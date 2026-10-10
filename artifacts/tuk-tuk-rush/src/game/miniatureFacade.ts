@@ -57,7 +57,7 @@ export const defaultSign: Record<Style, string> = {
 
 export function composeFacade(
   api: FacadeApi,
-  o: { style: Style; W: number; D: number; H: number; i: number; sign: number; showcase: boolean },
+  o: { style: Style; W: number; D: number; H: number; i: number; sign: number; showcase: boolean; businessName?: string },
 ) {
   const { style, W, D, H, i } = o, F = D / 2, p = PAL[style];
   const side = i % 2 ? 1 : -1, ux = side * (W / 2 - 0.95);
@@ -105,13 +105,21 @@ export function composeFacade(
     api.add("metal", p.b, GABLE(W * 0.3, 1.3, 1.9), 0, H + 2.4, F - 0.6);
     api.add("metal", p.b, GABLE(W * 0.18, 0.9, 1.3), 0, H + 3.5, F - 0.6);
     api.add("metal", p.b, BALL(0.35, 0.35, 0.35), 0, H + 4.6, F - 0.6);
-    // Blade sign on twin brackets, deeper than the fascia.
-    Bx("metal", p.b, 0.12, 0.12, 1.5, ux, 6.2, F + 0.75);
-    Bx("metal", p.b, 0.12, 0.12, 1.5, ux, 11.8, F + 0.75);
-    R("metal", p.b, 0.34, 7.6, 1.2, ux, 9.2, F + 1.5, 0.1);
-    api.vsign(o.sign, ux, 9.2, F + 1.5, 1.0, 7.3);
-    api.add("metal", p.b, BALL(0.55, 0.55, 0.2), ux, 13.3, F + 1.5);
-    R("metal", p.a, 0.34, 0.5, 1.5, ux, 13.0, F + 1.5, 0.12);
+    // Two researched Yaowarat gold-shop names deserve a distinctive visual
+    // landmark, not another copy of the generic miniature blade sign.
+    const hero = !!o.businessName && /ฮั่วเซ่งเฮง|ทองใบเยาวราช/.test(o.businessName);
+    const signHeight = hero ? 10.6 : 7.3;
+    const signWidth = hero ? 2.05 : 1.0;
+    const signY = hero ? 10.65 : 9.2;
+    const signOut = hero ? F + 2.0 : F + 1.5;
+    for (const y of hero ? [6.0, 15.1] : [6.2, 11.8])
+      Bx("metal", p.b, 0.14, 0.14, hero ? 2.1 : 1.5, ux, y, F + 0.7);
+    R("metal", p.b, hero ? 0.55 : 0.34, signHeight + 0.3, hero ? 2.25 : 1.2, ux, signY, signOut, 0.14);
+    api.vsign(o.sign, ux, signY, signOut, signWidth, signHeight);
+    api.add("metal", p.b, BALL(hero ? 0.82 : 0.55, hero ? 0.75 : 0.55, 0.2),
+      ux, signY + signHeight / 2 + 0.3, signOut);
+    R("metal", p.a, hero ? 0.55 : 0.34, 0.5, hero ? 2.1 : 1.5,
+      ux, signY + signHeight / 2, signOut, 0.12);
   } else if (style === "noodle") {
     api.add("cloth", p.a, VAULT(W - 1.0, 1.05), 0, 3.35, F + 0.95);
     api.add("cloth", p.b, VAULT(W - 0.9, 0.98), 0, 3.32, F + 0.96);

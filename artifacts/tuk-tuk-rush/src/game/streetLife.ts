@@ -242,7 +242,8 @@ export function buildStreetLife(d: District) {
           }
         }
       }
-      const follow = Math.min(1, Math.max(0, dt) * (escaping ? 5.5 : 1.65));
+      // Pause must freeze the displayed evade animation as well as the route.
+      const follow = active ? Math.min(1, Math.max(0, dt) * (escaping ? 5.5 : 1.65)) : 0;
       p.dodgeX = (p.dodgeX ?? 0) + (targetX - (p.dodgeX ?? 0)) * follow;
       p.dodgeZ = (p.dodgeZ ?? 0) + (targetZ - (p.dodgeZ ?? 0)) * follow;
       let displayX = p.x + (p.dodgeX ?? 0), displayZ = p.z + (p.dodgeZ ?? 0);

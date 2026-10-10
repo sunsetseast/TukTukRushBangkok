@@ -161,7 +161,7 @@ export function buildStreetscape(
             piece(plane, verticalSign, "#fff", wx(u + side * 0.18, v), y, wz(u + side * 0.18, v), w, h, 1, n.ry + (side * Math.PI) / 2, k);
         },
     };
-    composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, showcase: b.showcase ?? i % 4 === 0 });
+    composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, businessName: b.sign, showcase: b.showcase ?? i % 4 === 0 });
     composeSide(api, { style, W: n.w, D: n.dd, H: b.height, i });
   });
   // Flat sidewalks follow every sampled segment; they are cut back only at real junctions.

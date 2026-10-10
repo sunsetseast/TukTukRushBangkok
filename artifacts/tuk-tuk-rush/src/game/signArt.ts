@@ -43,9 +43,24 @@ export function buildSignAtlas(entries: SignEntry[]) {
   const index = new Map<string, number>();
   entries.forEach((e, i) => {
     index.set(e.key, i);
-    const [bg, line, ink] = PAL[e.style][e.variant % 2]!;
+    const signature = e.text === "ฮั่วเซ่งเฮง" ? "hua" :
+      e.text === "ทองใบเยาวราช" ? "thong" : "";
+    // Original, distinctly composed reference-inspired signage: verified
+    // business names, no copied brand logos or photographic textures.
+    const [bg, line, ink] = signature === "hua"
+      ? ["#971c22", "#eac05d", "#fff0bf"]
+      : signature === "thong"
+        ? ["#b7272e", "#e5bd55", "#fff5cd"]
+        : PAL[e.style][e.variant % 2]!;
     let x = (i % H.cols) * H.cw, y = Math.floor(i / H.cols) * H.ch;
     frame(H.c, x, y, H.cw, H.ch, bg, line);
+    if (signature) {
+      H.c.fillStyle = signature === "hua" ? "#166947" : "#174f9a";
+      H.c.fillRect(x + 4, y + 4, H.cw - 8, 7);
+      H.c.fillRect(x + 4, y + H.ch - 11, H.cw - 8, 7);
+      H.c.strokeStyle = "#f3d989"; H.c.lineWidth = 3;
+      H.c.strokeRect(x + 24, y + 23, H.cw - 48, H.ch - 46);
+    }
     motif(H.c, e.style, x + 50, y + 64, 20, line);
     motif(H.c, e.style, x + H.cw - 50, y + 64, 20, line);
     H.c.fillStyle = ink; H.c.textAlign = "center"; H.c.textBaseline = "middle";
@@ -53,6 +68,17 @@ export function buildSignAtlas(entries: SignEntry[]) {
     H.c.fillText(e.text, x + H.cw / 2, y + 68);
     x = (i % V.cols) * V.cw; y = Math.floor(i / V.cols) * V.ch;
     frame(V.c, x, y, V.cw, V.ch, bg, line);
+    if (signature) {
+      const trim = signature === "hua" ? "#156a4c" : "#17539c";
+      V.c.strokeStyle = trim; V.c.lineWidth = 11;
+      V.c.strokeRect(x + 13, y + 12, V.cw - 26, V.ch - 24);
+      V.c.strokeStyle = "#f8d873"; V.c.lineWidth = 2;
+      V.c.strokeRect(x + 21, y + 22, V.cw - 42, V.ch - 44);
+      for (let k = 0; k < 5; k++) {
+        V.c.fillStyle = k % 2 ? trim : line;
+        V.c.fillRect(x + 28, y + 70 + k * 72, V.cw - 56, 3);
+      }
+    }
     motif(V.c, e.style, x + 64, y + 40, 16, line);
     // Chinese supports stacked characters; Thai syllables/diacritics must stay
     // together. Never truncate a Thai business name into invented vertical text.
