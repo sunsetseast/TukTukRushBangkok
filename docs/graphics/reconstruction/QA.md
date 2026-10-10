@@ -102,8 +102,10 @@ covered by the original PR #3 WebGL screenshots or its earlier test results. A n
 `test:roadside` checks fixture footprints across *all* road branches and collision
 reverse recovery; updated street-life tests check visible safe evasion and pause.
 The player must test the resulting branch on iPhone before this PR can be merged.
-The newly introduced Actions workflow has not produced a successful run at the
-point of authoring; do not describe the updated code as fully tested.
+The corrective commits now pass the GitHub Actions TypeScript, production
+build, full gameplay, street-life, roadside/collision, and asset checks at
+https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38091297431 .
+This is source/build/regression evidence, not a rendered iPhone/Safari or visual-art certification.
 
 Two real gold-shop names (Hua Seng Heng and Thong Bai) receive **original,
 reference-inspired** signature sign art, not reproduced commercial logos. Their
