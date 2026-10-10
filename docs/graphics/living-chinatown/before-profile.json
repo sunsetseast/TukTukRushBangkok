@@ -1,0 +1,182 @@
+{
+  "environment": {
+    "browser": "145.0.7632.6",
+    "viewport": "1280x720 DPR1",
+    "renderer": "SwiftShader software; not iPhone"
+  },
+  "samples": {
+    "medium": [
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 55.300000000046566
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 130.10000000009313
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 126.89999999990687
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 91.30000000004657
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 179.19999999995343
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 141.80000000004657
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 147.19999999995343
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 141.80000000004657
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 149.89999999990687
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 71.4000000001397
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 81.79999999981374
+      },
+      {
+        "calls": 198,
+        "triangles": 142946,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 175.9000000001397
+      }
+    ],
+    "low": [
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 18.800000000046566
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 382.19999999995343
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 362.80000000004657
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 445.29999999981374
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 392.60000000009313
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 417.80000000004657
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 379.39999999990687
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 415.80000000004657
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 475.19999999995343
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 450.4000000001397
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 426.89999999990687
+      },
+      {
+        "calls": 129,
+        "triangles": 101618,
+        "geometries": 580,
+        "textures": 10,
+        "frameMs": 382.5
+      }
+    ]
+  },
+  "errors": []
+}

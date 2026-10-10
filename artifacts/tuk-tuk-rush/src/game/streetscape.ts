@@ -56,7 +56,9 @@ export function buildStreetscape(
     roughness: 0.63,
   });
   verticalSign.name = "vertical";
-  const box = new T.BoxGeometry(1, 1, 1),
+  const sphere = new T.SphereGeometry(1, 8, 5),
+    torus = new T.TorusGeometry(1, 0.09, 4, 10),
+    box = new T.BoxGeometry(1, 1, 1),
     plane = new T.PlaneGeometry(1, 1);
   const buckets = new Map<
     string,
@@ -159,7 +161,7 @@ export function buildStreetscape(
     const n = front(b),
       showcase = Math.abs(b.z - 40) < 62;
     const color = new T.Color(b.color)
-      .lerp(new T.Color("#ddcfb5"), 0.35)
+      .lerp(new T.Color("#ddcfb5"), 0.15)
       .getStyle();
     // Upper masonry and ground-floor side/back walls leave a real 1.25m shop recess.
     B(
@@ -228,7 +230,7 @@ export function buildStreetscape(
         );
     }
     B(metal, "#646c68", b.x, b.height + 0.15, b.z, b.w, 0.3, b.d, 0, false);
-    const bays = 2,
+    const bays = showcase ? 3 : 2,
       bw = n.w / bays;
     // All facade detail projects into the existing off-road margin, by at most 1.35m.
     const local = (
@@ -253,25 +255,181 @@ export function buildStreetscape(
         n.ry,
       );
     for (let bay = 0; bay < bays; bay++) {
-      const u = (bay - 0.5) * bw;
+      const u = (bay - (bays - 1) / 2) * bw;
+      const shop = (i + bay) % 8;
       local(u, 1.75, -1.35, bw - 0.55, 3.3, 0.17, metal, "#263c3c");
-      // Recess illusion: shaded interior, warm counter and side piers rather than painted windows.
-      if ((i + bay) % 4 !== 0) {
-        local(u, 1.4, -1.25, bw - 0.85, 2.4, 0.05, glass, "#466466");
-        local(u, 1, -0.4, bw - 0.8, 0.2, 0.7, metal, "#b59050");
-        for (let k = 0; k < 6; k++)
+      // Sign tile and merchandise agree: gold, noodles, coffee, kitchen, tea, fruit.
+      const localShape = (
+        geo: T.BufferGeometry,
+        u0: number,
+        y: number,
+        v: number,
+        w: number,
+        h: number,
+        dep: number,
+        m: T.Material,
+        c: string,
+      ) =>
+        piece(
+          geo,
+          m,
+          c,
+          n.fx + Math.cos(n.ry) * u0 + n.nx * v,
+          y,
+          n.fz - Math.sin(n.ry) * u0 + n.nz * v,
+          w,
+          h,
+          dep,
+          n.ry,
+        );
+      if (shop !== 6) {
+        local(
+          u,
+          1.4,
+          -1.25,
+          bw - 0.75,
+          2.5,
+          0.05,
+          glass,
+          shop === 1 ? "#6d2224" : "#243e40",
+        );
+        local(
+          u,
+          0.85,
+          -0.48,
+          bw - 0.8,
+          0.16,
+          0.8,
+          metal,
+          shop === 1 ? "#a92c31" : "#986646",
+        );
+        local(
+          u,
+          0.4,
+          -0.5,
+          bw - 0.9,
+          0.8,
+          0.62,
+          plaster,
+          shop === 1 ? "#8b242a" : "#514e43",
+        );
+        if (shop === 1) {
+          // Red velvet necklace boards and gold loops, readable even from the road.
+          for (let k = 0; k < 5; k++) {
+            const x = u + ((k - 2) * (bw - 0.95)) / 5;
+            local(x, 1.55, -0.72, 0.43, 0.75, 0.16, metal, "#88252c");
+            localShape(
+              torus,
+              x,
+              1.63,
+              -0.61,
+              0.14,
+              0.23,
+              0.12,
+              metal,
+              "#efc255",
+            );
+            localShape(
+              sphere,
+              x,
+              1.42,
+              -0.59,
+              0.06,
+              0.075,
+              0.03,
+              metal,
+              "#ffe092",
+            );
+          }
+          local(u, 2.8, -0.4, bw - 0.8, 0.09, 0.13, metal, "#ead09a");
+        } else if (shop === 7) {
+          for (let shelf = 0; shelf < 2; shelf++) {
+            local(
+              u,
+              0.95 + shelf * 0.5,
+              -0.5,
+              bw - 0.8,
+              0.07,
+              0.6,
+              metal,
+              "#816241",
+            );
+            for (let k = 0; k < 9; k++)
+              localShape(
+                sphere,
+                u + ((k - 4) * (bw - 0.9)) / 10,
+                1.12 + shelf * 0.5,
+                -0.33,
+                0.16,
+                0.15,
+                0.15,
+                plaster,
+                ["#df9130", "#689649", "#c14c35"][k % 3]!,
+              );
+          }
+        } else if (shop === 5) {
+          for (let shelf = 0; shelf < 3; shelf++) {
+            local(
+              u,
+              1.12 + shelf * 0.55,
+              -0.7,
+              bw - 0.8,
+              0.08,
+              0.42,
+              metal,
+              "#78563e",
+            );
+            for (let k = 0; k < 6; k++)
+              local(
+                u + ((k - 2.5) * (bw - 0.85)) / 7,
+                1.3 + shelf * 0.55,
+                -0.62,
+                0.25,
+                0.3,
+                0.22,
+                metal,
+                ["#97502d", "#50735b", "#c7a264"][k % 3]!,
+              );
+          }
+        } else {
+          // Bowls, coffee canisters, cooker, tiled counter and menu-board silhouette.
+          for (let k = 0; k < 5; k++)
+            localShape(
+              sphere,
+              u + ((k - 2) * (bw - 0.9)) / 6,
+              1.08,
+              -0.4,
+              0.22,
+              0.08,
+              0.2,
+              plaster,
+              "#eee1c4",
+            );
           local(
-            u + (k - 2.5) * 0.62,
-            1.24,
-            -0.4,
-            0.35,
-            0.2,
-            0.16,
+            u + bw * 0.27,
+            1.4,
+            -0.65,
+            0.48,
+            0.6,
+            0.4,
             metal,
-            k % 2 ? "#d6c780" : "#da6b39",
+            shop === 3 ? "#34585b" : "#adadb0",
           );
+          local(u - bw * 0.28, 2.18, -1.05, 0.6, 0.8, 0.08, metal, "#283b38");
+          for (let k = 0; k < 4; k++)
+            local(
+              u - bw * 0.28,
+              1.92 + k * 0.15,
+              -0.99,
+              0.45,
+              0.025,
+              0.025,
+              plaster,
+              "#dbcba0",
+            );
+        }
       } else {
-        local(u, 1.5, 0.22, bw - 0.65, 2.7, 0.08, metal, "#7e9292");
+        local(u, 1.5, 0.22, bw - 0.65, 2.7, 0.08, metal, "#6b8785");
         for (let k = 0; k < 16; k++)
           local(
             u,
@@ -281,7 +439,7 @@ export function buildStreetscape(
             0.025,
             0.045,
             metal,
-            "#425b5e",
+            "#385653",
           );
       }
       for (let side of [-1, 1]) {
@@ -311,7 +469,7 @@ export function buildStreetscape(
         (i + bay) % 4
       ]!;
       local(u, 3.25, 0.76, bw - 0.5, 0.12, 1.4, metal, awnColor);
-      for (let k = 0; k < 8; k++)
+      for (let k = 0; k < (shop % 3 === 0 ? 0 : 8); k++)
         local(
           u + ((k - 3.5) * (bw - 0.5)) / 8,
           3.25,
@@ -327,22 +485,22 @@ export function buildStreetscape(
       for (let f = 0; f < floors; f++) {
         const y = 5.7 + f * 3.5;
         local(u, y - 0.99, 0.13, bw - 0.05, 0.13, 0.34, plaster, "#f1e4c9");
-        for (let k of [-1, 1]) {
+        for (let k of showcase ? [0] : [-1, 1]) {
           const wx = u + k * bw * 0.22;
-          local(wx, y, 0.13, 1.7, 2, 0.15, metal, "#e8d8b7");
+          local(wx, y, 0.13, bw * 0.35, 2, 0.15, metal, "#e8d8b7");
           local(
             wx,
             y,
             0.23,
-            1.38,
+            bw * 0.29,
             1.72,
             0.05,
             glass,
             (i + f + bay) % 5 === 0 ? "#e5b466" : "#4c7078",
           );
           local(wx, y, 0.28, 0.065, 1.74, 0.05, metal, "#e6d6b5");
-          local(wx, y, 0.28, 1.38, 0.06, 0.05, metal, "#d0c39f");
-          local(wx, y + 1.03, 0.15, 1.93, 0.14, 0.38, plaster, "#e8d9b9");
+          local(wx, y, 0.28, bw * 0.29, 0.06, 0.05, metal, "#d0c39f");
+          local(wx, y + 1.03, 0.15, bw * 0.4, 0.14, 0.38, plaster, "#e8d9b9");
         }
         if (showcase && f % 2 === 0) {
           local(u, y - 0.9, 0.61, bw - 0.65, 0.13, 1.23, plaster, "#c4b69a");
@@ -359,6 +517,44 @@ export function buildStreetscape(
               "#405350",
             );
         }
+      }
+      if (showcase) {
+        // Rain streaks below sills; mismatched old repairs and plaster patches.
+        for (let k = 0; k < 3; k++)
+          local(
+            u + (k - 1) * bw * 0.25,
+            4.9 + (i % 3) * 0.12,
+            0.035,
+            0.09 + 0.02 * k,
+            0.7 + 0.17 * k,
+            0.01,
+            plaster,
+            "#a4977a",
+          );
+        if ((i + bay) % 3 === 0) {
+          local(u, 6.9, 0.3, bw * 0.7, 0.14, 0.12, metal, "#396765");
+          for (let side of [-1, 1])
+            local(
+              u + side * bw * 0.4,
+              5.7,
+              0.27,
+              0.25,
+              2.15,
+              0.1,
+              metal,
+              "#3d7169",
+            );
+        }
+        local(
+          u,
+          b.height - 0.15,
+          0.4,
+          bw - 0.2,
+          0.35,
+          0.5,
+          plaster,
+          ["#eed3a3", "#cf784e", "#579189"][i % 3]!,
+        );
       }
       // AC compressor, louvres, downpipe and projecting two-sided business signage.
       if (showcase) {
@@ -466,6 +662,8 @@ export function buildStreetscape(
     bucket.group.add(mesh);
     bucket.geometries.forEach((g) => g.dispose());
   }
+  sphere.dispose();
+  torus.dispose();
   box.dispose();
   plane.dispose();
   return {

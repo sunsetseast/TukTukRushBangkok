@@ -1,0 +1,182 @@
+{
+  "environment": {
+    "browser": "145.0.7632.6",
+    "viewport": "1280x720 DPR1",
+    "renderer": "SwiftShader software; not iPhone"
+  },
+  "samples": {
+    "medium": [
+      {
+        "calls": 213,
+        "triangles": 185108,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 248.80000000004657
+      },
+      {
+        "calls": 213,
+        "triangles": 185108,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 243.10000000009313
+      },
+      {
+        "calls": 213,
+        "triangles": 185108,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 231.69999999995343
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 256.19999999995343
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 249.10000000009313
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 14.199999999953434
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 275.89999999990687
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 270.5
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 264.9000000001397
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 236.5999999998603
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 241
+      },
+      {
+        "calls": 213,
+        "triangles": 184476,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 246.10000000009313
+      }
+    ],
+    "low": [
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 569
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 425.5999999998603
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 415
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 11.300000000046566
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 399.5
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 429.79999999981374
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 449.80000000004657
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 790.8000000000466
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 424.10000000009313
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 399.19999999995343
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 386.89999999990687
+      },
+      {
+        "calls": 142,
+        "triangles": 125828,
+        "geometries": 573,
+        "textures": 10,
+        "frameMs": 395.30000000004657
+      }
+    ]
+  },
+  "errors": []
+}

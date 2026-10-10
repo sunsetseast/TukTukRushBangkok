@@ -6,6 +6,7 @@ import { buildCity, buildSky } from "./cityMesh";
 import { buildTuk } from "./tukMesh";
 import { TrafficLayer } from "./trafficMesh";
 import { architectureShadows, vehicleShadow } from "./contactShadows";
+import { buildStreetLife } from "./streetLife";
 import { buildStreetscape } from "./streetscape";
 import { loadArt, type ArtBundle, disposeObject } from "./assets";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
@@ -65,6 +66,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     s.root.name = "Facades";
     return s;
   }, [engine, art]);
+  const life = useMemo(
+    () => buildStreetLife(engine.model.district),
+    [engine, city],
+  );
   const shadows = useMemo(
     () => architectureShadows(engine.model.district),
     [engine],
@@ -96,12 +101,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       city.dispose();
       streets.dispose();
       traffic.dispose();
+      life.dispose();
       disposeObject(sky);
       disposeObject(beacon.g);
       disposeObject(shadows);
       disposeObject(contact);
     };
-  }, [city, streets, traffic, sky, beacon, shadows, contact, gl, scene]);
+  }, [city, streets, traffic, life, sky, beacon, shadows, contact, gl, scene]);
 
   useFrame((state, delta) => {
     const dt = Math.min(delta, 0.1);
@@ -228,6 +234,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     }
     sky.position.copy(cp.position);
     streets.update(cp.position, s.quality);
+    life.update(
+      delta,
+      cp.position,
+      s.quality,
+      s.phase === "playing" || s.phase === "title",
+      p,
+    );
     city.update(cp.position, s.quality, engine.intersectionHorizontalGreen);
     const far = s.quality === "low" ? 240 : 340;
     if (cp.far !== far) {
@@ -247,6 +260,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         three: THREE,
         camera: cp,
         hero: tuk.root,
+        life,
         stats: {
           calls: gl.info.render.calls,
           triangles: gl.info.render.triangles,
@@ -262,15 +276,16 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     <>
       <color attach="background" args={["#e5ccab"]} />
       <fog attach="fog" args={["#e5ccab", 120, 440]} />
-      <hemisphereLight args={["#c9e9f2", "#a58c72", 1.1]} />
+      <hemisphereLight args={["#c9e9f2", "#7d7369", 0.8]} />
       <directionalLight
         position={[-120, 45, 60]}
-        intensity={2.6}
+        intensity={2.2}
         color="#ffe0af"
       />
       <primitive object={sky} />
       <primitive object={city.group} />
       <primitive object={streets.root} />
+      <primitive object={life.root} />
       <primitive object={shadows} />
       <primitive object={contact} />
       <primitive object={tuk.root} />
@@ -352,7 +367,7 @@ export default function GameCanvas({
           };
           gl.outputColorSpace = THREE.SRGBColorSpace;
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 0.98;
+          gl.toneMappingExposure = 0.88;
         }}
         camera={{ fov: 58, near: 0.2, far: 1200, position: [-282, 5, 40] }}
         style={{ touchAction: "none" }}

@@ -66,9 +66,11 @@ export function surface(
 export function disposeObject(root: THREE.Object3D) {
   const gs = new Set<THREE.BufferGeometry>(),
     ms = new Set<THREE.Material>(),
-    ts = new Set<THREE.Texture>();
+    ts = new Set<THREE.Texture>(),
+    instances = new Set<THREE.InstancedMesh>();
   root.traverse((o) => {
     const mesh = o as THREE.Mesh;
+    if (o instanceof THREE.InstancedMesh) instances.add(o);
     if (mesh.geometry) gs.add(mesh.geometry);
     for (const m of Array.isArray(mesh.material)
       ? mesh.material
@@ -86,6 +88,7 @@ export function disposeObject(root: THREE.Object3D) {
     if (typeof ImageBitmap !== "undefined" && image instanceof ImageBitmap)
       image.close();
   });
+  instances.forEach((mesh) => mesh.dispose());
   ms.forEach((m) => m.dispose());
   gs.forEach((g) => g.dispose());
 }
