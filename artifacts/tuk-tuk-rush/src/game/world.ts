@@ -1,100 +1,157 @@
-import type { District, Point, Road, RoadNode } from './types';
+import type { District, Point, Road, RoadNode, Obstacle } from './types';
+import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE, SIGN_NAMES } from './mapData';
 
-// A stylized district, not a survey or a navigation map. North is -Z.
-const xs = [-320, -210, -90, 40, 170, 300];
-const zs = [-300, -180, -80, 40, 160, 280];
-const palette = ['#ee9a73', '#4ea8a0', '#f1c96b', '#da7997', '#89a774', '#d49a61', '#b7b2cb'];
-export const nodeId = (col: number, row: number) => `${col}:${row}`;
 export const WORLD_SIZE = 700;
-
-export function createDistrict(): District {
-  const nodes: RoadNode[] = [];
-  const roads: Road[] = [];
-  for (let row = 0; row < zs.length; row++) {
-    for (let col = 0; col < xs.length; col++) {
-      nodes.push({ id: nodeId(col, row), x: xs[col]!, z: zs[row]! });
-      if (col > 0) roads.push({
-        a: nodeId(col - 1, row), b: nodeId(col, row),
-        width: row === 3 ? 20 : row === 2 ? 28 : row === 0 || row === 5 ? 22 : 18,
-        name: row === 3 ? 'Yaowarat Road' : row === 2 ? 'Charoen Krung Road' : row === 0 ? 'Station Road' : row === 4 ? 'Soi Lantern' : 'Market Lane',
-      });
-      if (row > 0) roads.push({
-        a: nodeId(col, row - 1), b: nodeId(col, row),
-        width: col === 4 ? 26 : col === 0 || col === 5 ? 22 : 18,
-        name: col === 4 ? 'Tri Mit Road' : col === 2 ? 'Soi Wanit' : 'Chinatown Lane',
-      });
-    }
-  }
-  // Fictional shortcuts cross otherwise rectangular blocks. Buildings avoid them.
-  roads.push(
-    { a: '1:3', b: '2:4', width: 11, name: 'Dragon Alley', shortcut: true },
-    { a: '3:1', b: '4:2', width: 11, name: 'Lantern Cut', shortcut: true },
-    { a: '2:2', b: '3:3', width: 11, name: 'Spice Market', shortcut: true },
-  );
-  const landmarks: District['landmarks'] = [
-    { kind: 'gate', name: 'Chinatown Gate / Odeon', x: 225, z: 100 },
-    { kind: 'temple', name: 'Wat Traimit', x: 100, z: -20 },
-    { kind: 'station', name: 'Hua Lamphong', x: 230, z: -240 },
-  ];
-  const district: District = { nodes, roads, buildings: [], obstacles: [], landmarks };
-  // Shophouse footprints are generated once, never randomly in the render loop.
-  let seed = 812;
-  const random = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
-  for (let row = 0; row < zs.length - 1; row++) {
-    for (let col = 0; col < xs.length - 1; col++) {
-      const x0 = xs[col]! + 25, x1 = xs[col + 1]! - 25;
-      const z0 = zs[row]! + 25, z1 = zs[row + 1]! - 25;
-      for (let x = x0 + 7; x <= x1 - 5; x += 16) {
-        for (let z = z0 + 7; z <= z1 - 5; z += 19) {
-          if (x > x0 + 19 && x < x1 - 19 && z > z0 + 20 && z < z1 - 20) continue;
-          if (landmarks.some(l => Math.abs(l.x - x) < (l.kind === 'station' ? 52 : 38) && Math.abs(l.z - z) < 40)) continue;
-          if (roads.some(r => {
-            const a = nodes.find(n => n.id === r.a)!;
-            const b = nodes.find(n => n.id === r.b)!;
-            return distanceToSegment({ x, z }, a, b).distance < r.width / 2 + 11;
-          })) continue;
-          const building = { x, z, w: 13, d: 16, height: 10 + Math.floor(random() * 5) * 4, color: palette[Math.floor(random() * palette.length)]! };
-          // Bring only Yaowarat's existing frontage row toward the narrower 20m boulevard.
-          // Apply before registering the same object as its collision footprint.
-          if (Math.abs(building.z - 40) < 34) building.z += building.z < 40 ? 8 : -8;
-          district.buildings.push(building);
-          district.obstacles.push(building);
-        }
-      }
-    }
-  }
-  // Landmark collision footprints, with clear road approaches around each.
-  district.obstacles.push(
-    { x: 100, z: -20, w: 42, d: 44, height: 22, color: '#edc878' },
-    { x: 230, z: -240, w: 85, d: 48, height: 18, color: '#d9bc8e' },
-    { x: 206, z: 100, w: 5, d: 7, height: 15, color: '#b63737' },
-    { x: 244, z: 100, w: 5, d: 7, height: 15, color: '#b63737' },
-  );
-  return district;
-}
+export const nodeId = (col: number, row: number) => `${col}:${row}`;
 
 export function distanceToSegment(p: Point, a: Point, b: Point) {
-  const dx = b.x - a.x, dz = b.z - a.z;
-  const t = Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.z - a.z) * dz) / (dx * dx + dz * dz)));
+  const dx = b.x - a.x, dz = b.z - a.z, l2 = dx * dx + dz * dz;
+  const t = l2 ? Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.z - a.z) * dz) / l2)) : 0;
   const point = { x: a.x + t * dx, z: a.z + t * dz };
   return { point, distance: Math.hypot(p.x - point.x, p.z - point.z), t };
 }
 
+/** World-space point to an oriented obstacle's local axes (same yaw as Three.js). */
+export function obstacleLocal(p: Point, b: Obstacle): Point {
+  const c = Math.cos(b.yaw ?? 0), s = Math.sin(b.yaw ?? 0);
+  const dx = p.x - b.x, dz = p.z - b.z;
+  return { x: c * dx - s * dz, z: s * dx + c * dz };
+}
+export function obstacleDistance(p: Point, b: Obstacle) {
+  const q = obstacleLocal(p, b);
+  return Math.hypot(Math.max(0, Math.abs(q.x) - b.w / 2), Math.max(0, Math.abs(q.z) - b.d / 2));
+}
+
+export function createDistrict(): District {
+  const nodes: RoadNode[] = [], roads: Road[] = [];
+  const byId = new Map<string, RoadNode>();
+  const node = (id: string, p: Point, name?: string) => {
+    if (byId.has(id)) return byId.get(id)!;
+    const n = { id, ...p, name }; nodes.push(n); byId.set(id, n); return n;
+  };
+  const edge = (a: string, b: string, width: number, name: string, oneWay = false, shortcut = false, roundabout = false) =>
+    roads.push({ a, b, width, name, oneWay, shortcut, roundabout });
+  const rb = { ...GATE_CENTER, radius: 34, laneWidth: 12 };
+  for (let i = 0; i < 20; i++) {
+    const angle = -Math.PI / 2 + i * Math.PI * 2 / 20;
+    node(`odeon:${i}`, { x: rb.x + Math.cos(angle) * rb.radius, z: rb.z + Math.sin(angle) * rb.radius }, 'Odeon Circle');
+  }
+  for (let i = 0; i < 20; i++) edge(`odeon:${i}`, `odeon:${(i + 1) % 20}`, 12, 'Odeon Circle', true, false, true);
+
+  // Catmull-Rom sampled centreline: every system consumes these exact short edges.
+  // Intersections are the named control nodes, not independently rendered curves.
+  const trace = (prefix: string, points: Point[], width: number, name: string, oneWay: boolean) => {
+    for (let i = 0; i < points.length; i++) node(`${prefix}:${i}`, points[i]!);
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[Math.max(0, i - 1)]!, p1 = points[i]!, p2 = points[i + 1]!, p3 = points[Math.min(points.length - 1, i + 2)]!;
+      const count = Math.max(1, Math.ceil(Math.hypot(p2.x - p1.x, p2.z - p1.z) / 22));
+      let prev = `${prefix}:${i}`;
+      for (let j = 1; j <= count; j++) {
+        const t = j / count;
+        const f = (a: number, b: number, c: number, d: number) =>
+          0.5 * ((2 * b) + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t * t + (-a + 3 * b - 3 * c + d) * t * t * t);
+        const id = j === count ? `${prefix}:${i + 1}` : `${prefix}:${i}.${j}`;
+        node(id, { x: f(p0.x, p1.x, p2.x, p3.x), z: f(p0.z, p1.z, p2.z, p3.z) });
+        edge(prev, id, width, name, oneWay); prev = id;
+      }
+    }
+  };
+  trace('yaowarat', YAOWARAT_TRACE, 20, 'Yaowarat Road', true);
+  trace('charoen', CHAROEN_TRACE, 22, 'Charoen Krung Road', true);
+  edge('odeon:0', 'yaowarat:0', 20, 'Yaowarat Road', true);
+  edge('charoen:8', 'odeon:3', 18, 'Charoen Krung Road', true);
+  edge('yaowarat:6', 'charoen:3', 13, 'Plaeng Nam Road');
+  edge('yaowarat:3', 'charoen:5', 16, 'Song Sawat Road');
+  edge('yaowarat:8', 'charoen:1', 15, 'Mangkon Road');
+  // Connected fictional service streets provide a return route without traffic jams.
+  node('west-market', { x: -285, z: -175 }, 'Dragon Alley market');
+  edge('yaowarat:10', 'west-market', 13, 'Dragon Alley', false, true);
+  edge('west-market', 'charoen:0', 15, 'Lantern Cut', false, true);
+  node('south-market', { x: -45, z: 244 });
+  edge('yaowarat:3', 'south-market', 13, 'Spice Market', false, true);
+  edge('south-market', 'odeon:14', 15, 'Market Loop', false, true);
+  node('temple-stop', { x: 155, z: 121 }, 'Wat Traimit');
+  node('station-stop', { x: 260, z: -26 }, 'Hua Lamphong station');
+  node('tri-mit-bend', { x: 211, z: 90 });
+  node('tri-mit-south', { x: 218, z: 229 });
+  node('station-west', { x: 205, z: -26 });
+  edge('odeon:7', 'tri-mit-south', 18, 'Tri Mit Road');
+  edge('tri-mit-south', 'tri-mit-bend', 18, 'Tri Mit Road');
+  edge('tri-mit-bend', 'temple-stop', 16, 'Temple Approach');
+  edge('tri-mit-bend', 'station-west', 20, 'Station Approach');
+  edge('station-west', 'station-stop', 20, 'Station Approach');
+  edge('station-stop', 'charoen:5', 16, 'Station Service Road', false, true);
+
+  const landmarks: District['landmarks'] = [
+    { kind: 'gate', name: 'Chinatown Gate / Odeon Circle', ...GATE_CENTER },
+    { kind: 'temple', name: 'Wat Traimit', ...TEMPLE_CENTER },
+    { kind: 'station', name: 'Hua Lamphong', ...STATION_CENTER },
+  ];
+  const district: District = { nodes, roads, landmarks, roundabout: rb, buildings: [], obstacles: [] };
+  district.obstacles.push(
+    { ...TEMPLE_CENTER, w: 42, d: 44, height: 22, color: '#edc878' },
+    { ...STATION_CENTER, w: 85, d: 48, height: 18, color: '#d9bc8e' },
+    // A solid landscaped island, not a drive-through straight-street archway.
+    { ...GATE_CENTER, w: 42, d: 38, height: 1, color: '#95aa77' },
+  );
+  const segments = roads.map(r => ({ r, a: byId.get(r.a)!, b: byId.get(r.b)! }));
+  const clear = (b: Obstacle) => {
+    if (Math.abs(b.x) + Math.hypot(b.w, b.d) / 2 > 335 || Math.abs(b.z) + Math.hypot(b.w, b.d) / 2 > 335) return false;
+    if (landmarks.some(l => Math.hypot(l.x - b.x, l.z - b.z) < (l.kind === 'gate' ? 60 : l.kind === 'station' ? 67 : 45))) return false;
+    // Rotated footprint projection against every road corridor, not just its closest road.
+    for (const { r, a, b: end } of segments) {
+      const q = distanceToSegment(b, a, end), theta = Math.atan2(end.x - a.x, end.z - a.z);
+      const support = Math.abs(Math.cos((b.yaw ?? 0) - theta)) * b.w / 2 + Math.abs(Math.sin((b.yaw ?? 0) - theta)) * b.d / 2;
+      if (q.distance < r.width / 2 + support + 5.2) return false;
+    }
+    return district.buildings.every(o => Math.hypot(o.x - b.x, o.z - b.z) > Math.hypot(o.w, o.d) / 2 + Math.hypot(b.w, b.d) / 2 - 2);
+  };
+  // Road-facing handcrafted module placements follow the SAME curve as traffic.
+  // One building per ~20m on each side; distinct business classes and silhouettes.
+  let index = 0;
+  for (const { r, a, b: end } of segments) {
+    if (r.roundabout || r.shortcut) continue;
+    const len = Math.hypot(end.x - a.x, end.z - a.z), ux = (end.x - a.x) / len, uz = (end.z - a.z) / len;
+    for (let t = 10; t < len - 1; t += 21) for (const side of [-1, 1]) {
+      const showcase = r.name === 'Yaowarat Road', depth = showcase ? 13 : 15;
+      const off = r.width / 2 + depth / 2 + 5.8;
+      const x = a.x + ux * t + uz * off * side, z = a.z + uz * t - ux * off * side;
+      const yaw = Math.atan2(-uz * side, ux * side);
+      const styles: NonNullable<Obstacle['style']>[] = ['gold', 'heritage', 'noodle', 'pharmacy', 'hotel', 'heritage'];
+      const b: Obstacle = { x, z, w: 13, d: depth, height: 12 + (index % 4) * 3.4,
+        color: PALETTE[index % PALETTE.length]!, yaw, style: styles[index % styles.length]!, showcase,
+        sign: undefined };
+      const text = { gold: 'ร้านทอง', noodle: 'ก๋วยเตี๋ยว', pharmacy: 'ร้านขายยา', hotel: 'โรงแรม', heritage: 'เยาวราช' };
+      b.sign = text[b.style!];
+      if (clear(b)) { district.buildings.push(b); district.obstacles.push(b); index++; }
+    }
+  }
+  // One curated factual business reference, not a random repeating logo on every shop.
+  const reference = byId.get('yaowarat:6')!;
+  const goldShops = district.buildings.filter(b => b.showcase && b.style === 'gold')
+    .sort((a, b) => Math.hypot(a.x - reference.x, a.z - reference.z) - Math.hypot(b.x - reference.x, b.z - reference.z));
+  if (goldShops[0]) goldShops[0].sign = SIGN_NAMES[0];
+  const heritage = district.buildings.find(b => b.showcase && b.style === 'heritage');
+  if (heritage) heritage.sign = '耀華力路';
+  return district;
+}
+
 export function nearestRoad(district: District, p: Point) {
-  let result = { point: { x: -270, z: 40 }, heading: Math.PI / 2, distance: Infinity };
+  let result = { point: { x: 0, z: 0 }, heading: 0, distance: Infinity };
+  const nodes = new Map(district.nodes.map(n => [n.id, n]));
   for (const road of district.roads) {
-    const a = district.nodes.find(n => n.id === road.a)!;
-    const b = district.nodes.find(n => n.id === road.b)!;
+    const a = nodes.get(road.a)!, b = nodes.get(road.b)!;
     const candidate = distanceToSegment(p, a, b);
     if (candidate.distance < result.distance) result = { ...candidate, heading: Math.atan2(b.x - a.x, b.z - a.z) };
   }
   return result;
 }
 
+/** Player routing permits wrong-way arcade driving; AI honors Road.oneWay. */
 export function routeBetween(district: District, start: string, end: string): RoadNode[] {
   const queue = [start], previous = new Map<string, string | null>([[start, null]]);
-  while (queue.length) {
-    const id = queue.shift()!;
+  for (let i = 0; i < queue.length; i++) {
+    const id = queue[i]!;
     if (id === end) break;
     for (const road of district.roads) {
       const next = road.a === id ? road.b : road.b === id ? road.a : null;
@@ -102,8 +159,7 @@ export function routeBetween(district: District, start: string, end: string): Ro
     }
   }
   if (!previous.has(end)) return [];
-  const ids: string[] = [];
-  let current: string | null = end;
+  const ids: string[] = []; let current: string | null = end;
   while (current) { ids.unshift(current); current = previous.get(current) ?? null; }
   return ids.map(id => district.nodes.find(n => n.id === id)!);
 }

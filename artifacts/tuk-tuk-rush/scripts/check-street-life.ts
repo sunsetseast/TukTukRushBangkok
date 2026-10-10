@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import * as T from "three";
-import { createDistrict, distanceToSegment } from "../src/game/world";
+import { createDistrict, distanceToSegment, obstacleDistance } from "../src/game/world";
 import { buildCity } from "../src/game/cityMesh";
 import { ASSETS } from "../src/game/assets";
 import { buildStreetLife, streetPeople } from "../src/game/streetLife";
@@ -31,15 +31,13 @@ for (const p of people)
     );
     assert(
       !district.obstacles.some(
-        (o) =>
-          Math.abs(o.x - q.x) < o.w / 2 + 0.35 &&
-          Math.abs(o.z - q.z) < o.d / 2 + 0.35,
+        (o) => obstacleDistance(q, o) < 0.35,
       ),
       "Path clear of shops and carts",
     );
   }
 const life = buildStreetLife(district),
-  camera = new T.Vector3(-270, 3, 40);
+  camera = new T.Vector3(0, 3, 50);
 const positions = () => life.people.map((p) => [p.x, p.z]);
 life.update(0, camera, "medium", false);
 const initial = positions();

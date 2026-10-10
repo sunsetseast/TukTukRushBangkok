@@ -19,6 +19,17 @@ export type ArtBundle = {
   dispose: () => void;
 };
 export async function loadArt(): Promise<ArtBundle> {
+  // Tiny local OFL subsets guarantee readable Thai/Chinese across test browsers
+  // and iPhone; no remote font request or system-font assumption at runtime.
+  const fonts = [
+    new FontFace("Rush Thai", `url("${assetURL("assets/fonts/thai-signs.ttf")}")`),
+    new FontFace("Rush Chinese", `url("${assetURL("assets/fonts/chinese-signs.ttf")}")`),
+  ];
+  const loadedFonts = await Promise.allSettled(fonts.map(async f => { await f.load(); document.fonts.add(f); }));
+  if (loadedFonts.some(f => f.status === "rejected")) {
+    fonts.forEach(f => document.fonts.delete(f));
+    throw new Error("Required signage fonts could not load");
+  }
   const textures = new Map<string, THREE.Texture>();
   const loader = new THREE.TextureLoader();
   const results = await Promise.allSettled([
@@ -33,6 +44,7 @@ export async function loadArt(): Promise<ArtBundle> {
   ]);
   const heroResult = results[0]!;
   if (results.some((result) => result.status === "rejected")) {
+    fonts.forEach(f => document.fonts.delete(f));
     textures.forEach((t) => t.dispose());
     if (heroResult.status === "fulfilled")
       disposeObject((heroResult.value as { scene: THREE.Group }).scene);
@@ -44,6 +56,7 @@ export async function loadArt(): Promise<ArtBundle> {
     hero,
     textures,
     dispose() {
+      fonts.forEach(f => document.fonts.delete(f));
       disposeObject(hero);
       textures.forEach((t) => t.dispose());
     },

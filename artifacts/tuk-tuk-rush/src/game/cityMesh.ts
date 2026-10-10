@@ -5,6 +5,8 @@ import { lamb } from "./meshUtil";
 import { StaticBatch } from "./staticBatch";
 import { buildTrafficModel } from "./trafficMesh";
 import { ASSETS, surface, disposeObject } from "./assets";
+import { degreeMap, sidewalkRange } from "./roadGeometry";
+import { nearestRoad, obstacleDistance } from "./world";
 
 export type City = {
   group: THREE.Group;
@@ -74,7 +76,7 @@ export function buildCity(
   // ground
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(1400, 1400).rotateX(-Math.PI / 2),
-    lamb("#3a2a35"),
+    lamb("#b6b69c"),
   );
   ground.position.y = -0.02;
   group.add(ground);
@@ -131,18 +133,13 @@ export function buildCity(
   const dashGeo = new THREE.BoxGeometry(1, 0.04, 1);
   for (const s of segs) {
     if (s.r.width < 9 || s.r.shortcut) continue;
-    for (let t = 14; t < s.len - 14; t += 9)
-      dashM.push(
-        M(
-          s.a.x + s.dx * t,
-          0.12,
-          s.a.z + s.dz * t,
-          Math.atan2(s.dx, s.dz),
-          0.35,
-          1,
-          4,
-        ),
-      );
+    {
+      const n = Math.floor(s.len / 9);
+      for (let k = 0; k < n; k++) {
+        const t = ((k + 0.5) * s.len) / n;
+        dashM.push(M(s.a.x + s.dx * t, 0.12, s.a.z + s.dz * t, Math.atan2(s.dx, s.dz), 0.35, 1, 4));
+      }
+    }
   }
   inst(
     dashGeo,
@@ -155,39 +152,26 @@ export function buildCity(
     dashM,
   );
 
+  const deg = degreeMap(d);
   const whiteM: THREE.Matrix4[] = [],
     curbM: THREE.Matrix4[] = [];
   for (const s of segs) {
-    if (s.r.shortcut) continue;
-    const ry = Math.atan2(s.dx, s.dz);
+    const range = sidewalkRange(s.r, s.len, deg.get(s.a.id) ?? 2, deg.get(s.b.id) ?? 2);
+    if (!range) continue;
+    const ry = Math.atan2(s.dx, s.dz), tc = (range[0]! + range[1]!) / 2;
     for (const side of [-1, 1]) {
       const off = s.r.width / 2 - 0.5;
-      curbM.push(
-        M(
-          (s.a.x + s.b.x) / 2 - s.dz * off * side,
-          0.14,
-          (s.a.z + s.b.z) / 2 + s.dx * off * side,
-          ry,
-          0.12,
-          1,
-          s.len - 32,
-        ),
-      );
-      for (let k = 0; k < 6; k++) {
-        const t = 14 + k * 0.9;
-        whiteM.push(
-          M(
-            s.a.x + s.dx * t - s.dz * side * s.r.width * 0.24,
-            0.15,
-            s.a.z + s.dz * t + s.dx * side * s.r.width * 0.24,
-            ry,
-            s.r.width * 0.4,
-            1,
-            0.38,
-          ),
-        );
-      }
+      curbM.push(M(s.a.x + s.dx * tc - s.dz * off * side, 0.14, s.a.z + s.dz * tc + s.dx * off * side, ry, 0.12, 1, range[1]! - range[0]!));
     }
+    // Zebra crossings only beside true junctions on segments long enough to host them.
+    if (s.len >= 20 && s.r.width >= 9)
+      for (const [id, t0, dir] of [[s.a.id, 4, 1], [s.b.id, s.len - 4, -1]] as const) {
+        if ((deg.get(id) ?? 2) < 3) continue;
+        for (let k = 0; k < 6; k++) {
+          const t = t0 + dir * k * 0.9;
+          whiteM.push(M(s.a.x + s.dx * t, 0.15, s.a.z + s.dz * t, ry, s.r.width * 0.8, 1, 0.38));
+        }
+      }
   }
   inst(dashGeo, new THREE.MeshBasicMaterial({ color: "#ded9bf" }), whiteM);
   inst(dashGeo, new THREE.MeshBasicMaterial({ color: "#b5b09d" }), curbM);
@@ -198,50 +182,38 @@ export function buildCity(
     lampM: THREE.Matrix4[] = [],
     lanM: THREE.Matrix4[] = [],
     wire: number[] = [];
+  const poleState = new Map<string, { acc: number; last: { x: number; z: number } | null }>();
   for (const s of segs) {
     const ry = Math.atan2(s.dx, s.dz);
+    if (s.r.shortcut) continue;
     for (const side of [-1, 1]) {
-      let last: { x: number; z: number } | null = null;
-      for (let t = 20; t < s.len - 16; t += 30) {
-        const off = s.r.width / 2 + 0.8,
+      const key = `${s.r.name}:${side * (s.dx + s.dz > 0 ? 1 : -1)}`;
+      const st = poleState.get(key) ?? { acc: 30, last: null as { x: number; z: number } | null };
+      poleState.set(key, st);
+      if (st.acc >= 28 && s.len > 6) {
+        const t = s.len / 2, off = s.r.width / 2 + 0.8,
           x = s.a.x + s.dx * t - s.dz * side * off,
           z = s.a.z + s.dz * t + s.dx * side * off;
         poleM.push(M(x, 3.1, z, 0));
         crossM.push(M(x, 5.6, z, ry, 1.3, 0.07, 0.1));
-        lampM.push(
-          M(
-            x + s.dz * side * 0.55,
-            6.15,
-            z - s.dx * side * 0.55,
-            ry,
-            1.1,
-            0.1,
-            0.3,
-          ),
-        );
-        if (last)
+        lampM.push(M(x + s.dz * side * 0.55, 6.15, z - s.dx * side * 0.55, ry, 1.1, 0.1, 0.3));
+        const last = st.last;
+        if (last && Math.hypot(x - last.x, z - last.z) < 48)
           for (let cable = 0; cable < 4; cable++) {
-            let px = last.x,
-              py = 5.68 + cable * 0.14,
-              pz = last.z;
+            let px = last.x, py = 5.68 + cable * 0.14, pz = last.z;
             for (let step = 1; step <= 8; step++) {
-              const f = step / 8,
-                nx = last.x + (x - last.x) * f,
-                nz = last.z + (z - last.z) * f,
-                ny =
-                  5.68 +
-                  cable * 0.14 -
-                  Math.sin(f * Math.PI) * (0.4 + cable * 0.05);
+              const f = step / 8, nx = last.x + (x - last.x) * f, nz = last.z + (z - last.z) * f,
+                ny = 5.68 + cable * 0.14 - Math.sin(f * Math.PI) * (0.4 + cable * 0.05);
               wire.push(px, py, pz, nx, ny, nz);
-              px = nx;
-              py = ny;
-              pz = nz;
+              px = nx; py = ny; pz = nz;
             }
           }
-        if (s.r.name === "Yaowarat Road" || s.r.shortcut)
+        if (s.r.name.includes("Yaowarat") || s.r.shortcut)
           lanM.push(M(x + s.dz * side * 0.9, 4.1, z - s.dx * side * 0.9, 0));
-        last = { x, z };
+        st.last = { x, z };
+        st.acc = 0;
       }
+      st.acc += s.len;
     }
   }
   inst(new THREE.CylinderGeometry(0.11, 0.16, 6.2, 8), lamb("#93958b"), poleM);
@@ -276,7 +248,7 @@ export function buildCity(
   ];
   const lensGeo = new THREE.SphereGeometry(0.11, 8, 6),
     signalM: THREE.Matrix4[][] = [[], []];
-  for (const n of d.nodes)
+  for (const n of d.nodes.filter((n) => (deg.get(n.id) ?? 0) >= 3))
     for (let axis = 0; axis < 2; axis++) {
       const x = n.x + (axis === 0 ? 12 : 10),
         z = n.z + (axis === 0 ? 10 : 12);
@@ -496,51 +468,40 @@ function buildProps(
     "#8a2a2a",
   ];
   const leaf = ["#437c66", "#4d8d6f", "#366757"];
-  const free = (
-    x: number,
-    z: number,
-    hw: number,
-    hd: number,
-    roadClear: number,
-  ) => {
+  const ra = d.roundabout;
+  const free = (x: number, z: number, hw: number, hd: number, roadClear: number) => {
+    const p = { x, z }, rad = Math.hypot(hw, hd);
     if (nearest(x, z).d < roadClear) return false;
-    if (Math.hypot(x + 270, z - 40) < 20 || Math.hypot(x - 225, z - 100) < 36)
-      return false;
-    for (const n of d.nodes)
-      if (Math.hypot(n.x - x, n.z - z) < 18) return false;
-    for (const o of staticObstacles)
-      if (
-        Math.abs(o.x - x) < o.w / 2 + hw + 1 &&
-        Math.abs(o.z - z) < o.d / 2 + hd + 1
-      )
-        return false;
-    for (const o of placed)
-      if (
-        Math.abs(o.x - x) < o.w / 2 + hw + 0.8 &&
-        Math.abs(o.z - z) < o.d / 2 + hd + 0.8
-      )
-        return false;
+    if (ra && Math.hypot(x - ra.x, z - ra.z) < ra.radius + ra.laneWidth) return false;
+    for (const r of d.roads) {
+      const a = nodes.get(r.a)!, b = nodes.get(r.b)!;
+      if (nearestRoad({ ...d, roads: [r] }, p).distance < r.width / 2 + rad + 0.8) return false;
+    }
+    for (const n of d.nodes) if ((degAll.get(n.id) ?? 2) >= 3 && Math.hypot(n.x - x, n.z - z) < 20) return false;
+    for (const o of staticObstacles) if (obstacleDistance(p, o) < rad + 1.2) return false;
+    for (const o of placed) if (Math.abs(o.x - x) < o.w / 2 + hw + 0.8 && Math.abs(o.z - z) < o.d / 2 + hd + 0.8) return false;
     return true;
   };
+  const degAll = degreeMap(d);
   segs.forEach((s, si) => {
     let side = si % 2 ? 1 : -1;
-    for (let t = 30; t < s.len - 30; t += 17) {
+    if (s.r.shortcut || s.r.roundabout) return;
+    for (let t = 6; t < s.len - 4; t += 17) {
       const roll = rand();
       const along = roll < 0.4 ? "car" : roll < 0.7 ? "stall" : "tree";
       const off =
-        s.r.width / 2 + (along === "car" ? 2.0 : along === "stall" ? 2.4 : 2.6);
+        s.r.width / 2 + (along === "car" ? 4.5 : along === "stall" ? 3.2 : 2.6);
       const x = s.a.x + s.dx * t - s.dz * side * off,
         z = s.a.z + s.dz * t + s.dx * side * off;
       side = -side;
-      const eastWest = Math.abs(s.dx) > Math.abs(s.dz);
+      const eastWest = Math.abs(s.dx) > Math.abs(s.dz), cry = Math.atan2(s.dx, s.dz);
       if (along === "car") {
-        const w = eastWest ? 4.4 : 2.2,
-          dd = eastWest ? 2.2 : 4.4;
-        if (!free(x, z, w / 2, dd / 2, s.r.width / 2 + 1.5)) continue;
-        placed.push({ x, z, w, d: dd });
+        const w = 2.2, dd = 4.4;
+        if (si % 3 || !free(x, z, 2.4, 2.4, s.r.width / 2 + 1.5)) continue;
+        placed.push({ x, z, w: 4.8, d: 4.8 });
         if (fresh)
-          d.obstacles.push({ x, z, w, d: dd, height: 1.8, color: "#888888" });
-        const ry = eastWest ? Math.PI / 2 : 0;
+          d.obstacles.push({ x, z, w, d: dd, height: 1.8, color: "#888888", yaw: cry });
+        const ry = cry;
         carM.push(M(x, 0, z, ry));
         carC.push(
           new THREE.Color(carCols[Math.floor(rand() * carCols.length)]),
@@ -572,11 +533,11 @@ function buildProps(
     }
   });
   // Curated food-cart pockets along every Yaowarat segment, checked against the same footprints.
-  for (const s of segs.filter((s) => s.r.name === "Yaowarat Road"))
+  for (const s of segs.filter((s) => s.r.name.includes("Yaowarat")))
     for (const side of [-1, 1])
       for (const f of [0.33, 0.68]) {
         const t = s.len * f,
-          off = s.r.width / 2 + 2.6,
+          off = s.r.width / 2 + 3.2,
           x = s.a.x + s.dx * t - s.dz * side * off,
           z = s.a.z + s.dz * t + s.dx * side * off;
         if (!free(x, z, 1.3, 1.3, s.r.width / 2 + 1.6)) continue;
@@ -593,6 +554,7 @@ function buildProps(
         stM.push(M(x, 0.6, z, 0));
       }
   void nodes;
+  if (!stM.length && !carM.length && !trM.length) return;
   const lm = () => new THREE.MeshStandardMaterial({ roughness: 0.9 });
   const van = buildTrafficModel("van", "#e4d6ba");
   van.traverse((o) => {

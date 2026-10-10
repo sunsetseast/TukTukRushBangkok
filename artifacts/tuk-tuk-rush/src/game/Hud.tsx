@@ -47,7 +47,7 @@ export function Minimap({ d, f }: { d: District; f: Frame }) {
     const nm = new Map(d.nodes.map((n) => [n.id, n]));
     return (
       <g>
-        {d.buildings.map((b, i) => <rect key={i} x={-b.x - b.w / 2} y={-b.z - b.d / 2} width={b.w} height={b.d} fill="#5a3350" opacity={0.55} />)}
+        {d.buildings.map((b, i) => <rect key={i} x={-b.x - b.w / 2} y={-b.z - b.d / 2} width={b.w} height={b.d} transform={`rotate(${-(b.yaw ?? 0) * 180 / Math.PI} ${-b.x} ${-b.z})`} fill="#5a3350" opacity={0.55} />)}
         {d.roads.map((r, i) => {
           const a = nm.get(r.a), b = nm.get(r.b);
           if (!a || !b) return null;

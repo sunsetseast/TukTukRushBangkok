@@ -1,8 +1,11 @@
 import type { District, Input, TrafficCar, Vehicle } from './types';
-import { nearestRoad } from './world';
+import { nearestRoad, obstacleLocal } from './world';
+import { YAOWARAT_TRACE } from './mapData';
 
 export function createVehicle(): Vehicle {
-  return { x: -270, z: 40, heading: Math.PI / 2, speed: 0, steer: 0, lean: 0, wheelSpin: 0, collision: 0 };
+  const a = YAOWARAT_TRACE[2]!, b = YAOWARAT_TRACE[3]!;
+  const heading = Math.atan2(b.x - a.x, b.z - a.z);
+  return { x: a.x, z: a.z, heading, speed: 0, steer: 0, lean: 0, wheelSpin: 0, collision: 0 };
 }
 
 export class VehicleController {
@@ -37,14 +40,16 @@ export class VehicleController {
     const radius = 1.5;
     let collided = false;
     for (const b of district.obstacles) {
-      if (Math.abs(p.x - b.x) > b.w / 2 + radius || Math.abs(p.z - b.z) > b.d / 2 + radius) continue;
-      const nearestX = Math.max(b.x - b.w / 2, Math.min(p.x, b.x + b.w / 2));
-      const nearestZ = Math.max(b.z - b.d / 2, Math.min(p.z, b.z + b.d / 2));
-      const dx = p.x - nearestX, dz = p.z - nearestZ;
+      const q = obstacleLocal(p, b);
+      if (Math.abs(q.x) > b.w / 2 + radius || Math.abs(q.z) > b.d / 2 + radius) continue;
+      const nearestX = Math.max(-b.w / 2, Math.min(q.x, b.w / 2));
+      const nearestZ = Math.max(-b.d / 2, Math.min(q.z, b.d / 2));
+      const dx = q.x - nearestX, dz = q.z - nearestZ;
       const distance = Math.hypot(dx, dz);
       if (distance >= radius) continue;
       if (distance > 0.001) {
-        const nx = dx / distance, nz = dz / distance;
+        const c = Math.cos(b.yaw ?? 0), s = Math.sin(b.yaw ?? 0);
+        const nx = c * dx / distance + s * dz / distance, nz = -s * dx / distance + c * dz / distance;
         p.x += nx * (radius - distance); p.z += nz * (radius - distance);
         const inward = this.vx * nx + this.vz * nz;
         if (inward < 0) { this.vx -= inward * nx * 1.2; this.vz -= inward * nz * 1.2; }
@@ -76,7 +81,7 @@ export class VehicleController {
     p.x = road.point.x; p.z = road.point.z; p.heading = road.heading;
     // Avoid resetting directly inside a traffic vehicle.
     if (traffic.some(t => Math.hypot(t.x - p.x, t.z - p.z) < 5)) {
-      p.x += Math.cos(p.heading) * 6; p.z -= Math.sin(p.heading) * 6;
+      p.x -= Math.cos(p.heading) * 3; p.z += Math.sin(p.heading) * 3;
     }
     p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;
     this.vx = 0; this.vz = 0;

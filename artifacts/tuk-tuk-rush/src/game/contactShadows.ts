@@ -14,10 +14,14 @@ export function architectureShadows(d: District) {
       [b.w / 2, b.d / 2],
       [-b.w / 2, b.d / 2],
     ]
-      .flatMap(([x, z]) => [
-        [x! + b.x, z! + b.z],
-        [x! + b.x + sx, z! + b.z + sz],
-      ])
+      .flatMap(([lx, lz]) => {
+        const cy = Math.cos(b.yaw ?? 0), sy = Math.sin(b.yaw ?? 0);
+        const x = cy * lx! + sy * lz!, z = -sy * lx! + cy * lz!;
+        return [
+          [x + b.x, z + b.z],
+          [x + b.x + sx, z + b.z + sz],
+        ];
+      })
       .sort((a, b) => a[0]! - b[0]! || a[1]! - b[1]!);
     const cross = (a: number[], b: number[], c: number[]) =>
       (b[0]! - a[0]!) * (c[1]! - a[1]!) - (b[1]! - a[1]!) * (c[0]! - a[0]!);

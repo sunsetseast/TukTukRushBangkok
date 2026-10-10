@@ -6,6 +6,10 @@ import {
 import type { District, Obstacle } from "./types";
 import { ASSETS, surface, disposeObject } from "./assets";
 import { distanceToSegment } from "./world";
+import { composeFacade, composeSide, clearFacadeCache, defaultSign, type Style, type MatKey, type FacadeApi } from "./miniatureFacade";
+import { buildSignAtlas, type SignEntry } from "./signArt";
+import { degreeMap, sidewalkRange } from "./roadGeometry";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
 /** Small spatial batches keep culling useful; all art stays outside road/collision envelopes. */
 export function buildStreetscape(
@@ -17,45 +21,31 @@ export function buildStreetscape(
     shells: T.Group[] = [];
   const plasterMap = surface(textures, ASSETS.plaster, 2),
     pavingMap = surface(textures, ASSETS.paving, 3);
-  const signsMap = surface(textures, ASSETS.signs);
-  signsMap.wrapS = signsMap.wrapT = T.ClampToEdgeWrapping;
-  const plaster = new T.MeshStandardMaterial({
-    map: plasterMap,
-    vertexColors: true,
-    roughness: 0.95,
-  });
-  const stone = new T.MeshStandardMaterial({
-    map: pavingMap,
-    vertexColors: true,
-    roughness: 0.94,
-  });
-  const metal = new T.MeshStandardMaterial({
-    vertexColors: true,
-    roughness: 0.56,
-    metalness: 0.3,
-  });
-  const glass = new T.MeshStandardMaterial({
-    vertexColors: true,
-    roughness: 0.25,
-    metalness: 0.35,
-  });
-  const sign = new T.MeshStandardMaterial({
-    map: signsMap,
-    emissiveMap: signsMap,
-    emissive: "#ffffff",
-    emissiveIntensity: 0.23,
-    roughness: 0.63,
-  });
-  const verticalMap = surface(textures, ASSETS.verticalSigns);
-  verticalMap.wrapS = verticalMap.wrapT = T.ClampToEdgeWrapping;
-  const verticalSign = new T.MeshStandardMaterial({
-    map: verticalMap,
-    emissiveMap: verticalMap,
-    emissive: "#ffffff",
-    emissiveIntensity: 0.2,
-    roughness: 0.63,
-  });
-  verticalSign.name = "vertical";
+  const plaster = new T.MeshStandardMaterial({ map: plasterMap, vertexColors: true, roughness: 0.95 });
+  const stone = new T.MeshStandardMaterial({ map: pavingMap, vertexColors: true, roughness: 0.94 });
+  const metal = new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.56, metalness: 0.3 });
+  const glass = new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.25, metalness: 0.35 });
+  const STYLES: Style[] = ["gold", "noodle", "heritage", "pharmacy", "hotel"];
+  const styleOf = (b: Obstacle, i: number): Style => b.style ?? STYLES[i % 5]!;
+  const entries: SignEntry[] = [];
+  const keyOf = (b: Obstacle, i: number) => {
+    const style = styleOf(b, i),
+      text = b.sign ?? defaultSign[style],
+      key = `${text}|${style}|${i % 2}`;
+    if (!entries.some((e) => e.key === key)) entries.push({ key, text, style, variant: i % 2 });
+    return key;
+  };
+  const keys = d.buildings.map((b, i) => keyOf(b, i));
+  const atlas = buildSignAtlas(entries);
+  const mkSign = (a: { tex: T.Texture; cols: number; rows: number }) => {
+    const m = new T.MeshStandardMaterial({ map: a.tex, emissiveMap: a.tex, emissive: "#ffffff", emissiveIntensity: 0.22, roughness: 0.6 });
+    m.userData = { cols: a.cols, rows: a.rows };
+    return m;
+  };
+  const sign = mkSign(atlas.h),
+    verticalSign = mkSign(atlas.v);
+  const cloth = new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.92, side: T.DoubleSide });
+  void textures;
   const sphere = new T.SphereGeometry(1, 8, 5),
     torus = new T.TorusGeometry(1, 0.09, 4, 10),
     box = new T.BoxGeometry(1, 1, 1),
@@ -104,8 +94,8 @@ export function buildStreetscape(
     );
     if (tile >= 0) {
       const uv = g.getAttribute("uv"),
-        cols = m.name === "vertical" ? 8 : 4,
-        rows = m.name === "vertical" ? 1 : 2;
+        cols = m.userData.cols as number,
+        rows = m.userData.rows as number;
       for (let i = 0; i < uv.count; i++)
         uv.setXY(
           i,
@@ -138,519 +128,83 @@ export function buildStreetscape(
   ) => piece(box, m, c, x, y, z, w, h, dep, ry, -1, detail);
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   function front(b: Obstacle) {
+    if (typeof b.yaw === "number") {
+      const nx = Math.sin(b.yaw), nz = Math.cos(b.yaw);
+      return { ry: b.yaw, w: b.w, dd: b.d, nx, nz };
+    }
     let best = { distance: Infinity, point: { x: 0, z: 0 } };
     for (const r of d.roads) {
       const q = distanceToSegment(b, nodes.get(r.a)!, nodes.get(r.b)!);
       if (q.distance < best.distance) best = q;
     }
-    const dx = best.point.x - b.x,
-      dz = best.point.z - b.z;
+    const dx = best.point.x - b.x, dz = best.point.z - b.z;
     const xside = Math.abs(dx) / (b.w / 2) > Math.abs(dz) / (b.d / 2);
-    const nx = xside ? Math.sign(dx) : 0,
-      nz = xside ? 0 : Math.sign(dz);
-    return {
-      nx,
-      nz,
-      ry: Math.atan2(nx, nz),
-      w: xside ? b.d : b.w,
-      fx: b.x + (nx * b.w) / 2,
-      fz: b.z + (nz * b.d) / 2,
-    };
+    const nx = xside ? Math.sign(dx) : 0, nz = xside ? 0 : Math.sign(dz);
+    return { ry: Math.atan2(nx, nz), w: xside ? b.d : b.w, dd: xside ? b.w : b.d, nx, nz };
   }
+  const mats: Record<MatKey, T.Material> = { plaster, metal, glass, cloth };
   d.buildings.forEach((b, i) => {
-    const n = front(b),
-      showcase = Math.abs(b.z - 40) < 62;
-    const color = new T.Color(b.color)
-      .lerp(new T.Color("#ddcfb5"), 0.15)
-      .getStyle();
-    // Upper masonry and ground-floor side/back walls leave a real 1.25m shop recess.
-    B(
-      plaster,
-      color,
-      b.x,
-      (b.height + 3.5) / 2,
-      b.z,
-      b.w,
-      b.height - 3.5,
-      b.d,
-      0,
-      false,
-    );
-    if (n.nx) {
-      B(
-        plaster,
-        color,
-        b.x - n.nx * (b.w / 2 - 0.12),
-        1.75,
-        b.z,
-        0.24,
-        3.5,
-        b.d,
-        0,
-        false,
-      );
-      for (const side of [-1, 1])
-        B(
-          plaster,
-          color,
-          b.x,
-          1.75,
-          b.z + side * (b.d / 2 - 0.12),
-          b.w,
-          3.5,
-          0.24,
-          0,
-          false,
-        );
-    } else {
-      B(
-        plaster,
-        color,
-        b.x,
-        1.75,
-        b.z - n.nz * (b.d / 2 - 0.12),
-        b.w,
-        3.5,
-        0.24,
-        0,
-        false,
-      );
-      for (const side of [-1, 1])
-        B(
-          plaster,
-          color,
-          b.x + side * (b.w / 2 - 0.12),
-          1.75,
-          b.z,
-          0.24,
-          3.5,
-          b.d,
-          0,
-          false,
-        );
-    }
-    B(metal, "#646c68", b.x, b.height + 0.15, b.z, b.w, 0.3, b.d, 0, false);
-    const bays = showcase ? 3 : 2,
-      bw = n.w / bays;
-    // All facade detail projects into the existing off-road margin, by at most 1.35m.
-    const local = (
-      u: number,
-      y: number,
-      v: number,
-      w: number,
-      h: number,
-      dep: number,
-      m: T.Material,
-      c: string,
-    ) =>
-      B(
-        m,
-        c,
-        n.fx + Math.cos(n.ry) * u + n.nx * v,
-        y,
-        n.fz - Math.sin(n.ry) * u + n.nz * v,
-        w,
-        h,
-        dep,
-        n.ry,
-      );
-    for (let bay = 0; bay < bays; bay++) {
-      const u = (bay - (bays - 1) / 2) * bw;
-      const shop = (i + bay) % 8;
-      local(u, 1.75, -1.35, bw - 0.55, 3.3, 0.17, metal, "#263c3c");
-      // Sign tile and merchandise agree: gold, noodles, coffee, kitchen, tea, fruit.
-      const localShape = (
-        geo: T.BufferGeometry,
-        u0: number,
-        y: number,
-        v: number,
-        w: number,
-        h: number,
-        dep: number,
-        m: T.Material,
-        c: string,
-      ) =>
-        piece(
-          geo,
-          m,
-          c,
-          n.fx + Math.cos(n.ry) * u0 + n.nx * v,
-          y,
-          n.fz - Math.sin(n.ry) * u0 + n.nz * v,
-          w,
-          h,
-          dep,
-          n.ry,
-        );
-      if (shop !== 6) {
-        local(
-          u,
-          1.4,
-          -1.25,
-          bw - 0.75,
-          2.5,
-          0.05,
-          glass,
-          shop === 1 ? "#6d2224" : "#243e40",
-        );
-        local(
-          u,
-          0.85,
-          -0.48,
-          bw - 0.8,
-          0.16,
-          0.8,
-          metal,
-          shop === 1 ? "#a92c31" : "#986646",
-        );
-        local(
-          u,
-          0.4,
-          -0.5,
-          bw - 0.9,
-          0.8,
-          0.62,
-          plaster,
-          shop === 1 ? "#8b242a" : "#514e43",
-        );
-        if (shop === 1) {
-          // Red velvet necklace boards and gold loops, readable even from the road.
-          for (let k = 0; k < 5; k++) {
-            const x = u + ((k - 2) * (bw - 0.95)) / 5;
-            local(x, 1.55, -0.72, 0.43, 0.75, 0.16, metal, "#88252c");
-            localShape(
-              torus,
-              x,
-              1.63,
-              -0.61,
-              0.14,
-              0.23,
-              0.12,
-              metal,
-              "#efc255",
-            );
-            localShape(
-              sphere,
-              x,
-              1.42,
-              -0.59,
-              0.06,
-              0.075,
-              0.03,
-              metal,
-              "#ffe092",
-            );
-          }
-          local(u, 2.8, -0.4, bw - 0.8, 0.09, 0.13, metal, "#ead09a");
-        } else if (shop === 7) {
-          for (let shelf = 0; shelf < 2; shelf++) {
-            local(
-              u,
-              0.95 + shelf * 0.5,
-              -0.5,
-              bw - 0.8,
-              0.07,
-              0.6,
-              metal,
-              "#816241",
-            );
-            for (let k = 0; k < 9; k++)
-              localShape(
-                sphere,
-                u + ((k - 4) * (bw - 0.9)) / 10,
-                1.12 + shelf * 0.5,
-                -0.33,
-                0.16,
-                0.15,
-                0.15,
-                plaster,
-                ["#df9130", "#689649", "#c14c35"][k % 3]!,
-              );
-          }
-        } else if (shop === 5) {
-          for (let shelf = 0; shelf < 3; shelf++) {
-            local(
-              u,
-              1.12 + shelf * 0.55,
-              -0.7,
-              bw - 0.8,
-              0.08,
-              0.42,
-              metal,
-              "#78563e",
-            );
-            for (let k = 0; k < 6; k++)
-              local(
-                u + ((k - 2.5) * (bw - 0.85)) / 7,
-                1.3 + shelf * 0.55,
-                -0.62,
-                0.25,
-                0.3,
-                0.22,
-                metal,
-                ["#97502d", "#50735b", "#c7a264"][k % 3]!,
-              );
-          }
-        } else {
-          // Bowls, coffee canisters, cooker, tiled counter and menu-board silhouette.
-          for (let k = 0; k < 5; k++)
-            localShape(
-              sphere,
-              u + ((k - 2) * (bw - 0.9)) / 6,
-              1.08,
-              -0.4,
-              0.22,
-              0.08,
-              0.2,
-              plaster,
-              "#eee1c4",
-            );
-          local(
-            u + bw * 0.27,
-            1.4,
-            -0.65,
-            0.48,
-            0.6,
-            0.4,
-            metal,
-            shop === 3 ? "#34585b" : "#adadb0",
-          );
-          local(u - bw * 0.28, 2.18, -1.05, 0.6, 0.8, 0.08, metal, "#283b38");
-          for (let k = 0; k < 4; k++)
-            local(
-              u - bw * 0.28,
-              1.92 + k * 0.15,
-              -0.99,
-              0.45,
-              0.025,
-              0.025,
-              plaster,
-              "#dbcba0",
-            );
-        }
-      } else {
-        local(u, 1.5, 0.22, bw - 0.65, 2.7, 0.08, metal, "#6b8785");
-        for (let k = 0; k < 16; k++)
-          local(
-            u,
-            0.3 + k * 0.17,
-            0.28,
-            bw - 0.65,
-            0.025,
-            0.045,
-            metal,
-            "#385653",
-          );
-      }
-      for (let side of [-1, 1]) {
-        local(
-          u + side * (bw / 2 - 0.2),
-          1.75,
-          0.24,
-          0.26,
-          3.5,
-          0.3,
-          plaster,
-          "#ece0c3",
-        );
-        local(
-          u + side * (bw / 2 - 0.5),
-          1.6,
-          0.27,
-          0.065,
-          2.5,
-          0.06,
-          metal,
-          "#bfb398",
-        );
-      }
-      local(u, 3.72, 0.23, bw - 0.3, 0.22, 0.4, plaster, "#ecdfbe");
-      const awnColor = ["#9c3032", "#2d7974", "#b79045", "#45646d"][
-        (i + bay) % 4
-      ]!;
-      local(u, 3.25, 0.76, bw - 0.5, 0.12, 1.4, metal, awnColor);
-      for (let k = 0; k < (shop % 3 === 0 ? 0 : 8); k++)
-        local(
-          u + ((k - 3.5) * (bw - 0.5)) / 8,
-          3.25,
-          0.77,
-          (bw - 0.5) / 16,
-          0.125,
-          1.4,
-          metal,
-          "#e5d2a2",
-        );
-      local(u, 3.08, 1.44, bw - 0.5, 0.3, 0.08, metal, awnColor);
-      const floors = Math.max(1, Math.floor((b.height - 4) / 3.5));
-      for (let f = 0; f < floors; f++) {
-        const y = 5.7 + f * 3.5;
-        local(u, y - 0.99, 0.13, bw - 0.05, 0.13, 0.34, plaster, "#f1e4c9");
-        for (let k of showcase ? [0] : [-1, 1]) {
-          const wx = u + k * bw * 0.22;
-          local(wx, y, 0.13, bw * 0.35, 2, 0.15, metal, "#e8d8b7");
-          local(
-            wx,
-            y,
-            0.23,
-            bw * 0.29,
-            1.72,
-            0.05,
-            glass,
-            (i + f + bay) % 5 === 0 ? "#e5b466" : "#4c7078",
-          );
-          local(wx, y, 0.28, 0.065, 1.74, 0.05, metal, "#e6d6b5");
-          local(wx, y, 0.28, bw * 0.29, 0.06, 0.05, metal, "#d0c39f");
-          local(wx, y + 1.03, 0.15, bw * 0.4, 0.14, 0.38, plaster, "#e8d9b9");
-        }
-        if (showcase && f % 2 === 0) {
-          local(u, y - 0.9, 0.61, bw - 0.65, 0.13, 1.23, plaster, "#c4b69a");
-          local(u, y - 0.42, 1.18, bw - 0.65, 0.06, 0.06, metal, "#415453");
-          for (let k = 0; k < 10; k++)
-            local(
-              u + ((k - 4.5) * (bw - 0.65)) / 9,
-              y - 0.64,
-              1.18,
-              0.035,
-              0.5,
-              0.035,
-              metal,
-              "#405350",
-            );
-        }
-      }
-      if (showcase) {
-        // Rain streaks below sills; mismatched old repairs and plaster patches.
-        for (let k = 0; k < 3; k++)
-          local(
-            u + (k - 1) * bw * 0.25,
-            4.9 + (i % 3) * 0.12,
-            0.035,
-            0.09 + 0.02 * k,
-            0.7 + 0.17 * k,
-            0.01,
-            plaster,
-            "#a4977a",
-          );
-        if ((i + bay) % 3 === 0) {
-          local(u, 6.9, 0.3, bw * 0.7, 0.14, 0.12, metal, "#396765");
-          for (let side of [-1, 1])
-            local(
-              u + side * bw * 0.4,
-              5.7,
-              0.27,
-              0.25,
-              2.15,
-              0.1,
-              metal,
-              "#3d7169",
-            );
-        }
-        local(
-          u,
-          b.height - 0.15,
-          0.4,
-          bw - 0.2,
-          0.35,
-          0.5,
-          plaster,
-          ["#eed3a3", "#cf784e", "#579189"][i % 3]!,
-        );
-      }
-      // AC compressor, louvres, downpipe and projecting two-sided business signage.
-      if (showcase) {
-        local(u + bw * 0.35, 5.25, 0.65, 0.8, 0.48, 0.5, metal, "#d6d2b7");
-        for (let k = 0; k < 5; k++)
-          local(
-            u + bw * 0.35,
-            5.08 + k * 0.07,
-            0.92,
-            0.66,
-            0.025,
-            0.04,
-            metal,
-            "#536463",
-          );
-        local(
-          u - bw * 0.43,
-          b.height * 0.5,
-          0.24,
-          0.1,
-          b.height,
-          0.1,
-          metal,
-          "#766e61",
-        );
-      }
-      piece(
-        plane,
-        sign,
-        "#ffffff",
-        n.fx + Math.cos(n.ry) * u + n.nx * 0.42,
-        4.35,
-        n.fz - Math.sin(n.ry) * u + n.nz * 0.42,
-        bw - 0.6,
-        1.12,
-        1,
-        n.ry,
-        (i + bay) % 8,
-      );
-      if (showcase) {
-        const x = n.fx + Math.cos(n.ry) * (u + bw * 0.37) + n.nx * 1.2,
-          z = n.fz - Math.sin(n.ry) * (u + bw * 0.37) + n.nz * 1.2;
-        B(metal, "#76302c", x, 8, z, 0.15, 5.1, 1.6, n.ry);
-        for (let side of [-1, 1])
-          piece(
-            plane,
-            verticalSign,
-            "#fff",
-            x + Math.cos(n.ry) * side * 0.09,
-            8,
-            z - Math.sin(n.ry) * side * 0.09,
-            1.52,
-            4.8,
-            1,
-            n.ry + (side * Math.PI) / 2,
-            (i + bay) % 8,
-          );
-      }
-    }
-    B(
-      plaster,
-      "#eadcbf",
-      b.x,
-      b.height + 0.45,
-      b.z,
-      b.w + 0.2,
-      0.3,
-      b.d + 0.2,
-      0,
-      false,
-    );
+    const n = front(b), style = styleOf(b, i);
+    const c = Math.cos(n.ry), sn = Math.sin(n.ry);
+    const wx = (u: number, v: number) => b.x + c * u + sn * v,
+      wz = (u: number, v: number) => b.z - sn * u + c * v;
+    const wall = new T.Color(b.color).lerp(new T.Color("#ddcfb5"), 0.3).getStyle();
+    // Bevelled masonry shell plus cornice; one rounded mass per building keeps silhouettes soft.
+    piece(new RoundedBoxGeometry(n.w, b.height, n.dd, 1, 0.32), plaster, wall, b.x, b.height / 2, b.z, 1, 1, 1, n.ry, -1, false);
+    B(metal, "#646c68", b.x, b.height + 0.1, b.z, n.w - 0.4, 0.2, n.dd - 0.4, n.ry, false);
+    const id = atlas.index.get(keys[i]!)!;
+    const api: FacadeApi = {
+        add: (m, color, geo, u, y, v, detail = true) => piece(geo, mats[m], color, wx(u, v), y, wz(u, v), 1, 1, 1, n.ry, -1, detail),
+        sign: (k, u, y, v, w, h) => piece(plane, sign, "#fff", wx(u, v), y, wz(u, v), w, h, 1, n.ry, k),
+        vsign: (k, u, y, v, w, h) => {
+          for (const side of [-1, 1])
+            piece(plane, verticalSign, "#fff", wx(u + side * 0.18, v), y, wz(u + side * 0.18, v), w, h, 1, n.ry + (side * Math.PI) / 2, k);
+        },
+    };
+    composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, showcase: b.showcase ?? i % 4 === 0 });
+    composeSide(api, { style, W: n.w, D: n.dd, H: b.height, i });
   });
-  // Flat sidewalks are visual surfaces, never new invisible collision walls. Keep intersection mouths clear.
+  // Flat sidewalks follow every sampled segment; they are cut back only at real junctions.
+  const deg = degreeMap(d);
   for (const r of d.roads) {
-    const a = nodes.get(r.a)!,
-      b = nodes.get(r.b)!,
+    const a = nodes.get(r.a)!, b = nodes.get(r.b)!,
       len = Math.hypot(b.x - a.x, b.z - a.z),
-      ry = Math.atan2(b.x - a.x, b.z - a.z);
-    if (r.shortcut) continue;
+      ry = Math.atan2(b.x - a.x, b.z - a.z),
+      range = sidewalkRange(r, len, deg.get(r.a) ?? 2, deg.get(r.b) ?? 2);
+    if (!range) continue;
+    const tc = (range[0]! + range[1]!) / 2, l = range[1]! - range[0]!;
     for (const side of [-1, 1]) {
       const off = r.width / 2 + 2.3,
-        x = (a.x + b.x) / 2 + Math.cos(ry) * off * side,
-        z = (a.z + b.z) / 2 - Math.sin(ry) * off * side;
-      B(stone, "#c6bc9f", x, 0.16, z, 4.4, 0.12, len - 36, ry, false);
-      B(
-        plaster,
-        "#d8cbaa",
-        x - Math.cos(ry) * 2.1 * side,
-        0.15,
-        z,
-        0.17,
-        0.15,
-        len - 36,
-        ry,
-        false,
-      );
+        x = a.x + Math.sin(ry) * tc + Math.cos(ry) * off * side,
+        z = a.z + Math.cos(ry) * tc - Math.sin(ry) * off * side;
+      B(stone, "#c6bc9f", x, 0.16, z, 4.4, 0.12, l, ry, false);
+      B(plaster, "#d8cbaa", x - Math.cos(ry) * 2.1 * side, 0.15, z, 0.17, 0.15, l, ry, false);
+    }
+  }
+  // Solid roundabout island: curb ring, garden, gravel path and shrubs; the gate stands in its middle.
+  if (d.roundabout) {
+    const { x, z } = d.roundabout;
+    const rr = (w: number, dd: number, r: number, h: number) => {
+      const sh = new T.Shape(), x0 = -w / 2, y0 = -dd / 2;
+      sh.moveTo(x0 + r, y0); sh.lineTo(-x0 - r, y0); sh.quadraticCurveTo(-x0, y0, -x0, y0 + r);
+      sh.lineTo(-x0, -y0 - r); sh.quadraticCurveTo(-x0, -y0, -x0 - r, -y0);
+      sh.lineTo(x0 + r, -y0); sh.quadraticCurveTo(x0, -y0, x0, -y0 - r);
+      sh.lineTo(x0, y0 + r); sh.quadraticCurveTo(x0, y0, x0 + r, y0);
+      return new T.ExtrudeGeometry(sh, { depth: h, bevelEnabled: false, curveSegments: 5 }).rotateX(-Math.PI / 2);
+    };
+    piece(rr(42, 38, 9, 0.3), stone, "#d6ccb0", x, 0, z, 1, 1, 1, 0, -1, false);
+    piece(rr(40.6, 36.6, 8.2, 0.12), metal, "#7ea56c", x, 0.3, z, 1, 1, 1, 0, -1, false);
+    piece(rr(34, 5, 2, 0.05), metal, "#cdb98c", x, 0.42, z, 1, 1, 1, 0, -1, false);
+    const bush = ["#4f8a5e", "#5f9a63", "#3f7a58"];
+    for (let k = 0; k < 16; k++) {
+      const sx = ((k % 8) - 3.5) * 4.9, sz = (k < 8 ? -1 : 1) * (9 + (k % 3) * 2.6);
+      const sc = 1.3 + (k % 4) * 0.28;
+      piece(sphere, metal, bush[k % 3]!, x + sx, 0.5 + sc * 0.5, z + sz, sc * 1.25, sc * 0.9, sc * 1.25, 0, -1, false);
+    }
+    for (const [tx, tz] of [[-17, -14], [17, -14], [-17, 14], [17, 14]] as const) {
+      B(metal, "#6a4a36", x + tx, 2.2, z + tz, 0.5, 4, 0.5, 0, false);
+      for (const [ox, oy, oz, s2] of [[0, 5.2, 0, 2.7], [1.5, 4.5, 0.6, 1.9], [-1.4, 4.6, -0.5, 2.0]] as const)
+        piece(sphere, metal, "#468a60", x + tx + ox, oy, z + tz + oz, s2, s2 * 0.8, s2, 0, -1, false);
     }
   }
   for (const bucket of buckets.values()) {
@@ -662,6 +216,7 @@ export function buildStreetscape(
     bucket.group.add(mesh);
     bucket.geometries.forEach((g) => g.dispose());
   }
+  clearFacadeCache();
   sphere.dispose();
   torus.dispose();
   box.dispose();
@@ -669,12 +224,12 @@ export function buildStreetscape(
   return {
     root,
     update(camera: T.Vector3, quality: "low" | "medium") {
-      const radius = quality === "low" ? 100 : 155;
+      const radius = quality === "low" ? 75 : 140;
       for (const g of shells) {
         const c = g.userData.center as T.Vector3;
         g.visible =
           Math.hypot(c.x - camera.x, c.z - camera.z) <
-          (quality === "low" ? 235 : 330);
+          (quality === "low" ? 200 : 330);
       }
       for (const g of details) {
         const c = g.userData.center as T.Vector3;

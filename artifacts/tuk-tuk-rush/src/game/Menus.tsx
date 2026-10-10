@@ -31,6 +31,9 @@ export function Title({ onStart, settings }: { onStart: (m: 'shift' | 'free') =>
         </div>
         {settings}
         <div className="tt-how">Drag left thumb to steer · hold GO on the right</div>
+        <small style={{ display: 'block', fontSize: 10, marginTop: 5 }}>
+          Road layout adapted from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a> · ODbL
+        </small>
       </div>
     </div>
   );
