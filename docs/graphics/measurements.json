@@ -1,0 +1,246 @@
+{
+  "environment": {
+    "browser": "153.0.8010.0",
+    "viewport": "1280x720 @ DPR 1",
+    "hardware": "Linux software SwiftShader; not an iPhone"
+  },
+  "samples": {
+    "medium": {
+      "frames": [
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 294.60000000009313
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 324.39999999990687
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 303.39999999990687
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 279.89999999990687
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 287.90000000037253
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 257.09999999962747
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 277.60000000009313
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 293.39999999990687
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 272.70000000018626
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 316.5
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 21.299999999813735
+        },
+        {
+          "calls": 198,
+          "triangles": 142946,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 323.40000000037253
+        }
+      ],
+      "medianFrameMs": 293.39999999990687,
+      "p95FrameMs": 324.39999999990687
+    },
+    "low": {
+      "frames": [
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 599
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 292.40000000037253
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 15.099999999627471
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 309.10000000009313
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 576.3999999999069
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 265.3000000002794
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 291.89999999990687
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 14.799999999813735
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 277.40000000037253
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 542.5
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 275.1999999997206
+        },
+        {
+          "calls": 129,
+          "triangles": 101618,
+          "geometries": 251,
+          "textures": 9,
+          "frameMs": 285.8000000002794
+        }
+      ],
+      "medianFrameMs": 291.89999999990687,
+      "p95FrameMs": 599
+    }
+  },
+  "resources": [
+    {
+      "geometries": 493,
+      "textures": 10,
+      "meshes": 10,
+      "obstacles": 469
+    },
+    {
+      "geometries": 493,
+      "textures": 10,
+      "meshes": 10,
+      "obstacles": 469
+    },
+    {
+      "geometries": 493,
+      "textures": 10,
+      "meshes": 10,
+      "obstacles": 469
+    },
+    {
+      "geometries": 493,
+      "textures": 10,
+      "meshes": 10,
+      "obstacles": 469
+    },
+    {
+      "geometries": 493,
+      "textures": 10,
+      "meshes": 10,
+      "obstacles": 469
+    }
+  ],
+  "buffers": {
+    "geometryBytes": 62390920,
+    "textures": 10,
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "checks": [
+    "assets load",
+    "no JS/HTTP/WebGL errors",
+    "traffic movement",
+    "pickup/delivery/score",
+    "passenger visibility",
+    "pause",
+    "Free Ride clock",
+    "shift clock",
+    "five stable restarts",
+    "multitouch gas and steering/release",
+    "front steering animation",
+    "844x390 and 932x430 landscape",
+    "portrait auto-pause",
+    "WebGL context restoration",
+    "model and texture failure/retry",
+    "actual scene route and food-cart collisions",
+    "quality reduces submissions"
+  ]
+}

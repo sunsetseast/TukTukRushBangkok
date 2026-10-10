@@ -81,6 +81,7 @@ export class GameEngine {
     this.clearInput(); this.model.snapshot.boarding = 0;
     this.message('Back on the road', 2); this.updateTarget(); this.publish();
   }
+  get intersectionHorizontalGreen() { return this.trafficSystem.horizontalGreen; }
   setQuality(quality: 'low' | 'medium') { this.model.snapshot.quality = quality; this.slowTime = 0; this.publish(); }
   private message(text: string, seconds = 3) { this.model.snapshot.message = text; this.messageTime = seconds; }
   private nextPassenger() {
