@@ -1,1 +1,2 @@
 - [Prototype direction](prototype-direction.md) — iPhone-only development/testing, browser-first scope, hybrid Bangkok roads and fictional shortcuts.
+- [Graphics reconstruction direction](graphics-direction.md) — GitHub main is authoritative; preserve working gameplay and pursue researched, premium miniature-cartoon Bangkok.
