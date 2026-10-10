@@ -27,7 +27,10 @@ page.on("response", (r) => {
   if (r.status() >= 400) failed.push(r.url());
 });
 const url = process.env.GAME_URL || "http://127.0.0.1:5173";
-const out = new URL("../../../docs/graphics/", import.meta.url);
+const out = new URL(
+  process.env.QA_OUTPUT_DIR || "../../../docs/graphics/",
+  import.meta.url,
+);
 await fs.mkdir(new URL("screenshots/", out), { recursive: true });
 const shot = async (name) =>
   page.screenshot({
@@ -44,7 +47,7 @@ const nextFrames = async (n = 2) => {
   );
 };
 await page.goto(url);
-await page.waitForFunction(() => window.__graphics, { timeout: 60000 });
+await page.waitForFunction(() => window.__graphics, null, { timeout: 60000 });
 await page.getByTestId("button-free-roam").click();
 await nextFrames();
 await shot("after-chase");
@@ -120,6 +123,36 @@ assert(
   "Traffic must actually move",
 );
 await shot("after-intersection");
+// Street-life integration: animate during gameplay and freeze with the pause menu.
+if (await page.evaluate(() => !!window.__graphics.life)) {
+  const lifeBefore = await page.evaluate(() =>
+    window.__graphics.life.people.map((p) => [p.x, p.z]),
+  );
+  await nextFrames(8);
+  const lifeAfter = await page.evaluate(() =>
+    window.__graphics.life.people.map((p) => [p.x, p.z]),
+  );
+  assert(
+    lifeAfter.some(
+      (p, i) =>
+        Math.hypot(p[0] - lifeBefore[i][0], p[1] - lifeBefore[i][1]) > 0.01,
+    ),
+    "Actual rendered walkers move",
+  );
+  await page.evaluate(() => window.__graphics.engine.pause());
+  const frozen = await page.evaluate(() =>
+    JSON.stringify(window.__graphics.life.people.map((p) => [p.x, p.z])),
+  );
+  await nextFrames(4);
+  assert.equal(
+    await page.evaluate(() =>
+      JSON.stringify(window.__graphics.life.people.map((p) => [p.x, p.z])),
+    ),
+    frozen,
+    "Pause freezes street life",
+  );
+  await page.evaluate(() => window.__graphics.engine.resume());
+}
 // Mission transitions, actual render visibility, scoring, pause, free/shift clocks.
 const mission = await page.evaluate(() => {
   const e = window.__graphics.engine;
@@ -302,6 +335,7 @@ assert.equal(
 );
 // Real WEBGL_lose_context event; renderer restores assets without constructing another city.
 await page.setViewportSize({ width: 844, height: 390 });
+await nextFrames(3);
 await page.evaluate(() => {
   window.__graphics.engine.resume();
   window.__lostExtension = window.__graphics.gl
@@ -309,7 +343,9 @@ await page.evaluate(() => {
     .getExtension("WEBGL_lose_context");
   window.__lostExtension.loseContext();
 });
-await page.getByText("Restoring graphics…").waitFor({ state: "visible" });
+await page
+  .getByText("Restoring graphics…")
+  .waitFor({ state: "visible", timeout: 60000 });
 assert.equal(
   await page.evaluate(() => window.__graphics.engine.model.snapshot.phase),
   "paused",
@@ -380,6 +416,8 @@ await fs.writeFile(
       resources,
       buffers,
       checks: [
+        "rendered sidewalk walkers move",
+        "pause freezes street-life animation",
         "assets load",
         "no JS/HTTP/WebGL errors",
         "traffic movement",
@@ -406,7 +444,7 @@ await fs.writeFile(
 console.log(
   JSON.stringify(
     {
-      checks: 17,
+      checks: 19,
       resources,
       buffers,
       medians: Object.fromEntries(

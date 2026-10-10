@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import type { District, Road, RoadNode } from "./types";
-import { box, lamb } from "./meshUtil";
+import { buildLandmarkArt } from "./landmarkArt";
+import { lamb } from "./meshUtil";
 import { StaticBatch } from "./staticBatch";
 import { buildTrafficModel } from "./trafficMesh";
 import { ASSETS, surface, disposeObject } from "./assets";
@@ -336,86 +337,28 @@ export function buildCity(
     texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
     texture.repeat.set(0.5, 0.5);
     texture.offset.set((index % 2) * 0.5, (1 - Math.floor(index / 2)) * 0.5);
-    const sp = new THREE.Sprite(
-      new THREE.SpriteMaterial({ map: texture, depthWrite: false }),
-    );
+    const sp =
+      index === 0
+        ? new THREE.Mesh(
+            new THREE.PlaneGeometry(1, 1),
+            new THREE.MeshBasicMaterial({ map: texture }),
+          )
+        : new THREE.Sprite(
+            new THREE.SpriteMaterial({ map: texture, depthWrite: false }),
+          );
     void bg;
     void fg;
     sp.scale.set(s, s * 0.3125, 1);
     sp.position.set(x, y, z);
     group.add(sp);
   };
-  const red = lamb("#c4281c"),
-    gold = lamb("#f7b733"),
-    jade = lamb("#1f8f78"),
-    cream = lamb("#f1e2c0"),
-    maroon = lamb("#6a1d34");
   for (const l of d.landmarks) {
-    const g = new THREE.Group();
-    g.position.set(l.x, 0, l.z);
-    if (l.kind === "gate") {
-      // Axis-aligned, matching parent colliders: pillars 5x7 at x=l.x-19 / l.x+19, height 15.
-      const hw = 19;
-      for (const sx of [-hw, hw]) {
-        g.add(box(5, 15, 7, sx, 7.5, 0, red));
-        g.add(box(6.4, 1, 8.4, sx, 15.5, 0, gold));
-        g.add(box(6.4, 1, 8.4, sx, 0.5, 0, gold));
-      }
-      g.add(box(hw * 2 + 5, 2.4, 6, 0, 13.6, 0, red));
-      g.add(box(hw * 2 + 9, 0.8, 8.6, 0, 15.2, 0, jade));
-      g.add(box(hw * 1.5, 0.8, 7, 0, 16, 0, gold));
-      g.add(box(hw * 0.9, 0.8, 5.6, 0, 16.8, 0, jade));
-      g.add(box(3, 2, 3, 0, 18, 0, gold));
-      const plaza = new THREE.Mesh(
-        new THREE.RingGeometry(26, 34, 40).rotateX(-Math.PI / 2),
-        new THREE.MeshLambertMaterial({
-          color: "#8f6f5c",
-          polygonOffset: true,
-          polygonOffsetFactor: -3,
-          polygonOffsetUnits: -3,
-        }),
-      );
-      plaza.position.y = 0.11;
-      g.add(plaza);
-      label("เยาวราช", "#b3201a", "#ffd23f", 12.2, l.x, l.z + 4.4, 14);
-    } else if (l.kind === "temple") {
-      g.add(box(40, 3, 42, 0, 1.5, 0, cream));
-      g.add(box(30, 9, 32, 0, 7.5, 0, maroon));
-      const cone = (r: number, h: number, y: number, m: THREE.Material) => {
-        const c = new THREE.Mesh(new THREE.ConeGeometry(r, h, 4), m);
-        c.rotation.y = Math.PI / 4;
-        c.position.y = y;
-        g.add(c);
-      };
-      cone(26, 5, 14.5, gold);
-      cone(19, 5, 18.5, red);
-      cone(12, 6, 23, gold);
-      const sp = new THREE.Mesh(new THREE.ConeGeometry(0.9, 8, 8), gold);
-      sp.position.y = 30;
-      g.add(sp);
-      label("วัดไตรมิตร", "#5a1530", "#ffd23f", 38, l.x, l.z, 18);
-    } else {
-      g.add(box(84, 12, 46, 0, 6, 0, cream));
-      const vault = new THREE.Mesh(
-        new THREE.CylinderGeometry(
-          15,
-          15,
-          80,
-          18,
-          1,
-          false,
-          0,
-          Math.PI,
-        ).rotateZ(Math.PI / 2),
-        lamb("#2b8f86"),
-      );
-      vault.position.y = 12;
-      g.add(vault);
-      g.add(box(6, 14, 6, 0, 19, 24, red));
-      g.add(box(4, 4, 0.4, 0, 22, 27.2, lamb("#fff0d2")));
-      label("หัวลำโพง", "#12705f", "#fff0d2", 30, l.x, l.z, 18);
-    }
-    group.add(g);
+    group.add(buildLandmarkArt(l));
+    if (l.kind === "gate")
+      label("เยาวราช", "#b3201a", "#ffd23f", 12.6, l.x, l.z + 3.25, 13);
+    else if (l.kind === "temple")
+      label("วัดไตรมิตร", "#5a1530", "#ffd23f", 35, l.x, l.z, 18);
+    else label("หัวลำโพง", "#12705f", "#fff0d2", 29, l.x, l.z, 18);
   }
 
   const roadGroups = infrastructure.finish();
