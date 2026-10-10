@@ -28,7 +28,9 @@ export class VehicleController {
     speed *= Math.exp(-dt * 0.16);
     speed = Math.max(-8, Math.min(31, speed));
     if (Math.abs(speed) < 0.08 && !input.gas && !input.brake) speed = 0;
-    const turn = p.steer * Math.min(Math.abs(speed) / 5, 1) * (1.7 - Math.min(Math.abs(speed) / 45, 0.55)) * Math.sign(speed);
+    // A blocked tuk-tuk must still be steerable while creeping or reversing.
+    const steeringSpeed = Math.max(Math.abs(speed), p.collision > 0.05 && (input.gas || input.brake) ? 2.2 : 0);
+    const turn = p.steer * Math.min(steeringSpeed / 5, 1) * (1.7 - Math.min(Math.abs(speed) / 45, 0.55)) * Math.sign(speed || (input.brake ? -1 : 1));
     p.heading -= turn * dt;
     const forwardX = Math.sin(p.heading), forwardZ = Math.cos(p.heading);
     const sideX = Math.cos(p.heading), sideZ = -Math.sin(p.heading);
@@ -47,14 +49,33 @@ export class VehicleController {
       const dx = q.x - nearestX, dz = q.z - nearestZ;
       const distance = Math.hypot(dx, dz);
       if (distance >= radius) continue;
+      // Resolve overlap along a contact normal, never teleport back into the wall.
+      // A deeply embedded circle uses the closest exit face of the oriented box.
+      let lx: number, lz: number, penetration: number;
       if (distance > 0.001) {
-        const c = Math.cos(b.yaw ?? 0), s = Math.sin(b.yaw ?? 0);
-        const nx = c * dx / distance + s * dz / distance, nz = -s * dx / distance + c * dz / distance;
-        p.x += nx * (radius - distance); p.z += nz * (radius - distance);
-        const inward = this.vx * nx + this.vz * nz;
-        if (inward < 0) { this.vx -= inward * nx * 1.2; this.vz -= inward * nz * 1.2; }
+        lx = dx / distance; lz = dz / distance;
+        penetration = radius - distance;
       } else {
-        p.x = oldX; p.z = oldZ; this.vx *= -0.2; this.vz *= -0.2;
+        const gapX = Math.max(0, b.w / 2 - Math.abs(q.x));
+        const gapZ = Math.max(0, b.d / 2 - Math.abs(q.z));
+        if (gapX <= gapZ) {
+          lx = Math.sign(q.x || oldX - b.x || 1); lz = 0;
+          penetration = radius + gapX;
+        } else {
+          lx = 0; lz = Math.sign(q.z || oldZ - b.z || 1);
+          penetration = radius + gapZ;
+        }
+      }
+      const c = Math.cos(b.yaw ?? 0), s = Math.sin(b.yaw ?? 0);
+      const nx = c * lx + s * lz, nz = -s * lx + c * lz;
+      p.x += nx * (penetration + 0.002);
+      p.z += nz * (penetration + 0.002);
+      // Remove only velocity into the obstacle. Retain the tangential component
+      // so the player can slide along walls and slowly steer/reverse to escape.
+      const inward = this.vx * nx + this.vz * nz;
+      if (inward < 0) {
+        this.vx -= inward * nx;
+        this.vz -= inward * nz;
       }
       collided = true;
     }
@@ -62,9 +83,20 @@ export class VehicleController {
       const dx = p.x - car.x, dz = p.z - car.z;
       const distance = Math.hypot(dx, dz);
       const safe = car.kind === 'motorcycle' ? 2.2 : 3.1;
-      if (distance < safe && distance > 0.001) {
-        p.x += dx / distance * (safe - distance); p.z += dz / distance * (safe - distance);
-        this.vx *= 0.5; this.vz *= 0.5; car.wait = Math.max(car.wait, 0.5); collided = true;
+      if (distance < safe) {
+        const nx = distance > 0.001 ? dx / distance : -Math.sin(car.heading);
+        const nz = distance > 0.001 ? dz / distance : -Math.cos(car.heading);
+        p.x += nx * (safe - distance + 0.002);
+        p.z += nz * (safe - distance + 0.002);
+        // Never halve all velocity each physics substep: that effectively freezes
+        // the player against traffic. Remove inward velocity, not escape velocity.
+        const inward = this.vx * nx + this.vz * nz;
+        if (inward < 0) {
+          this.vx -= inward * nx;
+          this.vz -= inward * nz;
+        }
+        car.wait = Math.max(car.wait, 0.35);
+        collided = true;
       }
     }
     if (Math.abs(p.x) > 342 || Math.abs(p.z) > 342) {

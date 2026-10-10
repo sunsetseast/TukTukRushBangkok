@@ -13,6 +13,11 @@ export type StreetPerson = {
   role: "walker" | "vendor" | "customer";
   seed: number;
   height: number;
+  // Visual-only evasive offset: actual sidewalk route remains deterministic.
+  dodgeX?: number;
+  dodgeZ?: number;
+  renderX?: number;
+  renderZ?: number;
 };
 const clear = (d: District, p: Point, margin = 0.4) =>
   d.obstacles.every((o) => obstacleDistance(p, o) > margin);
@@ -79,6 +84,14 @@ export function buildStreetLife(d: District) {
   const root = new T.Group();
   root.name = "StreetLife";
   const people = streetPeople(d);
+  const routeNodes = new Map(d.nodes.map(n => [n.id, n]));
+  const safeDodge = (x: number, z: number) => {
+    const q = { x, z };
+    if (d.obstacles.some(o => obstacleDistance(q, o) < 0.5)) return false;
+    return d.roads.every(r =>
+      distanceToSegment(q, routeNodes.get(r.a)!, routeNodes.get(r.b)!).distance >= r.width / 2 + 0.5
+    );
+  };
   const material = new T.MeshStandardMaterial({ roughness: 0.86 });
   const sphere = new T.SphereGeometry(1, 10, 7);
   const capsule = new T.CapsuleGeometry(1, 1, 2, 8);
@@ -160,7 +173,7 @@ export function buildStreetLife(d: District) {
     camera: T.Vector3,
     quality: "low" | "medium",
     active: boolean,
-    player?: Point,
+    player?: Point & { heading?: number; speed?: number },
   ) {
     if (active) time += Math.max(0, Math.min(dt, 0.05));
     let slot = 0,
@@ -192,18 +205,65 @@ export function buildStreetLife(d: District) {
         p.x = p.start.x;
         p.z = p.start.z;
       }
+      // Predict an approaching tuk-tuk, then step onto a *validated* safe part
+      // of the sidewalk. Do not vanish or become an invisible hard obstacle.
+      let targetX = 0, targetZ = 0, escaping = false;
+      if (player && active) {
+        const dx = p.x - player.x, dz = p.z - player.z;
+        const distance = Math.hypot(dx, dz);
+        const speed = Math.abs(player.speed ?? 0);
+        const ahead = dx * Math.sin(player.heading ?? 0) + dz * Math.cos(player.heading ?? 0);
+        const approaching = speed < 1.5 || ahead > -1.2;
+        const threshold = 3.1 + Math.min(speed * 0.18, 4.5);
+        if (approaching && distance < threshold) {
+          const directionX = dx / Math.max(0.01, distance);
+          const directionZ = dz / Math.max(0.01, distance);
+          const pathX = p.end.x - p.start.x, pathZ = p.end.z - p.start.z;
+          const pathLength = Math.max(0.01, Math.hypot(pathX, pathZ));
+          const ux = pathX / pathLength, uz = pathZ / pathLength;
+          // Away from vehicle first; both directions along the sidewalk as backups.
+          const vectors = [
+            [directionX, directionZ], [ux, uz], [-ux, -uz],
+            [uz, -ux], [-uz, ux],
+          ];
+          let best = -Infinity;
+          for (const [vx, vz] of vectors) {
+            for (const step of [1.5, 2.5, 3.5]) {
+              const x = p.x + vx! * step, z = p.z + vz! * step;
+              if (!safeDodge(x, z)) continue;
+              const separation = Math.hypot(x - player.x, z - player.z);
+              const score = separation - step * 0.18;
+              if (score > best) {
+                best = score;
+                targetX = x - p.x; targetZ = z - p.z;
+                escaping = true;
+              }
+            }
+          }
+        }
+      }
+      const follow = Math.min(1, Math.max(0, dt) * (escaping ? 5.5 : 1.65));
+      p.dodgeX = (p.dodgeX ?? 0) + (targetX - (p.dodgeX ?? 0)) * follow;
+      p.dodgeZ = (p.dodgeZ ?? 0) + (targetZ - (p.dodgeZ ?? 0)) * follow;
+      let displayX = p.x + (p.dodgeX ?? 0), displayZ = p.z + (p.dodgeZ ?? 0);
+      // The base route might advance while a person dodges. Never show someone
+      // moving through an obstacle or into a lane between updates.
+      if (!safeDodge(displayX, displayZ)) {
+        p.dodgeX = 0; p.dodgeZ = 0;
+        displayX = p.x; displayZ = p.z;
+      }
+      p.renderX = displayX; p.renderZ = displayZ;
       const visible =
-        Math.hypot(p.x - camera.x, p.z - camera.z) <
+        Math.hypot(displayX - camera.x, displayZ - camera.z) <
           (quality === "low" ? 65 : 100) &&
-        (quality === "medium" || i % 2 === 0) &&
-        (!player || Math.hypot(p.x - player.x, p.z - player.z) > 1.7);
+        (quality === "medium" || i % 2 === 0);
       if (!visible) continue;
-      const swing = walking ? Math.sin(time * 6 + p.seed) * 0.48 : 0;
+      const swing = walking || escaping ? Math.sin(time * (escaping ? 12 : 6) + p.seed) * 0.48 : 0;
       const serve = p.role === "vendor" ? Math.sin(time * 2 + p.seed) * 0.2 : 0;
       parent.position.set(
-        p.x,
-        0.22 + (walking ? Math.abs(Math.sin(time * 6 + p.seed)) * 0.025 : 0),
-        p.z,
+        displayX,
+        0.22 + ((walking || escaping) ? Math.abs(Math.sin(time * (escaping ? 12 : 6) + p.seed)) * 0.025 : 0),
+        displayZ,
       );
       parent.rotation.set(0, p.heading, 0);
       parent.scale.setScalar(p.height);
