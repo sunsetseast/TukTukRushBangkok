@@ -10,7 +10,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:gameplay": "tsx scripts/check-gameplay.ts && tsx scripts/check-driven-mission.ts",
     "test:assets": "node scripts/check-assets.mjs",
-    "test:street-life": "tsx scripts/check-street-life.ts"
+    "test:street-life": "tsx scripts/check-street-life.ts",
+    "test:roadside": "tsx scripts/check-roadside.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

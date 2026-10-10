@@ -322,7 +322,7 @@ export function buildCity(
 
   // Props: parked cars, stalls and trees. Colliders are appended to district.obstacles once.
   const propBatches = new StaticBatch();
-  buildProps(d, segs, nodes, nearest, propBatches.add);
+  buildProps(d, segs, nodes, nearest, propBatches.add, fixtures);
   const propGroups = propBatches.finish();
   propGroups.forEach((g) => group.add(g));
 
@@ -474,6 +474,7 @@ function buildProps(
   nodes: Map<string, RoadNode>,
   nearest: (x: number, z: number) => { d: number; w: number },
   inst: Inst,
+  fixtures: { kind: string; x: number; z: number; clearance: number }[],
 ) {
   const fresh = !propDone.has(d);
   propDone.add(d);
@@ -505,6 +506,8 @@ function buildProps(
     const p = { x, z }, rad = Math.hypot(hw, hd);
     if (nearest(x, z).d < roadClear) return false;
     if (ra && Math.hypot(x - ra.x, z - ra.z) < ra.radius + ra.laneWidth) return false;
+    // Cars, carts and trees must not occupy the same pavement as lamp posts.
+    if (fixtures.some(o => Math.hypot(o.x - x, o.z - z) < rad + o.clearance + 0.6)) return false;
     for (const r of d.roads) {
       const a = nodes.get(r.a)!, b = nodes.get(r.b)!;
       if (nearestRoad({ ...d, roads: [r] }, p).distance < r.width / 2 + rad + 0.8) return false;
