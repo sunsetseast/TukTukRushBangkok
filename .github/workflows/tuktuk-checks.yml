@@ -13,6 +13,9 @@ jobs:
   game:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      PORT: '24177'
+      BASE_PATH: '/'
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
