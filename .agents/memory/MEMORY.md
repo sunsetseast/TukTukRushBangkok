@@ -1,0 +1,1 @@
+- [Prototype direction](prototype-direction.md) — iPhone-only development/testing, browser-first scope, hybrid Bangkok roads and fictional shortcuts.

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Tuk Tuk Rush: Bangkok"
+description = "An iPhone-first landscape 3D arcade driving game with a hybrid Bangkok Chinatown district, responsive touch controls, traffic, and timed passenger deliveries. Procedural assets, no backend or accounts."
+version = "1.0.0"
+id = "artifacts/tuk-tuk-rush"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24177
+
+[services.development]
+run = "pnpm --filter @workspace/tuk-tuk-rush run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tuk-tuk-rush", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/tuk-tuk-rush/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24177"
+BASE_PATH = "/"
