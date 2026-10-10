@@ -6,7 +6,7 @@ import { StaticBatch } from "./staticBatch";
 import { buildTrafficModel } from "./trafficMesh";
 import { ASSETS, surface, disposeObject } from "./assets";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
-import { nearestRoad, obstacleDistance } from "./world";
+import { nearestRoad, obstacleDistance, distanceToSegment } from "./world";
 
 export type City = {
   group: THREE.Group;
@@ -121,9 +121,13 @@ export function buildCity(
     }
   const discM: THREE.Matrix4[] = [],
     discC: THREE.Color[] = [];
+  const intersectionDegree = degreeMap(d);
   for (const [id, s] of nodeW) {
     const n = nodes.get(id)!;
-    discM.push(M(n.x, 0.05, n.z, 0, s.r.width / 2, 1, s.r.width / 2));
+    // Curve samples are not junctions: full-size discs at every sample make
+    // winding streets resemble huge overlapping asphalt plazas.
+    const r = s.r.width / 2 * ((intersectionDegree.get(id) ?? 0) >= 3 ? 1 : 0.72);
+    discM.push(M(n.x, 0.05, n.z, 0, r, 1, r));
     discC.push(roadCol(s.r));
   }
   inst(discGeo, roadMat, discM, discC);
@@ -183,6 +187,16 @@ export function buildCity(
     lanM: THREE.Matrix4[] = [],
     wire: number[] = [];
   const poleState = new Map<string, { acc: number; last: { x: number; z: number } | null }>();
+  const fixtures: { kind: string; x: number; z: number; clearance: number }[] = [];
+  const safeFixture = (x: number, z: number, clearance = 0.6) => {
+    const p = { x, z };
+    // All connected roads matter near a skewed junction, not only the source road.
+    if (segs.some(s => distanceToSegment(p, s.a, s.b).distance < s.r.width / 2 + clearance)) return false;
+    if (d.obstacles.some(o => obstacleDistance(p, o) < clearance + 0.5)) return false;
+    if (d.roundabout && Math.hypot(x - d.roundabout.x, z - d.roundabout.z) < d.roundabout.radius + 3) return false;
+    if (fixtures.some(o => Math.hypot(x - o.x, z - o.z) < clearance + o.clearance + 2.2)) return false;
+    return true;
+  };
   for (const s of segs) {
     const ry = Math.atan2(s.dx, s.dz);
     if (s.r.shortcut) continue;
@@ -191,9 +205,11 @@ export function buildCity(
       const st = poleState.get(key) ?? { acc: 30, last: null as { x: number; z: number } | null };
       poleState.set(key, st);
       if (st.acc >= 28 && s.len > 6) {
-        const t = s.len / 2, off = s.r.width / 2 + 0.8,
+        const t = s.len / 2, off = s.r.width / 2 + 2.8,
           x = s.a.x + s.dx * t - s.dz * side * off,
           z = s.a.z + s.dz * t + s.dx * side * off;
+        if (!safeFixture(x, z, 0.6)) { st.acc += s.len; continue; }
+        fixtures.push({ kind: "utility-pole", x, z, clearance: 0.6 });
         poleM.push(M(x, 3.1, z, 0));
         crossM.push(M(x, 5.6, z, ry, 1.3, 0.07, 0.1));
         lampM.push(M(x + s.dz * side * 0.55, 6.15, z - s.dx * side * 0.55, ry, 1.1, 0.1, 0.3));
@@ -248,18 +264,34 @@ export function buildCity(
   ];
   const lensGeo = new THREE.SphereGeometry(0.11, 8, 6),
     signalM: THREE.Matrix4[][] = [[], []];
-  for (const n of d.nodes.filter((n) => (deg.get(n.id) ?? 0) >= 3))
-    for (let axis = 0; axis < 2; axis++) {
-      const x = n.x + (axis === 0 ? 12 : 10),
-        z = n.z + (axis === 0 ? 10 : 12);
-      inst(new THREE.BoxGeometry(0.12, 3.7, 0.12), lamb("#415658"), [
-        M(x, 1.85, z, 0),
-      ]);
-      inst(new THREE.BoxGeometry(0.35, 0.85, 0.24), lamb("#203840"), [
-        M(x, 3.75, z, (axis * Math.PI) / 2),
-      ]);
-      signalM[axis]!.push(M(x, 3.72, z + 0.16, 0));
+  // Road-angle-aware placement. Each candidate must clear EVERY road arm.
+  for (const n of d.nodes.filter(n => (deg.get(n.id) ?? 0) >= 3)) {
+    const approaches = segs.filter(s => s.a.id === n.id || s.b.id === n.id);
+    let installed = 0;
+    for (const s of approaches) {
+      if (installed >= 2 || s.r.roundabout) continue;
+      const other = s.a.id === n.id ? s.b : s.a;
+      const length = Math.hypot(other.x - n.x, other.z - n.z);
+      if (length < 5) continue;
+      const ux = (other.x - n.x) / length, uz = (other.z - n.z) / length;
+      const dist = Math.min(length * 0.48, 9);
+      for (const side of [-1, 1]) {
+        const off = s.r.width / 2 + 2.7;
+        const x = n.x + ux * dist - uz * side * off;
+        const z = n.z + uz * dist + ux * side * off;
+        if (!safeFixture(x, z, 0.85)) continue;
+        fixtures.push({ kind: "traffic-signal", x, z, clearance: 0.85 });
+        const angle = Math.atan2(ux, uz);
+        inst(new THREE.BoxGeometry(0.12, 3.7, 0.12), lamb("#415658"), [M(x, 1.85, z, angle)]);
+        inst(new THREE.BoxGeometry(0.35, 0.85, 0.24), lamb("#203840"), [M(x, 3.75, z, angle)]);
+        const axis = Math.abs(ux) > Math.abs(uz) ? 0 : 1;
+        signalM[axis]!.push(M(x, 3.72, z, angle));
+        installed++;
+        break;
+      }
     }
+  }
+  group.userData.roadsideFixtures = fixtures;
   signalM.forEach((matrices, axis) => {
     const im = new THREE.InstancedMesh(
       lensGeo,

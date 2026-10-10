@@ -36,7 +36,7 @@ export function createDistrict(): District {
     const angle = -Math.PI / 2 + i * Math.PI * 2 / 20;
     node(`odeon:${i}`, { x: rb.x + Math.cos(angle) * rb.radius, z: rb.z + Math.sin(angle) * rb.radius }, 'Odeon Circle');
   }
-  for (let i = 0; i < 20; i++) edge(`odeon:${i}`, `odeon:${(i + 1) % 20}`, 12, 'Odeon Circle', true, false, true);
+  for (let i = 0; i < 20; i++) edge(`odeon:${i}`, `odeon:${(i + 1) % 20}`, 10, 'Odeon Circle', true, false, true);
 
   // Catmull-Rom sampled centreline: every system consumes these exact short edges.
   // Intersections are the named control nodes, not independently rendered curves.
@@ -56,31 +56,31 @@ export function createDistrict(): District {
       }
     }
   };
-  trace('yaowarat', YAOWARAT_TRACE, 20, 'Yaowarat Road', true);
-  trace('charoen', CHAROEN_TRACE, 22, 'Charoen Krung Road', true);
-  edge('odeon:0', 'yaowarat:0', 20, 'Yaowarat Road', true);
-  edge('charoen:8', 'odeon:3', 18, 'Charoen Krung Road', true);
-  edge('yaowarat:6', 'charoen:3', 13, 'Plaeng Nam Road');
-  edge('yaowarat:3', 'charoen:5', 16, 'Song Sawat Road');
-  edge('yaowarat:8', 'charoen:1', 15, 'Mangkon Road');
+  trace('yaowarat', YAOWARAT_TRACE, 14, 'Yaowarat Road', true);
+  trace('charoen', CHAROEN_TRACE, 15, 'Charoen Krung Road', true);
+  edge('odeon:0', 'yaowarat:0', 14, 'Yaowarat Road', true);
+  edge('charoen:8', 'odeon:3', 13, 'Charoen Krung Road', true);
+  edge('yaowarat:6', 'charoen:3', 9.5, 'Plaeng Nam Road');
+  edge('yaowarat:3', 'charoen:5', 11, 'Song Sawat Road');
+  edge('yaowarat:8', 'charoen:1', 10.5, 'Mangkon Road');
   // Connected fictional service streets provide a return route without traffic jams.
   node('west-market', { x: -285, z: -175 }, 'Dragon Alley market');
-  edge('yaowarat:10', 'west-market', 13, 'Dragon Alley', false, true);
-  edge('west-market', 'charoen:0', 15, 'Lantern Cut', false, true);
+  edge('yaowarat:10', 'west-market', 8.5, 'Dragon Alley', false, true);
+  edge('west-market', 'charoen:0', 9, 'Lantern Cut', false, true);
   node('south-market', { x: -45, z: 244 });
-  edge('yaowarat:3', 'south-market', 13, 'Spice Market', false, true);
-  edge('south-market', 'odeon:14', 15, 'Market Loop', false, true);
+  edge('yaowarat:3', 'south-market', 8.5, 'Spice Market', false, true);
+  edge('south-market', 'odeon:14', 9, 'Market Loop', false, true);
   node('temple-stop', { x: 155, z: 121 }, 'Wat Traimit');
   node('station-stop', { x: 260, z: -26 }, 'Hua Lamphong station');
   node('tri-mit-bend', { x: 211, z: 90 });
   node('tri-mit-south', { x: 218, z: 229 });
   node('station-west', { x: 205, z: -26 });
-  edge('odeon:7', 'tri-mit-south', 18, 'Tri Mit Road');
-  edge('tri-mit-south', 'tri-mit-bend', 18, 'Tri Mit Road');
-  edge('tri-mit-bend', 'temple-stop', 16, 'Temple Approach');
-  edge('tri-mit-bend', 'station-west', 20, 'Station Approach');
-  edge('station-west', 'station-stop', 20, 'Station Approach');
-  edge('station-stop', 'charoen:5', 16, 'Station Service Road', false, true);
+  edge('odeon:7', 'tri-mit-south', 12, 'Tri Mit Road');
+  edge('tri-mit-south', 'tri-mit-bend', 11, 'Tri Mit Road');
+  edge('tri-mit-bend', 'temple-stop', 10, 'Temple Approach');
+  edge('tri-mit-bend', 'station-west', 12, 'Station Approach');
+  edge('station-west', 'station-stop', 12, 'Station Approach');
+  edge('station-stop', 'charoen:5', 10, 'Station Service Road', false, true);
 
   const landmarks: District['landmarks'] = [
     { kind: 'gate', name: 'Chinatown Gate / Odeon Circle', ...GATE_CENTER },
@@ -117,9 +117,17 @@ export function createDistrict(): District {
       const off = r.width / 2 + depth / 2 + 5.8;
       const x = a.x + ux * t + uz * off * side, z = a.z + uz * t - ux * off * side;
       const yaw = Math.atan2(-uz * side, ux * side);
-      const styles: NonNullable<Obstacle['style']>[] = ['gold', 'heritage', 'noodle', 'pharmacy', 'hotel', 'heritage'];
-      const b: Obstacle = { x, z, w: 13, d: depth, height: 12 + (index % 4) * 3.4,
-        color: PALETTE[index % PALETTE.length]!, yaw, style: styles[index % styles.length]!, showcase,
+      // District-specific business mix, not identical shops on every road.
+      const styles: NonNullable<Obstacle['style']>[] = showcase
+        ? ['gold', 'noodle', 'gold', 'heritage', 'noodle', 'gold', 'hotel']
+        : r.name === 'Charoen Krung Road'
+          ? ['heritage', 'pharmacy', 'hotel', 'heritage', 'noodle']
+          : r.name.includes('Tri Mit') || r.name.includes('Temple')
+            ? ['heritage', 'noodle', 'pharmacy', 'heritage']
+            : ['heritage', 'hotel', 'pharmacy', 'noodle'];
+      const variant = (index + Math.floor(t / 13) + (side < 0 ? 2 : 0)) % styles.length;
+      const b: Obstacle = { x, z, w: 13, d: depth, height: 12 + ((index + Math.floor(t / 10)) % 4) * 3.4,
+        color: PALETTE[(index + Math.floor(t / 10)) % PALETTE.length]!, yaw, style: styles[variant]!, showcase,
         sign: undefined };
       const text = { gold: 'ร้านทอง', noodle: 'ก๋วยเตี๋ยว', pharmacy: 'ร้านขายยา', hotel: 'โรงแรม', heritage: 'เยาวราช' };
       b.sign = text[b.style!];
@@ -131,6 +139,9 @@ export function createDistrict(): District {
   const goldShops = district.buildings.filter(b => b.showcase && b.style === 'gold')
     .sort((a, b) => Math.hypot(a.x - reference.x, a.z - reference.z) - Math.hypot(b.x - reference.x, b.z - reference.z));
   if (goldShops[0]) goldShops[0].sign = SIGN_NAMES[0];
+  // Thong Bai Goldshop is a documented Yaowarat business. This uses original
+  // stylized artwork, not an unlicensed reproduction of its commercial logo.
+  if (goldShops[1]) goldShops[1].sign = 'ทองใบเยาวราช';
   const heritage = district.buildings.find(b => b.showcase && b.style === 'heritage');
   if (heritage) heritage.sign = '耀華力路';
   return district;
