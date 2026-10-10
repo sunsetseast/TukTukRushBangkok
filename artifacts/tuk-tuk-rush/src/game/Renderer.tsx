@@ -11,6 +11,7 @@ import { buildStreetscape } from "./streetscape";
 import { loadArt, type ArtBundle, disposeObject } from "./assets";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { clamp } from "./meshUtil";
+import { obstacleLocal } from "./world";
 
 function buildBeacon() {
   const g = new THREE.Group();
@@ -188,10 +189,11 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
           pz = hz + (dz - hz) * k;
         let hit = false;
         for (const b of m.district.buildings) {
+          const local = obstacleLocal({ x: px, z: pz }, b);
           if (
             py < b.height + 0.5 &&
-            Math.abs(px - b.x) < b.w / 2 + 0.8 &&
-            Math.abs(pz - b.z) < b.d / 2 + 0.8
+            Math.abs(local.x) < b.w / 2 + 0.8 &&
+            Math.abs(local.z) < b.d / 2 + 0.8
           ) {
             hit = true;
             break;

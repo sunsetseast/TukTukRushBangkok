@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "VMS8-rXx-5FUuYP95W8UW"
+uri = "file://generated-artifacts/bangkok-reconstruction/review.html"
+type = "html"
+title = "Bangkok reconstruction — actual before/after review"
+description = "Self-contained review with ten actual WebGL captures, historical main comparisons, render counts and honest testing limits. Not a physical-iPhone benchmark."
+logical_id = "1efae94e-65f0-475d-91a9-ef2e7cc73e10"
+content_hash = "sha256:80dbaf5e445078a3ca643458604de5ea5a303eff69942a7d8ef0788ff4af53dc"
+size = 2496682
+mtime_ms = 1791665408081
+storage_uri = "gcs://replit-rams-assets-kirk/rams/assets/repl:ee7f65ff-2481-4d0e-9b88-d12ee81a82c2/1efae94e-65f0-475d-91a9-ef2e7cc73e10/27060f7a-cc5a-4baf-a216-7383d2ed12f7"
+storage_version_token = "1791666008449850"
+content_type = "text/html"

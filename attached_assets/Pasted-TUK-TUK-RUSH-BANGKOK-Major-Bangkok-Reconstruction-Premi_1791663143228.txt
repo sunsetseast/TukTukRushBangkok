@@ -1,0 +1,954 @@
+TUK TUK RUSH: BANGKOK
+
+Major Bangkok Reconstruction & Premium Cartoon Graphics Overhaul
+
+PROJECT
+
+Continue developing my existing playable 3D arcade driving game:
+
+Tuk Tuk Rush: Bangkok
+
+GitHub repository: sunsetseast/TukTukRushBangkok
+
+This game was originally created in Replit and is already playable on my iPhone.
+
+The latest GitHub main contains:
+
+* PR #1 — Major 3D graphics overhaul with a detailed tuk-tuk model, enhanced streetscape, textures and rendering.
+* PR #2 — Living Chinatown, including animated pedestrians, richer shops, street vendors and improved landmarks.
+
+Start by checking the existing Replit workspace against the latest GitHub main.
+
+The GitHub repository is the source of truth.
+
+Do not accidentally overwrite newer GitHub changes with an older Replit project.
+
+If syncing is possible, establish a clean development branch from current main before making changes.
+
+If you cannot safely access or synchronize the latest source, explain the blocker instead of rebuilding the game from scratch.
+
+GITHUB DELIVERY
+
+Create a new branch for this work.
+
+Suggested branch:
+
+graphics/authentic-cartoon-bangkok
+
+Suggested pull request title:
+
+Recreate Authentic Bangkok Chinatown with Premium Stylized 3D Graphics
+
+If Replit can create a GitHub pull request, create one draft PR against main.
+
+Otherwise, push the completed branch to GitHub and provide the exact comparison link or instructions for opening the PR.
+
+Do not merge into main automatically.
+
+⸻
+
+1. YOUR ROLE
+
+Approach this project as a combined:
+
+1. Principal Three.js / React Three Fiber graphics engineer.
+2. Professional 3D environment artist.
+3. Senior technical artist specializing in stylized 3D games.
+4. Bangkok architectural and urban-environment researcher.
+5. Experienced mobile arcade game developer.
+6. Game art director.
+7. iPhone WebGL performance engineer.
+
+You are responsible for both technical implementation and artistic results.
+
+Do not simply generate more code.
+
+Do not consider a visually poor result successful because it builds.
+
+Do not be afraid to challenge the existing graphics architecture where necessary.
+
+The current game works, but its environment needs a dramatic improvement in artistic quality and geographic authenticity.
+
+⸻
+
+2. NEW VISUAL DIRECTION — EXTREMELY IMPORTANT
+
+I am attaching a screenshot showing a custom stylized 3D rendition of Buckingham Palace and its surroundings, created by Charly Delaroche (@Nal_uh) over an Apple Maps-style environment.
+
+Use this screenshot as a major art-direction reference.
+
+I love its miniature-cartoon aesthetic.
+
+Important characteristics:
+
+* Beautiful rounded geometry.
+* Soft, sculpted shapes.
+* Clean, cohesive 3D models.
+* Charming miniature-world appearance.
+* Soft atmospheric lighting.
+* Attractive colors without excessive saturation.
+* Smooth, polished surfaces.
+* Highly readable architectural silhouettes.
+* Appealing rounded trees and foliage.
+* Carefully simplified architectural detail.
+* A world that resembles a handcrafted, premium 3D diorama.
+
+This is NOT a request for generic low-poly graphics.
+
+There is a significant difference between intentionally stylized geometry and crude primitive models.
+
+I want the former.
+
+Our target style
+
+A premium miniature-cartoon rendition of real Bangkok with the lively energy of an arcade driving game.
+
+Imagine the charm of a beautifully crafted 3D miniature city combined with:
+
+* Colorful Bangkok tuk-tuks.
+* Famous Yaowarat gold shops.
+* Enormous Chinese neon signs.
+* Authentic Thai shophouses.
+* Dense urban street life.
+* Bright pink taxis.
+* Scooters and motorcycles.
+* Delicious-looking street-food stalls.
+* Warm tropical sunsets.
+* Gorgeous nighttime neon illumination.
+
+The result should be colorful, memorable, charming and instantly recognizable as Bangkok.
+
+IMPORTANT DISTINCTION
+
+The reference screenshot is viewed from an elevated map perspective.
+
+Our game is primarily a third-person driving game.
+
+Do not change the gameplay into an overhead map simulator.
+
+Instead, adapt that same artistic quality to a street-level driving environment.
+
+The scene should look beautiful while viewed from behind the tuk-tuk, not only from far above.
+
+Apple Maps clarification
+
+The reference uses custom 3D graphics over a map-like environment.
+
+We do not necessarily need to integrate Apple Maps itself.
+
+Our existing Three.js engine may be the better solution for unrestricted driving, custom roads, collisions and game performance.
+
+Use the reference for its artistic style and miniature-world polish, not as a mandatory technical architecture.
+
+Do not use unauthorized Apple Maps 3D assets or restricted map tiles.
+
+⸻
+
+3. PRIMARY ENVIRONMENT — REAL YAOWARAT ROAD
+
+The centerpiece of this overhaul must be:
+
+Yaowarat Road (ถนนเยาวราช), Bangkok Chinatown.
+
+I want the playable version to resemble the real street as closely as reasonably possible.
+
+Its appearance should be recognizable even without a map label.
+
+Research the actual street before rebuilding it.
+
+Focus on:
+
+* Real road alignment and curves.
+* Actual street proportions.
+* Recognizable building arrangements.
+* Famous shops and commercial buildings.
+* Distinctive Chinese and Thai signage.
+* Vertical signs projecting from buildings.
+* Gold-shop storefronts.
+* Street-food establishments.
+* Sidewalk structure.
+* Side streets and intersections.
+* Electrical wiring and utility poles.
+* Authentic traffic patterns.
+* Architectural density and building heights.
+
+Do not merely decorate the current perfectly straight rectangular road with more signs.
+
+Reconstruct the underlying geography and street composition.
+
+The player should feel as though they are actually traveling along Yaowarat Road.
+
+⸻
+
+4. RESEARCH REAL BANGKOK BEFORE MODELING
+
+Use reliable, publicly available resources to research the location.
+
+Suggested sources:
+
+* OpenStreetMap.
+* Tourism Authority of Thailand.
+* Publicly accessible photographs of Yaowarat.
+* Architectural and tourism articles.
+* Official business websites and historical materials.
+* Appropriately licensed geographic and photographic references.
+
+Research recognizable real-world locations including:
+
+* Yaowarat Road.
+* Charoen Krung Road.
+* Tri Mit Road.
+* Odeon Circle / Chinatown Gate.
+* Wat Traimit.
+* Hua Lamphong station.
+* Major intersections and connecting sois.
+* Famous Chinatown gold shops and restaurants.
+
+Use exact geographic data where feasible and appropriate.
+
+Reference photography should guide the appearance of real locations.
+
+Do not copy photographs or proprietary map assets into the game without appropriate rights.
+
+Document the research sources and distinguish verified details from intentional fictional adaptations.
+
+The game should feel geographically authentic without sacrificing arcade gameplay.
+
+⸻
+
+5. REBUILD THE ROAD NETWORK
+
+The existing district uses an artificial rectangular grid.
+
+This was acceptable for the initial prototype but is no longer sufficient.
+
+Replace the relevant central geography with an arcade-adapted network inspired by actual Bangkok Chinatown.
+
+Requirements
+
+Implement support for:
+
+* Curved roads.
+* Irregular intersections.
+* Varying road widths.
+* Proper sidewalks.
+* Junctions at different angles.
+* A functioning Odeon Circle roundabout.
+* Connected smaller sois.
+* Arcade-friendly shortcuts.
+* Logical traffic direction.
+* Roadside building placement.
+* Correct vehicle collision boundaries.
+
+Use a coherent world-coordinate system shared by:
+
+* Road rendering.
+* Traffic AI.
+* Player navigation.
+* Minimap.
+* Mission routing.
+* Building placement.
+* Pedestrian paths.
+* Collision geometry.
+
+Avoid independently hardcoded layouts that become misaligned.
+
+Preserve our hybrid approach
+
+The major streets and landmarks should closely resemble Bangkok.
+
+However, fictional connecting alleys and shortcuts are allowed where they improve gameplay.
+
+These should look like plausible Bangkok service roads or small sois.
+
+Do not create absurd shortcuts cutting through solid buildings.
+
+Scope control
+
+Do not attempt to create the entire city in this update.
+
+Prioritize one excellent, continuous, driveable Yaowarat corridor with its most important connecting roads and recognizable landmarks.
+
+Preserve the rest of the playable game through compatible transitions if necessary.
+
+The final result must be fully playable.
+
+⸻
+
+6. AUTHENTIC YAOWARAT SIGNAGE — CRITICAL PRIORITY
+
+I especially want the famous Yaowarat signs to look like the actual signs found there.
+
+This requirement is extremely important.
+
+The existing game uses repetitive generic Thai and Chinese signs.
+
+I want a major leap in fidelity.
+
+Research real signage
+
+Investigate identifiable Yaowarat businesses and their signs.
+
+Examples worth researching include:
+
+* Hua Seng Heng.
+* Tang To Kang.
+* Historic gold shops.
+* Traditional pharmacies.
+* Famous restaurants.
+* Hotels and commercial buildings.
+* Distinctive large Chinese vertical signs.
+
+Verify each selected business’s signage, location and appearance through suitable sources.
+
+For important recognizable signs, determine:
+
+* Actual lettering.
+* Language.
+* Colors.
+* Typography.
+* Shape.
+* Dimensions and proportions.
+* Sign border and frame.
+* Placement on the building.
+* Lighting and illumination.
+* Architectural surroundings.
+
+Do not invent Chinese or Thai lettering and pretend it is authentic.
+
+Recreate physical signage
+
+Signs should be actual attractive 3D objects or carefully textured assets.
+
+They may require:
+
+* Extruded lettering.
+* Proper illuminated sign faces.
+* Metal mounting brackets.
+* Raised frames and borders.
+* Different sign depths.
+* Curved or decorative shapes.
+* Weathering.
+* Neon-style glow.
+* Dimensional letters.
+* Correct perspective and orientation.
+
+Do not make every sign an identical flat rectangle.
+
+The street should contain the visual variety and iconic density of real Yaowarat.
+
+Art and licensing
+
+This may eventually become a commercially released game.
+
+Use accurate public facts and verified text, while evaluating whether exact commercial artwork or logos require permission.
+
+Where exact reproduction is legally appropriate, aim for fidelity.
+
+Where clearance is necessary or uncertain, document that and use original, visually compatible substitute artwork rather than copying protected assets without authorization.
+
+Keep an asset inventory identifying authentic, adapted, fictional and clearance-pending signage.
+
+The player should still recognize the actual visual atmosphere of the street.
+
+⸻
+
+7. CREATE PREMIUM CARTOON BUILDINGS
+
+The existing procedurally generated shophouses are functional, but repetitive and somewhat boxy.
+
+Improve their artistic quality using the supplied reference screenshot as inspiration.
+
+Desired appearance
+
+Buildings should have:
+
+* Beautifully sculpted silhouettes.
+* Slightly softened edges.
+* Appealing architectural proportions.
+* Subtle material and color variation.
+* Clean, carefully shaped windows.
+* Attractive balconies.
+* Well-modeled storefronts.
+* Roof details and architectural trim.
+* Distinctive corner geometry.
+* Air-conditioning equipment.
+* Awnings and ornamental elements.
+* Rooftop clutter where appropriate.
+* Nonuniform building heights.
+* Recognizable historic Thai-Chinese character.
+
+Some buildings should be highly detailed signature assets.
+
+Others can be assembled from reusable modular components.
+
+Avoid the procedural repetition problem
+
+Do not simply use one shophouse template with ten colors.
+
+Develop multiple genuinely different architectural modules.
+
+A historic gold shop should look materially different from a small noodle shop.
+
+A traditional pharmacy should not look identical to a hotel.
+
+A corner building should have credible architectural design on both exposed sides.
+
+Modeling techniques
+
+Use detailed GLB models, custom geometry, curved surfaces, bevels, and carefully authored materials where useful.
+
+Reuse procedural geometry for background structures and repetitive details.
+
+If suitable licensed assets can be acquired safely, evaluate them.
+
+If assets are created procedurally, they must still meet professional visual standards.
+
+Merely adding more boxes is not an acceptable substitute for an art upgrade.
+
+⸻
+
+8. CHINATOWN GATE AND OTHER LANDMARKS
+
+Recreate the visual and geographic identity of Odeon Circle and Chinatown Gate.
+
+Research their real appearance.
+
+The gate should have a recognizable:
+
+* Overall silhouette.
+* Red columns.
+* Ornamental roofs.
+* Gold detailing.
+* Chinese architectural proportions.
+* Decorative features.
+* Proper central island arrangement.
+
+The surrounding roundabout must function correctly within the driving game.
+
+Do not model it as a generic gate over an ordinary straight street.
+
+Improve Wat Traimit and Hua Lamphong as far as practical, prioritizing their distinctive real-world silhouettes.
+
+These locations should feel like handcrafted miniatures of recognizable Bangkok landmarks.
+
+Avoid generic temple models that could belong anywhere in Asia.
+
+⸻
+
+9. STREET LIFE AND ENVIRONMENTAL DETAIL
+
+PR #2 introduced animated pedestrians and vendors.
+
+Preserve this foundation but make their presentation feel more natural and visually appealing.
+
+Current characters are built from basic shared shapes.
+
+Improve close-range character design where it delivers noticeable value.
+
+Consider:
+
+* More appealing stylized human proportions.
+* Better clothing silhouettes.
+* Distinct hairstyles.
+* Travelers carrying backpacks.
+* Food vendors preparing dishes.
+* Customers gathered around carts.
+* People standing outside shops.
+* Small groups talking.
+* Customers waiting at pedestrian crossings.
+* Pedestrians walking along actual sidewalks.
+
+Characters should feel like inhabitants of Bangkok, not randomly scattered decoration.
+
+Street-food environment
+
+Improve the appearance of:
+
+* Food carts.
+* Woks and cooking equipment.
+* Steam and smoke.
+* Plastic stools.
+* Outdoor tables.
+* Food displays.
+* Noodle bowls.
+* Drinks.
+* Umbrellas.
+* Small lighting fixtures.
+* Sidewalk merchandise.
+
+Focus detail close to the player.
+
+Use efficient animation and instancing.
+
+Do not implement expensive NPC intelligence unnecessarily.
+
+The priority remains visual life and atmosphere.
+
+⸻
+
+10. TRAFFIC MUST FEEL LIKE BANGKOK
+
+Investigate the existing traffic system carefully.
+
+Thailand drives on the left, but the previous review identified right-side lane placement in the game’s traffic code.
+
+Correct this comprehensively.
+
+Also improve the visual authenticity of nearby traffic.
+
+Consider:
+
+* Pink and green-yellow Bangkok taxis.
+* Motorcycles and scooters.
+* Delivery motorcycles.
+* Small trucks.
+* Vans.
+* Buses where appropriate.
+* Other tuk-tuks.
+
+Develop varied, recognizable vehicle silhouettes.
+
+The road should not appear deserted.
+
+However, do not simply spawn enormous numbers of cars.
+
+Traffic should be concentrated intelligently near the player and at important intersections.
+
+The driving game must remain fun.
+
+Vehicles must use sensible routes, avoid obvious wall clipping and negotiate the irregular roads.
+
+Important gameplay principle
+
+This is an arcade driving game inspired by Crazy Taxi.
+
+Traffic should create exciting obstacles and opportunities for skillful driving.
+
+It should not become a realistic traffic-jam simulator where the player is constantly stuck.
+
+⸻
+
+11. LIGHTING AND ATMOSPHERE
+
+I want lighting inspired by the miniature-cartoon reference.
+
+Prioritize:
+
+* Soft, appealing shadows.
+* Attractive warm sunlight.
+* Cohesive color grading.
+* Strong but gentle material definition.
+* More depth in building facades.
+* Richer storefront interiors.
+* Subtle atmospheric perspective.
+* Attractive road surfaces.
+* Better environmental contrast.
+* Polished character and vehicle grounding.
+
+Avoid an overly washed-out appearance.
+
+Avoid making every material flat and matte.
+
+Also avoid forcing photorealistic textures onto cartoon geometry.
+
+Everything should belong to the same cohesive visual style.
+
+Evening presentation
+
+Yaowarat is especially famous for its illuminated signs and nighttime atmosphere.
+
+Prepare the assets and materials for an appealing dusk or evening presentation.
+
+If practical, include a lightweight preview or switchable visual preset to demonstrate the sign lighting.
+
+This does not require implementing an entire dynamic day/night weather system.
+
+The signage and architecture must look beautiful in daylight first.
+
+⸻
+
+12. CAMERA AND COMPOSITION
+
+The normal third-person driving camera is the most important visual viewpoint.
+
+Evaluate whether the camera currently shows the best features of the city.
+
+Consider careful adjustments to:
+
+* Camera height.
+* Following distance.
+* Field of view.
+* Speed-based camera movement.
+* City visibility.
+* How signs appear overhead.
+* How close storefronts feel.
+* Readability at intersections.
+
+Do not create a beautiful model that is never appreciable from the driving camera.
+
+The art should be designed around what the player actually sees.
+
+Optional presentation feature
+
+If straightforward and useful, add a development-only free camera or environmental inspection mode.
+
+This would help us evaluate detailed locations without altering normal gameplay.
+
+Do not make this a major feature at the expense of the actual graphics overhaul.
+
+⸻
+
+13. PRESERVE THE WORKING GAME
+
+The game currently works on my iPhone.
+
+Do not unnecessarily rewrite or remove:
+
+* Tuk-tuk driving.
+* Acceleration.
+* Steering.
+* Braking and reverse.
+* Arcade handling.
+* Vehicle collision.
+* Recovery.
+* Passenger pickup.
+* Passenger delivery.
+* Mission timers.
+* Scoring.
+* Free Ride.
+* Arcade shift.
+* HUD.
+* Touch controls.
+* Pause and restart.
+* Camera behavior.
+* Existing models and gameplay assets.
+
+Modify these systems only where required to support the improved geography and rendering.
+
+Preserve the hero tuk-tuk model unless a targeted improvement is demonstrably beneficial.
+
+Do not replace the Three.js engine.
+
+Do not turn the game into a static art showcase.
+
+It must remain a real, playable 3D driving game.
+
+⸻
+
+14. OPTIMIZE FOR IPHONE
+
+I develop and test entirely on my iPhone.
+
+The game must remain accessible through the existing browser-based testing workflow.
+
+Do not require me to install desktop software.
+
+Use the Replit environment for development, asset creation, testing and builds.
+
+Maintain:
+
+* Smooth driving.
+* Responsive multitouch controls.
+* Stable camera movement.
+* Reasonable scene-loading times.
+* Efficient GPU-resource use.
+* Appropriate mobile memory consumption.
+* Adaptive Fast/Pretty modes.
+
+Use:
+
+* Geometry and material reuse.
+* Batching and instancing.
+* Spatial culling.
+* Efficient GLB assets.
+* Sensible texture sizes.
+* LOD for distant details.
+* Limited expensive effects.
+
+Avoid adding complexity that provides little actual visual improvement.
+
+Testing honesty
+
+Do not claim the game runs at 60 FPS on iPhone without measuring it.
+
+If direct physical iPhone testing is unavailable, distinguish browser simulation from real-device evidence.
+
+The previous merged graphics version was reported smooth on my phone; preserve that experience as closely as possible.
+
+⸻
+
+15. DEVELOPMENT STRATEGY
+
+Do not attempt to improve every building in the city equally.
+
+Work through the following stages.
+
+Stage 1 — Inspect and audit
+
+Analyze the current code and existing rendered graphics.
+
+Identify:
+
+* Existing visual assets worth retaining.
+* Road-system limitations.
+* Map and traffic assumptions.
+* Reusable architectural systems.
+* Areas creating visual repetition.
+* Major rendering bottlenecks.
+
+Document what needs to change.
+
+Stage 2 — Research real Yaowarat
+
+Gather reliable geographic and visual references.
+
+Establish:
+
+* Major road alignments.
+* Landmark positions.
+* Important intersections.
+* A recognizable continuous showcase corridor.
+* A curated set of iconic signs and storefronts.
+
+Stage 3 — Rebuild geographic foundations
+
+Implement curved roads, realistic junctions, left-side traffic and geographically coherent landmarks.
+
+Keep the game playable throughout the transition.
+
+Stage 4 — Establish the premium cartoon art style
+
+Use the supplied miniature-world screenshot to guide:
+
+* Geometry.
+* Materials.
+* Colors.
+* Lighting.
+* Architectural forms.
+* Environmental proportions.
+
+Create a cohesive visual language across the entire showcase.
+
+Stage 5 — Handcraft iconic Yaowarat
+
+Concentrate artistic effort on one highly recognizable, continuous section of Yaowarat.
+
+Produce beautiful buildings, signs, shopfronts, street-food areas and associated detail.
+
+Stage 6 — Integrate street life and traffic
+
+Reposition and adapt existing characters, vendors, vehicles and props to the new geography.
+
+Improve close-range appearances and animations as practical.
+
+Stage 7 — Visual testing and polish
+
+Run the actual game.
+
+Capture screenshots.
+
+Compare game locations against real photographs and the attached artistic reference.
+
+Fix obvious problems.
+
+Optimize for mobile performance.
+
+⸻
+
+16. VISUAL QA — NON-NEGOTIABLE
+
+Do not evaluate graphics solely by reading the code.
+
+You must run the 3D game and inspect actual screenshots.
+
+Capture at minimum:
+
+1. Third-person driving down Yaowarat.
+2. A comparison with the previous main-branch driving view.
+3. A close-up showing authentic Yaowarat signage.
+4. A street-level view of the new shops.
+5. A view showing the curved road geography.
+6. A view of Chinatown Gate and Odeon Circle.
+7. An intersection with traffic.
+8. A populated sidewalk and food-stall area.
+9. A mobile landscape gameplay view.
+10. A view specifically showcasing the new premium cartoon art direction.
+
+Where practical, compare real reference photographs with the corresponding in-game location.
+
+Use reference imagery lawfully and document its sources.
+
+Evaluate whether the resulting screenshot is artistically convincing.
+
+Critical quality questions
+
+* Does the game actually look like Bangkok Chinatown?
+* Does Yaowarat look recognizable?
+* Are the signs authentic and geographically plausible?
+* Is the art consistently charming and high-quality?
+* Are buildings distinguishable from each other?
+* Do the roads feel natural instead of artificial?
+* Are sidewalks visually alive?
+* Do landmarks resemble the real structures?
+* Does the scene resemble the intended miniature-cartoon art style?
+* Is the result noticeably better during real driving?
+* Does it still play smoothly?
+
+If the answer to any major question is no, improve that area before declaring success.
+
+⸻
+
+17. TESTING
+
+Run TypeScript and production build checks.
+
+Update or add focused tests for:
+
+* Road geometry.
+* Curved-road driving.
+* Intersection navigation.
+* Left-side traffic.
+* Roundabout movement.
+* Mission route connectivity.
+* Collision alignment.
+* Passenger pickup and delivery.
+* Pedestrian-path safety.
+* Asset loading.
+* Graphics quality settings.
+* Touch controls.
+* Pause and restart.
+* GPU-resource cleanup.
+* WebGL errors.
+* Mobile landscape responsiveness.
+
+Test at least one complete passenger-delivery route using actual simulated driving rather than merely teleporting between mission coordinates.
+
+Document which tests were actually executed.
+
+Fix confirmed regressions.
+
+Do not introduce unrelated gameplay redesigns.
+
+⸻
+
+18. DEFINITION OF SUCCESS
+
+This update is successful when:
+
+1. The existing game remains playable.
+2. Yaowarat’s geometry is substantially more faithful to reality.
+3. The street’s most recognizable visual features are recreated.
+4. Significant iconic signs are based on verified real references.
+5. Chinatown Gate is properly represented within an authentic-style Odeon Circle.
+6. Bangkok traffic conventions are corrected.
+7. Shophouses are visibly more distinctive and sophisticated.
+8. The environment embraces the soft, charming, premium miniature-cartoon style.
+9. Street life feels more visually convincing.
+10. The improvement is obvious from normal gameplay screenshots.
+11. The game remains optimized for mobile.
+12. The code and actual assets are delivered, tested and available for review.
+
+Do not measure success by lines of code, number of geometric objects or number of new components.
+
+Judge success by the actual graphics and player experience.
+
+⸻
+
+19. REPLIT AGENT EXECUTION REQUIREMENTS
+
+You are working as an implementation agent, not merely an advisor.
+
+Do not stop after producing a design document.
+
+Make the code changes, create actual playable artwork, run the application and test the result.
+
+However, manage scope carefully.
+
+Priority order if time or resources become limited:
+
+1. Preserve a functioning game.
+2. Correct the playable central Yaowarat geography.
+3. Correct Thailand’s traffic-side conventions and road navigation.
+4. Establish the cohesive premium cartoon art direction.
+5. Create recognizable, researched Yaowarat storefronts and signs.
+6. Reconstruct Odeon Circle.
+7. Polish supporting architecture, traffic and street life.
+8. Add optional dusk illumination.
+
+Complete the highest-impact connected vertical slice rather than implementing superficial fragments of every feature.
+
+Never claim unfinished work is complete.
+
+GitHub workflow
+
+Before coding:
+
+* Confirm the latest main-branch commit.
+* Check whether the Replit workspace is synchronized.
+* Create an isolated branch for the improvements.
+* Preserve the previous working version.
+
+After coding:
+
+* Run the production build.
+* Run relevant tests.
+* Inspect the rendered result.
+* Commit the changes.
+* Push the branch to GitHub.
+* Create a draft pull request if supported.
+
+Do not merge.
+
+If direct GitHub integration is unavailable, provide the actual changed files and clear, minimal instructions for transferring them without losing work.
+
+⸻
+
+20. FINAL DELIVERABLES
+
+Provide:
+
+1. A running, playable Replit preview.
+2. The GitHub branch or draft PR.
+3. Summary of the implemented improvements.
+4. Actual new graphics assets and their locations.
+5. Real-world research sources.
+6. Signage and storefront references.
+7. Asset licensing information.
+8. Before-and-after screenshots.
+9. In-game versus real-world location comparisons.
+10. Technical details of the road and traffic changes.
+11. Build and gameplay test results.
+12. Performance information and limitations.
+13. Anything requiring additional iPhone testing.
+14. A realistic recommendation for the next graphics milestone.
+
+Do not represent an untested or unfinished feature as complete.
+
+⸻
+
+FINAL VISION
+
+I want Tuk Tuk Rush: Bangkok to become a charming, colorful, beautifully crafted, 3D arcade driving game that celebrates the real visual identity of Bangkok.
+
+The graphics should combine:
+
+The charm and polish of the attached miniature-cartoon city reference
+
+The recognizable real streets, famous signs, buildings, traffic and atmosphere of Bangkok Chinatown
+
+The excitement and speed of a fun Crazy Taxi-inspired arcade driving game.
+
+Imagine the player driving a beautifully modeled tuk-tuk along the real, recognizable curve of Yaowarat Road, surrounded by towering Chinese signs, famous red-and-gold gold shops, crowded restaurants, colorful taxis, scooters, street vendors, Thai architecture and warm tropical lighting.
+
+Everything should feel lovingly designed rather than procedurally assembled.
+
+The environment should be recognizable to somebody who has actually visited Bangkok.
+
+The game should feel playful and visually delightful rather than gritty or photorealistic.
+
+Don’t settle for more geometric complexity. Make the artistic result substantially better.
+
+Take ownership of the implementation, the visual decisions, the authenticity research and the final playable result.
+
+Deliver the strongest practical version within the existing Replit project while preserving the game that already works.

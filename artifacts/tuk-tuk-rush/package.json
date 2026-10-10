@@ -7,7 +7,11 @@
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:gameplay": "tsx scripts/check-gameplay.ts && tsx scripts/check-driven-mission.ts",
+    "test:assets": "node scripts/check-assets.mjs",
+    "test:street-life": "tsx scripts/check-street-life.ts",
+    "test:roadside": "tsx scripts/check-roadside.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -59,6 +63,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "catalog:",
     "next-themes": "^0.4.6",
+    "playwright": "^1.64.0",
     "react": "catalog:",
     "react-day-picker": "^9.11.1",
     "react-dom": "catalog:",
@@ -69,6 +74,7 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "catalog:",
     "tailwindcss": "catalog:",
+    "tsx": "catalog:",
     "tw-animate-css": "^1.4.0",
     "vaul": "^1.1.2",
     "vite": "catalog:",

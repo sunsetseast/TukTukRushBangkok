@@ -1,30 +1,37 @@
-import type { District, RoadNode, TrafficCar, Vehicle } from './types';
+import type { District, Road, RoadNode, TrafficCar, Vehicle } from './types';
 
+/** Left-hand directed road graph; ordinary sampled curve nodes are not signals. */
 export class TrafficSystem {
   private nodes: Map<string, RoadNode>;
   private neighbors = new Map<string, string[]>();
+  private edges = new Map<string, Road>();
   private seed = 982;
   private elapsed = 0;
   constructor(private district: District) {
     this.nodes = new Map(district.nodes.map(n => [n.id, n]));
     for (const node of district.nodes) this.neighbors.set(node.id, []);
-    for (const road of district.roads.filter(r => !r.shortcut)) {
-      this.neighbors.get(road.a)!.push(road.b); this.neighbors.get(road.b)!.push(road.a);
+    for (const road of district.roads) {
+      this.neighbors.get(road.a)!.push(road.b);
+      this.edges.set(`${road.a}>${road.b}`, road);
+      if (!road.oneWay) {
+        this.neighbors.get(road.b)!.push(road.a);
+        this.edges.set(`${road.b}>${road.a}`, road);
+      }
     }
   }
   private random() { this.seed = (this.seed * 1664525 + 1013904223) >>> 0; return this.seed / 4294967296; }
   get horizontalGreen() { return Math.floor(this.elapsed / 9) % 2 === 0; }
   create(): TrafficCar[] {
-    const colors = ['#ed58a3', '#34b5a5', '#ffcd45', '#eb6c4b', '#c3d5de'];
+    const colors = ['#e872a8', '#4da995', '#e6bc54', '#db8f78', '#b9c9cf'];
+    const main = this.district.roads.filter(r => r.name === 'Yaowarat Road' && !r.roundabout);
+    const support = this.district.roads.filter(r => r.name === 'Charoen Krung Road');
     return Array.from({ length: 12 }, (_, id) => {
-      const from = this.district.nodes[(id * 7 + 4) % this.district.nodes.length]!.id;
-      const neighbors = this.neighbors.get(from)!;
-      const to = neighbors[id % neighbors.length]!;
-      const a = this.nodes.get(from)!, b = this.nodes.get(to)!;
-      const t = 0.15 + this.random() * 0.7;
+      const list = id < 8 ? main : support;
+      const road = list[Math.floor((id < 8 ? id / 8 : (id - 8) / 4) * list.length)]!;
+      const a = this.nodes.get(road.a)!, b = this.nodes.get(road.b)!, t = 0.12 + this.random() * 0.7;
       const heading = Math.atan2(b.x - a.x, b.z - a.z);
-      return { id, from, to, x: a.x + (b.x - a.x) * t + Math.cos(heading) * 4,
-        z: a.z + (b.z - a.z) * t - Math.sin(heading) * 4, heading,
+      return { id, from: road.a, to: road.b, x: a.x + (b.x - a.x) * t - Math.cos(heading) * 3,
+        z: a.z + (b.z - a.z) * t + Math.sin(heading) * 3, heading,
         speed: 7 + id % 4, kind: id % 4 === 0 ? 'motorcycle' : id % 3 === 0 ? 'car' : 'taxi',
         color: colors[id % colors.length]!, wait: 0, nearMissCooldown: 0 };
     });
@@ -35,32 +42,48 @@ export class TrafficSystem {
       car.nearMissCooldown = Math.max(0, car.nearMissCooldown - dt);
       car.wait = Math.max(0, car.wait - dt);
       const a = this.nodes.get(car.from)!, b = this.nodes.get(car.to)!;
+      const road = this.edges.get(`${car.from}>${car.to}`)!;
       const dx = b.x - a.x, dz = b.z - a.z, length = Math.hypot(dx, dz);
       const ux = dx / length, uz = dz / length;
-      const targetX = b.x + uz * 4, targetZ = b.z - ux * 4;
-      const remaining = (targetX - car.x) * ux + (targetZ - car.z) * uz;
-      const horizontal = Math.abs(dx) > Math.abs(dz);
-      // Alternating intersection phases, plus local yielding/spacing.
-      const green = this.horizontalGreen === horizontal;
-      let blocked = car.wait > 0 || (!green && remaining < 16 && remaining > 6);
+      const progress = Math.max(0, Math.min(length, (car.x - a.x) * ux + (car.z - a.z) * uz));
+      const remaining = length - progress;
+      const junction = this.district.roads.filter(r => r.a === b.id || r.b === b.id).length >= 3;
+      const signal = junction && !road.roundabout && !b.id.startsWith('odeon:');
+      const green = this.horizontalGreen === (Math.abs(dx) > Math.abs(dz));
+      let blocked = car.wait > 0 || (signal && !green && remaining < 13 && remaining > 5);
       for (const other of cars) {
         if (other === car) continue;
         const ox = other.x - car.x, oz = other.z - car.z;
-        const ahead = ox * ux + oz * uz;
-        if (ahead > 0 && ahead < 9 && Math.abs(ox * uz - oz * ux) < 3) blocked = true;
+        if (ox * ux + oz * uz > 0 && ox * ux + oz * uz < 8 && Math.abs(ox * uz - oz * ux) < 2.5) blocked = true;
+        // Entering vehicles yield to circulating traffic, without stopping every arc node.
+        if (!road.roundabout && b.id.startsWith('odeon:') && remaining < 14 &&
+          this.edges.get(`${other.from}>${other.to}`)?.roundabout && Math.hypot(other.x - b.x, other.z - b.z) < 11) blocked = true;
       }
       const px = player.x - car.x, pz = player.z - car.z;
-      if (px * ux + pz * uz > 0 && px * ux + pz * uz < 8 && Math.abs(px * uz - pz * ux) < 3) blocked = true;
-      car.speed += ((blocked ? 0 : 8 + car.id % 4) - car.speed) * Math.min(1, dt * 4);
-      car.x += ux * car.speed * dt; car.z += uz * car.speed * dt;
-      if (remaining < 0.8) {
-        const next = this.neighbors.get(car.to)!.filter(id => id !== car.from);
-        const chosen = next[Math.floor(this.random() * next.length)] ?? car.from;
+      if (px * ux + pz * uz > 0 && px * ux + pz * uz < 7 && Math.abs(px * uz - pz * ux) < 2.7) blocked = true;
+      car.speed += ((blocked ? 0 : road.roundabout ? 6.5 : 8 + car.id % 4) - car.speed) * Math.min(1, dt * 4);
+      const lane = road.roundabout ? 0 : Math.min(3, road.width / 4);
+      const nextProgress = Math.min(length, progress + car.speed * dt);
+      // Ease to junction center for a continuous join; the exact curve remains common data.
+      const join = Math.min(1, nextProgress / 5, (length - nextProgress) / 5);
+      const targetX = a.x + ux * nextProgress - uz * lane * join;
+      const targetZ = a.z + uz * nextProgress + ux * lane * join;
+      const oldX = car.x, oldZ = car.z;
+      car.x = targetX; car.z = targetZ;
+      if (car.speed > 0.2) {
+        const desired = Math.atan2(car.x - oldX, car.z - oldZ);
+        const delta = Math.atan2(Math.sin(desired - car.heading), Math.cos(desired - car.heading));
+        car.heading += delta * Math.min(1, dt * 8);
+      }
+      if (nextProgress >= length - 0.01) {
+        let options = this.neighbors.get(car.to)!.filter(id => id !== car.from);
+        if (!options.length) options = this.neighbors.get(car.to)!;
+        if (!options.length) throw new Error(`Traffic dead end at ${car.to}`);
+        // Roundabout traffic favors continuation, but can take its exits.
+        const chosen = options[Math.floor(this.random() * options.length)]!;
         car.from = car.to; car.to = chosen;
-        const end = this.nodes.get(chosen)!;
-        car.heading = Math.atan2(end.x - b.x, end.z - b.z);
-        car.x = b.x + Math.cos(car.heading) * 4; car.z = b.z - Math.sin(car.heading) * 4;
-        car.wait = 0.25 + car.id % 3 * 0.12;
+        car.x = b.x; car.z = b.z;
+        if (signal) car.wait = 0.12;
       }
     }
   }

@@ -41,9 +41,9 @@ export default defineConfig({
               root: path.resolve(import.meta.dirname, '..'),
             }),
           ),
-          await import('@replit/vite-plugin-dev-banner').then((m) =>
-            m.devBanner(),
-          ),
+          // Fullscreen mobile gameplay puts Pause in this corner. The preview
+          // banner intercepted real touch/click events there during verification.
+          // Keep cartography/error tooling, but don't overlay driving controls.
         ]
       : []),
   ],

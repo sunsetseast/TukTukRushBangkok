@@ -1,1 +1,4 @@
 - [Prototype direction](prototype-direction.md) — iPhone-only development/testing, browser-first scope, hybrid Bangkok roads and fictional shortcuts.
+- [Graphics reconstruction direction](graphics-direction.md) — GitHub main is authoritative; preserve working gameplay and pursue researched, premium miniature-cartoon Bangkok.
+- [WebGL verification](browser-verification.md) — a capture browser can lack WebGL 2 despite a working game; software rendering is not physical-iPhone performance evidence.
+- [GitHub delivery](github-delivery.md) — authorized App writes may work when CLI auth fails; tree hashes verify content even when API commit IDs differ.

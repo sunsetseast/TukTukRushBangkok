@@ -39,6 +39,28 @@ Sources and font licenses:
 - https://openfontlicense.org/
 
 The small Latin captions also use the system DejaVu Sans font when generating the
-texture atlas. No font binary is shipped. All visible signs are generic fictional
+texture atlas. No font binary was shipped in that original baked-texture pass. Legacy signs are generic fictional
 businesses using real words, not copies of commercial logos. The vehicle plate is
 fictional. No external photos, models, textures, or API keys are required at runtime.
+
+## Reconstruction fonts and geographic data
+
+The reconstruction distributes small Noto Sans Thai and Noto Serif SC font subsets
+in `fonts/thai-signs.ttf` and `fonts/chinese-signs.ttf`, under SIL OFL 1.1, not MIT.
+The accompanying `OFL-Thai.txt` and `OFL-Chinese.txt` preserve their notices.
+They were obtained from Google Fonts' text-subset service on 2026-10-10; see
+`docs/graphics/reconstruction/RESEARCH.md` for the source and subset recipe.
+The earlier statement about not shipping binaries applies to legacy baked PNGs.
+
+Road-coordinate data adapted from OpenStreetMap is © OpenStreetMap contributors,
+under ODbL 1.0: https://www.openstreetmap.org/copyright and
+https://opendatacommons.org/licenses/odbl/1-0/ .
+The editable adapted geographic dataset is distributed as `src/game/mapData.ts`;
+the connected arcade graph and clearly labeled fictional adaptations are in
+`src/game/world.ts`. This data license is separate from the original game artwork.
+
+New facade meshes, sign framing and motifs are original procedural artwork.
+One sign uses the factual name ฮั่วเซ่งเฮง (Hua Seng Heng); it is a simplified
+reference label, not a licensed commercial logo or an endorsement. Commercial
+trademark/brand clearance has not been obtained. Research photographs are
+reference-only and are NOT included in the game or licensed as game artwork.

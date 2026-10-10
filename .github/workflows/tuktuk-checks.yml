@@ -1,0 +1,34 @@
+name: Tuk Tuk Rush graphics checks
+
+on:
+  push:
+    branches:
+      - graphics/authentic-cartoon-bangkok
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/**'
+      - '.github/workflows/tuktuk-checks.yml'
+
+jobs:
+  game:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24177'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush run build
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:gameplay
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:street-life
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:roadside
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:assets
