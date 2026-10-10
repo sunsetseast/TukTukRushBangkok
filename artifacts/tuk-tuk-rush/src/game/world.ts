@@ -15,7 +15,7 @@ export function createDistrict(): District {
       nodes.push({ id: nodeId(col, row), x: xs[col]!, z: zs[row]! });
       if (col > 0) roads.push({
         a: nodeId(col - 1, row), b: nodeId(col, row),
-        width: row === 3 ? 32 : row === 2 ? 28 : row === 0 || row === 5 ? 22 : 18,
+        width: row === 3 ? 20 : row === 2 ? 28 : row === 0 || row === 5 ? 22 : 18,
         name: row === 3 ? 'Yaowarat Road' : row === 2 ? 'Charoen Krung Road' : row === 0 ? 'Station Road' : row === 4 ? 'Soi Lantern' : 'Market Lane',
       });
       if (row > 0) roads.push({
@@ -54,6 +54,9 @@ export function createDistrict(): District {
             return distanceToSegment({ x, z }, a, b).distance < r.width / 2 + 11;
           })) continue;
           const building = { x, z, w: 13, d: 16, height: 10 + Math.floor(random() * 5) * 4, color: palette[Math.floor(random() * palette.length)]! };
+          // Bring only Yaowarat's existing frontage row toward the narrower 20m boulevard.
+          // Apply before registering the same object as its collision footprint.
+          if (Math.abs(building.z - 40) < 34) building.z += building.z < 40 ? 8 : -8;
           district.buildings.push(building);
           district.obstacles.push(building);
         }

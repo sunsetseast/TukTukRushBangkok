@@ -13,6 +13,7 @@ export class TrafficSystem {
     }
   }
   private random() { this.seed = (this.seed * 1664525 + 1013904223) >>> 0; return this.seed / 4294967296; }
+  get horizontalGreen() { return Math.floor(this.elapsed / 9) % 2 === 0; }
   create(): TrafficCar[] {
     const colors = ['#ed58a3', '#34b5a5', '#ffcd45', '#eb6c4b', '#c3d5de'];
     return Array.from({ length: 12 }, (_, id) => {
@@ -40,7 +41,7 @@ export class TrafficSystem {
       const remaining = (targetX - car.x) * ux + (targetZ - car.z) * uz;
       const horizontal = Math.abs(dx) > Math.abs(dz);
       // Alternating intersection phases, plus local yielding/spacing.
-      const green = (Math.floor(this.elapsed / 9) % 2 === 0) === horizontal;
+      const green = this.horizontalGreen === horizontal;
       let blocked = car.wait > 0 || (!green && remaining < 16 && remaining > 6);
       for (const other of cars) {
         if (other === car) continue;

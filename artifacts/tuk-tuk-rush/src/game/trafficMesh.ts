@@ -1,72 +1,188 @@
-import * as THREE from 'three';
-import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import type { TrafficCar } from './types';
-import { box, glow, lamb } from './meshUtil';
+import * as T from "three";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
+import type { TrafficCar } from "./types";
+import { disposeObject } from "./assets";
 
-const hGeo = new THREE.SphereGeometry(0.16, 8, 6);
-
-function build(kind: TrafficCar['kind'], color: string) {
-  const g = new THREE.Group();
-  const body = lamb(color);
-  const dark = lamb('#18151c');
-  if (kind === 'motorcycle') {
-    g.add(box(0.35, 0.45, 1.5, 0, 0.7, 0, body));
-    g.add(box(0.14, 0.6, 0.6, 0, 0.32, 0.75, dark));
-    g.add(box(0.14, 0.6, 0.6, 0, 0.32, -0.7, dark));
-    g.add(box(0.4, 0.5, 0.3, 0, 1.2, -0.1, lamb('#e8e0d0')));
-    const h = new THREE.Mesh(hGeo, lamb('#c98f64'));
-    h.position.set(0, 1.6, -0.05); g.add(h);
-    g.add(box(0.2, 0.15, 0.1, 0, 0.95, 0.8, glow('#fff3c0')));
-    return g;
+/** Shared shape per silhouette. Colour is per vertex; material class is retained. */
+export function buildTrafficModel(
+  kind: TrafficCar["kind"] | "van",
+  color: string,
+) {
+  const g = new T.Group();
+  const paint = new T.MeshStandardMaterial({
+      color,
+      roughness: 0.35,
+      metalness: 0.2,
+    }),
+    glass = new T.MeshStandardMaterial({
+      color: "#496977",
+      roughness: 0.2,
+      metalness: 0.3,
+    }),
+    rubber = new T.MeshStandardMaterial({ color: "#23323c", roughness: 0.92 }),
+    trim = new T.MeshStandardMaterial({
+      color: "#d8d9c3",
+      roughness: 0.3,
+      metalness: 0.7,
+    });
+  paint.name = "paint";
+  const add = (
+    geo: T.BufferGeometry,
+    m: T.Material,
+    x: number,
+    y: number,
+    z: number,
+  ) => {
+    const o = new T.Mesh(geo, m);
+    o.position.set(x, y, z);
+    g.add(o);
+    return o;
+  };
+  const rb = (
+    w: number,
+    h: number,
+    d: number,
+    x: number,
+    y: number,
+    z: number,
+    m: T.Material,
+  ) => add(new RoundedBoxGeometry(w, h, d, 1, 0.06), m, x, y, z);
+  const wheel = (x: number, z: number, r = 0.32) => {
+    add(
+      new T.TorusGeometry(r - 0.09, 0.09, 6, 16).rotateY(Math.PI / 2),
+      rubber,
+      x,
+      r,
+      z,
+    );
+    add(
+      new T.CylinderGeometry(r * 0.58, r * 0.58, 0.21, 12).rotateZ(Math.PI / 2),
+      trim,
+      x,
+      r,
+      z,
+    );
+  };
+  if (kind === "motorcycle") {
+    rb(0.37, 0.38, 0.56, 0, 0.83, 0.48, paint);
+    rb(0.46, 0.24, 1, 0, 0.64, -0.15, paint);
+    rb(0.38, 0.09, 0.65, 0, 0.9, -0.18, rubber);
+    wheel(0, 0.68, 0.3);
+    wheel(0, -0.65, 0.3);
+    for (const s of [-1, 1]) {
+      rb(0.05, 0.45, 0.05, s * 0.13, 0.59, 0.66, trim);
+      rb(0.09, 0.45, 0.09, s * 0.18, 1.02, -0.2, rubber);
+      rb(0.3, 0.04, 0.04, s * 0.18, 1.06, 0.39, trim);
+    }
+    add(new T.CapsuleGeometry(0.18, 0.28, 3, 8), trim, 0, 1.3, -0.15);
+    add(new T.SphereGeometry(0.18, 12, 8), paint, 0, 1.73, -0.05);
+    rb(0.24, 0.14, 0.05, 0, 0.91, 0.79, trim);
+  } else {
+    rb(1.78, 0.48, 3.9, 0, 0.65, 0, paint);
+    rb(1.55, 0.55, 1.97, 0, 1.15, -0.15, glass);
+    rb(
+      1.56,
+      0.1,
+      1.86,
+      0,
+      1.46,
+      -0.19,
+      kind === "taxi"
+        ? new T.MeshStandardMaterial({ color: "#edc44b", roughness: 0.38 })
+        : paint,
+    );
+    if (kind === "van") {
+      rb(1.73, 0.86, 2.95, 0, 1.43, -0.43, paint);
+      rb(1.64, 0.1, 2.9, 0, 1.9, -0.45, paint);
+      rb(1.76, 0.44, 1.12, 0, 1.48, 0.7, glass);
+    }
+    rb(1.64, 0.12, 1.04, 0, 0.94, 1.33, paint);
+    rb(1.69, 0.12, 0.85, 0, 0.93, -1.49, paint);
+    for (let s of [-1, 1]) {
+      wheel(s * 0.86, 1.23);
+      wheel(s * 0.86, -1.24);
+      rb(0.075, 0.61, 0.1, s * 0.77, 1.13, -0.11, paint);
+      rb(0.18, 0.1, 0.24, s * 0.92, 1.09, 0.7, paint);
+      rb(0.46, 0.13, 0.05, s * 0.56, 0.82, 1.99, trim);
+      rb(
+        0.43,
+        0.15,
+        0.05,
+        s * 0.56,
+        0.82,
+        -1.99,
+        new T.MeshStandardMaterial({ color: "#d9473d" }),
+      );
+      rb(0.26, 0.035, 0.035, s * 0.88, 0.92, -0.38, trim);
+    }
+    rb(1.66, 0.11, 0.1, 0, 0.48, 1.98, trim);
+    rb(1.66, 0.11, 0.1, 0, 0.48, -1.98, trim);
+    rb(0.58, 0.12, 0.04, 0, 0.6, 2.04, rubber);
+    if (kind === "taxi") rb(0.63, 0.19, 0.25, 0, 1.58, -0.2, trim);
   }
-  g.add(box(1.8, 0.65, 4.2, 0, 0.65, 0, body));
-  g.add(box(1.55, 0.6, 2.2, 0, 1.25, -0.2, lamb(kind === 'taxi' ? '#ffd34d' : '#cfd6e6')));
-  g.add(box(1.57, 0.3, 2.0, 0, 1.3, -0.2, lamb('#232a3a')));
-  for (const sx of [-0.92, 0.92]) for (const sz of [-1.3, 1.3]) g.add(box(0.25, 0.62, 0.62, sx, 0.31, sz, dark));
-  g.add(box(0.4, 0.15, 0.08, -0.6, 0.75, 2.1, glow('#fff3c0')));
-  g.add(box(0.4, 0.15, 0.08, 0.6, 0.75, 2.1, glow('#fff3c0')));
-  g.add(box(0.4, 0.15, 0.08, -0.6, 0.75, -2.1, glow('#ff3030')));
-  g.add(box(0.4, 0.15, 0.08, 0.6, 0.75, -2.1, glow('#ff3030')));
-  if (kind === 'taxi') g.add(box(0.7, 0.22, 0.3, 0, 1.68, -0.2, glow('#fff3c0')));
+  // One draw per material class, shared by all vehicles of that appearance.
+  const buckets = new Map<T.Material, T.BufferGeometry[]>();
+  g.updateMatrixWorld(true);
+  g.traverse((o) => {
+    if (o instanceof T.Mesh) {
+      const geo = (
+        o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone()
+      ).applyMatrix4(o.matrixWorld);
+      geo.deleteAttribute("uv");
+      const m = o.material as T.Material;
+      if (!buckets.has(m)) buckets.set(m, []);
+      buckets.get(m)!.push(geo);
+    }
+  });
+  disposeObjectGeometry(g);
+  g.clear();
+  for (const [m, geos] of buckets) {
+    g.add(new T.Mesh(mergeGeometries(geos)!, m));
+    geos.forEach((x) => x.dispose());
+  }
   return g;
 }
-
+function disposeObjectGeometry(g: T.Group) {
+  g.traverse((o) => {
+    if (o instanceof T.Mesh) o.geometry.dispose();
+  });
+}
 export class TrafficLayer {
-  group = new THREE.Group();
-  private map = new Map<number, THREE.Group>();
+  group = new T.Group();
+  private map = new Map<number, T.Group>();
+  private templates = new Map<string, T.Group>();
   sync(cars: TrafficCar[]) {
     const seen = new Set<number>();
     for (const c of cars) {
       let g = this.map.get(c.id);
       if (!g) {
-        // Bake the simple colored pieces into one draw call per traffic vehicle.
-        const pieces = build(c.kind, c.color);
-        pieces.updateMatrixWorld(true);
-        const geometries: THREE.BufferGeometry[] = [];
-        pieces.traverse((object) => {
-          if (!(object instanceof THREE.Mesh)) return;
-          const geometry = object.geometry.clone().applyMatrix4(object.matrixWorld);
-          const color = (object.material as THREE.MeshLambertMaterial).color;
-          const colors = new Float32Array(geometry.getAttribute('position').count * 3);
-          for (let i = 0; i < colors.length; i += 3) {
-            colors[i] = color.r; colors[i + 1] = color.g; colors[i + 2] = color.b;
-          }
-          geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-          geometries.push(geometry);
-        });
-        const merged = mergeGeometries(geometries);
-        if (!merged) throw new Error('Could not build traffic vehicle geometry');
-        geometries.forEach(geometry => geometry.dispose());
-        g = new THREE.Group();
-        g.add(new THREE.Mesh(merged, new THREE.MeshLambertMaterial({ vertexColors: true })));
-        this.map.set(c.id, g); this.group.add(g);
+        const key = c.kind + c.color;
+        let template = this.templates.get(key);
+        if (!template) {
+          template = buildTrafficModel(c.kind, c.color);
+          this.templates.set(key, template);
+        }
+        g = template.clone();
+        this.map.set(c.id, g);
+        this.group.add(g);
       }
       g.position.set(c.x, 0, c.z);
       g.rotation.y = c.heading;
       seen.add(c.id);
     }
-    if (this.map.size > seen.size) {
-      for (const [id, g] of this.map) if (!seen.has(id)) { this.group.remove(g); this.map.delete(id); }
-    }
+    for (const [id, g] of this.map)
+      if (!seen.has(id)) {
+        this.group.remove(g);
+        this.map.delete(id);
+      }
+  }
+  dispose() {
+    const owner = new T.Group();
+    for (const g of this.templates.values()) owner.add(g);
+    disposeObject(owner);
+    this.templates.clear();
+    this.map.clear();
+    this.group.clear();
   }
 }
