@@ -67,6 +67,29 @@ assert(
   visible("low") < visible("medium"),
   "Fast quality reduces visible people",
 );
+// Approaching vehicles should cause visible lateral/along-sidewalk evasion,
+ // without hiding people, and the resulting location must stay out of roads.
+let dodged = false;
+for (const person of life.people.filter(p => p.role === "walker").slice(0, 30)) {
+  const near = { x: person.x - 2.0, z: person.z, heading: Math.PI / 2, speed: 10 };
+  life.update(1 / 30, camera, "medium", true, near);
+  for (const p of life.people) {
+    if (Math.hypot((p.renderX ?? p.x) - p.x, (p.renderZ ?? p.z) - p.z) <= 0.01) continue;
+    dodged = true;
+    const q = { x: p.renderX!, z: p.renderZ! };
+    assert(district.roads.every(r =>
+      distanceToSegment(q, nodes.get(r.a)!, nodes.get(r.b)!).distance >= r.width / 2 + 0.48),
+      "Dodge must not enter traffic");
+    assert(district.obstacles.every(o => obstacleDistance(q, o) >= 0.48),
+      "Dodge must not enter solid scenery");
+  }
+  if (dodged) break;
+}
+assert(dodged, "At least one roadside walker visibly evades an approaching tuk-tuk");
+const dodgeSnapshot = life.people.map(p => [p.renderX, p.renderZ]);
+life.update(1 / 30, camera, "medium", false, { x: 999, z: 999, heading: 0, speed: 0 });
+assert.deepEqual(life.people.map(p => [p.renderX, p.renderZ]), dodgeSnapshot,
+  "Pause freezes pedestrian evasion animation");
 assert.equal(life.root.children.length, 13, "Bounded character draw calls");
 const obstacleCount = district.obstacles.length;
 life.dispose();

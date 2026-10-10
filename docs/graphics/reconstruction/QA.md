@@ -93,3 +93,24 @@ one factual Hua Seng Heng name is included, with brand clearance still pending.
 Tang To Kang and further exact signature storefronts are deferred. Open parcels
 and repeated trade motifs remain; this is not a full landmark-grade streetscape
 reconstruction. A new optional dusk/neon lighting mode is not implemented.
+
+## Corrective source changes after user iPhone feedback (not yet certified)
+
+Follow-up commits on this draft branch address reports of poles/signals appearing in roads,
+wide indistinct streets, stuck collisions, and pedestrians vanishing. They are **not**
+covered by the original PR #3 WebGL screenshots or its earlier test results. A new
+`test:roadside` checks fixture footprints across *all* road branches and collision
+reverse recovery; updated street-life tests check visible safe evasion and pause.
+The player must test the resulting branch on iPhone before this PR can be merged.
+The newly introduced Actions workflow has not produced a successful run at the
+point of authoring; do not describe the updated code as fully tested.
+
+Two real gold-shop names (Hua Seng Heng and Thong Bai) receive **original,
+reference-inspired** signature sign art, not reproduced commercial logos. Their
+placement remains approximate, not address-level faithful. Research sources:
+- https://www.huasengheng.com/en/contact/
+- https://bangkoktype.com/2025/06/16/thong-bai-goldshop/
+
+Visual QA still needed: inspect every streetlight, signal, wall-side sign,
+corner junction and Odeon roundabout during actual driving; verify 5-minute
+performance, collisions, pedestrian clearance and navigation on iPhone Safari.

@@ -47,11 +47,12 @@ export function buildSignAtlas(entries: SignEntry[]) {
       e.text === "ทองใบเยาวราช" ? "thong" : "";
     // Original, distinctly composed reference-inspired signage: verified
     // business names, no copied brand logos or photographic textures.
-    const [bg, line, ink] = signature === "hua"
+    const colors: [string, string, string] = signature === "hua"
       ? ["#971c22", "#eac05d", "#fff0bf"]
       : signature === "thong"
         ? ["#b7272e", "#e5bd55", "#fff5cd"]
         : PAL[e.style][e.variant % 2]!;
+    const [bg, line, ink] = colors;
     let x = (i % H.cols) * H.cw, y = Math.floor(i / H.cols) * H.ch;
     frame(H.c, x, y, H.cw, H.ch, bg, line);
     if (signature) {
