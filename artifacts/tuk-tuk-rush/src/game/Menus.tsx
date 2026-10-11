@@ -29,6 +29,14 @@ export function Title({ onStart, settings }: { onStart: (m: 'shift' | 'free') =>
           <button className="tt-btn big" onClick={() => onStart('shift')} data-testid="button-start-shift">Start shift</button>
           <button className="tt-btn gold" onClick={() => onStart('free')} data-testid="button-free-roam">Free roam</button>
         </div>
+        <div style={{ marginTop: 12 }}>
+          <a href="/bangkok-drive.html" className="tt-btn big"
+             style={{ display: 'block', textDecoration: 'none', textAlign: 'center',
+               background: 'linear-gradient(120deg,#2c8995,#164c69)', color: '#fff',
+               border: '1px solid #5dd2d2', fontWeight: 850 }}>
+            Explore Central Bangkok · City Tour →
+          </a>
+        </div>
         {settings}
         <div className="tt-how">Drag left thumb to steer · hold GO on the right</div>
         <small style={{ display: 'block', fontSize: 10, marginTop: 5 }}>

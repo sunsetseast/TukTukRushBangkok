@@ -63,6 +63,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        classic: path.resolve(import.meta.dirname, 'index.html'),
+        cityTour: path.resolve(import.meta.dirname, 'bangkok-drive.html'),
+        realMap: path.resolve(import.meta.dirname, 'bangkok-map.html'),
+      },
+    },
   },
   server: {
     port,

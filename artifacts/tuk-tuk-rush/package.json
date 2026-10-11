@@ -13,7 +13,8 @@
     "test:street-life": "tsx scripts/check-street-life.ts",
     "test:roadside": "tsx scripts/check-roadside.ts",
     "test:signature": "tsx scripts/check-signature.ts",
-    "test:sign-layers": "tsx scripts/check-sign-layers.ts"
+    "test:sign-layers": "tsx scripts/check-sign-layers.ts",
+    "test:city": "tsx scripts/check-city-game.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

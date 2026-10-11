@@ -1,0 +1,26 @@
+{
+  "source": "OSM-derived Bangkok urban street network research dataset",
+  "source_url": "https://github.com/Todai-ops/Planarization-in-Urban-Road-Networks",
+  "source_files": [
+    "Bangkok_nodes_osm.xlsx",
+    "Bangkok_edges_osm.xlsx"
+  ],
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "license": "ODbL-1.0",
+  "bounds": {
+    "south": 13.696,
+    "west": 100.477,
+    "north": 13.778,
+    "east": 100.553
+  },
+  "generated": "2026-10-11T21:28:57.877367+00:00",
+  "roadWays": 1679,
+  "bridgeWays": 223,
+  "waterFeatures": 0,
+  "riverReady": false,
+  "notes": [
+    "Research graph may contain simplified street topology.",
+    "Some lanes, legal turns, road directions and ferry piers remain unverified.",
+    "Do not invent river water polygons or fictitious bridge connections."
+  ]
+}

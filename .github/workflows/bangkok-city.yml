@@ -1,0 +1,51 @@
+name: Playable Bangkok City Tour
+on:
+  push:
+    branches: ['game/bangkok-city-adventure']
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/game/bangkok*.ts'
+      - 'artifacts/tuk-tuk-rush/bangkok-drive.html'
+      - 'artifacts/tuk-tuk-rush/public/maps/imported/**'
+      - 'artifacts/tuk-tuk-rush/scripts/check-city-game.ts'
+      - 'artifacts/tuk-tuk-rush/scripts/capture-bangkok-city.mjs'
+      - '.github/workflows/bangkok-city.yml'
+      - 'artifacts/tuk-tuk-rush/vite.config.ts'
+  workflow_dispatch:
+jobs:
+  game:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      PORT: '24177'
+      BASE_PATH: '/'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush run build
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:city
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:gameplay
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Drive Bangkok in software WebGL with keyboard and tap controls
+        run: |
+          cd artifacts/tuk-tuk-rush
+          pnpm exec vite --config vite.config.ts --host 127.0.0.1 --port 24177 > /tmp/city.log 2>&1 &
+          for i in $(seq 1 45); do
+            if curl -sf http://127.0.0.1:24177/bangkok-drive.html >/dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/capture-bangkok-city.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bangkok-playable-city-screenshots
+          path: artifacts/tuk-tuk-rush/generated-artifacts/bangkok-city-adventure/
+          if-no-files-found: warn
