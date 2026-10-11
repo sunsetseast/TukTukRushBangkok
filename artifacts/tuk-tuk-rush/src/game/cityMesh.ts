@@ -394,11 +394,11 @@ export function buildSky() {
   const g = new THREE.Group();
   const geo = new THREE.SphereGeometry(900, 24, 16);
   const stops = [
-    [-1, "#ddc5a1"],
-    [0, "#f2cda3"],
-    [0.12, "#e9d5ba"],
-    [0.4, "#93bed0"],
-    [1, "#4b8eb4"],
+    [-1, "#ad9ba7"],
+    [0, "#f5c4a3"],
+    [0.12, "#d8bfba"],
+    [0.4, "#a0b8d0"],
+    [1, "#587ead"],
   ] as const;
   const cs = stops.map((s) => new THREE.Color(s[1]));
   const pos = geo.attributes.position;

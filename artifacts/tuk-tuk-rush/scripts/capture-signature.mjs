@@ -74,6 +74,50 @@ try {
     await page.screenshot({ path: dest + '/screenshots/' + name + '.jpg', type: 'jpeg', quality: 89 });
     shots.push({ name, camera, stats: await page.evaluate(() => ({ ...window.__graphics.stats })) });
   }
+  // Most important comparison: actual in-game following camera ON the
+  // drivable Yaowarat centreline. A facade screenshot alone says little about
+  // whether the player can recognize Chinatown while driving.
+  const drivingPose = await page.evaluate(() => {
+    const model = window.__graphics.engine.model, d = model.district;
+    const shop = d.buildings.find(b => b.signatureId === 'so456');
+    if (!shop) throw new Error('So Seng Heng hero facade missing');
+    const nodes = new Map(d.nodes.map(n => [n.id, n]));
+    const road = d.roads.filter(r => r.name === 'Yaowarat Road' && r.a.startsWith('yaowarat:'));
+    let best = null;
+    for (const r of road) {
+      const a = nodes.get(r.a), b = nodes.get(r.b);
+      const dx = b.x-a.x, dz = b.z-a.z, len2 = dx*dx+dz*dz;
+      const t = Math.max(0, Math.min(1, ((shop.x-a.x)*dx+(shop.z-a.z)*dz)/len2));
+      const pt = { x:a.x+t*dx, z:a.z+t*dz };
+      const score = Math.hypot(pt.x-shop.x, pt.z-shop.z);
+      if (!best || score < best.score) best = { score, x:pt.x, z:pt.z, heading:Math.atan2(dx,dz) };
+    }
+    return best;
+  });
+  if (!drivingPose || !Number.isFinite(drivingPose.x + drivingPose.z)) {
+    throw new Error('Could not locate a valid driveable Yaowarat camera pose');
+  }
+  await page.evaluate(p => {
+    delete window.__artCamera;
+    const car = window.__graphics.engine.model.player;
+    car.x=p.x; car.z=p.z; car.heading=p.heading; car.speed=0;
+    window.__graphics.engine.model.input.gas=false;
+    window.__graphics.engine.model.input.brake=false;
+    window.__graphics.engine.model.input.steer=0;
+  }, drivingPose);
+  await ready();
+  await page.screenshot({ path: dest + '/screenshots/chase-on-yaowarat.jpg',
+    type:'jpeg', quality:90 });
+  shots.push({ name:'chase-on-yaowarat', camera:drivingPose,
+    stats:await page.evaluate(() => ({ ...window.__graphics.stats })) });
+  await page.evaluate(p => {
+    window.__graphics.engine.model.player.heading = p.heading + Math.PI;
+  }, drivingPose);
+  await ready();
+  await page.screenshot({ path: dest + '/screenshots/chase-reverse-yaowarat.jpg',
+    type:'jpeg', quality:90 });
+  shots.push({ name:'chase-reverse-yaowarat', camera:drivingPose,
+    stats:await page.evaluate(() => ({ ...window.__graphics.stats })) });
   await page.setViewportSize({ width: 844, height: 390 });
   await page.evaluate(c => { window.__artCamera = c; }, cameraData['street-perspective']);
   await ready();
@@ -81,7 +125,7 @@ try {
   const glStatus = await page.evaluate(() => window.__graphics.gl.getContext().getError());
   await fs.writeFile(dest + '/report.json', JSON.stringify({
     renderer: 'Linux Chromium / SwiftShader (not iPhone)',
-    mode: 'art-inspection free camera, not normal chase gameplay',
+    mode: 'landmark art-inspection cameras plus two real chase-camera views; not physical iPhone testing',
     shots, glStatus, errors, failures,
     claims: 'Named shops and street block are art-directed location approximations, not surveyed elevations.',
   }, null, 2));

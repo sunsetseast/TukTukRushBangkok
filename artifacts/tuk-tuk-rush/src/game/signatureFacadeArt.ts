@@ -47,6 +47,37 @@ export function buildSignatureFacade(
       orb('metal', trim, 0.32, end * (W / 2 - 0.2), H + 1.29, F + 0.33);
     }
   };
+  // Individual sign cabinets stand above pavement on structural arms, with
+  // no road-surface posts. Unique proportions reflect real Yaowarat's mixed
+  // large projecting signs; text remains faithful to the named Thai business.
+  const projectingLightbox = (opts: {
+    u: number; y: number; height: number; width: number;
+    color: string; border: string; projection?: number; crown?: 'coin' | 'arch';
+  }) => {
+    const v = F + (opts.projection ?? 2.15);
+    for (const yy of [opts.y - opts.height * 0.31, opts.y + opts.height * 0.31])
+      block('metal', '#71604c', 0.16, 0.16, 2.85, opts.u, yy, F + 1.05);
+    block('metal', '#685d51', opts.width + 0.4, opts.height + 0.7, 0.87, opts.u, opts.y, v);
+    block('metal', opts.border, opts.width + 0.27, opts.height + 0.44, 0.94, opts.u, opts.y, v + 0.07);
+    block('plaster', opts.color, opts.width + 0.08, opts.height + 0.14, 1.01, opts.u, opts.y, v + 0.14);
+    api.vsign(sign, opts.u, opts.y, v + 0.3, opts.width, opts.height,
+      (opts.width + 0.4) / 2 + 0.04);
+    // Inset strips and corner bosses break the default cardboard rectangle.
+    for (const dx of [-1, 1]) {
+      const x = opts.u + dx * (opts.width / 2 + 0.13);
+      block('metal', opts.border, 0.12, opts.height + 0.50, 0.2, x, opts.y, v + 0.65);
+      for (const dy of [-1, 1])
+        orb('metal', '#edce83', 0.15, x, opts.y + dy * opts.height / 2, v + 0.65);
+    }
+    if (opts.crown === 'coin') {
+      round('metal', opts.border, opts.width * 0.56, 0.21, opts.u, opts.y + opts.height/2 + 0.72, v + 0.24);
+      round('metal', '#f1d38b', opts.width * 0.38, 0.24, opts.u, opts.y + opts.height/2 + 0.73, v + 0.4);
+    } else if (opts.crown === 'arch') {
+      add('metal', opts.border,
+        new T.TorusGeometry(opts.width * 0.52, 0.19, 6, 16, Math.PI),
+        opts.u, opts.y + opts.height/2 + 0.05, v + 0.25);
+    }
+  };
   // Full-depth display windows make the actual driving-level frontage read as
   // OPEN commerce, not the dark hollow rectangles in the first WebGL review.
   // All are facade-mounted and entirely inside the established footprint.
@@ -69,6 +100,21 @@ export function buildSignatureFacade(
   }
   for (const x of [-W * 0.18, W * 0.18])
     block('plaster', '#ffdfa0', W * 0.21, 0.12, 0.25, x, 3.18, F + 0.55);
+  // Distinct structural cornice, shutter recesses and streetward lightboxes.
+  // All hero shops are now built WITHOUT composeFacade's repeated silhouettes.
+  const frameColor = id === 'nai442' ? '#b14a3b' : '#d7b587';
+  block('plaster', frameColor, W - 0.8, 0.23, 0.64, 0, 3.63, F + 0.3);
+  for (const side of [-1, 1]) {
+    const x = side * (W / 2 - 0.62);
+    block('plaster', id === 'hua418' ? '#e5d8c7' : '#cbb08b',
+      0.7, 3.9, 0.54, x, 1.95, F + 0.16);
+  }
+  for (const x of [-W*0.22, W*0.22]) {
+    // Warm lit transoms on the upper shopfront bring the trading floor
+    // out of the black void visible in the original PR #4 screenshots.
+    block('glass', goldShop ? '#bd9b66' : '#e1dbc3',
+      W * 0.30, 0.44, 0.07, x, 3.22, F + 0.51);
+  }
   // These pieces are all within or above the existing building collider.
   // Ground-level objects must remain behind the actual curb clearance.
   if (id === 'hua418') {
@@ -82,6 +128,24 @@ export function buildSignatureFacade(
     block('metal', '#e8bf5f', W - 0.7, 0.35, 0.4, 0, 5.72, F + 0.64);
     block('plaster', '#a01f2c', W - 1.0, 1.25, 0.3, 0, 4.75, F + 0.67);
     api.sign(sign, 0, 4.78, F + 0.85, W - 1.35, 1.12);
+    // Cream stone arched portal, inspired by the documented 2022 renovated
+    // Hua Seng Heng Yaowarat storefront (reference, not measured blueprints).
+    const arcadeR = Math.min(3.6, W * 0.35);
+    const portalY = 7.95;
+    block('plaster', '#eee2d0', W + 0.18, 0.56, 0.82, 0, 8.25, F + 0.31);
+    for (const side of [-1, 1]) {
+      block('plaster', '#f0e5d8', 0.62, 4.0, 0.66,
+        side * arcadeR, 5.35, F + 0.62);
+      block('metal', '#be9b6d', 0.12, 3.6, 0.3,
+        side * (arcadeR - 0.35), 5.5, F + 0.99);
+    }
+    add('plaster', '#ede0d0', new T.TorusGeometry(arcadeR, 0.31, 8, 32, Math.PI),
+      0, portalY, F + 0.57);
+    add('metal', '#be9a6b', new T.TorusGeometry(arcadeR - 0.31, 0.072, 4, 32, Math.PI),
+      0, portalY, F + 0.94);
+    block('glass', '#71827f', arcadeR * 1.5, 0.55, 0.1, 0, 7.30, F + 0.30);
+    for (let i = -3; i <= 3; i++)
+      block('metal', '#c5ae87', 0.055, 0.63, 0.1, i * arcadeR/4, 7.30, F + 0.48);
     // Deliberately model a convex projecting canopy, not a generic flat slab.
     add('metal', '#e3c169',
       new T.CylinderGeometry(1.15, 1.15, W - 0.75, 16, 1, false, 0, Math.PI).rotateZ(Math.PI / 2),
@@ -95,8 +159,28 @@ export function buildSignatureFacade(
       }
       rail('#b82e33', y - 1.32, F + 0.68, 11);
     }
-    roofEmbellishment('#9c2630', '#efc562');
+    projectingLightbox({
+      u: W*0.30, y: 11.1, height: 7.5, width: 1.6,
+      color: '#8b222d', border: '#d1ac5e', crown: 'arch',
+    });
+    roofEmbellishment('#e1d2bc', '#b99268');
   } else if (id === 'nai442') {
+    // Brick-red open restaurant, white menu board, fluorescent canopy, visible
+    // steel counter and small hanging lamps seen at the genuine 442 entrance.
+    // No giant invented neon dragon on this modest noodle restaurant.
+    block('plaster', '#7c3f36', W - 0.5, H - 5.1, 0.35,
+      0, (H + 5.1)/2, F + 0.22);
+    const cols = W > 10 ? [-W*0.26, W*0.26] : [0];
+    for (const x of cols) {
+      block('metal', '#d9d1bd', W * 0.38, 2.5, 0.23, x, 7.45, F + 0.45);
+      block('glass', '#46676c', W * 0.34, 2.18, 0.08, x, 7.45, F + 0.6);
+      block('metal', '#ded9c9', 0.14, 2.35, 0.18, x, 7.45, F + 0.68);
+      block('metal', '#ded9c9', W * 0.34, 0.14, 0.18, x, 7.45, F + 0.68);
+    }
+    for (const x of [-W*0.28, 0, W*0.28]) {
+      block('metal', '#606d6f', 0.09, 0.7, 0.13, x, 2.72, F + 1.07);
+      orb('plaster', '#fae9be', 0.22, x, 2.34, F + 1.07);
+    }
     // The restaurant must read differently from the gold shops: white/red
     // horizontal fascia, exposed cooking counter, low awning and food details.
     block('plaster', '#f5f0dc', W - 0.3, 1.8, 0.35, 0, 4.65, F + 0.72);
@@ -117,9 +201,26 @@ export function buildSignatureFacade(
       add('metal', '#9da9aa', new T.CylinderGeometry(0.47, 0.42, 0.49, 12), x, 1.83, F + 0.64);
       add('plaster', '#f6edd4', new T.TorusGeometry(0.4, 0.045, 4, 12).rotateX(Math.PI / 2), x, 2.1, F + 0.64);
     }
+    // Nai Ek's small perpendicular lightbox is restrained beside the main
+    // white menu sign; it must not compete with the big gold-shop signs.
+    projectingLightbox({
+      u: -W*0.31, y: 7.1, height: 3.65, width: 0.94,
+      color: '#f1eee2', border: '#b64c45', projection: 1.75,
+    });
     rail('#8a5a44', 6.83, F + 0.35);
     roofEmbellishment('#dfceb0', '#c14f3a');
   } else if (id === 'thong444') {
+    // Distinct branch 444 identity: layered jewelry shop sign, restrained
+    // blue-green corner trim and illuminated glass showcases. BangkokType's
+    // highly colorful sign photograph is of branch 152–154, NOT this one.
+    for (const x of [-W * 0.28, W * 0.28]) {
+      block('metal', '#177567', 0.35, 3.5, 0.35, x, 1.85, F + 0.64);
+      block('metal', '#f1d48a', 0.56, 0.24, 0.45, x, 3.47, F + 0.71);
+    }
+    for (let k=0;k<5;k++) {
+      const x=(k-2)*((W-2)/5);
+      block('metal', '#efc265', 0.13, 0.47, 0.18, x, 4.09, F + 0.96);
+    }
     // Colored bands evoke Thong Bai's multicolored Thai-Chinese gold-shop
     // lightboxes without copying a proprietary logo or another branch photo.
     const colors = ['#c93034', '#dfb84e', '#1d8066', '#2b5b90'];
@@ -141,8 +242,26 @@ export function buildSignatureFacade(
       }
       rail('#c12d37', y - 1.3, F + 0.84);
     }
+    projectingLightbox({
+      u: -W*0.30, y: 12.1, height: 8.5, width: 1.65,
+      color: '#a72334', border: '#e5be61', crown: 'coin',
+    });
     roofEmbellishment('#a9262f', '#ecc467');
   } else if (id === 'so456') {
+    // More detailed arched upper bays, concrete cornices and front-column
+    // profiles distinguish this real shop from every other gold facade.
+    for (const x of [-W*0.27, W*0.27]) {
+      for (let f=0;f<2;f++) {
+        const yy = 7.1 + f*3.45;
+        block('plaster', '#efdfcc', W*0.34, 2.72, 0.28, x, yy, F+0.4);
+        block('glass', '#5b7069', W*0.27, 2.23, 0.08, x, yy, F+0.56);
+        block('metal', '#b4976e', W*0.30, 0.09, 0.16, x, yy+0.9, F+0.63);
+      }
+    }
+    for (const y of [9.1, 12.55, 16.5]) {
+      if (y + 1 > H) continue;
+      block('metal', '#c5a477', W-0.35, 0.19, 0.9, 0, y, F+0.49);
+    }
     // Reference-inspired monumental pale arch on the So Seng Heng commercial
     // elevation: unmistakably different from a generic red gold shop.
     // The actual facade in archival street photographs includes broad white
@@ -174,7 +293,7 @@ export function buildSignatureFacade(
     block('metal', '#a62d31', 2.95, 11.5, 1.22, x, y, v);
     block('metal', '#e9ba57', 2.72, 11.2, 1.3, x, y, v + 0.1);
     block('metal', '#a92531', 2.49, 10.95, 1.36, x, y, v + 0.16);
-    api.vsign(sign, x, y, v + 0.9, 2.32, 10.5);
+    api.vsign(sign, x, y, v + 0.16, 2.32, 10.5, 1.55);
     // Crown: stylized original dragon-like ornamental creature rather than
     // an unauthorized copied manufacturer's crest.
     const curve = new T.CatmullRomCurve3([
@@ -197,6 +316,15 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#aa2930', '#e0b35b');
   } else if (id === 'tea-house') {
+    // Historic wooden shutters and canopies in this FICTIONAL context unit.
+    block('plaster', '#bfa988', W-0.55, H-4.4, 0.24, 0, (H+4.4)/2, F+0.18);
+    for (const x of [-W*0.24, W*0.24])
+      for (let i=0;i<2;i++) {
+        const y=6.7 + i*3.1;
+        block('metal', '#614b38', W*0.34, 2.16, 0.18, x, y, F+0.42);
+        for (let slat=-3;slat<=3;slat++)
+          block('metal', '#8b704f', W*0.30, 0.075, 0.20, x, y+slat*0.26, F+0.56);
+      }
     block('plaster', '#75684c', W - 1.0, 1.0, 0.3, 0, 4.8, F + 0.35);
     api.sign(sign, 0, 4.8, F + 0.57, W - 1.6, 0.82);
     for (let floor = 0; floor < 2; floor++) {
@@ -207,6 +335,13 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#a28b6d', '#845f42');
   } else if (id === 'traditional-medicine') {
+    block('plaster', '#b9c9b2', W-0.6, H-4.1, 0.2, 0, (H+4.1)/2, F+0.21);
+    for (const x of [-W*0.22, W*0.22])
+      for (const y of [6.7, 9.65]) {
+        if (y+1.5 >= H) continue;
+        block('metal', '#486c5d', W*0.34, 2.25, 0.22, x, y, F+0.34);
+        block('glass', '#819c86', W*0.29, 1.8, 0.09, x, y, F+0.49);
+      }
     const x = W * 0.30;
     block('plaster', '#e9e4cf', W - 0.7, 1.3, 0.25, 0, 4.7, F + 0.47);
     api.sign(sign, 0, 4.7, F + 0.62, W - 1.2, 1.1);
@@ -219,6 +354,9 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#c7cab2', '#477e66');
   } else {
+    // Older corner commercial block with patched ochre plaster and deep
+    // inset timber window shutters, not a generic fresh paint palette.
+    block('plaster', '#b38766', W-0.6, H-4.2, 0.2, 0, (H+4.2)/2, F+0.22);
     // Old balcony-and-shutters silhouette to visually break gold-shop rhythm.
     for (let f = 0; f < 3; f++) {
       const y = 6.5 + f * 3.2;
@@ -280,11 +418,40 @@ export function buildOppositeFacadeArt(
     box('metal', trim, W - 0.2, 0.62, 1.2, 0, 3.6, F + 0.94);
   }
   api.sign(sign, 0, 4.65, F + 0.92, W - 1.5, 1.05);
-  // Three-dimensional smaller projecting signs over the sidewalk (supports
-  // attached to upper facades; no ground pole or collision intrusion).
-  const side = index % 2 ? -1 : 1, sx = side * (W / 2 - 1);
-  box('metal', trim, 0.14, 0.16, 1.5, sx, 8.0, F + 1.2);
-  box('metal', trim, 0.14, 0.16, 1.5, sx, 11.0, F + 1.2);
-  box('metal', trim, 1.2, 4.0, 1.3, sx, 9.35, F + 1.8);
-  api.vsign(sign, sx, 9.35, F + 2.6, 0.95, 3.65);
+  // Intentional Chinese trade-name signage, NOT invented real storefronts.
+  // Unlike repeated 4m blades, these silhouette heights, mounts, construction,
+  // language and surface tones vary from shop to shop, as in real Yaowarat.
+  const side = index % 2 ? -1 : 1, sx = side * (W / 2 - 0.83);
+  const tall = [6.3, 7.8, 5.7, 6.0, 5.0, 7.3, 5.8][index % 7]!;
+  const y = Math.min(H - tall/2 - 0.9, Math.max(6.8, tall/2 + 4.9));
+  const outward = F + (index % 3 === 0 ? 2.3 : 1.95);
+  const signW = [1.85,1.9,1.6,1.7,1.55,1.9,1.6][index % 7]!;
+  const border = index % 3 === 0 ? '#ecb852' :
+    index % 3 === 1 ? '#d6d2a7' : '#d59054';
+  const panel = index % 3 === 0 ? '#9d2930' :
+    index % 3 === 1 ? '#254a59' : '#6d3a2e';
+  for (const yy of [y - tall * 0.31, y + tall * 0.31]) {
+    box('metal', '#766554', 0.16, 0.18, 3.3, sx, yy, F + 0.95);
+    box('metal', border, 0.26, 0.22, 0.55, sx, yy, outward - 1.0);
+  }
+  // The cabinet is narrow along the facade, extends into the sidewalk over
+  // head-height, and its lettering is placed on BOTH OUTSIDE faces.
+  box('metal', '#716358', 0.52, tall + 0.50, signW + 0.25, sx, y, outward);
+  box('metal', border, 0.47, tall + 0.29, signW + 0.31, sx, y, outward + 0.02);
+  box('metal', panel, 0.39, tall + 0.08, signW + 0.34, sx, y, outward + 0.03);
+  api.vsign(sign, sx, y, outward + 0.06, signW, tall, 0.25);
+  for (const dy of [-1, 1]) {
+    box('metal', border, 0.63, 0.13, signW + 0.5,
+      sx, y + dy * (tall/2 + 0.13), outward + 0.02);
+  }
+  if (index % 3 === 0) {
+    // Vintage round medallions and curved crown evoke old metal sign-makers.
+    const g = new T.TorusGeometry(0.52, 0.11, 5, 14);
+    api.add('metal', '#f0bd60', g, sx, y + tall/2 + 0.73, outward);
+    g.dispose();
+  } else if (index % 3 === 1) {
+    box('metal', '#c2a779', 0.68, 0.82, signW + 0.4,
+      sx, y + tall/2 + 0.42, outward);
+  }
+
 }

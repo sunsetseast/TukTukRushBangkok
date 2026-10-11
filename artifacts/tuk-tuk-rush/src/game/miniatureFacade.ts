@@ -8,7 +8,8 @@ export type MatKey = "plaster" | "metal" | "glass" | "cloth";
 export type FacadeApi = {
   add(m: MatKey, color: string, geo: T.BufferGeometry, u: number, y: number, v: number, detail?: boolean): void;
   sign(id: number, u: number, y: number, v: number, w: number, h: number): void;
-  vsign(id: number, u: number, y: number, v: number, w: number, h: number): void;
+  /** faceHalfWidth controls outward offset from a 3D sign cabinet's center. */
+  vsign(id: number, u: number, y: number, v: number, w: number, h: number, faceHalfWidth?: number): void;
 };
 const cache = new Map<string, T.BufferGeometry>();
 const get = (k: string, f: () => T.BufferGeometry) => {
