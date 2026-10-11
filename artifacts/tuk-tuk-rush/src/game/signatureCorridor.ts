@@ -136,7 +136,9 @@ export function signaturePlots(segments: StreetSegment[]): Obstacle[] {
 export function signatureOppositePlots(segments: StreetSegment[]): Obstacle[] {
   const styles: NonNullable<Obstacle['style']>[] =
     ['heritage', 'hotel', 'noodle', 'pharmacy', 'heritage', 'hotel', 'noodle'];
-  const signs = ['เยาวราช', 'โรงแรม', 'อาหาร', 'ร้านขายยา', 'เยาวราช', 'โรงแรม', 'ก๋วยเตี๋ยว'];
+  // Functional Chinese category signs on ORIGINAL fictional shops. These are
+  // not falsely attributed to actual Yaowarat businesses.
+  const signs = ['茶樓', '旅店', '麵館', '藥房', '布莊', '旅店', '飯店'];
   return signaturePlots(segments).map((hero, i) => {
     const yaw = hero.yaw ?? 0;
     const normalX = Math.sin(yaw), normalZ = Math.cos(yaw);

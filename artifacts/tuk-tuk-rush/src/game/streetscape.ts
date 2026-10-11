@@ -32,8 +32,8 @@ export function buildStreetscape(
   const keyOf = (b: Obstacle, i: number) => {
     const style = styleOf(b, i),
       text = b.sign ?? defaultSign[style],
-      key = `${text}|${style}|${i % 2}`;
-    if (!entries.some((e) => e.key === key)) entries.push({ key, text, style, variant: i % 2 });
+      key = b.signatureId ? `hero:${b.signatureId}` : `${text}|${style}|${i % 2}`;
+    if (!entries.some((e) => e.key === key)) entries.push({ key, text, style, variant: i % 2, signatureId: b.signatureId });
     return key;
   };
   const keys = d.buildings.map((b, i) => keyOf(b, i));
@@ -162,11 +162,16 @@ export function buildStreetscape(
             piece(plane, verticalSign, "#fff", wx(u + side * 0.18, v), y, wz(u + side * 0.18, v), w, h, 1, n.ry + (side * Math.PI) / 2, k);
         },
     };
-    composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, businessName: b.sign, showcase: b.showcase ?? i % 4 === 0 });
+    // Real-world reference shops are composed from dedicated geometry,
+    // never covered by the interchangeable procedural gold/noodle facades.
+    if (b.signatureId) {
+      buildSignatureFacade(api, {
+        id: b.signatureId, W: n.w, D: n.dd, H: b.height, sign: id,
+      });
+    } else {
+      composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, businessName: b.sign, showcase: b.showcase ?? i % 4 === 0 });
+    }
     composeSide(api, { style, W: n.w, D: n.dd, H: b.height, i });
-    if (b.signatureId) buildSignatureFacade(api, {
-      id: b.signatureId, W: n.w, D: n.dd, H: b.height, sign: id,
-    });
     if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
     });

@@ -2,7 +2,7 @@ import * as T from "three";
 import type { Obstacle } from "./types";
 
 export type SignStyle = NonNullable<Obstacle["style"]>;
-export type SignEntry = { key: string; text: string; style: SignStyle; variant: number };
+export type SignEntry = { key: string; text: string; style: SignStyle; variant: number; signatureId?: string };
 const PAL: Record<SignStyle, [string, string, string][]> = {
   gold: [["#a3262a", "#e6bb55", "#f6d27c"], ["#2b1f1c", "#e6bb55", "#f6d27c"]],
   noodle: [["#f1e2b5", "#2f7f76", "#b5461f"], ["#2f7f76", "#f1e2b5", "#f7e3b0"]],
@@ -31,6 +31,86 @@ function fit(c: CanvasRenderingContext2D, text: string, maxW: number, size: numb
   const m = c.measureText(text).width;
   if (m > maxW) c.font = `800 ${Math.floor((size * maxW) / m)}px ${FONT}`;
 }
+
+/** Hand-authored lettering layouts informed by individual shop photographs.
+ * No proprietary logo bitmaps or photo textures; text is drawn with fonts
+ * bundled in the game. Never silently apply one branch's design to another.
+ */
+function heroHorizontal(c: CanvasRenderingContext2D, e: SignEntry,
+  kind: string, x: number, y: number, w: number, h: number): boolean {
+  if (!kind) return false;
+  c.save();
+  if (kind === "naiek") {
+    // Nai Ek 442: unpretentious white Thai menu board rather than gold neon.
+    c.fillStyle = "#f6f3e8"; c.fillRect(x, y, w, h);
+    c.fillStyle = "#b8292e"; c.fillRect(x, y, w, 9);
+    c.fillStyle = "#4e463c"; c.fillRect(x, y + h - 7, w, 7);
+    c.textAlign = "left"; c.textBaseline = "middle"; c.fillStyle = "#c2292b";
+    fit(c, "ก๋วยจั๊บนายเอก", w - 60, 58);
+    c.fillText("ก๋วยจั๊บนายเอก", x + 28, y + 46);
+    c.font = \`500 22px \${FONT}\`; c.fillStyle = "#50453e";
+    c.fillText("ก๋วยจั๊บ   ข้าวหมูกรอบ   ข้าวขาหมู", x + 29, y + 97);
+    c.restore(); return true;
+  }
+  if (kind === "hua") {
+    // Cream stone and deep-red inset correspond to the modern Yaowarat shop.
+    c.fillStyle = "#e4d8c6"; c.fillRect(x, y, w, h);
+    c.fillStyle = "#8b1825"; c.fillRect(x + 16, y + 10, w - 32, h - 20);
+    c.strokeStyle = "#d5ab67"; c.lineWidth = 5;
+    c.strokeRect(x + 21, y + 15, w - 42, h - 30);
+    c.textAlign = "center"; c.textBaseline = "middle"; c.fillStyle = "#f4e5c1";
+    fit(c, e.text, w - 88, 78);
+    c.fillText(e.text, x + w/2, y + h/2 + 3);
+    c.restore(); return true;
+  }
+  if (kind === "thong") {
+    // Branch 444 sign is intentionally a NEW design: do not copy the vivid
+    // lightbox photographed at branch 152–154 and call it the same location.
+    c.fillStyle = "#941e2e"; c.fillRect(x, y, w, h);
+    for (const [col, inset] of [["#e9c05d",5],["#236a58",11],["#e5ae4f",17]] as const) {
+      c.strokeStyle = col; c.lineWidth = 5;
+      c.strokeRect(x + inset, y + inset, w - 2 * inset, h - 2 * inset);
+    }
+    c.textAlign = "center"; c.textBaseline = "middle"; c.fillStyle = "#fff1cc";
+    fit(c, e.text, w - 90, 70);
+    c.fillText(e.text, x + w/2, y + h/2 + 3);
+    c.restore(); return true;
+  }
+  // So Seng Heng: antique-style deep-red inset and gilded rectangular border.
+  c.fillStyle = "#e1d3bd"; c.fillRect(x, y, w, h);
+  c.fillStyle = "#85252a"; c.fillRect(x + 12, y + 9, w - 24, h - 18);
+  c.strokeStyle = "#e9be62"; c.lineWidth = 6;
+  c.strokeRect(x + 19, y + 16, w - 38, h - 32);
+  c.textAlign = "center"; c.textBaseline = "middle"; c.fillStyle = "#ffe5a5";
+  fit(c, e.text, w - 85, 70);
+  c.fillText(e.text, x + w/2, y + h/2 + 1);
+  c.restore(); return true;
+}
+/** Side-facing sign text always stays legible. Thai diacritics are never
+ * separated into individual boxes or rendered in invented Chinese glyphs. */
+function heroVertical(c: CanvasRenderingContext2D, e: SignEntry,
+  kind: string, x: number, y: number, w: number, h: number): boolean {
+  if (!kind) return false;
+  c.save();
+  const red = kind === "naiek" ? "#f1efe3" : "#9a1f2b";
+  const gold = kind === "naiek" ? "#ba2d2b" : "#efd075";
+  c.fillStyle = red; c.fillRect(x, y, w, h);
+  c.strokeStyle = gold; c.lineWidth = kind === "naiek" ? 4 : 7;
+  c.strokeRect(x + 9, y + 11, w - 18, h - 22);
+  if (kind === "soseng") {
+    for (let i=0; i<7; i++) {
+      c.fillStyle = i % 2 ? "#6d1723" : "#bd3940";
+      c.fillRect(x + 20, y + 21 + i * 69, w - 40, 2);
+    }
+  }
+  c.fillStyle = gold; c.textAlign = "center"; c.textBaseline = "middle";
+  c.translate(x + w/2, y + h/2);
+  c.rotate(Math.PI/2);
+  fit(c, e.text, h - 65, kind === "naiek" ? 42 : 51);
+  c.fillText(e.text, 0, 0);
+  c.restore(); return true;
+}
+
 /** Original sign plates: two atlases (horizontal fascia, vertical blade), drawn once on canvas. */
 export function buildSignAtlas(entries: SignEntry[]) {
   const n = Math.max(1, entries.length);
@@ -43,10 +123,10 @@ export function buildSignAtlas(entries: SignEntry[]) {
   const index = new Map<string, number>();
   entries.forEach((e, i) => {
     index.set(e.key, i);
-    const signature = e.text === "ฮั่วเซ่งเฮง" ? "hua" :
-      e.text === "ทองใบเยาวราช" ? "thong" :
-      e.text === "โซวเซ่งเฮง" ? "soseng" :
-      e.text === "ก๋วยจั๊บนายเอก" ? "naiek" : "";
+    const signature = e.signatureId === "hua418" ? "hua" :
+      e.signatureId === "thong444" ? "thong" :
+      e.signatureId === "so456" ? "soseng" :
+      e.signatureId === "nai442" ? "naiek" : "";
     // Original, distinctly composed reference-inspired signage: verified
     // business names, no copied brand logos or photographic textures.
     const colors: [string, string, string] = signature === "hua"
@@ -60,56 +140,44 @@ export function buildSignAtlas(entries: SignEntry[]) {
             : PAL[e.style][e.variant % 2]!;
     const [bg, line, ink] = colors;
     let x = (i % H.cols) * H.cw, y = Math.floor(i / H.cols) * H.ch;
-    frame(H.c, x, y, H.cw, H.ch, bg, line);
-    if (signature) {
-      H.c.fillStyle = signature === "hua" ? "#166947" : "#174f9a";
-      H.c.fillRect(x + 4, y + 4, H.cw - 8, 7);
-      H.c.fillRect(x + 4, y + H.ch - 11, H.cw - 8, 7);
-      H.c.strokeStyle = "#f3d989"; H.c.lineWidth = 3;
-      H.c.strokeRect(x + 24, y + 23, H.cw - 48, H.ch - 46);
+    if (!heroHorizontal(H.c, e, signature, x, y, H.cw, H.ch)) {
+      frame(H.c, x, y, H.cw, H.ch, bg, line);
+      motif(H.c, e.style, x + 50, y + 64, 20, line);
+      motif(H.c, e.style, x + H.cw - 50, y + 64, 20, line);
+      H.c.fillStyle = ink; H.c.textAlign = "center"; H.c.textBaseline = "middle";
+      fit(H.c, e.text, H.cw - 150, 74);
+      H.c.fillText(e.text, x + H.cw / 2, y + 68);
     }
-    motif(H.c, e.style, x + 50, y + 64, 20, line);
-    motif(H.c, e.style, x + H.cw - 50, y + 64, 20, line);
-    H.c.fillStyle = ink; H.c.textAlign = "center"; H.c.textBaseline = "middle";
-    fit(H.c, e.text, H.cw - 150, 74);
-    H.c.fillText(e.text, x + H.cw / 2, y + 68);
     x = (i % V.cols) * V.cw; y = Math.floor(i / V.cols) * V.ch;
-    frame(V.c, x, y, V.cw, V.ch, bg, line);
-    if (signature) {
-      const trim = signature === "hua" ? "#156a4c" : "#17539c";
-      V.c.strokeStyle = trim; V.c.lineWidth = 11;
-      V.c.strokeRect(x + 13, y + 12, V.cw - 26, V.ch - 24);
-      V.c.strokeStyle = "#f8d873"; V.c.lineWidth = 2;
-      V.c.strokeRect(x + 21, y + 22, V.cw - 42, V.ch - 44);
-      for (let k = 0; k < 5; k++) {
-        V.c.fillStyle = k % 2 ? trim : line;
-        V.c.fillRect(x + 28, y + 70 + k * 72, V.cw - 56, 3);
+    if (!heroVertical(V.c, e, signature, x, y, V.cw, V.ch)) {
+      frame(V.c, x, y, V.cw, V.ch, bg, line);
+      motif(V.c, e.style, x + 64, y + 40, 16, line);
+      // Fictional Chinese trade signs use real words and stacked characters.
+      // Thai stays intact and is rotated as a single correctly shaped phrase.
+      const thai = /[\u0E00-\u0E7F]/.test(e.text);
+      const glyphs = thai ? [] : (e.text.match(/\p{L}\p{M}*|\p{N}/gu) ?? [e.text]).slice(0, 4);
+      const cell = Math.min(104, (512 - 90) / Math.max(1, glyphs.length));
+      glyphs.forEach((g, k) => {
+        const cy = y + 70 + k * cell;
+        V.c.strokeStyle = line; V.c.lineWidth = 3;
+        V.c.strokeRect(x + 14, cy + 4, 100, cell - 8);
+        V.c.fillStyle = line; V.c.beginPath();
+        V.c.arc(x + 64, cy + cell / 2, cell * 0.38, 0, 7); V.c.fill();
+        V.c.fillStyle = bg; V.c.beginPath();
+        V.c.arc(x + 64, cy + cell / 2, cell * 0.32, 0, 7); V.c.fill();
+        V.c.fillStyle = ink; V.c.font = `800 ${cell * 0.42}px ${FONT}`;
+        V.c.textAlign = "center"; V.c.textBaseline = "middle";
+        V.c.fillText(g, x + 64, cy + cell / 2 + 2);
+      });
+      if (thai) {
+        V.c.save();
+        V.c.translate(x + V.cw / 2, y + V.ch / 2);
+        V.c.rotate(Math.PI / 2);
+        V.c.fillStyle = ink; V.c.textAlign = "center"; V.c.textBaseline = "middle";
+        fit(V.c, e.text, V.ch - 80, 46);
+        V.c.fillText(e.text, 0, 0);
+        V.c.restore();
       }
-    }
-    motif(V.c, e.style, x + 64, y + 40, 16, line);
-    // Chinese supports stacked characters; Thai syllables/diacritics must stay
-    // together. Never truncate a Thai business name into invented vertical text.
-    const thai = /[\u0E00-\u0E7F]/.test(e.text);
-    const glyphs = thai ? [] : (e.text.match(/\p{L}\p{M}*|\p{N}/gu) ?? [e.text]).slice(0, 4);
-    const cell = Math.min(104, (512 - 90) / glyphs.length);
-    glyphs.forEach((g, k) => {
-      const cy = y + 70 + k * cell;
-      V.c.strokeStyle = line; V.c.lineWidth = 3; V.c.strokeRect(x + 14, cy + 4, 100, cell - 8);
-      V.c.fillStyle = line; V.c.beginPath(); V.c.arc(x + 64, cy + cell / 2, cell * 0.38, 0, 7); V.c.fill();
-      V.c.fillStyle = bg; V.c.beginPath(); V.c.arc(x + 64, cy + cell / 2, cell * 0.32, 0, 7); V.c.fill();
-      V.c.fillStyle = ink; V.c.font = `800 ${cell * 0.42}px ${FONT}`; V.c.textAlign = "center"; V.c.textBaseline = "middle";
-      V.c.fillText(g, x + 64, cy + cell / 2 + 2);
-    });
-    if (thai) {
-      V.c.save();
-      V.c.translate(x + V.cw / 2, y + V.ch / 2);
-      V.c.rotate(Math.PI / 2);
-      V.c.fillStyle = ink;
-      V.c.textAlign = "center";
-      V.c.textBaseline = "middle";
-      fit(V.c, e.text, V.ch - 80, 46);
-      V.c.fillText(e.text, 0, 0);
-      V.c.restore();
     }
   });
   const tex = (a: typeof H) => {
