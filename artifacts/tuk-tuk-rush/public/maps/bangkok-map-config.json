@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "name": "Bangkok world geography foundation",
+  "scale": "geographic 1:1 coordinates, no 0.55 compression",
+  "bbox": {
+    "south": 13.696,
+    "west": 100.477,
+    "north": 13.778,
+    "east": 100.553
+  },
+  "focus": [
+    13.7425,
+    100.5075
+  ],
+  "projection": {
+    "type": "local-equirectangular",
+    "origin": {
+      "lat": 13.7402,
+      "lon": 100.51
+    },
+    "metersPerDegreeLatitude": 111320,
+    "metersPerDegreeLongitude": 108134.323,
+    "north": "negative-z"
+  },
+  "river": "Chao Phraya River geometry is supplied by the live OSM base map; vector river shapes must be imported from OSM before any game integration.",
+  "landmarks": 18,
+  "zones": [
+    {
+      "id": "rattanakosin",
+      "name": "Old Bangkok / Rattanakosin",
+      "center": [
+        13.749,
+        100.497
+      ],
+      "radiusM": 1300
+    },
+    {
+      "id": "thonburi",
+      "name": "Thonburi / Wat Arun",
+      "center": [
+        13.743,
+        100.4875
+      ],
+      "radiusM": 1150
+    },
+    {
+      "id": "chinatown",
+      "name": "Yaowarat / Chinatown",
+      "center": [
+        13.74,
+        100.5104
+      ],
+      "radiusM": 1150
+    },
+    {
+      "id": "riverside",
+      "name": "ICONSIAM / Riverside",
+      "center": [
+        13.725,
+        100.511
+      ],
+      "radiusM": 1600
+    },
+    {
+      "id": "siam",
+      "name": "Siam / Pathum Wan",
+      "center": [
+        13.7447,
+        100.535
+      ],
+      "radiusM": 1550
+    },
+    {
+      "id": "southern-river",
+      "name": "Asiatique / Southern River",
+      "center": [
+        13.706,
+        100.503
+      ],
+      "radiusM": 1200
+    }
+  ]
+}
