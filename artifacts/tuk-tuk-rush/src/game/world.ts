@@ -110,6 +110,13 @@ export function createDistrict(): District {
   // Authored hero frontages take precedence over generic shop placement.
   // No overlays/duplicate collision shells and no invented GPS accuracy.
   for (const hero of signaturePlots(segments)) {
+    // Maximize facade continuity without ever manufacturing a collision across
+    // a neighboring junction. True plot widths change near real intersections.
+    // The previous global 14.2m width forced the first gold shop into a curve.
+    for (const width of [14.2, 13.0, 11.8, 10.4, 9.2]) {
+      hero.w = width;
+      if (clear(hero)) break;
+    }
     if (!clear(hero)) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
     district.buildings.push(hero);
     district.obstacles.push(hero);
