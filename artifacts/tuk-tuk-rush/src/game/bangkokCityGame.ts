@@ -534,17 +534,29 @@ class BangkokGame {
     if(i===0)ctx.moveTo(X(p.x),Z(p.z));else ctx.lineTo(X(p.x),Z(p.z));
    }ctx.stroke();
   }
-  for(const p of this.pois){
+  const labels:{x:number;y:number;w:number;h:number}[]=[];
+  // Famous sites are close together in *real* Bangkok. Declutter labels
+  // instead of painting every Wat Pho/Palace/Chinatown name on top of each
+  // other. All 18 tappable markers remain visible even without labels.
+  const named=[...this.pois].sort((a,b)=>
+    Number(b.id===this.current?.id)-Number(a.id===this.current?.id)||
+    a.priority-b.priority);
+  for(const p of named){
    const x=X(p.point.x),y=Z(p.point.z);
    const got=this.stamps.has(p.id),focused=this.current?.id===p.id;
    ctx.fillStyle=!p.accessible?"#6d8291":got?"#64dab9":focused?"#fbd06b":"#e4a779";
    ctx.beginPath();ctx.arc(x,y,focused?9:p.priority===1?6.5:4.2,0,Math.PI*2);ctx.fill();
-   if(p.priority===1){
-    ctx.font="bold 15px system-ui";ctx.textAlign="center";ctx.textBaseline="top";
-    ctx.strokeStyle="#203349";ctx.lineWidth=4;
-    ctx.strokeText(p.name,x,y+10,172);
-    ctx.fillStyle="#f6edda";ctx.fillText(p.name,x,y+10,172);
-   }
+   if(p.priority!==1&&!focused)continue;
+   ctx.font="bold 14px system-ui";ctx.textAlign="center";ctx.textBaseline="middle";
+   const text=p.name.length>25?p.name.slice(0,24)+"…":p.name;
+   const width=ctx.measureText(text).width+14;
+   const left=x-width/2,top=y+14,height=20;
+   if(left<5||left+width>w-5||top<45||top+height>h-5)continue;
+   if(labels.some(r=>left<r.x+r.w+6&&left+width+6>r.x&&top<r.y+r.h+5&&top+height+5>r.y))continue;
+   labels.push({x:left,y:top,w:width,h:height});
+   ctx.fillStyle="#162d40ed";ctx.fillRect(left,top,width,height);
+   ctx.fillStyle=focused?"#ffd36f":"#f5ebdc";
+   ctx.fillText(text,x,top+height/2);
   }
   ctx.save();ctx.translate(X(this.pos.x),Z(this.pos.z));ctx.rotate(-this.heading);
   ctx.fillStyle="#fff8c4";ctx.beginPath();ctx.moveTo(0,12);
