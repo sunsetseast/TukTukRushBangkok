@@ -119,7 +119,7 @@ class CityScene{
  }
  private makeWater(input:Record<string,unknown>){
   const features=(input.features||[]) as {geometry:{type:string;coordinates:[number,number][]};properties:Record<string,unknown>}[];
-  const material=new T.MeshLambertMaterial({color:"#3297a7",side:T.DoubleSide,roughness:0.55});
+  const material=new T.MeshLambertMaterial({color:"#3297a7",side:T.DoubleSide});
   for(const feature of features.slice(0,800)){
    if(feature.geometry.type!=="LineString")continue;
    const pts=feature.geometry.coordinates.map(p=>project(p[0],p[1]));
