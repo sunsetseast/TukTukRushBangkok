@@ -38,7 +38,7 @@ h1,h2,p{margin-top:0}
 .drive.boost{height:66px;width:60px;background:linear-gradient(#62d5dd,#158591);font-size:22px}
 .drive:active{filter:brightness(1.3);transform:translateY(3px);box-shadow:0 2px 0 #0f1b29}
 #city-minimap{background:#182d42;border:2px solid #eee4bf9e;width:158px;height:158px;border-radius:13px;box-shadow:0 6px 20px #020b1aab;pointer-events:none}
-.radar{position:relative}.radar::after{content:"REAL ROAD MAP";position:absolute;top:6px;left:9px;font-size:8px;letter-spacing:1px;color:#f3d1a4;background:#13273a;padding:3px 5px;border-radius:4px}
+.radar{position:fixed;top:210px;right:14px;z-index:2;pointer-events:none}.radar::after{content:"REAL ROAD MAP";position:absolute;top:6px;left:9px;font-size:8px;letter-spacing:1px;color:#f3d1a4;background:#13273a;padding:3px 5px;border-radius:4px}
 #city-boost{margin-top:9px;height:6px;background:#ffffff40;border-radius:10px;overflow:hidden}#city-boost-fill{height:100%;width:100%;background:linear-gradient(90deg,#6deae3,#ffd277);transition:width .18s}
 #city-message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);border:1px solid #f4d69b;background:#142839e8;padding:15px 20px;max-width:390px;width:max-content;opacity:0;transition:opacity .15s;border-radius:14px;box-shadow:0 5px 35px #0007;text-align:center;font-weight:850;font-size:18px;pointer-events:none}
 #city-message.visible{opacity:1}
@@ -69,14 +69,14 @@ h1,h2,p{margin-top:0}
 .readout strong{font-size:16px}.readout small{font-size:8px}
 .drive{width:58px;height:58px;border-radius:15px}.drive.go{width:77px;height:82px}
 .drive.brake{height:69px}.drive.boost{width:54px;height:52px}
-#city-minimap{width:121px;height:121px}
+#city-minimap{width:121px;height:121px}.radar{top:126px;right:10px}
 .bottom{bottom:6px}#city-start .panel{padding:15px}#city-start h1{font-size:33px}
 #city-start p{font-size:11px;margin:8px auto}
 }
 @media(max-width:580px) and (min-height:600px){
 .readouts{top:145px;right:8px;grid-template-columns:repeat(2,76px)}
 .readout{padding:7px}.readout strong{font-size:16px}
-.status{top:97px;max-width:51vw}.status #city-target{font-size:13px}
+.status{top:115px;max-width:53vw}.status #city-target{font-size:13px}.radar{top:265px;right:8px}
 .drive{width:56px;height:60px}.drive.go{width:73px;height:86px}
 .drive.brake{height:70px}.drive.boost{width:51px}
 #city-minimap{width:106px;height:106px}#city-places{grid-template-columns:1fr}
