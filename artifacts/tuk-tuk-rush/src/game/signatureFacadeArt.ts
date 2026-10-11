@@ -418,11 +418,40 @@ export function buildOppositeFacadeArt(
     box('metal', trim, W - 0.2, 0.62, 1.2, 0, 3.6, F + 0.94);
   }
   api.sign(sign, 0, 4.65, F + 0.92, W - 1.5, 1.05);
-  // Three-dimensional smaller projecting signs over the sidewalk (supports
-  // attached to upper facades; no ground pole or collision intrusion).
-  const side = index % 2 ? -1 : 1, sx = side * (W / 2 - 1);
-  box('metal', trim, 0.14, 0.16, 1.5, sx, 8.0, F + 1.2);
-  box('metal', trim, 0.14, 0.16, 1.5, sx, 11.0, F + 1.2);
-  box('metal', trim, 1.2, 4.0, 1.3, sx, 9.35, F + 1.8);
-  api.vsign(sign, sx, 9.35, F + 2.6, 0.95, 3.65);
+  // Intentional Chinese trade-name signage, NOT invented real storefronts.
+  // Unlike repeated 4m blades, these silhouette heights, mounts, construction,
+  // language and surface tones vary from shop to shop, as in real Yaowarat.
+  const side = index % 2 ? -1 : 1, sx = side * (W / 2 - 0.83);
+  const tall = [6.3, 7.8, 5.7, 6.0, 5.0, 7.3, 5.8][index % 7]!;
+  const y = Math.min(H - tall/2 - 0.9, Math.max(6.8, tall/2 + 4.9));
+  const outward = F + (index % 3 === 0 ? 2.3 : 1.95);
+  const signW = [1.85,1.9,1.6,1.7,1.55,1.9,1.6][index % 7]!;
+  const border = index % 3 === 0 ? '#ecb852' :
+    index % 3 === 1 ? '#d6d2a7' : '#d59054';
+  const panel = index % 3 === 0 ? '#9d2930' :
+    index % 3 === 1 ? '#254a59' : '#6d3a2e';
+  for (const yy of [y - tall * 0.31, y + tall * 0.31]) {
+    box('metal', '#766554', 0.16, 0.18, 3.3, sx, yy, F + 0.95);
+    box('metal', border, 0.26, 0.22, 0.55, sx, yy, outward - 1.0);
+  }
+  // The cabinet is narrow along the facade, extends into the sidewalk over
+  // head-height, and its lettering is placed on BOTH OUTSIDE faces.
+  box('metal', '#716358', 0.52, tall + 0.50, signW + 0.25, sx, y, outward);
+  box('metal', border, 0.47, tall + 0.29, signW + 0.31, sx, y, outward + 0.02);
+  box('metal', panel, 0.39, tall + 0.08, signW + 0.34, sx, y, outward + 0.03);
+  api.vsign(sign, sx, y, outward + 0.06, signW, tall, 0.25);
+  for (const dy of [-1, 1]) {
+    box('metal', border, 0.63, 0.13, signW + 0.5,
+      sx, y + dy * (tall/2 + 0.13), outward + 0.02);
+  }
+  if (index % 3 === 0) {
+    // Vintage round medallions and curved crown evoke old metal sign-makers.
+    const g = new T.TorusGeometry(0.52, 0.11, 5, 14);
+    api.add('metal', '#f0bd60', g, sx, y + tall/2 + 0.73, outward);
+    g.dispose();
+  } else if (index % 3 === 1) {
+    box('metal', '#c2a779', 0.68, 0.82, signW + 0.4,
+      sx, y + tall/2 + 0.42, outward);
+  }
+
 }
