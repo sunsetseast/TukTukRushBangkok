@@ -217,9 +217,10 @@ export function buildStreetscape(
     if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
     });
-    const wall=wallSigns.get(b);
-    if(wall)buildYaowaratWallAd(api,{
-      W:n.w,D:n.dd,H:b.height,side:wall.side,i,sign:atlas.index.get(wall.key)!,
+    const exposedAd=wallSigns.get(b);
+    if(exposedAd)buildYaowaratWallAd(api,{
+      W:n.w,D:n.dd,H:b.height,side:exposedAd.side,i,
+      sign:atlas.index.get(exposedAd.key)!,
     });
     const extra=signsByBuilding.get(b);
     if(extra && b.height>12)
