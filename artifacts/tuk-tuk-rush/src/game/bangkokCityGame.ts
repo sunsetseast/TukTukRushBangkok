@@ -265,9 +265,9 @@ class BangkokGame {
  pos:Point={x:0,z:0};heading=0;speed=0;
  keys=new Set<string>();touch=new Set<Control>();
  current:Landmark|null=null;route:number[]=[];
- score=0,earnings=0,stamps=new Set<string>();
+ score=0;earnings=0;stamps=new Set<string>();
  countdown=720;gameOn=false;mode:"tour"|"rush"="tour";
- lastTime=0,lastRoute=0,lastUI=0;quality:"fast"|"pretty"="pretty";
+ lastTime=0;lastRoute=0;lastUI=0;quality:"fast"|"pretty"="pretty";
  boost=100;horn=0;nearestStreet="";
  private mapCtx=(el("city-minimap") as HTMLCanvasElement).getContext("2d")!;
  async init(){
