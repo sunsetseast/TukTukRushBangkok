@@ -214,7 +214,7 @@ export function buildStreetscape(
   const canopyGeo = new T.ConeGeometry(1, 0.62, 10);
   const poleGeo = new T.CylinderGeometry(1, 1, 1, 8);
   const landmarkShops = d.buildings.filter(b=>b.signatureId);
-  const nearShops = d.buildings.filter(b=>!b.signatureId && b.showcase &&
+  const marketShopCandidates = d.buildings.filter(b=>!b.signatureId && b.showcase &&
     landmarkShops.some(h=>Math.hypot(h.x-b.x,h.z-b.z)<110))
     .sort((a,b)=>{
       const distance=(v:Obstacle)=>Math.min(...landmarkShops.map(h=>Math.hypot(h.x-v.x,h.z-v.z)));
@@ -224,7 +224,7 @@ export function buildStreetscape(
     ...landmarkShops.filter(b=>b.signatureId==='nai442' ||
       b.signatureId==='tea-house' || b.signatureId==='heritage-balcony' ||
       b.signatureId==='traditional-medicine'),
-    ...nearShops,
+    ...marketShopCandidates,
   ];
   for (const b of noodleSidewalk) {
     // A bounded set of curated, valid sidewalk stalls. Never uniformly flood
