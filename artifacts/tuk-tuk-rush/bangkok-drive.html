@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"/>
+<meta name="theme-color" content="#122538"/>
+<title>Tuk Tuk Rush — Bangkok City Tour</title>
+<style>
+:root{font-family:system-ui,-apple-system,Arial,sans-serif;color:#fff8e8;background:#182d3d;font-synthesis:none}
+*{box-sizing:border-box;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;touch-action:none}
+#city-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:linear-gradient(#a8cde1,#ddc1a2)}
+#city-ui{position:absolute;inset:0;pointer-events:none}
+button{cursor:pointer;font:inherit;touch-action:none}
+button:disabled{opacity:.35;cursor:not-allowed}
+h1,h2,p{margin-top:0}
+.top{position:absolute;top:max(env(safe-area-inset-top),12px);left:max(env(safe-area-inset-left),12px);right:max(env(safe-area-inset-right),12px);display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.top .brand{border-radius:15px;padding:10px 14px;background:#122536d9;border:1px solid #ffe1a14d;box-shadow:0 5px 22px #1225366b}
+.top .brand .kicker{color:#efc57d;font-size:10px;letter-spacing:1.8px;font-weight:850}
+.top .brand b{font-size:22px;letter-spacing:-1px;display:block;line-height:1.1}
+.top .brand b span{color:#ffc35f}
+.top .brand small{font-size:10px;color:#bbd0df}
+.top .controls{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tt-btn{pointer-events:auto;background:#11283ce8;border:1px solid #d5b5856b;color:#fff6e5;border-radius:11px;padding:10px 12px;font-weight:700;font-size:12px}
+.tt-btn:active{background:#efc477;color:#122337}
+.status{position:absolute;top:95px;left:12px;min-width:210px;max-width:min(390px,52vw);background:#122638ca;border:1px solid #bfc8cc40;border-radius:13px;padding:12px 15px}
+.status .label{display:block;color:#bbd1df;font-size:10px;font-weight:800;letter-spacing:1.6px;margin-bottom:4px}
+.status #city-target{font-size:16px;font-weight:850;display:block}
+.status .meta{font-size:12px;color:#f2cd90;margin-top:5px}
+.readouts{position:absolute;right:12px;top:95px;display:grid;grid-template-columns:repeat(2,minmax(72px,110px));gap:6px}
+.readout{background:#112638db;border:1px solid #dce6ee40;border-radius:12px;padding:10px;text-align:center}
+.readout strong{font-size:19px;display:block;line-height:1.05}
+.readout small{display:block;text-transform:uppercase;color:#a9c5d8;letter-spacing:1px;font-size:9px;margin-top:5px}
+.readout strong .unit{font-size:11px;font-weight:500}
+.bottom{position:absolute;bottom:max(12px,env(safe-area-inset-bottom));left:12px;right:12px;display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.drive-controls{pointer-events:auto;display:flex;gap:8px;align-items:flex-end}
+.drive{width:70px;height:70px;border:1px solid #ffffff87;border-radius:22px;background:linear-gradient(160deg,#384e66ed,#1c2d42ec);box-shadow:0 5px 0 #0f1b29;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-size:25px;font-weight:900}
+.drive small{font-size:10px;letter-spacing:.8px}.drive.go{height:100px;width:92px;background:linear-gradient(#ffd577,#e5a348);color:#2a2940;font-size:28px;border:2px solid #fff0c1}
+.drive.brake{background:linear-gradient(#ed967d,#be4e4e);height:84px}
+.drive.boost{height:66px;width:60px;background:linear-gradient(#62d5dd,#158591);font-size:22px}
+.drive:active{filter:brightness(1.3);transform:translateY(3px);box-shadow:0 2px 0 #0f1b29}
+#city-minimap{background:#182d42;border:2px solid #eee4bf9e;width:158px;height:158px;border-radius:13px;box-shadow:0 6px 20px #020b1aab;pointer-events:none}
+.radar{position:relative}.radar::after{content:"REAL ROAD MAP";position:absolute;top:6px;left:9px;font-size:8px;letter-spacing:1px;color:#f3d1a4;background:#13273a;padding:3px 5px;border-radius:4px}
+#city-boost{margin-top:9px;height:6px;background:#ffffff40;border-radius:10px;overflow:hidden}#city-boost-fill{height:100%;width:100%;background:linear-gradient(90deg,#6deae3,#ffd277);transition:width .18s}
+#city-message{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);border:1px solid #f4d69b;background:#142839e8;padding:15px 20px;max-width:390px;width:max-content;opacity:0;transition:opacity .15s;border-radius:14px;box-shadow:0 5px 35px #0007;text-align:center;font-weight:850;font-size:18px;pointer-events:none}
+#city-message.visible{opacity:1}
+#city-start{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at center,#2f567ba8,#0b1c2fee);backdrop-filter:blur(7px);pointer-events:auto;z-index:10}
+#city-start .panel{width:min(490px,calc(100% - 35px));background:linear-gradient(170deg,#142b44,#13273c);border:1px solid #d5ba85;box-shadow:0 12px 80px #020c1ad9;border-radius:23px;padding:28px;text-align:center}
+#city-start .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:#d9a65b;font-weight:850}
+#city-start h1{font-size:clamp(30px,6vw,52px);line-height:1.0;letter-spacing:-2px;margin:8px 0}#city-start h1 span{color:#ffc876}
+#city-start p{font-size:14px;line-height:1.6;color:#c1d3df;margin:10px auto 18px}
+#city-status{background:#253c4f;border:1px solid #7ca8b5;color:#bddfda;border-radius:8px;font-size:11px;padding:10px;margin-bottom:16px}
+#city-status.error{color:#ffb1a8;border-color:#d66e69}
+#city-start .start-btns{display:flex;gap:8px;flex-wrap:wrap}
+.start-btns button{flex:1;min-width:160px;padding:15px;border:0;border-radius:11px;background:#f7c873;color:#1b2940;font-weight:900}
+.start-btns button:nth-child(2){background:#2c6275;color:#fff}
+#city-start a{color:#bad8e1;font-size:12px;display:inline-block;margin-top:16px}
+#city-map{position:absolute;inset:0;z-index:8;background:#0c1f30ed;backdrop-filter:blur(8px);overflow:auto;pointer-events:auto;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}
+#city-map header{display:flex;justify-content:space-between;align-items:center;max-width:680px;margin:auto;gap:12px}
+#city-map h2{font-size:24px;letter-spacing:-1px;margin:0}
+#city-map p{max-width:680px;margin:10px auto;color:#abc1d7;font-size:13px;line-height:1.5}
+#city-places{max-width:680px;margin:10px auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.city-place{background:#1c3650;border:1px solid #52647a;border-radius:11px;padding:12px;text-align:left;color:#fff}
+.city-place:hover{border-color:#ffcb73}.city-place b{font-size:13px;display:block}.city-place small{display:block;color:#b4c7d7;margin-top:5px}
+.osm-credits{font-size:10px;color:#c9d8e4;margin:20px auto;max-width:680px}.osm-credits a{color:#ffd4a0}
+.hidden{display:none!important}
+@media(max-height:520px){
+.top .brand{padding:6px 10px}.top .brand b{font-size:17px}
+.status{top:70px;max-width:37vw;padding:7px 10px}.status #city-target{font-size:13px}
+.readouts{top:70px;grid-template-columns:repeat(4,auto)}.readout{padding:6px 8px}
+.readout strong{font-size:16px}.readout small{font-size:8px}
+.drive{width:58px;height:58px;border-radius:15px}.drive.go{width:77px;height:82px}
+.drive.brake{height:69px}.drive.boost{width:54px;height:52px}
+#city-minimap{width:121px;height:121px}
+.bottom{bottom:6px}#city-start .panel{padding:15px}#city-start h1{font-size:33px}
+#city-start p{font-size:11px;margin:8px auto}
+}
+@media(max-width:580px) and (min-height:600px){
+.readouts{top:145px;right:8px;grid-template-columns:repeat(2,76px)}
+.readout{padding:7px}.readout strong{font-size:16px}
+.status{top:97px;max-width:51vw}.status #city-target{font-size:13px}
+.drive{width:56px;height:60px}.drive.go{width:73px;height:86px}
+.drive.brake{height:70px}.drive.boost{width:51px}
+#city-minimap{width:106px;height:106px}#city-places{grid-template-columns:1fr}
+}
+</style></head><body>
+<canvas id="city-canvas" aria-label="Playable three dimensional Bangkok roads"></canvas>
+<div id="city-ui">
+<div class="top">
+<div class="brand"><div class="kicker">TUK TUK RUSH · GLOBAL BANGKOK</div><b>BANGKOK <span>CITY TOUR</span></b><small id="city-road">Roadside exploration · 1:1 geography</small></div>
+<div class="controls">
+<button class="tt-btn" id="btn-map">Destinations</button>
+<button class="tt-btn" id="btn-recover">Recover</button>
+<button class="tt-btn" id="btn-horn">Horn</button>
+<button class="tt-btn" id="btn-quality">Pretty</button>
+<button class="tt-btn" id="btn-pause">Pause</button>
+</div></div>
+<div class="status"><span class="label">NEXT ATTRACTION</span><strong id="city-target">Explore Bangkok</strong><div class="meta"><span id="city-distance">—</span> · <span id="city-time">FREE ROAM</span></div><div id="city-boost"><div id="city-boost-fill"></div></div></div>
+<div class="readouts">
+<div class="readout"><strong><span id="city-speed">0</span> <span class="unit">km/h</span></strong><small>Speed</small></div>
+<div class="readout"><strong id="city-coins">฿0</strong><small>Fares</small></div>
+<div class="readout"><strong id="city-stamps">0</strong><small>Badges</small></div>
+<div class="readout"><strong id="city-score">0</strong><small>Score</small></div></div>
+<div id="city-message" role="status"></div>
+<div class="bottom">
+<div class="drive-controls"><button class="drive" data-drive="left">↶<small>LEFT</small></button><button class="drive" data-drive="right">↷<small>RIGHT</small></button></div>
+<div class="radar"><canvas id="city-minimap" width="210" height="210"></canvas></div>
+<div class="drive-controls">
+<button class="drive boost" data-drive="boost">⚡<small>BOOST</small></button>
+<button class="drive brake" data-drive="brake">▾<small>BRAKE</small></button>
+<button class="drive go" data-drive="go">GO <small>GAS</small></button>
+</div></div>
+<div id="city-map" class="hidden"><header><h2>Bangkok Passport <span style="color:#f6c779">✦</span></h2><button id="btn-close-map" class="tt-btn">Back to driving</button></header><p>Choose a real landmark, then follow the golden route over Bangkok's actual mapped streets and bridges. Pull up near the destination to earn a badge and fare.</p><div id="city-places"></div><div class="osm-credits">Geography © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>, ODbL. Landmark buildings are original stylized interpretations. Public streets and legal vehicle access still require ongoing validation.</div></div>
+<div id="city-start"><div class="panel">
+<div class="eyebrow">Bangkok • Chao Phraya • Siam • Rattanakosin</div>
+<h1>THE ENTIRE <span>CITY</span> IS YOUR PLAYGROUND.</h1>
+<p>Three wheels. Famous temples. Riverside crossings. Wild fares. Find real landmarks and collect your Bangkok Passport badges, all on a geographically scaled city map.</p>
+<div id="city-status" role="status">Loading connected Bangkok road network…</div>
+<div class="start-btns"><button id="btn-tour">EXPLORE BANGKOK</button><button id="btn-rush">12-MINUTE FARE RUSH</button></div>
+<a href="/">← Back to Chinatown classic</a>
+</div></div></div>
+<script type="module" src="/src/game/bangkokCityGame.ts"></script>
+</body></html>
