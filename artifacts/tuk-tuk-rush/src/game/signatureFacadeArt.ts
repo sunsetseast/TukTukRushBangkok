@@ -47,6 +47,36 @@ export function buildSignatureFacade(
       orb('metal', trim, 0.32, end * (W / 2 - 0.2), H + 1.29, F + 0.33);
     }
   };
+  // Individual sign cabinets stand above pavement on structural arms, with
+  // no road-surface posts. Unique proportions reflect real Yaowarat's mixed
+  // large projecting signs; text remains faithful to the named Thai business.
+  const projectingLightbox = (opts: {
+    u: number; y: number; height: number; width: number;
+    color: string; border: string; projection?: number; crown?: 'coin' | 'arch';
+  }) => {
+    const v = F + (opts.projection ?? 2.15);
+    for (const yy of [opts.y - opts.height * 0.31, opts.y + opts.height * 0.31])
+      block('metal', '#71604c', 0.16, 0.16, 2.85, opts.u, yy, F + 1.05);
+    block('metal', '#685d51', opts.width + 0.4, opts.height + 0.7, 0.87, opts.u, opts.y, v);
+    block('metal', opts.border, opts.width + 0.27, opts.height + 0.44, 0.94, opts.u, opts.y, v + 0.07);
+    block('plaster', opts.color, opts.width + 0.08, opts.height + 0.14, 1.01, opts.u, opts.y, v + 0.14);
+    api.vsign(sign, opts.u, opts.y, v + 0.84, opts.width, opts.height);
+    // Inset strips and corner bosses break the default cardboard rectangle.
+    for (const dx of [-1, 1]) {
+      const x = opts.u + dx * (opts.width / 2 + 0.13);
+      block('metal', opts.border, 0.12, opts.height + 0.50, 0.2, x, opts.y, v + 0.65);
+      for (const dy of [-1, 1])
+        orb('metal', '#edce83', 0.15, x, opts.y + dy * opts.height / 2, v + 0.65);
+    }
+    if (opts.crown === 'coin') {
+      round('metal', opts.border, opts.width * 0.56, 0.21, opts.u, opts.y + opts.height/2 + 0.72, v + 0.24);
+      round('metal', '#f1d38b', opts.width * 0.38, 0.24, opts.u, opts.y + opts.height/2 + 0.73, v + 0.4);
+    } else if (opts.crown === 'arch') {
+      add('metal', opts.border,
+        new T.TorusGeometry(opts.width * 0.52, 0.19, 6, 16, Math.PI),
+        opts.u, opts.y + opts.height/2 + 0.05, v + 0.25);
+    }
+  };
   // Full-depth display windows make the actual driving-level frontage read as
   // OPEN commerce, not the dark hollow rectangles in the first WebGL review.
   // All are facade-mounted and entirely inside the established footprint.
@@ -128,7 +158,11 @@ export function buildSignatureFacade(
       }
       rail('#b82e33', y - 1.32, F + 0.68, 11);
     }
-    roofEmbellishment('#9c2630', '#efc562');
+    projectingLightbox({
+      u: W*0.30, y: 11.1, height: 7.5, width: 1.6,
+      color: '#8b222d', border: '#d1ac5e', crown: 'arch',
+    });
+    roofEmbellishment('#e1d2bc', '#b99268');
   } else if (id === 'nai442') {
     // Brick-red open restaurant, white menu board, fluorescent canopy, visible
     // steel counter and small hanging lamps seen at the genuine 442 entrance.
@@ -166,6 +200,12 @@ export function buildSignatureFacade(
       add('metal', '#9da9aa', new T.CylinderGeometry(0.47, 0.42, 0.49, 12), x, 1.83, F + 0.64);
       add('plaster', '#f6edd4', new T.TorusGeometry(0.4, 0.045, 4, 12).rotateX(Math.PI / 2), x, 2.1, F + 0.64);
     }
+    // Nai Ek's small perpendicular lightbox is restrained beside the main
+    // white menu sign; it must not compete with the big gold-shop signs.
+    projectingLightbox({
+      u: -W*0.31, y: 7.1, height: 3.65, width: 0.94,
+      color: '#f1eee2', border: '#b64c45', projection: 1.75,
+    });
     rail('#8a5a44', 6.83, F + 0.35);
     roofEmbellishment('#dfceb0', '#c14f3a');
   } else if (id === 'thong444') {
@@ -201,6 +241,10 @@ export function buildSignatureFacade(
       }
       rail('#c12d37', y - 1.3, F + 0.84);
     }
+    projectingLightbox({
+      u: -W*0.30, y: 12.1, height: 8.5, width: 1.65,
+      color: '#a72334', border: '#e5be61', crown: 'coin',
+    });
     roofEmbellishment('#a9262f', '#ecc467');
   } else if (id === 'so456') {
     // More detailed arched upper bays, concrete cornices and front-column
