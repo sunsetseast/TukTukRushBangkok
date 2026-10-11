@@ -110,14 +110,27 @@ export function createDistrict(): District {
   // Authored hero frontages take precedence over generic shop placement.
   // No overlays/duplicate collision shells and no invented GPS accuracy.
   for (const hero of signaturePlots(segments)) {
-    // Maximize facade continuity without ever manufacturing a collision across
-    // a neighboring junction. True plot widths change near real intersections.
-    // The previous global 14.2m width forced the first gold shop into a curve.
-    for (const width of [14.2, 13.0, 11.8, 10.4, 9.2]) {
-      hero.w = width;
-      if (clear(hero)) break;
+    // Preserve the surveyed-approximate geotagged ROAD POSITION while making
+    // controlled arcade concessions to safe footprints and junction mouths.
+    // Never force a facade through a road. Prefer small along-road displacements
+    // and local footprint narrowing to changing an established road network.
+    const originalX = hero.x, originalZ = hero.z, yaw = hero.yaw ?? 0;
+    const nx = Math.sin(yaw), nz = Math.cos(yaw);
+    const tx = Math.cos(yaw), tz = -Math.sin(yaw);
+    let fitted = false;
+    for (const along of [0, -4, 4, -8, 8, -13, 13, -19, 19]) {
+      if (fitted) break;
+      for (const away of [0, 1, 2.5, 4]) {
+        if (fitted) break;
+        for (const width of [14.2, 13, 11.8, 10.4, 9.2, 8]) {
+          hero.x = originalX + tx * along - nx * away;
+          hero.z = originalZ + tz * along - nz * away;
+          hero.w = width;
+          if (clear(hero)) { fitted = true; break; }
+        }
+      }
     }
-    if (!clear(hero)) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
+    if (!fitted) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
     district.buildings.push(hero);
     district.obstacles.push(hero);
   }
