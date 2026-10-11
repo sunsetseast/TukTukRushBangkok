@@ -47,6 +47,28 @@ export function buildSignatureFacade(
       orb('metal', trim, 0.32, end * (W / 2 - 0.2), H + 1.29, F + 0.33);
     }
   };
+  // Full-depth display windows make the actual driving-level frontage read as
+  // OPEN commerce, not the dark hollow rectangles in the first WebGL review.
+  // All are facade-mounted and entirely inside the established footprint.
+  const goldShop = id === 'hua418' || id === 'thong444' || id === 'so456';
+  const backdrop = goldShop ? '#a97937' : id === 'nai442' ? '#c7aa7e' : '#b3a78e';
+  block('plaster', backdrop, W - 1.8, 2.65, 0.2, 0, 1.88, F + 0.34);
+  for (const x of [-W * 0.31, 0, W * 0.31]) {
+    block('metal', goldShop ? '#dfba68' : '#6c796b',
+      0.12, 2.65, 0.32, x, 1.88, F + 0.47);
+    block('metal', goldShop ? '#f0ce80' : '#d0c7a7',
+      W * 0.23, 0.12, 0.48, x, 0.9, F + 0.6);
+    if (goldShop) for (const y of [1.45, 2.2]) {
+      block('metal', '#eed18b', W * 0.18, 0.09, 0.4, x, y, F + 0.66);
+      for (const dx of [-0.55, 0, 0.55]) {
+        add('metal', '#eac565',
+          new T.TorusGeometry(0.16, 0.04, 6, 12),
+          x + dx, y + 0.16, F + 0.73);
+      }
+    }
+  }
+  for (const x of [-W * 0.18, W * 0.18])
+    block('plaster', '#ffdfa0', W * 0.21, 0.12, 0.25, x, 3.18, F + 0.55);
   // These pieces are all within or above the existing building collider.
   // Ground-level objects must remain behind the actual curb clearance.
   if (id === 'hua418') {
@@ -188,4 +210,60 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#a87453', '#6d5141');
   }
+}
+
+/** Curated opposing shopfronts: original context facades, NOT named real sites. */
+export function buildOppositeFacadeArt(
+  api: FacadeApi,
+  o: { index: number; W: number; D: number; H: number; sign: number },
+) {
+  const { index, W, D, H, sign } = o, F = D / 2;
+  const box = (m: 'metal'|'plaster'|'glass'|'cloth', color: string,
+    w: number, h: number, d: number, u: number, y: number, v: number) => {
+    const g = new T.BoxGeometry(w, h, d);
+    api.add(m, color, g, u, y, v); g.dispose();
+  };
+  const trim = ['#966443','#c8b597','#6f5047','#5b806a','#915f51','#486474','#ab704d'][index % 7]!;
+  // Shaded storefront entry and sculpted surround distinguish the handmade
+  // corridor from the dead-black default procedural shop entrances.
+  box('plaster', '#9e886a', W - 1.9, 2.55, 0.22, 0, 1.81, F + 0.36);
+  for (const x of [-W * 0.28, W * 0.28]) {
+    box('metal', trim, 0.22, 2.55, 0.32, x, 1.81, F + 0.52);
+  }
+  if (index % 3 === 0) {
+    for (const y of [6.0, 9.4, 12.8]) {
+      if (y + 1.3 > H) break;
+      box('plaster', '#b8a286', W - 0.8, 0.28, 0.9, 0, y - 1.2, F + 0.61);
+      for (let j = -4; j <= 4; j++)
+        box('metal', '#695344', 0.10, 0.83, 0.2, j * (W - 1.6) / 9, y - 0.75, F + 0.89);
+    }
+  } else if (index % 3 === 1) {
+    for (const y of [7.0, 10.3, 13.6, 16.9]) {
+      if (y + 1.2 > H) break;
+      for (const x of [-W * 0.25, W * 0.25]) {
+        box('metal', '#e1d2b6', W * 0.38, 2.65, 0.29, x, y, F + 0.33);
+        box('glass', '#61838c', W * 0.30, 2.2, 0.12, x, y, F + 0.5);
+      }
+    }
+    box('metal', '#caab73', W + 0.4, 0.5, 0.7, 0, H + 0.25, F + 0.3);
+  } else {
+    for (let f = 0; f < 3; f++) {
+      const y = 6.7 + 3.0 * f;
+      if (y + 1.3 > H) break;
+      for (const x of [-W * 0.26, W * 0.26]) {
+        box('metal', trim, 2.8, 2.1, 0.3, x, y, F + 0.27);
+        box('glass', '#57716c', 1.65, 1.65, 0.12, x, y, F + 0.45);
+        box('metal', '#a9af97', 0.15, 1.8, 0.2, x, y, F + 0.59);
+      }
+    }
+    box('metal', trim, W - 0.2, 0.62, 1.2, 0, 3.6, F + 0.94);
+  }
+  api.sign(sign, 0, 4.65, F + 0.92, W - 1.5, 1.05);
+  // Three-dimensional smaller projecting signs over the sidewalk (supports
+  // attached to upper facades; no ground pole or collision intrusion).
+  const side = index % 2 ? -1 : 1, sx = side * (W / 2 - 1);
+  box('metal', trim, 0.14, 0.16, 1.5, sx, 8.0, F + 1.2);
+  box('metal', trim, 0.14, 0.16, 1.5, sx, 11.0, F + 1.2);
+  box('metal', trim, 1.2, 4.0, 1.3, sx, 9.35, F + 1.8);
+  api.vsign(sign, sx, 9.35, F + 2.6, 0.95, 3.65);
 }

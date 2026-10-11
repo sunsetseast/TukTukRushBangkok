@@ -23,6 +23,12 @@ try {
   await page.goto(process.env.GAME_URL || 'http://localhost:24177/', { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => window.__graphics?.engine?.model?.district, null, { timeout: 90000 });
   await page.getByTestId('button-free-roam').click();
+  // Camera comparison must show artwork, not huge mission beacons/HUD panels.
+  await page.addStyleTag({ content: '.tt-hud, .tt-controls, .tt-msg, .tt-joystick, .tt-pedal { visibility: hidden !important; }' });
+  await page.evaluate(() => {
+    const beacon = window.__graphics.scene.getObjectByName('MissionBeacon');
+    if (beacon) beacon.visible = false;
+  });
   await page.evaluate(() => {
     window.__artQuality = 'medium';
     const e = window.__graphics.engine, previous = e.update.bind(e);
