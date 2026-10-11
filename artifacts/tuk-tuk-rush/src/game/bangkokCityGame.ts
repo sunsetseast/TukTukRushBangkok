@@ -350,11 +350,17 @@ class BangkokGame {
  countdown=720;gameOn=false;mode:"tour"|"rush"="tour";
  lastTime=0;lastRoute=0;lastUI=0;quality:"fast"|"pretty"="pretty";
  boost=100;horn=0;nearestStreet="";
+ riverLines:[number,number][][]=[];
+ mapTransform={scale:1,offsetX:0,offsetY:0};
+ resumeAfterMap=false;
  private mapCtx=(el("city-minimap") as HTMLCanvasElement).getContext("2d")!;
  async init(){
   try{
    const data=await BangkokNetwork.load();
    this.net=data.network;this.pois=data.landmarks;
+   this.riverLines=(data.water.features||[])
+    .filter(f=>f.geometry.type==="LineString")
+    .map(f=>f.geometry.coordinates as [number,number][]);
    this.world=new CityScene(this.net,this.pois,data.water,el("city-canvas") as HTMLCanvasElement);
    const start=this.net.nearest(project(100.5099857,13.7403072),true,1000);
    if(!start)throw Error("Yaowarat has no connected drivable roads in imported map.");
@@ -392,6 +398,19 @@ class BangkokGame {
   el("btn-tour").addEventListener("click",()=>this.start("tour"));
   el("btn-rush").addEventListener("click",()=>this.start("rush"));
   el("btn-map").addEventListener("click",()=>this.toggleMap());
+  el("city-world-map").addEventListener("pointerup",event=>{
+   const canvas=el("city-world-map") as HTMLCanvasElement;
+   const rect=canvas.getBoundingClientRect();
+   const px=(event as PointerEvent).clientX-rect.left,pz=(event as PointerEvent).clientY-rect.top;
+   let nearest:Landmark|undefined,limit=24;
+   for(const l of this.pois.filter(p=>p.accessible)){
+    const x=(l.point.x*this.mapTransform.scale+this.mapTransform.offsetX)*rect.width/canvas.width;
+    const y=(l.point.z*this.mapTransform.scale+this.mapTransform.offsetY)*rect.height/canvas.height;
+    const distance=Math.hypot(px-x,pz-y);
+    if(distance<limit){limit=distance;nearest=l;}
+   }
+   if(nearest){this.current=nearest;this.calculateRoute();this.toggleMap(false);}
+  });
   el("btn-close-map").addEventListener("click",()=>this.toggleMap(false));
   el("btn-recover").addEventListener("click",()=>this.recover());
   el("btn-horn").addEventListener("click",()=>this.honk());
@@ -467,7 +486,70 @@ class BangkokGame {
   }catch{}
  }
  private toggleMap(force?:boolean){
-  const map=el("city-map");map.classList.toggle("hidden",force===undefined?!map.classList.contains("hidden"):!force);
+  const map=el("city-map");
+  const shouldOpen=force===undefined?map.classList.contains("hidden"):force;
+  map.classList.toggle("hidden",!shouldOpen);
+  if(shouldOpen){
+   this.resumeAfterMap=this.gameOn;this.gameOn=false;
+   this.drawWorldMap();
+  }else if(this.resumeAfterMap){
+   this.gameOn=true;this.resumeAfterMap=false;
+  }
+ }
+ private drawWorldMap(){
+  if(!this.net)return;
+  const canvas=el("city-world-map") as HTMLCanvasElement;
+  const ctx=canvas.getContext("2d")!,w=canvas.width,h=canvas.height;
+  ctx.fillStyle="#233b4b";ctx.fillRect(0,0,w,h);
+  const bounds=this.net.boundaries;
+  const dx=bounds.maxX-bounds.minX,dz=bounds.maxZ-bounds.minZ;
+  const scale=Math.min((w-72)/Math.max(1,dx),(h-58)/Math.max(1,dz));
+  const offsetX=w/2-(bounds.minX+bounds.maxX)/2*scale;
+  const offsetY=h/2-(bounds.minZ+bounds.maxZ)/2*scale;
+  this.mapTransform={scale,offsetX,offsetY};
+  const X=(x:number)=>x*scale+offsetX,Z=(z:number)=>z*scale+offsetY;
+  // Draw TRUE OSM river centerlines, not a guessed crossing or land strip.
+  for(const line of this.riverLines){
+   if(line.length<2)continue;
+   ctx.beginPath();
+   for(let i=0;i<line.length;i++){
+    const p=project(line[i]![0],line[i]![1]);
+    if(i===0)ctx.moveTo(X(p.x),Z(p.z));else ctx.lineTo(X(p.x),Z(p.z));
+   }
+   ctx.strokeStyle="#57b2c4";ctx.lineWidth=8;ctx.lineCap="round";ctx.stroke();
+  }
+  for(const seg of this.net.segments){
+   ctx.beginPath();ctx.moveTo(X(seg.x1),Z(seg.z1));ctx.lineTo(X(seg.x2),Z(seg.z2));
+   const major=["trunk","primary","secondary"].includes(seg.className);
+   ctx.strokeStyle=seg.bridge?"#f1b978":major?"#c5d1cc":"#708b98";
+   ctx.lineWidth=major?1.8:0.9;ctx.stroke();
+  }
+  if(this.route.length>=2){
+   ctx.strokeStyle="#ffd363";ctx.lineWidth=4.3;ctx.lineCap="round";
+   ctx.beginPath();
+   for(let i=0;i<this.route.length;i++){
+    const p=this.net.nodes[this.route[i]!]!;
+    if(i===0)ctx.moveTo(X(p.x),Z(p.z));else ctx.lineTo(X(p.x),Z(p.z));
+   }ctx.stroke();
+  }
+  for(const p of this.pois){
+   const x=X(p.point.x),y=Z(p.point.z);
+   const got=this.stamps.has(p.id),focused=this.current?.id===p.id;
+   ctx.fillStyle=!p.accessible?"#6d8291":got?"#64dab9":focused?"#fbd06b":"#e4a779";
+   ctx.beginPath();ctx.arc(x,y,focused?9:p.priority===1?6.5:4.2,0,Math.PI*2);ctx.fill();
+   if(p.priority===1){
+    ctx.font="bold 15px system-ui";ctx.textAlign="center";ctx.textBaseline="top";
+    ctx.strokeStyle="#203349";ctx.lineWidth=4;
+    ctx.strokeText(p.name,x,y+10,172);
+    ctx.fillStyle="#f6edda";ctx.fillText(p.name,x,y+10,172);
+   }
+  }
+  ctx.save();ctx.translate(X(this.pos.x),Z(this.pos.z));ctx.rotate(-this.heading);
+  ctx.fillStyle="#fff8c4";ctx.beginPath();ctx.moveTo(0,12);
+  ctx.lineTo(-9,-7);ctx.lineTo(9,-7);ctx.closePath();ctx.fill();
+  ctx.restore();
+  ctx.fillStyle="#a9c9d2";ctx.font="bold 18px system-ui";ctx.textAlign="left";
+  ctx.fillText("BANGKOK PASSPORT • TRUE-SCALE CITY",18,31);
  }
  private frame=(now:number)=>{
   const dt=clamp((now-(this.lastTime||now))/1000,0,0.05);this.lastTime=now;
