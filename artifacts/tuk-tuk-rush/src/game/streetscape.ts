@@ -182,6 +182,63 @@ export function buildStreetscape(
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
     });
   });
+  // Reference-inspired Yaowarat curb activity. Localized to the noodle shop
+  // and contextual tea/heritage frontage; this creates real street composition
+  // instead of scattering generic carts through every neighborhood.
+  // Visual-only: never introduces a hard collision or road-centreline object.
+  const carts: { x:number; z:number }[] = [];
+  const lanternGeo = new T.SphereGeometry(1, 10, 7);
+  const canopyGeo = new T.ConeGeometry(1, 0.62, 10);
+  const poleGeo = new T.CylinderGeometry(1, 1, 1, 8);
+  const noodleSidewalk = d.buildings.filter(b =>
+    b.signatureId === 'nai442' || b.signatureId === 'tea-house' ||
+    b.signatureId === 'heritage-balcony' || b.signatureId === 'traditional-medicine');
+  for (const b of noodleSidewalk) {
+    const yaw = b.yaw ?? 0, nx = Math.sin(yaw), nz = Math.cos(yaw);
+    const tx = Math.cos(yaw), tz = -Math.sin(yaw);
+    const slots = b.signatureId === 'nai442' ? [-b.w * 0.30, b.w * 0.29]
+      : [b.w * 0.31];
+    for (const t of slots) {
+      const gap = b.d/2 + 1.40, x = b.x + nx*gap + tx*t, z = b.z + nz*gap + tz*t;
+      const pt = { x, z };
+      if (carts.some(q=>Math.hypot(q.x-x, q.z-z)<3.2)) continue;
+      // Check against ALL roads and all building/landmark footprints: close
+      // crossroads are skipped rather than moving the stall into traffic.
+      if (d.roads.some(r=>{
+        const a=nodes.get(r.a)!, end=nodes.get(r.b)!;
+        return distanceToSegment(pt,a,end).distance < r.width/2 + 2.3;
+      })) continue;
+      if (d.obstacles.some(o=>{
+        const dx=x-o.x, dz=z-o.z, c=Math.cos(o.yaw??0), si=Math.sin(o.yaw??0);
+        const ux=c*dx-si*dz, uz=si*dx+c*dz;
+        return Math.hypot(Math.max(0,Math.abs(ux)-o.w/2),Math.max(0,Math.abs(uz)-o.d/2))<0.80;
+      })) continue;
+      carts.push(pt);
+      // A tiny hand-pushed noodle cart with cream counter, visible condiment
+      // jars, wheels, folded awning and two short, warm paper-lantern pendants.
+      B(metal,'#b5b4aa',x,0.90,z,1.38,1.25,0.77,yaw);
+      B(metal,'#d6d9d4',x,1.59,z,1.65,0.13,1.05,yaw);
+      B(plaster,'#885342',x,0.53,z,1.29,0.18,0.82,yaw);
+      for (const dx of [-0.57,0.57])
+        for (const dz of [-0.37,0.37])
+          piece(torus,metal,'#444d4d',x+dx,0.35,z+dz,0.28,0.28,0.28,0,-1,true);
+      const red = b.signatureId === 'nai442' ? '#af2d35' : '#b74a36';
+      // Only the overhead canopy overhangs the walkway; no road pole.
+      for (const dx of [-0.54,0.54]) {
+        B(metal,'#786c55',x+tx*dx,2.14,z+tz*dx,0.055,1.31,0.055);
+      }
+      piece(canopyGeo,cloth,red,x,2.91,z,1.27,1,1.14,yaw,-1,true);
+      for (const dx of [-0.51,0.51]) {
+        piece(lanternGeo,metal,'#c5433f',x+tx*dx,2.38,z+tz*dx,0.18,0.26,0.18,0,-1,true);
+        piece(sphere,metal,'#f6d18d',x+tx*dx,2.15,z+tz*dx,0.10,0.10,0.10,0,-1,true);
+      }
+      for (const [dx,col] of [[-0.4,'#b76535'],[0,'#e5cd87'],[0.4,'#496d4c']] as const)
+        piece(poleGeo,metal,col,x+tx*dx,1.79,z+tz*dx,0.11,0.26,0.11,yaw,-1,true);
+    }
+  }
+  lanternGeo.dispose();
+  canopyGeo.dispose();
+  poleGeo.dispose();
   // Flat sidewalks follow every sampled segment; they are cut back only at real junctions.
   const deg = degreeMap(d);
   for (const r of d.roads) {

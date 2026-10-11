@@ -251,8 +251,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cp.updateProjectionMatrix();
     }
     const fog = scene.fog as THREE.Fog;
-    fog.near = s.quality === "low" ? 85 : 120;
-    fog.far = s.quality === "low" ? 190 : 290;
+    fog.near = s.quality === "low" ? 95 : 135;
+    fog.far = s.quality === "low" ? 205 : 310;
     if (import.meta.env.DEV) {
       const debug = window as typeof window & { __graphics?: unknown };
       debug.__graphics = {
@@ -277,13 +277,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
 
   return (
     <>
-      <color attach="background" args={["#e5ccab"]} />
-      <fog attach="fog" args={["#e5ccab", 120, 440]} />
-      <hemisphereLight args={["#c9e9f2", "#7d7369", 0.8]} />
+      <color attach="background" args={["#b2a1aa"]} />
+      <fog attach="fog" args={["#b2a1aa", 125, 430]} />
+      <hemisphereLight args={["#bddcf0", "#70616a", 1.05]} />
       <directionalLight
         position={[-120, 45, 60]}
-        intensity={1.75}
-        color="#ffe0af"
+        intensity={1.95}
+        color="#ffc78f"
       />
       <primitive object={sky} />
       <primitive object={city.group} />
