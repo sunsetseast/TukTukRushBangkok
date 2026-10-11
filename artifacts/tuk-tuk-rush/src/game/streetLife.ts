@@ -76,6 +76,30 @@ export function streetPeople(d: District): StreetPerson[] {
       break;
     }
   }
+  // Reference-led shopfront activity: small queues and window-shoppers beside
+  // named Yaowarat stores, not uniformly spaced puppets all over the map.
+  // Each person's spawn is validated against the complete road and collider
+  // network; none becomes a solid obstacle for arcade driving.
+  for (const shop of d.buildings.filter(b => b.signatureId)) {
+    const nx = Math.sin(shop.yaw ?? 0), nz = Math.cos(shop.yaw ?? 0);
+    const tx = Math.cos(shop.yaw ?? 0), tz = -Math.sin(shop.yaw ?? 0);
+    const waiters = shop.signatureId === 'nai442' ? [-2.2, -0.6, 1.0, 2.6]
+      : shop.signatureId === 'so456' ? [-1.8, 0, 1.8]
+      : [-1.35, 1.35];
+    for (const offset of waiters) {
+      if (people.length >= 132) break;
+      // Local frontage normal points toward the road; keep the queue on the
+      // pavement, in front of the existing building collider.
+      const dist = shop.d / 2 + 1.5;
+      const p = { x: shop.x + tx * offset + nx * dist,
+        z: shop.z + tz * offset + nz * dist };
+      if (!clear(d, p, 0.55) || !roadsClear(p)) continue;
+      people.push({ start: p, end: p, x: p.x, z: p.z,
+        heading: Math.atan2(-nx, -nz),
+        role: 'customer', seed: people.length,
+        height: 0.91 + (people.length % 7) * 0.032 });
+    }
+  }
   return people;
 }
 

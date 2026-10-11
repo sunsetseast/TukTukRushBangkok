@@ -1,0 +1,46 @@
+name: Yaowarat art inspection
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/**'
+      - 'docs/graphics/signature-corridor/**'
+      - '.github/workflows/yaowarat-visual.yml'
+  workflow_dispatch:
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PORT: '24177'
+      BASE_PATH: '/'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:signature
+      - run: pnpm --filter @workspace/tuk-tuk-rush run build
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Capture actual WebGL frames
+        run: |
+          pnpm --filter @workspace/tuk-tuk-rush exec vite --config vite.config.ts --host 127.0.0.1 --port 24177 > /tmp/tuktuk-vite.log 2>&1 &
+          for i in $(seq 1 45); do
+            if curl -sf http://localhost:24177/ >/dev/null; then break; fi
+            sleep 1
+          done
+          GAME_URL=http://localhost:24177/ pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-signature.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yaowarat-webgl-screenshots
+          path: generated-artifacts/yaowarat-signature/
+          if-no-files-found: warn

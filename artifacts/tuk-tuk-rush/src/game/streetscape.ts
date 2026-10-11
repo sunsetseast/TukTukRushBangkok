@@ -8,6 +8,7 @@ import { ASSETS, surface, disposeObject } from "./assets";
 import { distanceToSegment } from "./world";
 import { composeFacade, composeSide, clearFacadeCache, defaultSign, type Style, type MatKey, type FacadeApi } from "./miniatureFacade";
 import { buildSignAtlas, type SignEntry } from "./signArt";
+import { buildSignatureFacade, buildOppositeFacadeArt } from "./signatureFacadeArt";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -163,6 +164,12 @@ export function buildStreetscape(
     };
     composeFacade(api, { style, W: n.w, D: n.dd, H: b.height, i, sign: id, businessName: b.sign, showcase: b.showcase ?? i % 4 === 0 });
     composeSide(api, { style, W: n.w, D: n.dd, H: b.height, i });
+    if (b.signatureId) buildSignatureFacade(api, {
+      id: b.signatureId, W: n.w, D: n.dd, H: b.height, sign: id,
+    });
+    if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
+      index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
+    });
   });
   // Flat sidewalks follow every sampled segment; they are cut back only at real junctions.
   const deg = degreeMap(d);

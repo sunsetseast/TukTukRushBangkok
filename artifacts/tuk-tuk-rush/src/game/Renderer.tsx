@@ -15,6 +15,7 @@ import { obstacleLocal } from "./world";
 
 function buildBeacon() {
   const g = new THREE.Group();
+  g.name = "MissionBeacon";
   const colMat = new THREE.MeshBasicMaterial({
     color: "#ffd23f",
     transparent: true,
@@ -281,7 +282,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       <hemisphereLight args={["#c9e9f2", "#7d7369", 0.8]} />
       <directionalLight
         position={[-120, 45, 60]}
-        intensity={2.2}
+        intensity={1.75}
         color="#ffe0af"
       />
       <primitive object={sky} />
@@ -369,7 +370,7 @@ export default function GameCanvas({
           };
           gl.outputColorSpace = THREE.SRGBColorSpace;
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 0.88;
+          gl.toneMappingExposure = 0.84;
         }}
         camera={{ fov: 58, near: 0.2, far: 1200, position: [-282, 5, 40] }}
         style={{ touchAction: "none" }}

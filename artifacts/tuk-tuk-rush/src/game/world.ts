@@ -1,5 +1,6 @@
 import type { District, Point, Road, RoadNode, Obstacle } from './types';
-import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE, SIGN_NAMES } from './mapData';
+import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE } from './mapData';
+import { signaturePlots, signatureOppositePlots } from './signatureCorridor';
 
 export const WORLD_SIZE = 700;
 export const nodeId = (col: number, row: number) => `${col}:${row}`;
@@ -20,6 +21,27 @@ export function obstacleLocal(p: Point, b: Obstacle): Point {
 export function obstacleDistance(p: Point, b: Obstacle) {
   const q = obstacleLocal(p, b);
   return Math.hypot(Math.max(0, Math.abs(q.x) - b.w / 2), Math.max(0, Math.abs(q.z) - b.d / 2));
+}
+
+/** Rotated-rectangle intersection with explicit clearance, using four SAT axes.
+ * Conservative bounding circles artificially separate neighboring shophouses,
+ * even when their actual rectangular facades can stand side-by-side.
+ */
+export function orientedFootprintsOverlap(a: Obstacle, b: Obstacle, margin = 0): boolean {
+  const ac = Math.cos(a.yaw ?? 0), as = Math.sin(a.yaw ?? 0);
+  const bc = Math.cos(b.yaw ?? 0), bs = Math.sin(b.yaw ?? 0);
+  const axesA = [{ x: ac, z: -as }, { x: as, z: ac }];
+  const axesB = [{ x: bc, z: -bs }, { x: bs, z: bc }];
+  const dx = b.x - a.x, dz = b.z - a.z;
+  for (const axis of [...axesA, ...axesB]) {
+    const proj = Math.abs(dx * axis.x + dz * axis.z);
+    const ah = Math.abs(axis.x * axesA[0]!.x + axis.z * axesA[0]!.z) * a.w / 2 +
+      Math.abs(axis.x * axesA[1]!.x + axis.z * axesA[1]!.z) * a.d / 2;
+    const bh = Math.abs(axis.x * axesB[0]!.x + axis.z * axesB[0]!.z) * b.w / 2 +
+      Math.abs(axis.x * axesB[1]!.x + axis.z * axesB[1]!.z) * b.d / 2;
+    if (proj >= ah + bh + margin) return false;
+  }
+  return true;
 }
 
 export function createDistrict(): District {
@@ -104,8 +126,61 @@ export function createDistrict(): District {
       const support = Math.abs(Math.cos((b.yaw ?? 0) - theta)) * b.w / 2 + Math.abs(Math.sin((b.yaw ?? 0) - theta)) * b.d / 2;
       if (q.distance < r.width / 2 + support + 5.2) return false;
     }
-    return district.buildings.every(o => Math.hypot(o.x - b.x, o.z - b.z) > Math.hypot(o.w, o.d) / 2 + Math.hypot(b.w, b.d) / 2 - 2);
+    // Oriented rectangle separation allows dense, accurate frontage.
+    // The old bounding-circle check added artificial gaps of several meters.
+    return district.buildings.every(o => !orientedFootprintsOverlap(o, b, 0.65));
   };
+  // Authored hero frontages take precedence over generic shop placement.
+  // No overlays/duplicate collision shells and no invented GPS accuracy.
+  for (const hero of signaturePlots(segments)) {
+    // Preserve the surveyed-approximate geotagged ROAD POSITION while making
+    // controlled arcade concessions to safe footprints and junction mouths.
+    // Never force a facade through a road. Prefer small along-road displacements
+    // and local footprint narrowing to changing an established road network.
+    const originalX = hero.x, originalZ = hero.z, yaw = hero.yaw ?? 0;
+    const nx = Math.sin(yaw), nz = Math.cos(yaw);
+    const tx = Math.cos(yaw), tz = -Math.sin(yaw);
+    let fitted = false;
+    for (const along of [0, -4, 4, -8, 8, -13, 13, -19, 19]) {
+      if (fitted) break;
+      for (const away of [0, 1, 2.5, 4]) {
+        if (fitted) break;
+        for (const width of [14.2, 13, 11.8, 10.4, 9.2, 8]) {
+          hero.x = originalX + tx * along - nx * away;
+          hero.z = originalZ + tz * along - nz * away;
+          hero.w = width;
+          if (clear(hero)) { fitted = true; break; }
+        }
+      }
+    }
+    if (!fitted) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
+    district.buildings.push(hero);
+    district.obstacles.push(hero);
+  }
+  // Add intentionally fictional neighboring elevations, not invented real
+  // businesses. Fit each one to every road arm and existing physical obstacle;
+  // an authored candidate can shift ALONG its building line, never onto asphalt.
+  for (const neighbor of signatureOppositePlots(segments)) {
+    const x0 = neighbor.x, z0 = neighbor.z, yaw = neighbor.yaw ?? 0;
+    const nx = Math.sin(yaw), nz = Math.cos(yaw);
+    const tx = Math.cos(yaw), tz = -Math.sin(yaw);
+    let placed = false;
+    for (const along of [0, 7, -7, 14, -14, 22, -22, 30, -30]) {
+      if (placed) break;
+      for (const away of [0, 1.5, 3.5, 5.5]) {
+        if (placed) break;
+        for (const width of [13.7, 12, 10.4, 9.0, 7.8]) {
+          neighbor.x = x0 + tx * along - nx * away;
+          neighbor.z = z0 + tz * along - nz * away;
+          neighbor.w = width;
+          if (clear(neighbor)) { placed = true; break; }
+        }
+      }
+    }
+    if (!placed) continue;
+    district.buildings.push(neighbor);
+    district.obstacles.push(neighbor);
+  }
   // Road-facing handcrafted module placements follow the SAME curve as traffic.
   // One building per ~20m on each side; distinct business classes and silhouettes.
   let index = 0;
@@ -134,16 +209,6 @@ export function createDistrict(): District {
       if (clear(b)) { district.buildings.push(b); district.obstacles.push(b); index++; }
     }
   }
-  // One curated factual business reference, not a random repeating logo on every shop.
-  const reference = byId.get('yaowarat:6')!;
-  const goldShops = district.buildings.filter(b => b.showcase && b.style === 'gold')
-    .sort((a, b) => Math.hypot(a.x - reference.x, a.z - reference.z) - Math.hypot(b.x - reference.x, b.z - reference.z));
-  if (goldShops[0]) goldShops[0].sign = SIGN_NAMES[0];
-  // Thong Bai Goldshop is a documented Yaowarat business. This uses original
-  // stylized artwork, not an unlicensed reproduction of its commercial logo.
-  if (goldShops[1]) goldShops[1].sign = 'ทองใบเยาวราช';
-  const heritage = district.buildings.find(b => b.showcase && b.style === 'heritage');
-  if (heritage) heritage.sign = '耀華力路';
   return district;
 }
 

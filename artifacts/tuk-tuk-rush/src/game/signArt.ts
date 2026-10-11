@@ -44,14 +44,20 @@ export function buildSignAtlas(entries: SignEntry[]) {
   entries.forEach((e, i) => {
     index.set(e.key, i);
     const signature = e.text === "ฮั่วเซ่งเฮง" ? "hua" :
-      e.text === "ทองใบเยาวราช" ? "thong" : "";
+      e.text === "ทองใบเยาวราช" ? "thong" :
+      e.text === "โซวเซ่งเฮง" ? "soseng" :
+      e.text === "ก๋วยจั๊บนายเอก" ? "naiek" : "";
     // Original, distinctly composed reference-inspired signage: verified
     // business names, no copied brand logos or photographic textures.
     const colors: [string, string, string] = signature === "hua"
       ? ["#971c22", "#eac05d", "#fff0bf"]
       : signature === "thong"
         ? ["#b7272e", "#e5bd55", "#fff5cd"]
-        : PAL[e.style][e.variant % 2]!;
+        : signature === "soseng"
+          ? ["#a91f2b", "#edc255", "#fff1bf"]
+          : signature === "naiek"
+            ? ["#f2eee1", "#b82d30", "#ab252e"]
+            : PAL[e.style][e.variant % 2]!;
     const [bg, line, ink] = colors;
     let x = (i % H.cols) * H.cw, y = Math.floor(i / H.cols) * H.ch;
     frame(H.c, x, y, H.cw, H.ch, bg, line);
