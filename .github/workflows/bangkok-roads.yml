@@ -23,6 +23,8 @@ jobs:
           python-version: '3.12'
       - name: Install OSM PBF geometry reader
         run: python -m pip install 'osmium>=4,<5'
+      # Preprocessed OSMnx Bangkok intersection/road graph from an academic
+      # research project. Road lines are clipped to the actual WGS84 map bounds.
       - name: Inspect university's published Bangkok OSM road graph
         run: |
           git clone --depth 1 https://github.com/Todai-ops/Planarization-in-Urban-Road-Networks.git /tmp/bangkok-osm-graph
