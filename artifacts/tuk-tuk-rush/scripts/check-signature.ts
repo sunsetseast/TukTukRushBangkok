@@ -1,13 +1,26 @@
 import assert from 'node:assert/strict';
-import { createDistrict, obstacleDistance, distanceToSegment } from '../src/game/world';
+import { createDistrict, obstacleDistance, distanceToSegment, orientedFootprintsOverlap } from '../src/game/world';
 import { SIGNATURE_SEQUENCE, signaturePlots } from '../src/game/signatureCorridor';
 
+// SAT must distinguish touching shophouse walls from true intersections.
+const fixture = { x: 0, z: 0, w: 10, d: 12, height: 10, color: '#aaa', yaw: 0 };
+assert(orientedFootprintsOverlap(fixture, { ...fixture, x: 9, z: 0 }), 'Overlapping shop boxes collide');
+assert(!orientedFootprintsOverlap(fixture, { ...fixture, x: 10.8, z: 0 }, 0.4),
+  'Side-by-side shops can fit safely, unlike inflated bounding circles');
+assert(orientedFootprintsOverlap(fixture, { ...fixture, x: 5, z: 2, yaw: Math.PI / 4 }),
+  'Rotated corners still collide');
 const d = createDistrict();
 const buildings = d.buildings.filter(b => b.signatureId);
 assert.equal(buildings.length, SIGNATURE_SEQUENCE.length, 'All curated storefronts must be built');
 assert.equal(new Set(buildings.map(b => b.signatureId)).size, SIGNATURE_SEQUENCE.length, 'No duplicate signature buildings');
 const infill = d.buildings.filter(b => b.signatureInfillIndex !== undefined);
 assert(infill.length >= 3, 'Signature corridor needs opposite-side architectural infill');
+for (let i = 0; i < d.buildings.length; i++) {
+  for (let j = i + 1; j < d.buildings.length; j++) {
+    assert(!orientedFootprintsOverlap(d.buildings[i]!, d.buildings[j]!, 0.1),
+      'Buildings must never collide, even at curved intersections');
+  }
+}
 const nodes = new Map(d.nodes.map(n => [n.id, n]));
 const signatures = SIGNATURE_SEQUENCE.filter(s => s.verifiedBusiness);
 assert.equal(signatures.length, 4);
