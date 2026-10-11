@@ -358,6 +358,8 @@ class BangkokGame {
   try{
    const data=await BangkokNetwork.load();
    this.net=data.network;this.pois=data.landmarks;
+   (el("btn-tour") as HTMLButtonElement).disabled=false;
+   (el("btn-rush") as HTMLButtonElement).disabled=false;
    this.riverLines=(data.water.features||[])
     .filter(f=>f.geometry.type==="LineString")
     .map(f=>f.geometry.coordinates as [number,number][]);
@@ -578,7 +580,9 @@ class BangkokGame {
   else if(brake)this.speed-=dt*(this.speed>1?30:11);
   else this.speed*=Math.exp(-1.9*dt);
   this.speed=clamp(this.speed,-7,boost?40:30);
-  this.heading+=steer*dt*clamp(Math.abs(this.speed)/7,0.25,2.5)*(this.speed>=0?1:-1);
+  // Heading 0 faces +Z and negative angles turn left. Do not invert the
+  // left/right buttons and keyboard arrows on a real iPhone.
+  this.heading-=steer*dt*clamp(Math.abs(this.speed)/7,0.25,2.5)*(this.speed>=0?1:-1);
   const dx=Math.sin(this.heading)*this.speed*dt,dz=Math.cos(this.heading)*this.speed*dt;
   const next={x:this.pos.x+dx,z:this.pos.z+dz};
   const road=this.net.nearest(next,false,55);

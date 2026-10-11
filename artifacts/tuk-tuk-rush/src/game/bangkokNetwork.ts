@@ -85,7 +85,8 @@ export class BangkokNetwork{
    if(!Array.isArray(coords)||coords.length<2)continue;
    const one=String(p.oneway||"").toLowerCase();
    const isOneWay=["yes","1","true","-1"].includes(one)||String(p.highway)==="motorway";
-   const reverse=one==="-1",bridge=String(p.bridge)==="yes"||String(p.bridge)==="viaduct";
+   const reverse=one==="-1";
+   const bridge=["yes","true","1","viaduct"].includes(String(p.bridge).toLowerCase());
    const w=width(p),name=String(p["name:en"]||p.name||p.highway||"Bangkok street");
    for(let j=1;j<coords.length;j++){
     const ca=coords[j-1]!,cb=coords[j]!;

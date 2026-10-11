@@ -34,7 +34,7 @@ export function Title({ onStart, settings }: { onStart: (m: 'shift' | 'free') =>
              style={{ display: 'block', textDecoration: 'none', textAlign: 'center',
                background: 'linear-gradient(120deg,#2c8995,#164c69)', color: '#fff',
                border: '1px solid #5dd2d2', fontWeight: 850 }}>
-            Explore ALL Bangkok · City Tour →
+            Explore Central Bangkok · City Tour →
           </a>
         </div>
         {settings}
