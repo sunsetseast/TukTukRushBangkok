@@ -23,11 +23,11 @@ for(const H of shopDimensions) {
   const placements:{y:number;h:number;faceWidth:number}[]=[];
   let geometries=0, fascia=0;
   const api:FacadeApi = {
-    add(_m,_c,_geo,_u,y,_v) => { geometries++; assert(y>=0,"Valid prop elevation"); },
-    sign(_id,_u,y,_v,w,h) => {
+    add: (_m,_c,_geo,_u,y,_v) => { geometries++; assert(y>=0,"Valid prop elevation"); },
+    sign: (_id,_u,y,_v,w,h) => {
       fascia++; assert(y>5 && h>0 && w>0);
     },
-    vsign(_id,_u,y,_v,w,h,faceWidth) => {
+    vsign: (_id,_u,y,_v,w,h,faceWidth) => {
       placements.push({y,h,faceWidth:faceWidth??0});
     },
   };
