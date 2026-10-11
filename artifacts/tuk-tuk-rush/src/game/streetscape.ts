@@ -9,6 +9,7 @@ import { distanceToSegment } from "./world";
 import { composeFacade, composeSide, clearFacadeCache, defaultSign, type Style, type MatKey, type FacadeApi } from "./miniatureFacade";
 import { buildSignAtlas, type SignEntry } from "./signArt";
 import { buildSignatureFacade, buildOppositeFacadeArt } from "./signatureFacadeArt";
+import { TRADE, tradeKeys, buildYaowaratBlades } from "./yaowaratSignLayers";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -37,6 +38,24 @@ export function buildStreetscape(
     return key;
   };
   const keys = d.buildings.map((b, i) => keyOf(b, i));
+  const heroes=d.buildings.filter(b=>b.signatureId);
+  const dist=(b:Obstacle)=>Math.min(...heroes.map(h=>Math.hypot(b.x-h.x,b.z-h.z)));
+  const context=d.buildings.filter(b=>!b.signatureId && b.showcase &&
+    b.signatureInfillIndex===undefined && dist(b)<125).sort((a,b)=>dist(a)-dist(b)).slice(0,20);
+  const nearShops=new Set<Obstacle>([
+    ...d.buildings.filter(b=>b.signatureInfillIndex!==undefined),...context,
+  ]);
+  const signsByBuilding=new Map<Obstacle,[string,string]>();
+  for(const [i,b] of d.buildings.entries()){
+    if(!nearShops.has(b))continue;
+    const style=styleOf(b,i),variant=i%2, ids=tradeKeys(style,variant);
+    signsByBuilding.set(b,ids);
+    for(let slot=0;slot<2;slot++){
+      const key=ids[slot]!;
+      if(!entries.some(e=>e.key===key))
+        entries.push({key,text:TRADE[style][variant]![slot]!,style,variant});
+    }
+  }
   const atlas = buildSignAtlas(entries);
   const mkSign = (a: { tex: T.Texture; cols: number; rows: number }) => {
     const m = new T.MeshStandardMaterial({ map: a.tex, emissiveMap: a.tex, emissive: "#ffffff", emissiveIntensity: 0.22, roughness: 0.6 });
@@ -181,6 +200,10 @@ export function buildStreetscape(
     if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
     });
+    const extra=signsByBuilding.get(b);
+    if(extra && b.height>12)
+      buildYaowaratBlades(api,{W:n.w,D:n.dd,H:b.height,i,
+        ids:[atlas.index.get(extra[0])!,atlas.index.get(extra[1])!]});
   });
   // Reference-inspired Yaowarat curb activity. Localized to the noodle shop
   // and contextual tea/heritage frontage; this creates real street composition
