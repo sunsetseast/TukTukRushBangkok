@@ -1,0 +1,103 @@
+{
+  "environment": "Linux Chromium SwiftShader, not physical iPhone",
+  "samples": {
+    "chase": {
+      "calls": 210,
+      "triangles": 230716,
+      "geometries": 253,
+      "textures": 10,
+      "frameMs": 2899.899999999907
+    },
+    "signage": {
+      "calls": 60,
+      "triangles": 127038,
+      "geometries": 261,
+      "textures": 10,
+      "frameMs": 1082.1999999997206
+    },
+    "shops": {
+      "calls": 58,
+      "triangles": 85326,
+      "geometries": 267,
+      "textures": 10,
+      "frameMs": 19
+    },
+    "curve": {
+      "calls": 222,
+      "triangles": 246042,
+      "geometries": 302,
+      "textures": 10,
+      "frameMs": 1164.7000000001863
+    },
+    "gate": {
+      "calls": 219,
+      "triangles": 159534,
+      "geometries": 330,
+      "textures": 10,
+      "frameMs": 1712.3999999999069
+    },
+    "intersection": {
+      "calls": 218,
+      "triangles": 225978,
+      "geometries": 333,
+      "textures": 10,
+      "frameMs": 1104.1000000000931
+    },
+    "street-life": {
+      "calls": 147,
+      "triangles": 184206,
+      "geometries": 333,
+      "textures": 10,
+      "frameMs": 1212.6000000000931
+    },
+    "miniature": {
+      "calls": 159,
+      "triangles": 189254,
+      "geometries": 333,
+      "textures": 10,
+      "frameMs": 1103.6999999997206
+    }
+  },
+  "qualitySamples": {
+    "medium": {
+      "calls": 228,
+      "triangles": 240628,
+      "geometries": 338,
+      "textures": 10,
+      "frameMs": 662.7000000001863
+    },
+    "low": {
+      "calls": 161,
+      "triangles": 138952,
+      "geometries": 338,
+      "textures": 10,
+      "frameMs": 975.7999999998137
+    }
+  },
+  "interfaceChecks": {
+    "pauseFreeze": true,
+    "qualityButtons": true,
+    "resume": true,
+    "recovery": true,
+    "restart": {
+      "phase": "playing",
+      "mode": "free",
+      "stage": "pickup",
+      "deliveries": 0
+    },
+    "portraitGuidance": true,
+    "landscapeRestored": true
+  },
+  "cleanup": {
+    "before": 338,
+    "after": 333,
+    "released": 5
+  },
+  "gpu": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "error": 0,
+    "fontsLoaded": true
+  },
+  "errors": [],
+  "failed": []
+}
