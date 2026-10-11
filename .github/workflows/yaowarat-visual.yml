@@ -32,7 +32,7 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
       - name: Capture actual WebGL frames
         run: |
-          pnpm --filter @workspace/tuk-tuk-rush run serve -- --port 24177 > /tmp/tuktuk-vite.log 2>&1 &
+          pnpm --filter @workspace/tuk-tuk-rush exec vite --config vite.config.ts --host 127.0.0.1 --port 24177 > /tmp/tuktuk-vite.log 2>&1 &
           for i in $(seq 1 45); do
             if curl -sf http://localhost:24177/ >/dev/null; then break; fi
             sleep 1
