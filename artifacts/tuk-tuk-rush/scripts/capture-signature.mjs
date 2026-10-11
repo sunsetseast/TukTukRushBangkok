@@ -42,23 +42,25 @@ try {
       return b;
     };
     const hero = ['hua418','nai442','thong444','so456'].map(find);
-    const shot = (b, distance = 20, along = 0) => {
+    const shot = (b, distance = 15, along = 0) => {
       const nx = Math.sin(b.yaw), nz = Math.cos(b.yaw);
       const tx = Math.cos(b.yaw), tz = -Math.sin(b.yaw);
-      return { position: [b.x + nx * distance + tx * along, 6.6, b.z + nz * distance + tz * along],
-        look: [b.x, 8.8, b.z] };
+      // Stay closer to the same-side curb. Previously large 38m camera
+      // offsets put the visual inspection camera INSIDE opposite buildings.
+      return { position: [b.x + nx * distance + tx * along, 6.0, b.z + nz * distance + tz * along],
+        look: [b.x, 8.5, b.z] };
     };
     const start = hero[0], finish = hero[3];
     const center = { x: (start.x + finish.x) / 2, z: (start.z + finish.z) / 2 };
     const normal = { x: Math.sin(start.yaw), z: Math.cos(start.yaw) };
     return {
-      'hua-418': shot(hero[0], 21),
-      'nai-442': shot(hero[1], 18),
-      'thong-444': shot(hero[2], 21),
-      'so-456': shot(hero[3], 22),
-      'street-overview': { position: [center.x + normal.x * 34, 26, center.z + normal.z * 34],
+      'hua-418': shot(hero[0], 16),
+      'nai-442': shot(hero[1], 15),
+      'thong-444': shot(hero[2], 16),
+      'so-456': shot(hero[3], 17),
+      'street-overview': { position: [center.x + normal.x * 21, 26, center.z + normal.z * 21],
         look: [center.x, 8, center.z] },
-      'street-perspective': shot(hero[0], 38, -18),
+      'street-perspective': shot(hero[0], 16.5, -18),
     };
   });
   const ready = async () => {
