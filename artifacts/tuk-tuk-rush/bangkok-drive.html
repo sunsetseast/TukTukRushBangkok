@@ -58,6 +58,7 @@ h1,h2,p{margin-top:0}
 #city-map h2{font-size:24px;letter-spacing:-1px;margin:0}
 #city-map p{max-width:680px;margin:10px auto;color:#abc1d7;font-size:13px;line-height:1.5}
 #city-places{max-width:680px;margin:10px auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#city-world-map{display:block;max-width:680px;width:100%;height:auto;aspect-ratio:16/9;border:1px solid #e3c18b80;border-radius:13px;margin:12px auto;background:#203449;cursor:crosshair;touch-action:manipulation}
 .city-place{background:#1c3650;border:1px solid #52647a;border-radius:11px;padding:12px;text-align:left;color:#fff}
 .city-place:hover{border-color:#ffcb73}.city-place b{font-size:13px;display:block}.city-place small{display:block;color:#b4c7d7;margin-top:5px}
 .osm-credits{font-size:10px;color:#c9d8e4;margin:20px auto;max-width:680px}.osm-credits a{color:#ffd4a0}
@@ -108,7 +109,9 @@ h1,h2,p{margin-top:0}
 <button class="drive brake" data-drive="brake">▾<small>BRAKE</small></button>
 <button class="drive go" data-drive="go">GO <small>GAS</small></button>
 </div></div>
-<div id="city-map" class="hidden"><header><h2>Bangkok Passport <span style="color:#f6c779">✦</span></h2><button id="btn-close-map" class="tt-btn">Back to driving</button></header><p>Choose a real landmark, then follow the golden route over Bangkok's actual mapped streets and bridges. Pull up near the destination to earn a badge and fare.</p><div id="city-places"></div><div class="osm-credits">Geography © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>, ODbL. Landmark buildings are original stylized interpretations. Public streets and legal vehicle access still require ongoing validation.</div></div>
+<div id="city-map" class="hidden"><header><h2>Bangkok Passport <span style="color:#f6c779">✦</span></h2><button id="btn-close-map" class="tt-btn">Back to driving</button></header><p>Tap a landmark on the full Bangkok map, or choose a destination below. The golden route follows the mapped street network; river crossings use existing bridges.</p>
+<canvas id="city-world-map" width="960" height="540" aria-label="Interactive whole Bangkok geographic game map"></canvas>
+<div id="city-places"></div><div class="osm-credits">Geography © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>, ODbL. Landmark buildings are original stylized interpretations. Public streets and legal vehicle access still require ongoing validation.</div></div>
 <div id="city-start"><div class="panel">
 <div class="eyebrow">Bangkok • Chao Phraya • Siam • Rattanakosin</div>
 <h1>THE ENTIRE <span>CITY</span> IS YOUR PLAYGROUND.</h1>
