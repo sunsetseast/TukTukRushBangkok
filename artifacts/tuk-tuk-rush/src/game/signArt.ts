@@ -46,8 +46,8 @@ function heroHorizontal(c: CanvasRenderingContext2D, e: SignEntry,
     c.fillStyle = "#b8292e"; c.fillRect(x, y, w, 9);
     c.fillStyle = "#4e463c"; c.fillRect(x, y + h - 7, w, 7);
     c.textAlign = "left"; c.textBaseline = "middle"; c.fillStyle = "#c2292b";
-    fit(c, "ก๋วยจั๊บนายเอก", w - 60, 58);
-    c.fillText("ก๋วยจั๊บนายเอก", x + 28, y + 46);
+    fit(c, "ก๋วยจั๊บนายเอ็ก", w - 60, 58);
+    c.fillText("ก๋วยจั๊บนายเอ็ก", x + 28, y + 46);
     c.font = `500 22px ${FONT}`; c.fillStyle = "#50453e";
     c.fillText("ก๋วยจั๊บ   ข้าวหมูกรอบ   ข้าวขาหมู", x + 29, y + 97);
     c.restore(); return true;

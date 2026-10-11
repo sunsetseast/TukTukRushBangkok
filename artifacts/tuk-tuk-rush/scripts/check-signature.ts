@@ -11,6 +11,10 @@ assert(orientedFootprintsOverlap(fixture, { ...fixture, x: 5, z: 2, yaw: Math.PI
   'Rotated corners still collide');
 const d = createDistrict();
 const buildings = d.buildings.filter(b => b.signatureId);
+const nai = SIGNATURE_SEQUENCE.find(b => b.id === 'nai442');
+assert.equal(nai?.sign, 'ก๋วยจั๊บนายเอ็ก', 'Sign must use the photographed Thai spelling');
+assert(!SIGNATURE_SEQUENCE.some(b => b.sign.includes('ก๋วยจั๊บนายเอก')),
+  'Do not write the wrong Nai Ek Thai name on any signage');
 assert.equal(buildings.length, SIGNATURE_SEQUENCE.length, 'All curated storefronts must be built');
 assert.equal(new Set(buildings.map(b => b.signatureId)).size, SIGNATURE_SEQUENCE.length, 'No duplicate signature buildings');
 const infill = d.buildings.filter(b => b.signatureInfillIndex !== undefined);

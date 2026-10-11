@@ -51,7 +51,7 @@ export const SIGNATURE_SEQUENCE: readonly SignatureSpec[] = [
     color: '#c7ab86', verifiedBusiness: false,
     latitude: 13.74053, longitude: 100.50982, side: -1 },
   { id: 'nai442', name: 'Nai Ek Roll Noodles',
-    address: '442 Yaowarat Soi 9', sign: 'ก๋วยจั๊บนายเอก',
+    address: '442 Yaowarat Soi 9', sign: 'ก๋วยจั๊บนายเอ็ก',
     style: 'noodle', height: 15.5, color: '#d9c6a0', verifiedBusiness: true,
     latitude: 13.740258, longitude: 100.509982, side: 1,
     positionEvidence: 'https://johorkaki.blogspot.com/2019/10/nai-ek-roll-noodles-michelin-plate-kway.html',
