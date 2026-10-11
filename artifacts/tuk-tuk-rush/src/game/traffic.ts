@@ -25,14 +25,19 @@ export class TrafficSystem {
     const colors = ['#e872a8', '#4da995', '#e6bc54', '#db8f78', '#b9c9cf'];
     const main = this.district.roads.filter(r => r.name === 'Yaowarat Road' && !r.roundabout);
     const support = this.district.roads.filter(r => r.name === 'Charoen Krung Road');
-    return Array.from({ length: 12 }, (_, id) => {
-      const list = id < 8 ? main : support;
-      const road = list[Math.floor((id < 8 ? id / 8 : (id - 8) / 4) * list.length)]!;
+    // Chinatown's main spine should not look deserted when viewed from the
+    // tuk-tuk. 16 vehicles, with extra motorcycles, remain small enough for
+    // the existing instanced/batched model and deterministic traffic AI.
+    const mainCount=11,supportCount=5;
+    return Array.from({ length: mainCount+supportCount }, (_, id) => {
+      const list = id < mainCount ? main : support;
+      const road = list[Math.floor((id < mainCount ? id/mainCount :
+        (id-mainCount)/supportCount) * list.length)]!;
       const a = this.nodes.get(road.a)!, b = this.nodes.get(road.b)!, t = 0.12 + this.random() * 0.7;
       const heading = Math.atan2(b.x - a.x, b.z - a.z);
       return { id, from: road.a, to: road.b, x: a.x + (b.x - a.x) * t - Math.cos(heading) * 3,
         z: a.z + (b.z - a.z) * t + Math.sin(heading) * 3, heading,
-        speed: 7 + id % 4, kind: id % 4 === 0 ? 'motorcycle' : id % 3 === 0 ? 'car' : 'taxi',
+        speed: 7 + id % 4, kind: id % 3 === 0 ? 'motorcycle' : id % 5 === 0 ? 'car' : 'taxi',
         color: colors[id % colors.length]!, wait: 0, nearMissCooldown: 0 };
     });
   }

@@ -213,10 +213,23 @@ export function buildStreetscape(
   const lanternGeo = new T.SphereGeometry(1, 10, 7);
   const canopyGeo = new T.ConeGeometry(1, 0.62, 10);
   const poleGeo = new T.CylinderGeometry(1, 1, 1, 8);
-  const noodleSidewalk = d.buildings.filter(b =>
-    b.signatureId === 'nai442' || b.signatureId === 'tea-house' ||
-    b.signatureId === 'heritage-balcony' || b.signatureId === 'traditional-medicine');
+  const landmarkShops = d.buildings.filter(b=>b.signatureId);
+  const nearShops = d.buildings.filter(b=>!b.signatureId && b.showcase &&
+    landmarkShops.some(h=>Math.hypot(h.x-b.x,h.z-b.z)<110))
+    .sort((a,b)=>{
+      const distance=(v:Obstacle)=>Math.min(...landmarkShops.map(h=>Math.hypot(h.x-v.x,h.z-v.z)));
+      return distance(a)-distance(b);
+    }).slice(0,17);
+  const noodleSidewalk = [
+    ...landmarkShops.filter(b=>b.signatureId==='nai442' ||
+      b.signatureId==='tea-house' || b.signatureId==='heritage-balcony' ||
+      b.signatureId==='traditional-medicine'),
+    ...nearShops,
+  ];
   for (const b of noodleSidewalk) {
+    // A bounded set of curated, valid sidewalk stalls. Never uniformly flood
+    // every street or cover the road with merchandise.
+    if(carts.length>=19)break;
     const yaw = b.yaw ?? 0, nx = Math.sin(yaw), nz = Math.cos(yaw);
     const tx = Math.cos(yaw), tz = -Math.sin(yaw);
     const slots = b.signatureId === 'nai442' ? [-b.w * 0.30, b.w * 0.29]
