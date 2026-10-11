@@ -69,6 +69,21 @@ export function buildSignatureFacade(
   }
   for (const x of [-W * 0.18, W * 0.18])
     block('plaster', '#ffdfa0', W * 0.21, 0.12, 0.25, x, 3.18, F + 0.55);
+  // Distinct structural cornice, shutter recesses and streetward lightboxes.
+  // All hero shops are now built WITHOUT composeFacade's repeated silhouettes.
+  const frameColor = id === 'nai442' ? '#b14a3b' : '#d7b587';
+  block('plaster', frameColor, W - 0.8, 0.23, 0.64, 0, 3.63, F + 0.3);
+  for (const side of [-1, 1]) {
+    const x = side * (W / 2 - 0.62);
+    block('plaster', id === 'hua418' ? '#e5d8c7' : '#cbb08b',
+      0.7, 3.9, 0.54, x, 1.95, F + 0.16);
+  }
+  for (const x of [-W*0.22, W*0.22]) {
+    // Warm lit transoms on the upper shopfront bring the trading floor
+    // out of the black void visible in the original PR #4 screenshots.
+    block('glass', goldShop ? '#bd9b66' : '#e1dbc3',
+      W * 0.30, 0.44, 0.07, x, 3.22, F + 0.51);
+  }
   // These pieces are all within or above the existing building collider.
   // Ground-level objects must remain behind the actual curb clearance.
   if (id === 'hua418') {
@@ -82,6 +97,24 @@ export function buildSignatureFacade(
     block('metal', '#e8bf5f', W - 0.7, 0.35, 0.4, 0, 5.72, F + 0.64);
     block('plaster', '#a01f2c', W - 1.0, 1.25, 0.3, 0, 4.75, F + 0.67);
     api.sign(sign, 0, 4.78, F + 0.85, W - 1.35, 1.12);
+    // Cream stone arched portal, inspired by the documented 2022 renovated
+    // Hua Seng Heng Yaowarat storefront (reference, not measured blueprints).
+    const arcadeR = Math.min(3.6, W * 0.35);
+    const portalY = 7.95;
+    block('plaster', '#eee2d0', W + 0.18, 0.56, 0.82, 0, 8.25, F + 0.31);
+    for (const side of [-1, 1]) {
+      block('plaster', '#f0e5d8', 0.62, 4.0, 0.66,
+        side * arcadeR, 5.35, F + 0.62);
+      block('metal', '#be9b6d', 0.12, 3.6, 0.3,
+        side * (arcadeR - 0.35), 5.5, F + 0.99);
+    }
+    add('plaster', '#ede0d0', new T.TorusGeometry(arcadeR, 0.31, 8, 32, Math.PI),
+      0, portalY, F + 0.57);
+    add('metal', '#be9a6b', new T.TorusGeometry(arcadeR - 0.31, 0.072, 4, 32, Math.PI),
+      0, portalY, F + 0.94);
+    block('glass', '#71827f', arcadeR * 1.5, 0.55, 0.1, 0, 7.30, F + 0.30);
+    for (let i = -3; i <= 3; i++)
+      block('metal', '#c5ae87', 0.055, 0.63, 0.1, i * arcadeR/4, 7.30, F + 0.48);
     // Deliberately model a convex projecting canopy, not a generic flat slab.
     add('metal', '#e3c169',
       new T.CylinderGeometry(1.15, 1.15, W - 0.75, 16, 1, false, 0, Math.PI).rotateZ(Math.PI / 2),
@@ -97,6 +130,22 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#9c2630', '#efc562');
   } else if (id === 'nai442') {
+    // Brick-red open restaurant, white menu board, fluorescent canopy, visible
+    // steel counter and small hanging lamps seen at the genuine 442 entrance.
+    // No giant invented neon dragon on this modest noodle restaurant.
+    block('plaster', '#7c3f36', W - 0.5, H - 5.1, 0.35,
+      0, (H + 5.1)/2, F + 0.22);
+    const cols = W > 10 ? [-W*0.26, W*0.26] : [0];
+    for (const x of cols) {
+      block('metal', '#d9d1bd', W * 0.38, 2.5, 0.23, x, 7.45, F + 0.45);
+      block('glass', '#46676c', W * 0.34, 2.18, 0.08, x, 7.45, F + 0.6);
+      block('metal', '#ded9c9', 0.14, 2.35, 0.18, x, 7.45, F + 0.68);
+      block('metal', '#ded9c9', W * 0.34, 0.14, 0.18, x, 7.45, F + 0.68);
+    }
+    for (const x of [-W*0.28, 0, W*0.28]) {
+      block('metal', '#606d6f', 0.09, 0.7, 0.13, x, 2.72, F + 1.07);
+      orb('plaster', '#fae9be', 0.22, x, 2.34, F + 1.07);
+    }
     // The restaurant must read differently from the gold shops: white/red
     // horizontal fascia, exposed cooking counter, low awning and food details.
     block('plaster', '#f5f0dc', W - 0.3, 1.8, 0.35, 0, 4.65, F + 0.72);
@@ -120,6 +169,17 @@ export function buildSignatureFacade(
     rail('#8a5a44', 6.83, F + 0.35);
     roofEmbellishment('#dfceb0', '#c14f3a');
   } else if (id === 'thong444') {
+    // Distinct branch 444 identity: layered jewelry shop sign, restrained
+    // blue-green corner trim and illuminated glass showcases. BangkokType's
+    // highly colorful sign photograph is of branch 152–154, NOT this one.
+    for (const x of [-W * 0.28, W * 0.28]) {
+      block('metal', '#177567', 0.35, 3.5, 0.35, x, 1.85, F + 0.64);
+      block('metal', '#f1d48a', 0.56, 0.24, 0.45, x, 3.47, F + 0.71);
+    }
+    for (let k=0;k<5;k++) {
+      const x=(k-2)*((W-2)/5);
+      block('metal', '#efc265', 0.13, 0.47, 0.18, x, 4.09, F + 0.96);
+    }
     // Colored bands evoke Thong Bai's multicolored Thai-Chinese gold-shop
     // lightboxes without copying a proprietary logo or another branch photo.
     const colors = ['#c93034', '#dfb84e', '#1d8066', '#2b5b90'];
@@ -143,6 +203,20 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#a9262f', '#ecc467');
   } else if (id === 'so456') {
+    // More detailed arched upper bays, concrete cornices and front-column
+    // profiles distinguish this real shop from every other gold facade.
+    for (const x of [-W*0.27, W*0.27]) {
+      for (let f=0;f<2;f++) {
+        const yy = 7.1 + f*3.45;
+        block('plaster', '#efdfcc', W*0.34, 2.72, 0.28, x, yy, F+0.4);
+        block('glass', '#5b7069', W*0.27, 2.23, 0.08, x, yy, F+0.56);
+        block('metal', '#b4976e', W*0.30, 0.09, 0.16, x, yy+0.9, F+0.63);
+      }
+    }
+    for (const y of [9.1, 12.55, 16.5]) {
+      if (y + 1 > H) continue;
+      block('metal', '#c5a477', W-0.35, 0.19, 0.9, 0, y, F+0.49);
+    }
     // Reference-inspired monumental pale arch on the So Seng Heng commercial
     // elevation: unmistakably different from a generic red gold shop.
     // The actual facade in archival street photographs includes broad white
@@ -197,6 +271,15 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#aa2930', '#e0b35b');
   } else if (id === 'tea-house') {
+    // Historic wooden shutters and canopies in this FICTIONAL context unit.
+    block('plaster', '#bfa988', W-0.55, H-4.4, 0.24, 0, (H+4.4)/2, F+0.18);
+    for (const x of [-W*0.24, W*0.24])
+      for (let i=0;i<2;i++) {
+        const y=6.7 + i*3.1;
+        block('metal', '#614b38', W*0.34, 2.16, 0.18, x, y, F+0.42);
+        for (let slat=-3;slat<=3;slat++)
+          block('metal', '#8b704f', W*0.30, 0.075, 0.20, x, y+slat*0.26, F+0.56);
+      }
     block('plaster', '#75684c', W - 1.0, 1.0, 0.3, 0, 4.8, F + 0.35);
     api.sign(sign, 0, 4.8, F + 0.57, W - 1.6, 0.82);
     for (let floor = 0; floor < 2; floor++) {
@@ -207,6 +290,13 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#a28b6d', '#845f42');
   } else if (id === 'traditional-medicine') {
+    block('plaster', '#b9c9b2', W-0.6, H-4.1, 0.2, 0, (H+4.1)/2, F+0.21);
+    for (const x of [-W*0.22, W*0.22])
+      for (const y of [6.7, 9.65]) {
+        if (y+1.5 >= H) continue;
+        block('metal', '#486c5d', W*0.34, 2.25, 0.22, x, y, F+0.34);
+        block('glass', '#819c86', W*0.29, 1.8, 0.09, x, y, F+0.49);
+      }
     const x = W * 0.30;
     block('plaster', '#e9e4cf', W - 0.7, 1.3, 0.25, 0, 4.7, F + 0.47);
     api.sign(sign, 0, 4.7, F + 0.62, W - 1.2, 1.1);
@@ -219,6 +309,9 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#c7cab2', '#477e66');
   } else {
+    // Older corner commercial block with patched ochre plaster and deep
+    // inset timber window shutters, not a generic fresh paint palette.
+    block('plaster', '#b38766', W-0.6, H-4.2, 0.2, 0, (H+4.2)/2, F+0.22);
     // Old balcony-and-shutters silhouette to visually break gold-shop rhythm.
     for (let f = 0; f < 3; f++) {
       const y = 6.5 + f * 3.2;
