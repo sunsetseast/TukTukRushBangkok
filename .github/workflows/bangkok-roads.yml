@@ -23,14 +23,20 @@ jobs:
           python-version: '3.12'
       - name: Install OSM PBF geometry reader
         run: python -m pip install 'osmium>=4,<5'
-      - name: Download published Bangkok OSM extract from BBBike
+      - name: Inspect university's published Bangkok OSM road graph
         run: |
-          curl -fL --retry 3 --connect-timeout 25 --max-time 260 \
-            -o /tmp/Bangkok.osm.pbf \
-            https://download.bbbike.org/osm/bbbike/Bangkok/Bangkok.osm.pbf
-          test $(stat -c%s /tmp/Bangkok.osm.pbf) -gt 10000000
-      - name: Extract true OSM roads, bridges and waterways
-        run: python artifacts/tuk-tuk-rush/scripts/extract-bangkok-pbf.py /tmp/Bangkok.osm.pbf
+          git clone --depth 1 https://github.com/Todai-ops/Planarization-in-Urban-Road-Networks.git /tmp/bangkok-osm-graph
+          python -m pip install pandas openpyxl
+          python - <<'PY'
+          import pandas as pd
+          for name in ('Bangkok_nodes_osm.xlsx','Bangkok_edges_osm.xlsx'):
+              f='/tmp/bangkok-osm-graph/'+name
+              d=pd.read_excel(f,nrows=4)
+              print(name,'columns=',d.columns.tolist())
+              print(d.to_string(index=False,max_colwidth=90))
+          PY
+      - name: Extract true OSM road data from published research
+        run: python artifacts/tuk-tuk-rush/scripts/extract-bangkok-xlsx.py /tmp/bangkok-osm-graph
       - name: Commit generated licensed static road geometry to draft branch
         run: |
           git config user.name "github-actions[bot]"
