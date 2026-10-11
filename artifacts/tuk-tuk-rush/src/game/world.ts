@@ -1,5 +1,6 @@
 import type { District, Point, Road, RoadNode, Obstacle } from './types';
-import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE, SIGN_NAMES } from './mapData';
+import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE } from './mapData';
+import { signaturePlots } from './signatureCorridor';
 
 export const WORLD_SIZE = 700;
 export const nodeId = (col: number, row: number) => `${col}:${row}`;
@@ -106,6 +107,13 @@ export function createDistrict(): District {
     }
     return district.buildings.every(o => Math.hypot(o.x - b.x, o.z - b.z) > Math.hypot(o.w, o.d) / 2 + Math.hypot(b.w, b.d) / 2 - 2);
   };
+  // Authored hero frontages take precedence over generic shop placement.
+  // No overlays/duplicate collision shells and no invented GPS accuracy.
+  for (const hero of signaturePlots(segments)) {
+    if (!clear(hero)) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
+    district.buildings.push(hero);
+    district.obstacles.push(hero);
+  }
   // Road-facing handcrafted module placements follow the SAME curve as traffic.
   // One building per ~20m on each side; distinct business classes and silhouettes.
   let index = 0;
@@ -134,16 +142,6 @@ export function createDistrict(): District {
       if (clear(b)) { district.buildings.push(b); district.obstacles.push(b); index++; }
     }
   }
-  // One curated factual business reference, not a random repeating logo on every shop.
-  const reference = byId.get('yaowarat:6')!;
-  const goldShops = district.buildings.filter(b => b.showcase && b.style === 'gold')
-    .sort((a, b) => Math.hypot(a.x - reference.x, a.z - reference.z) - Math.hypot(b.x - reference.x, b.z - reference.z));
-  if (goldShops[0]) goldShops[0].sign = SIGN_NAMES[0];
-  // Thong Bai Goldshop is a documented Yaowarat business. This uses original
-  // stylized artwork, not an unlicensed reproduction of its commercial logo.
-  if (goldShops[1]) goldShops[1].sign = 'ทองใบเยาวราช';
-  const heritage = district.buildings.find(b => b.showcase && b.style === 'heritage');
-  if (heritage) heritage.sign = '耀華力路';
   return district;
 }
 
