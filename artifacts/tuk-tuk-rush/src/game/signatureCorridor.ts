@@ -6,8 +6,8 @@ import type { Obstacle, Road, RoadNode } from './types';
  * Addresses and business names are verified; the arcade miniature's plot
  * positions, frontage widths, and neighbors are NOT surveyed geolocation.
  * Never present these locations as actual GPS matches. The planned 418–456
- * frontage is a curated contiguous slice on the left side approaching from
- * Odeon Circle toward western Yaowarat.
+ * frontage is a curated contiguous arcade storefront slice on the south-west side of
+ * Yaowarat. Parcel-level positions remain unverified.
  */
 export type SignatureId =
   | 'hua418' | 'tea-house' | 'nai442' | 'thong444'
@@ -83,7 +83,7 @@ export function signaturePlots(segments: StreetSegment[]): Obstacle[] {
     const ux = (segment.b.x - segment.a.x) / segment.length;
     const uz = (segment.b.z - segment.a.z) / segment.length;
     const depth = 12.5, width = 10.4;
-    const side = -1; // roadside left as seen travelling away from Odeon
+    const side = 1; // south-west frontage, away from the connecting northern roads
     const off = segment.r.width / 2 + depth / 2 + 5.85;
     plots.push({
       x: segment.a.x + ux * distance + uz * off * side,
