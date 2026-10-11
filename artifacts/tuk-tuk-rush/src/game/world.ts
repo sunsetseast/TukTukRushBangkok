@@ -134,10 +134,27 @@ export function createDistrict(): District {
     district.buildings.push(hero);
     district.obstacles.push(hero);
   }
-  // Give the signature road a proper TWO-SIDED urban canyon. Nearby junctions
-  // remain open; unsafe candidate frontages are skipped, never forced into lanes.
+  // Add intentionally fictional neighboring elevations, not invented real
+  // businesses. Fit each one to every road arm and existing physical obstacle;
+  // an authored candidate can shift ALONG its building line, never onto asphalt.
   for (const neighbor of signatureOppositePlots(segments)) {
-    if (!clear(neighbor)) continue;
+    const x0 = neighbor.x, z0 = neighbor.z, yaw = neighbor.yaw ?? 0;
+    const nx = Math.sin(yaw), nz = Math.cos(yaw);
+    const tx = Math.cos(yaw), tz = -Math.sin(yaw);
+    let placed = false;
+    for (const along of [0, 7, -7, 14, -14, 22, -22, 30, -30]) {
+      if (placed) break;
+      for (const away of [0, 1.5, 3.5, 5.5]) {
+        if (placed) break;
+        for (const width of [13.7, 12, 10.4, 9.0, 7.8]) {
+          neighbor.x = x0 + tx * along - nx * away;
+          neighbor.z = z0 + tz * along - nz * away;
+          neighbor.w = width;
+          if (clear(neighbor)) { placed = true; break; }
+        }
+      }
+    }
+    if (!placed) continue;
     district.buildings.push(neighbor);
     district.obstacles.push(neighbor);
   }
