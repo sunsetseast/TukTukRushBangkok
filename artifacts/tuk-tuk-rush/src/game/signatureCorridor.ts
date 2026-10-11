@@ -82,7 +82,7 @@ export function signaturePlots(segments: StreetSegment[]): Obstacle[] {
     }
     const ux = (segment.b.x - segment.a.x) / segment.length;
     const uz = (segment.b.z - segment.a.z) / segment.length;
-    const depth = 12.5, width = 10.4;
+    const depth = 12.5, width = 14.2;
     const side = 1; // south-west frontage, away from the connecting northern roads
     const off = segment.r.width / 2 + depth / 2 + 5.85;
     plots.push({
@@ -95,4 +95,32 @@ export function signaturePlots(segments: StreetSegment[]): Obstacle[] {
     });
   });
   return plots;
+}
+
+/**
+ * Curated OPPOSITE FRONTAGE infill, without falsely identifying unverified
+ * neighbors as real shops. Mirrors the geometric road-sampling reference but
+ * uses independent original architectural silhouettes and trade signboards.
+ * Candidates intersecting junction arms are discarded by world.clear().
+ */
+export function signatureOppositePlots(segments: StreetSegment[]): Obstacle[] {
+  const styles: NonNullable<Obstacle['style']>[] =
+    ['heritage', 'hotel', 'noodle', 'pharmacy', 'heritage', 'hotel', 'noodle'];
+  const signs = ['เยาวราช', 'โรงแรม', 'อาหาร', 'ร้านขายยา', 'เยาวราช', 'โรงแรม', 'ก๋วยเตี๋ยว'];
+  return signaturePlots(segments).map((hero, i) => {
+    const yaw = hero.yaw ?? 0;
+    const normalX = Math.sin(yaw), normalZ = Math.cos(yaw);
+    const plotOffset = 7 + 12.5 / 2 + 5.85;
+    const heights = [15.2, 23.1, 14.6, 17.4, 16.0, 21.2, 14.4];
+    return {
+      x: hero.x + normalX * plotOffset * 2,
+      z: hero.z + normalZ * plotOffset * 2,
+      yaw: yaw + Math.PI,
+      w: 13.7, d: 12.5, height: heights[i]!,
+      color: ['#bd9d79', '#d5c5a1', '#cfad92', '#bfd2c4', '#d7bb9c', '#acb6bd', '#b8a98e'][i]!,
+      style: styles[i]!, showcase: true,
+      sign: signs[i]!,
+      signatureInfillIndex: i,
+    };
+  });
 }

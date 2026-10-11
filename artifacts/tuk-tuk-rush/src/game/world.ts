@@ -1,6 +1,6 @@
 import type { District, Point, Road, RoadNode, Obstacle } from './types';
 import { YAOWARAT_TRACE, CHAROEN_TRACE, GATE_CENTER, TEMPLE_CENTER, STATION_CENTER, PALETTE } from './mapData';
-import { signaturePlots } from './signatureCorridor';
+import { signaturePlots, signatureOppositePlots } from './signatureCorridor';
 
 export const WORLD_SIZE = 700;
 export const nodeId = (col: number, row: number) => `${col}:${row}`;
@@ -113,6 +113,13 @@ export function createDistrict(): District {
     if (!clear(hero)) throw new Error(`Signature frontage blocked: ${hero.signatureId}`);
     district.buildings.push(hero);
     district.obstacles.push(hero);
+  }
+  // Give the signature road a proper TWO-SIDED urban canyon. Nearby junctions
+  // remain open; unsafe candidate frontages are skipped, never forced into lanes.
+  for (const neighbor of signatureOppositePlots(segments)) {
+    if (!clear(neighbor)) continue;
+    district.buildings.push(neighbor);
+    district.obstacles.push(neighbor);
   }
   // Road-facing handcrafted module placements follow the SAME curve as traffic.
   // One building per ~20m on each side; distinct business classes and silhouettes.

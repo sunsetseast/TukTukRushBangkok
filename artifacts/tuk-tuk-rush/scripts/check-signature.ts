@@ -6,6 +6,8 @@ const d = createDistrict();
 const buildings = d.buildings.filter(b => b.signatureId);
 assert.equal(buildings.length, SIGNATURE_SEQUENCE.length, 'All curated storefronts must be built');
 assert.equal(new Set(buildings.map(b => b.signatureId)).size, SIGNATURE_SEQUENCE.length, 'No duplicate signature buildings');
+const infill = d.buildings.filter(b => b.signatureInfillIndex !== undefined);
+assert(infill.length >= 3, 'Signature corridor needs opposite-side architectural infill');
 const nodes = new Map(d.nodes.map(n => [n.id, n]));
 const signatures = SIGNATURE_SEQUENCE.filter(s => s.verifiedBusiness);
 assert.equal(signatures.length, 4);
