@@ -23,6 +23,27 @@ export function obstacleDistance(p: Point, b: Obstacle) {
   return Math.hypot(Math.max(0, Math.abs(q.x) - b.w / 2), Math.max(0, Math.abs(q.z) - b.d / 2));
 }
 
+/** Rotated-rectangle intersection with explicit clearance, using four SAT axes.
+ * Conservative bounding circles artificially separate neighboring shophouses,
+ * even when their actual rectangular facades can stand side-by-side.
+ */
+export function orientedFootprintsOverlap(a: Obstacle, b: Obstacle, margin = 0): boolean {
+  const ac = Math.cos(a.yaw ?? 0), as = Math.sin(a.yaw ?? 0);
+  const bc = Math.cos(b.yaw ?? 0), bs = Math.sin(b.yaw ?? 0);
+  const axesA = [{ x: ac, z: -as }, { x: as, z: ac }];
+  const axesB = [{ x: bc, z: -bs }, { x: bs, z: bc }];
+  const dx = b.x - a.x, dz = b.z - a.z;
+  for (const axis of [...axesA, ...axesB]) {
+    const proj = Math.abs(dx * axis.x + dz * axis.z);
+    const ah = Math.abs(axis.x * axesA[0]!.x + axis.z * axesA[0]!.z) * a.w / 2 +
+      Math.abs(axis.x * axesA[1]!.x + axis.z * axesA[1]!.z) * a.d / 2;
+    const bh = Math.abs(axis.x * axesB[0]!.x + axis.z * axesB[0]!.z) * b.w / 2 +
+      Math.abs(axis.x * axesB[1]!.x + axis.z * axesB[1]!.z) * b.d / 2;
+    if (proj >= ah + bh + margin) return false;
+  }
+  return true;
+}
+
 export function createDistrict(): District {
   const nodes: RoadNode[] = [], roads: Road[] = [];
   const byId = new Map<string, RoadNode>();
@@ -105,7 +126,9 @@ export function createDistrict(): District {
       const support = Math.abs(Math.cos((b.yaw ?? 0) - theta)) * b.w / 2 + Math.abs(Math.sin((b.yaw ?? 0) - theta)) * b.d / 2;
       if (q.distance < r.width / 2 + support + 5.2) return false;
     }
-    return district.buildings.every(o => Math.hypot(o.x - b.x, o.z - b.z) > Math.hypot(o.w, o.d) / 2 + Math.hypot(b.w, b.d) / 2 - 2);
+    // Oriented rectangle separation allows dense, accurate frontage.
+    // The old bounding-circle check added artificial gaps of several meters.
+    return district.buildings.every(o => !orientedFootprintsOverlap(o, b, 0.65));
   };
   // Authored hero frontages take precedence over generic shop placement.
   // No overlays/duplicate collision shells and no invented GPS accuracy.
