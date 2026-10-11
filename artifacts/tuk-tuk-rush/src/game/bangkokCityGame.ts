@@ -34,6 +34,11 @@ class CityScene{
  lastTile="";
  private art:{dispose:()=>void}|null=null;
  private spokes:T.Object3D[]=[];
+ private trafficBody:T.InstancedMesh;
+ private trafficRoofs:T.InstancedMesh;
+ traffic:{seg:RoadSegment;t:number;dir:number;speed:number;position:Point;heading:number;cooldown:number}[]=[];
+ private trafficOrigin:Point={x:1e7,z:1e7};
+ private pairMap=new Map<string,RoadSegment>();
  constructor(readonly graph:BangkokNetwork,readonly poi:Landmark[],water:Record<string,unknown>,canvas:HTMLCanvasElement){
   this.renderer=new T.WebGLRenderer({canvas,antialias:false,powerPreference:"high-performance"});
   this.renderer.outputColorSpace=T.SRGBColorSpace;
@@ -50,6 +55,16 @@ class CityScene{
   this.roofs.count=0;this.roofs.instanceMatrix.setUsage(T.DynamicDrawUsage);
   this.scene.add(this.buildings,this.roofs);
   this.makeRoads();this.makeWater(water);
+  for(const road of this.graph.segments){
+   this.pairMap.set(String(road.a)+":"+String(road.b),road);
+   this.pairMap.set(String(road.b)+":"+String(road.a),road);
+  }
+  this.trafficBody=new T.InstancedMesh(new T.BoxGeometry(1,1,1),mat("#ffffff"),27);
+  this.trafficRoofs=new T.InstancedMesh(new T.BoxGeometry(1,1,1),mat("#ffffff"),27);
+  for(const mesh of [this.trafficBody,this.trafficRoofs]){
+   mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);mesh.count=0;
+   this.scene.add(mesh);
+  }
   for(const p of poi)this.makeLandmark(p);
   const beacon=new T.Mesh(new T.CylinderGeometry(2.0,2.0,80,10,1,true),
    new T.MeshBasicMaterial({color:"#f8c566",transparent:true,opacity:0.3,depthWrite:false,side:T.DoubleSide}));
@@ -136,6 +151,70 @@ class CityScene{
    geometry.setAttribute("position",new T.Float32BufferAttribute(vertices,3));
    const mesh=new T.Mesh(geometry,material);mesh.visible=false;this.scene.add(mesh);
    this.rivers.push({obj:mesh,center:pts[Math.floor(pts.length/2)]!});
+  }
+ }
+ private populateTraffic(position:Point){
+  if(distance(position,this.trafficOrigin)<300&&this.traffic.length>12)return;
+  this.trafficOrigin={...position};
+  const candidates=Array.from(this.graph.nearby(position,550))
+   .map(id=>this.graph.segments[id]!)
+   .filter(s=>s.length>19 && distance({x:(s.x1+s.x2)/2,z:(s.z1+s.z2)/2},position)<520 &&
+     !["motorway","trunk"].includes(s.className));
+  // Fully deterministic placement for stable on-device QA screenshots and no
+  // random car spawning directly into the playable tuk-tuk.
+  candidates.sort((a,b)=>((a.a*109+a.b*47)%401)-((b.a*109+b.b*47)%401));
+  this.traffic=[];
+  const used=new Set<string>();
+  for(const s of candidates){
+   if(this.traffic.length>=27)break;
+   const key=Math.floor((s.x1+s.x2)/110)+":"+Math.floor((s.z1+s.z2)/110);
+   if(used.has(key))continue;used.add(key);
+   const t=0.18+(this.traffic.length%6)*0.12;
+   const x=s.x1+(s.x2-s.x1)*t,z=s.z1+(s.z2-s.z1)*t;
+   if(distance({x,z},position)<20)continue;
+   this.traffic.push({seg:s,t,dir:(this.traffic.length%3?1:-1),
+    speed:5+(this.traffic.length%7)*0.8,position:{x,z},heading:0,cooldown:0});
+  }
+ }
+ private moveTraffic(dt:number){
+  const matrix=new T.Object3D();
+  for(let i=0;i<this.traffic.length;i++){
+   const car=this.traffic[i]!;
+   car.cooldown=Math.max(0,car.cooldown-dt);
+   car.t+=car.speed*dt/car.seg.length*car.dir;
+   if(car.t<0||car.t>1){
+    const endpoint=car.dir>0?car.seg.b:car.seg.a;
+    const paths=this.graph.nodes[endpoint]!.neighbors
+     .filter(link=>link.cost<1800)
+     .map(link=>({link,seg:this.pairMap.get(String(endpoint)+":"+String(link.to))}))
+     .filter((x):x is {link:{to:number;cost:number};seg:RoadSegment}=>!!x.seg)
+     .filter(x=>x.seg!==car.seg);
+    if(paths.length){
+     const pick=paths[(i+Math.floor(car.cooldown*31))%paths.length]!;
+     car.seg=pick.seg;
+     car.dir=car.seg.a===endpoint?1:-1;
+     car.t=car.dir===1?0:1;
+    }else{
+     car.dir*=-1;car.t=clamp(car.t,0,1);
+    }
+   }
+   const s=car.seg,dx=(s.x2-s.x1)/s.length,dz=(s.z2-s.z1)/s.length;
+   const offset=s.w/2*0.42;
+   car.position={x:s.x1+(s.x2-s.x1)*car.t-car.dir*dz*offset,
+     z:s.z1+(s.z2-s.z1)*car.t+car.dir*dx*offset};
+   car.heading=Math.atan2(dx*car.dir,dz*car.dir);
+   matrix.position.set(car.position.x,0.9,car.position.z);matrix.rotation.y=car.heading;
+   matrix.scale.set(1.55,1.10,3.15);matrix.updateMatrix();
+   this.trafficBody.setMatrixAt(i,matrix.matrix);
+   this.trafficBody.setColorAt(i,new T.Color(
+    i%5===0?"#e9b95c":i%5===1?"#e88ca8":i%5===2?"#6ac2bb":i%5===3?"#e8d6b6":"#b3c2d1"));
+   matrix.position.y=1.67;matrix.scale.set(1.45,0.62,1.5);matrix.updateMatrix();
+   this.trafficRoofs.setMatrixAt(i,matrix.matrix);
+   this.trafficRoofs.setColorAt(i,new T.Color(i%2?"#f5eee0":"#5e8990"));
+  }
+  for(const inst of [this.trafficBody,this.trafficRoofs]){
+   inst.count=this.traffic.length;inst.instanceMatrix.needsUpdate=true;
+   if(inst.instanceColor)inst.instanceColor.needsUpdate=true;
   }
  }
  private makeLandmark(p:Landmark){
@@ -239,6 +318,8 @@ class CityScene{
   this.cam.lerp(new T.Vector3(pos.x-x*12,6.2,pos.z-z*12),clamp(dt*7,0,1));
   this.look.lerp(new T.Vector3(pos.x+x*13,2.3,pos.z+z*13),clamp(dt*8,0,1));
   this.camera.position.copy(this.cam);this.camera.lookAt(this.look);
+  this.populateTraffic(pos);
+  this.moveTraffic(dt);
   const key=tile(pos.x,pos.z);
   if(key!==this.lastTile){
    this.lastTile=key;
@@ -433,6 +514,24 @@ class BangkokGame {
       z:nearest.point.z+pz/dist*Math.min(dist,limit)};
     this.speed*=0.68;
    }else{this.speed=0;}
+  }
+  // Arcade-safe traffic bump and near-miss rewards. Allow reverse and
+  // steering after contact rather than repeatedly halving movement to zero.
+  if(Math.abs(this.speed)>2){
+   for(const car of this.world.traffic){
+    const d=distance(this.pos,car.position);
+    if(d<3.4){
+     const nx=(this.pos.x-car.position.x)/(d||1);
+     const nz=(this.pos.z-car.position.z)/(d||1);
+     this.pos.x+=nx*Math.min(1,3.5-d);
+     this.pos.z+=nz*Math.min(1,3.5-d);
+     this.speed*=0.67;
+     break;
+    }
+    if(d<5.5&&d>3.5&&this.speed>13&&car.cooldown===0){
+     car.cooldown=9;this.score+=35;this.message("Bangkok close pass +35!");
+    }
+   }
   }
   if(this.current){
    const d=distance(this.pos,this.current.road);
