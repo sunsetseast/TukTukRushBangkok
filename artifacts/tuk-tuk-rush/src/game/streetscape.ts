@@ -5,11 +5,11 @@ import {
 } from "three/addons/utils/BufferGeometryUtils.js";
 import type { District, Obstacle } from "./types";
 import { ASSETS, surface, disposeObject } from "./assets";
-import { distanceToSegment } from "./world";
+import { distanceToSegment, obstacleDistance } from "./world";
 import { composeFacade, composeSide, clearFacadeCache, defaultSign, type Style, type MatKey, type FacadeApi } from "./miniatureFacade";
 import { buildSignAtlas, type SignEntry } from "./signArt";
 import { buildSignatureFacade, buildOppositeFacadeArt } from "./signatureFacadeArt";
-import { TRADE, tradeKeys, buildYaowaratBlades } from "./yaowaratSignLayers";
+import { TRADE, tradeKeys, buildYaowaratBlades, buildYaowaratWallAd } from "./yaowaratSignLayers";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -54,6 +54,23 @@ export function buildStreetscape(
       const key=ids[slot]!;
       if(!entries.some(e=>e.key===key))
         entries.push({key,text:TRADE[style][variant]![slot]!,style,variant});
+    }
+  }
+  // Select only EXPOSED masonry side walls, not attached party walls or
+  // verified commercial brand facades. This adds a second visual-sign plane.
+  const wallSigns=new Map<Obstacle,{side:-1|1;key:string}>();
+  const wallCandidates=d.buildings.filter(b=>!b.signatureId &&
+    b.height>12 && dist(b)<140).sort((a,b)=>dist(a)-dist(b)).slice(0,32);
+  for(const b of wallCandidates){
+    const yaw=b.yaw??0,ux=Math.cos(yaw),uz=-Math.sin(yaw);
+    for(const side of [-1,1] as const){
+      const p={x:b.x+side*ux*(b.w/2+0.72),z:b.z+side*uz*(b.w/2+0.72)};
+      if(d.buildings.some(other=>other!==b && obstacleDistance(p,other)<0.8))continue;
+      const style=styleOf(b,d.buildings.indexOf(b));
+      const key=tradeKeys(style,1)[1];
+      if(!entries.some(e=>e.key===key))
+        entries.push({key,text:TRADE[style][1]![1],style,variant:1});
+      wallSigns.set(b,{side,key});break;
     }
   }
   const atlas = buildSignAtlas(entries);
@@ -199,6 +216,10 @@ export function buildStreetscape(
     composeSide(api, { style, W: n.w, D: n.dd, H: b.height, i });
     if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
+    });
+    const wall=wallSigns.get(b);
+    if(wall)buildYaowaratWallAd(api,{
+      W:n.w,D:n.dd,H:b.height,side:wall.side,i,sign:atlas.index.get(wall.key)!,
     });
     const extra=signsByBuilding.get(b);
     if(extra && b.height>12)
