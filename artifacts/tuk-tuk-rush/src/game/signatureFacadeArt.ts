@@ -60,7 +60,8 @@ export function buildSignatureFacade(
     block('metal', '#685d51', opts.width + 0.4, opts.height + 0.7, 0.87, opts.u, opts.y, v);
     block('metal', opts.border, opts.width + 0.27, opts.height + 0.44, 0.94, opts.u, opts.y, v + 0.07);
     block('plaster', opts.color, opts.width + 0.08, opts.height + 0.14, 1.01, opts.u, opts.y, v + 0.14);
-    api.vsign(sign, opts.u, opts.y, v + 0.84, opts.width, opts.height);
+    api.vsign(sign, opts.u, opts.y, v + 0.3, opts.width, opts.height,
+      (opts.width + 0.4) / 2 + 0.04);
     // Inset strips and corner bosses break the default cardboard rectangle.
     for (const dx of [-1, 1]) {
       const x = opts.u + dx * (opts.width / 2 + 0.13);
@@ -292,7 +293,7 @@ export function buildSignatureFacade(
     block('metal', '#a62d31', 2.95, 11.5, 1.22, x, y, v);
     block('metal', '#e9ba57', 2.72, 11.2, 1.3, x, y, v + 0.1);
     block('metal', '#a92531', 2.49, 10.95, 1.36, x, y, v + 0.16);
-    api.vsign(sign, x, y, v + 0.9, 2.32, 10.5);
+    api.vsign(sign, x, y, v + 0.16, 2.32, 10.5, 1.55);
     // Crown: stylized original dragon-like ornamental creature rather than
     // an unauthorized copied manufacturer's crest.
     const curve = new T.CatmullRomCurve3([

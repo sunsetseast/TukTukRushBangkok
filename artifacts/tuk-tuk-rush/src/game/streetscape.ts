@@ -157,9 +157,15 @@ export function buildStreetscape(
     const api: FacadeApi = {
         add: (m, color, geo, u, y, v, detail = true) => piece(geo, mats[m], color, wx(u, v), y, wz(u, v), 1, 1, 1, n.ry, -1, detail),
         sign: (k, u, y, v, w, h) => piece(plane, sign, "#fff", wx(u, v), y, wz(u, v), w, h, 1, n.ry, k),
-        vsign: (k, u, y, v, w, h) => {
+        vsign: (k, u, y, v, w, h, faceHalfWidth = 0.18) => {
+          // Textured faces must sit on the *OUTSIDE* of the sign cabinet.
+          // Previous hard-coded 0.18m buried textures inside 3m-wide hero
+          // signs, leaving what looked like unmarked colored boxes.
           for (const side of [-1, 1])
-            piece(plane, verticalSign, "#fff", wx(u + side * 0.18, v), y, wz(u + side * 0.18, v), w, h, 1, n.ry + (side * Math.PI) / 2, k);
+            piece(plane, verticalSign, "#fff",
+              wx(u + side * faceHalfWidth, v), y,
+              wz(u + side * faceHalfWidth, v), w, h, 1,
+              n.ry + (side * Math.PI) / 2, k);
         },
     };
     // Real-world reference shops are composed from dedicated geometry,
