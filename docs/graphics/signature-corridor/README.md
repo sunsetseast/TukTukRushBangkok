@@ -26,14 +26,29 @@ or parcel-level reconstructed**, and none of the new signs are copied logos.
 
 ## Architectural and mapping limitations
 
-The run of plots is generated from `yaowarat:3` to `yaowarat:6`
-via the **same sampled curved road graph used by driving and collisions**.
-Each building has a distinct collision shell and hand-authored facade layer.
-Plot spacing and street side were selected to preserve playable arcade lanes.
-They were not derived from surveyed front-door GPS points or measured
-architectural elevations. Actual street-corner placement for Nai Ek/Soi 9,
-the precise Yaowa Phanit intersection, and the neighboring building order
-require stronger location-aligned visual evidence.
+Four named shops now use **independently sourced approximate geotags**
+projected onto the **same sampled curved road graph used by traffic, collisions
+and driving**. Their geographic positions and side-of-street are no longer
+inferred from numerical address order. Buildings may move several game meters
+from those projections to preserve arcade vehicle clearance and junctions;
+their facade widths and heights are artistic approximations.
+
+| Shop | Approximate lat, lon used | Secondary position evidence |
+|---|---|---|
+| Hua Seng Heng 418–420 | 13.740462, 100.509640 | Local map listing, cross-checked against the Yaowarat alignment |
+| Nai Ek 442 | 13.740258, 100.509982 | https://johorkaki.blogspot.com/2019/10/nai-ek-roll-noodles-michelin-plate-kway.html |
+| Thong Bai 444 | 13.740420, 100.509940 | https://bangkok.worldplaces.me/th/review/78162130.html (low-authority estimate; must recheck) |
+| So Seng Heng 456 | 13.739890, 100.510480 | https://mapcarta.com/N3096836187 (OpenStreetMap-derived) |
+
+The three context shops are **explicitly fictional** with approximate authorship
+positions. Additional opposite-side fictional facades are permitted only where
+they clear all roads and existing shops, and not represented as actual named
+businesses.
+
+These geotags are not surveyed shop entrances or storefront parcel boundaries.
+Precise current storefront photos, Nai Ek/Soi 9 corner geometry, Yao Phanit
+junction geometry, and real shop-sign designs still need a location-matched
+physical/photo survey. Do not claim these assets are identical to the real road.
 
 This is a production-quality **asset prototype**, not a certification that the
 whole road looks identical to reality. The wider street remains largely
@@ -46,8 +61,11 @@ Run: `pnpm --filter @workspace/tuk-tuk-rush run test:signature`.
 
 A separate GitHub workflow captures **actual WebGL screenshots** with a
 Linux/Chromium art-inspection camera. It saves matching hero-shop viewpoints,
-street overview and 844×390 landscape. These are *not* user iPhone
-screenshots, 60 FPS claims, or completed photo-matching studies.
+street overview and 844×390 landscape. These are *not* user iPhone screenshots,
+60 FPS claims, or completed photo-matching studies. The screenshots are
+automatically uploaded as workflow artifacts so a reviewer can inspect them.
+They show original stylized models; a real-world visual match has not been
+established. The fidelity bar remains higher than this initial build.
 
 ### Still required to declare the full 12-point vision complete
 
