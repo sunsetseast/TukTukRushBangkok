@@ -5,10 +5,11 @@ import {
 } from "three/addons/utils/BufferGeometryUtils.js";
 import type { District, Obstacle } from "./types";
 import { ASSETS, surface, disposeObject } from "./assets";
-import { distanceToSegment } from "./world";
+import { distanceToSegment, obstacleDistance } from "./world";
 import { composeFacade, composeSide, clearFacadeCache, defaultSign, type Style, type MatKey, type FacadeApi } from "./miniatureFacade";
 import { buildSignAtlas, type SignEntry } from "./signArt";
 import { buildSignatureFacade, buildOppositeFacadeArt } from "./signatureFacadeArt";
+import { TRADE, tradeKeys, buildYaowaratBlades, buildYaowaratWallAd } from "./yaowaratSignLayers";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 
@@ -37,6 +38,41 @@ export function buildStreetscape(
     return key;
   };
   const keys = d.buildings.map((b, i) => keyOf(b, i));
+  const heroes=d.buildings.filter(b=>b.signatureId);
+  const dist=(b:Obstacle)=>Math.min(...heroes.map(h=>Math.hypot(b.x-h.x,b.z-h.z)));
+  const context=d.buildings.filter(b=>!b.signatureId && b.showcase &&
+    b.signatureInfillIndex===undefined && dist(b)<125).sort((a,b)=>dist(a)-dist(b)).slice(0,20);
+  const nearShops=new Set<Obstacle>([
+    ...d.buildings.filter(b=>b.signatureInfillIndex!==undefined),...context,
+  ]);
+  const signsByBuilding=new Map<Obstacle,[string,string]>();
+  for(const [i,b] of d.buildings.entries()){
+    if(!nearShops.has(b))continue;
+    const style=styleOf(b,i),variant=i%2, ids=tradeKeys(style,variant);
+    signsByBuilding.set(b,ids);
+    for(let slot=0;slot<2;slot++){
+      const key=ids[slot]!;
+      if(!entries.some(e=>e.key===key))
+        entries.push({key,text:TRADE[style][variant]![slot]!,style,variant});
+    }
+  }
+  // Select only EXPOSED masonry side walls, not attached party walls or
+  // verified commercial brand facades. This adds a second visual-sign plane.
+  const wallSigns=new Map<Obstacle,{side:-1|1;key:string}>();
+  const wallCandidates=d.buildings.filter(b=>!b.signatureId &&
+    b.height>12 && dist(b)<140).sort((a,b)=>dist(a)-dist(b)).slice(0,32);
+  for(const b of wallCandidates){
+    const yaw=b.yaw??0,ux=Math.cos(yaw),uz=-Math.sin(yaw);
+    for(const side of [-1,1] as const){
+      const p={x:b.x+side*ux*(b.w/2+0.72),z:b.z+side*uz*(b.w/2+0.72)};
+      if(d.buildings.some(other=>other!==b && obstacleDistance(p,other)<0.8))continue;
+      const style=styleOf(b,d.buildings.indexOf(b));
+      const key=tradeKeys(style,1)[1];
+      if(!entries.some(e=>e.key===key))
+        entries.push({key,text:TRADE[style][1]![1],style,variant:1});
+      wallSigns.set(b,{side,key});break;
+    }
+  }
   const atlas = buildSignAtlas(entries);
   const mkSign = (a: { tex: T.Texture; cols: number; rows: number }) => {
     const m = new T.MeshStandardMaterial({ map: a.tex, emissiveMap: a.tex, emissive: "#ffffff", emissiveIntensity: 0.22, roughness: 0.6 });
@@ -181,6 +217,15 @@ export function buildStreetscape(
     if (b.signatureInfillIndex !== undefined) buildOppositeFacadeArt(api, {
       index: b.signatureInfillIndex, W: n.w, D: n.dd, H: b.height, sign: id,
     });
+    const exposedAd=wallSigns.get(b);
+    if(exposedAd)buildYaowaratWallAd(api,{
+      W:n.w,D:n.dd,H:b.height,side:exposedAd.side,i,
+      sign:atlas.index.get(exposedAd.key)!,
+    });
+    const extra=signsByBuilding.get(b);
+    if(extra && b.height>12)
+      buildYaowaratBlades(api,{W:n.w,D:n.dd,H:b.height,i,
+        ids:[atlas.index.get(extra[0])!,atlas.index.get(extra[1])!]});
   });
   // Reference-inspired Yaowarat curb activity. Localized to the noodle shop
   // and contextual tea/heritage frontage; this creates real street composition
@@ -190,10 +235,23 @@ export function buildStreetscape(
   const lanternGeo = new T.SphereGeometry(1, 10, 7);
   const canopyGeo = new T.ConeGeometry(1, 0.62, 10);
   const poleGeo = new T.CylinderGeometry(1, 1, 1, 8);
-  const noodleSidewalk = d.buildings.filter(b =>
-    b.signatureId === 'nai442' || b.signatureId === 'tea-house' ||
-    b.signatureId === 'heritage-balcony' || b.signatureId === 'traditional-medicine');
+  const landmarkShops = d.buildings.filter(b=>b.signatureId);
+  const marketShopCandidates = d.buildings.filter(b=>!b.signatureId && b.showcase &&
+    landmarkShops.some(h=>Math.hypot(h.x-b.x,h.z-b.z)<110))
+    .sort((a,b)=>{
+      const distance=(v:Obstacle)=>Math.min(...landmarkShops.map(h=>Math.hypot(h.x-v.x,h.z-v.z)));
+      return distance(a)-distance(b);
+    }).slice(0,17);
+  const noodleSidewalk = [
+    ...landmarkShops.filter(b=>b.signatureId==='nai442' ||
+      b.signatureId==='tea-house' || b.signatureId==='heritage-balcony' ||
+      b.signatureId==='traditional-medicine'),
+    ...marketShopCandidates,
+  ];
   for (const b of noodleSidewalk) {
+    // A bounded set of curated, valid sidewalk stalls. Never uniformly flood
+    // every street or cover the road with merchandise.
+    if(carts.length>=19)break;
     const yaw = b.yaw ?? 0, nx = Math.sin(yaw), nz = Math.cos(yaw);
     const tx = Math.cos(yaw), tz = -Math.sin(yaw);
     const slots = b.signatureId === 'nai442' ? [-b.w * 0.30, b.w * 0.29]

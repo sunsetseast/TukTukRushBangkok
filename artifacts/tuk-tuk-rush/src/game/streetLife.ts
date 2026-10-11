@@ -100,6 +100,37 @@ export function streetPeople(d: District): StreetPerson[] {
         height: 0.91 + (people.length % 7) * 0.032 });
     }
   }
+  // Layered pedestrian groups beside the new fictional commercial frontage.
+  // We reuse the EXISTING instanced person silhouettes and evade behaviour,
+  // so extra street life adds no new animated draw calls.
+  const heroes=d.buildings.filter(b=>b.signatureId);
+  const contexts=d.buildings.filter(b=>!b.signatureId && b.showcase &&
+    heroes.some(h=>Math.hypot(h.x-b.x,h.z-b.z)<125))
+    .sort((a,b)=>{
+      const distance=(v:typeof a)=>Math.min(...heroes.map(h=>Math.hypot(v.x-h.x,v.z-h.z)));
+      return distance(a)-distance(b);
+    }).slice(0,32);
+  for(const shop of contexts){
+    if(people.length>=180)break;
+    const yaw=shop.yaw ?? 0, nx=Math.sin(yaw),nz=Math.cos(yaw);
+    const tx=Math.cos(yaw),tz=-Math.sin(yaw);
+    for(const offset of [-0.24,0.23]){
+      if(people.length>=180)break;
+      const x=shop.x+nx*(shop.d/2+1.85)+tx*shop.w*offset;
+      const z=shop.z+nz*(shop.d/2+1.85)+tz*shop.w*offset;
+      const p={x,z};
+      if(!clear(d,p,0.55)||!roadsClear(p))continue;
+      if(people.some(other=>Math.hypot(other.start.x-x,other.start.z-z)<1.3))continue;
+      // Half are small moving window shoppers, half stop at the counter.
+      const moving=people.length%2===0;
+      const goal=moving?{x:x+tx*0.75,z:z+tz*0.75}:p;
+      if(!clear(d,goal,0.55)||!roadsClear(goal))continue;
+      const seed=people.length;
+      people.push({start:p,end:goal,...p,heading:Math.atan2(-nx,-nz),
+        role:moving?"walker":"customer",seed,
+        height:0.88+(seed%7)*0.033});
+    }
+  }
   return people;
 }
 

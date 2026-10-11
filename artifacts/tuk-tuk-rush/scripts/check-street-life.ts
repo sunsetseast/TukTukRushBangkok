@@ -9,7 +9,10 @@ const district = createDistrict(),
 const city = buildCity(district, textures),
   nodes = new Map(district.nodes.map((n) => [n.id, n]));
 const people = streetPeople(district);
-assert(people.length >= 25, "Chinatown must contain visible street activity");
+assert(people.length >= 50, "Chinatown must contain active street life");
+const heroes=district.buildings.filter(b=>b.signatureId);
+const occupied=people.filter(p=>heroes.some(h=>Math.hypot(p.x-h.x,p.z-h.z)<125));
+assert(occupied.length>=18,"Signature Yaowarat corridor needs populated storefronts");
 assert(
   people.some((p) => p.role === "vendor"),
   "Food carts have vendors",

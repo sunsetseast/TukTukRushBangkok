@@ -31,4 +31,6 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:street-life
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:roadside
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:signature
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:sign-layers
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:assets
