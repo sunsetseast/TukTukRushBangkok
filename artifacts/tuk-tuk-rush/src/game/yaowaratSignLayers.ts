@@ -63,3 +63,29 @@ export function buildYaowaratBlades(
     api.sign(ids[0],0,signY,F+0.94,W*0.52,0.58);
   }
 }
+
+/** Side-wall enamel trade board for original FICTIONAL businesses. Mounted to
+ * exposed masonry, above pedestrian height; no ground footprint. */
+export function buildYaowaratWallAd(api:FacadeApi,
+ o:{W:number;D:number;H:number;side:-1|1;i:number;sign:number}){
+ const {W,H,side,i,sign}=o;
+ const h=Math.min(7.3,H-6.8);if(h<3.2)return;
+ const y=H-h/2-0.5,u=side*(W/2+0.17),v=0.4+(i%2)*0.36;
+ const rim=["#d8b361","#b88b5b","#dec17d","#ad765f"][i%4]!;
+ const bg=["#812f35","#285664","#695043","#385e4c"][i%4]!;
+ const box=(color:string,w:number,ht:number,depth:number,x:number,yy:number,z:number)=>{
+   const geo=new THREE.BoxGeometry(w,ht,depth);
+   api.add("metal",color,geo,x,yy,z);geo.dispose();
+ };
+ box("#574d48",0.2,h+0.65,3.63,u,y,v);
+ box(rim,0.24,h+0.38,3.52,u+side*0.07,y,v);
+ box(bg,0.29,h+0.14,3.38,u+side*0.11,y,v);
+ api.vsign(sign,u+side*0.12,y,v,3.12,h,0.18);
+ for(const yy of [y-h/2-0.1,y+h/2+0.1])
+   box(rim,0.34,0.12,3.78,u+side*0.16,yy,v);
+ for(const yy of [y-h*0.28,y,y+h*0.28]){
+   const geo=new THREE.SphereGeometry(0.12,7,5);
+   api.add("metal","#ead5a8",geo,u+side*0.34,yy,v+1.58);
+   geo.dispose();
+ }
+}
