@@ -143,6 +143,27 @@ export function buildSignatureFacade(
     }
     roofEmbellishment('#a9262f', '#ecc467');
   } else if (id === 'so456') {
+    // Reference-inspired monumental pale arch on the So Seng Heng commercial
+    // elevation: unmistakably different from a generic red gold shop.
+    // The actual facade in archival street photographs includes broad white
+    // masonry around a dramatically curved central upper bay. This is a new,
+    // original miniature rendition, NOT a measured or exact building model.
+    const archRadius = Math.min(W * 0.39, 3.8);
+    const archCenter = H - archRadius - 1.45;
+    for (const side of [-1, 1]) {
+      const px = side * archRadius;
+      block('plaster', '#eadfd1', 0.78, archCenter - 5.7, 0.62,
+        px, (archCenter + 5.7) / 2, F + 0.66);
+      block('metal', '#c5a06a', 0.13, archCenter - 5.9, 0.69,
+        px, (archCenter + 5.9) / 2, F + 0.96);
+    }
+    add('plaster', '#e9dfd1',
+      new T.TorusGeometry(archRadius, 0.39, 8, 36, Math.PI),
+      0, archCenter, F + 0.82);
+    add('metal', '#c9a877',
+      new T.TorusGeometry(archRadius - 0.4, 0.095, 5, 36, Math.PI),
+      0, archCenter, F + 0.98);
+    block('plaster', '#eee3d2', W + 0.2, 0.8, 0.9, 0, H - 0.36, F + 0.5);
     // Signature dragon-crowned vertical projecting sign: deliberately strong
     // silhouette from the chase camera, with brackets rooted in the facade.
     block('plaster', '#982832', W - 0.8, 1.55, 0.4, 0, 4.8, F + 0.45);
