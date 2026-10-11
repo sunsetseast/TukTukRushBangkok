@@ -1,0 +1,47 @@
+name: Bangkok Map Foundation Validation
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/bangkok-map.html'
+      - 'artifacts/tuk-tuk-rush/public/maps/**'
+      - 'artifacts/tuk-tuk-rush/scripts/*bangkok-map*'
+      - '.github/workflows/bangkok-map.yml'
+  workflow_dispatch:
+jobs:
+  verify-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24177'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: node artifacts/tuk-tuk-rush/scripts/check-bangkok-map.mjs
+      - run: node artifacts/tuk-tuk-rush/scripts/build-bangkok-standalone.mjs
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Render real-world map at desktop and iPhone viewports
+        run: |
+          cd artifacts/tuk-tuk-rush
+          pnpm exec vite --config vite.config.ts --host 127.0.0.1 --port 24177 > /tmp/bangkok-map-vite.log 2>&1 &
+          for i in $(seq 1 50); do
+            if curl -sf http://localhost:24177/bangkok-map.html >/dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/capture-bangkok-map.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bangkok-real-map-preview
+          path: |
+            artifacts/tuk-tuk-rush/generated-map-preview/
+            artifacts/tuk-tuk-rush/public/maps/bangkok-landmarks.geojson
+            artifacts/tuk-tuk-rush/public/maps/bangkok-map-config.json
+          if-no-files-found: warn
