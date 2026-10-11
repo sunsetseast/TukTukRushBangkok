@@ -8,7 +8,7 @@ export type Point={x:number;z:number};
 export type RoadSegment={a:number;b:number;x1:number;z1:number;x2:number;z2:number;w:number;name:string;bridge:boolean;className:string;length:number};
 export type RoadNode={x:number;z:number;neighbors:{to:number;cost:number}[];component:number};
 export type Landmark={id:string;name:string;name_th:string;zone:string;category:string;priority:number;point:Point;road:Point;roadNode:number;accessible:boolean;reason?:string};
-type Feature={geometry:{type:string;coordinates:unknown};properties:Record<string,unknown>};
+type Feature={id?:string;geometry:{type:string;coordinates:unknown};properties:Record<string,unknown>};
 type GeoJSON={features:Feature[];metadata?:Record<string,unknown>};
 export const ORIGIN={lon:100.5100,lat:13.7402};
 export const METERS_LON=111320*Math.cos(ORIGIN.lat*Math.PI/180), METERS_LAT=111320;
@@ -187,7 +187,7 @@ export class BangkokNetwork{
     if(heap[next]!.score>=last.score)break;heap[i]=heap[next]!;i=next;
    }heap[i]=last}return top;
   };
-  const h=id=>Math.hypot(this.nodes[id]!.x-this.nodes[end]!.x,this.nodes[id]!.z-this.nodes[end]!.z);
+  const h=(id:number)=>Math.hypot(this.nodes[id]!.x-this.nodes[end]!.x,this.nodes[id]!.z-this.nodes[end]!.z);
   push(start,h(start));
   while(heap.length){
    const cur=pop()!.id;if(visited[cur])continue;visited[cur]=1;
