@@ -95,13 +95,15 @@ export class BangkokNetwork{
     if(len<0.7||len>1600)continue; // reject corrupt map geometry
     const ai=this.makeNode(a,lookup),bi=this.makeNode(b,lookup);
     if(ai===bi)continue;
-    this.nodes[ai]!.neighbors.push({to:bi,cost:len});
-    if(isOneWay){
-     if(reverse){
-      this.nodes[ai]!.neighbors.pop();
-      this.nodes[bi]!.neighbors.push({to:ai,cost:len});
-     }
-    }else this.nodes[bi]!.neighbors.push({to:ai,cost:len});
+    // The academic OSMnx extract does not include a complete turn-restriction
+    // network. Prefer correct one-way direction. Arcade-only reverse travel
+    // carries a large routing penalty rather than letting a sparse directed
+    // graph strand Wat Pho, Wat Arun, ICONSIAM or another landmark.
+    // These are REAL mapped street edges, not fictional bridges/shortcuts.
+    // This is deliberately not a legal real-world navigation system.
+    const detourPenalty=7;
+    this.nodes[ai]!.neighbors.push({to:bi,cost:len*(isOneWay&&reverse?detourPenalty:1)});
+    this.nodes[bi]!.neighbors.push({to:ai,cost:len*(isOneWay&&!reverse?detourPenalty:1)});
     const idx=this.segments.length;
     this.segments.push({a:ai,b:bi,x1:a.x,z1:a.z,x2:b.x,z2:b.z,
       w,name,bridge,className:String(p.highway),length:len});
@@ -113,6 +115,8 @@ export class BangkokNetwork{
     }
    }
   }
+  // Undirected reachability here reflects ARCADE playable streets, with
+  // directional penalties. Not a legally compliant driving navigation graph.
   // Components must treat a legal one-way road as connected for geographic
   // access discovery; actual A* still respects directed traffic edges.
   const connected: number[][]=this.nodes.map(()=>[]);
