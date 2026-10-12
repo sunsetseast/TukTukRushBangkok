@@ -18,21 +18,23 @@ export function Settings({ audio, onAudio, quality, onQuality }: { audio: boolea
   );
 }
 
-export function Title({ onStart, settings }: { onStart: (m: 'shift' | 'free') => void; settings: React.ReactNode }) {
+export function Title({ onStart, settings, bangkok = false }: { onStart: (m: 'shift' | 'free') => void; settings: React.ReactNode; bangkok?: boolean }) {
   return (
     <div className="tt-title">
       <div className="tt-panel">
-        <div className="tt-kicker">เยาวราช · BANGKOK · 18:04</div>
+        <div className="tt-kicker">{bangkok ? 'BANGKOK · SUNSET SHIFT' : 'เยาวราช · BANGKOK · 18:04'}</div>
         <h1><span>TUK TUK</span><span className="r">RUSH</span></h1>
-        <p>Three wheels. Sunset Chinatown. 180 seconds of fares.</p>
+        <p>{bangkok ? 'Explore compact Bangkok. A 24-minute sunset-to-night shift.' : 'Three wheels. Sunset Chinatown. 180 seconds of fares.'}</p>
+        {bangkok && <small>City layout preview · landmark blockouts</small>}
         <div className="tt-title-btns">
           <button className="tt-btn big" onClick={() => onStart('shift')} data-testid="button-start-shift">Start shift</button>
           <button className="tt-btn gold" onClick={() => onStart('free')} data-testid="button-free-roam">Free roam</button>
         </div>
         {settings}
+        <a className="tt-world-switch" href={bangkok ? '?world=chinatown' : '?world=bangkok'}>{bangkok ? 'Play the detailed Chinatown district' : 'Explore the Bangkok layout'}</a>
         <div className="tt-how">Drag left thumb to steer · hold GO on the right</div>
         <small style={{ display: 'block', fontSize: 10, marginTop: 5 }}>
-          Road layout adapted from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a> · ODbL
+          {bangkok ? 'Hand-authored compact map · not for real-world navigation' : <>Road layout adapted from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a> · ODbL</>}
         </small>
       </div>
     </div>

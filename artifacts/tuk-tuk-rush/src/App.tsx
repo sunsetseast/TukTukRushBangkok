@@ -1,4 +1,5 @@
 import { Component, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { WorldMap } from './game/bangkok/WorldMap';
 import { GameEngine } from './game/engine';
 import GameCanvas from './game/Renderer';
 import { Hud, type Frame } from './game/Hud';
@@ -8,7 +9,7 @@ import { sfx } from './game/audio';
 
 let engineSingleton: GameEngine | null = null;
 function getEngine() {
-  if (!engineSingleton) engineSingleton = new GameEngine();
+  if (!engineSingleton) engineSingleton = new GameEngine({ world: new URLSearchParams(window.location.search).get('world') === 'chinatown' ? 'chinatown' : 'bangkok' });
   return engineSingleton;
 }
 
@@ -46,6 +47,8 @@ function App() {
   const engine = getEngine();
   const [gl] = useState(hasWebGL);
   const [frame, setFrame] = useState<Frame>(() => read(engine));
+  const [mapOpen, setMapOpen] = useState(false);
+  const resumeAfterMap = useRef(false);
   const [audio, setAudio] = useState(true);
   const root = useRef<HTMLDivElement>(null);
   const phase = useRef(frame.snap.phase);
@@ -66,7 +69,7 @@ function App() {
 
   useEffect(() => {
     const el = root.current;
-    const stop = (e: Event) => e.preventDefault();
+    const stop = (e: Event) => { if (!(e.target as HTMLElement).closest?.('.tt-world-map')) e.preventDefault(); };
     el?.addEventListener('touchmove', stop, { passive: false });
     el?.addEventListener('contextmenu', stop);
     document.addEventListener('gesturestart', stop);
@@ -82,6 +85,8 @@ function App() {
   }, [engine, gl]);
 
   const start = useCallback((m: 'shift' | 'free') => { sfx.unlock(); engine.start(m); }, [engine]);
+  const openMap = useCallback(() => { resumeAfterMap.current = engine.model.snapshot.phase === 'playing'; engine.clearInput(); engine.pause(); setMapOpen(true); }, [engine]);
+  const closeMap = useCallback(() => { setMapOpen(false); if (resumeAfterMap.current && !document.hidden && window.matchMedia('(orientation: landscape)').matches) engine.resume(); }, [engine]);
   const settings = (
     <Settings audio={audio} onAudio={() => { sfx.unlock(); setAudio((a) => !a); }} quality={frame.snap.quality} onQuality={(q) => engine.setQuality(q)} />
   );
@@ -90,19 +95,20 @@ function App() {
   if (!gl) return <div className="tt-root"><Fail msg="The 3D city needs WebGL 2, which this browser or device did not provide. Enable hardware acceleration or try a current browser." /></div>;
 
   return (
-    <div className="tt-root" ref={root}>
+    <div className={`tt-root ${mapOpen ? 'tt-map-open' : ''}`} ref={root}>
       <Boundary><GameCanvas engine={engine} quality={frame.snap.quality} /></Boundary>
       <div className="tt-ui">
         {(s.phase === 'playing' || s.phase === 'paused') && (
-          <Hud d={engine.model.district} f={frame} shift={s.mode === 'shift'} onPause={() => { engine.clearInput(); engine.pause(); }} />
+          <Hud d={engine.model.district} f={frame} shift={s.mode === 'shift'} onMap={engine.model.district.worldId === 'bangkok' ? openMap : undefined} onPause={() => { engine.clearInput(); engine.pause(); }} />
         )}
-        {s.phase === 'playing' && <Controls engine={engine} onHorn={() => sfx.horn()} />}
-        {s.phase === 'title' && <Title onStart={start} settings={settings} />}
-        {s.phase === 'paused' && (
+        {s.phase === 'playing' && !mapOpen && <Controls engine={engine} onHorn={() => sfx.horn()} />}
+        {s.phase === 'title' && <Title onStart={start} settings={settings} bangkok={engine.model.district.worldId === 'bangkok'} />}
+        {s.phase === 'paused' && !mapOpen && (
           <PauseMenu onResume={() => engine.resume()} onRestart={() => engine.restart()} onRecover={() => { engine.recover(); engine.resume(); }} settings={settings} />
         )}
         {s.phase === 'ended' && <Results s={s} onAgain={() => engine.restart()} onFree={() => start('free')} />}
       </div>
+      {mapOpen && <WorldMap d={engine.model.district} f={frame} onClose={closeMap} />}
       <div className="tt-rotate" data-testid="hint-rotate">
         <div className="tt-phone" />
         <b>Turn your phone sideways</b>
