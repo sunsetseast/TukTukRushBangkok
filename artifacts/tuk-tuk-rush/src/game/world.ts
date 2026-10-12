@@ -223,19 +223,29 @@ export function nearestRoad(district: District, p: Point) {
   return result;
 }
 
-/** Player routing permits wrong-way arcade driving; AI honors Road.oneWay. */
+/** Shortest-distance arcade player route. NPC traffic separately honors road directions. */
 export function routeBetween(district: District, start: string, end: string): RoadNode[] {
-  const queue = [start], previous = new Map<string, string | null>([[start, null]]);
-  for (let i = 0; i < queue.length; i++) {
-    const id = queue[i]!;
-    if (id === end) break;
-    for (const road of district.roads) {
-      const next = road.a === id ? road.b : road.b === id ? road.a : null;
-      if (next && !previous.has(next)) { previous.set(next, id); queue.push(next); }
+  const nodes = new Map(district.nodes.map(n => [n.id, n]));
+  if (!nodes.has(start) || !nodes.has(end)) return [];
+  const neighbors = new Map<string, { id: string; length: number }[]>();
+  for (const r of district.roads) {
+    const a = nodes.get(r.a)!, b = nodes.get(r.b)!, length = Math.hypot(b.x - a.x, b.z - a.z);
+    for (const [from, to] of [[a, b], [b, a]]) {
+      const list = neighbors.get(from!.id) ?? []; list.push({ id: to!.id, length }); neighbors.set(from!.id, list);
     }
   }
-  if (!previous.has(end)) return [];
-  const ids: string[] = []; let current: string | null = end;
-  while (current) { ids.unshift(current); current = previous.get(current) ?? null; }
-  return ids.map(id => district.nodes.find(n => n.id === id)!);
+  const distances = new Map([[start, 0]]), previous = new Map<string, string>(), open = new Set([start]);
+  while (open.size) {
+    let current = '', best = Infinity;
+    for (const id of open) if (distances.get(id)! < best) { current = id; best = distances.get(id)!; }
+    open.delete(current); if (current === end) break;
+    for (const edge of neighbors.get(current) ?? []) {
+      const distance = best + edge.length;
+      if (distance < (distances.get(edge.id) ?? Infinity)) { distances.set(edge.id, distance); previous.set(edge.id, current); open.add(edge.id); }
+    }
+  }
+  if (!distances.has(end)) return [];
+  const path: RoadNode[] = []; let at: string | undefined = end;
+  while (at) { path.unshift(nodes.get(at)!); at = previous.get(at); }
+  return path;
 }

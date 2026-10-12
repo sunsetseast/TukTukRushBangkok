@@ -5,7 +5,7 @@ Object.assign(globalThis, {
   document: { addEventListener() {}, removeEventListener() {}, hidden: false },
 });
 const { GameEngine } = await import('../src/game/engine');
-const engine = new GameEngine();
+const engine = new GameEngine({ world: 'chinatown' });
 engine.start('shift');
 // Isolate path/controller/mission integration from unpredictable traffic encounters.
 // No position teleporting: every metre below is driven through VehicleController.

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { BangkokMinimap } from './bangkok/WorldMap';
 import { Pause } from 'lucide-react';
 import type { District, GameSnapshot, RoadNode } from './types';
 
@@ -91,13 +92,13 @@ export function Minimap({ d, f }: { d: District; f: Frame }) {
   );
 }
 
-export function Hud({ d, f, shift, onPause }: { d: District; f: Frame; shift: boolean; onPause: () => void }) {
+export function Hud({ d, f, shift, onPause, onMap }: { d: District; f: Frame; shift: boolean; onPause: () => void; onMap?: () => void }) {
   const s = f.snap;
   const pick = s.stage === 'pickup';
   return (
     <div className="tt-hud">
       <div className="tt-hud-tl">
-        <Minimap d={d} f={f} />
+        <div className="tt-map-wrap">{d.worldId === 'bangkok' ? <BangkokMinimap d={d} f={f} /> : <Minimap d={d} f={f} />}{onMap && <button className="tt-map-button" onClick={onMap} data-testid="button-open-map">Map</button>}</div>
         <div className="tt-stats">
           <div className="tt-chip tt-money" data-testid="text-earnings">฿ {Math.round(s.earnings).toLocaleString()}</div>
           <div className="tt-chip" data-testid="text-score">SCORE {Math.round(s.score).toLocaleString()}</div>
@@ -105,6 +106,7 @@ export function Hud({ d, f, shift, onPause }: { d: District; f: Frame; shift: bo
         </div>
       </div>
       <div className="tt-hud-tc">
+        {d.worldId === 'bangkok' && <div className="tt-area-name">{s.districtName}</div>}
         {shift && <div className={`tt-timer ${s.shiftTime < 20 ? 'low' : ''}`} data-testid="text-shift-time">{fmtTime(s.shiftTime)}</div>}
         <div className={`tt-mission ${pick ? 'pickup' : 'drop'}`} data-testid="text-mission">
           <svg className="tt-arrow" viewBox="-12 -12 24 24" style={{ transform: `rotate(${-s.bearing}rad)` }}>

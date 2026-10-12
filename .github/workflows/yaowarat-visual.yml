@@ -37,10 +37,17 @@ jobs:
             if curl -sf http://localhost:24177/ >/dev/null; then break; fi
             sleep 1
           done
-          GAME_URL=http://localhost:24177/ pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-signature.mjs
+          GAME_URL=http://localhost:24177/?world=chinatown pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-signature.mjs
+          GAME_URL=http://localhost:24177/ pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-bangkok.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: yaowarat-webgl-screenshots
           path: generated-artifacts/yaowarat-signature/
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compact-bangkok-webgl-qa
+          path: generated-artifacts/compact-bangkok/
           if-no-files-found: warn

@@ -1,4 +1,6 @@
 import type { GameModel, GameSnapshot, Mission } from './types';
+import { createBangkokWorld, regionAt, SHIFT_SECONDS } from './bangkok/world';
+import { readDiscovery, discover, type Discovery } from './bangkok/discovery';
 import { createDistrict } from './world';
 import { VehicleController, createVehicle } from './vehicle';
 import { TrafficSystem } from './traffic';
@@ -17,19 +19,25 @@ export class GameEngine {
   private frameTime = 0;
   private slowTime = 0;
   private disposed = false;
-  constructor() {
-    const district = createDistrict();
+  private discovery: Discovery = { regions: [], landmarks: [], shortcuts: [] };
+  private discoveryTime = 0;
+  private storage: Storage | undefined;
+  constructor(options: { world?: 'bangkok' | 'chinatown' } = {}) {
+    const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
+    try { this.storage = window.localStorage; } catch { /* Browser storage is optional. */ }
+    this.discovery = readDiscovery(this.storage);
     this.trafficSystem = new TrafficSystem(district);
     this.missions = createMissions(district);
     const mission = this.missions[0]!;
     this.model = {
-      district, player: createVehicle(), traffic: this.trafficSystem.create(),
+      district, player: createVehicle(district), traffic: this.trafficSystem.create(),
       input: { steer: 0, gas: false, brake: false }, mission, missionIndex: 0,
       snapshot: {
-        phase: 'title', mode: 'shift', stage: 'pickup', shiftTime: 180, tripTime: mission.limit,
+        elapsed: 0, districtName: regionAt(district, district.spawn ?? { x: 0, z: 0 })?.name, discoveredDistricts: [...this.discovery.regions], discoveredLandmarks: [...this.discovery.landmarks], discoveredShortcuts: [...this.discovery.shortcuts],
+        phase: 'title', mode: 'shift', stage: 'pickup', shiftTime: district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: mission.limit,
         score: 0, earnings: 0, deliveries: 0, speed: 0, target: mission.pickup,
         passenger: mission.passenger, distance: 61, bearing: 0,
-        message: 'Your Chinatown shift starts here', boarding: 0, quality: 'medium', fps: 60,
+        message: district.worldId === 'bangkok' ? 'Explore compact Bangkok' : 'Your Chinatown shift starts here', boarding: 0, quality: 'medium', fps: 60,
       },
     };
     window.addEventListener('keydown', this.onKeyDown);
@@ -56,11 +64,11 @@ export class GameEngine {
   private publish() { for (const cb of this.listeners) cb({ ...this.model.snapshot }); }
   start(mode: 'shift' | 'free') {
     this.clearInput(); this.controller.reset();
-    Object.assign(this.model.player, createVehicle());
+    Object.assign(this.model.player, createVehicle(this.model.district));
     this.model.traffic = this.trafficSystem.create();
     this.model.missionIndex = 0; this.model.mission = this.missions[0]!;
     Object.assign(this.model.snapshot, {
-      phase: 'playing', mode, stage: 'pickup', shiftTime: 180, tripTime: this.model.mission.limit,
+      elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
       score: 0, earnings: 0, deliveries: 0, boarding: 0, target: this.model.mission.pickup,
       passenger: this.model.mission.passenger, speed: 0,
     });
@@ -115,11 +123,22 @@ export class GameEngine {
       this.trafficSystem.update(this.model.traffic, player, dt);
       this.controller.update(player, { gas, brake, steer: keys || input.steer }, this.model.district, this.model.traffic, dt);
       this.updateTarget();
+      s.elapsed = (s.elapsed ?? 0) + dt;
+      if (this.model.district.worldId === 'bangkok') {
+        this.discoveryTime += dt;
+        if (this.discoveryTime > .3) {
+          this.discoveryTime = 0;
+          const entered = discover(this.model.district, player, this.discovery, this.storage);
+          s.districtName = entered.region?.name ?? 'Bangkok connector';
+          if (entered.newRegion) this.message(`Discovered ${entered.region!.name}`, 3);
+          if (entered.changed) { s.discoveredDistricts = [...this.discovery.regions]; s.discoveredLandmarks = [...this.discovery.landmarks]; s.discoveredShortcuts = [...this.discovery.shortcuts]; }
+        }
+      }
       this.messageTime = Math.max(0, this.messageTime - dt);
       if (!this.messageTime) s.message = '';
       if (s.mode === 'shift') {
         s.shiftTime = Math.max(0, s.shiftTime - dt);
-        if (s.shiftTime === 0) { s.phase = 'ended'; this.clearInput(); this.message('Shift complete. Chinatown says thanks!', 10); }
+        if (s.shiftTime === 0) { s.phase = 'ended'; this.clearInput(); this.message(this.model.district.worldId === 'bangkok' ? 'Bangkok shift complete!' : 'Shift complete. Chinatown says thanks!', 10); }
       }
       if (s.phase === 'playing') {
         if (s.stage === 'delivery') {

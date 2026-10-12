@@ -1,8 +1,10 @@
 import type { District, Input, TrafficCar, Vehicle } from './types';
 import { nearestRoad, obstacleLocal } from './world';
+import { blockedByRiver } from './bangkok/world';
 import { YAOWARAT_TRACE } from './mapData';
 
-export function createVehicle(): Vehicle {
+export function createVehicle(district?: District): Vehicle {
+  if (district?.spawn) return { ...district.spawn, speed: 0, steer: 0, lean: 0, wheelSpin: 0, collision: 0 };
   const a = YAOWARAT_TRACE[2]!, b = YAOWARAT_TRACE[3]!;
   const heading = Math.atan2(b.x - a.x, b.z - a.z);
   return { x: a.x, z: a.z, heading, speed: 0, steer: 0, lean: 0, wheelSpin: 0, collision: 0 };
@@ -99,9 +101,11 @@ export class VehicleController {
         collided = true;
       }
     }
-    if (Math.abs(p.x) > 342 || Math.abs(p.z) > 342) {
-      p.x = Math.max(-342, Math.min(342, p.x)); p.z = Math.max(-342, Math.min(342, p.z));
-      this.vx *= -0.2; this.vz *= -0.2; collided = true;
+    if (blockedByRiver(district, p)) { p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }
+    const bounds = district.bounds ?? { minX: -342, maxX: 342, minZ: -342, maxZ: 342 };
+    if (p.x < bounds.minX || p.x > bounds.maxX || p.z < bounds.minZ || p.z > bounds.maxZ) {
+      p.x = Math.max(bounds.minX, Math.min(bounds.maxX, p.x)); p.z = Math.max(bounds.minZ, Math.min(bounds.maxZ, p.z));
+      this.vx *= -.2; this.vz *= -.2; collided = true;
     }
     if (collided) p.collision = 1;
     p.speed = this.vx * forwardX + this.vz * forwardZ;

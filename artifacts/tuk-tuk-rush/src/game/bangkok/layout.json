@@ -1,0 +1,1162 @@
+{
+  "title": "Tuk Tuk Rush - Compact Bangkok Layout v1",
+  "status": "proposed_design_not_implemented",
+  "coordinate_system": {
+    "type": "compressed_design",
+    "x": "east",
+    "y": "south",
+    "bounds": [
+      0,
+      0,
+      1000,
+      1200
+    ],
+    "candidate_world_transform": "worldX=(x-500)*4; worldZ=(y-600)*4; meters_per_design_unit=4 (graybox tuning only)"
+  },
+  "river": {
+    "centerline": [
+      [
+        230,
+        -20
+      ],
+      [
+        240,
+        120
+      ],
+      [
+        215,
+        300
+      ],
+      [
+        195,
+        430
+      ],
+      [
+        205,
+        560
+      ],
+      [
+        270,
+        675
+      ],
+      [
+        380,
+        790
+      ],
+      [
+        405,
+        940
+      ],
+      [
+        370,
+        1040
+      ],
+      [
+        315,
+        1140
+      ],
+      [
+        280,
+        1220
+      ]
+    ],
+    "design_width": 72
+  },
+  "districts": [
+    {
+      "id": "north",
+      "name": "NORTH / CHATUCHAK",
+      "color": "#497b6c",
+      "polygon": [
+        [
+          630,
+          10
+        ],
+        [
+          875,
+          10
+        ],
+        [
+          835,
+          375
+        ],
+        [
+          610,
+          355
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "khaosan",
+      "name": "KHAO SAN / CIVIC CORE",
+      "color": "#927453",
+      "polygon": [
+        [
+          260,
+          170
+        ],
+        [
+          460,
+          180
+        ],
+        [
+          500,
+          345
+        ],
+        [
+          385,
+          365
+        ],
+        [
+          375,
+          265
+        ],
+        [
+          245,
+          255
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "oldtown",
+      "name": "RATTANAKOSIN",
+      "color": "#a08745",
+      "polygon": [
+        [
+          245,
+          260
+        ],
+        [
+          375,
+          270
+        ],
+        [
+          385,
+          475
+        ],
+        [
+          320,
+          525
+        ],
+        [
+          250,
+          505
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "westbank",
+      "name": "THONBURI",
+      "color": "#467c73",
+      "polygon": [
+        [
+          70,
+          195
+        ],
+        [
+          185,
+          195
+        ],
+        [
+          150,
+          510
+        ],
+        [
+          220,
+          655
+        ],
+        [
+          300,
+          720
+        ],
+        [
+          260,
+          950
+        ],
+        [
+          70,
+          950
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "chinatown",
+      "name": "CHINATOWN",
+      "color": "#a34d54",
+      "polygon": [
+        [
+          375,
+          470
+        ],
+        [
+          620,
+          510
+        ],
+        [
+          610,
+          625
+        ],
+        [
+          475,
+          700
+        ],
+        [
+          330,
+          590
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "siam",
+      "name": "SIAM / RATCHAPRASONG",
+      "color": "#775889",
+      "polygon": [
+        [
+          600,
+          380
+        ],
+        [
+          835,
+          385
+        ],
+        [
+          850,
+          575
+        ],
+        [
+          640,
+          615
+        ],
+        [
+          605,
+          510
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "talatnoi",
+      "name": "TALAT NOI / BANG RAK",
+      "color": "#9a704f",
+      "polygon": [
+        [
+          495,
+          670
+        ],
+        [
+          620,
+          655
+        ],
+        [
+          640,
+          805
+        ],
+        [
+          475,
+          865
+        ],
+        [
+          425,
+          765
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "sukhumvit",
+      "name": "SUKHUMVIT / ASOK",
+      "color": "#506aa0",
+      "polygon": [
+        [
+          855,
+          400
+        ],
+        [
+          980,
+          450
+        ],
+        [
+          980,
+          795
+        ],
+        [
+          875,
+          795
+        ],
+        [
+          875,
+          600
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "icon",
+      "name": "KHLONG SAN",
+      "color": "#498e9d",
+      "polygon": [
+        [
+          265,
+          730
+        ],
+        [
+          350,
+          750
+        ],
+        [
+          360,
+          850
+        ],
+        [
+          355,
+          930
+        ],
+        [
+          285,
+          950
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "silom",
+      "name": "SILOM / SATHORN",
+      "color": "#507e9c",
+      "polygon": [
+        [
+          625,
+          730
+        ],
+        [
+          740,
+          625
+        ],
+        [
+          865,
+          625
+        ],
+        [
+          885,
+          875
+        ],
+        [
+          885,
+          1040
+        ],
+        [
+          465,
+          1040
+        ],
+        [
+          475,
+          870
+        ],
+        [
+          640,
+          805
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "south",
+      "name": "RIVERSIDE SOUTH",
+      "color": "#8d6859",
+      "polygon": [
+        [
+          450,
+          1030
+        ],
+        [
+          665,
+          1030
+        ],
+        [
+          665,
+          1185
+        ],
+        [
+          375,
+          1185
+        ],
+        [
+          360,
+          1150
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
+    }
+  ],
+  "road_nodes": {
+    "pinklao_w": [
+      135,
+      230
+    ],
+    "pinklao_e": [
+      310,
+      230
+    ],
+    "democracy": [
+      435,
+      270
+    ],
+    "lan_luang": [
+      540,
+      335
+    ],
+    "phaya_thai": [
+      680,
+      340
+    ],
+    "phetchaburi_e": [
+      825,
+      360
+    ],
+    "victory": [
+      675,
+      230
+    ],
+    "ari": [
+      725,
+      145
+    ],
+    "chatuchak": [
+      770,
+      65
+    ],
+    "palace_w": [
+      250,
+      335
+    ],
+    "palace_e": [
+      350,
+      335
+    ],
+    "pho_w": [
+      250,
+      440
+    ],
+    "pho_e": [
+      350,
+      440
+    ],
+    "flower_market": [
+      340,
+      535
+    ],
+    "memorial_e": [
+      330,
+      600
+    ],
+    "memorial_w": [
+      190,
+      650
+    ],
+    "giant_swing": [
+      405,
+      405
+    ],
+    "golden_mount": [
+      465,
+      360
+    ],
+    "national_stadium": [
+      640,
+      455
+    ],
+    "siam": [
+      710,
+      455
+    ],
+    "ratchaprasong": [
+      810,
+      455
+    ],
+    "nana": [
+      875,
+      490
+    ],
+    "asok": [
+      945,
+      550
+    ],
+    "yaowarat_w": [
+      395,
+      520
+    ],
+    "yaowarat_mid": [
+      460,
+      555
+    ],
+    "odeon": [
+      535,
+      590
+    ],
+    "charoen_mid": [
+      475,
+      490
+    ],
+    "hua_lamphong": [
+      600,
+      550
+    ],
+    "song_wat": [
+      440,
+      640
+    ],
+    "ratchawong": [
+      425,
+      575
+    ],
+    "talat_noi": [
+      540,
+      690
+    ],
+    "sam_yan": [
+      665,
+      675
+    ],
+    "banthat_thong": [
+      635,
+      595
+    ],
+    "bang_rak": [
+      535,
+      835
+    ],
+    "sala_daeng": [
+      755,
+      810
+    ],
+    "lump_nw": [
+      750,
+      650
+    ],
+    "lump_ne": [
+      855,
+      650
+    ],
+    "lump_se": [
+      855,
+      810
+    ],
+    "mahanakhon": [
+      650,
+      875
+    ],
+    "chong_nonsi": [
+      680,
+      935
+    ],
+    "sathorn_e": [
+      855,
+      895
+    ],
+    "benjakitti": [
+      925,
+      705
+    ],
+    "khlong_toei": [
+      945,
+      825
+    ],
+    "arun_road": [
+      125,
+      465
+    ],
+    "west_link": [
+      175,
+      665
+    ],
+    "icon_road": [
+      275,
+      820
+    ],
+    "icon_access": [
+      325,
+      820
+    ],
+    "taksin_w": [
+      320,
+      965
+    ],
+    "taksin_e": [
+      500,
+      965
+    ],
+    "charoen_south": [
+      480,
+      1100
+    ],
+    "asiatique_access": [
+      410,
+      1100
+    ]
+  },
+  "road_corridors": [
+    {
+      "id": "pinklao",
+      "name": "Phra Pinklao Bridge",
+      "nodes": [
+        "pinklao_w",
+        "pinklao_e"
+      ],
+      "kind": "bridge",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "north_old",
+      "name": "Ratchadamnoen / Lan Luang connector",
+      "nodes": [
+        "pinklao_e",
+        "democracy",
+        "lan_luang"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "phetchaburi",
+      "name": "Phetchaburi corridor",
+      "nodes": [
+        "lan_luang",
+        "phaya_thai",
+        "phetchaburi_e"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "phaya",
+      "name": "Phaya Thai / Phahonyothin",
+      "nodes": [
+        "siam",
+        "phaya_thai",
+        "victory",
+        "ari",
+        "chatuchak"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "ratchadamri",
+      "name": "Ratchadamri",
+      "nodes": [
+        "phetchaburi_e",
+        "ratchaprasong",
+        "lump_nw",
+        "sala_daeng"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "old_w",
+      "name": "Maha Rat perimeter",
+      "nodes": [
+        "pinklao_e",
+        "palace_w",
+        "pho_w",
+        "flower_market"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "old_e",
+      "name": "Sanam Chai perimeter",
+      "nodes": [
+        "pinklao_e",
+        "palace_e",
+        "pho_e",
+        "flower_market"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "palace_n",
+      "name": "Na Phra Lan perimeter",
+      "nodes": [
+        "palace_w",
+        "palace_e"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "old_china",
+      "name": "Chak Phet / Phahurat connector",
+      "nodes": [
+        "flower_market",
+        "yaowarat_w"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "old_siam",
+      "name": "Bamrung Mueang / Rama I connector",
+      "nodes": [
+        "palace_e",
+        "giant_swing",
+        "golden_mount",
+        "national_stadium",
+        "siam",
+        "ratchaprasong"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "sukhumvit",
+      "name": "Phloen Chit / Sukhumvit",
+      "nodes": [
+        "ratchaprasong",
+        "nana",
+        "asok"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "memorial",
+      "name": "Memorial Bridge",
+      "nodes": [
+        "memorial_w",
+        "memorial_e"
+      ],
+      "kind": "bridge",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "memorial_approach",
+      "name": "Memorial Bridge approaches",
+      "nodes": [
+        "flower_market",
+        "memorial_e",
+        "song_wat"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "yaowarat",
+      "name": "Yaowarat Road",
+      "nodes": [
+        "yaowarat_w",
+        "yaowarat_mid",
+        "odeon"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "charoen_n",
+      "name": "Charoen Krung - Chinatown arc",
+      "nodes": [
+        "yaowarat_w",
+        "charoen_mid",
+        "hua_lamphong",
+        "odeon"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "ratchawong",
+      "name": "Ratchawong link",
+      "nodes": [
+        "charoen_mid",
+        "ratchawong",
+        "song_wat"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "songwat",
+      "name": "Song Wat / Talat Noi connector",
+      "nodes": [
+        "song_wat",
+        "talat_noi"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "charoen_s",
+      "name": "Charoen Krung - riverside",
+      "nodes": [
+        "odeon",
+        "talat_noi",
+        "bang_rak",
+        "taksin_e",
+        "charoen_south"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "ramaiv",
+      "name": "Rama IV corridor",
+      "nodes": [
+        "hua_lamphong",
+        "sam_yan",
+        "sala_daeng",
+        "lump_se",
+        "khlong_toei"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "banthat",
+      "name": "Banthat Thong / Sam Yan connector",
+      "nodes": [
+        "national_stadium",
+        "banthat_thong",
+        "sam_yan"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "silom",
+      "name": "Silom corridor",
+      "nodes": [
+        "bang_rak",
+        "mahanakhon",
+        "sala_daeng"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "narathiwas",
+      "name": "Narathiwas link",
+      "nodes": [
+        "mahanakhon",
+        "chong_nonsi"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "sathorn",
+      "name": "Sathorn corridor",
+      "nodes": [
+        "taksin_e",
+        "chong_nonsi",
+        "sathorn_e",
+        "lump_se"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "asok_ratchada",
+      "name": "Asok / Ratchadaphisek",
+      "nodes": [
+        "asok",
+        "benjakitti",
+        "khlong_toei"
+      ],
+      "kind": "main",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "park_n",
+      "name": "Sarasin / Wireless perimeter",
+      "nodes": [
+        "lump_nw",
+        "lump_ne",
+        "lump_se"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "west",
+      "name": "Itsaraphap / west-bank connector",
+      "nodes": [
+        "pinklao_w",
+        "arun_road",
+        "west_link",
+        "icon_road",
+        "taksin_w"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "memorial_w_access",
+      "name": "West-bank bridge approach",
+      "nodes": [
+        "west_link",
+        "memorial_w"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "charoen_nakhon",
+      "name": "Charoen Nakhon / ICONSIAM access",
+      "nodes": [
+        "icon_road",
+        "icon_access"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "taksin",
+      "name": "Taksin Bridge",
+      "nodes": [
+        "taksin_w",
+        "taksin_e"
+      ],
+      "kind": "bridge",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "asiatique",
+      "name": "Asiatique road entrance",
+      "nodes": [
+        "charoen_south",
+        "asiatique_access"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "shortcut_1",
+      "name": "Workshop lane",
+      "nodes": [
+        "yaowarat_mid",
+        "song_wat"
+      ],
+      "kind": "shortcut",
+      "geography_basis": "invented_gameplay_connector"
+    },
+    {
+      "id": "shortcut_2",
+      "name": "University service lane",
+      "nodes": [
+        "banthat_thong",
+        "hua_lamphong"
+      ],
+      "kind": "shortcut",
+      "geography_basis": "invented_gameplay_connector"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "chatuchak",
+      "name": "Chatuchak Market",
+      "position": [
+        758,
+        55
+      ]
+    },
+    {
+      "id": "victory",
+      "name": "Victory Monument",
+      "position": [
+        675,
+        228
+      ]
+    },
+    {
+      "id": "khaosan",
+      "name": "Khao San Road",
+      "position": [
+        290,
+        218
+      ]
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy Monument",
+      "position": [
+        435,
+        268
+      ]
+    },
+    {
+      "id": "sanam",
+      "name": "Sanam Luang",
+      "position": [
+        285,
+        294
+      ]
+    },
+    {
+      "id": "palace",
+      "name": "Grand Palace / Wat Phra Kaew",
+      "position": [
+        295,
+        365
+      ]
+    },
+    {
+      "id": "pho",
+      "name": "Wat Pho",
+      "position": [
+        290,
+        443
+      ]
+    },
+    {
+      "id": "arun",
+      "name": "Wat Arun",
+      "position": [
+        160,
+        465
+      ]
+    },
+    {
+      "id": "golden",
+      "name": "Golden Mount",
+      "position": [
+        470,
+        352
+      ]
+    },
+    {
+      "id": "swing",
+      "name": "Giant Swing",
+      "position": [
+        410,
+        400
+      ]
+    },
+    {
+      "id": "flowers",
+      "name": "Pak Khlong Talat",
+      "position": [
+        337,
+        533
+      ]
+    },
+    {
+      "id": "mbk",
+      "name": "MBK",
+      "position": [
+        658,
+        490
+      ]
+    },
+    {
+      "id": "paragon",
+      "name": "Siam Paragon",
+      "position": [
+        730,
+        415
+      ]
+    },
+    {
+      "id": "central",
+      "name": "CentralWorld / Erawan",
+      "position": [
+        805,
+        427
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "Chinatown Gate",
+      "position": [
+        535,
+        590
+      ]
+    },
+    {
+      "id": "traimit",
+      "name": "Wat Traimit",
+      "position": [
+        563,
+        574
+      ]
+    },
+    {
+      "id": "hua",
+      "name": "Hua Lamphong",
+      "position": [
+        600,
+        540
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Banthat Thong",
+      "position": [
+        635,
+        595
+      ]
+    },
+    {
+      "id": "icon",
+      "name": "ICONSIAM",
+      "position": [
+        325,
+        820
+      ]
+    },
+    {
+      "id": "park",
+      "name": "Lumphini Park",
+      "position": [
+        807,
+        730
+      ]
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal 21 / Asok",
+      "position": [
+        948,
+        535
+      ]
+    },
+    {
+      "id": "benjakitti",
+      "name": "Benjakitti Park",
+      "position": [
+        904,
+        710
+      ]
+    },
+    {
+      "id": "mahanakhon",
+      "name": "Mahanakhon",
+      "position": [
+        652,
+        875
+      ]
+    },
+    {
+      "id": "asiatique",
+      "name": "Asiatique",
+      "position": [
+        410,
+        1100
+      ]
+    }
+  ],
+  "notes": [
+    "Road polylines are compressed corridor intent. Not surveyed alignments or final lane geometry.",
+    "Unmarked intersections do not imply road connections. Split every at-grade crossing into graph nodes during graybox.",
+    "Exact turns, lane directions, road widths, junction tangents and access spurs require local reference and driving validation.",
+    "All areas remain drive-accessible. Discovery reveals knowledge, not invisible city locks.",
+    "No driving through temple courts, park interiors, pedestrian market lanes or expressways.",
+    "Passenger ferries are scenery, not vehicle crossings. Bridges are the driving crossings.",
+    "Roads tagged invented_gameplay_connector must remain explicitly fictional."
+  ]
+}

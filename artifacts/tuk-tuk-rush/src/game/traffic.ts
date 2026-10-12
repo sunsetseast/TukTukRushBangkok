@@ -5,12 +5,14 @@ export class TrafficSystem {
   private nodes: Map<string, RoadNode>;
   private neighbors = new Map<string, string[]>();
   private edges = new Map<string, Road>();
+  private degrees = new Map<string, number>();
   private seed = 982;
   private elapsed = 0;
   constructor(private district: District) {
     this.nodes = new Map(district.nodes.map(n => [n.id, n]));
     for (const node of district.nodes) this.neighbors.set(node.id, []);
     for (const road of district.roads) {
+      for (const id of [road.a, road.b]) this.degrees.set(id, (this.degrees.get(id) ?? 0) + 1);
       this.neighbors.get(road.a)!.push(road.b);
       this.edges.set(`${road.a}>${road.b}`, road);
       if (!road.oneWay) {
@@ -23,20 +25,20 @@ export class TrafficSystem {
   get horizontalGreen() { return Math.floor(this.elapsed / 9) % 2 === 0; }
   create(): TrafficCar[] {
     const colors = ['#e872a8', '#4da995', '#e6bc54', '#db8f78', '#b9c9cf'];
-    const main = this.district.roads.filter(r => r.name === 'Yaowarat Road' && !r.roundabout);
-    const support = this.district.roads.filter(r => r.name === 'Charoen Krung Road');
+    const main = this.district.roads.filter(r => this.district.worldId === 'bangkok' ? r.corridor === 'yaowarat' || r.corridor === 'charoen_s' : r.name === 'Yaowarat Road' && !r.roundabout);
+    const support = this.district.roads.filter(r => this.district.worldId === 'bangkok' ? !r.shortcut && !r.bridge && r.corridor !== 'yaowarat' && r.corridor !== 'charoen_s' : r.name === 'Charoen Krung Road');
     // Chinatown's main spine should not look deserted when viewed from the
     // tuk-tuk. 16 vehicles, with extra motorcycles, remain small enough for
     // the existing instanced/batched model and deterministic traffic AI.
-    const mainCount=11,supportCount=5;
+    const mainCount=11,supportCount=this.district.worldId === 'bangkok' ? 13 : 5;
     return Array.from({ length: mainCount+supportCount }, (_, id) => {
       const list = id < mainCount ? main : support;
       const road = list[Math.floor((id < mainCount ? id/mainCount :
         (id-mainCount)/supportCount) * list.length)]!;
       const a = this.nodes.get(road.a)!, b = this.nodes.get(road.b)!, t = 0.12 + this.random() * 0.7;
       const heading = Math.atan2(b.x - a.x, b.z - a.z);
-      return { id, from: road.a, to: road.b, x: a.x + (b.x - a.x) * t - Math.cos(heading) * 3,
-        z: a.z + (b.z - a.z) * t + Math.sin(heading) * 3, heading,
+      return { id, from: road.a, to: road.b, x: a.x + (b.x - a.x) * t - Math.cos(heading) * Math.min(3, road.width / 4),
+        z: a.z + (b.z - a.z) * t + Math.sin(heading) * Math.min(3, road.width / 4), heading,
         speed: 7 + id % 4, kind: id % 3 === 0 ? 'motorcycle' : id % 5 === 0 ? 'car' : 'taxi',
         color: colors[id % colors.length]!, wait: 0, nearMissCooldown: 0 };
     });
@@ -52,7 +54,7 @@ export class TrafficSystem {
       const ux = dx / length, uz = dz / length;
       const progress = Math.max(0, Math.min(length, (car.x - a.x) * ux + (car.z - a.z) * uz));
       const remaining = length - progress;
-      const junction = this.district.roads.filter(r => r.a === b.id || r.b === b.id).length >= 3;
+      const junction = (this.degrees.get(b.id) ?? 0) >= 3;
       const signal = junction && !road.roundabout && !b.id.startsWith('odeon:');
       const green = this.horizontalGreen === (Math.abs(dx) > Math.abs(dz));
       let blocked = car.wait > 0 || (signal && !green && remaining < 13 && remaining > 5);

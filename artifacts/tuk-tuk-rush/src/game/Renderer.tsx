@@ -10,6 +10,7 @@ import { buildStreetLife } from "./streetLife";
 import { buildStreetscape } from "./streetscape";
 import { loadArt, type ArtBundle, disposeObject } from "./assets";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { buildBangkokGraybox, shiftLighting } from './bangkok/mesh';
 import { clamp } from "./meshUtil";
 import { obstacleLocal } from "./world";
 
@@ -52,28 +53,30 @@ function buildBeacon() {
 
 function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const { camera, gl, scene } = useThree();
+  const bangkok = engine.model.district.worldId === 'bangkok';
+  const sun = useRef<THREE.DirectionalLight>(null), ambient = useRef<THREE.HemisphereLight>(null);
   const city = useMemo(() => {
-    const c = buildCity(engine.model.district, art.textures);
+    const c = bangkok ? buildBangkokGraybox(engine.model.district) : buildCity(engine.model.district, art.textures);
     c.group.name = "City";
     return c;
   }, [engine, art]);
   const sky = useMemo(() => {
-    const s = buildSky();
+    const s = bangkok ? new THREE.Group() : buildSky();
     s.scale.setScalar(0.18);
     return s;
   }, []);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   const streets = useMemo(() => {
-    const s = buildStreetscape(engine.model.district, art.textures);
+    const s = bangkok ? { root: new THREE.Group(), update() {}, dispose() {} } : buildStreetscape(engine.model.district, art.textures);
     s.root.name = "Facades";
     return s;
   }, [engine, art]);
   const life = useMemo(
-    () => buildStreetLife(engine.model.district),
+    () => bangkok ? { root: new THREE.Group(), update() {}, dispose() {} } : buildStreetLife(engine.model.district),
     [engine, city],
   );
   const shadows = useMemo(
-    () => architectureShadows(engine.model.district),
+    () => bangkok ? new THREE.Group() : architectureShadows(engine.model.district),
     [engine],
   );
   const contact = useMemo(() => vehicleShadow(), []);
@@ -119,6 +122,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       s = m.snapshot,
       c = cam.current;
     const t = state.clock.elapsedTime;
+    if (bangkok) {
+      const lighting = shiftLighting(s.elapsed ?? 0);
+      (scene.background as THREE.Color).copy(lighting.sky); (scene.fog as THREE.Fog).color.copy(lighting.sky);
+      if (sun.current) sun.current.intensity = lighting.sun;
+      if (ambient.current) ambient.current.intensity = lighting.ambient;
+      gl.toneMappingExposure = lighting.exposure;
+    }
 
     tuk.root.position.set(p.x, 0, p.z);
     tuk.root.rotation.y = p.heading;
@@ -245,14 +255,14 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       p,
     );
     city.update(cp.position, s.quality, engine.intersectionHorizontalGreen);
-    const far = s.quality === "low" ? 240 : 340;
+    const far = bangkok ? s.quality === "low" ? 500 : 800 : s.quality === "low" ? 240 : 340;
     if (cp.far !== far) {
       cp.far = far;
       cp.updateProjectionMatrix();
     }
     const fog = scene.fog as THREE.Fog;
-    fog.near = s.quality === "low" ? 95 : 135;
-    fog.far = s.quality === "low" ? 205 : 310;
+    fog.near = bangkok ? 220 : s.quality === "low" ? 95 : 135;
+    fog.far = bangkok ? s.quality === "low" ? 450 : 720 : s.quality === "low" ? 205 : 310;
     if (import.meta.env.DEV) {
       const debug = window as typeof window & { __graphics?: unknown };
       debug.__graphics = {
@@ -279,8 +289,9 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     <>
       <color attach="background" args={["#b2a1aa"]} />
       <fog attach="fog" args={["#b2a1aa", 125, 430]} />
-      <hemisphereLight args={["#bddcf0", "#70616a", 1.05]} />
+      <hemisphereLight ref={ambient} args={["#bddcf0", "#70616a", 1.05]} />
       <directionalLight
+        ref={sun}
         position={[-120, 45, 60]}
         intensity={1.95}
         color="#ffc78f"
@@ -338,7 +349,7 @@ export default function GameCanvas({
       )}
       {!art && (
         <div className="tt-asset-status" role="status">
-          <b>{error || "Preparing Chinatown…"}</b>
+          <b>{error || "Preparing Bangkok…"}</b>
           {error && (
             <button className="tt-btn" onClick={() => location.reload()}>
               Retry
