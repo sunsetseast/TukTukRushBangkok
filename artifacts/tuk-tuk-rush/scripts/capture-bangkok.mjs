@@ -52,6 +52,8 @@ try {
   assert.equal(await page.evaluate(() => window.__graphics.engine.model.snapshot.phase), 'paused', 'Closing portrait map must not resume behind rotate prompt');
   await page.setViewportSize({ width: 844, height: 390 });
   await page.getByTestId('button-resume').click();
+  // Inspection views exclude HUD/pause overlays; UI was captured and tested above.
+  await page.addStyleTag({ content: '.tt-ui { visibility: hidden !important; }' });
   for (const id of ['gate', 'arun', 'icon', 'paragon', 'mahanakhon']) {
     await page.evaluate(id => {
       const { engine } = window.__graphics, d = engine.model.district, l = d.landmarks.find(l => l.id === id), n = d.nodes.find(n => n.id === l.accessNode);

@@ -2,9 +2,10 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { District, Point } from '../types';
 import type { Frame } from '../Hud';
 import { regionAt, routeFromPoint, SCALE, toMap } from './world';
+const districtLabels: Record<string, string> = { north: 'Chatuchak', khaosan: 'Khao San', oldtown: 'Old Town', westbank: 'Thonburi', chinatown: 'Chinatown', siam: 'Siam', talatnoi: 'Talat Noi', sukhumvit: 'Asok', icon: 'Khlong San', silom: 'Silom / Sathorn', south: 'Asiatique' };
 const points = (ps: Point[]) => ps.map(p => { const m = toMap(p); return `${m.x},${m.y}`; }).join(' ');
 
-function MapLayers({ d, f, detail = false }: { d: District; f: Frame; detail?: boolean }) {
+function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true }: { d: District; f: Frame; detail?: boolean; labelScale?: number; placeNames?: boolean }) {
   const nodes = useMemo(() => new Map(d.nodes.map(n => [n.id, n])), [d]);
   const visited = f.snap.discoveredDistricts ?? [], shortcuts = f.snap.discoveredShortcuts ?? [];
   const path = useMemo(() => routeFromPoint(d, { x: f.px, z: f.pz }, f.snap.target), [d, f.snap.target.id, Math.round(f.px / 25), Math.round(f.pz / 25)]);
@@ -23,17 +24,17 @@ function MapLayers({ d, f, detail = false }: { d: District; f: Frame; detail?: b
     })}
     {detail && d.regions?.map(r => {
       const centroid = r.polygon.reduce((p, n) => ({ x: p.x + n.x / r.polygon.length, z: p.z + n.z / r.polygon.length }), { x: 0, z: 0 }), m = toMap(centroid);
-      return <text key={r.id} x={m.x} y={m.y} textAnchor="middle" className="tt-world-district" opacity={visited.includes(r.id) ? 1 : .55}>{r.name}</text>;
+      return <text key={r.id} x={m.x} y={m.y} textAnchor="middle" className="tt-world-district" style={{ fontSize: 11 * labelScale, strokeWidth: 3 * labelScale }} opacity={visited.includes(r.id) ? 1 : .55}>{districtLabels[r.id] ?? r.name}</text>;
     })}
     {d.landmarks.filter(l => l.id && f.snap.discoveredLandmarks?.includes(l.id)).map(l => {
       const m = toMap(l), end = m.x > 780;
-      return <g key={l.id}><circle cx={m.x} cy={m.y} r="5" fill="#f3c471" stroke="#10212e" strokeWidth="2" />
-        {detail && <text x={m.x + (end ? -9 : 9)} y={m.y - 8} textAnchor={end ? 'end' : 'start'} className="tt-world-landmark">{l.name}</text>}
+      return <g key={l.id}><circle cx={m.x} cy={m.y} r={4 * labelScale} fill="#f3c471" stroke="#10212e" strokeWidth={1.5 * labelScale} />
+        {detail && placeNames && <text x={m.x + (end ? -9 : 9) * labelScale} y={m.y - 8 * labelScale} textAnchor={end ? 'end' : 'start'} className="tt-world-landmark" style={{ fontSize: 10 * labelScale, strokeWidth: 3 * labelScale }}>{l.name}</text>}
       </g>;
     })}
-    <polyline points={points(path)} stroke={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} strokeWidth="3" strokeLinejoin="round" fill="none" />
-    <circle cx={target.x} cy={target.y} r="7" fill={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} stroke="#142434" strokeWidth="2" />
-    <g transform={`translate(${p.x} ${p.y}) rotate(${180 - f.ph * 180 / Math.PI})`} data-testid="map-player"><circle r="11" fill="#092637" /><polygon points="0,-10 7,8 0,4 -7,8" fill="#63f2df" stroke="#ecfff9" strokeWidth="1.2" /></g>
+    <polyline points={points(path)} stroke={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinejoin="round" fill="none" />
+    <circle cx={target.x} cy={target.y} r={6 * labelScale} fill={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} stroke="#142434" strokeWidth="2" />
+    <g transform={`translate(${p.x} ${p.y}) rotate(${180 - f.ph * 180 / Math.PI}) scale(${labelScale})`} data-testid="map-player"><circle r="11" fill="#092637" /><polygon points="0,-10 7,8 0,4 -7,8" fill="#63f2df" stroke="#ecfff9" strokeWidth="1.2" /></g>
   </>;
 }
 export function BangkokMinimap({ d, f }: { d: District; f: Frame }) {
@@ -41,10 +42,19 @@ export function BangkokMinimap({ d, f }: { d: District; f: Frame }) {
   return <svg className="tt-minimap tt-bangkok-minimap" viewBox={`${p.x - radius} ${p.y - radius} ${radius * 2} ${radius * 2}`} aria-label="Bangkok local map, north up" data-testid="minimap"><MapLayers d={d} f={f} /><text x={p.x - 51} y={p.y - 43} fill="#f3e0b8" fontSize="10">N ↑</text></svg>;
 }
 export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: () => void }) {
-  const [view, setView] = useState({ x: -25, y: -30, w: 1050, h: 1260 });
+  const [view, setView] = useState(() => { const p = toMap({ x: f.px, z: f.pz }); return { x: p.x - 160, y: p.y - 192, w: 320, h: 384 }; });
+  const [labelScale, setLabelScale] = useState(1);
   const svg = useRef<SVGSVGElement>(null), root = useRef<HTMLDivElement>(null), close = useRef<HTMLButtonElement>(null);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const [selected, setSelected] = useState('');
+  useEffect(() => {
+    const resize = () => { const scale = svg.current?.getScreenCTM()?.a; if (scale && Number.isFinite(scale)) setLabelScale(1 / scale); };
+    resize();
+    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(resize);
+    if (svg.current) observer?.observe(svg.current);
+    window.addEventListener('resize', resize);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', resize); };
+  }, [view]);
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     close.current?.focus();
@@ -83,7 +93,7 @@ export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: ()
   return <div className="tt-world-map" role="dialog" aria-modal="true" aria-labelledby="bangkok-map-title" ref={root} data-testid="world-map">
     <header><div><h2 id="bangkok-map-title">Bangkok</h2><p>{f.snap.districtName} · {f.snap.discoveredDistricts?.length ?? 0}/{d.regions?.length} areas discovered</p></div><button ref={close} className="tt-btn" onClick={onClose} data-testid="button-close-map">Back to driving</button></header>
     <div className="tt-world-map-body">
-      <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail /></svg>
+      <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail labelScale={labelScale} placeNames={view.w < 700} /></svg>
       <div className="tt-map-tools"><button aria-label="Zoom in" onClick={() => zoom(.75)}>+</button><button aria-label="Zoom out" onClick={() => zoom(1.33)}>−</button><button onClick={recenter}>My tuk-tuk</button><button onClick={() => setView({ x: -25, y: -30, w: 1050, h: 1260 })}>Whole city</button></div>
       <aside><b>Your next fare</b><p>{f.snap.target.name}</p><span>Dim areas reveal as you drive into them.</span><div className="tt-map-places">{d.landmarks.filter(l => f.snap.discoveredLandmarks?.includes(l.id!)).map(l => <button key={l.id} onClick={() => { const p = toMap(l); setView({ x: p.x - 180, y: p.y - 216, w: 360, h: 432 }); setSelected(l.name); }}>{l.name}</button>)}</div>{selected && <p role="status">Viewing {selected}</p>}</aside>
     </div>
