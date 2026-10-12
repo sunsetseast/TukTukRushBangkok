@@ -13,6 +13,7 @@ The main game now opens the compact Bangkok layout preview. The title screen off
 - A full north-up map with current vehicle heading/location, fare target/route, pan, pinch/button zoom, recenter and a whole-city view. The local minimap excludes distant road geometry. The map pauses gameplay; it works in portrait and landscape. Closing it in portrait leaves gameplay paused behind the rotation prompt.
 - District, landmark-approach and shortcut discovery persists in browser storage, with a safe in-session fallback if storage is unavailable. Browsing the map never discovers places. Areas remain accessible from the start.
 - A stylized 24-minute sunset shift: sunset -> blue hour -> night by minute nine, tied to simulation time. Free roam also progresses to night. Pausing freezes both time and lighting.
+- Landmark reference pins and roadside stops stay fixed. Visual/collision parcels are fitted nearby on the same river bank, within 180 m of their reference site, rather than shrinking a building to fit a road. Gate stays on its circle island.
 - Simple district-colored massing, protected park greenery, reused compatible landmark art, unique tower/wheel/palace blockouts, a continuous ground plane, batched infrastructure and distance-limited scenery.
 
 ## Validation completed locally

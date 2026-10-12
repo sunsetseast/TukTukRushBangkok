@@ -63,7 +63,7 @@ export function buildBangkokGraybox(d: District): City {
     add(x, h / 2, z, 65, h, 65, '#657584');
   }
   batch.finish().forEach(chunk => { chunk.name = 'BangkokSector'; group.add(chunk); });
-  const heroes = d.landmarks.map(l => { const root = blockout(l); root.position.set(l.x, 0, l.z); root.name = `BangkokLandmark:${l.id}`; group.add(root); return root; });
+  const heroes = d.landmarks.map(l => { const root = blockout(l); root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z); root.name = `BangkokLandmark:${l.id}`; group.add(root); return root; });
   const chunks = group.children.filter(c => c.name === 'BangkokSector');
   let lastX = Infinity, lastZ = Infinity, lastQuality = '';
   return { group, update(camera, quality) {

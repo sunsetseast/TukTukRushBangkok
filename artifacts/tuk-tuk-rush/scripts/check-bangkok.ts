@@ -68,7 +68,12 @@ for (let i = 0; i < 2400; i++) {
 assert(changes > 50);
 const city = buildBangkokGraybox(d); city.group.updateMatrixWorld(true);
 const landmarkObject = city.group.getObjectByName('BangkokLandmark:palace')!;
-const bounds = new Box3().setFromObject(landmarkObject); assert(bounds.containsPoint(new Vector3(gate.x + find('palace').x - gate.x, 3, find('palace').z)), 'Landmark art must be positioned once');
+const bounds = new Box3().setFromObject(landmarkObject); assert(bounds.containsPoint(new Vector3(find('palace').plot!.x, 3, find('palace').plot!.z)), 'Landmark art must be positioned once');
+for (const l of d.landmarks.filter(l => l.kind !== 'park')) { assert(l.plot && l.size! >= 25); assert(d.obstacles.some(o => o.landmarkId === l.id)); assert(Math.hypot(l.plot.x - l.x, l.plot.z - l.z) <= 181); }
+const towerSize = new Box3().setFromObject(city.group.getObjectByName('BangkokLandmark:mahanakhon')!).getSize(new Vector3());
+const mallSize = new Box3().setFromObject(city.group.getObjectByName('BangkokLandmark:icon')!).getSize(new Vector3());
+assert(towerSize.x >= 30 && towerSize.z >= 30 && towerSize.y >= 80, 'Tower massing must not collapse into a roadside pole');
+assert(mallSize.x >= 50 && mallSize.z >= 50, 'Mall must have a meaningful blockout footprint');
 city.update(new Vector3(d.spawn!.x, 5, d.spawn!.z), 'low'); assert(city.group.children.some(c => c.visible)); city.dispose();
 const sunset = shiftLighting(0), night = shiftLighting(9 * 60); assert.equal(sunset.night, 0); assert.equal(night.night, 1); assert(night.sun < sunset.sun);
 console.log(JSON.stringify({ pass: true, nodes: nodes.size, roads: d.roads.length, roadSamples, bridgeSamples, protectedGate: true, reachableFares: 10, trafficTransitions: changes, discoveryPersistence: true, meshConstructionAndDisposal: true }));

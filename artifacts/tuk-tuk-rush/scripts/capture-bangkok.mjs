@@ -59,7 +59,8 @@ try {
       const { engine } = window.__graphics, d = engine.model.district, l = d.landmarks.find(l => l.id === id), n = d.nodes.find(n => n.id === l.accessNode);
       engine.pause(); Object.assign(engine.model.player, { x: n.x, z: n.z, speed: 0 }); engine.recover();
       engine.model.snapshot.elapsed = id === 'mahanakhon' ? 600 : 0;
-      window.__artCamera = { position: [l.x + 105, 160, l.z + 120], look: [l.x, 10, l.z] };
+      const site = l.plot || l;
+      window.__artCamera = { position: [site.x + 105, 160, site.z + 120], look: [site.x, 10, site.z] };
     }, id);
     const before = await page.evaluate(() => window.__graphics.frameId);
     await page.waitForFunction(frame => window.__graphics.frameId > frame + 3, before, { timeout: 30000 });

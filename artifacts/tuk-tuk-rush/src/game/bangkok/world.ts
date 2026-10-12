@@ -106,13 +106,34 @@ export function createBangkokWorld(): District {
     { ...toWorld([805, 726]), w: 300, d: 520, height: .6, color: '#43886b', protected: true },
     { ...toWorld([904, 720]), w: 70, d: 265, height: .6, color: '#43886b', protected: true },
   );
+  const bank = (p: Point) => {
+    const closest = river.slice(1).map((b, i) => distanceToSegment(p, river[i]!, b)).sort((a, b) => a.distance - b.distance)[0]!;
+    return Math.sign(p.x - closest.point.x);
+  };
   for (const l of landmarks) {
-    const nearest = Math.min(...roads.map(r => distanceToSegment(l, byId.get(r.a)!, byId.get(r.b)!).distance));
-    const size = l.kind === 'gate' ? 28 : Math.max(3, Math.min(l.kind === 'palace' ? 135 : l.kind === 'tower' ? 40 : 50, (nearest - 4) * 1.1));
-    l.size = size;
     l.accessNode = nodes.reduce((best, n) => Math.hypot(n.x - l.x, n.z - l.z) < Math.hypot(best.x - l.x, best.z - l.z) ? n : best).id;
-    if (l.kind !== 'park' && nearest > size * Math.SQRT2 / 2 + 3) world.obstacles.push({ ...l, w: size, d: size,
-      height: l.kind === 'tower' ? 100 : l.kind === 'palace' ? 28 : 18, color: '#dfbd83', landmarkId: l.id });
+    if (l.kind === 'park') { l.size = 50; continue; }
+    const size = l.kind === 'palace' ? 135 : l.kind === 'tower' ? 40 : l.kind === 'mall' ? 65 : l.kind === 'station' ? 70 : l.kind === 'temple' ? 50 : l.kind === 'gate' ? 28 : l.kind === 'wheel' ? 45 : 30;
+    const radius = size * Math.SQRT2 / 2;
+    let plot: Point | undefined;
+    // Site pins/roadside approaches are not building centers. Fit a meaningful
+    // parcel nearby rather than shrinking a landmark into a pole on the road.
+    for (const distance of [0, 30, 50, 75, 100, 140, 180]) {
+      for (let direction = 0; direction < 16; direction++) {
+        const angle = direction * Math.PI * 2 / 16;
+        const candidate = { x: l.x + Math.cos(angle) * distance, z: l.z + Math.sin(angle) * distance };
+        if (bank(candidate) !== bank(l) || riverDistance(world, candidate) < riverWidth / 2 + radius + 3) continue;
+        if (candidate.x < world.bounds!.minX + radius || candidate.x > world.bounds!.maxX - radius || candidate.z < world.bounds!.minZ + radius || candidate.z > world.bounds!.maxZ - radius) continue;
+        if (roads.some(r => distanceToSegment(candidate, byId.get(r.a)!, byId.get(r.b)!).distance < r.width / 2 + radius + (l.kind === 'gate' ? 1.5 : 3))) continue;
+        const footprint: Obstacle = { ...candidate, w: size, d: size, height: l.kind === 'tower' ? 100 : l.kind === 'palace' ? 28 : 18, color: '#dfbd83', landmarkId: l.id };
+        if (world.obstacles.some(o => orientedFootprintsOverlap(o, footprint, 3))) continue;
+        plot = candidate; world.obstacles.push(footprint); break;
+      }
+      if (plot) break;
+      if (l.kind === 'gate') break; // Gate stays on its protected circle island.
+    }
+    if (!plot) throw new Error(`No safe landmark parcel: ${l.id}`);
+    l.size = size; l.plot = plot;
   }
   let index = 0;
   for (const s of segments.filter(s => !s.road.shortcut && !s.road.bridge)) {
