@@ -1,0 +1,408 @@
+{
+  "type": "FeatureCollection",
+  "name": "Bangkok landmarks — geographically anchored phase 1",
+  "metadata": {
+    "source": "Wikidata, OpenStreetMap contributors and individual referenced feature pages",
+    "surveyLevel": "Approximate centerpoints; not entrance surveyed",
+    "license": "Mixed factual coordinates, OSM-derived components ODbL. See docs/maps/README.md",
+    "gameReady": false
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "wat-pho",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.49361,
+          13.74639
+        ]
+      },
+      "properties": {
+        "id": "wat-pho",
+        "name": "Wat Pho — Reclining Buddha",
+        "name_th": "วัดโพธิ์",
+        "category": "temple",
+        "zone": "Rattanakosin",
+        "priority": 1,
+        "source": "https://www.wikidata.org/wiki/Q1059910",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Temple compound; reclining Buddha is inside, not a drive-through point."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wat-arun",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.48889,
+          13.74361
+        ]
+      },
+      "properties": {
+        "id": "wat-arun",
+        "name": "Wat Arun — Temple of Dawn",
+        "name_th": "วัดอรุณ",
+        "category": "temple",
+        "zone": "Thonburi",
+        "priority": 1,
+        "source": "https://www.wikidata.org/wiki/Q724970",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Across the Chao Phraya from Wat Pho; reached by road bridge or ferry, not a fictitious crossing."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "grand-palace",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.492,
+          13.7501
+        ]
+      },
+      "properties": {
+        "id": "grand-palace",
+        "name": "The Grand Palace",
+        "name_th": "พระบรมมหาราชวัง",
+        "category": "palace",
+        "zone": "Rattanakosin",
+        "priority": 1,
+        "source": "https://en.wikipedia.org/wiki/Grand_Palace",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Large compound, landmark marker is a centroid, not an entrance."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wat-phra-kaew",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.4925,
+          13.75139
+        ]
+      },
+      "properties": {
+        "id": "wat-phra-kaew",
+        "name": "Wat Phra Kaew — Emerald Buddha",
+        "name_th": "วัดพระแก้ว",
+        "category": "temple",
+        "zone": "Rattanakosin",
+        "priority": 1,
+        "source": "https://en.wikipedia.org/wiki/Wat_Phra_Kaew",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Within the Grand Palace complex; distinct points are not independent car access roads."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "iconsiam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.51033,
+          13.72683
+        ]
+      },
+      "properties": {
+        "id": "iconsiam",
+        "name": "ICONSIAM",
+        "name_th": "ไอคอนสยาม",
+        "category": "shopping",
+        "zone": "Riverside / Thonburi",
+        "priority": 1,
+        "source": "https://mapcarta.com/37414840/Map",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "On the west bank of the river. Access from the west-bank road network."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "siam-paragon",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.53494,
+          13.7468
+        ]
+      },
+      "properties": {
+        "id": "siam-paragon",
+        "name": "Siam Paragon",
+        "name_th": "สยามพารากอน",
+        "category": "shopping",
+        "zone": "Siam / Pathum Wan",
+        "priority": 1,
+        "source": "https://mapcarta.com/W781138575",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "An east-city shopping anchor, several real kilometers from Chinatown."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "yaowarat",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.5099857,
+          13.7403072
+        ]
+      },
+      "properties": {
+        "id": "yaowarat",
+        "name": "Yaowarat Road — Chinatown",
+        "name_th": "ถนนเยาวราช",
+        "category": "district",
+        "zone": "Chinatown",
+        "priority": 1,
+        "source": "https://www.openstreetmap.org/copyright",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Representative mid-corridor point from the current OSM-derived road trace, not a shop entrance."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chinatown-gate",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.5129,
+          13.73712
+        ]
+      },
+      "properties": {
+        "id": "chinatown-gate",
+        "name": "Chinatown Gate — Odeon Circle",
+        "name_th": "ซุ้มประตูเฉลิมพระเกียรติ",
+        "category": "monument",
+        "zone": "Chinatown",
+        "priority": 1,
+        "source": "https://www.openstreetmap.org/copyright",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Odeon Circle location from the existing map trace; verify entrance/roundabout modeling before gameplay."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wat-traimit",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.51363,
+          13.73809
+        ]
+      },
+      "properties": {
+        "id": "wat-traimit",
+        "name": "Wat Traimit — Golden Buddha",
+        "name_th": "วัดไตรมิตร",
+        "category": "temple",
+        "zone": "Chinatown",
+        "priority": 1,
+        "source": "https://mapcarta.com/26163568",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Temple compound near Odeon Circle."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hua-lamphong",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.51767,
+          13.73985
+        ]
+      },
+      "properties": {
+        "id": "hua-lamphong",
+        "name": "Hua Lamphong Railway Station",
+        "name_th": "สถานีรถไฟหัวลำโพง",
+        "category": "transport",
+        "zone": "Chinatown / Pathum Wan",
+        "priority": 1,
+        "source": "https://mapcarta.com/36119874",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Historic station footprint; use a drivable arrival point outside station buildings."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pak-khlong-talat",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.49632,
+          13.74168
+        ]
+      },
+      "properties": {
+        "id": "pak-khlong-talat",
+        "name": "Pak Khlong Talat — Flower Market",
+        "name_th": "ปากคลองตลาด",
+        "category": "market",
+        "zone": "Rattanakosin",
+        "priority": 2,
+        "source": "https://mapcarta.com/W1423814928",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Market area, not a single parking spot."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "asiatique",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.50277,
+          13.70419
+        ]
+      },
+      "properties": {
+        "id": "asiatique",
+        "name": "Asiatique The Riverfront",
+        "name_th": "เอเชียทีค เดอะ ริเวอร์ฟร้อนท์",
+        "category": "shopping",
+        "zone": "Riverside / Bang Kho Laem",
+        "priority": 2,
+        "source": "https://mapcarta.com/W196107455",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Southern riverfront anchor; extends full-map coverage southward."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rama-viii-bridge",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.49675,
+          13.76918
+        ]
+      },
+      "properties": {
+        "id": "rama-viii-bridge",
+        "name": "Rama VIII Bridge",
+        "name_th": "สะพานพระราม 8",
+        "category": "bridge",
+        "zone": "Northern River",
+        "priority": 2,
+        "source": "https://mapcarta.com/W965040447",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Road bridge and distinctive pylon; bridge paths must connect both banks at actual endpoints."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "khao-san-road",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.49732,
+          13.7589
+        ]
+      },
+      "properties": {
+        "id": "khao-san-road",
+        "name": "Khao San Road",
+        "name_th": "ถนนข้าวสาร",
+        "category": "street",
+        "zone": "Rattanakosin",
+        "priority": 2,
+        "source": "https://mapcarta.com/Bangkok/Khao_San_Road",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Street entertainment area; some segments have pedestrian-only restrictions."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "democracy-monument",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.50184,
+          13.75669
+        ]
+      },
+      "properties": {
+        "id": "democracy-monument",
+        "name": "Democracy Monument",
+        "name_th": "อนุสาวรีย์ประชาธิปไตย",
+        "category": "monument",
+        "zone": "Rattanakosin",
+        "priority": 2,
+        "source": "https://mapcarta.com/26035690",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Major roundabout landmark, not a shortcut through the center."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "golden-mount",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.50669,
+          13.75385
+        ]
+      },
+      "properties": {
+        "id": "golden-mount",
+        "name": "Wat Saket — Golden Mount",
+        "name_th": "ภูเขาทอง",
+        "category": "temple",
+        "zone": "Rattanakosin",
+        "priority": 2,
+        "source": "https://mapcarta.com/W243936903",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Elevation is visual, road access is at the base."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lumphini-park",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.54165,
+          13.73048
+        ]
+      },
+      "properties": {
+        "id": "lumphini-park",
+        "name": "Lumphini Park",
+        "name_th": "สวนลุมพินี",
+        "category": "park",
+        "zone": "Siam / Pathum Wan",
+        "priority": 2,
+        "source": "https://mapcarta.com/15557852",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Park boundaries must be mapped; do not generate driveable park paths."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "centralworld",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.539719,
+          13.746944
+        ]
+      },
+      "properties": {
+        "id": "centralworld",
+        "name": "centralwOrld",
+        "name_th": "เซ็นทรัลเวิลด์",
+        "category": "shopping",
+        "zone": "Siam / Pathum Wan",
+        "priority": 2,
+        "source": "https://www.latlong.net/place/siam-paragon-bangkok-thailand-31039.html",
+        "access": "roadside-view-or-legal-entrance-only",
+        "note": "Approximate mapped centroid from location guide; verify building footprint in OSM extraction."
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Bangkok — Real-World Map Foundation | Tuk Tuk Rush</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#101a29;color:#f4f6fc}
+*{box-sizing:border-box}body{margin:0;overflow:hidden}.app{display:grid;grid-template-columns:minmax(295px,360px) minmax(0,1fr);height:100dvh}
+aside{background:linear-gradient(170deg,#121f35,#101927);overflow:auto;box-shadow:10px 0 35px #050b1730;z-index:500;display:flex;flex-direction:column;padding:24px 21px 12px}
+.topline{color:#8faed3;font-size:10px;text-transform:uppercase;letter-spacing:2.4px;font-weight:800}
+h1{font-size:32px;font-weight:850;letter-spacing:-1.45px;line-height:1.08;margin:10px 0 8px}h1 span{color:#f6ba69}
+.sub{font-size:13px;line-height:1.55;color:#aabacf;margin:0 0 18px}
+.statline{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 20px}
+.stat{background:#1e3048;border:1px solid #32445c;border-radius:11px;padding:10px 12px}.stat b{display:block;font-size:18px}.stat small{font-size:10px;color:#aebdd0}
+.search{background:#1e3048;color:#fff;padding:13px;border:1px solid #3b526e;border-radius:9px;width:100%;outline:none;font-size:14px}.search:focus{border-color:#f4bf74}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}.filter{border:1px solid #3b4c67;border-radius:7px;padding:7px 9px;color:#c8d4e4;background:#1b2a40;cursor:pointer;font-size:11px;font-weight:650}.filter.active{background:#f3b969;color:#182337;border-color:#f3b969}
+.sectionhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}.sectionhead b{font-size:13px}.sectionhead small{color:#8399b6;font-size:11px}
+#results{overflow-y:auto;flex:1;min-height:90px;padding-right:3px}.item{cursor:pointer;background:#18283f;border:1px solid #2c3d57;border-radius:10px;margin-bottom:7px;padding:12px;display:flex;align-items:flex-start;gap:11px;text-align:left;width:100%;color:inherit}.item:hover,.item.active{border-color:#eebb6e;background:#263852}
+.dot{width:11px;height:11px;margin-top:5px;border-radius:50%;flex:none;box-shadow:0 0 0 3px #ffffff16}.item strong{display:block;font-size:13px}.item small{display:block;color:#92a8c3;font-size:11px;margin-top:3px}
+#map{height:100%;width:100%;background:radial-gradient(circle at 30% 50%,#25435a,#142332)}
+.overlay{position:absolute;z-index:450;right:18px;top:16px;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.overlay button{background:#fff;color:#1e3246;border:0;border-radius:9px;padding:11px 12px;font-weight:750;font-size:12px;box-shadow:0 3px 14px #0f1b2766;cursor:pointer}
+.overlay button.selected{background:#ffcb7d;color:#171d2c}
+.info{position:absolute;z-index:450;bottom:30px;right:18px;max-width:300px;background:#142238ec;border:1px solid #32475d;box-shadow:0 6px 18px #0a142c66;border-radius:11px;padding:11px 14px;color:#d3e0f1;font-size:11px;line-height:1.5}
+.info b{color:#fff}.info a{color:#f4ba6b}.brand{font-size:10px;color:#7892b1;padding:14px 2px 5px;line-height:1.5}
+.brand a{color:#b2c7e2}.leaflet-container{font:inherit}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#15263d;color:#e9f0fa}.leaflet-popup-content{margin:13px 15px;font-size:12px;min-width:170px}.leaflet-popup-content h3{font-size:15px;margin:0 0 5px}.leaflet-popup-content p{margin:5px 0;color:#c0d2e7}.leaflet-popup-content a{color:#ffc774}
+.pinLabel{padding:3px 6px;background:#15233ddd;color:#fff;font-weight:700;font-size:10px;white-space:nowrap;border:1px solid #e5ecfa44;border-radius:5px;pointer-events:none}
+.leaflet-tooltip.pinLabel:before{display:none}.leaflet-control-attribution{font-size:10px!important}
+@media(max-width:760px){.app{display:flex;flex-direction:column-reverse}aside{height:41dvh;min-height:220px;max-height:50dvh;padding:13px 14px 2px;border-top:2px solid #435b77;box-shadow:0 -5px 20px #0005}#map{height:59dvh;flex:1}.topline{font-size:9px}h1{font-size:21px;margin:4px 0}.sub{font-size:11px;margin:4px 0 9px}.statline{display:none}.filters{margin:8px 0;gap:4px}.filter{padding:6px;font-size:10px}.item{padding:9px;margin-bottom:5px}.overlay{top:9px;right:8px;left:8px}.overlay button{padding:9px;font-size:10px}.info{display:none}.brand{display:none}.sectionhead{margin-top:2px}}
+</style>
+</head><body>
+<div class="app"><aside>
+<div class="topline">Tuk Tuk Rush / geographic masterplan</div><h1>A real map of <span>Bangkok.</span></h1>
+<p class="sub">Explore actual streets, the Chao Phraya River and iconic landmarks at true geographic positions. This is a planning map, not the current playable game.</p>
+<div class="statline"><div class="stat"><b id="count">18</b><small>Geographic landmarks</small></div><div class="stat"><b>1:1</b><small>Original map coordinates</small></div></div>
+<input id="search" class="search" type="search" placeholder="Find Wat Arun, ICONSIAM, Siam…" aria-label="Search landmarks"/>
+<div id="filters" class="filters"></div>
+<div class="sectionhead"><b>Places and attractions</b><small id="matching">Loading</small></div>
+<div id="results" aria-live="polite"></div>
+<div class="brand">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a> (ODbL). Geographical centers are approximate, not legal driving entrances. The conceptual planning areas are not administrative boundaries.</div>
+</aside><div style="position:relative;min-height:0;flex:1">
+<div id="map" aria-label="Interactive true-scale Bangkok city map"></div>
+<div class="overlay"><button id="fit">Show all</button><button id="river">Follow the river</button><button id="zones">Planning zones</button></div>
+<div class="info"><b>Map first. Game world second.</b> The real road network, bridges and river are supplied by OpenStreetMap. Driving lanes, building collisions and ferry connections will be engineered only after the map is approved.</div>
+</div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(async()=>{
+const url="/maps/bangkok-landmarks.geojson",configUrl="/maps/bangkok-map-config.json";
+const [data, config] = await Promise.all([
+  fetch(url).then(r=>{if(!r.ok)throw Error("Landmarks data is missing. Run through the Tuk Tuk Rush Vite server.");return r.json()}),
+  fetch(configUrl).then(r=>{if(!r.ok)throw Error("Map config is missing.");return r.json()})
+]);
+const categories={temple:["Temples","#e5a263"],palace:["Palaces","#e3bf76"],shopping:["Shopping","#d886be"],
+district:["Districts","#f3c47e"],monument:["Monuments","#b993dc"],transport:["Transport","#77b4d8"],
+market:["Markets","#83c9a2"],bridge:["Bridges","#94b6d9"],street:["Streets","#bccee2"],park:["Parks","#8ec28e"]};
+const bounds=[[config.bbox.south,config.bbox.west],[config.bbox.north,config.bbox.east]];
+const map=L.map("map",{zoomControl:false,preferCanvas:true}).fitBounds(bounds,{padding:[22,22]});
+map.attributionControl.setPrefix(false);
+L.control.zoom({position:"bottomright"}).addTo(map);
+L.control.scale({position:"bottomleft",imperial:false}).addTo(map);
+const tiles=L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{
+  maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL)'
+}).addTo(map);
+const group=L.layerGroup().addTo(map);
+const regions=L.layerGroup();
+for(const z of config.zones) {
+  L.circle(z.center,{radius:z.radiusM,color:"#daab66",weight:1.4,dashArray:"5 5",fillColor:"#e9bb70",fillOpacity:0.035}).bindTooltip(z.name+" (planning zone)",{sticky:true}).addTo(regions);
+}
+const feats=data.features, markers=new Map(), list=document.getElementById("results");
+let category="all",query="",selected="";
+function featurePopup(f){
+ const p=f.properties,c=f.geometry.coordinates;
+ const info=document.createElement("div");
+ info.innerHTML="<h3></h3><p></p><p></p><p></p><a target='_blank' rel='noopener noreferrer'>View on OpenStreetMap ↗</a>";
+ info.querySelector("h3").textContent=p.name;
+ info.querySelectorAll("p")[0].textContent=p.name_th||"";
+ info.querySelectorAll("p")[1].textContent=p.zone+" · "+p.category;
+ info.querySelectorAll("p")[2].textContent=p.note;
+ info.querySelector("a").href="https://www.openstreetmap.org/?mlat="+c[1]+"&mlon="+c[0]+"#map=17/"+c[1]+"/"+c[0];
+ return info;
+}
+function select(f) {
+ selected=f.properties.id;const xy=f.geometry.coordinates;
+ map.flyTo([xy[1],xy[0]],Math.max(map.getZoom(),16),{duration:0.5});
+ markers.get(selected)?.openPopup();renderList();
+}
+const filters=document.getElementById("filters");
+const all=[["all","All"],...Object.entries(categories).map(([k,v])=>[k,v[0]])];
+for(const [key,text] of all){
+ const b=document.createElement("button");b.className="filter"+(key==="all"?" active":"");
+ b.textContent=text;b.onclick=()=>{category=key;for(const n of filters.children)n.classList.toggle("active",n===b);update();};
+ filters.append(b);
+}
+function visible(f) {
+ const p=f.properties;
+ return (category==="all"||p.category===category)&&
+  (!query||(p.name+" "+p.name_th+" "+p.zone).toLowerCase().includes(query));
+}
+function update(){
+ group.clearLayers();
+ let shown=0;
+ for(const f of feats){
+  if(!visible(f))continue;
+  let m=markers.get(f.properties.id);
+  if(!m){
+   const c=f.geometry.coordinates,clr=categories[f.properties.category]?.[1]||"#aaa";
+   m=L.circleMarker([c[1],c[0]],{radius:f.properties.priority===1?9:7,weight:2,color:"#fff",fillColor:clr,fillOpacity:0.92});
+   m.bindTooltip(f.properties.name,{direction:"right",offset:[9,0],className:"pinLabel"});
+   m.bindPopup(featurePopup(f));
+   m.on("click",()=>{selected=f.properties.id;renderList()});
+   markers.set(f.properties.id,m);
+  }
+  m.addTo(group);shown++;
+ }
+ document.getElementById("matching").textContent=shown+" shown";
+ document.getElementById("count").textContent=feats.length;
+ renderList();
+}
+function renderList(){
+ list.replaceChildren();
+ for(const f of feats){
+  if(!visible(f))continue;
+  const p=f.properties;
+  const b=document.createElement("button");
+  b.className="item"+(selected===p.id?" active":"");
+  const dot=document.createElement("span");dot.className="dot";dot.style.background=categories[p.category]?.[1]||"#aaa";
+  const t=document.createElement("span"),title=document.createElement("strong"),sub=document.createElement("small");
+  title.textContent=p.name;sub.textContent=p.zone+" • "+p.name_th;t.append(title,sub);b.append(dot,t);
+  b.onclick=()=>select(f);list.append(b);
+ }
+}
+document.getElementById("search").oninput=e=>{query=e.target.value.trim().toLowerCase();update()};
+document.getElementById("fit").onclick=()=>map.fitBounds(bounds,{padding:[20,20],animate:true});
+document.getElementById("river").onclick=()=>map.flyTo([13.7414,100.4995],13,{duration:0.7});
+document.getElementById("zones").onclick=e=>{
+ const on=map.hasLayer(regions);if(on)map.removeLayer(regions);else regions.addTo(map);
+ e.currentTarget.classList.toggle("selected",!on);
+};
+update();
+})().catch(e=>{
+ document.getElementById("results").textContent="Map data could not load: "+e.message;
+ console.error(e);
+});
+</script></body></html>
