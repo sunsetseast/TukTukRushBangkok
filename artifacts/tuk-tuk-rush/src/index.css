@@ -540,3 +540,5 @@ html, body, #root { margin:0; width:100%; height:100%; overflow:hidden; overscro
 .tt-map-you {color:#63f2df}.tt-map-open .tt-rotate {display:none}
 @media (orientation:portrait) {.tt-world-map aside {position:absolute;bottom:8px;left:8px;right:8px;width:auto;max-height:110px;border:1px solid #334657;border-radius:10px;padding:10px}.tt-map-places {display:none}.tt-world-map header {align-items:center}.tt-world-map footer {gap:8px}}
 @media (max-height:450px) {.tt-world-map header {padding:5px 12px}.tt-world-map h2 {font-size:18px}.tt-world-map footer {padding:4px}.tt-world-map aside {width:175px;padding:10px}.tt-area-name {padding:2px 7px}}
+/* Let the place list scroll while the map SVG owns its pan/pinch gestures. */
+.tt-root.tt-map-open, .tt-world-map {touch-action:auto}
