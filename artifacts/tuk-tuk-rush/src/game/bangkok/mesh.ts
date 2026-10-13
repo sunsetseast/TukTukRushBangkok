@@ -4,17 +4,21 @@ import type { City } from '../cityMesh';
 import { StaticBatch } from '../staticBatch';
 import { disposeObject } from '../assets';
 import { buildLandmarkArt } from '../landmarkArt';
+import { emitBangkokArchitecture } from './architecture';
+import { buildBangkokSigns } from './signage';
 
-/** Blockout massing for layout testing, deliberately separate from the finished Chinatown kit. */
-export function buildBangkokGraybox(d: District): City {
+/** Reuse the tested city graph with regional streetscape art and mobile culling. */
+export function buildBangkokGraybox(d: District): City & { setNight: (night: number) => void } {
   const group = new T.Group(); group.name = 'CompactBangkokGraybox';
   const ground = new T.Mesh(new T.PlaneGeometry(14000, 14000).rotateX(-Math.PI / 2), new T.MeshStandardMaterial({ color: '#53645c', roughness: 1 }));
   ground.position.y = -.25; group.add(ground);
-  const batch = new StaticBatch(), unit = new T.BoxGeometry(1, 1, 1), temp = new T.Object3D();
+  const batch = new StaticBatch(), detailBatch = new StaticBatch(), nightBatch = new StaticBatch();
+  const unit = new T.BoxGeometry(1, 1, 1), temp = new T.Object3D();
   const material = new T.MeshStandardMaterial({ roughness: .9 });
-  const add = (x: number, y: number, z: number, w: number, h: number, depth: number, color: string, yaw = 0) => {
+  const nightMaterial = new T.MeshStandardMaterial({ roughness: .38, metalness: .12, emissive: '#f7be76', emissiveIntensity: 0 });
+  const add = (x: number, y: number, z: number, w: number, h: number, depth: number, color: string, yaw = 0, destination = batch, surface: T.Material = material) => {
     temp.position.set(x, y, z); temp.rotation.set(0, yaw, 0); temp.scale.set(w, h, depth); temp.updateMatrix();
-    batch.add(unit, material, [temp.matrix.clone()], [new T.Color(color)]);
+    destination.add(unit, surface, [temp.matrix.clone()], [new T.Color(color)]);
   };
   const nodes = new Map(d.nodes.map(n => [n.id, n])), widths = new Map<string, number>(), degrees = new Map<string, number>();
   for (const r of d.roads) {
@@ -54,31 +58,44 @@ export function buildBangkokGraybox(d: District): City {
       add(x, 3, z, 1.2, 6, 1.2, '#706052'); add(x, 8, z, 9, 7, 9, '#49785d');
     }
   }
-  for (const b of d.buildings) {
-    add(b.x, b.height / 2, b.z, b.w, b.height, b.d, b.color, b.yaw);
-    add(b.x, b.height + .5, b.z, b.w + 1, 1, b.d + 1, '#657484', b.yaw);
-  }
-  for (let i = 0; i < 42; i++) {
-    const angle = i * Math.PI * 2 / 42, x = Math.cos(angle) * 3600, z = Math.sin(angle) * 3900, h = 50 + i % 7 * 18;
-    add(x, h / 2, z, 65, h, 65, '#657584');
-  }
+  // A deliberately bounded regional art kit replaces the featureless blocks.
+  // Core storefronts and rooflines survive Fast mode; trim and glowing windows
+  // use separately culled batches so they do not overwhelm an iPhone viewport.
+  emitBangkokArchitecture(d,
+    (x, y, z, w, h, depth, color, yaw) => add(x, y, z, w, h, depth, color, yaw),
+    (x, y, z, w, h, depth, color, yaw) => add(x, y, z, w, h, depth, color, yaw, detailBatch),
+    (x, y, z, w, h, depth, color, yaw) => add(x, y, z, w, h, depth, color, yaw, nightBatch, nightMaterial));
   batch.finish().forEach(chunk => { chunk.name = 'BangkokSector'; group.add(chunk); });
+  detailBatch.finish().forEach(chunk => { chunk.name = 'BangkokDetail'; group.add(chunk); });
+  nightBatch.finish().forEach(chunk => { chunk.name = 'BangkokNight'; group.add(chunk); });
+  if (typeof document !== 'undefined') {
+    const signs = buildBangkokSigns(d);
+    for (const child of [...signs.children]) group.add(child);
+  }
   const heroes = d.landmarks.map(l => { const root = blockout(l); root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z); root.name = `BangkokLandmark:${l.id}`; group.add(root); return root; });
   // River sections span several cells. A cell-center test can hide their near
   // bank while the player is still looking at it; cull the full geometry bounds.
   group.updateMatrixWorld(true);
-  const chunks = group.children.filter(c => c.name === 'BangkokSector').map(chunk => ({
-    chunk, bounds: new T.Box3().setFromObject(chunk),
-  }));
-  let lastX = Infinity, lastZ = Infinity, lastQuality = '';
-  return { group, update(camera, quality) {
+  const chunks = group.children.filter(c => c.name === 'BangkokSector' || c.name === 'BangkokDetail' || c.name === 'BangkokNight' || c.name === 'BangkokSign')
+    .map(chunk => ({ chunk, bounds: new T.Box3().setFromObject(chunk), core: chunk.name !== 'BangkokDetail' }));
+  const glowing = group.children.filter(c => c.name === 'BangkokNight')
+    .flatMap(c => c.children).map(c => (c as T.Mesh).material as T.MeshStandardMaterial);
+  const signMaterials = group.children.filter(c => c.name === 'BangkokSign')
+    .flatMap(c => c.children).map(c => (c as T.Mesh).material as T.MeshStandardMaterial);
+  let lastX = Infinity, lastZ = Infinity, lastQuality = '', lastNight = -1;
+  return { group, setNight(night: number) {
+    if (Math.abs(night - lastNight) < .015) return;
+    lastNight = night;
+    for (const mat of glowing) mat.emissiveIntensity = Math.max(0, night) * .9;
+    for (const mat of signMaterials) mat.emissiveIntensity = .16 + Math.max(0, night) * .72;
+  }, update(camera, quality) {
     if (Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 && quality === lastQuality) return;
     lastX = camera.x; lastZ = camera.z; lastQuality = quality;
     const radius = quality === 'low' ? 420 : 650;
-    for (const { chunk, bounds } of chunks) {
+    for (const { chunk, bounds, core } of chunks) {
       const dx = Math.max(bounds.min.x - camera.x, 0, camera.x - bounds.max.x);
       const dz = Math.max(bounds.min.z - camera.z, 0, camera.z - bounds.max.z);
-      chunk.visible = dx * dx + dz * dz < radius * radius;
+      chunk.visible = (quality === 'medium' || core) && dx * dx + dz * dz < radius * radius;
     }
     for (const hero of heroes) hero.visible = Math.hypot(hero.position.x - camera.x, hero.position.z - camera.z) < radius + 180;
   }, dispose() { disposeObject(group); } };

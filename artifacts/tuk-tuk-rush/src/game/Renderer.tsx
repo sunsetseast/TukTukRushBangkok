@@ -128,6 +128,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       if (sun.current) sun.current.intensity = lighting.sun;
       if (ambient.current) ambient.current.intensity = lighting.ambient;
       gl.toneMappingExposure = lighting.exposure;
+      (city as ReturnType<typeof buildBangkokGraybox>).setNight(lighting.night);
     }
 
     tuk.root.position.set(p.x, 0, p.z);
