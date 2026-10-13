@@ -19,8 +19,10 @@ Bangkok mode or importing the conflicting 1:1 OSM driving graph from draft #8.
   and roof structures, and warm riverside buildings.
 - In both quality modes, visible buildings have shop openings, columns,
   awnings, fascias and different roof treatments instead of a single block.
-- Pretty mode adds balconies, shutters, window arrays and hanging sign cabinets.
-  Some windows become emissive as simulated sunset progresses to night, and dim
+- Pretty mode adds balconies, shutters, window arrays and hanging sign cabinets. Generic, correctly shaped Thai and Chinese trade
+  wording uses the bundled OFL fonts and the existing sign atlas renderer.
+  Readable signs and upper windows remain present in Fast mode. Some windows
+  become emissive as simulated sunset progresses to night, and dim
   when the clock restarts. Original Chinatown mode remains unchanged.
 - Static art reuses the existing 80 m spatial merging and correct bounds-based
   culling. Decorative pieces are visual-only and remain attached to existing
@@ -29,8 +31,9 @@ Bangkok mode or importing the conflicting 1:1 OSM driving graph from draft #8.
 ## Reality and limits
 
 This is **Phase 1 of the citywide art pass**, not completed Bangkok architecture.
-Facades and colored sign cabinets are stylized, not exact real-business replicas;
-Thai/Chinese text and licensed venue identities are not fabricated. Some streets
+Facades and signs are stylized, not exact real-business replicas. Sign lettering
+indicates plausible business *categories* in Thai and Chinese; it is not a
+claim that any particular shop at that location actually exists. Some streets
 will still have empty parcels where safety envelopes or the source layout do not
 permit buildings. Landmark hero models, street vendors, animated pedestrians,
 bridge silhouettes, river boats and full environment/audio richness are follow-on
@@ -42,7 +45,7 @@ Run the normal test:bangkok suite, now including check-bangkok-architecture.ts
 for district families, street-facing facades, density, detail counts, and
 night emissive behavior. The existing full-graph, safe road centerline, river
 crossing, mission drive, older Chinatown, and browser regression tests remain
-the acceptance gates. CI captures **normal chase-camera views** at sunset and
+the acceptance gates. CI captures **normal chase-camera views** in Fast and Pretty modes, sunset and
 at simulated nighttime in addition to its landmark inspection cameras.
 
 Physical iPhone Safari is still required for actual GPU frame rate, long-session
