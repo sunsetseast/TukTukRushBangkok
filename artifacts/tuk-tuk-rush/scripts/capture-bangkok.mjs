@@ -56,6 +56,22 @@ try {
   // cannot establish that the world looks inhabited while actually driving.
   await page.waitForFunction(() => window.__graphics.frameId > 10);
   await page.screenshot({ path: `${output}/screenshots/street-chase-sunset.png` });
+  await page.evaluate(() => {
+    const { engine } = window.__graphics;
+    engine.pause(); engine.setQuality('low');
+  });
+  await page.addStyleTag({ content: '.tt-ui { visibility: hidden !important; }' });
+  const lowFrame = await page.evaluate(() => window.__graphics.frameId);
+  await page.waitForFunction(frame => window.__graphics.frameId > frame + 3, lowFrame);
+  const visibleSigns = await page.evaluate(() =>
+    window.__graphics.scene.getObjectByName('City').children
+      .filter(c => c.name === 'BangkokSign' && c.visible).length);
+  assert(visibleSigns > 0, 'Generic Thai/Chinese shop signs must remain in Fast mode');
+  await page.screenshot({ path: `${output}/screenshots/street-chase-fast.png` });
+  await page.evaluate(() => window.__graphics.engine.setQuality('medium'));
+  const detailedFrame = await page.evaluate(() => window.__graphics.frameId);
+  await page.waitForFunction(frame => window.__graphics.frameId > frame + 3, detailedFrame);
+  await page.screenshot({ path: `${output}/screenshots/street-chase-pretty.png` });
   // Following snapshots set simulated time for art inspection; this is not a
   // claim that the player drove to night during the automated QA run.
   await page.evaluate(() => {
@@ -112,5 +128,5 @@ try {
   }
   const stats = await page.evaluate(() => window.__graphics.stats);
   assert.deepEqual(errors, []); assert.deepEqual(failures, []);
-  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, bridgeBoundsVisibility: ['Fast', 'Pretty'], inspectionViews: 7, ordinaryChaseCaptures: 2, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
+  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, bridgeBoundsVisibility: ['Fast', 'Pretty'], inspectionViews: 7, ordinaryChaseCaptures: 4, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
 } finally { await browser.close(); }
