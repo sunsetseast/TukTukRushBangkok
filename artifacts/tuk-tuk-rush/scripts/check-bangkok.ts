@@ -74,6 +74,25 @@ const towerSize = new Box3().setFromObject(city.group.getObjectByName('BangkokLa
 const mallSize = new Box3().setFromObject(city.group.getObjectByName('BangkokLandmark:icon')!).getSize(new Vector3());
 assert(towerSize.x >= 30 && towerSize.z >= 30 && towerSize.y >= 80, 'Tower massing must not collapse into a roadside pole');
 assert(mallSize.x >= 50 && mallSize.z >= 50, 'Mall must have a meaningful blockout footprint');
+const sectors = city.group.children.filter(c => c.name === 'BangkokSector').map(chunk => ({ chunk, bounds: new Box3().setFromObject(chunk) }));
+let bridgeViewChecks = 0;
+for (const quality of ['low', 'medium'] as const) {
+  const radius = quality === 'low' ? 420 : 650;
+  for (const road of d.roads.filter(r => r.bridge)) {
+    const a = nodes.get(road.a)!, b = nodes.get(road.b)!;
+    const camera = new Vector3((a.x + b.x) / 2, 5, (a.z + b.z) / 2);
+    city.update(camera, quality);
+    for (const { chunk, bounds } of sectors) {
+      const distance = bounds.distanceToPoint(new Vector3(camera.x, 0, camera.z));
+      // Check scenery that is clearly in view, leaving room for the 16 m
+      // visibility-update threshold. This catches near river sections whose
+      // batch center is outside the old cutoff without disabling city culling.
+      if (distance < radius - 20) assert(chunk.visible, `Near scenery vanished on ${road.corridor} (${quality})`);
+      if (distance > radius + 20) assert(!chunk.visible, `Distant scenery submitted on ${road.corridor} (${quality})`);
+    }
+    bridgeViewChecks++;
+  }
+}
 city.update(new Vector3(d.spawn!.x, 5, d.spawn!.z), 'low'); assert(city.group.children.some(c => c.visible)); city.dispose();
 const sunset = shiftLighting(0), night = shiftLighting(9 * 60); assert.equal(sunset.night, 0); assert.equal(night.night, 1); assert(night.sun < sunset.sun);
-console.log(JSON.stringify({ pass: true, nodes: nodes.size, roads: d.roads.length, roadSamples, bridgeSamples, protectedGate: true, reachableFares: 10, trafficTransitions: changes, discoveryPersistence: true, meshConstructionAndDisposal: true }));
+console.log(JSON.stringify({ pass: true, nodes: nodes.size, roads: d.roads.length, roadSamples, bridgeSamples, protectedGate: true, reachableFares: 10, trafficTransitions: changes, discoveryPersistence: true, meshConstructionAndDisposal: true, bridgeViewChecks }));

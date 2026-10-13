@@ -64,13 +64,22 @@ export function buildBangkokGraybox(d: District): City {
   }
   batch.finish().forEach(chunk => { chunk.name = 'BangkokSector'; group.add(chunk); });
   const heroes = d.landmarks.map(l => { const root = blockout(l); root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z); root.name = `BangkokLandmark:${l.id}`; group.add(root); return root; });
-  const chunks = group.children.filter(c => c.name === 'BangkokSector');
+  // River sections span several cells. A cell-center test can hide their near
+  // bank while the player is still looking at it; cull the full geometry bounds.
+  group.updateMatrixWorld(true);
+  const chunks = group.children.filter(c => c.name === 'BangkokSector').map(chunk => ({
+    chunk, bounds: new T.Box3().setFromObject(chunk),
+  }));
   let lastX = Infinity, lastZ = Infinity, lastQuality = '';
   return { group, update(camera, quality) {
     if (Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 && quality === lastQuality) return;
     lastX = camera.x; lastZ = camera.z; lastQuality = quality;
     const radius = quality === 'low' ? 420 : 650;
-    for (const chunk of chunks) { const center = chunk.userData.center as T.Vector3; chunk.visible = Math.hypot(center.x - camera.x, center.z - camera.z) < radius; }
+    for (const { chunk, bounds } of chunks) {
+      const dx = Math.max(bounds.min.x - camera.x, 0, camera.x - bounds.max.x);
+      const dz = Math.max(bounds.min.z - camera.z, 0, camera.z - bounds.max.z);
+      chunk.visible = dx * dx + dz * dz < radius * radius;
+    }
     for (const hero of heroes) hero.visible = Math.hypot(hero.position.x - camera.x, hero.position.z - camera.z) < radius + 180;
   }, dispose() { disposeObject(group); } };
 }
