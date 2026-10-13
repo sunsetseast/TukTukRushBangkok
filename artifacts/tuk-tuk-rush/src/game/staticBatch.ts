@@ -6,6 +6,7 @@ import {
 
 /** Bake repeated prop pieces into a few indexed PBR batches per spatial cell. */
 export class StaticBatch {
+  constructor(private cellOrigin=0) {}
   private buckets = new Map<
     string,
     { geos: T.BufferGeometry[]; mat: T.Material; center: T.Vector3 }
@@ -27,18 +28,20 @@ export class StaticBatch {
     const style = mat.uuid;
     matrices.forEach((matrix, i) => {
       p.setFromMatrixPosition(matrix);
-      const cx = Math.floor(p.x / 80),
-        cz = Math.floor(p.z / 80),
+      const cx = Math.floor((p.x + this.cellOrigin) / 80),
+        cz = Math.floor((p.z + this.cellOrigin) / 80),
         key = `${cx}:${cz}:${style}`;
       let b = this.buckets.get(key);
       if (!b) {
         const material = mat.clone() as T.MeshStandardMaterial;
         material.color.set("#ffffff");
         material.vertexColors = true;
+        material.onBeforeCompile=mat.onBeforeCompile;
+        material.customProgramCacheKey=mat.customProgramCacheKey;
         b = {
           geos: [],
           mat: material,
-          center: new T.Vector3((cx + 0.5) * 80, 0, (cz + 0.5) * 80),
+          center: new T.Vector3((cx + 0.5) * 80 - this.cellOrigin, 0, (cz + 0.5) * 80 - this.cellOrigin),
         };
         this.buckets.set(key, b);
       }

@@ -1,4 +1,6 @@
 import * as T from "three";
+import { sculptedLandmark } from "./sculptedLandmarks";
+import { scalaParcel, emitScala, buildScalaSigns } from "./scala";
 import type { District, Landmark } from "../types";
 import type { City } from "../cityMesh";
 import { StaticBatch } from "../staticBatch";
@@ -180,8 +182,10 @@ export function buildBangkokGraybox(
   installSurfaceAtlas(facadeMaterial);
   nightMaterial.vertexColors = true;
   const architecture = new ArchitecturalBatch(facadeMaterial, nightMaterial);
-  emitDistrictArchitecture(designs, (piece) => architecture.add(piece));
-  emitUrbanLayers(d, designs, (piece) => architecture.add(piece));
+  const scala=scalaParcel(d), ordinary=designs.filter(p=>p.parcel!==scala);
+  emitDistrictArchitecture(ordinary, (piece) => architecture.add(piece));
+  emitScala(scala, piece=>architecture.add(piece));
+  emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   for (const l of d.landmarks.filter((l) => l.kind === "mall")) {
     const site = l.plot!,
       size = l.size!;
@@ -267,9 +271,10 @@ export function buildBangkokGraybox(
     group.add(chunk);
   });
   if (typeof document !== "undefined") {
-    const signs = buildBangkokSigns(d, designs);
+    const signs = buildBangkokSigns(d, ordinary);
     for (const child of [...signs.children]) group.add(child);
   }
+  const scalaSigns=buildScalaSigns(scala);group.add(scalaSigns);
   const heroes = d.landmarks.map((l) => {
     const root = blockout(l);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
@@ -316,6 +321,7 @@ export function buildBangkokGraybox(
       for (const mat of new Set(glowing))
         mat.emissiveIntensity = Math.max(0, night) * 1.55;
       for (const hero of heroes) {
+        for(const m of hero.userData.nightMaterials ?? [])m.emissiveIntensity=night*.75;
         const mat = hero.userData.nightMaterial as
           T.MeshStandardMaterial | undefined;
         if (mat) {
@@ -324,6 +330,8 @@ export function buildBangkokGraybox(
           mat.visible = night > 0.02;
         }
       }
+      const scalaMat=scalaSigns.userData.nightMaterial as T.MeshStandardMaterial | undefined;
+      if(scalaMat)scalaMat.emissiveIntensity=.12+night*.85;
       for (const mat of new Set(signMaterials))
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.55;
     },
@@ -375,6 +383,7 @@ export function buildBangkokGraybox(
   };
 }
 function blockout(l: Landmark) {
+  const authored=sculptedLandmark(l);if(authored)return authored;
   if (l.kind === "park") return new T.Group();
   if (l.kind === "mall") return buildCommercialLandmark(l);
   const g = new T.Group(),

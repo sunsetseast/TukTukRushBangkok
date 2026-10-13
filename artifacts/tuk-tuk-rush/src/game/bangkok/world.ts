@@ -1,4 +1,5 @@
 import layout from './layout.json';
+import { scalaParcel } from './scala';
 import type { District, Landmark, Obstacle, Point, Road, RoadNode } from '../types';
 import { distanceToSegment, orientedFootprintsOverlap, routeBetween } from '../world';
 
@@ -192,6 +193,7 @@ export function createBangkokWorld(): District {
   const spawnRoad = roads.find(r => r.corridor === 'yaowarat')!;
   const spawn = byId.get(spawnRoad.a)!, next = byId.get(spawnRoad.b)!;
   world.spawn = { ...spawn, heading: Math.atan2(next.x - spawn.x, next.z - spawn.z) };
+  scalaParcel(world).height=36;
   return world;
 }
 
