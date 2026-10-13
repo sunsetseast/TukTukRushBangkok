@@ -1,0 +1,22 @@
+[
+  {
+    "language": "Thai",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansthai/NotoSansThai%5Bwdth,wght%5D.ttf",
+    "sourceSha256": "5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8",
+    "subset": "public/assets/fonts/thai-signs.ttf",
+    "glyphs": 182,
+    "bytes": 28528,
+    "license": "SIL Open Font License 1.1; bundled OFL-Thai.txt",
+    "retrieved": "2026-10-13"
+  },
+  {
+    "language": "Chinese",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "sourceSha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "subset": "public/assets/fonts/chinese-signs.ttf",
+    "glyphs": 133,
+    "bytes": 108216,
+    "license": "SIL Open Font License 1.1; bundled OFL-Chinese.txt",
+    "retrieved": "2026-10-13"
+  }
+]

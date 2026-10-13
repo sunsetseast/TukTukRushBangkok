@@ -1,0 +1,190 @@
+{
+  "pass": true,
+  "drives": [
+    {
+      "name": "yaowarat",
+      "start": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "id": "bkk:504",
+        "heading": -2.020483893706025,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": 77.35156430391272,
+        "z": -65.43757105148626,
+        "id": "bkk:504",
+        "heading": -2.020483893706025,
+        "speed": 20.117318175698124,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 94.13384308765498,
+        "collision": 0,
+        "elapsed": 2.7318000000007436
+      },
+      "metres": 35.770860373308885,
+      "inputs": "ArrowUp throttle, Space brake; no camera override or position edits during clip"
+    },
+    {
+      "name": "talatnoi",
+      "start": {
+        "x": 160,
+        "z": 360,
+        "id": "bkk:504",
+        "heading": -0.03446910099950844,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": 158.75206562374728,
+        "z": 396.19009691133135,
+        "id": "bkk:504",
+        "heading": -0.03446910099950844,
+        "speed": 18.055162913305832,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 95.29370165546544,
+        "collision": 0,
+        "elapsed": 2.752200000001116
+      },
+      "metres": 36.21160662907665,
+      "inputs": "ArrowUp throttle, Space brake; no camera override or position edits during clip"
+    },
+    {
+      "name": "oldtown",
+      "start": {
+        "x": -905.2631578947369,
+        "z": -540,
+        "id": "bkk:504",
+        "heading": 0.7583777142101857,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -879.5821873771006,
+        "z": -512.8923088980503,
+        "id": "bkk:504",
+        "heading": 0.7583777142101857,
+        "speed": 17.032904166510527,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 98.26539772791656,
+        "collision": 0,
+        "elapsed": 2.785599999998695
+      },
+      "metres": 37.34085113660948,
+      "inputs": "ArrowUp throttle, Space brake; no camera override or position edits during clip"
+    },
+    {
+      "name": "siam",
+      "start": {
+        "x": 811.7647058823529,
+        "z": -688.2352941176471,
+        "id": "bkk:504",
+        "heading": -2.886410262968976,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": 802.2843554456612,
+        "z": -724.5766374582965,
+        "id": "bkk:504",
+        "heading": -2.886410262968976,
+        "speed": 17.274738130701273,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 98.83568305622546,
+        "collision": 0,
+        "elapsed": 2.7931999999983224
+      },
+      "metres": 37.5575595613646,
+      "inputs": "ArrowUp throttle, Space brake; no camera override or position edits during clip"
+    },
+    {
+      "name": "riverfront",
+      "start": {
+        "x": -700,
+        "z": 880,
+        "id": "bkk:504",
+        "heading": -1.5707963267948966,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -735.4469300003675,
+        "z": 880,
+        "id": "bkk:504",
+        "heading": -1.5707963267948966,
+        "speed": 19.724693790893326,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 93.281394737811,
+        "collision": 0,
+        "elapsed": 2.6878000000016753
+      },
+      "metres": 35.4469300003675,
+      "inputs": "ArrowUp throttle, Space brake; no camera override or position edits during clip"
+    }
+  ],
+  "touchRelease": true,
+  "mapPanPinch": true,
+  "portraitMap": true,
+  "restarts": [
+    {
+      "calls": 200,
+      "triangles": 334976,
+      "geometries": 760,
+      "textures": 11,
+      "frameMs": 763.5,
+      "cityId": "0570bbfc-167c-41d5-92f5-12dba3afb5b1"
+    },
+    {
+      "calls": 200,
+      "triangles": 334976,
+      "geometries": 760,
+      "textures": 11,
+      "frameMs": 1515.300000000745,
+      "cityId": "0570bbfc-167c-41d5-92f5-12dba3afb5b1"
+    },
+    {
+      "calls": 200,
+      "triangles": 334976,
+      "geometries": 760,
+      "textures": 11,
+      "frameMs": 312.6000000005588,
+      "cityId": "0570bbfc-167c-41d5-92f5-12dba3afb5b1"
+    },
+    {
+      "calls": 200,
+      "triangles": 334976,
+      "geometries": 760,
+      "textures": 11,
+      "frameMs": 330.70000000018626,
+      "cityId": "0570bbfc-167c-41d5-92f5-12dba3afb5b1"
+    }
+  ],
+  "contextLossAndRecovery": true,
+  "original": {
+    "facades": 198,
+    "people": 155
+  },
+  "errors": [],
+  "failed": [],
+  "performanceEnvironment": "Chromium software WebGL, not device certification"
+}

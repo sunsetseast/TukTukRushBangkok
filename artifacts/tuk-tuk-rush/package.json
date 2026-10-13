@@ -14,7 +14,8 @@
     "test:roadside": "tsx scripts/check-roadside.ts",
     "test:signature": "tsx scripts/check-signature.ts",
     "test:sign-layers": "tsx scripts/check-sign-layers.ts",
-    "test:bangkok": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts"
+    "test:bangkok": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+    "test:environment": "node --import tsx scripts/check-environment-art.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

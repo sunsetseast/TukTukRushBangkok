@@ -3,6 +3,7 @@ import type { District, Point } from "./types";
 import { distanceToSegment, obstacleDistance } from "./world";
 import { degreeMap, sidewalkRange } from "./roadGeometry";
 import { disposeObject } from "./assets";
+import { cityClearance } from "./bangkok/clearanceIndex";
 
 export type StreetPerson = {
   start: Point;
@@ -135,12 +136,15 @@ export function streetPeople(d: District): StreetPerson[] {
 }
 
 /** Shared instanced character parts: bounded draw calls, no skeletons or per-person materials. */
-export function buildStreetLife(d: District) {
+export function buildStreetLife(d: District, population?: StreetPerson[]) {
   const root = new T.Group();
   root.name = "StreetLife";
-  const people = streetPeople(d);
+  const people = population ?? streetPeople(d);
+  const citywide = d.worldId === "bangkok";
   const routeNodes = new Map(d.nodes.map(n => [n.id, n]));
+  const indexedClear = citywide ? cityClearance(d) : undefined;
   const safeDodge = (x: number, z: number) => {
+    if (indexedClear) return indexedClear({x,z});
     const q = { x, z };
     if (d.obstacles.some(o => obstacleDistance(q, o) < 0.5)) return false;
     return d.roads.every(r =>
@@ -190,7 +194,7 @@ export function buildStreetLife(d: District) {
     mesh.name = key;
     mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
     // Explicit district bound, not the initial all-zero instance matrices.
-    mesh.boundingSphere = new T.Sphere(new T.Vector3(0, 1, 0), 520);
+    mesh.boundingSphere = new T.Sphere(new T.Vector3(0, 1, 0), citywide ? 3600 : 520);
     root.add(mesh);
     parts.push({ mesh, key });
   }
@@ -219,7 +223,7 @@ export function buildStreetLife(d: District) {
   );
   steam.name = "CookingSteam";
   steam.instanceMatrix.setUsage(T.DynamicDrawUsage);
-  steam.boundingSphere = new T.Sphere(new T.Vector3(), 520);
+  steam.boundingSphere = new T.Sphere(new T.Vector3(), citywide ? 3600 : 520);
   root.add(steam);
   const colorTemp = new T.Color();
   let time = 0;
@@ -236,6 +240,7 @@ export function buildStreetLife(d: District) {
     for (let i = 0; i < people.length; i++) {
       const p = people[i]!,
         length = Math.hypot(p.end.x - p.start.x, p.end.z - p.start.z);
+      if (citywide && Math.hypot(p.start.x-camera.x,p.start.z-camera.z)>125) continue;
       const period = length / 0.85 + 5,
         cycle = (time + p.seed * 3.73) % (period * 2),
         returning = cycle >= period;
@@ -313,7 +318,7 @@ export function buildStreetLife(d: District) {
         Math.hypot(displayX - camera.x, displayZ - camera.z) <
           (quality === "low" ? 65 : 100) &&
         (quality === "medium" || i % 2 === 0);
-      if (!visible) continue;
+      if (!visible || (citywide && slot >= (quality === "low" ? 20 : 32))) continue;
       const swing = walking || escaping ? Math.sin(time * (escaping ? 12 : 6) + p.seed) * 0.48 : 0;
       const serve = p.role === "vendor" ? Math.sin(time * 2 + p.seed) * 0.2 : 0;
       parent.position.set(

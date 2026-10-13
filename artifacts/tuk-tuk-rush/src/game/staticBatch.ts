@@ -22,7 +22,9 @@ export class StaticBatch {
     this.sourceMats.add(mat);
     const m = mat as T.MeshStandardMaterial,
       p = new T.Vector3();
-    const style = `${mat.type}:${m.roughness}:${m.metalness}:${m.side}:${m.map?.uuid ?? ""}:${m.polygonOffset}`;
+    // Material identity preserves all render state, including emissiveMap,
+    // transparency, depthWrite and blending. Similar roughness is not ownership.
+    const style = mat.uuid;
     matrices.forEach((matrix, i) => {
       p.setFromMatrixPosition(matrix);
       const cx = Math.floor(p.x / 80),

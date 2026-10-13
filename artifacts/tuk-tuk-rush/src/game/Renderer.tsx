@@ -10,6 +10,7 @@ import { buildStreetLife } from "./streetLife";
 import { buildStreetscape } from "./streetscape";
 import { loadArt, type ArtBundle, disposeObject } from "./assets";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { bangkokPeople } from './bangkok/urbanLayers';
 import { buildBangkokGraybox, shiftLighting } from './bangkok/mesh';
 import { clamp } from "./meshUtil";
 import { obstacleLocal } from "./world";
@@ -72,7 +73,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     return s;
   }, [engine, art]);
   const life = useMemo(
-    () => bangkok ? { root: new THREE.Group(), update() {}, dispose() {} } : buildStreetLife(engine.model.district),
+    () => buildStreetLife(engine.model.district, bangkok ? bangkokPeople(engine.model.district) : undefined),
     [engine, city],
   );
   const shadows = useMemo(
@@ -128,6 +129,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       if (sun.current) sun.current.intensity = lighting.sun;
       if (ambient.current) ambient.current.intensity = lighting.ambient;
       gl.toneMappingExposure = lighting.exposure;
+      scene.environmentIntensity = .38 - lighting.night * .28;
       (city as ReturnType<typeof buildBangkokGraybox>).setNight(lighting.night);
     }
 

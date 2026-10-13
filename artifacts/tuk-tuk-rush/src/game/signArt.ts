@@ -112,14 +112,14 @@ function heroVertical(c: CanvasRenderingContext2D, e: SignEntry,
 }
 
 /** Original sign plates: two atlases (horizontal fascia, vertical blade), drawn once on canvas. */
-export function buildSignAtlas(entries: SignEntry[]) {
+export function buildSignAtlas(entries: SignEntry[], compact = false) {
   const n = Math.max(1, entries.length);
   const make = (cw: number, ch: number, cols: number) => {
     const rows = Math.ceil(n / cols), canvas = document.createElement("canvas");
     canvas.width = cw * cols; canvas.height = ch * rows;
     return { canvas, c: canvas.getContext("2d")!, rows, cols, cw, ch };
   };
-  const H = make(512, 128, 2), V = make(128, 512, 8);
+  const H = make(512, 128, compact ? 4 : 2), V = make(128, 512, compact ? 8 : 8);
   const index = new Map<string, number>();
   entries.forEach((e, i) => {
     index.set(e.key, i);
@@ -154,7 +154,7 @@ export function buildSignAtlas(entries: SignEntry[]) {
       motif(V.c, e.style, x + 64, y + 40, 16, line);
       // Fictional Chinese trade signs use real words and stacked characters.
       // Thai stays intact and is rotated as a single correctly shaped phrase.
-      const thai = /[\u0E00-\u0E7F]/.test(e.text);
+      const thai = /[\u0E00-\u0E7F]|[A-Za-z]/.test(e.text);
       const glyphs = thai ? [] : (e.text.match(/\p{L}\p{M}*|\p{N}/gu) ?? [e.text]).slice(0, 4);
       const cell = Math.min(104, (512 - 90) / Math.max(1, glyphs.length));
       glyphs.forEach((g, k) => {
@@ -181,7 +181,9 @@ export function buildSignAtlas(entries: SignEntry[]) {
     }
   });
   const tex = (a: typeof H) => {
-    const t = new T.CanvasTexture(a.canvas);
+    let canvas = a.canvas;
+    if (compact) { const reduced = document.createElement("canvas"); reduced.width = canvas.width / 2; reduced.height = canvas.height / 2; reduced.getContext("2d")!.drawImage(canvas, 0, 0, reduced.width, reduced.height); canvas = reduced; }
+    const t = new T.CanvasTexture(canvas);
     t.colorSpace = T.SRGBColorSpace; t.anisotropy = 4; t.generateMipmaps = true;
     return t;
   };

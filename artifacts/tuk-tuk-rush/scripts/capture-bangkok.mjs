@@ -7,8 +7,11 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 const output = fileURLToPath(new URL('../../../generated-artifacts/compact-bangkok/', import.meta.url));
 await fs.mkdir(`${output}/screenshots`, { recursive: true });
-const browser = await chromium.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-dev-shm-usage', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
 const page = await browser.newPage({ viewport: { width: 844, height: 390 }, hasTouch: true });
+// SwiftShader can take longer to resize/read back the portrait WebGL canvas
+// than Playwright's default 30 seconds on a shared CI runner.
+page.setDefaultTimeout(120000);
 const errors = [], failures = [];
 page.on('pageerror', e => errors.push(e.message));
 page.on('response', r => { if (r.status() >= 400) failures.push(`${r.status()} ${r.url()}`); });
