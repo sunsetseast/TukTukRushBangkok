@@ -118,7 +118,7 @@ export function emitBangkokArchitecture(
 
     // Recessed upper floors, visible shutters, and balcony rails. Cap tiny
     // detail per facade so a dense city remains viable on mobile WebGL.
-    const levels = Math.min(6, Math.max(1, Math.floor((h - shopHeight - 1.9) / floor)));
+    const levels = Math.min(3, Math.max(1, Math.floor((h - shopHeight - 1.9) / floor)));
     for (let level = 0; level < levels; level++) {
       const y = shopHeight + 2.4 + level * floor;
       if (y + 1.4 > h - .5) break;
@@ -127,9 +127,11 @@ export function emitBangkokArchitecture(
         put('window', u, y, front + .2, modern ? 3.8 : 3.15, 2.7, .16,
           (i + level + col) % 5 === 0 ? '#f6bf80' : '#71949f');
         put('trim', u, y + 1.48, front + .29, modern ? 4.05 : 3.5, .28, .24, style.trim);
-        if (!modern) {
+        // One high-contrast balcony run per selected heritage building
+        // reads as layered architecture without ~10 railing meshes per shop.
+        if (!modern && level === 0 && i % 3 === 0) {
           put('trim', u, y - 1.5, front + .66, 4.1, .24, 1.25, style.trim);
-          for (const rail of [-1.7, 0, 1.7]) put('trim', u + rail, y - .92, front + 1.18, .14, .8, .12, style.accent);
+          for (const rail of [-1.7, 1.7]) put('trim', u + rail, y - .92, front + 1.18, .16, .8, .12, style.accent);
         }
       }
     }
