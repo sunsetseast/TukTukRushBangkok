@@ -164,6 +164,31 @@ export function createBangkokWorld(): District {
       world.buildings.push(building); world.obstacles.push(building);
     }
   }
+  // A small second row closes vistas behind roadside frontage. These are REAL
+  // solid parcels, screened by the same road, river, park and landmark rules.
+  // No fake roads, no skyline props floating outside the physical city.
+  const frontages = [...world.buildings];
+  for (const [i, b] of frontages.entries()) {
+    if (i % 3 !== 0) continue;
+    const yaw = b.yaw ?? 0;
+    const p = { x: b.x - Math.sin(yaw) * 29, z: b.z - Math.cos(yaw) * 29 };
+    const infill: Obstacle = { ...b, ...p, w: 21, d: 19, height: b.height * .75, artRole: 'background' };
+    if (p.x < world.bounds!.minX+20 || p.x > world.bounds!.maxX-20 || p.z < world.bounds!.minZ+20 || p.z > world.bounds!.maxZ-20) continue;
+    if (riverDistance(world,p) < riverWidth/2+18) continue;
+    if (roads.some(r=>distanceToSegment(p,byId.get(r.a)!,byId.get(r.b)!).distance<r.width/2+17)) continue;
+    if (world.obstacles.some(o=>orientedFootprintsOverlap(o,infill,1.3))) continue;
+    world.buildings.push(infill); world.obstacles.push(infill);
+  }
+  // Mall approach planters are solid furniture, validated independently of
+  // the original mall plot. The broad road/river contract remains unchanged.
+  for(const l of landmarks.filter(l=>l.kind==='mall'))for(const side of [-1,1])for(const end of [-1,1]){
+    const site=l.plot!, p={x:site.x+side*24,z:site.z+end*(l.size!/2+5.5)};
+    const o:Obstacle={...p,w:1.5,d:1.5,height:1,color:'#81967b',artRole:'furniture',landmarkId:l.id};
+    if(riverDistance(world,p)<riverWidth/2+2)continue;
+    if(roads.some(r=>distanceToSegment(p,byId.get(r.a)!,byId.get(r.b)!).distance<r.width/2+3))continue;
+    if(world.obstacles.some(other=>orientedFootprintsOverlap(o,other,.5)))continue;
+    world.obstacles.push(o);
+  }
   const spawnRoad = roads.find(r => r.corridor === 'yaowarat')!;
   const spawn = byId.get(spawnRoad.a)!, next = byId.get(spawnRoad.b)!;
   world.spawn = { ...spawn, heading: Math.atan2(next.x - spawn.x, next.z - spawn.z) };

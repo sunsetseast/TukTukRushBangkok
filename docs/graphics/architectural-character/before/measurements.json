@@ -1,0 +1,2109 @@
+{
+  "label": "before",
+  "loadMs": 6962.716350000001,
+  "survey": [
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 9
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 9.600000000093132
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 15.5
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 112.5
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 157.8000000002794
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 8
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 148.39999999990687
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 147.3000000002794
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-low-night.jpg",
+      "samples": [
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 101.59999999962747
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 120.8000000002794
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 99.60000000009313
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 102.1999999997206
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 15.300000000279397
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 116.8000000002794
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 9.200000000186265
+        },
+        {
+          "calls": 138,
+          "triangles": 57834,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 124.40000000037253
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 101.89999999990687
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 95.40000000037253
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 77.10000000009313
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 106.20000000018626
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 101.8000000002794
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 95.8000000002794
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 103.60000000009313
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 266,
+          "textures": 6,
+          "frameMs": 109
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 95.20000000018626
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 19.800000000279397
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 81.29999999981374
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 88.29999999981374
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 76.1999999997206
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 97.39999999990687
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 72.60000000009313
+        },
+        {
+          "calls": 240,
+          "triangles": 101036,
+          "geometries": 292,
+          "textures": 6,
+          "frameMs": 99.79999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "talatnoi",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -2.427501954977635
+      },
+      "file": "talatnoi-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 16.399999999906868
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 114.59999999962747
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 104.1999999997206
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 125.89999999990687
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 112.39999999990687
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 128.5
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 124.09999999962747
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 122.39999999990687
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "talatnoi",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -2.427501954977635
+      },
+      "file": "talatnoi-low-night.jpg",
+      "samples": [
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 94.39999999990687
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 80
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 97.29999999981374
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 79.79999999981374
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 94.3000000002794
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 15.700000000186263
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 94.29999999981374
+        },
+        {
+          "calls": 127,
+          "triangles": 62132,
+          "geometries": 354,
+          "textures": 6,
+          "frameMs": 94.8000000002794
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "talatnoi",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -2.427501954977635
+      },
+      "file": "talatnoi-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 97.89999999990687
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 98.60000000009313
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 101
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 201.3000000002794
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 78.89999999990687
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 181.70000000018626
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 16
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 387,
+          "textures": 6,
+          "frameMs": 203.70000000018626
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "talatnoi",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -2.427501954977635
+      },
+      "file": "talatnoi-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 88.79999999981374
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 108.09999999962747
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 33.39999999990687
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 114.10000000009313
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 111.79999999981374
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 131.10000000009313
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 107.70000000018626
+        },
+        {
+          "calls": 263,
+          "triangles": 115284,
+          "geometries": 449,
+          "textures": 6,
+          "frameMs": 86.90000000037253
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "oldtown",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": -924.2105263157895,
+        "z": -560,
+        "heading": 0.7583777142101827
+      },
+      "file": "oldtown-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 88.5
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 74
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 37.60000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 112.60000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 36.09999999962747
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 85.6999999997206
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 105.60000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 26.5
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "oldtown",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": -924.2105263157895,
+        "z": -560,
+        "heading": 0.7583777142101827
+      },
+      "file": "oldtown-low-night.jpg",
+      "samples": [
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 109.60000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 15.200000000186265
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 164.89999999990687
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 10.899999999906868
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 108.8000000002794
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 129.10000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 134.60000000009313
+        },
+        {
+          "calls": 78,
+          "triangles": 41110,
+          "geometries": 493,
+          "textures": 6,
+          "frameMs": 160.89999999990687
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "oldtown",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": -924.2105263157895,
+        "z": -560,
+        "heading": 0.7583777142101827
+      },
+      "file": "oldtown-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 7
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 9.600000000093132
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 109.89999999990687
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 118.79999999981374
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 8.400000000372529
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 113.10000000009313
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 126.90000000037251
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 540,
+          "textures": 6,
+          "frameMs": 110.60000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "oldtown",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": -924.2105263157895,
+        "z": -560,
+        "heading": 0.7583777142101827
+      },
+      "file": "oldtown-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 96.10000000009313
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 16.100000000093132
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 266.60000000009313
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 88.70000000018626
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 103.3000000002794
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 87.5
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 88.29999999981374
+        },
+        {
+          "calls": 170,
+          "triangles": 80984,
+          "geometries": 548,
+          "textures": 6,
+          "frameMs": 82.29999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "siam",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 804.7058823529412,
+        "z": -715.2941176470588,
+        "heading": 1.7818896600176435
+      },
+      "file": "siam-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 135.5
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 7.599999999627471
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 108.10000000009313
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 122.60000000009313
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 117.3000000002794
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 119.70000000018626
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 120.70000000018626
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 17.799999999813735
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "siam",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 804.7058823529412,
+        "z": -715.2941176470588,
+        "heading": 1.7818896600176435
+      },
+      "file": "siam-low-night.jpg",
+      "samples": [
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 9.299999999813735
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 109.29999999981374
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 275.09999999962747
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 6.199999999720603
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 107.29999999981374
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 5.600000000093132
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 112.89999999990687
+        },
+        {
+          "calls": 96,
+          "triangles": 51944,
+          "geometries": 612,
+          "textures": 6,
+          "frameMs": 102.39999999990687
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "siam",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 804.7058823529412,
+        "z": -715.2941176470588,
+        "heading": 1.7818896600176435
+      },
+      "file": "siam-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 103.10000000009313
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 14.5
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 108.89999999990687
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 117.09999999962747
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 115.60000000009313
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 118.39999999990687
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 108.79999999981374
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 709,
+          "textures": 6,
+          "frameMs": 109.70000000018626
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "siam",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 804.7058823529412,
+        "z": -715.2941176470588,
+        "heading": 1.7818896600176435
+      },
+      "file": "siam-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 118.40000000037253
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 32.700000000186265
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 145.89999999990687
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 92.60000000009313
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 116.20000000018626
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 33.299999999813735
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 287.5
+        },
+        {
+          "calls": 193,
+          "triangles": 88360,
+          "geometries": 735,
+          "textures": 6,
+          "frameMs": 121.79999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 134.10000000009313
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 25.300000000279397
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 138.20000000018626
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 122.39999999990687
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 99.5
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 134
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 112.89999999990687
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 124
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-low-night.jpg",
+      "samples": [
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 4.199999999720603
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 33.60000000009313
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 61.89999999990687
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 32.200000000186265
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 41.5
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 39.10000000009313
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 34.60000000009313
+        },
+        {
+          "calls": 44,
+          "triangles": 30828,
+          "geometries": 746,
+          "textures": 6,
+          "frameMs": 53.299999999813735
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 39.8000000002794
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 45
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 35.39999999990687
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 41.89999999990687
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 38
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 55
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 10.800000000279397
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 770,
+          "textures": 6,
+          "frameMs": 42.60000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 10.600000000093132
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 62.5
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 53.5
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 67.3000000002794
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 13.299999999813735
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 66.10000000009313
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 124.5
+        },
+        {
+          "calls": 75,
+          "triangles": 42176,
+          "geometries": 799,
+          "textures": 6,
+          "frameMs": 42.200000000186265
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "silom",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": 2.125103822996444
+      },
+      "file": "silom-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 35.6999999997206
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 82.10000000009313
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 39.5
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 44.5
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 44.5
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 43.700000000186265
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 41.8000000002794
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 44.299999999813735
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "silom",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": 2.125103822996444
+      },
+      "file": "silom-low-night.jpg",
+      "samples": [
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 94.20000000018626
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 98.5
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 98.70000000018626
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 94.39999999990687
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 85.5
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 91.6999999997206
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 89.60000000009313
+        },
+        {
+          "calls": 74,
+          "triangles": 39664,
+          "geometries": 841,
+          "textures": 6,
+          "frameMs": 93.5
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "silom",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": 2.125103822996444
+      },
+      "file": "silom-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 100.29999999981374
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 76.60000000009313
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 107.29999999981374
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 99.8000000002794
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 96
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 95.10000000009313
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 71.5
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 95.90000000037253
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "silom",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": 2.125103822996444
+      },
+      "file": "silom-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 124.89999999990687
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 7.600000000093132
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 130.89999999990687
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 32.3000000002794
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 136.29999999981374
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 148.29999999981374
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 40
+        },
+        {
+          "calls": 164,
+          "triangles": 83038,
+          "geometries": 931,
+          "textures": 6,
+          "frameMs": 281.29999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "residential",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "heading": -0.042527534619786644
+      },
+      "file": "residential-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 117.5
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 27
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 134.5
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 116.29999999981374
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 129
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 117.3000000002794
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 125.5
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 115.10000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "residential",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "heading": -0.042527534619786644
+      },
+      "file": "residential-low-night.jpg",
+      "samples": [
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 107.10000000009313
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 105.10000000009313
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 111.10000000009313
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 87.5
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 235.1999999997206
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 10.199999999720603
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 135.39999999990687
+        },
+        {
+          "calls": 63,
+          "triangles": 36354,
+          "geometries": 961,
+          "textures": 6,
+          "frameMs": 154.60000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "residential",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "heading": -0.042527534619786644
+      },
+      "file": "residential-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 94.89999999990687
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 108.6999999997206
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 4.699999999720603
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 107.39999999990687
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 111.5
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 103.10000000009313
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 105.1999999997206
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 14.699999999720603
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "residential",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "heading": -0.042527534619786644
+      },
+      "file": "residential-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 8.200000000186265
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 112.6999999997206
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 131.20000000018626
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 9.5
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 102.70000000018626
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 5.099999999627471
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 106.60000000009313
+        },
+        {
+          "calls": 89,
+          "triangles": 50054,
+          "geometries": 986,
+          "textures": 6,
+          "frameMs": 135.20000000018626
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 69334976,
+        "texturePixels": 1871872,
+        "heapBytes": 435000000
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "environment": "844x390 Chromium SwiftShader, software WebGL, not physical iPhone"
+}
