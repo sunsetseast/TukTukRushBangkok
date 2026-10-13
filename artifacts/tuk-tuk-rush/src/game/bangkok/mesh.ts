@@ -5,6 +5,7 @@ import { StaticBatch } from '../staticBatch';
 import { disposeObject } from '../assets';
 import { buildLandmarkArt } from '../landmarkArt';
 import { emitBangkokArchitecture } from './architecture';
+import { buildBangkokSigns } from './signage';
 
 /** Reuse the tested city graph with regional streetscape art and mobile culling. */
 export function buildBangkokGraybox(d: District): City & { setNight: (night: number) => void } {
@@ -67,19 +68,26 @@ export function buildBangkokGraybox(d: District): City & { setNight: (night: num
   batch.finish().forEach(chunk => { chunk.name = 'BangkokSector'; group.add(chunk); });
   detailBatch.finish().forEach(chunk => { chunk.name = 'BangkokDetail'; group.add(chunk); });
   nightBatch.finish().forEach(chunk => { chunk.name = 'BangkokNight'; group.add(chunk); });
+  if (typeof document !== 'undefined') {
+    const signs = buildBangkokSigns(d);
+    for (const child of [...signs.children]) group.add(child);
+  }
   const heroes = d.landmarks.map(l => { const root = blockout(l); root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z); root.name = `BangkokLandmark:${l.id}`; group.add(root); return root; });
   // River sections span several cells. A cell-center test can hide their near
   // bank while the player is still looking at it; cull the full geometry bounds.
   group.updateMatrixWorld(true);
-  const chunks = group.children.filter(c => c.name === 'BangkokSector' || c.name === 'BangkokDetail' || c.name === 'BangkokNight')
-    .map(chunk => ({ chunk, bounds: new T.Box3().setFromObject(chunk), core: chunk.name === 'BangkokSector' || chunk.name === 'BangkokNight' }));
+  const chunks = group.children.filter(c => c.name === 'BangkokSector' || c.name === 'BangkokDetail' || c.name === 'BangkokNight' || c.name === 'BangkokSign')
+    .map(chunk => ({ chunk, bounds: new T.Box3().setFromObject(chunk), core: chunk.name !== 'BangkokDetail' }));
   const glowing = group.children.filter(c => c.name === 'BangkokNight')
+    .flatMap(c => c.children).map(c => (c as T.Mesh).material as T.MeshStandardMaterial);
+  const signMaterials = group.children.filter(c => c.name === 'BangkokSign')
     .flatMap(c => c.children).map(c => (c as T.Mesh).material as T.MeshStandardMaterial);
   let lastX = Infinity, lastZ = Infinity, lastQuality = '', lastNight = -1;
   return { group, setNight(night: number) {
     if (Math.abs(night - lastNight) < .015) return;
     lastNight = night;
     for (const mat of glowing) mat.emissiveIntensity = Math.max(0, night) * .9;
+    for (const mat of signMaterials) mat.emissiveIntensity = .16 + Math.max(0, night) * .72;
   }, update(camera, quality) {
     if (Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 && quality === lastQuality) return;
     lastX = camera.x; lastZ = camera.z; lastQuality = quality;
