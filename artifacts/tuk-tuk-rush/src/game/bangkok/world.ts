@@ -135,20 +135,32 @@ export function createBangkokWorld(): District {
     if (!plot) throw new Error(`No safe landmark parcel: ${l.id}`);
     l.size = size; l.plot = plot;
   }
+  // Streets are assembled as nearly attached commercial rows, not isolated
+  // blocks every 54 metres. All facade masses remain in the real collision map.
+  // Each +Z facade faces its road; the old tangent yaw placed windows sideways.
   let index = 0;
   for (const s of segments.filter(s => !s.road.shortcut && !s.road.bridge)) {
     const dx = s.b.x - s.a.x, dz = s.b.z - s.a.z, len = Math.hypot(dx, dz), ux = dx / len, uz = dz / len;
-    for (let t = 40; t < len - 24; t += 54) for (const side of [-1, 1]) {
-      const offset = s.road.width / 2 + 22;
-      const p = { x: s.a.x + ux * t + uz * offset * side, z: s.a.z + uz * t - ux * offset * side };
-      if (p.x < world.bounds!.minX || p.x > world.bounds!.maxX || p.z < world.bounds!.minZ || p.z > world.bounds!.maxZ) continue;
-      const region = regionAt(world, p), tower = region?.id === 'silom' || region?.id === 'sukhumvit';
-      const building: Obstacle = { ...p, w: 24, d: 27, height: tower ? 30 + index % 6 * 10 : 9 + index % 4 * 4,
-        yaw: Math.atan2(ux, uz), color: region?.color ?? '#888f9d', regionId: region?.id };
+    for (let t = 14; t < len - 11; t += 26) for (const side of [-1, 1]) {
+      const frontage = s.road.width / 2 + 18;
+      const p = { x: s.a.x + ux * t + uz * frontage * side, z: s.a.z + uz * t - ux * frontage * side };
+      if (p.x < world.bounds!.minX + 18 || p.x > world.bounds!.maxX - 18 ||
+          p.z < world.bounds!.minZ + 18 || p.z > world.bounds!.maxZ - 18) continue;
+      const region = regionAt(world, p);
+      const modern = ['siam', 'silom', 'sukhumvit', 'icon'].includes(region?.id ?? '');
+      const building: Obstacle = {
+        ...p, w: 22, d: 22,
+        height: modern ? 26 + index % 7 * 6 : 11 + index % 4 * 3.6,
+        // The frontage normal points *toward* its road (local +Z).
+        yaw: Math.atan2(-uz * side, ux * side),
+        color: region?.color ?? '#b5ad9c', regionId: region?.id,
+      };
       index++;
-      if (riverDistance(world, p) < riverWidth / 2 + 24) continue;
-      if (roads.some(r => distanceToSegment(p, byId.get(r.a)!, byId.get(r.b)!).distance < r.width / 2 + 21)) continue;
-      if (world.obstacles.some(o => orientedFootprintsOverlap(o, building, 3))) continue;
+      if (riverDistance(world, p) < riverWidth / 2 + 18) continue;
+      // The nearest possible rotated corner is ~15.6m from the center.
+      // Leave at least 2m beyond the asphalt edge, including intersections.
+      if (roads.some(r => distanceToSegment(p, byId.get(r.a)!, byId.get(r.b)!).distance < r.width / 2 + 16)) continue;
+      if (world.obstacles.some(o => orientedFootprintsOverlap(o, building, 1.3))) continue;
       world.buildings.push(building); world.obstacles.push(building);
     }
   }
