@@ -54,6 +54,32 @@ try {
   await page.getByTestId('button-resume').click();
   // Inspection views exclude HUD/pause overlays; UI was captured and tested above.
   await page.addStyleTag({ content: '.tt-ui { visibility: hidden !important; }' });
+  for (const quality of ['low', 'medium']) {
+    await page.evaluate(quality => {
+      const { engine } = window.__graphics;
+      engine.pause(); engine.setQuality(quality);
+      window.__artCamera = { position: [-1130, 110, 200], look: [-860, 0, 210] };
+    }, quality);
+    const before = await page.evaluate(() => window.__graphics.frameId);
+    await page.waitForFunction(frame => window.__graphics.frameId > frame + 8, before, { timeout: 30000 });
+    const visibility = await page.evaluate(quality => {
+      const { scene, three: T, camera } = window.__graphics;
+      const radius = quality === 'low' ? 420 : 650;
+      let nearby = 0, distant = 0;
+      const missing = [], excessive = [];
+      for (const chunk of scene.getObjectByName('City').children.filter(c => c.name === 'BangkokSector')) {
+        const bounds = new T.Box3().setFromObject(chunk);
+        const distance = bounds.distanceToPoint(new T.Vector3(camera.position.x, 0, camera.position.z));
+        if (distance < radius - 20) { nearby++; if (!chunk.visible) missing.push(chunk.userData.center.toArray()); }
+        if (distance > radius + 20) { distant++; if (chunk.visible) excessive.push(chunk.userData.center.toArray()); }
+      }
+      return { nearby, distant, missing, excessive };
+    }, quality);
+    assert(visibility.nearby > 0 && visibility.distant > 0);
+    assert.deepEqual(visibility.missing, [], `Nearby river scenery must remain visible (${quality})`);
+    assert.deepEqual(visibility.excessive, [], `Distant scenery must still be culled (${quality})`);
+    await page.screenshot({ path: `${output}/screenshots/memorial-${quality}.png` });
+  }
   for (const id of ['gate', 'arun', 'icon', 'paragon', 'mahanakhon']) {
     await page.evaluate(id => {
       const { engine } = window.__graphics, d = engine.model.district, l = d.landmarks.find(l => l.id === id), n = d.nodes.find(n => n.id === l.accessNode);
@@ -68,5 +94,5 @@ try {
   }
   const stats = await page.evaluate(() => window.__graphics.stats);
   assert.deepEqual(errors, []); assert.deepEqual(failures, []);
-  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, inspectionViews: 5, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
+  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, bridgeBoundsVisibility: ['Fast', 'Pretty'], inspectionViews: 7, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
 } finally { await browser.close(); }
