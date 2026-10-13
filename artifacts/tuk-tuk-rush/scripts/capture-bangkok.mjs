@@ -52,8 +52,26 @@ try {
   assert.equal(await page.evaluate(() => window.__graphics.engine.model.snapshot.phase), 'paused', 'Closing portrait map must not resume behind rotate prompt');
   await page.setViewportSize({ width: 844, height: 390 });
   await page.getByTestId('button-resume').click();
-  // Inspection views exclude HUD/pause overlays; UI was captured and tested above.
+  // Ordinary chase-camera captures are essential: aerial art previews alone
+  // cannot establish that the world looks inhabited while actually driving.
+  await page.waitForFunction(() => window.__graphics.frameId > 10);
+  await page.screenshot({ path: `${output}/screenshots/street-chase-sunset.png` });
+  // Following snapshots set simulated time for art inspection; this is not a
+  // claim that the player drove to night during the automated QA run.
+  await page.evaluate(() => {
+    const { engine } = window.__graphics;
+    engine.pause();
+    engine.model.snapshot.elapsed = 9 * 60;
+  });
   await page.addStyleTag({ content: '.tt-ui { visibility: hidden !important; }' });
+  const nightFrame = await page.evaluate(() => window.__graphics.frameId);
+  await page.waitForFunction(frame => window.__graphics.frameId > frame + 6, nightFrame, { timeout: 30000 });
+  const luminous = await page.evaluate(() =>
+    window.__graphics.scene.getObjectByName('City').children
+      .filter(c => c.name === 'BangkokNight').flatMap(c => c.children)
+      .some(m => m.material.emissiveIntensity > .5));
+  assert(luminous, 'Night-time city windows must illuminate');
+  await page.screenshot({ path: `${output}/screenshots/street-chase-night.png` });
   for (const quality of ['low', 'medium']) {
     await page.evaluate(quality => {
       const { engine } = window.__graphics;
@@ -94,5 +112,5 @@ try {
   }
   const stats = await page.evaluate(() => window.__graphics.stats);
   assert.deepEqual(errors, []); assert.deepEqual(failures, []);
-  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, bridgeBoundsVisibility: ['Fast', 'Pretty'], inspectionViews: 7, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
+  await fs.writeFile(`${output}/qa.json`, JSON.stringify({ pass: true, mapPauses: true, portraitMap: true, touchThrottleRelease: true, touchPanAndPinch: true, bridgeBoundsVisibility: ['Fast', 'Pretty'], inspectionViews: 7, ordinaryChaseCaptures: 2, javascriptErrors: errors, assetFailures: failures, stats, performanceEnvironment: 'Chromium software WebGL; not physical-iPhone performance' }, null, 2));
 } finally { await browser.close(); }
