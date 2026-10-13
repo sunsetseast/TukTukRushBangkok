@@ -72,7 +72,7 @@ export function buildBangkokGraybox(d: District): City & { setNight: (night: num
   // bank while the player is still looking at it; cull the full geometry bounds.
   group.updateMatrixWorld(true);
   const chunks = group.children.filter(c => c.name === 'BangkokSector' || c.name === 'BangkokDetail' || c.name === 'BangkokNight')
-    .map(chunk => ({ chunk, bounds: new T.Box3().setFromObject(chunk), core: chunk.name === 'BangkokSector' }));
+    .map(chunk => ({ chunk, bounds: new T.Box3().setFromObject(chunk), core: chunk.name === 'BangkokSector' || chunk.name === 'BangkokNight' }));
   const glowing = group.children.filter(c => c.name === 'BangkokNight')
     .flatMap(c => c.children).map(c => (c as T.Mesh).material as T.MeshStandardMaterial);
   let lastX = Infinity, lastZ = Infinity, lastQuality = '', lastNight = -1;
