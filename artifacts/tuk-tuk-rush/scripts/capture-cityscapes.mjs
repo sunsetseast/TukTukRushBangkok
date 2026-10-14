@@ -1,8 +1,8 @@
+import { startQaServer } from "./browser-vite.mjs";
 /** Matched normal-height camera survey. Repositioned surveys are art inspection.
  * Software WebGL metrics do not certify physical iPhone performance. */
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
-import { spawn } from "node:child_process";
 import { chromium } from "playwright";
 const label = process.env.CAPTURE_LABEL || "after";
 const out = process.env.CAPTURE_ROOT
@@ -13,35 +13,7 @@ const out = process.env.CAPTURE_ROOT
     ).pathname;
 await fs.mkdir(out, { recursive: true });
 const port = Number(process.env.QA_PORT || 24185);
-const server = spawn(
-  process.execPath,
-  [
-    "node_modules/vite/bin/vite.js",
-    "--host",
-    "127.0.0.1",
-    "--port",
-    String(port),
-  ],
-  {
-    env: { ...process.env, PORT: String(port), BASE_PATH: "/" },
-    stdio: ["ignore", "pipe", "pipe"],
-  },
-);
-let log = "";
-server.stdout.on("data", (b) => (log += b));
-server.stderr.on("data", (b) => (log += b));
-await new Promise((resolve, reject) => {
-  const t = setInterval(() => {
-    if (log.includes("Local:")) {
-      clearInterval(t);
-      resolve();
-    }
-  }, 100);
-  server.on("exit", () => {
-    clearInterval(t);
-    reject(new Error(log));
-  });
-});
+const server = await startQaServer(port);
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH,
   headless: true,

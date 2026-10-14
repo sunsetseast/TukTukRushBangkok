@@ -1,6 +1,6 @@
+import { startQaServer } from "./browser-vite.mjs";
 /** Sequential warm-frame comparison without screenshot/video encoding. */
 import fs from "node:fs/promises";
-import { spawn } from "node:child_process";
 import { chromium } from "playwright";
 const root =
     process.env.PROFILE_ROOT ||
@@ -12,35 +12,7 @@ await fs.mkdir(`${root}/${label}`, { recursive: true });
 const baseline = JSON.parse(
   await fs.readFile(`${root}/before/measurements.json`, "utf8"),
 );
-const server = spawn(
-  process.execPath,
-  [
-    "node_modules/vite/bin/vite.js",
-    "--host",
-    "127.0.0.1",
-    "--port",
-    String(port),
-  ],
-  {
-    env: { ...process.env, PORT: String(port), BASE_PATH: "/" },
-    stdio: ["ignore", "pipe", "pipe"],
-  },
-);
-let log = "";
-server.stdout.on("data", (b) => (log += b));
-server.stderr.on("data", (b) => (log += b));
-await new Promise((resolve, reject) => {
-  const t = setInterval(() => {
-    if (log.includes("Local:")) {
-      clearInterval(t);
-      resolve();
-    }
-  }, 100);
-  server.on("exit", () => {
-    clearInterval(t);
-    reject(new Error(log));
-  });
-});
+const server = await startQaServer(port);
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH,
   headless: true,

@@ -1,3 +1,4 @@
+import { startQaServer } from "./browser-vite.mjs";
 import { playableDrive } from "./playable-drive.mjs";
 /** Real rendered play with browser keyboard/touch events. Individual corridor
  * clips start from stated road positions; no transform edits during each drive. */
@@ -16,35 +17,7 @@ const rawOut = new URL(
 await fs.mkdir(out, { recursive: true });
 await fs.mkdir(rawOut, { recursive: true });
 const port = 24190,
-  server = spawn(
-    process.execPath,
-    [
-      "node_modules/vite/bin/vite.js",
-      "--host",
-      "127.0.0.1",
-      "--port",
-      String(port),
-    ],
-    {
-      env: { ...process.env, PORT: String(port), BASE_PATH: "/" },
-      stdio: ["ignore", "pipe", "pipe"],
-    },
-  );
-let log = "";
-server.stdout.on("data", (v) => (log += v));
-server.stderr.on("data", (v) => (log += v));
-await new Promise((resolve, reject) => {
-  const t = setInterval(() => {
-    if (log.includes("Local:")) {
-      clearInterval(t);
-      resolve();
-    }
-  }, 100);
-  server.on("exit", () => {
-    clearInterval(t);
-    reject(new Error(log));
-  });
-});
+  server = await startQaServer(port);
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH,
   headless: true,

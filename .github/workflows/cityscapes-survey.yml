@@ -11,6 +11,8 @@ on:
 
 jobs:
   survey:
+    # Full art surveys are explicit reviews, not mandatory on every code edit.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:

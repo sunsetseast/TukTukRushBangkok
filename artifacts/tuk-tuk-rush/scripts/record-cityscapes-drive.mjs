@@ -1,3 +1,4 @@
+import { startQaServer } from "./browser-vite.mjs";
 /** A single controller recording, finalized independently for durable QA. */
 import fs from "node:fs/promises";
 import { spawn } from "node:child_process";
@@ -25,35 +26,8 @@ const rawOut = new URL(
 await fs.mkdir(out, { recursive: true });
 await fs.mkdir(rawOut, { recursive: true });
 const port = 24195;
-const server = spawn(
-  process.execPath,
-  [
-    "node_modules/vite/bin/vite.js",
-    "--host",
-    "127.0.0.1",
-    "--port",
-    String(port),
-  ],
-  {
-    env: { ...process.env, PORT: String(port), BASE_PATH: "/" },
-    stdio: ["ignore", "pipe", "pipe"],
-  },
-);
-let log = "";
-server.stdout.on("data", (b) => (log += b));
-server.stderr.on("data", (b) => (log += b));
-await new Promise((resolve, reject) => {
-  const t = setInterval(() => {
-    if (log.includes("Local:")) {
-      clearInterval(t);
-      resolve();
-    }
-  }, 100);
-  server.on("exit", () => {
-    clearInterval(t);
-    reject(Error(log));
-  });
-});
+const server = await startQaServer(port);
+console.log("Vite HTTP ready", spec[0]);
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH,
   headless: true,
@@ -80,7 +54,7 @@ page.on("console", (m) => {
 page.on("response", (r) => {
   if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`);
 });
-let drive;
+let drive, progress;
 const encode = async (args) =>
   await new Promise((resolve, reject) => {
     const p = spawn(
@@ -99,6 +73,31 @@ try {
     timeout: 120000,
   });
   await page.getByTestId("button-free-roam").click();
+  console.log("Game ready", browser.version());
+  let checking = false;
+  progress = setInterval(async () => {
+    if (checking) return;
+    checking = true;
+    try {
+      console.log(
+        "Drive progress",
+        await page.evaluate(() => {
+          const d = window.__qaDrive;
+          return (
+            d && {
+              elapsed:
+                window.__graphics.engine.model.snapshot.elapsed - d.epoch,
+              metres: d.metres,
+              phase: window.__graphics.engine.model.snapshot.phase,
+            }
+          );
+        }),
+      );
+    } catch {
+    } finally {
+      checking = false;
+    }
+  }, 30000);
   drive = await playableDrive(page, spec, epoch);
   assert(drive.metres > 100);
   assert(drive.elapsed >= spec[6]);
@@ -119,8 +118,7 @@ try {
         failed,
         quality: "low",
         viewport: [844, 390],
-        environment:
-          `${browser.version()} SwiftShader; not iPhone; normal chase camera`,
+        environment: `${browser.version()} SwiftShader; not iPhone; normal chase camera`,
       },
       null,
       2,
@@ -136,6 +134,7 @@ try {
     }),
   );
 } finally {
+  clearInterval(progress);
   const video = page.video();
   await context.close();
   try {
