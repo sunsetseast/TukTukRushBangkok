@@ -84,7 +84,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   );
   const contact = useMemo(() => vehicleShadow(), []);
   const traffic = useMemo(() => new TrafficLayer(), []);
-  const beacon = useMemo(() => buildBeacon(), []);
+  const beacon = useMemo(() => {const b=buildBeacon();if(bangkok){b.colMat.opacity=.065;b.ringMat.opacity=.5;}return b;}, []);
   const cam = useRef({
     init: false,
     phase: "",
@@ -268,7 +268,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cp.far = far;
       cp.updateProjectionMatrix();
     }
-    state.camera.far=bangkok?(s.quality==="low"?650:850):430;state.camera.updateProjectionMatrix();
+    if(bangkok){state.camera.far=s.quality==="low"?650:850;state.camera.updateProjectionMatrix();}
     const fog = scene.fog as THREE.Fog;
     fog.near = bangkok ? 260 : s.quality === "low" ? 95 : 135;
     fog.far = bangkok ? s.quality === "low" ? 600 : 780 : s.quality === "low" ? 205 : 310;
