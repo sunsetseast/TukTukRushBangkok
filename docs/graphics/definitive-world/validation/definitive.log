@@ -1,0 +1,3 @@
+$ node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts
+{"pass":true,"movingLaneSamples":7365,"regions":["westbank","connector","khaosan","north","siam","silom","oldtown","chinatown","sukhumvit","talatnoi","south","icon","paknam"],"trafficTransitions":1508,"clockwiseFrames":3633,"maxStep":0.18333333333354235,"sidewalkRoadOverlap":0,"boost":"5s active / 10s recharge / 1.4 acceleration / 37m/s cap","roadTriangles":2154,"buildings":4459}
+{ failed: 0, roadSamples: 2560 }

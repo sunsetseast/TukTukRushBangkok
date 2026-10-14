@@ -1,0 +1,129 @@
+{
+  "setup": "Two diagnostic vehicles start on an actual Silom road, then move through the normal TrafficSystem. Player is stationary; normal chase camera.",
+  "samples": [
+    {
+      "elapsed": 240,
+      "cars": [
+        {
+          "id": 1000,
+          "from": "bkk:642",
+          "to": "bkk:789",
+          "x": 160.15222854149047,
+          "z": 943.8331762765482,
+          "heading": 1.236059489478081,
+          "speed": 9,
+          "kind": "taxi",
+          "color": "#e36c9a",
+          "wait": 0,
+          "nearMissCooldown": 0
+        },
+        {
+          "id": 1001,
+          "from": "bkk:789",
+          "to": "bkk:642",
+          "x": 147.9588825696206,
+          "z": 945.9446015012296,
+          "heading": -1.9055331641117124,
+          "speed": 9,
+          "kind": "taxi",
+          "color": "#51b69c",
+          "wait": 0,
+          "nearMissCooldown": 0
+        }
+      ]
+    },
+    {
+      "elapsed": 240.71209999999977,
+      "cars": [
+        {
+          "id": 1000,
+          "from": "bkk:642",
+          "to": "bkk:789",
+          "x": 165.67470216357887,
+          "z": 945.7540366668397,
+          "heading": 1.2360594894785508,
+          "speed": 8.0181559094638,
+          "kind": "taxi",
+          "color": "#e36c9a",
+          "wait": 0,
+          "nearMissCooldown": 0
+        },
+        {
+          "id": 1001,
+          "from": "bkk:789",
+          "to": "bkk:642",
+          "x": 143.0352278388234,
+          "z": 944.112664328361,
+          "heading": -1.9644058786001266,
+          "speed": 6.580692930950216,
+          "kind": "taxi",
+          "color": "#51b69c",
+          "wait": 0,
+          "nearMissCooldown": 0
+        }
+      ]
+    },
+    {
+      "elapsed": 241.5559000000007,
+      "cars": [
+        {
+          "id": 1000,
+          "from": "bkk:789",
+          "to": "bkk:790",
+          "x": 171.87238264821238,
+          "z": 947.9097516180167,
+          "heading": 1.2360594894779768,
+          "speed": 7.992131075693549,
+          "kind": "taxi",
+          "color": "#e36c9a",
+          "wait": 0,
+          "nearMissCooldown": 0
+        },
+        {
+          "id": 1001,
+          "from": "bkk:789",
+          "to": "bkk:642",
+          "x": 138.56635924313582,
+          "z": 941.0377296317996,
+          "heading": -2.4720874845927954,
+          "speed": 6.500660133535177,
+          "kind": "taxi",
+          "color": "#51b69c",
+          "wait": 0,
+          "nearMissCooldown": 0
+        }
+      ]
+    },
+    {
+      "elapsed": 242.52000000000052,
+      "cars": [
+        {
+          "id": 1000,
+          "from": "bkk:789",
+          "to": "bkk:790",
+          "x": 179.15595969033828,
+          "z": 950.4431697196256,
+          "heading": 1.2360594894787003,
+          "speed": 7.999968267823635,
+          "kind": "taxi",
+          "color": "#e36c9a",
+          "wait": 0,
+          "nearMissCooldown": 0
+        },
+        {
+          "id": 1001,
+          "from": "bkk:789",
+          "to": "bkk:642",
+          "x": 137.24298236909084,
+          "z": 935.0099850300269,
+          "heading": -3.123526095475934,
+          "speed": 6.500002662050485,
+          "kind": "taxi",
+          "color": "#51b69c",
+          "wait": 0,
+          "nearMissCooldown": 0
+        }
+      ]
+    }
+  ]
+}

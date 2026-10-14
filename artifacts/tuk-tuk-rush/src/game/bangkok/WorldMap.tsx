@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { District, Point } from '../types';
 import type { Frame } from '../Hud';
 import { regionAt, routeFromPoint, SCALE, toMap } from './world';
-const districtLabels: Record<string, string> = { north: 'Chatuchak', khaosan: 'Khao San', oldtown: 'Old Town', westbank: 'Thonburi', chinatown: 'Chinatown', siam: 'Siam', talatnoi: 'Talat Noi', sukhumvit: 'Asok', icon: 'Khlong San', silom: 'Silom / Sathorn', south: 'Asiatique' };
+const districtLabels: Record<string, string> = { paknam:'Phasi Charoen',north: 'Chatuchak', khaosan: 'Khao San', oldtown: 'Old Town', westbank: 'Thonburi', chinatown: 'Chinatown', siam: 'Siam', talatnoi: 'Talat Noi', sukhumvit: 'Asok', icon: 'Khlong San', silom: 'Silom / Sathorn', south: 'Asiatique' };
 const points = (ps: Point[]) => ps.map(p => { const m = toMap(p); return `${m.x},${m.y}`; }).join(' ');
 
 function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true }: { d: District; f: Frame; detail?: boolean; labelScale?: number; placeNames?: boolean }) {
@@ -15,6 +15,7 @@ function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true }: 
     {d.regions?.map(r => <polygon key={r.id} points={points(r.polygon)} fill={r.color} fillOpacity={visited.includes(r.id) ? .6 : .12} stroke={r.color} strokeOpacity=".45" strokeWidth="1" />)}
     {d.obstacles.filter(o => o.protected).map((o, i) => { const m = toMap(o); return <rect key={`park:${i}`} x={m.x - o.w / SCALE / 2} y={m.y - o.d / SCALE / 2} width={o.w / SCALE} height={o.d / SCALE} fill="#34795b" />; })}
     <polyline points={points(d.river ?? [])} stroke="#1e6d87" strokeWidth={(d.riverWidth ?? 0) / SCALE} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    {d.canals?.map((c,i)=><polyline key={`canal:${i}`} points={points(c.points)} stroke="#1e6d87" strokeWidth={c.width/SCALE} fill="none" strokeLinejoin="round"/>)}
     {d.roads.map((r, i) => {
       if (r.shortcut && !shortcuts.includes(r.corridor!)) return null;
       const a = nodes.get(r.a)!, b = nodes.get(r.b)!, am = toMap(a), bm = toMap(b);

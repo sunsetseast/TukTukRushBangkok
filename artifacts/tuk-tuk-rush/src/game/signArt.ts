@@ -137,7 +137,9 @@ export function buildSignAtlas(entries: SignEntry[], compact = false) {
           ? ["#a91f2b", "#edc255", "#fff1bf"]
           : signature === "naiek"
             ? ["#f2eee1", "#b82d30", "#ab252e"]
-            : PAL[e.style][e.variant % 2]!;
+            : e.key.startsWith('khao-') ? [
+              ['#203f4b','#f9cc6a','#fff0bd'],['#52304e','#f397c9','#ffe0f0'],['#174e49','#73dfba','#e0ffdf'],['#2c3855','#87bced','#d5f6ff']
+            ][e.variant%4] as [string,string,string] : PAL[e.style][e.variant % 2]!;
     const [bg, line, ink] = colors;
     let x = (i % H.cols) * H.cw, y = Math.floor(i / H.cols) * H.ch;
     if (!heroHorizontal(H.c, e, signature, x, y, H.cw, H.ch)) {

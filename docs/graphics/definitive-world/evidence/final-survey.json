@@ -1,0 +1,101 @@
+{
+  "loadMs": 12675.324478,
+  "survey": [
+    {
+      "name": "baiyoke",
+      "pose": {
+        "x": 666.6666666666667,
+        "z": -1041.904761904762,
+        "heading": 1.29000645593257,
+        "landmark": "baiyoke",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 217,
+          "triangles": 296701,
+          "geometries": 479,
+          "textures": 11,
+          "frameMs": 15.600000000093132
+        },
+        {
+          "calls": 217,
+          "triangles": 296701,
+          "geometries": 479,
+          "textures": 11,
+          "frameMs": 17.199999999720603
+        },
+        {
+          "calls": 217,
+          "triangles": 296701,
+          "geometries": 479,
+          "textures": 11,
+          "frameMs": 15.700000000186263
+        },
+        {
+          "calls": 217,
+          "triangles": 296701,
+          "geometries": 479,
+          "textures": 11,
+          "frameMs": 16.799999999813735
+        },
+        {
+          "calls": 217,
+          "triangles": 296701,
+          "geometries": 479,
+          "textures": 11,
+          "frameMs": 739.5
+        }
+      ]
+    },
+    {
+      "name": "khaosan",
+      "pose": {
+        "x": -733.8461538461538,
+        "z": -1580,
+        "heading": 1.5707963267948966,
+        "landmark": "khaosan",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 621,
+          "textures": 11,
+          "frameMs": 799
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 621,
+          "textures": 11,
+          "frameMs": 44.89999999990687
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 621,
+          "textures": 11,
+          "frameMs": 865.3999999999069
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 621,
+          "textures": 11,
+          "frameMs": 700.3000000002794
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 621,
+          "textures": 11,
+          "frameMs": 830.2999999998137
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

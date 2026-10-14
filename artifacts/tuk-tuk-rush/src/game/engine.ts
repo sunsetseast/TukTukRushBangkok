@@ -1,3 +1,4 @@
+import { TurboBoost } from './boost';
 import type { GameModel, GameSnapshot, Mission } from './types';
 import { createBangkokWorld, regionAt, SHIFT_SECONDS } from './bangkok/world';
 import { readDiscovery, discover, type Discovery } from './bangkok/discovery';
@@ -8,6 +9,7 @@ import { createMissions } from './missions';
 
 export class GameEngine {
   readonly model: GameModel;
+  readonly boost = new TurboBoost();
   private controller = new VehicleController();
   private trafficSystem: TrafficSystem;
   private missions: Mission[];
@@ -50,6 +52,7 @@ export class GameEngine {
     if (e.code === 'Escape' || e.code === 'KeyP') {
       if (!e.repeat) { if (this.model.snapshot.phase === 'playing') this.pause(); else if (this.model.snapshot.phase === 'paused') this.resume(); }
     }
+    if (['ShiftLeft','ShiftRight','KeyB'].includes(e.code) && !e.repeat) { e.preventDefault(); this.triggerBoost(); }
     if (e.code === 'KeyR' && !e.repeat) this.recover();
     this.keyboard.add(e.code);
   };
@@ -63,12 +66,12 @@ export class GameEngine {
   }
   private publish() { for (const cb of this.listeners) cb({ ...this.model.snapshot }); }
   start(mode: 'shift' | 'free') {
-    this.clearInput(); this.controller.reset();
+    this.clearInput(); this.controller.reset(); this.boost.reset(); this.trafficSystem.reset();
     Object.assign(this.model.player, createVehicle(this.model.district));
     this.model.traffic = this.trafficSystem.create();
     this.model.missionIndex = 0; this.model.mission = this.missions[0]!;
     Object.assign(this.model.snapshot, {
-      elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
+      viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
       score: 0, earnings: 0, deliveries: 0, boarding: 0, target: this.model.mission.pickup,
       passenger: this.model.mission.passenger, speed: 0,
     });
@@ -80,7 +83,7 @@ export class GameEngine {
   }
   resume() {
     if (this.model.snapshot.phase !== 'paused') return;
-    this.clearInput(); this.model.snapshot.phase = 'playing'; this.publish();
+    this.clearInput(); this.model.snapshot.viewingLandmark=undefined; this.model.snapshot.phase = 'playing'; this.publish();
   }
   restart() { this.start(this.model.snapshot.mode); }
   recover() {
@@ -88,6 +91,18 @@ export class GameEngine {
     this.controller.recover(this.model.player, this.model.district, this.model.traffic);
     this.clearInput(); this.model.snapshot.boarding = 0;
     this.message('Back on the road', 2); this.updateTarget(); this.publish();
+  }
+  triggerBoost() {
+    if(this.model.snapshot.phase!=='playing'||!this.boost.trigger())return false;
+    Object.assign(this.model.snapshot,{boostState:this.boost.state,boostActive:this.boost.active,boostRecharge:this.boost.recharge});this.publish();return true;
+  }
+  canViewPho() {
+    const l=this.model.district.landmarks.find(l=>l.id==='pho'),a=this.model.district.nodes.find(n=>n.id===l?.accessNode);
+    return !!a&&Math.hypot(this.model.player.x-a.x,this.model.player.z-a.z)<65&&Math.abs(this.model.player.speed)<3;
+  }
+  viewPho() {
+    if(this.model.snapshot.phase!=='playing'||!this.canViewPho())return false;
+    this.pause();this.model.snapshot.viewingLandmark='pho';this.publish();return true;
   }
   get intersectionHorizontalGreen() { return this.trafficSystem.horizontalGreen; }
   setQuality(quality: 'low' | 'medium') { this.model.snapshot.quality = quality; this.slowTime = 0; this.publish(); }
@@ -121,7 +136,10 @@ export class GameEngine {
       const brake = input.brake || this.keyboard.has('ArrowDown') || this.keyboard.has('KeyS') || this.keyboard.has('Space');
       const keys = Number(this.keyboard.has('ArrowRight') || this.keyboard.has('KeyD')) - Number(this.keyboard.has('ArrowLeft') || this.keyboard.has('KeyA'));
       this.trafficSystem.update(this.model.traffic, player, dt);
-      this.controller.update(player, { gas, brake, steer: keys || input.steer }, this.model.district, this.model.traffic, dt);
+      const boosted=this.boost.advance(dt), steer=keys || input.steer;
+      if(boosted>0)this.controller.update(player,{gas,brake,steer,boost:true},this.model.district,this.model.traffic,boosted);
+      if(dt>boosted)this.controller.update(player,{gas,brake,steer},this.model.district,this.model.traffic,dt-boosted);
+      s.boostState=this.boost.state;s.boostActive=this.boost.active;s.boostRecharge=this.boost.recharge;
       this.updateTarget();
       s.elapsed = (s.elapsed ?? 0) + dt;
       if (this.model.district.worldId === 'bangkok') {

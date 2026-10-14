@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 Object.assign(globalThis, { window: { addEventListener() {}, removeEventListener() {} }, document: { addEventListener() {}, removeEventListener() {}, hidden: false } });
 const { GameEngine } = await import('../src/game/engine');
 const { routeFromPoint, SHIFT_SECONDS } = await import('../src/game/bangkok/world');
-const e = new GameEngine(); e.start('free'); e.model.traffic.length = 0;
+const {createMissions}=await import('../src/game/missions');
+const e = new GameEngine();const fareCount=createMissions(e.model.district).length; e.start('free'); e.model.traffic.length = 0;
 let frames = 0, metres = 0, collisions = 0;
 const drive = (expected: 'pickup' | 'delivery', goal: number) => {
   const path = routeFromPoint(e.model.district, e.model.player, e.model.snapshot.target).slice(1); let index = 0;
@@ -16,11 +17,11 @@ const drive = (expected: 'pickup' | 'delivery', goal: number) => {
     const x = p.x, z = p.z; e.update(1 / 60); frames++; metres += Math.hypot(p.x - x, p.z - z); if (p.collision) collisions++;
   }
 };
-for (let goal = 1; goal <= 10; goal++) {
+for (let goal = 1; goal <= fareCount; goal++) {
   drive('pickup', goal); assert.equal(e.model.snapshot.stage, 'delivery', `Pickup ${goal} failed`);
   drive('delivery', goal); assert.equal(e.model.snapshot.deliveries, goal, `Delivery ${goal} failed: ${JSON.stringify(e.model.player)}`);
 }
 assert(metres > 2000, 'Drive must cover districts and a river crossing'); assert.equal(collisions, 0, 'Driven routes must clear physical geometry');
 const before = e.model.snapshot.elapsed; e.pause(); for (let i = 0; i < 10; i++) e.update(.05); assert.equal(e.model.snapshot.elapsed, before); e.recover(); assert.equal(e.model.snapshot.phase, 'paused'); e.resume();
 e.start('shift'); assert.equal(e.model.snapshot.shiftTime, SHIFT_SECONDS); e.model.traffic.length = 0; e.update(.05); assert(e.model.snapshot.shiftTime < SHIFT_SECONDS); e.restart(); assert.equal(e.model.snapshot.deliveries, 0); e.dispose();
-console.log(JSON.stringify({ pass: true, drivenFares: 10, noTeleports: true, metres: Math.round(metres), simulatedSeconds: Math.round(frames / 60), collisions, pauseRecoveryRestart: true, trafficDisabledForDeterminism: true }));
+console.log(JSON.stringify({ pass: true, drivenFares: fareCount, noTeleports: true, metres: Math.round(metres), simulatedSeconds: Math.round(frames / 60), collisions, pauseRecoveryRestart: true, trafficDisabledForDeterminism: true }));

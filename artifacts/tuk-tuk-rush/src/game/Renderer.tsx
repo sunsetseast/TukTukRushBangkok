@@ -134,7 +134,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       scene.environmentIntensity = .38 - lighting.night * .2;
       (city as ReturnType<typeof buildBangkokGraybox>).setNight(lighting.night);
       (city as ReturnType<typeof buildBangkokGraybox>).animate(s.elapsed??0,s.quality,engine.intersectionHorizontalGreen);
-      atmosphere!.update(state.camera.position,lighting.night);
+      atmosphere!.update(state.camera.position,lighting.night,THREE.MathUtils.smoothstep(s.elapsed??0,45,150));
       if(sun.current)sun.current.color.set(lighting.night>.6?"#9bb7df":"#ffdeb1");
     }
 
@@ -183,6 +183,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.fov = 56;
     } else {
       const sp = clamp(Math.abs(p.speed) / 31, 0, 1);
+      if(Math.hypot(p.x-c.pos.x,p.z-c.pos.z)>45)c.init=false;
       const snapNow = !c.init;
       if (snapNow) {
         c.heading = p.heading;
@@ -191,7 +192,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       let dh = p.heading - c.heading;
       dh = Math.atan2(Math.sin(dh), Math.cos(dh));
       c.heading += dh * (1 - Math.exp(-4.5 * dt));
-      const dist = 7.8 + 3 * sp,
+      const boosted=s.boostState==='active' ? 1 : 0;
+      const dist = 7.8 + 3 * sp + boosted*.7,
         h = 3.3 + 1.3 * sp;
       const fx = Math.sin(c.heading),
         fz = Math.cos(c.heading);
@@ -236,7 +238,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cp.position.copy(c.pos);
       c.look.set(p.x + fx * 6, 1.4, p.z + fz * 6);
       cp.lookAt(c.look);
-      c.fov += (58 + sp * 14 - c.fov) * (1 - Math.exp(-3 * dt));
+      c.fov += (58 + sp * 14 + boosted*3 - c.fov) * (1 - Math.exp(-3 * dt));
     }
     if (Math.abs(cp.fov - c.fov) > 0.1) {
       cp.fov = c.fov;
@@ -253,6 +255,11 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         cp.lookAt(new THREE.Vector3().fromArray(override.look));
       }
     }
+    if(s.viewingLandmark==='pho') {
+      const l=m.district.landmarks.find(l=>l.id==='pho')!;
+      cp.position.set(l.plot!.x,8,l.plot!.z+21.5);
+      c.look.set(l.plot!.x-2,7.6,l.plot!.z+2);cp.lookAt(c.look);cp.fov=66;cp.updateProjectionMatrix();c.init=false;
+    }
     sky.position.copy(cp.position);
     streets.update(cp.position, s.quality);
     life.update(
@@ -268,7 +275,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cp.far = far;
       cp.updateProjectionMatrix();
     }
-    if(bangkok){state.camera.far=s.quality==="low"?650:850;state.camera.updateProjectionMatrix();}
+
     const fog = scene.fog as THREE.Fog;
     fog.near = bangkok ? 260 : s.quality === "low" ? 95 : 135;
     fog.far = bangkok ? s.quality === "low" ? 600 : 780 : s.quality === "low" ? 205 : 310;

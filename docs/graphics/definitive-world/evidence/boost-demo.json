@@ -1,0 +1,83 @@
+{
+  "input": "Touch BOOST + keyboard throttle, normal chase camera, no pose edits after setup; traffic disabled for this isolated boost demonstration",
+  "samples": [
+    {
+      "name": "ready",
+      "time": 240,
+      "state": "ready",
+      "active": 0,
+      "recharge": 0,
+      "speed": 0,
+      "collision": 0,
+      "position": {
+        "x": 1251.9879526681714,
+        "z": -576.9522154233464
+      }
+    },
+    {
+      "name": "active-start",
+      "time": 240.60309999999973,
+      "state": "active",
+      "active": 5,
+      "recharge": 0,
+      "speed": 2.753470116692869,
+      "collision": 0,
+      "position": {
+        "x": 1252.2437992412993,
+        "z": -576.8144518839697
+      }
+    },
+    {
+      "name": "active-middle",
+      "time": 242.62260000000018,
+      "state": "active",
+      "active": 2.980500000000007,
+      "recharge": 0,
+      "speed": 35.79010750170254,
+      "collision": 0,
+      "position": {
+        "x": 1288.2349673296228,
+        "z": -557.4345921441038
+      }
+    },
+    {
+      "name": "recharging",
+      "time": 245.64930000000098,
+      "state": "recharging",
+      "active": 0,
+      "recharge": 9.953799999999822,
+      "speed": 3.537343114203389,
+      "collision": 0,
+      "position": {
+        "x": 1331.982894063684,
+        "z": -533.8780162103814
+      }
+    },
+    {
+      "name": "recharge-middle",
+      "time": 250.643599999999,
+      "state": "recharging",
+      "active": 0,
+      "recharge": 4.95950000000279,
+      "speed": 2.407412430484045e-35,
+      "collision": 0,
+      "position": {
+        "x": 1335.5073562919504,
+        "z": -531.9802288566998
+      }
+    },
+    {
+      "name": "ready-again",
+      "time": 255.60510000000005,
+      "state": "ready",
+      "active": 0,
+      "recharge": 0,
+      "speed": 0,
+      "collision": 0,
+      "position": {
+        "x": 1335.5073562919504,
+        "z": -531.9802288566998
+      }
+    }
+  ]
+}

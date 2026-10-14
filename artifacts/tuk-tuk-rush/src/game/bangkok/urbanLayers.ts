@@ -1,3 +1,4 @@
+import {regionAt} from './world';
 import { environmentPeople } from "./environmentPlan";
 import type { District, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
@@ -39,6 +40,7 @@ export function emitUrbanLayers(
     });
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   for (const [i, p] of designs.entries()) {
+    if(p.parcel.artRole)continue;
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
@@ -139,11 +141,11 @@ export function bangkokPeople(
       (r) => distanceToSegment(p, r.a, r.b).distance > r.width / 2 + 0.8,
     );
   const people: StreetPerson[] = [];
-  for (const p of designs) {
-    if (!p.hero || p.parcel.artRole || p.bays.every((a) => !a.occupied))
+  for (const p of [...designs].sort((a,b)=>Number(b.corridor==='khaosan')-Number(a.corridor==='khaosan'))) {
+    if ((!p.hero && p.region!=="khaosan") || p.parcel.artRole || p.bays.every((a) => !a.occupied))
       continue;
     const quota =
-      p.region === "chinatown" ? 96 : p.region === "talatnoi" ? 64 : 48;
+      ["chinatown","khaosan"].includes(p.region) ? 96 : p.region === "talatnoi" ? 64 : 48;
     if (
       people.filter(
         (person) =>
@@ -151,13 +153,13 @@ export function bangkokPeople(
       ).length >= quota
     )
       continue;
-    if (p.region !== "chinatown" && p.parcel.x % 3 > 1) continue;
+    if (!["chinatown","khaosan"].includes(p.region) && p.parcel.x % 3 > 1) continue;
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
       s = Math.sin(yaw),
       dist = b.d / 2 + 1.95;
-    for (const off of p.region === "chinatown" ? [-0.28, 0.22] : [0.1]) {
+    for (const off of ["chinatown","khaosan"].includes(p.region) ? [-0.28, 0.22] : [0.1]) {
       const u = b.w * off,
         start = { x: b.x + c * u + s * dist, z: b.z - s * u + c * dist },
         end = { x: start.x + c * 1.7, z: start.z - s * 1.7 };
@@ -181,5 +183,10 @@ export function bangkokPeople(
       );
     }
   }
-  return [...environmentPeople(d), ...people].slice(0,360);
+  const groups=new Map<string,StreetPerson[]>();
+  for(const p of [...environmentPeople(d),...people]){const id=regionAt(d,p.start)?.id??'connector';if(!groups.has(id))groups.set(id,[]);groups.get(id)!.push(p);}
+  const balanced:StreetPerson[]=[];for(let i=0;balanced.length<360;i++){
+    let found=false;for(const group of groups.values())if(group[i]&&balanced.length<360){balanced.push(group[i]!);found=true;}if(!found)break;
+  }
+  return balanced;
 }

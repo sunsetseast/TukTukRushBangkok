@@ -2,6 +2,7 @@ import type { District, Input, TrafficCar, Vehicle } from './types';
 import { nearestRoad, obstacleLocal } from './world';
 import { blockedByRiver } from './bangkok/world';
 import { physicsObstacleIndex } from './bangkok/clearanceIndex';
+import { BOOST_ACCELERATION, BOOST_SPEED_CAP } from './boost';
 import { YAOWARAT_TRACE } from './mapData';
 
 export function createVehicle(district?: District): Vehicle {
@@ -26,10 +27,10 @@ export class VehicleController {
     const oldX = p.x, oldZ = p.z;
     let speed = this.vx * Math.sin(p.heading) + this.vz * Math.cos(p.heading);
     if (input.brake) speed += (speed > 0.6 ? -27 : -9) * dt;
-    else if (input.gas) speed += 14 * dt;
+    else if (input.gas) speed += 14 * (input.boost ? BOOST_ACCELERATION : 1) * dt;
     else speed *= Math.exp(-dt * 0.7);
     speed *= Math.exp(-dt * 0.16);
-    speed = Math.max(-8, Math.min(31, speed));
+    speed = Math.max(-8, Math.min(input.boost ? BOOST_SPEED_CAP : Math.max(31, speed * Math.exp(-dt * .65)), speed));
     if (Math.abs(speed) < 0.08 && !input.gas && !input.brake) speed = 0;
     // A blocked tuk-tuk must still be steerable while creeping or reversing.
     const steeringSpeed = Math.max(Math.abs(speed), p.collision > 0.05 && (input.gas || input.brake) ? 2.2 : 0);
@@ -122,7 +123,7 @@ export class VehicleController {
     p.x = road.point.x; p.z = road.point.z; p.heading = road.heading;
     // Avoid resetting directly inside a traffic vehicle.
     if (traffic.some(t => Math.hypot(t.x - p.x, t.z - p.z) < 5)) {
-      p.x -= Math.cos(p.heading) * 3; p.z += Math.sin(p.heading) * 3;
+      p.x += Math.cos(p.heading) * 3; p.z -= Math.sin(p.heading) * 3;
     }
     p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;
     this.vx = 0; this.vz = 0;

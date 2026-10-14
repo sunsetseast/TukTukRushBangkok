@@ -1,0 +1,13 @@
+$ node scripts/check-assets.mjs
+{
+  "modelBytes": 606816,
+  "triangles": 29068,
+  "materials": 13,
+  "dimensions": [
+    2.1179423332214355,
+    2.451500053405762,
+    3.4935525465011597
+  ],
+  "textureTransferBytes": 328831,
+  "estimatedTextureBytesWithMips": 11010048
+}

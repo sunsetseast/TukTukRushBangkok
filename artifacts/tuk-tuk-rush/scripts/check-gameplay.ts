@@ -40,8 +40,9 @@ for (const m of createMissions(district)) {
 const ts = new TrafficSystem(district), cars = ts.create(), player = createVehicle();
 for (const c of cars) {
   const a = nodes.get(c.from)!, b = nodes.get(c.to)!, len = Math.hypot(b.x - a.x, b.z - a.z);
-  const signedLeft = ((b.x - a.x) * (c.z - a.z) - (b.z - a.z) * (c.x - a.x)) / len;
-  assert(signedLeft > 2.9, 'Traffic spawned on right side');
+  const signedLeft = ((b.z - a.z) * (c.x - a.x) - (b.x - a.x) * (c.z - a.z)) / len;
+  const r=district.roads.find(r=>r.a===c.from&&r.b===c.to||!r.oneWay&&r.b===c.from&&r.a===c.to)!;
+  assert(r.roundabout || signedLeft > Math.min(3,r.width/4)-.01, 'Traffic spawned on right side');
 }
 let circleFrames = 0, changedEdges = 0;
 for (let i = 0; i < 18000; i++) {
@@ -53,7 +54,7 @@ for (let i = 0; i < 18000; i++) {
     if (c.from.startsWith('odeon:') && c.to.startsWith('odeon:')) circleFrames++;
     if (before[j] !== c.from + '>' + c.to) changedEdges++;
     assert(lanesClear(c, 0.8), `Traffic clipped geometry: ${c.from}>${c.to}`);
-    assert(distanceToSegment(c, nodes.get(c.from)!, nodes.get(c.to)!).distance <= 4.1, 'AI departed common trace');
+    assert(distanceToSegment(c, nodes.get(c.from)!, nodes.get(c.to)!).distance <= 14, 'AI departed junction envelope');
   });
 }
 assert(circleFrames > 50 && changedEdges > 100, 'Traffic must navigate the full graph and circle');

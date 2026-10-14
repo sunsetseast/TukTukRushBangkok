@@ -1,0 +1,477 @@
+{
+  "label": "before",
+  "loadMs": 7678.13299,
+  "survey": [
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 234,
+          "triangles": 307378,
+          "geometries": 376,
+          "textures": 10,
+          "frameMs": 319.80000000004657
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-low-twilight.jpg",
+      "samples": [
+        {
+          "calls": 235,
+          "triangles": 307390,
+          "geometries": 377,
+          "textures": 10,
+          "frameMs": 22.9000000001397
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-low-night.jpg",
+      "samples": [
+        {
+          "calls": 235,
+          "triangles": 307390,
+          "geometries": 377,
+          "textures": 10,
+          "frameMs": 15.599999999860302
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 339,
+          "triangles": 429154,
+          "geometries": 377,
+          "textures": 10,
+          "frameMs": 13.800000000046566
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-medium-twilight.jpg",
+      "samples": [
+        {
+          "calls": 340,
+          "triangles": 429166,
+          "geometries": 411,
+          "textures": 10,
+          "frameMs": 277.10000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "chinatown-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 340,
+          "triangles": 429166,
+          "geometries": 411,
+          "textures": 10,
+          "frameMs": 348.79999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 85,
+          "triangles": 79526,
+          "geometries": 449,
+          "textures": 10,
+          "frameMs": 409.10000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "elapsed": 360,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-low-twilight.jpg",
+      "samples": [
+        {
+          "calls": 85,
+          "triangles": 79526,
+          "geometries": 449,
+          "textures": 10,
+          "frameMs": 88.30000000004657
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-low-night.jpg",
+      "samples": [
+        {
+          "calls": 85,
+          "triangles": 79526,
+          "geometries": 449,
+          "textures": 10,
+          "frameMs": 92.4000000001397
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 147,
+          "triangles": 111512,
+          "geometries": 501,
+          "textures": 10,
+          "frameMs": 96.9000000001397
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "elapsed": 360,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-medium-twilight.jpg",
+      "samples": [
+        {
+          "calls": 147,
+          "triangles": 111512,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 66.5
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483
+      },
+      "file": "icon-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 147,
+          "triangles": 111512,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 128.79999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 234,
+          "triangles": 307378,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 45.10000000009313
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "low",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-low-twilight.jpg",
+      "samples": [
+        {
+          "calls": 235,
+          "triangles": 307390,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 11.399999999906868
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-low-night.jpg",
+      "samples": [
+        {
+          "calls": 235,
+          "triangles": 307390,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 15.800000000046564
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 339,
+          "triangles": 429154,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 267.89999999990687
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "medium",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-medium-twilight.jpg",
+      "samples": [
+        {
+          "calls": 340,
+          "triangles": 429166,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 19.100000000093132
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    },
+    {
+      "name": "intersection",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "file": "intersection-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 340,
+          "triangles": 429166,
+          "geometries": 538,
+          "textures": 10,
+          "frameMs": 18.399999999906868
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 109474392,
+        "texturePixels": 2478080,
+        "heapBytes": 188000000
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "environment": "844x390 Chromium SwiftShader, software WebGL, not physical iPhone"
+}

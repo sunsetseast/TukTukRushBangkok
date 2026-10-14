@@ -59,7 +59,7 @@ function App() {
     const id = setInterval(() => {
       const f = read(engine);
       setFrame(f);
-      sfx.update(f.snap.speed / 3.6, engine.model.input.gas, f.snap.phase === 'playing');
+      sfx.update(f.snap.speed / 3.6, engine.model.input.gas, f.snap.phase === 'playing',f.snap.boostState === 'active');
     }, 100);
     const unsub = engine.subscribe((s) => {
       if (s.phase !== phase.current) { phase.current = s.phase; setFrame(read(engine)); }
@@ -98,12 +98,13 @@ function App() {
     <div className={`tt-root ${mapOpen ? 'tt-map-open' : ''}`} ref={root}>
       <Boundary><GameCanvas engine={engine} quality={frame.snap.quality} /></Boundary>
       <div className="tt-ui">
-        {(s.phase === 'playing' || s.phase === 'paused') && (
+        {(s.phase === 'playing' || s.phase === 'paused') && !s.viewingLandmark && (
           <Hud d={engine.model.district} f={frame} shift={s.mode === 'shift'} onMap={engine.model.district.worldId === 'bangkok' ? openMap : undefined} onPause={() => { engine.clearInput(); engine.pause(); }} />
         )}
+        {s.viewingLandmark && <div className="tt-inspection" data-testid="pho-inspection" role="dialog" aria-modal="true" aria-label="Wat Pho Reclining Buddha"><div><b>WAT PHO · RECLINING BUDDHA</b><p>A quiet view inside the viharn. Your shift and boost timers are paused.</p></div><button onClick={()=>engine.resume()}>RETURN TO TUK-TUK</button></div>}
         {s.phase === 'playing' && !mapOpen && <Controls engine={engine} onHorn={() => sfx.horn()} />}
         {s.phase === 'title' && <Title onStart={start} settings={settings} bangkok={engine.model.district.worldId === 'bangkok'} />}
-        {s.phase === 'paused' && !mapOpen && (
+        {s.phase === 'paused' && !s.viewingLandmark && !mapOpen && (
           <PauseMenu onResume={() => engine.resume()} onRestart={() => engine.restart()} onRecover={() => { engine.recover(); engine.resume(); }} settings={settings} />
         )}
         {s.phase === 'ended' && <Results s={s} onAgain={() => engine.restart()} onFree={() => start('free')} />}

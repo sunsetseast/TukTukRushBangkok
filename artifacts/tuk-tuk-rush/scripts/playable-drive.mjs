@@ -138,8 +138,8 @@ export async function playableDrive(page, spec, videoEpoch) {
           t = Math.min(len, progress + 10),
           lane = edge.roundabout ? 0 : Math.min(3, edge.width / 4),
           join = Math.max(0, Math.min(1, t / 5, (len - t) / 5));
-        let tx = a.x + ux * t - uz * lane * join,
-          tz = a.z + uz * t + ux * lane * join;
+        let tx = a.x + ux * t + uz * lane * join,
+          tz = a.z + uz * t - ux * lane * join;
         if (len - progress < 8 && drive.index < route.length - 1) {
           const c = route[drive.index + 1],
             n = Math.hypot(c.x - b.x, c.z - b.z);

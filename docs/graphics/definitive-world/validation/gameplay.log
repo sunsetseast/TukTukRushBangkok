@@ -1,0 +1,3 @@
+$ node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts
+{"pass":true,"nodes":81,"roads":87,"buildings":99,"curvedRoad":true,"clockwiseCircle":true,"leftTraffic":true,"fiveMinuteTrafficEdges":1122,"circleFrames":25069}
+{"pass":true,"actualDrivenDelivery":true,"noTeleports":true,"trafficDisabledForDeterminism":true,"metres":258,"simulatedSeconds":24.816666666666666,"collisionFrames":0,"pauseResumeRestartFreeRide":true}

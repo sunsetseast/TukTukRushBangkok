@@ -68,82 +68,21 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
         shape,
         layer,
       );
-    if (to > from)
-      for (const side of [-1, 1]) {
-        const t = (from + to) / 2;
-        local(side * (r.width / 2 + 3), t, 0.14, 6, 0.16, to - from, "#b8b3a3");
-        local(
-          side * (r.width / 2 + 0.12),
-          t,
-          0.18,
-          0.22,
-          0.09,
-          to - from,
-          "#ded7bb",
-        );
-        local(
-          side * (r.width / 2 - 0.12),
-          t,
-          0.147,
-          0.2,
-          0.01,
-          to - from,
-          "#5d665f",
-        );
-        for (let v = from + 3; v < to; v += 5.3)
-          local(
-            side * (r.width / 2 + 2.8),
-            v,
-            0.227,
-            5.5,
-            0.014,
-            0.045,
-            "#898b7f",
-            0,
-            "box",
-            "detail",
-          );
-        if (seed % 3 === 0) {
-          const v = from + (to - from) * 0.62;
-          local(
-            side * (r.width / 2 - 0.25),
-            v,
-            0.156,
-            0.45,
-            0.025,
-            1.1,
-            "#6d7975",
-          );
-          for (let i = 0; i < 5; i++)
-            local(
-              side * (r.width / 2 - 0.25),
-              v - 0.4 + i * 0.2,
-              0.17,
-              0.43,
-              0.025,
-              0.025,
-              "#344c4c",
-              0,
-              "box",
-              "detail",
-            );
-        }
-      }
     if (seed % 13 === 0)
       local(0, len * 0.55, 0.154, 1, 0.02, 1, "#637274", 0, "cylinder");
-    if (seed % 5 === 0 && !r.oneWay)
+    if (seed % 5 === 0 && !r.oneWay && len > 20 && from < to)
       for (const side of [-1, 1]) {
         const t = len * 0.5;
         local(side * r.width * 0.24, t, 0.155, 0.18, 0.012, 2.5, "#d2cab4");
         local(
           side * r.width * 0.24,
-          t - side * 1.3,
+          t + side * 1.3,
           0.155,
           1,
           0.012,
           1,
           "#d2cab4",
-          side > 0 ? Math.PI : 0,
+          side < 0 ? Math.PI : 0,
           "arrow",
         );
       }
@@ -155,7 +94,7 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       for (let u = -r.width / 2 + 1; u < r.width / 2 - 1; u += 1.35)
         local(u, t, 0.16, 0.78, 0.012, 2.7, "#e4dbc0");
       local(
-        ((r.oneWay ? -1 : 1) * r.width) / 4,
+        ((r.oneWay ? 1 : -1) * r.width) / 4,
         r.oneWay ? t - 2.5 : t + 2.5,
         0.16,
         r.width / 2 - 1,
@@ -244,6 +183,14 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       );
       B(0, 1.3, -0.25, 0.55, 0.17, 0.85, "#3e4d4b");
       B(0, 1.5, 0.6, 1.05, 0.09, 0.15, "#687b78");
+    } else if(site.kind==='clothing') {
+      B(0,2.9,0,b.w,.18,b.d,'#5b9984');
+      for(const u of [-1.3,1.3])B(u,1.5,-.5,.12,2.7,.12,'#667c75');B(0,2.6,-.5,2.8,.12,.12,'#778b7c');
+      for(let i=0;i<6;i++){
+        B(-1.1+i*.44,1.9,-.5,.35,1.1,.08,['#dcae68','#b96d82','#b4c6af','#7795b7'][i%4]!,'box','core');
+        B(-1.1+i*.44,2.35,-.5,.52,.15,.08,'#d9cab4','box','detail');
+      }
+      B(0,.65,.45,2.8,1.1,.65,'#ac9b71');
     } else if (site.kind === "bench") {
       for (const x of [-1.1, 1.1]) B(x, 0.55, 0, 0.25, 0.65, 1, "#566760");
       B(0, 0.87, 0, 3, 0.16, 1, "#89765a");
@@ -267,8 +214,8 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
         noodle: "#479292",
         grill: "#a34d3e",
         fruit: "#b1a84d",
-        tea: "#52766e",
-      }[site.kind as "noodle" | "grill" | "fruit" | "tea"];
+        tea: "#52766e", wok:"#be6b3f",dessert:"#aa7698",
+      }[site.kind as "noodle" | "grill" | "fruit" | "tea" | "wok" | "dessert"];
       B(0, 0.85, 0, b.w - 0.3, 1, b.d - 0.3, col);
       B(0, 1.42, 0, b.w, 0.18, b.d, "#d5cbb6");
       if (site.kind !== "fruit")
@@ -299,12 +246,24 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
             ["#d4b64d", "#a56842", "#69934f"][i % 3]!,
             "orb",
           );
+      } else if(site.kind === 'wok') {
+        B(0,2.9,0,b.w,.2,b.d,'#c77840');
+        B(-.55,1.7,0,1.35,.35,1.2,'#334b4c','orb');
+        B(-.55,1.47,0,1,.17,.8,'#eda65b','box','night');
+        B(.95,1.7,.3,.7,.6,.7,'#d3d1ad','cylinder');
+        B(-1,1.83,.2,.1,.06,1.25,'#73857c','box','detail');
+      } else if(site.kind === 'dessert') {
+        B(0,2.65,0,b.w,.18,b.d,'#b85e83');
+        B(0,2,0,b.w*.9,.9,b.d*.7,'#a9c9bb');
+        for(let i=0;i<6;i++)B(-.9+i*.36,1.75,.6,.27,.22,.4,['#d8b96f','#a7bb5b','#bf7759'][i%3]!,'orb');
       } else {
         B(0, 2.65, 0, b.w * 0.75, 0.18, b.d * 0.75, "#9db69c");
         for (const u of [-0.55, 0.4])
           B(u, 1.83, 0, 0.48, 0.75, 0.48, "#d29c56", "cylinder");
         B(0, 1.75, -0.65, 1.35, 0.42, 0.35, "#c7d7c6");
       }
+      B(0,2.55,-b.d*.4,b.w*.8,.12,.18,'#ffe1a0','box','night');
+      for(let i=0;i<3;i++)B(-.55+i*.5,1.7,b.d*.3,.16,.28,.16,['#a84c3b','#d3ab55','#dfd6b2'][i]!,'cylinder','detail');
       for (const u of [-b.w * 0.32, b.w * 0.32])
         B(u, 0.55, -b.d * 0.37, 0.25, 0.45, 0.25, "#384c45", "orb");
     }
@@ -341,16 +300,11 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
     }
   }
   for (const l of d.landmarks.filter((l) =>
-    ["arun", "pho", "icon", "paragon"].includes(l.id ?? ""),
+    ["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
   )) {
-    const a = nodes.get(l.accessNode!)!,
-      p = l.plot!,
-      len = Math.hypot(p.x - a.x, p.z - a.z),
-      yaw = Math.atan2(p.x - a.x, p.z - a.z),
-      modern = ["icon", "paragon"].includes(l.id!),
-      depth = Math.max(1, len - l.size! * 0.4),
-      cx = (a.x + p.x) / 2,
-      cz = (a.z + p.z) / 2;
+    const a=nodes.get(l.accessNode!)!,p=l.plot!,len=Math.hypot(p.x-a.x,p.z-a.z),yaw=Math.atan2(p.x-a.x,p.z-a.z),modern=['icon','paragon'].includes(l.id!);
+    const start=18,end=Math.max(start,len-l.size!*.55),depth=Math.max(1,end-start),mid=(start+end)/2;
+    const cx=a.x+Math.sin(yaw)*mid,cz=a.z+Math.cos(yaw)*mid;
     // Ground-only civic composition uses the already cleared 24m approach.
     // These low surfaces add no walls or unregistered solid street furniture.
     const paving = (

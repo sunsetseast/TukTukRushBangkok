@@ -1,4 +1,5 @@
 import layout from './layout.json';
+import { completeUrbanFabric } from './urbanCompleteness';
 import { scalaParcel } from './scala';
 import { planEnvironment } from './environmentPlan';
 import { bridgeBarriers } from './bridgeBarriers';
@@ -32,7 +33,9 @@ export function riverDistance(d: District, p: Point) {
 const bridgeCache = new WeakMap<District, { a: Point; b: Point; width: number }[]>();
 /** Render and physics use the same buffered river. Only actual bridge lanes cross water. */
 export function blockedByRiver(d: District, p: Point, radius = 1.5) {
-  if (!d.river || riverDistance(d, p) >= d.riverWidth! / 2 + radius) return false;
+  const main=!!d.river&&riverDistance(d,p)<d.riverWidth!/2+radius;
+  const canal=d.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+radius));
+  if(!main&&!canal)return false;
   let bridges = bridgeCache.get(d);
   if (!bridges) {
     const nodes = new Map(d.nodes.map(n => [n.id, n]));
@@ -42,13 +45,14 @@ export function blockedByRiver(d: District, p: Point, radius = 1.5) {
   return !bridges.some(r => distanceToSegment(p, r.a, r.b).distance <= r.width / 2 - radius);
 }
 const kinds: Record<string, Landmark['kind']> = {
-  chatuchak: 'market', victory: 'monument', khaosan: 'market', democracy: 'monument', sanam: 'park',
+  paknam:'temple',baiyoke:'tower',state:'tower',chatuchak: 'market', victory: 'monument', khaosan: 'market', democracy: 'monument', sanam: 'park',
   palace: 'palace', pho: 'temple', arun: 'temple', golden: 'temple', swing: 'monument', flowers: 'market',
   mbk: 'mall', paragon: 'mall', central: 'mall', gate: 'gate', traimit: 'temple', hua: 'station',
   food: 'market', icon: 'mall', park: 'park', terminal: 'mall', benjakitti: 'park', mahanakhon: 'tower', asiatique: 'wheel',
 };
 
 export function createBangkokWorld(): District {
+  const canals=layout.canals.map(c=>({points:c.centerline.map(toWorld),width:c.design_width*SCALE}));
   const controls = Object.fromEntries(Object.entries(layout.road_nodes).map(([id, p]) => [id, toWorld(p)]));
   const segments: Segment[] = [];
   for (const corridor of layout.road_corridors) {
@@ -94,7 +98,11 @@ export function createBangkokWorld(): District {
       let previous = getNode(a);
       for (let j = 1; j <= count; j++) {
         const next = getNode(mix(a, b, j / count));
-        if (next.id !== previous.id) roads.push({ ...s.road, a: previous.id, b: next.id });
+        if (next.id !== previous.id) {
+          const middle={x:(previous.x+next.x)/2,z:(previous.z+next.z)/2},half=Math.hypot(next.x-previous.x,next.z-previous.z)/2;
+          const canalBridge=canals.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(middle,c.points[i]!,b).distance<c.width/2+half+3));
+          roads.push({ ...s.road, bridge:s.road.bridge||canalBridge,a: previous.id, b: next.id });
+        }
         previous = next;
       }
     }
@@ -102,7 +110,7 @@ export function createBangkokWorld(): District {
   const river = layout.river.centerline.map(toWorld), riverWidth = layout.river.design_width * SCALE;
   const regions = layout.districts.map(r => ({ id: r.id, name: r.name, color: r.color, polygon: r.polygon.map(toWorld) }));
   const landmarks: Landmark[] = layout.landmarks.map(l => ({ ...toWorld(l.position), id: l.id, name: l.name, kind: kinds[l.id]! }));
-  const world: District = { worldId: 'bangkok', nodes, roads, river, riverWidth, regions, landmarks, buildings: [], obstacles: [],
+  const world: District = { worldId: 'bangkok', nodes, roads, river, riverWidth, canals, regions, landmarks, buildings: [], obstacles: [],
     bounds: { minX: -1980, maxX: 1980, minZ: -2380, maxZ: 2380 } };
   const byId = new Map(nodes.map(n => [n.id, n]));
   world.obstacles.push(
@@ -116,7 +124,7 @@ export function createBangkokWorld(): District {
   for (const l of landmarks) {
     l.accessNode = nodes.reduce((best, n) => Math.hypot(n.x - l.x, n.z - l.z) < Math.hypot(best.x - l.x, best.z - l.z) ? n : best).id;
     if (l.kind === 'park') { l.size = 50; continue; }
-    const size = l.kind === 'palace' ? 135 : l.kind === 'tower' ? 40 : l.kind === 'mall' ? 65 : l.kind === 'station' ? 70 : l.kind === 'temple' ? 50 : l.kind === 'gate' ? 28 : l.kind === 'wheel' ? 45 : 30;
+    const size = l.id==='paknam' ? 90 : l.kind === 'palace' ? 135 : l.kind === 'tower' ? 40 : l.kind === 'mall' ? 65 : l.kind === 'station' ? 70 : l.kind === 'temple' ? 50 : l.kind === 'gate' ? 28 : l.kind === 'wheel' ? 45 : 30;
     const radius = size * Math.SQRT2 / 2;
     let plot: Point | undefined;
     // Site pins/roadside approaches are not building centers. Fit a meaningful
@@ -125,10 +133,11 @@ export function createBangkokWorld(): District {
       for (let direction = 0; direction < 16; direction++) {
         const angle = direction * Math.PI * 2 / 16;
         const candidate = { x: l.x + Math.cos(angle) * distance, z: l.z + Math.sin(angle) * distance };
+        if (world.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(candidate,c.points[i]!,b).distance<c.width/2+radius+3))) continue;
         if (bank(candidate) !== bank(l) || riverDistance(world, candidate) < riverWidth / 2 + radius + 3) continue;
         if (candidate.x < world.bounds!.minX + radius || candidate.x > world.bounds!.maxX - radius || candidate.z < world.bounds!.minZ + radius || candidate.z > world.bounds!.maxZ - radius) continue;
         if (roads.some(r => distanceToSegment(candidate, byId.get(r.a)!, byId.get(r.b)!).distance < r.width / 2 + radius + (l.kind === 'gate' ? 1.5 : 3))) continue;
-        const footprint: Obstacle = { ...candidate, w: size, d: size, height: l.kind === 'tower' ? 100 : l.kind === 'palace' ? 28 : 18, color: '#dfbd83', landmarkId: l.id };
+        const footprint: Obstacle = { ...candidate, w: size, d: size, height: l.id==='paknam'?80:l.kind === 'tower' ? 150 : l.kind === 'palace' ? 28 : 18, color: '#dfbd83', landmarkId: l.id };
         if (world.obstacles.some(o => orientedFootprintsOverlap(o, footprint, 3))) continue;
         plot = candidate; world.obstacles.push(footprint); break;
       }
@@ -137,6 +146,7 @@ export function createBangkokWorld(): District {
     }
     if (!plot) throw new Error(`No safe landmark parcel: ${l.id}`);
     l.size = size; l.plot = plot;
+    if(l.id==='paknam'){const a=byId.get(l.accessNode!)!;l.yaw=Math.atan2(a.x-plot.x,a.z-plot.z);world.obstacles.find(o=>o.landmarkId===l.id)!.yaw=l.yaw;}
   }
   // Streets are assembled as nearly attached commercial rows, not isolated
   // blocks every 54 metres. All facade masses remain in the real collision map.
@@ -159,7 +169,7 @@ export function createBangkokWorld(): District {
         color: region?.color ?? '#b5ad9c', regionId: region?.id,
       };
       index++;
-      if (riverDistance(world, p) < riverWidth / 2 + 18) continue;
+      if (riverDistance(world, p) < riverWidth / 2 + 18 || world.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+18))) continue;
       // The nearest possible rotated corner is ~15.6m from the center.
       // Leave at least 2m beyond the asphalt edge, including intersections.
       if (roads.some(r => distanceToSegment(p, byId.get(r.a)!, byId.get(r.b)!).distance < r.width / 2 + 16)) continue;
@@ -177,7 +187,7 @@ export function createBangkokWorld(): District {
     const p = { x: b.x - Math.sin(yaw) * 29, z: b.z - Math.cos(yaw) * 29 };
     const infill: Obstacle = { ...b, ...p, w: 21, d: 19, height: b.height * .75, artRole: 'background' };
     if (p.x < world.bounds!.minX+20 || p.x > world.bounds!.maxX-20 || p.z < world.bounds!.minZ+20 || p.z > world.bounds!.maxZ-20) continue;
-    if (riverDistance(world,p) < riverWidth/2+18) continue;
+    if (riverDistance(world,p) < riverWidth/2+18 || world.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+18))) continue;
     if (roads.some(r=>distanceToSegment(p,byId.get(r.a)!,byId.get(r.b)!).distance<r.width/2+17)) continue;
     if (world.obstacles.some(o=>orientedFootprintsOverlap(o,infill,1.3))) continue;
     world.buildings.push(infill); world.obstacles.push(infill);
@@ -194,11 +204,13 @@ export function createBangkokWorld(): District {
   }
   const spawnRoad = roads.find(r => r.corridor === 'yaowarat')!;
   const spawn = byId.get(spawnRoad.a)!, next = byId.get(spawnRoad.b)!;
-  world.spawn = { ...spawn, heading: Math.atan2(next.x - spawn.x, next.z - spawn.z) };
-  const approaches=landmarks.filter(l=>['arun','pho','icon','paragon'].includes(l.id!)).map(l=>{const a=byId.get(l.accessNode!)!,p=l.plot!,length=Math.hypot(p.x-a.x,p.z-a.z);return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:24,d:Math.max(0,length-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};});
+  const heading=Math.atan2(next.x-spawn.x,next.z-spawn.z);
+  world.spawn = { x:spawn.x+Math.sin(heading)*5+Math.cos(heading)*3, z:spawn.z+Math.cos(heading)*5-Math.sin(heading)*3, heading };
+  const approaches=landmarks.filter(l=>['arun','pho','icon','paragon','paknam'].includes(l.id!)).map(l=>{const a=byId.get(l.accessNode!)!,p=l.plot!,length=Math.hypot(p.x-a.x,p.z-a.z);return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:24,d:Math.max(0,length-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};});
   const hidden=new Set(world.buildings.filter(b=>approaches.some(a=>a.d>1&&orientedFootprintsOverlap(a,b))));
   world.buildings=world.buildings.filter(b=>!hidden.has(b));world.obstacles=world.obstacles.filter(b=>!hidden.has(b));
   scalaParcel(world).height=36;
+  (world as District & {completeness?:unknown}).completeness=completeUrbanFabric(world);
   world.obstacles.push(...bridgeBarriers(world));planEnvironment(world);
   return world;
 }
@@ -209,6 +221,6 @@ export function routeFromPoint(d: District, p: Point, target: RoadNode): Point[]
     distanceToSegment(p, nodes.get(best.a)!, nodes.get(best.b)!).distance ? r : best);
   const projection = distanceToSegment(p, nodes.get(road.a)!, nodes.get(road.b)!).point;
   const length = (ps: Point[]) => ps.slice(1).reduce((sum, b, i) => sum + Math.hypot(b.x - ps[i]!.x, b.z - ps[i]!.z), 0);
-  const choices = [road.a, road.b].map(id => [projection, ...routeBetween(d, id, target.id), target]);
+  const choices = (road.oneWay ? [road.b] : [road.a, road.b]).map(id => [projection, ...routeBetween(d, id, target.id), target]);
   return [p, ...choices.sort((a, b) => length(a) - length(b))[0]!];
 }
