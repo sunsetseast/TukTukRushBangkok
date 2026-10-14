@@ -5,7 +5,7 @@ import { stableHash } from "./buildingGrammar";
 /** Sagged bundles terminate at real frontage posts; no low roadway wires. */
 export function emitCables(d: District, emit: (p: ArtPiece) => void) {
   const row = d.buildings.filter(
-    (b) => !b.artRole && ["chinatown", "talatnoi"].includes(b.regionId ?? ""),
+    (b) => !b.artRole && ["chinatown", "talatnoi", "khaosan"].includes(b.regionId ?? ""),
   );
   for (let i = 0; i < row.length; i++) {
     const a = row[i]!,

@@ -1,9 +1,12 @@
+import { buddhaLandmark } from './buddhaLandmarks';
+import { skylineLandmark, civicLandmark } from './skylineLandmarks';
 import * as T from "three";
 import type { Landmark } from "../types";
 import { LandmarkBuilder } from "./landmarkBuilder";
 
 /** Site-specific original arcade assets; proportions compress the real places. */
 export function sculptedLandmark(l: Landmark) {
+  const special=buddhaLandmark(l)??skylineLandmark(l)??civicLandmark(l);if(special)return special;
   if (
     ![
       "gate",

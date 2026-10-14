@@ -48,7 +48,7 @@ export function emitDistrictArchitecture(
       s = Math.sin(yaw);
     if (b.artRole === "background") {
       const a = p.bays[0]!,
-        H = Math.min(a.height, 31),
+        H = ["siam","silom","sukhumvit"].includes(p.region)?Math.min(b.height,80):Math.min(a.height,31),
         F = b.d / 2;
       const put = (
         u: number,
@@ -81,6 +81,7 @@ export function emitDistrictArchitecture(
         put(u, H * 0.6, F + 0.01, 2.2, 2.8, 0.08, "#47645e");
         put(u, H * 0.25, F + 0.01, 2.2, 2.8, 0.08, a.trim);
       }
+      if(['siam','silom','sukhumvit'].includes(p.region))for(let y=6;y<H-1;y+=6)for(const side of [-1,1])emit({x:b.x+s*side*(b.d/2+.04),y,z:b.z+c*side*(b.d/2+.04),w:b.w*.84,h:.8,d:.1,color:y%12?'#91c7be':'#e3bc81',yaw,layer:'night',surface:'panel'});
       continue;
     }
     for (const a of p.bays) {

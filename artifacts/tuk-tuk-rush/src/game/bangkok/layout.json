@@ -1,6 +1,6 @@
 {
   "title": "Tuk Tuk Rush - Compact Bangkok Layout v1",
-  "status": "proposed_design_not_implemented",
+  "status": "implemented_compact_arcade_layout",
   "coordinate_system": {
     "type": "compressed_design",
     "x": "east",
@@ -390,6 +390,30 @@
         ]
       ],
       "boundary_type": "gameplay_region_not_administrative"
+    },
+    {
+      "id": "paknam",
+      "name": "PHASI CHAROEN / CANALS",
+      "color": "#71965c",
+      "polygon": [
+        [
+          12,
+          620
+        ],
+        [
+          135,
+          620
+        ],
+        [
+          160,
+          805
+        ],
+        [
+          12,
+          820
+        ]
+      ],
+      "boundary_type": "gameplay_region_not_administrative"
     }
   ],
   "road_nodes": {
@@ -596,6 +620,22 @@
     "asiatique_access": [
       410,
       1100
+    ],
+    "khaosan_w": [
+      275,
+      205
+    ],
+    "khaosan_e": [
+      365,
+      205
+    ],
+    "paknam_link": [
+      80,
+      665
+    ],
+    "paknam_access": [
+      80,
+      740
     ]
   },
   "road_corridors": [
@@ -954,6 +994,30 @@
       ],
       "kind": "shortcut",
       "geography_basis": "invented_gameplay_connector"
+    },
+    {
+      "id": "khaosan",
+      "name": "Khao San / Chakrabongse approach",
+      "nodes": [
+        "pinklao_e",
+        "khaosan_w",
+        "khaosan_e",
+        "democracy"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "paknam",
+      "name": "Thonburi / Wat Paknam approach",
+      "nodes": [
+        "west_link",
+        "paknam_link",
+        "paknam_access",
+        "icon_road"
+      ],
+      "kind": "district",
+      "geography_basis": "real_corridor_compressed"
     }
   ],
   "landmarks": [
@@ -1148,6 +1212,30 @@
         410,
         1100
       ]
+    },
+    {
+      "id": "paknam",
+      "name": "Wat Paknam / Big Buddha",
+      "position": [
+        55,
+        722
+      ]
+    },
+    {
+      "id": "baiyoke",
+      "name": "Baiyoke Tower II",
+      "position": [
+        755,
+        365
+      ]
+    },
+    {
+      "id": "state",
+      "name": "State Tower / Lebua",
+      "position": [
+        550,
+        895
+      ]
     }
   ],
   "notes": [
@@ -1158,5 +1246,33 @@
     "No driving through temple courts, park interiors, pedestrian market lanes or expressways.",
     "Passenger ferries are scenery, not vehicle crossings. Bridges are the driving crossings.",
     "Roads tagged invented_gameplay_connector must remain explicitly fictional."
+  ],
+  "canals": [
+    {
+      "name": "Khlong Bangkok Yai / Phasi Charoen (compressed)",
+      "centerline": [
+        [
+          250,
+          640
+        ],
+        [
+          125,
+          645
+        ],
+        [
+          65,
+          655
+        ],
+        [
+          42,
+          720
+        ],
+        [
+          80,
+          785
+        ]
+      ],
+      "design_width": 8
+    }
   ]
 }

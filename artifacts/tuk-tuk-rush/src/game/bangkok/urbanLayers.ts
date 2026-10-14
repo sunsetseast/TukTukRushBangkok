@@ -39,6 +39,7 @@ export function emitUrbanLayers(
     });
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   for (const [i, p] of designs.entries()) {
+    if(p.parcel.artRole)continue;
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
@@ -140,10 +141,10 @@ export function bangkokPeople(
     );
   const people: StreetPerson[] = [];
   for (const p of designs) {
-    if (!p.hero || p.parcel.artRole || p.bays.every((a) => !a.occupied))
+    if ((!p.hero && p.region!=="khaosan") || p.parcel.artRole || p.bays.every((a) => !a.occupied))
       continue;
     const quota =
-      p.region === "chinatown" ? 96 : p.region === "talatnoi" ? 64 : 48;
+      ["chinatown","khaosan"].includes(p.region) ? 96 : p.region === "talatnoi" ? 64 : 48;
     if (
       people.filter(
         (person) =>
@@ -151,13 +152,13 @@ export function bangkokPeople(
       ).length >= quota
     )
       continue;
-    if (p.region !== "chinatown" && p.parcel.x % 3 > 1) continue;
+    if (!["chinatown","khaosan"].includes(p.region) && p.parcel.x % 3 > 1) continue;
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
       s = Math.sin(yaw),
       dist = b.d / 2 + 1.95;
-    for (const off of p.region === "chinatown" ? [-0.28, 0.22] : [0.1]) {
+    for (const off of ["chinatown","khaosan"].includes(p.region) ? [-0.28, 0.22] : [0.1]) {
       const u = b.w * off,
         start = { x: b.x + c * u + s * dist, z: b.z - s * u + c * dist },
         end = { x: start.x + c * 1.7, z: start.z - s * 1.7 };

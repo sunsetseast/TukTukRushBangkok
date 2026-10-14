@@ -3,8 +3,9 @@ import { riverWater,riverMotion,emitRiverfront } from "./riverfront";
 import { emitBridges } from "./bridgeArt";
 import { environmentEffects } from "./environmentEffects";
 import { emitEnvironment } from "./environmentArt";
+import { emitDistrictSigns } from './districtSigns';
 import { emitCables } from "./environmentCables";
-import { asphaltMaterial } from "./streetSurfaces";
+import { buildRoadSurfaces } from "./roadSurfaceGraph";
 import { sculptedLandmark } from "./sculptedLandmarks";
 import { scalaParcel, emitScala, buildScalaSigns } from "./scala";
 import type { District, Landmark } from "../types";
@@ -42,7 +43,7 @@ export function buildBangkokGraybox(
     nightBatch = new StaticBatch();
   const unit = new T.BoxGeometry(1, 1, 1),
     temp = new T.Object3D();
-  const material = new T.MeshStandardMaterial({ roughness: 0.9 }), asphalt=asphaltMaterial();
+  const material = new T.MeshStandardMaterial({ roughness: 0.9 });
   const nightMaterial = new T.MeshStandardMaterial({
     roughness: 0.38,
     metalness: 0.12,
@@ -83,28 +84,8 @@ export function buildBangkokGraybox(
       widths.set(id, Math.max(widths.get(id) ?? 0, r.width));
       degrees.set(id, (degrees.get(id) ?? 0) + 1);
     }
-    add(
-      x,
-      -0.02,
-      z,
-      r.width + 12,
-      0.16,
-      len + 0.5,
-      r.bridge ? "#bbcbc9" : "#aaa79b",
-      yaw,
-    );
-    add(
-      x,
-      0.08,
-      z,
-      r.width,
-      0.12,
-      len + 0.7,
-      r.shortcut ? "#796857" : "#ffffff",
-      yaw, batch, r.shortcut?material:asphalt,
-    );
     if (!r.shortcut && !r.oneWay && !r.roundabout)
-      for (let t = 8; t < len - 4; t += 12)
+      for (let t = (degrees.get(r.a)! > 2 ? 15 : 2); t < len - (degrees.get(r.b)! > 2 ? 15 : 2); t += 12)
         add(
           a.x + (dx * t) / len,
           0.155,
@@ -117,22 +98,7 @@ export function buildBangkokGraybox(
         );
 
   }
-  const disc = new T.CylinderGeometry(1, 1, 0.12, 20);
-  for (const [id, degree] of degrees)
-    if (degree > 2) {
-      const n = nodes.get(id)!,
-        width = widths.get(id)!;
-      temp.position.set(n.x, 0.08, n.z);
-      temp.rotation.set(0, 0, 0);
-      temp.scale.set(width / 2, 1, width / 2);
-      temp.updateMatrix();
-      batch.add(
-        disc,
-        material,
-        [temp.matrix.clone()],
-        [new T.Color("#343e49")],
-      );
-    }
+  group.add(buildRoadSurfaces(d));
   const waterStyle=riverWater(),water=waterStyle.material,
     waterDisc = new T.CylinderGeometry(1, 1, 0.04, 32);
   for (let i = 1; i < d.river!.length; i++) {
@@ -151,6 +117,11 @@ export function buildBangkokGraybox(
       temp.updateMatrix();
       batch.add(waterDisc, water, [temp.matrix.clone()]);
     }
+  }
+  for(const canal of d.canals??[])for(let i=1;i<canal.points.length;i++){
+    const a=canal.points[i-1]!,b=canal.points[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);
+    temp.position.set((a.x+b.x)/2,-.15,(a.z+b.z)/2);temp.rotation.set(0,Math.atan2(b.x-a.x,b.z-a.z),0);temp.scale.set(canal.width,.04,len+.1);temp.updateMatrix();batch.add(unit,water,[temp.matrix.clone()]);
+    for(const p of [a,b]){temp.position.set(p.x,-.15,p.z);temp.rotation.set(0,0,0);temp.scale.set(canal.width/2,1,canal.width/2);temp.updateMatrix();batch.add(waterDisc,water,[temp.matrix.clone()]);}
   }
   const designs = designBuildings(d);
   const surfaceMap = architecturalSurfaceMap();
@@ -171,6 +142,7 @@ export function buildBangkokGraybox(
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d,piece=>architecture.add(piece));
   emitCables(d,piece=>architecture.add(piece));
+  emitDistrictSigns(ordinary,piece=>architecture.add(piece));
   emitRiverfront(d,piece=>architecture.add(piece));
   emitBridges(d,piece=>architecture.add(piece));
   for (const l of d.landmarks.filter((l) => l.kind === "mall")) {
@@ -263,10 +235,11 @@ export function buildBangkokGraybox(
   }
   const scalaSigns=buildScalaSigns(scala);group.add(scalaSigns);
   const motion=riverMotion(d),effects=environmentEffects(d);group.add(motion.root,effects.root);
-  let lightLevel=0,horizontalGreen=true;
+  let lightLevel=0,horizontalGreen=true,animationTime=0;
   const heroes = d.landmarks.map((l) => {
     const root = blockout(l);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
+    root.rotation.y=l.yaw??0;
     root.name = `BangkokLandmark:${l.id}`;
     group.add(root);
     return root;
@@ -304,7 +277,7 @@ export function buildBangkokGraybox(
     lastNight = -1;
   return {
     group,
-    animate(time:number,quality:string,green:boolean){horizontalGreen=green;motion.update(time,quality);waterStyle.time.value=time;},
+    animate(time:number,quality:string,green:boolean){horizontalGreen=green;animationTime=time;motion.update(time,quality);waterStyle.time.value=time;},
     setNight(night: number) {
       waterStyle.night.value=night;lightLevel=night;
       if (Math.abs(night - lastNight) < 0.015) return;
@@ -312,7 +285,7 @@ export function buildBangkokGraybox(
       for (const mat of new Set(glowing))
         mat.emissiveIntensity = Math.max(0, night) * 1.55;
       for (const hero of heroes) {
-        for(const m of hero.userData.nightMaterials ?? [])m.emissiveIntensity=night*.75;
+        for(const m of hero.userData.nightMaterials ?? [])m.emissiveIntensity=night*(hero.userData.nightScale??.75);
         const mat = hero.userData.nightMaterial as
           T.MeshStandardMaterial | undefined;
         if (mat) {
@@ -327,7 +300,7 @@ export function buildBangkokGraybox(
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.55;
     },
     update(camera, quality) {
-      effects.update(camera,quality,lightLevel,horizontalGreen);
+      effects.update(camera,quality,lightLevel,horizontalGreen,animationTime);
       if (
         Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 &&
         quality === lastQuality
@@ -457,16 +430,16 @@ function blockout(l: Landmark) {
   return g;
 }
 export function shiftLighting(elapsed: number) {
-  const blue = T.MathUtils.smoothstep(elapsed, 0, 4 * 60),
-    night = T.MathUtils.smoothstep(elapsed, 4 * 60, 9 * 60);
+  const blue = T.MathUtils.smoothstep(elapsed, 0, 150),
+    night = T.MathUtils.smoothstep(elapsed, 60, 240);
   const sky = new T.Color("#c99585")
     .lerp(new T.Color("#576482"), blue)
     .lerp(new T.Color("#17263d"), night);
   return {
     sky,
     night,
-    ambient: 1.15 - night * 0.64,
-    sun: 1.8 - blue * 0.7 - night * 0.89,
+    ambient: 1.15 - night * 0.48,
+    sun: 1.8 - blue * 0.7 - night * 0.76,
     exposure: 0.9 + night * 0.12,
   };
 }

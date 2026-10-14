@@ -269,7 +269,7 @@ export function designBuildings(d: District): ParcelDesign[] {
     const id = buildingIdentity(b),
       seed = stableHash(id),
       region = b.regionId ?? "connector",
-      g = GRAMMARS[region] ?? GRAMMARS.connector!;
+      g = GRAMMARS[region] ?? (region==='paknam'?GRAMMARS.westbank!:GRAMMARS.connector!);
     const road = roads.reduce((best, r) =>
       distanceToSegment(b, r.a, r.b).distance <
       distanceToSegment(b, best.a, best.b).distance
@@ -284,7 +284,7 @@ export function designBuildings(d: District): ParcelDesign[] {
             l.id === h.landmark && Math.hypot(l.x - b.x, l.z - b.z) < h.radius,
         ),
     );
-    const count = g.bayCount[seed % g.bayCount.length]!;
+    const count = Math.min(g.bayCount[seed % g.bayCount.length]!,Math.max(1,Math.floor(b.w/5.5)));
     const weights = Array.from(
         { length: count },
         (_, i) => 0.8 + (stableHash(`${id}:width:${i}`) % 9) / 20,

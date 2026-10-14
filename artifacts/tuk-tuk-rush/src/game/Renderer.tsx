@@ -183,6 +183,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.fov = 56;
     } else {
       const sp = clamp(Math.abs(p.speed) / 31, 0, 1);
+      if(Math.hypot(p.x-c.pos.x,p.z-c.pos.z)>45)c.init=false;
       const snapNow = !c.init;
       if (snapNow) {
         c.heading = p.heading;

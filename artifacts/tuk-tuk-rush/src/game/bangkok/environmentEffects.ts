@@ -6,7 +6,7 @@ export function environmentEffects(d: District) {
   const root = new T.Group(),
     sites = planEnvironment(d),
     lamps = sites.filter((s) =>
-      ["lamp", "noodle", "grill", "tea"].includes(s.kind),
+      ["lamp", "noodle", "grill", "tea", "wok", "dessert"].includes(s.kind),
     ),
     signals = sites.filter((s) => s.kind === "signal"),
     night = { value: 0 };
@@ -39,6 +39,10 @@ export function environmentEffects(d: District) {
   lenses.userData.environmentEffect = true;
   lenses.frustumCulled = false;
   root.add(lenses);
+  const cooking=sites.filter(s=>['noodle','grill','wok'].includes(s.kind)),steamPositions=new Float32Array(32*3);
+  const steamGeo=new T.BufferGeometry();steamGeo.setAttribute('position',new T.BufferAttribute(steamPositions,3));
+  const steam=new T.Points(steamGeo,new T.PointsMaterial({color:'#e3d5c1',size:.6,transparent:true,opacity:.22,depthWrite:false}));
+  steam.name='BangkokCookingSteam';steam.frustumCulled=false;root.add(steam);
   const temp = new T.Object3D(),
     color = new T.Color();
   return {
@@ -48,8 +52,14 @@ export function environmentEffects(d: District) {
       quality: string,
       n: number,
       horizontalGreen: boolean,
+      time=0,
     ) {
       night.value = n;
+      let particle=0;
+      for(const site of cooking){if(particle>=(quality==='low'?16:32)||Math.hypot(site.body.x-camera.x,site.body.z-camera.z)>70)continue;
+        for(let j=0;j<3&&particle<32;j++){const life=(time*.4+j*.33+site.seed*.01)%1,idx=particle++*3;steamPositions[idx]=site.body.x+Math.sin(time+site.seed+j)*.28;steamPositions[idx+1]=1.8+life*1.9;steamPositions[idx+2]=site.body.z+Math.cos(time*.7+j)*.2;}
+      }
+      steamGeo.setDrawRange(0,particle);steamGeo.attributes.position!.needsUpdate=true;
       let slot = 0;
       for (const l of lamps) {
         if (

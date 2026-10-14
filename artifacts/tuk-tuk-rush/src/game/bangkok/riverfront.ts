@@ -66,8 +66,8 @@ export function boatRoutes(d: District) {
 }
 function boat(kind: number) {
   const b = new LandmarkBuilder(),
-    W = kind === 1 ? 5 : 3.4,
-    L = kind === 1 ? 22 : kind === 0 ? 18 : 11,
+    W = kind === 3 ? 6 : kind === 1 ? 5 : 3.4,
+    L = kind === 3 ? 25 : kind === 1 ? 22 : kind === 0 ? 18 : 11,
     s = new T.Shape([
       new T.Vector2(-W * 0.35, L * 0.5),
       new T.Vector2(W * 0.35, L * 0.5),
@@ -103,6 +103,12 @@ function boat(kind: number) {
     b.box(0, 0.8, -1, W * 0.75, 0.5, 4, "#687d62");
     b.box(0, 1.7, -1, W * 0.8, 0.2, 4.5, "#b99054");
   }
+  if(kind===3){
+    b.box(0,2,0,5,2,16,'#c7dbd7');
+    for(let z=-6;z<=6;z+=2)for(const side of [-1,1])b.box(side*2.52,2.2,z,.12,1.2,1.5,'#4b8d9c');
+    b.box(0,3.4,0,5.6,.25,17,'#d5d8bf');b.box(0,3.7,-5,3.3,.5,3,'#376c83');
+  }
+  if(kind===4){b.box(0,2.8,0,3.1,.35,7.5,'#df854a');b.box(0,1.6,2.5,2.8,1.7,1.7,'#599c9b');}
   if (kind === 0) {
     b.box(0, 0.65, -L * 0.46, 0.85, 0.85, 1.5, "#3c514c");
     b.box(0, 0.25, -L * 0.61, 0.15, 0.15, 4.2, "#657d71");
@@ -112,9 +118,11 @@ function boat(kind: number) {
 export function riverMotion(d: District) {
   const root = new T.Group();
   root.name = "BangkokRiverCraft";
-  const routes = boatRoutes(d),
+  const routes = [...boatRoutes(d),...(d.canals??[]).flatMap(c=>c.points.slice(1,3).map((b,i)=>{
+      const a=c.points[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);return {center:{x:(a.x+b.x)/2,z:(a.z+b.z)/2},dx:(b.x-a.x)/len,dz:(b.z-a.z)/len,length:Math.min(36,len*.18),phase:i*.2,period:115};
+    }))],
     boats = routes.map((r, i) => {
-      const g = boat(i % 3);
+      const g = boat(i>=7?0:i%5);
       root.add(g);
       return g;
     }),
@@ -161,16 +169,16 @@ export function riverWater() {
       "varying vec2 riverWorld;\n" +
       shader.vertexShader.replace(
         "#include <begin_vertex>",
-        "#include <begin_vertex>\nriverWorld=(modelMatrix*vec4(position,1.)).xz;",
+        "#include <begin_vertex>\nvec4 wp=vec4(position,1.);\n#ifdef USE_INSTANCING\nwp=instanceMatrix*wp;\n#endif\nriverWorld=(modelMatrix*wp).xz;",
       );
     shader.fragmentShader =
       "varying vec2 riverWorld;uniform float riverTime;uniform float riverNight;\n" +
       shader.fragmentShader.replace(
         "#include <color_fragment>",
-        "#include <color_fragment>\nfloat wave=sin(riverWorld.x*.15+sin(riverWorld.y*.07)+riverTime*.7)*sin(riverWorld.y*.22-riverTime*.5); vec3 water=mix(vec3(.11,.28,.31),vec3(.035,.105,.17),riverNight); float streak=pow(max(0.,sin(riverWorld.x*.025+riverWorld.y*.009)),14.)*.09; diffuseColor.rgb=water+wave*.016+vec3(.12,.075,.025)*streak*(.7+riverNight);",
+        "#include <color_fragment>\nfloat wave=sin(riverWorld.x*.15+sin(riverWorld.y*.07)+riverTime*.7)*sin(riverWorld.y*.22-riverTime*.5); vec3 water=mix(vec3(.11,.28,.31),vec3(.035,.105,.17),riverNight); float streak=pow(max(0.,sin(riverWorld.x*.025+riverWorld.y*.009)),14.)*.09; diffuseColor.rgb=water+wave*.016+mix(vec3(.32,.18,.07),vec3(.32,.12,.29),.5+.5*sin(riverWorld.x*.014))*streak*(.7+riverNight*4.);",
       );
   };
-  mat.customProgramCacheKey = () => "living-river-v1";
+  mat.customProgramCacheKey = () => "living-river-v2";
   return { material: mat, time, night };
 }
 export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
@@ -203,7 +211,22 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
         if (!blockedByRiver(d, q, 0.3)) continue;
         put(q, 0.65, 0.18, 1.25, 0.18, "#63776e");
         put(q, 1.2, 0.1, 0.1, 12, "#697d73", yaw);
+        if(Math.floor(t/12)%4===0){
+          put(p,2,.16,3.8,.16,'#55716b');
+          emit({...p,y:4,w:.65,h:.55,d:.65,yaw:0,color:'#f4c98a',surface:'panel',layer:'night'});
+          put(p,.65,1.8,.18,.7,'#9c805b',yaw);
+        }
       }
+  }
+  const nodes=new Map(d.nodes.map(n=>[n.id,n]));
+  for(const canal of d.canals??[])for(let i=1;i<canal.points.length;i++){
+    const a=canal.points[i-1]!,b=canal.points[i]!,len=Math.hypot(b.x-a.x,b.z-a.z),ux=(b.x-a.x)/len,uz=(b.z-a.z)/len,yaw=Math.atan2(ux,uz);
+    for(let t=8;t<len;t+=12)for(const side of [-1,1]){
+      const p={x:a.x+ux*t+uz*(canal.width/2+.5)*side,z:a.z+uz*t-ux*(canal.width/2+.5)*side};
+      if(d.roads.some(r=>distanceToSegment(p,nodes.get(r.a)!,nodes.get(r.b)!).distance<r.width/2+8))continue;
+      put(p,-.65,1.3,1.6,12,'#788977',yaw);put(p,.18,3,.08,12,'#b6b49a',yaw);
+      if(Math.floor(t/12)%4===0)emit({...p,y:.24,w:1,h:.02,d:1,yaw:0,color:'#e8ba6c',surface:'panel',layer:'night'});
+    }
   }
   for (const l of d.landmarks.filter((l) =>
     ["arun", "pho", "icon", "asiatique"].includes(l.id!),
@@ -229,6 +252,9 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
       yaw = Math.atan2(nx, nz) + Math.PI / 2;
     put(p, 0.12, 21, 0.2, 10, "#bfb497", yaw);
     put(p, 2.7, 14, 0.25, 6, "#bfab79", yaw);
+    emit({...p,y:2.55,w:13,h:.12,d:5,yaw,color:'#ffcb84',surface:'panel',layer:'night'});
+    for(let i=0;i<4;i++)put({x:p.x+nx*(4+i),z:p.z+nz*(4+i)},.15-i*.08,16,.16,1.2,'#b7ac94',yaw);
+    for(const side of [-1,1]){const q={x:p.x+Math.cos(yaw)*side*9,z:p.z-Math.sin(yaw)*side*9};put(q,.7,.5,1.4,.5,'#80745a');put(q,1.35,.7,.15,.7,'#626e68');}
     for (const x of [-6, 6])
       for (const z of [-2.3, 2.3]) {
         const q = {

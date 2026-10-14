@@ -9,6 +9,9 @@ import { stableHash } from "./buildingGrammar";
 import { degreeMap } from "../roadGeometry";
 import type { StreetPerson } from "../streetLife";
 export type SiteKind =
+  | "clothing"
+  | "wok"
+  | "dessert"
   | "noodle"
   | "grill"
   | "fruit"
@@ -88,6 +91,7 @@ export function placementIndex(d: District) {
       q = nearby(o, radius + 2);
     return (
       riverDistance(d, o) > d.riverWidth! / 2 + radius + 2 &&
+      !(d.canals??[]).some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(o,c.points[i]!,b).distance<c.width/2+radius+2)) &&
       [...q.os].every((b) => !orientedFootprintsOverlap(o, b, 0.6)) &&
       [...q.rs].every((i) => {
         const { r, a, b } = segments[i]!;
@@ -125,6 +129,8 @@ export function planEnvironment(d: District) {
     axis?: boolean,
   ) => {
     const sizes: Record<SiteKind, [number, number, number]> = {
+      clothing:[3.2,2.6,3],
+      wok:[3.2,2.6,2.8],dessert:[2.8,2.5,2.6],
       noodle: [2.7, 2.3, 2.9],
       grill: [3.3, 2.7, 2.8],
       fruit: [3.5, 2.4, 2.6],
@@ -166,10 +172,10 @@ export function planEnvironment(d: District) {
       z = a.z + Math.cos(yaw) * t,
       region = regionAt(d, { x, z })?.id ?? "residential";
     for (const side of [-1, 1]) {
-      if ((seed + (side + 1) * 3) % 7 > 2) continue;
+      if (!['chinatown','khaosan','talatnoi'].includes(region) && (seed + (side + 1) * 3) % 7 > 2) continue;
       const menu: SiteKind[] =
-        region === "chinatown"
-          ? ["noodle", "grill", "fruit", "tea", "scooter", "lamp"]
+        region === "chinatown" || region === "khaosan"
+          ? ["noodle", "grill", "fruit", "tea", "wok", "dessert", "clothing", "scooter", "lamp"]
           : region === "talatnoi"
             ? ["workshop", "tea", "tree", "scooter", "bench"]
             : ["siam", "icon"].includes(region)
@@ -177,7 +183,7 @@ export function planEnvironment(d: District) {
               : region === "oldtown"
                 ? ["tree", "bench", "lamp", "tea"]
                 : ["tree", "scooter", "tea", "lamp"];
-      const kind = menu[(seed + (side + 1) * 11) % menu.length]!,
+      const kind = (region!=="khaosan"&&menu[(seed+(side+1)*11)%menu.length]==='clothing'?'noodle':menu[(seed + (side + 1) * 11) % menu.length])!,
         off =
           r.width / 2 +
           (["tree", "palm", "lamp", "signal"].includes(kind) ? 3.1 : 4.9);
@@ -209,7 +215,7 @@ export function planEnvironment(d: District) {
     }
   }
   for (const l of d.landmarks.filter((l) =>
-    ["arun", "pho", "icon", "paragon"].includes(l.id ?? ""),
+    ["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
   )) {
     const a = nodes.get(l.accessNode!)!,
       p = l.plot!,
@@ -235,9 +241,9 @@ export function environmentPeople(d: District): StreetPerson[] {
   const index = placementIndex(d),
     people: StreetPerson[] = [];
   for (const site of planEnvironment(d).filter((s) =>
-    ["noodle", "grill", "fruit", "tea"].includes(s.kind),
+    ["noodle", "grill", "fruit", "tea", "wok", "dessert"].includes(s.kind),
   )) {
-    if (people.length >= 80) break;
+    if (people.length >= 140) break;
     const b = site.body,
       yaw = b.yaw ?? 0;
     for (const side of [-1, 1]) {

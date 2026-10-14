@@ -10,7 +10,7 @@ export function createMissions(district: District): Mission[] {
     const a = district.nodes.find(n => n.id === road.a)!, b = district.nodes.find(n => n.id === road.b)!;
     const heading = Math.atan2(b.x - a.x, b.z - a.z);
     const offset = Math.min(road.width / 2 - 2, 7);
-    const p = { ...node, x: node.x - Math.cos(heading) * offset, z: node.z + Math.sin(heading) * offset, name };
+    const p = { ...node, x: node.x + Math.cos(heading) * offset, z: node.z - Math.sin(heading) * offset, name };
     if (district.obstacles.some(o => obstacleDistance(p, o) < 2)) throw new Error(`Blocked passenger stop: ${name}`);
     return p;
   };
@@ -31,12 +31,12 @@ function createBangkokMissions(d: District): Mission[] {
     const landmark = d.landmarks.find(l => l.id === id)!, n = d.nodes.find(n => n.id === landmark.accessNode)!;
     const road = d.roads.find(r => r.a === n.id || r.b === n.id)!, a = d.nodes.find(n => n.id === road.a)!, b = d.nodes.find(n => n.id === road.b)!;
     const heading = Math.atan2(b.x - a.x, b.z - a.z), offset = Math.min(3, road.width / 2 - 2);
-    let p = { ...n, x: n.x - Math.cos(heading) * offset, z: n.z + Math.sin(heading) * offset, name: `${landmark.name} · roadside stop` };
+    let p = { ...n, x: n.x + Math.cos(heading) * offset, z: n.z - Math.sin(heading) * offset, name: `${landmark.name} · roadside stop` };
     if (d.obstacles.some(o => obstacleDistance(p, o) < 2)) p = { ...n, name: p.name };
     if (d.obstacles.some(o => obstacleDistance(p, o) < 2)) throw new Error(`Blocked Bangkok stop: ${id}`);
     return p;
   };
-  const tour = ['gate', 'pho', 'arun', 'icon', 'asiatique', 'mahanakhon', 'park', 'terminal', 'paragon', 'chatuchak', 'gate'];
+  const tour = ['gate', 'pho', 'arun', 'paknam', 'icon', 'asiatique', 'mahanakhon', 'park', 'terminal', 'paragon', 'chatuchak', 'gate'];
   return tour.slice(1).map((to, i) => {
     const pickup = stop(tour[i]!), destination = stop(to), route = routeBetween(d, pickup.id, destination.id);
     if (!route.length) throw new Error(`Unreachable Bangkok fare: ${to}`);

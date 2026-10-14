@@ -1,3 +1,4 @@
+import { DISTRICT_SIGN_ENTRIES, districtSigns } from './districtSigns';
 import * as T from "three";
 import type { District } from "../types";
 import { StaticBatch } from "../staticBatch";
@@ -37,7 +38,7 @@ export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS).flatMap(
       style: v.style,
       variant: i,
     })),
-);
+).concat(DISTRICT_SIGN_ENTRIES);
 export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
     batch = new StaticBatch(),
@@ -97,7 +98,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       temp.matrix.clone(),
     ]);
   };
-  for (const p of designs)
+  for (const p of designs.filter(p=>!p.parcel.artRole))
     for (const a of p.bays) {
       if (a.trade === "residence" || a.trade === "closed") continue;
       const i = atlas.index.get(`${a.trade}:${a.sign}`)!;
@@ -118,6 +119,11 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
             (side * Math.PI) / 2,
           );
     }
+  for(const sign of districtSigns(designs)){
+    const i=atlas.index.get(sign.key)!;
+    if(sign.blade)for(const side of [-1,1])place(sign.p,sign.u+side*.286,sign.y,sign.v,sign.width,sign.height,i,!sign.round,side*Math.PI/2);
+    else place(sign.p,sign.u,sign.y,sign.v+.235,sign.width,sign.height,i);
+  }
   batch.finish().forEach((chunk) => {
     chunk.name = "BangkokSign";
     root.add(chunk);
