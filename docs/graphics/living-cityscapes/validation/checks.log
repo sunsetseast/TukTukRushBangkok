@@ -37,3 +37,19 @@ PASS pedestrian spatial index matches full collision scans
 PASS fresh scene construction after resource disposal
 exit=0
 $ node --import tsx scripts/check-cityscapes.ts
+{"pass":true,"mapContract":"5ed882d40914d62c46672f0e13a52419fc4194030e1a91b6fb03bc7f5a324497","sites":885,"solids":3537,"boats":7,"boatSamples":1792,"pedestrians":332,"cablePieces":2916,"flagships":5,"scalaEaves":305,"matchedCollisionSteps":800,"medianPhysicsCandidates":9}
+exit=0
+$ node scripts/check-assets.mjs
+{
+  "modelBytes": 606816,
+  "triangles": 29068,
+  "materials": 13,
+  "dimensions": [
+    2.1179423332214355,
+    2.451500053405762,
+    3.4935525465011597
+  ],
+  "textureTransferBytes": 328831,
+  "estimatedTextureBytesWithMips": 11010048
+}
+exit=0

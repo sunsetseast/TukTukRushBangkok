@@ -8,6 +8,7 @@ const root =
       .pathname,
   label = process.env.PROFILE_LABEL || "after",
   port = 24192;
+await fs.mkdir(`${root}/${label}`, { recursive: true });
 const baseline = JSON.parse(
   await fs.readFile(`${root}/before/measurements.json`, "utf8"),
 );
