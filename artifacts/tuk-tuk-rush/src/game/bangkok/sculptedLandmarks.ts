@@ -94,6 +94,23 @@ export function sculptedLandmark(l: Landmark) {
     b.box(0, 8.6, -31, 21, 0.45, 2.5, "#dfc981", 0, true);
     b.box(0, 1.7, 30, 55, 3.4, 5, "#c6bd9e");
     b.box(0, 3.5, 30, 55, 0.3, 5, "#e0ccb0");
+    // The river and street see different elevations: pleats continue around
+    // both end walls rather than leaving a blank teal box on the approach.
+    for (const x of [-30.2, 30.2])
+      for (let z = -26; z <= 26; z += 3.7) {
+        b.box(x, 15.5, z, 0.3, 26, 3.45, "#679eaa");
+        b.box(
+          x + Math.sign(x) * 0.2,
+          15.5,
+          z,
+          0.18,
+          27,
+          0.14,
+          "#d6b463",
+          0,
+          true,
+        );
+      }
   } else if (l.id === "paragon") {
     b.box(0, 0.6, 0, 64, 1.2, 64, "#c6c9bd");
     b.box(0, 15, 4, 58, 29, 52, "#bdc6bd");
@@ -122,6 +139,12 @@ export function sculptedLandmark(l: Landmark) {
     }
     b.box(0, 7, -32.7, 19, 10, 0.3, "#557c81");
     b.box(0, 12.2, -33, 23, 0.35, 4, "#dcc9a2", 0, true);
+    for (const side of [-1, 1]) {
+      for (let z = -20; z <= 26; z += 3)
+        b.box(side * 29.15, 15, z, 0.3, 25, 2.7, "#6d969d");
+      for (let y = 5; y <= 23; y += 9)
+        b.box(side * 29.4, y, 4, 0.4, 0.35, 52, "#d9dfcf", 0, true);
+    }
   } else if (l.id === "mahanakhon") {
     for (let i = 0; i < 18; i++) {
       const cut = i > 5 && i < 16,

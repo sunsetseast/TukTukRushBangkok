@@ -138,8 +138,8 @@ try {
               );
             if (name === "scala")
               n = d.nodes.reduce((best, q) =>
-                Math.hypot(q.x - 180, q.z + 100) <
-                Math.hypot(best.x - 180, best.z + 100)
+                Math.hypot(q.x - 110, q.z + 50) <
+                Math.hypot(best.x - 110, best.z + 50)
                   ? q
                   : best,
               );

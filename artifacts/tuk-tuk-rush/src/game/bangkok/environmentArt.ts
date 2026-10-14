@@ -346,16 +346,45 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
     const a = nodes.get(l.accessNode!)!,
       p = l.plot!,
       len = Math.hypot(p.x - a.x, p.z - a.z),
-      yaw = Math.atan2(p.x - a.x, p.z - a.z);
-    put(
-      (a.x + p.x) / 2,
-      0.18,
-      (a.z + p.z) / 2,
-      5,
-      0.08,
-      Math.max(1, len - l.size! * 0.4),
-      ["icon", "paragon"].includes(l.id!) ? "#d3cdb6" : "#bdb69d",
-      yaw,
-    );
+      yaw = Math.atan2(p.x - a.x, p.z - a.z),
+      modern = ["icon", "paragon"].includes(l.id!),
+      depth = Math.max(1, len - l.size! * 0.4),
+      cx = (a.x + p.x) / 2,
+      cz = (a.z + p.z) / 2;
+    // Ground-only civic composition uses the already cleared 24m approach.
+    // These low surfaces add no walls or unregistered solid street furniture.
+    const paving = (
+      u: number,
+      v: number,
+      w: number,
+      d: number,
+      color: string,
+      y = 0.19,
+      layer: ArtPiece["layer"] = "core",
+    ) =>
+      put(
+        cx + Math.cos(yaw) * u + Math.sin(yaw) * v,
+        y,
+        cz - Math.sin(yaw) * u + Math.cos(yaw) * v,
+        w,
+        0.035,
+        d,
+        color,
+        yaw,
+        "box",
+        layer,
+      );
+    paving(0, 0, 24, depth, modern ? "#c5c4ae" : "#b8ae94");
+    paving(0, 0, modern ? 8 : 6, depth, modern ? "#e0d9c0" : "#d8cbb0", 0.22);
+    for (const side of [-1, 1]) {
+      paving(side * 8.4, 0, 4.8, depth, "#6e865c", 0.23);
+      paving(side * 5.7, 0, 0.22, depth, "#e3d3ad", 0.25);
+      for (let v = -depth / 2 + 2; v < depth / 2; v += 5.5) {
+        paving(side * 8.4, v, 4.8, 0.15, "#a49d80", 0.26);
+        paving(side * 5.7, v, 0.35, 1.1, "#e4bd78", 0.27, "night");
+      }
+    }
+    for (let v = -depth / 2 + 1; v < depth / 2; v += 3.5)
+      paving(0, v, modern ? 8 : 6, 0.055, "#a9a493", 0.245, "detail");
   }
 }

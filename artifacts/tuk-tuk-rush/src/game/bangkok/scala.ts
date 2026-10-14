@@ -47,9 +47,9 @@ export function emitScala(b: Obstacle, emit: (p: ArtPiece) => void) {
     });
   // Broad glazing bands and red columns remain legible from the chase camera.
   put(0, 18, 0, W, 36, b.d, "#a7b5a8");
-  put(0, 2.2, F - 0.8, W - 1, 4.4, 1.5, "#49382e");
+  put(0, 2.2, F + 0.07, W - 1, 4.4, 0.12, "#49382e");
   for (const x of [-0.44, 0, 0.44])
-    put(x * W, 2.2, F - 0.2, 0.6, 4.4, 0.7, "#9a6261");
+    put(x * W, 2.2, F + 0.18, 0.6, 4.4, 0.3, "#9a6261");
   for (const y of [7.5, 11.4, 17, 22, 27, 32.2]) {
     put(0, y, F + 0.03, W - 1, 3.5, 0.1, "#88b7b4");
     for (let u = -W * 0.4; u < W * 0.45; u += W / 8)
