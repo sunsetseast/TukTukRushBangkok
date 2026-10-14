@@ -92,33 +92,6 @@ export function emitUrbanLayers(
       }
     }
   }
-  // Arcade-compressed Siam elevated rail/skywalk vocabulary follows the
-  // existing east-west shopping corridor. Clearance is 12m; supports remain
-  // inside roadside collider parcels, never in a lane or a newly drawn route.
-  for (const r of d.roads.filter((r) =>
-    ["old_siam", "sukhumvit"].includes(r.corridor ?? ""),
-  )) {
-    const a = nodes.get(r.a)!,
-      b = nodes.get(r.b)!,
-      mid = { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 };
-    if (mid.x < 630 || mid.x > 1450 || mid.z > -280 || mid.z < -900) continue;
-    const len = Math.hypot(a.x - b.x, a.z - b.z),
-      yaw = Math.atan2(b.x - a.x, b.z - a.z);
-    put(mid.x, 12.8, mid.z, 4.8, 1.1, len + 0.1, "#949f9f", "box", "core", yaw);
-    for (const side of [-1, 1])
-      put(
-        mid.x + Math.cos(yaw) * side * 1.7,
-        13.45,
-        mid.z - Math.sin(yaw) * side * 1.7,
-        0.15,
-        0.18,
-        len,
-        "#777b7a",
-        "box",
-        "core",
-        yaw,
-      );
-  }
   // Continuous silhouette behind roadside development uses only real parcels.
   // World fog covers the finite city boundary; there are no floating aerial slabs.
 }

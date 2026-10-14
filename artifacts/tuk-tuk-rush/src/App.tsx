@@ -59,7 +59,7 @@ function App() {
     const id = setInterval(() => {
       const f = read(engine);
       setFrame(f);
-      sfx.update(f.snap.speed / 3.6, engine.model.input.gas, f.snap.phase === 'playing',f.snap.boostState === 'active');
+      sfx.update(f.snap.speed / 3.6, engine.model.input.gas, f.snap.phase === 'playing',f.snap.boostState === 'active',engine.railSoundLevel);
     }, 100);
     const unsub = engine.subscribe((s) => {
       if (s.phase !== phase.current) { phase.current = s.phase; setFrame(read(engine)); }
@@ -101,7 +101,7 @@ function App() {
         {(s.phase === 'playing' || s.phase === 'paused') && !s.viewingLandmark && (
           <Hud d={engine.model.district} f={frame} shift={s.mode === 'shift'} onMap={engine.model.district.worldId === 'bangkok' ? openMap : undefined} onPause={() => { engine.clearInput(); engine.pause(); }} />
         )}
-        {s.viewingLandmark && <div className="tt-inspection" data-testid="pho-inspection" role="dialog" aria-modal="true" aria-label="Wat Pho Reclining Buddha"><div><b>WAT PHO · RECLINING BUDDHA</b><p>A quiet view inside the viharn. Your shift and boost timers are paused.</p></div><button onClick={()=>engine.resume()}>RETURN TO TUK-TUK</button></div>}
+        {s.viewingLandmark && <div className="tt-inspection" data-testid={s.viewingLandmark==='pho'?'pho-inspection':'palace-inspection'} role="dialog" aria-modal="true" aria-label={s.viewingLandmark==='pho'?'Wat Pho Reclining Buddha':'Grand Palace rooflines'}><div><b>{s.viewingLandmark==='pho'?'WAT PHO · RECLINING BUDDHA':'GRAND PALACE · PERIMETER VIEW'}</b><p>{s.viewingLandmark==='pho'?'A quiet view inside the viharn.':'An elevated view from outside the ceremonial enclosure.'} Your shift and boost timers are paused.</p></div><button onClick={()=>engine.resume()}>RETURN TO TUK-TUK</button></div>}
         {s.phase === 'playing' && !mapOpen && <Controls engine={engine} onHorn={() => sfx.horn()} />}
         {s.phase === 'title' && <Title onStart={start} settings={settings} bangkok={engine.model.district.worldId === 'bangkok'} />}
         {s.phase === 'paused' && !s.viewingLandmark && !mapOpen && (

@@ -25,7 +25,7 @@ export function Title({ onStart, settings, bangkok = false }: { onStart: (m: 'sh
         <div className="tt-kicker">{bangkok ? 'BANGKOK · SUNSET SHIFT' : 'เยาวราช · BANGKOK · 18:04'}</div>
         <h1><span>TUK TUK</span><span className="r">RUSH</span></h1>
         <p>{bangkok ? 'Explore compact Bangkok. A 24-minute sunset-to-night shift.' : 'Three wheels. Sunset Chinatown. 180 seconds of fares.'}</p>
-        {bangkok && <small>City layout preview · landmark blockouts</small>}
+        {bangkok && <small>Temple arrivals · BTS & Gold Line</small>}
         <div className="tt-title-btns">
           <button className="tt-btn big" onClick={() => onStart('shift')} data-testid="button-start-shift">Start shift</button>
           <button className="tt-btn gold" onClick={() => onStart('free')} data-testid="button-free-roam">Free roam</button>

@@ -1,6 +1,6 @@
 import * as T from "three";
 import type { Surface } from "./buildingGrammar";
-export type Shape = "box" | "gable" | "arch" | "cylinder" | "orb" | "arrow";
+export type Shape = "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow";
 export type Layer = "core" | "near" | "coarse" | "detail" | "night";
 export type ArtPiece = {
   x: number;
@@ -130,6 +130,10 @@ export class ArchitecturalBatch {
           depth: 1,
           bevelEnabled: false,
         }).translate(0, 0, -0.5);
+      } else if(shape==='vault'){
+        const outer=Array.from({length:9},(_,i)=>new T.Vector2((i/8-.5),Math.sin(i/8*Math.PI)));
+        const inner=[...outer].reverse().map(p=>new T.Vector2(p.x,p.y-.055));
+        geo=new T.ExtrudeGeometry(new T.Shape([...outer,...inner]),{depth:1,bevelEnabled:false,curveSegments:1}).translate(0,0,-.5);
       } else if (shape === "arch")
         geo = new T.TorusGeometry(0.5, 0.095, 3, 10, Math.PI).translate(
           0,

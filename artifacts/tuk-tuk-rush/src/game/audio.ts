@@ -5,6 +5,7 @@ class Sfx {
   private gain: GainNode | null = null;
   private osc: OscillatorNode | null = null;
   private filt: BiquadFilterNode | null = null;
+  private railGain:GainNode|null=null;
   enabled = true;
 
   unlock() {
@@ -19,15 +20,17 @@ class Sfx {
         const gain = ctx.createGain(); gain.gain.value = 0;
         osc.connect(filt); sub.connect(filt); filt.connect(gain); gain.connect(ctx.destination);
         osc.start(); sub.start();
+        const rail=ctx.createOscillator();rail.type='sine';rail.frequency.value=94;const rg=ctx.createGain();rg.gain.value=0;rail.connect(rg);rg.connect(ctx.destination);rail.start();this.railGain=rg;
         this.ctx = ctx; this.osc = osc; this.filt = filt; this.gain = gain;
       }
       void this.ctx?.resume();
     } catch { /* audio is optional */ }
   }
 
-  update(speed: number, gas: boolean, playing: boolean, boost = false) {
+  update(speed: number, gas: boolean, playing: boolean, boost = false,railLevel=0) {
     if (!this.ctx || !this.osc || !this.filt || !this.gain) return;
     const t = this.ctx.currentTime;
+    this.railGain?.gain.setTargetAtTime(this.enabled&&playing?railLevel*.012:0,t,.3);
     const s = Math.min(1, Math.abs(speed) / 31);
     this.osc.frequency.setTargetAtTime(38 + s * 70 + (gas ? 10 : 0) + (boost ? 20 : 0), t, 0.08);
     this.filt.frequency.setTargetAtTime(300 + s * 700 + (boost ? 350 : 0), t, 0.1);

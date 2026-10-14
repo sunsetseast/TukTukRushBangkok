@@ -1,6 +1,10 @@
 import * as T from "three";
 import { riverWater,riverMotion,emitRiverfront } from "./riverfront";
 import { emitBridges } from "./bridgeArt";
+import { emitDestinationGrounds } from './destinationArt';
+import { emitRailInfrastructure, buildRailTrains } from './transit/art';
+import { buildTransitSigns } from './transit/signs';
+import type { RailService } from './transit/service';
 import { environmentEffects } from "./environmentEffects";
 import { emitEnvironment } from "./environmentArt";
 import { emitDistrictSigns } from './districtSigns';
@@ -29,6 +33,7 @@ import { buildCommercialLandmark } from "./landmarkArchitecture";
 /** Reuse the tested city graph with regional streetscape art and mobile culling. */
 export function buildBangkokGraybox(
   d: District,
+  railService?:RailService,
 ): City & { setNight: (night: number) => void; animate:(time:number,quality:string,green:boolean)=>void } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
@@ -145,6 +150,8 @@ export function buildBangkokGraybox(
   emitDistrictSigns(ordinary,piece=>architecture.add(piece));
   emitRiverfront(d,piece=>architecture.add(piece));
   emitBridges(d,piece=>architecture.add(piece));
+  emitDestinationGrounds(d,piece=>architecture.add(piece));
+  emitRailInfrastructure(d,piece=>architecture.add(piece));
   for (const l of d.landmarks.filter((l) => l.kind === "mall")) {
     const site = l.plot!,
       size = l.size!;
@@ -234,7 +241,8 @@ export function buildBangkokGraybox(
     for (const child of [...signs.children]) group.add(child);
   }
   const scalaSigns=buildScalaSigns(scala);group.add(scalaSigns);
-  const motion=riverMotion(d),effects=environmentEffects(d);group.add(motion.root,effects.root);
+  const motion=riverMotion(d),effects=environmentEffects(d),trains=buildRailTrains(d,railService),transitSigns=buildTransitSigns(d);group.add(motion.root,effects.root,trains.root,transitSigns);
+  group.userData.railService=trains.service;
   let lightLevel=0,horizontalGreen=true,animationTime=0;
   const heroes = d.landmarks.map((l) => {
     const root = blockout(l);
@@ -282,6 +290,7 @@ export function buildBangkokGraybox(
       waterStyle.night.value=night;lightLevel=night;
       if (Math.abs(night - lastNight) < 0.015) return;
       lastNight = night;
+      for(const m of transitSigns.userData.materials??[])m.emissiveIntensity=.2+night*.7;
       for (const mat of new Set(glowing))
         mat.emissiveIntensity = Math.max(0, night) * 1.55;
       for (const hero of heroes) {
@@ -300,6 +309,7 @@ export function buildBangkokGraybox(
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.55;
     },
     update(camera, quality) {
+      trains.update(animationTime,camera,quality,lightLevel);
       effects.update(camera,quality,lightLevel,horizontalGreen,animationTime);
       if (
         Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 &&
