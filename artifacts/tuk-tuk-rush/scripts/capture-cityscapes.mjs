@@ -258,9 +258,9 @@ try {
           },
           { landmark, name, quality, elapsed },
         );
-        await frames(7);
+        await frames(Number(process.env.CAPTURE_WARM_FRAMES || 7));
         const samples = [];
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < Number(process.env.CAPTURE_SAMPLES || 8); i++) {
           await frames(1);
           samples.push(
             await page.evaluate(() => ({ ...window.__graphics.stats })),
@@ -317,6 +317,22 @@ try {
           ),
         );
         console.log("Captured", file);
+        if (name === "scala" && quality === "medium" && elapsed !== 360) {
+          // Supplemental facade inspection: same pose on both branches, a
+          // higher target so the tall sign/eaves fit. Driving views stay above.
+          await page.evaluate(() => {
+            window.__artCamera = {
+              position: [137, 8, -96],
+              look: [63.11045, 18, -45.66192],
+            };
+          });
+          await frames(3);
+          await page.screenshot({
+            path: `${out}/scala-facade-${elapsed ? "night" : "sunset"}.jpg`,
+            type: "jpeg",
+            quality: 90,
+          });
+        }
         if (
           quality === "medium" &&
           !elapsed &&
