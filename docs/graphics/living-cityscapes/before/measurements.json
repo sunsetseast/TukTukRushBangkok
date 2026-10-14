@@ -7,74 +7,25 @@
       "quality": "low",
       "elapsed": 0,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-low-sunset.jpg",
       "samples": [
         {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
           "textures": 8,
-          "frameMs": 690.6999999999534
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 13
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 544.5999999998603
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 127.30000000004657
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 786.8000000000466
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 791.3999999999069
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 141.19999999995343
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 804
+          "frameMs": 13.400000000372529
         }
       ],
       "resource": {
         "actualQuality": "low",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -82,74 +33,25 @@
       "quality": "low",
       "elapsed": 360,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-low-twilight.jpg",
       "samples": [
         {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
           "textures": 8,
-          "frameMs": 15.300000000046566
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 372.80000000004657
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 639.1000000000931
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 682.0999999998603
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 1233
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 33
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 75.59999999962747
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 1069.4000000003725
+          "frameMs": 158.5
         }
       ],
       "resource": {
         "actualQuality": "low",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -157,74 +59,25 @@
       "quality": "low",
       "elapsed": 600,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-low-night.jpg",
       "samples": [
         {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
           "textures": 8,
-          "frameMs": 18.100000000093132
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 672.5
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 801.8999999999069
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 665.1000000000931
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 244.79999999981374
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 165.3000000002794
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 652.4000000003725
-        },
-        {
-          "calls": 184,
-          "triangles": 296048,
-          "geometries": 364,
-          "textures": 8,
-          "frameMs": 1489
+          "frameMs": 327.29999999981374
         }
       ],
       "resource": {
         "actualQuality": "low",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -232,74 +85,25 @@
       "quality": "medium",
       "elapsed": 0,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-medium-sunset.jpg",
       "samples": [
         {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 321,
           "textures": 8,
-          "frameMs": 23.09999999962747
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 29.899999999906868
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 21.399999999906868
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 476.40000000037253
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 453.1999999997206
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 580.1000000000931
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 532.7000000001863
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 122.89999999990687
+          "frameMs": 288.89999999990687
         }
       ],
       "resource": {
         "actualQuality": "medium",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -307,74 +111,25 @@
       "quality": "medium",
       "elapsed": 360,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-medium-twilight.jpg",
       "samples": [
         {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 381,
           "textures": 8,
-          "frameMs": 1639.5
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 1147.1999999997206
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 792
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 1038.7000000001863
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 230.89999999990687
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 2085
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 150.59999999962747
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 17.5
+          "frameMs": 314.5
         }
       ],
       "resource": {
         "actualQuality": "medium",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -382,74 +137,25 @@
       "quality": "medium",
       "elapsed": 600,
       "pose": {
-        "x": 189.2996894379985,
-        "z": -72.92821526602323,
-        "heading": -1.3579932284481575
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
       },
       "file": "scala-medium-night.jpg",
       "samples": [
         {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 381,
           "textures": 8,
-          "frameMs": 8.200000000186265
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 13.099999999627471
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 952.0999999996275
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 1962
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 987.7999999998137
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 15.200000000186265
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 975.1000000000931
-        },
-        {
-          "calls": 315,
-          "triangles": 494996,
-          "geometries": 367,
-          "textures": 8,
-          "frameMs": 998.1999999997206
+          "frameMs": 14.399999999906868
         }
       ],
       "resource": {
         "actualQuality": "medium",
         "cpuGeometryBytes": 94286108,
         "texturePixels": 2199552,
-        "heapBytes": 199000000
+        "heapBytes": 435000000
       }
     },
     {
@@ -5855,5 +5561,6 @@
   ],
   "errors": [],
   "failures": [],
-  "environment": "844x390 Chromium SwiftShader, software WebGL, not physical iPhone"
+  "environment": "844x390 Chromium SwiftShader, software WebGL, not physical iPhone",
+  "additionalLoadMs": 5320.187541
 }

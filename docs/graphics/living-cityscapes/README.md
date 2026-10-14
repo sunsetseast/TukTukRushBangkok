@@ -108,7 +108,7 @@ Across these five poses, Fast averages 12.2% more draw calls and -4.7% changed t
 Across these five poses, Pretty averages 11.3% more draw calls and -5.8% changed triangles. 
 CPU scene buffers rise from 90.07 to 104.60 MiB (+16.1%). The count includes unique attribute/index arrays and every instance matrix/color array, including hidden assets. Texture pixels, JS heap and driver allocations are separate. Texture objects stay at 11; RGBA base pixels rise from approximately 8.39 to 9.45 MiB before mipmaps. Driver VRAM/render-target memory was not measured. Construction retains temporary arrays; these are not equal to uploaded GPU buffers.
 
-Optimization accompanies the additional artwork: 20-triangle foliage lobes, shared vertex-colored landmark batches (two materials per site), bounded people/boat/light presentation, shortened near-detail ranges, removed primitive river/park duplicates and an ordered physics broad phase. The contact test queries a median nine solids rather than scanning all 3,537, with the same 800 tested contact responses. The additional calls/materials primarily come from environmental cell layers, original landmark surfaces and Scala/sign lighting; the base facade/sign system remains a major cost. The measured mall riverfront cost rises despite the overall triangle reduction, so device testing is still required.
+Optimization accompanies the additional artwork: 20-triangle foliage lobes, shared vertex-colored landmark batches (two materials per site), bounded people/boat/light presentation, shortened near-detail ranges, removed primitive river/park duplicates and an ordered physics broad phase. The contact test queries a median nine solids rather than scanning all 3,537, with the same 800 tested contact responses. Source inspection suggests the additional calls/materials primarily come from environmental cell layers, original landmark surfaces and Scala/sign lighting; the base facade/sign system remains a major cost. The measured mall riverfront cost rises despite the overall triangle reduction, so device testing is still required.
 
 Four warm restarts preserve the same scene and uploaded geometry/texture counts in the paused UI test. Isolated-profile restarts also finish with stable 1,021 uploaded geometries and 11 textures, after all sampled locations have warmed. This detects repeat-session resource growth in these checks, not every possible mobile leak. Source disposal checks exercise release and rebuild separately.
 
@@ -116,11 +116,11 @@ Fresh Node 24 processes, three builds per version, with forced GC after construc
 
 | Construction measure | PR #12 | New branch |
 |---|---:|---:|
-| World build, ms | 780.91 | 820.74 |
-| Scene build, ms | 2,243.18 | 2,531.74 |
-| Node heap after GC, MiB | 39.04 | 44.37 |
-| Node array buffers after GC, MiB | 96.43 | 108.43 |
-| Process RSS, MiB | 555.40 | 613.43 |
+| World build, ms | 702.24 | 722.38 |
+| Scene build, ms | 1,710.41 | 2,264.31 |
+| Node heap after GC, MiB | 39.04 | 44.38 |
+| Node array buffers after GC, MiB | 97.02 | 108.69 |
+| Process RSS, MiB | 556.19 | 616.20 |
 
 Node array buffers include construction allocations as well as retained render data. Scene construction is slower and uses more memory; a mobile cold-start/load budget still needs physical-device measurement. Browser scene readiness uses the development server and is not production network load time.
 
@@ -130,9 +130,21 @@ PR #12's historical 127/224 calls, 165,626/226,494 triangles and 89.9 MiB used a
 
 ## Acceptance and remaining work
 
-<!-- REVIEW -->
-Final aesthetic review follows inspection of the actual captures and driving footage. Automated geometry/count checks are not proof of visual quality.
-<!-- /REVIEW -->
+The art inspection finds a substantial improvement over the inherited environment, with some visible limits still requiring judgment rather than an object-count score.
+
+| Acceptance area | Implemented / inspected | Remaining limit |
+|---|---|---|
+| Street enclosure and corners | Raised edges, crossings, drainage, trade activity, plants and cables add structure while retaining road widths. Opening Chinatown has a taller Scala anchor. | Long avenues and some blank corner/rear walls remain regular or open. No claim that every road is fully dressed. |
+| District identity | Commercial Yaowarat, workshop/tea Talat Noi, red-roof/chedi Old Town, glazed Siam and golden riverfront retail use distinct assets and surroundings. | Talat Noi's individual courtyards and the broader retail precinct are less authored than the hero assets. |
+| Landmark recognition | Wat Arun's tall central/four subsidiary prangs, Wat Pho's halls/compound/colored chedis, ceremonial Gate and two contemporary retail assets have distinct silhouettes. Scala follows the supplied facade composition. | These are compact stylizations; retail approach width and context are compressed. Secondary landmarks remain uneven. |
+| Public space, vegetation and river | Formal paved approaches with planted strips; shade groves/park paths and ponds; visible river walls/piers, shaped craft and bridge rails/trusses. | Large green areas beyond the authored approach envelopes and some block interiors still look spare. |
+| Sunset / twilight / night | Gradient sky, readable cool fill, warm windows/signs, landmark trim and bounded ground spill make night visibly different. | Landmark-area spill is restrained; no expensive reflections, fountain show or dense real-time lamps. |
+| Driving and readability | Original lanes, routes, pickup/drop-off, graph and controls preserved; meaningful controller runs and map/context tests accompany the art. | A guide-driven clip is not a substitute for human iPhone play, thermal testing or every route/traffic encounter. |
+| Fast and Pretty | Both retain prangs/rooflines, mall masses, food silhouettes, primary signs and vegetation. Pretty adds nearby fitting/paving detail and more presented people. | Fine decorative detail is intentionally absent in Fast. |
+| Engineering | Full local suite and production build pass; CI graphics/regression checks pass on the runtime source; exact disposal/rebuild, deterministic contacts and restarts checked. | Mobile VRAM, background OS eviction and sustained 30 FPS are device-unverified. |
+
+**Fully implemented:** shared environment planning, road edges/markings, four food families, validated roadside solids, existing-system vendors, tropical planting/park compositions, five authored flagship assets, Scala, river/boat presentation, bridge barriers/art, sky/night effects, near/far culling and ordered physics broad phase. **Partially implemented art coverage:** public-space context beyond cleared approaches, secondary destinations, individual courtyard/mural stories and broader skyline composition. **Tested:** map/gameplay/traffic, ten fare simulations, clearance, deterministic generation, font/asset loading, modes, disposal/rebuild, browser controls/context recovery. **Visually inspected:** selected matched opening, temple, retail, river, bridge and sunset/night views, followed by controller footage review. **Device-unverified:** physical iPhone Safari frame pacing, load/VRAM, thermal behavior, memory pressure and OS background/resume. **Optional later additions:** seated/food-service gestures, murals, bus shelters and richer selective light/reflection effects after profiling.
+
 
 1. Required: sustained physical iPhone Safari Fast/Pretty driving, thermal/frame pacing, memory pressure, background/resume, touch rotation and repeated sessions.
 2. Important art work: secondary landmark sites, open block interiors and broader civic/plaza compositions remain simplified.
