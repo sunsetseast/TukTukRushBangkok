@@ -1,4 +1,7 @@
 import * as T from "three";
+import { riverWater,riverMotion,emitRiverfront } from "./riverfront";
+import { emitBridges } from "./bridgeArt";
+import { environmentEffects } from "./environmentEffects";
 import { emitEnvironment } from "./environmentArt";
 import { emitCables } from "./environmentCables";
 import { asphaltMaterial } from "./streetSurfaces";
@@ -25,7 +28,7 @@ import { buildCommercialLandmark } from "./landmarkArchitecture";
 /** Reuse the tested city graph with regional streetscape art and mobile culling. */
 export function buildBangkokGraybox(
   d: District,
-): City & { setNight: (night: number) => void } {
+): City & { setNight: (night: number) => void; animate:(time:number,quality:string,green:boolean)=>void } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
   const ground = new T.Mesh(
@@ -112,22 +115,7 @@ export function buildBangkokGraybox(
           "#e6dba1",
           yaw,
         );
-    if (r.bridge) {
-      add(x, -0.9, z, r.width + 2, 1.4, len + 0.5, "#778b93", yaw);
-      for (const side of [-1, 1]) {
-        const off = r.width / 2 + 1;
-        add(
-          x + Math.cos(yaw) * off * side,
-          1.05,
-          z - Math.sin(yaw) * off * side,
-          0.4,
-          1.6,
-          len + 0.5,
-          "#68c1c4",
-          yaw,
-        );
-      }
-    }
+
   }
   const disc = new T.CylinderGeometry(1, 1, 0.12, 20);
   for (const [id, degree] of degrees)
@@ -145,7 +133,7 @@ export function buildBangkokGraybox(
         [new T.Color("#343e49")],
       );
     }
-  const water = new T.MeshBasicMaterial({ color: "#285877" }),
+  const waterStyle=riverWater(),water=waterStyle.material,
     waterDisc = new T.CylinderGeometry(1, 1, 0.04, 32);
   for (let i = 1; i < d.river!.length; i++) {
     const a = d.river![i - 1]!,
@@ -183,6 +171,8 @@ export function buildBangkokGraybox(
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d,piece=>architecture.add(piece));
   emitCables(d,piece=>architecture.add(piece));
+  emitRiverfront(d,piece=>architecture.add(piece));
+  emitBridges(d,piece=>architecture.add(piece));
   for (const l of d.landmarks.filter((l) => l.kind === "mall")) {
     const site = l.plot!,
       size = l.size!;
@@ -272,6 +262,8 @@ export function buildBangkokGraybox(
     for (const child of [...signs.children]) group.add(child);
   }
   const scalaSigns=buildScalaSigns(scala);group.add(scalaSigns);
+  const motion=riverMotion(d),effects=environmentEffects(d);group.add(motion.root,effects.root);
+  let lightLevel=0,horizontalGreen=true;
   const heroes = d.landmarks.map((l) => {
     const root = blockout(l);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
@@ -312,7 +304,9 @@ export function buildBangkokGraybox(
     lastNight = -1;
   return {
     group,
+    animate(time:number,quality:string,green:boolean){horizontalGreen=green;motion.update(time,quality);waterStyle.time.value=time;},
     setNight(night: number) {
+      waterStyle.night.value=night;lightLevel=night;
       if (Math.abs(night - lastNight) < 0.015) return;
       lastNight = night;
       for (const mat of new Set(glowing))
@@ -333,6 +327,7 @@ export function buildBangkokGraybox(
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.55;
     },
     update(camera, quality) {
+      effects.update(camera,quality,lightLevel,horizontalGreen);
       if (
         Math.hypot(camera.x - lastX, camera.z - lastZ) < 16 &&
         quality === lastQuality
@@ -470,8 +465,8 @@ export function shiftLighting(elapsed: number) {
   return {
     sky,
     night,
-    ambient: 1.15 - night * 0.85,
-    sun: 1.8 - blue * 0.7 - night * 1.03,
+    ambient: 1.15 - night * 0.64,
+    sun: 1.8 - blue * 0.7 - night * 0.89,
     exposure: 0.9 + night * 0.12,
   };
 }

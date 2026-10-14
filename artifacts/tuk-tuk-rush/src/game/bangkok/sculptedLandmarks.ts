@@ -56,7 +56,7 @@ export function sculptedLandmark(l:Landmark){
     // Faceted jewel entrance: alternating triangular glazing planes.
     for(let i=0;i<5;i++){
       const x=-10+i*5,geo=new T.BufferGeometry();geo.setAttribute("position",new T.Float32BufferAttribute([x-2.5,0,0,x+2.5,0,0,x+2,6,-3,x-2,6,-3],3));geo.setIndex([0,1,2,0,2,3]);geo.computeVertexNormals();
-      b.shape(geo,0,11,-34,i%2?"#c2d7c6":"#679c9d");
+      b.shape(geo,0,11,-32.5,i%2?"#c2d7c6":"#679c9d");
     }
     b.box(0,7,-32.7,19,10,.3,"#557c81");b.box(0,12.2,-33,23,.35,4,"#dcc9a2",0,true);
   }else if(l.id==="mahanakhon"){

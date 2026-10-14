@@ -1,3 +1,4 @@
+import { citySky } from "./bangkok/atmosphere";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
@@ -55,6 +56,7 @@ function buildBeacon() {
 function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const { camera, gl, scene } = useThree();
   const bangkok = engine.model.district.worldId === 'bangkok';
+  const atmosphere=useMemo(()=>bangkok?citySky():undefined,[bangkok]);
   const sun = useRef<THREE.DirectionalLight>(null), ambient = useRef<THREE.HemisphereLight>(null);
   const city = useMemo(() => {
     const c = bangkok ? buildBangkokGraybox(engine.model.district) : buildCity(engine.model.district, art.textures);
@@ -62,8 +64,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     return c;
   }, [engine, art]);
   const sky = useMemo(() => {
-    const s = bangkok ? new THREE.Group() : buildSky();
-    s.scale.setScalar(0.18);
+    const s = bangkok ? atmosphere!.root : buildSky();
+    s.scale.setScalar(bangkok?1:.18);
     return s;
   }, []);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
@@ -129,8 +131,11 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       if (sun.current) sun.current.intensity = lighting.sun;
       if (ambient.current) ambient.current.intensity = lighting.ambient;
       gl.toneMappingExposure = lighting.exposure;
-      scene.environmentIntensity = .38 - lighting.night * .28;
+      scene.environmentIntensity = .38 - lighting.night * .2;
       (city as ReturnType<typeof buildBangkokGraybox>).setNight(lighting.night);
+      (city as ReturnType<typeof buildBangkokGraybox>).animate(s.elapsed??0,s.quality,engine.intersectionHorizontalGreen);
+      atmosphere!.update(state.camera.position,lighting.night);
+      if(sun.current)sun.current.color.set(lighting.night>.6?"#9bb7df":"#ffdeb1");
     }
 
     tuk.root.position.set(p.x, 0, p.z);
@@ -263,9 +268,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cp.far = far;
       cp.updateProjectionMatrix();
     }
+    state.camera.far=bangkok?(s.quality==="low"?650:850):430;state.camera.updateProjectionMatrix();
     const fog = scene.fog as THREE.Fog;
-    fog.near = bangkok ? 220 : s.quality === "low" ? 95 : 135;
-    fog.far = bangkok ? s.quality === "low" ? 450 : 720 : s.quality === "low" ? 205 : 310;
+    fog.near = bangkok ? 260 : s.quality === "low" ? 95 : 135;
+    fog.far = bangkok ? s.quality === "low" ? 600 : 780 : s.quality === "low" ? 205 : 310;
     if (import.meta.env.DEV) {
       const debug = window as typeof window & { __graphics?: unknown };
       debug.__graphics = {
