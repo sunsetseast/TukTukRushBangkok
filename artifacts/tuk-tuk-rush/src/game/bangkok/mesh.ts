@@ -1,4 +1,7 @@
 import * as T from "three";
+import { emitEnvironment } from "./environmentArt";
+import { emitCables } from "./environmentCables";
+import { asphaltMaterial } from "./streetSurfaces";
 import { sculptedLandmark } from "./sculptedLandmarks";
 import { scalaParcel, emitScala, buildScalaSigns } from "./scala";
 import type { District, Landmark } from "../types";
@@ -36,7 +39,7 @@ export function buildBangkokGraybox(
     nightBatch = new StaticBatch();
   const unit = new T.BoxGeometry(1, 1, 1),
     temp = new T.Object3D();
-  const material = new T.MeshStandardMaterial({ roughness: 0.9 });
+  const material = new T.MeshStandardMaterial({ roughness: 0.9 }), asphalt=asphaltMaterial();
   const nightMaterial = new T.MeshStandardMaterial({
     roughness: 0.38,
     metalness: 0.12,
@@ -94,10 +97,10 @@ export function buildBangkokGraybox(
       r.width,
       0.12,
       len + 0.7,
-      r.shortcut ? "#796857" : "#343e49",
-      yaw,
+      r.shortcut ? "#796857" : "#ffffff",
+      yaw, batch, r.shortcut?material:asphalt,
     );
-    if (!r.shortcut)
+    if (!r.shortcut && !r.oneWay && !r.roundabout)
       for (let t = 8; t < len - 4; t += 12)
         add(
           a.x + (dx * t) / len,
@@ -161,14 +164,6 @@ export function buildBangkokGraybox(
       batch.add(waterDisc, water, [temp.matrix.clone()]);
     }
   }
-  for (const o of d.obstacles.filter((o) => o.protected)) {
-    add(o.x, -0.06, o.z, o.w, 0.25, o.d, "#2f7755");
-    for (let x = o.x - o.w / 2 + 20; x < o.x + o.w / 2 - 10; x += 45)
-      for (let z = o.z - o.d / 2 + 20; z < o.z + o.d / 2 - 10; z += 55) {
-        add(x, 3, z, 1.2, 6, 1.2, "#706052");
-        add(x, 8, z, 9, 7, 9, "#49785d");
-      }
-  }
   const designs = designBuildings(d);
   const surfaceMap = architecturalSurfaceMap();
   const facadeMaterial = new T.MeshStandardMaterial({
@@ -186,6 +181,8 @@ export function buildBangkokGraybox(
   emitDistrictArchitecture(ordinary, (piece) => architecture.add(piece));
   emitScala(scala, piece=>architecture.add(piece));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
+  emitEnvironment(d,piece=>architecture.add(piece));
+  emitCables(d,piece=>architecture.add(piece));
   for (const l of d.landmarks.filter((l) => l.kind === "mall")) {
     const site = l.plot!,
       size = l.size!;
@@ -206,7 +203,7 @@ export function buildBangkokGraybox(
       surface: "tile",
     });
   }
-  for (const o of d.obstacles.filter((o) => o.artRole === "furniture")) {
+  for (const o of d.obstacles.filter((o) => o.artRole === "furniture" && !o.environmentId)) {
     architecture.add({
       x: o.x,
       y: 0.5,
@@ -364,7 +361,7 @@ export function buildBangkokGraybox(
             Math.hypot(center.x - camera.x, center.z - camera.z) - 85,
           );
         }
-        const near = quality === "low" ? 175 : 240;
+        const near = quality === "low" ? 120 : 195;
         if (chunk.name === "BangkokFacade") chunk.visible = distance < near;
         else if (chunk.name === "BangkokCoarse")
           chunk.visible = distance >= near && distance < radius;
