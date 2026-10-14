@@ -25,12 +25,12 @@ class Sfx {
     } catch { /* audio is optional */ }
   }
 
-  update(speed: number, gas: boolean, playing: boolean) {
+  update(speed: number, gas: boolean, playing: boolean, boost = false) {
     if (!this.ctx || !this.osc || !this.filt || !this.gain) return;
     const t = this.ctx.currentTime;
     const s = Math.min(1, Math.abs(speed) / 31);
-    this.osc.frequency.setTargetAtTime(38 + s * 70 + (gas ? 10 : 0), t, 0.08);
-    this.filt.frequency.setTargetAtTime(300 + s * 700, t, 0.1);
+    this.osc.frequency.setTargetAtTime(38 + s * 70 + (gas ? 10 : 0) + (boost ? 20 : 0), t, 0.08);
+    this.filt.frequency.setTargetAtTime(300 + s * 700 + (boost ? 350 : 0), t, 0.1);
     this.gain.gain.setTargetAtTime(this.enabled && playing ? 0.05 + 0.04 * s + (gas ? 0.02 : 0) : 0, t, 0.1);
   }
 

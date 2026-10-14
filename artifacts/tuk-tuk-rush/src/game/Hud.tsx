@@ -22,7 +22,7 @@ function route(d: District, from: RoadNode, to: RoadNode): RoadNode[] {
     if (cur === to.id) break;
     const c = nm.get(cur)!;
     for (const r of d.roads) {
-      const o = r.a === cur ? r.b : r.b === cur ? r.a : null;
+      const o = r.a === cur ? r.b : r.b === cur && !r.oneWay ? r.a : null;
       const n = o && nm.get(o);
       if (!o || !n) continue;
       const nd = best + Math.hypot(n.x - c.x, n.z - c.z);

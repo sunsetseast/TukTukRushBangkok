@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Megaphone, Wrench } from 'lucide-react';
+import { Megaphone, Wrench, Zap } from 'lucide-react';
 import type { GameEngine } from './engine';
 
 const R = 56;
@@ -89,11 +89,16 @@ function Pedal({ className, onActive, children, testid }: { className: string; o
 }
 
 export function Controls({ engine, onHorn }: { engine: GameEngine; onHorn: () => void }) {
+  const [snap,setSnap]=useState(engine.model.snapshot);
+  useEffect(()=>engine.subscribe(setSnap),[engine]);
+  const state=snap.boostState??'ready', meter=state==='active'?(snap.boostActive??0)/5:state==='recharging'?1-(snap.boostRecharge??0)/10:1;
   return (
-    <div className="tt-controls">
+    <div className={`tt-controls boost-${state}`}>
       <Stick engine={engine} />
+      {engine.canViewPho() && <button className="tt-landmark-view" data-testid="button-view-pho" onClick={()=>engine.viewPho()}>VIEW RECLINING BUDDHA</button>}
       <div className="tt-right">
         <div className="tt-small-row">
+          <button className={`tt-boost ${state}`} data-testid="button-boost" aria-label={`Boost ${state}`} disabled={state!=='ready'} onPointerDown={e=>{e.preventDefault();engine.triggerBoost();}} onClick={e=>{if(e.detail===0)engine.triggerBoost();}}><Zap size={18}/><b>BOOST</b><span>{state==='ready'?'READY':`${Math.ceil(state==='active'?(snap.boostActive??0):(snap.boostRecharge??0))}s`}</span><i style={{transform:`scaleX(${meter})`}}/></button>
           <Pedal className="small" testid="button-recover" onActive={(a) => a && engine.recover()}><Wrench size={20} /><span>RESET</span></Pedal>
           <Pedal className="small" testid="button-horn" onActive={(a) => a && onHorn()}><Megaphone size={20} /><span>HORN</span></Pedal>
         </div>

@@ -230,7 +230,7 @@ export function routeBetween(district: District, start: string, end: string): Ro
   const neighbors = new Map<string, { id: string; length: number }[]>();
   for (const r of district.roads) {
     const a = nodes.get(r.a)!, b = nodes.get(r.b)!, length = Math.hypot(b.x - a.x, b.z - a.z);
-    for (const [from, to] of [[a, b], [b, a]]) {
+    for (const [from, to] of r.oneWay ? [[a, b]] : [[a, b], [b, a]]) {
       const list = neighbors.get(from!.id) ?? []; list.push({ id: to!.id, length }); neighbors.set(from!.id, list);
     }
   }

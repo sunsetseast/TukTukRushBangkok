@@ -545,3 +545,12 @@ html, body, #root { margin:0; width:100%; height:100%; overflow:hidden; overscro
 /* The steering capture zone must never sit above the Map button. */
 .tt-map-wrap {position:relative;z-index:4}
 .tt-map-button {min-height:44px;min-width:88px}
+
+.tt-boost {position:relative;width:96px;height:46px;overflow:hidden;pointer-events:auto;touch-action:none;border:2px solid #a3ffe0;border-radius:14px;background:#165f54;color:#eaffd4;display:grid;grid-template-columns:24px 1fr;align-content:center;padding:4px 8px;box-shadow:0 4px 0 #102e2b;}
+.tt-boost b{font-size:12px}.tt-boost span{grid-column:2;font-size:9px;letter-spacing:.08em}.tt-boost i{position:absolute;bottom:0;left:0;right:0;height:4px;background:#b4ff64;transform-origin:left;transition:transform .1s linear;}
+.tt-boost.active{background:#a85d16;border-color:#ffdc70;animation:boost-pulse .5s alternate infinite}.tt-boost.recharging{background:#273f48;color:#b1c8d1;border-color:#78979e;box-shadow:none}
+@keyframes boost-pulse{to{box-shadow:0 0 15px #ffd56a80}}
+.tt-landmark-view{position:absolute;bottom:20px;left:42%;pointer-events:auto;padding:10px;border:1px solid #ecd39a;border-radius:12px;background:#233d3fe6;color:#ffe3a5;font-size:11px;max-width:190px}
+.tt-inspection{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:20px;pointer-events:none;color:#ffe7b1;background:linear-gradient(#172a3b80,transparent 30%,transparent 70%,#172a3b80)}
+.tt-inspection button{pointer-events:auto;border:1px solid #ffe7b1;border-radius:12px;background:#203d42;padding:12px 20px;color:#fff0d2}.tt-inspection p{font-size:12px;text-align:center}
+@media(prefers-reduced-motion:reduce){.tt-boost.active{animation:none}}
