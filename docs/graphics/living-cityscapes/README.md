@@ -66,9 +66,27 @@ Scala reference response: [sunset facade](after/scala-facade-sunset.jpg), [night
 
 Every surveyed location has the same six sunset/twilight/night × Fast/Pretty files. [Before folder](before) · [After folder](after). The 24-minute shift length is unchanged.
 
-<!-- DRIVES -->
-Controller recordings are being finalized separately.
-<!-- /DRIVES -->
+The [six-corridor CI recording run](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664) passed on runtime source `6db4998`. Clips use actual browser keyboard throttle/brake and pointer events through the existing steering widget, with traffic enabled and the normal chase camera. Each setup position/route is documented in its manifest; no player or camera transform is edited during driving. The first-player run starts at the actual new-game spawn.
+
+| Controller clip | Simulation seconds | Metres | Contact frames | Complete video + trace archive |
+|---|---:|---:|---:|---|
+| first-player | 30.01 | 247.4 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11871623353) |
+| yaowarat-gate | 25.00 | 303.7 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11872600089) |
+| talatnoi-songwat | 25.01 | 313.7 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11871904312) |
+| watpho-oldtown | 25.01 | 285.5 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11871842979) |
+| siam-ratchaprasong | 25.03 | 317.8 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11872203371) |
+| iconsiam-riverfront | 25.01 | 308.6 | 0 | [Download MP4s and JSON](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297664/artifacts/11872089146) |
+
+Total: **155.08 simulation seconds, 1,776.6 m, zero contact frames**. [Combined trace](browser/drives.json). Archives contain an 844 × 390 H.264 clip retimed to simulation time, a 676 × 312 wall-time clip, final gameplay image and full input/position samples. Native clips render at 15 video FPS; that is an export setting, not game/device FPS. The measured wall durations range from 183.6 to 540.1 seconds under software rendering.
+
+Repository copies: [first-player](browser/first-player.mp4), [Yaowarat](browser/yaowarat-gate.mp4), [Talat Noi](browser/talatnoi-songwat.mp4). Their `-wall.mp4` counterparts and JSON manifests are alongside them. The earlier [local ICONSIAM loop](browser/iconsiam-riverfront.mp4) is a separately measured 308.0 m run; the table above uses the uniform CI set. CI archives require GitHub access and expire **12 January 2027**. This retention limit is explicit; the gallery and committed recordings remain in the branch.
+
+The existing ICONSIAM loop leaves the access point and tours Khlong San. A separate arrival was already completed before recording work stopped: 25.02 simulation seconds, 251.7 m, one turn and a full stop at the existing access road, zero contacts. [Actual stopped arrival image](browser/iconsiam-arrival-driven.jpg) · [controller trace](browser/iconsiam-arrival.json). No additional recording was started after the request to wrap up.
+
+Selected driving frames were inspected for progression, traffic encounters, turns, roadside readability and the unchanged HUD/camera. These clips also expose remaining long modular rows. Wat Pho and Siam's closest hero facade views are in the matched access-pose survey; their drive clips spend more time on surrounding streets. They are not presented as exhaustive footage of each forecourt.
+
+Verified CI: [full graphics/gameplay regressions](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297551) and [existing WebGL art inspection](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38515297588) passed. Earlier recording attempts stalled on terminal-banner readiness; the shared HTTP readiness helper fixed that, and run 4 above completed all six jobs. Final documentation/test-tooling delivery commits use `[skip ci]`; game runtime behavior is unchanged from the verified source. Full recording/survey workflows are available through manual dispatch; routine source regressions remain automatic.
+
 
 [Browser UI/context results](browser/qa.json) cover 844 × 390, 932 × 430, 1280 × 800, 375 × 812 and 430 × 932; gas touch release; map pan/pinch; portrait map access and rotation hints; pause/resume; four restarts without uploaded geometry/texture growth; intentional WebGL context loss/restoration; and the original Chinatown mode. There were no console errors or failed HTTP responses. [Viewport and recovery captures](browser).
 
@@ -104,8 +122,8 @@ Equivalent measurement: five flagship poses at night, 844 × 390, pinned Fast/Pr
 | Approximate browser JS heap, MiB | 414.85 | 527.38 |
 | Dev-server first scene readiness, seconds | 5.53 | 6.63 |
 
-Across these five poses, Fast averages 12.2% more draw calls and -4.7% changed triangles. 
-Across these five poses, Pretty averages 11.3% more draw calls and -5.8% changed triangles. 
+Across these five poses, Fast averages 12.2% more draw calls and 4.7% fewer triangles.
+Across these five poses, Pretty averages 11.3% more draw calls and 5.8% fewer triangles.
 CPU scene buffers rise from 90.07 to 104.60 MiB (+16.1%). The count includes unique attribute/index arrays and every instance matrix/color array, including hidden assets. Texture pixels, JS heap and driver allocations are separate. Texture objects stay at 11; RGBA base pixels rise from approximately 8.39 to 9.45 MiB before mipmaps. Driver VRAM/render-target memory was not measured. Construction retains temporary arrays; these are not equal to uploaded GPU buffers.
 
 Optimization accompanies the additional artwork: 20-triangle foliage lobes, shared vertex-colored landmark batches (two materials per site), bounded people/boat/light presentation, shortened near-detail ranges, removed primitive river/park duplicates and an ordered physics broad phase. The contact test queries a median nine solids rather than scanning all 3,537, with the same 800 tested contact responses. Source inspection suggests the additional calls/materials primarily come from environmental cell layers, original landmark surfaces and Scala/sign lighting; the base facade/sign system remains a major cost. The measured mall riverfront cost rises despite the overall triangle reduction, so device testing is still required.
@@ -143,12 +161,13 @@ The art inspection finds a substantial improvement over the inherited environmen
 | Fast and Pretty | Both retain prangs/rooflines, mall masses, food silhouettes, primary signs and vegetation. Pretty adds nearby fitting/paving detail and more presented people. | Fine decorative detail is intentionally absent in Fast. |
 | Engineering | Full local suite and production build pass; CI graphics/regression checks pass on the runtime source; exact disposal/rebuild, deterministic contacts and restarts checked. | Mobile VRAM, background OS eviction and sustained 30 FPS are device-unverified. |
 
-**Fully implemented:** shared environment planning, road edges/markings, four food families, validated roadside solids, existing-system vendors, tropical planting/park compositions, five authored flagship assets, Scala, river/boat presentation, bridge barriers/art, sky/night effects, near/far culling and ordered physics broad phase. **Partially implemented art coverage:** public-space context beyond cleared approaches, secondary destinations, individual courtyard/mural stories and broader skyline composition. **Tested:** map/gameplay/traffic, ten fare simulations, clearance, deterministic generation, font/asset loading, modes, disposal/rebuild, browser controls/context recovery. **Visually inspected:** selected matched opening, temple, retail, river, bridge and sunset/night views, followed by controller footage review. **Device-unverified:** physical iPhone Safari frame pacing, load/VRAM, thermal behavior, memory pressure and OS background/resume. **Optional later additions:** seated/food-service gestures, murals, bus shelters and richer selective light/reflection effects after profiling.
+**Fully implemented:** shared environment planning, road edges/markings, four food families, validated roadside solids, existing-system vendors, tropical planting/park compositions, five authored flagship assets, Scala, river/boat presentation, bridge barriers/art, sky/night effects, near/far culling and ordered physics broad phase. **Partially implemented art coverage:** public-space context beyond cleared approaches, secondary destinations, individual courtyard/mural stories and broader skyline composition. **Tested:** map/gameplay/traffic, ten fare simulations, clearance, deterministic generation, font/asset loading, modes, disposal/rebuild, browser controls/context recovery. **Visually inspected:** selected matched opening, temple, retail, river, bridge and sunset/night views, plus sampled controller footage frames and the actual stopped ICONSIAM arrival. **Device-unverified:** physical iPhone Safari frame pacing, load/VRAM, thermal behavior, memory pressure and OS background/resume. **Optional later additions:** seated/food-service gestures, murals, bus shelters and richer selective light/reflection effects after profiling.
 
 
 1. Required: sustained physical iPhone Safari Fast/Pretty driving, thermal/frame pacing, memory pressure, background/resume, touch rotation and repeated sessions.
-2. Important art work: secondary landmark sites, open block interiors and broader civic/plaza compositions remain simplified.
-3. Optional: richer food-service gestures, seated people, murals, bus shelters and selective reflection/shadow refinement after device profiling.
+2. Important art work: finish large green/plaza areas beyond the cleared civic approaches, then improve secondary landmark sites and open block interiors.
+3. Important composition work: break up long avenue repetition, blank rear/corner walls and distant roofline uniformity; expand direct-arrival QA for Wat Pho and Siam.
+4. Optional: richer food-service gestures, seated people, murals, bus shelters and selective reflection/shadow refinement after device profiling.
 
 ## Reference and asset provenance
 
@@ -171,7 +190,8 @@ In `artifacts/tuk-tuk-rush`, use the existing dependencies:
 node --import tsx scripts/check-cityscapes.ts
 node --import tsx scripts/check-environment-art.ts
 CHROMIUM_PATH=/path/to/chromium CAPTURE_LABEL=after node scripts/capture-cityscapes.mjs
-CHROMIUM_PATH=/path/to/chromium node scripts/browser-cityscapes-qa.mjs
+CHROMIUM_PATH=/path/to/chromium UI_ONLY=1 node scripts/browser-cityscapes-qa.mjs
+CHROMIUM_PATH=/path/to/chromium DRIVE_NAME=yaowarat-gate node scripts/record-cityscapes-drive.mjs
 ```
 
 The matched baseline uses an isolated worktree at the base commit and the same capture script. Survey poses are paused art inspections, distinct from controller recordings.

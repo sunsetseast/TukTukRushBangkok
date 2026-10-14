@@ -1,69 +1,75 @@
 /** Browser controller inputs only after a documented setup pose. */
 export async function playableDrive(page, spec, videoEpoch) {
-  const setup = await page.evaluate(([name, x, z, gx, gz, time, duration]) => {
-    const e = window.__graphics.engine,
-      d = e.model.district;
-    e.restart();
-    e.setQuality("low");
-    e.frameTime = -100000;
-    delete window.__artCamera;
-    const nearest = (x, z) =>
-        d.nodes.reduce((a, n) =>
-          Math.hypot(n.x - x, n.z - z) < Math.hypot(a.x - x, a.z - z) ? n : a,
-        ),
-      a =
-        name === "first-player" ? nearest(d.spawn.x, d.spawn.z) : nearest(x, z),
-      b = nearest(gx, gz),
-      queue = [a.id],
-      prev = new Map([[a.id, null]]);
-    for (const id of queue) {
-      if (id === b.id) break;
-      for (const r of d.roads) {
-        const next = r.a === id ? r.b : !r.oneWay && r.b === id ? r.a : null;
-        if (next && !prev.has(next)) {
-          prev.set(next, id);
-          queue.push(next);
+  const setup = await page.evaluate(
+    ([name, x, z, gx, gz, time, duration, stopAtEnd = false]) => {
+      const e = window.__graphics.engine,
+        d = e.model.district;
+      e.restart();
+      e.setQuality("low");
+      e.frameTime = -100000;
+      delete window.__artCamera;
+      const nearest = (x, z) =>
+          d.nodes.reduce((a, n) =>
+            Math.hypot(n.x - x, n.z - z) < Math.hypot(a.x - x, a.z - z) ? n : a,
+          ),
+        a =
+          name === "first-player"
+            ? nearest(d.spawn.x, d.spawn.z)
+            : nearest(x, z),
+        b = nearest(gx, gz),
+        queue = [a.id],
+        prev = new Map([[a.id, null]]);
+      for (const id of queue) {
+        if (id === b.id) break;
+        for (const r of d.roads) {
+          const next = r.a === id ? r.b : !r.oneWay && r.b === id ? r.a : null;
+          if (next && !prev.has(next)) {
+            prev.set(next, id);
+            queue.push(next);
+          }
         }
       }
-    }
-    if (!prev.has(b.id)) throw Error("Disconnected driving route");
-    const ids = [];
-    let id = b.id;
-    while (id) {
-      ids.unshift(id);
-      id = prev.get(id);
-    }
-    const route = ids.map((id) => d.nodes.find((n) => n.id === id));
-    const first = route[0],
-      next = route[1];
-    Object.assign(e.model.player, {
-      x: name === "first-player" ? d.spawn.x : first.x,
-      z: name === "first-player" ? d.spawn.z : first.z,
-      heading:
-        name === "first-player"
-          ? d.spawn.heading
-          : Math.atan2(next.x - first.x, next.z - first.z),
-      speed: 0,
-      steer: 0,
-    });
-    e.model.snapshot.elapsed = time;
-    window.__qaDrive = {
-      name,
-      route,
-      ids,
-      index: 1,
-      epoch: time,
-      duration,
-      metres: 0,
-      collisionFrames: 0,
-      inputEvents: 0,
-      samples: [],
-      lastSample: 0,
-      last: { ...e.model.player },
-      done: false,
-    };
-    return { start: { ...e.model.player }, ids, time, duration };
-  }, spec);
+      if (!prev.has(b.id)) throw Error("Disconnected driving route");
+      const ids = [];
+      let id = b.id;
+      while (id) {
+        ids.unshift(id);
+        id = prev.get(id);
+      }
+      const route = ids.map((id) => d.nodes.find((n) => n.id === id));
+      const first = route[0],
+        next = route[1];
+      Object.assign(e.model.player, {
+        x: name === "first-player" ? d.spawn.x : first.x,
+        z: name === "first-player" ? d.spawn.z : first.z,
+        heading:
+          name === "first-player"
+            ? d.spawn.heading
+            : Math.atan2(next.x - first.x, next.z - first.z),
+        speed: 0,
+        steer: 0,
+      });
+      e.model.snapshot.elapsed = time;
+      window.__qaDrive = {
+        name,
+        route,
+        ids,
+        index: 1,
+        epoch: time,
+        duration,
+        stopAtEnd,
+        metres: 0,
+        collisionFrames: 0,
+        inputEvents: 0,
+        samples: [],
+        lastSample: 0,
+        last: { ...e.model.player },
+        done: false,
+      };
+      return { start: { ...e.model.player }, ids, time, duration, stopAtEnd };
+    },
+    spec,
+  );
   const box = await page.getByTestId("control-steer").boundingBox();
   await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.5);
   await page.mouse.down();
@@ -159,17 +165,26 @@ export async function playableDrive(page, spec, videoEpoch) {
           }),
         );
         drive.inputEvents++;
-        const blocked = e.model.traffic.some((c) => {
-          const x = c.x - p.x,
-            z = c.z - p.z,
-            ahead = x * Math.sin(p.heading) + z * Math.cos(p.heading),
-            side = x * Math.cos(p.heading) - z * Math.sin(p.heading);
-          return ahead > 0 && ahead < 9 && Math.abs(side) < 3.1;
-        });
+        const arrived =
+          drive.stopAtEnd &&
+          drive.index === route.length - 1 &&
+          Math.hypot(p.x - b.x, p.z - b.z) < 8;
+        const blocked =
+          arrived ||
+          e.model.traffic.some((c) => {
+            const x = c.x - p.x,
+              z = c.z - p.z,
+              ahead = x * Math.sin(p.heading) + z * Math.cos(p.heading),
+              side = x * Math.cos(p.heading) - z * Math.sin(p.heading);
+            return ahead > 0 && ahead < 9 && Math.abs(side) < 3.1;
+          });
         const speed =
           Math.abs(error) > 0.5 ? 7.5 : Math.abs(error) > 0.25 ? 10 : 13.5;
         key("ArrowUp", !blocked && p.speed < speed);
-        key("Space", p.speed > speed + 1 || (blocked && p.speed > 2));
+        key(
+          "Space",
+          p.speed > speed + 1 || (blocked && p.speed > (arrived ? 0.1 : 2)),
+        );
         if (elapsed - drive.lastSample >= 0.5) {
           drive.lastSample = elapsed;
           drive.samples.push({

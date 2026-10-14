@@ -12,6 +12,7 @@ const specs = [
   ["watpho-oldtown", -980, -980, -740, -450, 0, 25],
   ["siam-ratchaprasong", 760, -900, 1240, -690, 600, 25],
   ["iconsiam-riverfront", -700, 680, -440, 1280, 0, 25],
+  ["iconsiam-arrival", -1000, 880, -700, 880, 0, 25, true],
 ];
 const spec = specs.find((s) => s[0] === process.env.DRIVE_NAME);
 assert(spec, "Set DRIVE_NAME to a showcase name");
