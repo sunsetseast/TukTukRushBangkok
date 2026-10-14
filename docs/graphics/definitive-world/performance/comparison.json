@@ -1,0 +1,46 @@
+{
+  "samplesPerScene": 40,
+  "matchedViews": [
+    "chinatown",
+    "icon"
+  ],
+  "rows": [
+    {
+      "label": "before",
+      "quality": "low",
+      "calls": 159.5,
+      "triangles": 188238.0,
+      "geometries": 396.5,
+      "textures": 10.0,
+      "frameMs": 138.5
+    },
+    {
+      "label": "before",
+      "quality": "medium",
+      "calls": 243.5,
+      "triangles": 270339.0,
+      "geometries": 422.0,
+      "textures": 10.0,
+      "frameMs": 176.5999999998603
+    },
+    {
+      "label": "after",
+      "quality": "low",
+      "calls": 165.5,
+      "triangles": 249547.5,
+      "geometries": 360.0,
+      "textures": 10.0,
+      "frameMs": 174.35000000009313
+    },
+    {
+      "label": "after",
+      "quality": "medium",
+      "calls": 242.5,
+      "triangles": 333661.5,
+      "geometries": 425.5,
+      "textures": 10.0,
+      "frameMs": 151.80000000004657
+    }
+  ],
+  "limitations": "Chromium SwiftShader, not iPhone GPU performance; per-scene timings differ substantially, so no native FPS claim."
+}

@@ -60,7 +60,7 @@ for (const p of designs) {
     if (a.occupied) assert(TRADE_SIGNS[a.trade as keyof typeof TRADE_SIGNS]);
   }
   if (p.parcel.artRole === "background")
-    assert(riverDistance(d, p.parcel) > d.riverWidth! / 2 + 17);
+    assert(riverDistance(d, p.parcel) > d.riverWidth! / 2 + Math.hypot(p.parcel.w,p.parcel.d)/2+2,"Background parcel must clear water by its own radius");
 }
 const structuralKey = (p: (typeof designs)[number]) =>
   p.bays
@@ -131,6 +131,7 @@ assert(
 assert(
   emitted.some((p) => p.shape === "gable" || p.shape === "arch") ||
     sample.bays.some((a) => a.balcony),
+  "Sample facade should contain an architectural feature",
 );
 const people = bangkokPeople(d),
   segments = d.roads.map((r) => ({
@@ -148,10 +149,11 @@ for (const person of people)
       ),
     );
   }
-assert(SIGN_ENTRIES.every((e) => e.text.trim() && !/[\uFFFD]/.test(e.text)));
+assert(SIGN_ENTRIES.every((e) => e.text.trim() && !/[\uFFFD]/.test(e.text)),"All sign entries have valid text");
 assert(
   SIGN_ENTRIES.some((e) => /[\u0E00-\u0E7F]/.test(e.text)) &&
     SIGN_ENTRIES.some((e) => /[\u4e00-\u9fff]/.test(e.text)),
+  "Thai and Chinese signs exist",
 );
 const city = buildBangkokGraybox(d);
 city.update(new Vector3(d.spawn!.x, 5, d.spawn!.z), "low", true);

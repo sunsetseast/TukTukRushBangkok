@@ -1,0 +1,4 @@
+import * as T from 'three';import {createBangkokWorld} from '../src/game/bangkok/world';import {buildRoadSurfaces} from '../src/game/bangkok/roadSurfaceGraph';
+const d=createBangkokWorld(),g=buildRoadSurfaces(d),nodes=new Map(d.nodes.map(n=>[n.id,n]));g.updateMatrixWorld(true);let failed=0;const ray=new T.Raycaster();
+for(const r of d.roads){const a=nodes.get(r.a)!,b=nodes.get(r.b)!;for(const t of [.3,.7]){const p=new T.Vector3(a.x+(b.x-a.x)*t,100,a.z+(b.z-a.z)*t);ray.set(p,new T.Vector3(0,-1,0));const hits=ray.intersectObject(g,true);if(hits[0]?.object.name!=='RoadSurface:asphalt'){if(failed<12)console.log(r.corridor,p.toArray(),hits.map(v=>({name:v.object.name,y:v.point.y})));failed++;}}}
+console.log({failed,roadSamples:d.roads.length*2});g.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();for(const m of [o.material].flat())m.dispose();}});if(failed)process.exitCode=1;

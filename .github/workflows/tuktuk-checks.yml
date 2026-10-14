@@ -28,6 +28,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush run build
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:definitive
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:cityscapes
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:environment
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:bangkok

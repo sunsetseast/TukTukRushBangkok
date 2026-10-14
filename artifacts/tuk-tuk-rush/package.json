@@ -17,7 +17,7 @@
     "test:bangkok": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
     "test:environment": "node --import tsx scripts/check-environment-art.ts",
     "test:cityscapes": "node --import tsx scripts/check-cityscapes.ts",
-    "test:definitive": "node --import tsx scripts/check-definitive-world.ts",
+    "test:definitive": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
     "art:roads": "node --import tsx scripts/generate-road-surfaces.ts"
   },
   "devDependencies": {

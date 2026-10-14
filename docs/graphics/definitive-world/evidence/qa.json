@@ -1,0 +1,1325 @@
+{
+  "pass": true,
+  "loadMs": 11562.284715,
+  "survey": [
+    {
+      "name": "yaowarat",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025,
+        "landmark": "gate",
+        "elapsed": 0
+      },
+      "samples": [
+        {
+          "calls": 335,
+          "triangles": 527855,
+          "geometries": 403,
+          "textures": 10,
+          "frameMs": 16.699999999720603
+        },
+        {
+          "calls": 335,
+          "triangles": 527855,
+          "geometries": 403,
+          "textures": 10,
+          "frameMs": 18.100000000093132
+        },
+        {
+          "calls": 335,
+          "triangles": 527855,
+          "geometries": 403,
+          "textures": 10,
+          "frameMs": 16.5
+        },
+        {
+          "calls": 335,
+          "triangles": 527855,
+          "geometries": 403,
+          "textures": 10,
+          "frameMs": 489.70000000018626
+        },
+        {
+          "calls": 336,
+          "triangles": 539927,
+          "geometries": 403,
+          "textures": 10,
+          "frameMs": 510.19999999972066
+        }
+      ]
+    },
+    {
+      "name": "yaowarat-night",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025,
+        "landmark": "gate",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 337,
+          "triangles": 539969,
+          "geometries": 404,
+          "textures": 10,
+          "frameMs": 492.40000000037253
+        },
+        {
+          "calls": 337,
+          "triangles": 539969,
+          "geometries": 404,
+          "textures": 10,
+          "frameMs": 566.5999999996275
+        },
+        {
+          "calls": 337,
+          "triangles": 539969,
+          "geometries": 404,
+          "textures": 10,
+          "frameMs": 563.9000000003725
+        },
+        {
+          "calls": 337,
+          "triangles": 539969,
+          "geometries": 404,
+          "textures": 10,
+          "frameMs": 22.699999999720603
+        },
+        {
+          "calls": 337,
+          "triangles": 539969,
+          "geometries": 404,
+          "textures": 10,
+          "frameMs": 563
+        }
+      ]
+    },
+    {
+      "name": "gate",
+      "pose": {
+        "x": 149.88854381999832,
+        "z": -9.566191478555087,
+        "heading": -2.827433388230814,
+        "landmark": "gate",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 330,
+          "triangles": 547472,
+          "geometries": 463,
+          "textures": 10,
+          "frameMs": 473.89999999990687
+        },
+        {
+          "calls": 330,
+          "triangles": 547472,
+          "geometries": 463,
+          "textures": 10,
+          "frameMs": 449.79999999981374
+        },
+        {
+          "calls": 330,
+          "triangles": 547472,
+          "geometries": 463,
+          "textures": 10,
+          "frameMs": 461
+        },
+        {
+          "calls": 330,
+          "triangles": 547472,
+          "geometries": 463,
+          "textures": 10,
+          "frameMs": 489.8000000002794
+        },
+        {
+          "calls": 330,
+          "triangles": 547472,
+          "geometries": 463,
+          "textures": 10,
+          "frameMs": 417.6999999997206
+        }
+      ]
+    },
+    {
+      "name": "talatnoi",
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -0.03446910099950844,
+        "landmark": "hua",
+        "elapsed": 120
+      },
+      "samples": [
+        {
+          "calls": 177,
+          "triangles": 241706,
+          "geometries": 567,
+          "textures": 10,
+          "frameMs": 19.100000000093132
+        },
+        {
+          "calls": 177,
+          "triangles": 241706,
+          "geometries": 567,
+          "textures": 10,
+          "frameMs": 412.89999999990687
+        },
+        {
+          "calls": 177,
+          "triangles": 241706,
+          "geometries": 567,
+          "textures": 10,
+          "frameMs": 397.39999999990687
+        },
+        {
+          "calls": 177,
+          "triangles": 241706,
+          "geometries": 567,
+          "textures": 10,
+          "frameMs": 398.8000000002794
+        },
+        {
+          "calls": 177,
+          "triangles": 241706,
+          "geometries": 567,
+          "textures": 10,
+          "frameMs": 12.400000000372529
+        }
+      ]
+    },
+    {
+      "name": "pho-road",
+      "pose": {
+        "x": -924.2105263157895,
+        "z": -560,
+        "heading": 2.2500937380928128,
+        "landmark": "pho",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 274,
+          "triangles": 399891,
+          "geometries": 758,
+          "textures": 10,
+          "frameMs": 9.400000000372529
+        },
+        {
+          "calls": 274,
+          "triangles": 399891,
+          "geometries": 758,
+          "textures": 10,
+          "frameMs": 535.8999999999069
+        },
+        {
+          "calls": 274,
+          "triangles": 399891,
+          "geometries": 758,
+          "textures": 10,
+          "frameMs": 16.299999999813735
+        },
+        {
+          "calls": 274,
+          "triangles": 399891,
+          "geometries": 758,
+          "textures": 10,
+          "frameMs": 231.10000000009313
+        },
+        {
+          "calls": 274,
+          "triangles": 399891,
+          "geometries": 758,
+          "textures": 10,
+          "frameMs": 345.20000000018626
+        }
+      ]
+    },
+    {
+      "name": "arun",
+      "pose": {
+        "x": -1493.3333333333333,
+        "z": -513.3333333333334,
+        "heading": 1.4823478635310319,
+        "landmark": "arun",
+        "elapsed": 120
+      },
+      "samples": [
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 839,
+          "textures": 10,
+          "frameMs": 298.79999999981374
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 839,
+          "textures": 10,
+          "frameMs": 17.90000000037253
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 839,
+          "textures": 10,
+          "frameMs": 313.09999999962747
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 839,
+          "textures": 10,
+          "frameMs": 287.20000000018626
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 839,
+          "textures": 10,
+          "frameMs": 300.5
+        }
+      ]
+    },
+    {
+      "name": "paknam",
+      "pose": {
+        "x": -1680,
+        "z": 478.1818181818182,
+        "heading": -1.070402831440553,
+        "landmark": "paknam",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 86,
+          "triangles": 105293,
+          "geometries": 886,
+          "textures": 10,
+          "frameMs": 180.5
+        },
+        {
+          "calls": 86,
+          "triangles": 105293,
+          "geometries": 886,
+          "textures": 10,
+          "frameMs": 11
+        },
+        {
+          "calls": 86,
+          "triangles": 105293,
+          "geometries": 886,
+          "textures": 10,
+          "frameMs": 15.900000000372529
+        },
+        {
+          "calls": 86,
+          "triangles": 105293,
+          "geometries": 886,
+          "textures": 10,
+          "frameMs": 161.39999999990687
+        },
+        {
+          "calls": 86,
+          "triangles": 105293,
+          "geometries": 886,
+          "textures": 10,
+          "frameMs": 175.29999999981374
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "pose": {
+        "x": -700,
+        "z": 880,
+        "heading": 0.7853981633974483,
+        "landmark": "icon",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 147,
+          "triangles": 112299,
+          "geometries": 967,
+          "textures": 10,
+          "frameMs": 13.300000000279397
+        },
+        {
+          "calls": 147,
+          "triangles": 112299,
+          "geometries": 967,
+          "textures": 10,
+          "frameMs": 113.5
+        },
+        {
+          "calls": 147,
+          "triangles": 112299,
+          "geometries": 967,
+          "textures": 10,
+          "frameMs": 115.29999999981374
+        },
+        {
+          "calls": 147,
+          "triangles": 112299,
+          "geometries": 967,
+          "textures": 10,
+          "frameMs": 66.39999999990687
+        },
+        {
+          "calls": 147,
+          "triangles": 112299,
+          "geometries": 967,
+          "textures": 10,
+          "frameMs": 63.10000000009314
+        }
+      ]
+    },
+    {
+      "name": "siam",
+      "pose": {
+        "x": 804.7058823529412,
+        "z": -715.2941176470588,
+        "heading": 1.7818896600176437,
+        "landmark": "paragon",
+        "elapsed": 120
+      },
+      "samples": [
+        {
+          "calls": 248,
+          "triangles": 250455,
+          "geometries": 1149,
+          "textures": 11,
+          "frameMs": 73.29999999981374
+        },
+        {
+          "calls": 248,
+          "triangles": 250455,
+          "geometries": 1149,
+          "textures": 11,
+          "frameMs": 165.89999999990687
+        },
+        {
+          "calls": 248,
+          "triangles": 250455,
+          "geometries": 1149,
+          "textures": 11,
+          "frameMs": 144.40000000037253
+        },
+        {
+          "calls": 248,
+          "triangles": 250455,
+          "geometries": 1149,
+          "textures": 11,
+          "frameMs": 151.6999999997206
+        },
+        {
+          "calls": 248,
+          "triangles": 250455,
+          "geometries": 1149,
+          "textures": 11,
+          "frameMs": 12.600000000093132
+        }
+      ]
+    },
+    {
+      "name": "sathorn",
+      "pose": {
+        "x": 267.77777777777777,
+        "z": 984.4444444444445,
+        "heading": 1.2354037871188872,
+        "landmark": "mahanakhon",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 221,
+          "triangles": 261726,
+          "geometries": 1307,
+          "textures": 11,
+          "frameMs": 319.10000000009313
+        },
+        {
+          "calls": 221,
+          "triangles": 261726,
+          "geometries": 1307,
+          "textures": 11,
+          "frameMs": 17.200000000186265
+        },
+        {
+          "calls": 221,
+          "triangles": 261726,
+          "geometries": 1307,
+          "textures": 11,
+          "frameMs": 321.20000000018626
+        },
+        {
+          "calls": 221,
+          "triangles": 261726,
+          "geometries": 1307,
+          "textures": 11,
+          "frameMs": 366.89999999990687
+        },
+        {
+          "calls": 221,
+          "triangles": 261726,
+          "geometries": 1307,
+          "textures": 11,
+          "frameMs": 315.6999999997206
+        }
+      ]
+    },
+    {
+      "name": "baiyoke",
+      "pose": {
+        "x": 666.6666666666667,
+        "z": -1041.904761904762,
+        "heading": 1.29000645593257,
+        "landmark": "baiyoke",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 217,
+          "triangles": 296689,
+          "geometries": 1372,
+          "textures": 11,
+          "frameMs": 423.10000000009313
+        },
+        {
+          "calls": 217,
+          "triangles": 296689,
+          "geometries": 1372,
+          "textures": 11,
+          "frameMs": 368.29999999981374
+        },
+        {
+          "calls": 217,
+          "triangles": 296689,
+          "geometries": 1372,
+          "textures": 11,
+          "frameMs": 98.29999999981374
+        },
+        {
+          "calls": 217,
+          "triangles": 296689,
+          "geometries": 1372,
+          "textures": 11,
+          "frameMs": 476.10000000009313
+        },
+        {
+          "calls": 217,
+          "triangles": 296689,
+          "geometries": 1372,
+          "textures": 11,
+          "frameMs": 381
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "pose": {
+        "x": 144.76190476190476,
+        "z": 801.9047619047619,
+        "heading": 0.14506940913658548,
+        "landmark": "state",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 275,
+          "triangles": 322470,
+          "geometries": 1450,
+          "textures": 11,
+          "frameMs": 342.89999999990687
+        },
+        {
+          "calls": 275,
+          "triangles": 322470,
+          "geometries": 1450,
+          "textures": 11,
+          "frameMs": 349.60000000009313
+        },
+        {
+          "calls": 275,
+          "triangles": 322470,
+          "geometries": 1450,
+          "textures": 11,
+          "frameMs": 423
+        },
+        {
+          "calls": 275,
+          "triangles": 322470,
+          "geometries": 1450,
+          "textures": 11,
+          "frameMs": 44.799999999813735
+        },
+        {
+          "calls": 275,
+          "triangles": 322470,
+          "geometries": 1450,
+          "textures": 11,
+          "frameMs": 386.8000000002794
+        }
+      ]
+    },
+    {
+      "name": "khaosan",
+      "pose": {
+        "x": -733.8461538461538,
+        "z": -1580,
+        "heading": 1.5707963267948966,
+        "landmark": "khaosan",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 1590,
+          "textures": 11,
+          "frameMs": 422.39999999990687
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 1590,
+          "textures": 11,
+          "frameMs": 441.10000000009313
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 1590,
+          "textures": 11,
+          "frameMs": 81.39999999990687
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 1590,
+          "textures": 11,
+          "frameMs": 358.39999999990687
+        },
+        {
+          "calls": 204,
+          "triangles": 347986,
+          "geometries": 1590,
+          "textures": 11,
+          "frameMs": 443.8000000002794
+        }
+      ]
+    },
+    {
+      "name": "residential",
+      "pose": {
+        "x": -1481.1764705882354,
+        "z": -982.3529411764706,
+        "heading": -0.042527534619778436,
+        "landmark": "victory",
+        "elapsed": 120
+      },
+      "samples": [
+        {
+          "calls": 136,
+          "triangles": 195684,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 343.5
+        },
+        {
+          "calls": 136,
+          "triangles": 195684,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 382.89999999990687
+        },
+        {
+          "calls": 136,
+          "triangles": 195684,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 387.90000000037253
+        },
+        {
+          "calls": 136,
+          "triangles": 195684,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 10
+        },
+        {
+          "calls": 136,
+          "triangles": 195684,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 378.70000000018626
+        }
+      ]
+    },
+    {
+      "name": "riverfront",
+      "pose": {
+        "x": -1493.3333333333333,
+        "z": -513.3333333333334,
+        "heading": 1.4823478635310319,
+        "landmark": "arun",
+        "elapsed": 240
+      },
+      "samples": [
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 506.80000000027934
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 22.600000000093132
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 271.09999999962747
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 63.3000000002794
+        },
+        {
+          "calls": 164,
+          "triangles": 202105,
+          "geometries": 1646,
+          "textures": 11,
+          "frameMs": 192.6999999997206
+        }
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "width": 844,
+      "height": 390,
+      "pass": true
+    },
+    {
+      "width": 932,
+      "height": 430,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "pass": true
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pass": true
+    }
+  ],
+  "multitouch": {
+    "gas": true,
+    "steer": 0.3788819875776397,
+    "state": "active"
+  },
+  "inspectionTimers": {
+    "before": {
+      "time": 240.10000000000002,
+      "shift": 1440,
+      "trip": 224,
+      "boost": 0
+    },
+    "after": {
+      "time": 240.10000000000002,
+      "shift": 1440,
+      "trip": 224,
+      "boost": 0
+    }
+  },
+  "drives": [
+    {
+      "name": "yaowarat",
+      "start": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "id": "bkk:504"
+      },
+      "end": {
+        "x": 82.34809777942947,
+        "z": -61.05987629456397,
+        "heading": -2.068083895569132,
+        "speed": 14.00239799969263,
+        "steer": -0.2690184508726111,
+        "lean": 0.018834337910729908,
+        "wheelSpin": 78.32939705803358,
+        "collision": 0
+      },
+      "metres": 29.79520370059791,
+      "elapsed": 3.0225000000006332,
+      "collisionFrames": 0,
+      "inputEvents": 94,
+      "samples": [
+        {
+          "elapsed": 0.5169999999996264,
+          "x": 108.78334437542624,
+          "z": -50.24122034029489,
+          "heading": -1.9270709119217804,
+          "speed": 4.745730140034953,
+          "steer": -0.2743469076842228,
+          "inputEvents": 12,
+          "stats": {
+            "calls": 237,
+            "triangles": 399211,
+            "geometries": 1731,
+            "textures": 11,
+            "frameMs": 469
+          }
+        },
+        {
+          "elapsed": 1.0175000000002115,
+          "x": 104.93371148135509,
+          "z": -51.396944988095605,
+          "heading": -1.7884717096940523,
+          "speed": 11.108899194735875,
+          "steer": 0.0023736640945332343,
+          "inputEvents": 23,
+          "stats": {
+            "calls": 239,
+            "triangles": 406719,
+            "geometries": 1732,
+            "textures": 11,
+            "frameMs": 345.5
+          }
+        },
+        {
+          "elapsed": 1.5175000000003251,
+          "x": 98.64362102556049,
+          "z": -52.838685559648056,
+          "heading": -1.8243474718559998,
+          "speed": 13.583244955749358,
+          "steer": 0.14768272203178076,
+          "inputEvents": 40,
+          "stats": {
+            "calls": 251,
+            "triangles": 407355,
+            "geometries": 1732,
+            "textures": 11,
+            "frameMs": 384.5
+          }
+        },
+        {
+          "elapsed": 2.050500000000426,
+          "x": 92.34863492578232,
+          "z": -54.657826195122986,
+          "heading": -2.0277341989022886,
+          "speed": 9.589024756202521,
+          "steer": 0.4374590839468583,
+          "inputEvents": 60,
+          "stats": {
+            "calls": 252,
+            "triangles": 407931,
+            "geometries": 1732,
+            "textures": 11,
+            "frameMs": 388.60000000009313
+          }
+        },
+        {
+          "elapsed": 2.5505000000005396,
+          "x": 87.53327747681364,
+          "z": -57.44253000326906,
+          "heading": -2.2256567732001904,
+          "speed": 13.591345806443169,
+          "steer": -0.30966680030239724,
+          "inputEvents": 75,
+          "stats": {
+            "calls": 248,
+            "triangles": 395577,
+            "geometries": 1732,
+            "textures": 11,
+            "frameMs": 491.10000000009313
+          }
+        }
+      ],
+      "setup": {
+        "start": {
+          "x": 109.56619147855508,
+          "z": -49.88854381999831,
+          "heading": -2.020483893706025,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "ids": [
+          "bkk:504",
+          "bkk:505",
+          "bkk:506",
+          "bkk:507",
+          "bkk:508",
+          "bkk:509",
+          "bkk:510",
+          "bkk:511",
+          "bkk:512",
+          "bkk:513",
+          "bkk:514",
+          "bkk:515",
+          "bkk:516",
+          "bkk:517",
+          "bkk:518",
+          "bkk:519"
+        ],
+        "time": 240,
+        "duration": 3,
+        "stopAtEnd": false
+      },
+      "wallVideoStart": 6.108,
+      "wallVideoDuration": 25.833,
+      "inputs": "Browser keyboard throttle/brake + pointer events through steering widget; normal chase camera; no pose edits after setup"
+    },
+    {
+      "name": "paknam",
+      "start": {
+        "x": -1680,
+        "z": 450.9090909090909,
+        "id": "bkk:1207"
+      },
+      "end": {
+        "x": -1678.3192211524843,
+        "z": 481.7952363097092,
+        "heading": -0.018185300831607288,
+        "speed": 13.840020061924111,
+        "steer": -0.24553794853884403,
+        "lean": 0.01862969942510868,
+        "wheelSpin": 82.3379506217351,
+        "collision": 0
+      },
+      "metres": 31.320752016747562,
+      "elapsed": 3.031100000001601,
+      "collisionFrames": 0,
+      "inputEvents": 105,
+      "samples": [
+        {
+          "elapsed": 0.5033000000003653,
+          "x": -1679.9578211139653,
+          "z": 452.04900386857844,
+          "heading": 0.12050819391816041,
+          "speed": 5.463569598815055,
+          "steer": -0.23390429993682083,
+          "inputEvents": 12,
+          "stats": {
+            "calls": 119,
+            "triangles": 130745,
+            "geometries": 1772,
+            "textures": 11,
+            "frameMs": 39
+          }
+        },
+        {
+          "elapsed": 1.005900000000537,
+          "x": -1679.2063208933384,
+          "z": 456.37247528984216,
+          "heading": 0.23399037050424468,
+          "speed": 11.797133365557976,
+          "steer": 0.02357213180102488,
+          "inputEvents": 27,
+          "stats": {
+            "calls": 115,
+            "triangles": 123993,
+            "geometries": 1773,
+            "textures": 11,
+            "frameMs": 210
+          }
+        },
+        {
+          "elapsed": 1.5351000000008241,
+          "x": -1677.6421564834081,
+          "z": 463.3058883962376,
+          "heading": 0.17926156859225253,
+          "speed": 13.84058418660082,
+          "steer": 0.17157140953422909,
+          "inputEvents": 48,
+          "stats": {
+            "calls": 115,
+            "triangles": 123995,
+            "geometries": 1774,
+            "textures": 11,
+            "frameMs": 389.10000000009313
+          }
+        },
+        {
+          "elapsed": 2.0464000000011993,
+          "x": -1676.7394865445497,
+          "z": 469.3316237428335,
+          "heading": -0.05546495491259454,
+          "speed": 10.154444571501728,
+          "steer": 0.41652383720904973,
+          "inputEvents": 71,
+          "stats": {
+            "calls": 116,
+            "triangles": 129075,
+            "geometries": 1774,
+            "textures": 11,
+            "frameMs": 19.899999999906868
+          }
+        },
+        {
+          "elapsed": 2.5811000000014985,
+          "x": -1677.4715705533526,
+          "z": 475.764003910295,
+          "heading": -0.18926648018896172,
+          "speed": 13.209916005651754,
+          "steer": -0.318112994592306,
+          "inputEvents": 88,
+          "stats": {
+            "calls": 101,
+            "triangles": 120393,
+            "geometries": 1774,
+            "textures": 11,
+            "frameMs": 220.29999999981374
+          }
+        }
+      ],
+      "setup": {
+        "start": {
+          "x": -1680,
+          "z": 450.9090909090909,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "ids": [
+          "bkk:1207",
+          "bkk:1208",
+          "bkk:1209",
+          "bkk:1210"
+        ],
+        "time": 240,
+        "duration": 3,
+        "stopAtEnd": false
+      },
+      "wallVideoStart": 0.442,
+      "wallVideoDuration": 18.049,
+      "inputs": "Browser keyboard throttle/brake + pointer events through steering widget; normal chase camera; no pose edits after setup"
+    },
+    {
+      "name": "khaosan",
+      "start": {
+        "x": -900,
+        "z": -1580,
+        "id": "bkk:1160"
+      },
+      "end": {
+        "x": -869.4274702218114,
+        "z": -1581.7571346196257,
+        "heading": 1.5378797957170913,
+        "speed": 12.96463901666259,
+        "steer": -0.2524280902167768,
+        "lean": 0.01839346487729188,
+        "wheelSpin": 81.51845887351033,
+        "collision": 0
+      },
+      "metres": 31.007907569513634,
+      "elapsed": 3.01660000000075,
+      "collisionFrames": 0,
+      "inputEvents": 100,
+      "samples": [
+        {
+          "elapsed": 0.5336000000002059,
+          "x": -898.6874700697019,
+          "z": -1580.056778134623,
+          "heading": 1.7046627899305298,
+          "speed": 5.860056228157837,
+          "steer": -0.21332251170313346,
+          "inputEvents": 15,
+          "stats": {
+            "calls": 157,
+            "triangles": 244141,
+            "geometries": 1817,
+            "textures": 11,
+            "frameMs": 645.6999999997206
+          }
+        },
+        {
+          "elapsed": 1.0439000000006047,
+          "x": -894.0887601484137,
+          "z": -1580.8952269616734,
+          "heading": 1.8057409009362084,
+          "speed": 12.255598706815714,
+          "steer": 0.038493392060972735,
+          "inputEvents": 28,
+          "stats": {
+            "calls": 150,
+            "triangles": 237007,
+            "geometries": 1818,
+            "textures": 11,
+            "frameMs": 285.8000000002794
+          }
+        },
+        {
+          "elapsed": 1.5816000000008898,
+          "x": -887.0702765502316,
+          "z": -1582.4624839045314,
+          "heading": 1.7409897031160344,
+          "speed": 13.45128975582423,
+          "steer": 0.1829901453612514,
+          "inputEvents": 50,
+          "stats": {
+            "calls": 151,
+            "triangles": 242021,
+            "geometries": 1818,
+            "textures": 11,
+            "frameMs": 281.5
+          }
+        },
+        {
+          "elapsed": 2.0816000000010035,
+          "x": -881.1755838117745,
+          "z": -1583.2972137125148,
+          "heading": 1.5095627687417146,
+          "speed": 9.874074249904222,
+          "steer": 0.4126384196431026,
+          "inputEvents": 68,
+          "stats": {
+            "calls": 167,
+            "triangles": 269595,
+            "geometries": 1818,
+            "textures": 11,
+            "frameMs": 272.5
+          }
+        },
+        {
+          "elapsed": 2.5970000000010316,
+          "x": -875.0429180229057,
+          "z": -1582.5887882867667,
+          "heading": 1.380023316743572,
+          "speed": 13.866068551813928,
+          "steer": -0.3122715544730579,
+          "inputEvents": 84,
+          "stats": {
+            "calls": 179,
+            "triangles": 279541,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 350
+          }
+        }
+      ],
+      "setup": {
+        "start": {
+          "x": -900,
+          "z": -1580,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "ids": [
+          "bkk:1160",
+          "bkk:1161",
+          "bkk:1162",
+          "bkk:1163",
+          "bkk:1164",
+          "bkk:1165",
+          "bkk:1166",
+          "bkk:1167",
+          "bkk:1168",
+          "bkk:1169",
+          "bkk:1170",
+          "bkk:1171"
+        ],
+        "time": 240,
+        "duration": 3,
+        "stopAtEnd": false
+      },
+      "wallVideoStart": 0.225,
+      "wallVideoDuration": 19.763,
+      "inputs": "Browser keyboard throttle/brake + pointer events through steering widget; normal chase camera; no pose edits after setup"
+    },
+    {
+      "name": "riverfront",
+      "start": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "id": "bkk:995"
+      },
+      "end": {
+        "x": -1484.3009538482656,
+        "z": -868.7330702399006,
+        "heading": -0.07580405863751732,
+        "speed": 13.992150391946385,
+        "steer": -0.2608881069487837,
+        "lean": 0.019337224188581085,
+        "wheelSpin": 81.68813084708712,
+        "collision": 0
+      },
+      "metres": 31.072785925334806,
+      "elapsed": 3.039300000000395,
+      "collisionFrames": 0,
+      "inputEvents": 100,
+      "samples": [
+        {
+          "elapsed": 0.5081000000001552,
+          "x": -1484.7144654077726,
+          "z": -898.3349188085045,
+          "heading": 0.07203372140694479,
+          "speed": 5.309985142308858,
+          "steer": -0.242870056768935,
+          "inputEvents": 13,
+          "stats": {
+            "calls": 91,
+            "triangles": 119747,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 452.39999999990687
+          }
+        },
+        {
+          "elapsed": 1.0194000000005303,
+          "x": -1484.151993886226,
+          "z": -893.9539885013616,
+          "heading": 0.19160297685152317,
+          "speed": 11.760730637431985,
+          "steer": 0.02266638239678386,
+          "inputEvents": 27,
+          "stats": {
+            "calls": 96,
+            "triangles": 122503,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 229.20000000018626
+          }
+        },
+        {
+          "elapsed": 1.519400000000644,
+          "x": -1482.972910459167,
+          "z": -887.4994083480263,
+          "heading": 0.14370956784059785,
+          "speed": 13.046613734689004,
+          "steer": 0.15423758615584834,
+          "inputEvents": 45,
+          "stats": {
+            "calls": 96,
+            "triangles": 122503,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 236.79999999981374
+          }
+        },
+        {
+          "elapsed": 2.0603000000001828,
+          "x": -1482.224049845347,
+          "z": -880.8936869671486,
+          "heading": -0.0757064422526335,
+          "speed": 10.528000145477742,
+          "steer": 0.4276068666275413,
+          "inputEvents": 66,
+          "stats": {
+            "calls": 95,
+            "triangles": 125491,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 225.8000000002794
+          }
+        },
+        {
+          "elapsed": 2.5722000000002083,
+          "x": -1483.0531945754803,
+          "z": -875.0050665346731,
+          "heading": -0.24811547163885087,
+          "speed": 13.195114772318261,
+          "steer": -0.3204296661128157,
+          "inputEvents": 82,
+          "stats": {
+            "calls": 95,
+            "triangles": 124735,
+            "geometries": 1821,
+            "textures": 11,
+            "frameMs": 453.60000000009313
+          }
+        }
+      ],
+      "setup": {
+        "start": {
+          "x": -1484.7058823529412,
+          "z": -899.4117647058823,
+          "heading": -0.042527534619786644,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "ids": [
+          "bkk:995",
+          "bkk:996",
+          "bkk:997",
+          "bkk:998",
+          "bkk:999",
+          "bkk:1000",
+          "bkk:1001",
+          "bkk:1002",
+          "bkk:1003",
+          "bkk:1004",
+          "bkk:1005",
+          "bkk:1006"
+        ],
+        "time": 240,
+        "duration": 3,
+        "stopAtEnd": false
+      },
+      "wallVideoStart": 0.349,
+      "wallVideoDuration": 16.747,
+      "inputs": "Browser keyboard throttle/brake + pointer events through steering widget; normal chase camera; no pose edits after setup"
+    }
+  ],
+  "lifecycle": [
+    {
+      "calls": 236,
+      "triangles": 399169,
+      "geometries": 1821,
+      "textures": 11,
+      "frameMs": 248.1999999997206
+    },
+    {
+      "calls": 236,
+      "triangles": 399169,
+      "geometries": 1821,
+      "textures": 11,
+      "frameMs": 215.60000000009313
+    },
+    {
+      "calls": 236,
+      "triangles": 399169,
+      "geometries": 1821,
+      "textures": 11,
+      "frameMs": 13.300000000279397
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "environment": "Chromium 142 / SwiftShader; keyboard/pointer drives use normal chase camera. Repositioned stills are surveys. No physical iPhone certification."
+}

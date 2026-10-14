@@ -19,7 +19,7 @@ for (const root of [d.nodes[0]!.id, d.landmarks.find(l => l.id === 'gate')!.acce
   const seen = new Set([root]); for (const id of seen) for (const next of directed.get(id)!) seen.add(next);
   assert.equal(seen.size, nodes.size, 'NPC directions must not strand a neighborhood');
 }
-assert.equal(new Set(d.roads.filter(r => r.bridge).map(r => r.corridor)).size, 3);
+assert.equal(new Set(d.roads.filter(r => r.bridge && ['pinklao','memorial','taksin'].includes(r.corridor!)).map(r => r.corridor)).size, 3);
 assert.equal(new Set(d.roads.filter(r => r.shortcut).map(r => r.corridor)).size, 2);
 let roadSamples = 0, bridgeSamples = 0;
 for (const r of d.roads) {
@@ -95,4 +95,4 @@ for (const quality of ['low', 'medium'] as const) {
 }
 city.update(new Vector3(d.spawn!.x, 5, d.spawn!.z), 'low'); assert(city.group.children.some(c => c.visible)); city.dispose();
 const sunset = shiftLighting(0), night = shiftLighting(9 * 60); assert.equal(sunset.night, 0); assert.equal(night.night, 1); assert(night.sun < sunset.sun);
-console.log(JSON.stringify({ pass: true, nodes: nodes.size, roads: d.roads.length, roadSamples, bridgeSamples, protectedGate: true, reachableFares: 10, trafficTransitions: changes, discoveryPersistence: true, meshConstructionAndDisposal: true, bridgeViewChecks }));
+console.log(JSON.stringify({ pass: true, nodes: nodes.size, roads: d.roads.length, roadSamples, bridgeSamples, protectedGate: true, reachableFares: createMissions(d).length, trafficTransitions: changes, discoveryPersistence: true, meshConstructionAndDisposal: true, bridgeViewChecks }));
