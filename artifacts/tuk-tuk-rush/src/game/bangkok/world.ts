@@ -1,5 +1,7 @@
 import layout from './layout.json';
 import { scalaParcel } from './scala';
+import { planEnvironment } from './environmentPlan';
+import { bridgeBarriers } from './bridgeBarriers';
 import type { District, Landmark, Obstacle, Point, Road, RoadNode } from '../types';
 import { distanceToSegment, orientedFootprintsOverlap, routeBetween } from '../world';
 
@@ -193,7 +195,11 @@ export function createBangkokWorld(): District {
   const spawnRoad = roads.find(r => r.corridor === 'yaowarat')!;
   const spawn = byId.get(spawnRoad.a)!, next = byId.get(spawnRoad.b)!;
   world.spawn = { ...spawn, heading: Math.atan2(next.x - spawn.x, next.z - spawn.z) };
+  const approaches=landmarks.filter(l=>['arun','pho','icon','paragon'].includes(l.id!)).map(l=>{const a=byId.get(l.accessNode!)!,p=l.plot!,length=Math.hypot(p.x-a.x,p.z-a.z);return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:24,d:Math.max(0,length-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};});
+  const hidden=new Set(world.buildings.filter(b=>approaches.some(a=>a.d>1&&orientedFootprintsOverlap(a,b))));
+  world.buildings=world.buildings.filter(b=>!hidden.has(b));world.obstacles=world.obstacles.filter(b=>!hidden.has(b));
   scalaParcel(world).height=36;
+  world.obstacles.push(...bridgeBarriers(world));planEnvironment(world);
   return world;
 }
 
