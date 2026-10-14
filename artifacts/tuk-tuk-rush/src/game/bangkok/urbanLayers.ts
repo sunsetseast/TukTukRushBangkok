@@ -1,3 +1,4 @@
+import {regionAt} from './world';
 import { environmentPeople } from "./environmentPlan";
 import type { District, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
@@ -140,7 +141,7 @@ export function bangkokPeople(
       (r) => distanceToSegment(p, r.a, r.b).distance > r.width / 2 + 0.8,
     );
   const people: StreetPerson[] = [];
-  for (const p of designs) {
+  for (const p of [...designs].sort((a,b)=>Number(b.corridor==='khaosan')-Number(a.corridor==='khaosan'))) {
     if ((!p.hero && p.region!=="khaosan") || p.parcel.artRole || p.bays.every((a) => !a.occupied))
       continue;
     const quota =
@@ -182,5 +183,10 @@ export function bangkokPeople(
       );
     }
   }
-  return [...environmentPeople(d), ...people].slice(0,360);
+  const groups=new Map<string,StreetPerson[]>();
+  for(const p of [...environmentPeople(d),...people]){const id=regionAt(d,p.start)?.id??'connector';if(!groups.has(id))groups.set(id,[]);groups.get(id)!.push(p);}
+  const balanced:StreetPerson[]=[];for(let i=0;balanced.length<360;i++){
+    let found=false;for(const group of groups.values())if(group[i]&&balanced.length<360){balanced.push(group[i]!);found=true;}if(!found)break;
+  }
+  return balanced;
 }

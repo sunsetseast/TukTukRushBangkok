@@ -242,7 +242,7 @@ export function environmentPeople(d: District): StreetPerson[] {
     people: StreetPerson[] = [];
   for (const site of planEnvironment(d).filter((s) =>
     ["noodle", "grill", "fruit", "tea", "wok", "dessert"].includes(s.kind),
-  )) {
+  ).sort((a,b)=>(['khaosan','chinatown','talatnoi'].includes(a.region)?['khaosan','chinatown','talatnoi'].indexOf(a.region):3)-(['khaosan','chinatown','talatnoi'].includes(b.region)?['khaosan','chinatown','talatnoi'].indexOf(b.region):3))) {
     if (people.length >= 140) break;
     const b = site.body,
       yaw = b.yaw ?? 0;
