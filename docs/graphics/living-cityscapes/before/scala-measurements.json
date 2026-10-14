@@ -1,0 +1,165 @@
+{
+  "label": "before",
+  "loadMs": 5320.187541,
+  "survey": [
+    {
+      "name": "scala",
+      "quality": "low",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-low-sunset.jpg",
+      "samples": [
+        {
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
+          "textures": 8,
+          "frameMs": 13.400000000372529
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "scala",
+      "quality": "low",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-low-twilight.jpg",
+      "samples": [
+        {
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
+          "textures": 8,
+          "frameMs": 158.5
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "scala",
+      "quality": "low",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-low-night.jpg",
+      "samples": [
+        {
+          "calls": 211,
+          "triangles": 356622,
+          "geometries": 320,
+          "textures": 8,
+          "frameMs": 327.29999999981374
+        }
+      ],
+      "resource": {
+        "actualQuality": "low",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "scala",
+      "quality": "medium",
+      "elapsed": 0,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-medium-sunset.jpg",
+      "samples": [
+        {
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 321,
+          "textures": 8,
+          "frameMs": 288.89999999990687
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "scala",
+      "quality": "medium",
+      "elapsed": 360,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-medium-twilight.jpg",
+      "samples": [
+        {
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 381,
+          "textures": 8,
+          "frameMs": 314.5
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    },
+    {
+      "name": "scala",
+      "quality": "medium",
+      "elapsed": 600,
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -1.4800643944167469
+      },
+      "file": "scala-medium-night.jpg",
+      "samples": [
+        {
+          "calls": 302,
+          "triangles": 476464,
+          "geometries": 381,
+          "textures": 8,
+          "frameMs": 14.399999999906868
+        }
+      ],
+      "resource": {
+        "actualQuality": "medium",
+        "cpuGeometryBytes": 94286108,
+        "texturePixels": 2199552,
+        "heapBytes": 435000000
+      }
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "environment": "844x390 Chromium SwiftShader, software WebGL, not physical iPhone"
+}

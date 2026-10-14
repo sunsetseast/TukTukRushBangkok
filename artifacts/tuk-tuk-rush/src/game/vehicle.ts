@@ -1,6 +1,7 @@
 import type { District, Input, TrafficCar, Vehicle } from './types';
 import { nearestRoad, obstacleLocal } from './world';
 import { blockedByRiver } from './bangkok/world';
+import { physicsObstacleIndex } from './bangkok/clearanceIndex';
 import { YAOWARAT_TRACE } from './mapData';
 
 export function createVehicle(district?: District): Vehicle {
@@ -43,7 +44,10 @@ export class VehicleController {
     p.x += this.vx * dt; p.z += this.vz * dt;
     const radius = 1.5;
     let collided = false;
-    for (const b of district.obstacles) {
+    const index=district.worldId==='bangkok'?physicsObstacleIndex(district):undefined;
+    let candidates=index?.query(p),cursor=0,last=-1;
+    while(cursor<(candidates?.length??district.obstacles.length)){
+      const item=candidates?candidates[cursor++]!:cursor++;if(item<=last)continue;last=item;const b=district.obstacles[item]!;
       const q = obstacleLocal(p, b);
       if (Math.abs(q.x) > b.w / 2 + radius || Math.abs(q.z) > b.d / 2 + radius) continue;
       const nearestX = Math.max(-b.w / 2, Math.min(q.x, b.w / 2));
@@ -80,6 +84,7 @@ export class VehicleController {
         this.vz -= inward * nz;
       }
       collided = true;
+      if(index){candidates=index.query(p);cursor=0;}
     }
     for (const car of traffic) {
       const dx = p.x - car.x, dz = p.z - car.z;

@@ -1,0 +1,55 @@
+$ node ../../node_modules/typescript/bin/tsc -p tsconfig.json --noEmit
+exit=0
+$ node --import tsx scripts/check-gameplay.ts
+{"pass":true,"nodes":81,"roads":87,"buildings":99,"curvedRoad":true,"clockwiseCircle":true,"leftTraffic":true,"fiveMinuteTrafficEdges":715,"circleFrames":19090}
+exit=0
+$ node --import tsx scripts/check-driven-mission.ts
+{"pass":true,"actualDrivenDelivery":true,"noTeleports":true,"trafficDisabledForDeterminism":true,"metres":258,"simulatedSeconds":24.816666666666666,"collisionFrames":0,"pauseResumeRestartFreeRide":true}
+exit=0
+$ node --import tsx scripts/check-street-life.ts
+PASS 155 people; deterministic clear paths, movement, pause, quality and bounded batches
+exit=0
+$ node --import tsx scripts/check-roadside.ts
+PASS roadside: 91 furniture placements, wall slide/reverse, traffic escape
+exit=0
+$ node --import tsx scripts/check-signature.ts
+PASS Yaowarat signature plots, road/collider clearance, four verified businesses
+exit=0
+$ node --import tsx scripts/check-sign-layers.ts
+PASS sign trade labels, exterior face mounts, high clearances, traffic density
+exit=0
+$ node --import tsx scripts/check-bangkok.ts
+{"pass":true,"nodes":1171,"roads":1190,"roadSamples":10710,"bridgeSamples":657,"protectedGate":true,"reachableFares":10,"trafficTransitions":313,"discoveryPersistence":true,"meshConstructionAndDisposal":true,"bridgeViewChecks":146}
+exit=0
+$ node --import tsx scripts/check-bangkok-driven.ts
+{"pass":true,"drivenFares":10,"noTeleports":true,"metres":18321,"simulatedSeconds":1872,"collisions":0,"pauseRecoveryRestart":true,"trafficDisabledForDeterminism":true}
+exit=0
+$ node --import tsx scripts/check-bangkok-map.tsx
+{"pass":true,"mapMarkup":true,"modalAndLocation":true,"discoveryNotMutatedByMap":true,"culledMinimapRoads":60}
+exit=0
+$ node --import tsx scripts/check-bangkok-architecture.ts
+{"pass":true,"buildings":2467,"aligned":2453,"families":["chinatown","connector","icon","khaosan","north","oldtown","siam","silom","south","sukhumvit","talatnoi","westbank"],"alwaysVisiblePieces":342360,"details":41836,"windows":16739}
+exit=0
+$ node --import tsx scripts/check-environment-art.ts
+{"pass":true,"identities":2467,"typologies":["apartment","arcade","concrete","gold","guesthouse","noodle","office","residence","retail","riverhouse","shophouse","timber","warehouse","workshop"],"heroDiversity":[{"hero":"yaowarat-gate","parcels":155,"structuralCompositions":148},{"hero":"songwat-workshops","parcels":61,"structuralCompositions":60},{"hero":"watpho-heritage","parcels":117,"structuralCompositions":115},{"hero":"siam-retail","parcels":138,"structuralCompositions":60},{"hero":"iconsiam-river","parcels":49,"structuralCompositions":41}],"pedestrians":332,"tradeSignEntries":36,"sharedResourcesReleasedExactlyOnce":true}
+PASS bundled Thai/Chinese/Latin glyph coverage for all 36 trade signs
+PASS pedestrian spatial index matches full collision scans
+PASS fresh scene construction after resource disposal
+exit=0
+$ node --import tsx scripts/check-cityscapes.ts
+{"pass":true,"mapContract":"5ed882d40914d62c46672f0e13a52419fc4194030e1a91b6fb03bc7f5a324497","sites":885,"solids":3537,"boats":7,"boatSamples":1792,"pedestrians":332,"cablePieces":2916,"flagships":5,"scalaEaves":305,"matchedCollisionSteps":800,"medianPhysicsCandidates":9}
+exit=0
+$ node scripts/check-assets.mjs
+{
+  "modelBytes": 606816,
+  "triangles": 29068,
+  "materials": 13,
+  "dimensions": [
+    2.1179423332214355,
+    2.451500053405762,
+    3.4935525465011597
+  ],
+  "textureTransferBytes": 328831,
+  "estimatedTextureBytesWithMips": 11010048
+}
+exit=0

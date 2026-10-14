@@ -1,0 +1,61 @@
+name: Bangkok matched environment survey
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/game/bangkok/**'
+      - 'artifacts/tuk-tuk-rush/src/game/Renderer.tsx'
+      - 'artifacts/tuk-tuk-rush/scripts/capture-cityscapes.mjs'
+      - '.github/workflows/cityscapes-survey.yml'
+  workflow_dispatch:
+
+jobs:
+  survey:
+    # Full art surveys are explicit reviews, not mandatory on every code edit.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 13
+      matrix:
+        location: [scala, chinatown, gate, talatnoi, oldtown, arun, arunriver, siam, icon, bridge, bridgewater, residential, intersection]
+    env:
+      PORT: '24185'
+      BASE_PATH: '/'
+      CI: 'true'
+      CAPTURE_NAMES: ${{ matrix.location }}
+      CAPTURE_MANIFEST: ${{ matrix.location }}-measurements.json
+      CAPTURE_SAMPLES: '1'
+      CAPTURE_WARM_FRAMES: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Matched PR12 baseline and new branch
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          git worktree add "$RUNNER_TEMP/tuktuk-pr12" d8597be90685073a80581b7abc3dbbaf739adbe8
+          ln -s "$GITHUB_WORKSPACE/node_modules" "$RUNNER_TEMP/tuktuk-pr12/node_modules"
+          ln -s "$GITHUB_WORKSPACE/artifacts/tuk-tuk-rush/node_modules" "$RUNNER_TEMP/tuktuk-pr12/artifacts/tuk-tuk-rush/node_modules"
+          export CAPTURE_ROOT="$GITHUB_WORKSPACE/docs/graphics/living-cityscapes"
+          (cd "$RUNNER_TEMP/tuktuk-pr12/artifacts/tuk-tuk-rush" && CAPTURE_LABEL=before node "$GITHUB_WORKSPACE/artifacts/tuk-tuk-rush/scripts/capture-cityscapes.mjs")
+          CAPTURE_LABEL=after node scripts/capture-cityscapes.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cityscapes-survey-${{ matrix.location }}
+          path: |
+            docs/graphics/living-cityscapes/before/${{ matrix.location }}*
+            docs/graphics/living-cityscapes/after/${{ matrix.location }}*
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,49 @@
+name: Bangkok living cityscapes driving QA
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/game/**'
+      - 'artifacts/tuk-tuk-rush/scripts/record-cityscapes-drive.mjs'
+      - 'artifacts/tuk-tuk-rush/scripts/playable-drive.mjs'
+      - '.github/workflows/cityscapes-driving.yml'
+  workflow_dispatch:
+
+jobs:
+  drive:
+    # Long recordings are explicit reviews; normal PRs retain the fast suites.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        corridor: [first-player, yaowarat-gate, talatnoi-songwat, watpho-oldtown, siam-ratchaprasong, iconsiam-riverfront]
+    env:
+      PORT: '24195'
+      BASE_PATH: '/'
+      CI: 'true'
+      DRIVE_NAME: ${{ matrix.corridor }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Record actual controller inputs
+        working-directory: artifacts/tuk-tuk-rush
+        run: node scripts/record-cityscapes-drive.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cityscapes-${{ matrix.corridor }}
+          path: docs/graphics/living-cityscapes/browser/${{ matrix.corridor }}*
+          if-no-files-found: error
+          retention-days: 90

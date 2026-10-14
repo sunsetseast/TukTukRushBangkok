@@ -1,0 +1,49 @@
+{
+  "pass": true,
+  "drives": [],
+  "touchRelease": true,
+  "mapPanPinch": true,
+  "portraitMap": true,
+  "restarts": [
+    {
+      "calls": 233,
+      "triangles": 296938,
+      "geometries": 366,
+      "textures": 10,
+      "frameMs": 523.5,
+      "cityId": "ab950ff8-2e76-4d6e-a651-d2a033146a59"
+    },
+    {
+      "calls": 233,
+      "triangles": 296938,
+      "geometries": 366,
+      "textures": 10,
+      "frameMs": 1103.5,
+      "cityId": "ab950ff8-2e76-4d6e-a651-d2a033146a59"
+    },
+    {
+      "calls": 233,
+      "triangles": 296938,
+      "geometries": 366,
+      "textures": 10,
+      "frameMs": 9.699999999953434,
+      "cityId": "ab950ff8-2e76-4d6e-a651-d2a033146a59"
+    },
+    {
+      "calls": 233,
+      "triangles": 296938,
+      "geometries": 366,
+      "textures": 10,
+      "frameMs": 28,
+      "cityId": "ab950ff8-2e76-4d6e-a651-d2a033146a59"
+    }
+  ],
+  "contextLossAndRecovery": true,
+  "original": {
+    "facades": 198,
+    "people": 155
+  },
+  "errors": [],
+  "failed": [],
+  "performanceEnvironment": "Chromium software WebGL, not device certification"
+}

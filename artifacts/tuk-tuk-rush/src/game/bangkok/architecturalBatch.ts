@@ -1,6 +1,6 @@
 import * as T from "three";
 import type { Surface } from "./buildingGrammar";
-export type Shape = "box" | "gable" | "arch" | "cylinder" | "orb";
+export type Shape = "box" | "gable" | "arch" | "cylinder" | "orb" | "arrow";
 export type Layer = "core" | "near" | "coarse" | "detail" | "night";
 export type ArtPiece = {
   x: number;
@@ -10,6 +10,8 @@ export type ArtPiece = {
   h: number;
   d: number;
   yaw: number;
+  pitch?: number;
+  siteId?: string;
   color: string;
   surface?: Surface;
   shape?: Shape;
@@ -65,7 +67,7 @@ export class ArchitecturalBatch {
         this.instances.set(key, bucket);
       }
       const c = Math.cos(o.yaw),
-        s = Math.sin(o.yaw),
+        s = Math.sin(o.yaw), cp=Math.cos(o.pitch??0),sp=Math.sin(o.pitch??0),
         color = new T.Color(o.color);
       // Matrices contain world transforms. A custom per-instance surface tile
       // selects the shared material atlas in the vertex shader.
@@ -74,13 +76,13 @@ export class ArchitecturalBatch {
         0,
         -s * o.w,
         0,
+        s*sp*o.h,
+        cp*o.h,
+        c*sp*o.h,
         0,
-        o.h,
-        0,
-        0,
-        s * o.d,
-        0,
-        c * o.d,
+        s*cp*o.d,
+        -sp*o.d,
+        c*cp*o.d,
         0,
         o.x,
         o.y,
@@ -136,7 +138,8 @@ export class ArchitecturalBatch {
         );
       else if (shape === "cylinder")
         geo = new T.CylinderGeometry(0.5, 0.5, 1, 8);
-      else if (shape === "orb") geo = new T.SphereGeometry(0.5, 8, 5);
+      else if(shape==="orb")geo=new T.IcosahedronGeometry(.5,0);
+      else if(shape==="arrow"){geo=new T.BufferGeometry();geo.setAttribute("position",new T.Float32BufferAttribute([-.5,0,-.5,.5,0,-.5,0,0,.5],3));geo.setAttribute("uv",new T.Float32BufferAttribute([0,0,1,0,.5,1],2));geo.setIndex([0,2,1]);geo.computeVertexNormals();}
       else geo = new T.BoxGeometry(1, 1, 1);
       this.templates.set(shape, geo);
     }

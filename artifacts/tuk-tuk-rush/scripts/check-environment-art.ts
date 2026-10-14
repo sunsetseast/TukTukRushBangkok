@@ -183,12 +183,14 @@ const gs = new Set<any>(),
 city.group.traverse((o) => {
   if (o instanceof InstancedMesh) {
     inst.add(o);
+    if(o.userData.environmentEffect) {assert(o.geometry.hasAttribute("position"));assert(o.instanceMatrix.count>=o.count);}else{
     assert(
       o.geometry.hasAttribute("color"),
       "Instanced tint must not multiply by an absent zero vertex color",
     );
     assert(o.geometry.hasAttribute("artSurface"));
     assert(o.boundingSphere && Number.isFinite(o.boundingSphere.radius));
+    }
   }
   if (o instanceof Mesh) {
     gs.add(o.geometry);

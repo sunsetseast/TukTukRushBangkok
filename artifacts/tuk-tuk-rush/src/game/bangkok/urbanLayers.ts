@@ -1,3 +1,4 @@
+import { environmentPeople } from "./environmentPlan";
 import type { District, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { designBuildings, type ParcelDesign } from "./buildingGrammar";
@@ -42,6 +43,8 @@ export function emitUrbanLayers(
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
       s = Math.sin(yaw);
+    const threshold={x:b.x+s*(b.d/2+1.1),z:b.z+c*(b.d/2+1.1)};
+    put(threshold.x,.14,threshold.z,b.w,.16,2.4,"#bdb59f","box","core",yaw);
     const local = (u: number, v: number) => ({
       x: b.x + c * u + s * v,
       z: b.z - s * u + c * v,
@@ -114,18 +117,6 @@ export function emitUrbanLayers(
         yaw,
       );
   }
-  // Original small river craft, inside the already non-drivable river. Kept
-  // static here; no traffic simulation or invisible new river obstacles.
-  for (let i = 2; i < (d.river?.length ?? 0) - 1; i++) {
-    const a = d.river![i - 1]!,
-      b = d.river![i]!,
-      x = (a.x + b.x) / 2 + 22,
-      z = (a.z + b.z) / 2,
-      yaw = Math.atan2(b.x - a.x, b.z - a.z);
-    put(x, 0.35, z, 3.7, 0.9, 13, "#986944", "box", "core", yaw);
-    put(x, 1.55, z, 3.15, 0.25, 7.5, "#b57346", "box", "core", yaw);
-    put(x, 1, z, 2.8, 0.9, 4.8, "#346a74", "box", "core", yaw);
-  }
   // Continuous silhouette behind roadside development uses only real parcels.
   // World fog covers the finite city boundary; there are no floating aerial slabs.
 }
@@ -190,5 +181,5 @@ export function bangkokPeople(
       );
     }
   }
-  return people;
+  return [...environmentPeople(d), ...people].slice(0,360);
 }

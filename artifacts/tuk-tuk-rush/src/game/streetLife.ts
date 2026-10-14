@@ -226,7 +226,8 @@ export function buildStreetLife(d: District, population?: StreetPerson[]) {
   steam.boundingSphere = new T.Sphere(new T.Vector3(), citywide ? 3600 : 520);
   root.add(steam);
   const colorTemp = new T.Color();
-  let time = 0;
+  let time = 0,nearX=Infinity,nearZ=Infinity;
+  let presentation=people.map((_,i)=>i);
   function update(
     dt: number,
     camera: T.Vector3,
@@ -235,9 +236,10 @@ export function buildStreetLife(d: District, population?: StreetPerson[]) {
     player?: Point & { heading?: number; speed?: number },
   ) {
     if (active) time += Math.max(0, Math.min(dt, 0.05));
+    if(citywide&&Math.hypot(camera.x-nearX,camera.z-nearZ)>12){nearX=camera.x;nearZ=camera.z;presentation=people.map((_,i)=>i).sort((i,j)=>{const score=(i:number)=>Math.hypot(people[i].start.x-camera.x,people[i].start.z-camera.z)-(people[i].role==='vendor'?8:0);return score(i)-score(j);});}
     let slot = 0,
       steamSlot = 0;
-    for (let i = 0; i < people.length; i++) {
+    for (const i of presentation) {
       const p = people[i]!,
         length = Math.hypot(p.end.x - p.start.x, p.end.z - p.start.z);
       if (citywide && Math.hypot(p.start.x-camera.x,p.start.z-camera.z)>125) continue;
@@ -317,7 +319,7 @@ export function buildStreetLife(d: District, population?: StreetPerson[]) {
       const visible =
         Math.hypot(displayX - camera.x, displayZ - camera.z) <
           (quality === "low" ? 65 : 100) &&
-        (quality === "medium" || i % 2 === 0);
+        (quality === "medium" || i % 2 === 0 || (citywide && p.role === "vendor"));
       if (!visible || (citywide && slot >= (quality === "low" ? 20 : 32))) continue;
       const swing = walking || escaping ? Math.sin(time * (escaping ? 12 : 6) + p.seed) * 0.48 : 0;
       const serve = p.role === "vendor" ? Math.sin(time * 2 + p.seed) * 0.2 : 0;

@@ -1,0 +1,126 @@
+{
+  "scenes": [
+    {
+      "name": "chinatown",
+      "quality": "low",
+      "beforeCalls": 200.0,
+      "afterCalls": 235.0,
+      "beforeTriangles": 328976.0,
+      "afterTriangles": 307390.0,
+      "beforeMs": 323.1500000000233,
+      "afterMs": 317.70000000006985,
+      "beforeP95": 625.8999999999069,
+      "afterP95": 697.1000000000931
+    },
+    {
+      "name": "chinatown",
+      "quality": "medium",
+      "beforeCalls": 300.0,
+      "afterCalls": 340.0,
+      "beforeTriangles": 453006.0,
+      "afterTriangles": 429166.0,
+      "beforeMs": 392.9000000000233,
+      "afterMs": 401.79999999993015,
+      "beforeP95": 680.3000000000466,
+      "afterP95": 621.6999999999534
+    },
+    {
+      "name": "talatnoi",
+      "quality": "low",
+      "beforeCalls": 165.0,
+      "afterCalls": 196.0,
+      "beforeTriangles": 279836.0,
+      "afterTriangles": 253252.0,
+      "beforeMs": 348.6500000000233,
+      "afterMs": 264.10000000009313,
+      "beforeP95": 609.6000000000931,
+      "afterP95": 694.8999999999069
+    },
+    {
+      "name": "talatnoi",
+      "quality": "medium",
+      "beforeCalls": 333.0,
+      "afterCalls": 360.0,
+      "beforeTriangles": 523808.0,
+      "afterTriangles": 470846.0,
+      "beforeMs": 398.1500000000233,
+      "afterMs": 400.14999999990687,
+      "beforeP95": 785.3999999999069,
+      "afterP95": 804.2000000001863
+    },
+    {
+      "name": "oldtown",
+      "quality": "low",
+      "beforeCalls": 133.0,
+      "afterCalls": 140.0,
+      "beforeTriangles": 191620.0,
+      "afterTriangles": 174678.0,
+      "beforeMs": 196.04999999993015,
+      "afterMs": 153.15000000002328,
+      "beforeP95": 764.8000000000466,
+      "afterP95": 796.8999999999069
+    },
+    {
+      "name": "oldtown",
+      "quality": "medium",
+      "beforeCalls": 245.0,
+      "afterCalls": 267.0,
+      "beforeTriangles": 371044.0,
+      "afterTriangles": 338176.0,
+      "beforeMs": 308.8499999999767,
+      "afterMs": 236.0,
+      "beforeP95": 608.1000000000931,
+      "afterP95": 480
+    },
+    {
+      "name": "siam",
+      "quality": "low",
+      "beforeCalls": 156.0,
+      "afterCalls": 165.0,
+      "beforeTriangles": 165662.0,
+      "afterTriangles": 172848.0,
+      "beforeMs": 229.34999999997672,
+      "afterMs": 210.05000000004657,
+      "beforeP95": 573.3999999999069,
+      "afterP95": 544.8999999999069
+    },
+    {
+      "name": "siam",
+      "quality": "medium",
+      "beforeCalls": 229.0,
+      "afterCalls": 252.0,
+      "beforeTriangles": 224314.0,
+      "afterTriangles": 220461.0,
+      "beforeMs": 248.0999999998603,
+      "afterMs": 243.5,
+      "beforeP95": 471.30000000004657,
+      "afterP95": 525.1999999999534
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "beforeCalls": 78.0,
+      "afterCalls": 85.0,
+      "beforeTriangles": 70358.0,
+      "afterTriangles": 79526.0,
+      "beforeMs": 66.25,
+      "afterMs": 92.25,
+      "beforeP95": 278,
+      "afterP95": 258
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "beforeCalls": 120.0,
+      "afterCalls": 147.0,
+      "beforeTriangles": 94154.0,
+      "afterTriangles": 111512.0,
+      "beforeMs": 75.69999999995343,
+      "afterMs": 93.09999999997672,
+      "beforeP95": 113.19999999995343,
+      "afterP95": 151.0999999998603
+    }
+  ],
+  "protocol": "844x390; same five poses at elapsed=600; modes pinned; 12 warm-up and 40 sampled frames, no screenshot/video encoding; shared software-renderer container, not iPhone",
+  "bufferDefinition": "unique geometry attribute/index arrays plus every instance matrix/color array; excludes textures, driver/VRAM and transient JS; texturePixels counted separately"
+}

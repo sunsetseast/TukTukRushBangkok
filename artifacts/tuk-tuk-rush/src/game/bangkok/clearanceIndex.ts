@@ -1,5 +1,45 @@
 import type { District, Obstacle, Point, Road } from "../types";
 import { distanceToSegment, obstacleDistance } from "../world";
+const physicsCache = new WeakMap<
+  District,
+  ReturnType<typeof createPhysicsIndex>
+>();
+function createPhysicsIndex(d: District) {
+  const cells = new Map<string, number[]>();
+  d.obstacles.forEach((o, i) => {
+    const c = Math.abs(Math.cos(o.yaw ?? 0)),
+      s = Math.abs(Math.sin(o.yaw ?? 0)),
+      rx = (c * o.w + s * o.d) / 2 + 1.55,
+      rz = (s * o.w + c * o.d) / 2 + 1.55;
+    for (
+      let x = Math.floor((o.x - rx) / 80);
+      x <= Math.floor((o.x + rx) / 80);
+      x++
+    )
+      for (
+        let z = Math.floor((o.z - rz) / 80);
+        z <= Math.floor((o.z + rz) / 80);
+        z++
+      ) {
+        const k = `${x}:${z}`;
+        if (!cells.has(k)) cells.set(k, []);
+        cells.get(k)!.push(i);
+      }
+  });
+  return {
+    query: (p: Point) =>
+      cells.get(`${Math.floor(p.x / 80)}:${Math.floor(p.z / 80)}`) ?? [],
+  };
+}
+/** Preserve original collider order and contact solver; construction is static. */
+export function physicsObstacleIndex(d: District) {
+  let index = physicsCache.get(d);
+  if (!index) {
+    index = createPhysicsIndex(d);
+    physicsCache.set(d, index);
+  }
+  return index;
+}
 /** Conservative broad phase for citywide presentation agents. Includes rotated
  * collider bounds and complete road segment extents; exact tests remain shared. */
 export function cityClearance(d: District) {
