@@ -39,15 +39,94 @@ Additional original improvements: pixel-cut Mahanakhon, hill-mounted Golden Moun
 
 ## Evidence and validation
 
-<!-- EVIDENCE -->
-Fresh matched captures, controller recordings, viewport/context checks and final measurements are being attached. This section is incomplete until their files and manifests are present.
-<!-- /EVIDENCE -->
+The survey uses the same road coordinates, heading, camera (height 4.5 m, 10 m behind the player), 844 × 390 viewport, quality and shift time on both branches. Pose manifests: [PR #12 baseline](before/measurements.json) and [new branch](after/measurements.json). These are paused art inspections, not recorded driving. Supplemental Scala facade views use the same higher target on both branches so the upper eaves and projecting sign fit.
+
+| Location | PR #12, Pretty sunset | New branch, Pretty sunset |
+|---|---|---|
+| Chinatown | ![Before Chinatown](before/chinatown-medium-sunset.jpg) | ![After Chinatown](after/chinatown-medium-sunset.jpg) |
+| Chinatown Gate | ![Before Chinatown Gate](before/gate-medium-sunset.jpg) | ![After Chinatown Gate](after/gate-medium-sunset.jpg) |
+| Scala (normal camera) | ![Before Scala (normal camera)](before/scala-medium-sunset.jpg) | ![After Scala (normal camera)](after/scala-medium-sunset.jpg) |
+| Talat Noi | ![Before Talat Noi](before/talatnoi-medium-sunset.jpg) | ![After Talat Noi](after/talatnoi-medium-sunset.jpg) |
+| Wat Pho / Old Town | ![Before Wat Pho / Old Town](before/oldtown-medium-sunset.jpg) | ![After Wat Pho / Old Town](after/oldtown-medium-sunset.jpg) |
+| Wat Arun approach | ![Before Wat Arun approach](before/arun-medium-sunset.jpg) | ![After Wat Arun approach](after/arun-medium-sunset.jpg) |
+| Wat Arun from river road | ![Before Wat Arun from river road](before/arunriver-medium-sunset.jpg) | ![After Wat Arun from river road](after/arunriver-medium-sunset.jpg) |
+| Siam | ![Before Siam](before/siam-medium-sunset.jpg) | ![After Siam](after/siam-medium-sunset.jpg) |
+| ICONSIAM | ![Before ICONSIAM](before/icon-medium-sunset.jpg) | ![After ICONSIAM](after/icon-medium-sunset.jpg) |
+| Bridge approach | ![Before Bridge approach](before/bridge-medium-sunset.jpg) | ![After Bridge approach](after/bridge-medium-sunset.jpg) |
+| Bridge over water | ![Before Bridge over water](before/bridgewater-medium-sunset.jpg) | ![After Bridge over water](after/bridgewater-medium-sunset.jpg) |
+| Quiet residential street | ![Before Quiet residential street](before/residential-medium-sunset.jpg) | ![After Quiet residential street](after/residential-medium-sunset.jpg) |
+| Major intersection | ![Before Major intersection](before/intersection-medium-sunset.jpg) | ![After Major intersection](after/intersection-medium-sunset.jpg) |
+
+Scala reference response: [sunset facade](after/scala-facade-sunset.jpg), [night facade](after/scala-facade-night.jpg), [matched baseline facade](before/scala-facade-sunset.jpg). All geometry and sign artwork are original.
+
+| Same Chinatown pose | Sunset (0 s) | Twilight (360 s) | Night (600 s) |
+|---|---|---|---|
+| Fast | ![Fast sunset](after/chinatown-low-sunset.jpg) | ![Fast twilight](after/chinatown-low-twilight.jpg) | ![Fast night](after/chinatown-low-night.jpg) |
+| Pretty | ![Pretty sunset](after/chinatown-medium-sunset.jpg) | ![Pretty twilight](after/chinatown-medium-twilight.jpg) | ![Pretty night](after/chinatown-medium-night.jpg) |
+
+Every surveyed location has the same six sunset/twilight/night × Fast/Pretty files. [Before folder](before) · [After folder](after). The 24-minute shift length is unchanged.
+
+<!-- DRIVES -->
+Controller recordings are being finalized separately.
+<!-- /DRIVES -->
+
+[Browser UI/context results](browser/qa.json) cover 844 × 390, 932 × 430, 1280 × 800, 375 × 812 and 430 × 932; gas touch release; map pan/pinch; portrait map access and rotation hints; pause/resume; four restarts without uploaded geometry/texture growth; intentional WebGL context loss/restoration; and the original Chinatown mode. There were no console errors or failed HTTP responses. [Viewport and recovery captures](browser).
+
+[Full source regression output](validation/checks.log) and [production build output](validation/build.log) retain the existing suites and add environment-specific checks. Ten fares were driven through the existing controller/physics in deterministic simulation: 18,321 m, 1,872 simulation seconds, zero collisions; traffic is disabled only for that deterministic certification. Browser clips retain traffic. The base map contract SHA-256 remains `5ed882d40914d62c46672f0e13a52419fc4194030e1a91b6fb03bc7f5a324497`: nodes, roads/widths, landmark plots/access, river, spawn, bounds and regions agree with current main.
+
+Focused checks validate all 885 environment sites, 3,537 solid footprints, 332 pedestrian routes, 1,792 samples on seven continuous boat loops, river/bank/bridge clearance, actual signal phase, deterministic generation, authored landmark envelopes, shared bridge art/physics, 800 indexed/full-scan contact steps, text/font loading and exact resource disposal with a fresh rebuild. Geometry counts establish coverage only; the images and controller footage establish visual evidence.
+
 
 ## Performance
 
-<!-- PERFORMANCE -->
-Equivalent current-main and branch measurements are pending. Software Chromium results cannot certify iPhone 30 FPS, VRAM, thermal behavior or memory pressure.
-<!-- /PERFORMANCE -->
+Equivalent measurement: five flagship poses at night, 844 × 390, pinned Fast/Pretty, 12 warm-up and 40 sampled frames each. Versions ran sequentially without screenshot/video encoding. Raw [baseline](before/isolated-profile.json), [branch](after/isolated-profile.json) and [summary](performance-summary.json) retain every sample. These shared-container SwiftShader intervals include software rendering and scheduling; they are not GPU timer measurements and cannot establish iPhone FPS.
+
+| Pose / mode | Calls before → after | Triangles before → after | Median frame interval ms | p95 interval ms |
+|---|---:|---:|---:|---:|
+| chinatown / Fast | 200 → 235 | 328,976 → 307,390 | 323.2 → 317.7 | 625.9 → 697.1 |
+| chinatown / Pretty | 300 → 340 | 453,006 → 429,166 | 392.9 → 401.8 | 680.3 → 621.7 |
+| talatnoi / Fast | 165 → 196 | 279,836 → 253,252 | 348.7 → 264.1 | 609.6 → 694.9 |
+| talatnoi / Pretty | 333 → 360 | 523,808 → 470,846 | 398.2 → 400.1 | 785.4 → 804.2 |
+| oldtown / Fast | 133 → 140 | 191,620 → 174,678 | 196.0 → 153.2 | 764.8 → 796.9 |
+| oldtown / Pretty | 245 → 267 | 371,044 → 338,176 | 308.8 → 236.0 | 608.1 → 480.0 |
+| siam / Fast | 156 → 165 | 165,662 → 172,848 | 229.3 → 210.1 | 573.4 → 544.9 |
+| siam / Pretty | 229 → 252 | 224,314 → 220,461 | 248.1 → 243.5 | 471.3 → 525.2 |
+| icon / Fast | 78 → 85 | 70,358 → 79,526 | 66.2 → 92.2 | 278.0 → 258.0 |
+| icon / Pretty | 120 → 147 | 94,154 → 111,512 | 75.7 → 93.1 | 113.2 → 151.1 |
+
+| Whole-scene resource | PR #12 | New branch |
+|---|---:|---:|
+| CPU geometry + instance buffers, MiB | 90.07 | 104.60 |
+| Unique scene geometries | 3,831.00 | 4,293.00 |
+| Scene materials | 1,376.00 | 1,733.00 |
+| Texture objects | 11.00 | 11.00 |
+| Texture pixels | 2,199,552.00 | 2,478,080.00 |
+| Approximate browser JS heap, MiB | 414.85 | 527.38 |
+| Dev-server first scene readiness, seconds | 5.53 | 6.63 |
+
+Across these five poses, Fast averages 12.2% more draw calls and -4.7% changed triangles. 
+Across these five poses, Pretty averages 11.3% more draw calls and -5.8% changed triangles. 
+CPU scene buffers rise from 90.07 to 104.60 MiB (+16.1%). The count includes unique attribute/index arrays and every instance matrix/color array, including hidden assets. Texture pixels, JS heap and driver allocations are separate. Texture objects stay at 11; RGBA base pixels rise from approximately 8.39 to 9.45 MiB before mipmaps. Driver VRAM/render-target memory was not measured. Construction retains temporary arrays; these are not equal to uploaded GPU buffers.
+
+Optimization accompanies the additional artwork: 20-triangle foliage lobes, shared vertex-colored landmark batches (two materials per site), bounded people/boat/light presentation, shortened near-detail ranges, removed primitive river/park duplicates and an ordered physics broad phase. The contact test queries a median nine solids rather than scanning all 3,537, with the same 800 tested contact responses. The additional calls/materials primarily come from environmental cell layers, original landmark surfaces and Scala/sign lighting; the base facade/sign system remains a major cost. The measured mall riverfront cost rises despite the overall triangle reduction, so device testing is still required.
+
+Four warm restarts preserve the same scene and uploaded geometry/texture counts in the paused UI test. Isolated-profile restarts also finish with stable 1,021 uploaded geometries and 11 textures, after all sampled locations have warmed. This detects repeat-session resource growth in these checks, not every possible mobile leak. Source disposal checks exercise release and rebuild separately.
+
+Fresh Node 24 processes, three builds per version, with forced GC after construction, no DOM signs, WebGL upload or other local browser job. [Baseline raw builds](before/construction.jsonl) · [Branch raw builds](after/construction.jsonl). Medians:
+
+| Construction measure | PR #12 | New branch |
+|---|---:|---:|
+| World build, ms | 780.91 | 820.74 |
+| Scene build, ms | 2,243.18 | 2,531.74 |
+| Node heap after GC, MiB | 39.04 | 44.37 |
+| Node array buffers after GC, MiB | 96.43 | 108.43 |
+| Process RSS, MiB | 555.40 | 613.43 |
+
+Node array buffers include construction allocations as well as retained render data. Scene construction is slower and uses more memory; a mobile cold-start/load budget still needs physical-device measurement. Browser scene readiness uses the development server and is not production network load time.
+
+
+PR #12's historical 127/224 calls, 165,626/226,494 triangles and 89.9 MiB used a different survey; they are retained for context, not used as the denominator above. No stable 30 FPS, thermal, Safari GPU or memory-pressure claim is made without physical iPhone testing.
+
 
 ## Acceptance and remaining work
 
