@@ -120,7 +120,7 @@ try {
         quality: "low",
         viewport: [844, 390],
         environment:
-          "Chromium 133 SwiftShader; not iPhone; normal chase camera",
+          `${browser.version()} SwiftShader; not iPhone; normal chase camera`,
       },
       null,
       2,
