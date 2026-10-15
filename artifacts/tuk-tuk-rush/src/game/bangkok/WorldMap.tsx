@@ -25,6 +25,7 @@ function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true, tr
     })}
     {transit&&d.transit?.lines.map(line=><g key={line.id} data-testid={`map-rail-${line.id}`}>
       <polyline points={points(line.samples)} stroke={line.color} strokeWidth="3" strokeDasharray={line.id==='gold'?'5 2':undefined} strokeLinejoin="round" fill="none"/>
+      {detail&&placeNames&&line.continuation.map((label,i)=>{const m=toMap(line.samples[i?line.samples.length-1:0]!);return <text key={`beyond:${i}`} x={m.x} y={m.y-12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{label}</text>;})}
       {line.stations.map(s=>{const m=toMap(s);return <g key={s.id}><circle cx={m.x} cy={m.y} r={(s.interchange?4.5:2.5)*labelScale} fill={line.color} stroke="#132d35" strokeWidth={labelScale}/>{detail&&placeNames&&<text x={m.x+6*labelScale} y={m.y+12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{s.code} {s.name}{s.mrt?' · MRT link':''}</text>}</g>;})}
     </g>)}
     {detail&&d.destinations?.map(a=>{const m=toMap(a.entrance);return <path key={a.id} transform={`translate(${m.x} ${m.y}) rotate(${180-a.entrance.yaw*180/Math.PI}) scale(${labelScale})`} d="M 0 -4 L 4 4 L -4 4 Z" fill="#efcc98" stroke="#10212e" strokeWidth="1"/>;})}

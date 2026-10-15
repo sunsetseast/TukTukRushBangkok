@@ -16,7 +16,7 @@ const d=createBangkokWorld(),nodes=new Map(d.nodes.map(n=>[n.id,n])),traffic=new
 const grid=physicsObstacleIndex(d);
 let samples=0;const regions=new Set<string>();
 // Actual moving cars, both directions of every two-way road. Old sign fails +Z calibration.
-for(const r of d.roads)for(const [from,to] of r.oneWay?[[r.a,r.b]]:[[r.a,r.b],[r.b,r.a]]){
+for(const r of d.roads.filter(r=>!r.noTraffic))for(const [from,to] of r.oneWay?[[r.a,r.b]]:[[r.a,r.b],[r.b,r.a]]){
   const a=nodes.get(from!)!,b=nodes.get(to!)!,len=Math.hypot(b.x-a.x,b.z-a.z);if(len<2)continue;
   const car:TrafficCar={...lanePoint(a,b,r,.5),from:from!,to:to!,heading:Math.atan2(b.x-a.x,b.z-a.z),speed:8,id:samples,kind:'taxi',color:'#fff',wait:0,nearMissCooldown:0};
   for(let i=0;i<3;i++){

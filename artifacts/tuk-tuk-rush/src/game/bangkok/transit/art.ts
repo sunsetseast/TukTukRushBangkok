@@ -216,7 +216,10 @@ export function emitRailInfrastructure(
           );
       for (const side of [-1, 1]) {
         const edge = siam ? 9 : river ? 6 : gold ? 6 : 7;
-        at(side * edge, level + 0.8, 0, 0.2, 1.8, L, "#a2b9b2");
+        at(side * edge, level + 0.12, 0, 0.2, 0.25, L, "#a2b9b2");
+        at(side * edge, level + 1.25, 0, 0.14, 0.14, L, "#a2b9b2");
+        for(let post=-L/2;post<=L/2;post+=6)
+          at(side * edge, level + 0.65, post, 0.14, 1.25, 0.14, "#a2b9b2");
         at(side * edge, level + 0.1, 0, 0.4, 0.25, L, "#f0ce84", "night");
         for (let z = -L / 2 + 4; z < L / 2; z += 9)
           at(
@@ -249,8 +252,8 @@ export function emitRailInfrastructure(
       // Two island decks, each carrying BOTH lines in one travel direction.
       for (const side of [-1, 1]) {
         at(side * 10.1, 10.2, 0, 1.4, 3, L, "#8f9692");
-        at(side * 11.1, 14.8, 0, 0.3, 2, L, "#bd3f46");
-        at(side * 11.1, 20.8, 0, 0.3, 2, L, "#bd3f46");
+        at(side * 11.1, 14.8, 0, 0.2, 0.2, L, "#bd3f46");
+        at(side * 11.1, 20.8, 0, 0.2, 0.2, L, "#bd3f46");
       }
       // Upper/lower escalators at the island ends; clear of all four tracks.
       for (const z of [-30, 30]) {
