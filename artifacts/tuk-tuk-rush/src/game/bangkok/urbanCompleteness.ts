@@ -3,6 +3,7 @@ import { regionAt, riverDistance } from './world';
 import { placementIndex } from './environmentPlan';
 import { stableHash } from './buildingGrammar';
 import { distanceToSegment, orientedFootprintsOverlap } from '../world';
+import { inDestinationGrounds } from './destinationAccess';
 export type CompletenessReport={frontage:number;rear:number;screened:number;rejected:number};
 /** Fit smaller real parcels first, then rear courts. No scenery is placed inside
  * a road, waterway, public park, landmark plot or its viewing approach. */
@@ -14,7 +15,7 @@ export function completeUrbanFabric(d:District):CompletenessReport{
   });
   const clear=(b:Obstacle)=>{
     const rad=Math.hypot(b.w,b.d)/2,bd=d.bounds!;
-    return b.x>bd.minX+rad&&b.x<bd.maxX-rad&&b.z>bd.minZ+rad&&b.z<bd.maxZ-rad&&
+    return !inDestinationGrounds(d,b)&&b.x>bd.minX+rad&&b.x<bd.maxX-rad&&b.z>bd.minZ+rad&&b.z<bd.maxZ-rad&&
       !approaches.some(a=>a.d>1&&orientedFootprintsOverlap(a,b,1))&&index.clear(b);
   };
   const add=(p:Point,yaw:number,w:number,depth:number,role:'frontage'|'rear'|'screened')=>{
@@ -22,7 +23,7 @@ export function completeUrbanFabric(d:District):CompletenessReport{
     const b:Obstacle={...p,w,d:depth,yaw,height:modern?24+seed%6*8:7+seed%4*3.5,color:'#b7baa2',regionId:region,artRole:role==='frontage'?undefined:'background',environmentId:`infill:${role}:${seed}`};
     if(!clear(b))return false;d.buildings.push(b);d.obstacles.push(b);index.insert(b);report[role]++;return true;
   };
-  for(const r of d.roads){if(r.bridge||r.roundabout||r.shortcut)continue;
+  for(const r of d.roads){if(r.destinationId||r.bridge||r.roundabout||r.shortcut)continue;
     const a=nodes.get(r.a)!,b=nodes.get(r.b)!,len=Math.hypot(b.x-a.x,b.z-a.z),ux=(b.x-a.x)/len,uz=(b.z-a.z)/len;
     for(const t of [len*.25,len*.7])for(const side of [-1,1]){
       const yaw=Math.atan2(-uz*side,ux*side),point=(off:number)=>({x:a.x+ux*t+uz*side*off,z:a.z+uz*t-ux*side*off});

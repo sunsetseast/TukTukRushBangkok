@@ -174,11 +174,11 @@
         ],
         [
           260,
-          950
+          1000
         ],
         [
           70,
-          950
+          1000
         ]
       ],
       "boundary_type": "gameplay_region_not_administrative"
@@ -636,6 +636,14 @@
     "paknam_access": [
       80,
       740
+    ],
+    "krung_thon_buri": [
+      270,
+      965
+    ],
+    "wongwian_yai": [
+      195,
+      965
     ]
   },
   "road_corridors": [
@@ -1017,6 +1025,17 @@
         "icon_road"
       ],
       "kind": "district",
+      "geography_basis": "real_corridor_compressed"
+    },
+    {
+      "id": "krung_thon_buri",
+      "name": "Krung Thon Buri Road / Wongwian Yai",
+      "nodes": [
+        "taksin_w",
+        "krung_thon_buri",
+        "wongwian_yai"
+      ],
+      "kind": "main",
       "geography_basis": "real_corridor_compressed"
     }
   ],

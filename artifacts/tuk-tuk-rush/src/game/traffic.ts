@@ -18,11 +18,11 @@ export class TrafficSystem {
   constructor(private district:District){
     this.nodes=new Map(district.nodes.map(n=>[n.id,n]));
     for(const n of district.nodes){this.neighbors.set(n.id,[]);this.incident.set(n.id,[]);}
-    for(const r of district.roads){
+    for(const r of district.roads.filter(r=>!r.noTraffic)){
       this.incident.get(r.a)!.push(r);this.incident.get(r.b)!.push(r);
       this.neighbors.get(r.a)!.push(r.b);if(!r.oneWay)this.neighbors.get(r.b)!.push(r.a);
     }
-    for(const r of district.roads) for(const [from,to] of r.oneWay?[[r.a,r.b]]:[[r.a,r.b],[r.b,r.a]]){
+    for(const r of district.roads.filter(r=>!r.noTraffic)) for(const [from,to] of r.oneWay?[[r.a,r.b]]:[[r.a,r.b],[r.b,r.a]]){
       const a=this.nodes.get(from!)!,b=this.nodes.get(to!)!,length=Math.hypot(b.x-a.x,b.z-a.z);
       const trim=(n:RoadNode)=>{
         const rs=this.incident.get(n.id)!;
@@ -40,7 +40,7 @@ export class TrafficSystem {
   reset(){this.seed=982;this.elapsed=0;this.motions=new WeakMap();}
   private point(e:Edge,distance:number){return lanePoint(e.a,e.b,e.r,distance/e.length);}
   create():TrafficCar[]{
-    const roads=this.district.roads.filter(r=>!r.shortcut),main=roads.filter(r=>r.corridor==='yaowarat'||r.name==='Yaowarat Road');
+    const roads=this.district.roads.filter(r=>!r.shortcut&&!r.noTraffic),main=roads.filter(r=>r.corridor==='yaowarat'||r.name==='Yaowarat Road');
     const colors=['#e872a8','#4da995','#e6bc54','#db8f78','#b9c9cf'];
     return Array.from({length:this.district.worldId==='bangkok'?38:16},(_,id)=>{
       const list=id<10&&main.length?main:roads;

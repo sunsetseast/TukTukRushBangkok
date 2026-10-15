@@ -29,6 +29,7 @@ export function createMissions(district: District): Mission[] {
 function createBangkokMissions(d: District): Mission[] {
   const stop = (id: string) => {
     const landmark = d.landmarks.find(l => l.id === id)!, n = d.nodes.find(n => n.id === landmark.accessNode)!;
+    if(d.destinations?.some(a=>a.landmarkId===id))return {...n,name:`${landmark.name} · visitor drop-off`};
     const road = d.roads.find(r => r.a === n.id || r.b === n.id)!, a = d.nodes.find(n => n.id === road.a)!, b = d.nodes.find(n => n.id === road.b)!;
     const heading = Math.atan2(b.x - a.x, b.z - a.z), offset = Math.min(3, road.width / 2 - 2);
     let p = { ...n, x: n.x + Math.cos(heading) * offset, z: n.z - Math.sin(heading) * offset, name: `${landmark.name} · roadside stop` };

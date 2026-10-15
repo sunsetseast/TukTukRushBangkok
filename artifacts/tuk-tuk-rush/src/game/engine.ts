@@ -2,6 +2,8 @@ import { TurboBoost } from './boost';
 import type { GameModel, GameSnapshot, Mission } from './types';
 import { createBangkokWorld, regionAt, SHIFT_SECONDS } from './bangkok/world';
 import { readDiscovery, discover, type Discovery } from './bangkok/discovery';
+import { destinationAt } from './bangkok/destinationAccess';
+import { RailService } from './bangkok/transit/service';
 import { createDistrict } from './world';
 import { VehicleController, createVehicle } from './vehicle';
 import { TrafficSystem } from './traffic';
@@ -10,6 +12,7 @@ import { createMissions } from './missions';
 export class GameEngine {
   readonly model: GameModel;
   readonly boost = new TurboBoost();
+  readonly railService?:RailService;
   private controller = new VehicleController();
   private trafficSystem: TrafficSystem;
   private missions: Mission[];
@@ -23,9 +26,11 @@ export class GameEngine {
   private disposed = false;
   private discovery: Discovery = { regions: [], landmarks: [], shortcuts: [] };
   private discoveryTime = 0;
+  private arrivalId = '';
   private storage: Storage | undefined;
   constructor(options: { world?: 'bangkok' | 'chinatown' } = {}) {
     const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
+    if(district.transit)this.railService=new RailService(district.transit);
     try { this.storage = window.localStorage; } catch { /* Browser storage is optional. */ }
     this.discovery = readDiscovery(this.storage);
     this.trafficSystem = new TrafficSystem(district);
@@ -67,6 +72,8 @@ export class GameEngine {
   private publish() { for (const cb of this.listeners) cb({ ...this.model.snapshot }); }
   start(mode: 'shift' | 'free') {
     this.clearInput(); this.controller.reset(); this.boost.reset(); this.trafficSystem.reset();
+    this.arrivalId='';
+    this.railService?.update(0);
     Object.assign(this.model.player, createVehicle(this.model.district));
     this.model.traffic = this.trafficSystem.create();
     this.model.missionIndex = 0; this.model.mission = this.missions[0]!;
@@ -98,13 +105,16 @@ export class GameEngine {
   }
   canViewPho() {
     const l=this.model.district.landmarks.find(l=>l.id==='pho'),a=this.model.district.nodes.find(n=>n.id===l?.accessNode);
-    return !!a&&Math.hypot(this.model.player.x-a.x,this.model.player.z-a.z)<65&&Math.abs(this.model.player.speed)<3;
+    return !!a&&Math.hypot(this.model.player.x-a.x,this.model.player.z-a.z)<12&&Math.abs(this.model.player.speed)<3;
   }
   viewPho() {
     if(this.model.snapshot.phase!=='playing'||!this.canViewPho())return false;
     this.pause();this.model.snapshot.viewingLandmark='pho';this.publish();return true;
   }
+  canViewPalace(){return destinationAt(this.model.district,this.model.player)?.id==='palace'&&Math.abs(this.model.player.speed)<3;}
+  viewPalace(){if(this.model.snapshot.phase!=='playing'||!this.canViewPalace())return false;this.pause();this.model.snapshot.viewingLandmark='palace';this.publish();return true;}
   get intersectionHorizontalGreen() { return this.trafficSystem.horizontalGreen; }
+  get railSoundLevel(){let level=0;const p=this.model.player;for(const t of this.railService?.trains??[])level=Math.max(level,Math.max(0,1-Math.hypot(p.x-t.sample.x,p.z-t.sample.z)/110)*Math.min(1,t.speed/15));return level;}
   setQuality(quality: 'low' | 'medium') { this.model.snapshot.quality = quality; this.slowTime = 0; this.publish(); }
   private message(text: string, seconds = 3) { this.model.snapshot.message = text; this.messageTime = seconds; }
   private nextPassenger() {
@@ -142,6 +152,7 @@ export class GameEngine {
       s.boostState=this.boost.state;s.boostActive=this.boost.active;s.boostRecharge=this.boost.recharge;
       this.updateTarget();
       s.elapsed = (s.elapsed ?? 0) + dt;
+      this.railService?.update(s.elapsed);
       if (this.model.district.worldId === 'bangkok') {
         this.discoveryTime += dt;
         if (this.discoveryTime > .3) {
@@ -149,6 +160,9 @@ export class GameEngine {
           const entered = discover(this.model.district, player, this.discovery, this.storage);
           s.districtName = entered.region?.name ?? 'Bangkok connector';
           if (entered.newRegion) this.message(`Discovered ${entered.region!.name}`, 3);
+          const arrival=destinationAt(this.model.district,player);
+          if(arrival&&arrival.id!==this.arrivalId&&Math.abs(player.speed)<3){this.arrivalId=arrival.id;this.message(`Arrived · ${this.model.district.landmarks.find(l=>l.id===arrival.landmarkId)!.name}`,4);}
+          if(!arrival)this.arrivalId='';
           if (entered.changed) { s.discoveredDistricts = [...this.discovery.regions]; s.discoveredLandmarks = [...this.discovery.landmarks]; s.discoveredShortcuts = [...this.discovery.shortcuts]; }
         }
       }

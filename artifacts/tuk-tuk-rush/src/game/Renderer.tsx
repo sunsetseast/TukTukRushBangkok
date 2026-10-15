@@ -59,7 +59,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const atmosphere=useMemo(()=>bangkok?citySky():undefined,[bangkok]);
   const sun = useRef<THREE.DirectionalLight>(null), ambient = useRef<THREE.HemisphereLight>(null);
   const city = useMemo(() => {
-    const c = bangkok ? buildBangkokGraybox(engine.model.district) : buildCity(engine.model.district, art.textures);
+    const c = bangkok ? buildBangkokGraybox(engine.model.district,engine.railService) : buildCity(engine.model.district, art.textures);
     c.group.name = "City";
     return c;
   }, [engine, art]);
@@ -185,11 +185,16 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       const sp = clamp(Math.abs(p.speed) / 31, 0, 1);
       if(Math.hypot(p.x-c.pos.x,p.z-c.pos.z)>45)c.init=false;
       const snapNow = !c.init;
+      const arrival=Math.abs(p.speed)<1.8&&!m.input.gas?m.district.destinations?.find(a=>{
+        const n=m.district.nodes.find(n=>n.id===a.arrivalNode)!;return Math.hypot(p.x-n.x,p.z-n.z)<a.arrivalRadius+1;
+      }):undefined;
+      const destination=arrival?m.district.landmarks.find(l=>l.id===arrival.landmarkId):undefined;
+      const heading=destination?Math.atan2(destination.plot!.x-p.x,destination.plot!.z-p.z):p.heading;
       if (snapNow) {
-        c.heading = p.heading;
+        c.heading = heading;
         c.init = true;
       }
-      let dh = p.heading - c.heading;
+      let dh = heading - c.heading;
       dh = Math.atan2(Math.sin(dh), Math.cos(dh));
       c.heading += dh * (1 - Math.exp(-4.5 * dt));
       const boosted=s.boostState==='active' ? 1 : 0;
@@ -236,7 +241,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.pos.y += (ty - c.pos.y) * f;
       c.pos.z += (tz - c.pos.z) * f;
       cp.position.copy(c.pos);
-      c.look.set(p.x + fx * 6, 1.4, p.z + fz * 6);
+      if(destination){const y=destination.id==='paknam'?30:destination.id==='arun'?22:destination.id==='pho'?8:destination.kind==='palace'?18:17;c.look.set(destination.plot!.x,y,destination.plot!.z);}
+      else c.look.set(p.x + fx * 6, 1.4, p.z + fz * 6);
       cp.lookAt(c.look);
       c.fov += (58 + sp * 14 + boosted*3 - c.fov) * (1 - Math.exp(-3 * dt));
     }
@@ -259,6 +265,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       const l=m.district.landmarks.find(l=>l.id==='pho')!;
       cp.position.set(l.plot!.x,8,l.plot!.z+21.5);
       c.look.set(l.plot!.x-2,7.6,l.plot!.z+2);cp.lookAt(c.look);cp.fov=66;cp.updateProjectionMatrix();c.init=false;
+    }
+    if(s.viewingLandmark==='palace'){
+      const l=m.district.landmarks.find(l=>l.id==='palace')!,a=m.district.destinations!.find(a=>a.id==='palace')!,dx=a.origin.x-l.plot!.x,dz=a.origin.z-l.plot!.z;
+      cp.position.set(l.plot!.x+dx*1.05,32,l.plot!.z+dz*1.05);c.look.set(l.plot!.x,15,l.plot!.z);cp.lookAt(c.look);cp.fov=66;cp.updateProjectionMatrix();c.init=false;
     }
     sky.position.copy(cp.position);
     streets.update(cp.position, s.quality);

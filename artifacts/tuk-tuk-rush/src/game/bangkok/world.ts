@@ -3,6 +3,8 @@ import { completeUrbanFabric } from './urbanCompleteness';
 import { scalaParcel } from './scala';
 import { planEnvironment } from './environmentPlan';
 import { bridgeBarriers } from './bridgeBarriers';
+import { connectDestinations, detailDestinationCollisions, inDestinationGrounds } from './destinationAccess';
+import { createRailNetwork, reserveRailCorridors } from './transit/network';
 import type { District, Landmark, Obstacle, Point, Road, RoadNode } from '../types';
 import { distanceToSegment, orientedFootprintsOverlap, routeBetween } from '../world';
 
@@ -30,19 +32,19 @@ export function regionAt(d: District, p: Point) {
 export function riverDistance(d: District, p: Point) {
   return Math.min(...(d.river ?? []).slice(1).map((b, i) => distanceToSegment(p, d.river![i]!, b).distance));
 }
-const bridgeCache = new WeakMap<District, { a: Point; b: Point; width: number }[]>();
+const bridgeCache = new WeakMap<District, {count:number;bridges:{ a: Point; b: Point; width: number }[]}>();
 /** Render and physics use the same buffered river. Only actual bridge lanes cross water. */
 export function blockedByRiver(d: District, p: Point, radius = 1.5) {
   const main=!!d.river&&riverDistance(d,p)<d.riverWidth!/2+radius;
   const canal=d.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+radius));
   if(!main&&!canal)return false;
-  let bridges = bridgeCache.get(d);
-  if (!bridges) {
+  let cache = bridgeCache.get(d);
+  if (!cache || cache.count!==d.roads.length) {
     const nodes = new Map(d.nodes.map(n => [n.id, n]));
-    bridges = d.roads.filter(r => r.bridge).map(r => ({ a: nodes.get(r.a)!, b: nodes.get(r.b)!, width: r.width }));
-    bridgeCache.set(d, bridges);
+    const bridges = d.roads.filter(r => r.bridge).map(r => ({ a: nodes.get(r.a)!, b: nodes.get(r.b)!, width: r.width }));
+    cache={count:d.roads.length,bridges};bridgeCache.set(d, cache);
   }
-  return !bridges.some(r => distanceToSegment(p, r.a, r.b).distance <= r.width / 2 - radius);
+  return !cache.bridges.some(r => distanceToSegment(p, r.a, r.b).distance <= r.width / 2 - radius);
 }
 const kinds: Record<string, Landmark['kind']> = {
   paknam:'temple',baiyoke:'tower',state:'tower',chatuchak: 'market', victory: 'monument', khaosan: 'market', democracy: 'monument', sanam: 'park',
@@ -148,6 +150,13 @@ export function createBangkokWorld(): District {
     l.size = size; l.plot = plot;
     if(l.id==='paknam'){const a=byId.get(l.accessNode!)!;l.yaw=Math.atan2(a.x-plot.x,a.z-plot.z);world.obstacles.find(o=>o.landmarkId===l.id)!.yaw=l.yaw;}
   }
+  connectDestinations(world);
+  const paknamArrival=world.destinations!.find(a=>a.id==='paknam')!,paknamLandmark=landmarks.find(l=>l.id==='paknam')!;
+  paknamLandmark.yaw=Math.atan2(paknamArrival.origin.x-paknamLandmark.plot!.x,paknamArrival.origin.z-paknamLandmark.plot!.z);
+  world.obstacles.find(o=>o.landmarkId==='paknam')!.yaw=paknamLandmark.yaw;
+  world.transit=createRailNetwork(world);
+  // Access roads were appended after public graph sampling.
+  for(const n of nodes)byId.set(n.id,n);
   // Streets are assembled as nearly attached commercial rows, not isolated
   // blocks every 54 metres. All facade masses remain in the real collision map.
   // Each +Z facade faces its road; the old tangent yaw placed windows sideways.
@@ -169,6 +178,7 @@ export function createBangkokWorld(): District {
         color: region?.color ?? '#b5ad9c', regionId: region?.id,
       };
       index++;
+      if(inDestinationGrounds(world,building))continue;
       if (riverDistance(world, p) < riverWidth / 2 + 18 || world.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+18))) continue;
       // The nearest possible rotated corner is ~15.6m from the center.
       // Leave at least 2m beyond the asphalt edge, including intersections.
@@ -186,6 +196,7 @@ export function createBangkokWorld(): District {
     const yaw = b.yaw ?? 0;
     const p = { x: b.x - Math.sin(yaw) * 29, z: b.z - Math.cos(yaw) * 29 };
     const infill: Obstacle = { ...b, ...p, w: 21, d: 19, height: b.height * .75, artRole: 'background' };
+    if(inDestinationGrounds(world,infill))continue;
     if (p.x < world.bounds!.minX+20 || p.x > world.bounds!.maxX-20 || p.z < world.bounds!.minZ+20 || p.z > world.bounds!.maxZ-20) continue;
     if (riverDistance(world,p) < riverWidth/2+18 || world.canals?.some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(p,c.points[i]!,b).distance<c.width/2+18))) continue;
     if (roads.some(r=>distanceToSegment(p,byId.get(r.a)!,byId.get(r.b)!).distance<r.width/2+17)) continue;
@@ -206,11 +217,13 @@ export function createBangkokWorld(): District {
   const spawn = byId.get(spawnRoad.a)!, next = byId.get(spawnRoad.b)!;
   const heading=Math.atan2(next.x-spawn.x,next.z-spawn.z);
   world.spawn = { x:spawn.x+Math.sin(heading)*5+Math.cos(heading)*3, z:spawn.z+Math.cos(heading)*5-Math.sin(heading)*3, heading };
-  const approaches=landmarks.filter(l=>['arun','pho','icon','paragon','paknam'].includes(l.id!)).map(l=>{const a=byId.get(l.accessNode!)!,p=l.plot!,length=Math.hypot(p.x-a.x,p.z-a.z);return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:24,d:Math.max(0,length-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};});
+  const approaches=landmarks.filter(l=>!world.destinations?.some(a=>a.landmarkId===l.id)&&['arun','pho','icon','paragon','paknam'].includes(l.id!)).map(l=>{const a=byId.get(l.accessNode!)!,p=l.plot!,length=Math.hypot(p.x-a.x,p.z-a.z);return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:24,d:Math.max(0,length-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};});
   const hidden=new Set(world.buildings.filter(b=>approaches.some(a=>a.d>1&&orientedFootprintsOverlap(a,b))));
   world.buildings=world.buildings.filter(b=>!hidden.has(b));world.obstacles=world.obstacles.filter(b=>!hidden.has(b));
   scalaParcel(world).height=36;
   (world as District & {completeness?:unknown}).completeness=completeUrbanFabric(world);
+  reserveRailCorridors(world);
+  detailDestinationCollisions(world);
   world.obstacles.push(...bridgeBarriers(world));planEnvironment(world);
   return world;
 }

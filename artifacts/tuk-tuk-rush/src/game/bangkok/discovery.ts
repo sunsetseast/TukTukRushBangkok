@@ -18,7 +18,10 @@ export function discover(d: District, p: Point, state: Discovery, storage?: Stor
   if (region) add(state.regions, region.id);
   for (const l of d.landmarks) {
     const approach = d.nodes.find(n => n.id === l.accessNode);
-    if (l.id && (Math.hypot(l.x - p.x, l.z - p.z) < Math.max(110, (l.size ?? 0) + 60) || approach && Math.hypot(approach.x - p.x, approach.z - p.z) < 40)) add(state.landmarks, l.id);
+    const access=d.destinations?.find(a=>a.landmarkId===l.id);
+    const reached=access?approach&&Math.hypot(approach.x-p.x,approach.z-p.z)<access.arrivalRadius:
+      Math.hypot(l.x-p.x,l.z-p.z)<Math.max(110,(l.size??0)+60)||approach&&Math.hypot(approach.x-p.x,approach.z-p.z)<40;
+    if(l.id&&reached)add(state.landmarks,l.id);
   }
   const nodes = new Map(d.nodes.map(n => [n.id, n]));
   for (const r of d.roads.filter(r => r.shortcut)) if (distanceToSegment(p, nodes.get(r.a)!, nodes.get(r.b)!).distance < r.width / 2 + 2) add(state.shortcuts, r.corridor!);

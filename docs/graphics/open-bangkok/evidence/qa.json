@@ -1,0 +1,298 @@
+{
+  "pass": true,
+  "drives": [
+    {
+      "id": "pho",
+      "metres": 222.04457388009337,
+      "frames": 2091,
+      "collisionFrames": 0,
+      "start": {
+        "x": -943.1578947368421,
+        "z": -580,
+        "heading": 0.7583777142101827,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -941.2910109535854,
+        "z": -578.0177284270625,
+        "heading": 3.8970258573328356,
+        "speed": 0.09340780864893326,
+        "steer": 0.0000015261777289554345,
+        "lean": -9.198562912489893e-8,
+        "wheelSpin": 582.6307439301954,
+        "collision": 0
+      },
+      "controllerOnly": true,
+      "acceleratedSimulation": true
+    },
+    {
+      "id": "arun",
+      "metres": 214.56964603710196,
+      "frames": 2050,
+      "collisionFrames": 0,
+      "start": {
+        "x": -1500,
+        "z": -540,
+        "heading": 0.2449786631268672,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -1499.466144780622,
+        "z": -537.310239048115,
+        "heading": 3.3375295251081774,
+        "speed": 0.046715499465535305,
+        "steer": 0.000002266052086028656,
+        "lean": -1.4915072358020493e-7,
+        "wheelSpin": 562.710557723374,
+        "collision": 0
+      },
+      "controllerOnly": true,
+      "acceleratedSimulation": true
+    },
+    {
+      "id": "paknam",
+      "metres": 734.3506574211519,
+      "frames": 6511,
+      "collisionFrames": 0,
+      "start": {
+        "x": -1554.1935483870968,
+        "z": 611.6129032258065,
+        "heading": 1.1814796049617553,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -1551.4579934093533,
+        "z": 612.0507111540451,
+        "heading": 4.55368133991482,
+        "speed": -0.02240834231393466,
+        "steer": -0.0000035520988065120263,
+        "lean": 2.2790286802996156e-7,
+        "wheelSpin": 1929.9793089917978,
+        "collision": 0
+      },
+      "controllerOnly": true,
+      "acceleratedSimulation": true
+    },
+    {
+      "id": "icon",
+      "metres": 245.66215033610212,
+      "frames": 2300,
+      "collisionFrames": 0,
+      "start": {
+        "x": -775,
+        "z": 880,
+        "heading": 1.5707963267948966,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": -772.2473006960037,
+        "z": 880.0043471368341,
+        "heading": 4.710801534564297,
+        "speed": -0.015083988694065366,
+        "steer": -0.000002945139385307199,
+        "lean": 1.921724854337725e-7,
+        "wheelSpin": 644.8315566632272,
+        "collision": 0
+      },
+      "controllerOnly": true,
+      "acceleratedSimulation": true
+    },
+    {
+      "id": "paragon",
+      "metres": 228.90219854973887,
+      "frames": 2151,
+      "collisionFrames": 0,
+      "start": {
+        "x": 818.8235294117648,
+        "z": -661.1764705882354,
+        "heading": -2.8864102629689725,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "end": {
+        "x": 818.1117987828117,
+        "z": -663.8368832423022,
+        "heading": 0.26140165479659483,
+        "speed": 0.01226833012313418,
+        "steer": -0.0000011531814342743519,
+        "lean": 7.43208348165301e-8,
+        "wheelSpin": 600.6407817739079,
+        "collision": 0
+      },
+      "controllerOnly": true,
+      "acceleratedSimulation": true
+    }
+  ],
+  "stations": [
+    {
+      "id": "siam",
+      "x": 784,
+      "z": -580
+    },
+    {
+      "id": "chong-nonsi",
+      "x": 624,
+      "z": 1148
+    },
+    {
+      "id": "asok",
+      "x": 1740,
+      "z": -234.2857142857143
+    },
+    {
+      "id": "saphan-taksin",
+      "x": -27.692307692307622,
+      "z": 1460
+    },
+    {
+      "id": "charoen-nakhon",
+      "x": -875.4545454545455,
+      "z": 959.0909090909091
+    },
+    {
+      "id": "national-stadium",
+      "x": 511.7241379310344,
+      "z": -606.2068965517242
+    },
+    {
+      "id": "sala-daeng",
+      "x": 1015.6521739130435,
+      "z": 700.8695652173913
+    }
+  ],
+  "moving": {
+    "before": [
+      {
+        "id": "sukhumvit:0",
+        "distance": 2485.683363162542
+      },
+      {
+        "id": "sukhumvit:1",
+        "distance": 308.7715287042925
+      },
+      {
+        "id": "silom:0",
+        "distance": 3633.1688227068435
+      },
+      {
+        "id": "silom:1",
+        "distance": 1170.7178613474846
+      },
+      {
+        "id": "gold:0",
+        "distance": 587.9947007265872
+      },
+      {
+        "id": "gold:1",
+        "distance": 410.4970667275232
+      }
+    ],
+    "after": [
+      {
+        "id": "sukhumvit:0",
+        "distance": 2485.683363162542
+      },
+      {
+        "id": "sukhumvit:1",
+        "distance": 277.968196898745
+      },
+      {
+        "id": "silom:0",
+        "distance": 3645.842227873211
+      },
+      {
+        "id": "silom:1",
+        "distance": 1132.0096736835974
+      },
+      {
+        "id": "gold:0",
+        "distance": 610.889646600841
+      },
+      {
+        "id": "gold:1",
+        "distance": 371.4970667275232
+      }
+    ]
+  },
+  "viewports": [
+    {
+      "width": 844,
+      "height": 390,
+      "pass": true
+    },
+    {
+      "width": 932,
+      "height": 430,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "pass": true
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pass": true
+    }
+  ],
+  "multitouch": {
+    "gas": true,
+    "steer": 0.3788819875776397,
+    "boost": "active"
+  },
+  "cancellation": true,
+  "focusPause": true,
+  "restarts": [
+    {
+      "calls": 174,
+      "triangles": 287730,
+      "geometries": 561,
+      "textures": 12,
+      "frameMs": 17.5
+    },
+    {
+      "calls": 219,
+      "triangles": 375308,
+      "geometries": 561,
+      "textures": 12,
+      "frameMs": 9.800000000046566
+    },
+    {
+      "calls": 174,
+      "triangles": 287730,
+      "geometries": 561,
+      "textures": 12,
+      "frameMs": 16.800000000046566
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "environment": "138.0.7204.0",
+  "physicalIPhone": false,
+  "videoRecorded": false
+}

@@ -5,7 +5,7 @@ import { regionAt, routeFromPoint, SCALE, toMap } from './world';
 const districtLabels: Record<string, string> = { paknam:'Phasi Charoen',north: 'Chatuchak', khaosan: 'Khao San', oldtown: 'Old Town', westbank: 'Thonburi', chinatown: 'Chinatown', siam: 'Siam', talatnoi: 'Talat Noi', sukhumvit: 'Asok', icon: 'Khlong San', silom: 'Silom / Sathorn', south: 'Asiatique' };
 const points = (ps: Point[]) => ps.map(p => { const m = toMap(p); return `${m.x},${m.y}`; }).join(' ');
 
-function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true }: { d: District; f: Frame; detail?: boolean; labelScale?: number; placeNames?: boolean }) {
+function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true, transit = true }: { d: District; f: Frame; detail?: boolean; labelScale?: number; placeNames?: boolean; transit?:boolean }) {
   const nodes = useMemo(() => new Map(d.nodes.map(n => [n.id, n])), [d]);
   const visited = f.snap.discoveredDistricts ?? [], shortcuts = f.snap.discoveredShortcuts ?? [];
   const path = useMemo(() => routeFromPoint(d, { x: f.px, z: f.pz }, f.snap.target), [d, f.snap.target.id, Math.round(f.px / 25), Math.round(f.pz / 25)]);
@@ -21,8 +21,14 @@ function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true }: 
       const a = nodes.get(r.a)!, b = nodes.get(r.b)!, am = toMap(a), bm = toMap(b);
       if (!detail && (Math.min(a.x, b.x) > f.px + 260 || Math.max(a.x, b.x) < f.px - 260 || Math.min(a.z, b.z) > f.pz + 260 || Math.max(a.z, b.z) < f.pz - 260)) return null;
       const region = regionAt(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 });
-      return <line key={i} x1={am.x} y1={am.y} x2={bm.x} y2={bm.y} stroke={r.bridge ? '#58e1d0' : r.shortcut ? '#f3c471' : '#becbd2'} strokeWidth={Math.max(r.width / SCALE, 2)} strokeLinecap="round" opacity={r.width >= 20 || !region || visited.includes(region.id) ? 1 : .25} />;
+      return <line key={i} x1={am.x} y1={am.y} x2={bm.x} y2={bm.y} stroke={r.destinationId?'#edca96':r.bridge ? '#58e1d0' : r.shortcut ? '#f3c471' : '#becbd2'} strokeWidth={Math.max(r.width / SCALE, 2)} strokeLinecap="round" opacity={r.destinationId||r.width >= 20 || !region || visited.includes(region.id) ? 1 : .25} />;
     })}
+    {transit&&d.transit?.lines.map(line=><g key={line.id} data-testid={`map-rail-${line.id}`}>
+      <polyline points={points(line.samples)} stroke={line.color} strokeWidth="3" strokeDasharray={line.id==='gold'?'5 2':undefined} strokeLinejoin="round" fill="none"/>
+      {detail&&placeNames&&line.continuation.map((label,i)=>{const m=toMap(line.samples[i?line.samples.length-1:0]!);return <text key={`beyond:${i}`} x={m.x} y={m.y-12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{label}</text>;})}
+      {line.stations.map(s=>{const m=toMap(s);return <g key={s.id}><circle cx={m.x} cy={m.y} r={(s.interchange?4.5:2.5)*labelScale} fill={line.color} stroke="#132d35" strokeWidth={labelScale}/>{detail&&placeNames&&<text x={m.x+6*labelScale} y={m.y+12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{s.code} {s.name}{s.mrt?' · MRT link':''}</text>}</g>;})}
+    </g>)}
+    {detail&&d.destinations?.map(a=>{const m=toMap(a.entrance);return <path key={a.id} transform={`translate(${m.x} ${m.y}) rotate(${180-a.entrance.yaw*180/Math.PI}) scale(${labelScale})`} d="M 0 -4 L 4 4 L -4 4 Z" fill="#efcc98" stroke="#10212e" strokeWidth="1"/>;})}
     {detail && d.regions?.map(r => {
       const centroid = r.polygon.reduce((p, n) => ({ x: p.x + n.x / r.polygon.length, z: p.z + n.z / r.polygon.length }), { x: 0, z: 0 }), m = toMap(centroid);
       return <text key={r.id} x={m.x} y={m.y} textAnchor="middle" className="tt-world-district" style={{ fontSize: 11 * labelScale, strokeWidth: 3 * labelScale }} opacity={visited.includes(r.id) ? 1 : .55}>{districtLabels[r.id] ?? r.name}</text>;
@@ -48,6 +54,7 @@ export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: ()
   const svg = useRef<SVGSVGElement>(null), root = useRef<HTMLDivElement>(null), close = useRef<HTMLButtonElement>(null);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const [selected, setSelected] = useState('');
+  const [transit,setTransit]=useState(true);
   useEffect(() => {
     const resize = () => { const scale = svg.current?.getScreenCTM()?.a; if (scale && Number.isFinite(scale)) setLabelScale(1 / scale); };
     resize();
@@ -94,10 +101,10 @@ export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: ()
   return <div className="tt-world-map" role="dialog" aria-modal="true" aria-labelledby="bangkok-map-title" ref={root} data-testid="world-map">
     <header><div><h2 id="bangkok-map-title">Bangkok</h2><p>{f.snap.districtName} · {f.snap.discoveredDistricts?.length ?? 0}/{d.regions?.length} areas discovered</p></div><button ref={close} className="tt-btn" onClick={onClose} data-testid="button-close-map">Back to driving</button></header>
     <div className="tt-world-map-body">
-      <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail labelScale={labelScale} placeNames={view.w < 700} /></svg>
-      <div className="tt-map-tools"><button aria-label="Zoom in" onClick={() => zoom(.75)}>+</button><button aria-label="Zoom out" onClick={() => zoom(1.33)}>−</button><button onClick={recenter}>My tuk-tuk</button><button onClick={() => setView({ x: -25, y: -30, w: 1050, h: 1260 })}>Whole city</button></div>
+      <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail labelScale={labelScale} placeNames={view.w < 700} transit={transit}/></svg>
+      <div className="tt-map-tools"><button aria-label="Zoom in" onClick={() => zoom(.75)}>+</button><button aria-label="Zoom out" onClick={() => zoom(1.33)}>−</button><button onClick={recenter}>My tuk-tuk</button><button onClick={() => setView({ x: -25, y: -30, w: 1050, h: 1260 })}>Whole city</button><button aria-pressed={transit} data-testid="button-transit-layer" onClick={()=>setTransit(v=>!v)}>BTS / Gold Line</button></div>
       <aside><b>Your next fare</b><p>{f.snap.target.name}</p><span>Dim areas reveal as you drive into them.</span><div className="tt-map-places">{d.landmarks.filter(l => f.snap.discoveredLandmarks?.includes(l.id!)).map(l => <button key={l.id} onClick={() => { const p = toMap(l); setView({ x: p.x - 180, y: p.y - 216, w: 360, h: 432 }); setSelected(l.name); }}>{l.name}</button>)}</div>{selected && <p role="status">Viewing {selected}</p>}</aside>
     </div>
-    <footer><span className="tt-map-you">▲ You</span><span>● Landmarks found</span><span>━ River crossings</span><span>North ↑ · distances compressed</span></footer>
+    <footer><span className="tt-map-you">▲ You</span><span>△ Vehicle entrances</span><span style={{color:'#8dcc58'}}>━ Sukhumvit</span><span style={{color:'#168a70'}}>━ Silom</span><span style={{color:'#e5b64d'}}>┄ Gold Line</span><span>North ↑ · distances compressed</span></footer>
   </div>;
 }

@@ -1,0 +1,174 @@
+{
+  "beforeLoadMs": 10013.299253,
+  "afterLoadMs": 11608.967444,
+  "scenes": [
+    {
+      "name": "siam",
+      "quality": "low",
+      "before": {
+        "calls": 145.0,
+        "triangles": 160489.0,
+        "frameMs": 30.649999999906868
+      },
+      "after": {
+        "calls": 158.0,
+        "triangles": 170590.0,
+        "frameMs": 293.8499999999767
+      }
+    },
+    {
+      "name": "chong-nonsi",
+      "quality": "low",
+      "before": {
+        "calls": 131.0,
+        "triangles": 182622.0,
+        "frameMs": 305.1500000000233
+      },
+      "after": {
+        "calls": 144.0,
+        "triangles": 181309.0,
+        "frameMs": 320.8500000000349
+      }
+    },
+    {
+      "name": "asok",
+      "quality": "low",
+      "before": {
+        "calls": 99.0,
+        "triangles": 121799.0,
+        "frameMs": 281.30000000004657
+      },
+      "after": {
+        "calls": 112.0,
+        "triangles": 122050.0,
+        "frameMs": 271.25
+      }
+    },
+    {
+      "name": "taksin",
+      "quality": "low",
+      "before": {
+        "calls": 94.0,
+        "triangles": 89283.0,
+        "frameMs": 148.40000000002328
+      },
+      "after": {
+        "calls": 87.0,
+        "triangles": 94256.0,
+        "frameMs": 171.95000000006985
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "before": {
+        "calls": 148.0,
+        "triangles": 195086.0,
+        "frameMs": 221.29999999993015
+      },
+      "after": {
+        "calls": 145.0,
+        "triangles": 167555.0,
+        "frameMs": 208.0
+      }
+    },
+    {
+      "name": "pho",
+      "quality": "low",
+      "before": {
+        "calls": 154.0,
+        "triangles": 237467.0,
+        "frameMs": 275.25
+      },
+      "after": {
+        "calls": 154.0,
+        "triangles": 228558.0,
+        "frameMs": 239.65000000002328
+      }
+    },
+    {
+      "name": "siam",
+      "quality": "medium",
+      "before": {
+        "calls": 255.0,
+        "triangles": 259248.0,
+        "frameMs": 371.69999999995343
+      },
+      "after": {
+        "calls": 268.0,
+        "triangles": 256997.0,
+        "frameMs": 241.0
+      }
+    },
+    {
+      "name": "chong-nonsi",
+      "quality": "medium",
+      "before": {
+        "calls": 144.0,
+        "triangles": 207982.0,
+        "frameMs": 370.69999999995343
+      },
+      "after": {
+        "calls": 156.0,
+        "triangles": 197733.0,
+        "frameMs": 323.79999999993015
+      }
+    },
+    {
+      "name": "asok",
+      "quality": "medium",
+      "before": {
+        "calls": 139.0,
+        "triangles": 158833.0,
+        "frameMs": 315.44999999995343
+      },
+      "after": {
+        "calls": 142.0,
+        "triangles": 154860.0,
+        "frameMs": 296.75
+      }
+    },
+    {
+      "name": "taksin",
+      "quality": "medium",
+      "before": {
+        "calls": 130.0,
+        "triangles": 106723.0,
+        "frameMs": 167.74999999988358
+      },
+      "after": {
+        "calls": 133.0,
+        "triangles": 119712.0,
+        "frameMs": 288.8499999999767
+      }
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "before": {
+        "calls": 207.0,
+        "triangles": 245488.0,
+        "frameMs": 333.04999999993015
+      },
+      "after": {
+        "calls": 207.0,
+        "triangles": 215973.0,
+        "frameMs": 274.39999999990687
+      }
+    },
+    {
+      "name": "pho",
+      "quality": "medium",
+      "before": {
+        "calls": 278.0,
+        "triangles": 431821.0,
+        "frameMs": 373.80000000004657
+      },
+      "after": {
+        "calls": 262.0,
+        "triangles": 416820.0,
+        "frameMs": 323.19999999995343
+      }
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import {
 import { riverDistance, regionAt } from "./world";
 import { stableHash } from "./buildingGrammar";
 import { degreeMap } from "../roadGeometry";
+import { inDestinationGrounds } from './destinationAccess';
 import type { StreetPerson } from "../streetLife";
 export type SiteKind =
   | "clothing"
@@ -87,6 +88,7 @@ export function placementIndex(d: District) {
     return { os, rs };
   };
   const clear = (o: Obstacle) => {
+    if(inDestinationGrounds(d,o))return false;
     const radius = Math.hypot(o.w, o.d) / 2,
       q = nearby(o, radius + 2);
     return (
@@ -215,7 +217,7 @@ export function planEnvironment(d: District) {
     }
   }
   for (const l of d.landmarks.filter((l) =>
-    ["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
+    !d.destinations?.some(a=>a.landmarkId===l.id)&&["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
   )) {
     const a = nodes.get(l.accessNode!)!,
       p = l.plot!,
