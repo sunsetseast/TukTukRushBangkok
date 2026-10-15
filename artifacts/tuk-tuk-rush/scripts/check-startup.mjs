@@ -3,6 +3,7 @@ import {build,createServer} from 'vite';
 
 process.env.PORT ||= '24218';
 process.env.BASE_PATH ||= '/';
+const browserSmoke=process.env.STARTUP_BROWSER==='1';
 const packages=['polygon-clipping','splaytree','robust-predicates'];
 // Fail even on a fully installed checkout if authoring leaks into the browser.
 // This reproduces the user's missing-package startup environment without
@@ -14,7 +15,7 @@ const denyAuthoring=()=>({name:'deny-offline-road-dependencies',enforce:'pre',re
 const configFile=new URL('../vite.config.ts',import.meta.url).pathname;
 await build({configFile,logLevel:'warn',plugins:[denyAuthoring()],build:{write:false}});
 console.log('PASS production build with polygon-clipping and its dependencies unavailable');
-if(process.env.STARTUP_BROWSER==='1'){
+if(browserSmoke){
  // Vite's build API sets NODE_ENV=production; the following dev-server smoke
  // intentionally needs the development diagnostics used by gameplay QA.
  process.env.NODE_ENV='development';

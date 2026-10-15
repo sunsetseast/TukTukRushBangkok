@@ -32,23 +32,23 @@ function reclining(b:LandmarkBuilder,detail:boolean){
 function hall(b:LandmarkBuilder,detail:boolean){
  b.box(0,.5,0,49,1,49,'#d1c8af');b.box(0,1.05,2,47,1.1,20,'#a3997d');
  for(let tier=0;tier<4;tier++)b.box(0,1.8+tier*.47,2,44.6-tier*.4,.35,8.8-tier*.2,tier%2?'#b98c55':'#7d3e32');
- b.box(0,7,-7.5,49,12,.65,'#833c33');
- for(const x of [-24.4,24.4])b.box(x,7,2,.55,12,20,'#b9a272');
+ b.box(0,8.5,-7.5,49,15,.65,'#833c33');
+ for(const x of [-24.4,24.4])b.box(x,8.5,2,.55,15,20,'#b9a272');
  // Burgundy mural fields with original lotus/landscape friezes; not photographs
  // and not a claim to reproduce a specific Jataka scene.
  for(let x=-21;x<=21;x+=6){
-  b.box(x,6.7,-7.1,5.45,8.8,.1,'#684335');
-  for(const y of [2.4,10.9])b.box(x,y,-6.96,5.5,.2,.1,'#d4b66c',0,true);
+  b.box(x,8.2,-7.1,5.45,11.8,.1,'#684335');
+  for(const y of [2.4,13.9])b.box(x,y,-6.96,5.5,.2,.1,'#d4b66c',0,true);
   if(detail)for(let row=0;row<3;row++)for(let j=-2;j<=2;j++)b.sculpt(new T.OctahedronGeometry(.26,0).scale(1,1.5,.15),x+j*.85,4+row*2.05,-6.91,['#d5b16a','#6c9985','#bd7960'][(j+row+6)%3]!,'ceramic');
  }
  for(let x=-21;x<=21;x+=6){
-  b.sculpt(new T.CylinderGeometry(.32,.43,11.6,12),x,7,10.75,'#914334','ceramic');
-  for(const y of [1.6,3,10.8,12.4])b.sculpt(new T.CylinderGeometry(y>10?.62:.47,y>10?.55:.5,.28,12),x,y,10.75,'#d9b66c','gilded');
-  if(detail)for(let y=4;y<10;y+=.75)b.sculpt(new T.OctahedronGeometry(.12,0).scale(1,1.4,.4),x,y,11.09,'#e6bd71','gilded');
+  b.sculpt(new T.CylinderGeometry(.32,.43,14.6,12),x,8.5,10.75,'#914334','ceramic');
+  for(const y of [1.6,3,13.8,15.4])b.sculpt(new T.CylinderGeometry(y>10?.62:.47,y>10?.55:.5,.28,12),x,y,10.75,'#d9b66c','gilded');
+  if(detail)for(let y=4;y<13;y+=.75)b.sculpt(new T.OctahedronGeometry(.12,0).scale(1,1.4,.4),x,y,11.09,'#e6bd71','gilded');
  }
- b.box(0,13.05,2,49,.24,20,'#6d382f');
- if(detail)for(let x=-22;x<=22;x+=3)for(let z=-5;z<=9;z+=3)b.sculpt(new T.OctahedronGeometry(.3,0).scale(1,.1,1),x,12.87,z,'#d4b16a','gilded');
- thaiRoof(b,0,13.4,2,49.5,22.8,3.6,'#47736c',detail);thaiRoof(b,0,15.85,2,41,19,3.3,'#ba4c34',detail);
+ b.box(0,16.05,2,49,.24,20,'#6d382f');
+ if(detail)for(let x=-22;x<=22;x+=3)for(let z=-5;z<=9;z+=3)b.sculpt(new T.OctahedronGeometry(.3,0).scale(1,.1,1),x,15.87,z,'#d4b16a','gilded');
+ thaiRoof(b,0,16.4,2,49.5,22.8,3.6,'#47736c',detail);thaiRoof(b,0,18.85,2,41,19,3.3,'#ba4c34',detail);
  for(const [i,color] of ['#3e8265','#eee4cf','#d2a33a','#345d91'].entries())royalChedi(b,-18+i*12,-18,20,3.7,color,detail);
  for(const x of [-24.4,24.4])b.box(x,2.2,0,.6,3.2,49,'#e9dfc2');b.box(0,2.2,24.4,49,3.2,.6,'#ede0bc');
  for(const x of [-9,9])guardian(b,x,22.2,3.5,'#8c9685',false);

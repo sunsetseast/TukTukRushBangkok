@@ -1,4 +1,5 @@
 import type {District,Landmark,Obstacle} from './types';
+import {designBuildings} from './bangkok/buildingGrammar';
 export type Vec3=[number,number,number];
 export type InspectionView={id:string;label:string;target:Vec3;distance:number;azimuth:number;pitch:number;minDistance:number;maxDistance:number;minPitch:number;maxPitch:number;pan:number;azimuthRange?:[number,number];room?:{min:Vec3;max:Vec3}};
 export type InspectionSubject={id:string;name:string;origin:Vec3;yaw:number;views:InspectionView[]};
@@ -10,7 +11,7 @@ export function inspectionSubject(l:Landmark):InspectionSubject{
  if(l.id==='pho'){
   const room={min:[-23.5,2.8,8.1] as Vec3,max:[23.5,11.3,10.05] as Vec3};
   const inside=(id:string,label:string,target:Vec3,azimuth:number,distance:number,pitch:number):InspectionView=>({id,label,target,azimuth,distance,pitch,minDistance:4,maxDistance:16,minPitch:-.2,maxPitch:.42,pan:2,azimuthRange:[-1.1,1.1],room});
-  views=[inside('head','Serene face',[-17.6,10,2.1],-.38,8.6,.02),inside('body','Reclining figure',[-1,6.6,2.5],0,11,.15),{...inside('feet','Pearl-inlaid soles',[20.2,5.7,2.1],1.2,5.4,.08),azimuthRange:[.7,2.25],room:{min:[22.1,3,-5],max:[23.7,10.8,10.05]}},view('courts','Royal chedis',[0,10,-11],66,.35,.48)];
+  views=[inside('head','Serene face',[-17.6,10,2.1],-.38,8.6,.02),inside('body','Reclining figure',[-1,6.6,2.5],0,11,.15),{...inside('feet','Pearl-inlaid soles',[20.2,5.7,2.1],1.2,5.4,.08),azimuthRange:[.7,2.25],room:{min:[22.1,3,-5],max:[23.7,10.8,10.05]}},view('courts','Royal chedis',[0,10,-11],66,2.8,.48)];
  }
  if(l.id==='paknam')views.push({...view('face','Buddha close-up',[0,55,12],43,.12,.07),minDistance:30,maxDistance:75,pan:4,azimuthRange:[-1.1,1.1]});
  if(l.id==='arun')views.push({...view('ceramics','Porcelain terraces',[0,20,0],51,.8,.13),minDistance:38,maxDistance:80,pan:4});
@@ -42,7 +43,7 @@ export class InspectionCamera {
   const cy=Math.cos(s.yaw),sy=Math.sin(s.yaw);
   for(const [local,world] of [[target,out.target],[pos,out.position]] as const){world[0]=s.origin[0]+cy*local[0]+sy*local[2];world[1]=local[1];world[2]=s.origin[2]-sy*local[0]+cy*local[2];}
   if(d&&!v.room){
-   if(this.cachedSubject!==s||this.cachedDistrict!==d){this.cachedSubject=s;this.cachedDistrict=d;this.inputP[0]=Infinity;const radius=Math.max(...s.views.map(v=>v.maxDistance))+50;this.nearby=d.obstacles.filter(b=>b.landmarkId!==s.id&&Math.hypot(b.x-s.origin[0],b.z-s.origin[2])<radius+Math.hypot(b.w,b.d)/2);}
+   if(this.cachedSubject!==s||this.cachedDistrict!==d){this.cachedSubject=s;this.cachedDistrict=d;this.inputP[0]=Infinity;const radius=Math.max(...s.views.map(v=>v.maxDistance))+50;this.nearby=cameraSceneEnvelopes(d).filter(b=>b.landmarkId!==s.id&&Math.hypot(b.x-s.origin[0],b.z-s.origin[2])<radius+Math.hypot(b.w,b.d)/2);}
    if(out.position.some((n,i)=>Math.abs(n-this.inputP[i]!)>.01)||out.target.some((n,i)=>Math.abs(n-this.inputTarget[i]!)>.01)){
     for(let i=0;i<3;i++){this.inputP[i]=out.position[i]!;this.inputTarget[i]=out.target[i]!;}
     avoidInspectionObstacles(out.position,out.target,this.nearby,s.id);clearInspectionSightline(out.position,out.target,this.nearby,s.id);for(let i=0;i<3;i++)this.safeP[i]=out.position[i]!;
@@ -72,7 +73,7 @@ export function inspectionOccluded(p:Vec3,target:Vec3,obstacles:Obstacle[],site:
  for(const b of obstacles){const envelope=(b.w+b.d)*.71+1;if(b.landmarkId===site||b.height<4||b.x+envelope<minX||b.x-envelope>maxX||b.z+envelope<minZ||b.z-envelope>maxZ)continue;
   const c=Math.cos(b.yaw??0),s=Math.sin(b.yaw??0),ax=c*(target[0]-b.x)-s*(target[2]-b.z),az=s*(target[0]-b.x)+c*(target[2]-b.z),bx=c*(p[0]-b.x)-s*(p[2]-b.z),bz=s*(p[0]-b.x)+c*(p[2]-b.z);let lo=0,hi=1;
   for(const [a,v,r] of [[ax,bx-ax,b.w/2+.4],[az,bz-az,b.d/2+.4]]){if(Math.abs(v!)<1e-6){if(Math.abs(a!)>r!)hi=-1;}else{let q=(-r!-a!)/v!,u=(r!-a!)/v!;if(q>u)[q,u]=[u,q];lo=Math.max(lo,q);hi=Math.min(hi,u);}}
-  if(lo<.99&&hi>.01&&lo<=hi&&Math.min(target[1]+(p[1]-target[1])*lo,target[1]+(p[1]-target[1])*hi)<b.height+.7)return true;
+  if(lo<1.00001&&hi>.001&&lo<=hi&&Math.min(target[1]+(p[1]-target[1])*lo,target[1]+(p[1]-target[1])*hi)<b.height+.7)return true;
  }return false;
 }
 /** Search a bounded arc for a clear composition, including the site's base.
@@ -81,4 +82,14 @@ export function clearInspectionSightline(p:Vec3,target:Vec3,obstacles:Obstacle[]
  const base:Vec3=[target[0],1.8,target[2]],clear=(q:Vec3)=>!inspectionOccluded(q,target,obstacles,site)&&(target[1]>25||!inspectionOccluded(q,base,obstacles,site));
  if(clear(p))return;const dx=p[0]-target[0],dz=p[2]-target[2],y=p[1],q:Vec3=[0,y,0];
  for(const lift of [0,6,12])for(let step=1;step<=24;step++){const a=Math.ceil(step/2)*(step%2?1:-1)*Math.PI/12,c=Math.cos(a),s=Math.sin(a);q[0]=target[0]+c*dx+s*dz;q[2]=target[2]-s*dx+c*dz;q[1]=y+lift;if(clear(q)){p[0]=q[0];p[1]=q[1];p[2]=q[2];return;}}
+}
+
+const cameraEnvelopes=new WeakMap<District,Obstacle[]>();
+/** Rendering intentionally varies bay heights independently of vehicle footprints.
+ * Inspectors must clear those actual facades/roofs, not only the physics boxes. */
+export function cameraSceneEnvelopes(d:District){
+ let cached=cameraEnvelopes.get(d);if(cached)return cached;
+ const heights=new Map<Obstacle,number>();for(const p of designBuildings(d)){const modern=['siam','silom','sukhumvit'].includes(p.region),H=p.parcel.artRole?(modern?Math.min(p.parcel.height,80):Math.min(p.bays[0]!.height,31)):Math.max(...p.bays.map(a=>a.height));heights.set(p.parcel,H+4);}
+ const hero:Record<string,number>={pho:25,arun:56,palace:47,traimit:42,golden:48,swing:22,democracy:25,victory:40,hua:27,icon:40,paragon:34,mahanakhon:155,baiyoke:158,state:138,paknam:80};
+ cached=d.obstacles.map(b=>({...b,w:b.w+1.2,d:b.d+1.2,height:Math.max(b.height,heights.get(b)??0,hero[b.landmarkId??'']??0)}));cameraEnvelopes.set(d,cached);return cached;
 }

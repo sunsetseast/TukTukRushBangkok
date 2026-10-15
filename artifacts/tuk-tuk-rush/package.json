@@ -20,7 +20,8 @@
     "test:definitive": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
     "art:roads": "node --import tsx scripts/generate-road-surfaces.ts",
     "test:open-bangkok": "node --import tsx scripts/check-open-bangkok.ts",
-    "test:startup": "node scripts/check-startup.mjs"
+    "test:startup": "node scripts/check-startup.mjs",
+    "test:landmark-quality": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
