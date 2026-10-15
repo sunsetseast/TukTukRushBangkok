@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createBangkokWorld,blockedByRiver} from '../src/game/bangkok/world';
 import {VehicleController,createVehicle} from '../src/game/vehicle';
 import {RailService,trainSample} from '../src/game/bangkok/transit/service';
-import {obstacleDistance,distanceToSegment} from '../src/game/world';
+import {obstacleDistance,distanceToSegment,orientedFootprintsOverlap} from '../src/game/world';
 import baked from '../src/game/bangkok/roadSurfaces.generated.json';
 import {roadGraphKey} from '../src/game/bangkok/roadSurfaceGraph';
 import {physicsObstacleIndex} from '../src/game/bangkok/clearanceIndex';
@@ -30,10 +30,14 @@ for(let i=0;i<net.lines.length;i++)for(let j=i+1;j<net.lines.length;j++){
   for(const ad of [-1,1])for(const bd of [-1,1]){crossLineChecks++;const x={...p},y={...q};trainSample(a,p.distance,ad,x);trainSample(b,q.distance,bd,y);const distance=Math.hypot(x.x-y.x,x.z-y.z);if(distance<3.2){assert(Math.abs(x.y-y.y)>3.5,`Crossing tracks collide ${a.id}/${b.id}`);}}
  }
 }
-const service=new RailService(net),visited=new Set<string>();let maxStep=0,minSeparation=Infinity;const last=service.trains.map(t=>({...t.sample}));
+const service=new RailService(net),visited=new Set<string>();let maxStep=0,minSeparation=Infinity,carBodyChecks=0;const last=service.trains.map(t=>({...t.sample}));
 for(let frame=1;frame<=36000;frame++){
  service.update(frame/30);for(let i=0;i<service.trains.length;i++){const t=service.trains[i]!,old=last[i]!;maxStep=Math.max(maxStep,Math.hypot(t.sample.x-old.x,t.sample.z-old.z,t.sample.y-old.y));assert(maxStep<.8,'Train teleports');Object.assign(old,t.sample);if(t.station)visited.add(`${t.line.id}:${t.station}`);const s={...t.sample};trainSample(t.line,t.distance,t.direction,s);assert(Math.hypot(t.sample.x-s.x,t.sample.z-s.z,t.sample.y-s.y)<1e-7);}
+ if(frame%10===0){
+  const cars=service.trains.flatMap(t=>Array.from({length:t.line.id==='gold'?2:4},(_,i)=>{const count=t.line.id==='gold'?2:4,s={...t.sample};trainSample(t.line,t.distance+(i-(count-1)/2)*(count===2?13:17.2),t.direction,s);return {train:t.id,x:s.x,z:s.z,y:s.y,yaw:Math.atan2(s.tx,s.tz),w:count===2?2.8:2.95,d:count===2?12.4:16.5,height:3.7,color:'#fff'};}));
+  for(let i=0;i<cars.length;i++)for(let j=i+1;j<cars.length;j++){const a=cars[i]!,b=cars[j]!;if(a.train===b.train||Math.hypot(a.x-b.x,a.z-b.z)>22||Math.abs(a.y-b.y)>4)continue;carBodyChecks++;assert(!orientedFootprintsOverlap(a,b),`Moving car bodies overlap ${a.train}/${b.train}`);}
+ }
  for(let i=0;i<6;i+=2){const a=service.trains[i]!,b=service.trains[i+1]!;const dist=Math.hypot(a.sample.x-b.sample.x,a.sample.z-b.sample.z,a.sample.y-b.sample.y);minSeparation=Math.min(minSeparation,dist);assert(dist>3.2,'Opposing trains collide');}
 }
 assert.equal(visited.size,25);const frozen=JSON.stringify(service.trains);service.update(1200);assert.equal(JSON.stringify(service.trains),frozen);service.update(0);assert.equal(JSON.stringify(service.trains),JSON.stringify(new RailService(net).trains));
-console.log(JSON.stringify({pass:true,journeys,stationsServed:visited.size,trainFrames:36000,crossLineChecks,maxStep,minTrainCentreSeparation:minSeparation,supports:net.supports.length,clearedParcels:net.removedParcels,nodes:d.nodes.length,roads:d.roads.length,buildings:d.buildings.length,pauseRestart:true},null,2));
+console.log(JSON.stringify({pass:true,journeys,stationsServed:visited.size,trainFrames:36000,crossLineChecks,carBodyChecks,maxStep,minTrainCentreSeparation:minSeparation,supports:net.supports.length,clearedParcels:net.removedParcels,nodes:d.nodes.length,roads:d.roads.length,buildings:d.buildings.length,pauseRestart:true},null,2));
