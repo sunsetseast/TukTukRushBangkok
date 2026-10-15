@@ -42,7 +42,9 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- After pulling or merging dependency changes, let the post-merge `pnpm install --frozen-lockfile --prefer-offline` finish before restarting the game. The hook does not push database schemas.
+- Bangkok asphalt, curbs and sidewalks are committed generated data. After intentional road-graph edits, run `pnpm --filter @workspace/tuk-tuk-rush art:roads` and commit `roadSurfaces.generated.json` together with those edits.
+- `polygon-clipping` is used by offline road authoring/QA only. Browser startup does not import it or run polygon booleans. A stale road bake fails with a specific regeneration instruction rather than silently rendering mismatched roads.
 
 ## Pointers
 
