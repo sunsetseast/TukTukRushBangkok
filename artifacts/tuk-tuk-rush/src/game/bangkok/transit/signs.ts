@@ -14,6 +14,7 @@ export function buildTransitSigns(d: District) {
     .transit!.lines.flatMap((l) => l.stations)
     .filter((s, i, all) => all.findIndex((q) => q.id === s.id) === i);
   const entries = [
+    {key:"historic:gate",top:"ซุ้มประตูเฉลิมพระเกียรติ",bottom:"Chinatown Gate",color:"#174a45"},
     ...stations.map((s) => ({
       key: s.id,
       top: `${s.code}  ${s.thai}`,
@@ -104,6 +105,7 @@ export function buildTransitSigns(d: District) {
       if (p) add(`mrt:${s.id}`, p.x, 2, p.z, p.yaw + Math.PI, 5);
     }
   }
+  const gate=d.landmarks.find(l=>l.id==='gate');if(gate){const p=gate.plot??gate;for(const side of [-1,1])add('historic:gate',p.x,10.3,p.z+side*4.86,side>0?0:Math.PI,6.4);}
   const structure=new LandmarkBuilder();
   for(const a of d.destinations??[]){const p=arrivalSign(a),g=a.entrance;add(p.key,p.x,p.y,p.z,p.yaw,p.w);
    const c=Math.cos(g.yaw),s=Math.sin(g.yaw);for(const u of [-5.3,5.3]){structure.box(g.x+c*u-s*1.7,6.8,g.z-s*u-c*1.7,.12,.16,3.5,'#9b8c62',g.yaw);structure.box(p.x+c*u,6.25,p.z-s*u,.12,1.1,.12,'#9b8c62');}}

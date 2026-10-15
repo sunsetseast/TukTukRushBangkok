@@ -53,8 +53,8 @@ function build(l:Landmark,detail:boolean){
   for(let i=0;i<8;i++)b.sculpt(new T.CylinderGeometry(22-i*1.8,24-i*1.8,3.1,20),0,1.8+i*3,0,i%2?'#819167':'#6c805c','ceramic');
   b.sculpt(new T.CylinderGeometry(9,10,4,16),0,26.5,0,'#e2d7b8','ceramic');
   // Its visible golden crown is separately elevated, preserving the planted base.
-  const crown=new T.LatheGeometry([[0,0],[5,0],[5,2],[3.4,4],[2.4,8],[1.3,13],[0,20]].map(([r,y])=>new T.Vector2(r!,y!)),24);b.sculpt(crown,0,28,0,'#e2b34e','gilded');
-  if(detail)for(let i=0;i<86;i++){const a=i*.115,r=23-i*.125,y=1+i*.29;b.box(Math.sin(a)*r,y,Math.cos(a)*r,1.25,.33,2.4,'#d5cdb5',a);if(i%3===0)b.sculpt(new T.CylinderGeometry(.05,.05,1,4),Math.sin(a)*(r+1.1),y+.6,Math.cos(a)*(r+1.1),'#e3d5b1','ceramic');}
+  const crown=new T.LatheGeometry([[0,0],[6,0],[6,.8],[5.2,1.4],[5.4,2.1],[4.1,2.6],[4.7,4],[4.4,5.8],[3.4,8],[2.2,9.5],[2.1,10.5],[1.7,11.5],[1.4,13],[.8,16],[0,20]].map(([r,y])=>new T.Vector2(r!,y!)),24);b.sculpt(crown,0,28,0,'#e2b34e','gilded');
+  if(detail)for(let i=0;i<86;i++){const a=i*.115,r=23-i*.125,y=1+i*.29;b.box(Math.sin(a)*r,y,Math.cos(a)*r,1.25,.33,2.4,'#d5cdb5',a+Math.PI/2);if(i%3===0)b.sculpt(new T.CylinderGeometry(.05,.05,1,4),Math.sin(a)*(r+1.1),y+.6,Math.cos(a)*(r+1.1),'#e3d5b1','ceramic');}
  }else if(l.id==='swing'){
   for(const x of [-5.2,5.2]){b.box(x,1,0,2.2,1.5,2.5,'#cac5b3');b.sculpt(new T.CylinderGeometry(.38,.55,19,8),x,10.5,0,'#b52f2e','ceramic');b.box(x,19.5,0,1.1,1.8,1.1,'#b52f2e');}
   const lintel=new T.Shape([new T.Vector2(-7.2,0),new T.Vector2(-7.8,1.1),new T.Vector2(-5.5,.6),new T.Vector2(0,.4),new T.Vector2(5.5,.6),new T.Vector2(7.8,1.1),new T.Vector2(7.2,0),new T.Vector2(0,-.25)]);

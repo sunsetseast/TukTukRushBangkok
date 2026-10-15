@@ -11,7 +11,7 @@ export function sectionLoft(sections:Section[],sides=24,steps=48,folds=0){
  for(let i=0;i<=steps;i++){
   const t=i/steps,q=t*(sections.length-1),k=Math.min(sections.length-2,Math.floor(q)),f=q-k,A=sections[k]!,B=sections[k+1]!,smooth=f*f*(3-2*f),a=T.MathUtils.lerp(A.a,B.a,smooth),b=T.MathUtils.lerp(A.b,B.b,smooth),p=curve.getPoint(t);
   curve.getTangent(t,tangent);if(i===0){u.set(Math.abs(tangent.y)>.8?1:0,Math.abs(tangent.y)>.8?0:1,0);}else{rotation.setFromUnitVectors(prev,tangent);u.applyQuaternion(rotation);}u.addScaledVector(tangent,-u.dot(tangent)).normalize();v.crossVectors(tangent,u).normalize();prev.copy(tangent);
-  for(let j=0;j<=sides;j++){const theta=j/sides*Math.PI*2,fold=1+folds*Math.sin(theta*5+t*31)*Math.pow(Math.max(0,Math.cos(theta)),2),x=Math.cos(theta)*a*fold,z=Math.sin(theta)*b*fold;positions.push(p.x+u.x*x+v.x*z,p.y+u.y*x+v.y*z,p.z+u.z*x+v.z*z);uv.push(j/sides,t);if(i<steps&&j<sides){const n=i*(sides+1)+j;indices.push(n,n+1,n+sides+1,n+1,n+sides+2,n+sides+1);}}
+  for(let j=0;j<=sides;j++){const theta=j/sides*Math.PI*2,fold=1+folds*(Math.sin(theta*7+t*12)+.35*Math.sin(theta*17-t*9)),x=Math.cos(theta)*a*fold,z=Math.sin(theta)*b*fold;positions.push(p.x+u.x*x+v.x*z,p.y+u.y*x+v.y*z,p.z+u.z*x+v.z*z);uv.push(j/sides,t);if(i<steps&&j<sides){const n=i*(sides+1)+j;indices.push(n,n+1,n+sides+1,n+1,n+sides+2,n+sides+1);}}
  }
  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(positions,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();return g;
 }
@@ -36,7 +36,7 @@ export function sculptedFace(b:LandmarkBuilder,position:V3,scale:number,detail:b
  const cap=[[-.01,1.14],[1.04,1.15],[1.12,1.5],[.94,1.94],[.62,2.24],[0,2.32]].map(([r,y])=>new T.Vector2(r!,y!));put(new T.LatheGeometry(cap,detail?40:20),'#bc8d3c');
  const crown=[[0,0],[.43,0],[.46,.25],[.3,.6],[.19,.92],[0,1.2]].map(([r,y])=>new T.Vector2(r!,y!));put(new T.LatheGeometry(crown,20).translate(0,2.12,0),'#d6a746');
  if(detail){
-  for(let row=0;row<7;row++){const y=1.14+row*.15,r=Math.sqrt(Math.max(.03,1-((y-1.25)/1.05)**2))*1.12,n=Math.round(22*r);for(let j=0;j<n;j++){const a=(j+(row%2)*.5)/n*Math.PI*2;put(new T.IcosahedronGeometry(.095,0).translate(Math.sin(a)*r,y,Math.cos(a)*r),'#b78938');}}
+  for(let row=0;row<7;row++){const y=1.14+row*.15,r=Math.sqrt(Math.max(.03,1-((y-1.25)/1.05)**2))*1.12,n=Math.round(22*r);for(let j=0;j<n;j++){const a=(j+(row%2)*.5)/n*Math.PI*2;put(new T.TorusGeometry(.065,.034,4,8).rotateY(a).translate(Math.sin(a)*r,y,Math.cos(a)*r),'#b78938');}}
  }
  // Elongated lobes are shaped leaf sections, with a recessed inner ear ridge.
  for(const side of [-1,1]){

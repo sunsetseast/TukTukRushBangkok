@@ -4,7 +4,7 @@ import {LandmarkBuilder} from './landmarkBuilder';
 import {sectionLoft,ribbonPath,sculptedFace,sculptedHand,pearlSoleTexture,type Section} from './sculptureGeometry';
 import {thaiRoof,royalChedi,framedWindow,guardian} from './templeCraft';
 const GOLD='#dfb15b';
-function robe(b:LandmarkBuilder,sections:Section[],detail:boolean){b.sculpt(sectionLoft(sections,detail?36:18,detail?70:34,.018),0,0,0,GOLD,'gilded');}
+function robe(b:LandmarkBuilder,sections:Section[],detail:boolean){b.sculpt(sectionLoft(sections,detail?36:18,detail?70:34,sections.length>=5?.035:0),0,0,0,GOLD,'gilded');}
 function sole(b:LandmarkBuilder,x:number,y:number,z:number,material:T.MeshStandardMaterial){
  const s=new T.Shape();s.moveTo(-.62,-1.8);s.quadraticCurveTo(-1.16,-1.2,-.92,.7);
  for(let i=0;i<5;i++){const a=-1+i*.4;s.quadraticCurveTo(a-.1,2.12-Math.abs(i-2)*.07,a+.22,2.18-Math.abs(i-2)*.07);}

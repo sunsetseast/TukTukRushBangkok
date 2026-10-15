@@ -55,9 +55,9 @@ export function porcelainPrang(b:LandmarkBuilder,x:number,z:number,h:number,r:nu
   }
  }
  for(const side of [-1,1]){
-  for(let step=0;step<12;step++){const y=step*h*.012,zp=side*(r*1.7-step*r*.075);b.box(x,y+.3,z+zp,r*.53,.5,r*.14,'#c8c2aa');}
+  for(let step=0;step<12;step++){const y=step*h*.017,zp=side*(r*1.7-step*r*.075);b.box(x,y+.3,z+zp,r*.53,.5,r*.14,'#c8c2aa');}
   const recess=new T.Shape([new T.Vector2(-r*.17,0),new T.Vector2(-r*.17,h*.07),new T.Vector2(0,h*.1),new T.Vector2(r*.17,h*.07),new T.Vector2(r*.17,0)]);
-  b.sculpt(new T.ExtrudeGeometry(recess,{depth:.1,bevelEnabled:false}),x,h*.18,z+side*r*.7,'#707c70','ceramic',side<0?Math.PI:0);
+  b.box(x,h*.235,z+side*r*.72,r*.42,h*.12,r*.16,'#dedac7');b.sculpt(new T.ExtrudeGeometry(recess,{depth:.1,bevelEnabled:false}),x,h*.18,z+side*r*.812,'#707c70','ceramic',side<0?Math.PI:0);
  }
 }
 export function guardian(b:LandmarkBuilder,x:number,z:number,h:number,color:string,detail=true){

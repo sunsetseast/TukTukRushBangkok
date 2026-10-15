@@ -56,7 +56,7 @@ function buildBeacon() {
 function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const { camera, gl, scene } = useThree();
   const bangkok = engine.model.district.worldId === 'bangkok';
-  const cameraBlend=useRef({key:'',time:0,from:new THREE.Vector3(),look:new THREE.Vector3(),last:new THREE.Vector3(),lastLook:new THREE.Vector3()});
+  const cameraBlend=useRef({key:'',time:0,room:false,from:new THREE.Vector3(),look:new THREE.Vector3(),last:new THREE.Vector3(),lastLook:new THREE.Vector3()});
   const railView=useRef({next:0,y:1.4,target:1.4});
   const lookPose=useRef({position:[0,0,0] as [number,number,number],target:[0,0,0] as [number,number,number]});
   const atmosphere=useMemo(()=>bangkok?citySky():undefined,[bangkok]);
@@ -267,8 +267,9 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         cp.lookAt(new THREE.Vector3().fromArray(override.look));
       }
     }
+    beacon.g.visible=!s.viewingLandmark;
     const blend=cameraBlend.current,key=s.viewingLandmark??'';
-    if(key!==blend.key){blend.from.copy(blend.key?blend.last:cp.position);blend.look.copy(blend.key?blend.lastLook:c.look);blend.time=t;blend.key=key;}
+    if(key!==blend.key){blend.from.copy(blend.key?blend.last:cp.position);blend.look.copy(blend.key?blend.lastLook:c.look);const room=!!engine.inspection.view?.room;blend.time=room||blend.room?t-1:t;blend.room=room;blend.key=key;}
     if(s.viewingLandmark&&engine.inspection.update(delta,lookPose.current,m.district)){
       cp.position.fromArray(lookPose.current.position);c.look.fromArray(lookPose.current.target);cp.fov=62;cp.updateProjectionMatrix();c.init=false;
     }

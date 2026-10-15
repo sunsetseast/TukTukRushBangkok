@@ -19,6 +19,8 @@ export function inspectionSubject(l:Landmark):InspectionSubject{
 /** Input state is separate from simulation time. No momentum runs after cancellation. */
 export class InspectionCamera {
  subject?:InspectionSubject;viewIndex=0;revision=0;
+ private inputP:Vec3=[Infinity,Infinity,Infinity];private inputTarget:Vec3=[0,0,0];private safeP:Vec3=[0,0,0];
+ private cachedSubject?:InspectionSubject;private cachedDistrict?:District;private nearby:Obstacle[]=[];
  azimuth=0;pitch=.3;distance=50;panX=0;panY=0;
  private az=0;private el=.3;private radius=50;private px=0;private py=0;
  get view(){return this.subject?.views[this.viewIndex];}
@@ -39,7 +41,13 @@ export class InspectionCamera {
   if(v.room){for(let i=0;i<3;i++)pos[i]=clamp(pos[i]!,v.room.min[i]!,v.room.max[i]!);}
   const cy=Math.cos(s.yaw),sy=Math.sin(s.yaw);
   for(const [local,world] of [[target,out.target],[pos,out.position]] as const){world[0]=s.origin[0]+cy*local[0]+sy*local[2];world[1]=local[1];world[2]=s.origin[2]-sy*local[0]+cy*local[2];}
-  if(d&&!v.room)avoidInspectionObstacles(out.position,out.target,d.obstacles,s.id);
+  if(d&&!v.room){
+   if(this.cachedSubject!==s||this.cachedDistrict!==d){this.cachedSubject=s;this.cachedDistrict=d;this.inputP[0]=Infinity;const radius=Math.max(...s.views.map(v=>v.maxDistance))+50;this.nearby=d.obstacles.filter(b=>b.landmarkId!==s.id&&Math.hypot(b.x-s.origin[0],b.z-s.origin[2])<radius+Math.hypot(b.w,b.d)/2);}
+   if(out.position.some((n,i)=>Math.abs(n-this.inputP[i]!)>.01)||out.target.some((n,i)=>Math.abs(n-this.inputTarget[i]!)>.01)){
+    for(let i=0;i<3;i++){this.inputP[i]=out.position[i]!;this.inputTarget[i]=out.target[i]!;}
+    avoidInspectionObstacles(out.position,out.target,this.nearby,s.id);clearInspectionSightline(out.position,out.target,this.nearby,s.id);for(let i=0;i<3;i++)this.safeP[i]=out.position[i]!;
+   }else for(let i=0;i<3;i++)out.position[i]=this.safeP[i]!;
+  }
   return true;
  }
 }
@@ -57,4 +65,20 @@ export function avoidInspectionObstacles(p:Vec3,target:Vec3,obstacles:Obstacle[]
   let nx=x,nz=z;if(rx-Math.abs(x)<rz-Math.abs(z))nx=Math.sign(x||1)*rx;else nz=Math.sign(z||1)*rz;
   p[0]=b.x+c*nx+s*nz;p[2]=b.z-s*nx+c*nz;
  }
+}
+
+export function inspectionOccluded(p:Vec3,target:Vec3,obstacles:Obstacle[],site:string){
+ const minX=Math.min(p[0],target[0]),maxX=Math.max(p[0],target[0]),minZ=Math.min(p[2],target[2]),maxZ=Math.max(p[2],target[2]);
+ for(const b of obstacles){const envelope=(b.w+b.d)*.71+1;if(b.landmarkId===site||b.height<4||b.x+envelope<minX||b.x-envelope>maxX||b.z+envelope<minZ||b.z-envelope>maxZ)continue;
+  const c=Math.cos(b.yaw??0),s=Math.sin(b.yaw??0),ax=c*(target[0]-b.x)-s*(target[2]-b.z),az=s*(target[0]-b.x)+c*(target[2]-b.z),bx=c*(p[0]-b.x)-s*(p[2]-b.z),bz=s*(p[0]-b.x)+c*(p[2]-b.z);let lo=0,hi=1;
+  for(const [a,v,r] of [[ax,bx-ax,b.w/2+.4],[az,bz-az,b.d/2+.4]]){if(Math.abs(v!)<1e-6){if(Math.abs(a!)>r!)hi=-1;}else{let q=(-r!-a!)/v!,u=(r!-a!)/v!;if(q>u)[q,u]=[u,q];lo=Math.max(lo,q);hi=Math.min(hi,u);}}
+  if(lo<.99&&hi>.01&&lo<=hi&&Math.min(target[1]+(p[1]-target[1])*lo,target[1]+(p[1]-target[1])*hi)<b.height+.7)return true;
+ }return false;
+}
+/** Search a bounded arc for a clear composition, including the site's base.
+ * Nearby boxes are cached per subject; no whole-city triangle raycasts. */
+export function clearInspectionSightline(p:Vec3,target:Vec3,obstacles:Obstacle[],site:string){
+ const base:Vec3=[target[0],1.8,target[2]],clear=(q:Vec3)=>!inspectionOccluded(q,target,obstacles,site)&&(target[1]>25||!inspectionOccluded(q,base,obstacles,site));
+ if(clear(p))return;const dx=p[0]-target[0],dz=p[2]-target[2],y=p[1],q:Vec3=[0,y,0];
+ for(const lift of [0,6,12])for(let step=1;step<=24;step++){const a=Math.ceil(step/2)*(step%2?1:-1)*Math.PI/12,c=Math.cos(a),s=Math.sin(a);q[0]=target[0]+c*dx+s*dz;q[2]=target[2]-s*dx+c*dz;q[1]=y+lift;if(clear(q)){p[0]=q[0];p[1]=q[1];p[2]=q[2];return;}}
 }
