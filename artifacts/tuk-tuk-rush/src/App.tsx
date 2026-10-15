@@ -1,3 +1,4 @@
+import {Inspection} from './game/Inspection';
 import { Component, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { WorldMap } from './game/bangkok/WorldMap';
 import { GameEngine } from './game/engine';
@@ -91,17 +92,21 @@ function App() {
     <Settings audio={audio} onAudio={() => { sfx.unlock(); setAudio((a) => !a); }} quality={frame.snap.quality} onQuality={(q) => engine.setQuality(q)} />
   );
   const s = frame.snap;
+  const [cameraReturn,setCameraReturn]=useState(false),wasViewing=useRef(false);
+  useEffect(()=>{if(wasViewing.current&&!s.viewingLandmark){setCameraReturn(true);const t=setTimeout(()=>setCameraReturn(false),350);wasViewing.current=false;return()=>clearTimeout(t);}wasViewing.current=!!s.viewingLandmark;return undefined;},[s.viewingLandmark]);
+
 
   if (!gl) return <div className="tt-root"><Fail msg="The 3D city needs WebGL 2, which this browser or device did not provide. Enable hardware acceleration or try a current browser." /></div>;
 
   return (
-    <div className={`tt-root ${mapOpen ? 'tt-map-open' : ''}`} ref={root}>
+    <div className={`tt-root ${mapOpen || s.viewingLandmark ? 'tt-map-open' : ''}`} ref={root}>
       <Boundary><GameCanvas engine={engine} quality={frame.snap.quality} /></Boundary>
       <div className="tt-ui">
         {(s.phase === 'playing' || s.phase === 'paused') && !s.viewingLandmark && (
           <Hud d={engine.model.district} f={frame} shift={s.mode === 'shift'} onMap={engine.model.district.worldId === 'bangkok' ? openMap : undefined} onPause={() => { engine.clearInput(); engine.pause(); }} />
         )}
-        {s.viewingLandmark && <div className="tt-inspection" data-testid={s.viewingLandmark==='pho'?'pho-inspection':'palace-inspection'} role="dialog" aria-modal="true" aria-label={s.viewingLandmark==='pho'?'Wat Pho Reclining Buddha':'Grand Palace rooflines'}><div><b>{s.viewingLandmark==='pho'?'WAT PHO · RECLINING BUDDHA':'GRAND PALACE · PERIMETER VIEW'}</b><p>{s.viewingLandmark==='pho'?'A quiet view inside the viharn.':'An elevated view from outside the ceremonial enclosure.'} Your shift and boost timers are paused.</p></div><button onClick={()=>engine.resume()}>RETURN TO TUK-TUK</button></div>}
+        {s.viewingLandmark&&<Inspection key={s.viewingLandmark} engine={engine}/>}
+
         {s.phase === 'playing' && !mapOpen && <Controls engine={engine} onHorn={() => sfx.horn()} />}
         {s.phase === 'title' && <Title onStart={start} settings={settings} bangkok={engine.model.district.worldId === 'bangkok'} />}
         {s.phase === 'paused' && !s.viewingLandmark && !mapOpen && (
@@ -109,6 +114,7 @@ function App() {
         )}
         {s.phase === 'ended' && <Results s={s} onAgain={() => engine.restart()} onFree={() => start('free')} />}
       </div>
+      {cameraReturn&&<div className="tt-camera-return" aria-hidden="true"/>}
       {mapOpen && <WorldMap d={engine.model.district} f={frame} onClose={closeMap} />}
       <div className="tt-rotate" data-testid="hint-rotate">
         <div className="tt-phone" />

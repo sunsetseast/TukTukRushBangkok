@@ -17,7 +17,7 @@ export type TrafficCar = Point & { id: number; heading: number; speed: number; k
 export type Input = { steer: number; gas: boolean; brake: boolean; boost?: boolean };
 export type Mission = { pickup: RoadNode; destination: RoadNode; passenger: string; limit: number };
 export type GameSnapshot = {
-  viewingLandmark?: 'pho' | 'palace'; boostState?: 'ready' | 'active' | 'recharging'; boostActive?: number; boostRecharge?: number;
+  viewingLandmark?: string; boostState?: 'ready' | 'active' | 'recharging'; boostActive?: number; boostRecharge?: number;
   elapsed?: number; districtName?: string; discoveredDistricts?: string[]; discoveredLandmarks?: string[]; discoveredShortcuts?: string[];
   phase: 'title' | 'playing' | 'paused' | 'ended';
   mode: 'shift' | 'free'; stage: 'pickup' | 'delivery';

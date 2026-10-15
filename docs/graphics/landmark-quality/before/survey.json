@@ -1,0 +1,152 @@
+{
+  "label": "before",
+  "survey": [
+    {
+      "name": "pho-head",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "pho",
+        "view": "head"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 191,
+        "triangles": 296168,
+        "geometries": 435,
+        "textures": 11,
+        "frameMs": 1108.7000000000698
+      }
+    },
+    {
+      "name": "pho-body",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "pho",
+        "view": "body"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 150,
+        "triangles": 244438,
+        "geometries": 445,
+        "textures": 11,
+        "frameMs": 2442.3000000000466
+      }
+    },
+    {
+      "name": "pho-feet",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "pho",
+        "view": "feet"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 123,
+        "triangles": 217284,
+        "geometries": 505,
+        "textures": 11,
+        "frameMs": 1373.6999999999534
+      }
+    },
+    {
+      "name": "paknam",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "paknam",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 29,
+        "triangles": 28592,
+        "geometries": 526,
+        "textures": 11,
+        "frameMs": 143.5
+      }
+    },
+    {
+      "name": "arun",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "arun",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 131,
+        "triangles": 158971,
+        "geometries": 575,
+        "textures": 11,
+        "frameMs": 284.9000000000233
+      }
+    },
+    {
+      "name": "palace",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "palace",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 189,
+        "triangles": 302318,
+        "geometries": 620,
+        "textures": 11,
+        "frameMs": 192.89999999990687
+      }
+    },
+    {
+      "name": "icon",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "icon",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 155,
+        "triangles": 160878,
+        "geometries": 731,
+        "textures": 11,
+        "frameMs": 919.1999999999534
+      }
+    },
+    {
+      "name": "arrival-pho",
+      "pose": {
+        "normalCamera": true,
+        "arrivalSign": "pho"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 223,
+        "triangles": 357239,
+        "geometries": 795,
+        "textures": 11,
+        "frameMs": 489.4000000000233
+      }
+    },
+    {
+      "name": "bts-asok",
+      "pose": {
+        "normalCamera": true,
+        "station": "asok",
+        "x": 1759.1304347826087,
+        "z": -38.260869565217405
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 151,
+        "triangles": 174033,
+        "geometries": 898,
+        "textures": 12,
+        "frameMs": 23.399999999906868
+      }
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "videoRecorded": false
+}

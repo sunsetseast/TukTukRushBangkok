@@ -56,6 +56,9 @@ function buildBeacon() {
 function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const { camera, gl, scene } = useThree();
   const bangkok = engine.model.district.worldId === 'bangkok';
+  const cameraBlend=useRef({key:'',time:0,room:false,from:new THREE.Vector3(),look:new THREE.Vector3(),last:new THREE.Vector3(),lastLook:new THREE.Vector3()});
+  const railView=useRef({next:0,y:1.4,target:1.4});
+  const lookPose=useRef({position:[0,0,0] as [number,number,number],target:[0,0,0] as [number,number,number]});
   const atmosphere=useMemo(()=>bangkok?citySky():undefined,[bangkok]);
   const sun = useRef<THREE.DirectionalLight>(null), ambient = useRef<THREE.HemisphereLight>(null);
   const city = useMemo(() => {
@@ -166,6 +169,9 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     beacon.gem.rotation.y = t * 2;
     beacon.gem.position.y = 24 + Math.sin(t * 2) * 1.2;
 
+    // A small horizon adjustment near genuine rail corridors exposes overhead
+    // trains without changing driving position, FOV or historic-district views.
+    const rv=railView.current;if(t>rv.next){rv.next=t+.25;rv.target=m.district.transit?.lines.some(line=>line.samples.some((q,i)=>i%8===0&&Math.hypot(q.x-p.x,q.z-p.z)<65))?3.65:1.4;}rv.y+=(rv.target-rv.y)*(1-Math.exp(-3*dt));
     // camera
     if (c.phase !== s.phase && (c.phase === "title" || c.phase === ""))
       c.init = false;
@@ -242,7 +248,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.pos.z += (tz - c.pos.z) * f;
       cp.position.copy(c.pos);
       if(destination){const y=destination.id==='paknam'?30:destination.id==='arun'?22:destination.id==='pho'?8:destination.kind==='palace'?18:17;c.look.set(destination.plot!.x,y,destination.plot!.z);}
-      else c.look.set(p.x + fx * 6, 1.4, p.z + fz * 6);
+      else c.look.set(p.x + fx * 6, rv.y, p.z + fz * 6);
       cp.lookAt(c.look);
       c.fov += (58 + sp * 14 + boosted*3 - c.fov) * (1 - Math.exp(-3 * dt));
     }
@@ -261,15 +267,16 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         cp.lookAt(new THREE.Vector3().fromArray(override.look));
       }
     }
-    if(s.viewingLandmark==='pho') {
-      const l=m.district.landmarks.find(l=>l.id==='pho')!;
-      cp.position.set(l.plot!.x,8,l.plot!.z+21.5);
-      c.look.set(l.plot!.x-2,7.6,l.plot!.z+2);cp.lookAt(c.look);cp.fov=66;cp.updateProjectionMatrix();c.init=false;
+    beacon.g.visible=!s.viewingLandmark;
+    const blend=cameraBlend.current,key=s.viewingLandmark??'';
+    if(key!==blend.key){blend.from.copy(blend.key?blend.last:cp.position);blend.look.copy(blend.key?blend.lastLook:c.look);const room=!!engine.inspection.view?.room;blend.time=room||blend.room?t-1:t;blend.room=room;blend.key=key;}
+    if(s.viewingLandmark&&engine.inspection.update(delta,lookPose.current,m.district)){
+      cp.position.fromArray(lookPose.current.position);c.look.fromArray(lookPose.current.target);cp.fov=62;cp.updateProjectionMatrix();c.init=false;
     }
-    if(s.viewingLandmark==='palace'){
-      const l=m.district.landmarks.find(l=>l.id==='palace')!,a=m.district.destinations!.find(a=>a.id==='palace')!,dx=a.origin.x-l.plot!.x,dz=a.origin.z-l.plot!.z;
-      cp.position.set(l.plot!.x+dx*1.05,32,l.plot!.z+dz*1.05);c.look.set(l.plot!.x,15,l.plot!.z);cp.lookAt(c.look);cp.fov=66;cp.updateProjectionMatrix();c.init=false;
-    }
+    const mix=THREE.MathUtils.smoothstep(t-blend.time,0,.45);
+    if(mix<1){cp.position.lerpVectors(blend.from,cp.position,mix);c.look.lerpVectors(blend.look,c.look,mix);}
+    if(key||mix<1)cp.lookAt(c.look);blend.last.copy(cp.position);blend.lastLook.copy(c.look);
+
     sky.position.copy(cp.position);
     streets.update(cp.position, s.quality);
     life.update(

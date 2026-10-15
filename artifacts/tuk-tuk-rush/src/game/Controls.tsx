@@ -95,8 +95,7 @@ export function Controls({ engine, onHorn }: { engine: GameEngine; onHorn: () =>
   return (
     <div className={`tt-controls boost-${state}`}>
       <Stick engine={engine} />
-      {engine.canViewPho() && <button className="tt-landmark-view" data-testid="button-view-pho" onClick={()=>engine.viewPho()}>VIEW RECLINING BUDDHA</button>}
-      {engine.canViewPalace() && <button className="tt-landmark-view" data-testid="button-view-palace" onClick={()=>engine.viewPalace()}>VIEW PALACE ROOFLINES</button>}
+      {engine.inspectableLandmark&&<button className="tt-landmark-view" data-testid={engine.inspectableLandmark.id==='pho'?'button-view-pho':engine.inspectableLandmark.id==='palace'?'button-view-palace':'button-view-landmark'} onClick={()=>engine.viewLandmark()}>LOOK · {engine.inspectableLandmark.name}</button>}
       <div className="tt-right">
         <div className="tt-small-row">
           <button className={`tt-boost ${state}`} data-testid="button-boost" aria-label={`Boost ${state}`} disabled={state!=='ready'} onPointerDown={e=>{e.preventDefault();engine.triggerBoost();}} onClick={e=>{if(e.detail===0)engine.triggerBoost();}}><Zap size={18}/><b>BOOST</b><span>{state==='ready'?'READY':`${Math.ceil(state==='active'?(snap.boostActive??0):(snap.boostRecharge??0))}s`}</span><i style={{transform:`scaleX(${meter})`}}/></button>

@@ -34,7 +34,8 @@ import { buildCommercialLandmark } from "./landmarkArchitecture";
 export function buildBangkokGraybox(
   d: District,
   railService?:RailService,
-): City & { setNight: (night: number) => void; animate:(time:number,quality:string,green:boolean)=>void } {
+): City & { setNight: (night: number) => void;
+  setInspection: (id?:string) => void; animate:(time:number,quality:string,green:boolean)=>void } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
   const ground = new T.Mesh(
@@ -352,6 +353,7 @@ export function buildBangkokGraybox(
           Math.hypot(hero.position.x - camera.x, hero.position.z - camera.z) <
           radius + 180;
     },
+    setInspection(id?:string){for(const hero of heroes){if(hero instanceof T.LOD){hero.autoUpdate=hero.name!==`BangkokLandmark:${id}`;if(!hero.autoUpdate){hero.levels.forEach((l,i)=>l.object.visible=i===0);}}}},
     dispose() {
       disposeObject(group);
     },

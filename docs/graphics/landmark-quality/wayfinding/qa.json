@@ -1,0 +1,455 @@
+{
+  "pass": true,
+  "survey": [
+    {
+      "id": "pho",
+      "data": {
+        "key": "arrival:pho",
+        "x": -919.277304185034,
+        "y": 5.45,
+        "z": -561.9362470572224,
+        "yaw": 5.086405678803494,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 13.821883144612501,
+          "hit": 13.784961450718063,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 13.274861719179013,
+          "hit": 13.239402857345627,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 13.821883144612556,
+          "hit": 13.784964785771452,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "arun",
+      "data": {
+        "key": "arrival:arun",
+        "x": -1489.3254431229564,
+        "y": 5.45,
+        "z": -514.337486238206,
+        "yaw": 4.957879592026366,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 12.720538044892216,
+          "hit": 12.683244662646475,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 12.123926267985416,
+          "hit": 12.088377171792782,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 12.72053804489196,
+          "hit": 12.683234531617433,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "paknam",
+      "data": {
+        "key": "arrival:paknam",
+        "x": -1769.0214414937989,
+        "y": 5.45,
+        "z": 653.941547167328,
+        "yaw": 1.7033785870390987,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 28.83912273284344,
+          "hit": 28.803684157598678,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 28.5809814387122,
+          "hit": 28.545888632292737,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 28.839122732843574,
+          "hit": 28.80374178408299,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "palace",
+      "data": {
+        "key": "arrival:palace",
+        "x": -944.2928115575008,
+        "y": 5.45,
+        "z": -1050.4735623167855,
+        "yaw": 3.385805073077768,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 18.161224998253658,
+          "hit": 18.125134287555813,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 17.748453268868047,
+          "hit": 17.713210870285533,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 18.161224998253605,
+          "hit": 18.125191663026666,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "icon",
+      "data": {
+        "key": "arrival:icon",
+        "x": -745.4780668193129,
+        "y": 5.45,
+        "z": 888.0996187740783,
+        "yaw": 3.650777979504837,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 17.636570924067808,
+          "hit": 17.60041546130275,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 17.211221164103204,
+          "hit": 17.175937404380832,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 17.636570924067797,
+          "hit": 17.600414895989037,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "paragon",
+      "data": {
+        "key": "arrival:paragon",
+        "x": 816.9822127611027,
+        "y": 5.45,
+        "z": -691.7610105256964,
+        "yaw": 5.306651886135274,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 14.770656761815278,
+          "hit": 14.733999496615029,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 14.260077179852841,
+          "hit": 14.224681275660851,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 14.77065676181529,
+          "hit": 14.733987530256131,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "central",
+      "data": {
+        "key": "arrival:central",
+        "x": 1257.1493702945202,
+        "y": 5.45,
+        "z": -784.7239366724476,
+        "yaw": 2.1979159608616707,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 28.839122732843343,
+          "hit": 28.80373608900185,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 28.58098143871207,
+          "hit": 28.545911528033955,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 28.83912273284343,
+          "hit": 28.80373605768984,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "terminal",
+      "data": {
+        "key": "arrival:terminal",
+        "x": 1702.3150998825636,
+        "y": 5.45,
+        "z": -288.72779612858426,
+        "yaw": 4.846620483331029,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 28.839122732843332,
+          "hit": 28.80366979213214,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 28.580981438711948,
+          "hit": 28.545863142245256,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 28.839122732843187,
+          "hit": 28.803704708969658,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "asiatique",
+      "data": {
+        "key": "arrival:asiatique",
+        "x": -243.64400035335092,
+        "y": 5.45,
+        "z": 2020.8573115982306,
+        "yaw": 2.293655776434389,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 28.83912273284341,
+          "hit": 28.803723227350744,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 28.58098143871214,
+          "hit": 28.545887400254585,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 28.83912273284347,
+          "hit": 28.80370022795081,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "traimit",
+      "data": {
+        "key": "arrival:traimit",
+        "x": 372.83397857683093,
+        "y": 5.45,
+        "z": -167.23339387306933,
+        "yaw": 2.942889156962809,
+        "w": 11,
+        "h": 2.0625,
+        "clearance": 4.41875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 27.181872788887723,
+          "hit": 27.146409341952968,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 26.907837302750185,
+          "hit": 26.872731173034037,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 27.181872788887702,
+          "hit": 27.146408918898537,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "street:yaowarat",
+      "data": {
+        "key": "street:yaowarat",
+        "thai": "ถนนเยาวราช",
+        "english": "Yaowarat Road",
+        "x": 95.2884600832956,
+        "z": -67.88389217089184,
+        "y": 3.7,
+        "yaw": -0.44968756691112866,
+        "w": 5.8,
+        "h": 1.0875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 24.87414923168227,
+          "hit": 24.751863612521518,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 22.93674780783012,
+          "hit": 22.823991107572382,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 21.01683372918004,
+          "hit": 20.913519254061942,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    },
+    {
+      "id": "street:khaosan",
+      "data": {
+        "key": "street:khaosan",
+        "thai": "ถนนข้าวสาร",
+        "english": "Thanon Khao San",
+        "x": -769.3876180628091,
+        "z": -1498.9944775692102,
+        "y": 3.7,
+        "yaw": -0.6202494859828196,
+        "w": 5.8,
+        "h": 1.0875
+      },
+      "visibility": [
+        {
+          "u": -0.35,
+          "distance": 24.874149231682264,
+          "hit": 24.751963464946982,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0,
+          "distance": 22.936747807830013,
+          "hit": 22.82401517732257,
+          "visible": true,
+          "occluder": "BangkokSign"
+        },
+        {
+          "u": 0.35,
+          "distance": 21.016833729179837,
+          "hit": 20.913478996399252,
+          "visible": true,
+          "occluder": "BangkokSign"
+        }
+      ],
+      "normalChaseCamera": true
+    }
+  ],
+  "errors": [],
+  "frontBackFaces": "separate FrontSide planes, unmirrored atlas UVs",
+  "physicalIPhone": false,
+  "videoRecorded": false
+}

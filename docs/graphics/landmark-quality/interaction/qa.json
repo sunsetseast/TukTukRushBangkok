@@ -1,0 +1,144 @@
+{
+  "pass": true,
+  "orbit": {
+    "before": {
+      "azimuth": -0.38,
+      "pitch": 0.02,
+      "distance": 8.6,
+      "panX": 0,
+      "panY": 0,
+      "view": "head"
+    },
+    "rotated": {
+      "azimuth": -0.6446123971765302,
+      "pitch": 0.14526683033004328,
+      "distance": 8.6,
+      "panX": 0,
+      "panY": 0,
+      "view": "head"
+    }
+  },
+  "pinched": {
+    "azimuth": -0.6643356669282062,
+    "pitch": 0.15460377565800018,
+    "distance": 5.610795912255814,
+    "panX": -0.11568219819569997,
+    "panY": 0.23136439639139988,
+    "view": "head"
+  },
+  "reset": {
+    "azimuth": -0.38,
+    "pitch": 0.02,
+    "distance": 8.6,
+    "panX": 0,
+    "panY": 0,
+    "view": "head"
+  },
+  "cancelBefore": {
+    "azimuth": -0.466187871726122,
+    "pitch": 0.02,
+    "distance": 8.6,
+    "panX": 0,
+    "panY": 0,
+    "view": "head"
+  },
+  "inputIsolation": {
+    "gas": false,
+    "steer": 0
+  },
+  "freezeTimers": true,
+  "sites": [
+    {
+      "id": "arun",
+      "phase": "paused"
+    },
+    {
+      "id": "paknam",
+      "phase": "paused"
+    },
+    {
+      "id": "palace",
+      "phase": "paused"
+    },
+    {
+      "id": "traimit",
+      "phase": "paused"
+    },
+    {
+      "id": "icon",
+      "phase": "paused"
+    },
+    {
+      "id": "paragon",
+      "phase": "paused"
+    },
+    {
+      "id": "democracy",
+      "phase": "paused"
+    },
+    {
+      "id": "gate",
+      "phase": "paused"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "pass": true,
+      "portraitReturnPaused": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pass": true,
+      "portraitReturnPaused": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "pass": true,
+      "portraitReturnPaused": false
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "pass": true,
+      "portraitReturnPaused": false
+    }
+  ],
+  "nearbyStationSelection": true,
+  "train": {
+    "before": 35,
+    "after": 55.35475783473593,
+    "paused": 55.35475783473593,
+    "restarted": 35
+  },
+  "lifecycle": [
+    {
+      "calls": 246,
+      "triangles": 403706,
+      "geometries": 1246,
+      "textures": 13,
+      "frameMs": 1205
+    },
+    {
+      "calls": 246,
+      "triangles": 403706,
+      "geometries": 1246,
+      "textures": 13,
+      "frameMs": 12.300000000046566
+    },
+    {
+      "calls": 246,
+      "triangles": 403706,
+      "geometries": 1246,
+      "textures": 13,
+      "frameMs": 16.5999999998603
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "physicalIPhone": false,
+  "videoRecorded": false
+}

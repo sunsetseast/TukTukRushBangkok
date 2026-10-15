@@ -248,6 +248,15 @@ export function emitRailInfrastructure(
         L + 7,
         gold ? "#e2b947" : "#c2cabc",
       );
+    // Exposed structural rhythm and canopy undersides remain readable from
+    // street level. These share existing batched materials and geometry.
+    for(let z=-L/2+3;z<L/2;z+=8){
+      at(0,roofY-.35,z,width-.8,.22,.32,'#d4d5c3');
+      for(const side of [-1,1])at(side*(width/2-.8),roofY-.65,z,.14,.12,3.8,'#e7c78c','night');
+    }
+    if(s.id==='asok')for(const side of [-1,1])at(side*8.7,10.4,0,.25,.6,L,'#557e9a');
+    if(s.id==='national-stadium')for(const side of [-1,1])at(side*8.5,11,0,.2,.6,L,'#859cbb');
+    if(gold)for(const side of [-1,1])at(side*6.5,10.4,0,.22,.55,L,'#d0a541','night');
     if (siam) {
       // Two island decks, each carrying BOTH lines in one travel direction.
       for (const side of [-1, 1]) {
@@ -423,6 +432,14 @@ function carPrototype(gold: boolean, cab: boolean) {
   if (!gold) {
     box(0, 3.48, -3, 0.9, 0.18, 1.8, "#44585c");
     box(0, 3.68, -3, 0.65, 0.3, 0.14, "#556b6d");
+  }
+  // Flexible black inter-car bellows, roof conduits and framed door steps.
+  if(!cab){box(0,1.7,length/2+.12,2.45,2.5,.25,'#38474b');for(let y=.7;y<2.9;y+=.25)box(0,y,length/2+.27,2.5,.06,.12,'#697575');}
+  for(const side of [-1,1])box(side*1.52,.42,0,.08,.12,length-.2,'#c9d2cb');
+  if(cab){
+    const shape=new T.Shape([new T.Vector2(-1.42,0),new T.Vector2(1.42,0),new T.Vector2(1.25,2.4),new T.Vector2(.94,2.9),new T.Vector2(-.94,2.9),new T.Vector2(-1.25,2.4)]);
+    const nose=new T.ExtrudeGeometry(shape,{depth:.6,bevelEnabled:true,bevelSize:.16,bevelThickness:.12,bevelSegments:2,steps:1}).translate(0,.2,length/2-.3);
+    t.position.set(0,0,0);t.rotation.set(0,0,0);t.scale.set(1,1,1);t.updateMatrix();b.add(nose,body,[t.matrix.clone()],[new T.Color(gold?'#d8c084':'#335e83')]);
   }
   if (gold && cab)
     for (const end of [1]) {

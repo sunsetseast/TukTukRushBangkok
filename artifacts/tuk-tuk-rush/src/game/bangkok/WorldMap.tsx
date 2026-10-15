@@ -55,6 +55,8 @@ export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: ()
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const [selected, setSelected] = useState('');
   const [transit,setTransit]=useState(true);
+  const nearbyStations=d.transit?.lines.flatMap(l=>l.stations).filter((s,i,all)=>all.findIndex(q=>q.id===s.id)===i).sort((a,b)=>Math.hypot(a.x-f.px,a.z-f.pz)-Math.hypot(b.x-f.px,b.z-f.pz)).slice(0,5)??[];
+  const centerStation=(s:typeof nearbyStations[number])=>{const p=toMap(s);setTransit(true);setView({x:p.x-110,y:p.y-132,w:220,h:264});setSelected(`${s.code} ${s.name}${s.interchange?' · interchange':''} — elevated railway; use public roads to approach`);};
   useEffect(() => {
     const resize = () => { const scale = svg.current?.getScreenCTM()?.a; if (scale && Number.isFinite(scale)) setLabelScale(1 / scale); };
     resize();
@@ -103,7 +105,7 @@ export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: ()
     <div className="tt-world-map-body">
       <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail labelScale={labelScale} placeNames={view.w < 700} transit={transit}/></svg>
       <div className="tt-map-tools"><button aria-label="Zoom in" onClick={() => zoom(.75)}>+</button><button aria-label="Zoom out" onClick={() => zoom(1.33)}>−</button><button onClick={recenter}>My tuk-tuk</button><button onClick={() => setView({ x: -25, y: -30, w: 1050, h: 1260 })}>Whole city</button><button aria-pressed={transit} data-testid="button-transit-layer" onClick={()=>setTransit(v=>!v)}>BTS / Gold Line</button></div>
-      <aside><b>Your next fare</b><p>{f.snap.target.name}</p><span>Dim areas reveal as you drive into them.</span><div className="tt-map-places">{d.landmarks.filter(l => f.snap.discoveredLandmarks?.includes(l.id!)).map(l => <button key={l.id} onClick={() => { const p = toMap(l); setView({ x: p.x - 180, y: p.y - 216, w: 360, h: 432 }); setSelected(l.name); }}>{l.name}</button>)}</div>{selected && <p role="status">Viewing {selected}</p>}</aside>
+      <aside>{transit&&<div className="tt-map-stations"><b>Find the Skytrain</b><p>Nearest stations · trains run while you drive</p>{nearbyStations.map(s=><button key={s.id} data-testid={`map-station-${s.id}`} onClick={()=>centerStation(s)}><span style={{color:d.transit!.lines.find(l=>l.id===s.line)!.color}}>●</span> {s.code} {s.name}{s.interchange?' ⇄':''}</button>)}</div>}<b>Your next fare</b><p>{f.snap.target.name}</p><span>Dim areas reveal as you drive into them.</span><div className="tt-map-places">{d.landmarks.filter(l => f.snap.discoveredLandmarks?.includes(l.id!)).map(l => <button key={l.id} onClick={() => { const p = toMap(l); setView({ x: p.x - 180, y: p.y - 216, w: 360, h: 432 }); setSelected(l.name); }}>{l.name}</button>)}</div>{selected && <p role="status">Viewing {selected}</p>}</aside>
     </div>
     <footer><span className="tt-map-you">▲ You</span><span>△ Vehicle entrances</span><span style={{color:'#8dcc58'}}>━ Sukhumvit</span><span style={{color:'#168a70'}}>━ Silom</span><span style={{color:'#e5b64d'}}>┄ Gold Line</span><span>North ↑ · distances compressed</span></footer>
   </div>;
