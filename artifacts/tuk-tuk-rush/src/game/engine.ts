@@ -1,3 +1,4 @@
+import {InspectionCamera,inspectionSubject} from './inspection';
 import { TurboBoost } from './boost';
 import type { GameModel, GameSnapshot, Mission } from './types';
 import { createBangkokWorld, regionAt, SHIFT_SECONDS } from './bangkok/world';
@@ -12,6 +13,7 @@ import { createMissions } from './missions';
 export class GameEngine {
   readonly model: GameModel;
   readonly boost = new TurboBoost();
+  readonly inspection = new InspectionCamera();
   readonly railService?:RailService;
   private controller = new VehicleController();
   private trafficSystem: TrafficSystem;
@@ -53,6 +55,7 @@ export class GameEngine {
     document.addEventListener('visibilitychange', this.onVisibility);
   }
   private onKeyDown = (e: KeyboardEvent) => {
+    if(this.model.snapshot.viewingLandmark){if(e.code==='Escape'&&!e.repeat)this.resume();return;}
     if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD'].includes(e.code)) e.preventDefault();
     if (e.code === 'Escape' || e.code === 'KeyP') {
       if (!e.repeat) { if (this.model.snapshot.phase === 'playing') this.pause(); else if (this.model.snapshot.phase === 'paused') this.resume(); }
@@ -72,7 +75,7 @@ export class GameEngine {
   private publish() { for (const cb of this.listeners) cb({ ...this.model.snapshot }); }
   start(mode: 'shift' | 'free') {
     this.clearInput(); this.controller.reset(); this.boost.reset(); this.trafficSystem.reset();
-    this.arrivalId='';
+    this.arrivalId=''; this.inspection.close();
     this.railService?.update(0);
     Object.assign(this.model.player, createVehicle(this.model.district));
     this.model.traffic = this.trafficSystem.create();
@@ -90,7 +93,7 @@ export class GameEngine {
   }
   resume() {
     if (this.model.snapshot.phase !== 'paused') return;
-    this.clearInput(); this.model.snapshot.viewingLandmark=undefined; this.model.snapshot.phase = 'playing'; this.publish();
+    this.clearInput(); this.inspection.close(); this.model.snapshot.viewingLandmark=undefined; this.model.snapshot.phase = 'playing'; this.publish();
   }
   restart() { this.start(this.model.snapshot.mode); }
   recover() {
@@ -103,16 +106,21 @@ export class GameEngine {
     if(this.model.snapshot.phase!=='playing'||!this.boost.trigger())return false;
     Object.assign(this.model.snapshot,{boostState:this.boost.state,boostActive:this.boost.active,boostRecharge:this.boost.recharge});this.publish();return true;
   }
-  canViewPho() {
-    const l=this.model.district.landmarks.find(l=>l.id==='pho'),a=this.model.district.nodes.find(n=>n.id===l?.accessNode);
-    return !!a&&Math.hypot(this.model.player.x-a.x,this.model.player.z-a.z)<12&&Math.abs(this.model.player.speed)<3;
+  get inspectableLandmark(){
+    if(Math.abs(this.model.player.speed)>=2||this.model.player.collision>.1)return;
+    const d=this.model.district,p=this.model.player;
+    const arrival=destinationAt(d,p);
+    if(arrival)return d.landmarks.find(l=>l.id===arrival.landmarkId);
+    return d.landmarks.find(l=>{if(d.destinations?.some(a=>a.landmarkId===l.id))return false;const n=d.nodes.find(n=>n.id===l.accessNode);return n&&Math.hypot(p.x-n.x,p.z-n.z)<16;});
   }
-  viewPho() {
-    if(this.model.snapshot.phase!=='playing'||!this.canViewPho())return false;
-    this.pause();this.model.snapshot.viewingLandmark='pho';this.publish();return true;
+  viewLandmark(id=this.inspectableLandmark?.id){
+    const l=this.inspectableLandmark;if(this.model.snapshot.phase!=='playing'||!l||l.id!==id)return false;
+    this.pause();this.inspection.open(inspectionSubject(l));this.model.snapshot.viewingLandmark=l.id;this.publish();return true;
   }
-  canViewPalace(){return destinationAt(this.model.district,this.model.player)?.id==='palace'&&Math.abs(this.model.player.speed)<3;}
-  viewPalace(){if(this.model.snapshot.phase!=='playing'||!this.canViewPalace())return false;this.pause();this.model.snapshot.viewingLandmark='palace';this.publish();return true;}
+  canViewPho(){return this.inspectableLandmark?.id==='pho';}
+  viewPho(){return this.viewLandmark('pho');}
+  canViewPalace(){return this.inspectableLandmark?.id==='palace';}
+  viewPalace(){return this.viewLandmark('palace');}
   get intersectionHorizontalGreen() { return this.trafficSystem.horizontalGreen; }
   get railSoundLevel(){let level=0;const p=this.model.player;for(const t of this.railService?.trains??[])level=Math.max(level,Math.max(0,1-Math.hypot(p.x-t.sample.x,p.z-t.sample.z)/110)*Math.min(1,t.speed/15));return level;}
   setQuality(quality: 'low' | 'medium') { this.model.snapshot.quality = quality; this.slowTime = 0; this.publish(); }

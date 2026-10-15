@@ -551,6 +551,19 @@ html, body, #root { margin:0; width:100%; height:100%; overflow:hidden; overscro
 .tt-boost.active{background:#a85d16;border-color:#ffdc70;animation:boost-pulse .5s alternate infinite}.tt-boost.recharging{background:#273f48;color:#b1c8d1;border-color:#78979e;box-shadow:none}
 @keyframes boost-pulse{to{box-shadow:0 0 15px #ffd56a80}}
 .tt-landmark-view{position:absolute;bottom:20px;left:42%;pointer-events:auto;padding:10px;border:1px solid #ecd39a;border-radius:12px;background:#233d3fe6;color:#ffe3a5;font-size:11px;max-width:190px}
-.tt-inspection{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:20px;pointer-events:none;color:#ffe7b1;background:linear-gradient(#172a3b80,transparent 30%,transparent 70%,#172a3b80)}
-.tt-inspection button{pointer-events:auto;border:1px solid #ffe7b1;border-radius:12px;background:#203d42;padding:12px 20px;color:#fff0d2}.tt-inspection p{font-size:12px;text-align:center}
+/* Inspection owns every pointer; driving controls are unmounted while paused. */
+.tt-inspection{position:absolute;inset:0;pointer-events:auto;color:#fff0cf;touch-action:none;animation:tt-look-enter .3s ease-out}
+.tt-inspection-gesture{position:absolute;inset:0;touch-action:none;outline:none;cursor:grab}
+.tt-inspection-gesture:active{cursor:grabbing}.tt-inspection-gesture:focus-visible{outline:2px solid #a1efe2;outline-offset:-4px}
+.tt-inspection header{position:absolute;top:max(10px,env(safe-area-inset-top));left:20px;right:20px;display:flex;flex-direction:column;gap:3px;align-items:center;pointer-events:none;text-shadow:0 2px 4px #000;background:linear-gradient(#152a36b0,transparent);border-radius:12px}
+.tt-inspection header b{font-size:18px}.tt-inspection header span{font-size:11px}
+.tt-inspection footer{position:absolute;bottom:max(8px,env(safe-area-inset-bottom));left:10px;right:10px;display:flex;flex-direction:column;align-items:center;gap:6px;pointer-events:none}
+.tt-inspection nav,.tt-inspection footer div{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;pointer-events:auto}
+.tt-inspection button{border:1px solid #c9b88a;border-radius:10px;background:#193a43ed;padding:8px 12px;color:#fff0d2;min-height:36px;font-size:11px}
+.tt-inspection button[aria-pressed=true]{background:#e2c482;color:#182e37}.tt-inspection small{font-size:10px;text-shadow:0 1px 3px #000}
+.tt-camera-return{position:absolute;inset:0;z-index:20;pointer-events:none;background:#10202c;animation:tt-return .35s ease-out forwards}
+@keyframes tt-look-enter{from{background:#10202cf0}to{background:transparent}}@keyframes tt-return{from{opacity:1}to{opacity:0}}
+
 @media(prefers-reduced-motion:reduce){.tt-boost.active{animation:none}}
+
+.tt-map-stations {display:grid;gap:5px;margin-bottom:16px}.tt-map-stations p{font-size:12px;margin:2px 0 6px}.tt-map-stations button{text-align:left;padding:8px;border:1px solid #53777d;background:#132e39;color:#f6ecd7;border-radius:6px}
