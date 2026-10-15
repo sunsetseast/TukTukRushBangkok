@@ -40,7 +40,7 @@ export function buildTransitSigns(d: District) {
   const cols=3, cellW=512,cellH=96;
   const canvas = document.createElement("canvas");
   canvas.width = cols*cellW;
-  canvas.height = 2048;
+  canvas.height = Math.ceil(entries.length / cols) * cellH;
   const ctx = canvas.getContext("2d")!;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
@@ -84,7 +84,7 @@ export function buildTransitSigns(d: District) {
       uv.setXY(
         j,
         ((i % cols) * 512 + 2 + uv.getX(j) * 508) / canvas.width,
-        1 - (Math.floor(i / cols) * 96 + 94 - uv.getY(j) * 92) / 2048,
+        1 - (Math.floor(i / cols) * 96 + 94 - uv.getY(j) * 92) / canvas.height,
       );
     const matrices=[];for(const side of [0,1]){temp.position.set(x+Math.sin(yaw)*(.035-side*.07),y,z+Math.cos(yaw)*(.035-side*.07));temp.rotation.set(0,yaw+side*Math.PI,0);temp.scale.set(1,1,1);temp.updateMatrix();matrices.push(temp.matrix.clone());}batch.add(g,mat,matrices);
   };

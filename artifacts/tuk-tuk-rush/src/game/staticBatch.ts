@@ -11,6 +11,8 @@ export class StaticBatch {
     string,
     { geos: T.BufferGeometry[]; mat: T.Material; center: T.Vector3 }
   >();
+  // One owned clone per source identity; spatial cells share it. Root disposal
+  // deduplicates shared materials/maps while retaining each cell geometry.
   private outputMats = new Map<string,T.MeshStandardMaterial>();
   private sourceGeos = new Set<T.BufferGeometry>();
   private sourceMats = new Set<T.Material>();

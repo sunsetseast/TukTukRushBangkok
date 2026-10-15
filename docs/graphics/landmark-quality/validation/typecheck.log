@@ -1,0 +1,1 @@
+PASS node_modules/.bin/tsc -p artifacts/tuk-tuk-rush/tsconfig.json --noEmit

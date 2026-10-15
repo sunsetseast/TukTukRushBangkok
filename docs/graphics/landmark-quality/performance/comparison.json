@@ -1,0 +1,143 @@
+{
+  "beforeCommit": "1d85beecc254692edde6355f0e619150dbe67dc2",
+  "beforeLoadMs": 12051.903783999998,
+  "afterLoadMs": 16475.814545,
+  "beforeResource": {
+    "geometries": 4583,
+    "materials": 1330,
+    "textures": 12,
+    "bufferBytes": 131615952,
+    "texturePixels": 5099520
+  },
+  "afterResource": {
+    "geometries": 4734,
+    "materials": 240,
+    "textures": 12,
+    "bufferBytes": 145476028,
+    "texturePixels": 5165056
+  },
+  "rows": [
+    {
+      "name": "siam",
+      "quality": "low",
+      "callsBefore": 158.0,
+      "callsAfter": 159.0,
+      "trianglesBefore": 170590.0,
+      "trianglesAfter": 172914.0,
+      "frameMsBefore": 16.7,
+      "frameMsAfter": 16.55
+    },
+    {
+      "name": "chong-nonsi",
+      "quality": "low",
+      "callsBefore": 144.0,
+      "callsAfter": 147.0,
+      "trianglesBefore": 181309.0,
+      "trianglesAfter": 186317.0,
+      "frameMsBefore": 275.0,
+      "frameMsAfter": 455.3
+    },
+    {
+      "name": "asok",
+      "quality": "low",
+      "callsBefore": 112.0,
+      "callsAfter": 110.0,
+      "trianglesBefore": 122050.0,
+      "trianglesAfter": 122866.0,
+      "frameMsBefore": 268.65,
+      "frameMsAfter": 281.05
+    },
+    {
+      "name": "taksin",
+      "quality": "low",
+      "callsBefore": 87.0,
+      "callsAfter": 88.0,
+      "trianglesBefore": 94256.0,
+      "trianglesAfter": 102340.0,
+      "frameMsBefore": 226.15,
+      "frameMsAfter": 215.95
+    },
+    {
+      "name": "icon",
+      "quality": "low",
+      "callsBefore": 145.0,
+      "callsAfter": 149.0,
+      "trianglesBefore": 167555.0,
+      "trianglesAfter": 168361.0,
+      "frameMsBefore": 143.75,
+      "frameMsAfter": 134.0
+    },
+    {
+      "name": "pho",
+      "quality": "low",
+      "callsBefore": 154.0,
+      "callsAfter": 181.0,
+      "trianglesBefore": 228558.0,
+      "trianglesAfter": 258176.0,
+      "frameMsBefore": 217.9,
+      "frameMsAfter": 210.6
+    },
+    {
+      "name": "siam",
+      "quality": "medium",
+      "callsBefore": 268.0,
+      "callsAfter": 270.0,
+      "trianglesBefore": 256997.0,
+      "trianglesAfter": 260019.0,
+      "frameMsBefore": 198.95,
+      "frameMsAfter": 195.4
+    },
+    {
+      "name": "chong-nonsi",
+      "quality": "medium",
+      "callsBefore": 156.0,
+      "callsAfter": 161.0,
+      "trianglesBefore": 197733.0,
+      "trianglesAfter": 204565.0,
+      "frameMsBefore": 355.35,
+      "frameMsAfter": 350.8
+    },
+    {
+      "name": "asok",
+      "quality": "medium",
+      "callsBefore": 142.0,
+      "callsAfter": 140.0,
+      "trianglesBefore": 154860.0,
+      "trianglesAfter": 155676.0,
+      "frameMsBefore": 276.6,
+      "frameMsAfter": 268.85
+    },
+    {
+      "name": "taksin",
+      "quality": "medium",
+      "callsBefore": 133.0,
+      "callsAfter": 136.0,
+      "trianglesBefore": 119712.0,
+      "trianglesAfter": 128380.0,
+      "frameMsBefore": 254.35,
+      "frameMsAfter": 257.65
+    },
+    {
+      "name": "icon",
+      "quality": "medium",
+      "callsBefore": 207.0,
+      "callsAfter": 211.0,
+      "trianglesBefore": 215973.0,
+      "trianglesAfter": 216779.0,
+      "frameMsBefore": 141.25,
+      "frameMsAfter": 154.55
+    },
+    {
+      "name": "pho",
+      "quality": "medium",
+      "callsBefore": 262.0,
+      "callsAfter": 291.0,
+      "trianglesBefore": 416820.0,
+      "trianglesAfter": 446566.0,
+      "frameMsBefore": 247.2,
+      "frameMsAfter": 225.85
+    }
+  ],
+  "physicalIPhone": false,
+  "caveat": "SwiftShader software renderer, one run per revision, six warm-up and twelve sampled frames. These are neither GPU timings nor native Safari frame rates."
+}

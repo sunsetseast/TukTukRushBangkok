@@ -1,0 +1,921 @@
+{
+  "label": "after",
+  "survey": [
+    {
+      "name": "arun",
+      "pose": {
+        "inspection": true,
+        "id": "arun",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 138,
+        "triangles": 200842,
+        "geometries": 532,
+        "textures": 12,
+        "frameMs": 39.39999999990687
+      }
+    },
+    {
+      "name": "palace",
+      "pose": {
+        "inspection": true,
+        "id": "palace",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 233,
+        "triangles": 421538,
+        "geometries": 699,
+        "textures": 12,
+        "frameMs": 493.40000000037253
+      }
+    },
+    {
+      "name": "arrival-pho",
+      "pose": {
+        "normalCamera": true,
+        "arrivalSign": "pho"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 230,
+        "triangles": 378477,
+        "geometries": 998,
+        "textures": 12,
+        "frameMs": 1530.1000000000931
+      }
+    },
+    {
+      "name": "asiatique",
+      "pose": {
+        "inspection": true,
+        "id": "asiatique",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 152,
+        "triangles": 148269,
+        "geometries": 742,
+        "textures": 11,
+        "frameMs": 423.1000000000058,
+        "camera": [
+          -324.51071259285715,
+          28.9565171610998,
+          2099.0656197308526
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 58.5,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 38.25,
+          "maxDistance": 121.50000000000001,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 5.3999999999999995
+        }
+      }
+    },
+    {
+      "name": "chatuchak",
+      "pose": {
+        "inspection": true,
+        "id": "chatuchak",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 26,
+        "triangles": 44402,
+        "geometries": 1099,
+        "textures": 11,
+        "frameMs": 21.099999999976717,
+        "camera": [
+          1033.6258773468642,
+          24.581936277769074,
+          -2137.459153073263
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 45,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 25.5,
+          "maxDistance": 81,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 3.5999999999999996
+        }
+      }
+    },
+    {
+      "name": "flowers",
+      "pose": {
+        "inspection": true,
+        "id": "flowers",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 252,
+        "triangles": 365064,
+        "geometries": 1548,
+        "textures": 12,
+        "frameMs": 560.6000000000058,
+        "camera": [
+          -641.9826131989367,
+          24.581936277769074,
+          -217.85554412243442
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 45,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 25.5,
+          "maxDistance": 81,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 3.5999999999999996
+        }
+      }
+    },
+    {
+      "name": "food",
+      "pose": {
+        "inspection": true,
+        "id": "food",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 289,
+        "triangles": 411458,
+        "geometries": 1687,
+        "textures": 12,
+        "frameMs": 1011.7999999999882,
+        "camera": [
+          602.5808582991449,
+          24.581936277769074,
+          20.670494696375634
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 45,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 25.5,
+          "maxDistance": 81,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 3.5999999999999996
+        }
+      }
+    },
+    {
+      "name": "khaosan",
+      "pose": {
+        "inspection": true,
+        "id": "khaosan",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 126,
+        "triangles": 177650,
+        "geometries": 1860,
+        "textures": 12,
+        "frameMs": 13.89999999999418,
+        "camera": [
+          -855.1355276761938,
+          24.581936277769074,
+          -1475.8490023326715
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 45,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 25.5,
+          "maxDistance": 81,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 3.5999999999999996
+        }
+      }
+    },
+    {
+      "name": "sanam",
+      "pose": {
+        "inspection": true,
+        "id": "sanam",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 200,
+        "triangles": 315156,
+        "geometries": 1922,
+        "textures": 12,
+        "frameMs": 834,
+        "camera": [
+          -827.2422034289474,
+          31.062796845666444,
+          -1171.9588109969832
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 65,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 42.5,
+          "maxDistance": 135,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 6
+        }
+      }
+    },
+    {
+      "name": "park",
+      "pose": {
+        "inspection": true,
+        "id": "park",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 175,
+        "triangles": 217410,
+        "geometries": 2086,
+        "textures": 12,
+        "frameMs": 197.70000000001164,
+        "camera": [
+          1246.1723508765426,
+          31.062796845666444,
+          578.746270116987
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 65,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 42.5,
+          "maxDistance": 135,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 6
+        }
+      }
+    },
+    {
+      "name": "benjakitti",
+      "pose": {
+        "inspection": true,
+        "id": "benjakitti",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 192,
+        "triangles": 253700,
+        "geometries": 2196,
+        "textures": 12,
+        "frameMs": 18.70000000001164,
+        "camera": [
+          1634.1723508765426,
+          31.062796845666444,
+          498.74627011698703
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 65,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 42.5,
+          "maxDistance": 135,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 6
+        }
+      }
+    },
+    {
+      "name": "pho-sunset",
+      "pose": {
+        "inspection": true,
+        "id": "pho",
+        "view": "courts"
+      },
+      "elapsed": 25,
+      "stats": {
+        "calls": 200,
+        "triangles": 345476,
+        "geometries": 2313,
+        "textures": 13,
+        "frameMs": 9.399999999965075,
+        "camera": [
+          -820.3892359669522,
+          40.477425585737876,
+          -694.1592645319527
+        ],
+        "view": {
+          "id": "courts",
+          "label": "Royal chedis",
+          "target": [
+            0,
+            10,
+            -11
+          ],
+          "distance": 66,
+          "azimuth": 2.8,
+          "pitch": 0.48,
+          "minDistance": 42.5,
+          "maxDistance": 135,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 6
+        }
+      }
+    },
+    {
+      "name": "arun-sunset",
+      "pose": {
+        "inspection": true,
+        "id": "arun",
+        "view": "approach"
+      },
+      "elapsed": 25,
+      "stats": {
+        "calls": 154,
+        "triangles": 224034,
+        "geometries": 2401,
+        "textures": 14,
+        "frameMs": 13.399999999965075,
+        "camera": [
+          -1377.1829881827848,
+          47.06279684566644,
+          -445.8983908236856
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            26,
+            0
+          ],
+          "distance": 65,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 42.5,
+          "maxDistance": 135,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 6
+        }
+      }
+    },
+    {
+      "name": "paknam-sunset",
+      "pose": {
+        "inspection": true,
+        "id": "paknam",
+        "view": "approach"
+      },
+      "elapsed": 25,
+      "stats": {
+        "calls": 37,
+        "triangles": 82636,
+        "geometries": 2487,
+        "textures": 14,
+        "frameMs": 17.5,
+        "camera": [
+          -1781.0935280588396,
+          74.9130343221996,
+          638.637117547737
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            37,
+            0
+          ],
+          "distance": 117,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 76.5,
+          "maxDistance": 243.00000000000003,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 9
+        }
+      }
+    },
+    {
+      "name": "palace-sunset",
+      "pose": {
+        "inspection": true,
+        "id": "palace",
+        "view": "approach"
+      },
+      "elapsed": 25,
+      "stats": {
+        "calls": 251,
+        "triangles": 471542,
+        "geometries": 2623,
+        "textures": 14,
+        "frameMs": 990.5,
+        "camera": [
+          -770.9346526333348,
+          77.8695514832994,
+          -781.385070684135
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            21,
+            0
+          ],
+          "distance": 175.5,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 114.75,
+          "maxDistance": 364.5,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 9
+        }
+      }
+    },
+    {
+      "name": "icon",
+      "pose": {
+        "inspection": true,
+        "id": "icon",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 95,
+        "triangles": 65204,
+        "geometries": 373,
+        "textures": 11,
+        "frameMs": 101.69999999995343,
+        "camera": [
+          -725.3715336479431,
+          47.38163589936637,
+          917.437375479324
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            20,
+            0
+          ],
+          "distance": 84.5,
+          "azimuth": -1.7671458676442586,
+          "pitch": 0.33,
+          "minDistance": 55.25,
+          "maxDistance": 175.5,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 7.8
+        }
+      }
+    },
+    {
+      "name": "bts-asok",
+      "pose": {
+        "normalCamera": true,
+        "station": "asok",
+        "x": 1770.0220749358086,
+        "z": -160.1794798119293,
+        "publicRoad": "Asok / Ratchadaphisek",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 115,
+        "triangles": 144653,
+        "geometries": 884,
+        "textures": 11,
+        "frameMs": 215.9000000001397,
+        "camera": [
+          1768.0936766607192,
+          3.3,
+          -152.6216176742192
+        ]
+      }
+    },
+    {
+      "name": "paragon",
+      "pose": {
+        "inspection": true,
+        "id": "paragon",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 204,
+        "triangles": 223224,
+        "geometries": 1039,
+        "textures": 11,
+        "frameMs": 263.29999999981374,
+        "camera": [
+          846.144536142672,
+          43.38163589936637,
+          -709.4080652149387
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            16,
+            0
+          ],
+          "distance": 84.5,
+          "azimuth": -1.1780972450961718,
+          "pitch": 0.33,
+          "minDistance": 55.25,
+          "maxDistance": 175.5,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 7.8
+        }
+      }
+    },
+    {
+      "name": "central",
+      "pose": {
+        "inspection": true,
+        "id": "central",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 254,
+        "triangles": 259494,
+        "geometries": 1136,
+        "textures": 11,
+        "frameMs": 15.100000000093132,
+        "camera": [
+          1222.8755488097227,
+          37.38163589936637,
+          -754.3749608863753
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 84.5,
+          "azimuth": 2.7488935718910685,
+          "pitch": 0.33,
+          "minDistance": 55.25,
+          "maxDistance": 175.5,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 7.8
+        }
+      }
+    },
+    {
+      "name": "terminal",
+      "pose": {
+        "inspection": true,
+        "id": "terminal",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 57,
+        "triangles": 79252,
+        "geometries": 1145,
+        "textures": 11,
+        "frameMs": 20.199999999953434,
+        "camera": [
+          1748.144536142672,
+          37.38163589936637,
+          -290.59193478506126
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            10,
+            0
+          ],
+          "distance": 84.5,
+          "azimuth": -1.963495408493621,
+          "pitch": 0.33,
+          "minDistance": 55.25,
+          "maxDistance": 175.5,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 7.8
+        }
+      }
+    },
+    {
+      "name": "mahanakhon",
+      "pose": {
+        "inspection": true,
+        "id": "mahanakhon",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 256,
+        "triangles": 312738,
+        "geometries": 1304,
+        "textures": 11,
+        "frameMs": 8.700000000186265,
+        "camera": [
+          704.517409822144,
+          138.3277451110763,
+          1281.8161504037569
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            80,
+            0
+          ],
+          "distance": 180,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 34,
+          "maxDistance": 243.00000000000003,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 4.8
+        }
+      }
+    },
+    {
+      "name": "baiyoke",
+      "pose": {
+        "inspection": true,
+        "id": "baiyoke",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 197,
+        "triangles": 257364,
+        "geometries": 1443,
+        "textures": 11,
+        "frameMs": 32.300000000046566,
+        "camera": [
+          1071.581519026494,
+          141.78593873885322,
+          -773.25097174486
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            82,
+            0
+          ],
+          "distance": 184.5,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 34,
+          "maxDistance": 249.07500000000002,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 4.8
+        }
+      }
+    },
+    {
+      "name": "state",
+      "pose": {
+        "inspection": true,
+        "id": "state",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 197,
+        "triangles": 254032,
+        "geometries": 1602,
+        "textures": 11,
+        "frameMs": 15,
+        "camera": [
+          245.2910898769217,
+          124.49497059996867,
+          1326.4137809069523
+        ],
+        "view": {
+          "id": "approach",
+          "label": "Architecture",
+          "target": [
+            0,
+            72,
+            0
+          ],
+          "distance": 162,
+          "azimuth": 0.3,
+          "pitch": 0.33,
+          "minDistance": 34,
+          "maxDistance": 218.70000000000002,
+          "minPitch": 0.08,
+          "maxPitch": 1.05,
+          "pan": 4.8
+        }
+      }
+    },
+    {
+      "name": "bts-siam",
+      "pose": {
+        "normalCamera": true,
+        "station": "siam",
+        "x": 836.5269158486814,
+        "z": -612.3292721651292,
+        "publicRoad": "Phaya Thai / Phahonyothin",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 231,
+        "triangles": 270610,
+        "geometries": 1614,
+        "textures": 11,
+        "frameMs": 1122.3999999999069,
+        "camera": [
+          835.3671440461753,
+          3.3,
+          -620.0425677880203
+        ]
+      }
+    },
+    {
+      "name": "bts-chong-nonsi",
+      "pose": {
+        "normalCamera": true,
+        "station": "chong-nonsi",
+        "x": 667.6240496899203,
+        "z": 1241.68797515504,
+        "publicRoad": "Narathiwas link",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 207,
+        "triangles": 290377,
+        "geometries": 1628,
+        "textures": 11,
+        "frameMs": 13.800000000046566,
+        "camera": [
+          673.6874355250011,
+          3.3,
+          1246.5946392167975
+        ]
+      }
+    },
+    {
+      "name": "bts-saphan-taksin",
+      "pose": {
+        "normalCamera": true,
+        "station": "saphan-taksin",
+        "x": -9.34817661929858,
+        "z": 1490.3465664267706,
+        "publicRoad": "Charoen Krung - riverside",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 143,
+        "triangles": 145221,
+        "geometries": 1683,
+        "textures": 11,
+        "frameMs": 432.5,
+        "camera": [
+          -2.0371421008656503,
+          3.3,
+          1493.0647964152524
+        ]
+      }
+    },
+    {
+      "name": "bts-charoen-nakhon",
+      "pose": {
+        "normalCamera": true,
+        "station": "charoen-nakhon",
+        "x": -896.25,
+        "z": 882.88,
+        "publicRoad": "Charoen Nakhon / ICONSIAM access",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 150,
+        "triangles": 130532,
+        "geometries": 1723,
+        "textures": 11,
+        "frameMs": 361.19999999995343,
+        "camera": [
+          -904.0376787796313,
+          3.3,
+          883.3182456220903
+        ]
+      }
+    },
+    {
+      "name": "bts-national-stadium",
+      "pose": {
+        "normalCamera": true,
+        "station": "national-stadium",
+        "x": 555.6932635509077,
+        "z": -540.1027916078757,
+        "publicRoad": "Banthat Thong / Sam Yan connector",
+        "clearSightline": true
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 264,
+        "triangles": 301837,
+        "geometries": 1859,
+        "textures": 11,
+        "frameMs": 1163.9000000001397,
+        "camera": [
+          554.8759333158812,
+          3.3,
+          -532.3457321594177
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "videoRecorded": false
+}

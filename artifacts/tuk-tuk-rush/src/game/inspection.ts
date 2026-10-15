@@ -47,7 +47,7 @@ export class InspectionCamera {
    if(this.cachedSubject!==s||this.cachedDistrict!==d){this.cachedSubject=s;this.cachedDistrict=d;this.inputP[0]=Infinity;const radius=Math.max(...s.views.map(v=>v.maxDistance))+50;this.nearby=cameraSceneEnvelopes(d).filter(b=>b.landmarkId!==s.id&&Math.hypot(b.x-s.origin[0],b.z-s.origin[2])<radius+Math.hypot(b.w,b.d)/2);}
    if(out.position.some((n,i)=>Math.abs(n-this.inputP[i]!)>.01)||out.target.some((n,i)=>Math.abs(n-this.inputTarget[i]!)>.01)){
     for(let i=0;i<3;i++){this.inputP[i]=out.position[i]!;this.inputTarget[i]=out.target[i]!;}
-    avoidInspectionObstacles(out.position,out.target,this.nearby,s.id);clearInspectionSightline(out.position,out.target,this.nearby,s.id);for(let i=0;i<3;i++)this.safeP[i]=out.position[i]!;
+    clearInspectionSightline(out.position,out.target,this.nearby,s.id);avoidInspectionObstacles(out.position,out.target,this.nearby,s.id);for(let i=0;i<3;i++)this.safeP[i]=out.position[i]!;
    }else for(let i=0;i<3;i++)out.position[i]=this.safeP[i]!;
   }
   return true;
