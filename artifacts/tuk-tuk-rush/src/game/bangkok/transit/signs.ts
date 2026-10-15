@@ -1,4 +1,6 @@
 import * as T from "three";
+import {arrivalSign,municipalSigns,ARRIVAL_THAI} from "../signPlacement";
+import {LandmarkBuilder} from "../landmarkBuilder";
 import type { District } from "../../types";
 import { StaticBatch } from "../../staticBatch";
 
@@ -28,23 +30,26 @@ export function buildTransitSigns(d: District) {
       })),
     ...(d.destinations ?? []).map((a) => ({
       key: `arrival:${a.id}`,
-      top: d.landmarks.find((l) => l.id === a.id)!.name,
-      bottom: a.kind === "palace" ? "PERIMETER DROP-OFF" : "VISITOR ARRIVAL  →",
+      top: ARRIVAL_THAI[a.id],
+      bottom: `${d.landmarks.find(l=>l.id===a.id)!.name} · ${a.kind==='palace'?'DROP-OFF':'ARRIVAL'} →`,
       color: a.kind === "mall" ? "#2a6674" : "#7c483b",
     })),
+    ...municipalSigns(d).map(s=>({key:s.key,top:s.thai,bottom:s.english,color:"#163c91"})),
   ];
+  const cols=3, cellW=512,cellH=96;
   const canvas = document.createElement("canvas");
-  canvas.width = 1024;
+  canvas.width = cols*cellW;
   canvas.height = 2048;
   const ctx = canvas.getContext("2d")!;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   entries.forEach((e, i) => {
-    const x = (i % 2) * 512,
-      y = Math.floor(i / 2) * 96;
+    const x = (i % cols) * 512,
+      y = Math.floor(i / cols) * 96;
     ctx.fillStyle = e.color;
     ctx.fillRect(x, y, 512, 96);
-    ctx.fillStyle = "#f8ecd1";
+    ctx.strokeStyle=e.key.startsWith("street:")?"#d7e4f4":"#e4c78f";ctx.lineWidth=2;ctx.strokeRect(x+5,y+5,502,86);
+    ctx.fillStyle = "#fff7e6";
     ctx.font = '32px "Rush Thai", sans-serif';
     ctx.fillText(e.top, x + 256, y + 29, 490);
     ctx.font = "23px sans-serif";
@@ -59,7 +64,7 @@ export function buildTransitSigns(d: District) {
     emissive: "#ffffff",
     emissiveIntensity: 0.2,
     roughness: 0.6,
-    side: T.DoubleSide,
+    side: T.FrontSide,
   });
   const batch = new StaticBatch(),
     temp = new T.Object3D();
@@ -77,14 +82,10 @@ export function buildTransitSigns(d: District) {
     for (let j = 0; j < uv.count; j++)
       uv.setXY(
         j,
-        ((i % 2) * 512 + 2 + uv.getX(j) * 508) / 1024,
-        1 - (Math.floor(i / 2) * 96 + 94 - uv.getY(j) * 92) / 2048,
+        ((i % cols) * 512 + 2 + uv.getX(j) * 508) / canvas.width,
+        1 - (Math.floor(i / cols) * 96 + 94 - uv.getY(j) * 92) / 2048,
       );
-    temp.position.set(x, y, z);
-    temp.rotation.set(0, yaw, 0);
-    temp.scale.set(1, 1, 1);
-    temp.updateMatrix();
-    batch.add(g, mat, [temp.matrix.clone()]);
+    const matrices=[];for(const side of [0,1]){temp.position.set(x+Math.sin(yaw)*(.035-side*.07),y,z+Math.cos(yaw)*(.035-side*.07));temp.rotation.set(0,yaw+side*Math.PI,0);temp.scale.set(1,1,1);temp.updateMatrix();matrices.push(temp.matrix.clone());}batch.add(g,mat,matrices);
   };
   for (const s of stations) {
     for (const side of [-1, 1])
@@ -103,10 +104,11 @@ export function buildTransitSigns(d: District) {
       if (p) add(`mrt:${s.id}`, p.x, 2, p.z, p.yaw + Math.PI, 5);
     }
   }
-  for (const a of d.destinations ?? []) {
-    const p = a.entrance;
-    add(`arrival:${a.id}`, p.x, 7.45, p.z, p.yaw + Math.PI, 11);
-  }
+  const structure=new LandmarkBuilder();
+  for(const a of d.destinations??[]){const p=arrivalSign(a),g=a.entrance;add(p.key,p.x,p.y,p.z,p.yaw,p.w);
+   const c=Math.cos(g.yaw),s=Math.sin(g.yaw);for(const u of [-5.3,5.3]){structure.box(g.x+c*u-s*1.7,6.8,g.z-s*u-c*1.7,.12,.16,3.5,'#9b8c62',g.yaw);structure.box(p.x+c*u,6.25,p.z-s*u,.12,1.1,.12,'#9b8c62');}}
+  for(const p of municipalSigns(d)){add(p.key,p.x,p.y,p.z,p.yaw,p.w);const px=p.x-Math.cos(p.yaw)*3.15,pz=p.z+Math.sin(p.yaw)*3.15;structure.sculpt(new T.CylinderGeometry(.07,.12,4.5,8),px,2.25,pz,'#54746d','ceramic');structure.sculpt(new T.ConeGeometry(.22,.55,8),px,4.7,pz,'#cbb77b','ceramic');structure.box(px,.3,pz,.6,.6,.6,'#9d9e8c');structure.box(p.x,3.08,p.z,6.2,.12,.12,'#54746d',p.yaw);}
+  root.add(structure.finish('wayfinding-mounts-v3'));
   const materials: T.Material[] = [];
   for (const g of batch.finish()) {
     g.name = "BangkokSign";

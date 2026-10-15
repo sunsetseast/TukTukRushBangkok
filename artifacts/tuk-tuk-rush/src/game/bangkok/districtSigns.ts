@@ -10,6 +10,11 @@ export const DISTRICT_SIGN_ENTRIES:SignEntry[]=[
   {key:'canyon-chinese',text:'金店',style:'gold',variant:1},
   {key:'canyon-tea',text:'茶樓',style:'heritage',variant:0},
   {key:'canyon-food',text:'食堂',style:'noodle',variant:1},
+  {key:'canyon-herbs',text:'參茸藥行',style:'heritage',variant:2},
+  {key:'canyon-jewel',text:'珠寶',style:'gold',variant:3},
+  {key:'canyon-silk',text:'絲綢',style:'heritage',variant:1},
+  {key:'canyon-noodles',text:'麵館',style:'noodle',variant:2},
+  {key:'khao-travel',text:'TRAVEL & TOURS',style:'hotel',variant:1},
   {key:'khao-hostel',text:'GUESTHOUSE',style:'hotel',variant:0},
   {key:'khao-live',text:'LIVE MUSIC',style:'hotel',variant:2},
   {key:'khao-cafe',text:'CAFE & BAR',style:'heritage',variant:3},
@@ -26,7 +31,7 @@ export function districtSigns(designs:ParcelDesign[]):DistrictSign[]{
   ['hua418','nai442','thong444','so456'].forEach((key,i)=>{const p=yaowarat[Math.floor(yaowarat.length*(.15+i*.2))];if(p)heroes.set(p.id,key);});
   for(const p of designs){const b=p.parcel;if(b.artRole||!['chinatown','khaosan'].includes(p.region))continue;
     const seed=p.bays[0]!.seed,F=b.d/2,key=heroes.get(p.id),khao=p.region==='khaosan';
-    const menu=khao?['khao-hostel','khao-live','khao-cafe','khao-tailor','khao-market','khao-roof']:['canyon-gold','canyon-chinese','canyon-gold','canyon-food','canyon-tea','canyon-gold','canyon-chinese'];
+    const menu=khao?['khao-hostel','khao-live','khao-cafe','khao-tailor','khao-market','khao-roof','khao-travel']:['canyon-gold','canyon-chinese','canyon-herbs','canyon-food','canyon-tea','canyon-jewel','canyon-silk','canyon-noodles'];
     const height=khao?2+seed%3*.65:5.5+seed%4*1.2,y=khao?7.4+seed%4*.7:Math.max(9,Math.min(15,b.height-2));
     signs.push({p,key:key??menu[seed%menu.length]!,u:b.w*.28,y,v:F+(khao?2.6:3.2),width:khao?3.4+seed%3*.55:2.7+seed%3*.65,height,blade:true,round:khao&&seed%4===0,hero:!!key});
     if(seed%3!==0||key)signs.push({p,key:key??menu[(seed+1)%menu.length]!,u:-b.w*.22,y:khao?5.8:5.9,v:F+1.4,width:Math.min(b.w*.75,khao?6.8:10),height:khao?1.8:1.9,blade:false,hero:!!key});

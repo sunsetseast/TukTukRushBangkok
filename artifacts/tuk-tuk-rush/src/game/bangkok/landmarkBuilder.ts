@@ -12,6 +12,14 @@ export class LandmarkBuilder {
     emissiveIntensity: 0,
   });
   private unit = new T.BoxGeometry();
+  private finishes=new Map<string,T.MeshStandardMaterial>();
+  sculpt(geo:T.BufferGeometry,x:number,y:number,z:number,color:string,finish:'gilded'|'ceramic'|'glass'|'bronze'='ceramic',yaw=0){
+    let mat=this.finishes.get(finish);if(!mat){mat=new T.MeshStandardMaterial({roughness:finish==='gilded'?.49:finish==='glass'?.25:.67,metalness:finish==='gilded'?.64:finish==='bronze'?.5:finish==='glass'?.3:.03});this.finishes.set(finish,mat);}
+    this.painted(geo,mat,x,y,z,color,yaw);
+  }
+  painted(geo:T.BufferGeometry,mat:T.Material,x:number,y:number,z:number,color='#ffffff',yaw=0){
+    this.temp.position.set(x,y,z);this.temp.rotation.set(0,yaw,0);this.temp.scale.set(1,1,1);this.temp.updateMatrix();this.batch.add(geo,mat,[this.temp.matrix.clone()],[new T.Color(color)]);
+  }
   private temp = new T.Object3D();
   shape(
     geo: T.BufferGeometry,

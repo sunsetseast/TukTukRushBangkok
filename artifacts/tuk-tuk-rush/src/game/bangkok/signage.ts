@@ -49,7 +49,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     emissive: "#ffffff",
     emissiveIntensity: 0.16,
     roughness: 0.57,
-    side: T.DoubleSide,
+    side: T.FrontSide,
   });
   const matV = new T.MeshStandardMaterial({
     map: atlas.v.tex,
@@ -57,7 +57,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     emissive: "#ffffff",
     emissiveIntensity: 0.16,
     roughness: 0.59,
-    side: T.DoubleSide,
+    side: T.FrontSide,
   });
   const tile = (i: number, v: boolean) => {
     const a = v ? atlas.v : atlas.h,
