@@ -1,35 +1,16 @@
 import baked from './roadSurfaces.generated.json';
 import {stableHash} from './buildingGrammar';
 import * as T from 'three';
-import clipping, { type MultiPolygon, type Polygon, type Ring } from 'polygon-clipping';
-import type { District, Point } from '../types';
+import type { District } from '../types';
 import { asphaltMaterial } from './streetSurfaces';
+
+// Runtime consumes committed geometry; polygon boolean operations belong to art:roads.
+export type RoadPolygons = [number, number][][][];
 
 /** Boolean road ribbons: one topological surface, including holes around islands.
  * Sidewalks are the DIFFERENCE of road envelopes, never independent crossing slabs. */
 export function roadGraphKey(d:District){return String(stableHash(JSON.stringify({nodes:d.nodes.map(n=>[n.x,n.z]),roads:d.roads.map(r=>[r.a,r.b,r.width])})));}
-export function roadEnvelopes(d: District, extra = 0, force=false): MultiPolygon {
-  if(!force&&extra===0&&baked.key===roadGraphKey(d))return baked.road as MultiPolygon;
-  const nodes = new Map(d.nodes.map(n => [n.id, n]));
-  const polys: Polygon[] = [];
-  const caps = new Map<string, { p: Point; radius: number }>();
-  for (const r of d.roads) {
-    const a = nodes.get(r.a)!, b = nodes.get(r.b)!, len = Math.hypot(b.x-a.x,b.z-a.z);
-    const ux=(b.x-a.x)/len, uz=(b.z-a.z)/len, w=r.width/2+extra;
-    const ring: Ring = [[a.x+uz*w,a.z-ux*w],[b.x+uz*w,b.z-ux*w],
-      [b.x-uz*w,b.z+ux*w],[a.x-uz*w,a.z+ux*w],[a.x+uz*w,a.z-ux*w]];
-    polys.push([ring]);
-    for (const p of [a,b]) if (!caps.has(p.id) || caps.get(p.id)!.radius<w) caps.set(p.id,{p,radius:w});
-  }
-  for (const {p,radius} of caps.values()) {
-    const ring: Ring = Array.from({length:17},(_,i)=>[p.x+Math.cos(i*Math.PI/8)*radius,p.z+Math.sin(i*Math.PI/8)*radius]);
-    ring[16]=ring[0]!;polys.push([ring]);
-  }
-  // Millimetre snapping removes near-coincident sampled endpoints before the sweep.
-  for(const polygon of polys)for(const ring of polygon)for(const p of ring){p[0]=Math.round(p[0]*1000)/1000;p[1]=Math.round(p[1]*1000)/1000;}
-  return clipping.union(polys[0]!,...polys.slice(1));
-}
-export function surfaceGeometry(polygons: MultiPolygon, y: number) {
+export function surfaceGeometry(polygons: RoadPolygons, y: number) {
   const positions:number[]=[], normals:number[]=[], uvs:number[]=[];
   for(const polygon of polygons) {
     const rings=polygon.map(r=>r.slice(0,-1).map(p=>new T.Vector2(Math.fround(p[0]),Math.fround(p[1]))));
@@ -47,7 +28,8 @@ export function surfaceGeometry(polygons: MultiPolygon, y: number) {
   g.computeBoundingBox();g.computeBoundingSphere();return g;
 }
 export function buildRoadSurfaces(d: District) {
-  const cached=baked.key===roadGraphKey(d),road=cached?baked.road as MultiPolygon:roadEnvelopes(d),curb=cached?baked.curb as MultiPolygon:clipping.difference(roadEnvelopes(d,.32),road),sidewalk=cached?baked.sidewalk as MultiPolygon:clipping.difference(roadEnvelopes(d,6),roadEnvelopes(d,.32));
+  if(baked.key!==roadGraphKey(d))throw new Error('Bangkok road geometry is stale. Run pnpm --filter @workspace/tuk-tuk-rush art:roads and commit the generated file.');
+  const road=baked.road as RoadPolygons,curb=baked.curb as RoadPolygons,sidewalk=baked.sidewalk as RoadPolygons;
   const root=new T.Group();root.name='BangkokRoadGraph';
   const surfaces=[
     [road,.14,asphaltMaterial(),'asphalt'],
