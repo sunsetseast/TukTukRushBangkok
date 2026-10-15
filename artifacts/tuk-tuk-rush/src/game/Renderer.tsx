@@ -178,11 +178,11 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     c.phase = s.phase;
     const cp = camera as THREE.PerspectiveCamera;
     if (s.phase === "title") {
-      const a = t * 0.18 + 0.6;
-      const sa = Math.sin(a),
-        ca = Math.cos(a);
-      c.pos.set(p.x + sa * 12, 4.2, p.z + ca * 12);
-      c.look.set(p.x - ca * 3.6, 1.4, p.z + sa * 3.6);
+      // A stable, road-aligned hero view avoids orbiting through shop facades.
+      // No extra scene or render pass; also comfortable with reduced motion.
+      const fx = Math.sin(p.heading), fz = Math.cos(p.heading);
+      c.pos.set(p.x - fx * 12, 4.7, p.z - fz * 12);
+      c.look.set(p.x + fx * 24, 3.1, p.z + fz * 24);
       cp.position.copy(c.pos);
       cp.lookAt(c.look);
       c.init = false;

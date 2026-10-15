@@ -1,0 +1,252 @@
+{
+  "hardware": "Chromium 138 / SwiftShader software WebGL; not iPhone",
+  "viewport": "844x390",
+  "browserVersion": "138.0.7204.0",
+  "runs": [
+    {
+      "name": "main",
+      "startupMs": 47623,
+      "samples": [
+        {
+          "calls": 246,
+          "triangles": 403706,
+          "geometries": 317,
+          "textures": 11,
+          "frameMs": 9457
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 233.59999999962747
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 29.700000000186265
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 15.299999999813735
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 11
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 11.400000000372529
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 12.5
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 17.90000000037253
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 24.399999999441206
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 9.900000000372529
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 14.099999999627471
+        },
+        {
+          "calls": 247,
+          "triangles": 403746,
+          "geometries": 318,
+          "textures": 11,
+          "frameMs": 242.1000000005588
+        }
+      ],
+      "geometryBytes": 145476028,
+      "materialObjects": 240,
+      "geometryObjects": 4734,
+      "domNodes": 236,
+      "controls": [
+        {
+          "name": "button-boost",
+          "width": 96,
+          "height": 46
+        },
+        {
+          "name": "button-recover",
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "button-horn",
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "button-brake",
+          "width": 108,
+          "height": 85.796875
+        },
+        {
+          "name": "button-gas",
+          "width": 150,
+          "height": 109.1875
+        }
+      ],
+      "phase": "playing",
+      "mapOpenToRafMs": 129.8999999994412,
+      "mapDomNodes": 1783,
+      "mapCanvasWidth": 669
+    },
+    {
+      "name": "branch",
+      "startupMs": 22551,
+      "samples": [
+        {
+          "calls": 245,
+          "triangles": 403670,
+          "geometries": 220,
+          "textures": 11,
+          "frameMs": 10841.099999999627
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 20.799999999813735
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 15.799999999813734
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 16.800000000745058
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 16.5
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 19.699999999254942
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 13.600000000558794
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 16.799999999813735
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 21.299999999813735
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 12.100000000558794
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 16.299999999813735
+        },
+        {
+          "calls": 246,
+          "triangles": 403710,
+          "geometries": 221,
+          "textures": 11,
+          "frameMs": 16.700000000186265
+        }
+      ],
+      "geometryBytes": 145476028,
+      "materialObjects": 240,
+      "geometryObjects": 4734,
+      "domNodes": 215,
+      "controls": [
+        {
+          "name": "button-boost",
+          "width": 101,
+          "height": 44
+        },
+        {
+          "name": "button-horn",
+          "width": 44,
+          "height": 44
+        },
+        {
+          "name": "button-brake",
+          "width": 72,
+          "height": 66
+        },
+        {
+          "name": "button-gas",
+          "width": 82,
+          "height": 90
+        }
+      ],
+      "phase": "playing",
+      "mapOpenToRafMs": 271.8999999994412,
+      "mapDomNodes": 1783,
+      "mapCanvasWidth": 812
+    }
+  ]
+}

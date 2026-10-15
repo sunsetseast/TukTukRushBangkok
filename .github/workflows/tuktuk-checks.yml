@@ -34,6 +34,7 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:definitive
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:cityscapes
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:environment
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:interface
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:bangkok
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:street-life
