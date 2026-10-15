@@ -4,10 +4,10 @@ export type Vec3=[number,number,number];
 export type InspectionView={id:string;label:string;target:Vec3;distance:number;azimuth:number;pitch:number;minDistance:number;maxDistance:number;minPitch:number;maxPitch:number;pan:number;azimuthRange?:[number,number];room?:{min:Vec3;max:Vec3}};
 export type InspectionSubject={id:string;name:string;origin:Vec3;yaw:number;views:InspectionView[]};
 const clamp=(v:number,a:number,b:number)=>Math.max(a,Math.min(b,v));
-export function inspectionSubject(l:Landmark):InspectionSubject{
+export function inspectionSubject(l:Landmark,d?:District):InspectionSubject{
  const size=l.size??50,h=({arun:26,paknam:37,palace:21,traimit:18,golden:30,swing:12,democracy:12,victory:20,hua:12,icon:20,paragon:16,mahanakhon:80,baiyoke:82,state:72} as Record<string,number>)[l.id!]??10;
  const view=(id:string,label:string,target:Vec3,distance:number,azimuth=0,pitch=.28):InspectionView=>({id,label,target,distance,azimuth,pitch,minDistance:Math.max(size*.85,15),maxDistance:Math.max(size*2.7,distance*1.35,65),minPitch:.08,maxPitch:1.05,pan:Math.min(9,size*.12)});
- let views=[view('approach','Architecture',[0,h,0],Math.max(size*1.3,h*1.35,45),.3,.33),view('overview','Overview',[0,h*.65,0],Math.max(size*1.6,h*1.65,55),-.6,.67)];
+ let views=[view('approach','Architecture',[0,h,0],Math.max(size*1.3,h*2.25,45),.3,.33),view('overview','Overview',[0,h*.65,0],Math.max(size*1.6,h*2.6,55),-.6,.67)];
  if(l.id==='pho'){
   const room={min:[-23.5,2.8,8.1] as Vec3,max:[23.5,11.3,10.05] as Vec3};
   const inside=(id:string,label:string,target:Vec3,azimuth:number,distance:number,pitch:number):InspectionView=>({id,label,target,azimuth,distance,pitch,minDistance:4,maxDistance:16,minPitch:-.2,maxPitch:.42,pan:2,azimuthRange:[-1.1,1.1],room});
@@ -15,6 +15,7 @@ export function inspectionSubject(l:Landmark):InspectionSubject{
  }
  if(l.id==='paknam')views.push({...view('face','Buddha close-up',[0,55,12],43,.12,.07),minDistance:30,maxDistance:75,pan:4,azimuthRange:[-1.1,1.1]});
  if(l.id==='arun')views.push({...view('ceramics','Porcelain terraces',[0,20,0],51,.8,.13),minDistance:38,maxDistance:80,pan:4});
+ if(d&&['icon','paragon','central','terminal','mbk'].includes(l.id!)){const a=d.destinations?.find(a=>a.id===l.id);if(a){const dx=a.origin.x-(l.plot?.x??l.x),dz=a.origin.z-(l.plot?.z??l.z),c=Math.cos(l.yaw??0),s=Math.sin(l.yaw??0);views[0]!.azimuth=Math.atan2(c*dx-s*dz,s*dx+c*dz);}}
  return {id:l.id!,name:l.name,origin:[l.plot?.x??l.x,0,l.plot?.z??l.z],yaw:l.yaw??0,views};
 }
 /** Input state is separate from simulation time. No momentum runs after cancellation. */

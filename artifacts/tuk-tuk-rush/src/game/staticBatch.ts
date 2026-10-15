@@ -11,6 +11,7 @@ export class StaticBatch {
     string,
     { geos: T.BufferGeometry[]; mat: T.Material; center: T.Vector3 }
   >();
+  private outputMats = new Map<string,T.MeshStandardMaterial>();
   private sourceGeos = new Set<T.BufferGeometry>();
   private sourceMats = new Set<T.Material>();
   add = (
@@ -33,11 +34,11 @@ export class StaticBatch {
         key = `${cx}:${cz}:${style}`;
       let b = this.buckets.get(key);
       if (!b) {
-        const material = mat.clone() as T.MeshStandardMaterial;
+        let material=this.outputMats.get(style);if(!material){material=mat.clone() as T.MeshStandardMaterial;this.outputMats.set(style,material);
         material.color.set("#ffffff");
         material.vertexColors = true;
         material.onBeforeCompile=mat.onBeforeCompile;
-        material.customProgramCacheKey=mat.customProgramCacheKey;
+        material.customProgramCacheKey=mat.customProgramCacheKey;}
         b = {
           geos: [],
           mat: material,
@@ -75,7 +76,7 @@ export class StaticBatch {
     }
     this.sourceGeos.forEach((g) => g.dispose());
     this.sourceMats.forEach((m) => m.dispose());
-    this.buckets.clear();
+    this.buckets.clear();this.outputMats.clear();this.sourceGeos.clear();this.sourceMats.clear();
     return groups;
   }
 }

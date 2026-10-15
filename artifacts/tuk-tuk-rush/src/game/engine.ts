@@ -93,7 +93,7 @@ export class GameEngine {
   }
   resume() {
     if (this.model.snapshot.phase !== 'paused') return;
-    this.clearInput(); this.inspection.close(); this.model.snapshot.viewingLandmark=undefined; this.model.snapshot.phase = 'playing'; this.publish();
+    const wasInspecting=!!this.model.snapshot.viewingLandmark;this.clearInput();this.inspection.close();this.model.snapshot.viewingLandmark=undefined;const portrait=typeof window.matchMedia==='function'&&window.matchMedia('(orientation: portrait)').matches;if(wasInspecting&&(document.hidden||portrait)){this.publish();return;}this.model.snapshot.phase='playing';this.publish();
   }
   restart() { this.start(this.model.snapshot.mode); }
   recover() {
@@ -115,7 +115,7 @@ export class GameEngine {
   }
   viewLandmark(id=this.inspectableLandmark?.id){
     const l=this.inspectableLandmark;if(this.model.snapshot.phase!=='playing'||!l||l.id!==id)return false;
-    this.pause();this.inspection.open(inspectionSubject(l));this.model.snapshot.viewingLandmark=l.id;this.publish();return true;
+    this.pause();this.inspection.open(inspectionSubject(l,this.model.district));this.model.snapshot.viewingLandmark=l.id;this.publish();return true;
   }
   canViewPho(){return this.inspectableLandmark?.id==='pho';}
   viewPho(){return this.viewLandmark('pho');}
