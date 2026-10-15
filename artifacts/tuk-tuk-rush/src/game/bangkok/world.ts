@@ -6,7 +6,7 @@ import { bridgeBarriers } from './bridgeBarriers';
 import { connectDestinations, detailDestinationCollisions, inDestinationGrounds } from './destinationAccess';
 import { createRailNetwork, reserveRailCorridors } from './transit/network';
 import type { District, Landmark, Obstacle, Point, Road, RoadNode } from '../types';
-import { distanceToSegment, orientedFootprintsOverlap, routeBetween } from '../world';
+import { distanceToSegment, orientedFootprintsOverlap } from '../world';
 
 /** North-up compressed design coordinates, not GPS. All world/map positions use this transform. */
 export const SCALE = 4;
@@ -228,12 +228,5 @@ export function createBangkokWorld(): District {
   return world;
 }
 
-export function routeFromPoint(d: District, p: Point, target: RoadNode): Point[] {
-  const nodes = new Map(d.nodes.map(n => [n.id, n]));
-  const road = d.roads.reduce((best, r) => distanceToSegment(p, nodes.get(r.a)!, nodes.get(r.b)!).distance <
-    distanceToSegment(p, nodes.get(best.a)!, nodes.get(best.b)!).distance ? r : best);
-  const projection = distanceToSegment(p, nodes.get(road.a)!, nodes.get(road.b)!).point;
-  const length = (ps: Point[]) => ps.slice(1).reduce((sum, b, i) => sum + Math.hypot(b.x - ps[i]!.x, b.z - ps[i]!.z), 0);
-  const choices = (road.oneWay ? [road.b] : [road.a, road.b]).map(id => [projection, ...routeBetween(d, id, target.id), target]);
-  return [p, ...choices.sort((a, b) => length(a) - length(b))[0]!];
-}
+// Shared with the navigation HUD; disconnected targets return no fabricated route.
+export { navigationPath as routeFromPoint } from '../navigation';

@@ -1,112 +1,987 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
-import type { District, Point } from '../types';
-import type { Frame } from '../Hud';
-import { regionAt, routeFromPoint, SCALE, toMap } from './world';
-const districtLabels: Record<string, string> = { paknam:'Phasi Charoen',north: 'Chatuchak', khaosan: 'Khao San', oldtown: 'Old Town', westbank: 'Thonburi', chinatown: 'Chinatown', siam: 'Siam', talatnoi: 'Talat Noi', sukhumvit: 'Asok', icon: 'Khlong San', silom: 'Silom / Sathorn', south: 'Asiatique' };
-const points = (ps: Point[]) => ps.map(p => { const m = toMap(p); return `${m.x},${m.y}`; }).join(' ');
+import {
+  memo,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent,
+} from "react";
+import {
+  ArrowLeft,
+  Building2,
+  ChevronDown,
+  Compass,
+  LocateFixed,
+  MapPin,
+  Maximize,
+  Minus,
+  Plus,
+  TrainFront,
+  X,
+} from "lucide-react";
+import type { District, Landmark, Point } from "../types";
+import type { Frame } from "../Hud";
+import { regionAt, SCALE, toMap } from "./world";
+import {
+  placeMapLabels,
+  type MapLabel,
+  type LabelBounds,
+} from "../ui/mapLabels";
+import { useMapMotion } from "../ui/useMapMotion";
+import { navigationPath } from "../navigation";
+const districtLabels: Record<string, string> = {
+  paknam: "Phasi Charoen",
+  north: "Chatuchak",
+  khaosan: "Khao San",
+  oldtown: "Old Town",
+  westbank: "Thonburi",
+  chinatown: "Chinatown",
+  siam: "Siam",
+  talatnoi: "Talat Noi",
+  sukhumvit: "Asok",
+  icon: "Khlong San",
+  silom: "Silom / Sathorn",
+  south: "Asiatique",
+};
+const points = (ps: Point[]) =>
+  ps
+    .map((p) => {
+      const m = toMap(p);
+      return `${m.x},${m.y}`;
+    })
+    .join(" ");
+const categories: Record<Landmark["kind"], string> = {
+  gate: "Landmark",
+  temple: "Temple",
+  station: "Railway station",
+  palace: "Palace",
+  park: "Park",
+  mall: "Shopping",
+  tower: "Landmark",
+  market: "Market",
+  wheel: "Landmark",
+  monument: "Monument",
+};
+const glyph: Record<Landmark["kind"], string> = {
+  temple: "M-7 0L0-7L7 0M-8 1H8M-5 2V7M0 2V7M5 2V7M-7 8H7",
+  palace: "M-7 8V-2L-3 1L0-6L3 1L7-2V8ZM-2 8V4H2V8",
+  mall: "M-6-4H6L8 8H-8ZM-3-4V-6Q0-10 3-6V-4",
+  park: "M0-9L-6 0H-3L-7 5H7L3 0H6ZM0 5V9",
+  market: "M-8-3L-5-8H5L8-3ZM-6-2V8H6V-2M-2 8V3H3",
+  station: "M-6 4V-6Q0-9 6-6V4ZM-6-2H6M-5 8L-2 4M5 8L2 4",
+  tower: "M-5 8L-3-7H3L5 8ZM-2-7V-10M-4 1H4",
+  gate: "M-8-4H8M-7-6H7M-5-3V8M5-3V8M-7 8H7",
+  wheel: "M0-8A8 8 0 1 1-.01-8M0-8V8M-8 0H8M-5 9L0 0L5 9",
+  monument: "M-2-8H2L3 5H-3ZM-6 5H6V8H-6Z",
+};
+function PlaceGlyph({ kind }: { kind: Landmark["kind"] }) {
+  return (
+    <path
+      d={glyph[kind]}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  );
+}
+const BaseMap = memo(function BaseMap({
+  d,
+  visited,
+  shortcuts,
+  detail,
+  px,
+  pz,
+}: {
+  d: District;
+  visited: string[];
+  shortcuts: string[];
+  detail: boolean;
+  px: number;
+  pz: number;
+}) {
+  const nodes = useMemo(() => new Map(d.nodes.map((n) => [n.id, n])), [d]);
+  const footprints = useMemo(
+    () =>
+      d.buildings
+        .filter((_, i) => i % 6 === 0)
+        .map((b) => {
+          const m = toMap(b),
+            angle = -(b.yaw ?? 0),
+            c = Math.cos(angle),
+            n = Math.sin(angle);
+          const corners = [
+            [-1, -1],
+            [1, -1],
+            [1, 1],
+            [-1, 1],
+          ].map(([x, y]) => {
+            const dx = (x! * b.w) / SCALE / 2,
+              dy = (y! * b.d) / SCALE / 2;
+            return `${(m.x + dx * c - dy * n).toFixed(2)},${(m.y + dx * n + dy * c).toFixed(2)}`;
+          });
+          return `M${corners.join("L")}Z`;
+        })
+        .join(""),
+    [d],
+  );
+  return (
+    <g className="tt-map-base">
+      <rect x="-2500" y="-2500" width="6000" height="6000" fill="#0c1c25" />
+      {d.regions?.map((r) => (
+        <polygon
+          key={r.id}
+          points={points(r.polygon)}
+          fill={visited.includes(r.id) ? r.color : "#11252e"}
+          fillOpacity={visited.includes(r.id) ? 0.2 : 1}
+          stroke="#42615e"
+          strokeOpacity=".32"
+          strokeWidth="1"
+        />
+      ))}
+      {detail && <path d={footprints} fill="#325054" opacity=".25" />}
+      {d.obstacles
+        .filter((o) => o.protected)
+        .map((o, i) => {
+          const m = toMap(o);
+          return (
+            <rect
+              key={i}
+              x={m.x - o.w / SCALE / 2}
+              y={m.y - o.d / SCALE / 2}
+              width={o.w / SCALE}
+              height={o.d / SCALE}
+              fill="#2f6351"
+              opacity=".65"
+            />
+          );
+        })}
+      <polyline
+        points={points(d.river ?? [])}
+        stroke="#0a2738"
+        strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <polyline
+        points={points(d.river ?? [])}
+        stroke="#20536a"
+        strokeWidth={(d.riverWidth ?? 0) / SCALE}
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {d.canals?.map((c, i) => (
+        <polyline
+          key={i}
+          points={points(c.points)}
+          stroke="#20536a"
+          strokeWidth={Math.max(1.5, c.width / SCALE)}
+          fill="none"
+          strokeLinejoin="round"
+        />
+      ))}
+      {d.roads.map((r, i) => {
+        if (r.shortcut && !shortcuts.includes(r.corridor!)) return null;
+        const a = nodes.get(r.a)!,
+          b = nodes.get(r.b)!;
+        if (
+          !detail &&
+          (Math.min(a.x, b.x) > px + 280 ||
+            Math.max(a.x, b.x) < px - 280 ||
+            Math.min(a.z, b.z) > pz + 280 ||
+            Math.max(a.z, b.z) < pz - 280)
+        )
+          return null;
+        const am = toMap(a),
+          bm = toMap(b),
+          region = regionAt(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 }),
+          major = r.width >= 20;
+        return (
+          <line
+            key={i}
+            x1={am.x}
+            y1={am.y}
+            x2={bm.x}
+            y2={bm.y}
+            stroke={
+              r.bridge
+                ? "#aac7c9"
+                : r.destinationId
+                  ? "#9c9474"
+                  : r.shortcut
+                    ? "#ba9566"
+                    : major
+                      ? "#839997"
+                      : "#435b61"
+            }
+            strokeWidth={Math.max(r.width / SCALE, major ? 2.8 : 1.2)}
+            strokeLinecap="round"
+            opacity={!region || visited.includes(region.id) ? 1 : 0.22}
+          />
+        );
+      })}
+    </g>
+  );
+});
+function MapLayers({
+  d,
+  f,
+  detail = false,
+  labelScale = 1,
+  placeNames = true,
+  transit = true,
+  landmarks = true,
+  onSelect,
+  labelBounds,
+}: {
+  d: District;
+  f: Frame;
+  detail?: boolean;
+  labelScale?: number;
+  placeNames?: boolean;
+  transit?: boolean;
+  landmarks?: boolean;
+  onSelect?: (l: Landmark) => void;
+  labelBounds?: LabelBounds;
+}) {
+  const visited = f.snap.discoveredDistricts ?? [],
+    shortcuts = f.snap.discoveredShortcuts ?? [];
+  const path = useMemo(
+      () => navigationPath(d, { x: f.px, z: f.pz }, f.snap.target),
+      [d, f.snap.target.id, Math.round(f.px / 8), Math.round(f.pz / 8)],
+    ),
+    p = toMap({ x: f.px, z: f.pz }),
+    target = toMap(f.snap.target);
+  const visibleLandmarks = useMemo(() => {
+    const known = d.landmarks.filter(
+      (l) => l.id && f.snap.discoveredLandmarks?.includes(l.id),
+    );
+    if (!detail) return known;
+    const priority = (l: Landmark) =>
+      l.accessNode === f.snap.target.id ||
+      d.destinations?.some(
+        (a) => a.landmarkId === l.id && a.arrivalNode === f.snap.target.id,
+      )
+        ? 100
+        : l.kind === "palace"
+          ? 8
+          : l.kind === "temple"
+            ? 6
+            : l.kind === "tower"
+              ? 5
+              : l.kind === "mall"
+                ? 4
+                : 1;
+    const result: Landmark[] = [];
+    for (const l of known.sort((a, b) => priority(b) - priority(a))) {
+      if (
+        result.every(
+          (q) => Math.hypot(q.x - l.x, q.z - l.z) >= 30 * labelScale * SCALE,
+        )
+      )
+        result.push(l);
+    }
+    return result;
+  }, [d, detail, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
+  const labels = useMemo(() => {
+    const features: MapLabel[] = [];
+    if (!detail || !placeNames) return placeMapLabels(features, labelScale);
+    if (landmarks)
+      for (const l of visibleLandmarks) {
+        const m = toMap(l);
+        features.push({
+          id: `l:${l.id}`,
+          x: m.x,
+          y: m.y,
+          text: l.name,
+          font: 11,
+          priority: 5,
+          offset: 18,
+        });
+      }
+    const seen = new Set<string>();
+    if (transit)
+      for (const line of d.transit?.lines ?? [])
+        for (const station of line.stations) {
+          if (seen.has(station.id)) continue;
+          seen.add(station.id);
+          const m = toMap(station);
+          features.push({
+            id: `s:${line.id}:${station.id}`,
+            x: m.x,
+            y: m.y,
+            text: `${station.code} ${station.name}`,
+            font: 10,
+            priority: station.interchange ? 3 : 1,
+            offset: 7,
+          });
+        }
+    return placeMapLabels(features, labelScale, labelBounds);
+  }, [
+    d,
+    visibleLandmarks,
+    detail,
+    placeNames,
+    landmarks,
+    transit,
+    f.snap.discoveredLandmarks,
+    labelScale,
+    labelBounds?.minX,
+    labelBounds?.maxX,
+    labelBounds?.minY,
+    labelBounds?.maxY,
+  ]);
 
-function MapLayers({ d, f, detail = false, labelScale = 1, placeNames = true, transit = true }: { d: District; f: Frame; detail?: boolean; labelScale?: number; placeNames?: boolean; transit?:boolean }) {
-  const nodes = useMemo(() => new Map(d.nodes.map(n => [n.id, n])), [d]);
-  const visited = f.snap.discoveredDistricts ?? [], shortcuts = f.snap.discoveredShortcuts ?? [];
-  const path = useMemo(() => routeFromPoint(d, { x: f.px, z: f.pz }, f.snap.target), [d, f.snap.target.id, Math.round(f.px / 25), Math.round(f.pz / 25)]);
-  const p = toMap({ x: f.px, z: f.pz }), target = toMap(f.snap.target);
-  return <>
-    <rect x="-400" y="-400" width="1800" height="2100" fill="#101e2b" />
-    {d.regions?.map(r => <polygon key={r.id} points={points(r.polygon)} fill={r.color} fillOpacity={visited.includes(r.id) ? .6 : .12} stroke={r.color} strokeOpacity=".45" strokeWidth="1" />)}
-    {d.obstacles.filter(o => o.protected).map((o, i) => { const m = toMap(o); return <rect key={`park:${i}`} x={m.x - o.w / SCALE / 2} y={m.y - o.d / SCALE / 2} width={o.w / SCALE} height={o.d / SCALE} fill="#34795b" />; })}
-    <polyline points={points(d.river ?? [])} stroke="#1e6d87" strokeWidth={(d.riverWidth ?? 0) / SCALE} strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    {d.canals?.map((c,i)=><polyline key={`canal:${i}`} points={points(c.points)} stroke="#1e6d87" strokeWidth={c.width/SCALE} fill="none" strokeLinejoin="round"/>)}
-    {d.roads.map((r, i) => {
-      if (r.shortcut && !shortcuts.includes(r.corridor!)) return null;
-      const a = nodes.get(r.a)!, b = nodes.get(r.b)!, am = toMap(a), bm = toMap(b);
-      if (!detail && (Math.min(a.x, b.x) > f.px + 260 || Math.max(a.x, b.x) < f.px - 260 || Math.min(a.z, b.z) > f.pz + 260 || Math.max(a.z, b.z) < f.pz - 260)) return null;
-      const region = regionAt(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 });
-      return <line key={i} x1={am.x} y1={am.y} x2={bm.x} y2={bm.y} stroke={r.destinationId?'#edca96':r.bridge ? '#58e1d0' : r.shortcut ? '#f3c471' : '#becbd2'} strokeWidth={Math.max(r.width / SCALE, 2)} strokeLinecap="round" opacity={r.destinationId||r.width >= 20 || !region || visited.includes(region.id) ? 1 : .25} />;
-    })}
-    {transit&&d.transit?.lines.map(line=><g key={line.id} data-testid={`map-rail-${line.id}`}>
-      <polyline points={points(line.samples)} stroke={line.color} strokeWidth="3" strokeDasharray={line.id==='gold'?'5 2':undefined} strokeLinejoin="round" fill="none"/>
-      {detail&&placeNames&&line.continuation.map((label,i)=>{const m=toMap(line.samples[i?line.samples.length-1:0]!);return <text key={`beyond:${i}`} x={m.x} y={m.y-12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{label}</text>;})}
-      {line.stations.map(s=>{const m=toMap(s);return <g key={s.id}><circle cx={m.x} cy={m.y} r={(s.interchange?4.5:2.5)*labelScale} fill={line.color} stroke="#132d35" strokeWidth={labelScale}/>{detail&&placeNames&&<text x={m.x+6*labelScale} y={m.y+12*labelScale} className="tt-world-landmark" style={{fontSize:8*labelScale,strokeWidth:2*labelScale}}>{s.code} {s.name}{s.mrt?' · MRT link':''}</text>}</g>;})}
-    </g>)}
-    {detail&&d.destinations?.map(a=>{const m=toMap(a.entrance);return <path key={a.id} transform={`translate(${m.x} ${m.y}) rotate(${180-a.entrance.yaw*180/Math.PI}) scale(${labelScale})`} d="M 0 -4 L 4 4 L -4 4 Z" fill="#efcc98" stroke="#10212e" strokeWidth="1"/>;})}
-    {detail && d.regions?.map(r => {
-      const centroid = r.polygon.reduce((p, n) => ({ x: p.x + n.x / r.polygon.length, z: p.z + n.z / r.polygon.length }), { x: 0, z: 0 }), m = toMap(centroid);
-      return <text key={r.id} x={m.x} y={m.y} textAnchor="middle" className="tt-world-district" style={{ fontSize: 11 * labelScale, strokeWidth: 3 * labelScale }} opacity={visited.includes(r.id) ? 1 : .55}>{districtLabels[r.id] ?? r.name}</text>;
-    })}
-    {d.landmarks.filter(l => l.id && f.snap.discoveredLandmarks?.includes(l.id)).map(l => {
-      const m = toMap(l), end = m.x > 780;
-      return <g key={l.id}><circle cx={m.x} cy={m.y} r={4 * labelScale} fill="#f3c471" stroke="#10212e" strokeWidth={1.5 * labelScale} />
-        {detail && placeNames && <text x={m.x + (end ? -9 : 9) * labelScale} y={m.y - 8 * labelScale} textAnchor={end ? 'end' : 'start'} className="tt-world-landmark" style={{ fontSize: 10 * labelScale, strokeWidth: 3 * labelScale }}>{l.name}</text>}
-      </g>;
-    })}
-    <polyline points={points(path)} stroke={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinejoin="round" fill="none" />
-    <circle cx={target.x} cy={target.y} r={6 * labelScale} fill={f.snap.stage === 'pickup' ? '#ffd23f' : '#ff689b'} stroke="#142434" strokeWidth="2" />
-    <g transform={`translate(${p.x} ${p.y}) rotate(${180 - f.ph * 180 / Math.PI}) scale(${labelScale})`} data-testid="map-player"><circle r="11" fill="#092637" /><polygon points="0,-10 7,8 0,4 -7,8" fill="#63f2df" stroke="#ecfff9" strokeWidth="1.2" /></g>
-  </>;
+  return (
+    <>
+      <BaseMap
+        d={d}
+        visited={visited}
+        shortcuts={shortcuts}
+        detail={detail}
+        px={Math.round(f.px / 80) * 80}
+        pz={Math.round(f.pz / 80) * 80}
+      />
+      {detail &&
+        d.regions
+          ?.filter(
+            (r, i) =>
+              placeNames ||
+              [
+                "chinatown",
+                "oldtown",
+                "siam",
+                "silom",
+                "north",
+                "south",
+                "paknam",
+              ].includes(r.id),
+          )
+          .map((r) => {
+            const center = r.polygon.reduce(
+                (p, n) => ({
+                  x: p.x + n.x / r.polygon.length,
+                  z: p.z + n.z / r.polygon.length,
+                }),
+                { x: 0, z: 0 },
+              ),
+              m = toMap(center);
+            return (
+              <text
+                key={r.id}
+                x={m.x}
+                y={m.y}
+                textAnchor="middle"
+                className="tt-world-district"
+                style={{
+                  fontSize: (placeNames ? 11 : 9) * labelScale,
+                  strokeWidth: 3 * labelScale,
+                }}
+                opacity={visited.includes(r.id) ? 0.85 : 0.45}
+              >
+                {(districtLabels[r.id] ?? r.name).toUpperCase()}
+              </text>
+            );
+          })}
+      {transit &&
+        d.transit?.lines.map((line) => (
+          <g key={line.id} data-testid={`map-rail-${line.id}`}>
+            <polyline
+              points={points(line.samples)}
+              stroke="#10252c"
+              strokeWidth="7"
+              vectorEffect="non-scaling-stroke"
+              strokeLinejoin="round"
+              fill="none"
+            />
+            <polyline
+              points={points(line.samples)}
+              stroke={line.color}
+              strokeWidth="3"
+              vectorEffect="non-scaling-stroke"
+              strokeDasharray={line.id === "gold" ? "6 3" : undefined}
+              strokeLinejoin="round"
+              fill="none"
+            />
+            {line.stations.map((s) => {
+              const m = toMap(s),
+                label = labels.get(`s:${line.id}:${s.id}`);
+              return (
+                <g key={s.id}>
+                  <circle
+                    cx={m.x}
+                    cy={m.y}
+                    r={(s.interchange ? 4 : 2.5) * labelScale}
+                    fill="#dfede4"
+                    stroke={line.color}
+                    strokeWidth={1.8 * labelScale}
+                  />
+                  {detail && placeNames && label && (
+                    <text
+                      x={label.x}
+                      y={label.y}
+                      textAnchor={label.anchor}
+                      className="tt-world-landmark"
+                      style={{
+                        fontSize: 10 * labelScale,
+                        strokeWidth: 3 * labelScale,
+                      }}
+                    >
+                      {s.code} {s.name}
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+          </g>
+        ))}
+      <polyline
+        points={points(path)}
+        stroke="#0a1720"
+        strokeWidth="8"
+        vectorEffect="non-scaling-stroke"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <polyline
+        data-testid="map-route"
+        points={points(path)}
+        stroke={f.snap.stage === "pickup" ? "#e8bd77" : "#ed9685"}
+        strokeWidth="3.5"
+        vectorEffect="non-scaling-stroke"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {landmarks &&
+        visibleLandmarks.map((l) => {
+          const m = toMap(l),
+            label = labels.get(`l:${l.id}`);
+          return (
+            <g
+              key={l.id}
+              transform={`translate(${m.x} ${m.y}) scale(${labelScale})`}
+              className="tt-map-pin"
+              role={detail ? "button" : undefined}
+              tabIndex={detail ? 0 : undefined}
+              aria-label={
+                detail
+                  ? `${l.name}, ${categories[l.kind]}, discovered`
+                  : undefined
+              }
+              data-testid={detail ? `map-landmark-${l.id}` : undefined}
+              onPointerDown={detail ? (e) => e.stopPropagation() : undefined}
+              onClick={detail ? () => onSelect?.(l) : undefined}
+              onKeyDown={
+                detail
+                  ? (e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        onSelect?.(l);
+                      }
+                    }
+                  : undefined
+              }
+            >
+              <circle r={detail ? 22 : 5} fill="transparent" />
+              {detail ? (
+                <>
+                  <rect
+                    x="-13"
+                    y="-13"
+                    width="26"
+                    height="26"
+                    rx="9"
+                    fill="#172e36"
+                    stroke="#b59b6e"
+                  />
+                  <PlaceGlyph kind={l.kind} />
+                </>
+              ) : (
+                <circle r="3.5" fill="#e8bd77" />
+              )}
+              {detail && placeNames && label && (
+                <text
+                  x={(label.x - m.x) / labelScale}
+                  y={(label.y - m.y) / labelScale}
+                  textAnchor={label.anchor}
+                  className="tt-world-landmark"
+                  style={{ fontSize: 11, strokeWidth: 3 }}
+                >
+                  {l.name}
+                </text>
+              )}
+            </g>
+          );
+        })}
+      <circle
+        cx={target.x}
+        cy={target.y}
+        pointerEvents="none"
+        r={8 * labelScale}
+        fill="#142b31"
+        stroke={f.snap.stage === "pickup" ? "#e8bd77" : "#ed9685"}
+        strokeWidth={2 * labelScale}
+      />
+      <circle
+        pointerEvents="none"
+        cx={target.x}
+        cy={target.y}
+        r={3 * labelScale}
+        fill="#e8bd77"
+      />
+      <g
+        transform={`translate(${p.x} ${p.y}) rotate(${180 - (f.ph * 180) / Math.PI}) scale(${labelScale})`}
+        data-testid="map-player"
+        pointerEvents="none"
+      >
+        <circle r="16" fill="#10383b" stroke="#65c7b7" strokeOpacity=".5" />
+        <path d="M0-23L5-15H-5Z" fill="#8fefdb" />
+        <rect
+          x="-7"
+          y="-10"
+          width="14"
+          height="21"
+          rx="5"
+          fill="#ebd5a4"
+          stroke="#0b252b"
+          strokeWidth="1.5"
+        />
+        <path d="M-5-5H5V4H-5Z" fill="#286d68" />
+        <path
+          d="M-9 4V10M9 4V10"
+          stroke="#f2ebdb"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </g>
+    </>
+  );
 }
 export function BangkokMinimap({ d, f }: { d: District; f: Frame }) {
-  const p = toMap({ x: f.px, z: f.pz }), radius = 60;
-  return <svg className="tt-minimap tt-bangkok-minimap" viewBox={`${p.x - radius} ${p.y - radius} ${radius * 2} ${radius * 2}`} aria-label="Bangkok local map, north up" data-testid="minimap"><MapLayers d={d} f={f} /><text x={p.x - 51} y={p.y - 43} fill="#f3e0b8" fontSize="10">N ↑</text></svg>;
+  const p = toMap({ x: f.px, z: f.pz }),
+    radius = 62;
+  return (
+    <svg
+      className="tt-minimap tt-bangkok-minimap"
+      viewBox={`${p.x - radius} ${p.y - radius} ${radius * 2} ${radius * 2}`}
+      aria-label="Bangkok local map, north up"
+      data-testid="minimap"
+    >
+      <MapLayers d={d} f={f} transit={false} />
+      <text x={p.x - 49} y={p.y - 43} fill="#bfd5cd" fontSize="10">
+        N ↑
+      </text>
+    </svg>
+  );
 }
-export function WorldMap({ d, f, onClose }: { d: District; f: Frame; onClose: () => void }) {
-  const [view, setView] = useState(() => { const p = toMap({ x: f.px, z: f.pz }); return { x: p.x - 160, y: p.y - 192, w: 320, h: 384 }; });
-  const [labelScale, setLabelScale] = useState(1);
-  const svg = useRef<SVGSVGElement>(null), root = useRef<HTMLDivElement>(null), close = useRef<HTMLButtonElement>(null);
-  const pointers = useRef(new Map<number, { x: number; y: number }>());
-  const [selected, setSelected] = useState('');
-  const [transit,setTransit]=useState(true);
-  const nearbyStations=d.transit?.lines.flatMap(l=>l.stations).filter((s,i,all)=>all.findIndex(q=>q.id===s.id)===i).sort((a,b)=>Math.hypot(a.x-f.px,a.z-f.pz)-Math.hypot(b.x-f.px,b.z-f.pz)).slice(0,5)??[];
-  const centerStation=(s:typeof nearbyStations[number])=>{const p=toMap(s);setTransit(true);setView({x:p.x-110,y:p.y-132,w:220,h:264});setSelected(`${s.code} ${s.name}${s.interchange?' · interchange':''} — elevated railway; use public roads to approach`);};
+export function WorldMap({
+  d,
+  f,
+  onClose,
+}: {
+  d: District;
+  f: Frame;
+  onClose: () => void;
+}) {
+  const player = toMap({ x: f.px, z: f.pz });
+  const [view, setView] = useState({ cx: player.x, cy: player.y, span: 360 }),
+    [aspect, setAspect] = useState(2),
+    [transit, setTransit] = useState(true),
+    [landmarks, setLandmarks] = useState(true),
+    [selected, setSelected] = useState<Landmark | null>(null),
+    [station, setStation] = useState(""),
+    [stationsOpen, setStationsOpen] = useState(false);
+  const spanRef = useRef(view.span);
+  spanRef.current = view.span;
+  const svg = useRef<SVGSVGElement>(null),
+    root = useRef<HTMLDivElement>(null),
+    close = useRef<HTMLButtonElement>(null),
+    pointers = useRef(new Map<number, { x: number; y: number }>());
+  const width = view.span * Math.max(aspect, 1),
+    height = view.span * Math.max(1 / aspect, 1),
+    labelScale = svg.current
+      ? width / (svg.current.getBoundingClientRect().width || 1)
+      : 1;
+  const cameraMotion = useRef(false);
+  const box = [view.cx - width / 2, view.cy - height / 2, width, height];
+  useMapMotion(svg, box, cameraMotion);
+  const moveTo = (next: typeof view) => {
+    cameraMotion.current = true;
+    setView(next);
+  };
+  const nearbyStations = useMemo(
+    () =>
+      d.transit?.lines
+        .flatMap((l) => l.stations)
+        .filter((s, i, a) => a.findIndex((q) => q.id === s.id) === i)
+        .sort(
+          (a, b) =>
+            Math.hypot(a.x - f.px, a.z - f.pz) -
+            Math.hypot(b.x - f.px, b.z - f.pz),
+        )
+        .slice(0, 5) ?? [],
+    [d, f.px, f.pz],
+  );
   useEffect(() => {
-    const resize = () => { const scale = svg.current?.getScreenCTM()?.a; if (scale && Number.isFinite(scale)) setLabelScale(1 / scale); };
+    const el = svg.current;
+    if (!el) return;
+    const resize = () => {
+      const r = el.getBoundingClientRect();
+      setAspect(r.width / Math.max(1, r.height));
+    };
     resize();
-    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(resize);
-    if (svg.current) observer?.observe(svg.current);
-    window.addEventListener('resize', resize);
-    return () => { observer?.disconnect(); window.removeEventListener('resize', resize); };
-  }, [view]);
+    const observer = new ResizeObserver(resize);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     close.current?.focus();
-    const keys = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); onClose(); }
-      if (['KeyP', 'KeyR', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) e.stopPropagation();
-      if (e.key === 'Tab') {
-        const all = [...(root.current?.querySelectorAll<HTMLElement>('button') ?? [])];
-        const first = all[0], last = all.at(-1);
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    const key = (e: KeyboardEvent) => {
+      if (
+        (e.key === "Enter" || e.key === " ") &&
+        (e.target as Element).closest?.(".tt-map-pin")
+      )
+        return;
+      e.stopPropagation();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      }
+      if (e.key === "Tab") {
+        const a = [
+          ...(root.current?.querySelectorAll<HTMLElement>(
+            'button:not(:disabled),[tabindex="0"]',
+          ) ?? []),
+        ];
+        if (e.shiftKey && document.activeElement === a[0]) {
+          e.preventDefault();
+          a.at(-1)?.focus();
+        } else if (!e.shiftKey && document.activeElement === a.at(-1)) {
+          e.preventDefault();
+          a[0]?.focus();
+        }
+      }
+      if (e.target === svg.current) {
+        const n = (45 * spanRef.current) / 360;
+        if (
+          ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)
+        ) {
+          e.preventDefault();
+          setView((v) => ({
+            ...v,
+            cx:
+              v.cx +
+              (e.key === "ArrowRight" ? n : e.key === "ArrowLeft" ? -n : 0),
+            cy:
+              v.cy + (e.key === "ArrowDown" ? n : e.key === "ArrowUp" ? -n : 0),
+          }));
+        }
+        if (e.key === "+" || e.key === "=") zoom(0.75);
+        if (e.key === "-") zoom(1.33);
       }
     };
-    document.addEventListener('keydown', keys, true);
-    return () => { document.removeEventListener('keydown', keys, true); previous?.focus(); };
+    document.addEventListener("keydown", key, true);
+    return () => {
+      document.removeEventListener("keydown", key, true);
+      previous?.isConnected && previous.focus();
+    };
   }, [onClose]);
-  const zoom = (factor: number) => setView(v => {
-    const w = Math.max(160, Math.min(1600, v.w * factor)), h = w * 1.2;
-    return { x: v.x + (v.w - w) / 2, y: v.y + (v.h - h) / 2, w, h };
-  });
-  const pointerDown = (e: PointerEvent<SVGSVGElement>) => { e.currentTarget.setPointerCapture(e.pointerId); pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY }); };
-  const pointerMove = (e: PointerEvent<SVGSVGElement>) => {
-    const old = pointers.current.get(e.pointerId); if (!old) return;
+  const zoom = (factor: number, smooth = true) => {
+    cameraMotion.current = smooth;
+    setView((v) => ({
+      ...v,
+      span: Math.max(120, Math.min(1450, v.span * factor)),
+    }));
+  };
+  const down = (e: PointerEvent<SVGSVGElement>) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  };
+  const move = (e: PointerEvent<SVGSVGElement>) => {
+    cameraMotion.current = false;
+    const old = pointers.current.get(e.pointerId);
+    if (!old) return;
     const before = [...pointers.current.values()];
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const matrix = svg.current?.getScreenCTM();
+    if (!matrix) return;
     if (before.length === 2) {
-      const now = [...pointers.current.values()], previousDistance = Math.hypot(before[0]!.x - before[1]!.x, before[0]!.y - before[1]!.y), distance = Math.hypot(now[0]!.x - now[1]!.x, now[0]!.y - now[1]!.y);
-      if (distance > 8 && previousDistance > 8) zoom(previousDistance / distance);
-    } else {
-      const matrix = svg.current?.getScreenCTM();
-      if (matrix) setView(v => ({ ...v, x: v.x - (e.clientX - old.x) / matrix.a, y: v.y - (e.clientY - old.y) / matrix.d }));
+      const now = [...pointers.current.values()],
+        a = Math.hypot(
+          before[0]!.x - before[1]!.x,
+          before[0]!.y - before[1]!.y,
+        ),
+        b = Math.hypot(now[0]!.x - now[1]!.x, now[0]!.y - now[1]!.y);
+      if (a > 8 && b > 8) zoom(a / b, false);
     }
+    setView((v) => ({
+      ...v,
+      cx: Math.max(
+        -1000,
+        Math.min(
+          2000,
+          v.cx - (e.clientX - old.x) / matrix.a / (before.length === 2 ? 2 : 1),
+        ),
+      ),
+      cy: Math.max(
+        -1000,
+        Math.min(
+          2400,
+          v.cy - (e.clientY - old.y) / matrix.d / (before.length === 2 ? 2 : 1),
+        ),
+      ),
+    }));
   };
-  const pointerEnd = (e: PointerEvent<SVGSVGElement>) => { pointers.current.delete(e.pointerId); };
-  const recenter = () => { const p = toMap({ x: f.px, z: f.pz }); setView(v => ({ ...v, x: p.x - v.w / 2, y: p.y - v.h / 2 })); };
-  return <div className="tt-world-map" role="dialog" aria-modal="true" aria-labelledby="bangkok-map-title" ref={root} data-testid="world-map">
-    <header><div><h2 id="bangkok-map-title">Bangkok</h2><p>{f.snap.districtName} · {f.snap.discoveredDistricts?.length ?? 0}/{d.regions?.length} areas discovered</p></div><button ref={close} className="tt-btn" onClick={onClose} data-testid="button-close-map">Back to driving</button></header>
-    <div className="tt-world-map-body">
-      <svg ref={svg} viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`} onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerEnd} onPointerCancel={pointerEnd} onLostPointerCapture={pointerEnd} aria-label="Compact Bangkok, north up. Drag to pan and pinch to zoom."><MapLayers d={d} f={f} detail labelScale={labelScale} placeNames={view.w < 700} transit={transit}/></svg>
-      <div className="tt-map-tools"><button aria-label="Zoom in" onClick={() => zoom(.75)}>+</button><button aria-label="Zoom out" onClick={() => zoom(1.33)}>−</button><button onClick={recenter}>My tuk-tuk</button><button onClick={() => setView({ x: -25, y: -30, w: 1050, h: 1260 })}>Whole city</button><button aria-pressed={transit} data-testid="button-transit-layer" onClick={()=>setTransit(v=>!v)}>BTS / Gold Line</button></div>
-      <aside>{transit&&<div className="tt-map-stations"><b>Find the Skytrain</b><p>Nearest stations · trains run while you drive</p>{nearbyStations.map(s=><button key={s.id} data-testid={`map-station-${s.id}`} onClick={()=>centerStation(s)}><span style={{color:d.transit!.lines.find(l=>l.id===s.line)!.color}}>●</span> {s.code} {s.name}{s.interchange?' ⇄':''}</button>)}</div>}<b>Your next fare</b><p>{f.snap.target.name}</p><span>Dim areas reveal as you drive into them.</span><div className="tt-map-places">{d.landmarks.filter(l => f.snap.discoveredLandmarks?.includes(l.id!)).map(l => <button key={l.id} onClick={() => { const p = toMap(l); setView({ x: p.x - 180, y: p.y - 216, w: 360, h: 432 }); setSelected(l.name); }}>{l.name}</button>)}</div>{selected && <p role="status">Viewing {selected}</p>}</aside>
+  const end = (e: PointerEvent<SVGSVGElement>) =>
+    pointers.current.delete(e.pointerId);
+  const select = (l: Landmark) => {
+    setSelected(l);
+    setStation("");
+    setStationsOpen(false);
+    const p = toMap(l);
+    moveTo({ cx: p.x, cy: p.y + (aspect < 1 ? 90 : 0), span: 300 });
+  };
+  const recenter = () => {
+    cameraMotion.current = true;
+    setView((v) => ({ ...v, cx: player.x, cy: player.y }));
+  };
+  const region = selected ? regionAt(d, selected) : null;
+  return (
+    <div
+      className="tt-world-map"
+      ref={root}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bangkok-map-title"
+      data-testid="world-map"
+    >
+      <header>
+        <div>
+          <span className="tt-kicker">YOUR CITY TO DISCOVER</span>
+          <h2 id="bangkok-map-title">
+            Bangkok<span> / กรุงเทพฯ</span>
+          </h2>
+        </div>
+        <div className="tt-map-discovery">
+          <b>
+            {f.snap.discoveredDistricts?.length ?? 0}
+            <span> / {d.regions?.length}</span>
+          </b>
+          <small>districts discovered</small>
+        </div>
+        <button
+          ref={close}
+          className="tt-btn ghost"
+          onClick={onClose}
+          data-testid="button-close-map"
+        >
+          <ArrowLeft size={16} />
+          Back to driving
+        </button>
+      </header>
+      <div className="tt-world-map-body">
+        <svg
+          ref={svg}
+          tabIndex={0}
+          viewBox={`${view.cx - width / 2} ${view.cy - height / 2} ${width} ${height}`}
+          onPointerDown={down}
+          onPointerMove={move}
+          onPointerUp={end}
+          onPointerCancel={end}
+          onLostPointerCapture={end}
+          aria-label="Bangkok, north up. Drag to pan; pinch or use plus and minus to zoom. Arrow keys pan."
+        >
+          <MapLayers
+            d={d}
+            f={f}
+            detail
+            labelScale={labelScale}
+            placeNames={view.span < 650}
+            transit={transit}
+            landmarks={landmarks}
+            onSelect={select}
+            labelBounds={{
+              minX: view.cx - width / 2 + 8 * labelScale,
+              maxX: view.cx + width / 2 - 58 * labelScale,
+              minY: view.cy - height / 2 + 8 * labelScale,
+              maxY: view.cy + height / 2 - 68 * labelScale,
+            }}
+          />
+        </svg>
+        <div className="tt-map-filters" role="group" aria-label="Map layers">
+          <button
+            aria-pressed={landmarks}
+            onClick={() => setLandmarks((v) => !v)}
+            data-testid="button-landmark-layer"
+          >
+            <MapPin size={16} />
+            Places
+          </button>
+          <button
+            aria-pressed={transit}
+            data-testid="button-transit-layer"
+            onClick={() => {
+              setTransit((v) => !v);
+              setStationsOpen(false);
+            }}
+          >
+            <TrainFront size={16} />
+            BTS network
+          </button>
+        </div>
+        <div className="tt-map-tools">
+          <span className="tt-map-north">
+            <Compass size={20} />N
+          </span>
+          <button
+            className="tt-icon-btn"
+            aria-label="Zoom in"
+            onClick={() => zoom(0.75)}
+          >
+            <Plus size={20} />
+          </button>
+          <button
+            className="tt-icon-btn"
+            aria-label="Zoom out"
+            onClick={() => zoom(1.33)}
+          >
+            <Minus size={20} />
+          </button>
+          <button
+            className="tt-icon-btn"
+            aria-label="My tuk-tuk"
+            onClick={recenter}
+            data-testid="button-map-recenter"
+          >
+            <LocateFixed size={20} />
+          </button>
+          <button
+            className="tt-icon-btn"
+            aria-label="Whole city"
+            onClick={() => moveTo({ cx: 490, cy: 600, span: 1250 })}
+            data-testid="button-whole-city"
+          >
+            <Maximize size={19} />
+          </button>
+        </div>
+        <div className="tt-map-bottom">
+          <div className="tt-map-mission">
+            <MapPin size={18} />
+            <div>
+              <span className="tt-eyebrow">
+                {f.snap.stage === "pickup"
+                  ? "NEXT PICKUP"
+                  : "PASSENGER DESTINATION"}
+              </span>
+              <b>{f.snap.target.name}</b>
+            </div>
+          </div>
+          {transit && (
+            <button
+              className="tt-btn ghost"
+              aria-expanded={stationsOpen}
+              data-testid="button-nearby-stations"
+              onClick={() => {
+                setStationsOpen((v) => !v);
+                setSelected(null);
+              }}
+            >
+              <TrainFront size={16} />
+              Nearby stations
+              <ChevronDown size={14} />
+            </button>
+          )}
+        </div>
+        {stationsOpen && (
+          <aside className="tt-map-detail tt-map-stations">
+            <div className="tt-card-heading">
+              <b>Find the Skytrain</b>
+              <button
+                className="tt-icon-btn"
+                aria-label="Close station list"
+                onClick={() => setStationsOpen(false)}
+              >
+                <X size={16} />
+              </button>
+            </div>
+            {nearbyStations.map((s) => (
+              <button
+                key={s.id}
+                data-testid={`map-station-${s.id}`}
+                onClick={() => {
+                  const p = toMap(s);
+                  moveTo({ cx: p.x, cy: p.y, span: 250 });
+                  setStation(
+                    `${s.code} ${s.name}${s.interchange ? " · interchange" : ""} — elevated railway; use public roads to approach`,
+                  );
+                  setSelected(null);
+                }}
+              >
+                <span
+                  style={{
+                    color: d.transit!.lines.find((l) => l.id === s.line)!.color,
+                  }}
+                >
+                  ●
+                </span>
+                {s.code} {s.name}
+              </button>
+            ))}
+            {station && <p role="status">Viewing {station}</p>}
+          </aside>
+        )}
+        {selected && (
+          <aside className="tt-map-detail" data-testid="map-detail">
+            <div className="tt-card-heading">
+              <span className="tt-kicker">{categories[selected.kind]}</span>
+              <button
+                className="tt-icon-btn"
+                aria-label="Close place details"
+                onClick={() => setSelected(null)}
+              >
+                <X size={17} />
+              </button>
+            </div>
+            <div className="tt-place-title">
+              <Building2 size={24} />
+              <h3>{selected.name}</h3>
+            </div>
+            <p>
+              {region?.name ?? "Bangkok"} ·{" "}
+              <span className="tt-discovered">Discovered</span>
+            </p>
+            <span className="tt-detail-note">
+              {selected.accessNode === f.snap.target.id ||
+              selected.id === f.snap.target.id ||
+              d.destinations?.find((a) => a.landmarkId === selected.id)
+                ?.arrivalNode === f.snap.target.id
+                ? "Your current fare destination"
+                : "Explore this landmark from the city streets."}
+            </span>
+          </aside>
+        )}
+      </div>
+      <footer>
+        <span>
+          <i className="tt-legend-route" />
+          Fare route
+        </span>
+        <span>
+          <i className="tt-legend-fog" />
+          Dim districts are unexplored
+        </span>
+        {transit && (
+          <span className="tt-rail-legend">Sukhumvit · Silom · Gold Line</span>
+        )}
+        <span className="tt-map-scale">North up · compact game geography</span>
+      </footer>
     </div>
-    <footer><span className="tt-map-you">▲ You</span><span>△ Vehicle entrances</span><span style={{color:'#8dcc58'}}>━ Sukhumvit</span><span style={{color:'#168a70'}}>━ Silom</span><span style={{color:'#e5b64d'}}>┄ Gold Line</span><span>North ↑ · distances compressed</span></footer>
-  </div>;
+  );
 }

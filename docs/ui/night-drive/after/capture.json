@@ -1,0 +1,207 @@
+{
+  "physicalIPhone": false,
+  "reducedMotion": true,
+  "simulationFrozenForRepeatableStills": true,
+  "manualBannerKeptOpenByRepeatedTaps": true,
+  "screens": [
+    {
+      "name": "title",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "title",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "driving",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "compact",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "expanded",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "approach",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "arrival",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "pause",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "settings",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "inspection",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "night",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "results",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "ended",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "settings-375x812",
+      "width": 375,
+      "height": 812,
+      "state": {
+        "phase": "paused",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "inspection-375x812",
+      "width": 375,
+      "height": 812,
+      "state": {
+        "phase": "paused",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "driving-932x430",
+      "width": 932,
+      "height": 430,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "driving-1280x800",
+      "width": 1280,
+      "height": 800,
+      "state": {
+        "phase": "playing",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "map",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "map-city",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "map-selected",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "map-bts",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    },
+    {
+      "name": "map-375x812",
+      "width": 375,
+      "height": 812,
+      "state": {
+        "phase": "paused",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "map-430x932",
+      "width": 430,
+      "height": 932,
+      "state": {
+        "phase": "paused",
+        "target": "Chinatown Gate · roadside stop"
+      }
+    },
+    {
+      "name": "map-all-discovered",
+      "width": 844,
+      "height": 390,
+      "state": {
+        "phase": "paused",
+        "target": "Wat Pho · visitor arrival"
+      }
+    }
+  ],
+  "errors": []
+}

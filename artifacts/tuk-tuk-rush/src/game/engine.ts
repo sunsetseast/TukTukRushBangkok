@@ -55,6 +55,8 @@ export class GameEngine {
     document.addEventListener('visibilitychange', this.onVisibility);
   }
   private onKeyDown = (e: KeyboardEvent) => {
+    const target = e.target as HTMLElement | null;
+    if (target?.closest?.('input,select,textarea') || (target?.closest?.('button,a') && ['Enter','Space'].includes(e.code))) return;
     if(this.model.snapshot.viewingLandmark){if(e.code==='Escape'&&!e.repeat)this.resume();return;}
     if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD'].includes(e.code)) e.preventDefault();
     if (e.code === 'Escape' || e.code === 'KeyP') {
@@ -81,7 +83,7 @@ export class GameEngine {
     this.model.traffic = this.trafficSystem.create();
     this.model.missionIndex = 0; this.model.mission = this.missions[0]!;
     Object.assign(this.model.snapshot, {
-      viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
+      session: (this.model.snapshot.session ?? 0) + 1, viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
       score: 0, earnings: 0, deliveries: 0, boarding: 0, target: this.model.mission.pickup,
       passenger: this.model.mission.passenger, speed: 0,
     });
@@ -95,6 +97,7 @@ export class GameEngine {
     if (this.model.snapshot.phase !== 'paused') return;
     const wasInspecting=!!this.model.snapshot.viewingLandmark;this.clearInput();this.inspection.close();this.model.snapshot.viewingLandmark=undefined;const portrait=typeof window.matchMedia==='function'&&window.matchMedia('(orientation: portrait)').matches;if(wasInspecting&&(document.hidden||portrait)){this.publish();return;}this.model.snapshot.phase='playing';this.publish();
   }
+  returnToTitle() { this.clearInput(); this.inspection.close(); Object.assign(this.model.player, createVehicle(this.model.district)); this.model.snapshot.viewingLandmark = undefined; this.model.snapshot.elapsed = 0; this.model.snapshot.phase = 'title'; this.publish(); }
   restart() { this.start(this.model.snapshot.mode); }
   recover() {
     if (this.model.snapshot.phase !== 'playing' && this.model.snapshot.phase !== 'paused') return;
