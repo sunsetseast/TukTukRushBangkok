@@ -99,7 +99,7 @@ function App() {
   if (!gl) return <div className="tt-root"><Fail msg="The 3D city needs WebGL 2, which this browser or device did not provide. Enable hardware acceleration or try a current browser." /></div>;
 
   return (
-    <div className={`tt-root ${mapOpen ? 'tt-map-open' : ''}`} ref={root}>
+    <div className={`tt-root ${mapOpen || s.viewingLandmark ? 'tt-map-open' : ''}`} ref={root}>
       <Boundary><GameCanvas engine={engine} quality={frame.snap.quality} /></Boundary>
       <div className="tt-ui">
         {(s.phase === 'playing' || s.phase === 'paused') && !s.viewingLandmark && (

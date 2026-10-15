@@ -2,6 +2,7 @@ import {useEffect,useRef,useState,type PointerEvent} from 'react';
 import type {GameEngine} from './engine';
 export function Inspection({engine}:{engine:GameEngine}){
  const orbit=engine.inspection,subject=orbit.subject!,root=useRef<HTMLDivElement>(null),surface=useRef<HTMLDivElement>(null),tap=useRef({time:0,x:0,y:0,moved:false}),pointers=useRef(new Map<number,{x:number;y:number}>()),[preset,setPreset]=useState(orbit.viewIndex);
+ useEffect(()=>{setPreset(orbit.viewIndex);pointers.current.clear();},[subject]);
  const clear=()=>pointers.current.clear();
  const reset=()=>{clear();orbit.reset();};
  useEffect(()=>{

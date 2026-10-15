@@ -1,6 +1,6 @@
 import * as T from 'three';
 import type {LandmarkBuilder} from './landmarkBuilder';
-import {ribbonPath,sectionLoft,sculptedFace} from './sculptureGeometry';
+import {ribbonPath,sectionLoft,buddhaFaceGeometry} from './sculptureGeometry';
 /** Site-scale Thai roofing: curved eaves, layered gables, chofa and mirror ribs.
  * Original geometric interpretation; no copied ornaments or photo textures. */
 export function thaiRoof(b:LandmarkBuilder,x:number,y:number,z:number,w:number,d:number,h:number,color:string,detail=true){
@@ -37,8 +37,15 @@ export function royalChedi(b:LandmarkBuilder,x:number,z:number,h:number,r:number
  for(const f of [.065,.14,.25,.43,.58,.68,.78,.87])b.sculpt(new T.CylinderGeometry(r*(1-f)*.9,r*(1-f)*.9,.16,24),x,h*f+.5,z,'#e1bc72','gilded');
  if(detail)for(const f of [.18,.32,.44,.53])for(let j=0;j<24;j++){const a=j/24*Math.PI*2,rr=r*(1-f)*.93;b.sculpt(new T.OctahedronGeometry(.18,0).scale(1,1.7,.5),x+Math.sin(a)*rr,h*f+.5,z+Math.cos(a)*rr,j%3===0?'#f1dfb4':j%3===1?'#698d83':'#b76a5b','ceramic',a);}
 }
-export function porcelainPrang(b:LandmarkBuilder,x:number,z:number,h:number,r:number,detail=true){
- b.prang(x,z,h,r,'#eee6d5');
+export function porcelainMaterial(){
+ const size=128,data=new Uint8Array(size*size*4);
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++){const dx=x-64,dy=y-64,a=Math.atan2(dy,dx),r=Math.hypot(dx,dy),petal=Math.abs(r-(21+8*Math.cos(a*6)))<4,center=r<8,grout=x<2||y<2,c=grout?[209,207,191]:center?[186,157,126]:petal?(Math.sin(a*3)>0?[169,185,166]:[192,168,156]):[236,232,216],i=(y*size+x)*4;data.set([...c,255],i);}
+ const texture=new T.DataTexture(data,size,size);texture.colorSpace=T.SRGBColorSpace;texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.generateMipmaps=true;texture.minFilter=T.LinearMipmapLinearFilter;texture.needsUpdate=true;
+ return new T.MeshStandardMaterial({map:texture,roughness:.72,metalness:.03});
+}
+export function porcelainPrang(b:LandmarkBuilder,x:number,z:number,h:number,r:number,detail=true,material?:T.MeshStandardMaterial){
+ const profile=[[0,0],[1,0],[1,.045],[.82,.07],[.86,.13],[.69,.16],[.73,.23],[.56,.27],[.61,.33],[.51,.4],[.56,.47],[.4,.53],[.42,.59],[.29,.66],[.3,.72],[.19,.79],[.14,.86],[.07,.93],[0,1]].map(([a,q])=>new T.Vector2(a!*r,q!*h));
+ const core=new T.LatheGeometry(profile,detail?32:16);if(material){const uv=core.attributes.uv!;for(let i=0;i<uv.count;i++)uv.setXY(i,uv.getX(i)*(r>6?24:12),uv.getY(i)*(r>6?32:14));b.painted(core,material,x,.3,z);}else b.sculpt(core,x,.3,z,'#e9e3d2','ceramic');
  for(const f of [.08,.18,.28,.4,.53,.65]){
   const rr=r*(1-f)*.88;
   b.sculpt(new T.CylinderGeometry(rr*1.04,rr*1.1,.28,8),x,h*f,z,'#d5d4bd','ceramic',Math.PI/8);
@@ -56,7 +63,7 @@ export function porcelainPrang(b:LandmarkBuilder,x:number,z:number,h:number,r:nu
 export function guardian(b:LandmarkBuilder,x:number,z:number,h:number,color:string,detail=true){
  const S=h/8;b.box(x,.5*S,z,2*S,1*S,2*S,'#c9c4b0');
  const body=sectionLoft([{p:[x,1*S,z],a:.25*S,b:.3*S},{p:[x,2.2*S,z],a:.8*S,b:.55*S},{p:[x,4.5*S,z],a:.95*S,b:.48*S},{p:[x,5.2*S,z],a:.3*S,b:.3*S}],12,18);b.sculpt(body,0,0,0,color,'ceramic');
- if(detail)sculptedFace(b,[x,6.1*S,z],.43*S,false);
+ if(detail){b.sculpt(buddhaFaceGeometry(false).scale(.43*S,.43*S,.43*S),x,6.1*S,z,color,'ceramic');for(const side of [-1,1])b.sculpt(new T.ConeGeometry(.06*S,.4*S,5).rotateZ(Math.PI),x+side*.22*S,5.9*S,z+.52*S,'#ece1c7','ceramic');}
  else b.sculpt(new T.CylinderGeometry(.4*S,.5*S,1*S,8),x,6*S,z,color,'ceramic');
  b.sculpt(new T.ConeGeometry(.55*S,1.3*S,8),x,7.1*S,z,'#d9b160','gilded');
  for(const side of [-1,1])b.sculpt(ribbonPath([[x+side*.8*S,4.6*S,z],[x+side*.6*S,3.6*S,z+.5*S],[x+side*.2*S,3.4*S,z+.8*S]],.18*S,6,12),0,0,0,color,'ceramic');

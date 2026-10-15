@@ -567,3 +567,5 @@ html, body, #root { margin:0; width:100%; height:100%; overflow:hidden; overscro
 @media(prefers-reduced-motion:reduce){.tt-boost.active{animation:none}}
 
 .tt-map-stations {display:grid;gap:5px;margin-bottom:16px}.tt-map-stations p{font-size:12px;margin:2px 0 6px}.tt-map-stations button{text-align:left;padding:8px;border:1px solid #53777d;background:#132e39;color:#f6ecd7;border-radius:6px}
+
+.tt-rotate span{font-family:"Rush Thai",sans-serif}

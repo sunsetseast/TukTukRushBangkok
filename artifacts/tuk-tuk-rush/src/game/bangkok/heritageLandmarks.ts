@@ -1,8 +1,8 @@
 import * as T from 'three';
 import type {Landmark} from '../types';
 import {LandmarkBuilder} from './landmarkBuilder';
-import {thaiRoof,framedWindow,porcelainPrang,royalChedi,guardian} from './templeCraft';
-import {ribbonPath} from './sculptureGeometry';
+import {thaiRoof,framedWindow,porcelainPrang,royalChedi,guardian,porcelainMaterial} from './templeCraft';
+import {ribbonPath,sectionLoft} from './sculptureGeometry';
 const sites=['arun','palace','traimit','golden','swing','democracy','victory','gate','hua','asiatique','mbk','central','terminal','flowers','food','chatuchak'];
 function pavilion(b:LandmarkBuilder,x:number,z:number,w:number,d:number,h:number,roof:string,detail:boolean){
  b.box(x,h/2+.7,z,w,h,d,'#eee0bf');
@@ -14,11 +14,22 @@ function wall(b:LandmarkBuilder,size:number,detail:boolean){
  for(const side of [-1,1]){b.box(side*(size/2-1),2,0,.8,3.5,size-2,'#e8dfc8');b.box(0,2,side*(size/2-1),size-2,3.5,.8,'#e8dfc8');
   if(detail)for(let q=-size/2+3;q<size/2-2;q+=4){b.sculpt(new T.ConeGeometry(.33,.55,4),q,4,side*(size/2-1),'#f3ead1','ceramic',Math.PI/4);}}
 }
+/** Five uniformed bronze figures, deliberately distinct from temple guardians. */
+function civicFigure(b:LandmarkBuilder,x:number,z:number,index:number){
+ const color='#536957';b.box(x,.8,z,2.2,.9,2.2,'#a8b19f');
+ for(const side of [-1,1]){b.sculpt(sectionLoft([{p:[x+side*.37,1.1,z],a:.21,b:.23},{p:[x+side*.34,2.3,z],a:.24,b:.25},{p:[x+side*.27,3.1,z],a:.29,b:.27}],8,12),0,0,0,color,'bronze');b.box(x+side*.4,1.1,z+.25,.55,.3,.9,color);}
+ b.sculpt(sectionLoft([{p:[x,2.6,z],a:.5,b:.3},{p:[x,3.5,z],a:.58,b:.34},{p:[x,4.3,z],a:.75,b:.32},{p:[x,4.5,z],a:.3,b:.26}],10,16),0,0,0,color,'bronze');
+ b.sculpt(new T.CylinderGeometry(.33,.27,.75,10),x,5,z,color,'bronze');b.sculpt(new T.ConeGeometry(.12,.25,5).rotateX(Math.PI/2),x,5.05,z+.33,color,'bronze');
+ // Soldier helmet, naval peak, air-service cap, police cap and civilian head.
+ if(index!==4)b.sculpt(new T.CylinderGeometry(index===0?.4:.32,.43,.26,10),x,5.47,z,color,'bronze');
+ for(const side of [-1,1])b.sculpt(ribbonPath([[x+side*.65,4.2,z],[x+side*.8,3.5,z+.12],[x+side*.45,3.1,z+.35]],.17,5,10),0,0,0,color,'bronze');
+ if(index<3)b.sculpt(new T.CylinderGeometry(.06,.06,3.1,5),x+.7,2.6,z+.45,'#435b4d','bronze');else b.box(x-.4,3.2,z+.5,.65,.8,.13,color);
+}
 function build(l:Landmark,detail:boolean){
  const b=new LandmarkBuilder(),S=l.size??50;
  b.box(0,.35,0,S-.6,.7,S-.6,['mbk','central','terminal'].includes(l.id!)?'#bcc6c1':'#d1c5aa');
  if(l.id==='arun'){
-  porcelainPrang(b,0,0,56,9.3,detail);for(const x of [-16,16])for(const z of [-16,16])porcelainPrang(b,x,z,23,4.15,detail);
+  const porcelain=detail?porcelainMaterial():undefined;porcelainPrang(b,0,0,56,12.4,detail,porcelain);for(const x of [-16,16])for(const z of [-16,16])porcelainPrang(b,x,z,23,4.15,detail,porcelain);
   wall(b,49,detail);for(const x of [-7,7])guardian(b,x,21,5.4,x<0?'#6c9a83':'#e7d5ba',detail);
   for(const x of [-20.5,20.5])for(let z=-8;z<=8;z+=4)b.box(x,.82,z,2.8,.3,3.6,'#aeb8a0');
  }else if(l.id==='palace'){
@@ -60,7 +71,7 @@ function build(l:Landmark,detail:boolean){
  }else if(l.id==='victory'){
   for(let i=0;i<3;i++)b.sculpt(new T.CylinderGeometry(11-i*1.1,12-i*1.1,1.1,20),0,.8+i,0,'#bec4b9','ceramic');
   b.box(0,5,0,9,4,9,'#c7c9bb');b.sculpt(new T.CylinderGeometry(.6,2.6,32,4),0,23,0,'#e2e0cf','ceramic',Math.PI/4);
-  for(let i=0;i<5;i++){const a=i*Math.PI*2/5;guardian(b,Math.sin(a)*8,Math.cos(a)*8,5.3,'#576b5d',false);}
+  for(let i=0;i<5;i++){const a=i*Math.PI*2/5;civicFigure(b,Math.sin(a)*8,Math.cos(a)*8,i);}
  }else if(l.id==='gate'){
   for(const x of [-9,9])for(const z of [-4,4]){b.sculpt(new T.CylinderGeometry(.72,.95,10.5,12),x,5.5,z,'#ab303a','ceramic');b.sculpt(new T.CylinderGeometry(1.2,1.2,.35,12),x,1,z,'#c8ba90','ceramic');}
   b.box(0,10.2,0,21,1.5,9,'#ad3b3d');
