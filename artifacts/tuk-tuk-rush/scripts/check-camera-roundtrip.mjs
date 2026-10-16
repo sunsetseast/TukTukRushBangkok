@@ -11,9 +11,9 @@ try{
  const errors=[];p.on('pageerror',e=>{errors.push(e.message);console.error('PAGE',e.message);});p.on('response',r=>{if(r.status()>=400)console.error('HTTP',r.status(),r.url());});await p.goto('http://127.0.0.1:24265');await p.waitForFunction(()=>window.__graphics).catch(async e=>{console.error('PAGE BODY',await p.locator('body').innerText());throw e;});await p.getByTestId('button-free-roam').click();
  const frames=async()=>{const f=await p.evaluate(()=>window.__graphics.frameId);await p.waitForFunction(f=>window.__graphics.frameId>f+3,f);};
  await p.evaluate(()=>{const e=window.__graphics.engine,d=e.model.district,n=d.nodes.find(n=>n.id===d.destinations.find(a=>a.id==='icon').arrivalNode);e.update=()=>{};e.setQuality('low');Object.assign(e.model.player,{x:n.x,z:n.z,heading:0,speed:0,collision:0});e.publish();});await frames();
- assert(await p.evaluate(()=>window.__graphics.engine.viewLandmark('icon')));await frames();
+ assert(await p.evaluate(()=>window.__graphics.engine.viewLandmark('icon')));await p.waitForFunction(()=>window.__graphics.camera.position.y>40);await frames();
  const inspectionHeight=await p.evaluate(()=>window.__graphics.camera.position.y);assert(inspectionHeight>10);
- await p.getByTestId('inspection-return').click();await frames();
+ await p.getByTestId('inspection-return').click();await p.waitForFunction(()=>window.__graphics.camera.position.y<6);await frames();
  const returnHeight=await p.evaluate(()=>window.__graphics.camera.position.y);assert(returnHeight<6);
  await p.getByTestId('button-open-map').click();await p.getByTestId('world-map').waitFor();await p.getByTestId('button-close-map').click();await frames();
  const afterMap=await p.evaluate(()=>window.__graphics.camera.position.y);

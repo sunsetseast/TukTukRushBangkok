@@ -363,7 +363,7 @@ body,
   font-weight: 650;
 }
 .tt-seg button[aria-pressed="true"] {
-  background: #138d80; color: #fff8df; box-shadow: 0 2px 0 #086960;
+  background: #087568; color: #fff8df; box-shadow: 0 2px 0 #086960;
 }
 .tt-setting-row input[type="range"] {
   width: 150px;
@@ -839,7 +839,7 @@ body,
   width: 82px; height: 90px; border-radius: 28px 28px 18px 18px; color: #fff9df; border-color: #9ff3ce;
 }
 .tt-pedal.gas:before {
-  background: #0d9f88; box-shadow: inset 0 3px #88ead290;
+  background: #087868; box-shadow: inset 0 3px #88ead290;
 }
 .tt-pedal.gas b {
   font-size: 16px;
@@ -866,7 +866,7 @@ body,
 .tt-boost {
   position: relative; display: grid; grid-template-columns: 22px 1fr; align-content: center; column-gap: 5px;
   width: 101px; height: 44px; padding: 5px 10px; border: 2px solid #a7d8f2; border-radius: 16px; overflow: hidden;
-  background: #267bc4; color: #fff7db; box-shadow: 0 3px 0 #164b78; pointer-events: auto; touch-action: none; transition: transform .1s;
+  background: #196bac; color: #fff7db; box-shadow: 0 3px 0 #164b78; pointer-events: auto; touch-action: none; transition: transform .1s;
 }
 .tt-boost svg {
   grid-row: span 2; align-self: center; color: #ffe27b;
@@ -1065,7 +1065,7 @@ body,
   font-size: 11px;
 }
 .tt-map-filters button[aria-pressed="true"] {
-  background: #168c80;
+  background: #087568;
   color: #fff7e5;
 }
 .tt-map-tools {
@@ -1314,7 +1314,7 @@ body,
   color: var(--ui-muted);
 }
 .tt-inspection button[aria-pressed="true"] {
-  background: #168c80;
+  background: #087568;
   color: #fff7e5;
 }
 .tt-inspection footer > div {
@@ -1387,7 +1387,7 @@ body,
   justify-content: center;
   gap: 16px;
   padding: 30px;
-  background: var(--ui-ink);
+  background: var(--ui-solid);
   color: var(--ui-text);
   text-align: center;
 }
