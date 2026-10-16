@@ -3,10 +3,10 @@ Object.assign(globalThis, { window: { addEventListener() {}, removeEventListener
 const { GameEngine } = await import('../src/game/engine');
 const { routeFromPoint, SHIFT_SECONDS } = await import('../src/game/bangkok/world');
 const {createMissions}=await import('../src/game/missions');
-const e = new GameEngine();const fareCount=createMissions(e.model.district).length; e.start('free'); e.model.traffic.length = 0;
+const e = new GameEngine({seed:20});const fareCount=createMissions(e.model.district).length; e.start('free'); e.model.traffic.length = 0;
 let frames = 0, metres = 0, collisions = 0;
 const drive = (expected: 'pickup' | 'delivery', goal: number) => {
-  const path = routeFromPoint(e.model.district, e.model.player, e.model.snapshot.target).slice(1); let index = 0;
+  const path = routeFromPoint(e.model.district, e.model.player, e.model.snapshot.target).slice(1); if(!path.length)path.push(e.model.snapshot.target); let index = 0;
   for (let step = 0; step < 60000 && e.model.snapshot.stage === expected && e.model.snapshot.deliveries < goal; step++) {
     const p = e.model.player; let point = path[index]!, distance = Math.hypot(point.x - p.x, point.z - p.z);
     while (distance < 5 && index < path.length - 1) { point = path[++index]!; distance = Math.hypot(point.x - p.x, point.z - p.z); }

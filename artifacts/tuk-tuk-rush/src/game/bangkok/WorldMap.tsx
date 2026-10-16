@@ -2,6 +2,7 @@ import {
   memo,
   useEffect,
   useMemo,
+  useId,
   useRef,
   useState,
   type PointerEvent,
@@ -30,6 +31,7 @@ import {
 import { useMapMotion } from "../ui/useMapMotion";
 import { navigationPath } from "../navigation";
 import { cartography, roadPaths } from "./cartography";
+const mapPalette:Record<string,string>={paknam:'#c7dea1',north:'#b5d4a5',khaosan:'#f6c3a5',oldtown:'#f3d995',westbank:'#afd8bf',chinatown:'#f2b4a3',siam:'#cbbfe4',talatnoi:'#e3c39b',sukhumvit:'#b4d9e4',icon:'#c2dfd4',silom:'#afd2cf',south:'#dec9aa'};
 const districtLabels: Record<string, string> = {
   paknam: "Phasi Charoen",
   north: "Chatuchak",
@@ -102,26 +104,27 @@ const BaseMap = memo(function BaseMap({
   px: number;
   pz: number;
 }) {
-  const cart = cartography(d);
+  const cart = cartography(d),fogId=useId().replace(/:/g,"");
   const roads = useMemo(
     () => roadPaths(d, detail, px, pz, shortcuts),
     [d, detail, px, pz, shortcuts.join("|")],
   );
   return (
     <g className="tt-map-base">
-      <rect x="-2500" y="-2500" width="6000" height="6000" fill="#0c1c25" />
+      <defs><pattern id={fogId} patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(35)"><rect width="12" height="12" fill="#e4e7d3"/><path d="M0 0V12" stroke="#b5c5b4" strokeWidth="3"/></pattern></defs>
+      <rect x="-2500" y="-2500" width="6000" height="6000" fill="#c6dfb2" />
       {d.regions?.map((r) => (
         <polygon
           key={r.id}
           points={cart.regions?.[d.regions!.indexOf(r)]}
-          fill={visited.includes(r.id) ? r.color : "#11252e"}
-          fillOpacity={visited.includes(r.id) ? 0.2 : 1}
-          stroke="#42615e"
-          strokeOpacity=".32"
+          fill={visited.includes(r.id) ? mapPalette[r.id] ?? r.color : `url(#${fogId})`}
+          fillOpacity="1"
+          stroke="#7a9d84"
+          strokeOpacity=".65"
           strokeWidth="1"
         />
       ))}
-      {detail && <path d={cart.footprints} fill="#325054" opacity=".25" />}
+      {detail && <path d={cart.footprints} fill="#9eae91" opacity=".3" />}
       {d.obstacles
         .filter((o) => o.protected)
         .map((o, i) => {
@@ -133,14 +136,14 @@ const BaseMap = memo(function BaseMap({
               y={m.y - o.d / SCALE / 2}
               width={o.w / SCALE}
               height={o.d / SCALE}
-              fill="#2f6351"
+              fill="#7bb86b"
               opacity=".65"
             />
           );
         })}
       <polyline
         points={cart.river}
-        stroke="#0a2738"
+        stroke="#f6e6b6"
         strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
         fill="none"
         strokeLinecap="round"
@@ -148,7 +151,7 @@ const BaseMap = memo(function BaseMap({
       />
       <polyline
         points={cart.river}
-        stroke="#20536a"
+        stroke="#40b8cd"
         strokeWidth={(d.riverWidth ?? 0) / SCALE}
         fill="none"
         strokeLinecap="round"
@@ -158,7 +161,7 @@ const BaseMap = memo(function BaseMap({
         <polyline
           key={i}
           points={cart.canals?.[i]}
-          stroke="#20536a"
+          stroke="#40b8cd"
           strokeWidth={Math.max(1.5, c.width / SCALE)}
           fill="none"
           strokeLinejoin="round"
@@ -172,7 +175,7 @@ const BaseMap = memo(function BaseMap({
           strokeWidth={r.width}
           strokeLinecap="round"
           fill="none"
-          opacity={!r.region || visited.includes(r.region) ? 1 : 0.22}
+          opacity={!r.region || visited.includes(r.region) ? 1 : 0.36}
         />
       ))}
     </g>
@@ -332,9 +335,9 @@ function MapLayers({
                   fontSize: (placeNames ? 11 : 9) * labelScale,
                   strokeWidth: 3 * labelScale,
                 }}
-                opacity={visited.includes(r.id) ? 0.85 : 0.45}
+                opacity={visited.includes(r.id) ? 1 : 0.8}
               >
-                {(districtLabels[r.id] ?? r.name).toUpperCase()}
+                {(districtLabels[r.id] ?? r.name).toUpperCase()}{!visited.includes(r.id) && " · ?"}
               </text>
             );
           })}
@@ -343,7 +346,7 @@ function MapLayers({
           <g key={line.id} data-testid={`map-rail-${line.id}`}>
             <polyline
               points={cartography(d).transit?.[d.transit!.lines.indexOf(line)]}
-              stroke="#10252c"
+              stroke="#fff7de"
               strokeWidth="7"
               vectorEffect="non-scaling-stroke"
               strokeLinejoin="round"
@@ -392,7 +395,7 @@ function MapLayers({
         ))}
       <polyline
         points={points(path)}
-        stroke="#0a1720"
+        stroke="#fff4cd"
         strokeWidth="8"
         vectorEffect="non-scaling-stroke"
         strokeLinejoin="round"
@@ -402,7 +405,7 @@ function MapLayers({
       <polyline
         data-testid="map-route"
         points={points(path)}
-        stroke={f.snap.stage === "pickup" ? "#e8bd77" : "#ed9685"}
+        stroke={f.snap.stage === "pickup" ? "#d96529" : "#a54dc1"}
         strokeWidth="3.5"
         vectorEffect="non-scaling-stroke"
         strokeLinejoin="round"
@@ -448,8 +451,8 @@ function MapLayers({
                     width="26"
                     height="26"
                     rx="9"
-                    fill="#172e36"
-                    stroke="#b59b6e"
+                    fill="#fff3d2"
+                    stroke="#b67937"
                   />
                   <PlaceGlyph kind={l.kind} />
                 </>
@@ -475,8 +478,8 @@ function MapLayers({
         cy={target.y}
         pointerEvents="none"
         r={8 * labelScale}
-        fill="#142b31"
-        stroke={f.snap.stage === "pickup" ? "#e8bd77" : "#ed9685"}
+        fill="#fff3ce"
+        stroke={f.snap.stage === "pickup" ? "#d96529" : "#a54dc1"}
         strokeWidth={2 * labelScale}
       />
       <circle
@@ -491,15 +494,15 @@ function MapLayers({
         data-testid="map-player"
         pointerEvents="none"
       >
-        <circle r="16" fill="#10383b" stroke="#65c7b7" strokeOpacity=".5" />
-        <path d="M0-23L5-15H-5Z" fill="#8fefdb" />
+        <circle r="16" fill="#157fbd" stroke="#fff4c5" strokeOpacity="1" />
+        <path d="M0-23L5-15H-5Z" fill="#167fb9" />
         <rect
           x="-7"
           y="-10"
           width="14"
           height="21"
           rx="5"
-          fill="#ebd5a4"
+          fill="#ffe17e"
           stroke="#0b252b"
           strokeWidth="1.5"
         />
@@ -954,7 +957,7 @@ export function WorldMap({
         </span>
         <span>
           <i className="tt-legend-fog" />
-          Dim districts are unexplored
+          Hatched districts are unexplored
         </span>
         {transit && (
           <span className="tt-rail-legend">Sukhumvit · Silom · Gold Line</span>

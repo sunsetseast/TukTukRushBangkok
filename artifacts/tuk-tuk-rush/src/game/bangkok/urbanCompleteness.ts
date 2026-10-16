@@ -23,7 +23,7 @@ export function completeUrbanFabric(d:District):CompletenessReport{
     const b:Obstacle={...p,w,d:depth,yaw,height:modern?24+seed%6*8:7+seed%4*3.5,color:'#b7baa2',regionId:region,artRole:role==='frontage'?undefined:'background',environmentId:`infill:${role}:${seed}`};
     if(!clear(b))return false;d.buildings.push(b);d.obstacles.push(b);index.insert(b);report[role]++;return true;
   };
-  for(const r of d.roads){if(r.destinationId||r.bridge||r.roundabout||r.shortcut)continue;
+  for(const r of d.roads){if(r.destinationId||r.roundabout||r.shortcut)continue;
     const a=nodes.get(r.a)!,b=nodes.get(r.b)!,len=Math.hypot(b.x-a.x,b.z-a.z),ux=(b.x-a.x)/len,uz=(b.z-a.z)/len;
     for(const t of [len*.25,len*.7])for(const side of [-1,1]){
       const yaw=Math.atan2(-uz*side,ux*side),point=(off:number)=>({x:a.x+ux*t+uz*side*off,z:a.z+uz*t-ux*side*off});
@@ -45,7 +45,7 @@ export function completeUrbanFabric(d:District):CompletenessReport{
     }
   }
   // Sparse screened service plots, kept close to streets rather than random map fill.
-  for(const r of d.roads.filter(r=>!r.bridge&&!r.roundabout&&!r.shortcut)){
+  for(const r of d.roads.filter(r=>!r.roundabout&&!r.shortcut)){
     const a=nodes.get(r.a)!,b=nodes.get(r.b)!,seed=stableHash(`${r.a}:${r.b}`);if(seed%4)continue;
     const yaw=Math.atan2(b.x-a.x,b.z-a.z),side=seed%2?1:-1,p={x:(a.x+b.x)/2+Math.cos(yaw)*65*side,z:(a.z+b.z)/2-Math.sin(yaw)*65*side};
     if(riverDistance(d,p)<d.riverWidth!/2+20)continue;
@@ -58,5 +58,21 @@ export function completeUrbanFabric(d:District):CompletenessReport{
       add(p,Math.atan2(-uz*side,ux*side),18,13,'rear');
     }
   }
-  return report;  return report;
+  // Canal communities and small temple-edge residences connect the cleared hero
+  // precincts to the surrounding city. Reuse real parcels and exact clearance.
+  let context=0;
+  for(const canal of d.canals??[])for(let i=1;i<canal.points.length;i++){
+    const a=canal.points[i-1]!,b=canal.points[i]!,len=Math.hypot(b.x-a.x,b.z-a.z),ux=(b.x-a.x)/len,uz=(b.z-a.z)/len;
+    for(let t=24;t<len;t+=65)for(const side of [-1,1]){
+      if(context>=100)break;
+      const off=canal.width/2+23,p={x:a.x+ux*t+uz*off*side,z:a.z+uz*t-ux*off*side};
+      if(add(p,Math.atan2(-uz*side,ux*side),13,10,'frontage'))context++;
+    }
+  }
+  const paknam=d.landmarks.find(l=>l.id==='paknam')!;
+  for(const radius of [85,112,140])for(let i=0;i<20;i++){
+    const a=i*Math.PI/10,p={x:paknam.plot!.x+Math.sin(a)*radius,z:paknam.plot!.z+Math.cos(a)*radius};
+    if(context<120&&add(p,a+Math.PI,12,10,'frontage'))context++;
+  }
+  return report;
 }

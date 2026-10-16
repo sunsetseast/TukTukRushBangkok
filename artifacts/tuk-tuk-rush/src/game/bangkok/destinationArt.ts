@@ -34,7 +34,7 @@ export function emitDestinationGrounds(
         shape,
         layer,
         yaw: a.yaw + yaw,
-        surface: temple ? "tile" : "concrete",
+        surface: y < .2 ? "concrete" : temple ? "plaster" : "concrete",
       });
     };
     const plot = d.landmarks.find((l) => l.id === a.landmarkId)!.plot!,

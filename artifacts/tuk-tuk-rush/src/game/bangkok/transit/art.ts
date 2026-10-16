@@ -1,3 +1,4 @@
+import {stationShell} from "./stationGeometry";
 import * as T from "three";
 import type { District } from "../../types";
 import { StaticBatch } from "../../staticBatch";
@@ -200,7 +201,8 @@ export function emitRailInfrastructure(
           ? "#526f87"
           : "#4c7b79";
     at(0, 7.8, 0, siam ? 22 : gold ? 15 : 18, 0.75, L + 10, "#b6b9ab");
-    at(0, 8.9, 0, siam ? 20 : gold ? 13 : 16, 1.5, L, "#b6c2bb");
+    const shell=stationShell(s);
+    at(0, shell.concourseY, 0, shell.concourseWidth, shell.concourseHeight, L, "#b6c2bb");
     for (const level of siam ? [13, 19] : [gold ? 12 : 13]) {
       if (siam) at(0, level - 0.35, 0, 6.2, 0.65, L, "#e1d7bd");
       else

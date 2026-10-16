@@ -88,9 +88,10 @@ type Grammar = {
   bayCount: number[];
 };
 export const GRAMMARS: Record<string, Grammar> = {
+  paknam:{types:['residence','timber','arcade'],walls:['#f4dfb0','#d5e5bd','#f0bc91'],trims:['#3e8066','#ad653e'],accents:['#e1ac42','#37a99b'],bayCount:[2,3]},
   chinatown: {
     types: ["shophouse", "gold", "noodle", "arcade", "concrete", "timber"],
-    walls: ["#ead6aa", "#c99c75", "#a8beb3", "#dfb48f", "#cab5ad"],
+    walls: ["#f4d9a2", "#e5ad79", "#9ed6c3", "#f1bb92", "#d5b9d0"],
     trims: ["#476b60", "#752e31", "#494544"],
     accents: ["#bd303e", "#dcaa40", "#2e8984"],
     bayCount: [3, 4, 3, 2],
@@ -153,7 +154,7 @@ export const GRAMMARS: Record<string, Grammar> = {
   },
   khaosan: {
     types: ["guesthouse", "timber", "noodle", "shophouse", "arcade"],
-    walls: ["#d1bd9c", "#bbc5b0", "#e2ab8d", "#bfd0d3"],
+    walls: ["#f0d49f", "#bdddab", "#f1ac8a", "#a5d9e6"],
     trims: ["#52543e", "#526b75"],
     accents: ["#b85973", "#ddac4f", "#448c81"],
     bayCount: [3, 2, 4],
@@ -174,7 +175,7 @@ export const GRAMMARS: Record<string, Grammar> = {
   },
   connector: {
     types: ["residence", "concrete", "timber", "workshop", "shophouse"],
-    walls: ["#d6c3a6", "#b4c5af", "#d6ab93"],
+    walls: ["#d6c3a6", "#c7deab", "#e7ad91"],
     trims: ["#596958", "#665646"],
     accents: ["#889d62", "#a27657"],
     bayCount: [3, 2, 3],

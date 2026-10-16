@@ -14,7 +14,8 @@ const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, has
 const errors = [], failed = [];
 page.on('pageerror', e => errors.push(e.message));
 page.on('response', r => { if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`); });
-await page.goto(process.env.GAME_URL || 'http://localhost:80/');
+await page.addInitScript(() => { if(location.protocol.startsWith('http')){const u=new URL(location.href);u.searchParams.set('qa','1');history.replaceState(null,'',u);} });
+  await page.goto(process.env.GAME_URL || 'http://localhost:80/');
 await page.waitForFunction(() => window.__graphics, null, { timeout: 120000 });
 await page.getByTestId('button-free-roam').click();
 await page.evaluate(() => {

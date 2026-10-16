@@ -31,6 +31,7 @@ try {
     if (m.type() === "error") errors.push(m.text());
   });
   const started = performance.now();
+  await page.addInitScript(() => { if(location.protocol.startsWith('http')){const u=new URL(location.href);u.searchParams.set('qa','1');history.replaceState(null,'',u);} });
   await page.goto(`http://127.0.0.1:${port}`);
   await page.waitForFunction(() => window.__graphics, null, {
     timeout: 120000,

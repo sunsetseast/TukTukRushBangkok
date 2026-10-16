@@ -47,9 +47,9 @@ export function asphaltMaterial() {
   mat.customProgramCacheKey = () => "bangkok-dry-asphalt-v2";
   return mat;
 }
-/** Derivative-antialiased scored concrete, without thousands of paving meshes. */
+/** Quiet poured concrete: fine aggregate and broad wear, not a city-wide tile grid. */
 export function pavingMaterial() {
-  const mat = new T.MeshStandardMaterial({ color: "#b4b4a6", roughness: 0.93 });
+  const mat = new T.MeshStandardMaterial({ color: "#dfd2b6", roughness: 0.96 });
   mat.onBeforeCompile = (shader) => {
     shader.vertexShader =
       "varying vec2 pavingWorld;\n" +
@@ -62,9 +62,21 @@ export function pavingMaterial() {
       shader.fragmentShader.replace(
         "#include <color_fragment>",
         `#include <color_fragment>
-    vec2 cell=pavingWorld*1.15;vec2 seam=min(fract(cell),1.-fract(cell));vec2 aa=max(fwidth(cell),vec2(.001));vec2 grout=smoothstep(vec2(.016),vec2(.016)+aa,seam);vec3 hash=fract(vec3(floor(cell).xyx)*.1031);hash+=dot(hash,hash.yzx+33.33);float tile=fract((hash.x+hash.y)*hash.z);diffuseColor.rgb*=mix(.76,.96+tile*.07,min(grout.x,grout.y));`,
+    vec3 hash=fract(vec3(floor(pavingWorld*7.).xyx)*.1031);hash+=dot(hash,hash.yzx+33.33);float grain=fract((hash.x+hash.y)*hash.z);diffuseColor.rgb*=.97+grain*.035;`,
       );
   };
-  mat.customProgramCacheKey = () => "bangkok-scored-paving-v1";
+  mat.customProgramCacheKey = () => "bangkok-quiet-concrete-v2";
   return mat;
+}
+
+/** Soft ground color variation reads as landscaped land beyond the built plots. */
+export function landscapeMaterial() {
+  const size=64,pixels=new Uint8Array(size*size*4);
+  for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+    const i=(y*size+x)*4,v=Math.sin(x*.19)*Math.cos(y*.15)*8;
+    pixels[i]=122+v;pixels[i+1]=155+v;pixels[i+2]=93+v*.6;pixels[i+3]=255;
+  }
+  const texture=new T.DataTexture(pixels,size,size);texture.colorSpace=T.SRGBColorSpace;
+  texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.repeat.set(1/32,1/32);texture.generateMipmaps=true;texture.minFilter=T.LinearMipmapLinearFilter;texture.needsUpdate=true;
+  return new T.MeshStandardMaterial({map:texture,color:'#dfecba',roughness:1});
 }

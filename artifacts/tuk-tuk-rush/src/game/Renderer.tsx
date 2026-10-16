@@ -15,7 +15,7 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { bangkokPeople } from "./bangkok/urbanLayers";
 import { buildBangkokGraybox, shiftLighting } from "./bangkok/mesh";
 import { clamp } from "./meshUtil";
-import { obstacleLocal } from "./world";
+import { ChaseCamera, ArtCameraLease } from "./chaseCamera";
 
 function buildBeacon() {
   const g = new THREE.Group();
@@ -121,14 +121,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     }
     return b;
   }, []);
-  const cam = useRef({
-    init: false,
-    phase: "",
-    heading: 0,
-    pos: new THREE.Vector3(),
-    look: new THREE.Vector3(),
-    fov: 60,
-  });
+  const cam = useRef(new ChaseCamera());
+  const cameraRevision = useRef(-1);
+  const artLease = useRef(new ArtCameraLease());
+  const qaCamera = import.meta.env.DEV && new URLSearchParams(window.location.search).get("qa") === "1";
   const stageRef = useRef("");
   const frameId = useRef(0);
   useEffect(() => {
@@ -142,6 +138,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     return () => {
       scene.environment = null;
       env.dispose();
+      delete (window as typeof window & {__artCamera?: unknown}).__artCamera;
       city.dispose();
       streets.dispose();
       traffic.dispose();
@@ -160,7 +157,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       p = m.player,
       s = m.snapshot,
       c = cam.current;
-    const t = state.clock.elapsedTime;
+    // R3F resets clock.elapsedTime on demand/always transitions (opening the
+    // map). A retained blend timestamp on that clock can replay the last LOOK
+    // pose for minutes. Presentation deadlines require a monotonic clock.
+    const t = performance.now() / 1000;
     if (bangkok) {
       const lighting = shiftLighting(s.elapsed ?? 0, lightState);
       (scene.background as THREE.Color).copy(lighting.sky);
@@ -234,121 +234,22 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         : 1.4;
     }
     rv.y += (rv.target - rv.y) * (1 - Math.exp(-3 * dt));
-    // camera
-    if (c.phase !== s.phase && (c.phase === "title" || c.phase === ""))
-      c.init = false;
-    c.phase = s.phase;
+    // A session/recovery/LOOK exit invalidates both follow history and inspection blend.
     const cp = camera as THREE.PerspectiveCamera;
-    if (s.phase === "title") {
-      // A stable, road-aligned hero view avoids orbiting through shop facades.
-      // No extra scene or render pass; also comfortable with reduced motion.
-      const fx = Math.sin(p.heading),
-        fz = Math.cos(p.heading);
-      c.pos.set(p.x - fx * 12, 4.7, p.z - fz * 12);
-      c.look.set(p.x + fx * 24, 3.1, p.z + fz * 24);
-      cp.position.copy(c.pos);
-      cp.lookAt(c.look);
-      c.init = false;
-      c.fov = 56;
-    } else {
-      const sp = clamp(Math.abs(p.speed) / 31, 0, 1);
-      if (Math.hypot(p.x - c.pos.x, p.z - c.pos.z) > 45) c.init = false;
-      const snapNow = !c.init;
-      const arrival =
-        Math.abs(p.speed) < 1.8 && !m.input.gas
-          ? m.district.destinations?.find((a) => {
-              const n = m.district.nodes.find((n) => n.id === a.arrivalNode)!;
-              return Math.hypot(p.x - n.x, p.z - n.z) < a.arrivalRadius + 1;
-            })
-          : undefined;
-      const destination = arrival
-        ? m.district.landmarks.find((l) => l.id === arrival.landmarkId)
-        : undefined;
-      const heading = destination
-        ? Math.atan2(destination.plot!.x - p.x, destination.plot!.z - p.z)
-        : p.heading;
-      if (snapNow) {
-        c.heading = heading;
-        c.init = true;
-      }
-      let dh = heading - c.heading;
-      dh = Math.atan2(Math.sin(dh), Math.cos(dh));
-      c.heading += dh * (1 - Math.exp(-4.5 * dt));
-      const boosted = s.boostState === "active" ? 1 : 0;
-      const dist = 7.8 + 3 * sp + boosted * 0.7,
-        h = 3.3 + 1.3 * sp;
-      const fx = Math.sin(c.heading),
-        fz = Math.cos(c.heading);
-      const hx = p.x,
-        hy = 1.6,
-        hz = p.z;
-      const dx = p.x - fx * dist,
-        dy = h,
-        dz = p.z - fz * dist;
-      let k = 1;
-      for (; k > 0.25; k -= 0.1) {
-        const px = hx + (dx - hx) * k,
-          py = hy + (dy - hy) * k,
-          pz = hz + (dz - hz) * k;
-        let hit = false;
-        for (const b of m.district.buildings) {
-          const local = obstacleLocal({ x: px, z: pz }, b);
-          if (
-            py < b.height + 0.5 &&
-            Math.abs(local.x) < b.w / 2 + 0.8 &&
-            Math.abs(local.z) < b.d / 2 + 0.8
-          ) {
-            hit = true;
-            break;
-          }
-        }
-        if (!hit) break;
-      }
-      const tx = hx + (dx - hx) * k,
-        ty = hy + (dy - hy) * k,
-        tz = hz + (dz - hz) * k;
-      if (
-        snapNow ||
-        !isFinite(c.pos.x) ||
-        Math.hypot(c.pos.x - tx, c.pos.z - tz) > 30
-      )
-        c.pos.set(tx, ty, tz);
-      const f = 1 - Math.exp(-(k < 1 ? 14 : 9) * dt);
-      c.pos.x += (tx - c.pos.x) * f;
-      c.pos.y += (ty - c.pos.y) * f;
-      c.pos.z += (tz - c.pos.z) * f;
-      cp.position.copy(c.pos);
-      if (destination) {
-        const y =
-          destination.id === "paknam"
-            ? 30
-            : destination.id === "arun"
-              ? 22
-              : destination.id === "pho"
-                ? 8
-                : destination.kind === "palace"
-                  ? 18
-                  : 17;
-        c.look.set(destination.plot!.x, y, destination.plot!.z);
-      } else c.look.set(p.x + fx * 6, rv.y, p.z + fz * 6);
-      cp.lookAt(c.look);
-      c.fov += (58 + sp * 14 + boosted * 3 - c.fov) * (1 - Math.exp(-3 * dt));
+    if (cameraRevision.current !== engine.cameraRevision) {
+      cameraRevision.current = engine.cameraRevision;
+      cameraBlend.current.key = "";
+      cameraBlend.current.time = -Infinity;
+      rv.y = rv.target = 1.4;
     }
-    if (Math.abs(cp.fov - c.fov) > 0.1) {
-      cp.fov = c.fov;
-      cp.updateProjectionMatrix();
-    }
-    if (import.meta.env.DEV) {
-      const override = (
-        window as typeof window & {
-          __artCamera?: { position: number[]; look: number[] };
-        }
-      ).__artCamera;
-      if (override) {
-        cp.position.fromArray(override.position);
-        cp.lookAt(new THREE.Vector3().fromArray(override.look));
-      }
-    }
+    c.update(m.district,p,dt,engine.cameraRevision,s.phase === "title",s.boostState === "active",rv.y);
+    cp.position.copy(c.pos);
+    cp.lookAt(c.look);
+    if (Math.abs(cp.fov-c.fov)>.1) {cp.fov=c.fov;cp.updateProjectionMatrix();}
+    const debugCamera = window as typeof window & {__artCamera?: {position:number[];look:number[]}};
+    const override = artLease.current.read(debugCamera.__artCamera,qaCamera,t,engine.cameraRevision);
+    if (override) {cp.position.fromArray(override.position);c.look.fromArray(override.look);cp.lookAt(c.look);}
+    else if(debugCamera.__artCamera) delete debugCamera.__artCamera;
     beacon.g.visible = !s.viewingLandmark;
     const blend = cameraBlend.current,
       key = s.viewingLandmark ?? "";
@@ -356,7 +257,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       blend.from.copy(blend.key ? blend.last : cp.position);
       blend.look.copy(blend.key ? blend.lastLook : c.look);
       const room = !!engine.inspection.view?.room;
-      blend.time = room || blend.room ? t - 1 : t;
+      blend.time = !key || room || blend.room ? t - 1 : t;
       blend.room = room;
       blend.key = key;
     }
@@ -368,7 +269,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.look.fromArray(lookPose.current.target);
       cp.fov = 62;
       cp.updateProjectionMatrix();
-      c.init = false;
+
     }
     const mix = THREE.MathUtils.smoothstep(t - blend.time, 0, 0.45);
     if (mix < 1) {

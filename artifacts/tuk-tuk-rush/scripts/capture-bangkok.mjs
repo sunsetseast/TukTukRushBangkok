@@ -35,6 +35,7 @@ page.on("response", (r) => {
   if (r.status() >= 400) failures.push(`${r.status()} ${r.url()}`);
 });
 try {
+  await page.addInitScript(() => { if(location.protocol.startsWith('http')){const u=new URL(location.href);u.searchParams.set('qa','1');history.replaceState(null,'',u);} });
   await page.goto(process.env.GAME_URL || "http://localhost:24177/", {
     waitUntil: "domcontentloaded",
   });

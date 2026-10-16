@@ -1,30 +1,19 @@
 import assert from 'node:assert/strict';
+import {routeBetween} from '../src/game/world';
 // Browser event bindings are irrelevant to this deterministic simulation, not to UI QA.
 Object.assign(globalThis, {
   window: { addEventListener() {}, removeEventListener() {} },
   document: { addEventListener() {}, removeEventListener() {}, hidden: false },
 });
 const { GameEngine } = await import('../src/game/engine');
-const engine = new GameEngine({ world: 'chinatown' });
+const engine = new GameEngine({ world: 'chinatown',seed:1 });
 engine.start('shift');
 // Isolate path/controller/mission integration from unpredictable traffic encounters.
 // No position teleporting: every metre below is driven through VehicleController.
 engine.model.traffic.length = 0;
 const d = engine.model.district;
 const nodes = new Map<string, { id: string; x: number; z: number }>(d.nodes.map((n: { id: string }) => [n.id, n]));
-function route(start: string, end: string) {
-  const queue = [start], prev = new Map<string, string | null>([[start, null]]);
-  for (const id of queue) {
-    if (id === end) break;
-    for (const r of d.roads) {
-      const next = r.a === id ? r.b : r.b === id ? r.a : null;
-      if (next && !prev.has(next)) { prev.set(next, id); queue.push(next); }
-    }
-  }
-  const out: { x: number; z: number }[] = []; let id: string | null = end;
-  while (id) { out.unshift(nodes.get(id)!); id = prev.get(id) ?? null; }
-  return out;
-}
+function route(start: string,end:string){return routeBetween(d,start,end);}
 let frames = 0, metres = 0, hits = 0;
 function drive(points: { x: number; z: number }[], expectedStage: string) {
   let i = 0;
