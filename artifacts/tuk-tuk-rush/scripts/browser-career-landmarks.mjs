@@ -73,6 +73,7 @@ try {
       e.publish();
     }, id);
     await p.getByTestId('inspection-return').waitFor();
+    if(process.env.QA_INSPECT_PRESET)await p.getByTestId('inspection-view-'+process.env.QA_INSPECT_PRESET).click();
     await p.waitForTimeout(450);
 
     const f = await p.evaluate(() => window.__graphics.frameId);
