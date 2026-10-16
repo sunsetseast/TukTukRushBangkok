@@ -39,6 +39,10 @@ jobs:
           done
           GAME_URL=http://localhost:24177/?world=chinatown pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-signature.mjs
           GAME_URL=http://localhost:24177/ pnpm --filter @workspace/tuk-tuk-rush exec node scripts/capture-bangkok.mjs
+      - name: Regress LOOK, map and restart camera return
+        run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/check-camera-roundtrip.mjs
+        env:
+          QA_OUT: /tmp/tuktuk-camera-regression
       - uses: actions/upload-artifact@v4
         if: always()
         with:

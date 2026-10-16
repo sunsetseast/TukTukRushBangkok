@@ -157,7 +157,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       p = m.player,
       s = m.snapshot,
       c = cam.current;
-    const t = state.clock.elapsedTime;
+    // R3F resets clock.elapsedTime on demand/always transitions (opening the
+    // map). A retained blend timestamp on that clock can replay the last LOOK
+    // pose for minutes. Presentation deadlines require a monotonic clock.
+    const t = performance.now() / 1000;
     if (bangkok) {
       const lighting = shiftLighting(s.elapsed ?? 0, lightState);
       (scene.background as THREE.Color).copy(lighting.sky);
