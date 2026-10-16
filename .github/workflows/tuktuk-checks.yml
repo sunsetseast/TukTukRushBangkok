@@ -34,6 +34,7 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:definitive
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:cityscapes
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:environment
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:career
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:corrections
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:graphics-foundation
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:interface

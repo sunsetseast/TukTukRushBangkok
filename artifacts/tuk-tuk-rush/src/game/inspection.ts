@@ -13,6 +13,10 @@ export function inspectionSubject(l:Landmark,d?:District):InspectionSubject{
   const inside=(id:string,label:string,target:Vec3,azimuth:number,distance:number,pitch:number):InspectionView=>({id,label,target,azimuth,distance,pitch,minDistance:4,maxDistance:16,minPitch:-.2,maxPitch:.42,pan:2,azimuthRange:[-1.1,1.1],room});
   views=[inside('head','Serene face',[-17.6,10,2.1],-.38,8.6,.02),inside('body','Reclining figure',[-1,6.6,2.5],0,11,.15),{...inside('feet','Pearl-inlaid soles',[20.2,5.7,2.1],1.2,5.4,.08),azimuthRange:[.7,2.25],room:{min:[22.1,3,-5],max:[23.7,10.8,10.05]}},view('courts','Royal chedis',[0,10,-11],66,2.8,.48)];
  }
+ if(l.id==='khaosan')views=[{...view('street','Street life',[0,4,0],37,0,.22),minDistance:22,maxDistance:65,azimuthRange:[-.65,.65],pan:3},view('overview','Commercial corridor',[0,6,0],52,.35,.65)];
+ if(l.id==='gate')views[0]=view('approach','Ceremonial gateway',[0,10,0],45,.35,.2);
+ if(l.id==='golden')views[0]=view('approach','Hilltop temple',[0,24,0],80,.5,.3);
+ if(l.id==='icon'){views[0]!.target=[0,14,0];views[0]!.pitch=.2;views.push(view('riverfront','Riverfront',[0,15,0],98,views[0]!.azimuth+Math.PI,.24));}
  if(l.id==='paknam')views.push({...view('face','Buddha close-up',[0,55,12],43,.12,.07),minDistance:30,maxDistance:75,pan:4,azimuthRange:[-1.1,1.1]});
  if(l.id==='arun')views.push({...view('ceramics','Porcelain terraces',[0,20,0],51,.8,.13),minDistance:38,maxDistance:80,pan:4});
  if(d&&['icon','paragon','central','terminal','mbk'].includes(l.id!)){const a=d.destinations?.find(a=>a.id===l.id);if(a){const dx=a.origin.x-(l.plot?.x??l.x),dz=a.origin.z-(l.plot?.z??l.z),c=Math.cos(l.yaw??0),s=Math.sin(l.yaw??0);views[0]!.azimuth=Math.atan2(c*dx-s*dz,s*dx+c*dz);}}
@@ -91,6 +95,6 @@ const cameraEnvelopes=new WeakMap<District,Obstacle[]>();
 export function cameraSceneEnvelopes(d:District){
  let cached=cameraEnvelopes.get(d);if(cached)return cached;
  const heights=new Map<Obstacle,number>();for(const p of designBuildings(d)){const modern=['siam','silom','sukhumvit'].includes(p.region),H=p.parcel.artRole?(modern?Math.min(p.parcel.height,80):Math.min(p.bays[0]!.height,31)):Math.max(...p.bays.map(a=>a.height));heights.set(p.parcel,H+4);}
- const hero:Record<string,number>={pho:25,arun:56,palace:47,traimit:42,golden:48,swing:22,democracy:25,victory:40,hua:27,icon:40,paragon:34,mahanakhon:155,baiyoke:158,state:138,paknam:80};
+ const hero:Record<string,number>={pho:25,arun:56,palace:47,traimit:49,golden:52,gate:21,swing:24,democracy:25,victory:40,hua:27,icon:40,paragon:34,mahanakhon:155,baiyoke:158,state:138,paknam:80};
  cached=d.obstacles.map(b=>({...b,w:b.w+1.2,d:b.d+1.2,height:Math.max(b.height,heights.get(b)??0,hero[b.landmarkId??'']??0)}));cameraEnvelopes.set(d,cached);return cached;
 }

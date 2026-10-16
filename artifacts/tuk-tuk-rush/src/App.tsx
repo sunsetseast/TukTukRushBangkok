@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 import { usePreferences } from "./game/ui/preferences";
 import { learn } from "./game/ui/Onboarding";
+import bangkokLayout from "./game/bangkok/layout.json";
+import { DriverCareer } from "./game/Career";
 import { Inspection } from "./game/Inspection";
 import {
   Component,
@@ -80,6 +82,7 @@ function App() {
   const engine = getEngine();
   const [gl] = useState(hasWebGL);
   const [frame, setFrame] = useState<Frame>(() => read(engine));
+  const [careerOpen, setCareerOpen] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
   const resumeAfterMap = useRef(false);
   const [prefs, updatePreferences] = usePreferences();
@@ -209,7 +212,7 @@ function App() {
 
   return (
     <div
-      className={`tt-root ${mapOpen || s.viewingLandmark ? "tt-map-open" : ""} ${s.phase === "title" || s.phase === "ended" ? "tt-entry" : ""} ${s.phase === "paused" && !s.viewingLandmark ? "tt-menu-open" : ""} ${prefs.motion === "reduced" ? "tt-reduced-motion" : ""} tt-controls-${prefs.controls}`}
+      className={`tt-root ${mapOpen || s.viewingLandmark || careerOpen ? "tt-map-open" : ""} ${s.phase === "title" || s.phase === "ended" ? "tt-entry" : ""} ${s.phase === "paused" && !s.viewingLandmark ? "tt-menu-open" : ""} ${prefs.motion === "reduced" ? "tt-reduced-motion" : ""} tt-controls-${prefs.controls}`}
       style={{ "--control-opacity": prefs.opacity } as CSSProperties}
       ref={root}
     >
@@ -241,15 +244,18 @@ function App() {
         {s.phase === "playing" && !mapOpen && (
           <Controls engine={engine} onHorn={() => sfx.horn()} />
         )}
-        {s.phase === "title" && (
+        {s.phase === "title" && !careerOpen && (
           <Title
+            onCareer={() => setCareerOpen(true)}
             onStart={start}
             settings={settings}
             bangkok={engine.model.district.worldId === "bangkok"}
           />
         )}
-        {s.phase === "paused" && !s.viewingLandmark && !mapOpen && (
+        {s.phase === "paused" && !s.viewingLandmark && !mapOpen && !careerOpen && (
           <PauseMenu
+            goals={s}
+            onCareer={() => setCareerOpen(true)}
             onResume={() => engine.resume()}
             onRestart={() => engine.restart()}
             onRecover={() => {
@@ -263,14 +269,16 @@ function App() {
             settings={settings}
           />
         )}
-        {s.phase === "ended" && (
+        {s.phase === "ended" && !careerOpen && (
           <Results
             s={s}
+            onCareer={() => setCareerOpen(true)}
             onAgain={() => start("shift")}
             onFree={() => start("free")}
           />
         )}
       </div>
+      {careerOpen && <DriverCareer store={engine.career} landmarkCount={bangkokLayout.landmarks.length} districtCount={bangkokLayout.districts.length} onClose={() => setCareerOpen(false)} />}
       {cameraReturn && <div className="tt-camera-return" aria-hidden="true" />}
       {mapOpen && (
         <WorldMap d={engine.model.district} f={frame} onClose={closeMap} />

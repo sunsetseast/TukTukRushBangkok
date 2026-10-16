@@ -43,6 +43,10 @@ jobs:
         run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/check-camera-roundtrip.mjs
         env:
           QA_OUT: /tmp/tuktuk-camera-regression
+      - name: Verify career rewards, persistence and responsive menus
+        run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-career.mjs
+        env:
+          QA_OUT: /tmp/tuktuk-career-regression
       - uses: actions/upload-artifact@v4
         if: always()
         with:

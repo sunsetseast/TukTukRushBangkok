@@ -24,7 +24,8 @@
     "test:landmark-quality": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
     "test:interface": "node --import tsx scripts/check-navigation-ui.ts",
     "test:graphics-foundation": "node --import tsx scripts/check-graphics-foundation.ts",
-    "test:corrections": "node --import tsx scripts/check-corrections.ts"
+    "test:corrections": "node --import tsx scripts/check-corrections.ts",
+    "test:career": "node --import tsx scripts/check-career.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

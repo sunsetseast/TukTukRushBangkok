@@ -66,17 +66,3 @@ export function skylineLandmark(l:Landmark){
   const distant=coarse.finish(`${l.id}-distant`),root=new T.LOD();root.addLevel(detailed,0);root.addLevel(distant,360);
   root.userData.authoredAsset=detailed.userData.authoredAsset;root.userData.nightMaterials=[...detailed.userData.nightMaterials,...distant.userData.nightMaterials];return root;
 }
-export function civicLandmark(l:Landmark){
-  if(l.id!=='khaosan')return;
-  const b=new LandmarkBuilder(),S=l.size!;b.box(0,.5,0,S-.5,1,S-.5,'#d5c9ac');
-  {
-    // Roadside guesthouse courtyard, not a generic market cube.
-    for(const x of [-10,10]){
-      b.box(x,7,0,8,13,27,'#bfad98');b.box(x,3.5,14,8,1.2,2,'#654976');
-      for(const y of [6,10])for(const z of [-9,-3,3,9])b.box(x+(x<0?4:-4),y,z,.12,2,2,'#93aa98',0,true);
-      b.box(x,14,0,8.7,.7,28,'#814b53');
-    }
-    for(let z=-10;z<=8;z+=6)b.box(0,5,z,15,.12,.14,'#e7b95c',0,true);
-  }
-  return b.finish(`authored-${l.id}-civic-v2`);
-}

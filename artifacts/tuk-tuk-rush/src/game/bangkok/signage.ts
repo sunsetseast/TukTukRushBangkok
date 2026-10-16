@@ -38,7 +38,7 @@ export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS).flatMap(
       style: v.style,
       variant: i,
     })),
-).concat(DISTRICT_SIGN_ENTRIES);
+).concat(DISTRICT_SIGN_ENTRIES, [{key:'odeon-inscription',text:'聖壽無疆',style:'heritage',variant:0}]);
 export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
     batch = new StaticBatch(),
@@ -123,6 +123,19 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     const i=atlas.index.get(sign.key)!;
     if(sign.blade)for(const side of [-1,1])place(sign.p,sign.u+side*.286,sign.y,sign.v,sign.width,sign.height,i,!sign.round,side*Math.PI/2);
     else place(sign.p,sign.u,sign.y,sign.v+.235,sign.width,sign.height,i);
+  }
+  // Lettering shares the existing atlas/material; no per-landmark canvases.
+  for(const l of d.landmarks.filter(l=>l.id==='gate'||l.id==='khaosan')){
+    const site=l.plot??l,yaw=l.yaw??0,c=Math.cos(yaw),s=Math.sin(yaw);
+    const board=(key:string,x:number,y:number,z:number,w:number,height:number,rotation=0)=>{
+      temp.position.set(site.x+c*x+s*z,y,site.z-s*x+c*z);temp.rotation.set(0,yaw+rotation,0);temp.scale.set(w,height,1);temp.updateMatrix();
+      batch.add(h[atlas.index.get(key)!]!,matH,[temp.matrix.clone()]);
+    };
+    if(l.id==='gate')for(const side of [-1,1])board('odeon-inscription',0,12.8,side*4.4,13,2.1,side<0?Math.PI:0);
+    else {
+      for(const side of [-1,1])for(let i=0;i<5;i++)board(['khao-hostel','khao-travel','khao-cafe','khao-tailor','khao-live'][i]!,side*6.35,4.4,-14+i*6.5,4.6,1,side<0?Math.PI/2:-Math.PI/2);
+      for(const side of [-1,1])for(const end of [-1,1])board(side<0?'khao-hostel':'khao-cafe',side*11,3.6,end<0?-17.4:15.5,6.8,.7,end<0?Math.PI:0);
+    }
   }
   batch.finish().forEach((chunk) => {
     chunk.name = "BangkokSign";

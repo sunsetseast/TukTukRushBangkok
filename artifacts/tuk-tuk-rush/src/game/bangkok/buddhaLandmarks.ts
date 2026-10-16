@@ -71,6 +71,23 @@ function seated(b:LandmarkBuilder,detail:boolean){
  const profile=[[10,0],[11,2],[8,5],[9,7],[6,13],[5,22],[3,31],[2,40],[0,49]].map(([r,y])=>new T.Vector2(r!,y!));b.sculpt(new T.LatheGeometry(profile,24),0,30,-27,'#f3eddf','ceramic');
  for(const x of [-34,34]){b.box(x,4,-5,14,6,20,'#eee0bd');thaiRoof(b,x,7.4,-5,16,22,4,'#b95439',detail);for(const z of [-11,-5,1])framedWindow(b,x,4,z,1.5,3,false);}
  for(const x of [-43,43])b.box(x,2,0,.8,3,87,'#e3d7b6');
+ // Maharatchamongkhon forecourt, side salas and planted courts bind the statue
+ // to the existing canal-side neighborhood without moving its arrival loop.
+ for(const side of [-1,1]){
+  for(const z of [-32,22]){
+   b.box(side*35,.9,z,12,.45,12,'#83ac6d');
+   b.sculpt(new T.CylinderGeometry(.25,.45,4.5,6),side*35,3,z,'#8d6a44');
+   b.sculpt(new T.IcosahedronGeometry(3,1).scale(1,1.3,1),side*35,6,z,'#549b61');
+  }
+  for(let z=7;z<=32;z+=8){b.box(side*40,2,z,3.5,2.5,6,'#f1dfbb');thaiRoof(b,side*40,3.5,z,4.5,7,1.8,'#bc593f',false);}
+  b.box(side*20,.83,-27,6,.25,27,'#c7b98d');
+ }
+ for(const x of [-31,31]){b.box(x,1,33,9,.7,11,'#a4bc78');b.sculpt(new T.CylinderGeometry(.3,.5,5,6),x,3.8,33,'#9c764a');b.sculpt(new T.IcosahedronGeometry(3.5,1).scale(1,1.25,1),x,7,33,'#5ba269');}
+ b.box(0,.79,34,47,.18,1.2,'#ba8a57');for(const x of [-24,24])b.box(x,.79,21,1.2,.18,27,'#ba8a57');
+ for(const x of [-8,8]){b.box(x,.85,37,8,.3,6,'#7fa66b');b.sculpt(new T.IcosahedronGeometry(1.5,1),x,2,37,'#6caa65');}
+ for(let i=0;i<7;i++)b.box(0,.85+i*.24,-9-i*.65,9,.28,1,'#d4c5a8');
+ for(const side of [-1,1])b.box(side*7,1.5,-14,.3,1.5,11,'#e7d9b8');
+
 }
 export function buddhaLandmark(l:Landmark){
  if(!['pho','paknam'].includes(l.id!))return;
