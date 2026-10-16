@@ -112,7 +112,9 @@ try {
     e.model.snapshot.discoveredLandmarks = e.model.district.landmarks.map(
       (l) => l.id,
     );
-    e.publish();
+    // Paused App snapshots update on phase/quality transitions, not every publish.
+    e.setQuality("medium");
+    e.setQuality("low");
   });
   await p.getByTestId("button-whole-city").click();
   await p.waitForFunction(
@@ -126,33 +128,30 @@ try {
   );
   const svg = p.locator(".tt-world-map-body>svg");
   const visiblePin = async () => {
-    const pins = await p
-      .locator('[data-testid^="map-landmark-"]')
-      .evaluateAll((els) =>
-        els
-          .map((el) => {
-            const point = new DOMPoint(0, 0).matrixTransform(el.getScreenCTM()),
-              x = point.x,
-              y = point.y;
-            return {
-              id: el.getAttribute("data-testid"),
-              x,
-              y,
-              clear:
-                x > 120 &&
-                x < 740 &&
-                y > 110 &&
-                y < 290 &&
-                document.elementFromPoint(x, y)?.closest(".tt-map-pin") === el,
-            };
-          })
-          .filter((p) => p.clear),
-      );
-    assert(
-      pins.length,
-      "At least one discovered, unobscured landmark is available",
+    const handle = await p.waitForFunction(
+      () => {
+        const pins = [
+          ...document.querySelectorAll('[data-testid^="map-landmark-"]'),
+        ];
+        for (const el of pins) {
+          const point = new DOMPoint(0, 0).matrixTransform(el.getScreenCTM()),
+            x = point.x,
+            y = point.y;
+          if (
+            x > 120 &&
+            x < 740 &&
+            y > 110 &&
+            y < 290 &&
+            document.elementFromPoint(x, y)?.closest(".tt-map-pin") === el
+          )
+            return { id: el.getAttribute("data-testid"), x, y };
+        }
+        return false;
+      },
+      null,
+      { timeout: 10000 },
     );
-    return pins[0];
+    return handle.jsonValue();
   };
   const pin = await visiblePin(),
     v = await svg.getAttribute("viewBox");

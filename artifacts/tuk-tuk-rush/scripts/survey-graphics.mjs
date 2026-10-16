@@ -84,6 +84,13 @@ try {
       });
       return {
         geometryBytes: [...arrays].reduce((n, a) => n + a.byteLength, 0),
+        pose: {
+          x: g.engine.model.player.x,
+          z: g.engine.model.player.z,
+          heading: g.engine.model.player.heading,
+        },
+        camera: g.camera.position.toArray(),
+        quality: g.engine.model.snapshot.quality,
         geometries: geos.size,
         materials: mats.size,
         programs: g.gl.info.programs.length,
@@ -296,6 +303,7 @@ try {
   report.endResources = await p.evaluate(() => ({
     memory: window.__graphics.gl.info.memory,
     programs: window.__graphics.gl.info.programs.length,
+    heapBytes: performance.memory?.usedJSHeapSize,
   }));
   assert.deepEqual(report.errors, []);
   await fs.writeFile(
