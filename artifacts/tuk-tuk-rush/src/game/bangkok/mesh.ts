@@ -1,3 +1,6 @@
+import { installShopLight } from "./shopLighting";
+import { yaowaratRoad } from "./yaowaratRoad";
+import { emitYaowaratLanterns } from "./yaowarat";
 import * as T from "three";
 import { landscapeMaterial } from "./streetSurfaces";
 import { emitLandscape } from "./landscape";
@@ -25,7 +28,7 @@ import { emitDistrictArchitecture } from "./architecture";
 import { designBuildings } from "./buildingGrammar";
 import { emitUrbanLayers } from "./urbanLayers";
 import { riverDistance } from "./world";
-import { ArchitecturalBatch } from "./architecturalBatch";
+import { ArchitecturalBatch, type ArtPiece } from "./architecturalBatch";
 import { buildBangkokSigns } from "./signage";
 import { buildCommercialLandmark } from "./landmarkArchitecture";
 
@@ -40,10 +43,7 @@ export function buildBangkokGraybox(
 } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
-  const ground = new T.Mesh(
-    channelGeometry("land"),
-    landscapeMaterial(),
-  );
+  const ground = new T.Mesh(channelGeometry("land"), landscapeMaterial());
   ground.name = "DevelopedLand";
   group.add(ground);
   const batch = new StaticBatch(),
@@ -109,9 +109,24 @@ export function buildBangkokGraybox(
           yaw,
         );
   }
-  group.add(buildRoadSurfaces(d));
+  const roadSurfaces = buildRoadSurfaces(d);
+  group.add(roadSurfaces);
+  group.add(
+    yaowaratRoad(
+      d,
+      (
+        roadSurfaces.getObjectByName("RoadSurface:asphalt") as T.Mesh<
+          T.BufferGeometry,
+          T.MeshStandardMaterial
+        >
+      ).material,
+    ),
+  );
   const waterStyle = riverWater();
-  const waterSurface = new T.Mesh(channelGeometry("water"),waterStyle.material);
+  const waterSurface = new T.Mesh(
+    channelGeometry("water"),
+    waterStyle.material,
+  );
   waterSurface.name = "BangkokChannels";
   group.add(waterSurface);
   const designs = designBuildings(d);
@@ -146,19 +161,41 @@ export function buildBangkokGraybox(
       "varying float windowLight;\n" +
       shader.fragmentShader.replace(
         "#include <emissivemap_fragment>",
-        "#include <emissivemap_fragment>\ntotalEmissiveRadiance*=windowLight;",
+        `#include <emissivemap_fragment>
+      totalEmissiveRadiance*=windowLight;
+      #if defined(USE_COLOR) || defined(USE_COLOR_ALPHA)
+      totalEmissiveRadiance*=vColor.rgb;
+      #endif`,
       );
   };
-  nightMaterial.customProgramCacheKey = () => "bangkok-occupied-windows-v1";
+  nightMaterial.customProgramCacheKey = () => "bangkok-occupied-windows-v2";
   const architecture = new ArchitecturalBatch(facadeMaterial, nightMaterial);
+  const shopNight = { value: 0 };
+  const benchmarkFacade = facadeMaterial.clone();
+  installFacadeFinish(benchmarkFacade);
+  installShopLight(benchmarkFacade, shopNight);
+  const benchmarkNight = nightMaterial.clone();
+  benchmarkNight.onBeforeCompile = nightMaterial.onBeforeCompile;
+  benchmarkNight.customProgramCacheKey = nightMaterial.customProgramCacheKey;
+  benchmarkNight.userData.cinematic = true;
+  benchmarkNight.emissiveIntensity = 0.25;
+  const benchmarkArchitecture = new ArchitecturalBatch(
+    benchmarkFacade,
+    benchmarkNight,
+  );
   const scala = scalaParcel(d),
     ordinary = designs.filter((p) => p.parcel !== scala);
-  emitDistrictArchitecture(ordinary, (piece) => architecture.add(piece));
+  emitDistrictArchitecture(ordinary, (piece: ArtPiece) =>
+    (piece.siteId === "yaowarat" ? benchmarkArchitecture : architecture).add(
+      piece,
+    ),
+  );
   emitScala(scala, (piece) => architecture.add(piece));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d, (piece) => architecture.add(piece));
   emitCables(d, (piece) => architecture.add(piece));
   emitDistrictSigns(ordinary, (piece) => architecture.add(piece));
+  emitYaowaratLanterns(d, (piece) => benchmarkArchitecture.add(piece));
   emitRiverfront(d, (piece) => architecture.add(piece));
   emitLandscape(d, (piece) => architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
@@ -233,6 +270,18 @@ export function buildBangkokGraybox(
     });
   }
   architecture.finish().forEach((chunk) => group.add(chunk));
+  const benchmarkChunks = new Map<string, T.Group>();
+  for (const chunk of benchmarkArchitecture.finish()) {
+    const center = chunk.userData.center as T.Vector3;
+    const key = `${chunk.name}:${center.x}:${center.z}`;
+    const existing = benchmarkChunks.get(key);
+    if (existing) existing.add(...[...chunk.children]);
+    else benchmarkChunks.set(key, chunk);
+  }
+  benchmarkChunks.forEach((chunk) => {
+    chunk.userData.cinematic = true;
+    group.add(chunk);
+  });
   group.userData.architecture = {
     parcels: designs.length,
     bays: designs.reduce((n, p) => n + p.bays.length, 0),
@@ -323,13 +372,16 @@ export function buildBangkokGraybox(
     setNight(night: number) {
       waterStyle.night.value = night;
       lightLevel = night;
+      shopNight.value = 0.12 + night * 0.88;
       grounding.setNight(night);
       if (Math.abs(night - lastNight) < 0.015) return;
       lastNight = night;
       for (const m of transitSigns.userData.materials ?? [])
         m.emissiveIntensity = 0.2 + night * 0.7;
       for (const mat of new Set(glowing))
-        mat.emissiveIntensity = Math.max(0, night) * 1.55;
+        mat.emissiveIntensity = mat.userData.cinematic
+          ? 0.25 + Math.max(0, night) * 1.5
+          : Math.max(0, night) * 1.55;
       for (const hero of heroes) {
         for (const m of hero.userData.nightMaterials ?? [])
           m.emissiveIntensity = night * (hero.userData.nightScale ?? 0.75);

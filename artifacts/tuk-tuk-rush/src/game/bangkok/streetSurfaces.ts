@@ -26,7 +26,7 @@ export function asphaltMaterial() {
   texture.needsUpdate = true;
   const mat = new T.MeshStandardMaterial({
     map: texture,
-    color: "#aab4b8",
+    color: "#b8b4cb",
     roughness: 0.96,
   });
   mat.onBeforeCompile = (shader) => {
@@ -49,7 +49,7 @@ export function asphaltMaterial() {
 }
 /** Quiet poured concrete: fine aggregate and broad wear, not a city-wide tile grid. */
 export function pavingMaterial() {
-  const mat = new T.MeshStandardMaterial({ color: "#dfd2b6", roughness: 0.96 });
+  const mat = new T.MeshStandardMaterial({ color: "#cbbda5", roughness: 0.96 });
   mat.onBeforeCompile = (shader) => {
     shader.vertexShader =
       "varying vec2 pavingWorld;\n" +
@@ -71,12 +71,27 @@ export function pavingMaterial() {
 
 /** Soft ground color variation reads as landscaped land beyond the built plots. */
 export function landscapeMaterial() {
-  const size=64,pixels=new Uint8Array(size*size*4);
-  for(let y=0;y<size;y++)for(let x=0;x<size;x++){
-    const i=(y*size+x)*4,v=Math.sin(x*.19)*Math.cos(y*.15)*8;
-    pixels[i]=122+v;pixels[i+1]=155+v;pixels[i+2]=93+v*.6;pixels[i+3]=255;
-  }
-  const texture=new T.DataTexture(pixels,size,size);texture.colorSpace=T.SRGBColorSpace;
-  texture.wrapS=texture.wrapT=T.RepeatWrapping;texture.repeat.set(1/32,1/32);texture.generateMipmaps=true;texture.minFilter=T.LinearMipmapLinearFilter;texture.needsUpdate=true;
-  return new T.MeshStandardMaterial({map:texture,color:'#dfecba',roughness:1});
+  const size = 64,
+    pixels = new Uint8Array(size * size * 4);
+  for (let y = 0; y < size; y++)
+    for (let x = 0; x < size; x++) {
+      const i = (y * size + x) * 4,
+        v = Math.sin(x * 0.19) * Math.cos(y * 0.15) * 8;
+      pixels[i] = 122 + v;
+      pixels[i + 1] = 155 + v;
+      pixels[i + 2] = 93 + v * 0.6;
+      pixels[i + 3] = 255;
+    }
+  const texture = new T.DataTexture(pixels, size, size);
+  texture.colorSpace = T.SRGBColorSpace;
+  texture.wrapS = texture.wrapT = T.RepeatWrapping;
+  texture.repeat.set(1 / 32, 1 / 32);
+  texture.generateMipmaps = true;
+  texture.minFilter = T.LinearMipmapLinearFilter;
+  texture.needsUpdate = true;
+  return new T.MeshStandardMaterial({
+    map: texture,
+    color: "#dfecba",
+    roughness: 1,
+  });
 }

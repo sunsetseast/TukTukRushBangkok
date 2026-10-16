@@ -267,10 +267,76 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       if (site.kind !== "fruit")
         for (const u of [-b.w * 0.43, b.w * 0.43])
           B(u, 2.2, 0, 0.07, 1.7, 0.07, "#778780", "cylinder");
+      const showcase =
+        site.region === "chinatown" &&
+        b.x > -145 &&
+        b.x < 100 &&
+        b.z > -200 &&
+        b.z < -30;
+      if (showcase) {
+        B(0, 0.36, 0, b.w - 0.15, 0.14, b.d - 0.15, "#384b52");
+        for (const side of [-1, 1])
+          B(
+            side * (b.w / 2 - 0.18),
+            0.44,
+            b.d * 0.31,
+            0.3,
+            0.4,
+            0.3,
+            "#2d3a44",
+            "cylinder",
+            "near",
+          );
+        B(0, 1.19, b.d * 0.5 - 0.02, b.w - 0.4, 0.13, 0.08, "#f7d796");
+        B(0, 2.74, 0, b.w - 0.22, 0.09, b.d - 0.3, "#ffd291", "box", "night");
+        for (const side of [-1, 1])
+          B(
+            side * (b.w / 2 - 0.15),
+            2.1,
+            0,
+            0.07,
+            1.65,
+            0.07,
+            "#c5bb94",
+            "cylinder",
+            "near",
+          );
+        for (let k = 0; k < 3; k++)
+          B(
+            (k - 1) * b.w * 0.23,
+            1.66,
+            b.d * 0.34,
+            0.26,
+            0.16,
+            0.26,
+            "#f5e5bc",
+            "cylinder",
+            "near",
+          );
+        // Canopy valance, service rail, and a real framed display opening.
+        B(0, 2.86, b.d * 0.5, b.w - 0.1, 0.24, 0.12, col);
+        for (let k = 0; k < 6; k++)
+          B(
+            ((k - 2.5) * b.w) / 6,
+            2.84,
+            b.d * 0.5 + 0.07,
+            b.w / 13,
+            0.2,
+            0.025,
+            "#f1d6a3",
+            "box",
+            "near",
+          );
+      }
       if (site.kind === "noodle") {
         B(0, 3, 0, b.w, 0.15, b.d, "#dab55e");
         B(-0.55, 1.72, 0, 0.65, 0.55, 0.65, "#a5bab2", "cylinder");
-        B(0.6, 2, 0.2, 0.65, 0.85, 0.5, "#b3d3c9");
+        B(0.6, 1.62, 0.2, 0.7, 0.08, 0.55, "#b3d3c9");
+        B(0.6, 2.43, 0.2, 0.7, 0.08, 0.55, "#b3d3c9");
+        for (const side of [-1, 1])
+          B(0.6 + side * 0.3, 2.02, 0.2, 0.055, 0.8, 0.5, "#b3d3c9");
+        B(0.6, 2.02, -0.03, 0.53, 0.7, 0.035, "#456e6d");
+        B(0.6, 1.84, 0.24, 0.4, 0.15, 0.3, "#d99f58", "orb", "near");
         for (const u of [-0.6, 0, 0.6])
           B(u, 1.65, -0.6, 0.3, 0.2, 0.3, "#e6dfc9", "cylinder", "detail");
       } else if (site.kind === "grill") {

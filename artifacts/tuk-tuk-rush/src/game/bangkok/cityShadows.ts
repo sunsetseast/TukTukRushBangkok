@@ -9,7 +9,7 @@ export function cityShadows(d: District) {
     color: "#263848",
     vertexColors: true,
     transparent: true,
-    opacity: 0.34,
+    opacity: 0.39,
     depthWrite: false,
     polygonOffset: true,
     polygonOffsetFactor: -1,
@@ -25,7 +25,7 @@ export function cityShadows(d: District) {
       s = Math.sin(b.yaw ?? 0),
       length = Math.min(28, b.height * 0.58),
       dx = length,
-      dz = -length * 0.5;
+      dz = length * 0.5;
     const corners = [
       [-1, -1],
       [1, -1],
@@ -86,7 +86,7 @@ export function cityShadows(d: District) {
     root,
     material,
     setNight: (night: number) => {
-      material.opacity = 0.34 - night * 0.22;
+      material.opacity = 0.39 - night * 0.25;
     },
   };
 }

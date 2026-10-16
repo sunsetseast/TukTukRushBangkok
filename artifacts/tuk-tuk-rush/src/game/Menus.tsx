@@ -10,8 +10,6 @@ import {
   VolumeX,
   Wrench,
   X,
-  Sparkles,
-  Flag,
   Trophy,
 } from "lucide-react";
 import { ACHIEVEMENTS } from "./career";
@@ -130,126 +128,7 @@ export function Settings({
     </div>
   );
 }
-export function Title({
-  onCareer,
-  onStart,
-  settings,
-  bangkok = false,
-}: {
-  onCareer: () => void;
-  onStart: (m: "shift" | "free") => void;
-  settings: ReactNode;
-  bangkok?: boolean;
-}) {
-  const [showSettings, setShowSettings] = useState(false);
-  return (
-    <>
-      <div className="tt-title">
-        <div className="tt-panel">
-          <div className="tt-kicker">
-            <Sparkles size={16} /> BANGKOK · ARCADE
-          </div>
-          <h1>
-            <span>TUK TUK</span>
-            <span className="r">
-              RUSH<span className="tt-title-period">.</span>
-            </span>
-          </h1>
-          <p className="tt-title-description">
-            Three wheels. Big city. Your next adventure.
-          </p>
-          <div className="tt-title-btns">
-            <button
-              className="tt-mode-card primary"
-              onClick={() => onStart("shift")}
-              data-testid="button-start-shift"
-            >
-              <span>
-                <b>Start shift</b>
-                <small>
-                  {bangkok ? "24 minutes" : "3 minutes"} · passengers, fares &
-                  the night ahead
-                </small>
-              </span>
-              <Flag size={22} />
-            </button>
-            <button
-              className="tt-mode-card"
-              onClick={() => onStart("free")}
-              data-testid="button-free-roam"
-            >
-              <span>
-                <b>Free roam</b>
-                <small>Your city. Your pace. No shift timer.</small>
-              </span>
-              <Compass size={22} />
-            </button>
-          </div>
-          <div className="tt-title-meta">
-            <button className="tt-text-button" onClick={onCareer} data-testid="button-title-career"><Trophy size={16}/> Driver career</button>
-            <button
-              className="tt-text-button"
-              onClick={() => setShowSettings(true)}
-              data-testid="button-title-settings"
-            >
-              <Settings2 size={16} /> Settings
-            </button>
-            <a
-              className="tt-world-switch"
-              href={bangkok ? "?world=chinatown" : "?world=bangkok"}
-            >
-              {bangkok ? "Original Chinatown" : "Explore Bangkok"}{" "}
-              <ArrowRight size={12} />
-            </a>
-          </div>
-          <small className="tt-map-credit">
-            {bangkok ? (
-              "A handcrafted, compact Bangkok"
-            ) : (
-              <>
-                Road layout ·{" "}
-                <a
-                  href="https://www.openstreetmap.org/copyright"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  © OpenStreetMap contributors
-                </a>{" "}
-                · ODbL
-              </>
-            )}
-          </small>
-        </div>
-        <div className="tt-title-location">
-          <span>กรุงเทพมหานคร</span>
-          <b>{bangkok ? "BANGKOK" : "YAOWARAT"}</b>
-          <small>From golden hour to neon nights</small>
-        </div>
-      </div>
-      {showSettings && (
-        <Surface label="Settings" onBack={() => setShowSettings(false)}>
-          <div className="tt-card tt-settings-card">
-            <div className="tt-card-heading">
-              <div>
-                <span className="tt-kicker">MAKE IT YOURS</span>
-                <h2>Settings</h2>
-              </div>
-              <button
-                className="tt-icon-btn"
-                aria-label="Close settings"
-                data-testid="button-close-settings"
-                onClick={() => setShowSettings(false)}
-              >
-                <X size={20} />
-              </button>
-            </div>
-            {settings}
-          </div>
-        </Surface>
-      )}
-    </>
-  );
-}
+export { ArcadeTitle as Title } from "./ui/ArcadeTitle";
 export function PauseMenu({
   goals,
   onCareer,
@@ -316,7 +195,19 @@ export function PauseMenu({
             <p className="tt-card-description">
               The city will wait. Your drive is paused.
             </p>
-            <div className="tt-drive-goals"><b>Try this drive · optional</b><span>{goals.deliveries>=3?'✓':'○'} Complete 3 fares · {Math.min(3,goals.deliveries)}/3</span>{goals.districtName && <span>{(goals.newDistricts??0)>0?'✓':'○'} Discover a new district</span>}</div>
+            <div className="tt-drive-goals">
+              <b>Try this drive · optional</b>
+              <span>
+                {goals.deliveries >= 3 ? "✓" : "○"} Complete 3 fares ·{" "}
+                {Math.min(3, goals.deliveries)}/3
+              </span>
+              {goals.districtName && (
+                <span>
+                  {(goals.newDistricts ?? 0) > 0 ? "✓" : "○"} Discover a new
+                  district
+                </span>
+              )}
+            </div>
             <button
               className="tt-btn big"
               onClick={onResume}
@@ -325,7 +216,13 @@ export function PauseMenu({
               Back to the streets <ArrowRight size={18} />
             </button>
             <div className="tt-menu-grid">
-              <button className="tt-btn ghost" onClick={onCareer} data-testid="button-pause-career"><Trophy size={18}/> Driver career</button>
+              <button
+                className="tt-btn ghost"
+                onClick={onCareer}
+                data-testid="button-pause-career"
+              >
+                <Trophy size={18} /> Driver career
+              </button>
               {onMap && (
                 <button
                   className="tt-btn ghost"
@@ -373,7 +270,8 @@ export function PauseMenu({
         ) : (
           <>
             <p className="tt-card-description">
-              This drive’s score and shift totals will be cleared. Your wallet, career and discovered places stay saved.
+              This drive’s score and shift totals will be cleared. Your wallet,
+              career and discovered places stay saved.
             </p>
             <button
               className="tt-btn"
@@ -425,11 +323,35 @@ export function Results({
             <span>Total score</span>
           </div>
         </div>
-        <div className="tt-results-career"><span><b>+{s.careerXP ?? 0} XP</b> Career experience</span><span><b>฿{(s.wallet ?? 0).toLocaleString()}</b> Wallet balance</span></div>
-        {!!s.careerRecords?.length && <p className="tt-career-record">★ {s.careerRecords.join(' · ')}</p>}
-        {!!s.careerAchievements?.length && <p className="tt-career-record">{s.careerAchievements.map(id=>ACHIEVEMENTS.find(a=>a.id===id)?.name).join(' · ')}</p>}
-        <p className="tt-card-description">Baht includes the time-based fare bonus. Quick deliveries add 150 score points. Shift complete: +100 XP.</p>
-        <button className="tt-text-button" onClick={onCareer} data-testid="button-results-career"><Trophy size={16}/> View driver career</button>
+        <div className="tt-results-career">
+          <span>
+            <b>+{s.careerXP ?? 0} XP</b> Career experience
+          </span>
+          <span>
+            <b>฿{(s.wallet ?? 0).toLocaleString()}</b> Wallet balance
+          </span>
+        </div>
+        {!!s.careerRecords?.length && (
+          <p className="tt-career-record">★ {s.careerRecords.join(" · ")}</p>
+        )}
+        {!!s.careerAchievements?.length && (
+          <p className="tt-career-record">
+            {s.careerAchievements
+              .map((id) => ACHIEVEMENTS.find((a) => a.id === id)?.name)
+              .join(" · ")}
+          </p>
+        )}
+        <p className="tt-card-description">
+          Baht includes the time-based fare bonus. Quick deliveries add 150
+          score points. Shift complete: +100 XP.
+        </p>
+        <button
+          className="tt-text-button"
+          onClick={onCareer}
+          data-testid="button-results-career"
+        >
+          <Trophy size={16} /> View driver career
+        </button>
         <div className="tt-card-btns">
           <button
             className="tt-btn"
