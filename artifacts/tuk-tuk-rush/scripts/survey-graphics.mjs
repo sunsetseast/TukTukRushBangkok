@@ -278,24 +278,47 @@ try {
       const f = await p.evaluate(() => window.__graphics.frameId);
       await p.waitForFunction((f) => window.__graphics.frameId > f + 5, f);
       const filename = `${id}-${elapsed}-${quality}.jpg`;
-      await p.screenshot({
-        path: `${out}/${filename}`,
-        type: "jpeg",
-        quality: 84,
-        timeout: 90000,
-      });
+      let frameSamples;
+      if (process.env.SCENE_PROFILE) {
+        frameSamples = await p.evaluate(async () => {
+          const samples = [],
+            start = performance.now();
+          let previous = start;
+          while (samples.length < 40 && performance.now() - start < 5000) {
+            await new Promise(requestAnimationFrame);
+            const now = performance.now();
+            samples.push({
+              ...window.__graphics.stats,
+              intervalMs: now - previous,
+            });
+            previous = now;
+          }
+          return samples;
+        });
+      } else {
+        await p.screenshot({
+          path: `${out}/${filename}`,
+          type: "jpeg",
+          quality: 84,
+          timeout: 90000,
+        });
+      }
       assert.deepEqual(report.errors, []);
       report.captures.push({
         filename,
         pose,
         elapsed,
         quality,
+        frameSamples,
         stats: await p.evaluate(() => ({
           ...window.__graphics.stats,
           camera: window.__graphics.camera.position.toArray(),
         })),
       });
-      await fs.writeFile(`${out}/survey.json`, JSON.stringify(report, null, 2));
+      await fs.writeFile(
+        `${out}/${process.env.SCENE_PROFILE ? "scene-profile" : "survey"}.json`,
+        JSON.stringify(report, null, 2),
+      );
       console.log("captured", filename);
     }
   }
@@ -307,7 +330,7 @@ try {
   }));
   assert.deepEqual(report.errors, []);
   await fs.writeFile(
-    `${out}/${process.env.PROFILE_ONLY ? "profile" : "survey"}.json`,
+    `${out}/${process.env.PROFILE_ONLY ? "profile" : process.env.SCENE_PROFILE ? "scene-profile" : "survey"}.json`,
     JSON.stringify(report, null, 2),
   );
 } finally {
