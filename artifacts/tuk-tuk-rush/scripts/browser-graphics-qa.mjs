@@ -102,31 +102,95 @@ try {
     report.viewports.push([width, height]);
     if (height > width) await shot(`map-${width}x${height}`);
   }
-  // Drag a discovered marker, then tap it. Both must remain useful touch targets.
+  // A marker is a tap target and a valid starting point for a map drag.
   await p.setViewportSize({ width: 844, height: 390 });
-  const pin = p.locator('[data-testid^="map-landmark-"]').first();
-  if (await pin.count()) {
-    const r = await pin.boundingBox(),
-      svg = p.locator(".tt-world-map-body>svg"),
-      v = await svg.getAttribute("viewBox");
-    if (r && r.x > 30 && r.x + r.width < 760) {
-      const finger = { id: 3, x: r.x + r.width / 2, y: r.y + r.height / 2 };
-      await cdp.send("Input.dispatchTouchEvent", {
-        type: "touchStart",
-        touchPoints: [finger],
-      });
-      await cdp.send("Input.dispatchTouchEvent", {
-        type: "touchMove",
-        touchPoints: [{ ...finger, x: finger.x + 40 }],
-      });
-      await cdp.send("Input.dispatchTouchEvent", {
-        type: "touchEnd",
-        touchPoints: [],
-      });
-      assert.notEqual(await svg.getAttribute("viewBox"), v);
-      report.checks.push("Drag beginning on map marker pans");
-    }
+  await p.evaluate(() => {
+    const e = window.__graphics.engine;
+    e.model.snapshot.discoveredDistricts = e.model.district.regions.map(
+      (r) => r.id,
+    );
+    e.model.snapshot.discoveredLandmarks = e.model.district.landmarks.map(
+      (l) => l.id,
+    );
+    e.publish();
+  });
+  await p.getByTestId("button-whole-city").click();
+  await p.waitForFunction(
+    () =>
+      Number(
+        document
+          .querySelector(".tt-world-map-body>svg")
+          .getAttribute("viewBox")
+          .split(" ")[3],
+      ) >= 1249,
+  );
+  const svg = p.locator(".tt-world-map-body>svg");
+  const visiblePin = async () => {
+    const pins = await p
+      .locator('[data-testid^="map-landmark-"]')
+      .evaluateAll((els) =>
+        els
+          .map((el) => {
+            const point = new DOMPoint(0, 0).matrixTransform(el.getScreenCTM()),
+              x = point.x,
+              y = point.y;
+            return {
+              id: el.getAttribute("data-testid"),
+              x,
+              y,
+              clear:
+                x > 120 &&
+                x < 740 &&
+                y > 110 &&
+                y < 290 &&
+                document.elementFromPoint(x, y)?.closest(".tt-map-pin") === el,
+            };
+          })
+          .filter((p) => p.clear),
+      );
+    assert(
+      pins.length,
+      "At least one discovered, unobscured landmark is available",
+    );
+    return pins[0];
+  };
+  const pin = await visiblePin(),
+    v = await svg.getAttribute("viewBox");
+  const finger = { id: 3, x: pin.x, y: pin.y };
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchStart",
+    touchPoints: [finger],
+  });
+  for (const dx of [10, 20, 30, 40]) {
+    await cdp.send("Input.dispatchTouchEvent", {
+      type: "touchMove",
+      touchPoints: [{ ...finger, x: finger.x + dx }],
+    });
+    await p.waitForTimeout(30);
   }
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchEnd",
+    touchPoints: [],
+  });
+  assert.notEqual(await svg.getAttribute("viewBox"), v);
+  assert.equal(
+    await p.getByTestId("map-detail").count(),
+    0,
+    "Dragging must not select a landmark",
+  );
+  const tap = await visiblePin();
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchStart",
+    touchPoints: [{ id: 4, x: tap.x, y: tap.y }],
+  });
+  await cdp.send("Input.dispatchTouchEvent", {
+    type: "touchEnd",
+    touchPoints: [],
+  });
+  await p.getByTestId("map-detail").waitFor();
+  report.checks.push(
+    "Native touch drag starting on marker pans without selection; subsequent tap selects",
+  );
   await p.getByTestId("button-close-map").click();
   await p.evaluate(() => {
     const e = window.__graphics.engine;

@@ -53,7 +53,8 @@ try {
   await p.waitForFunction(() => window.__graphics?.frameId > 2);
   report.startupMs = Date.now() - start;
   await p.getByTestId("button-free-roam").click();
-  console.log("interactive", report.startupMs);
+  report.interactiveMs = Date.now() - start;
+  console.log("interactive", report.interactiveMs);
   if (process.env.PROFILE_ONLY) {
     await p.evaluate(() => {
       const e = window.__graphics.engine;
@@ -100,21 +101,35 @@ try {
         heapBytes: performance.memory?.usedJSHeapSize,
       };
     });
-    report.frames = await p.evaluate(async () => {
-      const samples = [];
-      let previous = performance.now(),
-        start = previous;
-      for (let i = 0; i < 120 && performance.now() - start < 30000; i++) {
-        await new Promise(requestAnimationFrame);
-        const now = performance.now();
-        samples.push({
-          ...window.__graphics.stats,
-          intervalMs: now - previous,
-        });
-        previous = now;
-      }
-      return samples;
-    });
+    report.frames = await p.evaluate(
+      async ({ duration, maxSamples }) => {
+        const samples = [];
+        let previous = performance.now(),
+          start = previous;
+        for (
+          let i = 0;
+          i < maxSamples && performance.now() - start < duration;
+          i++
+        ) {
+          await new Promise(requestAnimationFrame);
+          const now = performance.now();
+          samples.push({
+            ...window.__graphics.stats,
+            intervalMs: now - previous,
+          });
+          previous = now;
+        }
+        return samples;
+      },
+      {
+        duration: Number(process.env.PROFILE_SECONDS || 30) * 1000,
+        maxSamples: process.env.PROFILE_SECONDS ? 10000 : 120,
+      },
+    );
+    report.warmResources = await p.evaluate(() => ({
+      memory: window.__graphics.gl.info.memory,
+      programs: window.__graphics.gl.info.programs.length,
+    }));
     for (let i = 0; i < 7; i++) {
       report.maps.push(
         await p.evaluate(
@@ -131,6 +146,9 @@ try {
                       mountMs: mount,
                       rafMs: performance.now() - start,
                       dom: document.querySelectorAll("*").length,
+                      svgNodes: document
+                        .querySelector(".tt-world-map-body>svg")
+                        .querySelectorAll("*").length,
                     }),
                   );
                 }
