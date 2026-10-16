@@ -5,6 +5,7 @@ const pkg = JSON.parse(await fs.readFile("package.json", "utf8")),
 await fs.mkdir(out, { recursive: true });
 const results = [];
 for (const name of [
+  "test:career",
   "test:corrections",
   "test:graphics-foundation",
   "test:gameplay",

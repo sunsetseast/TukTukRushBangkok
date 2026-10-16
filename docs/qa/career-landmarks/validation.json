@@ -1,0 +1,582 @@
+{
+  "base": "cf62719ff4063c36540eac6f4500d8ea4088254c",
+  "scripts": [
+    {
+      "name": "test:career",
+      "code": 0,
+      "ms": 22409
+    },
+    {
+      "name": "test:corrections",
+      "code": 0,
+      "ms": 13037
+    },
+    {
+      "name": "test:graphics-foundation",
+      "code": 0,
+      "ms": 737
+    },
+    {
+      "name": "test:gameplay",
+      "code": 0,
+      "ms": 4718
+    },
+    {
+      "name": "test:bangkok",
+      "code": 0,
+      "ms": 68473
+    },
+    {
+      "name": "test:interface",
+      "code": 0,
+      "ms": 7159
+    },
+    {
+      "name": "test:landmark-quality",
+      "code": 0,
+      "ms": 19902
+    },
+    {
+      "name": "test:open-bangkok",
+      "code": 0,
+      "ms": 9559
+    },
+    {
+      "name": "test:definitive",
+      "code": 0,
+      "ms": 23833
+    },
+    {
+      "name": "test:cityscapes",
+      "code": 0,
+      "ms": 23227
+    },
+    {
+      "name": "test:environment",
+      "code": 0,
+      "ms": 41243
+    },
+    {
+      "name": "test:street-life",
+      "code": 0,
+      "ms": 3063
+    },
+    {
+      "name": "test:roadside",
+      "code": 0,
+      "ms": 1433
+    },
+    {
+      "name": "test:signature",
+      "code": 0,
+      "ms": 174
+    },
+    {
+      "name": "test:sign-layers",
+      "code": 0,
+      "ms": 383
+    },
+    {
+      "name": "test:assets",
+      "code": 0,
+      "ms": 159
+    },
+    {
+      "name": "test:startup",
+      "code": 0,
+      "ms": 9476
+    }
+  ],
+  "careerBrowser": {
+    "checks": [
+      "Free Roam pickup and delivery credit wallet immediately; pause/career/resume does not repeat rewards",
+      "Restart and reload preserve earned baht and discoveries",
+      "Career panel fits and scrolls at all five required sizes",
+      "Completed shift records XP, wallet, achievements and personal records exactly once",
+      "Results career roundtrip and another shift retain totals"
+    ],
+    "errors": [],
+    "physicalIPhone": false
+  },
+  "landmarks": {
+    "errors": [],
+    "sites": [
+      {
+        "id": "palace",
+        "calls": 192,
+        "triangles": 295784,
+        "geometries": 463,
+        "textures": 12,
+        "camera": [
+          -770.9346526333348,
+          77.8695514832994,
+          -781.385070684135
+        ],
+        "driving": {
+          "samples": [
+            168.5999999998603,
+            287.4000000001397,
+            51,
+            211.39999999990687,
+            487.4000000001397,
+            20.699999999953434,
+            386.5,
+            294,
+            24.5999999998603,
+            932.8000000000466,
+            340.80000000004657,
+            396.19999999995343,
+            409.30000000004657,
+            345.39999999990687,
+            284.70000000018626,
+            25.399999999906868,
+            300.19999999995343,
+            20.199999999953434
+          ],
+          "calls": 186,
+          "triangles": 317123,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "gate",
+        "calls": 173,
+        "triangles": 367375,
+        "geometries": 533,
+        "textures": 12,
+        "camera": [
+          155.1228206315958,
+          18.940119885777754,
+          1.4291509998998322
+        ],
+        "driving": {
+          "samples": [
+            339.69999999995343,
+            17.800000000046566,
+            367.10000000009313,
+            248.79999999981374,
+            122.4000000001397,
+            385.0999999998603,
+            400,
+            20.9000000001397,
+            444.89999999990687,
+            79.10000000009313,
+            430.69999999995343,
+            73.89999999990687,
+            283.80000000004657,
+            495.60000000009313,
+            518.5999999998603,
+            428.10000000009313,
+            392.19999999995343,
+            397.80000000004657
+          ],
+          "calls": 203,
+          "triangles": 380781,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "golden",
+        "calls": 159,
+        "triangles": 243182,
+        "geometries": 712,
+        "textures": 12,
+        "camera": [
+          -53.35898313221664,
+          47.641616532907165,
+          -924.9290685124637
+        ],
+        "driving": {
+          "samples": [
+            312,
+            476,
+            266.79999999981374,
+            20.800000000046566,
+            250,
+            18.600000000093132,
+            260.30000000004657,
+            16.399999999906868,
+            254.60000000009313,
+            330.29999999981374,
+            66.5,
+            207.4000000001397,
+            315.80000000004657,
+            239.79999999981374,
+            537.7000000001863,
+            318.5,
+            17.299999999813735,
+            19.5
+          ],
+          "calls": 170,
+          "triangles": 259700,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "traimit",
+        "calls": 192,
+        "triangles": 352991,
+        "geometries": 823,
+        "textures": 12,
+        "camera": [
+          316.36632750210697,
+          39.06279684566644,
+          -26.11955826475848
+        ],
+        "driving": {
+          "samples": [
+            58.799999999813735,
+            396.5,
+            427.4000000001397,
+            50.699999999953434,
+            348.80000000004657,
+            30.5,
+            367.0999999998603,
+            50.10000000009313,
+            362.19999999995343,
+            379.4000000001397,
+            519.5999999998603,
+            471.5,
+            17.100000000093132,
+            381.80000000004657,
+            814.5999999998603,
+            464.10000000009313,
+            17.300000000046566,
+            13.599999999860302
+          ],
+          "calls": 175,
+          "triangles": 304939,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "icon",
+        "calls": 68,
+        "triangles": 65266,
+        "geometries": 873,
+        "textures": 12,
+        "camera": [
+          -728.1913382100859,
+          30.787558452182672,
+          916.8764814783203
+        ],
+        "driving": {
+          "samples": [
+            64.39999999990687,
+            110.4000000001397,
+            126.39999999990687,
+            15.699999999953436,
+            120.60000000009313,
+            107.19999999995343,
+            109.4000000001397,
+            108.79999999981374,
+            117.30000000004657,
+            100.80000000004657,
+            123.19999999995343,
+            119.19999999995343,
+            133.4000000001397,
+            50.39999999990687,
+            101,
+            128.19999999995343,
+            234.10000000009313,
+            10.100000000093132
+          ],
+          "calls": 95,
+          "triangles": 75308,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "paknam",
+        "calls": 82,
+        "triangles": 176428,
+        "geometries": 957,
+        "textures": 12,
+        "camera": [
+          -1781.0935280588396,
+          74.9130343221996,
+          638.637117547737
+        ],
+        "driving": {
+          "samples": [
+            260.19999999995343,
+            15.800000000046564,
+            241,
+            56.0999999998603,
+            113.10000000009313,
+            288.89999999990687,
+            43.3000000002794,
+            142.29999999981374,
+            148.89999999990687,
+            18.700000000186265,
+            140.60000000009313,
+            171.6999999997206,
+            56.10000000009313,
+            230.39999999990687,
+            173,
+            202.10000000009313,
+            88.89999999990687,
+            182.70000000018626
+          ],
+          "calls": 113,
+          "triangles": 202218,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "khaosan",
+        "calls": 122,
+        "triangles": 204804,
+        "geometries": 1068,
+        "textures": 12,
+        "camera": [
+          -867.7163859753387,
+          12.074496053992165,
+          -1480.4112914038149
+        ],
+        "driving": {
+          "samples": [
+            669,
+            26.299999999813735,
+            11.600000000093132,
+            252.10000000009313,
+            36.6999999997206,
+            238.60000000009313,
+            269.79999999981374,
+            259.5,
+            245.40000000037253,
+            28.399999999906868,
+            388.5,
+            362.6999999997206,
+            313.70000000018626,
+            288.70000000018626,
+            269,
+            281,
+            10.799999999813735,
+            14.600000000093132
+          ],
+          "calls": 154,
+          "triangles": 287541,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "swing",
+        "calls": 177,
+        "triangles": 276255,
+        "geometries": 1166,
+        "textures": 12,
+        "camera": [
+          -291.12754882524536,
+          26.581936277769074,
+          -744.8373129181185
+        ],
+        "driving": {
+          "samples": [
+            307.29999999981374,
+            40.3000000002794,
+            240.6999999997206,
+            293.3000000002794,
+            258.5,
+            24.199999999720603,
+            288.60000000009313,
+            408,
+            295.5,
+            26.100000000093132,
+            326.89999999990687,
+            54.799999999813735,
+            237.90000000037253,
+            654.8999999999069,
+            351.1999999997206,
+            508.9000000003725,
+            323.59999999962747,
+            14.900000000372529
+          ],
+          "calls": 139,
+          "triangles": 217174,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "democracy",
+        "calls": 93,
+        "triangles": 208706,
+        "geometries": 1212,
+        "textures": 12,
+        "camera": [
+          -257.9594014887634,
+          26.581936277769074,
+          -1314.2042752342245
+        ],
+        "driving": {
+          "samples": [
+            220,
+            186.10000000009313,
+            41.10000000009313,
+            222.29999999981374,
+            207.8000000002794,
+            48.299999999813735,
+            167.70000000018626,
+            219,
+            187.59999999962747,
+            42.40000000037253,
+            211.79999999981374,
+            250.39999999990687,
+            186.89999999990687,
+            214.40000000037253,
+            223.89999999990687,
+            50.60000000009313,
+            192.1999999997206,
+            11.5
+          ],
+          "calls": 108,
+          "triangles": 174058,
+          "height": 3.3,
+          "visible": true
+        }
+      },
+      {
+        "id": "hua",
+        "calls": 182,
+        "triangles": 317955,
+        "geometries": 1289,
+        "textures": 12,
+        "camera": [
+          425.4412912271597,
+          41.48791558393302,
+          -187.75522183621814
+        ],
+        "driving": {
+          "samples": [
+            338.6999999997206,
+            75.3000000002794,
+            280.29999999981374,
+            323.20000000018626,
+            62,
+            277.6999999997206,
+            359.8000000002794,
+            338,
+            50.60000000009313,
+            292.89999999990687,
+            342.89999999990687,
+            54.39999999990687,
+            310.39999999990687,
+            322.40000000037253,
+            327.89999999990687,
+            324.10000000009313,
+            360,
+            326.59999999962747
+          ],
+          "calls": 159,
+          "triangles": 271219,
+          "height": 3.3,
+          "visible": true
+        }
+      }
+    ],
+    "physicalIPhone": false
+  },
+  "landmarkResources": {
+    "main": {
+      "triangles": 422698,
+      "geometryAttributeBytes": 8528940
+    },
+    "branch": {
+      "triangles": 500678,
+      "geometryAttributeBytes": 9994140
+    },
+    "scope": "Both resident landmark LODs; attributes exclude index buffers. Counts are diagnostics, not phone performance."
+  },
+  "physicalIPhone": false,
+  "cityResources": {
+    "main": {
+      "bufferBytes": 110254120,
+      "geometryObjects": 4767,
+      "materials": 166,
+      "scope": "Node city root including both LODs, indices and instance buffers. No DOM signs, vehicles or GPU uploads."
+    },
+    "after": {
+      "bufferBytes": 112187200,
+      "geometryObjects": 4784,
+      "materials": 183,
+      "scope": "Node city root including both LODs, indices and instance buffers. No DOM signs, vehicles or GPU uploads."
+    }
+  },
+  "cameraRegression": {
+    "baselineBug": false,
+    "inspectionHeight": 30.787558452182672,
+    "returnHeight": 3.3,
+    "afterMap": 3.3,
+    "afterRestart": 3.3,
+    "errors": [],
+    "physicalIPhone": false
+  },
+  "interfaceBrowser": {
+    "physicalIPhone": false,
+    "softwareWebGL": true,
+    "videoRecorded": false,
+    "checks": [
+      "manual expansion expires at 5000 ms",
+      "repeated taps restart one five-second timer",
+      "keyboard driving works after map restores focus",
+      "map suspends expansion deadline and restores playing state",
+      "road-distance approach and departure hysteresis",
+      "CDP touch map pan, pinch, zoom, recenter and layers; mission route remains visible",
+      "fully discovered city keeps a clear marker hierarchy",
+      "pause map returns paused; settings persist; restart confirmation cancels safely",
+      "simultaneous steering + throttle, pointer cancel, map input clearing and keyboard isolation",
+      "keyboard brake release, horn press feedback, boost activation",
+      "LOOK suspends the manual banner deadline and restores remaining time",
+      "LOOK orbit, pinch zoom, two-finger pan, viewpoint, reset, timer freeze and return",
+      "confirmed return to title and free-roam entry",
+      "landscape notch/home-indicator inset simulation",
+      "original Chinatown free roam, controls, pause and recovery"
+    ],
+    "viewports": [
+      {
+        "width": 375,
+        "height": 812,
+        "pass": true
+      },
+      {
+        "width": 430,
+        "height": 932,
+        "pass": true
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "pass": true
+      },
+      {
+        "width": 932,
+        "height": 430,
+        "pass": true
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "pass": true
+      }
+    ],
+    "errors": [],
+    "http": [],
+    "readyMs": 20043,
+    "pass": true
+  },
+  "bundle": {
+    "mainJavaScriptGzipKB": 588.02,
+    "branchJavaScriptGzipKB": 595.88,
+    "mainCSSGzipKB": 22.34,
+    "branchCSSGzipKB": 23.31,
+    "ChineseFontDeltaBytes": 1740
+  }
+}

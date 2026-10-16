@@ -18,6 +18,7 @@ export type Input = { steer: number; gas: boolean; brake: boolean; boost?: boole
 export type Mission = { pickup: RoadNode; destination: RoadNode; passenger: string; limit: number; routeDistance?: number; baseFare?: number };
 export type GameSnapshot = {
   session?: number;
+  wallet?: number; careerXP?: number; careerAchievements?: string[]; careerRecords?: string[]; careerNotice?: string; newDistricts?: number;
   viewingLandmark?: string; boostState?: 'ready' | 'active' | 'recharging'; boostActive?: number; boostRecharge?: number;
   elapsed?: number; districtName?: string; discoveredDistricts?: string[]; discoveredLandmarks?: string[]; discoveredShortcuts?: string[];
   phase: 'title' | 'playing' | 'paused' | 'ended';

@@ -12,7 +12,9 @@ import {
   X,
   Sparkles,
   Flag,
+  Trophy,
 } from "lucide-react";
+import { ACHIEVEMENTS } from "./career";
 import type { GameSnapshot } from "./types";
 import type { Preferences } from "./ui/preferences";
 import { Surface } from "./ui/Surface";
@@ -129,10 +131,12 @@ export function Settings({
   );
 }
 export function Title({
+  onCareer,
   onStart,
   settings,
   bangkok = false,
 }: {
+  onCareer: () => void;
   onStart: (m: "shift" | "free") => void;
   settings: ReactNode;
   bangkok?: boolean;
@@ -182,6 +186,7 @@ export function Title({
             </button>
           </div>
           <div className="tt-title-meta">
+            <button className="tt-text-button" onClick={onCareer} data-testid="button-title-career"><Trophy size={16}/> Driver career</button>
             <button
               className="tt-text-button"
               onClick={() => setShowSettings(true)}
@@ -246,6 +251,8 @@ export function Title({
   );
 }
 export function PauseMenu({
+  goals,
+  onCareer,
   onResume,
   onRestart,
   onRecover,
@@ -253,6 +260,8 @@ export function PauseMenu({
   onTitle,
   settings,
 }: {
+  onCareer: () => void;
+  goals: GameSnapshot;
   onResume: () => void;
   onRestart: () => void;
   onRecover: () => void;
@@ -305,8 +314,9 @@ export function PauseMenu({
         ) : view === "main" ? (
           <>
             <p className="tt-card-description">
-              The city will wait. Your shift is paused.
+              The city will wait. Your drive is paused.
             </p>
+            <div className="tt-drive-goals"><b>Try this drive · optional</b><span>{goals.deliveries>=3?'✓':'○'} Complete 3 fares · {Math.min(3,goals.deliveries)}/3</span>{goals.districtName && <span>{(goals.newDistricts??0)>0?'✓':'○'} Discover a new district</span>}</div>
             <button
               className="tt-btn big"
               onClick={onResume}
@@ -315,6 +325,7 @@ export function PauseMenu({
               Back to the streets <ArrowRight size={18} />
             </button>
             <div className="tt-menu-grid">
+              <button className="tt-btn ghost" onClick={onCareer} data-testid="button-pause-career"><Trophy size={18}/> Driver career</button>
               {onMap && (
                 <button
                   className="tt-btn ghost"
@@ -362,8 +373,7 @@ export function PauseMenu({
         ) : (
           <>
             <p className="tt-card-description">
-              This drive’s earnings and score will be cleared. Discovered places
-              remain saved.
+              This drive’s score and shift totals will be cleared. Your wallet, career and discovered places stay saved.
             </p>
             <button
               className="tt-btn"
@@ -382,10 +392,12 @@ export function PauseMenu({
   );
 }
 export function Results({
+  onCareer,
   s,
   onAgain,
   onFree,
 }: {
+  onCareer: () => void;
   s: GameSnapshot;
   onAgain: () => void;
   onFree: () => void;
@@ -413,9 +425,11 @@ export function Results({
             <span>Total score</span>
           </div>
         </div>
-        <p className="tt-card-description">
-          Fare rewards and earned bonuses are included in your totals.
-        </p>
+        <div className="tt-results-career"><span><b>+{s.careerXP ?? 0} XP</b> Career experience</span><span><b>฿{(s.wallet ?? 0).toLocaleString()}</b> Wallet balance</span></div>
+        {!!s.careerRecords?.length && <p className="tt-career-record">★ {s.careerRecords.join(' · ')}</p>}
+        {!!s.careerAchievements?.length && <p className="tt-career-record">{s.careerAchievements.map(id=>ACHIEVEMENTS.find(a=>a.id===id)?.name).join(' · ')}</p>}
+        <p className="tt-card-description">Baht includes the time-based fare bonus. Quick deliveries add 150 score points. Shift complete: +100 XP.</p>
+        <button className="tt-text-button" onClick={onCareer} data-testid="button-results-career"><Trophy size={16}/> View driver career</button>
         <div className="tt-card-btns">
           <button
             className="tt-btn"

@@ -202,7 +202,7 @@ export function Hud({
             </b>
           )}
           <span className="tt-session-money" data-testid="text-earnings">
-            ฿{Math.round(s.earnings).toLocaleString()}
+            ฿{Math.round(s.earnings).toLocaleString()} <small>THIS DRIVE</small>
           </span>
         </div>
       </div>
@@ -215,7 +215,7 @@ export function Hud({
       >
         <Pause size={20} />
       </button>
-      {s.message && (
+      {(s.message || s.careerNotice) && (
         <div
           className={`tt-msg ${s.message.startsWith("Delivered") ? "reward" : ""}`}
           key={s.message}
@@ -223,6 +223,7 @@ export function Hud({
           data-testid="text-message"
         >
           {s.message}
+          {s.careerNotice && <small className="tt-career-toast">★ Achievement · {s.careerNotice}</small>}
         </div>
       )}
       <div className="tt-speed">
