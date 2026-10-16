@@ -1,0 +1,576 @@
+{
+  "environment": "Chromium 138 / SwiftShader software WebGL; not physical iPhone",
+  "viewport": [
+    844,
+    390
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "filename": "gate-90-medium.jpg",
+      "pose": {
+        "x": 149.88854381999832,
+        "z": -9.566191478555087,
+        "heading": -2.827433388230814,
+        "landmark": "Chinatown Gate"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 347,
+        "triangles": 577725,
+        "geometries": 399,
+        "textures": 12,
+        "frameMs": 1726.0999999998603,
+        "camera": [
+          152.2988763761229,
+          3.3,
+          -2.1479506514528897
+        ]
+      }
+    },
+    {
+      "filename": "traimit-90-medium.jpg",
+      "pose": {
+        "x": 341.9924667079649,
+        "z": -114.1310438279258,
+        "heading": -0.9817477042468113,
+        "landmark": "Wat Traimit"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 333,
+        "triangles": 584473,
+        "geometries": 536,
+        "textures": 12,
+        "frameMs": 514.0999999998603,
+        "camera": [
+          348.4779296839248,
+          3.3,
+          -118.46449164547869
+        ]
+      }
+    },
+    {
+      "filename": "pho-90-medium.jpg",
+      "pose": {
+        "x": -877.7279220613578,
+        "z": -590.2720779386422,
+        "heading": 2.356194490192345,
+        "landmark": "Wat Pho"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 309,
+        "triangles": 450550,
+        "geometries": 784,
+        "textures": 13,
+        "frameMs": 659.0999999998603,
+        "camera": [
+          -883.2433549546129,
+          3.3,
+          -584.7566450453871
+        ]
+      }
+    },
+    {
+      "filename": "arun-90-medium.jpg",
+      "pose": {
+        "x": -1441.8415111675404,
+        "z": -513.8913354851355,
+        "heading": 1.3744467859455336,
+        "landmark": "Wat Arun"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 189,
+        "triangles": 271136,
+        "geometries": 901,
+        "textures": 15,
+        "frameMs": 21.300000000046566,
+        "camera": [
+          -1449.4916363546856,
+          3.3,
+          -515.4130399968614
+        ]
+      }
+    },
+    {
+      "filename": "palace-90-medium.jpg",
+      "pose": {
+        "x": -912.8129530860235,
+        "z": -1002.015632574287,
+        "heading": 0.9817477042468103,
+        "landmark": "Grand Palace / Wat Phra Kaew"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 311,
+        "triangles": 475622,
+        "geometries": 971,
+        "textures": 15,
+        "frameMs": 919.3000000000466,
+        "camera": [
+          -919.2984160619834,
+          3.3,
+          -1006.34908039184
+        ]
+      }
+    },
+    {
+      "filename": "paknam-90-medium.jpg",
+      "pose": {
+        "x": -1826.7843044043539,
+        "z": 639.2055943278796,
+        "heading": -2.356194490192347,
+        "landmark": "Wat Paknam / Big Buddha"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 53,
+        "triangles": 102986,
+        "geometries": 1005,
+        "textures": 15,
+        "frameMs": 53.5,
+        "camera": [
+          -1821.2688715110987,
+          3.3,
+          644.7210272211347
+        ]
+      }
+    },
+    {
+      "filename": "khaosan-90-medium.jpg",
+      "pose": {
+        "x": -840,
+        "z": -1537.142857142857,
+        "heading": -0.9310912752654633,
+        "landmark": "Khao San Road"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 244,
+        "triangles": 350991,
+        "geometries": 1134,
+        "textures": 15,
+        "frameMs": 368.20000000018626,
+        "camera": [
+          -833.7422794539766,
+          3.3,
+          -1541.799136082942
+        ]
+      }
+    },
+    {
+      "filename": "talatnoi-90-medium.jpg",
+      "pose": {
+        "x": 160,
+        "z": 360,
+        "heading": -2.0344439357957027
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 272,
+        "triangles": 498594,
+        "geometries": 1185,
+        "textures": 15,
+        "frameMs": 2907.4000000001397,
+        "camera": [
+          166.97653208979935,
+          3.3,
+          363.48826604489966
+        ]
+      }
+    },
+    {
+      "filename": "paragon-90-medium.jpg",
+      "pose": {
+        "x": 864.139198026234,
+        "z": -716.8616982174283,
+        "heading": 1.963495408493622,
+        "landmark": "Siam Paragon"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 241,
+        "triangles": 291278,
+        "geometries": 1393,
+        "textures": 15,
+        "frameMs": 555.3000000000466,
+        "camera": [
+          856.932937672646,
+          3.3,
+          -713.8767674449806
+        ]
+      }
+    },
+    {
+      "filename": "terminal-90-medium.jpg",
+      "pose": {
+        "x": 1766.139198026234,
+        "z": -283.1383017825716,
+        "heading": 1.1780972450961729,
+        "landmark": "Terminal 21 / Asok"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 81,
+        "triangles": 121210,
+        "geometries": 1444,
+        "textures": 15,
+        "frameMs": 298,
+        "camera": [
+          1758.932937672646,
+          3.3,
+          -286.1232325550193
+        ]
+      }
+    },
+    {
+      "filename": "mahanakhon-90-medium.jpg",
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": 1.2313907334208234,
+        "landmark": "Mahanakhon"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 263,
+        "triangles": 377984,
+        "geometries": 1661,
+        "textures": 15,
+        "frameMs": 909.3999999999069,
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ]
+      }
+    },
+    {
+      "filename": "chongnonsi-90-medium.jpg",
+      "pose": {
+        "x": 660,
+        "z": 1220,
+        "heading": -1.62469256778392
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 290,
+        "triangles": 408892,
+        "geometries": 1870,
+        "textures": 15,
+        "frameMs": 784.7999999998137,
+        "camera": [
+          667.7886740033573,
+          3.3,
+          1220.4201871837956
+        ]
+      }
+    },
+    {
+      "filename": "taksin-90-medium.jpg",
+      "pose": {
+        "x": -83.0769230769231,
+        "z": 1460,
+        "heading": -1.5773507309921342
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 171,
+        "triangles": 128882,
+        "geometries": 1989,
+        "textures": 15,
+        "frameMs": 527.3000000000466,
+        "camera": [
+          -75.27709062115937,
+          3.3,
+          1460.0511239866871
+        ]
+      }
+    },
+    {
+      "filename": "icon-90-medium.jpg",
+      "pose": {
+        "x": -702.1027746375082,
+        "z": 922.0658194200764,
+        "heading": 1.3744467859455343,
+        "landmark": "ICONSIAM"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 124,
+        "triangles": 85364,
+        "geometries": 2027,
+        "textures": 15,
+        "frameMs": 226.30000000004657,
+        "camera": [
+          -709.7528998246535,
+          3.3,
+          920.5441149083506
+        ]
+      }
+    },
+    {
+      "filename": "asiatique-90-medium.jpg",
+      "pose": {
+        "x": -300.36582838174553,
+        "z": 2046.1939766255643,
+        "heading": -1.5707963267948966,
+        "landmark": "Asiatique"
+      },
+      "elapsed": 90,
+      "quality": "medium",
+      "stats": {
+        "calls": 111,
+        "triangles": 75490,
+        "geometries": 2095,
+        "textures": 15,
+        "frameMs": 496.60000000009313,
+        "camera": [
+          -292.5658283817455,
+          3.3,
+          2046.1939766255643
+        ]
+      }
+    },
+    {
+      "filename": "yaowarat-0-medium.jpg",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "elapsed": 0,
+      "quality": "medium",
+      "stats": {
+        "calls": 341,
+        "triangles": 558578,
+        "geometries": 2128,
+        "textures": 15,
+        "frameMs": 1003.5000000000001,
+        "camera": [
+          116.59073853556977,
+          3.3,
+          -46.4980071893473
+        ]
+      }
+    },
+    {
+      "filename": "yaowarat-150-medium.jpg",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "elapsed": 150,
+      "quality": "medium",
+      "stats": {
+        "calls": 342,
+        "triangles": 558706,
+        "geometries": 2128,
+        "textures": 15,
+        "frameMs": 1815.6999999999534,
+        "camera": [
+          116.59073853556977,
+          3.3,
+          -46.4980071893473
+        ]
+      }
+    },
+    {
+      "filename": "yaowarat-300-medium.jpg",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "elapsed": 300,
+      "quality": "medium",
+      "stats": {
+        "calls": 342,
+        "triangles": 558706,
+        "geometries": 2128,
+        "textures": 15,
+        "frameMs": 1104.5,
+        "camera": [
+          116.59073853556977,
+          3.3,
+          -46.4980071893473
+        ]
+      }
+    },
+    {
+      "filename": "yaowarat-300-low.jpg",
+      "pose": {
+        "x": 109.56619147855508,
+        "z": -49.88854381999831,
+        "heading": -2.020483893706025
+      },
+      "elapsed": 300,
+      "quality": "low",
+      "stats": {
+        "calls": 245,
+        "triangles": 405096,
+        "geometries": 2128,
+        "textures": 15,
+        "frameMs": 4794.300000000047,
+        "camera": [
+          116.59073853556977,
+          3.3,
+          -46.4980071893473
+        ]
+      }
+    },
+    {
+      "filename": "residential-0-low.jpg",
+      "pose": {
+        "x": -1484.7058823529412,
+        "z": -899.4117647058823,
+        "heading": 3.0990651189700067
+      },
+      "elapsed": 0,
+      "quality": "low",
+      "stats": {
+        "calls": 114,
+        "triangles": 124758,
+        "geometries": 2175,
+        "textures": 15,
+        "frameMs": 291,
+        "camera": [
+          -1485.0374971426147,
+          3.3,
+          -891.618817148554
+        ]
+      }
+    },
+    {
+      "filename": "bridge-150-medium.jpg",
+      "pose": {
+        "x": -1460,
+        "z": -1480,
+        "heading": 1.5707963267948966
+      },
+      "elapsed": 150,
+      "quality": "medium",
+      "stats": {
+        "calls": 204,
+        "triangles": 240703,
+        "geometries": 2212,
+        "textures": 15,
+        "frameMs": 363.80000000004657,
+        "camera": [
+          -1467.8,
+          3.3,
+          -1480
+        ]
+      }
+    },
+    {
+      "filename": "silom-300-medium.jpg",
+      "pose": {
+        "x": 600,
+        "z": 1100,
+        "heading": -1.9055331641117124
+      },
+      "elapsed": 300,
+      "quality": "medium",
+      "stats": {
+        "calls": 262,
+        "triangles": 381092,
+        "geometries": 2245,
+        "textures": 15,
+        "frameMs": 2035.2000000001863,
+        "camera": [
+          607.367075014308,
+          3.3,
+          1102.562460874542
+        ]
+      }
+    },
+    {
+      "filename": "sukhumvit-300-medium.jpg",
+      "pose": {
+        "x": 1760.7816299731228,
+        "z": -270.2039883274136,
+        "heading": -1.3432459225108009
+      },
+      "elapsed": 300,
+      "quality": "medium",
+      "stats": {
+        "calls": 275,
+        "triangles": 372110,
+        "geometries": 2381,
+        "textures": 15,
+        "frameMs": 1615,
+        "camera": [
+          1768.3805609956214,
+          3.3,
+          -271.963604000027
+        ]
+      }
+    }
+  ],
+  "maps": [],
+  "startupMs": 13888,
+  "interactiveMs": 14139,
+  "stalls": [
+    {
+      "start": 795.0999999998603,
+      "duration": 3227
+    },
+    {
+      "start": 4121.09999999986,
+      "duration": 8419
+    },
+    {
+      "start": 12540.399999999907,
+      "duration": 1268
+    },
+    {
+      "start": 14005.5,
+      "duration": 83
+    },
+    {
+      "start": 14396.899999999907,
+      "duration": 1080
+    },
+    {
+      "start": 26761.59999999986,
+      "duration": 1046
+    },
+    {
+      "start": 39987.39999999991,
+      "duration": 1046
+    },
+    {
+      "start": 52535.19999999995,
+      "duration": 669
+    },
+    {
+      "start": 119368.69999999995,
+      "duration": 52
+    }
+  ],
+  "endResources": {
+    "memory": {
+      "geometries": 2381,
+      "textures": 15
+    },
+    "programs": 28
+  }
+}
