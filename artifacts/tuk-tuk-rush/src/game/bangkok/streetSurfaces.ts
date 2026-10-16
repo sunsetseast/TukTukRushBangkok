@@ -31,17 +31,17 @@ export function asphaltMaterial() {
   });
   mat.onBeforeCompile = (shader) => {
     shader.vertexShader =
-      "varying vec2 roadWorld;\n" +
+      "varying vec2 roadWorld; varying float roadTone;\n" +
       shader.vertexShader.replace(
         "#include <begin_vertex>",
-        "#include <begin_vertex>\nroadWorld=(modelMatrix*vec4(position,1.)).xz;",
+        "#include <begin_vertex>\nroadWorld=(modelMatrix*vec4(position,1.)).xz;roadTone=mix(.93,1.05,smoothstep(.35,.65,.5+.5*sin(roadWorld.x*.032+sin(roadWorld.y*.051))));",
       );
     shader.fragmentShader =
-      "varying vec2 roadWorld;\n" +
+      "varying vec2 roadWorld; varying float roadTone;\n" +
       shader.fragmentShader.replace(
         "#include <map_fragment>",
         `diffuseColor*=texture2D(map,roadWorld*.24);
-   float resurfacing=.5+.5*sin(roadWorld.x*.032+sin(roadWorld.y*.051));diffuseColor.rgb*=mix(.93,1.05,smoothstep(.35,.65,resurfacing));`,
+   diffuseColor.rgb*=roadTone;`,
       );
   };
   mat.customProgramCacheKey = () => "bangkok-dry-asphalt-v2";
@@ -62,7 +62,7 @@ export function pavingMaterial() {
       shader.fragmentShader.replace(
         "#include <color_fragment>",
         `#include <color_fragment>
-    vec2 cell=pavingWorld*1.15;vec2 seam=min(fract(cell),1.-fract(cell));vec2 aa=max(fwidth(cell),vec2(.001));vec2 grout=smoothstep(vec2(.016),vec2(.016)+aa,seam);float tile=fract(sin(dot(floor(cell),vec2(12.9898,78.233)))*43758.5453);diffuseColor.rgb*=mix(.76,.96+tile*.07,min(grout.x,grout.y));`,
+    vec2 cell=pavingWorld*1.15;vec2 seam=min(fract(cell),1.-fract(cell));vec2 aa=max(fwidth(cell),vec2(.001));vec2 grout=smoothstep(vec2(.016),vec2(.016)+aa,seam);vec3 hash=fract(vec3(floor(cell).xyx)*.1031);hash+=dot(hash,hash.yzx+33.33);float tile=fract((hash.x+hash.y)*hash.z);diffuseColor.rgb*=mix(.76,.96+tile*.07,min(grout.x,grout.y));`,
       );
   };
   mat.customProgramCacheKey = () => "bangkok-scored-paving-v1";

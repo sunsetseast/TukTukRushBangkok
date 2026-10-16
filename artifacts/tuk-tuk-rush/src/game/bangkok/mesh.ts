@@ -394,9 +394,14 @@ export function buildBangkokGraybox(
         return;
       if (quality !== lastQuality)
         for (const mat of finishMaterials) {
-          const normal = quality === "low" ? null : finishes.normal;
-          if (mat.normalMap !== normal) {
+          const fast = quality === "low",
+            normal = fast ? null : finishes.normal,
+            pbr = fast ? null : finishes.pbr;
+          if (mat.normalMap !== normal || mat.roughnessMap !== pbr) {
             mat.normalMap = normal;
+            mat.roughnessMap = mat.metalnessMap = pbr;
+            mat.roughness = fast ? 0.86 : 1;
+            mat.metalness = fast ? 0.04 : 1;
             mat.needsUpdate = true;
           }
         }
