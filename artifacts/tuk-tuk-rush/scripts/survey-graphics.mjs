@@ -278,6 +278,82 @@ try {
       const f = await p.evaluate(() => window.__graphics.frameId);
       await p.waitForFunction((f) => window.__graphics.frameId > f + 5, f);
       const filename = `${id}-${elapsed}-${quality}.jpg`;
+      if (process.env.GPU_PROFILE) {
+        const gpu = await p.evaluate(async () => {
+          const g = window.__graphics,
+            gl = g.gl.getContext(),
+            ext = gl.getExtension("EXT_disjoint_timer_query_webgl2");
+          if (!ext) return { available: false };
+          let enabled = true;
+          const samples = [],
+            restore = [];
+          g.scene.traverse((o) => {
+            if (!o.isMesh && !o.isPoints) return;
+            const before = o.onBeforeRender,
+              after = o.onAfterRender;
+            restore.push(() => {
+              o.onBeforeRender = before;
+              o.onAfterRender = after;
+            });
+            let current;
+            o.onBeforeRender = function (...args) {
+              before.apply(this, args);
+              if (!enabled) return;
+              current = gl.createQuery();
+              gl.beginQuery(ext.TIME_ELAPSED_EXT, current);
+            };
+            o.onAfterRender = function (...args) {
+              if (enabled && current) {
+                gl.endQuery(ext.TIME_ELAPSED_EXT);
+                const m = args[4];
+                samples.push({
+                  query: current,
+                  object: o.name,
+                  parent: o.parent.name,
+                  shader: m.customProgramCacheKey(),
+                  map: m.map?.name,
+                  vertices: o.geometry.attributes.position.count,
+                  instances: o.count,
+                });
+                current = null;
+              }
+              after.apply(this, args);
+            };
+          });
+          try {
+            g.gl.render(g.scene, g.camera);
+            enabled = false;
+            gl.finish();
+            for (
+              let i = 0;
+              i < 100 &&
+              !samples.every((s) =>
+                gl.getQueryParameter(s.query, gl.QUERY_RESULT_AVAILABLE),
+              );
+              i++
+            )
+              await new Promise(requestAnimationFrame);
+            const disjoint = gl.getParameter(ext.GPU_DISJOINT_EXT);
+            return {
+              available: true,
+              disjoint,
+              samples: samples.map(({ query, ...s }) => ({
+                ...s,
+                available: gl.getQueryParameter(
+                  query,
+                  gl.QUERY_RESULT_AVAILABLE,
+                ),
+                ms: gl.getQueryParameter(query, gl.QUERY_RESULT) / 1e6,
+              })),
+            };
+          } finally {
+            enabled = false;
+            restore.forEach((f) => f());
+            samples.forEach((s) => gl.deleteQuery(s.query));
+          }
+        });
+        await fs.writeFile(`${out}/gpu.json`, JSON.stringify(gpu, null, 2));
+      }
       let frameSamples;
       if (process.env.SCENE_PROFILE) {
         frameSamples = await p.evaluate(async () => {

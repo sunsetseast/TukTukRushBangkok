@@ -98,13 +98,24 @@ export function facadeFinishes() {
       normals[i + 3] = 255;
     }
   const texture = (data: Uint8Array, name: string, color = false) => {
-    const t = new T.DataTexture(data, w, h);
+    const layers = new Uint8Array(data.length);
+    for (let layer = 0; layer < 8; layer++)
+      for (let row = 0; row < 128; row++) {
+        const start =
+          ((Math.floor(layer / 4) * 128 + row) * w + (layer % 4) * 128) * 4;
+        layers.set(
+          data.subarray(start, start + 128 * 4),
+          (layer * 128 * 128 + row * 128) * 4,
+        );
+      }
+    const t = new T.DataArrayTexture(layers, 128, 128, 8);
     t.name = name;
     t.colorSpace = color ? T.SRGBColorSpace : T.NoColorSpace;
     t.generateMipmaps = true;
     t.minFilter = T.LinearMipmapLinearFilter;
     t.magFilter = T.LinearFilter;
-    t.anisotropy = 2;
+    t.wrapS = t.wrapT = T.RepeatWrapping;
+    t.anisotropy = 1;
     t.needsUpdate = true;
     return t;
   };
@@ -114,13 +125,19 @@ export function facadeFinishes() {
     normal: texture(normals, "Bangkok finishes / normal"),
   };
 }
-/** Repeat inside padded tiles in the fragment stage, at four world metres. */
+/** Native array wrapping keeps world-scaled finishes without per-pixel atlas arithmetic. */
 export function installFacadeFinish(m: T.MeshStandardMaterial) {
+  const color = m.map,
+    pbr = m.roughnessMap,
+    normal = m.normalMap;
   m.onBeforeCompile = (shader) => {
+    shader.uniforms.finishColorArray = { value: color };
+    shader.uniforms.finishPbrArray = { value: pbr };
+    shader.uniforms.finishNormalArray = { value: normal };
     shader.vertexShader = shader.vertexShader.replace(
       "#include <common>",
       `#include <common>
-      varying vec2 finishMetric; varying float finishTile; varying vec2 finishEdge;
+      varying vec2 finishMetric; varying float finishLayer; varying vec2 finishEdge;
       #ifdef USE_INSTANCING
       attribute float artSurface;
       #endif`,
@@ -128,19 +145,30 @@ export function installFacadeFinish(m: T.MeshStandardMaterial) {
     shader.vertexShader = shader.vertexShader.replace(
       "#include <uv_vertex>",
       `#include <uv_vertex>
-      finishTile=-1.;finishMetric=vec2(0.);finishEdge=uv;
+      finishEdge=vec2(.5);
+      vec2 finishCell=floor(uv*vec2(4.,2.));
+      finishLayer=finishCell.x+finishCell.y*4.;
+      finishMetric=(uv*vec2(4.,2.)-finishCell-vec2(.025))/.95;
       #ifdef USE_INSTANCING
       vec3 extent=vec3(length(instanceMatrix[0].xyz),length(instanceMatrix[1].xyz),length(instanceMatrix[2].xyz));
       vec2 faceExtent=abs(normal.x)>.5?extent.zy:(abs(normal.y)>.5?extent.xz:extent.xy);
-      finishMetric=uv*faceExtent/4.;finishTile=artSurface;
+      finishMetric=uv*faceExtent/4.;finishLayer=artSurface;finishEdge=uv;
       #endif`,
     );
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <common>",
       `#include <common>
-      varying vec2 finishMetric; varying float finishTile; varying vec2 finishEdge;
-      vec2 finishUV(vec2 fallbackUV){if(finishTile<-.5)return fallbackUV;return (vec2(mod(finishTile,4.),floor(finishTile/4.))+vec2(.025)+fract(finishMetric)*.95)/vec2(4.,2.);}`,
+      uniform highp sampler2DArray finishColorArray;
+      uniform highp sampler2DArray finishPbrArray;
+      uniform highp sampler2DArray finishNormalArray;
+      varying vec2 finishMetric; varying float finishLayer; varying vec2 finishEdge;`,
     );
+    const samplers: Record<string, string> = {
+      map: "finishColorArray",
+      roughnessMap: "finishPbrArray",
+      metalnessMap: "finishPbrArray",
+      normalMap: "finishNormalArray",
+    };
     for (const key of [
       "map_fragment",
       "roughnessmap_fragment",
@@ -149,7 +177,8 @@ export function installFacadeFinish(m: T.MeshStandardMaterial) {
     ] as const) {
       const chunk = T.ShaderChunk[key].replace(
         /texture2D\( (map|roughnessMap|metalnessMap|normalMap), (v\w+Uv) \)/g,
-        "texture2D( $1, finishUV($2) )",
+        (_match, name: string) =>
+          `texture( ${samplers[name]}, vec3(finishMetric,finishLayer) )`,
       );
       shader.fragmentShader = shader.fragmentShader.replace(
         `#include <${key}>`,
@@ -159,8 +188,8 @@ export function installFacadeFinish(m: T.MeshStandardMaterial) {
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <aomap_fragment>",
       `#include <aomap_fragment>
-      if(finishTile>=0.){vec2 edge=min(finishEdge,1.-finishEdge);float rim=smoothstep(0.,.055,min(edge.x,edge.y));reflectedLight.indirectDiffuse*=mix(.76,1.,rim);}`,
+      vec2 edge=min(finishEdge,1.-finishEdge);float rim=smoothstep(0.,.055,min(edge.x,edge.y));reflectedLight.indirectDiffuse*=mix(.76,1.,rim);`,
     );
   };
-  m.customProgramCacheKey = () => "bangkok-metric-finishes-v1";
+  m.customProgramCacheKey = () => "bangkok-array-finishes-v2";
 }

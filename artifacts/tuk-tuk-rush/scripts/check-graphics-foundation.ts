@@ -7,6 +7,7 @@ import { buildTrafficModel } from "../src/game/trafficMesh";
 import { disposeObject } from "../src/game/assets";
 const geo = new T.BoxGeometry(),
   positions = geo.attributes.position.array.slice(),
+  originalNormals = geo.attributes.normal.array.slice(),
   before = Object.values(geo.attributes).reduce(
     (n, a) => n + a.array.byteLength,
     0,
@@ -18,6 +19,20 @@ const after = Object.values(geo.attributes).reduce(
   0,
 );
 assert(after < before * 0.7);
+const normal = geo.getAttribute("normal");
+assert("isInterleavedBufferAttribute" in normal);
+assert.equal(
+  normal.data.stride * normal.array.BYTES_PER_ELEMENT,
+  4,
+  "Packed normals retain four-byte alignment",
+);
+for (let i = 0; i < normal.count; i++)
+  for (const [j, value] of [
+    normal.getX(i),
+    normal.getY(i),
+    normal.getZ(i),
+  ].entries())
+    assert(Math.abs(value - originalNormals[i * 3 + j]) <= 1 / 127);
 const repeated = new T.PlaneGeometry();
 repeated.attributes.uv.setX(0, 20);
 const uv = repeated.attributes.uv;
@@ -27,10 +42,14 @@ const finishes = facadeFinishes();
 assert.equal(finishes.albedo.colorSpace, T.SRGBColorSpace);
 assert.equal(finishes.normal.colorSpace, T.NoColorSpace);
 assert.equal(finishes.pbr.colorSpace, T.NoColorSpace);
-assert.equal(finishes.albedo.image.width, 512);
+assert(finishes.albedo.isDataArrayTexture);
+assert.equal(finishes.albedo.image.width, 128);
+assert.equal(finishes.albedo.image.height, 128);
+assert.equal(finishes.albedo.image.depth, 8);
+assert.equal(finishes.albedo.image.data.byteLength, 512 * 256 * 4);
+assert.equal(finishes.albedo.wrapS, T.RepeatWrapping);
 assert(
-  finishes.pbr.image.data[1] >
-    finishes.pbr.image.data[(128 + 128 * 512) * 4 + 1],
+  finishes.pbr.image.data[1] > finishes.pbr.image.data[5 * 128 * 128 * 4 + 1],
 );
 const state = lightingState();
 for (let t = 0; t <= 600; t++) {
