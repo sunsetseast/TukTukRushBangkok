@@ -1,0 +1,38 @@
+interactive 14106
+map 0 {
+  mountMs: 85.8000000002794,
+  rafMs: 354.89999999990687,
+  dom: 1783,
+  svgNodes: 1516
+}
+map 1 { mountMs: 89.5, rafMs: 9233, dom: 1783, svgNodes: 1516 }
+map 2 {
+  mountMs: 134.89999999990687,
+  rafMs: 149.89999999990687,
+  dom: 1778,
+  svgNodes: 1512
+}
+map 3 {
+  mountMs: 70.60000000009313,
+  rafMs: 281.89999999990687,
+  dom: 1782,
+  svgNodes: 1516
+}
+map 4 {
+  mountMs: 119.3000000002794,
+  rafMs: 135.60000000009313,
+  dom: 1778,
+  svgNodes: 1512
+}
+map 5 {
+  mountMs: 94.40000000037253,
+  rafMs: 159.70000000018626,
+  dom: 1782,
+  svgNodes: 1516
+}
+map 6 {
+  mountMs: 104.8000000002794,
+  rafMs: 118.70000000018626,
+  dom: 1778,
+  svgNodes: 1512
+}

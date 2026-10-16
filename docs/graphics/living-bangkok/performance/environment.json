@@ -1,0 +1,14 @@
+{
+  "browser": "Chromium 138.0.7204.0 / SwiftShader",
+  "physicalIPhone": false,
+  "mode": "Vite dev, warm transform cache; fresh browser per run; one browser at a time; main-1, pr-1, main-2, pr-2 order",
+  "viewport": [
+    844,
+    390
+  ],
+  "quality": "low/Fast",
+  "elapsed": 300,
+  "source": "45a4552c442612d7396f3bdc068082f21533ba57",
+  "main": "b83e2f62cc6d06a11c83fa274b3ffc1302dbbc50",
+  "notes": "Baseline source is unchanged. Final PR runs follow the visual/browser suite; no concurrent local browsers. Experimental reports are excluded."
+}

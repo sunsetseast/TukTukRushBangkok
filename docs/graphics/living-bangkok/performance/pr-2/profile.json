@@ -1,0 +1,823 @@
+{
+  "environment": "Chromium 138 / SwiftShader software WebGL; not physical iPhone",
+  "viewport": [
+    844,
+    390
+  ],
+  "errors": [],
+  "captures": [],
+  "maps": [
+    {
+      "mountMs": 54.10000000055879,
+      "rafMs": 374,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 17.90000000037253,
+      "rafMs": 3000.2999999998137,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 19.799999999813735,
+      "rafMs": 1199.5,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 22.09999999962747,
+      "rafMs": 1087.7000000001863,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 23.799999999813735,
+      "rafMs": 810.8999999994412,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 23.600000000558794,
+      "rafMs": 43.60000000055879,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 23.700000000186265,
+      "rafMs": 37.10000000055879,
+      "dom": 347,
+      "svgNodes": 154
+    }
+  ],
+  "startupMs": 13677,
+  "interactiveMs": 13948,
+  "resources": {
+    "geometryBytes": 108365608,
+    "pose": {
+      "x": 103.75922414816708,
+      "z": -49.360215868999724,
+      "heading": -2.020483893706025
+    },
+    "camera": [
+      110.78377120518176,
+      3.3,
+      -45.96967923834871
+    ],
+    "quality": "low",
+    "geometries": 5535,
+    "materials": 249,
+    "programs": 19,
+    "textures": [
+      {
+        "name": "Dry asphalt aggregate",
+        "width": 256,
+        "height": 256,
+        "bytes": 262144,
+        "mipmaps": true
+      },
+      {
+        "name": "Bangkok finishes / color",
+        "width": 128,
+        "height": 128,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 1024,
+        "height": 896,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 512,
+        "height": 1792,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 512,
+        "height": 1024,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 1536,
+        "height": 1440,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 512,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 512,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 128,
+        "height": 128,
+        "bytes": 65536,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 64,
+        "height": 64,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 128,
+        "mipmaps": true
+      }
+    ],
+    "gpuMemoryAvailable": false,
+    "gpuTimerAvailable": true,
+    "heapBytes": 212000000
+  },
+  "frames": [
+    {
+      "calls": 243,
+      "triangles": 410220,
+      "geometries": 253,
+      "textures": 10,
+      "frameMs": 969.5,
+      "intervalMs": 1212.699999999255
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 329.19999999925494,
+      "intervalMs": 10.800000000745058
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.100000000558794,
+      "intervalMs": 15
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 272.59999999962747,
+      "intervalMs": 273.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 46.799999999813735,
+      "intervalMs": 46.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 29.90000000037253,
+      "intervalMs": 32
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16.200000000186265,
+      "intervalMs": 15.799999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 23.5,
+      "intervalMs": 21.899999999441206
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.700000000186265,
+      "intervalMs": 11.600000000558794
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 19,
+      "intervalMs": 19.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 463.09999999962747,
+      "intervalMs": 462
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 23.299999999813735,
+      "intervalMs": 33.39999999944121
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 2122.2000000001863,
+      "intervalMs": 2111.300000000745
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 384,
+      "intervalMs": 383.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 793.7999999998137,
+      "intervalMs": 796.3999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 417.70000000018626,
+      "intervalMs": 415.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 25.09999999962747,
+      "intervalMs": 26.700000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 160.5,
+      "intervalMs": 159.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 210,
+      "intervalMs": 208.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 97.40000000037253,
+      "intervalMs": 97.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 994.0999999996275,
+      "intervalMs": 998.3999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 421.6000000005588,
+      "intervalMs": 418.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 31.09999999962747,
+      "intervalMs": 31.700000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 445.20000000018626,
+      "intervalMs": 445.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 420.79999999981374,
+      "intervalMs": 420.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 393.40000000037253,
+      "intervalMs": 392.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 67.8999999994412,
+      "intervalMs": 68.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 409.80000000074506,
+      "intervalMs": 414.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 1641,
+      "intervalMs": 1636.5999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.5,
+      "intervalMs": 9.800000000745058
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 13,
+      "intervalMs": 14.199999999254942
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 22.799999999813735,
+      "intervalMs": 24.300000000745058
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 357.09999999962747,
+      "intervalMs": 359.69999999925494
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 13.700000000186265,
+      "intervalMs": 27.300000000745058
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 423.09999999962747,
+      "intervalMs": 406.3999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 47.700000000186265,
+      "intervalMs": 48.10000000055879
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 850.9000000003725,
+      "intervalMs": 857.7999999998137
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 426.5,
+      "intervalMs": 424.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 785.7000000001863,
+      "intervalMs": 780.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 395.19999999925494,
+      "intervalMs": 394
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 411.6000000005588,
+      "intervalMs": 419.8999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 18.09999999962747,
+      "intervalMs": 17.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 390.20000000018626,
+      "intervalMs": 386.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 411.79999999981374,
+      "intervalMs": 408.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 851.6000000005588,
+      "intervalMs": 853.0999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 445.09999999962747,
+      "intervalMs": 451
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 864.2999999998137,
+      "intervalMs": 857.2000000001863
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 19.100000000558794,
+      "intervalMs": 19.700000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 23,
+      "intervalMs": 26.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.199999999254942,
+      "intervalMs": 10.100000000558794
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 388.80000000074506,
+      "intervalMs": 394.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 825.2999999998137,
+      "intervalMs": 819.7999999998137
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 436.29999999981374,
+      "intervalMs": 441
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 866.7000000001863,
+      "intervalMs": 861.2000000001863
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 10.399999999441206,
+      "intervalMs": 9.099999999627471
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 418.1000000005588,
+      "intervalMs": 421.1000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 410.5,
+      "intervalMs": 416.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 399.29999999981374,
+      "intervalMs": 403.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 400.5,
+      "intervalMs": 388.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 386.90000000037253,
+      "intervalMs": 389.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 413,
+      "intervalMs": 410.5
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 430.79999999981374,
+      "intervalMs": 430.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 445.20000000018626,
+      "intervalMs": 446.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 415.3999999994412,
+      "intervalMs": 414.8999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 408.40000000037253,
+      "intervalMs": 412.5
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 233.3999999994412,
+      "intervalMs": 231.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 159.40000000037253,
+      "intervalMs": 169.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 439,
+      "intervalMs": 430
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 41.5,
+      "intervalMs": 38.299999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 842.4000000003725,
+      "intervalMs": 845.5999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.79999999981374,
+      "intervalMs": 433.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 422.8999999994412,
+      "intervalMs": 423.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 388.90000000037253,
+      "intervalMs": 388.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 71.29999999981374,
+      "intervalMs": 71.69999999925494
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 337.20000000018626,
+      "intervalMs": 337.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 433.70000000018626,
+      "intervalMs": 438.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 436.09999999962747,
+      "intervalMs": 444.69999999925494
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 388.29999999981374,
+      "intervalMs": 376.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 1166.5,
+      "intervalMs": 1176.2000000001863
+    }
+  ],
+  "warmResources": {
+    "memory": {
+      "geometries": 254,
+      "textures": 10
+    },
+    "programs": 20
+  },
+  "stalls": [
+    {
+      "start": 960.7999999998137,
+      "duration": 3120
+    },
+    {
+      "start": 4182.799999999814,
+      "duration": 8285
+    },
+    {
+      "start": 12468.200000000186,
+      "duration": 1174
+    },
+    {
+      "start": 13790.100000000559,
+      "duration": 70
+    },
+    {
+      "start": 14881,
+      "duration": 328
+    },
+    {
+      "start": 44456.299999999814,
+      "duration": 55
+    }
+  ],
+  "endResources": {
+    "memory": {
+      "geometries": 286,
+      "textures": 10
+    },
+    "programs": 20,
+    "heapBytes": 212000000
+  }
+}

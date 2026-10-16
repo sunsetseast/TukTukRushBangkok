@@ -4,11 +4,11 @@ Research informed rendering trade-offs and district character; no reference artw
 
 | Primary source | Applied principle |
 | --- | --- |
-| [Three.js: color management](https://threejs.org/manual/en/color-management.html) | Albedo is sRGB; packed roughness/metalness and tangent normals are linear data. Vertex colors remain linear. |
+| [Three.js: color management](https://threejs.org/manual/pages/color-management.html) | Albedo is sRGB; packed roughness/metalness and tangent normals are linear data. Vertex colors remain linear. |
 | [React Three Fiber: scaling performance](https://r3f.docs.pmnd.rs/advanced/scaling-performance) | Reuse resources, bound animation work, use instancing and on-demand rendering for the paused map. |
-| [Three.js: optimizing many objects](https://threejs.org/manual/en/optimize-lots-of-objects.html) | Keep existing spatial batches instead of introducing a mesh per architectural ornament. |
+| [Three.js: optimizing many objects](https://threejs.org/manual/pages/optimize-lots-of-objects.html) | Keep existing spatial batches instead of introducing a mesh per architectural ornament. |
 | [Khronos: mesh quantization](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md) | Four-byte alignment for packed three-component vertex vectors informs the static attribute layout. |
-| [Three.js: shadows](https://threejs.org/manual/en/shadows.html) | Prefer bounded ground projections over rendering thousands of casters into dynamic shadow maps. |
+| [Three.js: shadows](https://threejs.org/manual/pages/shadows.html) | Prefer bounded ground projections over rendering thousands of casters into dynamic shadow maps. |
 | [MDN: WebGL best practices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices) | Budget resident resources and uploads; avoid synchronous GPU queries and expensive postprocessing. |
 | [Tourism Authority of Thailand: Talat Noi](https://www.tourismthailand.org/Articles/1-day-in-talat-noi) | Older community/workshop and warehouse vocabulary, retained alongside the existing riverfront geography. |
 | [Tourism Authority of Thailand: Chinatown](https://www.tourismthailand.org/Articles/the-adventure-through-bangkok-s-chinatown) | Layered commercial streets and food activity; preserve the authored Sino-Thai signage rather than distributing lanterns everywhere. |

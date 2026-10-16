@@ -1,0 +1,3739 @@
+{
+  "environment": "Chromium 138 / SwiftShader software WebGL; not physical iPhone",
+  "viewport": [
+    844,
+    390
+  ],
+  "errors": [],
+  "captures": [],
+  "maps": [
+    {
+      "mountMs": 39.90000000037253,
+      "rafMs": 368.09999999962747,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 26.899999999441206,
+      "rafMs": 2468.2999999998137,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 26.40000000037253,
+      "rafMs": 2412.100000000559,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 17.799999999813735,
+      "rafMs": 143.70000000018626,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 27.299999999813735,
+      "rafMs": 815.6000000005588,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 17.299999999813735,
+      "rafMs": 719.2000000001863,
+      "dom": 350,
+      "svgNodes": 157
+    },
+    {
+      "mountMs": 29.299999999813735,
+      "rafMs": 263.09999999962747,
+      "dom": 350,
+      "svgNodes": 157
+    }
+  ],
+  "startupMs": 13473,
+  "interactiveMs": 13751,
+  "resources": {
+    "geometryBytes": 108365608,
+    "pose": {
+      "x": 103.75922414816708,
+      "z": -49.360215868999724,
+      "heading": -2.020483893706025
+    },
+    "camera": [
+      110.78377120518176,
+      3.3,
+      -45.96967923834871
+    ],
+    "quality": "low",
+    "geometries": 5535,
+    "materials": 249,
+    "programs": 19,
+    "textures": [
+      {
+        "name": "Dry asphalt aggregate",
+        "width": 256,
+        "height": 256,
+        "bytes": 262144,
+        "mipmaps": true
+      },
+      {
+        "name": "Bangkok finishes / color",
+        "width": 128,
+        "height": 128,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 1024,
+        "height": 896,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 512,
+        "height": 1792,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 512,
+        "height": 1024,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 1536,
+        "height": 1440,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 512,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 512,
+        "bytes": 524288,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 128,
+        "height": 128,
+        "bytes": 65536,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 64,
+        "height": 64,
+        "mipmaps": true
+      },
+      {
+        "name": "",
+        "width": 256,
+        "height": 128,
+        "mipmaps": true
+      }
+    ],
+    "gpuMemoryAvailable": false,
+    "gpuTimerAvailable": true,
+    "heapBytes": 239000000
+  },
+  "frames": [
+    {
+      "calls": 243,
+      "triangles": 410220,
+      "geometries": 253,
+      "textures": 10,
+      "frameMs": 805.7000000001863,
+      "intervalMs": 1348.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 625.5,
+      "intervalMs": 14.399999999441206
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.5,
+      "intervalMs": 10.700000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 15.799999999813734,
+      "intervalMs": 19
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.600000000558794,
+      "intervalMs": 10.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 17.5,
+      "intervalMs": 19.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.299999999813735,
+      "intervalMs": 13.299999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16.59999999962747,
+      "intervalMs": 16.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 455.40000000037253,
+      "intervalMs": 454.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 13,
+      "intervalMs": 10.599999999627471
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 31.799999999813735,
+      "intervalMs": 32.700000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 445.90000000037253,
+      "intervalMs": 447.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 412.29999999981374,
+      "intervalMs": 413.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 1662.3999999994412,
+      "intervalMs": 1659.7999999998137
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 903.9000000003725,
+      "intervalMs": 903.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 345.79999999981374,
+      "intervalMs": 351.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 406.70000000018626,
+      "intervalMs": 402.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 25.700000000186265,
+      "intervalMs": 24.899999999441206
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 153.20000000018626,
+      "intervalMs": 152.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 259,
+      "intervalMs": 259.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 75.09999999962747,
+      "intervalMs": 74.3999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 987.9000000003725,
+      "intervalMs": 989
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 29.59999999962747,
+      "intervalMs": 32.200000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.20000000018626,
+      "intervalMs": 433.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 28.399999999441206,
+      "intervalMs": 27.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 415.30000000074506,
+      "intervalMs": 416.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 885.5,
+      "intervalMs": 884.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.19999999925494,
+      "intervalMs": 439.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 442.5,
+      "intervalMs": 440.69999999925494
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 1657.300000000745,
+      "intervalMs": 1661.1000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 13.5,
+      "intervalMs": 10.599999999627471
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 12,
+      "intervalMs": 16
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 20.899999999441206,
+      "intervalMs": 17.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 10.200000000186265,
+      "intervalMs": 10.200000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 405.59999999962747,
+      "intervalMs": 403.8999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 946.3000000007451,
+      "intervalMs": 948
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 433.5,
+      "intervalMs": 437
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 384.69999999925494,
+      "intervalMs": 389
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 421.5,
+      "intervalMs": 413.5
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 439.20000000018626,
+      "intervalMs": 440.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 402.79999999981374,
+      "intervalMs": 404.1000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 431,
+      "intervalMs": 426.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 438.6000000005588,
+      "intervalMs": 438.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 422.29999999981374,
+      "intervalMs": 424.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 436.29999999981374,
+      "intervalMs": 434.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 418.1000000005588,
+      "intervalMs": 422.30000000074506
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 36.299999999813735,
+      "intervalMs": 42.299999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 410284,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 756,
+      "intervalMs": 745.5999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 386.5,
+      "intervalMs": 387.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 10.5,
+      "intervalMs": 8.299999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 15.700000000186263,
+      "intervalMs": 17.799999999813735
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16.299999999813735,
+      "intervalMs": 25.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 403.29999999981374,
+      "intervalMs": 401
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 371.70000000018626,
+      "intervalMs": 364.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.20000000018626,
+      "intervalMs": 438.40000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 861.3999999994412,
+      "intervalMs": 869.0999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.79999999981374,
+      "intervalMs": 427.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.100000000558794,
+      "intervalMs": 13
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 403.20000000018626,
+      "intervalMs": 408.20000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 418.8999999994412,
+      "intervalMs": 414.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 406.90000000037253,
+      "intervalMs": 408.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 412.29999999981374,
+      "intervalMs": 412.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 464.5,
+      "intervalMs": 465.6000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 415.40000000037253,
+      "intervalMs": 414.5
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 390.5,
+      "intervalMs": 389
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 367.3999999994412,
+      "intervalMs": 369.3999999994412
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 388.29999999981374,
+      "intervalMs": 386.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 381.5,
+      "intervalMs": 384
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 392.1000000005588,
+      "intervalMs": 389.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 382.3999999994412,
+      "intervalMs": 382.5
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.700000000186265,
+      "intervalMs": 14.900000000372529
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 756.9000000003725,
+      "intervalMs": 758.2999999998137
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 392.29999999981374,
+      "intervalMs": 393.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 418.40000000037253,
+      "intervalMs": 419.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 893.1999999992549,
+      "intervalMs": 890
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 10,
+      "intervalMs": 8.200000000186265
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 425.30000000074506,
+      "intervalMs": 428.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 12.799999999813735,
+      "intervalMs": 28.800000000745058
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 420.3999999994412,
+      "intervalMs": 402.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 493.80000000074506,
+      "intervalMs": 495
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 755,
+      "intervalMs": 753.7999999998137
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 381.8999999994412,
+      "intervalMs": 384.70000000018626
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 1647.1000000005588,
+      "intervalMs": 1644.5999999996275
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 422.5,
+      "intervalMs": 420.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 394,
+      "intervalMs": 395.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 368.8999999994412,
+      "intervalMs": 372.09999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 381.1000000005588,
+      "intervalMs": 380.30000000074506
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 404.09999999962747,
+      "intervalMs": 400.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 423.70000000018626,
+      "intervalMs": 429.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 384.09999999962747,
+      "intervalMs": 385.90000000037253
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 381.20000000018626,
+      "intervalMs": 376.79999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16.09999999962747,
+      "intervalMs": 10.599999999627471
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 755.7000000001863,
+      "intervalMs": 758.1000000005588
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 420.6000000005588,
+      "intervalMs": 420.59999999962747
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 392.59999999962747,
+      "intervalMs": 393
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 394,
+      "intervalMs": 393.29999999981374
+    },
+    {
+      "calls": 244,
+      "triangles": 407304,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 395.29999999981374,
+      "intervalMs": 397.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 795.1000000005588,
+      "intervalMs": 796.0999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 385.5,
+      "intervalMs": 383.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14.399999999441206,
+      "intervalMs": 25.399999999441206
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 392.70000000018626,
+      "intervalMs": 380.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 406.20000000018626,
+      "intervalMs": 405.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 13.200000000186265,
+      "intervalMs": 13.900000000372529
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.899999999441206,
+      "intervalMs": 13.799999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 11.400000000372529,
+      "intervalMs": 16
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 15.899999999441205,
+      "intervalMs": 10.399999999441206
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 385,
+      "intervalMs": 385.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 778,
+      "intervalMs": 776.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 393.80000000074506,
+      "intervalMs": 394
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 411.8999999994412,
+      "intervalMs": 412.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 389.29999999981374,
+      "intervalMs": 390.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 426.1000000005588,
+      "intervalMs": 426.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 881.0999999996275,
+      "intervalMs": 883.2000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 441.1000000005588,
+      "intervalMs": 438.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 58.89999999944121,
+      "intervalMs": 61.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 785.5,
+      "intervalMs": 786.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 436.79999999981374,
+      "intervalMs": 434.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 426.1000000005588,
+      "intervalMs": 424.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16.59999999962747,
+      "intervalMs": 23.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 492.90000000037253,
+      "intervalMs": 487.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 411.79999999981374,
+      "intervalMs": 409.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 364.90000000037253,
+      "intervalMs": 369.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 414.69999999925494,
+      "intervalMs": 427.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 422.5,
+      "intervalMs": 410.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 452,
+      "intervalMs": 447.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 423.70000000018626,
+      "intervalMs": 425.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 445,
+      "intervalMs": 443.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 420.5,
+      "intervalMs": 421.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 389.90000000037253,
+      "intervalMs": 387.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 422.79999999981374,
+      "intervalMs": 423.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 57.299999999813735,
+      "intervalMs": 58.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 860.6000000005588,
+      "intervalMs": 866.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 458.8999999994412,
+      "intervalMs": 450.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 10.700000000186265,
+      "intervalMs": 17.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 826.0999999996275,
+      "intervalMs": 818.6999999992549
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 243.40000000037253,
+      "intervalMs": 247.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 151.90000000037253,
+      "intervalMs": 148.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 810.8999999994412,
+      "intervalMs": 812.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 16,
+      "intervalMs": 14.799999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 417,
+      "intervalMs": 418.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 842.7999999998137,
+      "intervalMs": 841.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 408.80000000074506,
+      "intervalMs": 409.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 418.59999999962747,
+      "intervalMs": 432
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 468.20000000018626,
+      "intervalMs": 458.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 392.70000000018626,
+      "intervalMs": 389.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 793.7999999998137,
+      "intervalMs": 803
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 413.20000000018626,
+      "intervalMs": 406.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 374.29999999981374,
+      "intervalMs": 372.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 442.59999999962747,
+      "intervalMs": 441.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 494.90000000037253,
+      "intervalMs": 496.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 424.20000000018626,
+      "intervalMs": 425.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 384.09999999962747,
+      "intervalMs": 381
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 394,
+      "intervalMs": 394.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 22.59999999962747,
+      "intervalMs": 27.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 785.9000000003725,
+      "intervalMs": 780.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 415.40000000037253,
+      "intervalMs": 420.30000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 14,
+      "intervalMs": 12
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 907.2999999998137,
+      "intervalMs": 908.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 469.3999999994412,
+      "intervalMs": 465.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 186.20000000018626,
+      "intervalMs": 185.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 689.4000000003725,
+      "intervalMs": 690.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 432.8999999994412,
+      "intervalMs": 432.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 288.1000000005588,
+      "intervalMs": 287.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 150.70000000018626,
+      "intervalMs": 150.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 393.3999999994412,
+      "intervalMs": 393.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 384.1000000005588,
+      "intervalMs": 385.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 419.5,
+      "intervalMs": 429.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 399.69999999925494,
+      "intervalMs": 392.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 379,
+      "intervalMs": 380.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 420.70000000018626,
+      "intervalMs": 418.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 409.20000000018626,
+      "intervalMs": 405.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 399.40000000037253,
+      "intervalMs": 410.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 454.09999999962747,
+      "intervalMs": 445.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 437.70000000018626,
+      "intervalMs": 434.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 432,
+      "intervalMs": 436.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 450.70000000018626,
+      "intervalMs": 447.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 421.3999999994412,
+      "intervalMs": 424.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 67.6000000005588,
+      "intervalMs": 69
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 772.5,
+      "intervalMs": 769.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 417.09999999962747,
+      "intervalMs": 414.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 22.90000000037253,
+      "intervalMs": 27.5
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 781.5,
+      "intervalMs": 791.7000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 406960,
+      "geometries": 254,
+      "textures": 10,
+      "frameMs": 432.5,
+      "intervalMs": 419.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 396.3999999994412,
+      "intervalMs": 395.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 12,
+      "intervalMs": 14.399999999441206
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.6000000005588,
+      "intervalMs": 414.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 425.09999999962747,
+      "intervalMs": 437
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 790.7999999998137,
+      "intervalMs": 781.5999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 170.6000000005588,
+      "intervalMs": 172.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 228.69999999925494,
+      "intervalMs": 227.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 874.7000000001863,
+      "intervalMs": 870.7000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 387,
+      "intervalMs": 390.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 383.6000000005588,
+      "intervalMs": 385.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 375.59999999962747,
+      "intervalMs": 371.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 403.79999999981374,
+      "intervalMs": 402.30000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 856.6000000005588,
+      "intervalMs": 856.1999999992549
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 435.69999999925494,
+      "intervalMs": 436.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 426.90000000037253,
+      "intervalMs": 430.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 440.20000000018626,
+      "intervalMs": 439
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 427.79999999981374,
+      "intervalMs": 425.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 12.599999999627471,
+      "intervalMs": 24.700000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 837.2000000001863,
+      "intervalMs": 828.7999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.1000000005588,
+      "intervalMs": 416.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 13.299999999813735,
+      "intervalMs": 9.600000000558794
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 846.0999999996275,
+      "intervalMs": 847.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 403.29999999981374,
+      "intervalMs": 403.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 411.90000000037253,
+      "intervalMs": 411.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 401.20000000018626,
+      "intervalMs": 401.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 361.8999999994412,
+      "intervalMs": 375.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 39,
+      "intervalMs": 27.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 782.7000000001863,
+      "intervalMs": 784.0999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 416.20000000018626,
+      "intervalMs": 423.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 42.09999999962747,
+      "intervalMs": 34.799999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 773.5,
+      "intervalMs": 768.7000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 406.5,
+      "intervalMs": 406.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 422.30000000074506,
+      "intervalMs": 427.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 14.199999999254942,
+      "intervalMs": 21.200000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 502.7000000001862,
+      "intervalMs": 490.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 441.1000000005588,
+      "intervalMs": 445
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 439,
+      "intervalMs": 438.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 491.69999999925494,
+      "intervalMs": 497.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 376.6000000005588,
+      "intervalMs": 370
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 744.5,
+      "intervalMs": 746
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 14.5,
+      "intervalMs": 23.200000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 352.8999999994412,
+      "intervalMs": 341.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 923.7000000001863,
+      "intervalMs": 928.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 48.90000000037253,
+      "intervalMs": 50.700000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 746.5,
+      "intervalMs": 740.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 377.3999999994412,
+      "intervalMs": 383.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 375.30000000074506,
+      "intervalMs": 367
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 365.5,
+      "intervalMs": 366.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 457,
+      "intervalMs": 459.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 27,
+      "intervalMs": 25.799999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 389.59999999962747,
+      "intervalMs": 387.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 771.0999999996275,
+      "intervalMs": 771.5999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 14.300000000745058,
+      "intervalMs": 14.100000000558794
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 403.09999999962747,
+      "intervalMs": 403.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 795.7000000001863,
+      "intervalMs": 795.0999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 380.3999999994412,
+      "intervalMs": 379.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 422.90000000037253,
+      "intervalMs": 423.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 435.79999999981374,
+      "intervalMs": 443.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 391.90000000037253,
+      "intervalMs": 384.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.79999999981374,
+      "intervalMs": 418.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 18.59999999962747,
+      "intervalMs": 23.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 359.40000000037253,
+      "intervalMs": 360
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 378,
+      "intervalMs": 372.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 365.5,
+      "intervalMs": 366.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 366.40000000037253,
+      "intervalMs": 366.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 51.69999999925494,
+      "intervalMs": 55.10000000055879
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 304.20000000018626,
+      "intervalMs": 300.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 798.7000000001863,
+      "intervalMs": 801.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 13.299999999813735,
+      "intervalMs": 22.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 383.5,
+      "intervalMs": 370.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 856.4000000003725,
+      "intervalMs": 856.0999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 446.29999999981374,
+      "intervalMs": 449.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 361.09999999962747,
+      "intervalMs": 360.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 400.6000000005588,
+      "intervalMs": 399.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 424.20000000018626,
+      "intervalMs": 426.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 387.19999999925494,
+      "intervalMs": 393
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 391.70000000018626,
+      "intervalMs": 383.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 64.20000000018626,
+      "intervalMs": 68.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 340,
+      "intervalMs": 336.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 769.2000000001863,
+      "intervalMs": 767.4000000003725
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 428.70000000018626,
+      "intervalMs": 428.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 440.09999999962747,
+      "intervalMs": 439.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 413,
+      "intervalMs": 414
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 437.20000000018626,
+      "intervalMs": 438
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 449.5,
+      "intervalMs": 447.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 470.20000000018626,
+      "intervalMs": 473.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 430,
+      "intervalMs": 426.80000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 496.19999999925494,
+      "intervalMs": 496.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 382.40000000037253,
+      "intervalMs": 386.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 372.70000000018626,
+      "intervalMs": 368.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 24.399999999441206,
+      "intervalMs": 23.299999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 759.8000000007451,
+      "intervalMs": 768.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 404.19999999925494,
+      "intervalMs": 397.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 48.10000000055879,
+      "intervalMs": 48.89999999944121
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 733.5,
+      "intervalMs": 732.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 424.79999999981374,
+      "intervalMs": 428.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 13.299999999813735,
+      "intervalMs": 20
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 785.9000000003725,
+      "intervalMs": 777.2000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 379.8999999994412,
+      "intervalMs": 385.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 411.80000000074506,
+      "intervalMs": 405.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 381.79999999981374,
+      "intervalMs": 383.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 377.3999999994412,
+      "intervalMs": 374.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 427,
+      "intervalMs": 429.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 446.80000000074506,
+      "intervalMs": 447.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 401.3999999994412,
+      "intervalMs": 412.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.29999999981374,
+      "intervalMs": 404.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 413,
+      "intervalMs": 413.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 400.80000000074506,
+      "intervalMs": 401.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 420.09999999962747,
+      "intervalMs": 421.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 399.29999999981374,
+      "intervalMs": 395.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 426.6000000005588,
+      "intervalMs": 425.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 443.79999999981374,
+      "intervalMs": 444.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 418.29999999981374,
+      "intervalMs": 417.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 408.09999999962747,
+      "intervalMs": 408.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 41.5,
+      "intervalMs": 42.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 772.5,
+      "intervalMs": 772.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.80000000074506,
+      "intervalMs": 420.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 18.899999999441206,
+      "intervalMs": 17
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 775.2999999998137,
+      "intervalMs": 775.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 484.6000000005588,
+      "intervalMs": 483.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 19.200000000186265,
+      "intervalMs": 19.200000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 865.6999999992549,
+      "intervalMs": 869.7000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 415,
+      "intervalMs": 414.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 403.30000000074506,
+      "intervalMs": 401.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 425.09999999962747,
+      "intervalMs": 429.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 427.20000000018626,
+      "intervalMs": 421.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 428.29999999981374,
+      "intervalMs": 438.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 843.5,
+      "intervalMs": 840.9000000003725
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 16.700000000186265,
+      "intervalMs": 8.299999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 801.8999999994412,
+      "intervalMs": 802.0999999996275
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 404.90000000037253,
+      "intervalMs": 405.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 380.90000000037253,
+      "intervalMs": 382.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 417.69999999925494,
+      "intervalMs": 418.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 445,
+      "intervalMs": 442.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 850.9000000003725,
+      "intervalMs": 854.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 371.59999999962747,
+      "intervalMs": 368.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 18,
+      "intervalMs": 25.799999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 757.1000000005588,
+      "intervalMs": 749.3000000007451
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 390.20000000018626,
+      "intervalMs": 389.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 28.59999999962747,
+      "intervalMs": 31.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 764.2000000001863,
+      "intervalMs": 762.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 426.79999999981374,
+      "intervalMs": 425.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 188.5,
+      "intervalMs": 188.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 204.40000000037253,
+      "intervalMs": 208
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 416.29999999981374,
+      "intervalMs": 416.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 810,
+      "intervalMs": 808.9000000003725
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 19.09999999962747,
+      "intervalMs": 19.299999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 400.90000000037253,
+      "intervalMs": 406
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 406.29999999981374,
+      "intervalMs": 397.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 436,
+      "intervalMs": 439.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 408.90000000037253,
+      "intervalMs": 406.80000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 423.8999999994412,
+      "intervalMs": 424.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 475,
+      "intervalMs": 474
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 427.29999999981374,
+      "intervalMs": 427.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 455.40000000037253,
+      "intervalMs": 463.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 405.29999999981374,
+      "intervalMs": 406.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 410.1000000005588,
+      "intervalMs": 402.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 838.6999999992549,
+      "intervalMs": 837.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 47.30000000074506,
+      "intervalMs": 47.299999999813735
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 366.5,
+      "intervalMs": 366.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 757.5999999996275,
+      "intervalMs": 761.2000000001863
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 254.40000000037256,
+      "intervalMs": 250.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 171.79999999981374,
+      "intervalMs": 173.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 829.8999999994412,
+      "intervalMs": 828.2999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 387.5,
+      "intervalMs": 395.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 423.5,
+      "intervalMs": 416.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 56.60000000055879,
+      "intervalMs": 57.10000000055879
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 356.20000000018626,
+      "intervalMs": 363.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 382.5,
+      "intervalMs": 386.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 415.29999999981374,
+      "intervalMs": 402.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 411.3999999994412,
+      "intervalMs": 419.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 402.90000000037253,
+      "intervalMs": 395.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 819.7000000001863,
+      "intervalMs": 819.9000000003725
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 443.20000000018626,
+      "intervalMs": 446.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 435.3999999994412,
+      "intervalMs": 430.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 10,
+      "intervalMs": 15
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 429,
+      "intervalMs": 424.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 414.70000000018626,
+      "intervalMs": 419.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 15,
+      "intervalMs": 15.400000000372529
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 388.20000000018626,
+      "intervalMs": 383.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 441.8999999994412,
+      "intervalMs": 441.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 401.1000000005588,
+      "intervalMs": 401.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 875.7999999998137,
+      "intervalMs": 889.7999999998137
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 440.09999999962747,
+      "intervalMs": 429.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 435.20000000018626,
+      "intervalMs": 433.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 44.60000000055879,
+      "intervalMs": 52.200000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 372.3999999994412,
+      "intervalMs": 368.59999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 416.90000000037253,
+      "intervalMs": 416.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 756.7999999998137,
+      "intervalMs": 772.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 380.59999999962747,
+      "intervalMs": 373.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 365.40000000037253,
+      "intervalMs": 358
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 14.099999999627471,
+      "intervalMs": 18.600000000558794
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 393.5,
+      "intervalMs": 387.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 433.70000000018626,
+      "intervalMs": 428.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 448,
+      "intervalMs": 449.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 432.20000000018626,
+      "intervalMs": 439.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 400,
+      "intervalMs": 394.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 386.79999999981374,
+      "intervalMs": 385.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 412.20000000018626,
+      "intervalMs": 411.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 395.59999999962747,
+      "intervalMs": 395
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 402.20000000018626,
+      "intervalMs": 403.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 381.29999999981374,
+      "intervalMs": 382.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 97.40000000037253,
+      "intervalMs": 101.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 321.09999999962747,
+      "intervalMs": 316.1000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 869.6000000005588,
+      "intervalMs": 868.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 276.20000000018626,
+      "intervalMs": 276.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 121.19999999925494,
+      "intervalMs": 122.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 408.5,
+      "intervalMs": 407.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 405.40000000037253,
+      "intervalMs": 406.3999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 441.5,
+      "intervalMs": 448.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 368.90000000037253,
+      "intervalMs": 369
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 442.3999999994412,
+      "intervalMs": 448.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 22.5,
+      "intervalMs": 13.399999999441206
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 418.79999999981374,
+      "intervalMs": 413.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 1223.6000000005588,
+      "intervalMs": 1225
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 9.5,
+      "intervalMs": 11.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 789.8999999994412,
+      "intervalMs": 789
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 406.5,
+      "intervalMs": 405.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 416.70000000018626,
+      "intervalMs": 437.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 800.4000000003725,
+      "intervalMs": 778.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 398.79999999981374,
+      "intervalMs": 402.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 400,
+      "intervalMs": 396.8999999994412
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 412.29999999981374,
+      "intervalMs": 421
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 412.40000000037253,
+      "intervalMs": 402.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 386.5,
+      "intervalMs": 387.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 444.59999999962747,
+      "intervalMs": 443.80000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 22.299999999813735,
+      "intervalMs": 20.899999999441206
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 748.7000000001863,
+      "intervalMs": 749.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 401.29999999981374,
+      "intervalMs": 401.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 385.5,
+      "intervalMs": 391.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 368.20000000018626,
+      "intervalMs": 361.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 401,
+      "intervalMs": 409.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 443.29999999981374,
+      "intervalMs": 439.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 428.80000000074506,
+      "intervalMs": 425
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 408.69999999925494,
+      "intervalMs": 409.70000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 390.90000000037253,
+      "intervalMs": 390.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 41.299999999813735,
+      "intervalMs": 48.30000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 363.90000000037253,
+      "intervalMs": 355.69999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 388.29999999981374,
+      "intervalMs": 388.40000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 397.09999999962747,
+      "intervalMs": 397.79999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 10.300000000745058,
+      "intervalMs": 8.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 440.8999999994412,
+      "intervalMs": 442
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 393.29999999981374,
+      "intervalMs": 393.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 403.1000000005588,
+      "intervalMs": 404.80000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 463.09999999962747,
+      "intervalMs": 463.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 425,
+      "intervalMs": 425.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 410,
+      "intervalMs": 410.30000000074506
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 397.6000000005588,
+      "intervalMs": 398.19999999925494
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 420.5,
+      "intervalMs": 418.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 442.09999999962747,
+      "intervalMs": 441.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 410.90000000037253,
+      "intervalMs": 412.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 11.5,
+      "intervalMs": 12.200000000186265
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 397.19999999925494,
+      "intervalMs": 399
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 812.5,
+      "intervalMs": 812.6999999992549
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 393.30000000074506,
+      "intervalMs": 391.90000000037253
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 414.5,
+      "intervalMs": 416.20000000018626
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 411.29999999981374,
+      "intervalMs": 406.5
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 408,
+      "intervalMs": 409.29999999981374
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 454.09999999962747,
+      "intervalMs": 453.09999999962747
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 438.29999999981374,
+      "intervalMs": 439.6000000005588
+    },
+    {
+      "calls": 238,
+      "triangles": 405584,
+      "geometries": 258,
+      "textures": 10,
+      "frameMs": 376.40000000037253,
+      "intervalMs": 376.09999999962747
+    }
+  ],
+  "warmResources": {
+    "memory": {
+      "geometries": 258,
+      "textures": 10
+    },
+    "programs": 20
+  },
+  "stalls": [
+    {
+      "start": 868.2999999998137,
+      "duration": 3015
+    },
+    {
+      "start": 3976.5,
+      "duration": 8087
+    },
+    {
+      "start": 12064.099999999627,
+      "duration": 1365
+    },
+    {
+      "start": 13616.200000000186,
+      "duration": 79
+    },
+    {
+      "start": 14540.899999999441,
+      "duration": 620
+    }
+  ],
+  "endResources": {
+    "memory": {
+      "geometries": 290,
+      "textures": 10
+    },
+    "programs": 20,
+    "heapBytes": 239000000
+  }
+}

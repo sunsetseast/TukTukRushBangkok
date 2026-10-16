@@ -11,7 +11,7 @@ This PR improves the existing city through material response, facade depth, dist
 
 **Left: current main at `b83e2f6` (PR18). Right: this PR.** These are actual WebGL gameplay screenshots with the normal chase camera and live HUD, not isolated model renders. The survey positions the vehicle at deterministic road/access-node fixtures; it does not claim to have driven every link between captures. Both runs use 844×390, identical poses, elapsed times and quality modes. World simulation is frozen after one fixture update to keep lighting/camera stable. Dynamic traffic and pedestrian pool differences are not an artistic comparison metric. `medium` is the Detailed UI option; `low` is Fast.
 
-The 90-second views show the intermediate evening stage. Separate Yaowarat views cover sunset, dusk and full night. [Before metadata](before/survey.json) and [after metadata](after/survey.json) include coordinates, heading, camera, time, quality and draw statistics. Screenshot runs overlapped in the shared environment, so their frame/startup timings are **not** used for performance conclusions.
+The 90-second views show the intermediate evening stage. Separate Yaowarat views cover sunset, dusk and full night. [Before metadata](before/survey.json) and [after metadata](after/survey.json) include coordinates, heading, camera, time, quality and draw statistics. Screenshot runs overlapped in the shared environment, so their frame/startup timings are **not** used for performance conclusions. Static fixtures can be recaptured independently; resident GPU counts depend on visitation order. The HUD district label can lag after a QA teleport, so the recorded coordinates identify each location.
 
 | Area | Main | PR |
 | --- | --- | --- |

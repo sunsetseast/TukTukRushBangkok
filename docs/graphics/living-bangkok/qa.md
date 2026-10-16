@@ -24,7 +24,7 @@ The [graphics browser report](validation/graphics-browser.json) adds native simu
 
 ## Repaired visual workflow
 
-The complete [Yaowarat art inspection run](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38830017714) passed at source checkpoint `8a2c098`, including both capture scripts and both artifact uploads. The final source recheck is linked in the PR. The [graphics/gameplay workflow](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38830017843) also passed there.
+The complete [Yaowarat art inspection run](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38837784181) passed on final graphics source `45a4552`, including both capture scripts and both artifact uploads. The [graphics/gameplay workflow](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/38837784275) also passed. [Committed CI metadata](validation/ci.json) records jobs, steps and artifact IDs. The final documentation-only head is rechecked in the PR.
 
 The old pan assertion used a fixed screen coordinate. After PR18 it could land on a marker or control instead of the pannable canvas. `capture-bangkok.mjs` now hit-tests an actual uncovered point, sends a stepped native drag, verifies changed viewBox **and direction**, recomputes the pinch anchor after panning, and waits for the real whole-city extent. Timeout remains bounded. Pinch, pause, portrait, culling and inspection checks remain.
 
@@ -50,6 +50,10 @@ pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-graphics-qa.mjs
 The browser scripts start/stop their own local Vite child, unless an existing `GAME_URL` is supplied to the art captures. `CHROMIUM_PATH` can select a local browser executable. The matched survey and isolated profile commands are in [performance.md](performance.md). Existing generated-artifact directories remain CI output; this report commits only selected stills and compact JSON/log evidence, not recordings.
 
 On Replit, check out this PR branch and use the existing Run command/preview. On iPhone open that preview in Safari, rotate to landscape, select Fast first, then compare Detailed. Drive Yaowarat at night, Siam traffic/BTS, temple approaches and bridges; hold steering and GO together, brake/reverse, activate boost and pause while a control is held. Open/pan/pinch/recenter the map from a landmark marker, toggle BTS/Places, close back to the correct simulation state, then enter LOOK and exercise orbit/pinch/two-finger pan/reset/viewpoints/return. Repeat map and quality switches, complete fares and a shift, restart and reload to check saved discovery/preferences. Check safe areas, heat, memory-pressure reloads and frame pacing for a sustained session. This is a device verification checklist, **not** a claim those physical tests were performed.
+
+## Capture readback investigation
+
+One long-tour software capture showed terrain-colored road pixels at the residential sunset fixture. The same pose in a fresh browser and a repeated complete tour rendered the asphalt correctly; forced-material/depth diagnostics also confirmed the road geometry. No application regression could be reproduced. The final complete survey waited for submitted GPU work and captured the road correctly. The survey now fences **only screenshot readback**; gameplay and ordinary scene/frame/map measurements never call `gl.finish()`. An explicit `GPU_PROFILE=1` diagnostic uses a fence to read disjoint-checked timer queries; its perturbed frames are excluded from timing comparisons. This is a capture precaution, not a claim of a diagnosed physical-device graphics defect or a driver fix.
 
 ## Remaining limits
 
