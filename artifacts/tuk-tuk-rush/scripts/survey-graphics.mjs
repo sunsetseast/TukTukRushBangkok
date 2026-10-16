@@ -296,6 +296,9 @@ try {
           return samples;
         });
       } else {
+        // Evidence only: wait for submitted GPU work before reading the frame.
+        // Never fence the gameplay renderer or the performance sampling path.
+        await p.evaluate(() => window.__graphics.gl.getContext().finish());
         await p.screenshot({
           path: `${out}/${filename}`,
           type: "jpeg",
