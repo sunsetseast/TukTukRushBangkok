@@ -73,6 +73,25 @@ try {
       return {
         buttons,
         hero: [hero.x, hero.y],
+        covered: [
+          ...document.querySelectorAll(
+            ".tt-arcade-logo,.tt-cinematic-tagline,.tt-arcade-actions,.tt-arcade-secondary,.tt-arcade-profile,.tt-yaowarat-plaque",
+          ),
+        ]
+          .filter((el) => {
+            const b = el.getBoundingClientRect(),
+              x = ((hero.x + 1) * innerWidth) / 2,
+              y = ((1 - hero.y) * innerHeight) / 2;
+            return (
+              b.width > 0 &&
+              b.height > 0 &&
+              x > b.left &&
+              x < b.right &&
+              y > b.top &&
+              y < b.bottom
+            );
+          })
+          .map((el) => el.className),
         canvas: r(document.querySelector("canvas")),
         scroll: [
           document.documentElement.scrollWidth,
@@ -82,6 +101,11 @@ try {
         height: innerHeight,
       };
     });
+    assert.deepEqual(
+      layout.covered,
+      [],
+      "Live vehicle stays visible between the logo and actions",
+    );
     for (const b of layout.buttons) {
       assert(
         b.x >= 0 && b.y >= 0 && b.right <= width + 1 && b.bottom <= height + 1,
