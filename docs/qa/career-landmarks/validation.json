@@ -574,9 +574,53 @@
   },
   "bundle": {
     "mainJavaScriptGzipKB": 588.02,
-    "branchJavaScriptGzipKB": 595.88,
+    "branchJavaScriptGzipKB": 596.0,
     "mainCSSGzipKB": 22.34,
     "branchCSSGzipKB": 23.31,
     "ChineseFontDeltaBytes": 1740
+  },
+  "riverfrontBrowser": {
+    "errors": [],
+    "sites": [
+      {
+        "id": "icon",
+        "calls": 181,
+        "triangles": 156098,
+        "geometries": 422,
+        "textures": 11,
+        "camera": [
+          -553.0710475256258,
+          38.29485738985919,
+          917.3836846080939
+        ],
+        "driving": {
+          "samples": [
+            161.60000000009313,
+            224.8000000002794,
+            19.399999999906868,
+            220,
+            153,
+            222.1999999997206,
+            183.20000000018626,
+            47.200000000186265,
+            168.6999999997206,
+            42.5,
+            234.5,
+            13.700000000186265,
+            170,
+            435.79999999981374,
+            286.10000000009313,
+            333.39999999990687,
+            449.3000000002794,
+            11
+          ],
+          "calls": 95,
+          "triangles": 75308,
+          "height": 3.3,
+          "visible": true
+        }
+      }
+    ],
+    "physicalIPhone": false
   }
 }

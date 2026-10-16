@@ -12,7 +12,7 @@ Five XP ranks, eleven achievement milestones, optional drive goals, personal rec
 - Odeon Gate: taller ceremonial gateway, lower side roofs, curved eaves, red columns, blue/gold brackets and the photographed royal inscription using the existing font atlas.
 - Golden Mount: irregular continuous planted terrain, winding stairs, white terrace and hilltop chedi, replacing stacked cylinders.
 - Wat Traimit: marble-colored levels, lateral stairs, corner pavilions, cruciform roof and slender central prasat spire.
-- ICONSIAM: connected stepped retail masses, pleated glazing, thin folded gold canopies, roof planting and a lower facade-focused LOOK preset plus riverfront view.
+- ICONSIAM: connected stepped retail masses, pleated glazing, thin folded gold canopies, roof planting and a lower facade-focused LOOK preset plus a riverfront view derived from the nearest river segment.
 - Wat Paknam: retained Buddha/chedi sculptures, additional planted courts, side salas and defined paths within the canal-side compound.
 - Khao San: varied small guesthouse/shop bays, awnings, counters, locally lettered signs and bunting; LOOK frames the street.
 - Giant Swing: paired structural timbers, curved crossbar, plaza and compressed Wat Suthat-inspired hall context.
@@ -33,7 +33,7 @@ For iPhone/Replit: pull this branch, use the normal dev command, and keep the sa
 
 All 17 test groups, TypeScript and production build pass. Native browser checks cover all ten LOOK presets/returns, 15 existing HUD/map/touch interaction groups and five viewport sizes; the career check covers real boarding/delivery, wallet persistence, reload/restart, achievements/results and responsive scrolling. The camera returns to 3.3 m after LOOK, map and restart.
 
-City-root CPU buffers (both LODs, indices/instances; no DOM signs/vehicles/GPU uploads) change from **110.25 MB to 112.19 MB (+1.75%)**; materials 166→183. Landmark attributes alone are 8.53→9.99 MB. JavaScript gzip grows 588.02→595.88 kB; CSS 22.34→23.31 kB, and the Chinese font adds 1,740 bytes. No hardware FPS claim is made. Raw checks/counts and software frame samples are in `validation.json`.
+City-root CPU buffers (both LODs, indices/instances; no DOM signs/vehicles/GPU uploads) change from **110.25 MB to 112.19 MB (+1.75%)**; materials 166→183. Landmark attributes alone are 8.53→9.99 MB. JavaScript gzip grows 588.02→596.00 kB; CSS 22.34→23.31 kB, and the Chinese font adds 1,740 bytes. No hardware FPS claim is made. Raw checks/counts and software frame samples are in `validation.json`.
 
 The three comparison sheets show the five priority sites at Fast quality and the same sunset time. Palace and Wat Traimit retain matched viewpoints; Gate/Golden Mount/ICONSIAM include the improved default framing. The driving image uses the normal chase camera. Career/results images come from completed browser gameplay transactions (teleported QA stops, not a claim of human-driven trips).
 

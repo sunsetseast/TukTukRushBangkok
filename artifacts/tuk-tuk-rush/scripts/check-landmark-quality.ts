@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import * as T from 'three';
+import {distanceToSegment} from '../src/game/world';
 import {createBangkokWorld} from '../src/game/bangkok/world';
 import {sculptedLandmark} from '../src/game/bangkok/sculptedLandmarks';
 import {disposeObject} from '../src/game/assets';
@@ -12,6 +13,11 @@ for(const l of d.landmarks){
  g.traverse(o=>{if(!(o instanceof T.Mesh))return;const p=o.geometry.attributes.position!;for(const v of p.array)assert(Number.isFinite(v),`Invalid mesh ${l.id}`);triangles+=(o.geometry.index?.count??p.count)/3;for(const a of Object.values(o.geometry.attributes))bytes+=a.array.byteLength;o.geometry.addEventListener('dispose',()=>disposed++);});
  assert(triangles>50);assert(triangles<300000,`Unbounded hero geometry ${l.id}`);
  const bbox=new T.Box3().setFromObject(g),s=bbox.getSize(new T.Vector3());assert(s.x<l.size!+3&&s.z<l.size!+5,`Art escapes restricted site envelope: ${l.id}: ${s.toArray()}`);
+ if(l.id==='icon'){
+  const subject=inspectionSubject(l,d),v=subject.views.find(v=>v.id==='riverfront')!,p=l.plot!,nearest=d.river!.slice(1).map((q,i)=>distanceToSegment(p,d.river![i]!,q)).sort((a,b)=>a.distance-b.distance)[0]!.point;
+  const a=v.azimuth+subject.yaw,dx=nearest.x-p.x,dz=nearest.z-p.z;
+  assert((Math.sin(a)*dx+Math.cos(a)*dz)/Math.hypot(dx,dz)>.999,'Riverfront preset must stand on the actual river-facing side');
+ }
  camera.open(inspectionSubject(l,d));for(let i=0;i<camera.subject!.views.length;i++){camera.choose(i);camera.update(1/60,pose,d);if(!camera.view!.room)assert(Math.hypot(...pose.position.map((v,k)=>v-pose.target[k]!) as [number,number,number])>camera.distance*.8,`Default composition collapsed: ${l.id}/${camera.view!.id}`);for(let j=0;j<24;j++){camera.rotate(.3,.3);camera.zoom(j%2?.1:10);camera.pan(50,-50);assert(camera.update(1/60,pose,d));assert([...pose.position,...pose.target].every(Number.isFinite));const view=camera.view!;assert(camera.distance>=view.minDistance-1e-6&&camera.distance<=view.maxDistance+1e-6);assert(camera.pitch>=view.minPitch&&camera.pitch<=view.maxPitch);if(view.room){const origin=camera.subject!.origin;for(let k=0;k<3;k++)assert(pose.position[k]!-origin[k]!>=view.room.min[k]!-1e-5&&pose.position[k]!-origin[k]!<=view.room.max[k]!+1e-5,'Indoor camera escapes viewing aisle');}}
   camera.reset();assert.equal(camera.azimuth,camera.view!.azimuth);assert.equal(camera.panX,0);}
  camera.close();assert(!camera.update(1/60,pose,d));disposeObject(g);assert(disposed>0);
