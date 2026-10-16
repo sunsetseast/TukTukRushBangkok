@@ -28,9 +28,9 @@ export function facadeFinishes() {
         relief += cloud * 0.04;
       }
       if (tile === 1) {
-        const joint = u < 2 || v < 2;
-        value -= joint ? 0.16 : cloud * 0.07;
-        relief += joint ? -0.18 : 0;
+        // Ordinary concrete is not a repeated four-metre panel with black seams.
+        value -= cloud * 0.035;
+        relief += cloud * 0.015;
       }
       if (tile === 2) {
         const mortar =
@@ -40,8 +40,8 @@ export function facadeFinishes() {
       }
       if (tile === 3) {
         const joint = u % 32 < 1.5 || v % 32 < 1.5;
-        value = joint ? 0.65 : 0.95 + n * 0.025;
-        relief = joint ? -0.28 : 0.03;
+        value = joint ? 0.87 : 0.97 + n * 0.025;
+        relief = joint ? -0.08 : 0.015;
         r = joint ? 0.91 : 0.46 + n * 0.08;
       }
       if (tile === 4) {

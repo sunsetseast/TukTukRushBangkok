@@ -8,16 +8,20 @@ import { RailService } from './bangkok/transit/service';
 import { createDistrict } from './world';
 import { VehicleController, createVehicle } from './vehicle';
 import { TrafficSystem } from './traffic';
-import { createMissions } from './missions';
+import { FareDispatcher, seededRandom } from './missions';
 
 export class GameEngine {
   readonly model: GameModel;
+  cameraRevision = 0;
+  private resetCamera() { this.cameraRevision++; delete (window as typeof window & {__artCamera?: unknown}).__artCamera; }
   readonly boost = new TurboBoost();
   readonly inspection = new InspectionCamera();
   readonly railService?:RailService;
   private controller = new VehicleController();
   private trafficSystem: TrafficSystem;
-  private missions: Mission[];
+  private fares: FareDispatcher;
+  private readonly missionSeed?: number;
+  private sessions=0;
   private listeners = new Set<(s: GameSnapshot) => void>();
   private keyboard = new Set<string>();
   private publishTime = 0;
@@ -30,14 +34,15 @@ export class GameEngine {
   private discoveryTime = 0;
   private arrivalId = '';
   private storage: Storage | undefined;
-  constructor(options: { world?: 'bangkok' | 'chinatown' } = {}) {
+  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number } = {}) {
     const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
     if(district.transit)this.railService=new RailService(district.transit);
     try { this.storage = window.localStorage; } catch { /* Browser storage is optional. */ }
     this.discovery = readDiscovery(this.storage);
     this.trafficSystem = new TrafficSystem(district);
-    this.missions = createMissions(district);
-    const mission = this.missions[0]!;
+    this.missionSeed=options.seed;
+    this.fares=new FareDispatcher(district,options.seed===undefined?undefined:seededRandom(options.seed));
+    const mission = this.fares.next(createVehicle(district));
     this.model = {
       district, player: createVehicle(district), traffic: this.trafficSystem.create(),
       input: { steer: 0, gas: false, brake: false }, mission, missionIndex: 0,
@@ -77,11 +82,12 @@ export class GameEngine {
   private publish() { for (const cb of this.listeners) cb({ ...this.model.snapshot }); }
   start(mode: 'shift' | 'free') {
     this.clearInput(); this.controller.reset(); this.boost.reset(); this.trafficSystem.reset();
-    this.arrivalId=''; this.inspection.close();
+    this.arrivalId=''; this.inspection.close(); this.resetCamera();
     this.railService?.update(0);
     Object.assign(this.model.player, createVehicle(this.model.district));
     this.model.traffic = this.trafficSystem.create();
-    this.model.missionIndex = 0; this.model.mission = this.missions[0]!;
+    this.fares=new FareDispatcher(this.model.district,this.missionSeed===undefined?undefined:seededRandom(this.missionSeed+this.sessions++));
+    this.model.missionIndex = 0; this.model.mission = this.fares.next(this.model.player);
     Object.assign(this.model.snapshot, {
       session: (this.model.snapshot.session ?? 0) + 1, viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
       score: 0, earnings: 0, deliveries: 0, boarding: 0, target: this.model.mission.pickup,
@@ -95,12 +101,14 @@ export class GameEngine {
   }
   resume() {
     if (this.model.snapshot.phase !== 'paused') return;
-    const wasInspecting=!!this.model.snapshot.viewingLandmark;this.clearInput();this.inspection.close();this.model.snapshot.viewingLandmark=undefined;const portrait=typeof window.matchMedia==='function'&&window.matchMedia('(orientation: portrait)').matches;if(wasInspecting&&(document.hidden||portrait)){this.publish();return;}this.model.snapshot.phase='playing';this.publish();
+    const wasInspecting=!!this.model.snapshot.viewingLandmark;if(wasInspecting)this.resetCamera();this.clearInput();this.inspection.close();this.model.snapshot.viewingLandmark=undefined;const portrait=typeof window.matchMedia==='function'&&window.matchMedia('(orientation: portrait)').matches;if(wasInspecting&&(document.hidden||portrait)){this.publish();return;}this.model.snapshot.phase='playing';this.publish();
   }
-  returnToTitle() { this.clearInput(); this.inspection.close(); Object.assign(this.model.player, createVehicle(this.model.district)); this.model.snapshot.viewingLandmark = undefined; this.model.snapshot.elapsed = 0; this.model.snapshot.phase = 'title'; this.publish(); }
+  returnToTitle() { this.resetCamera(); this.clearInput(); this.inspection.close(); Object.assign(this.model.player, createVehicle(this.model.district)); this.model.snapshot.viewingLandmark = undefined; this.model.snapshot.elapsed = 0; this.model.snapshot.phase = 'title'; this.publish(); }
   restart() { this.start(this.model.snapshot.mode); }
   recover() {
     if (this.model.snapshot.phase !== 'playing' && this.model.snapshot.phase !== 'paused') return;
+    this.resetCamera();
+    if (![this.model.player.x,this.model.player.z,this.model.player.heading].every(Number.isFinite)) Object.assign(this.model.player,createVehicle(this.model.district));
     this.controller.recover(this.model.player, this.model.district, this.model.traffic);
     this.clearInput(); this.model.snapshot.boarding = 0;
     this.message('Back on the road', 2); this.updateTarget(); this.publish();
@@ -129,8 +137,8 @@ export class GameEngine {
   setQuality(quality: 'low' | 'medium') { this.model.snapshot.quality = quality; this.slowTime = 0; this.publish(); }
   private message(text: string, seconds = 3) { this.model.snapshot.message = text; this.messageTime = seconds; }
   private nextPassenger() {
-    this.model.missionIndex = (this.model.missionIndex + 1) % this.missions.length;
-    this.model.mission = this.missions[this.model.missionIndex]!;
+    this.model.missionIndex++;
+    this.model.mission = this.fares.next(this.model.player);
     Object.assign(this.model.snapshot, { stage: 'pickup', tripTime: this.model.mission.limit, target: this.model.mission.pickup, passenger: this.model.mission.passenger, boarding: 0 });
   }
   private updateTarget() {
@@ -144,6 +152,7 @@ export class GameEngine {
     if (this.disposed) return;
     const dt = Math.max(0, Math.min(delta, 0.05));
     const { snapshot: s, player, input } = this.model;
+    if(![player.x,player.z,player.heading,player.speed].every(Number.isFinite)){ Object.assign(player,createVehicle(this.model.district));this.controller.reset();this.clearInput();this.resetCamera(); }
     this.frames++; this.frameTime += delta;
     if (this.frameTime >= 2) {
       s.fps = Math.round(this.frames / this.frameTime);
@@ -195,7 +204,7 @@ export class GameEngine {
               s.stage = 'delivery'; s.target = this.model.mission.destination; s.tripTime = this.model.mission.limit; s.boarding = 0;
               this.message(`${this.model.mission.passenger.split(' · ')[0]} is aboard. Go to ${s.target.name}!`, 4);
             } else {
-              const fare = 60 + Math.round(s.tripTime * 2);
+              const fare = this.model.mission.baseFare === undefined ? 60 + Math.round(s.tripTime * 2) : this.model.mission.baseFare + Math.round(30 * s.tripTime / this.model.mission.limit);
               const quickBonus = s.tripTime > this.model.mission.limit * 0.45 ? 150 : 0;
               s.earnings += fare; s.score += fare * 5 + quickBonus; s.deliveries++;
               this.nextPassenger(); this.message(`Delivered! +฿${fare}${quickBonus ? ' · Quick delivery +150' : ''}`, 4);
@@ -218,7 +227,7 @@ export class GameEngine {
     if (this.publishTime > 0.1) { this.publishTime = 0; this.publish(); }
   }
   dispose() {
-    this.disposed = true; this.listeners.clear();
+    this.resetCamera(); this.disposed = true; this.listeners.clear();
     window.removeEventListener('keydown', this.onKeyDown); window.removeEventListener('keyup', this.onKeyUp);
     window.removeEventListener('blur', this.onBlur); document.removeEventListener('visibilitychange', this.onVisibility);
   }

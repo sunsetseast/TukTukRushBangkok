@@ -15,7 +15,7 @@ export type District = { destinations?: DestinationAccess[]; transit?: import('.
 export type Vehicle = Point & { heading: number; speed: number; steer: number; lean: number; wheelSpin: number; collision: number };
 export type TrafficCar = Point & { id: number; heading: number; speed: number; kind: 'taxi' | 'car' | 'motorcycle'; color: string; from: string; to: string; wait: number; nearMissCooldown: number };
 export type Input = { steer: number; gas: boolean; brake: boolean; boost?: boolean };
-export type Mission = { pickup: RoadNode; destination: RoadNode; passenger: string; limit: number };
+export type Mission = { pickup: RoadNode; destination: RoadNode; passenger: string; limit: number; routeDistance?: number; baseFare?: number };
 export type GameSnapshot = {
   session?: number;
   viewingLandmark?: string; boostState?: 'ready' | 'active' | 'recharging'; boostActive?: number; boostRecharge?: number;

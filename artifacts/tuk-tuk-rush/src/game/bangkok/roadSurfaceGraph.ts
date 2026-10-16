@@ -82,3 +82,7 @@ export function buildRoadSurfaces(d: District) {
   root.userData.sidewalkPolygons = sidewalk;
   return root;
 }
+export const WATER_LEVEL = -1.2;
+export function channelGeometry(kind:'land'|'water') {
+  return surfaceGeometry(baked[kind] as RoadPolygons,kind==='land'?-.25:WATER_LEVEL);
+}

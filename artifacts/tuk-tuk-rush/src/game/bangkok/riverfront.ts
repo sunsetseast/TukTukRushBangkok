@@ -164,13 +164,13 @@ export function riverMotion(d: District) {
     update(time: number, quality: string) {
       boats.forEach((g, i) => {
         const p = boatPose(routes[i]!, time);
-        g.position.set(p.x, 0.02 + Math.sin(time + i) * 0.035, p.z);
+        g.position.set(p.x, -1.03 + Math.sin(time + i) * 0.035, p.z);
         g.rotation.y = p.heading;
         const w = wakes[i]!;
         w.visible = quality === "medium";
         w.position.set(
           p.x - Math.sin(p.heading) * 14,
-          -0.12,
+          -1.17,
           p.z - Math.cos(p.heading) * 14,
         );
         w.rotation.y = p.heading;
@@ -195,7 +195,7 @@ export function riverWater() {
       "varying vec2 riverWorld;uniform float riverTime;uniform float riverNight;\n" +
       shader.fragmentShader.replace(
         "#include <color_fragment>",
-        "#include <color_fragment>\nfloat ripple=sin(riverWorld.y*.9+sin(riverWorld.x*.2)+riverTime*.85);float wave=sin(riverWorld.x*.15+sin(riverWorld.y*.07)+riverTime*.7)*sin(riverWorld.y*.22-riverTime*.5);vec3 water=mix(vec3(.075,.19,.20),vec3(.018,.065,.115),riverNight);float glint=pow(max(0.,ripple),12.);float streak=pow(max(0.,sin(riverWorld.x*.025+riverWorld.y*.009+wave*.025)),18.)*(.025+glint*.08);diffuseColor.rgb=water+wave*.009+mix(vec3(.55,.29,.09),vec3(.3,.13,.32),.5+.5*sin(riverWorld.x*.014))*streak*(.8+riverNight*2.5);",
+        "#include <color_fragment>\nfloat ripple=sin(riverWorld.y*.9+sin(riverWorld.x*.2)+riverTime*.85);float wave=sin(riverWorld.x*.15+sin(riverWorld.y*.07)+riverTime*.7)*sin(riverWorld.y*.22-riverTime*.5);vec3 water=mix(vec3(.06,.32,.35),vec3(.025,.14,.23),riverNight);float glint=pow(max(0.,ripple),12.);float streak=pow(max(0.,sin(riverWorld.x*.025+riverWorld.y*.009+wave*.025)),18.)*(.025+glint*.08);diffuseColor.rgb=water+wave*.009+mix(vec3(.55,.29,.09),vec3(.3,.13,.32),.5+.5*sin(riverWorld.x*.014))*streak*(.8+riverNight*2.5);",
       );
   };
   mat.customProgramCacheKey = () => "living-river-v3";

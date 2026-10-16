@@ -46,7 +46,8 @@ const nextFrames = async (n = 2) => {
     { timeout: 60000 },
   );
 };
-await page.goto(url);
+await page.addInitScript(() => { if(location.protocol.startsWith('http')){const u=new URL(location.href);u.searchParams.set('qa','1');history.replaceState(null,'',u);} });
+  await page.goto(url);
 await page.waitForFunction(() => window.__graphics, null, { timeout: 60000 });
 await page.getByTestId("button-free-roam").click();
 await nextFrames();

@@ -1,10 +1,11 @@
 import fs from "node:fs/promises";
 import { spawn } from "node:child_process";
 const pkg = JSON.parse(await fs.readFile("package.json", "utf8")),
-  out = "../../docs/graphics/living-bangkok/validation";
+  out = process.env.QA_OUT || "../../docs/graphics/living-bangkok/validation";
 await fs.mkdir(out, { recursive: true });
 const results = [];
 for (const name of [
+  "test:corrections",
   "test:graphics-foundation",
   "test:gameplay",
   "test:bangkok",

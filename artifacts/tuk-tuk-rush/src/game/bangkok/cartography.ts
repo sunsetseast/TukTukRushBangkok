@@ -22,14 +22,14 @@ function build(d: District) {
       region: regionAt(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 })?.id,
       shortcut: r.shortcut ? r.corridor : undefined,
       color: r.bridge
-        ? "#aac7c9"
+        ? "#f9f5dc"
         : r.destinationId
-          ? "#9c9474"
+          ? "#fff5df"
           : r.shortcut
-            ? "#ba9566"
+            ? "#c39e6c"
             : major
-              ? "#839997"
-              : "#435b61",
+              ? "#fff3d1"
+              : "#e5e1cb",
       width: Math.max(r.width / SCALE, major ? 2.8 : 1.2),
       minX: Math.min(a.x, b.x),
       maxX: Math.max(a.x, b.x),

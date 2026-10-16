@@ -3,6 +3,7 @@ import {arrivalSign,municipalSigns,ARRIVAL_THAI} from "../signPlacement";
 import {LandmarkBuilder} from "../landmarkBuilder";
 import type { District } from "../../types";
 import { StaticBatch } from "../../staticBatch";
+import {stationSignPlacements} from './stationGeometry';
 
 /** One locally shaped atlas for station and destination wayfinding. Original
  * typography/sign faces; no photographs or operator logo images are shipped. */
@@ -69,6 +70,7 @@ export function buildTransitSigns(d: District) {
   });
   const batch = new StaticBatch(),
     temp = new T.Object3D();
+  const structure=new LandmarkBuilder();
   const add = (
     key: string,
     x: number,
@@ -76,6 +78,7 @@ export function buildTransitSigns(d: District) {
     z: number,
     yaw: number,
     w: number,
+    doubleSided = true,
   ) => {
     const i = entries.findIndex((e) => e.key === key),
       g = new T.PlaneGeometry(w, (w * 96) / 512),
@@ -86,27 +89,27 @@ export function buildTransitSigns(d: District) {
         ((i % cols) * 512 + 2 + uv.getX(j) * 508) / canvas.width,
         1 - (Math.floor(i / cols) * 96 + 94 - uv.getY(j) * 92) / canvas.height,
       );
-    const matrices=[];for(const side of [0,1]){temp.position.set(x+Math.sin(yaw)*(.035-side*.07),y,z+Math.cos(yaw)*(.035-side*.07));temp.rotation.set(0,yaw+side*Math.PI,0);temp.scale.set(1,1,1);temp.updateMatrix();matrices.push(temp.matrix.clone());}batch.add(g,mat,matrices);
+    const matrices=[];for(const side of doubleSided?[0,1]:[0]){temp.position.set(x+Math.sin(yaw)*(.065-side*.13),y,z+Math.cos(yaw)*(.065-side*.13));temp.rotation.set(0,yaw+side*Math.PI,0);temp.scale.set(1,1,1);temp.updateMatrix();matrices.push(temp.matrix.clone());}batch.add(g,mat,matrices);
   };
   for (const s of stations) {
-    for (const side of [-1, 1])
-      add(
-        s.id,
-        s.x + Math.cos(s.yaw) * side * 9.2,
-        10.7,
-        s.z - Math.sin(s.yaw) * side * 9.2,
-        s.yaw + (side * Math.PI) / 2,
-        20,
-      );
-    for (const p of s.entrances ?? [])
-      add(s.id, p.x, 3.3, p.z, p.yaw + Math.PI, 6);
+    for (const p of stationSignPlacements(s)) {
+      // A shallow frame bolts to the existing concourse beam, never floats at
+      // a fixed world offset outside a narrow Gold Line canopy.
+      structure.box(p.x,p.y,p.z,p.w+.15,p.h+.12,.09,'#e7d5a1',p.yaw);
+      add(s.id,p.x,p.y,p.z,p.yaw,p.w,false);
+    }
+    for (const p of s.entrances ?? []) {
+      add(s.id, p.x, 3.3, p.z, p.yaw + Math.PI, 4.4);
+      const c=Math.cos(p.yaw),sn=Math.sin(p.yaw);
+      for(const side of [-1,1])structure.box(p.x+c*side*2.1,1.95,p.z-sn*side*2.1,.1,3.8,.1,'#3f7183');
+      structure.box(p.x,3.3,p.z,4.5,.95,.08,'#3f7183',p.yaw);
+    }
     if (s.mrt) {
       const p = s.entrances?.[0];
       if (p) add(`mrt:${s.id}`, p.x, 2, p.z, p.yaw + Math.PI, 5);
     }
   }
   const gate=d.landmarks.find(l=>l.id==='gate');if(gate){const p=gate.plot??gate;for(const side of [-1,1])add('historic:gate',p.x,10.3,p.z+side*4.86,side>0?0:Math.PI,6.4);}
-  const structure=new LandmarkBuilder();
   for(const a of d.destinations??[]){const p=arrivalSign(a),g=a.entrance;add(p.key,p.x,p.y,p.z,p.yaw,p.w);
    const c=Math.cos(g.yaw),s=Math.sin(g.yaw);for(const u of [-5.3,5.3]){structure.box(g.x+c*u-s*1.7,6.8,g.z-s*u-c*1.7,.12,.16,3.5,'#9b8c62',g.yaw);structure.box(p.x+c*u,6.25,p.z-s*u,.12,1.1,.12,'#9b8c62');}}
   for(const p of municipalSigns(d)){add(p.key,p.x,p.y,p.z,p.yaw,p.w);const px=p.x-Math.cos(p.yaw)*3.15,pz=p.z+Math.sin(p.yaw)*3.15;structure.sculpt(new T.CylinderGeometry(.07,.12,4.5,8),px,2.25,pz,'#54746d','ceramic');structure.sculpt(new T.ConeGeometry(.22,.55,8),px,4.7,pz,'#cbb77b','ceramic');structure.box(px,.3,pz,.6,.6,.6,'#9d9e8c');structure.box(p.x,3.08,p.z,6.2,.12,.12,'#54746d',p.yaw);}

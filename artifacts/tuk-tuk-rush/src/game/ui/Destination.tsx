@@ -4,6 +4,7 @@ import type { Frame } from "../Hud";
 import type { Guidance } from "../navigation";
 import { approaching, NAVIGATION } from "./banner";
 import { fmtClock } from "./format";
+import { destinationLabel } from "./destinationLabel";
 export function Destination({
   f,
   guidance,
@@ -110,7 +111,7 @@ export function Destination({
             {s.stage === "pickup" ? "PICKUP" : "DROP-OFF"}
             <span className="tt-nav-distance">{distance}</span>
           </span>
-          <b data-testid="text-destination">{s.target.name}</b>
+          <b data-testid="text-destination" title={s.target.name}>{expanded ? s.target.name : destinationLabel(s.target.name)}</b>
           <span className="tt-nav-extra">
             <UserRound size={12} /> {s.passenger}
             {s.stage === "delivery" && ` · ${fmtClock(s.tripTime)} left`}

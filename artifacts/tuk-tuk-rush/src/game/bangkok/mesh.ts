@@ -1,4 +1,6 @@
 import * as T from "three";
+import { landscapeMaterial } from "./streetSurfaces";
+import { emitLandscape } from "./landscape";
 import { facadeFinishes, installFacadeFinish } from "./facadeFinish";
 import { cityShadows } from "./cityShadows";
 import { riverWater, riverMotion, emitRiverfront } from "./riverfront";
@@ -11,7 +13,7 @@ import { environmentEffects } from "./environmentEffects";
 import { emitEnvironment } from "./environmentArt";
 import { emitDistrictSigns } from "./districtSigns";
 import { emitCables } from "./environmentCables";
-import { buildRoadSurfaces } from "./roadSurfaceGraph";
+import { buildRoadSurfaces, channelGeometry } from "./roadSurfaceGraph";
 import { sculptedLandmark } from "./sculptedLandmarks";
 import { scalaParcel, emitScala, buildScalaSigns } from "./scala";
 import type { District, Landmark } from "../types";
@@ -39,10 +41,10 @@ export function buildBangkokGraybox(
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
   const ground = new T.Mesh(
-    new T.PlaneGeometry(14000, 14000).rotateX(-Math.PI / 2),
-    new T.MeshStandardMaterial({ color: "#53645c", roughness: 1 }),
+    channelGeometry("land"),
+    landscapeMaterial(),
   );
-  ground.position.y = -0.25;
+  ground.name = "DevelopedLand";
   group.add(ground);
   const batch = new StaticBatch(),
     detailBatch = new StaticBatch(),
@@ -108,44 +110,10 @@ export function buildBangkokGraybox(
         );
   }
   group.add(buildRoadSurfaces(d));
-  const waterStyle = riverWater(),
-    water = waterStyle.material,
-    waterDisc = new T.CylinderGeometry(1, 1, 0.04, 32);
-  for (let i = 1; i < d.river!.length; i++) {
-    const a = d.river![i - 1]!,
-      b = d.river![i]!,
-      len = Math.hypot(b.x - a.x, b.z - a.z);
-    temp.position.set((a.x + b.x) / 2, -0.15, (a.z + b.z) / 2);
-    temp.rotation.set(0, Math.atan2(b.x - a.x, b.z - a.z), 0);
-    temp.scale.set(d.riverWidth!, 0.04, len);
-    temp.updateMatrix();
-    batch.add(unit, water, [temp.matrix.clone()]);
-    for (const p of [a, b]) {
-      temp.position.set(p.x, -0.15, p.z);
-      temp.rotation.set(0, 0, 0);
-      temp.scale.set(d.riverWidth! / 2, 1, d.riverWidth! / 2);
-      temp.updateMatrix();
-      batch.add(waterDisc, water, [temp.matrix.clone()]);
-    }
-  }
-  for (const canal of d.canals ?? [])
-    for (let i = 1; i < canal.points.length; i++) {
-      const a = canal.points[i - 1]!,
-        b = canal.points[i]!,
-        len = Math.hypot(b.x - a.x, b.z - a.z);
-      temp.position.set((a.x + b.x) / 2, -0.15, (a.z + b.z) / 2);
-      temp.rotation.set(0, Math.atan2(b.x - a.x, b.z - a.z), 0);
-      temp.scale.set(canal.width, 0.04, len + 0.1);
-      temp.updateMatrix();
-      batch.add(unit, water, [temp.matrix.clone()]);
-      for (const p of [a, b]) {
-        temp.position.set(p.x, -0.15, p.z);
-        temp.rotation.set(0, 0, 0);
-        temp.scale.set(canal.width / 2, 1, canal.width / 2);
-        temp.updateMatrix();
-        batch.add(waterDisc, water, [temp.matrix.clone()]);
-      }
-    }
+  const waterStyle = riverWater();
+  const waterSurface = new T.Mesh(channelGeometry("water"),waterStyle.material);
+  waterSurface.name = "BangkokChannels";
+  group.add(waterSurface);
   const designs = designBuildings(d);
   const finishes = facadeFinishes();
   const facadeMaterial = new T.MeshStandardMaterial({
@@ -192,6 +160,7 @@ export function buildBangkokGraybox(
   emitCables(d, (piece) => architecture.add(piece));
   emitDistrictSigns(ordinary, (piece) => architecture.add(piece));
   emitRiverfront(d, (piece) => architecture.add(piece));
+  emitLandscape(d, (piece) => architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
   emitDestinationGrounds(d, (piece) => architecture.add(piece));
   emitRailInfrastructure(d, (piece) => architecture.add(piece));
@@ -212,7 +181,7 @@ export function buildBangkokGraybox(
       d: plaza,
       color: l.id === "icon" ? "#bdb99c" : "#b8c3bc",
       yaw: 0,
-      surface: "tile",
+      surface: "concrete",
     });
   }
   for (const o of d.obstacles.filter(

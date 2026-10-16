@@ -10,6 +10,8 @@ import {
   VolumeX,
   Wrench,
   X,
+  Sparkles,
+  Flag,
 } from "lucide-react";
 import type { GameSnapshot } from "./types";
 import type { Preferences } from "./ui/preferences";
@@ -141,7 +143,7 @@ export function Title({
       <div className="tt-title">
         <div className="tt-panel">
           <div className="tt-kicker">
-            <span className="tt-live-dot" /> BANGKOK · NIGHT DRIVE
+            <Sparkles size={16} /> BANGKOK · ARCADE
           </div>
           <h1>
             <span>TUK TUK</span>
@@ -150,7 +152,7 @@ export function Title({
             </span>
           </h1>
           <p className="tt-title-description">
-            Three wheels. A city of possibilities.
+            Three wheels. Big city. Your next adventure.
           </p>
           <div className="tt-title-btns">
             <button
@@ -165,7 +167,7 @@ export function Title({
                   the night ahead
                 </small>
               </span>
-              <ArrowRight size={22} />
+              <Flag size={22} />
             </button>
             <button
               className="tt-mode-card"
@@ -279,12 +281,12 @@ export function PauseMenu({
       >
         <div className="tt-card-heading">
           <div>
-            <span className="tt-kicker">BANGKOK NIGHT DRIVE</span>
+            <span className="tt-kicker">BANGKOK ARCADE</span>
             <h2>
               {view === "settings"
                 ? "Settings"
                 : view === "main"
-                  ? "Take a breath."
+                  ? "Pit stop!"
                   : view === "restart"
                     ? "Start fresh?"
                     : "Leave this drive?"}
@@ -392,7 +394,7 @@ export function Results({
     <Surface label="Shift complete">
       <div className="tt-card tt-results-card">
         <span className="tt-kicker">THE CITY SAYS THANK YOU</span>
-        <h2>Shift complete.</h2>
+        <h2>What a ride!</h2>
         <div className="tt-earned">
           <span>SHIFT EARNINGS</span>
           <b data-testid="text-result-earnings">
