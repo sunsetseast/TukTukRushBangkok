@@ -770,7 +770,11 @@ export function WorldMap({
           onPointerMove={move}
           onPointerUp={end}
           onPointerCancel={end}
-          onLostPointerCapture={end}
+          onLostPointerCapture={(e) => {
+            // Touch implicitly captures the pin's child. Transferring that
+            // capture to this SVG must not discard the still-active gesture.
+            if (e.target === e.currentTarget) end(e);
+          }}
           aria-label="Bangkok, north up. Drag to pan; pinch or use plus and minus to zoom. Arrow keys pan."
         >
           <MapLayers

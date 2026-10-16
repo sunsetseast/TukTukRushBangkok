@@ -172,7 +172,19 @@ try {
     type: "touchEnd",
     touchPoints: [],
   });
-  assert.notEqual(await svg.getAttribute("viewBox"), v);
+  const moved = await svg.getAttribute("viewBox");
+  assert.notEqual(moved, v);
+  const pixelDelta = await svg.evaluate(
+    (el, previous) =>
+      (Number(el.getAttribute("viewBox").split(" ")[0]) -
+        Number(previous.split(" ")[0])) *
+      el.getScreenCTM().a,
+    v,
+  );
+  assert(
+    pixelDelta < -35 && pixelDelta > -45,
+    "Capture transfer must preserve the complete 40px drag",
+  );
   assert.equal(
     await p.getByTestId("map-detail").count(),
     0,
@@ -187,7 +199,9 @@ try {
     type: "touchEnd",
     touchPoints: [],
   });
-  await p.getByTestId("map-detail").waitFor();
+  await p.waitForTimeout(500);
+
+  await p.getByTestId("map-detail").waitFor({ timeout: 10000 });
   report.checks.push(
     "Native touch drag starting on marker pans without selection; subsequent tap selects",
   );
