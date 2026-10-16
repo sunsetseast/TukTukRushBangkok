@@ -1,6 +1,8 @@
 import * as T from "three";
+import { compactGeometry } from "../compactGeometry";
 import type { Surface } from "./buildingGrammar";
-export type Shape = "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow";
+export type Shape =
+  "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow";
 export type Layer = "core" | "near" | "coarse" | "detail" | "night";
 export type ArtPiece = {
   x: number;
@@ -67,7 +69,9 @@ export class ArchitecturalBatch {
         this.instances.set(key, bucket);
       }
       const c = Math.cos(o.yaw),
-        s = Math.sin(o.yaw), cp=Math.cos(o.pitch??0),sp=Math.sin(o.pitch??0),
+        s = Math.sin(o.yaw),
+        cp = Math.cos(o.pitch ?? 0),
+        sp = Math.sin(o.pitch ?? 0),
         color = new T.Color(o.color);
       // Matrices contain world transforms. A custom per-instance surface tile
       // selects the shared material atlas in the vertex shader.
@@ -76,13 +80,13 @@ export class ArchitecturalBatch {
         0,
         -s * o.w,
         0,
-        s*sp*o.h,
-        cp*o.h,
-        c*sp*o.h,
+        s * sp * o.h,
+        cp * o.h,
+        c * sp * o.h,
         0,
-        s*cp*o.d,
-        -sp*o.d,
-        c*cp*o.d,
+        s * cp * o.d,
+        -sp * o.d,
+        c * cp * o.d,
         0,
         o.x,
         o.y,
@@ -130,10 +134,19 @@ export class ArchitecturalBatch {
           depth: 1,
           bevelEnabled: false,
         }).translate(0, 0, -0.5);
-      } else if(shape==='vault'){
-        const outer=Array.from({length:9},(_,i)=>new T.Vector2((i/8-.5),Math.sin(i/8*Math.PI)));
-        const inner=[...outer].reverse().map(p=>new T.Vector2(p.x,p.y-.055));
-        geo=new T.ExtrudeGeometry(new T.Shape([...outer,...inner]),{depth:1,bevelEnabled:false,curveSegments:1}).translate(0,0,-.5);
+      } else if (shape === "vault") {
+        const outer = Array.from(
+          { length: 9 },
+          (_, i) => new T.Vector2(i / 8 - 0.5, Math.sin((i / 8) * Math.PI)),
+        );
+        const inner = [...outer]
+          .reverse()
+          .map((p) => new T.Vector2(p.x, p.y - 0.055));
+        geo = new T.ExtrudeGeometry(new T.Shape([...outer, ...inner]), {
+          depth: 1,
+          bevelEnabled: false,
+          curveSegments: 1,
+        }).translate(0, 0, -0.5);
       } else if (shape === "arch")
         geo = new T.TorusGeometry(0.5, 0.095, 3, 10, Math.PI).translate(
           0,
@@ -142,9 +155,23 @@ export class ArchitecturalBatch {
         );
       else if (shape === "cylinder")
         geo = new T.CylinderGeometry(0.5, 0.5, 1, 8);
-      else if(shape==="orb")geo=new T.IcosahedronGeometry(.5,0);
-      else if(shape==="arrow"){geo=new T.BufferGeometry();geo.setAttribute("position",new T.Float32BufferAttribute([-.5,0,-.5,.5,0,-.5,0,0,.5],3));geo.setAttribute("uv",new T.Float32BufferAttribute([0,0,1,0,.5,1],2));geo.setIndex([0,2,1]);geo.computeVertexNormals();}
-      else geo = new T.BoxGeometry(1, 1, 1);
+      else if (shape === "orb") geo = new T.IcosahedronGeometry(0.5, 0);
+      else if (shape === "arrow") {
+        geo = new T.BufferGeometry();
+        geo.setAttribute(
+          "position",
+          new T.Float32BufferAttribute(
+            [-0.5, 0, -0.5, 0.5, 0, -0.5, 0, 0, 0.5],
+            3,
+          ),
+        );
+        geo.setAttribute(
+          "uv",
+          new T.Float32BufferAttribute([0, 0, 1, 0, 0.5, 1], 2),
+        );
+        geo.setIndex([0, 2, 1]);
+        geo.computeVertexNormals();
+      } else geo = new T.BoxGeometry(1, 1, 1);
       this.templates.set(shape, geo);
     }
     const p = geo.attributes.position!,
@@ -205,7 +232,7 @@ export class ArchitecturalBatch {
       );
       geo.setAttribute(
         "artSurface",
-        new T.InstancedBufferAttribute(new Float32Array(b.tiles), 1),
+        new T.InstancedBufferAttribute(new Uint8Array(b.tiles), 1),
       );
       const mesh = new T.InstancedMesh(
         geo,
@@ -215,9 +242,11 @@ export class ArchitecturalBatch {
       mesh.instanceMatrix.array.set(b.matrices);
       mesh.instanceMatrix.needsUpdate = true;
       mesh.instanceColor = new T.InstancedBufferAttribute(
-        new Float32Array(b.colors),
+        new Uint8Array(b.colors.map((v) => Math.round(v * 255))),
         3,
+        true,
       );
+      compactGeometry(geo);
       mesh.computeBoundingBox();
       mesh.computeBoundingSphere();
       const root = new T.Group();
@@ -258,7 +287,12 @@ export class ArchitecturalBatch {
                 ? "BangkokDetail"
                 : "BangkokNight";
       root.userData.center = b.cell;
-      root.add(new T.Mesh(g, b.layer === "night" ? this.night : this.material));
+      root.add(
+        new T.Mesh(
+          compactGeometry(g),
+          b.layer === "night" ? this.night : this.material,
+        ),
+      );
       roots.push(root);
     }
     this.templates.forEach((g) => g.dispose());
@@ -266,78 +300,4 @@ export class ArchitecturalBatch {
     this.buckets.clear();
     return roots;
   }
-}
-/** Original 512x256 eight-surface atlas, generated once; no photographic sources. */
-export function installSurfaceAtlas(material: T.MeshStandardMaterial) {
-  material.onBeforeCompile = (shader) => {
-    shader.vertexShader = shader.vertexShader.replace(
-      "#include <common>",
-      "#include <common>\n#ifdef USE_INSTANCING\nattribute float artSurface;\n#endif",
-    );
-    shader.vertexShader = shader.vertexShader.replace(
-      "#include <uv_vertex>",
-      "#include <uv_vertex>\n#if defined(USE_INSTANCING) && defined(USE_MAP)\nvMapUv = vec2((mod(artSurface,4.0)+0.025+uv.x*0.95)/4.0,(floor(artSurface/4.0)+0.025+uv.y*0.95)/2.0);\n#ifdef USE_ROUGHNESSMAP\nvRoughnessMapUv=vMapUv;\n#endif\n#ifdef USE_METALNESSMAP\nvMetalnessMapUv=vMapUv;\n#endif\n#endif",
-    );
-  };
-  material.customProgramCacheKey = () => "bangkok-surface-atlas-v2";
-}
-export function architecturalTexture() {
-  const W = 512,
-    H = 256,
-    data = new Uint8Array(W * H * 4);
-  for (let y = 0; y < H; y++)
-    for (let x = 0; x < W; x++) {
-      const tile = Math.floor(x / 128) + Math.floor(y / 128) * 4,
-        u = x % 128,
-        v = y % 128,
-        noise =
-          ((Math.imul(x + 17, 73856093) ^ Math.imul(y + 31, 19349663)) >>> 0) %
-          17;
-      let shade = 235 + noise;
-      if (tile === 0) shade -= v > 106 ? 12 : 0;
-      if (tile === 1) shade -= (u + v) % 61 < 2 ? 12 : 0;
-      if (tile === 2)
-        shade =
-          v % 21 < 2 || (u + (Math.floor(v / 21) % 2) * 32) % 64 < 2
-            ? 180
-            : 225 + noise;
-      if (tile === 3) shade = u % 32 < 2 || v % 32 < 2 ? 180 : 240 + noise / 2;
-      if (tile === 4)
-        shade = u % 16 < 2 ? 173 : 218 + noise + Math.sin(u * 0.6) * 7;
-      if (tile === 5) shade = v % 10 < 2 ? 179 : 235 + noise;
-      if (tile === 6) shade = Math.floor(u / 16) % 2 ? 213 + noise : 249;
-      if (tile === 7) shade = u < 3 || v < 3 ? 198 : 244 + noise / 3;
-      const i = (y * W + x) * 4;
-      data[i] = data[i + 1] = data[i + 2] = Math.min(255, shade);
-      data[i + 3] = 255;
-    }
-  const tex = new T.DataTexture(data, W, H);
-  tex.colorSpace = T.SRGBColorSpace;
-  tex.generateMipmaps = true;
-  tex.minFilter = T.LinearMipmapLinearFilter;
-  tex.magFilter = T.LinearFilter;
-  tex.needsUpdate = true;
-  return tex;
-}
-
-/** Linear PBR masks share the eight material tiles with the color atlas. */
-export function architecturalSurfaceMap() {
-  const data = new Uint8Array(512 * 256 * 4),
-    rough = [0.92, 0.9, 0.96, 0.5, 0.78, 0.44, 0.95, 0.27],
-    metal = [0, 0, 0, 0.05, 0, 0.7, 0, 0.16];
-  for (let y = 0; y < 256; y++)
-    for (let x = 0; x < 512; x++) {
-      const tile = Math.floor(x / 128) + Math.floor(y / 128) * 4,
-        i = (y * 512 + x) * 4;
-      data[i] = 255;
-      data[i + 1] = Math.round(rough[tile]! * 255);
-      data[i + 2] = Math.round(metal[tile]! * 255);
-      data[i + 3] = 255;
-    }
-  const tex = new T.DataTexture(data, 512, 256);
-  tex.generateMipmaps = true;
-  tex.minFilter = T.LinearMipmapLinearFilter;
-  tex.magFilter = T.LinearFilter;
-  tex.needsUpdate = true;
-  return tex;
 }

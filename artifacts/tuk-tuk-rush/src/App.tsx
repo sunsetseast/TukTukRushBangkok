@@ -214,7 +214,7 @@ function App() {
       ref={root}
     >
       <Boundary>
-        <GameCanvas engine={engine} quality={frame.snap.quality} />
+        <GameCanvas engine={engine} quality={frame.snap.quality} mapOpen={mapOpen} />
       </Boundary>
       <div
         className={`tt-ui ${mapOpen || s.phase === "paused" ? "tt-overlay-active" : ""}`}
