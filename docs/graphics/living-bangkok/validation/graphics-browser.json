@@ -1,0 +1,47 @@
+{
+  "physicalIPhone": false,
+  "errors": [],
+  "checks": [
+    "Simultaneous native touch steering and throttle",
+    "Native touch drag starting on marker pans without selection; subsequent tap selects",
+    "Map clears held input and suspends rendering",
+    "Five responsive viewports",
+    "LOOK high-detail lock and alternate views"
+  ],
+  "viewports": [
+    [
+      375,
+      812
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      932,
+      430
+    ],
+    [
+      1280,
+      800
+    ]
+  ],
+  "stills": [
+    "map-375x812",
+    "map-430x932",
+    "night-drive-844x390",
+    "night-drive-932x430",
+    "night-drive-1280x800",
+    "look-arun",
+    "look-arun-second-view",
+    "look-pho",
+    "look-pho-second-view",
+    "look-paknam",
+    "look-paknam-second-view"
+  ],
+  "mapIdleFrames": 0
+}

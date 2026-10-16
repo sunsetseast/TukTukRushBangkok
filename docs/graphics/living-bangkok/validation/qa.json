@@ -1,0 +1,53 @@
+{
+  "physicalIPhone": false,
+  "softwareWebGL": true,
+  "videoRecorded": false,
+  "checks": [
+    "manual expansion expires at 5000 ms",
+    "repeated taps restart one five-second timer",
+    "keyboard driving works after map restores focus",
+    "map suspends expansion deadline and restores playing state",
+    "road-distance approach and departure hysteresis",
+    "CDP touch map pan, pinch, zoom, recenter and layers; mission route remains visible",
+    "fully discovered city keeps a clear marker hierarchy",
+    "pause map returns paused; settings persist; restart confirmation cancels safely",
+    "simultaneous steering + throttle, pointer cancel, map input clearing and keyboard isolation",
+    "keyboard brake release, horn press feedback, boost activation",
+    "LOOK suspends the manual banner deadline and restores remaining time",
+    "LOOK orbit, pinch zoom, two-finger pan, viewpoint, reset, timer freeze and return",
+    "confirmed return to title and free-roam entry",
+    "landscape notch/home-indicator inset simulation",
+    "original Chinatown free roam, controls, pause and recovery"
+  ],
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pass": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "pass": true
+    },
+    {
+      "width": 932,
+      "height": 430,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "readyMs": 14631,
+  "pass": true
+}

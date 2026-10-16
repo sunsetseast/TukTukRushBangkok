@@ -29,6 +29,7 @@ import {
 } from "../ui/mapLabels";
 import { useMapMotion } from "../ui/useMapMotion";
 import { navigationPath } from "../navigation";
+import { cartography, roadPaths } from "./cartography";
 const districtLabels: Record<string, string> = {
   paknam: "Phasi Charoen",
   north: "Chatuchak",
@@ -101,30 +102,10 @@ const BaseMap = memo(function BaseMap({
   px: number;
   pz: number;
 }) {
-  const nodes = useMemo(() => new Map(d.nodes.map((n) => [n.id, n])), [d]);
-  const footprints = useMemo(
-    () =>
-      d.buildings
-        .filter((_, i) => i % 6 === 0)
-        .map((b) => {
-          const m = toMap(b),
-            angle = -(b.yaw ?? 0),
-            c = Math.cos(angle),
-            n = Math.sin(angle);
-          const corners = [
-            [-1, -1],
-            [1, -1],
-            [1, 1],
-            [-1, 1],
-          ].map(([x, y]) => {
-            const dx = (x! * b.w) / SCALE / 2,
-              dy = (y! * b.d) / SCALE / 2;
-            return `${(m.x + dx * c - dy * n).toFixed(2)},${(m.y + dx * n + dy * c).toFixed(2)}`;
-          });
-          return `M${corners.join("L")}Z`;
-        })
-        .join(""),
-    [d],
+  const cart = cartography(d);
+  const roads = useMemo(
+    () => roadPaths(d, detail, px, pz, shortcuts),
+    [d, detail, px, pz, shortcuts.join("|")],
   );
   return (
     <g className="tt-map-base">
@@ -132,7 +113,7 @@ const BaseMap = memo(function BaseMap({
       {d.regions?.map((r) => (
         <polygon
           key={r.id}
-          points={points(r.polygon)}
+          points={cart.regions?.[d.regions!.indexOf(r)]}
           fill={visited.includes(r.id) ? r.color : "#11252e"}
           fillOpacity={visited.includes(r.id) ? 0.2 : 1}
           stroke="#42615e"
@@ -140,7 +121,7 @@ const BaseMap = memo(function BaseMap({
           strokeWidth="1"
         />
       ))}
-      {detail && <path d={footprints} fill="#325054" opacity=".25" />}
+      {detail && <path d={cart.footprints} fill="#325054" opacity=".25" />}
       {d.obstacles
         .filter((o) => o.protected)
         .map((o, i) => {
@@ -158,7 +139,7 @@ const BaseMap = memo(function BaseMap({
           );
         })}
       <polyline
-        points={points(d.river ?? [])}
+        points={cart.river}
         stroke="#0a2738"
         strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
         fill="none"
@@ -166,7 +147,7 @@ const BaseMap = memo(function BaseMap({
         strokeLinejoin="round"
       />
       <polyline
-        points={points(d.river ?? [])}
+        points={cart.river}
         stroke="#20536a"
         strokeWidth={(d.riverWidth ?? 0) / SCALE}
         fill="none"
@@ -176,53 +157,24 @@ const BaseMap = memo(function BaseMap({
       {d.canals?.map((c, i) => (
         <polyline
           key={i}
-          points={points(c.points)}
+          points={cart.canals?.[i]}
           stroke="#20536a"
           strokeWidth={Math.max(1.5, c.width / SCALE)}
           fill="none"
           strokeLinejoin="round"
         />
       ))}
-      {d.roads.map((r, i) => {
-        if (r.shortcut && !shortcuts.includes(r.corridor!)) return null;
-        const a = nodes.get(r.a)!,
-          b = nodes.get(r.b)!;
-        if (
-          !detail &&
-          (Math.min(a.x, b.x) > px + 280 ||
-            Math.max(a.x, b.x) < px - 280 ||
-            Math.min(a.z, b.z) > pz + 280 ||
-            Math.max(a.z, b.z) < pz - 280)
-        )
-          return null;
-        const am = toMap(a),
-          bm = toMap(b),
-          region = regionAt(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 }),
-          major = r.width >= 20;
-        return (
-          <line
-            key={i}
-            x1={am.x}
-            y1={am.y}
-            x2={bm.x}
-            y2={bm.y}
-            stroke={
-              r.bridge
-                ? "#aac7c9"
-                : r.destinationId
-                  ? "#9c9474"
-                  : r.shortcut
-                    ? "#ba9566"
-                    : major
-                      ? "#839997"
-                      : "#435b61"
-            }
-            strokeWidth={Math.max(r.width / SCALE, major ? 2.8 : 1.2)}
-            strokeLinecap="round"
-            opacity={!region || visited.includes(region.id) ? 1 : 0.22}
-          />
-        );
-      })}
+      {roads.map((r, i) => (
+        <path
+          key={i}
+          d={r.path}
+          stroke={r.color}
+          strokeWidth={r.width}
+          strokeLinecap="round"
+          fill="none"
+          opacity={!r.region || visited.includes(r.region) ? 1 : 0.22}
+        />
+      ))}
     </g>
   );
 });
@@ -390,7 +342,7 @@ function MapLayers({
         d.transit?.lines.map((line) => (
           <g key={line.id} data-testid={`map-rail-${line.id}`}>
             <polyline
-              points={points(line.samples)}
+              points={cartography(d).transit?.[d.transit!.lines.indexOf(line)]}
               stroke="#10252c"
               strokeWidth="7"
               vectorEffect="non-scaling-stroke"
@@ -398,7 +350,7 @@ function MapLayers({
               fill="none"
             />
             <polyline
-              points={points(line.samples)}
+              points={cartography(d).transit?.[d.transit!.lines.indexOf(line)]}
               stroke={line.color}
               strokeWidth="3"
               vectorEffect="non-scaling-stroke"
@@ -474,7 +426,6 @@ function MapLayers({
                   : undefined
               }
               data-testid={detail ? `map-landmark-${l.id}` : undefined}
-              onPointerDown={detail ? (e) => e.stopPropagation() : undefined}
               onClick={detail ? () => onSelect?.(l) : undefined}
               onKeyDown={
                 detail
@@ -592,11 +543,14 @@ export function WorldMap({
   const player = toMap({ x: f.px, z: f.pz });
   const [view, setView] = useState({ cx: player.x, cy: player.y, span: 360 }),
     [aspect, setAspect] = useState(2),
+    [mapWidth, setMapWidth] = useState(812),
     [transit, setTransit] = useState(true),
     [landmarks, setLandmarks] = useState(true),
     [selected, setSelected] = useState<Landmark | null>(null),
     [station, setStation] = useState(""),
     [stationsOpen, setStationsOpen] = useState(false);
+  const pendingPins = useRef(new Set<number>()),
+    dragged = useRef(false);
   const spanRef = useRef(view.span);
   spanRef.current = view.span;
   const svg = useRef<SVGSVGElement>(null),
@@ -605,9 +559,7 @@ export function WorldMap({
     pointers = useRef(new Map<number, { x: number; y: number }>());
   const width = view.span * Math.max(aspect, 1),
     height = view.span * Math.max(1 / aspect, 1),
-    labelScale = svg.current
-      ? width / (svg.current.getBoundingClientRect().width || 1)
-      : 1;
+    labelScale = width / mapWidth;
   const cameraMotion = useRef(false);
   const box = [view.cx - width / 2, view.cy - height / 2, width, height];
   useMapMotion(svg, box, cameraMotion);
@@ -634,6 +586,7 @@ export function WorldMap({
     const resize = () => {
       const r = el.getBoundingClientRect();
       setAspect(r.width / Math.max(1, r.height));
+      setMapWidth(Math.max(1, r.width));
     };
     resize();
     const observer = new ResizeObserver(resize);
@@ -701,13 +654,27 @@ export function WorldMap({
     }));
   };
   const down = (e: PointerEvent<SVGSVGElement>) => {
-    e.currentTarget.setPointerCapture(e.pointerId);
+    if (pointers.current.size === 0) dragged.current = false;
+    // Preserve pin taps, but transfer a real drag to the canvas after touch slop.
+    if ((e.target as Element).closest(".tt-map-pin"))
+      pendingPins.current.add(e.pointerId);
+    else e.currentTarget.setPointerCapture(e.pointerId);
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
   };
   const move = (e: PointerEvent<SVGSVGElement>) => {
     cameraMotion.current = false;
     const old = pointers.current.get(e.pointerId);
     if (!old) return;
+    if (pendingPins.current.has(e.pointerId)) {
+      if (
+        pointers.current.size === 1 &&
+        Math.hypot(e.clientX - old.x, e.clientY - old.y) < 6
+      )
+        return;
+      pendingPins.current.delete(e.pointerId);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    dragged.current = true;
     const before = [...pointers.current.values()];
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     const matrix = svg.current?.getScreenCTM();
@@ -739,8 +706,10 @@ export function WorldMap({
       ),
     }));
   };
-  const end = (e: PointerEvent<SVGSVGElement>) =>
+  const end = (e: PointerEvent<SVGSVGElement>) => {
     pointers.current.delete(e.pointerId);
+    pendingPins.current.delete(e.pointerId);
+  };
   const select = (l: Landmark) => {
     setSelected(l);
     setStation("");
@@ -791,11 +760,21 @@ export function WorldMap({
           ref={svg}
           tabIndex={0}
           viewBox={`${view.cx - width / 2} ${view.cy - height / 2} ${width} ${height}`}
+          onClickCapture={(e) => {
+            if (dragged.current && e.detail > 0) {
+              e.stopPropagation();
+              e.preventDefault();
+            }
+          }}
           onPointerDown={down}
           onPointerMove={move}
           onPointerUp={end}
           onPointerCancel={end}
-          onLostPointerCapture={end}
+          onLostPointerCapture={(e) => {
+            // Touch implicitly captures the pin's child. Transferring that
+            // capture to this SVG must not discard the still-active gesture.
+            if (e.target === e.currentTarget) end(e);
+          }}
           aria-label="Bangkok, north up. Drag to pan; pinch or use plus and minus to zoom. Arrow keys pan."
         >
           <MapLayers

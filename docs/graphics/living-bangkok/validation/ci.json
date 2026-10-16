@@ -1,0 +1,199 @@
+{
+  "source": "45a4552c442612d7396f3bdc068082f21533ba57",
+  "runs": {
+    "workflow_runs": [
+      {
+        "id": 38837784305,
+        "name": "Bangkok matched environment survey",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_number": 17,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784305/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784305/logs",
+        "workflow_id": 383951269
+      },
+      {
+        "id": 38837784264,
+        "name": "Bangkok living cityscapes driving QA",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_number": 19,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784264/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784264/logs",
+        "workflow_id": 383949257
+      },
+      {
+        "id": 38837784275,
+        "name": "Tuk Tuk Rush graphics checks",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 109,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784275/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784275/logs",
+        "workflow_id": 380859023
+      },
+      {
+        "id": 38837784181,
+        "name": "Yaowarat art inspection",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 96,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784181/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/38837784181/logs",
+        "workflow_id": 381438825
+      }
+    ]
+  },
+  "artJobs": {
+    "jobs": [
+      {
+        "id": 116770666640,
+        "name": "capture",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 38837784181,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run pnpm install --frozen-lockfile",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush run typecheck",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:signature",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush run build",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Capture actual WebGL frames",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Post Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 24
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 25
+          }
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "artifacts": [
+      {
+        "id": 12019329123,
+        "name": "compact-bangkok-webgl-qa",
+        "size_in_bytes": 3212797,
+        "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12019329123",
+        "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12019329123/zip",
+        "expired": false,
+        "created_at": "2026-10-16T02:02:07Z",
+        "expires_at": "2027-01-14T01:56:12Z",
+        "updated_at": "2026-10-16T02:02:07Z",
+        "digest": "sha256:51a90d450bb9d1915e2eba6587dded81d6ce925d56bfc52cfa00e05d2c326e31",
+        "workflow_run": {
+          "id": 38837784181,
+          "repository_id": 1412639590,
+          "head_repository_id": 1412639590,
+          "head_branch": "codex/living-bangkok-graphics",
+          "head_sha": "45a4552c442612d7396f3bdc068082f21533ba57"
+        }
+      },
+      {
+        "id": 12019309107,
+        "name": "yaowarat-webgl-screenshots",
+        "size_in_bytes": 1373430,
+        "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12019309107",
+        "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12019309107/zip",
+        "expired": false,
+        "created_at": "2026-10-16T02:02:06Z",
+        "expires_at": "2027-01-14T01:56:12Z",
+        "updated_at": "2026-10-16T02:02:06Z",
+        "digest": "sha256:d5ab7d894df08ffb43b10bfce40939c0bf81ac8d15222ed4eea2824ecb2f1707",
+        "workflow_run": {
+          "id": 38837784181,
+          "repository_id": 1412639590,
+          "head_repository_id": 1412639590,
+          "head_branch": "codex/living-bangkok-graphics",
+          "head_sha": "45a4552c442612d7396f3bdc068082f21533ba57"
+        }
+      }
+    ]
+  }
+}

@@ -93,7 +93,7 @@ const dodgeSnapshot = life.people.map(p => [p.renderX, p.renderZ]);
 life.update(1 / 30, camera, "medium", false, { x: 999, z: 999, heading: 0, speed: 0 });
 assert.deepEqual(life.people.map(p => [p.renderX, p.renderZ]), dodgeSnapshot,
   "Pause freezes pedestrian evasion animation");
-assert.equal(life.root.children.length, 13, "Bounded character draw calls");
+assert.equal(life.root.children.length, 14, "One extra shared accessory stream; no per-person draw calls");
 const obstacleCount = district.obstacles.length;
 life.dispose();
 city.dispose();

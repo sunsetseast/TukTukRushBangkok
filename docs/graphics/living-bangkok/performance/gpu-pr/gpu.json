@@ -1,0 +1,1759 @@
+{
+  "available": true,
+  "disjoint": false,
+  "samples": [
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 1225,
+      "instances": 1,
+      "available": true,
+      "ms": 1.633664
+    },
+    {
+      "object": "mesh_24",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 2000,
+      "instances": 1,
+      "available": true,
+      "ms": 0.387939
+    },
+    {
+      "object": "mesh_25",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 1742,
+      "instances": 1,
+      "available": true,
+      "ms": 0.550858
+    },
+    {
+      "object": "mesh_22",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 616,
+      "instances": 1,
+      "available": true,
+      "ms": 0.079025
+    },
+    {
+      "object": "mesh_18",
+      "parent": "Driver",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 393,
+      "instances": 1,
+      "available": true,
+      "ms": 0.128378
+    },
+    {
+      "object": "mesh_23",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 2490,
+      "instances": 1,
+      "available": true,
+      "ms": 0.10955
+    },
+    {
+      "object": "mesh_17",
+      "parent": "Driver",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 320,
+      "instances": 1,
+      "available": true,
+      "ms": 0.118604
+    },
+    {
+      "object": "mesh_27",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 336,
+      "instances": 1,
+      "available": true,
+      "ms": 0.082952
+    },
+    {
+      "object": "mesh_28",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 275,
+      "instances": 1,
+      "available": true,
+      "ms": 0.670503
+    },
+    {
+      "object": "mesh_29",
+      "parent": "Body",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 132,
+      "instances": 1,
+      "available": true,
+      "ms": 0.165944
+    },
+    {
+      "object": "",
+      "parent": "City",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 4,
+      "instances": 1,
+      "available": true,
+      "ms": 4.049365
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 64,
+      "available": true,
+      "ms": 0.330744
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 89,
+      "available": true,
+      "ms": 0.489097
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 4,
+      "available": true,
+      "ms": 0.490549
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 26,
+      "available": true,
+      "ms": 0.214384
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 3,
+      "available": true,
+      "ms": 0.077714
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 117,
+      "available": true,
+      "ms": 0.808656
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 108,
+      "available": true,
+      "ms": 1.160431
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 116,
+      "available": true,
+      "ms": 1.09904
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 2,
+      "available": true,
+      "ms": 0.030615
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 18,
+      "available": true,
+      "ms": 0.186043
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 3,
+      "available": true,
+      "ms": 0.049793
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 4,
+      "available": true,
+      "ms": 0.053709
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 18,
+      "available": true,
+      "ms": 0.16379
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 96,
+      "available": true,
+      "ms": 0.9481
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.023014
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 19,
+      "available": true,
+      "ms": 0.188076
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 4,
+      "available": true,
+      "ms": 0.074278
+    },
+    {
+      "object": "",
+      "parent": "BangkokNight",
+      "shader": "bangkok-occupied-windows-v1",
+      "vertices": 24,
+      "instances": 123,
+      "available": true,
+      "ms": 1.397388
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.04064
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.059167
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 120,
+      "instances": 1,
+      "available": true,
+      "ms": 0.042152
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 120,
+      "instances": 1,
+      "available": true,
+      "ms": 0.032047
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 96,
+      "instances": 1,
+      "available": true,
+      "ms": 0.031336
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 120,
+      "instances": 1,
+      "available": true,
+      "ms": 0.033519
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 72,
+      "instances": 1,
+      "available": true,
+      "ms": 0.046198
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.051876
+    },
+    {
+      "object": "RoadSurface:asphalt",
+      "parent": "BangkokRoadGraph",
+      "shader": "bangkok-dry-asphalt-v2",
+      "map": "Dry asphalt aggregate",
+      "vertices": 8451,
+      "instances": 1,
+      "available": true,
+      "ms": 0.285468
+    },
+    {
+      "object": "RoadSurface:curb",
+      "parent": "BangkokRoadGraph",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 16497,
+      "instances": 1,
+      "available": true,
+      "ms": 0.328922
+    },
+    {
+      "object": "RoadSurface:sidewalk",
+      "parent": "BangkokRoadGraph",
+      "shader": "bangkok-scored-paving-v1",
+      "vertices": 16338,
+      "instances": 1,
+      "available": true,
+      "ms": 1.774511
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "living-river-v3",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.113386
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "living-river-v3",
+      "vertices": 130,
+      "instances": 1,
+      "available": true,
+      "ms": 0.355942
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "living-river-v3",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.227945
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "living-river-v3",
+      "vertices": 130,
+      "instances": 1,
+      "available": true,
+      "ms": 0.200554
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "living-river-v3",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.092676
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 5836,
+      "instances": 1,
+      "available": true,
+      "ms": 0.29301
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 6368,
+      "instances": 1,
+      "available": true,
+      "ms": 0.217038
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 536,
+      "instances": 1,
+      "available": true,
+      "ms": 0.579409
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 340,
+      "instances": 1,
+      "available": true,
+      "ms": 0.424242
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 6288,
+      "instances": 1,
+      "available": true,
+      "ms": 0.2931
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 6308,
+      "instances": 1,
+      "available": true,
+      "ms": 0.819902
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 4616,
+      "instances": 1,
+      "available": true,
+      "ms": 0.577917
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 1052,
+      "instances": 1,
+      "available": true,
+      "ms": 0.18376
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 72,
+      "instances": 1,
+      "available": true,
+      "ms": 0.108059
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 824,
+      "instances": 1,
+      "available": true,
+      "ms": 0.187565
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 48,
+      "instances": 1,
+      "available": true,
+      "ms": 0.115369
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 8044,
+      "instances": 1,
+      "available": true,
+      "ms": 0.671064
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 1700,
+      "instances": 1,
+      "available": true,
+      "ms": 0.200554
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.080518
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 1100,
+      "instances": 1,
+      "available": true,
+      "ms": 0.168207
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 8218,
+      "instances": 1,
+      "available": true,
+      "ms": 0.487384
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 2168,
+      "instances": 1,
+      "available": true,
+      "ms": 0.16374
+    },
+    {
+      "object": "",
+      "parent": "BangkokFacade",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 706,
+      "available": true,
+      "ms": 3.682117
+    },
+    {
+      "object": "",
+      "parent": "BangkokDetail",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 146,
+      "available": true,
+      "ms": 0.652126
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 462,
+      "available": true,
+      "ms": 3.339565
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 581,
+      "available": true,
+      "ms": 2.594363
+    },
+    {
+      "object": "",
+      "parent": "BangkokDetail",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 240,
+      "available": true,
+      "ms": 1.153581
+    },
+    {
+      "object": "",
+      "parent": "BangkokFacade",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 1090,
+      "available": true,
+      "ms": 4.821616
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 125,
+      "available": true,
+      "ms": 0.568103
+    },
+    {
+      "object": "",
+      "parent": "BangkokDetail",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.171502
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 117,
+      "available": true,
+      "ms": 4.609135
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 239,
+      "available": true,
+      "ms": 4.828437
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 329,
+      "available": true,
+      "ms": 2.335063
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 4,
+      "available": true,
+      "ms": 0.080057
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 695,
+      "available": true,
+      "ms": 4.922034
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 69,
+      "available": true,
+      "ms": 0.622312
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 635,
+      "available": true,
+      "ms": 6.706059
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 69,
+      "available": true,
+      "ms": 1.17353
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 617,
+      "available": true,
+      "ms": 6.050929
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 58,
+      "available": true,
+      "ms": 0.82558
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 90,
+      "available": true,
+      "ms": 0.691914
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 257,
+      "available": true,
+      "ms": 2.83856
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 127,
+      "available": true,
+      "ms": 1.206478
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 10,
+      "available": true,
+      "ms": 0.168977
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 96,
+      "available": true,
+      "ms": 0.932407
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 113,
+      "available": true,
+      "ms": 1.082286
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 479,
+      "available": true,
+      "ms": 2.954791
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 8,
+      "available": true,
+      "ms": 0.181105
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 126,
+      "available": true,
+      "ms": 1.083288
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 205,
+      "available": true,
+      "ms": 1.800599
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 596,
+      "available": true,
+      "ms": 5.491479
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 60,
+      "available": true,
+      "ms": 0.680668
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 27,
+      "available": true,
+      "ms": 0.224239
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 210,
+      "available": true,
+      "ms": 1.812557
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 66,
+      "available": true,
+      "ms": 0.51137
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 11,
+      "available": true,
+      "ms": 0.154135
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 2,
+      "available": true,
+      "ms": 0.057474
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 56,
+      "available": true,
+      "ms": 0.414558
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 236,
+      "available": true,
+      "ms": 1.710177
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 660,
+      "available": true,
+      "ms": 5.348039
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 76,
+      "available": true,
+      "ms": 0.718192
+    },
+    {
+      "object": "",
+      "parent": "BangkokArchitecture",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 295,
+      "available": true,
+      "ms": 2.402361
+    },
+    {
+      "object": "",
+      "parent": "BangkokCoarse",
+      "shader": "bangkok-array-finishes-v2",
+      "map": "Bangkok finishes / color",
+      "vertices": 24,
+      "instances": 10,
+      "available": true,
+      "ms": 0.148597
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 40,
+      "instances": 1,
+      "available": true,
+      "ms": 0.122149
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 44,
+      "instances": 1,
+      "available": true,
+      "ms": 0.091214
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 44,
+      "instances": 1,
+      "available": true,
+      "ms": 0.08824
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 28,
+      "instances": 1,
+      "available": true,
+      "ms": 0.048661
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 20,
+      "instances": 1,
+      "available": true,
+      "ms": 0.070153
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 32,
+      "instances": 1,
+      "available": true,
+      "ms": 0.023264
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.101849
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 40,
+      "instances": 1,
+      "available": true,
+      "ms": 0.057845
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 102,
+      "instances": 1,
+      "available": true,
+      "ms": 0.091925
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 606,
+      "instances": 1,
+      "available": true,
+      "ms": 0.116381
+    },
+    {
+      "object": "BangkokSignalLenses",
+      "parent": "BangkokEnvironmentEffects",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 35,
+      "instances": 18,
+      "available": true,
+      "ms": 0.113777
+    },
+    {
+      "object": "",
+      "parent": "BangkokSign",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 8,
+      "instances": 1,
+      "available": true,
+      "ms": 0.047119
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 24,
+      "instances": 1,
+      "available": true,
+      "ms": 0.0277
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 72,
+      "instances": 1,
+      "available": true,
+      "ms": 0.025798
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 168,
+      "instances": 1,
+      "available": true,
+      "ms": 0.135318
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.077654
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 672,
+      "instances": 1,
+      "available": true,
+      "ms": 0.118154
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 1032,
+      "instances": 1,
+      "available": true,
+      "ms": 0.485782
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 792,
+      "instances": 1,
+      "available": true,
+      "ms": 0.194375
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 96,
+      "instances": 1,
+      "available": true,
+      "ms": 0.056383
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.188817
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.060369
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 374,
+      "instances": 1,
+      "available": true,
+      "ms": 0.103301
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 68,
+      "instances": 1,
+      "available": true,
+      "ms": 0.07519
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 5474,
+      "instances": 1,
+      "available": true,
+      "ms": 1.394754
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 208,
+      "instances": 1,
+      "available": true,
+      "ms": 0.113917
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 600,
+      "instances": 1,
+      "available": true,
+      "ms": 0.108429
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 102,
+      "instances": 1,
+      "available": true,
+      "ms": 0.0611
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 296,
+      "instances": 1,
+      "available": true,
+      "ms": 0.196918
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 18,
+      "instances": 1,
+      "available": true,
+      "ms": 0.036173
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 844,
+      "instances": 1,
+      "available": true,
+      "ms": 0.103662
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 60,
+      "instances": 1,
+      "available": true,
+      "ms": 0.035442
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 60,
+      "instances": 1,
+      "available": true,
+      "ms": 0.038226
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 6008,
+      "instances": 1,
+      "available": true,
+      "ms": 0.494415
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 282,
+      "instances": 1,
+      "available": true,
+      "ms": 0.063413
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 60,
+      "instances": 1,
+      "available": true,
+      "ms": 0.038236
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 904,
+      "instances": 1,
+      "available": true,
+      "ms": 0.090173
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 60,
+      "instances": 1,
+      "available": true,
+      "ms": 0.035352
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 312,
+      "instances": 1,
+      "available": true,
+      "ms": 0.079256
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 312,
+      "instances": 1,
+      "available": true,
+      "ms": 0.099075
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 1152,
+      "instances": 1,
+      "available": true,
+      "ms": 0.125734
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 1416,
+      "instances": 1,
+      "available": true,
+      "ms": 0.123942
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 696,
+      "instances": 1,
+      "available": true,
+      "ms": 0.09538
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 168,
+      "instances": 1,
+      "available": true,
+      "ms": 0.062702
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 168,
+      "instances": 1,
+      "available": true,
+      "ms": 0.055892
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 288,
+      "instances": 1,
+      "available": true,
+      "ms": 0.068761
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 576,
+      "instances": 1,
+      "available": true,
+      "ms": 0.29294
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 408,
+      "instances": 1,
+      "available": true,
+      "ms": 0.059898
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 3518,
+      "instances": 1,
+      "available": true,
+      "ms": 0.469017
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 13603,
+      "instances": 1,
+      "available": true,
+      "ms": 0.993917
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 1980,
+      "instances": 1,
+      "available": true,
+      "ms": 0.114909
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 3528,
+      "instances": 1,
+      "available": true,
+      "ms": 7.155318
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 3135,
+      "instances": 1,
+      "available": true,
+      "ms": 6.644248
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 20974,
+      "instances": 1,
+      "available": true,
+      "ms": 3.484026
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 5862,
+      "instances": 1,
+      "available": true,
+      "ms": 1.539306
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 536,
+      "instances": 1,
+      "available": true,
+      "ms": 0.234394
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 288,
+      "instances": 1,
+      "available": true,
+      "ms": 0.058476
+    },
+    {
+      "object": "BangkokCookingSteam",
+      "parent": "BangkokEnvironmentEffects",
+      "shader": "bangkok-soft-steam-v1",
+      "vertices": 32,
+      "available": true,
+      "ms": 0.000271
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 180,
+      "instances": 1,
+      "available": true,
+      "ms": 0.052678
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 216,
+      "instances": 1,
+      "available": true,
+      "ms": 0.039218
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.031916
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 36,
+      "instances": 1,
+      "available": true,
+      "ms": 0.021722
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 36,
+      "instances": 1,
+      "available": true,
+      "ms": 0.026669
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 126,
+      "instances": 1,
+      "available": true,
+      "ms": 0.034631
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 180,
+      "instances": 1,
+      "available": true,
+      "ms": 0.038256
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 36,
+      "instances": 1,
+      "available": true,
+      "ms": 0.02743
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 126,
+      "instances": 1,
+      "available": true,
+      "ms": 0.025918
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 90,
+      "instances": 1,
+      "available": true,
+      "ms": 0.022353
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 36,
+      "instances": 1,
+      "available": true,
+      "ms": 0.019388
+    },
+    {
+      "object": "",
+      "parent": "BangkokRiverCraft",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 4,
+      "instances": 1,
+      "available": true,
+      "ms": 0.034711
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 72,
+      "instances": 1,
+      "available": true,
+      "ms": 0.021982
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 72,
+      "instances": 1,
+      "available": true,
+      "ms": 0.021491
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 108,
+      "instances": 1,
+      "available": true,
+      "ms": 0.024206
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 162,
+      "instances": 1,
+      "available": true,
+      "ms": 0.045647
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 180,
+      "instances": 1,
+      "available": true,
+      "ms": 0.045266
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 198,
+      "instances": 1,
+      "available": true,
+      "ms": 0.034741
+    },
+    {
+      "object": "",
+      "parent": "BangkokRiverCraft",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 4,
+      "instances": 1,
+      "available": true,
+      "ms": 0.017937
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 144,
+      "instances": 1,
+      "available": true,
+      "ms": 0.026539
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 126,
+      "instances": 1,
+      "available": true,
+      "ms": 0.057705
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 36,
+      "instances": 1,
+      "available": true,
+      "ms": 0.041221
+    },
+    {
+      "object": "",
+      "parent": "",
+      "shader": "onBeforeCompile() {\n  }",
+      "map": "",
+      "vertices": 4,
+      "instances": 1,
+      "available": true,
+      "ms": 0.03408
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 216,
+      "instances": 1,
+      "available": true,
+      "ms": 0.038446
+    },
+    {
+      "object": "BangkokSpill",
+      "parent": "BangkokEnvironmentEffects",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 4,
+      "instances": 2,
+      "available": true,
+      "ms": 0.029693
+    },
+    {
+      "object": "",
+      "parent": "BangkokSector",
+      "shader": "onBeforeCompile() {\n  }",
+      "vertices": 126,
+      "instances": 1,
+      "available": true,
+      "ms": 0.033259
+    }
+  ]
+}

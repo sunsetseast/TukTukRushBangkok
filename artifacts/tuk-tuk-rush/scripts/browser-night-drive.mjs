@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
 import { startQaServer } from "./browser-vite.mjs";
-const out = new URL("../../../docs/ui/night-drive/after/", import.meta.url)
+const out=process.env.QA_OUT||new URL("../../../docs/ui/night-drive/after/", import.meta.url)
   .pathname;
 await fs.mkdir(out, { recursive: true });
 const server = await startQaServer(24232),
@@ -33,7 +33,8 @@ try {
     }),
     page = await context.newPage();
   page.setDefaultTimeout(120000);
-  page.on("pageerror", (e) => report.errors.push(e.message));
+  page.on("pageerror",(e)=>report.errors.push(e.message));
+  page.on("console",m=>{if(m.type()==="error")report.errors.push(m.text());});
   page.on("response", (r) => {
     if (r.status() >= 400) report.http.push(`${r.status()} ${r.url()}`);
   });

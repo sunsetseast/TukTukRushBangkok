@@ -1,0 +1,175 @@
+{
+  "pass": true,
+  "inventory": [
+    {
+      "id": "chatuchak",
+      "tier": "site-specific",
+      "residentTriangles": 1296,
+      "geometryBytes": 39924
+    },
+    {
+      "id": "victory",
+      "tier": "site-specific",
+      "residentTriangles": 10948,
+      "geometryBytes": 140364
+    },
+    {
+      "id": "khaosan",
+      "tier": "site-specific",
+      "residentTriangles": 324,
+      "geometryBytes": 11664
+    },
+    {
+      "id": "democracy",
+      "tier": "site-specific",
+      "residentTriangles": 1760,
+      "geometryBytes": 48456
+    },
+    {
+      "id": "sanam",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "palace",
+      "tier": "hero",
+      "residentTriangles": 106520,
+      "geometryBytes": 1920384
+    },
+    {
+      "id": "pho",
+      "tier": "hero",
+      "residentTriangles": 103296,
+      "geometryBytes": 1560942
+    },
+    {
+      "id": "arun",
+      "tier": "hero",
+      "residentTriangles": 39168,
+      "geometryBytes": 862584
+    },
+    {
+      "id": "golden",
+      "tier": "site-specific",
+      "residentTriangles": 4272,
+      "geometryBytes": 85536
+    },
+    {
+      "id": "swing",
+      "tier": "site-specific",
+      "residentTriangles": 328,
+      "geometryBytes": 9360
+    },
+    {
+      "id": "flowers",
+      "tier": "site-specific",
+      "residentTriangles": 1296,
+      "geometryBytes": 39924
+    },
+    {
+      "id": "mbk",
+      "tier": "site-specific",
+      "residentTriangles": 4104,
+      "geometryBytes": 144360
+    },
+    {
+      "id": "paragon",
+      "tier": "site-specific",
+      "residentTriangles": 2002,
+      "geometryBytes": 72072
+    },
+    {
+      "id": "central",
+      "tier": "site-specific",
+      "residentTriangles": 4104,
+      "geometryBytes": 147744
+    },
+    {
+      "id": "gate",
+      "tier": "site-specific",
+      "residentTriangles": 3004,
+      "geometryBytes": 44802
+    },
+    {
+      "id": "traimit",
+      "tier": "site-specific",
+      "residentTriangles": 35184,
+      "geometryBytes": 728874
+    },
+    {
+      "id": "hua",
+      "tier": "site-specific",
+      "residentTriangles": 2744,
+      "geometryBytes": 49932
+    },
+    {
+      "id": "food",
+      "tier": "site-specific",
+      "residentTriangles": 1296,
+      "geometryBytes": 39924
+    },
+    {
+      "id": "icon",
+      "tier": "site-specific",
+      "residentTriangles": 2432,
+      "geometryBytes": 86832
+    },
+    {
+      "id": "park",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "terminal",
+      "tier": "site-specific",
+      "residentTriangles": 4080,
+      "geometryBytes": 146880
+    },
+    {
+      "id": "benjakitti",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "mahanakhon",
+      "tier": "skyline",
+      "residentTriangles": 9516,
+      "geometryBytes": 342576
+    },
+    {
+      "id": "asiatique",
+      "tier": "site-specific",
+      "residentTriangles": 6392,
+      "geometryBytes": 168192
+    },
+    {
+      "id": "paknam",
+      "tier": "hero",
+      "residentTriangles": 73128,
+      "geometryBytes": 817380
+    },
+    {
+      "id": "baiyoke",
+      "tier": "skyline",
+      "residentTriangles": 2260,
+      "geometryBytes": 74412
+    },
+    {
+      "id": "state",
+      "tier": "skyline",
+      "residentTriangles": 3244,
+      "geometryBytes": 97020
+    }
+  ],
+  "arrivalSigns": 10,
+  "municipalSigns": [
+    "street:yaowarat",
+    "street:khaosan",
+    "street:charoen_n",
+    "street:sukhumvit",
+    "street:silom",
+    "street:rama1",
+    "street:charoen_nakhon"
+  ],
+  "inspection": "all presets, extreme inputs, reset, indoor bounds, disposal"
+}

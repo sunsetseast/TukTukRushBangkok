@@ -1,18 +1,87 @@
-import assert from 'node:assert/strict';
-import * as React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { WorldMap, BangkokMinimap } from '../src/game/bangkok/WorldMap';
-import { createBangkokWorld } from '../src/game/bangkok/world';
-import { createMissions } from '../src/game/missions';
-import type { Frame } from '../src/game/Hud';
+import assert from "node:assert/strict";
+import * as React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { WorldMap, BangkokMinimap } from "../src/game/bangkok/WorldMap";
+import { createBangkokWorld } from "../src/game/bangkok/world";
+import { cartography, roadPaths } from "../src/game/bangkok/cartography";
+import { createMissions } from "../src/game/missions";
+import type { Frame } from "../src/game/Hud";
 Object.assign(globalThis, { React });
-const d = createBangkokWorld(), mission = createMissions(d)[0]!;
-const f: Frame = { px: d.spawn!.x, pz: d.spawn!.z, ph: d.spawn!.heading, hit: 0, snap: { phase: 'paused', mode: 'free', stage: 'pickup', shiftTime: 1440, tripTime: mission.limit, score: 0, earnings: 0, deliveries: 0, speed: 0, target: mission.pickup, passenger: mission.passenger, distance: 0, bearing: 0, message: '', boarding: 0, quality: 'low', fps: 30, districtName: 'CHINATOWN', discoveredDistricts: ['chinatown'], discoveredLandmarks: ['gate'], discoveredShortcuts: [] } };
-const before = JSON.stringify(f.snap), full = renderToStaticMarkup(<WorldMap d={d} f={f} onClose={() => {}} />), mini = renderToStaticMarkup(<BangkokMinimap d={d} f={f} />);
-assert(full.includes('aria-modal="true"') && full.includes('data-testid="map-player"'));
-assert(full.includes('Back to driving') && full.includes('My tuk-tuk') && full.includes('Whole city'));
-assert(full.includes('Chinatown Gate') && !full.includes('Terminal 21'));
-assert(!full.includes('stroke="#f3c471"'), 'Undiscovered shortcut lanes must not be drawn');
-assert((mini.match(/<line /g) ?? []).length < 150, 'Local minimap must not render every distant road');
-assert.equal(JSON.stringify(f.snap), before, 'Viewing map must not discover areas');
-console.log(JSON.stringify({ pass: true, mapMarkup: true, modalAndLocation: true, discoveryNotMutatedByMap: true, culledMinimapRoads: (mini.match(/<line /g) ?? []).length }));
+const d = createBangkokWorld(),
+  mission = createMissions(d)[0]!;
+const f: Frame = {
+  px: d.spawn!.x,
+  pz: d.spawn!.z,
+  ph: d.spawn!.heading,
+  hit: 0,
+  snap: {
+    phase: "paused",
+    mode: "free",
+    stage: "pickup",
+    shiftTime: 1440,
+    tripTime: mission.limit,
+    score: 0,
+    earnings: 0,
+    deliveries: 0,
+    speed: 0,
+    target: mission.pickup,
+    passenger: mission.passenger,
+    distance: 0,
+    bearing: 0,
+    message: "",
+    boarding: 0,
+    quality: "low",
+    fps: 30,
+    districtName: "CHINATOWN",
+    discoveredDistricts: ["chinatown"],
+    discoveredLandmarks: ["gate"],
+    discoveredShortcuts: [],
+  },
+};
+const before = JSON.stringify(f.snap),
+  full = renderToStaticMarkup(<WorldMap d={d} f={f} onClose={() => {}} />),
+  mini = renderToStaticMarkup(<BangkokMinimap d={d} f={f} />);
+assert(
+  full.includes('aria-modal="true"') &&
+    full.includes('data-testid="map-player"'),
+);
+assert(
+  full.includes("Back to driving") &&
+    full.includes("My tuk-tuk") &&
+    full.includes("Whole city"),
+);
+assert(full.includes("Chinatown Gate") && !full.includes("Terminal 21"));
+assert(
+  !full.includes('stroke="#f3c471"'),
+  "Undiscovered shortcut lanes must not be drawn",
+);
+const segments = roadPaths(
+  d,
+  false,
+  Math.round(f.px / 80) * 80,
+  Math.round(f.pz / 80) * 80,
+  [],
+).reduce((n, r) => n + (r.path.match(/M/g) ?? []).length, 0);
+assert(
+  segments > 0 && segments < 150,
+  "Local minimap must keep nearby roads and cull distant ones",
+);
+assert.equal(cartography(d), cartography(d));
+assert(
+  roadPaths(d, true, 0, 0, []).length < 150,
+  "Styled path batches must bound map mounting cost",
+);
+assert.equal(
+  JSON.stringify(f.snap),
+  before,
+  "Viewing map must not discover areas",
+);
+console.log(
+  JSON.stringify({
+    pass: true,
+    mapMarkup: true,
+    modalAndLocation: true,
+    discoveryNotMutatedByMap: true,
+    culledMinimapRoads: segments,
+  }),
+);

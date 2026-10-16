@@ -1,4 +1,5 @@
 import * as T from "three";
+import { compactGeometry } from "./compactGeometry";
 import {
   mergeGeometries,
   mergeVertices,
@@ -6,14 +7,14 @@ import {
 
 /** Bake repeated prop pieces into a few indexed PBR batches per spatial cell. */
 export class StaticBatch {
-  constructor(private cellOrigin=0) {}
+  constructor(private cellOrigin = 0) {}
   private buckets = new Map<
     string,
     { geos: T.BufferGeometry[]; mat: T.Material; center: T.Vector3 }
   >();
   // One owned clone per source identity; spatial cells share it. Root disposal
   // deduplicates shared materials/maps while retaining each cell geometry.
-  private outputMats = new Map<string,T.MeshStandardMaterial>();
+  private outputMats = new Map<string, T.MeshStandardMaterial>();
   private sourceGeos = new Set<T.BufferGeometry>();
   private sourceMats = new Set<T.Material>();
   add = (
@@ -36,15 +37,23 @@ export class StaticBatch {
         key = `${cx}:${cz}:${style}`;
       let b = this.buckets.get(key);
       if (!b) {
-        let material=this.outputMats.get(style);if(!material){material=mat.clone() as T.MeshStandardMaterial;this.outputMats.set(style,material);
-        material.color.set("#ffffff");
-        material.vertexColors = true;
-        material.onBeforeCompile=mat.onBeforeCompile;
-        material.customProgramCacheKey=mat.customProgramCacheKey;}
+        let material = this.outputMats.get(style);
+        if (!material) {
+          material = mat.clone() as T.MeshStandardMaterial;
+          this.outputMats.set(style, material);
+          material.color.set("#ffffff");
+          material.vertexColors = true;
+          material.onBeforeCompile = mat.onBeforeCompile;
+          material.customProgramCacheKey = mat.customProgramCacheKey;
+        }
         b = {
           geos: [],
           mat: material,
-          center: new T.Vector3((cx + 0.5) * 80 - this.cellOrigin, 0, (cz + 0.5) * 80 - this.cellOrigin),
+          center: new T.Vector3(
+            (cx + 0.5) * 80 - this.cellOrigin,
+            0,
+            (cz + 0.5) * 80 - this.cellOrigin,
+          ),
         };
         this.buckets.set(key, b);
       }
@@ -73,12 +82,15 @@ export class StaticBatch {
       b.geos.forEach((g) => g.dispose());
       const group = new T.Group();
       group.userData.center = b.center;
-      group.add(new T.Mesh(indexed, b.mat));
+      group.add(new T.Mesh(compactGeometry(indexed), b.mat));
       groups.push(group);
     }
     this.sourceGeos.forEach((g) => g.dispose());
     this.sourceMats.forEach((m) => m.dispose());
-    this.buckets.clear();this.outputMats.clear();this.sourceGeos.clear();this.sourceMats.clear();
+    this.buckets.clear();
+    this.outputMats.clear();
+    this.sourceGeos.clear();
+    this.sourceMats.clear();
     return groups;
   }
 }

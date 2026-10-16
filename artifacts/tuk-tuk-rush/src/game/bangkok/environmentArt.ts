@@ -16,6 +16,7 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
     yaw = 0,
     shape: ArtPiece["shape"] = "box",
     layer: ArtPiece["layer"] = "core",
+    surface: ArtPiece["surface"] = "concrete",
   ) =>
     emit({
       x,
@@ -29,7 +30,7 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       shape,
       layer,
       siteId,
-      surface: shape === "orb" ? "plaster" : "concrete",
+      surface: shape === "orb" ? "plaster" : surface,
     });
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     degree = degreeMap(d);
@@ -135,6 +136,28 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
         yaw + turn,
         shape,
         layer,
+        [
+          "noodle",
+          "grill",
+          "fruit",
+          "tea",
+          "wok",
+          "dessert",
+          "clothing",
+        ].includes(site.kind)
+          ? y > 2.5 && h < 0.4
+            ? "cloth"
+            : color === "#d5cbb6" ||
+                ["#a5bab2", "#778780", "#73857c", "#b3d3c9"].includes(color)
+              ? "metal"
+              : color === "#e6dfc9"
+                ? "tile"
+                : "plaster"
+          : site.kind === "bench" && y > 0.8
+            ? "wood"
+            : ["lamp", "signal", "scooter", "workshop"].includes(site.kind)
+              ? "metal"
+              : "concrete",
       );
     if (["tree", "palm"].includes(site.kind)) {
       const H = site.kind === "palm" ? 9.5 : 5.8 + (seed % 4) * 0.5;
@@ -183,14 +206,35 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       );
       B(0, 1.3, -0.25, 0.55, 0.17, 0.85, "#3e4d4b");
       B(0, 1.5, 0.6, 1.05, 0.09, 0.15, "#687b78");
-    } else if(site.kind==='clothing') {
-      B(0,2.9,0,b.w,.18,b.d,'#5b9984');
-      for(const u of [-1.3,1.3])B(u,1.5,-.5,.12,2.7,.12,'#667c75');B(0,2.6,-.5,2.8,.12,.12,'#778b7c');
-      for(let i=0;i<6;i++){
-        B(-1.1+i*.44,1.9,-.5,.35,1.1,.08,['#dcae68','#b96d82','#b4c6af','#7795b7'][i%4]!,'box','core');
-        B(-1.1+i*.44,2.35,-.5,.52,.15,.08,'#d9cab4','box','detail');
+    } else if (site.kind === "clothing") {
+      B(0, 2.9, 0, b.w, 0.18, b.d, "#5b9984");
+      for (const u of [-1.3, 1.3]) B(u, 1.5, -0.5, 0.12, 2.7, 0.12, "#667c75");
+      B(0, 2.6, -0.5, 2.8, 0.12, 0.12, "#778b7c");
+      for (let i = 0; i < 6; i++) {
+        B(
+          -1.1 + i * 0.44,
+          1.9,
+          -0.5,
+          0.35,
+          1.1,
+          0.08,
+          ["#dcae68", "#b96d82", "#b4c6af", "#7795b7"][i % 4]!,
+          "box",
+          "core",
+        );
+        B(
+          -1.1 + i * 0.44,
+          2.35,
+          -0.5,
+          0.52,
+          0.15,
+          0.08,
+          "#d9cab4",
+          "box",
+          "detail",
+        );
       }
-      B(0,.65,.45,2.8,1.1,.65,'#ac9b71');
+      B(0, 0.65, 0.45, 2.8, 1.1, 0.65, "#ac9b71");
     } else if (site.kind === "bench") {
       for (const x of [-1.1, 1.1]) B(x, 0.55, 0, 0.25, 0.65, 1, "#566760");
       B(0, 0.87, 0, 3, 0.16, 1, "#89765a");
@@ -214,7 +258,9 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
         noodle: "#479292",
         grill: "#a34d3e",
         fruit: "#b1a84d",
-        tea: "#52766e", wok:"#be6b3f",dessert:"#aa7698",
+        tea: "#52766e",
+        wok: "#be6b3f",
+        dessert: "#aa7698",
       }[site.kind as "noodle" | "grill" | "fruit" | "tea" | "wok" | "dessert"];
       B(0, 0.85, 0, b.w - 0.3, 1, b.d - 0.3, col);
       B(0, 1.42, 0, b.w, 0.18, b.d, "#d5cbb6");
@@ -246,24 +292,95 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
             ["#d4b64d", "#a56842", "#69934f"][i % 3]!,
             "orb",
           );
-      } else if(site.kind === 'wok') {
-        B(0,2.9,0,b.w,.2,b.d,'#c77840');
-        B(-.55,1.7,0,1.35,.35,1.2,'#334b4c','orb');
-        B(-.55,1.47,0,1,.17,.8,'#eda65b','box','night');
-        B(.95,1.7,.3,.7,.6,.7,'#d3d1ad','cylinder');
-        B(-1,1.83,.2,.1,.06,1.25,'#73857c','box','detail');
-      } else if(site.kind === 'dessert') {
-        B(0,2.65,0,b.w,.18,b.d,'#b85e83');
-        B(0,2,0,b.w*.9,.9,b.d*.7,'#a9c9bb');
-        for(let i=0;i<6;i++)B(-.9+i*.36,1.75,.6,.27,.22,.4,['#d8b96f','#a7bb5b','#bf7759'][i%3]!,'orb');
+      } else if (site.kind === "wok") {
+        B(0, 2.9, 0, b.w, 0.2, b.d, "#c77840");
+        B(-0.55, 1.7, 0, 1.35, 0.35, 1.2, "#334b4c", "orb");
+        B(-0.55, 1.47, 0, 1, 0.17, 0.8, "#eda65b", "box", "night");
+        B(0.95, 1.7, 0.3, 0.7, 0.6, 0.7, "#d3d1ad", "cylinder");
+        B(-1, 1.83, 0.2, 0.1, 0.06, 1.25, "#73857c", "box", "detail");
+      } else if (site.kind === "dessert") {
+        B(0, 2.65, 0, b.w, 0.18, b.d, "#b85e83");
+        B(0, 2, 0, b.w * 0.9, 0.9, b.d * 0.7, "#a9c9bb");
+        for (let i = 0; i < 6; i++)
+          B(
+            -0.9 + i * 0.36,
+            1.75,
+            0.6,
+            0.27,
+            0.22,
+            0.4,
+            ["#d8b96f", "#a7bb5b", "#bf7759"][i % 3]!,
+            "orb",
+          );
       } else {
         B(0, 2.65, 0, b.w * 0.75, 0.18, b.d * 0.75, "#9db69c");
         for (const u of [-0.55, 0.4])
           B(u, 1.83, 0, 0.48, 0.75, 0.48, "#d29c56", "cylinder");
         B(0, 1.75, -0.65, 1.35, 0.42, 0.35, "#c7d7c6");
       }
-      B(0,2.55,-b.d*.4,b.w*.8,.12,.18,'#ffe1a0','box','night');
-      for(let i=0;i<3;i++)B(-.55+i*.5,1.7,b.d*.3,.16,.28,.16,['#a84c3b','#d3ab55','#dfd6b2'][i]!,'cylinder','detail');
+      if (site.kind === "noodle")
+        for (const u of [-0.65, 0.05, 0.75]) {
+          B(
+            u,
+            1.62,
+            b.d * 0.28,
+            0.42,
+            0.12,
+            0.42,
+            "#e6dfc9",
+            "cylinder",
+            "near",
+          );
+          B(
+            u,
+            1.69,
+            b.d * 0.28,
+            0.29,
+            0.035,
+            0.29,
+            "#bc9461",
+            "cylinder",
+            "detail",
+          );
+        }
+      else if (site.kind === "grill")
+        for (let j = 0; j < 4; j++) {
+          B(
+            -0.85,
+            1.86,
+            -0.45 + j * 0.26,
+            0.86,
+            0.06,
+            0.08,
+            "#9a553b",
+            "box",
+            "near",
+          );
+          B(
+            -0.25,
+            1.86,
+            -0.45 + j * 0.26,
+            0.4,
+            0.035,
+            0.035,
+            "#c7ac77",
+            "box",
+            "detail",
+          );
+        }
+      B(0, 2.55, -b.d * 0.4, b.w * 0.8, 0.12, 0.18, "#ffe1a0", "box", "night");
+      for (let i = 0; i < 3; i++)
+        B(
+          -0.55 + i * 0.5,
+          1.7,
+          b.d * 0.3,
+          0.16,
+          0.28,
+          0.16,
+          ["#a84c3b", "#d3ab55", "#dfd6b2"][i]!,
+          "cylinder",
+          "detail",
+        );
       for (const u of [-b.w * 0.32, b.w * 0.32])
         B(u, 0.55, -b.d * 0.37, 0.25, 0.45, 0.25, "#384c45", "orb");
     }
@@ -302,9 +419,17 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
   for (const l of d.landmarks.filter((l) =>
     ["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
   )) {
-    const a=nodes.get(l.accessNode!)!,p=l.plot!,len=Math.hypot(p.x-a.x,p.z-a.z),yaw=Math.atan2(p.x-a.x,p.z-a.z),modern=['icon','paragon'].includes(l.id!);
-    const start=18,end=Math.max(start,len-l.size!*.55),depth=Math.max(1,end-start),mid=(start+end)/2;
-    const cx=a.x+Math.sin(yaw)*mid,cz=a.z+Math.cos(yaw)*mid;
+    const a = nodes.get(l.accessNode!)!,
+      p = l.plot!,
+      len = Math.hypot(p.x - a.x, p.z - a.z),
+      yaw = Math.atan2(p.x - a.x, p.z - a.z),
+      modern = ["icon", "paragon"].includes(l.id!);
+    const start = 18,
+      end = Math.max(start, len - l.size! * 0.55),
+      depth = Math.max(1, end - start),
+      mid = (start + end) / 2;
+    const cx = a.x + Math.sin(yaw) * mid,
+      cz = a.z + Math.cos(yaw) * mid;
     // Ground-only civic composition uses the already cleared 24m approach.
     // These low surfaces add no walls or unregistered solid street furniture.
     const paving = (

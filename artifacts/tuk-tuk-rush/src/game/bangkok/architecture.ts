@@ -48,7 +48,9 @@ export function emitDistrictArchitecture(
       s = Math.sin(yaw);
     if (b.artRole === "background") {
       const a = p.bays[0]!,
-        H = ["siam","silom","sukhumvit"].includes(p.region)?Math.min(b.height,80):Math.min(a.height,31),
+        H = ["siam", "silom", "sukhumvit"].includes(p.region)
+          ? Math.min(b.height, 80)
+          : Math.min(a.height, 31),
         F = b.d / 2;
       const put = (
         u: number,
@@ -59,6 +61,7 @@ export function emitDistrictArchitecture(
         depth: number,
         color: string,
         shape: Shape = "box",
+        surface: Surface = a.surface,
       ) =>
         emit({
           x: b.x + c * u + s * v,
@@ -69,7 +72,7 @@ export function emitDistrictArchitecture(
           d: depth,
           color,
           yaw,
-          surface: a.surface,
+          surface,
           shape,
         });
       put(0, H / 2, 0, b.w, H, b.d, a.wall);
@@ -77,11 +80,82 @@ export function emitDistrictArchitecture(
       if (a.roof === "gable")
         put(0, H + 0.25, 0, b.w, 2.3, b.d, "#9c7456", "gable");
       else put(-b.w * 0.2, H + 1.5, 0, b.w * 0.42, 2.7, b.d * 0.5, a.trim);
-      for (const u of [-b.w * 0.28, b.w * 0.28]) {
-        put(u, H * 0.6, F + 0.01, 2.2, 2.8, 0.08, "#47645e");
-        put(u, H * 0.25, F + 0.01, 2.2, 2.8, 0.08, a.trim);
+      const urban = ["siam", "silom", "sukhumvit"].includes(p.region),
+        count = urban
+          ? Math.min(8, Math.floor(H / 5))
+          : Math.min(3, Math.floor(H / 4));
+      // Existing rear masses gain recessed bands, slab edges and corner piers.
+      for (let f = 0; f < count; f++) {
+        const y = 3.2 + (f * (H - 3)) / Math.max(1, count),
+          wh = urban ? 2.5 : 1.8;
+        for (const side of [-1, 1]) {
+          put(
+            0,
+            y,
+            side * (F + 0.015),
+            b.w * 0.86,
+            wh,
+            0.045,
+            urban ? "#3b6577" : "#48645c",
+            "box",
+            urban ? "panel" : "wood",
+          );
+          put(
+            0,
+            y - wh / 2 - 0.12,
+            side * (F + 0.19),
+            b.w * 0.94,
+            0.24,
+            0.42,
+            a.trim,
+            "box",
+            "concrete",
+          );
+          if (urban)
+            for (let col = 1; col < 4; col++)
+              put(
+                (col / 4 - 0.5) * b.w * 0.86,
+                y,
+                side * (F + 0.09),
+                0.13,
+                wh,
+                0.18,
+                a.trim,
+                "box",
+                "metal",
+              );
+          else
+            for (const u of [-b.w * 0.22, b.w * 0.22])
+              put(
+                u,
+                y,
+                side * (F + 0.1),
+                0.12,
+                wh,
+                0.24,
+                a.trim,
+                "box",
+                "wood",
+              );
+        }
       }
-      if(['siam','silom','sukhumvit'].includes(p.region))for(let y=6;y<H-1;y+=6)for(const side of [-1,1])emit({x:b.x+s*side*(b.d/2+.04),y,z:b.z+c*side*(b.d/2+.04),w:b.w*.84,h:.8,d:.1,color:y%12?'#91c7be':'#e3bc81',yaw,layer:'night',surface:'panel'});
+      for (const side of [-1, 1])
+        put(side * b.w * 0.47, H / 2, F + 0.12, 0.34, H, 0.38, a.trim);
+      if (["siam", "silom", "sukhumvit"].includes(p.region))
+        for (let y = 6; y < H - 1; y += 6)
+          for (const side of [-1, 1])
+            emit({
+              x: b.x + s * side * (b.d / 2 + 0.04),
+              y,
+              z: b.z + c * side * (b.d / 2 + 0.04),
+              w: b.w * 0.84,
+              h: 0.8,
+              d: 0.1,
+              color: y % 12 ? "#91c7be" : "#e3bc81",
+              yaw,
+              layer: "night",
+              surface: "panel",
+            });
       continue;
     }
     for (const a of p.bays) {
@@ -142,6 +216,32 @@ export function emitDistrictArchitecture(
         a.wall,
       );
       B(0, 1.55, F - 2.1, W - 0.35, 3.1, 0.18, interior, "wood");
+      if (a.occupied) {
+        B(
+          0,
+          3.26,
+          F - 1.3,
+          W * 0.75,
+          0.08,
+          1.15,
+          a.trade === "gold" ? "#ffe0a0" : modern ? "#b5dce5" : "#eab77b",
+          "panel",
+          "night",
+        );
+        if (a.trade === "gold")
+          for (const u of [-W * 0.23, 0, W * 0.23])
+            B(
+              u,
+              1.35,
+              F - 1.65,
+              W * 0.16,
+              0.42,
+              0.24,
+              "#d9ad55",
+              "metal",
+              "near",
+            );
+      }
       B(0, 0.28, F - 1, W, 0.56, 2.2, a.trim, "tile");
       B(0, 0.2, b.d / 2 - 0.8, W, 0.4, 1.6, a.trim, "tile");
       const cornerSide = a.corner && a.occupied ? (a.u > 0 ? 1 : -1) : 0;
@@ -243,7 +343,54 @@ export function emitDistrictArchitecture(
           );
         for (let n = 0; n < a.windows; n++) {
           const u = (n - (a.windows - 1) / 2) * span;
-          B(u, y, F - 1.32, ww, wh, 0.1, "#243c46", "panel");
+          B(
+            u,
+            y,
+            F - 1.32,
+            ww,
+            wh,
+            0.1,
+            modern
+              ? ["#2e5365", "#3b6571", "#345969"][(a.seed + n + f) % 3]!
+              : "#243c46",
+            "panel",
+          );
+          B(
+            u,
+            y + wh / 2 - 0.12,
+            F - 0.28,
+            ww,
+            0.19,
+            0.75,
+            "#3f4945",
+            "concrete",
+          );
+          if (!modern && (a.seed + n + f) % 3 === 0)
+            for (const side of [-1, 1])
+              put(
+                u + side * (ww / 2 - 0.05),
+                y,
+                F - 0.18,
+                0.3,
+                wh,
+                0.1,
+                a.trim,
+                "wood",
+                "near",
+                "box",
+                side * 0.28,
+              );
+          if (modern && p.region === "siam")
+            B(
+              u + ww / 2 + 0.08,
+              y,
+              F + 0.06,
+              0.12,
+              wh + 0.28,
+              0.75,
+              a.trim,
+              "metal",
+            );
           B(
             u,
             y - wh / 2 - 0.06,
@@ -504,6 +651,96 @@ export function emitDistrictArchitecture(
             "panel",
           );
       }
+      // Regional modules attach to existing bays and preserve entrance clearance.
+      if (p.region === "khaosan" && a.occupied) {
+        B(
+          0,
+          3.58,
+          F + 0.92,
+          W * 0.92,
+          0.035,
+          0.035,
+          "#394847",
+          "metal",
+          "near",
+        );
+        for (let j = 0; j < 6; j++)
+          put(
+            (j - 2.5) * W * 0.14,
+            3.48 - Math.sin((j / 5) * Math.PI) * 0.14,
+            F + 0.92,
+            0.13,
+            0.19,
+            0.13,
+            j % 2 ? "#ebbd79" : "#b3d4bc",
+            "panel",
+            "night",
+            "orb",
+          );
+      }
+      if (p.region === "oldtown" && !modern) {
+        B(
+          0,
+          H - 0.38,
+          F + 0.13,
+          W + 0.08,
+          0.18,
+          0.64,
+          a.trim,
+          "plaster",
+          "near",
+        );
+        B(0, H - 0.62, F + 0.03, W, 0.12, 0.38, a.wall, "plaster", "near");
+      }
+      if (
+        p.region === "talatnoi" &&
+        ["warehouse", "workshop", "timber"].includes(a.type)
+      ) {
+        B(0, 0.66, F - 0.08, W - 0.4, 0.68, 0.14, "#9b7963", "brick", "near");
+        B(0, 3.6, F + 0.1, W, 0.16, 0.8, "#68786d", "metal", "near");
+      }
+      if (p.region === "siam" && modern) {
+        B(0, 4.88, F + 0.12, W, 0.16, 1.9, "#ddc89d", "metal", "near");
+        B(0, 4.74, F + 0.12, W * 0.85, 0.045, 1.4, "#c4e3e2", "panel", "night");
+      }
+      if (p.region === "silom" && a.type === "office")
+        for (const u of [-W * 0.2, W * 0.2])
+          B(
+            u,
+            H * 0.6,
+            F + 0.2,
+            0.16,
+            H * 0.68,
+            0.58,
+            "#7e939a",
+            "metal",
+            "near",
+          );
+      if (p.region === "sukhumvit" && a.type === "apartment")
+        for (let f = 0; f < Math.min(3, levels); f++) {
+          B(
+            W * 0.34,
+            5 + f * floor,
+            F + 0.16,
+            0.8,
+            0.5,
+            0.55,
+            "#adb9b4",
+            "metal",
+            "near",
+          );
+          B(
+            W * 0.34,
+            5 + f * floor,
+            F + 0.46,
+            0.65,
+            0.35,
+            0.035,
+            "#536870",
+            "metal",
+            "detail",
+          );
+        }
       // Sign cabinet geometry is shared with lettering placement in signage.ts.
       if (a.occupied) {
         const signW = Math.min(

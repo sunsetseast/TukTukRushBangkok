@@ -1,8 +1,12 @@
 import * as T from "three";
+import { designBuildings, type ParcelDesign } from "./buildingGrammar";
 import type { District } from "../types";
 import { planEnvironment } from "./environmentPlan";
 /** Bounded spill and signal lenses; no grid of real-time point lights. */
-export function environmentEffects(d: District) {
+export function environmentEffects(
+  d: District,
+  designs: ParcelDesign[] = designBuildings(d),
+) {
   const root = new T.Group(),
     sites = planEnvironment(d),
     lamps = sites.filter((s) =>
@@ -11,15 +15,47 @@ export function environmentEffects(d: District) {
     signals = sites.filter((s) => s.kind === "signal"),
     night = { value: 0 };
   root.name = "BangkokEnvironmentEffects";
+  const frontages = designs
+    .filter((p) => p.hero && !p.parcel.artRole)
+    .flatMap((p) =>
+      p.bays
+        .filter((a) => a.occupied)
+        .map((a) => {
+          const yaw = p.parcel.yaw ?? 0,
+            s = Math.sin(yaw),
+            c = Math.cos(yaw),
+            v = a.front + 1.8;
+          return {
+            body: {
+              x: p.parcel.x + c * a.u + s * v,
+              z: p.parcel.z - s * a.u + c * v,
+              yaw,
+            },
+            tint:
+              a.trade === "gold"
+                ? "#eac581"
+                : ["siam", "silom", "sukhumvit"].includes(p.region)
+                  ? "#8eb9d7"
+                  : a.trade === "noodle"
+                    ? "#e7a275"
+                    : "#cba982",
+            scale: Math.min(1.2, a.width / 10),
+          };
+        }),
+    );
+  const pools = [
+    ...lamps.map((s) => ({ body: s.body, tint: "#f5bc75", scale: 1 })),
+    ...frontages,
+  ];
   const mat = new T.ShaderMaterial({
     transparent: true,
     depthWrite: false,
     blending: T.AdditiveBlending,
     uniforms: { night },
     vertexShader:
-      "varying vec2 localUV;void main(){localUV=uv;vec4 p=vec4(position,1.);\n#ifdef USE_INSTANCING\np=instanceMatrix*p;\n#endif\ngl_Position=projectionMatrix*modelViewMatrix*p;}",
+      "varying vec2 localUV;varying vec3 spillTint;void main(){localUV=uv;spillTint=vec3(1.);\n#ifdef USE_INSTANCING_COLOR\nspillTint=instanceColor;\n#endif\nvec4 p=vec4(position,1.);\n#ifdef USE_INSTANCING\np=instanceMatrix*p;\n#endif\ngl_Position=projectionMatrix*modelViewMatrix*p;}",
     fragmentShader:
-      "varying vec2 localUV;uniform float night;void main(){float a=pow(max(0.,1.-length(localUV-.5)*2.),2.);gl_FragColor=vec4(.95,.48,.14,a*night*.24);}",
+      "varying vec2 localUV;varying vec3 spillTint;uniform float night;void main(){float a=pow(max(0.,1.-length(localUV-.5)*2.),2.);gl_FragColor=vec4(spillTint,a*night*.19);}",
   });
   const spill = new T.InstancedMesh(
     new T.PlaneGeometry(12, 10).rotateX(-Math.PI / 2),
@@ -39,10 +75,33 @@ export function environmentEffects(d: District) {
   lenses.userData.environmentEffect = true;
   lenses.frustumCulled = false;
   root.add(lenses);
-  const cooking=sites.filter(s=>['noodle','grill','wok'].includes(s.kind)),steamPositions=new Float32Array(32*3);
-  const steamGeo=new T.BufferGeometry();steamGeo.setAttribute('position',new T.BufferAttribute(steamPositions,3));
-  const steam=new T.Points(steamGeo,new T.PointsMaterial({color:'#e3d5c1',size:.6,transparent:true,opacity:.22,depthWrite:false}));
-  steam.name='BangkokCookingSteam';steam.frustumCulled=false;root.add(steam);
+  const cooking = sites.filter((s) =>
+      ["noodle", "grill", "wok"].includes(s.kind),
+    ),
+    steamPositions = new Float32Array(32 * 3);
+  const steamGeo = new T.BufferGeometry();
+  steamGeo.setAttribute("position", new T.BufferAttribute(steamPositions, 3));
+  const steam = new T.Points(
+    steamGeo,
+    new T.PointsMaterial({
+      color: "#e3d5c1",
+      size: 0.6,
+      transparent: true,
+      opacity: 0.22,
+      depthWrite: false,
+    }),
+  );
+  (steam.material as T.PointsMaterial).onBeforeCompile = (shader) => {
+    shader.fragmentShader = shader.fragmentShader.replace(
+      "#include <map_particle_fragment>",
+      "#include <map_particle_fragment>\ndiffuseColor.a*=pow(max(0.,1.-length(gl_PointCoord-.5)*2.),2.);",
+    );
+  };
+  (steam.material as T.PointsMaterial).customProgramCacheKey = () =>
+    "bangkok-soft-steam-v1";
+  steam.name = "BangkokCookingSteam";
+  steam.frustumCulled = false;
+  root.add(steam);
   const temp = new T.Object3D(),
     color = new T.Color();
   return {
@@ -52,16 +111,30 @@ export function environmentEffects(d: District) {
       quality: string,
       n: number,
       horizontalGreen: boolean,
-      time=0,
+      time = 0,
     ) {
       night.value = n;
-      let particle=0;
-      for(const site of cooking){if(particle>=(quality==='low'?16:32)||Math.hypot(site.body.x-camera.x,site.body.z-camera.z)>70)continue;
-        for(let j=0;j<3&&particle<32;j++){const life=(time*.4+j*.33+site.seed*.01)%1,idx=particle++*3;steamPositions[idx]=site.body.x+Math.sin(time+site.seed+j)*.28;steamPositions[idx+1]=1.8+life*1.9;steamPositions[idx+2]=site.body.z+Math.cos(time*.7+j)*.2;}
+      let particle = 0;
+      for (const site of cooking) {
+        if (
+          particle >= (quality === "low" ? 16 : 32) ||
+          Math.hypot(site.body.x - camera.x, site.body.z - camera.z) > 70
+        )
+          continue;
+        for (let j = 0; j < 3 && particle < 32; j++) {
+          const life = (time * 0.4 + j * 0.33 + site.seed * 0.01) % 1,
+            idx = particle++ * 3;
+          steamPositions[idx] =
+            site.body.x + Math.sin(time + site.seed + j) * 0.28;
+          steamPositions[idx + 1] = 1.8 + life * 1.9;
+          steamPositions[idx + 2] =
+            site.body.z + Math.cos(time * 0.7 + j) * 0.2;
+        }
       }
-      steamGeo.setDrawRange(0,particle);steamGeo.attributes.position!.needsUpdate=true;
+      steamGeo.setDrawRange(0, particle);
+      steamGeo.attributes.position!.needsUpdate = true;
       let slot = 0;
-      for (const l of lamps) {
+      for (const l of pools) {
         if (
           slot >= (quality === "low" ? 32 : 64) ||
           Math.hypot(l.body.x - camera.x, l.body.z - camera.z) > 145
@@ -69,13 +142,15 @@ export function environmentEffects(d: District) {
           continue;
         temp.position.set(l.body.x, 0.245, l.body.z);
         temp.rotation.set(0, l.body.yaw ?? 0, 0);
-        temp.scale.set(1, 1, 1);
+        temp.scale.set(l.scale, 1, 0.75);
         temp.updateMatrix();
+        spill.setColorAt(slot, color.set(l.tint));
         spill.setMatrixAt(slot++, temp.matrix);
       }
       spill.count = slot;
       spill.visible = n > 0.01;
       spill.instanceMatrix.needsUpdate = true;
+      if (spill.instanceColor) spill.instanceColor.needsUpdate = true;
       signals.forEach((l, i) => {
         const green = l.axis === horizontalGreen,
           yaw = l.body.yaw ?? 0;

@@ -1,3 +1,4 @@
+import { lightingState } from "./bangkok/lighting";
 import { citySky } from "./bangkok/atmosphere";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
@@ -11,8 +12,8 @@ import { buildStreetLife } from "./streetLife";
 import { buildStreetscape } from "./streetscape";
 import { loadArt, type ArtBundle, disposeObject } from "./assets";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
-import { bangkokPeople } from './bangkok/urbanLayers';
-import { buildBangkokGraybox, shiftLighting } from './bangkok/mesh';
+import { bangkokPeople } from "./bangkok/urbanLayers";
+import { buildBangkokGraybox, shiftLighting } from "./bangkok/mesh";
 import { clamp } from "./meshUtil";
 import { obstacleLocal } from "./world";
 
@@ -55,39 +56,71 @@ function buildBeacon() {
 
 function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const { camera, gl, scene } = useThree();
-  const bangkok = engine.model.district.worldId === 'bangkok';
-  const cameraBlend=useRef({key:'',time:0,room:false,from:new THREE.Vector3(),look:new THREE.Vector3(),last:new THREE.Vector3(),lastLook:new THREE.Vector3()});
-  const railView=useRef({next:0,y:1.4,target:1.4});
-  const lookPose=useRef({position:[0,0,0] as [number,number,number],target:[0,0,0] as [number,number,number]});
-  const atmosphere=useMemo(()=>bangkok?citySky():undefined,[bangkok]);
-  const sun = useRef<THREE.DirectionalLight>(null), ambient = useRef<THREE.HemisphereLight>(null);
+  const bangkok = engine.model.district.worldId === "bangkok";
+  const cameraBlend = useRef({
+    key: "",
+    time: 0,
+    room: false,
+    from: new THREE.Vector3(),
+    look: new THREE.Vector3(),
+    last: new THREE.Vector3(),
+    lastLook: new THREE.Vector3(),
+  });
+  const railView = useRef({ next: 0, y: 1.4, target: 1.4 });
+  const lookPose = useRef({
+    position: [0, 0, 0] as [number, number, number],
+    target: [0, 0, 0] as [number, number, number],
+  });
+  const lightState = useMemo(() => lightingState(), []);
+  const atmosphere = useMemo(
+    () => (bangkok ? citySky() : undefined),
+    [bangkok],
+  );
+  const sun = useRef<THREE.DirectionalLight>(null),
+    ambient = useRef<THREE.HemisphereLight>(null);
   const city = useMemo(() => {
-    const c = bangkok ? buildBangkokGraybox(engine.model.district,engine.railService) : buildCity(engine.model.district, art.textures);
+    const c = bangkok
+      ? buildBangkokGraybox(engine.model.district, engine.railService)
+      : buildCity(engine.model.district, art.textures);
     c.group.name = "City";
     return c;
   }, [engine, art]);
   const sky = useMemo(() => {
     const s = bangkok ? atmosphere!.root : buildSky();
-    s.scale.setScalar(bangkok?1:.18);
+    s.scale.setScalar(bangkok ? 1 : 0.18);
     return s;
   }, []);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   const streets = useMemo(() => {
-    const s = bangkok ? { root: new THREE.Group(), update() {}, dispose() {} } : buildStreetscape(engine.model.district, art.textures);
+    const s = bangkok
+      ? { root: new THREE.Group(), update() {}, dispose() {} }
+      : buildStreetscape(engine.model.district, art.textures);
     s.root.name = "Facades";
     return s;
   }, [engine, art]);
   const life = useMemo(
-    () => buildStreetLife(engine.model.district, bangkok ? bangkokPeople(engine.model.district) : undefined),
+    () =>
+      buildStreetLife(
+        engine.model.district,
+        bangkok ? bangkokPeople(engine.model.district) : undefined,
+      ),
     [engine, city],
   );
   const shadows = useMemo(
-    () => bangkok ? new THREE.Group() : architectureShadows(engine.model.district),
+    () =>
+      bangkok ? new THREE.Group() : architectureShadows(engine.model.district),
     [engine],
   );
   const contact = useMemo(() => vehicleShadow(), []);
   const traffic = useMemo(() => new TrafficLayer(), []);
-  const beacon = useMemo(() => {const b=buildBeacon();if(bangkok){b.colMat.opacity=.065;b.ringMat.opacity=.5;}return b;}, []);
+  const beacon = useMemo(() => {
+    const b = buildBeacon();
+    if (bangkok) {
+      b.colMat.opacity = 0.065;
+      b.ringMat.opacity = 0.5;
+    }
+    return b;
+  }, []);
   const cam = useRef({
     init: false,
     phase: "",
@@ -129,16 +162,34 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c = cam.current;
     const t = state.clock.elapsedTime;
     if (bangkok) {
-      const lighting = shiftLighting(s.elapsed ?? 0);
-      (scene.background as THREE.Color).copy(lighting.sky); (scene.fog as THREE.Fog).color.copy(lighting.sky);
-      if (sun.current) sun.current.intensity = lighting.sun;
-      if (ambient.current) ambient.current.intensity = lighting.ambient;
+      const lighting = shiftLighting(s.elapsed ?? 0, lightState);
+      (scene.background as THREE.Color).copy(lighting.sky);
+      (scene.fog as THREE.Fog).color.copy(lighting.sky);
+      if (sun.current) {
+        sun.current.intensity = lighting.sun;
+        sun.current.color.copy(lighting.key);
+      }
+      if (ambient.current) {
+        ambient.current.intensity = lighting.ambient;
+        ambient.current.color.copy(lighting.fill);
+        ambient.current.groundColor.copy(lighting.ground);
+      }
       gl.toneMappingExposure = lighting.exposure;
-      scene.environmentIntensity = .38 - lighting.night * .2;
+      scene.environmentIntensity = 0.38 - lighting.night * 0.2;
+      (city as ReturnType<typeof buildBangkokGraybox>).setInspection(
+        s.viewingLandmark,
+      );
       (city as ReturnType<typeof buildBangkokGraybox>).setNight(lighting.night);
-      (city as ReturnType<typeof buildBangkokGraybox>).animate(s.elapsed??0,s.quality,engine.intersectionHorizontalGreen);
-      atmosphere!.update(state.camera.position,lighting.night,THREE.MathUtils.smoothstep(s.elapsed??0,45,150));
-      if(sun.current)sun.current.color.set(lighting.night>.6?"#9bb7df":"#ffdeb1");
+      (city as ReturnType<typeof buildBangkokGraybox>).animate(
+        s.elapsed ?? 0,
+        s.quality,
+        engine.intersectionHorizontalGreen,
+      );
+      atmosphere!.update(
+        state.camera.position,
+        lighting.night,
+        THREE.MathUtils.smoothstep(s.elapsed ?? 0, 45, 150),
+      );
     }
 
     tuk.root.position.set(p.x, 0, p.z);
@@ -154,7 +205,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     tuk.bars.rotation.y = -clamp(p.steer, -1, 1) * 0.45;
     for (const w of tuk.spins) w.rotation.x = p.wheelSpin;
     tuk.passenger.visible = s.stage === "delivery";
-    traffic.sync(m.traffic);
+    traffic.sync(m.traffic, camera.position, bangkok ? lightState.night : 0);
 
     // beacon
     beacon.g.position.set(s.target.x, 0, s.target.z);
@@ -171,7 +222,18 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
 
     // A small horizon adjustment near genuine rail corridors exposes overhead
     // trains without changing driving position, FOV or historic-district views.
-    const rv=railView.current;if(t>rv.next){rv.next=t+.25;rv.target=m.district.transit?.lines.some(line=>line.samples.some((q,i)=>i%8===0&&Math.hypot(q.x-p.x,q.z-p.z)<65))?3.65:1.4;}rv.y+=(rv.target-rv.y)*(1-Math.exp(-3*dt));
+    const rv = railView.current;
+    if (t > rv.next) {
+      rv.next = t + 0.25;
+      rv.target = m.district.transit?.lines.some((line) =>
+        line.samples.some(
+          (q, i) => i % 8 === 0 && Math.hypot(q.x - p.x, q.z - p.z) < 65,
+        ),
+      )
+        ? 3.65
+        : 1.4;
+    }
+    rv.y += (rv.target - rv.y) * (1 - Math.exp(-3 * dt));
     // camera
     if (c.phase !== s.phase && (c.phase === "title" || c.phase === ""))
       c.init = false;
@@ -180,7 +242,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     if (s.phase === "title") {
       // A stable, road-aligned hero view avoids orbiting through shop facades.
       // No extra scene or render pass; also comfortable with reduced motion.
-      const fx = Math.sin(p.heading), fz = Math.cos(p.heading);
+      const fx = Math.sin(p.heading),
+        fz = Math.cos(p.heading);
       c.pos.set(p.x - fx * 12, 4.7, p.z - fz * 12);
       c.look.set(p.x + fx * 24, 3.1, p.z + fz * 24);
       cp.position.copy(c.pos);
@@ -189,13 +252,21 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.fov = 56;
     } else {
       const sp = clamp(Math.abs(p.speed) / 31, 0, 1);
-      if(Math.hypot(p.x-c.pos.x,p.z-c.pos.z)>45)c.init=false;
+      if (Math.hypot(p.x - c.pos.x, p.z - c.pos.z) > 45) c.init = false;
       const snapNow = !c.init;
-      const arrival=Math.abs(p.speed)<1.8&&!m.input.gas?m.district.destinations?.find(a=>{
-        const n=m.district.nodes.find(n=>n.id===a.arrivalNode)!;return Math.hypot(p.x-n.x,p.z-n.z)<a.arrivalRadius+1;
-      }):undefined;
-      const destination=arrival?m.district.landmarks.find(l=>l.id===arrival.landmarkId):undefined;
-      const heading=destination?Math.atan2(destination.plot!.x-p.x,destination.plot!.z-p.z):p.heading;
+      const arrival =
+        Math.abs(p.speed) < 1.8 && !m.input.gas
+          ? m.district.destinations?.find((a) => {
+              const n = m.district.nodes.find((n) => n.id === a.arrivalNode)!;
+              return Math.hypot(p.x - n.x, p.z - n.z) < a.arrivalRadius + 1;
+            })
+          : undefined;
+      const destination = arrival
+        ? m.district.landmarks.find((l) => l.id === arrival.landmarkId)
+        : undefined;
+      const heading = destination
+        ? Math.atan2(destination.plot!.x - p.x, destination.plot!.z - p.z)
+        : p.heading;
       if (snapNow) {
         c.heading = heading;
         c.init = true;
@@ -203,8 +274,8 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       let dh = heading - c.heading;
       dh = Math.atan2(Math.sin(dh), Math.cos(dh));
       c.heading += dh * (1 - Math.exp(-4.5 * dt));
-      const boosted=s.boostState==='active' ? 1 : 0;
-      const dist = 7.8 + 3 * sp + boosted*.7,
+      const boosted = s.boostState === "active" ? 1 : 0;
+      const dist = 7.8 + 3 * sp + boosted * 0.7,
         h = 3.3 + 1.3 * sp;
       const fx = Math.sin(c.heading),
         fz = Math.cos(c.heading);
@@ -247,10 +318,21 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.pos.y += (ty - c.pos.y) * f;
       c.pos.z += (tz - c.pos.z) * f;
       cp.position.copy(c.pos);
-      if(destination){const y=destination.id==='paknam'?30:destination.id==='arun'?22:destination.id==='pho'?8:destination.kind==='palace'?18:17;c.look.set(destination.plot!.x,y,destination.plot!.z);}
-      else c.look.set(p.x + fx * 6, rv.y, p.z + fz * 6);
+      if (destination) {
+        const y =
+          destination.id === "paknam"
+            ? 30
+            : destination.id === "arun"
+              ? 22
+              : destination.id === "pho"
+                ? 8
+                : destination.kind === "palace"
+                  ? 18
+                  : 17;
+        c.look.set(destination.plot!.x, y, destination.plot!.z);
+      } else c.look.set(p.x + fx * 6, rv.y, p.z + fz * 6);
       cp.lookAt(c.look);
-      c.fov += (58 + sp * 14 + boosted*3 - c.fov) * (1 - Math.exp(-3 * dt));
+      c.fov += (58 + sp * 14 + boosted * 3 - c.fov) * (1 - Math.exp(-3 * dt));
     }
     if (Math.abs(cp.fov - c.fov) > 0.1) {
       cp.fov = c.fov;
@@ -267,15 +349,35 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
         cp.lookAt(new THREE.Vector3().fromArray(override.look));
       }
     }
-    beacon.g.visible=!s.viewingLandmark;
-    const blend=cameraBlend.current,key=s.viewingLandmark??'';
-    if(key!==blend.key){blend.from.copy(blend.key?blend.last:cp.position);blend.look.copy(blend.key?blend.lastLook:c.look);const room=!!engine.inspection.view?.room;blend.time=room||blend.room?t-1:t;blend.room=room;blend.key=key;}
-    if(s.viewingLandmark&&engine.inspection.update(delta,lookPose.current,m.district)){
-      cp.position.fromArray(lookPose.current.position);c.look.fromArray(lookPose.current.target);cp.fov=62;cp.updateProjectionMatrix();c.init=false;
+    beacon.g.visible = !s.viewingLandmark;
+    const blend = cameraBlend.current,
+      key = s.viewingLandmark ?? "";
+    if (key !== blend.key) {
+      blend.from.copy(blend.key ? blend.last : cp.position);
+      blend.look.copy(blend.key ? blend.lastLook : c.look);
+      const room = !!engine.inspection.view?.room;
+      blend.time = room || blend.room ? t - 1 : t;
+      blend.room = room;
+      blend.key = key;
     }
-    const mix=THREE.MathUtils.smoothstep(t-blend.time,0,.45);
-    if(mix<1){cp.position.lerpVectors(blend.from,cp.position,mix);c.look.lerpVectors(blend.look,c.look,mix);}
-    if(key||mix<1)cp.lookAt(c.look);blend.last.copy(cp.position);blend.lastLook.copy(c.look);
+    if (
+      s.viewingLandmark &&
+      engine.inspection.update(delta, lookPose.current, m.district)
+    ) {
+      cp.position.fromArray(lookPose.current.position);
+      c.look.fromArray(lookPose.current.target);
+      cp.fov = 62;
+      cp.updateProjectionMatrix();
+      c.init = false;
+    }
+    const mix = THREE.MathUtils.smoothstep(t - blend.time, 0, 0.45);
+    if (mix < 1) {
+      cp.position.lerpVectors(blend.from, cp.position, mix);
+      c.look.lerpVectors(blend.look, c.look, mix);
+    }
+    if (key || mix < 1) cp.lookAt(c.look);
+    blend.last.copy(cp.position);
+    blend.lastLook.copy(c.look);
 
     sky.position.copy(cp.position);
     streets.update(cp.position, s.quality);
@@ -287,7 +389,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       p,
     );
     city.update(cp.position, s.quality, engine.intersectionHorizontalGreen);
-    const far = bangkok ? s.quality === "low" ? 500 : 800 : s.quality === "low" ? 240 : 340;
+    const far = bangkok
+      ? s.quality === "low"
+        ? 500
+        : 800
+      : s.quality === "low"
+        ? 240
+        : 340;
     if (cp.far !== far) {
       cp.far = far;
       cp.updateProjectionMatrix();
@@ -295,7 +403,13 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
 
     const fog = scene.fog as THREE.Fog;
     fog.near = bangkok ? 260 : s.quality === "low" ? 95 : 135;
-    fog.far = bangkok ? s.quality === "low" ? 600 : 780 : s.quality === "low" ? 205 : 310;
+    fog.far = bangkok
+      ? s.quality === "low"
+        ? 600
+        : 780
+      : s.quality === "low"
+        ? 205
+        : 310;
     if (import.meta.env.DEV) {
       const debug = window as typeof window & { __graphics?: unknown };
       debug.__graphics = {
@@ -345,8 +459,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
 export default function GameCanvas({
   engine,
   quality,
+  mapOpen = false,
 }: {
   engine: GameEngine;
+  mapOpen?: boolean;
   quality: "low" | "medium";
 }) {
   const [art, setArt] = useState<ArtBundle | null>(null);
@@ -392,9 +508,11 @@ export default function GameCanvas({
       )}
       <Canvas
         className="tt-canvas"
+        frameloop={mapOpen ? "demand" : "always"}
         dpr={dpr}
         gl={{
           antialias: false,
+          stencil: false,
           alpha: false,
           powerPreference: "high-performance",
         }}

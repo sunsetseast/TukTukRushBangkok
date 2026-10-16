@@ -1,20 +1,24 @@
 import * as T from "three";
+import { facadeFinishes, installFacadeFinish } from "./facadeFinish";
 import type { Landmark } from "../types";
-import {
-  ArchitecturalBatch,
-  architecturalTexture,
-  installSurfaceAtlas,
-} from "./architecturalBatch";
+import { ArchitecturalBatch } from "./architecturalBatch";
 /** Reference-informed arcade compositions. Plot envelopes are the authority;
  * these are not dimensioned replicas, branded storefronts or copied logos. */
-export function buildCommercialLandmark(l: Landmark) {
+export function buildCommercialLandmark(
+  l: Landmark,
+  finishes = facadeFinishes(),
+) {
   const root = new T.Group(),
     size = l.size ?? 65,
     mat = new T.MeshStandardMaterial({
-      map: architecturalTexture(),
+      map: finishes.albedo,
+      normalMap: finishes.normal,
+      normalScale: new T.Vector2(0.28, 0.28),
+      roughnessMap: finishes.pbr,
+      metalnessMap: finishes.pbr,
       vertexColors: true,
-      roughness: 0.48,
-      metalness: 0.13,
+      roughness: 1,
+      metalness: 1,
     }),
     lit = new T.MeshStandardMaterial({
       vertexColors: true,
@@ -25,7 +29,7 @@ export function buildCommercialLandmark(l: Landmark) {
       depthWrite: false,
       roughness: 0.4,
     });
-  installSurfaceAtlas(mat);
+  installFacadeFinish(mat);
   const batch = new ArchitecturalBatch(mat, lit),
     S = size / 65;
   const box = (
@@ -48,7 +52,20 @@ export function buildCommercialLandmark(l: Landmark) {
       d: d * S,
       color,
       yaw,
-      surface: night ? "panel" : "panel",
+      surface: night
+        ? "panel"
+        : [
+              "#416778",
+              "#456f7b",
+              "#507684",
+              "#477686",
+              "#537e8c",
+              "#7196b6",
+            ].includes(color)
+          ? "panel"
+          : ["#d0b581", "#d7b768", "#d9bd84"].includes(color)
+            ? "metal"
+            : "concrete",
       layer: night ? "night" : "core",
     });
   if (l.id === "icon") {
