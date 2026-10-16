@@ -27,6 +27,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:cinematic
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:startup
       - run: pnpm --filter @workspace/tuk-tuk-rush run build
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:landmark-quality

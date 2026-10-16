@@ -1,3 +1,4 @@
+import { cinematicParcel, emitYaowaratFacade } from "./yaowarat";
 import type { District } from "../types";
 import {
   designBuildings,
@@ -42,6 +43,10 @@ export function emitDistrictArchitecture(
   emit: (piece: ArtPiece) => void,
 ) {
   for (const p of designs) {
+    if (cinematicParcel(p)) {
+      emitYaowaratFacade(p, emit);
+      continue;
+    }
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),

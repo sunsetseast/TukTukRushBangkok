@@ -1,0 +1,631 @@
+@font-face {
+  font-family: "Rush Display";
+  src: url("/assets/fonts/lilita-one.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+/* Entry screen only. The 3D city remains live and interactive controls remain DOM. */
+.tt-ui > .tt-cinematic-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  padding: var(--edge-top) max(24px, env(safe-area-inset-right))
+    var(--edge-bottom) max(32px, env(safe-area-inset-left));
+  background:
+    linear-gradient(90deg, #152b3fa8, #172d421b 49%, transparent 65%),
+    linear-gradient(0deg, #172c3f80, transparent 32%);
+}
+.tt-cinematic-panel {
+  width: min(470px, 45vw);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  isolation: isolate;
+}
+.tt-arcade-logo {
+  width: 100%;
+  max-width: 425px;
+  position: relative;
+  text-align: center;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 5px 0 #102f3bcc);
+}
+.tt-roof-ornament {
+  height: 42px;
+  width: 86%;
+  display: block;
+  margin: 0 auto -9px;
+  overflow: visible;
+}
+.tt-arcade-logo h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font:
+    400 clamp(60px, 10vh, 94px)/0.86 "Rush Display",
+    ui-rounded,
+    sans-serif;
+  letter-spacing: -0.035em;
+  transform: none;
+}
+.tt-arcade-logo h1 > span {
+  color: #41e2c5;
+  -webkit-text-stroke: 1.5px #10515b;
+  paint-order: stroke fill;
+  text-shadow:
+    0 2px #ddffe1,
+    0 5px #168a90,
+    0 9px #0c465a,
+    0 10px #f8c268,
+    3px 12px #613c27,
+    -3px 12px #613c27;
+}
+.tt-arcade-logo h1 > .rush {
+  font-size: 1.24em;
+  color: #ffd953;
+  -webkit-text-stroke: 1.5px #9d401f;
+  text-shadow:
+    0 2px #fff4ae,
+    0 5px #f39827,
+    0 9px #db4c2a,
+    0 11px #773327,
+    3px 13px #fac16c,
+    -3px 13px #fac16c;
+}
+.tt-logo-ribbon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 18px auto 0;
+  padding: 5px 16px;
+  max-width: 305px;
+  border: 2px solid #f0c36b;
+  border-radius: 7px;
+  background: #175961;
+  color: #fff1be;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  box-shadow: 0 3px 0 #763f26;
+}
+.tt-logo-ribbon i {
+  font-style: normal;
+  color: #ffd472;
+  font-size: 10px;
+}
+.tt-cinematic-tagline {
+  color: #fff1c8;
+  text-shadow:
+    0 2px 1px #102d40,
+    0 0 9px #102d40;
+  margin: 0;
+  text-align: center;
+  max-width: 425px;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 850;
+}
+.tt-arcade-actions {
+  display: grid;
+  gap: 12px;
+}
+.tt-arcade-start {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr 24px;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  min-height: 84px;
+  padding: 12px 15px;
+  border: 2px solid #f6cc70;
+  border-radius: 26px;
+  background: linear-gradient(#ff8750, #eb442f);
+  color: #fff2ca !important;
+  box-shadow:
+    inset 0 3px 0 #ffd591,
+    inset 0 -3px 0 #b32929,
+    0 5px 0 #7c3c26,
+    0 8px 14px #092d3a66;
+  transition: transform 120ms ease;
+  touch-action: manipulation;
+}
+.tt-arcade-start::before,
+.tt-arcade-start::after {
+  content: "◆";
+  position: absolute;
+  top: calc(50% - 8px);
+  color: #ffe294;
+  font-size: 11px;
+  text-shadow: 0 1px 0 #6b4020;
+}
+.tt-arcade-start::before {
+  left: -7px;
+}
+.tt-arcade-start::after {
+  right: -7px;
+}
+.tt-arcade-start.roam {
+  background: linear-gradient(#24b99f, #078a81);
+  box-shadow:
+    inset 0 3px 0 #a8edc7,
+    inset 0 -3px 0 #096c72,
+    0 5px 0 #124d58,
+    0 8px 14px #092d3a66;
+}
+.tt-arcade-start:active {
+  transform: translateY(3px) scale(0.985);
+}
+.tt-arcade-start b {
+  display: block;
+  font:
+    400 29px/1 "Rush Display",
+    ui-rounded,
+    sans-serif;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 0 #8b3a2d;
+}
+.tt-arcade-start.roam b {
+  text-shadow: 0 2px 0 #075265;
+}
+.tt-arcade-start small {
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fff0ce;
+}
+.tt-action-medallion {
+  height: 52px;
+  width: 52px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #f4cb75;
+  box-shadow:
+    0 2px 0 #844f2b,
+    inset 0 2px 0 #69a9a2;
+  background: #184c53;
+  border-radius: 50%;
+  color: #ffe39c;
+}
+.tt-action-medallion svg {
+  width: 27px;
+  height: 27px;
+  stroke-width: 2.2;
+}
+.tt-arcade-secondary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 6px;
+}
+.tt-cinematic-title .tt-arcade-secondary button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  border: 1.5px solid #f0c879;
+  border-radius: 14px;
+  background: #155962;
+  color: #fff2c7;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 12px;
+  box-shadow:
+    0 3px 0 #133e4c,
+    inset 0 2px 0 #86c3b849;
+}
+.tt-arcade-secondary button > svg {
+  height: 19px;
+  width: 19px;
+  color: #f7cb70;
+}
+.tt-cinematic-title .tt-arcade-secondary a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  margin-left: auto;
+  color: #fff0ca;
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-shadow: 0 1px 2px #14364c;
+}
+.tt-scene-credit {
+  font-size: 10px;
+  color: #ffe5b5;
+  text-shadow: 0 1px 2px #14364c;
+}
+.tt-arcade-profile {
+  position: absolute;
+  top: max(22px, env(safe-area-inset-top));
+  right: max(26px, env(safe-area-inset-right));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 255px;
+  padding: 10px 14px 10px 9px;
+  border: 2px solid #edc477;
+  border-radius: 19px;
+  background: #15545aef;
+  color: #fff2cd;
+  box-shadow:
+    inset 0 2px 0 #93cbb14d,
+    0 4px 0 #1b3449;
+}
+.tt-profile-emblem {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  width: 44px;
+  flex: none;
+  border: 2px solid #ffd277;
+  border-radius: 50%;
+  background: #149f93;
+  box-shadow: inset 0 2px 0 #81d5b6;
+}
+.tt-profile-emblem svg {
+  width: 26px;
+  height: 26px;
+}
+.tt-arcade-profile b {
+  font-size: 13px;
+}
+.tt-profile-progress {
+  display: block;
+  margin-top: 5px;
+  width: 110px;
+  height: 7px;
+  background: #123b47;
+  border: 1px solid #81ab9b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tt-profile-progress i {
+  display: block;
+  height: 100%;
+  background: #ffd15a;
+  transform-origin: left;
+}
+.tt-arcade-profile strong {
+  padding-left: 12px;
+  border-left: 1px solid #b2c5a755;
+  text-align: right;
+  font-size: 20px;
+  min-width: 67px;
+}
+.tt-arcade-profile strong small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #bfe8cd;
+}
+.tt-yaowarat-plaque {
+  position: absolute;
+  bottom: max(30px, env(safe-area-inset-bottom));
+  right: max(30px, env(safe-area-inset-right));
+  width: 235px;
+  padding: 13px 15px 12px;
+  text-align: center;
+  border: 3px solid #f0c772;
+  border-radius: 35% 35% 18px 18px / 24px 24px 18px 18px;
+  background: linear-gradient(#185c5e, #103e4d);
+  box-shadow:
+    inset 0 0 0 3px #a1743a,
+    0 5px 0 #6d402e,
+    0 8px 16px #102b3f80;
+  color: #ffefc3;
+}
+.tt-yaowarat-plaque .tt-roof-ornament {
+  height: 40px;
+  margin-top: -43px;
+  margin-bottom: 1px;
+}
+.tt-yaowarat-plaque > span {
+  display: block;
+  font-family: "Rush Thai", sans-serif;
+  font-size: 19px;
+  color: #ffcf73;
+  line-height: 1.5;
+}
+.tt-yaowarat-plaque b {
+  display: block;
+  font:
+    400 32px/0.95 "Rush Display",
+    sans-serif;
+  letter-spacing: 0.025em;
+}
+.tt-yaowarat-plaque strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: #f4cc80;
+  margin-top: 6px;
+}
+.tt-yaowarat-plaque small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin: 12px 0 9px;
+}
+.tt-yaowarat-plaque em {
+  display: block;
+  border-top: 1px solid #ad9b6655;
+  padding-top: 8px;
+  font-size: 9px;
+  font-style: normal;
+  color: #c5e1cd;
+}
+@media (min-width: 1100px) {
+  .tt-cinematic-title {
+    padding-left: 5vw;
+  }
+  .tt-cinematic-panel {
+    gap: 18px;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .tt-cinematic-title {
+    padding-left: max(24px, env(safe-area-inset-left));
+  }
+  .tt-cinematic-panel {
+    width: min(380px, 46vw);
+    gap: 6px;
+  }
+  .tt-arcade-logo {
+    max-width: 290px;
+  }
+  .tt-arcade-logo h1 {
+    font-size: 51px;
+  }
+  .tt-roof-ornament {
+    height: 26px;
+  }
+  .tt-logo-ribbon {
+    font-size: 8px;
+    max-width: 215px;
+    padding: 3px 8px;
+    margin-top: 11px;
+  }
+  .tt-cinematic-tagline {
+    font-size: 11px;
+    max-width: 290px;
+  }
+  .tt-cinematic-tagline br {
+    display: none;
+  }
+  .tt-arcade-actions {
+    gap: 9px;
+  }
+  .tt-arcade-start {
+    min-height: 59px;
+    grid-template-columns: 38px 1fr 18px;
+    gap: 9px;
+    padding: 8px 11px;
+    border-radius: 20px;
+  }
+  .tt-action-medallion {
+    width: 38px;
+    height: 38px;
+    border-width: 2px;
+  }
+  .tt-action-medallion svg {
+    width: 23px;
+    height: 23px;
+  }
+  .tt-arcade-start b {
+    font-size: 23px;
+  }
+  .tt-arcade-start small {
+    font-size: 9px;
+    margin-top: 4px;
+  }
+  .tt-arcade-secondary {
+    padding-top: 3px;
+    gap: 8px;
+  }
+  .tt-cinematic-title .tt-arcade-secondary button {
+    min-height: 44px;
+    font-size: 10px;
+    padding: 5px 8px;
+    gap: 5px;
+  }
+  .tt-cinematic-title .tt-arcade-secondary a {
+    font-size: 9px;
+  }
+  .tt-scene-credit {
+    display: none;
+  }
+  .tt-arcade-profile {
+    min-width: 225px;
+    padding: 6px 10px;
+    top: max(13px, env(safe-area-inset-top));
+    right: max(18px, env(safe-area-inset-right));
+    gap: 8px;
+  }
+  .tt-profile-emblem {
+    width: 36px;
+    height: 36px;
+  }
+  .tt-arcade-profile b {
+    font-size: 11px;
+  }
+  .tt-arcade-profile strong {
+    font-size: 17px;
+  }
+  .tt-profile-progress {
+    width: 90px;
+  }
+  .tt-yaowarat-plaque {
+    width: 180px;
+    bottom: 26px;
+    right: max(20px, env(safe-area-inset-right));
+    padding: 7px 10px;
+  }
+  .tt-yaowarat-plaque b {
+    font-size: 24px;
+  }
+  .tt-yaowarat-plaque > span {
+    font-size: 14px;
+  }
+  .tt-yaowarat-plaque strong {
+    font-size: 9px;
+    margin-top: 3px;
+  }
+  .tt-yaowarat-plaque small {
+    font-size: 8px;
+    margin: 7px 0 4px;
+  }
+  .tt-yaowarat-plaque em {
+    font-size: 7px;
+    padding-top: 4px;
+  }
+  .tt-yaowarat-plaque .tt-roof-ornament {
+    height: 32px;
+    margin-top: -35px;
+  }
+}
+@media (orientation: portrait) {
+  .tt-cinematic-title {
+    align-items: stretch;
+    padding: var(--edge-top) max(22px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom))
+      max(22px, env(safe-area-inset-left));
+    background: linear-gradient(
+      180deg,
+      #1a32476e,
+      transparent 44%,
+      #15304524 58%,
+      #12384be8 78%
+    );
+  }
+  .tt-cinematic-panel {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    padding-top: 62px;
+  }
+  .tt-arcade-logo {
+    max-width: 340px;
+    align-self: center;
+  }
+  .tt-arcade-logo h1 {
+    font-size: 73px;
+  }
+  .tt-roof-ornament {
+    height: 32px;
+  }
+  .tt-logo-ribbon {
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-top: 14px;
+    max-width: 260px;
+  }
+  .tt-cinematic-tagline {
+    font-size: 13px;
+    align-self: center;
+  }
+  .tt-cinematic-tagline br {
+    display: none;
+  }
+  .tt-arcade-actions {
+    margin-top: auto;
+    gap: 12px;
+  }
+  .tt-arcade-start {
+    min-height: 76px;
+    grid-template-columns: 44px 1fr 18px;
+    gap: 9px;
+    padding: 10px 12px;
+  }
+  .tt-action-medallion {
+    width: 44px;
+    height: 44px;
+  }
+  .tt-arcade-start b {
+    font-size: 26px;
+  }
+  .tt-arcade-start small {
+    font-size: 10px;
+  }
+  .tt-arcade-secondary {
+    gap: 8px;
+  }
+  .tt-arcade-secondary button {
+    font-size: 11px;
+    padding: 8px;
+  }
+  .tt-arcade-secondary a {
+    font-size: 9px;
+    max-width: 80px;
+  }
+  .tt-scene-credit {
+    display: none;
+  }
+  .tt-arcade-profile {
+    top: var(--edge-top);
+    left: 22px;
+    right: 22px;
+    min-width: 0;
+    height: 48px;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+  .tt-profile-emblem {
+    width: 32px;
+    height: 32px;
+  }
+  .tt-profile-emblem svg {
+    width: 22px;
+    height: 22px;
+  }
+  .tt-arcade-profile b {
+    font-size: 11px;
+  }
+  .tt-profile-progress {
+    width: 125px;
+    height: 5px;
+    margin-top: 3px;
+  }
+  .tt-arcade-profile strong {
+    margin-left: auto;
+    font-size: 18px;
+  }
+  .tt-arcade-profile strong small {
+    font-size: 7px;
+  }
+  .tt-yaowarat-plaque {
+    display: none;
+  }
+}
+@media (orientation: portrait) and (max-height: 850px) {
+  .tt-cinematic-panel {
+    gap: 9px;
+  }
+  .tt-arcade-logo h1 {
+    font-size: 65px;
+  }
+  .tt-arcade-start {
+    min-height: 70px;
+  }
+  .tt-arcade-start b {
+    font-size: 23px;
+  }
+  .tt-arcade-start small {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tt-arcade-start {
+    transition: none;
+  }
+}
+.tt-reduced-motion .tt-arcade-start {
+  transition: none;
+}

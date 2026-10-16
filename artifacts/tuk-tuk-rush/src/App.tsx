@@ -217,7 +217,11 @@ function App() {
       ref={root}
     >
       <Boundary>
-        <GameCanvas engine={engine} quality={frame.snap.quality} mapOpen={mapOpen} />
+        <GameCanvas
+          engine={engine}
+          quality={frame.snap.quality}
+          mapOpen={mapOpen}
+        />
       </Boundary>
       <div
         className={`tt-ui ${mapOpen || s.phase === "paused" ? "tt-overlay-active" : ""}`}
@@ -247,28 +251,34 @@ function App() {
         {s.phase === "title" && !careerOpen && (
           <Title
             onCareer={() => setCareerOpen(true)}
+            profile={engine.career.profile}
             onStart={start}
             settings={settings}
             bangkok={engine.model.district.worldId === "bangkok"}
           />
         )}
-        {s.phase === "paused" && !s.viewingLandmark && !mapOpen && !careerOpen && (
-          <PauseMenu
-            goals={s}
-            onCareer={() => setCareerOpen(true)}
-            onResume={() => engine.resume()}
-            onRestart={() => engine.restart()}
-            onRecover={() => {
-              engine.recover();
-              engine.resume();
-            }}
-            onMap={
-              engine.model.district.worldId === "bangkok" ? openMap : undefined
-            }
-            onTitle={() => engine.returnToTitle()}
-            settings={settings}
-          />
-        )}
+        {s.phase === "paused" &&
+          !s.viewingLandmark &&
+          !mapOpen &&
+          !careerOpen && (
+            <PauseMenu
+              goals={s}
+              onCareer={() => setCareerOpen(true)}
+              onResume={() => engine.resume()}
+              onRestart={() => engine.restart()}
+              onRecover={() => {
+                engine.recover();
+                engine.resume();
+              }}
+              onMap={
+                engine.model.district.worldId === "bangkok"
+                  ? openMap
+                  : undefined
+              }
+              onTitle={() => engine.returnToTitle()}
+              settings={settings}
+            />
+          )}
         {s.phase === "ended" && !careerOpen && (
           <Results
             s={s}
@@ -278,7 +288,14 @@ function App() {
           />
         )}
       </div>
-      {careerOpen && <DriverCareer store={engine.career} landmarkCount={bangkokLayout.landmarks.length} districtCount={bangkokLayout.districts.length} onClose={() => setCareerOpen(false)} />}
+      {careerOpen && (
+        <DriverCareer
+          store={engine.career}
+          landmarkCount={bangkokLayout.landmarks.length}
+          districtCount={bangkokLayout.districts.length}
+          onClose={() => setCareerOpen(false)}
+        />
+      )}
       {cameraReturn && <div className="tt-camera-return" aria-hidden="true" />}
       {mapOpen && (
         <WorldMap d={engine.model.district} f={frame} onClose={closeMap} />

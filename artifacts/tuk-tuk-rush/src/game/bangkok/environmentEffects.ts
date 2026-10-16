@@ -1,4 +1,5 @@
 import * as T from "three";
+import { cinematicParcel } from "./yaowarat";
 import { designBuildings, type ParcelDesign } from "./buildingGrammar";
 import type { District } from "../types";
 import { planEnvironment } from "./environmentPlan";
@@ -24,15 +25,20 @@ export function environmentEffects(
           const yaw = p.parcel.yaw ?? 0,
             s = Math.sin(yaw),
             c = Math.cos(yaw),
-            v = a.front + 1.8;
+            v = a.front + (cinematicParcel(p) ? 4.1 : 1.8);
           return {
             body: {
               x: p.parcel.x + c * a.u + s * v,
               z: p.parcel.z - s * a.u + c * v,
               yaw,
             },
-            tint:
-              a.trade === "gold"
+            tint: cinematicParcel(p)
+              ? a.trade === "gold"
+                ? "#efb25f"
+                : a.trade === "noodle"
+                  ? "#ef7857"
+                  : "#4fb7bb"
+              : a.trade === "gold"
                 ? "#eac581"
                 : ["siam", "silom", "sukhumvit"].includes(p.region)
                   ? "#8eb9d7"
@@ -113,7 +119,7 @@ export function environmentEffects(
       horizontalGreen: boolean,
       time = 0,
     ) {
-      night.value = n;
+      night.value = 0.12 + n * 0.88;
       let particle = 0;
       for (const site of cooking) {
         if (
@@ -148,7 +154,7 @@ export function environmentEffects(
         spill.setMatrixAt(slot++, temp.matrix);
       }
       spill.count = slot;
-      spill.visible = n > 0.01;
+      spill.visible = true;
       spill.instanceMatrix.needsUpdate = true;
       if (spill.instanceColor) spill.instanceColor.needsUpdate = true;
       signals.forEach((l, i) => {

@@ -1,3 +1,5 @@
+import { titleDrivePose, composeTitleCamera } from "./titleCamera";
+import { YAOWARAT_BENCHMARK } from "./bangkok/yaowarat";
 import { lightingState } from "./bangkok/lighting";
 import { citySky } from "./bangkok/atmosphere";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -72,6 +74,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     target: [0, 0, 0] as [number, number, number],
   });
   const lightState = useMemo(() => lightingState(), []);
+  const titlePose = useMemo(
+    () => titleDrivePose(engine.model.district),
+    [engine],
+  );
   const atmosphere = useMemo(
     () => (bangkok ? citySky() : undefined),
     [bangkok],
@@ -124,21 +130,42 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
   const cam = useRef(new ChaseCamera());
   const cameraRevision = useRef(-1);
   const artLease = useRef(new ArtCameraLease());
-  const qaCamera = import.meta.env.DEV && new URLSearchParams(window.location.search).get("qa") === "1";
+  const qaCamera =
+    import.meta.env.DEV &&
+    new URLSearchParams(window.location.search).get("qa") === "1";
   const stageRef = useRef("");
   const frameId = useRef(0);
   useEffect(() => {
-    const generator = new THREE.PMREMGenerator(gl);
-    const room = new RoomEnvironment();
-    const env = generator.fromScene(room, 0.04, 0.1, 50);
-    scene.environment = env.texture;
-    scene.environmentIntensity = 0.38;
-    room.dispose();
-    generator.dispose();
-    return () => {
+    let env: THREE.WebGLRenderTarget | undefined;
+    const prepareEnvironment = () => {
+      env?.dispose();
+      const generator = new THREE.PMREMGenerator(gl);
+      const room = new RoomEnvironment();
+      env = generator.fromScene(room, 0.04, 0.1, 50);
+      scene.environment = env.texture;
+      room.dispose();
+      generator.dispose();
+    };
+    // Release generated GPU pixels while the old context is lost. CPU-backed assets reupload.
+    const releaseTargets = () => {
       scene.environment = null;
-      env.dispose();
-      delete (window as typeof window & {__artCamera?: unknown}).__artCamera;
+      env?.dispose();
+      env = undefined;
+    };
+    const restoreEnvironment = () => prepareEnvironment();
+    gl.domElement.addEventListener("webglcontextlost", releaseTargets);
+    gl.domElement.addEventListener("webglcontextrestored", restoreEnvironment);
+    prepareEnvironment();
+    scene.environmentIntensity = 0.38;
+    return () => {
+      gl.domElement.removeEventListener("webglcontextlost", releaseTargets);
+      gl.domElement.removeEventListener(
+        "webglcontextrestored",
+        restoreEnvironment,
+      );
+      scene.environment = null;
+      env?.dispose();
+      delete (window as typeof window & { __artCamera?: unknown }).__artCamera;
       city.dispose();
       streets.dispose();
       traffic.dispose();
@@ -162,7 +189,10 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
     // pose for minutes. Presentation deadlines require a monotonic clock.
     const t = performance.now() / 1000;
     if (bangkok) {
-      const lighting = shiftLighting(s.elapsed ?? 0, lightState);
+      const lighting = shiftLighting(
+        s.phase === "title" ? YAOWARAT_BENCHMARK.sunset : (s.elapsed ?? 0),
+        lightState,
+      );
       (scene.background as THREE.Color).copy(lighting.sky);
       (scene.fog as THREE.Fog).color.copy(lighting.sky);
       if (sun.current) {
@@ -192,10 +222,12 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       );
     }
 
-    tuk.root.position.set(p.x, 0, p.z);
-    tuk.root.rotation.y = p.heading;
-    contact.position.set(p.x, 0.2, p.z);
-    contact.rotation.y = p.heading;
+    const displayPlayer = bangkok && s.phase === "title" ? titlePose : p;
+    tuk.root.position.set(displayPlayer.x, bangkok ? 0.14 : 0, displayPlayer.z);
+    tuk.setLights(bangkok ? lightState.night : 0, m.input.brake);
+    tuk.root.rotation.y = displayPlayer.heading;
+    contact.position.set(displayPlayer.x, 0.2, displayPlayer.z);
+    contact.rotation.y = displayPlayer.heading;
     tuk.lean.rotation.z = clamp(p.lean, -0.3, 0.3);
     tuk.lean.position.y =
       Math.sin(p.wheelSpin * 0.35) * Math.min(0.045, Math.abs(p.speed) * 0.003);
@@ -242,15 +274,46 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       cameraBlend.current.time = -Infinity;
       rv.y = rv.target = 1.4;
     }
-    c.update(m.district,p,dt,engine.cameraRevision,s.phase === "title",s.boostState === "active",rv.y);
+    c.update(
+      m.district,
+      p,
+      dt,
+      engine.cameraRevision,
+      s.phase === "title",
+      s.boostState === "active",
+      rv.y,
+    );
     cp.position.copy(c.pos);
     cp.lookAt(c.look);
-    if (Math.abs(cp.fov-c.fov)>.1) {cp.fov=c.fov;cp.updateProjectionMatrix();}
-    const debugCamera = window as typeof window & {__artCamera?: {position:number[];look:number[]}};
-    const override = artLease.current.read(debugCamera.__artCamera,qaCamera,t,engine.cameraRevision);
-    if (override) {cp.position.fromArray(override.position);c.look.fromArray(override.look);cp.lookAt(c.look);}
-    else if(debugCamera.__artCamera) delete debugCamera.__artCamera;
-    beacon.g.visible = !s.viewingLandmark;
+    if (Math.abs(cp.fov - c.fov) > 0.1) {
+      cp.fov = c.fov;
+      cp.updateProjectionMatrix();
+    }
+    if (bangkok && s.phase === "title") {
+      const pose = composeTitleCamera(titlePose, cp.aspect);
+      cp.position.fromArray(pose.position);
+      c.look.fromArray(pose.target);
+      cp.lookAt(c.look);
+      if (cp.fov !== pose.fov) {
+        cp.fov = pose.fov;
+        cp.updateProjectionMatrix();
+      }
+    }
+    const debugCamera = window as typeof window & {
+      __artCamera?: { position: number[]; look: number[] };
+    };
+    const override = artLease.current.read(
+      debugCamera.__artCamera,
+      qaCamera,
+      t,
+      engine.cameraRevision,
+    );
+    if (override) {
+      cp.position.fromArray(override.position);
+      c.look.fromArray(override.look);
+      cp.lookAt(c.look);
+    } else if (debugCamera.__artCamera) delete debugCamera.__artCamera;
+    beacon.g.visible = s.phase !== "title" && !s.viewingLandmark;
     const blend = cameraBlend.current,
       key = s.viewingLandmark ?? "";
     if (key !== blend.key) {
@@ -269,7 +332,6 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       c.look.fromArray(lookPose.current.target);
       cp.fov = 62;
       cp.updateProjectionMatrix();
-
     }
     const mix = THREE.MathUtils.smoothstep(t - blend.time, 0, 0.45);
     if (mix < 1) {
@@ -340,7 +402,7 @@ function Scene({ engine, art }: { engine: GameEngine; art: ArtBundle }) {
       <hemisphereLight ref={ambient} args={["#bddcf0", "#70616a", 1.05]} />
       <directionalLight
         ref={sun}
-        position={[-120, 45, 60]}
+        position={[-120, 45, -60]}
         intensity={1.95}
         color="#ffc78f"
       />

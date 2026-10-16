@@ -1,3 +1,4 @@
+import { composeYaowarat } from "./yaowarat";
 import type { District, Obstacle } from "../types";
 import { distanceToSegment } from "../world";
 
@@ -88,7 +89,13 @@ type Grammar = {
   bayCount: number[];
 };
 export const GRAMMARS: Record<string, Grammar> = {
-  paknam:{types:['residence','timber','arcade'],walls:['#f4dfb0','#d5e5bd','#f0bc91'],trims:['#3e8066','#ad653e'],accents:['#e1ac42','#37a99b'],bayCount:[2,3]},
+  paknam: {
+    types: ["residence", "timber", "arcade"],
+    walls: ["#f4dfb0", "#d5e5bd", "#f0bc91"],
+    trims: ["#3e8066", "#ad653e"],
+    accents: ["#e1ac42", "#37a99b"],
+    bayCount: [2, 3],
+  },
   chinatown: {
     types: ["shophouse", "gold", "noodle", "arcade", "concrete", "timber"],
     walls: ["#f4d9a2", "#e5ad79", "#9ed6c3", "#f1bb92", "#d5b9d0"],
@@ -270,7 +277,9 @@ export function designBuildings(d: District): ParcelDesign[] {
     const id = buildingIdentity(b),
       seed = stableHash(id),
       region = b.regionId ?? "connector",
-      g = GRAMMARS[region] ?? (region==='paknam'?GRAMMARS.westbank!:GRAMMARS.connector!);
+      g =
+        GRAMMARS[region] ??
+        (region === "paknam" ? GRAMMARS.westbank! : GRAMMARS.connector!);
     const road = roads.reduce((best, r) =>
       distanceToSegment(b, r.a, r.b).distance <
       distanceToSegment(b, best.a, best.b).distance
@@ -285,7 +294,10 @@ export function designBuildings(d: District): ParcelDesign[] {
             l.id === h.landmark && Math.hypot(l.x - b.x, l.z - b.z) < h.radius,
         ),
     );
-    const count = Math.min(g.bayCount[seed % g.bayCount.length]!,Math.max(1,Math.floor(b.w/5.5)));
+    const count = Math.min(
+      g.bayCount[seed % g.bayCount.length]!,
+      Math.max(1, Math.floor(b.w / 5.5)),
+    );
     const weights = Array.from(
         { length: count },
         (_, i) => 0.8 + (stableHash(`${id}:width:${i}`) % 9) / 20,
@@ -375,13 +387,13 @@ export function designBuildings(d: District): ParcelDesign[] {
         occupied: trade !== "closed" && trade !== "residence",
       };
     });
-    return {
+    return composeYaowarat({
       id,
       parcel: b,
       region,
       corridor: road.r.corridor ?? "",
       hero: hero?.id,
       bays,
-    };
+    });
   });
 }

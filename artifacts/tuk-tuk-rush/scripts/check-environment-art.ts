@@ -60,7 +60,11 @@ for (const p of designs) {
     if (a.occupied) assert(TRADE_SIGNS[a.trade as keyof typeof TRADE_SIGNS]);
   }
   if (p.parcel.artRole === "background")
-    assert(riverDistance(d, p.parcel) > d.riverWidth! / 2 + Math.hypot(p.parcel.w,p.parcel.d)/2+2,"Background parcel must clear water by its own radius");
+    assert(
+      riverDistance(d, p.parcel) >
+        d.riverWidth! / 2 + Math.hypot(p.parcel.w, p.parcel.d) / 2 + 2,
+      "Background parcel must clear water by its own radius",
+    );
 }
 const structuralKey = (p: (typeof designs)[number]) =>
   p.bays
@@ -149,7 +153,10 @@ for (const person of people)
       ),
     );
   }
-assert(SIGN_ENTRIES.every((e) => e.text.trim() && !/[\uFFFD]/.test(e.text)),"All sign entries have valid text");
+assert(
+  SIGN_ENTRIES.every((e) => e.text.trim() && !/[\uFFFD]/.test(e.text)),
+  "All sign entries have valid text",
+);
 assert(
   SIGN_ENTRIES.some((e) => /[\u0E00-\u0E7F]/.test(e.text)) &&
     SIGN_ENTRIES.some((e) => /[\u4e00-\u9fff]/.test(e.text)),
@@ -177,7 +184,9 @@ const night = city.group.children
 city.setNight(1);
 assert(night.every((m) => m.emissiveIntensity > 0.8));
 city.setNight(0);
-assert(night.every((m) => m.emissiveIntensity === 0));
+assert(
+  night.every((m) => m.emissiveIntensity === (m.userData.cinematic ? 0.25 : 0)),
+);
 const gs = new Set<any>(),
   ms = new Set<any>(),
   ts = new Set<any>(),
@@ -185,13 +194,16 @@ const gs = new Set<any>(),
 city.group.traverse((o) => {
   if (o instanceof InstancedMesh) {
     inst.add(o);
-    if(o.userData.environmentEffect) {assert(o.geometry.hasAttribute("position"));assert(o.instanceMatrix.count>=o.count);}else{
-    assert(
-      o.geometry.hasAttribute("color"),
-      "Instanced tint must not multiply by an absent zero vertex color",
-    );
-    assert(o.geometry.hasAttribute("artSurface"));
-    assert(o.boundingSphere && Number.isFinite(o.boundingSphere.radius));
+    if (o.userData.environmentEffect) {
+      assert(o.geometry.hasAttribute("position"));
+      assert(o.instanceMatrix.count >= o.count);
+    } else {
+      assert(
+        o.geometry.hasAttribute("color"),
+        "Instanced tint must not multiply by an absent zero vertex color",
+      );
+      assert(o.geometry.hasAttribute("artSurface"));
+      assert(o.boundingSphere && Number.isFinite(o.boundingSphere.radius));
     }
   }
   if (o instanceof Mesh) {

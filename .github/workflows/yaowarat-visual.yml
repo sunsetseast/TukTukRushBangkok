@@ -47,6 +47,10 @@ jobs:
         run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-career.mjs
         env:
           QA_OUT: /tmp/tuktuk-career-regression
+      - name: Verify cinematic title and Detailed context recovery
+        run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-cinematic.mjs
+        env:
+          QA_OUT: /tmp/tuktuk-cinematic-regression
       - uses: actions/upload-artifact@v4
         if: always()
         with:
