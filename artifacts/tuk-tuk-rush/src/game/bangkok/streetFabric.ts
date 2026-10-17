@@ -45,15 +45,16 @@ export function completeStreetFabric(d: District) {
     const { point, outward, road } = sample,
       yaw = Math.atan2(-outward.x, -outward.z);
     let fitted = false;
-    for (const along of [0, 5, -5]) {
+    for (const along of [0, 5, -5, 10, -10]) {
       if (fitted) break;
       for (const [w, depth] of [
         [18, 12],
         [13, 10],
         [8, 8],
         [5.5, 7],
+        [4.5, 4.5],
       ]) {
-        const off = 8 + depth! / 2,
+        const off = (w! < 6 ? 5 : 8) + depth! / 2,
           p = {
             x: point.x + outward.x * off - outward.z * along,
             z: point.z + outward.z * off + outward.x * along,

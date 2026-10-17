@@ -424,7 +424,7 @@ export function detailDestinationCollisions(d: District) {
     };
     const S = l.size!;
     if (["icon", "paragon", "central", "terminal"].includes(l.id!))
-      add(0, 0, S, S, l.id === "icon" ? 39 : 30);
+      add(0, 0, S, S, l.id === "icon" ? 39 : l.id === "terminal" ? 118 : l.id === "central" ? 36 : 30);
     else if (l.id === "pho") {
       add(0, 2, 48, 23, 20);
       for (const x of [-18, -6, 6, 18]) add(x, -18, 8, 8, 18);

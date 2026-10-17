@@ -43,14 +43,14 @@ try {
       window.__graphics.engine.model.snapshot.discoveredLandmarks,
     ]),
   );
-  for (const id of ["hotel:siam", "pier:icon"]) {
+  for (const id of ["hotel:embassy", "pier:icon"]) {
     const marker = p.getByTestId(`map-place-${id}`);
     await marker.focus();
     await p.keyboard.press("Enter");
     await p.getByTestId("map-place-detail").waitFor();
     assert(
       (await p.getByTestId("map-place-detail").innerText()).includes(
-        id.startsWith("hotel") ? "Siam city hotel" : "ICONSIAM pier",
+        id.startsWith("hotel") ? "Park Hyatt Bangkok" : "ICONSIAM pier",
       ),
     );
     await p

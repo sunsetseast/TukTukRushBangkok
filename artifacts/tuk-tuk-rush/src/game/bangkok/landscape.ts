@@ -1,3 +1,4 @@
+import { REAL_PLACES } from './realPlaces';
 import type { District, Obstacle } from '../types';
 import type { ArtPiece } from './architecturalBatch';
 import { placementIndex } from './environmentPlan';
@@ -10,7 +11,7 @@ export function planLandscape(d: District) {
         return cached;
     const result: Obstacle[] = [], index = placementIndex(d);
     const add = (x: number, z: number, yaw: number) => {
-        if (result.length >= 160)
+        if (result.length >= 240)
             return;
         const o: Obstacle = { x, z, w: 6, d: 8, height: 1, yaw, color: '#79ad62', artRole: 'furniture', environmentId: `garden:${Math.round(x)}:${Math.round(z)}` };
         if (!index.clear(o))
@@ -19,7 +20,7 @@ export function planLandscape(d: District) {
         d.obstacles.push(o);
         index.insert(o);
     };
-    for (const l of d.landmarks.filter(l => ['paknam', 'icon', 'asiatique', 'arun'].includes(l.id!))) {
+    for (const l of d.landmarks.filter(l => ['paknam', 'icon', 'asiatique', 'arun', ...REAL_PLACES.filter(p=>p.bank).map(p=>p.id)].includes(l.id!))) {
         const p = l.plot!;
         for (let a = 0; a < Math.PI * 2; a += Math.PI / 10)
             for (const radius of [l.size! * .65 + 18, l.size! * .65 + 45])

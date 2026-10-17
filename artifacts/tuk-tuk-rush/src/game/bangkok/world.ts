@@ -1,3 +1,4 @@
+import { placeRealArchitecture } from './realPlaces';
 import layout from './layout.json';
 import {planLandscape} from './landscape';
 import { completeUrbanFabric } from './urbanCompleteness';
@@ -156,6 +157,7 @@ export function createBangkokWorld(): District {
   const paknamArrival=world.destinations!.find(a=>a.id==='paknam')!,paknamLandmark=landmarks.find(l=>l.id==='paknam')!;
   paknamLandmark.yaw=Math.atan2(paknamArrival.origin.x-paknamLandmark.plot!.x,paknamArrival.origin.z-paknamLandmark.plot!.z);
   world.obstacles.find(o=>o.landmarkId==='paknam')!.yaw=paknamLandmark.yaw;
+  placeRealArchitecture(world);
   world.transit=createRailNetwork(world);
   // Access roads were appended after public graph sampling.
   for(const n of nodes)byId.set(n.id,n);
