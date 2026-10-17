@@ -109,6 +109,7 @@ try {
       let a = nodes.get(r.a),
         b = nodes.get(r.b);
       if (s.reverse) [a, b] = [b, a];
+      e.setQuality(s.quality ?? "medium");
       const heading = Math.atan2(b.x - a.x, b.z - a.z),
         pose = {
           x: (a.x + b.x) / 2 + Math.cos(heading) * Math.min(3, r.width / 4),
@@ -170,6 +171,8 @@ try {
         },
       };
     });
+    if (data.quality !== (s.quality ?? "medium"))
+      throw Error("Capture quality mismatch");
     await fs.writeFile(
       `${out}/${s.name}.jpg`,
       Buffer.from(data.jpeg, "base64"),

@@ -1,6 +1,6 @@
 import type { District } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
-import { accessPoint } from "./destinationAccess";
+import { accessPoint, arrivalPortal } from "./destinationAccess";
 
 /** Outer visitor environments are authored around real graph loops. Tile courts,
  * temple galleries, garden islands and retail canopies are separate from roads. */
@@ -34,7 +34,7 @@ export function emitDestinationGrounds(
         shape,
         layer,
         yaw: a.yaw + yaw,
-        surface: y < .2 ? "concrete" : temple ? "plaster" : "concrete",
+        surface: y < 0.2 ? "concrete" : temple ? "plaster" : "concrete",
       });
     };
     const plot = d.landmarks.find((l) => l.id === a.landmarkId)!.plot!,
@@ -96,42 +96,51 @@ export function emitDestinationGrounds(
       put(side * 9, 5.6, 0, 1.1, 0.7, 1.1, "#e9c386", "box", "night");
     }
     // Entrance portals follow the ACTUAL driveway tangent, including oblique gates.
-    const g = a.entrance,
-      c = Math.cos(g.yaw),
-      s = Math.sin(g.yaw);
-    const gate = (
-      x: number,
-      y: number,
-      w: number,
-      h: number,
-      depth: number,
-      color: string,
-      shape: ArtPiece["shape"] = "box",
-      layer: ArtPiece["layer"] = "core",
-    ) =>
-      emit({
-        x: g.x + c * x,
-        z: g.z - s * x,
-        y,
-        w,
-        h,
-        d: depth,
-        color,
-        shape,
-        layer,
-        yaw: g.yaw,
-        surface: temple ? "tile" : "metal",
-      });
-    for (const side of [-1, 1]) {
-      gate(side * 8, 3.5, 1.7, 7, 1.7, temple ? "#e4d4af" : "#929c99");
-      gate(side * 8, 6.8, 2.5, 0.6, 2.5, "#d6b56f");
+    const g = arrivalPortal(d, a);
+    if (g) {
+      const c = Math.cos(g.yaw),
+        s = Math.sin(g.yaw);
+      const gate = (
+        x: number,
+        y: number,
+        w: number,
+        h: number,
+        depth: number,
+        color: string,
+        shape: ArtPiece["shape"] = "box",
+        layer: ArtPiece["layer"] = "core",
+      ) =>
+        emit({
+          x: g.x + c * x,
+          z: g.z - s * x,
+          y,
+          w,
+          h,
+          d: depth,
+          color,
+          shape,
+          layer,
+          yaw: g.yaw,
+          surface: temple ? "tile" : "metal",
+        });
+      for (const side of [-1, 1]) {
+        gate(
+          side * g.halfSpan,
+          3.5,
+          1.7,
+          7,
+          1.7,
+          temple ? "#e4d4af" : "#929c99",
+        );
+        gate(side * g.halfSpan, 6.8, 2.5, 0.6, 2.5, "#d6b56f");
+      }
+      gate(0, 7.6, 19, 1.1, 2.8, temple ? "#b69654" : "#c2b28c");
+      if (temple) {
+        gate(0, 9.3, 22, 3, 5, a.id === "pho" ? "#42786a" : "#ad4c39", "gable");
+        gate(0, 11.6, 16, 2.2, 3.8, "#dbbf6c", "gable");
+      } else gate(0, 8.4, 20, 0.4, 6, "#e2c88e");
+      gate(0, 7.6, 10, 0.55, 0.08, "#f4d998", "box", "night");
     }
-    gate(0, 7.6, 19, 1.1, 2.8, temple ? "#b69654" : "#c2b28c");
-    if (temple) {
-      gate(0, 9.3, 22, 3, 5, a.id === "pho" ? "#42786a" : "#ad4c39", "gable");
-      gate(0, 11.6, 16, 2.2, 3.8, "#dbbf6c", "gable");
-    } else gate(0, 8.4, 20, 0.4, 6, "#e2c88e");
-    gate(0, 7.6, 10, 0.55, 0.08, "#f4d998", "box", "night");
     if (mall) {
       // Open sided drop-off canopy; clear underside >7m, no ground collider slab.
       // Covered passenger edges flank an open/louvred central oculus, keeping

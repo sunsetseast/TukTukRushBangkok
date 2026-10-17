@@ -1,3 +1,5 @@
+import { ChaseCamera } from "../src/game/chaseCamera";
+import { createVehicle } from "../src/game/vehicle";
 import assert from "node:assert/strict";
 import { createBangkokWorld } from "../src/game/bangkok/world";
 import { footprintRay, streetFaces } from "../src/game/bangkok/streetEdges";
@@ -112,6 +114,25 @@ for (const p of pieces)
       p.h > 0 &&
       p.d > 0,
   );
+// Real Wat Pho / diagonal-public-road repro: the entrance post used to push
+// the native camera to 1.56m behind the player, inside the canopy.
+const pa = nodes.get("bkk:270")!,
+  pb = nodes.get("bkk:271")!,
+  heading = Math.atan2(pb.x - pa.x, pb.z - pa.z),
+  driver = {
+    ...createVehicle(d),
+    x: (pa.x + pb.x) / 2 + Math.cos(heading) * 3,
+    z: (pa.z + pb.z) / 2 - Math.sin(heading) * 3,
+    heading,
+    speed: 0,
+  },
+  camera = new ChaseCamera();
+camera.update(d, driver, 0.05, 0, false, false);
+assert(
+  Math.hypot(camera.pos.x - driver.x, camera.pos.z - driver.z) > 7.5,
+  "Wat Pho portal cannot obstruct normal street chase",
+);
+assert(camera.pos.y >= 3.25);
 const places = cityPlaces(d, designs),
   piers = riverPiers(d);
 assert.equal(places.filter((p) => p.kind === "pier").length, piers.length);
