@@ -51,6 +51,10 @@ jobs:
         run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-cinematic.mjs
         env:
           QA_OUT: /tmp/tuktuk-cinematic-regression
+      - name: Verify city place layers, selection and responsive map
+        run: pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-city-fabric.mjs
+        env:
+          QA_OUT: /tmp/tuktuk-city-fabric-regression
       - uses: actions/upload-artifact@v4
         if: always()
         with:
