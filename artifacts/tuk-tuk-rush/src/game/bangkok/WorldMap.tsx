@@ -254,7 +254,7 @@ function MapLayers({
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
     const known = d.landmarks.filter(
-      (l) => l.kind !== "hotel" && l.id !== "state" && (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
+      (l) => (!detail || l.kind !== "hotel") && (!detail || l.id !== "state" || !placeNames) && (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
     );
     if (!detail) return known;
     const priority = (l: Landmark) =>
@@ -282,7 +282,7 @@ function MapLayers({
         result.push(l);
     }
     return result;
-  }, [d, detail, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
+  }, [d, detail, placeNames, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
   const labels = useMemo(() => {
     const features: MapLabel[] = [];
     if (!detail) return placeMapLabels(features, labelScale);

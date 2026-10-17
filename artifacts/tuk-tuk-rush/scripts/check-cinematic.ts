@@ -195,7 +195,7 @@ console.log(
     lanternPieces: lanterns.length,
     dynamicShadowPasses: 0,
     resourcesDisposed: disposed,
-    roadGraphUnchanged: true,
+    priorRoadGraphPreserved: true,
     titleCameraIsolated: true,
   }),
 );

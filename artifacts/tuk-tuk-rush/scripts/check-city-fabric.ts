@@ -24,7 +24,7 @@ const d = createBangkokWorld(),
 assert.equal(
   roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:'))}),
   "2198517381",
-  "Keep authoritative road/route and baked-surface graph",
+  "Preserve every prior road; new hotel driveway/bake checks are separate",
 );
 assert.equal(
   new Set(plan.after.map((s) => s.roadIndex)).size,

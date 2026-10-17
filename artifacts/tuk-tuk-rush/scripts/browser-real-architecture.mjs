@@ -13,15 +13,15 @@ try{
  await p.screenshot({path:`${out}/hotel-map-landscape.jpg`,type:'jpeg',quality:86});await p.getByRole('button',{name:'Back to driving',exact:true}).click();
  // Documented setup at the connected hotel driveway. Only keyboard controller
  // input advances the vehicle during the following drive; no position edits.
- const setup=await p.evaluate(()=>{const e=window.__graphics.engine,d=e.model.district,l=d.landmarks.find(l=>l.id==='hilton'),roads=d.roads.filter(r=>r.corridor==='real-arrival:hilton'),r=roads[0],a=d.nodes.find(n=>n.id===r.a),b=d.nodes.find(n=>n.id===r.b);e.restart();e.setQuality('low');e.model.traffic.length=0;Object.assign(e.model.player,{x:a.x,z:a.z,heading:Math.atan2(b.x-a.x,b.z-a.z),speed:0});e.resume();return {start:{...e.model.player},road:r.name};});
+ const setup=await p.evaluate(()=>{const e=window.__graphics.engine,d=e.model.district,l=d.landmarks.find(l=>l.id==='hilton'),roads=d.roads.filter(r=>r.corridor==='real-arrival:hilton'),r=roads[Math.max(0,roads.length-2)],a=d.nodes.find(n=>n.id===r.a),b=d.nodes.find(n=>n.id===r.b);e.restart();e.setQuality('low');e.model.traffic.length=0;Object.assign(e.model.player,{x:a.x,z:a.z,heading:Math.atan2(b.x-a.x,b.z-a.z),speed:0});e.resume();return {start:{...e.model.player},road:r.name};});
  await p.keyboard.down('ArrowUp');
  const begin=await p.evaluate(()=>{const e=window.__graphics.engine;return {elapsed:e.model.snapshot.elapsed,x:e.model.player.x,z:e.model.player.z};});
  await p.waitForFunction(b=>{const e=window.__graphics.engine;return e.model.snapshot.elapsed-b.elapsed>1.2;},begin);
- await p.keyboard.up('ArrowUp');await p.keyboard.down('Space');
- await p.waitForFunction(()=>Math.abs(window.__graphics.engine.model.player.speed)<.5);await p.keyboard.up('Space');
- const end=await p.evaluate(()=>{const e=window.__graphics.engine;e.pause();return {player:{...e.model.player},elapsed:e.model.snapshot.elapsed,quality:e.model.snapshot.quality};});assert(Math.hypot(end.player.x-begin.x,end.player.z-begin.z)>1);assert(!end.player.collision);report.drive={setup,begin,end,controllerOnly:true,trafficDisabled:true};
+ await p.keyboard.up('ArrowUp');await p.keyboard.down('ArrowDown');
+ await p.waitForFunction(()=>Math.abs(window.__graphics.engine.model.player.speed)<.5);await p.keyboard.up('ArrowDown');
+ const end=await p.evaluate(()=>{const e=window.__graphics.engine;return {player:{...e.model.player},elapsed:e.model.snapshot.elapsed,quality:e.model.snapshot.quality};});assert(Math.hypot(end.player.x-begin.x,end.player.z-begin.z)>1);assert(!end.player.collision);report.drive={setup,begin,end,controllerOnly:true,trafficDisabled:true};
  await p.screenshot({path:`${out}/hilton-driven-fast.jpg`,type:'jpeg',quality:87});
  await p.evaluate(()=>{const e=window.__graphics.engine;e.setQuality('medium');e.frameTime=-100000;});const frame=await p.evaluate(()=>window.__graphics.frameId);await p.waitForFunction(f=>window.__graphics.frameId>f+2,frame);await p.screenshot({path:`${out}/hilton-driven-detailed.jpg`,type:'jpeg',quality:87});report.checks.push('Controller-only hotel driveway movement, braking, Fast/Detailed scene');
- await p.setViewportSize({width:390,height:844});await p.getByTestId('button-open-map').click();await p.getByTestId('world-map').waitFor();await p.screenshot({path:`${out}/hotel-map-portrait.jpg`,type:'jpeg',quality:86});report.checks.push('Landscape and portrait map');
+ await p.getByTestId('button-open-map').click();await p.getByTestId('world-map').waitFor();await p.setViewportSize({width:390,height:844});await p.getByTestId('world-map').waitFor();await p.screenshot({path:`${out}/hotel-map-portrait.jpg`,type:'jpeg',quality:86});report.checks.push('Landscape and portrait map');
  assert.equal(report.errors.length,0);await fs.writeFile(`${out}/report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 }finally{await browser.close();server.kill();}

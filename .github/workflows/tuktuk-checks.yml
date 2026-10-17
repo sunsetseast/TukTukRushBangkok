@@ -27,6 +27,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/tuk-tuk-rush run typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:real-architecture
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:city-fabric
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:cinematic
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:startup
