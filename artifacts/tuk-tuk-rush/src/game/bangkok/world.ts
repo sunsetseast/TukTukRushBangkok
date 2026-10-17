@@ -1,6 +1,7 @@
 import layout from './layout.json';
 import {planLandscape} from './landscape';
 import { completeUrbanFabric } from './urbanCompleteness';
+import { completeStreetFabric } from './streetFabric';
 import { scalaParcel } from './scala';
 import { planEnvironment } from './environmentPlan';
 import { bridgeBarriers } from './bridgeBarriers';
@@ -225,6 +226,7 @@ export function createBangkokWorld(): District {
   (world as District & {completeness?:unknown}).completeness=completeUrbanFabric(world);
   reserveRailCorridors(world);
   detailDestinationCollisions(world);
+  completeStreetFabric(world);
   world.obstacles.push(...bridgeBarriers(world));planEnvironment(world);planLandscape(world);
   return world;
 }

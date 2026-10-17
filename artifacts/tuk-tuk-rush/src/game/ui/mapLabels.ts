@@ -19,6 +19,7 @@ export function placeMapLabels(
   features: MapLabel[],
   scale: number,
   bounds?: LabelBounds,
+  reserved: LabelBounds[] = [],
 ) {
   const placed = new Map<string, LabelPlacement>();
   const occupied: (LabelBounds & { id: string })[] = features.map((f) => ({
@@ -28,6 +29,7 @@ export function placeMapLabels(
     minY: f.y - (f.offset - 3) * scale,
     maxY: f.y + (f.offset - 3) * scale,
   }));
+  occupied.push(...reserved.map((b,i)=>({...b,id:`reserved:${i}`})));
   const overlaps = (a: LabelBounds, b: LabelBounds) =>
     a.minX < b.maxX + 2 * scale &&
     a.maxX > b.minX - 2 * scale &&
