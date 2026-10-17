@@ -26,7 +26,8 @@
     "test:graphics-foundation": "node --import tsx scripts/check-graphics-foundation.ts",
     "test:corrections": "node --import tsx scripts/check-corrections.ts",
     "test:career": "node --import tsx scripts/check-career.ts",
-    "test:cinematic": "node --import tsx scripts/check-cinematic.ts"
+    "test:cinematic": "node --import tsx scripts/check-cinematic.ts",
+    "test:city-fabric": "node --import tsx scripts/check-city-fabric.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -31,8 +31,21 @@ import {
 import { useMapMotion } from "../ui/useMapMotion";
 import { navigationPath } from "../navigation";
 import { cartography, roadPaths } from "./cartography";
-import {cityPlaces,type CityPlace} from './cityPlaces';
-const mapPalette:Record<string,string>={paknam:'#c7dea1',north:'#b5d4a5',khaosan:'#f6c3a5',oldtown:'#f3d995',westbank:'#afd8bf',chinatown:'#f2b4a3',siam:'#cbbfe4',talatnoi:'#e3c39b',sukhumvit:'#b4d9e4',icon:'#c2dfd4',silom:'#afd2cf',south:'#dec9aa'};
+import { cityPlaces, type CityPlace } from "./cityPlaces";
+const mapPalette: Record<string, string> = {
+  paknam: "#c7dea1",
+  north: "#b5d4a5",
+  khaosan: "#f6c3a5",
+  oldtown: "#f3d995",
+  westbank: "#afd8bf",
+  chinatown: "#f2b4a3",
+  siam: "#cbbfe4",
+  talatnoi: "#e3c39b",
+  sukhumvit: "#b4d9e4",
+  icon: "#c2dfd4",
+  silom: "#afd2cf",
+  south: "#dec9aa",
+};
 const districtLabels: Record<string, string> = {
   paknam: "Phasi Charoen",
   north: "Chatuchak",
@@ -54,6 +67,12 @@ const points = (ps: Point[]) =>
       return `${m.x},${m.y}`;
     })
     .join(" ");
+const mapName = (l: Landmark) =>
+  l.id === "palace"
+    ? "Grand Palace"
+    : l.id === "terminal"
+      ? "Terminal 21"
+      : l.name;
 const categories: Record<Landmark["kind"], string> = {
   gate: "Landmark",
   temple: "Temple",
@@ -105,20 +124,36 @@ const BaseMap = memo(function BaseMap({
   px: number;
   pz: number;
 }) {
-  const cart = cartography(d),fogId=useId().replace(/:/g,"");
+  const cart = cartography(d),
+    fogId = useId().replace(/:/g, "");
   const roads = useMemo(
     () => roadPaths(d, detail, px, pz, shortcuts),
     [d, detail, px, pz, shortcuts.join("|")],
   );
   return (
     <g className="tt-map-base">
-      <defs><pattern id={fogId} patternUnits="userSpaceOnUse" width="12" height="12" patternTransform="rotate(35)"><rect width="12" height="12" fill="#e4e7d3"/><path d="M0 0V12" stroke="#b5c5b4" strokeWidth="3"/></pattern></defs>
+      <defs>
+        <pattern
+          id={fogId}
+          patternUnits="userSpaceOnUse"
+          width="12"
+          height="12"
+          patternTransform="rotate(35)"
+        >
+          <rect width="12" height="12" fill="#e4e7d3" />
+          <path d="M0 0V12" stroke="#b5c5b4" strokeWidth="3" />
+        </pattern>
+      </defs>
       <rect x="-2500" y="-2500" width="6000" height="6000" fill="#c6dfb2" />
       {d.regions?.map((r) => (
         <polygon
           key={r.id}
           points={cart.regions?.[d.regions!.indexOf(r)]}
-          fill={visited.includes(r.id) ? mapPalette[r.id] ?? r.color : `url(#${fogId})`}
+          fill={
+            visited.includes(r.id)
+              ? (mapPalette[r.id] ?? r.color)
+              : `url(#${fogId})`
+          }
           fillOpacity="1"
           stroke="#7a9d84"
           strokeOpacity=".65"
@@ -202,7 +237,7 @@ function MapLayers({
   transit?: boolean;
   landmarks?: boolean;
   onSelect?: (l: Landmark) => void;
-  onSelectPlace?: (p:CityPlace)=>void;
+  onSelectPlace?: (p: CityPlace) => void;
   labelBounds?: LabelBounds;
 }) {
   const visited = f.snap.discoveredDistricts ?? [],
@@ -214,7 +249,9 @@ function MapLayers({
     p = toMap({ x: f.px, z: f.pz }),
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
-    const known=d.landmarks.filter(l=>detail||l.id&&f.snap.discoveredLandmarks?.includes(l.id));
+    const known = d.landmarks.filter(
+      (l) => detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id)),
+    );
     if (!detail) return known;
     const priority = (l: Landmark) =>
       l.accessNode === f.snap.target.id ||
@@ -247,13 +284,24 @@ function MapLayers({
     if (!detail) return placeMapLabels(features, labelScale);
     if (landmarks)
       for (const l of visibleLandmarks) {
-        if(!placeNames&&!['palace','pho','arun','icon','paragon','gate','khaosan','terminal'].includes(l.id!))continue;
         const m = toMap(l);
         features.push({
           id: `l:${l.id}`,
           x: m.x,
           y: m.y,
-          text: l.name,
+          text: mapName(l),
+          showText:
+            placeNames ||
+            [
+              "palace",
+              "pho",
+              "arun",
+              "icon",
+              "paragon",
+              "gate",
+              "khaosan",
+              "terminal",
+            ].includes(l.id!),
           font: 11,
           priority: 5,
           offset: 18,
@@ -276,9 +324,39 @@ function MapLayers({
             offset: 7,
           });
         }
-    if(landmarks&&placeNames)for(const p of cityPlaces(d)){const m=toMap(p);features.push({id:p.id,x:m.x,y:m.y,text:p.name,font:10,priority:2,offset:15});}
-    const reserved=(d.regions??[]).map(r=>{const m=toMap(r.polygon.reduce((v,p)=>({x:v.x+p.x/r.polygon.length,z:v.z+p.z/r.polygon.length}),{x:0,z:0})),font=placeNames?11:9,w=(districtLabels[r.id]??r.name).length*font*.32*labelScale;return {minX:m.x-w,maxX:m.x+w,minY:m.y-font*labelScale,maxY:m.y+3*labelScale};});
-    return placeMapLabels(features,labelScale,labelBounds,reserved);
+    if (landmarks && placeNames)
+      for (const p of cityPlaces(d)) {
+        const m = toMap(p);
+        features.push({
+          id: p.id,
+          x: m.x,
+          y: m.y,
+          text: p.name,
+          font: 10,
+          priority: 2,
+          offset: 15,
+        });
+      }
+    const reserved = (d.regions ?? []).map((r) => {
+      const m = toMap(
+          r.polygon.reduce(
+            (v, p) => ({
+              x: v.x + p.x / r.polygon.length,
+              z: v.z + p.z / r.polygon.length,
+            }),
+            { x: 0, z: 0 },
+          ),
+        ),
+        font = placeNames ? 11 : 9,
+        w = (districtLabels[r.id] ?? r.name).length * font * 0.32 * labelScale;
+      return {
+        minX: m.x - w,
+        maxX: m.x + w,
+        minY: m.y - font * labelScale,
+        maxY: m.y + 3 * labelScale,
+      };
+    });
+    return placeMapLabels(features, labelScale, labelBounds, reserved);
   }, [
     d,
     visibleLandmarks,
@@ -293,6 +371,18 @@ function MapLayers({
     labelBounds?.minY,
     labelBounds?.maxY,
   ]);
+  // At city scale keep minor amenities from covering major landmark symbols.
+  // Zooming exposes hotel lobbies and the closely spaced temple piers.
+  const visiblePlaces = detail
+    ? cityPlaces(d).filter(
+        (p) =>
+          placeNames ||
+          (p.kind === "pier" &&
+            visibleLandmarks.every(
+              (l) => Math.hypot(p.x - l.x, p.z - l.z) > 26 * labelScale * SCALE,
+            )),
+      )
+    : [];
 
   return (
     <>
@@ -308,6 +398,7 @@ function MapLayers({
         d.regions
           ?.filter(
             (r, i) =>
+              detail ||
               placeNames ||
               [
                 "chinatown",
@@ -341,7 +432,8 @@ function MapLayers({
                 }}
                 opacity={visited.includes(r.id) ? 1 : 0.8}
               >
-                {(districtLabels[r.id] ?? r.name).toUpperCase()}{!visited.includes(r.id) && " · ?"}
+                {(districtLabels[r.id] ?? r.name).toUpperCase()}
+                {!visited.includes(r.id) && " · ?"}
               </text>
             );
           })}
@@ -429,7 +521,7 @@ function MapLayers({
               tabIndex={detail ? 0 : undefined}
               aria-label={
                 detail
-                  ? `${l.name}, ${categories[l.kind]}, ${f.snap.discoveredLandmarks?.includes(l.id!)?'discovered':'unvisited'}`
+                  ? `${l.name}, ${categories[l.kind]}, ${f.snap.discoveredLandmarks?.includes(l.id!) ? "discovered" : "unvisited"}`
                   : undefined
               }
               data-testid={detail ? `map-landmark-${l.id}` : undefined}
@@ -455,9 +547,17 @@ function MapLayers({
                     width="26"
                     height="26"
                     rx="9"
-                    fill={f.snap.discoveredLandmarks?.includes(l.id!)?'#fff3d2':'#e8ebda'}
+                    fill={
+                      f.snap.discoveredLandmarks?.includes(l.id!)
+                        ? "#fff3d2"
+                        : "#e8ebda"
+                    }
                     stroke="#b67937"
-                    strokeDasharray={f.snap.discoveredLandmarks?.includes(l.id!)?undefined:'3 2'}
+                    strokeDasharray={
+                      f.snap.discoveredLandmarks?.includes(l.id!)
+                        ? undefined
+                        : "3 2"
+                    }
                   />
                   <PlaceGlyph kind={l.kind} />
                 </>
@@ -472,20 +572,70 @@ function MapLayers({
                   className="tt-world-landmark"
                   style={{ fontSize: 11, strokeWidth: 3 }}
                 >
-                  {l.name}
+                  {mapName(l)}
                 </text>
               )}
             </g>
           );
         })}
-      {detail&&landmarks&&cityPlaces(d).map(node=>{
-        const m=toMap(node),label=labels.get(node.id);
-        return <g key={node.id} transform={`translate(${m.x} ${m.y}) scale(${labelScale})`} className="tt-map-pin" role="button" tabIndex={0} aria-label={`${node.name}, ${node.kind}`} data-testid={`map-place-${node.id}`} onClick={()=>onSelectPlace?.(node)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();onSelectPlace?.(node);}}}>
-          <circle r="22" fill="transparent"/><rect x="-10" y="-10" width="20" height="20" rx="7" fill={node.kind==='pier'?'#d8f3ed':'#ffebcc'} stroke={node.kind==='pier'?'#157c8f':'#a26339'}/>
-          <path d={node.kind==='pier'?'M-6 2H6L3 6H-3ZM0-7V1M-4-5H4M-7 8Q-4 5 0 8Q4 5 7 8':'M-6 6V-7H6V6ZM-2 6V2H2V6M-3-3H-1M2-3H4'} fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
-          {placeNames&&label&&<text x={(label.x-m.x)/labelScale} y={(label.y-m.y)/labelScale} textAnchor={label.anchor} className="tt-world-landmark" style={{fontSize:10,strokeWidth:3}}>{node.name}</text>}
-        </g>;
-      })}
+      {detail &&
+        landmarks &&
+        visiblePlaces.map((node) => {
+          const m = toMap(node),
+            label = labels.get(node.id);
+          return (
+            <g
+              key={node.id}
+              transform={`translate(${m.x} ${m.y}) scale(${labelScale})`}
+              className="tt-map-pin"
+              role="button"
+              tabIndex={0}
+              aria-label={`${node.name}, ${node.kind}`}
+              data-testid={`map-place-${node.id}`}
+              onClick={() => onSelectPlace?.(node)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onSelectPlace?.(node);
+                }
+              }}
+            >
+              <circle r="22" fill="transparent" />
+              <rect
+                x="-10"
+                y="-10"
+                width="20"
+                height="20"
+                rx="7"
+                fill={node.kind === "pier" ? "#d8f3ed" : "#ffebcc"}
+                stroke={node.kind === "pier" ? "#157c8f" : "#a26339"}
+              />
+              <path
+                d={
+                  node.kind === "pier"
+                    ? "M-6 2H6L3 6H-3ZM0-7V1M-4-5H4M-7 8Q-4 5 0 8Q4 5 7 8"
+                    : "M-6 6V-7H6V6ZM-2 6V2H2V6M-3-3H-1M2-3H4"
+                }
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinejoin="round"
+              />
+              {placeNames && label && (
+                <text
+                  x={(label.x - m.x) / labelScale}
+                  y={(label.y - m.y) / labelScale}
+                  textAnchor={label.anchor}
+                  className="tt-world-landmark"
+                  style={{ fontSize: 10, strokeWidth: 3 }}
+                >
+                  {node.name}
+                </text>
+              )}
+            </g>
+          );
+        })}
       <circle
         cx={target.x}
         cy={target.y}
@@ -563,7 +713,7 @@ export function WorldMap({
     [transit, setTransit] = useState(true),
     [landmarks, setLandmarks] = useState(true),
     [selected, setSelected] = useState<Landmark | null>(null),
-    [selectedPlace,setSelectedPlace]=useState<CityPlace|null>(null),
+    [selectedPlace, setSelectedPlace] = useState<CityPlace | null>(null),
     [station, setStation] = useState(""),
     [stationsOpen, setStationsOpen] = useState(false);
   const pendingPins = useRef(new Set<number>()),
@@ -804,7 +954,13 @@ export function WorldMap({
             transit={transit}
             landmarks={landmarks}
             onSelect={select}
-            onSelectPlace={p=>{setSelectedPlace(p);setSelected(null);setStationsOpen(false);const m=toMap(p);moveTo({cx:m.x,cy:m.y+(aspect<1?90:0),span:300});}}
+            onSelectPlace={(p) => {
+              setSelectedPlace(p);
+              setSelected(null);
+              setStationsOpen(false);
+              const m = toMap(p);
+              moveTo({ cx: m.x, cy: m.y + (aspect < 1 ? 90 : 0), span: 300 });
+            }}
             labelBounds={{
               minX: view.cx - width / 2 + 8 * labelScale,
               maxX: view.cx + width / 2 - 58 * labelScale,
@@ -889,7 +1045,7 @@ export function WorldMap({
               onClick={() => {
                 setStationsOpen((v) => !v);
                 setSelected(null);
-              setSelectedPlace(null);
+                setSelectedPlace(null);
               }}
             >
               <TrainFront size={16} />
@@ -954,7 +1110,11 @@ export function WorldMap({
             </div>
             <p>
               {region?.name ?? "Bangkok"} ·{" "}
-              <span className="tt-discovered">{f.snap.discoveredLandmarks?.includes(selected.id!)?'Discovered':'Unvisited'}</span>
+              <span className="tt-discovered">
+                {f.snap.discoveredLandmarks?.includes(selected.id!)
+                  ? "Discovered"
+                  : "Unvisited"}
+              </span>
             </p>
             <span className="tt-detail-note">
               {selected.accessNode === f.snap.target.id ||
@@ -966,9 +1126,36 @@ export function WorldMap({
             </span>
           </aside>
         )}
+        {selectedPlace && (
+          <aside className="tt-map-detail" data-testid="map-place-detail">
+            <div className="tt-card-heading">
+              <span className="tt-kicker">
+                {selectedPlace.kind === "pier"
+                  ? "River transport"
+                  : "Hotel district"}
+              </span>
+              <button
+                className="tt-icon-btn"
+                aria-label="Close place details"
+                onClick={() => setSelectedPlace(null)}
+              >
+                <X size={17} />
+              </button>
+            </div>
+            <div className="tt-place-title">
+              <MapPin size={24} />
+              <h3>{selectedPlace.name}</h3>
+            </div>
+            <p>
+              {selectedPlace.region
+                ? (districtLabels[selectedPlace.region] ?? selectedPlace.region)
+                : "Chao Phraya riverfront"}
+            </p>
+            <span className="tt-detail-note">{selectedPlace.note}</span>
+          </aside>
+        )}
       </div>
       <footer>
-        {selectedPlace&&<aside className="tt-map-detail" data-testid="map-place-detail"><div className="tt-card-heading"><span className="tt-kicker">{selectedPlace.kind==='pier'?'River transport':'Hotel district'}</span><button className="tt-icon-btn" aria-label="Close place details" onClick={()=>setSelectedPlace(null)}><X size={17}/></button></div><div className="tt-place-title"><MapPin size={24}/><h3>{selectedPlace.name}</h3></div><p>{selectedPlace.region?districtLabels[selectedPlace.region]??selectedPlace.region:'Chao Phraya riverfront'}</p><span className="tt-detail-note">{selectedPlace.note}</span></aside>}
         <span>
           <i className="tt-legend-route" />
           Fare route

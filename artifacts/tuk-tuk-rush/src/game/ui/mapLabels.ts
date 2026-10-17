@@ -6,6 +6,7 @@ export type MapLabel = {
   font: number;
   priority: number;
   offset: number;
+  showText?: boolean;
 };
 export type LabelBounds = {
   minX: number;
@@ -29,13 +30,14 @@ export function placeMapLabels(
     minY: f.y - (f.offset - 3) * scale,
     maxY: f.y + (f.offset - 3) * scale,
   }));
-  occupied.push(...reserved.map((b,i)=>({...b,id:`reserved:${i}`})));
+  occupied.push(...reserved.map((b, i) => ({ ...b, id: `reserved:${i}` })));
   const overlaps = (a: LabelBounds, b: LabelBounds) =>
     a.minX < b.maxX + 2 * scale &&
     a.maxX > b.minX - 2 * scale &&
     a.minY < b.maxY + 2 * scale &&
     a.maxY > b.minY - 2 * scale;
   for (const f of [...features].sort((a, b) => b.priority - a.priority)) {
+    if (f.showText === false) continue;
     const width = (f.text.length * f.font * 0.61 + 4) * scale,
       height = f.font * 1.2 * scale;
     for (const [side, vertical] of [
