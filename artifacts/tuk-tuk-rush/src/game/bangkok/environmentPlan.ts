@@ -87,7 +87,7 @@ export function placementIndex(d: District) {
     });
     return { os, rs };
   };
-  const clear = (o: Obstacle) => {
+  const clear = (o: Obstacle, exactRoadFootprint = false) => {
     if(inDestinationGrounds(d,o))return false;
     const radius = Math.hypot(o.w, o.d) / 2,
       q = nearby(o, radius + 2);
@@ -97,6 +97,7 @@ export function placementIndex(d: District) {
       [...q.os].every((b) => !orientedFootprintsOverlap(o, b, 0.6)) &&
       [...q.rs].every((i) => {
         const { r, a, b } = segments[i]!;
+        if(exactRoadFootprint)return !orientedFootprintsOverlap(o,{x:(a.x+b.x)/2,z:(a.z+b.z)/2,w:r.width+3.4,d:Math.hypot(b.x-a.x,b.z-a.z)+3.4,yaw:Math.atan2(b.x-a.x,b.z-a.z),height:0,color:'#fff'});
         return (
           distanceToSegment(o, a, b).distance >= r.width / 2 + radius + 1.7
         );

@@ -12,6 +12,13 @@ export type BoatRoute = {
   phase: number;
   period: number;
 };
+/** Shared emitted/map locations; compressed scenic stops, not boat gameplay. */
+export function riverPiers(d:District){
+  const anchors=d.landmarks.filter(l=>['arun','pho','icon','asiatique'].includes(l.id!)).map(l=>({id:l.id!,name:`${l.name} pier`,point:l.plot!}));
+  const station=d.transit?.lines.flatMap(l=>l.stations).find(s=>s.code==='S6');if(station)anchors.push({id:'sathorn',name:'Sathorn river pier',point:station});
+  const nodes=new Map(d.nodes.map(n=>[n.id,n])),song=d.roads.filter(r=>r.corridor==='songwat').flatMap(r=>[nodes.get(r.a)!,nodes.get(r.b)!]).sort((a,b)=>riverDistance(d,a)-riverDistance(d,b))[0];if(song)anchors.push({id:'songwat',name:'Song Wat river landing',point:song});
+  return anchors.map(anchor=>{const nearest=d.river!.slice(1).map((b,i)=>distanceToSegment(anchor.point,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!,dx=anchor.point.x-nearest.point.x,dz=anchor.point.z-nearest.point.z,len=Math.hypot(dx,dz),nx=dx/len,nz=dz/len;return {...anchor,x:nearest.point.x+nx*(d.riverWidth!/2-9),z:nearest.point.z+nz*(d.riverWidth!/2-9),nx,nz,yaw:Math.atan2(nx,nz)+Math.PI/2};}).filter(p=>!d.roads.some(r=>distanceToSegment(p,nodes.get(r.a)!,nodes.get(r.b)!).distance<r.width/2+14));
+}
 export function boatPose(r: BoatRoute, time: number) {
   const a = (time / r.period + r.phase) * Math.PI * 2,
     t = Math.sin(a) * r.length,
@@ -288,28 +295,8 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
             });
         }
     }
-  for (const l of d.landmarks.filter((l) =>
-    ["arun", "pho", "icon", "asiatique"].includes(l.id!),
-  )) {
-    const plot = l.plot!,
-      nearest = d
-        .river!.slice(1)
-        .map((b, i) => ({
-          b,
-          a: d.river![i]!,
-          ...distanceToSegment(plot, d.river![i]!, b),
-        }))
-        .sort((a, b) => a.distance - b.distance)[0]!,
-      dx = plot.x - nearest.point.x,
-      dz = plot.z - nearest.point.z,
-      len = Math.hypot(dx, dz),
-      nx = dx / len,
-      nz = dz / len,
-      p = {
-        x: nearest.point.x + nx * (d.riverWidth! / 2 - 9),
-        z: nearest.point.z + nz * (d.riverWidth! / 2 - 9),
-      },
-      yaw = Math.atan2(nx, nz) + Math.PI / 2;
+  for (const p of riverPiers(d)) {
+    const {nx,nz,yaw}=p;
     put(p, 0.12, 21, 0.2, 10, "#bfb497", yaw);
     put(p, 2.7, 14, 0.25, 6, "#bfab79", yaw);
     emit({

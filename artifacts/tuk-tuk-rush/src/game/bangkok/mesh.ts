@@ -1,6 +1,8 @@
 import { installShopLight } from "./shopLighting";
 import { yaowaratRoad } from "./yaowaratRoad";
 import { emitYaowaratLanterns } from "./yaowarat";
+import { emitStreetFrontages, emitStreetGardens } from './streetFabric';
+import { emitHotelEntrances } from './cityPlaces';
 import * as T from "three";
 import { landscapeMaterial } from "./streetSurfaces";
 import { emitLandscape } from "./landscape";
@@ -191,6 +193,9 @@ export function buildBangkokGraybox(
     ),
   );
   emitScala(scala, (piece) => architecture.add(piece));
+  emitStreetFrontages(d, ordinary, p=>architecture.add(p));
+  emitStreetGardens(d, p=>architecture.add(p));
+  emitHotelEntrances(d, ordinary, p=>architecture.add(p));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d, (piece) => architecture.add(piece));
   emitCables(d, (piece) => architecture.add(piece));

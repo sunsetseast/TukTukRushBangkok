@@ -1,4 +1,6 @@
 import { DISTRICT_SIGN_ENTRIES, districtSigns } from './districtSigns';
+import {completeStreetFabric} from './streetFabric';
+import {cityPlaces} from './cityPlaces';
 import * as T from "three";
 import type { District } from "../types";
 import { StaticBatch } from "../staticBatch";
@@ -123,6 +125,15 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     const i=atlas.index.get(sign.key)!;
     if(sign.blade)for(const side of [-1,1])place(sign.p,sign.u+side*.286,sign.y,sign.v,sign.width,sign.height,i,!sign.round,side*Math.PI/2);
     else place(sign.p,sign.u,sign.y,sign.v+.235,sign.width,sign.height,i);
+  }
+  const byParcel=new Map(designs.map(p=>[p.parcel,p]));
+  for(const node of cityPlaces(d,designs).filter(p=>p.parcel)){
+    const b=node.parcel!,p=byParcel.get(b);if(p)place(p,0,3.95,b.d/2+.26,Math.min(b.w-1.2,6.8),.66,atlas.index.get('hotel:0')!);
+  }
+  for(const f of completeStreetFabric(d).faces){
+    const p=byParcel.get(f.parcel);if(!p)continue;const a=p.bays[0]!;if(a.trade==='residence'||a.trade==='closed')continue;
+    const count=Math.max(1,Math.floor((f.width-.4)/(['siam','silom','sukhumvit','icon'].includes(p.region)?6.5:5))),bw=(f.width-.4)/count,index=atlas.index.get(`${a.trade}:${a.sign}`)!,c=Math.cos(f.yaw),s=Math.sin(f.yaw);
+    for(let i=0;i<count;i++){const u=(i+.5)*bw-(f.width-.4)/2,v=f.depth/2+.32;temp.position.set(f.parcel.x+c*u+s*v,3.95,f.parcel.z-s*u+c*v);temp.rotation.set(0,f.yaw,0);temp.scale.set(bw-.5,.67,1);temp.updateMatrix();batch.add(h[index]!,matH,[temp.matrix.clone()]);}
   }
   // Lettering shares the existing atlas/material; no per-landmark canvases.
   for(const l of d.landmarks.filter(l=>l.id==='gate'||l.id==='khaosan')){

@@ -50,7 +50,16 @@ assert(
     full.includes("My tuk-tuk") &&
     full.includes("Whole city"),
 );
-assert(full.includes("Chinatown Gate") && !full.includes("Terminal 21"));
+assert(full.includes("Chinatown Gate, Landmark, discovered"));
+assert(
+  full.includes(
+    `${d.landmarks.find((l) => l.id === "terminal")!.name}, Shopping, unvisited`,
+  ),
+  "Public destinations do not grant discovery",
+);
+assert(
+  full.includes("map-place-pier:icon") && full.includes("Siam city hotel"),
+);
 assert(
   !full.includes('stroke="#f3c471"'),
   "Undiscovered shortcut lanes must not be drawn",

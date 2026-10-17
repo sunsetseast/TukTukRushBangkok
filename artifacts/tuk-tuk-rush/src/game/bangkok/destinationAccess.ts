@@ -362,6 +362,43 @@ export function connectDestinations(d: District) {
 /** Retain sacred/commercial buildings as solid, replace oversized whole-property
  * rectangles by separate hall, wall and chedi footprints. Interior barriers are
  * closed: visitor roads never lead into sacred courts or retail floors. */
+/** Fit a physical portal along the existing driveway. The previous fixed post
+ * offsets put Wat Pho's gateway in the chase-camera clearance of the diagonal
+ * public street. Art and collision use this same pose; no road is moved. */
+export function arrivalPortal(d: District, a: DestinationAccess) {
+  const nodes = new Map(d.nodes.map((n) => [n.id, n])),
+    g = a.entrance,
+    halfSpan = 9;
+  for (const offset of [0, 2, 4, 6, 8, 10, 12, 14, 16]) {
+    const p = {
+      x: g.x + Math.sin(g.yaw) * offset,
+      z: g.z + Math.cos(g.yaw) * offset,
+      yaw: g.yaw,
+      halfSpan,
+    };
+    if (
+      [-1, 1].every((side) => {
+        const post = {
+          x: p.x + Math.cos(p.yaw) * side * halfSpan,
+          z: p.z - Math.sin(p.yaw) * side * halfSpan,
+        };
+        return (
+          !blockedByRiver(d, post, 1.3) &&
+          d.roads.every(
+            (r) =>
+              distanceToSegment(post, nodes.get(r.a)!, nodes.get(r.b)!)
+                .distance >=
+              r.width / 2 + 2.25,
+          )
+        );
+      })
+    )
+      return p;
+  }
+  // A tight forecourt remains an open entrance, rather than a floating beam
+  // or a post hidden inside a road/turn. Enclosing galleries remain in place.
+  return undefined;
+}
 export function detailDestinationCollisions(d: District) {
   for (const a of d.destinations ?? []) {
     const l = d.landmarks.find((l) => l.id === a.landmarkId)!,
@@ -435,17 +472,19 @@ export function detailDestinationCollisions(d: District) {
     for (const side of [-1, 1])
       for (const z of [-3, 3])
         furniture(accessPoint(a, side * 5, z), 0.45, 0.45, 5);
+    const portal = arrivalPortal(d, a);
     for (const side of [-1, 1]) {
-      furniture(
-        {
-          x: a.entrance.x + Math.cos(a.entrance.yaw) * side * 8,
-          z: a.entrance.z - Math.sin(a.entrance.yaw) * side * 8,
-        },
-        1.7,
-        1.7,
-        7,
-        a.entrance.yaw,
-      );
+      if (portal)
+        furniture(
+          {
+            x: portal.x + Math.cos(portal.yaw) * side * portal.halfSpan,
+            z: portal.z - Math.sin(portal.yaw) * side * portal.halfSpan,
+          },
+          1.7,
+          1.7,
+          7,
+          portal.yaw,
+        );
       furniture(accessPoint(a, side * 28, 0), 1, 42, 2.4);
     }
   }

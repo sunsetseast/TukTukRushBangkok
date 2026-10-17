@@ -321,7 +321,7 @@ export function designBuildings(d: District): ParcelDesign[] {
         : g.types[(s >>> 4) % g.types.length]!;
       const tall = ["office", "apartment"].includes(type),
         modern = ["retail", "office", "apartment"].includes(type);
-      const floors = tall
+      const floors = b.environmentId?.startsWith('street-infill:') ? (modern ? 3 : 2) : tall
         ? 5 + (s % 8)
         : type === "warehouse"
           ? 1
