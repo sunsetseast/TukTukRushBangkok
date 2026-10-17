@@ -1,0 +1,45 @@
+{
+  "physicalIPhone": false,
+  "errors": [],
+  "checks": [
+    "Named hotel markers open and do not award discovery",
+    "Controller-only hotel driveway movement, braking, Fast/Detailed scene",
+    "Landscape and portrait map"
+  ],
+  "drive": {
+    "setup": {
+      "start": {
+        "x": -795.8,
+        "z": 820,
+        "heading": 3.071706651955152,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "road": "Millennium Hilton Bangkok drop-off"
+    },
+    "begin": {
+      "elapsed": 0.07289999999990687,
+      "x": -795.7996589166596,
+      "z": 819.9951273808517
+    },
+    "end": {
+      "player": {
+        "x": -794.7955554298469,
+        "z": 805.650791854958,
+        "heading": 3.071706651955152,
+        "speed": 0.3768774962808791,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 37.8534756437515,
+        "collision": 0
+      },
+      "elapsed": 1.8393000000002806,
+      "quality": "low"
+    },
+    "controllerOnly": true,
+    "trafficDisabled": true
+  }
+}

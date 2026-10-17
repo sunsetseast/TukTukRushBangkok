@@ -74,6 +74,8 @@ const mapName = (l: Landmark) =>
       ? "Terminal 21"
       : l.name;
 const categories: Record<Landmark["kind"], string> = {
+  hotel: "Hotel",
+  museum: "Museum",
   gate: "Landmark",
   temple: "Temple",
   station: "Railway station",
@@ -86,6 +88,8 @@ const categories: Record<Landmark["kind"], string> = {
   monument: "Monument",
 };
 const glyph: Record<Landmark["kind"], string> = {
+  hotel: "M-7 8V-8H7V8ZM-3-4H-1M2-4H4M-3 0H-1M2 0H4M-2 8V4H2V8",
+  museum: "M-8-3L0-8L8-3ZM-6-2V6M0-2V6M6-2V6M-8 8H8",
   temple: "M-7 0L0-7L7 0M-8 1H8M-5 2V7M0 2V7M5 2V7M-7 8H7",
   palace: "M-7 8V-2L-3 1L0-6L3 1L7-2V8ZM-2 8V4H2V8",
   mall: "M-6-4H6L8 8H-8ZM-3-4V-6Q0-10 3-6V-4",
@@ -250,7 +254,7 @@ function MapLayers({
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
     const known = d.landmarks.filter(
-      (l) => detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id)),
+      (l) => (!detail || l.kind !== "hotel") && (!detail || l.id !== "state" || !placeNames) && (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
     );
     if (!detail) return known;
     const priority = (l: Landmark) =>
@@ -278,7 +282,7 @@ function MapLayers({
         result.push(l);
     }
     return result;
-  }, [d, detail, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
+  }, [d, detail, placeNames, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
   const labels = useMemo(() => {
     const features: MapLabel[] = [];
     if (!detail) return placeMapLabels(features, labelScale);

@@ -1,0 +1,114 @@
+{
+  "rows": [
+    {
+      "pose": "siam",
+      "mode": "low",
+      "beforeCalls": 186.0,
+      "afterCalls": 194.0,
+      "beforeTriangles": 250952.0,
+      "afterTriangles": 256716.0
+    },
+    {
+      "pose": "chong-nonsi",
+      "mode": "low",
+      "beforeCalls": 179.0,
+      "afterCalls": 179.0,
+      "beforeTriangles": 267157.0,
+      "afterTriangles": 264057.0
+    },
+    {
+      "pose": "asok",
+      "mode": "low",
+      "beforeCalls": 131.0,
+      "afterCalls": 129.0,
+      "beforeTriangles": 168525.0,
+      "afterTriangles": 167085.0
+    },
+    {
+      "pose": "taksin",
+      "mode": "low",
+      "beforeCalls": 115.0,
+      "afterCalls": 126.0,
+      "beforeTriangles": 193278.0,
+      "afterTriangles": 228662.0
+    },
+    {
+      "pose": "icon",
+      "mode": "low",
+      "beforeCalls": 173.0,
+      "afterCalls": 184.0,
+      "beforeTriangles": 224975.0,
+      "afterTriangles": 244353.0
+    },
+    {
+      "pose": "pho",
+      "mode": "low",
+      "beforeCalls": 207.0,
+      "afterCalls": 209.0,
+      "beforeTriangles": 316918.0,
+      "afterTriangles": 316465.0
+    },
+    {
+      "pose": "siam",
+      "mode": "medium",
+      "beforeCalls": 322.0,
+      "afterCalls": 342.0,
+      "beforeTriangles": 387101.0,
+      "afterTriangles": 388625.0
+    },
+    {
+      "pose": "chong-nonsi",
+      "mode": "medium",
+      "beforeCalls": 197.0,
+      "afterCalls": 196.0,
+      "beforeTriangles": 293037.0,
+      "afterTriangles": 292089.0
+    },
+    {
+      "pose": "asok",
+      "mode": "medium",
+      "beforeCalls": 166.0,
+      "afterCalls": 164.0,
+      "beforeTriangles": 217703.0,
+      "afterTriangles": 211697.0
+    },
+    {
+      "pose": "taksin",
+      "mode": "medium",
+      "beforeCalls": 182.0,
+      "afterCalls": 203.0,
+      "beforeTriangles": 247990.0,
+      "afterTriangles": 295134.0
+    },
+    {
+      "pose": "icon",
+      "mode": "medium",
+      "beforeCalls": 237.0,
+      "afterCalls": 247.0,
+      "beforeTriangles": 283241.0,
+      "afterTriangles": 307331.0
+    },
+    {
+      "pose": "pho",
+      "mode": "medium",
+      "beforeCalls": 335.0,
+      "afterCalls": 340.0,
+      "beforeTriangles": 534580.0,
+      "afterTriangles": 535922.0
+    }
+  ],
+  "beforeResource": {
+    "geometries": 5837,
+    "materials": 271,
+    "textures": 12,
+    "bufferBytes": 120079616,
+    "texturePixels": 4972544
+  },
+  "afterResource": {
+    "geometries": 6053,
+    "materials": 372,
+    "textures": 13,
+    "bufferBytes": 129676584,
+    "texturePixels": 6021120
+  }
+}

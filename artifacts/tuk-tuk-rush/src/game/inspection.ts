@@ -1,3 +1,4 @@
+import { realPlace } from './bangkok/realPlaces';
 import type {District,Landmark,Obstacle} from './types';
 import {distanceToSegment} from './world';
 import {designBuildings} from './bangkok/buildingGrammar';
@@ -6,9 +7,10 @@ export type InspectionView={id:string;label:string;target:Vec3;distance:number;a
 export type InspectionSubject={id:string;name:string;origin:Vec3;yaw:number;views:InspectionView[]};
 const clamp=(v:number,a:number,b:number)=>Math.max(a,Math.min(b,v));
 export function inspectionSubject(l:Landmark,d?:District):InspectionSubject{
- const size=l.size??50,h=({arun:26,paknam:37,palace:21,traimit:18,golden:30,swing:12,democracy:12,victory:20,hua:12,icon:20,paragon:16,mahanakhon:80,baiyoke:82,state:72} as Record<string,number>)[l.id!]??10;
+ const size=l.size??50,h=realPlace(l.id)?.height ? realPlace(l.id)!.height*.48 : ({arun:26,paknam:37,palace:21,traimit:18,golden:30,swing:12,democracy:12,victory:20,hua:12,icon:20,paragon:16,mahanakhon:80,baiyoke:82,state:72} as Record<string,number>)[l.id!]??10;
  const view=(id:string,label:string,target:Vec3,distance:number,azimuth=0,pitch=.28):InspectionView=>({id,label,target,distance,azimuth,pitch,minDistance:Math.max(size*.85,15),maxDistance:Math.max(size*2.7,distance*1.35,65),minPitch:.08,maxPitch:1.05,pan:Math.min(9,size*.12)});
  let views=[view('approach','Architecture',[0,h,0],Math.max(size*1.3,h*2.25,45),.3,.33),view('overview','Overview',[0,h*.65,0],Math.max(size*1.6,h*2.6,55),-.6,.67)];
+ if(realPlace(l.id)?.bank)views.push(view('riverfront','River elevation',[0,h,0],Math.max(size*1.5,h*2.4),0,.22));
  if(l.id==='pho'){
   const room={min:[-23.5,2.8,8.1] as Vec3,max:[23.5,11.3,10.05] as Vec3};
   const inside=(id:string,label:string,target:Vec3,azimuth:number,distance:number,pitch:number):InspectionView=>({id,label,target,azimuth,distance,pitch,minDistance:4,maxDistance:16,minPitch:-.2,maxPitch:.42,pan:2,azimuthRange:[-1.1,1.1],room});

@@ -1,0 +1,3022 @@
+[
+  {
+    "corridor": "pinklao",
+    "roadIndex": 7,
+    "point": {
+      "x": -1250,
+      "z": -1490.5
+    },
+    "map": {
+      "x": 187.5,
+      "y": 227.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phetchaburi",
+    "roadIndex": 103,
+    "point": {
+      "x": 1284.7557835205373,
+      "z": -951.5032400477054
+    },
+    "map": {
+      "x": 821.1889458801343,
+      "y": 362.1241899880737
+    },
+    "outward": {
+      "x": -0.1366373971370321,
+      "z": 0.9906211292434747
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 107,
+    "point": {
+      "x": 827.8070401836964,
+      "z": -668.3367044298475
+    },
+    "map": {
+      "x": 706.9517600459241,
+      "y": 432.9158238925381
+    },
+    "outward": {
+      "x": 0.9676172723968434,
+      "z": -0.25242189714700525
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 108,
+    "point": {
+      "x": 800.4282539339508,
+      "z": -690.0946681191722
+    },
+    "map": {
+      "x": 700.1070634834878,
+      "y": 427.47633297020695
+    },
+    "outward": {
+      "x": -0.9676172723968443,
+      "z": 0.2524218971470014
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 108,
+    "point": {
+      "x": 798.0753127574802,
+      "z": -699.1142759623094
+    },
+    "map": {
+      "x": 699.5188281893701,
+      "y": 425.22143100942264
+    },
+    "outward": {
+      "x": -0.9676172723968443,
+      "z": 0.2524218971470014
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 110,
+    "point": {
+      "x": 783.9576656986567,
+      "z": -753.231923021133
+    },
+    "map": {
+      "x": 695.9894164246641,
+      "y": 411.6920192447168
+    },
+    "outward": {
+      "x": -0.9676172723968443,
+      "z": 0.2524218971470014
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 122,
+    "point": {
+      "x": 707.2191636611252,
+      "z": -1089.939886227021
+    },
+    "map": {
+      "x": 676.8047909152813,
+      "y": 327.5150284432448
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 126,
+    "point": {
+      "x": 703.0524969944585,
+      "z": -1181.6065528936874
+    },
+    "map": {
+      "x": 675.7631242486146,
+      "y": 304.59836177657814
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 126,
+    "point": {
+      "x": 702.6358303277918,
+      "z": -1190.7732195603542
+    },
+    "map": {
+      "x": 675.658957581948,
+      "y": 302.30669510991146
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 127,
+    "point": {
+      "x": 700.9691636611252,
+      "z": -1227.439886227021
+    },
+    "map": {
+      "x": 675.2422909152813,
+      "y": 293.1400284432448
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 128,
+    "point": {
+      "x": 700.5524969944585,
+      "z": -1236.6065528936874
+    },
+    "map": {
+      "x": 675.1381242486146,
+      "y": 290.84836177657814
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 128,
+    "point": {
+      "x": 700.1358303277918,
+      "z": -1245.7732195603542
+    },
+    "map": {
+      "x": 675.033957581948,
+      "y": 288.55669510991146
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 129,
+    "point": {
+      "x": 698.8858303277918,
+      "z": -1273.2732195603542
+    },
+    "map": {
+      "x": 674.721457581948,
+      "y": 281.68169510991146
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 130,
+    "point": {
+      "x": 697.6358303277918,
+      "z": -1300.7732195603542
+    },
+    "map": {
+      "x": 674.408957581948,
+      "y": 274.80669510991146
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 130,
+    "point": {
+      "x": 697.2191636611252,
+      "z": -1309.939886227021
+    },
+    "map": {
+      "x": 674.3047909152813,
+      "y": 272.5150284432448
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 131,
+    "point": {
+      "x": 696.8024969944585,
+      "z": -1319.1065528936874
+    },
+    "map": {
+      "x": 674.2006242486146,
+      "y": 270.22336177657814
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 131,
+    "point": {
+      "x": 696.3858303277918,
+      "z": -1328.2732195603542
+    },
+    "map": {
+      "x": 674.096457581948,
+      "y": 267.93169510991146
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 131,
+    "point": {
+      "x": 695.9691636611252,
+      "z": -1337.439886227021
+    },
+    "map": {
+      "x": 673.9922909152813,
+      "y": 265.6400284432448
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 132,
+    "point": {
+      "x": 695.5524969944585,
+      "z": -1346.6065528936874
+    },
+    "map": {
+      "x": 673.8881242486146,
+      "y": 263.34836177657814
+    },
+    "outward": {
+      "x": -0.9989685402102997,
+      "z": 0.045407660918649985
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 136,
+    "point": {
+      "x": 711.1141696722082,
+      "z": -1466.7267804396458
+    },
+    "map": {
+      "x": 677.778542418052,
+      "y": 233.31830489008854
+    },
+    "outward": {
+      "x": 0.9989685402102997,
+      "z": -0.045407660918649985
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "phaya",
+    "roadIndex": 149,
+    "point": {
+      "x": 862.0608018519545,
+      "z": -1776.2126002178045
+    },
+    "map": {
+      "x": 715.5152004629886,
+      "y": 155.94684994554888
+    },
+    "outward": {
+      "x": -0.8619342151577697,
+      "z": -0.5070201265633937
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 166,
+    "point": {
+      "x": 1287.4856317211877,
+      "z": -948.066178450038
+    },
+    "map": {
+      "x": 821.871407930297,
+      "y": 362.9834553874905
+    },
+    "outward": {
+      "x": -0.9877629653290695,
+      "z": -0.1559625734730088
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 184,
+    "point": {
+      "x": 1193.9643204084196,
+      "z": -466.087901412794
+    },
+    "map": {
+      "x": 798.4910801021049,
+      "y": 483.4780246468015
+    },
+    "outward": {
+      "x": -0.95577900872195,
+      "z": -0.2940858488375231
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 184,
+    "point": {
+      "x": 1191.2976537417528,
+      "z": -457.4212347461273
+    },
+    "map": {
+      "x": 797.8244134354381,
+      "y": 485.6446913134682
+    },
+    "outward": {
+      "x": -0.95577900872195,
+      "z": -0.2940858488375231
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 185,
+    "point": {
+      "x": 1183.2976537417528,
+      "z": -431.4212347461273
+    },
+    "map": {
+      "x": 795.8244134354381,
+      "y": 492.1446913134682
+    },
+    "outward": {
+      "x": -0.95577900872195,
+      "z": -0.2940858488375231
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 189,
+    "point": {
+      "x": 1171.3690129249137,
+      "z": -321.2454319205393
+    },
+    "map": {
+      "x": 792.8422532312284,
+      "y": 519.6886420198651
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 190,
+    "point": {
+      "x": 1168.7023462582472,
+      "z": -312.5787652538727
+    },
+    "map": {
+      "x": 792.1755865645619,
+      "y": 521.8553086865318
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 190,
+    "point": {
+      "x": 1166.0356795915804,
+      "z": -303.912098587206
+    },
+    "map": {
+      "x": 791.5089198978951,
+      "y": 524.0219753531985
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 190,
+    "point": {
+      "x": 1163.3690129249137,
+      "z": -295.2454319205393
+    },
+    "map": {
+      "x": 790.8422532312284,
+      "y": 526.1886420198651
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 191,
+    "point": {
+      "x": 1160.7023462582472,
+      "z": -286.5787652538727
+    },
+    "map": {
+      "x": 790.1755865645619,
+      "y": 528.3553086865318
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 191,
+    "point": {
+      "x": 1158.0356795915804,
+      "z": -277.912098587206
+    },
+    "map": {
+      "x": 789.5089198978951,
+      "y": 530.5219753531985
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 192,
+    "point": {
+      "x": 1150.0356795915804,
+      "z": -251.912098587206
+    },
+    "map": {
+      "x": 787.5089198978951,
+      "y": 537.0219753531985
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 195,
+    "point": {
+      "x": 1123.3690129249137,
+      "z": -165.24543192053935
+    },
+    "map": {
+      "x": 780.8422532312284,
+      "y": 558.6886420198651
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 196,
+    "point": {
+      "x": 1120.7023462582472,
+      "z": -156.57876525387266
+    },
+    "map": {
+      "x": 780.1755865645619,
+      "y": 560.8553086865319
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 204,
+    "point": {
+      "x": 1051.3690129249137,
+      "z": 68.75456807946067
+    },
+    "map": {
+      "x": 762.8422532312284,
+      "y": 617.1886420198651
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 205,
+    "point": {
+      "x": 1048.7023462582472,
+      "z": 77.42123474612733
+    },
+    "map": {
+      "x": 762.1755865645619,
+      "y": 619.3553086865319
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 205,
+    "point": {
+      "x": 1046.0356795915804,
+      "z": 86.087901412794
+    },
+    "map": {
+      "x": 761.5089198978951,
+      "y": 621.5219753531985
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 205,
+    "point": {
+      "x": 1043.3690129249137,
+      "z": 94.75456807946067
+    },
+    "map": {
+      "x": 760.8422532312284,
+      "y": 623.6886420198651
+    },
+    "outward": {
+      "x": 0.95577900872195,
+      "z": 0.2940858488375231
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 212,
+    "point": {
+      "x": 991.9688913170277,
+      "z": 279.168544610111
+    },
+    "map": {
+      "x": 747.9922228292569,
+      "y": 669.7921361525277
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719395
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 213,
+    "point": {
+      "x": 992.2587463894914,
+      "z": 288.4439069289516
+    },
+    "map": {
+      "x": 748.0646865973729,
+      "y": 672.1109767322379
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723565
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 213,
+    "point": {
+      "x": 992.838456534419,
+      "z": 306.99463156663273
+    },
+    "map": {
+      "x": 748.2096141336048,
+      "y": 676.7486578916582
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723565
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 214,
+    "point": {
+      "x": 993.1283116068828,
+      "z": 316.2699938854733
+    },
+    "map": {
+      "x": 748.2820779017206,
+      "y": 679.0674984713684
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 214,
+    "point": {
+      "x": 993.4181666793465,
+      "z": 325.54535620431386
+    },
+    "map": {
+      "x": 748.3545416698366,
+      "y": 681.3863390510785
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 215,
+    "point": {
+      "x": 994.5775869692017,
+      "z": 362.64680547967623
+    },
+    "map": {
+      "x": 748.6443967423004,
+      "y": 690.661701369919
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723503
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 216,
+    "point": {
+      "x": 994.8674420416654,
+      "z": 371.9221677985168
+    },
+    "map": {
+      "x": 748.7168605104164,
+      "y": 692.9805419496292
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 216,
+    "point": {
+      "x": 995.1572971141292,
+      "z": 381.19753011735736
+    },
+    "map": {
+      "x": 748.7893242785323,
+      "y": 695.2993825293394
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 216,
+    "point": {
+      "x": 995.4471521865929,
+      "z": 390.4728924361979
+    },
+    "map": {
+      "x": 748.8617880466483,
+      "y": 697.6182231090495
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 217,
+    "point": {
+      "x": 995.7370072590567,
+      "z": 399.74825475503854
+    },
+    "map": {
+      "x": 748.9342518147641,
+      "y": 699.9370636887596
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719492
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 217,
+    "point": {
+      "x": 996.0268623315204,
+      "z": 409.02361707387905
+    },
+    "map": {
+      "x": 749.0067155828801,
+      "y": 702.2559042684697
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719492
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 218,
+    "point": {
+      "x": 996.8964275489117,
+      "z": 436.84970403040086
+    },
+    "map": {
+      "x": 749.2241068872279,
+      "y": 709.2124260076002
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723503
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 218,
+    "point": {
+      "x": 997.1862826213755,
+      "z": 446.1250663492414
+    },
+    "map": {
+      "x": 749.2965706553439,
+      "y": 711.5312665873104
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723503
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 219,
+    "point": {
+      "x": 997.4761376938393,
+      "z": 455.400428668082
+    },
+    "map": {
+      "x": 749.3690344234599,
+      "y": 713.8501071670205
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 219,
+    "point": {
+      "x": 997.765992766303,
+      "z": 464.67579098692255
+    },
+    "map": {
+      "x": 749.4414981915758,
+      "y": 716.1689477467306
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 219,
+    "point": {
+      "x": 998.0558478387668,
+      "z": 473.9511533057631
+    },
+    "map": {
+      "x": 749.5139619596916,
+      "y": 718.4877883264408
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 220,
+    "point": {
+      "x": 998.3457029112305,
+      "z": 483.2265156246038
+    },
+    "map": {
+      "x": 749.5864257278076,
+      "y": 720.806628906151
+    },
+    "outward": {
+      "x": -0.9995120760870786,
+      "z": 0.031234752377723503
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchadamri",
+    "roadIndex": 221,
+    "point": {
+      "x": 999.2152681286219,
+      "z": 511.0526025811255
+    },
+    "map": {
+      "x": 749.8038170321555,
+      "y": 727.7631506452814
+    },
+    "outward": {
+      "x": -0.9995120760870788,
+      "z": 0.031234752377719426
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_w",
+    "roadIndex": 266,
+    "point": {
+      "x": -979.4918338704016,
+      "z": -627.8036735447535
+    },
+    "map": {
+      "x": 255.1270415323996,
+      "y": 443.0490816138116
+    },
+    "outward": {
+      "x": 0.7259526839058271,
+      "z": -0.6877446479107825
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_w",
+    "roadIndex": 269,
+    "point": {
+      "x": -935.2813075546121,
+      "z": -581.1370068780867
+    },
+    "map": {
+      "x": 266.179673111347,
+      "y": 454.71574828047835
+    },
+    "outward": {
+      "x": 0.7259526839058271,
+      "z": -0.6877446479107825
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_w",
+    "roadIndex": 271,
+    "point": {
+      "x": -891.0707812388226,
+      "z": -534.4703402114201
+    },
+    "map": {
+      "x": 277.2323046902943,
+      "y": 466.382414947145
+    },
+    "outward": {
+      "x": 0.7259526839058251,
+      "z": -0.6877446479107847
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 367,
+    "point": {
+      "x": -380.205195903903,
+      "z": -797.2563570645157
+    },
+    "map": {
+      "x": 404.9487010240242,
+      "y": 400.6859107338711
+    },
+    "outward": {
+      "x": 0.7863183388224232,
+      "z": -0.617821551931903
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 368,
+    "point": {
+      "x": -375.39090909090913,
+      "z": -796.5818181818182
+    },
+    "map": {
+      "x": 406.1522727272727,
+      "y": 400.8545454545455
+    },
+    "outward": {
+      "x": -0.6000000000000003,
+      "z": -0.7999999999999997
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 405,
+    "point": {
+      "x": 502.6916848647928,
+      "z": -599.1628435652113
+    },
+    "map": {
+      "x": 625.6729212161982,
+      "y": 450.20928910869713
+    },
+    "outward": {
+      "x": -0.4770918629042361,
+      "z": 0.8788534316656935
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 406,
+    "point": {
+      "x": 510.7376618762872,
+      "z": -594.7950274732574
+    },
+    "map": {
+      "x": 627.6844154690718,
+      "y": 451.3012431316856
+    },
+    "outward": {
+      "x": -0.4770918629042326,
+      "z": 0.8788534316656954
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 406,
+    "point": {
+      "x": 518.7836388877814,
+      "z": -590.4272113813033
+    },
+    "map": {
+      "x": 629.6959097219453,
+      "y": 452.39319715467417
+    },
+    "outward": {
+      "x": -0.4770918629042326,
+      "z": 0.8788534316656954
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 409,
+    "point": {
+      "x": 611.3333333333334,
+      "z": -590.5
+    },
+    "map": {
+      "x": 652.8333333333334,
+      "y": 452.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 410,
+    "point": {
+      "x": 620.6666666666666,
+      "z": -590.5
+    },
+    "map": {
+      "x": 655.1666666666666,
+      "y": 452.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 415,
+    "point": {
+      "x": 779.3333333333334,
+      "z": -590.5
+    },
+    "map": {
+      "x": 694.8333333333334,
+      "y": 452.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 425,
+    "point": {
+      "x": 1048.888888888889,
+      "z": -569.5
+    },
+    "map": {
+      "x": 762.2222222222222,
+      "y": 457.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 426,
+    "point": {
+      "x": 1057.7777777777778,
+      "z": -569.5
+    },
+    "map": {
+      "x": 764.4444444444445,
+      "y": 457.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 426,
+    "point": {
+      "x": 1075.5555555555557,
+      "z": -569.5
+    },
+    "map": {
+      "x": 768.8888888888889,
+      "y": 457.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 427,
+    "point": {
+      "x": 1093.3333333333333,
+      "z": -590.5
+    },
+    "map": {
+      "x": 773.3333333333333,
+      "y": 452.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "old_siam",
+    "roadIndex": 427,
+    "point": {
+      "x": 1102.2222222222222,
+      "z": -569.5
+    },
+    "map": {
+      "x": 775.5555555555555,
+      "y": 457.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sukhumvit",
+    "roadIndex": 438,
+    "point": {
+      "x": 1382.8568360206555,
+      "z": -515.0025223067586
+    },
+    "map": {
+      "x": 845.7142090051639,
+      "y": 471.2493694233103
+    },
+    "outward": {
+      "x": 0.4740998230350199,
+      "z": -0.8804710999221739
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "yaowarat",
+    "roadIndex": 520,
+    "point": {
+      "x": -215.7385115102724,
+      "z": -217.39545618949415
+    },
+    "map": {
+      "x": 446.0653721224319,
+      "y": 545.6511359526264
+    },
+    "outward": {
+      "x": 0.4740998230350173,
+      "z": -0.8804710999221754
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchawong",
+    "roadIndex": 581,
+    "point": {
+      "x": -218.45241041433263,
+      "z": -225.8108983866791
+    },
+    "map": {
+      "x": 445.3868973964168,
+      "y": 543.5472754033302
+    },
+    "outward": {
+      "x": 0.8619342153334393,
+      "z": 0.5070201262647553
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchawong",
+    "roadIndex": 582,
+    "point": {
+      "x": -243.12834558945147,
+      "z": -209.5018163892879
+    },
+    "map": {
+      "x": 439.2179136026371,
+      "y": 547.624545902678
+    },
+    "outward": {
+      "x": -0.8619342149925354,
+      "z": -0.5070201268442919
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ratchawong",
+    "roadIndex": 587,
+    "point": {
+      "x": -288.66645722798495,
+      "z": -79.79492012687525
+    },
+    "map": {
+      "x": 427.8333856930038,
+      "y": 580.0512699682812
+    },
+    "outward": {
+      "x": 0.9743911956946198,
+      "z": -0.22485950669875843
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ramaiv",
+    "roadIndex": 730,
+    "point": {
+      "x": 978.7634719094526,
+      "z": 797.074352060365
+    },
+    "map": {
+      "x": 744.6908679773632,
+      "y": 799.2685880150913
+    },
+    "outward": {
+      "x": -0.8320502943378437,
+      "z": 0.5547001962252291
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ramaiv",
+    "roadIndex": 731,
+    "point": {
+      "x": 983.7634719094526,
+      "z": 804.574352060365
+    },
+    "map": {
+      "x": 745.9408679773632,
+      "y": 801.1435880150913
+    },
+    "outward": {
+      "x": -0.8320502943378437,
+      "z": 0.5547001962252291
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ramaiv",
+    "roadIndex": 732,
+    "point": {
+      "x": 1003.7634719094526,
+      "z": 834.574352060365
+    },
+    "map": {
+      "x": 750.9408679773632,
+      "y": 808.6435880150913
+    },
+    "outward": {
+      "x": -0.8320502943378437,
+      "z": 0.5547001962252291
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ramaiv",
+    "roadIndex": 733,
+    "point": {
+      "x": 1033.3333333333335,
+      "z": 829.5
+    },
+    "map": {
+      "x": 758.3333333333334,
+      "y": 807.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "ramaiv",
+    "roadIndex": 747,
+    "point": {
+      "x": 1406.6666666666665,
+      "z": 850.5
+    },
+    "map": {
+      "x": 851.6666666666666,
+      "y": 812.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "banthat",
+    "roadIndex": 762,
+    "point": {
+      "x": 566.0196680770686,
+      "z": -566.4346717183361
+    },
+    "map": {
+      "x": 641.5049170192672,
+      "y": 458.39133207041596
+    },
+    "outward": {
+      "x": 0.9993628543475497,
+      "z": 0.035691530512412944
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 815,
+    "point": {
+      "x": 629.4732765465288,
+      "z": 1069.4055492931109
+    },
+    "map": {
+      "x": 657.3683191366322,
+      "y": 867.3513873232778
+    },
+    "outward": {
+      "x": -0.5263546146163,
+      "z": -0.850265146687859
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 815,
+    "point": {
+      "x": 637.2510543243066,
+      "z": 1064.5907344782959
+    },
+    "map": {
+      "x": 659.3127635810766,
+      "y": 866.147683619574
+    },
+    "outward": {
+      "x": -0.5263546146163,
+      "z": -0.850265146687859
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 816,
+    "point": {
+      "x": 645.0288321020845,
+      "z": 1059.775919663481
+    },
+    "map": {
+      "x": 661.2572080255211,
+      "y": 864.9439799158703
+    },
+    "outward": {
+      "x": -0.5263546146162921,
+      "z": -0.8502651466878638
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 817,
+    "point": {
+      "x": 676.1399432131956,
+      "z": 1040.5166604042217
+    },
+    "map": {
+      "x": 669.0349858032989,
+      "y": 860.1291651010554
+    },
+    "outward": {
+      "x": -0.5263546146162981,
+      "z": -0.8502651466878601
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 817,
+    "point": {
+      "x": 683.9177209909733,
+      "z": 1035.701845589407
+    },
+    "map": {
+      "x": 670.9794302477433,
+      "y": 858.9254613973517
+    },
+    "outward": {
+      "x": -0.5263546146162981,
+      "z": -0.8502651466878601
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 829,
+    "point": {
+      "x": 963.9177209909733,
+      "z": 862.3685122560737
+    },
+    "map": {
+      "x": 740.9794302477433,
+      "y": 815.5921280640184
+    },
+    "outward": {
+      "x": -0.526354614616294,
+      "z": -0.8502651466878627
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "silom",
+    "roadIndex": 831,
+    "point": {
+      "x": 1002.8066098798622,
+      "z": 838.2944381819996
+    },
+    "map": {
+      "x": 750.7016524699656,
+      "y": 809.5736095455
+    },
+    "outward": {
+      "x": -0.5263546146162951,
+      "z": -0.8502651466878619
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "narathiwas",
+    "roadIndex": 832,
+    "point": {
+      "x": 604.1862232585006,
+      "z": 1122.9068883707498
+    },
+    "map": {
+      "x": 651.0465558146252,
+      "y": 880.7267220926874
+    },
+    "outward": {
+      "x": -0.8944271909999159,
+      "z": 0.4472135954999579
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "narathiwas",
+    "roadIndex": 833,
+    "point": {
+      "x": 616.1862232585006,
+      "z": 1146.9068883707498
+    },
+    "map": {
+      "x": 654.0465558146252,
+      "y": 886.7267220926874
+    },
+    "outward": {
+      "x": -0.8944271909999159,
+      "z": 0.4472135954999579
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "narathiwas",
+    "roadIndex": 838,
+    "point": {
+      "x": 668.1862232585006,
+      "z": 1250.9068883707498
+    },
+    "map": {
+      "x": 667.0465558146252,
+      "y": 912.7267220926874
+    },
+    "outward": {
+      "x": -0.8944271909999159,
+      "z": 0.4472135954999579
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "narathiwas",
+    "roadIndex": 838,
+    "point": {
+      "x": 672.1862232585006,
+      "z": 1258.9068883707498
+    },
+    "map": {
+      "x": 668.0465558146252,
+      "y": 914.7267220926874
+    },
+    "outward": {
+      "x": -0.8944271909999159,
+      "z": 0.4472135954999579
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 847,
+    "point": {
+      "x": 144.94047729996035,
+      "z": 1425.1984193553183
+    },
+    "map": {
+      "x": 536.2351193249901,
+      "y": 956.2996048388295
+    },
+    "outward": {
+      "x": -0.16439898730536173,
+      "z": -0.9863939238321431
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 847,
+    "point": {
+      "x": 153.82936618884924,
+      "z": 1423.7169378738365
+    },
+    "map": {
+      "x": 538.4573415472123,
+      "y": 955.9292344684591
+    },
+    "outward": {
+      "x": -0.16439898730536173,
+      "z": -0.9863939238321431
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 860,
+    "point": {
+      "x": 486.17063381115065,
+      "z": 1389.616395459497
+    },
+    "map": {
+      "x": 621.5426584527877,
+      "y": 947.4040988648742
+    },
+    "outward": {
+      "x": 0.16439898730535354,
+      "z": 0.9863939238321443
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 863,
+    "point": {
+      "x": 566.1706338111508,
+      "z": 1376.2830621261635
+    },
+    "map": {
+      "x": 641.5426584527877,
+      "y": 944.0707655315409
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 863,
+    "point": {
+      "x": 575.0595227000396,
+      "z": 1374.8015806446817
+    },
+    "map": {
+      "x": 643.7648806750099,
+      "y": 943.7003951611705
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 863,
+    "point": {
+      "x": 583.9484115889285,
+      "z": 1373.3200991632004
+    },
+    "map": {
+      "x": 645.9871028972321,
+      "y": 943.3300247908
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 864,
+    "point": {
+      "x": 592.8373004778173,
+      "z": 1371.8386176817191
+    },
+    "map": {
+      "x": 648.2093251194543,
+      "y": 942.9596544204298
+    },
+    "outward": {
+      "x": 0.1643989873053532,
+      "z": 0.9863939238321445
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 865,
+    "point": {
+      "x": 619.5039671444841,
+      "z": 1367.3941732372743
+    },
+    "map": {
+      "x": 654.8759917861211,
+      "y": 941.8485433093185
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 865,
+    "point": {
+      "x": 628.392856033373,
+      "z": 1365.912691755793
+    },
+    "map": {
+      "x": 657.0982140083432,
+      "y": 941.4781729389483
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 865,
+    "point": {
+      "x": 637.2817449222619,
+      "z": 1364.4312102743113
+    },
+    "map": {
+      "x": 659.3204362305655,
+      "y": 941.1078025685779
+    },
+    "outward": {
+      "x": 0.16439898730536207,
+      "z": 0.986393923832143
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 866,
+    "point": {
+      "x": 646.1706338111507,
+      "z": 1362.9497287928302
+    },
+    "map": {
+      "x": 661.5426584527877,
+      "y": 940.7374321982076
+    },
+    "outward": {
+      "x": 0.16439898730535388,
+      "z": 0.9863939238321443
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 866,
+    "point": {
+      "x": 663.9484115889284,
+      "z": 1359.9867658298672
+    },
+    "map": {
+      "x": 665.987102897232,
+      "y": 939.9966914574668
+    },
+    "outward": {
+      "x": 0.16439898730535388,
+      "z": 0.9863939238321443
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 868,
+    "point": {
+      "x": 708.3928560333728,
+      "z": 1352.5793584224598
+    },
+    "map": {
+      "x": 677.0982140083432,
+      "y": 938.144839605615
+    },
+    "outward": {
+      "x": 0.1643989873053532,
+      "z": 0.9863939238321445
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "sathorn",
+    "roadIndex": 907,
+    "point": {
+      "x": 1409.5,
+      "z": 853.0769230769231
+    },
+    "map": {
+      "x": 852.375,
+      "y": 813.2692307692307
+    },
+    "outward": {
+      "x": -1,
+      "z": 0
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "asok_ratchada",
+    "roadIndex": 909,
+    "point": {
+      "x": 1784.0368560054542,
+      "z": -149.23601109981044
+    },
+    "map": {
+      "x": 946.0092140013635,
+      "y": 562.6909972250473
+    },
+    "outward": {
+      "x": 0.991777866634025,
+      "z": 0.12797133763019786
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "park_n",
+    "roadIndex": 949,
+    "point": {
+      "x": 1014,
+      "z": 206.5
+    },
+    "map": {
+      "x": 753.5,
+      "y": 651.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "park_n",
+    "roadIndex": 986,
+    "point": {
+      "x": 1413.5,
+      "z": 826.0869565217391
+    },
+    "map": {
+      "x": 853.375,
+      "y": 806.5217391304348
+    },
+    "outward": {
+      "x": -1,
+      "z": 0
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 987,
+    "point": {
+      "x": -1454.0941123296773,
+      "z": -1465.900124930174
+    },
+    "map": {
+      "x": 136.47647191758068,
+      "y": 233.52496876745653
+    },
+    "outward": {
+      "x": 0.9990958406831205,
+      "z": 0.042514716624815915
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1020,
+    "point": {
+      "x": -1492.9176417414421,
+      "z": -553.5471837537033
+    },
+    "map": {
+      "x": 126.77058956463947,
+      "y": 461.61320406157415
+    },
+    "outward": {
+      "x": 0.9990958406831205,
+      "z": 0.04251471662481609
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1047,
+    "point": {
+      "x": -1319.249629304611,
+      "z": 156.20129621504162
+    },
+    "map": {
+      "x": 170.18759267384723,
+      "y": 639.0503240537604
+    },
+    "outward": {
+      "x": 0.9701425001453312,
+      "z": -0.2425356250363359
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1048,
+    "point": {
+      "x": -1322.972592917611,
+      "z": 194.9098148960695
+    },
+    "map": {
+      "x": 169.25685177059722,
+      "y": 648.7274537240173
+    },
+    "outward": {
+      "x": -0.9701425001453312,
+      "z": 0.2425356250363359
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1067,
+    "point": {
+      "x": -1045.1553557371597,
+      "z": 643.0193852226997
+    },
+    "map": {
+      "x": 238.7111610657101,
+      "y": 760.754846305675
+    },
+    "outward": {
+      "x": 0.8402966482242458,
+      "z": -0.5421268698220908
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1069,
+    "point": {
+      "x": -1025.4022693174065,
+      "z": 673.6366691733168
+    },
+    "map": {
+      "x": 243.64943267064837,
+      "y": 768.4091672933292
+    },
+    "outward": {
+      "x": 0.8402966482242419,
+      "z": -0.5421268698220967
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1084,
+    "point": {
+      "x": -843.3375376561814,
+      "z": 1040.6491626790867
+    },
+    "map": {
+      "x": 289.16561558595464,
+      "y": 860.1622906697717
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1084,
+    "point": {
+      "x": -840.6102649289087,
+      "z": 1049.4370414669656
+    },
+    "map": {
+      "x": 289.8474337677728,
+      "y": 862.3592603667414
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1084,
+    "point": {
+      "x": -837.8829922016361,
+      "z": 1058.2249202548442
+    },
+    "map": {
+      "x": 290.52925194959096,
+      "y": 864.556230063711
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1085,
+    "point": {
+      "x": -835.1557194743633,
+      "z": 1067.0127990427231
+    },
+    "map": {
+      "x": 291.2110701314092,
+      "y": 866.7531997606808
+    },
+    "outward": {
+      "x": 0.9550641368112369,
+      "z": -0.2963992148724537
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1085,
+    "point": {
+      "x": -832.4284467470906,
+      "z": 1075.800677830602
+    },
+    "map": {
+      "x": 291.89288831322733,
+      "y": 868.9501694576504
+    },
+    "outward": {
+      "x": 0.9550641368112369,
+      "z": -0.2963992148724537
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1086,
+    "point": {
+      "x": -824.2466285652724,
+      "z": 1102.1643141942382
+    },
+    "map": {
+      "x": 293.9383428586819,
+      "y": 875.5410785485595
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1086,
+    "point": {
+      "x": -821.5193558379997,
+      "z": 1110.9521929821171
+    },
+    "map": {
+      "x": 294.6201610405001,
+      "y": 877.7380482455293
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1087,
+    "point": {
+      "x": -818.7920831107269,
+      "z": 1119.7400717699957
+    },
+    "map": {
+      "x": 295.30197922231827,
+      "y": 879.9350179424989
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1087,
+    "point": {
+      "x": -816.0648103834542,
+      "z": 1128.5279505578746
+    },
+    "map": {
+      "x": 295.98379740413645,
+      "y": 882.1319876394687
+    },
+    "outward": {
+      "x": 0.9550641368112374,
+      "z": -0.29639921487245224
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "west",
+    "roadIndex": 1091,
+    "point": {
+      "x": -798.4806441620003,
+      "z": 1229.0478070178829
+    },
+    "map": {
+      "x": 300.3798389594999,
+      "y": 907.2619517544707
+    },
+    "outward": {
+      "x": -0.9550641368112374,
+      "z": 0.29639921487245224
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "charoen_nakhon",
+    "roadIndex": 1104,
+    "point": {
+      "x": -879.1666666666666,
+      "z": 873.5
+    },
+    "map": {
+      "x": 280.20833333333337,
+      "y": 818.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "charoen_nakhon",
+    "roadIndex": 1106,
+    "point": {
+      "x": -837.5,
+      "z": 886.5
+    },
+    "map": {
+      "x": 290.625,
+      "y": 821.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "charoen_nakhon",
+    "roadIndex": 1106,
+    "point": {
+      "x": -829.1666666666666,
+      "z": 886.5
+    },
+    "map": {
+      "x": 292.70833333333337,
+      "y": 821.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "taksin",
+    "roadIndex": 1136,
+    "point": {
+      "x": -50.76923076923074,
+      "z": 1470.5
+    },
+    "map": {
+      "x": 487.3076923076923,
+      "y": 967.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "asiatique",
+    "roadIndex": 1146,
+    "point": {
+      "x": -318,
+      "z": 2006.5
+    },
+    "map": {
+      "x": 420.5,
+      "y": 1101.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "krung_thon_buri",
+    "roadIndex": 1266,
+    "point": {
+      "x": -874.1666666666666,
+      "z": 1449.5
+    },
+    "map": {
+      "x": 281.45833333333337,
+      "y": 962.375
+    },
+    "outward": {
+      "x": 0,
+      "z": -1
+    },
+    "side": -1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "krung_thon_buri",
+    "roadIndex": 1277,
+    "point": {
+      "x": -1170,
+      "z": 1470.5
+    },
+    "map": {
+      "x": 207.5,
+      "y": 967.625
+    },
+    "outward": {
+      "x": 0,
+      "z": 1
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1325,
+    "point": {
+      "x": -1576.280255677805,
+      "z": 634.7942446514537
+    },
+    "map": {
+      "x": 105.92993608054877,
+      "y": 758.6985611628634
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1325,
+    "point": {
+      "x": -1586.9707578495977,
+      "z": 636.2199792795358
+    },
+    "map": {
+      "x": 103.25731053760057,
+      "y": 759.054994819884
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1326,
+    "point": {
+      "x": -1597.6612600213907,
+      "z": 637.645713907618
+    },
+    "map": {
+      "x": 100.58468499465232,
+      "y": 759.4114284769045
+    },
+    "outward": {
+      "x": 0.1321941784275354,
+      "z": 0.9912238390948178
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1326,
+    "point": {
+      "x": -1608.3517621931833,
+      "z": 639.0714485356999
+    },
+    "map": {
+      "x": 97.91205945170418,
+      "y": 759.767862133925
+    },
+    "outward": {
+      "x": 0.1321941784275354,
+      "z": 0.9912238390948178
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1327,
+    "point": {
+      "x": -1619.0422643649763,
+      "z": 640.4971831637821
+    },
+    "map": {
+      "x": 95.23943390875593,
+      "y": 760.1242957909456
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1327,
+    "point": {
+      "x": -1629.732766536769,
+      "z": 641.9229177918642
+    },
+    "map": {
+      "x": 92.56680836580773,
+      "y": 760.480729447966
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1329,
+    "point": {
+      "x": -1672.4947752239405,
+      "z": 647.6258563041927
+    },
+    "map": {
+      "x": 81.87630619401489,
+      "y": 761.9064640760482
+    },
+    "outward": {
+      "x": 0.13219417842754053,
+      "z": 0.9912238390948169
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1330,
+    "point": {
+      "x": -1683.1852773957335,
+      "z": 649.0515909322748
+    },
+    "map": {
+      "x": 79.20368065106663,
+      "y": 762.2628977330687
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1331,
+    "point": {
+      "x": -1706.2848060588774,
+      "z": 639.0171502802065
+    },
+    "map": {
+      "x": 73.42879848528065,
+      "y": 759.7542875700516
+    },
+    "outward": {
+      "x": -0.13219417842753914,
+      "z": -0.9912238390948171
+    },
+    "side": -1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1333,
+    "point": {
+      "x": -1747.3282904264906,
+      "z": 657.6059987007675
+    },
+    "map": {
+      "x": 63.16792739337734,
+      "y": 764.4014996751919
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1334,
+    "point": {
+      "x": -1779.3997969418692,
+      "z": 661.8832025850138
+    },
+    "map": {
+      "x": 55.15005076453269,
+      "y": 765.4708006462535
+    },
+    "outward": {
+      "x": 0.13219417842753914,
+      "z": 0.9912238390948171
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:paknam",
+    "roadIndex": 1335,
+    "point": {
+      "x": -1790.0902991136622,
+      "z": 663.308937213096
+    },
+    "map": {
+      "x": 52.47742522158444,
+      "y": 765.827234303274
+    },
+    "outward": {
+      "x": 0.13219417842754053,
+      "z": 0.9912238390948169
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:terminal",
+    "roadIndex": 1396,
+    "point": {
+      "x": 1714.287946168149,
+      "z": -296.9036535432399
+    },
+    "map": {
+      "x": 928.5719865420372,
+      "y": 525.7740866141901
+    },
+    "outward": {
+      "x": -0.13382876658511755,
+      "z": -0.9910044708447616
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:terminal",
+    "roadIndex": 1397,
+    "point": {
+      "x": 1724.333041354135,
+      "z": -298.260178905658
+    },
+    "map": {
+      "x": 931.0832603385338,
+      "y": 525.4349552735855
+    },
+    "outward": {
+      "x": -0.13382876658511333,
+      "z": -0.9910044708447623
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:asiatique",
+    "roadIndex": 1410,
+    "point": {
+      "x": -245.1558222590486,
+      "z": 2030.8585735277172
+    },
+    "map": {
+      "x": 438.71104443523785,
+      "y": 1107.7146433819294
+    },
+    "outward": {
+      "x": 0.6615317239512715,
+      "z": 0.7499171808980367
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:asiatique",
+    "roadIndex": 1410,
+    "point": {
+      "x": -251.70155080676676,
+      "z": 2036.6328206059127
+    },
+    "map": {
+      "x": 437.0746122983083,
+      "y": 1109.1582051514781
+    },
+    "outward": {
+      "x": 0.6615317239512715,
+      "z": 0.7499171808980367
+    },
+    "side": 1,
+    "currentOpenWithin8m": false,
+    "status": "no-longer-open-in-current-spatial-audit",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  },
+  {
+    "corridor": "arrival:asiatique",
+    "roadIndex": 1411,
+    "point": {
+      "x": -258.24727935448493,
+      "z": 2042.4070676841081
+    },
+    "map": {
+      "x": 435.4381801613788,
+      "y": 1110.601766921027
+    },
+    "outward": {
+      "x": 0.6615317239512779,
+      "z": 0.7499171808980308
+    },
+    "side": 1,
+    "currentOpenWithin8m": true,
+    "status": "still-open-needs-art",
+    "note": "An automated spatial classification, not a claim that every view has been visually certified."
+  }
+]

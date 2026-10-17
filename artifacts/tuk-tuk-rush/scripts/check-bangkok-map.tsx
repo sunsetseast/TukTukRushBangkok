@@ -58,7 +58,7 @@ assert(
   "Public destinations do not grant discovery",
 );
 assert(
-  full.includes("map-place-pier:icon") && full.includes("Siam city hotel"),
+  full.includes("map-place-pier:icon") && full.includes("Park Hyatt Bangkok"),
 );
 assert(
   !full.includes('stroke="#f3c471"'),

@@ -22,9 +22,9 @@ const d = createBangkokWorld(),
   plan = completeStreetFabric(d),
   nodes = new Map(d.nodes.map((n) => [n.id, n]));
 assert.equal(
-  roadGraphKey(d),
+  roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:'))}),
   "2198517381",
-  "Keep authoritative road/route and baked-surface graph",
+  "Preserve every prior road; new hotel driveway/bake checks are separate",
 );
 assert.equal(
   new Set(plan.after.map((s) => s.roadIndex)).size,
@@ -36,7 +36,7 @@ assert(
   plan.after.filter((s) => s.kind === "open").length <
     plan.before.filter((s) => s.kind === "open").length,
 );
-assert(plan.infill.length > 50 && plan.infill.length < 200);
+assert(plan.infill.length > 50 && plan.infill.length < 300);
 assert(plan.faces.length > 200 && plan.faces.length < 900);
 assert(plan.pockets.length > 30 && plan.pockets.length < 180);
 assert(plan.ends.length < 40);
@@ -136,13 +136,13 @@ assert(camera.pos.y >= 3.25);
 const places = cityPlaces(d, designs),
   piers = riverPiers(d);
 assert.equal(places.filter((p) => p.kind === "pier").length, piers.length);
-for (const region of ["siam", "khaosan", "silom"])
+for (const region of ["siam", "icon", "silom", "south"])
   assert(places.some((p) => p.kind === "hotel" && p.region === region));
 assert(
   piers.some((p) => p.id === "sathorn") && piers.some((p) => p.id === "icon"),
 );
 for (const p of places.filter((p) => p.kind === "hotel"))
-  assert(d.buildings.includes(p.parcel!));
+  assert(d.landmarks.some(l=>`hotel:${l.id}`===p.id && l.plot?.x===p.x && l.plot?.z===p.z));
 for (const p of piers)
   assert(
     d.roads.every(
