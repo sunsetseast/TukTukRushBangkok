@@ -1,0 +1,230 @@
+{
+  "survey": [
+    {
+      "name": "palace",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "palace",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 274,
+        "triangles": 436614,
+        "geometries": 627,
+        "textures": 14,
+        "frameMs": 478.60000000009313,
+        "camera": [
+          -919.2984160619834,
+          3.3,
+          -1006.34908039184
+        ]
+      }
+    },
+    {
+      "name": "icon",
+      "pose": {
+        "comparisonOverride": true,
+        "id": "icon",
+        "view": "approach"
+      },
+      "elapsed": 240,
+      "stats": {
+        "calls": 183,
+        "triangles": 206834,
+        "geometries": 766,
+        "textures": 14,
+        "frameMs": 23.899999999906868,
+        "camera": [
+          -617.716991411009,
+          39,
+          1024.033008588991
+        ]
+      }
+    },
+    {
+      "id": "icon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -574.966991411009,
+            105,
+            866.433008588991
+          ],
+          "look": [
+            -646.966991411009,
+            14.28,
+            933.033008588991
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 258666,
+        "geometries": 440,
+        "textures": 13,
+        "frameMs": 2056.3000000002794
+      }
+    },
+    {
+      "id": "mahanakhon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            831.7939766255644,
+            142.5,
+            1311.1341716182544
+          ],
+          "look": [
+            654.1939766255643,
+            63,
+            1119.1341716182544
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 238,
+        "triangles": 398396,
+        "geometries": 629,
+        "textures": 13,
+        "frameMs": 4242.899999999907
+      }
+    },
+    {
+      "id": "state",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            363.392,
+            131.1,
+            1356.64
+          ],
+          "look": [
+            200,
+            57.96,
+            1180
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 208,
+        "triangles": 304649,
+        "geometries": 744,
+        "textures": 13,
+        "frameMs": 1546.3999999999069
+      }
+    },
+    {
+      "id": "mbk",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            698.6,
+            105,
+            -368
+          ],
+          "look": [
+            632,
+            14.28,
+            -440
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 213,
+        "triangles": 319507,
+        "geometries": 908,
+        "textures": 13,
+        "frameMs": 2181.1999999997206
+      }
+    },
+    {
+      "id": "paragon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1002.9656312782334,
+            105,
+            -687.6906889110151
+          ],
+          "look": [
+            920,
+            14.28,
+            -740
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 263,
+        "triangles": 386724,
+        "geometries": 1034,
+        "textures": 13,
+        "frameMs": 23.300000000279397
+      }
+    },
+    {
+      "id": "central",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1258.8836140246613,
+            105,
+            -608.5194970290473
+          ],
+          "look": [
+            1192.2836140246613,
+            14.28,
+            -680.5194970290473
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 259,
+        "triangles": 379358,
+        "geometries": 1152,
+        "textures": 13,
+        "frameMs": 359.89999999990687
+      }
+    },
+    {
+      "id": "terminal",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1913.686,
+            112.1,
+            -160.88
+          ],
+          "look": [
+            1822,
+            49.559999999999995,
+            -260
+          ]
+        },
+        "matchedToAfter": true
+      },
+      "stats": {
+        "calls": 193,
+        "triangles": 233014,
+        "geometries": 1293,
+        "textures": 13,
+        "frameMs": 253.29999999981374
+      }
+    }
+  ],
+  "errors": [],
+  "renderer": "Chromium SwiftShader; QA cameras explicitly distinguished from normal chase camera"
+}

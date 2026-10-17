@@ -75,6 +75,8 @@ function hilton(b:B,detail:boolean){
  for(let f=0;f<(detail?30:15);f++){
    const y=9+f*(detail?3:6);rounded(b,0,y,0,40.5,24,.36,IVORY,detail);
    glass(b,0,y+1.5,12.1,34,2.2,.16,'#598f9b');
+   glass(b,0,y+1.5,-13.6,34,2.2,.16,'#598f9b');
+   for(const side of [-1,1])glass(b,side*20.1,y+1.5,-2,.16,2.2,15,'#598f9b');
  }
  for(const x of [-18,-11,11,18])b.box(x,54,12.4,.7,92,.6,IVORY);
  b.box(-13,58,-9,9,106,7,'#8d9994');b.box(-13,111,-9,9,2,8,IVORY);

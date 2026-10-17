@@ -1,0 +1,820 @@
+[
+  {
+    "id": "oriental",
+    "name": "Mandarin Oriental Bangkok",
+    "address": "48 Oriental Avenue",
+    "neighborhood": "Bang Rak",
+    "region": "silom",
+    "bank": "east",
+    "map": [
+      450,
+      860
+    ],
+    "footprint": [
+      92,
+      64
+    ],
+    "height": 43,
+    "yaw": -1.5707963267948966,
+    "nearby": [
+      "river-city",
+      "state"
+    ],
+    "references": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+    ],
+    "features": [
+      "Broad River Wing with repeated recessed bays",
+      "Historic Authors\u2019 Wing and Garden Wing",
+      "White colonnades, pitched heritage roof and river terrace"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-oriental-v1",
+    "actualLocation": {
+      "address": "48 Oriental Avenue",
+      "geographicReference": "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+    },
+    "intendedMap": [
+      450,
+      860
+    ],
+    "gameLocation": {
+      "x": 450,
+      "y": 860
+    },
+    "world": {
+      "x": -200,
+      "z": 1040
+    },
+    "accessNode": "real-arrival:oriental:11",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "oriental",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Historic wing, pediment and broad River Wing added; garden/river wing proportions and full heritage elevation need another reference-matching pass."
+  },
+  {
+    "id": "peninsula",
+    "name": "The Peninsula Bangkok",
+    "address": "333 Charoen Nakhon Road",
+    "neighborhood": "Khlong San",
+    "region": "icon",
+    "bank": "west",
+    "map": [
+      345,
+      907
+    ],
+    "footprint": [
+      72,
+      60
+    ],
+    "height": 116,
+    "yaw": 1.5707963267948966,
+    "nearby": [
+      "icon",
+      "hilton",
+      "oriental"
+    ],
+    "references": [
+      "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf",
+      "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+    ],
+    "features": [
+      "Wave/W-shaped plan with angled river bays",
+      "Stepped tower crown",
+      "River terrace pavilions and garden"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-peninsula-v1",
+    "actualLocation": {
+      "address": "333 Charoen Nakhon Road",
+      "geographicReference": "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf"
+    },
+    "intendedMap": [
+      345,
+      907
+    ],
+    "gameLocation": {
+      "x": 345,
+      "y": 907
+    },
+    "world": {
+      "x": -620,
+      "z": 1228
+    },
+    "accessNode": "real-arrival:peninsula:6",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "peninsula",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed stylized exterior",
+    "qaNotes": "Wave/W plan, stepped tower shoulders and river terrace are identifiable. Curves are faceted, room counts compressed."
+  },
+  {
+    "id": "hilton",
+    "name": "Millennium Hilton Bangkok",
+    "address": "123 Charoen Nakhon Road",
+    "neighborhood": "Khlong San",
+    "region": "icon",
+    "bank": "west",
+    "map": [
+      311,
+      795
+    ],
+    "footprint": [
+      52,
+      48
+    ],
+    "height": 120,
+    "yaw": 1.5707963267948966,
+    "nearby": [
+      "icon",
+      "peninsula"
+    ],
+    "references": [
+      "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/",
+      "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok"
+    ],
+    "features": [
+      "Slender pale slab with rounded river face",
+      "Vertical dark spine",
+      "Cantilevered ThreeSixty rooftop disc"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-hilton-v1",
+    "actualLocation": {
+      "address": "123 Charoen Nakhon Road",
+      "geographicReference": "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/"
+    },
+    "intendedMap": [
+      311,
+      795
+    ],
+    "gameLocation": {
+      "x": 311,
+      "y": 795
+    },
+    "world": {
+      "x": -756,
+      "z": 780
+    },
+    "accessNode": "real-arrival:hilton:5",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "hilton",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed stylized exterior",
+    "qaNotes": "Rounded pale slab, dark vertical spine and cantilevered roof disc identify Hilton beside ICONSIAM. The roof mast and exact curtain wall are simplified."
+  },
+  {
+    "id": "shangri",
+    "name": "Shangri-La Bangkok",
+    "address": "89 Soi Wat Suan Plu, New Road",
+    "neighborhood": "Bang Rak",
+    "region": "silom",
+    "bank": "east",
+    "map": [
+      478,
+      931
+    ],
+    "footprint": [
+      86,
+      58
+    ],
+    "height": 79,
+    "yaw": -1.5707963267948966,
+    "nearby": [
+      "state",
+      "oriental",
+      "saphan-taksin"
+    ],
+    "references": [
+      "https://www.shangri-la.com/bangkok/shangrila/",
+      "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/"
+    ],
+    "features": [
+      "Shangri-La and Krungthep wings",
+      "Pale horizontal balcony bands",
+      "Thai riverside dining pavilions"
+    ],
+    "tier": "major",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-shangri-v1",
+    "actualLocation": {
+      "address": "89 Soi Wat Suan Plu, New Road",
+      "geographicReference": "https://www.shangri-la.com/bangkok/shangrila/"
+    },
+    "intendedMap": [
+      478,
+      931
+    ],
+    "gameLocation": {
+      "x": 478,
+      "y": 931
+    },
+    "world": {
+      "x": -88,
+      "z": 1324
+    },
+    "accessNode": "real-arrival:shangri:4",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "shangri",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Two wings and Thai waterfront pavilions exist; current silhouette/window rhythm is still too generic to certify a faithful recreation."
+  },
+  {
+    "id": "state",
+    "name": "Lebua at State Tower",
+    "address": "1055 Silom Road",
+    "neighborhood": "Bang Rak",
+    "region": "silom",
+    "bank": "east",
+    "map": [
+      550,
+      895
+    ],
+    "footprint": [
+      40,
+      40
+    ],
+    "height": 138,
+    "yaw": 0,
+    "nearby": [
+      "shangri",
+      "oriental"
+    ],
+    "references": [
+      "https://lebua.com/"
+    ],
+    "features": [
+      "Existing State Tower reused",
+      "Golden dome and open rooftop colonnade",
+      "Stepped pale balcony tower"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-state-v1",
+    "actualLocation": {
+      "address": "1055 Silom Road",
+      "geographicReference": "https://lebua.com/"
+    },
+    "intendedMap": [
+      550,
+      895
+    ],
+    "gameLocation": {
+      "x": 550,
+      "y": 895
+    },
+    "world": {
+      "x": 200,
+      "z": 1180
+    },
+    "accessNode": "bkk:650",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "state",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed stylized exterior",
+    "qaNotes": "Golden dome, open rooftop columns, pale setbacks and horizontal balconies. One reused State Tower ID and physical model."
+  },
+  {
+    "id": "four-seasons",
+    "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+    "address": "300/1 Charoen Krung Road",
+    "neighborhood": "Yan Nawa / Sathorn",
+    "region": "south",
+    "bank": "east",
+    "map": [
+      452,
+      1037
+    ],
+    "footprint": [
+      94,
+      64
+    ],
+    "height": 29,
+    "yaw": -1.5707963267948966,
+    "nearby": [
+      "capella",
+      "asiatique"
+    ],
+    "references": [
+      "https://www.fourseasons.com/bangkok/",
+      "https://press.fourseasons.com/bangkok/hotel-facts/"
+    ],
+    "features": [
+      "Cascading low-rise wings",
+      "Multiple open courtyards",
+      "Layered river terraces and reflecting pools"
+    ],
+    "tier": "major",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-four-seasons-v1",
+    "actualLocation": {
+      "address": "300/1 Charoen Krung Road",
+      "geographicReference": "https://www.fourseasons.com/bangkok/"
+    },
+    "intendedMap": [
+      452,
+      1037
+    ],
+    "gameLocation": {
+      "x": 452,
+      "y": 1037
+    },
+    "world": {
+      "x": -192,
+      "z": 1748
+    },
+    "accessNode": "real-arrival:four-seasons:5",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "four-seasons",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Low cascading wings and two courts are physical, but exact cascade proportions and river elevation still require fuller photographic comparison."
+  },
+  {
+    "id": "capella",
+    "name": "Capella Bangkok",
+    "address": "300/2 Charoen Krung Road",
+    "neighborhood": "Yan Nawa / Sathorn",
+    "region": "south",
+    "bank": "east",
+    "map": [
+      447,
+      1063
+    ],
+    "footprint": [
+      84,
+      58
+    ],
+    "height": 29,
+    "yaw": -1.5707963267948966,
+    "nearby": [
+      "four-seasons",
+      "asiatique"
+    ],
+    "references": [
+      "https://capellahotels.com/en/capella-bangkok"
+    ],
+    "features": [
+      "Seven-level rectilinear room wing",
+      "Deep glass balcony grid",
+      "Low U-shaped river court with villas"
+    ],
+    "tier": "major",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-capella-v1",
+    "actualLocation": {
+      "address": "300/2 Charoen Krung Road",
+      "geographicReference": "https://capellahotels.com/en/capella-bangkok"
+    },
+    "intendedMap": [
+      447,
+      1063
+    ],
+    "gameLocation": {
+      "x": 447,
+      "y": 1063
+    },
+    "world": {
+      "x": -212,
+      "z": 1852
+    },
+    "accessNode": "real-arrival:capella:5",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "capella",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed stylized exterior",
+    "qaNotes": "Rectilinear balcony grid, low U court, pool and river-facing villas echo the official aerial. Reduced villa/room counts and planting."
+  },
+  {
+    "id": "rosewood",
+    "name": "Rosewood Bangkok",
+    "address": "1041/38 Phloen Chit Road",
+    "neighborhood": "Phloen Chit",
+    "region": "sukhumvit",
+    "map": [
+      850,
+      461
+    ],
+    "footprint": [
+      48,
+      42
+    ],
+    "height": 119,
+    "yaw": 0,
+    "nearby": [
+      "embassy",
+      "phloen-chit"
+    ],
+    "references": [
+      "https://www.kpf.com/project/rosewood-bangkok",
+      "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
+    ],
+    "features": [
+      "Two sloping wai-inspired forms",
+      "Tall open central garden slot",
+      "Diagonal silver cladding and dark glass"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-rosewood-v1",
+    "actualLocation": {
+      "address": "1041/38 Phloen Chit Road",
+      "geographicReference": "https://www.kpf.com/project/rosewood-bangkok"
+    },
+    "intendedMap": [
+      850,
+      461
+    ],
+    "gameLocation": {
+      "x": 850,
+      "y": 461
+    },
+    "world": {
+      "x": 1400,
+      "z": -556
+    },
+    "accessNode": "bkk:435",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "rosewood",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed stylized exterior",
+    "qaNotes": "Two different sloping wai forms and a genuine open central slot are visible. Garden details and continuous metal cladding remain simplified."
+  },
+  {
+    "id": "embassy",
+    "name": "Park Hyatt Bangkok / Central Embassy",
+    "address": "88 Wireless Road",
+    "neighborhood": "Phloen Chit / Lumphini",
+    "region": "siam",
+    "map": [
+      825,
+      430
+    ],
+    "footprint": [
+      76,
+      65
+    ],
+    "height": 109,
+    "yaw": 0,
+    "nearby": [
+      "rosewood",
+      "central",
+      "phloen-chit"
+    ],
+    "references": [
+      "https://www.ala.uk.com/selected-projects/central-embassy/",
+      "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+    ],
+    "features": [
+      "Continuous curved retail podium and hotel",
+      "Twisting white ribbon around glass tower",
+      "Stepped open hotel terraces"
+    ],
+    "tier": "hero",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-embassy-v1",
+    "actualLocation": {
+      "address": "88 Wireless Road",
+      "geographicReference": "https://www.ala.uk.com/selected-projects/central-embassy/"
+    },
+    "intendedMap": [
+      825,
+      430
+    ],
+    "gameLocation": {
+      "x": 831,
+      "y": 430
+    },
+    "world": {
+      "x": 1324,
+      "z": -680
+    },
+    "accessNode": "bkk:176",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "embassy",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial hero study",
+    "qaNotes": "Integrated curved podium and ribbon tower exist, but the smooth continuous silver coil/void proportions are not yet faithful enough for B."
+  },
+  {
+    "id": "erawan-hotel",
+    "name": "Grand Hyatt Erawan Bangkok",
+    "address": "494 Ratchadamri Road",
+    "neighborhood": "Ratchaprasong",
+    "region": "siam",
+    "map": [
+      826,
+      496
+    ],
+    "footprint": [
+      66,
+      52
+    ],
+    "height": 70,
+    "yaw": 1.5707963267948966,
+    "nearby": [
+      "central",
+      "erawan-shrine"
+    ],
+    "references": [
+      "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+    ],
+    "features": [
+      "Stepped ivory hotel crown",
+      "Deep green glazing and pilasters",
+      "Classical portico and Erawan shrine court"
+    ],
+    "tier": "major",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-erawan-hotel-v1",
+    "actualLocation": {
+      "address": "494 Ratchadamri Road",
+      "geographicReference": "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+    },
+    "intendedMap": [
+      826,
+      496
+    ],
+    "gameLocation": {
+      "x": 826,
+      "y": 496
+    },
+    "world": {
+      "x": 1304,
+      "z": -416
+    },
+    "accessNode": "bkk:185",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "erawan-hotel",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Stepped tower, portico and corner shrine included; the hotel elevation still needs a more specific facade composition."
+  },
+  {
+    "id": "eastin",
+    "name": "Eastin Grand Hotel Sathorn",
+    "address": "33/1 South Sathorn Road",
+    "neighborhood": "Sathorn / Surasak",
+    "region": "silom",
+    "map": [
+      558,
+      933
+    ],
+    "footprint": [
+      42,
+      40
+    ],
+    "height": 111,
+    "yaw": 0,
+    "nearby": [
+      "surasak",
+      "state"
+    ],
+    "references": [
+      "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+    ],
+    "features": [
+      "Slender grid-glazed tower",
+      "Projecting mid-height pool terrace",
+      "Station-facing entrance near Surasak"
+    ],
+    "tier": "major",
+    "category": "hotel",
+    "access": "public-roadside",
+    "asset": "real-eastin-v1",
+    "actualLocation": {
+      "address": "33/1 South Sathorn Road",
+      "geographicReference": "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+    },
+    "intendedMap": [
+      558,
+      933
+    ],
+    "gameLocation": {
+      "x": 558,
+      "y": 933
+    },
+    "world": {
+      "x": 232,
+      "z": 1332
+    },
+    "accessNode": "bkk:842",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "eastin",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Tower, pool terrace and Surasak placement work; the podium and station connection are incomplete, so proximity alone does not pass fidelity."
+  },
+  {
+    "id": "river-city",
+    "name": "River City Bangkok",
+    "category": "architecture",
+    "address": "23 Soi Charoen Krung 24",
+    "neighborhood": "Si Phraya",
+    "region": "talatnoi",
+    "bank": "east",
+    "nearby": [
+      "oriental",
+      "hilton",
+      "icon"
+    ],
+    "map": [
+      470,
+      796
+    ],
+    "asset": "real-river-city-v1",
+    "tier": "major",
+    "access": "public-roadside",
+    "footprint": [
+      74,
+      48
+    ],
+    "height": 25,
+    "yaw": -1.5707963267948966,
+    "references": [
+      "https://rivercitybangkok.com/"
+    ],
+    "features": [
+      "Low riverfront arts mall",
+      "Broad arched glass opening",
+      "Deep vertical ribs and stepped terrace"
+    ],
+    "actualLocation": {
+      "address": "23 Soi Charoen Krung 24",
+      "geographicReference": "https://rivercitybangkok.com/"
+    },
+    "intendedMap": [
+      470,
+      796
+    ],
+    "gameLocation": {
+      "x": 470,
+      "y": 796
+    },
+    "world": {
+      "x": -120,
+      "z": 784
+    },
+    "accessNode": "real-arrival:river-city:10",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "river-city",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Physical riverside mall and stop; exact river facade proportions remain insufficiently matched."
+  },
+  {
+    "id": "siam-center",
+    "name": "Siam Center / Siam Discovery",
+    "category": "architecture",
+    "address": "Rama I Road, Pathum Wan",
+    "neighborhood": "Siam",
+    "region": "siam",
+    "nearby": [
+      "paragon",
+      "mbk",
+      "siam"
+    ],
+    "map": [
+      688,
+      432
+    ],
+    "asset": "real-siam-center-v1",
+    "tier": "major",
+    "access": "public-roadside",
+    "footprint": [
+      112,
+      52
+    ],
+    "height": 29,
+    "yaw": 3.141592653589793,
+    "references": [
+      "https://www.siamdiscovery.co.th/",
+      "https://www.nendo.jp/en/works/siam-discovery/"
+    ],
+    "features": [
+      "Two distinct low retail volumes",
+      "Discovery stacked white display frames",
+      "Siam Center dark glazed frontage"
+    ],
+    "actualLocation": {
+      "address": "Rama I Road, Pathum Wan",
+      "geographicReference": "https://www.siamdiscovery.co.th/"
+    },
+    "intendedMap": [
+      688,
+      432
+    ],
+    "gameLocation": {
+      "x": 682,
+      "y": 432
+    },
+    "world": {
+      "x": 728,
+      "z": -672
+    },
+    "accessNode": "bkk:109",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "siam-center",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "C",
+    "productionStatus": "Partial",
+    "qaNotes": "Two different retail volumes and framed displays create connected Siam context; exterior detail needs further matching."
+  },
+  {
+    "id": "jim-thompson",
+    "name": "Jim Thompson House",
+    "category": "heritage",
+    "address": "6 Soi Kasemsan 2, Rama I Road",
+    "neighborhood": "Wang Mai / Siam",
+    "region": "siam",
+    "nearby": [
+      "mbk",
+      "siam-center"
+    ],
+    "map": [
+      636,
+      439
+    ],
+    "asset": "real-jim-thompson-v1",
+    "tier": "major",
+    "access": "public-roadside",
+    "footprint": [
+      48,
+      44
+    ],
+    "height": 19,
+    "yaw": 0,
+    "references": [
+      "https://jimthompsonhouse.org/"
+    ],
+    "features": [
+      "Cluster of elevated teak houses",
+      "Steep Thai gables",
+      "Garden court and raised connecting walkways"
+    ],
+    "actualLocation": {
+      "address": "6 Soi Kasemsan 2, Rama I Road",
+      "geographicReference": "https://jimthompsonhouse.org/"
+    },
+    "intendedMap": [
+      636,
+      439
+    ],
+    "gameLocation": {
+      "x": 636,
+      "y": 439
+    },
+    "world": {
+      "x": 544,
+      "z": -644
+    },
+    "accessNode": "bkk:404",
+    "implemented": true,
+    "visualQA": "See asset review table; never inferred from automated geometry checks",
+    "discoveryId": "jim-thompson",
+    "referenceOnlyPhotography": true,
+    "visualGrade": "B",
+    "productionStatus": "Completed supporting exterior",
+    "qaNotes": "Cluster of raised teak houses, steep Thai roofs, posts and connecting platforms; museum interiors/artwork omitted."
+  }
+]
