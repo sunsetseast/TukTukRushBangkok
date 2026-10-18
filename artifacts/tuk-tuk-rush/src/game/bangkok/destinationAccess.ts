@@ -1,4 +1,6 @@
-import { inAuthoredSite } from './authoredSites';
+import { COMMERCIAL_DISTRICT_BOUNDS } from "./commercialDistrictArt";
+import { inPublicGround } from "./publicSpaces";
+import { inAuthoredSite } from "./authoredSites";
 import type {
   DestinationAccess,
   District,
@@ -81,7 +83,7 @@ export function destinationReservation(a: DestinationAccess): Obstacle {
   return { ...a.origin, yaw: a.yaw, w: 60, d: 56, height: 0, color: "#eee" };
 }
 export function inDestinationGrounds(d: District, o: Obstacle) {
-  if(inAuthoredSite(d,o)) return true;
+  if (inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
   return (
     d.destinations?.some((a) => {
       if (orientedFootprintsOverlap(o, destinationReservation(a), 2))
@@ -425,8 +427,22 @@ export function detailDestinationCollisions(d: District) {
       d.obstacles.push(o);
     };
     const S = l.size!;
-    if (["icon", "paragon", "central", "terminal"].includes(l.id!))
-      add(0, 0, S, S, l.id === "icon" ? 39 : l.id === "terminal" ? 118 : l.id === "central" ? 36 : 30);
+    const retail = COMMERCIAL_DISTRICT_BOUNDS[l.id!];
+    if (retail) add(0, 0, retail.w, retail.d, retail.height);
+    else if (["icon", "paragon", "central", "terminal"].includes(l.id!))
+      add(
+        0,
+        0,
+        S,
+        S,
+        l.id === "icon"
+          ? 39
+          : l.id === "terminal"
+            ? 118
+            : l.id === "central"
+              ? 36
+              : 30,
+      );
     else if (l.id === "pho") {
       add(0, 2, 48, 23, 20);
       for (const x of [-18, -6, 6, 18]) add(x, -18, 8, 8, 18);
@@ -445,10 +461,11 @@ export function detailDestinationCollisions(d: District) {
     } else add(0, 0, S - 2, S - 2, 30);
     // Match existing wall positions, close pedestrian-only boundary explicitly.
     const edge = l.id === "paknam" ? 43 : l.id === "palace" ? 66 : S / 2 - 1;
-    for (const side of [-1, 1]) {
-      add(side * edge, 0, 1, edge * 2 + 1, 3);
-      add(0, side * edge, edge * 2 + 1, 1, 3);
-    }
+    if (!retail)
+      for (const side of [-1, 1]) {
+        add(side * edge, 0, 1, edge * 2 + 1, 3);
+        add(0, side * edge, edge * 2 + 1, 1, 3);
+      }
     const furniture = (
       p: Point,
       w: number,

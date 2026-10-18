@@ -45,6 +45,8 @@ export function completeStreetFabric(d: District) {
     const { point, outward, road } = sample,
       yaw = Math.atan2(-outward.x, -outward.z);
     let fitted = false;
+    for (const extraSetback of [0,12,25]) {
+    if(fitted)break;
     for (const along of [0, 5, -5, 10, -10, 15, -15, 20, -20]) {
       if (fitted) break;
       for (const [w, depth] of [
@@ -55,7 +57,7 @@ export function completeStreetFabric(d: District) {
         [4.5, 4.5],
         [3.5, 4.5],
       ]) {
-        const off = (w! < 6 ? 5 : 8) + depth! / 2,
+        const off = (w! < 6 ? 5 : 8) + depth! / 2 + extraSetback,
           p = {
             x: point.x + outward.x * off - outward.z * along,
             z: point.z + outward.z * off + outward.x * along,
@@ -113,6 +115,7 @@ export function completeStreetFabric(d: District) {
         break;
       }
     }
+  }
   }
   const after = auditStreetEdges(d),
     faces = streetFaces(d, after);

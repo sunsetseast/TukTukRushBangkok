@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "references": 27,
+  "roundTrips": 155,
+  "protectedRelationships": [
+    "Sanam north of Palace",
+    "Swing north of Wat Suthat",
+    "Jim Thompson north/west of MBK",
+    "Discovery < Center < Paragon < CentralWorld west/east order",
+    "Peninsula opposite Oriental",
+    "Dusit southwest / One Bangkok east of Lumphini"
+  ],
+  "knownExceptions": [
+    {
+      "id": "park",
+      "note": "Actual outline is compressed inside existing four perimeter roads; north-south aspect is stretched."
+    },
+    {
+      "id": "victory",
+      "note": "Existing Phaya Thai gameplay corridor lies west of Siam despite the real junction lying slightly east; four approach topology and north/south relationship take priority."
+    },
+    {
+      "id": "sanam",
+      "note": "Compressed field aspect and perimeter route; temporary ceremonial installations omitted."
+    },
+    {
+      "id": "wat-suthat",
+      "note": "The separation from Giant Swing is reduced to 53 game meters."
+    },
+    {
+      "id": "flowers",
+      "note": "Wholesaler district represented by selected blocks rather than every market building."
+    },
+    {
+      "id": "central",
+      "note": "West-of-Ratchadamri site compressed to retain junction driving clearance; full north hotel/office complex omitted."
+    },
+    {
+      "id": "terminal",
+      "note": "Asok tower plot sits slightly east of the compressed junction rather than its real northwest corner; connected street and elevated relationship preserved."
+    },
+    {
+      "id": "capella",
+      "note": "Shared estate realigned: Capella is north of the broader Four Seasons cascade; distances and individual plots remain compressed."
+    }
+  ],
+  "physicalGpsAccuracy": "Not certified; nominal map/site centers only"
+}

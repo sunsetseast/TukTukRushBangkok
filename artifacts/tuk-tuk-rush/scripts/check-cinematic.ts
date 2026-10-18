@@ -1,3 +1,4 @@
+import {assertProtectedGeography} from './protected-geography';
 import assert from "node:assert/strict";
 import * as T from "three";
 import fs from "node:fs";
@@ -25,7 +26,7 @@ assert(
   row.length >= 10 && row.length <= 26,
   `Bounded corridor parcel budget: ${row.length}`,
 );
-assert.equal(roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')&&!n.id.startsWith('site-road:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:')&&r.corridor!=='charoen-nakhon-south')}), "2198517381");
+assertProtectedGeography(d);
 const pieces: ArtPiece[] = [];
 row.forEach((p) => emitYaowaratFacade(p, (piece) => pieces.push(piece)));
 assert(pieces.length < 14000, "No uncontrolled citywide detail pass");

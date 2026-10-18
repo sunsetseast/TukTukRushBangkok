@@ -1,3 +1,4 @@
+import {victoryMonument} from './victoryMonument';
 import { buildRealArchitecture } from './realArchitecture';
 import { realCommercial } from './realCommercial';
 import { reviewedLandmark } from './landmarkSites';
@@ -10,7 +11,7 @@ import { LandmarkBuilder } from "./landmarkBuilder";
 
 /** Site-specific original arcade assets; proportions compress the real places. */
 export function sculptedLandmark(l: Landmark) {
-  const special=buildRealArchitecture(l)??realCommercial(l)??reviewedLandmark(l)??buddhaLandmark(l)??heritageLandmark(l)??skylineLandmark(l);if(special)return special;
+  const special=victoryMonument(l)??buildRealArchitecture(l)??realCommercial(l)??reviewedLandmark(l)??buddhaLandmark(l)??heritageLandmark(l)??skylineLandmark(l);if(special)return special;
   if (l.id!=='paragon') return;
   const b=new LandmarkBuilder(), S=l.size??65;
   if (l.id === "paragon") {

@@ -1,0 +1,2322 @@
+{
+  "label": "after",
+  "viewport": [
+    844,
+    480
+  ],
+  "renderer": "Chromium / SwiftShader software WebGL; not physical iPhone Safari",
+  "cameraPolicy": "Fixed paired camera poses. No obstruction removal, object hiding, or screenshot-only geometry. Road views use the normal chase camera.",
+  "survey": [
+    {
+      "id": "lumphini-aerial",
+      "title": "Lumphini Park lake geography",
+      "view": "elevated",
+      "file": "lumphini-aerial-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 568,
+          "heading": -1.80634130751576,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1469.6,
+            280.8,
+            816.4
+          ],
+          "look": [
+            1220,
+            4.199999999999999,
+            520
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 277,
+        "triangles": 469673,
+        "geometries": 504,
+        "textures": 16,
+        "frameMs": 514.6999999999534
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "lumphini-lakes",
+      "title": "Lumphini lakes and island",
+      "view": "elevated",
+      "file": "lumphini-lakes-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1008,
+          "z": 428,
+          "heading": 1.799292966086759,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1279.2,
+            111.6,
+            505.8
+          ],
+          "look": [
+            1180,
+            2.8,
+            388
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 227,
+        "triangles": 362491,
+        "geometries": 672,
+        "textures": 16,
+        "frameMs": 502.3999999999069
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "victory-aerial",
+      "title": "Victory Monument roundabout",
+      "view": "elevated",
+      "file": "victory-aerial-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 720,
+          "z": -1332,
+          "heading": -3.0072712116368248,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            815.2,
+            129.6,
+            -1343.2
+          ],
+          "look": [
+            700,
+            8.399999999999999,
+            -1480
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 156,
+        "triangles": 228642,
+        "geometries": 815,
+        "textures": 16,
+        "frameMs": 23.399999999906868
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "sanam",
+      "title": "Sanam Luang ceremonial field",
+      "view": "elevated",
+      "file": "sanam-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -604,
+          "z": -1260,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -629.6,
+            151.2,
+            -1100.4
+          ],
+          "look": [
+            -764,
+            1.0499999999999998,
+            -1260
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 272,
+        "triangles": 440382,
+        "geometries": 1072,
+        "textures": 16,
+        "frameMs": 516
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "swing",
+      "title": "Giant Swing civic square",
+      "view": "elevated",
+      "file": "swing-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -360,
+          "z": -800,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -296,
+            72,
+            -659
+          ],
+          "look": [
+            -360,
+            8.75,
+            -735
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 243,
+        "triangles": 409413,
+        "geometries": 1269,
+        "textures": 16,
+        "frameMs": 502.3999999999069
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "suthat",
+      "title": "Wat Suthat compound south of Giant Swing",
+      "view": "elevated",
+      "file": "suthat-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -200,
+          "z": -708,
+          "heading": -1.409704422257316,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -264,
+            108,
+            -568
+          ],
+          "look": [
+            -360,
+            8.399999999999999,
+            -682
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 187,
+        "triangles": 331855,
+        "geometries": 1415,
+        "textures": 18,
+        "frameMs": 381.79999999981374
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "flowers",
+      "title": "Pak Khlong Talat flower market",
+      "view": "elevated",
+      "file": "flowers-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -640,
+          "z": -260,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -641.6,
+            97.2,
+            -157.4
+          ],
+          "look": [
+            -728,
+            6.3,
+            -260
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 222,
+        "triangles": 444051,
+        "geometries": 1551,
+        "textures": 21,
+        "frameMs": 903.2999999998137
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "jim-thompson",
+      "title": "Jim Thompson House canal compound",
+      "view": "elevated",
+      "file": "jim-thompson-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 560,
+          "z": -592,
+          "heading": -2.647651284670212,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            561.6,
+            70,
+            -627.6
+          ],
+          "look": [
+            504,
+            6.3,
+            -696
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 228,
+        "triangles": 309578,
+        "geometries": 1768,
+        "textures": 22,
+        "frameMs": 1036.1000000000931
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "mbk",
+      "title": "MBK Center / Pathum Wan",
+      "view": "elevated",
+      "file": "mbk-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 560,
+          "z": -560,
+          "heading": 0.5404195002705842,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            728,
+            108,
+            -326
+          ],
+          "look": [
+            632,
+            12.25,
+            -440
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 255,
+        "triangles": 379595,
+        "geometries": 1920,
+        "textures": 23,
+        "frameMs": 41
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "siam-discovery",
+      "title": "Siam Discovery",
+      "view": "elevated",
+      "file": "siam-discovery-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 664,
+          "z": -580,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            728,
+            72,
+            -596
+          ],
+          "look": [
+            664,
+            9.45,
+            -672
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 272,
+        "triangles": 372152,
+        "geometries": 2064,
+        "textures": 23,
+        "frameMs": 1191.3999999999069
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "siam-center",
+      "title": "Siam Center",
+      "view": "elevated",
+      "file": "siam-center-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 780,
+          "z": -580,
+          "heading": -2.7686049317897323,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            817.6,
+            82.8,
+            -584.6
+          ],
+          "look": [
+            744,
+            9.45,
+            -672
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 283,
+        "triangles": 369105,
+        "geometries": 2121,
+        "textures": 23,
+        "frameMs": 20.700000000186265
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "paragon",
+      "title": "Siam Paragon",
+      "view": "elevated",
+      "file": "paragon-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 908,
+          "z": -580,
+          "heading": 3.066732805879026,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1022.4,
+            115.19999999999999,
+            -618.4
+          ],
+          "look": [
+            920,
+            13.299999999999999,
+            -740
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 241,
+        "triangles": 361168,
+        "geometries": 2149,
+        "textures": 23,
+        "frameMs": 39.10000000009313
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "central",
+      "title": "CentralWorld / Ratchaprasong",
+      "view": "elevated",
+      "file": "central-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1240,
+          "z": -484,
+          "heading": -2.6861415823389,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1259.2,
+            129.6,
+            -543.2
+          ],
+          "look": [
+            1144,
+            14.7,
+            -680
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 421677,
+        "geometries": 2288,
+        "textures": 23,
+        "frameMs": 963
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "siam-square",
+      "title": "Siam Square commercial streets",
+      "view": "elevated",
+      "file": "siam-square-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 840,
+          "z": -568,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            936,
+            108,
+            -338
+          ],
+          "look": [
+            840,
+            7.35,
+            -452
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 330,
+        "triangles": 448729,
+        "geometries": 2330,
+        "textures": 23,
+        "frameMs": 2056.7000000001863
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Terminal 21 / Asok",
+      "view": "elevated",
+      "file": "terminal-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1704,
+          "z": -268,
+          "heading": 1.513715544388632,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1962.4,
+            133.2,
+            -119.4
+          ],
+          "look": [
+            1844,
+            30,
+            -260
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 254,
+        "triangles": 314096,
+        "geometries": 2523,
+        "textures": 23,
+        "frameMs": 782.1999999997206
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "river-city",
+      "title": "River City Si Phraya waterfront",
+      "view": "elevated",
+      "file": "river-city-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -80,
+          "z": 800,
+          "heading": -1.6522483711007676,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -180,
+            108,
+            898
+          ],
+          "look": [
+            -276,
+            9.799999999999999,
+            784
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 100,
+        "triangles": 174262,
+        "geometries": 2628,
+        "textures": 24,
+        "frameMs": 13.600000000093132
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "river-city",
+      "title": "River City Si Phraya waterfront",
+      "view": "river",
+      "file": "river-city-river.jpg",
+      "pose": {
+        "player": {
+          "x": -80,
+          "z": 800,
+          "heading": -1.6522483711007676,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -426,
+            16,
+            746.5
+          ],
+          "look": [
+            -276,
+            9.799999999999999,
+            784
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 234,
+        "triangles": 406012,
+        "geometries": 2839,
+        "textures": 24,
+        "frameMs": 264.10000000009313
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "bang-rak",
+      "title": "Bang Rak Charoen Krung corridor",
+      "view": "elevated",
+      "file": "bang-rak-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 148,
+          "z": 912,
+          "heading": -1.0963964440029892,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            118.4,
+            133.2,
+            1128.6
+          ],
+          "look": [
+            0,
+            19.25,
+            988
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 229,
+        "triangles": 446940,
+        "geometries": 2989,
+        "textures": 25,
+        "frameMs": 881.3000000002794
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "repaired-corridor",
+      "title": "Ratchadamri formerly exposed corridor",
+      "view": "elevated",
+      "file": "repaired-corridor-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1140,
+          "z": -120,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1270.4,
+            115.19999999999999,
+            1.5999999999999943
+          ],
+          "look": [
+            1168,
+            14,
+            -120
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 275,
+        "triangles": 371692,
+        "geometries": 3066,
+        "textures": 25,
+        "frameMs": 598.2999999998137
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "icon-surroundings",
+      "title": "ICONSIAM / Khlong San surroundings",
+      "view": "elevated",
+      "file": "icon-surroundings-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -900,
+          "z": 880,
+          "heading": 1.3045442776439713,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -539.2,
+            158.4,
+            1107.2
+          ],
+          "look": [
+            -680,
+            21.7,
+            940
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 231394,
+        "geometries": 3209,
+        "textures": 25,
+        "frameMs": 233.10000000009313
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "one-bangkok",
+      "title": "One Bangkok / Lumphini east edge",
+      "view": "elevated",
+      "file": "one-bangkok-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 720,
+          "heading": 1.6107750139181867,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1660.8,
+            158.4,
+            883.2
+          ],
+          "look": [
+            1520,
+            30,
+            716
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 275,
+        "triangles": 430139,
+        "geometries": 3336,
+        "textures": 25,
+        "frameMs": 507.7000000001862
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "wat-pho",
+      "title": "Wat Pho historic perimeter",
+      "view": "elevated",
+      "file": "wat-pho-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -600,
+          "z": -640,
+          "heading": -1.6475682180646747,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -712,
+            108,
+            -542
+          ],
+          "look": [
+            -808,
+            9.799999999999999,
+            -656
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 162,
+        "triangles": 325588,
+        "geometries": 3405,
+        "textures": 25,
+        "frameMs": 297.10000000009313
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "khaosan",
+      "title": "Khao San urban frontage",
+      "view": "elevated",
+      "file": "khaosan-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -800,
+          "z": -1580,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -616.8,
+            93.6,
+            -1481.2
+          ],
+          "look": [
+            -700,
+            6.6499999999999995,
+            -1580
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 189,
+        "triangles": 339094,
+        "geometries": 3456,
+        "textures": 25,
+        "frameMs": 980.5
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "benjakitti",
+      "title": "Benjakitti accessible public space",
+      "view": "elevated",
+      "file": "benjakitti-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1700,
+          "z": 444,
+          "heading": -1.6183794300718801,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1728,
+            126,
+            573
+          ],
+          "look": [
+            1616,
+            3.15,
+            440
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 215,
+        "triangles": 343483,
+        "geometries": 3537,
+        "textures": 25,
+        "frameMs": 2761.399999999907
+      },
+      "viewport": [
+        1000,
+        650
+      ]
+    },
+    {
+      "id": "lumphini-entrance",
+      "title": "Lumphini Wireless Road entrance",
+      "view": "elevated",
+      "file": "lumphini-entrance-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 376,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1436,
+            58,
+            320
+          ],
+          "look": [
+            1392,
+            2,
+            376
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 240,
+        "triangles": 445460,
+        "geometries": 589,
+        "textures": 16,
+        "frameMs": 1930.5
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "lumphini-entrance",
+      "title": "Lumphini Wireless Road entrance",
+      "view": "road",
+      "file": "lumphini-entrance-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 376,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 245,
+        "triangles": 417427,
+        "geometries": 492,
+        "textures": 16,
+        "frameMs": 1595.7999999998137
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "lumphini-entrance",
+      "title": "Lumphini Wireless Road entrance",
+      "view": "night",
+      "file": "lumphini-entrance-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 376,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1420,
+            6,
+            376
+          ],
+          "look": [
+            1392,
+            3.6,
+            376
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 218,
+        "triangles": 389665,
+        "geometries": 496,
+        "textures": 16,
+        "frameMs": 422.10000000009313
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "lumphini-lakes",
+      "title": "Lumphini lakes and island",
+      "view": "ground",
+      "file": "lumphini-lakes-ground.jpg",
+      "pose": {
+        "player": {
+          "x": 1008,
+          "z": 428,
+          "heading": 1.799292966086759,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1192,
+            4.8,
+            392
+          ],
+          "look": [
+            1136,
+            2.5,
+            352
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 396139,
+        "geometries": 603,
+        "textures": 16,
+        "frameMs": 361.29999999981374
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "victory-road",
+      "title": "Victory Monument Phaya Thai approach",
+      "view": "road",
+      "file": "victory-road-road.jpg",
+      "pose": {
+        "player": {
+          "x": 704.4893352894708,
+          "z": -1331.6004965579507,
+          "heading": -3.1113501902164864,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 192,
+        "triangles": 255816,
+        "geometries": 750,
+        "textures": 16,
+        "frameMs": 213.5
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "victory-road",
+      "title": "Victory Monument Phaya Thai approach",
+      "view": "night",
+      "file": "victory-road-night.jpg",
+      "pose": {
+        "player": {
+          "x": 704.4893352894708,
+          "z": -1331.6004965579507,
+          "heading": -3.1113501902164864,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            704.4893352894708,
+            6,
+            -1331.6004965579507
+          ],
+          "look": [
+            700,
+            9.600000000000001,
+            -1480
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 158,
+        "triangles": 225946,
+        "geometries": 750,
+        "textures": 16,
+        "frameMs": 232.89999999990687
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "sanam",
+      "title": "Sanam Luang ceremonial field",
+      "view": "road",
+      "file": "sanam-road.jpg",
+      "pose": {
+        "player": {
+          "x": -602.0270174191255,
+          "z": -1260.0263064344117,
+          "heading": -1.5706339143125108,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 224,
+        "triangles": 401677,
+        "geometries": 925,
+        "textures": 16,
+        "frameMs": 392.89999999990687
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "swing",
+      "title": "Giant Swing civic square",
+      "view": "road",
+      "file": "swing-road.jpg",
+      "pose": {
+        "player": {
+          "x": -357.6,
+          "z": -796.8,
+          "heading": -0.03881544608146335,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 298,
+        "triangles": 513614,
+        "geometries": 1082,
+        "textures": 18,
+        "frameMs": 693
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "swing",
+      "title": "Giant Swing civic square",
+      "view": "night",
+      "file": "swing-night.jpg",
+      "pose": {
+        "player": {
+          "x": -357.6,
+          "z": -796.8,
+          "heading": -0.03881544608146335,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -357.6,
+            6,
+            -796.8
+          ],
+          "look": [
+            -360,
+            10,
+            -735
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 263,
+        "triangles": 483402,
+        "geometries": 1082,
+        "textures": 18,
+        "frameMs": 917.3999999999069
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "suthat",
+      "title": "Wat Suthat compound south of Giant Swing",
+      "view": "ground",
+      "file": "suthat-ground.jpg",
+      "pose": {
+        "player": {
+          "x": -200,
+          "z": -708,
+          "heading": -1.409704422257316,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -360,
+            4,
+            -720
+          ],
+          "look": [
+            -360,
+            7,
+            -682
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 264,
+        "triangles": 484420,
+        "geometries": 1098,
+        "textures": 18,
+        "frameMs": 1161.7000000001863
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "flowers",
+      "title": "Pak Khlong Talat flower market",
+      "view": "road",
+      "file": "flowers-road.jpg",
+      "pose": {
+        "player": {
+          "x": -640,
+          "z": -260,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 187,
+        "triangles": 291378,
+        "geometries": 1191,
+        "textures": 20,
+        "frameMs": 279.8000000002794
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "flowers",
+      "title": "Pak Khlong Talat flower market",
+      "view": "night",
+      "file": "flowers-night.jpg",
+      "pose": {
+        "player": {
+          "x": -640,
+          "z": -260,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -640,
+            6,
+            -260
+          ],
+          "look": [
+            -728,
+            7.2,
+            -260
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 148,
+        "triangles": 260844,
+        "geometries": 1191,
+        "textures": 20,
+        "frameMs": 901.1000000000931
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "jim-thompson",
+      "title": "Jim Thompson House canal compound",
+      "view": "road",
+      "file": "jim-thompson-road.jpg",
+      "pose": {
+        "player": {
+          "x": 554.968474148802,
+          "z": -582.7313997477931,
+          "heading": -2.718756318404364,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 313,
+        "triangles": 400346,
+        "geometries": 1441,
+        "textures": 21,
+        "frameMs": 670.1000000000931
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "mbk",
+      "title": "MBK Center / Pathum Wan",
+      "view": "road",
+      "file": "mbk-road.jpg",
+      "pose": {
+        "player": {
+          "x": 559.2866242038217,
+          "z": -560.0254777070064,
+          "heading": 0.5446851281021828,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 293,
+        "triangles": 465680,
+        "geometries": 1608,
+        "textures": 21,
+        "frameMs": 1031
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "mbk",
+      "title": "MBK Center / Pathum Wan",
+      "view": "night",
+      "file": "mbk-night.jpg",
+      "pose": {
+        "player": {
+          "x": 559.2866242038217,
+          "z": -560.0254777070064,
+          "heading": 0.5446851281021828,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            559.2866242038217,
+            6,
+            -560.0254777070064
+          ],
+          "look": [
+            632,
+            14,
+            -440
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 257,
+        "triangles": 434922,
+        "geometries": 1608,
+        "textures": 21,
+        "frameMs": 928.2000000001863
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "siam-discovery",
+      "title": "Siam Discovery",
+      "view": "road",
+      "file": "siam-discovery-road.jpg",
+      "pose": {
+        "player": {
+          "x": 664,
+          "z": -580,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 295,
+        "triangles": 409230,
+        "geometries": 1692,
+        "textures": 21,
+        "frameMs": 765.3999999999069
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "siam-center",
+      "title": "Siam Center",
+      "view": "road",
+      "file": "siam-center-road.jpg",
+      "pose": {
+        "player": {
+          "x": 780,
+          "z": -580,
+          "heading": -2.7686049317897323,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 292,
+        "triangles": 395371,
+        "geometries": 1710,
+        "textures": 21,
+        "frameMs": 816.6000000000931
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "paragon",
+      "title": "Siam Paragon",
+      "view": "road",
+      "file": "paragon-road.jpg",
+      "pose": {
+        "player": {
+          "x": 908,
+          "z": -580,
+          "heading": 3.066732805879026,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 296,
+        "triangles": 426948,
+        "geometries": 1790,
+        "textures": 21,
+        "frameMs": 1534.1000000000931
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "paragon",
+      "title": "Siam Paragon",
+      "view": "night",
+      "file": "paragon-night.jpg",
+      "pose": {
+        "player": {
+          "x": 908,
+          "z": -580,
+          "heading": 3.066732805879026,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            908,
+            6,
+            -580
+          ],
+          "look": [
+            920,
+            15.200000000000001,
+            -740
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 274,
+        "triangles": 398359,
+        "geometries": 1790,
+        "textures": 21,
+        "frameMs": 673.5
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "central",
+      "title": "CentralWorld / Ratchaprasong",
+      "view": "road",
+      "file": "central-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1213.0162162162162,
+          "z": -492.3027027027027,
+          "heading": -2.7892376677159976,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 319,
+        "triangles": 441079,
+        "geometries": 1878,
+        "textures": 21,
+        "frameMs": 14.700000000186265
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "central",
+      "title": "CentralWorld / Ratchaprasong",
+      "view": "night",
+      "file": "central-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1213.0162162162162,
+          "z": -492.3027027027027,
+          "heading": -2.7892376677159976,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1213.0162162162162,
+            6,
+            -492.3027027027027
+          ],
+          "look": [
+            1144,
+            16.8,
+            -680
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 288,
+        "triangles": 413809,
+        "geometries": 1878,
+        "textures": 21,
+        "frameMs": 695.9000000003725
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "siam-square",
+      "title": "Siam Square commercial streets",
+      "view": "road",
+      "file": "siam-square-road.jpg",
+      "pose": {
+        "player": {
+          "x": 840,
+          "z": -568,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 280,
+        "triangles": 453809,
+        "geometries": 1899,
+        "textures": 21,
+        "frameMs": 926.7000000001863
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Terminal 21 / Asok",
+      "view": "road",
+      "file": "terminal-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1702.5882352941176,
+          "z": -266.3529411764706,
+          "heading": 1.5259013890858006,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 117,
+        "triangles": 212960,
+        "geometries": 1975,
+        "textures": 21,
+        "frameMs": 438.70000000018626
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Terminal 21 / Asok",
+      "view": "night",
+      "file": "terminal-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1702.5882352941176,
+          "z": -266.3529411764706,
+          "heading": 1.5259013890858006,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1702.5882352941176,
+            6,
+            -266.3529411764706
+          ],
+          "look": [
+            1844,
+            24,
+            -260
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 82,
+        "triangles": 177978,
+        "geometries": 1976,
+        "textures": 21,
+        "frameMs": 1199.3000000002794
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "river-city",
+      "title": "River City Si Phraya waterfront",
+      "view": "road",
+      "file": "river-city-road.jpg",
+      "pose": {
+        "player": {
+          "x": -79.59582737606998,
+          "z": 791.3823087073217,
+          "heading": -1.6083659718751595,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 186,
+        "triangles": 216422,
+        "geometries": 2105,
+        "textures": 22,
+        "frameMs": 1044.7999999998137
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "seven-chinatown",
+      "title": "7-Eleven Chinatown storefront",
+      "view": "road",
+      "file": "seven-chinatown-road.jpg",
+      "pose": {
+        "player": {
+          "x": -333.8577156636479,
+          "z": -352.30335662613203,
+          "heading": 0.3587706702705584,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 381,
+        "triangles": 688212,
+        "geometries": 2235,
+        "textures": 22,
+        "frameMs": 23.799999999813735
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "seven-chinatown",
+      "title": "7-Eleven Chinatown storefront",
+      "view": "night",
+      "file": "seven-chinatown-night.jpg",
+      "pose": {
+        "player": {
+          "x": -333.8577156636479,
+          "z": -352.30335662613203,
+          "heading": 0.3587706702705584,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -335.61333287159,
+            5,
+            -356.98500251397707
+          ],
+          "look": [
+            -329.29311092299895,
+            2.8,
+            -340.13107731773425
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 365,
+        "triangles": 679308,
+        "geometries": 2235,
+        "textures": 22,
+        "frameMs": 2061.100000000093
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "seven-modern",
+      "title": "7-Eleven modern commercial storefront",
+      "view": "road",
+      "file": "seven-modern-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1257.266254868395,
+          "z": -689.352947499835,
+          "heading": -1.72739820377691,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 324,
+        "triangles": 416171,
+        "geometries": 2259,
+        "textures": 23,
+        "frameMs": 22.699999999720603
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "seven-modern",
+      "title": "7-Eleven modern commercial storefront",
+      "view": "night",
+      "file": "seven-modern-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1257.266254868395,
+          "z": -689.352947499835,
+          "heading": -1.72739820377691,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1258.2540178337242,
+            5,
+            -689.1969849263619
+          ],
+          "look": [
+            1240.4742844578009,
+            2.8,
+            -692.0043112488761
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 298,
+        "triangles": 389113,
+        "geometries": 2259,
+        "textures": 23,
+        "frameMs": 1604.3999999999069
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "bang-rak",
+      "title": "Bang Rak Charoen Krung corridor",
+      "view": "road",
+      "file": "bang-rak-road.jpg",
+      "pose": {
+        "player": {
+          "x": 140.97387173396675,
+          "z": 911.7577197149644,
+          "heading": -1.0750240684456136,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 255,
+        "triangles": 461215,
+        "geometries": 2417,
+        "textures": 23,
+        "frameMs": 964.2000000001863
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "repaired-corridor",
+      "title": "Ratchadamri formerly exposed corridor",
+      "view": "road",
+      "file": "repaired-corridor-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1102.054054054054,
+          "z": -131.67567567567568,
+          "heading": 1.3955630655676168,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 232,
+        "triangles": 359847,
+        "geometries": 2535,
+        "textures": 23,
+        "frameMs": 1537.2999999998137
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "icon-surroundings",
+      "title": "ICONSIAM / Khlong San surroundings",
+      "view": "road",
+      "file": "icon-surroundings-road.jpg",
+      "pose": {
+        "player": {
+          "x": -900,
+          "z": 880,
+          "heading": 1.3045442776439713,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 219,
+        "triangles": 299258,
+        "geometries": 2620,
+        "textures": 23,
+        "frameMs": 465.89999999990687
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "icon-surroundings",
+      "title": "ICONSIAM / Khlong San surroundings",
+      "view": "night",
+      "file": "icon-surroundings-night.jpg",
+      "pose": {
+        "player": {
+          "x": -900,
+          "z": 880,
+          "heading": 1.3045442776439713,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -900,
+            6,
+            880
+          ],
+          "look": [
+            -680,
+            24,
+            940
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 180,
+        "triangles": 251578,
+        "geometries": 2620,
+        "textures": 23,
+        "frameMs": 898.9000000003725
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "one-bangkok",
+      "title": "One Bangkok / Lumphini east edge",
+      "view": "road",
+      "file": "one-bangkok-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 720,
+          "heading": 1.6107750139181867,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 206,
+        "triangles": 392471,
+        "geometries": 2783,
+        "textures": 23,
+        "frameMs": 1538.6000000000931
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "wat-pho",
+      "title": "Wat Pho historic perimeter",
+      "view": "road",
+      "file": "wat-pho-road.jpg",
+      "pose": {
+        "player": {
+          "x": -600,
+          "z": -640,
+          "heading": -1.6475682180646747,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 188,
+        "triangles": 331380,
+        "geometries": 2822,
+        "textures": 24,
+        "frameMs": 1012.2000000001863
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "khaosan",
+      "title": "Khao San urban frontage",
+      "view": "road",
+      "file": "khaosan-road.jpg",
+      "pose": {
+        "player": {
+          "x": -800,
+          "z": -1580,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 247,
+        "triangles": 454546,
+        "geometries": 2995,
+        "textures": 24,
+        "frameMs": 787.8000000002794
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    },
+    {
+      "id": "benjakitti",
+      "title": "Benjakitti accessible public space",
+      "view": "road",
+      "file": "benjakitti-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1703.8918918918919,
+          "z": 443.35135135135135,
+          "heading": -1.6089082446187744,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 239,
+        "triangles": 362515,
+        "geometries": 3050,
+        "textures": 24,
+        "frameMs": 629.2999999998137
+      },
+      "viewport": [
+        844,
+        480
+      ]
+    }
+  ],
+  "errors": [],
+  "viewportPolicy": "Per-frame dimensions are recorded in each survey item: desktop overviews and mobile landscape approaches."
+}

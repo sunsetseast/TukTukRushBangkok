@@ -30,7 +30,14 @@
     "test:city-fabric": "node --import tsx scripts/check-city-fabric.ts",
     "test:real-architecture": "node --import tsx scripts/check-real-architecture.ts",
     "test:authored-sites": "node --import tsx scripts/check-authored-sites.ts",
-    "test:authored-drives": "node --import tsx scripts/check-authored-drives.ts"
+    "test:authored-drives": "node --import tsx scripts/check-authored-drives.ts",
+    "test:civic-roads": "node --import tsx scripts/check-civic-roads.ts",
+    "test:commercial-districts": "node --import tsx scripts/check-commercial-districts.ts",
+    "test:convenience-urban": "node --import tsx scripts/check-convenience-urban.ts",
+    "test:geographic-reference": "node --import tsx scripts/check-geographic-reference.ts",
+    "test:historic-districts": "node --import tsx scripts/check-historic-districts.ts",
+    "test:public-spaces": "node --import tsx scripts/check-public-spaces.ts",
+    "test:city-drives": "node --import tsx scripts/check-city-reconstruction-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

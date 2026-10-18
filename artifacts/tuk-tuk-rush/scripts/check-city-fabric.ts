@@ -1,3 +1,4 @@
+import {assertProtectedGeography} from './protected-geography';
 import { ChaseCamera } from "../src/game/chaseCamera";
 import { createVehicle } from "../src/game/vehicle";
 import assert from "node:assert/strict";
@@ -21,11 +22,7 @@ import type { ArtPiece } from "../src/game/bangkok/architecturalBatch";
 const d = createBangkokWorld(),
   plan = completeStreetFabric(d),
   nodes = new Map(d.nodes.map((n) => [n.id, n]));
-assert.equal(
-  roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')&&!n.id.startsWith('site-road:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:')&&r.corridor!=='charoen-nakhon-south')}),
-  "2198517381",
-  "Preserve every prior road; new hotel driveway/bake checks are separate",
-);
+assertProtectedGeography(d);
 assert.equal(
   new Set(plan.after.map((s) => s.roadIndex)).size,
   d.roads.length,

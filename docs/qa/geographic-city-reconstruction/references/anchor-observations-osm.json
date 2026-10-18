@@ -1,0 +1,4489 @@
+{
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "retrieved": "2026-10-18",
+  "method": "bounding-box centers of mapped ways or published node positions, approximate visual reference, not entrance GPS",
+  "areas": {
+    "siam": [
+      {
+        "osmType": "node",
+        "osmId": "270666791",
+        "name": "Victory Monument",
+        "lat": 13.762753,
+        "lon": 100.537067,
+        "tags": {
+          "name": "\u0e2d\u0e19\u0e38\u0e2a\u0e32\u0e27\u0e23\u0e35\u0e22\u0e4c\u0e0a\u0e31\u0e22\u0e2a\u0e21\u0e23\u0e20\u0e39\u0e21\u0e34",
+          "name:en": "Victory Monument",
+          "name:th": "\u0e2d\u0e19\u0e38\u0e2a\u0e32\u0e27\u0e23\u0e35\u0e22\u0e4c\u0e0a\u0e31\u0e22\u0e2a\u0e21\u0e23\u0e20\u0e39\u0e21\u0e34",
+          "operator": "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e19\u0e2a\u0e48\u0e07\u0e21\u0e27\u0e25\u0e0a\u0e19\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "operator:en": "Bangkok Mass Transit System;BTSC",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "ref": "N3",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "270666802",
+        "name": "Sanam Pao",
+        "lat": 13.772615,
+        "lon": 100.542093,
+        "tags": {
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e40\u0e1b\u0e49\u0e32",
+          "name:en": "Sanam Pao",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e40\u0e1b\u0e49\u0e32",
+          "operator": "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e19\u0e2a\u0e48\u0e07\u0e21\u0e27\u0e25\u0e0a\u0e19\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "ref": "N4",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "373075446",
+        "name": "MBK Center",
+        "lat": 13.744355,
+        "lon": 100.530363,
+        "tags": {
+          "alt_name:th": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c;\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04;\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "bench": "yes",
+          "bin": "no",
+          "bus": "yes",
+          "colour": "blue",
+          "covered": "yes",
+          "departures_board": "realtime",
+          "highway": "bus_stop",
+          "lit": "yes",
+          "name": "\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07",
+          "name:en": "MBK Center",
+          "name:th": "\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07",
+          "public_transport": "platform",
+          "ref": "22",
+          "route_ref": "29;34;36;47;50;93;108;113;172;177;187;529",
+          "shelter": "yes",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "373097475",
+        "name": "Siam Square",
+        "lat": 13.745657,
+        "lon": 100.533409,
+        "tags": {
+          "bench": "no",
+          "bin": "no",
+          "bus": "yes",
+          "colour": "blue",
+          "departures_board": "no",
+          "highway": "bus_stop",
+          "lit": "no",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "name:en": "Siam Square",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "public_transport": "platform",
+          "ref": "24",
+          "route_ref": "15;16;21;25;40;48;54;73;141;204;501;508",
+          "shelter": "yes",
+          "wheelchair": "limited"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1692209237",
+        "name": "Siam",
+        "lat": 13.745624,
+        "lon": 100.53422,
+        "tags": {
+          "addr:country": "\u0e44\u0e17\u0e22",
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:district:en": "Pathumwan",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:province:en": "Bangkok",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e23\u0e30\u0e23\u0e32\u0e21\u0e17\u0e35\u0e48 1",
+          "addr:street:en": "Rama I Road",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "country": "Thailand",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:ja": "\u30b5\u30a4\u30a2\u30e0",
+          "name:ko": "\uc2f8\uc58c\uc5ed",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "network": "BTS",
+          "operator": "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e19\u0e2a\u0e48\u0e07\u0e21\u0e27\u0e25\u0e0a\u0e19\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "operator:en": "Bangkok Mass Transit System;BTSC",
+          "province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "public_transport": "station",
+          "railway": "station",
+          "ref": "CEN",
+          "station": "subway",
+          "subway": "yes",
+          "toilets:wheelchair": "no",
+          "website": "https://www.bts.co.th/library/system-structuer.html",
+          "wheelchair": "yes",
+          "wikidata": "Q1016037",
+          "wikipedia": "th:\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e2a\u0e22\u0e32\u0e21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1697004538",
+        "name": "Siam",
+        "lat": 13.745697,
+        "lon": 100.534234,
+        "tags": {
+          "local_ref": "1",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1697004542",
+        "name": "Siam",
+        "lat": 13.745546,
+        "lon": 100.534205,
+        "tags": {
+          "local_ref": "4",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1697004544",
+        "name": "Siam",
+        "lat": 13.745558,
+        "lon": 100.534208,
+        "tags": {
+          "local_ref": "3",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1697004551",
+        "name": "Siam",
+        "lat": 13.745684,
+        "lon": 100.534231,
+        "tags": {
+          "local_ref": "2",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700165025",
+        "name": "Siam Commercial Bank",
+        "lat": 13.745824,
+        "lon": 100.535147,
+        "tags": {
+          "amenity": "bank",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "0",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700165189",
+        "name": "The Oriental Shop",
+        "lat": 13.746839,
+        "lon": 100.534536,
+        "tags": {
+          "name": "The Oriental Shop",
+          "shop": "bakery"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700165221",
+        "name": "La'Espace d l'Oriental",
+        "lat": 13.746053,
+        "lon": 100.534913,
+        "tags": {
+          "amenity": "restaurant",
+          "level": "1",
+          "name": "La'Espace d l'Oriental"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700165425",
+        "name": "Four Seasons",
+        "lat": 13.746761,
+        "lon": 100.534522,
+        "tags": {
+          "amenity": "restaurant",
+          "level": "0",
+          "name": "Four Seasons"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700280564",
+        "name": "Siam Commercial Bank",
+        "lat": 13.744841,
+        "lon": 100.531661,
+        "tags": {
+          "amenity": "bank",
+          "branch": "\u0e2a\u0e32\u0e02\u0e32\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1700318700",
+        "name": "Siam Center",
+        "lat": 13.745899,
+        "lon": 100.533044,
+        "tags": {
+          "bench": "yes",
+          "bin": "no",
+          "bus": "yes",
+          "colour": "blue",
+          "highway": "bus_stop",
+          "lit": "no",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "name:en": "Siam Center",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "public_transport": "platform",
+          "ref": "23",
+          "route_ref": "15;40;48;54;73;73\u0e01;79;93;204;501;2-2;2-34R;2-46;",
+          "shelter": "no",
+          "wheelchair": "limited"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1714885573",
+        "name": "Jim Thompson",
+        "lat": 13.747888,
+        "lon": 100.534763,
+        "tags": {
+          "level": "1",
+          "name": "Jim Thompson",
+          "shop": "clothes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1714885600",
+        "name": "Siam Tiara",
+        "lat": 13.747677,
+        "lon": 100.534646,
+        "tags": {
+          "level": "2",
+          "name": "Siam Tiara",
+          "shop": "jewelry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2078129001",
+        "name": "Doo Dee Siam",
+        "lat": 13.745228,
+        "lon": 100.532169,
+        "tags": {
+          "amenity": "restaurant",
+          "cuisine": "thai",
+          "name": "Doo Dee Siam"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2203963656",
+        "name": "Siam",
+        "lat": 13.745782,
+        "lon": 100.533085,
+        "tags": {
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "place": "neighbourhood"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2382014661",
+        "name": "MBK Bicycle Parking",
+        "lat": 13.744179,
+        "lon": 100.529559,
+        "tags": {
+          "amenity": "bicycle_parking",
+          "bicycle_parking": "informal",
+          "capacity": "20",
+          "covered": "yes",
+          "fee": "no",
+          "name": "MBK Bicycle Parking",
+          "note": "Right next to parking attendant"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2900166433",
+        "name": "Bar @ Siam Square",
+        "lat": 13.744805,
+        "lon": 100.534874,
+        "tags": {
+          "amenity": "bar",
+          "name": "Bar @ Siam Square"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2935098201",
+        "name": "Siam Paragon Bicycle Parking",
+        "lat": 13.746432,
+        "lon": 100.53566,
+        "tags": {
+          "amenity": "bicycle_parking",
+          "bicycle_parking": "stands",
+          "capacity": "20",
+          "covered": "yes",
+          "name": "Siam Paragon Bicycle Parking",
+          "supervised": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3303524747",
+        "name": "Mens Ex Tailor, MBK Center",
+        "lat": 13.745601,
+        "lon": 100.530192,
+        "tags": {
+          "name": "Mens Ex Tailor, MBK Center",
+          "opening_hours": "Mo-Su,PH 10:00-22:00",
+          "shop": "tailor"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3836987257",
+        "name": "Siam Commercial Bank",
+        "lat": 13.743961,
+        "lon": 100.54202,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "1",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "opening_hours": "Mo-Fr 08:30-16:30; PH off"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3839364817",
+        "name": "Siam Commercial Bank",
+        "lat": 13.744264,
+        "lon": 100.529565,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "4",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3839364818",
+        "name": "Siam Commercial Bank",
+        "lat": 13.745818,
+        "lon": 100.530006,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "2",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3839364819",
+        "name": "Siam Commercial Bank",
+        "lat": 13.746877,
+        "lon": 100.538638,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "4",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4061147433",
+        "name": "Meko Clinic, CentralWorld Branch",
+        "lat": 13.74756,
+        "lon": 100.539743,
+        "tags": {
+          "addr:city": "\u0e01\u0e17\u0e21.",
+          "addr:housenumber": "999/9",
+          "addr:postcode": "10330",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e23\u0e32\u0e0a\u0e14\u0e33\u0e23\u0e34",
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "level": "5",
+          "name": "\u0e40\u0e21\u0e42\u0e01\u0e30 \u0e04\u0e25\u0e34\u0e19\u0e34\u0e01 \u0e2a\u0e32\u0e02\u0e32\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "name:en": "Meko Clinic, CentralWorld Branch",
+          "name:th": "\u0e40\u0e21\u0e42\u0e01\u0e30 \u0e04\u0e25\u0e34\u0e19\u0e34\u0e01 \u0e2a\u0e32\u0e02\u0e32\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "note": "\u0e0a\u0e31\u0e49\u0e19 5 \u0e15\u0e34\u0e14 Isetan",
+          "phone": "+66 2 658 6511",
+          "website": "https://mekoclinic.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4126727089",
+        "name": "Buriram United Shop Siam Soi9",
+        "lat": 13.744117,
+        "lon": 100.533065,
+        "tags": {
+          "addr:street": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 9",
+          "name": "Buriram United Shop Siam Soi9",
+          "shop": "sports"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4308530941",
+        "name": "Jim Thompson Restaurant",
+        "lat": 13.749273,
+        "lon": 100.52844,
+        "tags": {
+          "amenity": "restaurant",
+          "check_date": "2024-12-07",
+          "cuisine": "thai;noodles;pasta;chicken;ice_cream;sandwich;seafood",
+          "name": "Jim Thompson Restaurant"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4410702935",
+        "name": "Groove @ CentralWorld",
+        "lat": 13.745438,
+        "lon": 100.538248,
+        "tags": {
+          "name": "Groove @ CentralWorld",
+          "name:th": "Groove @ CentralWorld\uff08Harnn)",
+          "opening_hours": "Mo-Su 11:00-01:00",
+          "shop": "mall"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4585371674",
+        "name": "Siam Exchange",
+        "lat": 13.747065,
+        "lon": 100.530621,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "amenity": "bureau_de_change",
+          "contact:phone": "+66 2 612 5115",
+          "currency:CNY": "yes",
+          "currency:EUR": "yes",
+          "currency:JPY": "yes",
+          "currency:PHP": "yes",
+          "currency:SGD": "yes",
+          "currency:THB": "yes",
+          "currency:USD": "yes",
+          "email": "siamexchange@hotmail.com",
+          "name": "Siam Exchange",
+          "opening_hours": "Mo-Fr 09:30-18:30; Sa 09:30-15:30",
+          "phone": "+66 (2) 216 4782",
+          "source": "survey",
+          "website": "http://www.siamexchange.co.th"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4586283530",
+        "name": "Hotel Ibis Bangkok Siam",
+        "lat": 13.746967,
+        "lon": 100.528996,
+        "tags": {
+          "brand": "Ibis",
+          "brand:wikidata": "Q920166",
+          "breakfast": "buffet",
+          "check_date": "2024-03-08",
+          "contact:fax": "+66 2 659 2889",
+          "contact:phone": "+66 2 659 2888",
+          "dog": "yes",
+          "internet_access": "wlan",
+          "name": "Hotel Ibis Bangkok Siam",
+          "payment:cash": "yes",
+          "payment:credit_cards": "yes",
+          "payment:debit_cards": "yes",
+          "rooms": "189",
+          "source": "http://www.ibis.com/de/hotel-8016-ibis-bangkok-siam/index.shtml",
+          "stars": "3",
+          "tourism": "hotel",
+          "website": "http://www.ibis.com/fr/hotel-8016-ibis-bangkok-siam/index.shtml",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "5302898123",
+        "name": "Siam Center",
+        "lat": 13.746253,
+        "lon": 100.53293,
+        "tags": {
+          "name": "Siam Center",
+          "shop": "gift"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "5486035928",
+        "name": "Hotel Mercure Bangkok Siam",
+        "lat": 13.746985,
+        "lon": 100.52888,
+        "tags": {
+          "addr:housenumber": "927",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e23\u0e30\u0e23\u0e32\u0e21\u0e17\u0e35\u0e48 1",
+          "amenity": "restaurant",
+          "breakfast": "buffet",
+          "check_date": "2024-03-08",
+          "contact:fax": "+66 2 659 2889",
+          "contact:phone": "+66 2 659 2888",
+          "dog": "yes",
+          "internet_access": "wlan",
+          "internet_access:fee": "no",
+          "name": "Hotel Mercure Bangkok Siam",
+          "payment:cash": "yes",
+          "payment:credit_cards": "yes",
+          "payment:debit_cards": "yes",
+          "rooms": "189",
+          "stars": "4",
+          "tourism": "hotel",
+          "website": "https://www.accorhotels.com/en/hotel-8015-mercure-bangkok-siam/index.shtml",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "5537508322",
+        "name": "Siam Elevator 1",
+        "lat": 13.745513,
+        "lon": 100.534915,
+        "tags": {
+          "name": "Siam Elevator 1",
+          "railway": "subway_entrance",
+          "toilets:wheelchair": "no",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "5537527323",
+        "name": "Siam Elevator 2",
+        "lat": 13.745441,
+        "lon": 100.53498,
+        "tags": {
+          "name": "Siam Elevator 2",
+          "railway": "subway_entrance",
+          "toilets:wheelchair": "no",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6187371601",
+        "name": "Siam Commercial Bank",
+        "lat": 13.746879,
+        "lon": 100.528895,
+        "tags": {
+          "amenity": "atm",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "indoor": "yes",
+          "level": "0",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "operator": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "operator:wikidata": "Q2038986"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6320802000",
+        "name": "Jim Thompson Museum",
+        "lat": 13.749245,
+        "lon": 100.528509,
+        "tags": {
+          "charge": "200 THB",
+          "name": "Jim Thompson Museum",
+          "payment:cash": "yes",
+          "shop": "ticket"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6327475086",
+        "name": "Bchu Runway Siam Square Soi 3",
+        "lat": 13.745432,
+        "lon": 100.532827,
+        "tags": {
+          "addr:housenumber": "258/8-10 Soi Siam Square 3",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Rama 1 Road",
+          "email": "bchu@bchurunway.com",
+          "name": "Bchu Runway Siam Square Soi 3",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "operator": "Bchu Ruwnay",
+          "payment:cards": "yes",
+          "payment:visa": "yes",
+          "phone": "+66641926366",
+          "shop": "Clothing_Rental_Store",
+          "website": "https://bchurunway.com"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6385512990",
+        "name": "CentralWorld",
+        "lat": 13.747311,
+        "lon": 100.540492,
+        "tags": {
+          "alt_name:en": "Central World Plaza;World Trade Center",
+          "alt_name:th": "\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c\u0e1e\u0e25\u0e32\u0e0b\u0e48\u0e32;\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e4c\u0e14\u0e1e\u0e25\u0e32\u0e0b\u0e32;\u0e40\u0e27\u0e34\u0e25\u0e4c\u0e14\u0e40\u0e17\u0e23\u0e14\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c;\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c\u0e40\u0e17\u0e23\u0e14",
+          "bench": "yes",
+          "bus": "yes",
+          "colour": "blue",
+          "departures_board": "realtime",
+          "highway": "bus_stop",
+          "lit": "yes",
+          "local_ref": "2",
+          "name": "\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "name:en": "CentralWorld",
+          "name:th": "\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "public_transport": "platform",
+          "ref": "4",
+          "route_ref": "2;13;14;17;54;73;73\u0e01;74;77;79;204;504;505;511;514;A3",
+          "shelter": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6466663559",
+        "name": "Jim Thompson",
+        "lat": 13.749118,
+        "lon": 100.528451,
+        "tags": {
+          "check_date": "2024-12-07",
+          "name": "Jim Thompson",
+          "shop": "clothes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "8344761290",
+        "name": "S3 Siam Bangkok Hotel",
+        "lat": 13.748776,
+        "lon": 100.52724,
+        "tags": {
+          "facebook": "https://www.facebook.com/s3siam/",
+          "name": "S3 Sayam",
+          "name:en": "S3 Siam Bangkok Hotel",
+          "name:th": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21 \u0e40\u0e2d\u0e2a\u0e17\u0e23\u0e35 \u0e2a\u0e22\u0e32\u0e21 \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "phone": "+66-99-252-2991;+66-99-252-6452",
+          "tourism": "hotel",
+          "website": "https://myroomth.com/s3siam/index-en"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "10777237699",
+        "name": "FIRSTER Siam Square",
+        "lat": 13.744516,
+        "lon": 100.532131,
+        "tags": {
+          "addr:city": "\u0e41\u0e02\u0e27\u0e07\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "424",
+          "addr:postcode": "10330",
+          "addr:street": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "air_conditioning": "yes",
+          "branch": "Siam Square",
+          "name": "FIRSTER Siam Square",
+          "name:th": "\u0e40\u0e1f\u0e34\u0e23\u0e4c\u0e2a\u0e40\u0e15\u0e2d\u0e23\u0e4c \u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "opening_hours": "Mo-Su 10:00-21:00",
+          "payment:cash": "yes",
+          "payment:credit_cards": "yes",
+          "payment:debit_cards": "yes",
+          "payment:mastercard": "yes",
+          "payment:visa": "yes",
+          "phone": "(+66)2-677-8799",
+          "shop": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11271475034",
+        "name": "Tha Siam",
+        "lat": 13.744226,
+        "lon": 100.532531,
+        "tags": {
+          "air_conditioning": "yes",
+          "amenity": "restaurant",
+          "cuisine": "noodle",
+          "name": "\u0e17\u0e48\u0e32\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Tha Siam",
+          "name:th": "\u0e17\u0e48\u0e32\u0e2a\u0e22\u0e32\u0e21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11377569084",
+        "name": "Eat Am Are MBK Center",
+        "lat": 13.743587,
+        "lon": 100.529977,
+        "tags": {
+          "addr:housenumber": "444",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Phaya Thai Rd",
+          "amenity": "restaurant",
+          "cuisine": "steak_house",
+          "level": "2",
+          "name": "\u0e2d\u0e35\u0e17 \u0e41\u0e2d\u0e21 \u0e2d\u0e32\u0e23\u0e4c - \u0e2a\u0e32\u0e02\u0e32\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04 \u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "name:en": "Eat Am Are MBK Center",
+          "note": "444 MBK Center \u0e0a\u0e31\u0e49\u0e192 \u0e42\u0e0b\u0e19C Phaya Thai Rd, Wang Mai, Pathum Wan, Bangkok 10330, Thailand",
+          "opening_hours": "Mo-Su 10:00-01:00",
+          "phone": "+66638291311",
+          "website": "https://th-th.facebook.com/eatamaregoodsteak/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11708999315",
+        "name": "MobilehouseMBK",
+        "lat": 13.743623,
+        "lon": 100.530139,
+        "tags": {
+          "check_date": "2025-04-07",
+          "contact:line": "https://line.me/ti/p/@mobilehouse",
+          "name": "MobilehouseMBK",
+          "opening_hours": "Mo-Su 12:00-20:00",
+          "shop": "mobile_phone",
+          "website": "https://mobilehousembk.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11878123174",
+        "name": "Hotel Mercure Siam",
+        "lat": 13.747045,
+        "lon": 100.529007,
+        "tags": {
+          "name:en": "Hotel Mercure Siam",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12092067233",
+        "name": "K-Bank Siam Pic-Ganesha",
+        "lat": 13.745034,
+        "lon": 100.5338,
+        "tags": {
+          "amenity": "theatre",
+          "name": "\u0e42\u0e23\u0e07\u0e25\u0e30\u0e04\u0e23\u0e40\u0e04\u0e41\u0e1a\u0e07\u0e01\u0e4c\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e06\u0e40\u0e19\u0e28",
+          "name:en": "K-Bank Siam Pic-Ganesha",
+          "name:th": "\u0e42\u0e23\u0e07\u0e25\u0e30\u0e04\u0e23\u0e40\u0e04\u0e41\u0e1a\u0e07\u0e01\u0e4c\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e06\u0e40\u0e19\u0e28"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12299318760",
+        "name": "CityFresh centralwOrld",
+        "lat": 13.746799,
+        "lon": 100.538756,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "5th Floor, Unit KC504",
+          "addr:place": "\u0e23\u0e32\u0e0a\u0e1b\u0e23\u0e30\u0e2a\u0e07\u0e04\u0e4c",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e23\u0e32\u0e0a\u0e14\u0e33\u0e23\u0e34",
+          "addr:subdistrict": "\u0e23\u0e32\u0e0a\u0e14\u0e33\u0e23\u0e34",
+          "amenity": "cafe",
+          "cuisine": "ice_cream;juice;cake",
+          "internet_access": "yes",
+          "internet_access:fee": "no",
+          "name": "CityFresh centralwOrld",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "phone": "0611636966",
+          "website": "https://www.cityfreshfruit.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12885877711",
+        "name": "Sanam Pao",
+        "lat": 13.772637,
+        "lon": 100.542053,
+        "tags": {
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e40\u0e1b\u0e49\u0e32",
+          "name:en": "Sanam Pao",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e40\u0e1b\u0e49\u0e32",
+          "operator": "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e19\u0e2a\u0e48\u0e07\u0e21\u0e27\u0e25\u0e0a\u0e19\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "ref": "N4",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12885877729",
+        "name": "Victory Monument",
+        "lat": 13.762768,
+        "lon": 100.53704,
+        "tags": {
+          "name": "\u0e2d\u0e19\u0e38\u0e2a\u0e32\u0e27\u0e23\u0e35\u0e22\u0e4c\u0e0a\u0e31\u0e22\u0e2a\u0e21\u0e23\u0e20\u0e39\u0e21\u0e34",
+          "name:en": "Victory Monument",
+          "name:th": "\u0e2d\u0e19\u0e38\u0e2a\u0e32\u0e27\u0e23\u0e35\u0e22\u0e4c\u0e0a\u0e31\u0e22\u0e2a\u0e21\u0e23\u0e20\u0e39\u0e21\u0e34",
+          "operator": "\u0e23\u0e30\u0e1a\u0e1a\u0e02\u0e19\u0e2a\u0e48\u0e07\u0e21\u0e27\u0e25\u0e0a\u0e19\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "operator:en": "Bangkok Mass Transit System;BTSC",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "ref": "N3",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "13980424272",
+        "name": "Sanam Luang",
+        "lat": 13.759216,
+        "lon": 100.492759,
+        "tags": {
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "name:en": "Sanam Luang",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "network": "Metropolitan Rapid Transit",
+          "network:short": "MRT",
+          "network:wikidata": "Q806485",
+          "operator": "\u0e17\u0e32\u0e07\u0e14\u0e48\u0e27\u0e19\u0e41\u0e25\u0e30\u0e23\u0e16\u0e44\u0e1f\u0e1f\u0e49\u0e32\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "13980424273",
+        "name": "Sanam Luang",
+        "lat": 13.75929,
+        "lon": 100.49285,
+        "tags": {
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "name:en": "Sanam Luang",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "network": "Metropolitan Rapid Transit",
+          "network:short": "MRT",
+          "network:wikidata": "Q806485",
+          "operator": "\u0e17\u0e32\u0e07\u0e14\u0e48\u0e27\u0e19\u0e41\u0e25\u0e30\u0e23\u0e16\u0e44\u0e1f\u0e1f\u0e49\u0e32\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "node",
+        "osmId": "13985574839",
+        "name": "Kanori Siam Paragon",
+        "lat": 13.747687,
+        "lon": 100.53489,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "G20B2 991/1",
+          "addr:place": "Siam Paragon",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Rama I Road",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "air_conditioning": "yes",
+          "amenity": "restaurant",
+          "branch": "Siam Paragon",
+          "brand": "Kanori",
+          "cuisine": "japanese;sushi",
+          "internet_access": "no",
+          "level": "0",
+          "name": "Kanori Siam Paragon",
+          "opening_hours": "Mo-Su 11:00-22:00",
+          "phone": "098 559 6935",
+          "website": "https://www.tablecheck.com/en/kanori-siam-paragon-bangkok/reserve"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "25701334",
+        "name": "Siam Center",
+        "lat": 13.746277,
+        "lon": 100.532798,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "979",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e23\u0e30\u0e23\u0e32\u0e21\u0e17\u0e35\u0e48 1",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "alt_name:ja": "\u30b5\u30a4\u30a2\u30e0\u30fb\u30c7\u30a3\u30b9\u30ab\u30d0\u30ea\u30fc",
+          "building": "yes",
+          "building:levels": "6",
+          "name": "Siam Center",
+          "name:en": "Siam Center",
+          "name:ja": "\u30b5\u30a4\u30a2\u30e0\u30fb\u30bb\u30f3\u30bf\u30fc",
+          "name:ko": "\uc2f8\uc58c \uc13c\ud130",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "name:zh-Hant": "\u66b9\u7f85\u8cfc\u7269\u4e2d\u5fc3",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "operator": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c \u0e08\u0e33\u0e01\u0e31\u0e14",
+          "phone": "+66 2 658 1000",
+          "shop": "mall",
+          "start_date": "1973",
+          "toilets:wheelchair": "yes",
+          "website": "https://www.siamcenter.co.th/",
+          "wheelchair": "yes",
+          "wikidata": "Q913929",
+          "wikipedia": "th:\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "wikipedia:th": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "25745637",
+        "name": "The Offices at CentralWorld",
+        "lat": 13.745977,
+        "lon": 100.53833,
+        "tags": {
+          "building": "commercial",
+          "name": "\u0e14\u0e34 \u0e2d\u0e2d\u0e1f\u0e1f\u0e34\u0e28\u0e40\u0e28\u0e2a \u0e41\u0e2d\u0e17 \u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "name:en": "The Offices at CentralWorld",
+          "name:th": "\u0e14\u0e34 \u0e2d\u0e2d\u0e1f\u0e1f\u0e34\u0e28\u0e40\u0e28\u0e2a \u0e41\u0e2d\u0e17 \u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c",
+          "note:building:levels": "45",
+          "note:height": "198.8",
+          "wikidata": "Q20575829"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "25745751",
+        "name": "Siam Square Soi 7",
+        "lat": 13.74449,
+        "lon": 100.533059,
+        "tags": {
+          "highway": "pedestrian",
+          "motor_vehicle": "customers",
+          "motor_vehicle:conditional": "no @ (Mo-Th 15:00-23:00; Fr-Su 11:00-23:00)",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "oneway": "yes",
+          "surface": "asphalt"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "27135476",
+        "name": "Siam Square Soi 3",
+        "lat": 13.745217,
+        "lon": 100.532885,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "service",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "name:en": "Siam Square Soi 3",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "oneway": "no",
+          "sidewalk": "both",
+          "sidewalk:both": "separate"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "27135538",
+        "name": "Siam Square Soi 1",
+        "lat": 13.745382,
+        "lon": 100.531593,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 1",
+          "name:en": "Siam Square Soi 1",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 1",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "27135540",
+        "name": "Siam Square Soi 2",
+        "lat": 13.745298,
+        "lon": 100.532078,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "service",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "name:en": "Siam Square Soi 2",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "oneway": "yes",
+          "sidewalk": "both",
+          "sidewalk:both": "separate",
+          "surface": "asphalt"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "31972872",
+        "name": "Siam Square",
+        "lat": 13.744744,
+        "lon": 100.533124,
+        "tags": {
+          "landuse": "retail",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "name:en": "Siam Square",
+          "name:ja": "\u30b5\u30a4\u30a2\u30e0\u30b9\u30af\u30a8\u30a2",
+          "name:pt": "Pra\u00e7a Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "name:vi": "Qu\u1ea3ng tr\u01b0\u1eddng Siam",
+          "name:zh": "\u66b9\u7f85\u5ee3\u5834",
+          "wikidata": "Q1856401",
+          "wikipedia": "th:\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "31973452",
+        "name": "Siam Square Soi 8",
+        "lat": 13.744006,
+        "lon": 100.534292,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 8",
+          "name:en": "Siam Square Soi 8",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 8",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "31973453",
+        "name": "Siam Square Soi 9",
+        "lat": 13.744153,
+        "lon": 100.53343,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "service",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 9",
+          "name:en": "Siam Square Soi 9",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 9",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "31973455",
+        "name": "Siam Square Soi 10",
+        "lat": 13.744276,
+        "lon": 100.532701,
+        "tags": {
+          "highway": "service",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 10",
+          "name:en": "Siam Square Soi 10",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 10",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "31973457",
+        "name": "Siam Square Soi 11",
+        "lat": 13.744441,
+        "lon": 100.531737,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 11",
+          "name:en": "Siam Square Soi 11",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 11",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "40007276",
+        "name": "Siam BTS Station",
+        "lat": 13.745624,
+        "lon": 100.53422,
+        "tags": {
+          "addr:country": "Thailand",
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "building": "train_station",
+          "description": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e2a\u0e22\u0e32\u0e21 \u0e2a\u0e16\u0e32\u0e19\u0e35\u0e23\u0e16\u0e44\u0e1f\u0e1f\u0e49\u0e32 Siam BTS Skytrain station",
+          "layer": "1",
+          "name": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam BTS Station",
+          "name:th": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e2a\u0e22\u0e32\u0e21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157487601",
+        "name": "MBK Tower",
+        "lat": 13.745392,
+        "lon": 100.530004,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "commercial",
+          "building:levels": "25",
+          "height": "79",
+          "name": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04 \u0e17\u0e32\u0e27\u0e40\u0e27\u0e2d\u0e23\u0e4c",
+          "name:en": "MBK Tower",
+          "name:th": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04 \u0e17\u0e32\u0e27\u0e40\u0e27\u0e2d\u0e23\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157487606",
+        "name": "MBK Skywalk",
+        "lat": 13.744286,
+        "lon": 100.530492,
+        "tags": {
+          "bridge": "viaduct",
+          "covered": "yes",
+          "highway": "footway",
+          "indoor": "yes",
+          "layer": "1",
+          "name": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07",
+          "name:en": "MBK Skywalk",
+          "name:th": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157487610",
+        "name": "MBK Center",
+        "lat": 13.744512,
+        "lon": 100.529857,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e0d\u0e32\u0e44\u0e17",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "alt_name": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04",
+          "alt_name:en": "Mahboonkrong",
+          "alt_name:th": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04",
+          "building": "retail",
+          "building:levels": "8",
+          "check_date": "2025-07-19",
+          "internet_access": "wlan",
+          "internet_access:fee": "no",
+          "is_in:city": "Bangkok",
+          "is_in:country": "Thailand",
+          "is_in:district": "Pathum Wan District",
+          "is_in:iso_3166_2": "TH-10",
+          "name": "MBK Center",
+          "name:en": "MBK Center",
+          "name:ko": "\ub9c8\ubd84\ud06c\ub871",
+          "name:th": "\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "old_name:th": "\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "operator": "MBK Plc.",
+          "phone": "+66 2 620 9000",
+          "shop": "mall",
+          "short_name": "\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07",
+          "short_name:th": "\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07",
+          "start_date": "1985",
+          "toilets": "yes",
+          "website": "https://www.mbk-center.co.th/",
+          "wheelchair": "yes",
+          "width": "330",
+          "wikidata": "Q1926372",
+          "wikipedia": "th:\u0e40\u0e2d\u0e47\u0e21\u0e1a\u0e35\u0e40\u0e04\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157593033",
+        "name": "Center Point Siam Square",
+        "lat": 13.745103,
+        "lon": 100.533279,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "building": "yes",
+          "building:levels": "8",
+          "name": "Center Point Siam Square",
+          "name:en": "Center Point Siam Square",
+          "name:ko": "\uc13c\ud130 \ud3ec\uc778\ud2b8 \uc2f8\uc58c \uc2a4\ud018\uc5b4",
+          "name:th": "\u0e40\u0e0b\u0e47\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c\u0e1e\u0e2d\u0e22\u0e15\u0e4c \u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "name:zh": "\u908f\u7f57\u5e7f\u573a",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "operator": "\u0e2a\u0e4d\u0e32\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e17\u0e23\u0e31\u0e1e\u0e22\u0e4c\u0e2a\u0e34\u0e19\u0e08\u0e38\u0e2c\u0e32\u0e25\u0e07\u0e01\u0e23\u0e13\u0e4c\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e17\u0e22\u0e32\u0e25\u0e31\u0e22",
+          "shop": "mall",
+          "toilets": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157770877",
+        "name": "Siam Discovery",
+        "lat": 13.74668,
+        "lon": 100.531499,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "194",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e0d\u0e32\u0e44\u0e17",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "alt_name:th": "\u0e14\u0e34\u0e2a\u0e04\u0e31\u0e1f\u0e40\u0e27\u0e2d\u0e23\u0e35\u0e48",
+          "building": "yes",
+          "building:levels": "8",
+          "image": "https://images.mapillary.com/r3e7bgdhJLzhWJQCF5YThA/thumb-2048.jpg",
+          "mapillary": "469788877418601",
+          "name": "Siam Discovery",
+          "name:en": "Siam Discovery",
+          "name:ko": "\uc2f8\uc58c \ub514\uc2a4\ucee4\ubc84\ub9ac",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e14\u0e34\u0e2a\u0e04\u0e31\u0e1f\u0e40\u0e27\u0e2d\u0e23\u0e35\u0e48",
+          "shop": "mall",
+          "short_name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e14\u0e34\u0e2a\u0e04\u0e31\u0e1f\u0e40\u0e27\u0e2d\u0e23\u0e35\u0e48",
+          "website": "https://www.siamdiscovery.co.th/",
+          "wikidata": "Q1833446",
+          "wikipedia": "th:\u0e2a\u0e22\u0e32\u0e21\u0e14\u0e34\u0e2a\u0e04\u0e31\u0e1f\u0e40\u0e27\u0e2d\u0e23\u0e35"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157770905",
+        "name": "Siam Piwat Tower",
+        "lat": 13.746739,
+        "lon": 100.5317,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "alt_name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c\u0e17\u0e32\u0e27\u0e40\u0e27\u0e2d\u0e23\u0e4c;\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c \u0e17\u0e32\u0e27\u0e40\u0e27\u0e2d\u0e23\u0e4c;\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e31\u0e12\u0e19\u0e4c",
+          "building": "commercial",
+          "building:levels": "30",
+          "name": "Siam Piwat Tower",
+          "name:en": "Siam Piwat Tower",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c",
+          "official_name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c\u0e17\u0e32\u0e27\u0e40\u0e27\u0e2d\u0e23\u0e4c",
+          "old_name:en": "Siam Discovery Tower",
+          "short_name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e34\u0e27\u0e23\u0e23\u0e18\u0e19\u0e4c",
+          "website": "https://www.siampiwat.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "159378469",
+        "name": "Park @ Siam",
+        "lat": 13.74351,
+        "lon": 100.532377,
+        "tags": {
+          "leisure": "park",
+          "name": "Park @ Siam",
+          "name:en": "Park @ Siam",
+          "operator": "Office of Property Management, Chulalongkorn University"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "196260684",
+        "name": "Siam@Siam Design Hotel",
+        "lat": 13.747304,
+        "lon": 100.526919,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "865",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Rama I Road",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "air_conditioning": "yes",
+          "building": "yes",
+          "building:height": "85 m",
+          "building:levels": "28",
+          "building:roof": "flat",
+          "name": "Siam@Siam Design Hotel",
+          "stars": "4",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "234375367",
+        "name": "Siam Motors Parking Building",
+        "lat": 13.747175,
+        "lon": 100.528571,
+        "tags": {
+          "access": "private",
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "parking",
+          "name": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e08\u0e2d\u0e14\u0e23\u0e16 \u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23",
+          "name:en": "Siam Motors Parking Building",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e08\u0e2d\u0e14\u0e23\u0e16 \u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "313985317",
+        "name": "Evergreen Place Siam by UHG",
+        "lat": 13.750879,
+        "lon": 100.530444,
+        "tags": {
+          "addr:district": "\u0e23\u0e32\u0e0a\u0e40\u0e17\u0e27\u0e35",
+          "addr:housenumber": "318",
+          "addr:postcode": "10400",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Phayathai Road",
+          "addr:subdistrict": "\u0e16\u0e19\u0e19\u0e40\u0e1e\u0e0a\u0e23\u0e1a\u0e38\u0e23\u0e35",
+          "building": "yes",
+          "internet_access": "wlan",
+          "name": "Evergreen Place Siam by UHG",
+          "tourism": "hotel",
+          "website": "http://www.evergreenplacebangkok.com"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "333177956",
+        "name": "Holiday Inn Express Bangkok Siam",
+        "lat": 13.747238,
+        "lon": 100.527778,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "889",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Rama I Rd, Pathum Wan, Khet Pathum Wan, Krung Thep Maha Nakhon",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "brand": "Holiday Inn Express",
+          "brand:wikidata": "Q5880423",
+          "building": "yes",
+          "email": "info.hiexpresssiam@ihg.com",
+          "level": "23",
+          "name": "Holiday Inn Express Bangkok Siam",
+          "name:en": "Holiday Inn Express Bangkok Siam",
+          "name:th": "\u0e2e\u0e2d\u0e25\u0e34\u0e40\u0e14\u0e22\u0e4c\u0e2d\u0e34\u0e19\u0e19\u0e4c \u0e40\u0e2d\u0e47\u0e01\u0e0b\u0e4c\u0e40\u0e1e\u0e23\u0e2a \u0e1a\u0e32\u0e07\u0e01\u0e2d\u0e01 \u0e2a\u0e22\u0e32\u0e21",
+          "name:zh": "\u66fc\u8c37\u66b9\u7f85\u667a\u9078\u5047\u65e5\u9152\u5e97",
+          "operator": "Holiday Inn",
+          "phone": "+66 2 217 7555",
+          "rooms": "300",
+          "stars": "4",
+          "start_date": "2014",
+          "tourism": "hotel",
+          "website": "https://www.ihg.com/holidayinnexpress/hotels/us/en/bangkok/bkkrb/hoteldetail"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "333177999",
+        "name": "Siam Motors Company Limited",
+        "lat": 13.747087,
+        "lon": 100.528084,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "891/1",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "alt_name:th": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17\u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23 \u0e08\u0e33\u0e01\u0e31\u0e14",
+          "building": "commercial",
+          "layer": "1",
+          "name": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23",
+          "name:en": "Siam Motors Company Limited",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23",
+          "office": "company",
+          "short_name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e01\u0e25\u0e01\u0e32\u0e23"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "341577338",
+        "name": "Jim Thompson House",
+        "lat": 13.749225,
+        "lon": 100.528282,
+        "tags": {
+          "access": "customers",
+          "addr:housenumber": "6",
+          "addr:street": "Soi Kasemsan 2, Rama 1 Road",
+          "contact:phone": "+66 2 216 7368",
+          "fee": "yes",
+          "leisure": "garden",
+          "name": "\u0e1e\u0e34\u0e1e\u0e34\u0e18\u0e20\u0e31\u0e13\u0e11\u0e4c\u0e1a\u0e49\u0e32\u0e19\u0e08\u0e34\u0e21 \u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19",
+          "name:en": "Jim Thompson House",
+          "name:fr": "Maison de Jim Thompson",
+          "name:ko": "\uc9d0 \ud1b0\uc2a8 \ud558\uc6b0\uc2a4",
+          "name:th": "\u0e1e\u0e34\u0e1e\u0e34\u0e18\u0e20\u0e31\u0e13\u0e11\u0e4c\u0e1a\u0e49\u0e32\u0e19\u0e08\u0e34\u0e21 \u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19",
+          "opening_hours": "Mo-Su 09:00-18:00",
+          "operator": "The James H. W. Thompson Foundation",
+          "tourism": "museum",
+          "website": "https://www.jimthompsonhouse.com/",
+          "wikidata": "Q2916351",
+          "wikimedia_commons": "Category:Jim Thompson House",
+          "wikipedia": "th:\u0e1e\u0e34\u0e1e\u0e34\u0e18\u0e20\u0e31\u0e13\u0e11\u0e4c\u0e1a\u0e49\u0e32\u0e19\u0e08\u0e34\u0e21 \u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "341577340",
+        "name": "Jim Thompson House Museum",
+        "lat": 13.749328,
+        "lon": 100.528176,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "yes",
+          "fee": "yes",
+          "name": "Jim Thompson House Museum",
+          "opening_hours": "Mo-Su 09:00-17:00",
+          "tourism": "museum"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "341577932",
+        "name": "Henry B. Thompson Building",
+        "lat": 13.748799,
+        "lon": 100.528137,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "yes",
+          "building:levels": "4",
+          "elevator": "yes",
+          "name": "\u0e2d\u0e32\u0e04\u0e32\u0e23 \u0e40\u0e2e\u0e19\u0e23\u0e35 \u0e1a\u0e35 \u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19",
+          "name:en": "Henry B. Thompson Building",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23 \u0e40\u0e2e\u0e19\u0e23\u0e35 \u0e1a\u0e35 \u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "342135691",
+        "name": "The Seed Memories Siam",
+        "lat": 13.747845,
+        "lon": 100.528032,
+        "tags": {
+          "landuse": "residential",
+          "name": "The Seed Memories Siam",
+          "name:en": "The Seed Memories Siam",
+          "phone": "+66 88 088 8642",
+          "website": "https://www.seedmemoriessiam.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "365999406",
+        "name": "Siam Square One",
+        "lat": 13.74496,
+        "lon": 100.533761,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "building": "yes",
+          "description": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e27\u0e31\u0e19 \u201cUrban Shopping Center\u201d \u0e17\u0e35\u0e48\u0e40\u0e1b\u0e47\u0e19\u0e1e\u0e37\u0e49\u0e19\u0e17\u0e35\u0e48\u0e17\u0e32\u0e07\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e41\u0e25\u0e30\u0e27\u0e31\u0e12\u0e19\u0e18\u0e23\u0e23\u0e21\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e21\u0e31\u0e22\u0e1a\u0e19\u0e17\u0e33\u0e40\u0e25\u0e17\u0e2d\u0e07\u0e17\u0e35\u0e48\u0e14\u0e35\u0e17\u0e35\u0e48\u0e2a\u0e38\u0e14\u0e43\u0e19\u0e41\u0e2b\u0e25\u0e48\u0e07\u0e0a\u0e49\u0e2d\u0e1b\u0e1b\u0e34\u0e49\u0e07\u0e43\u0e08\u0e01\u0e25\u0e32\u0e07\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c \u0e1a\u0e19\u0e1e\u0e37\u0e49\u0e19\u0e17\u0e35\u0e48 8 \u0e44\u0e23\u0e48 \u0e40\u0e1b\u0e47\u0e19\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e23\u0e27\u0e21\u0e41\u0e25\u0e30\u0e08\u0e38\u0e14\u0e19\u0e31\u0e14\u0e1e\u0e1a\u0e17\u0e35\u0e48\u0e44\u0e14\u0e49\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e43\u0e2b\u0e49\u0e15\u0e2d\u0e1a\u0e2a\u0e19\u0e2d\u0e07\u0e04\u0e27\u0e32\u0e21\u0e15\u0e49\u0e2d\u0e07\u0e01\u0e32\u0e23\u0e44\u0e27\u0e49\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e04\u0e23\u0e1a\u0e16\u0e49\u0e27\u0e19 \u0e17\u0e31\u0e49\u0e07\u0e19\u0e27\u0e31\u0e15\u0e01\u0e23\u0e23\u0e21 \u0e28\u0e34\u0e25\u0e1b\u0e30 \u0e41\u0e1f\u0e0a\u0e31\u0e48\u0e19 \u0e2d\u0e32\u0e2b\u0e32\u0e23 \u0e41\u0e25\u0e30",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e27\u0e31\u0e19",
+          "name:en": "Siam Square One",
+          "name:ko": "\uc330\uc554\uc2a4\ud018\uc5b4",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e27\u0e31\u0e19",
+          "name:zh": "\u66b9\u7f57\u5e7f\u573a\u4e00\u53f7",
+          "operator": "\u0e2a\u0e4d\u0e32\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e17\u0e23\u0e31\u0e1e\u0e22\u0e4c\u0e2a\u0e34\u0e19\u0e08\u0e38\u0e2c\u0e32\u0e25\u0e07\u0e01\u0e23\u0e13\u0e4c\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e17\u0e22\u0e32\u0e25\u0e31\u0e22",
+          "shop": "mall",
+          "website": "https://pmcu.co.th/?page_id=9435"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "443613220",
+        "name": "Centara Grand at CentralWorld",
+        "lat": 13.747729,
+        "lon": 100.538513,
+        "tags": {
+          "alt_name": "Centara Grand & Bangkok Convention Centre at CentralWorld",
+          "area": "yes",
+          "building:levels": "57",
+          "height": "235",
+          "name": "Centara Grand at CentralWorld",
+          "toilets:wheelchair": "yes",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "452053538",
+        "name": "Siam Square Soi 5",
+        "lat": 13.744914,
+        "lon": 100.534302,
+        "tags": {
+          "highway": "pedestrian",
+          "lit": "yes",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 5",
+          "name:en": "Siam Square Soi 5",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 5",
+          "oneway": "no",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "452212783",
+        "name": "Siam Square Soi 6",
+        "lat": 13.744804,
+        "lon": 100.535054,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 6",
+          "name:en": "Siam Square Soi 6",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 6",
+          "oneway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "534768993",
+        "name": "Siam Kempinski",
+        "lat": 13.748543,
+        "lon": 100.535268,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "brand": "Kempinski",
+          "brand:wikidata": "Q671990",
+          "building": "hotel",
+          "layer": "1",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e04\u0e21\u0e1b\u0e34\u0e19\u0e2a\u0e01\u0e35\u0e49",
+          "name:en": "Siam Kempinski",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e40\u0e04\u0e21\u0e1b\u0e34\u0e19\u0e2a\u0e01\u0e35\u0e49",
+          "tourism": "hotel",
+          "website": "https://www.kempinski.com/en/bangkok/siam-hotel/",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "617784243",
+        "name": "MBK-Chula Foot Viaduct",
+        "lat": 13.742966,
+        "lon": 100.528586,
+        "tags": {
+          "bridge": "yes",
+          "highway": "footway",
+          "layer": "1",
+          "name": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f",
+          "name:en": "MBK-Chula Foot Viaduct",
+          "name:th": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "655137689",
+        "name": "SIAMSCAPE",
+        "lat": 13.744524,
+        "lon": 100.531206,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "building": "yes",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e40\u0e04\u0e1b",
+          "name:en": "SIAMSCAPE",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e40\u0e04\u0e1b",
+          "operator": "\u0e2a\u0e4d\u0e32\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e17\u0e23\u0e31\u0e1e\u0e22\u0e4c\u0e2a\u0e34\u0e19\u0e08\u0e38\u0e2c\u0e32\u0e25\u0e07\u0e01\u0e23\u0e13\u0e4c\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e17\u0e22\u0e32\u0e25\u0e31\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "680890155",
+        "name": "Siam Square Soi 4",
+        "lat": 13.744951,
+        "lon": 100.533388,
+        "tags": {
+          "fixme": "This path is not completely surveyed on the south side.",
+          "highway": "pedestrian",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4",
+          "name:en": "Siam Square Soi 4",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "684359995",
+        "name": "Siam Square Soi 4",
+        "lat": 13.74562,
+        "lon": 100.533626,
+        "tags": {
+          "access": "private",
+          "highway": "service",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4",
+          "name:en": "Siam Square Soi 4",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "686092687",
+        "name": "Siam B.",
+        "lat": 13.74534,
+        "lon": 100.531839,
+        "tags": {
+          "description": "Street food and street art",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21 \u0e1a\u0e35.",
+          "name:en": "Siam B.",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21 \u0e1a\u0e35.",
+          "surface": "paving_stones",
+          "tourism": "attraction"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "686092690",
+        "name": "Siam B.",
+        "lat": 13.745162,
+        "lon": 100.531777,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21 \u0e1a\u0e35.",
+          "name:en": "Siam B.",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21 \u0e1a\u0e35.",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "781138575",
+        "name": "Siam Paragon",
+        "lat": 13.746801,
+        "lon": 100.534938,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "991",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e23\u0e30\u0e23\u0e32\u0e21\u0e17\u0e35\u0e48 1",
+          "addr:subdistrict": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "building": "yes",
+          "name": "Siam Paragon",
+          "name:en": "Siam Paragon",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e32\u0e23\u0e32\u0e01\u0e2d\u0e19",
+          "shop": "mall",
+          "wikidata": "Q972334",
+          "wikipedia": "en:Siam Paragon"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "835042493",
+        "name": "centralwOrld",
+        "lat": 13.746615,
+        "lon": 100.539089,
+        "tags": {
+          "landuse": "retail",
+          "name": "centralwOrld"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "897909009",
+        "name": "Jim Thompson House",
+        "lat": 13.749313,
+        "lon": 100.528484,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "yes",
+          "fee": "yes",
+          "name": "Jim Thompson House",
+          "tourism": "museum"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "897909013",
+        "name": "VELA be Siam",
+        "lat": 13.748678,
+        "lon": 100.527633,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "yes",
+          "name": "VELA be Siam",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1076374378",
+        "name": "Siam Square Walking Street",
+        "lat": 13.74442,
+        "lon": 100.533095,
+        "tags": {
+          "area": "yes",
+          "area:highway": "pedestrian",
+          "highway": "pedestrian",
+          "layer": "-1",
+          "name": "\u0e16\u0e19\u0e19\u0e04\u0e19\u0e40\u0e14\u0e34\u0e19\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "name:en": "Siam Square Walking Street",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e16\u0e19\u0e19\u0e04\u0e19\u0e40\u0e14\u0e34\u0e19\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c",
+          "surface": "concrete"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1115939739",
+        "name": "Siam Square Soi 5/1",
+        "lat": 13.745037,
+        "lon": 100.534476,
+        "tags": {
+          "highway": "pedestrian",
+          "lit": "yes",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 5/1",
+          "name:en": "Siam Square Soi 5/1",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 5/1",
+          "oneway": "no",
+          "surface": "concrete"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1147659014",
+        "name": "Jim Thompson Art Center",
+        "lat": 13.748741,
+        "lon": 100.528413,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "yes",
+          "fee": "yes",
+          "name": "\u0e2b\u0e2d\u0e28\u0e34\u0e25\u0e1b\u0e4c\u0e1a\u0e49\u0e32\u0e19\u0e08\u0e34\u0e21\u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19",
+          "name:en": "Jim Thompson Art Center",
+          "name:th": "\u0e2b\u0e2d\u0e28\u0e34\u0e25\u0e1b\u0e4c\u0e1a\u0e49\u0e32\u0e19\u0e08\u0e34\u0e21\u0e17\u0e2d\u0e21\u0e1b\u0e4c\u0e2a\u0e31\u0e19",
+          "opening_hours": "Mo-Su 10:00-18:00",
+          "tourism": "gallery",
+          "website": "http://www.jimthompsonartcenter.org"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1159877713",
+        "name": "Siam Pathumwan House",
+        "lat": 13.747466,
+        "lon": 100.530207,
+        "tags": {
+          "addr:district": "\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19",
+          "addr:housenumber": "414",
+          "addr:postcode": "10330",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1e\u0e0d\u0e32\u0e44\u0e17",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e43\u0e2b\u0e21\u0e48",
+          "building": "construction",
+          "name": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19\u0e40\u0e2e\u0e49\u0e32\u0e2a\u0e4c",
+          "name:en": "Siam Pathumwan House",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e1b\u0e17\u0e38\u0e21\u0e27\u0e31\u0e19\u0e40\u0e2e\u0e49\u0e32\u0e2a\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1169249440",
+        "name": "Siam Square Soi 7",
+        "lat": 13.744527,
+        "lon": 100.532504,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1169254728",
+        "name": "MBK-Chula Foot Viaduct",
+        "lat": 13.742973,
+        "lon": 100.529305,
+        "tags": {
+          "bridge": "yes",
+          "highway": "footway",
+          "layer": "1",
+          "name": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f",
+          "name:en": "MBK-Chula Foot Viaduct",
+          "name:th": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f",
+          "surface": "concrete"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1200822126",
+        "name": "MBK-Chula Foot Viaduct",
+        "lat": 13.743196,
+        "lon": 100.527985,
+        "tags": {
+          "bridge": "yes",
+          "highway": "footway",
+          "layer": "1",
+          "name": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f",
+          "name:en": "MBK-Chula Foot Viaduct",
+          "name:th": "\u0e2a\u0e30\u0e1e\u0e32\u0e19\u0e25\u0e2d\u0e22 MBK-\u0e08\u0e38\u0e2c\u0e32\u0e2f"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1225237203",
+        "name": "Gump Siam Life",
+        "lat": 13.744254,
+        "lon": 100.535353,
+        "tags": {
+          "landuse": "construction",
+          "name": "Gump Siam Life",
+          "name:en": "Gump Siam Life"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1290387704",
+        "name": "Siam Square Soi 7",
+        "lat": 13.744793,
+        "lon": 100.531194,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "oneway": "yes",
+          "surface": "asphalt"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1292979515",
+        "name": "Siam Square Soi 7",
+        "lat": 13.744454,
+        "lon": 100.533619,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1292979521",
+        "name": "Siam Square Soi 2",
+        "lat": 13.745243,
+        "lon": 100.532137,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "name:en": "Siam Square Soi 2",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1292979522",
+        "name": "Siam Square Soi 2",
+        "lat": 13.745266,
+        "lon": 100.532004,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "name:en": "Siam Square Soi 2",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 2",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1292979523",
+        "name": "Siam Square Soi 3",
+        "lat": 13.745126,
+        "lon": 100.532812,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "name:en": "Siam Square Soi 3",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1292979524",
+        "name": "Siam Square Soi 3",
+        "lat": 13.7451,
+        "lon": 100.532941,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "name:en": "Siam Square Soi 3",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1343979921",
+        "name": "Siam Square Soi 7",
+        "lat": 13.744169,
+        "lon": 100.534943,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "unclassified",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "oneway": "yes",
+          "surface": "asphalt"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1491781340",
+        "name": "Siam Square Soi 3",
+        "lat": 13.744569,
+        "lon": 100.532772,
+        "tags": {
+          "access": "customers",
+          "foot": "yes",
+          "highway": "service",
+          "maxspeed": "20",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "name:en": "Siam Square Soi 3",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 3",
+          "oneway": "no",
+          "sidewalk": "both",
+          "sidewalk:both": "separate"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1491781341",
+        "name": "Siam Square Soi 7",
+        "lat": 13.744708,
+        "lon": 100.532169,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "name:en": "Siam Square Soi 7",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 7",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1525444511",
+        "name": "Siam Square Soi 4",
+        "lat": 13.74546,
+        "lon": 100.533597,
+        "tags": {
+          "access": "private",
+          "highway": "service",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4",
+          "name:en": "Siam Square Soi 4",
+          "name:etymology:wikidata": "Q1856401",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c\u0e0b\u0e2d\u0e22 4"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.526,13.742,100.543,13.751"
+      }
+    ],
+    "asok": [
+      {
+        "osmType": "node",
+        "osmId": "1368244537",
+        "name": "Siam Commercial Bank",
+        "lat": 13.740615,
+        "lon": 100.561426,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "Siam Commercial Bank",
+          "brand:wikidata": "Q2038986",
+          "name": "Siam Commercial Bank"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2084099084",
+        "name": "Terminal 21 Hotel",
+        "lat": 13.738186,
+        "lon": 100.560684,
+        "tags": {
+          "name": "Grande Centre Point Terminal 21",
+          "name:en": "Terminal 21 Hotel",
+          "name:es": "Hotel Gran center Point - Terminal 21",
+          "name:ja": "\uadf8\ub79c\ub4dc \uc13c\ud130 \ud3ec\uc778\ud2b8 \ud638\ud154 - \ud130\ubbf8\ub11021",
+          "name:ko": "\ud130\ubbf8\ub110 21",
+          "name:zh": "\u822a\u7ad921 \u98ef\u5e97",
+          "tourism": "hotel",
+          "website": "https://www.terminal21.co.th/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3860265994",
+        "name": "Siam Commercial Bank",
+        "lat": 13.737735,
+        "lon": 100.56064,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "-1",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "opening_hours": "PH,Mo-Su 11:00-18:00",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3921333802",
+        "name": "Siam Commercial Bank",
+        "lat": 13.735504,
+        "lon": 100.561543,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "0",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "opening_hours": "Mo-Fr 10:00-18:00; PH off",
+          "operator": "Siam Commercial Bank",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4460800318",
+        "name": "Siam Commercial Bank",
+        "lat": 13.736596,
+        "lon": 100.561765,
+        "tags": {
+          "amenity": "bank",
+          "atm": "yes",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "level": "0",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "opening_hours": "Mo-Fr 08:30-16:00; PH off"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4663403718",
+        "name": "Siam Commercial",
+        "lat": 13.737008,
+        "lon": 100.562901,
+        "tags": {
+          "amenity": "bureau_de_change",
+          "name:en": "Siam Commercial"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4663849292",
+        "name": "Siam Cosmos",
+        "lat": 13.738846,
+        "lon": 100.558114,
+        "tags": {
+          "name:en": "Siam Cosmos",
+          "shop": "travel_agency"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4857605667",
+        "name": "v.Siam Optical",
+        "lat": 13.736254,
+        "lon": 100.562849,
+        "tags": {
+          "addr:housenumber": "4/5",
+          "name": "v.Siam Optical",
+          "shop": "optician"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6217954708",
+        "name": "Siam Legal International",
+        "lat": 13.736718,
+        "lon": 100.561912,
+        "tags": {
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Interchange 21 Building, 23rd Floor Unit 24-13, 399 Sukhumvit Road, North Klongtoey, Wattana",
+          "email": "info@siam-legal.com",
+          "name": "Siam Legal International",
+          "phone": "+66 259 8100",
+          "website": "https://www.siam-legal.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12438224305",
+        "name": "Terminal 21 Asok",
+        "lat": 13.737906,
+        "lon": 100.559335,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e21\u0e34\u0e19\u0e2d\u0e25 21 \u0e2d\u0e42\u0e28\u0e01",
+          "name:en": "Terminal 21 Asok",
+          "name:th": "\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e21\u0e34\u0e19\u0e2d\u0e25 21 \u0e2d\u0e42\u0e28\u0e01",
+          "public_transport": "platform",
+          "shelter": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12550439794",
+        "name": "Siambreeze",
+        "lat": 13.738366,
+        "lon": 100.563913,
+        "tags": {
+          "check_date": "2025-02-02",
+          "level": "0",
+          "name": "Siambreeze",
+          "shop": "massage",
+          "wheelchair": "no"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "25829350",
+        "name": "Hilton Bangkok Grande Asoke",
+        "lat": 13.739005,
+        "lon": 100.562107,
+        "tags": {
+          "addr:district": "\u0e27\u0e31\u0e12\u0e19\u0e32",
+          "addr:housenumber": "30",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Asok Montri Road",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22\u0e40\u0e2b\u0e19\u0e37\u0e2d",
+          "brand": "Hilton",
+          "brand:wikidata": "Q598884",
+          "building": "yes",
+          "contact:facebook": "https://www.facebook.com/HiltonBangkokGrandeAsoke/",
+          "contact:instagram": "https://www.instagram.com/hiltongrandeasoke/",
+          "contact:linkedin": "https://www.linkedin.com/company/hilton-bangkok-grande-asoke/",
+          "email": "bkkas-reservation@hilton.com",
+          "internet_access": "wlan",
+          "internet_access:fee": "no",
+          "name": "Hilton Bangkok Grande Asoke",
+          "phone": "+66 2 204 4000",
+          "rooms": "325",
+          "tourism": "hotel",
+          "website": "https://www.hilton.com/en/hotels/bkkashi-hilton-bangkok-grande-asoke/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "157656710",
+        "name": "Terminal 21",
+        "lat": 13.737924,
+        "lon": 100.560421,
+        "tags": {
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Sukhumvit Soi 16",
+          "alt_name": "Terminal21 Asok Shopping Mall",
+          "building": "retail",
+          "building:height": "177 m",
+          "building:levels": "32",
+          "name": "Terminal 21",
+          "name:en": "Terminal 21",
+          "name:ko": "\ud130\ubbf8\ub110 21",
+          "name:th": "\u0e40\u0e17\u0e2d\u0e23\u0e4c\u0e21\u0e34\u0e19\u0e2d\u0e25 21",
+          "name:zh": "\u822a\u7ad921\u767e\u8ca8",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "shop": "mall",
+          "toilets": "yes",
+          "website": "https://www.terminal21.co.th/",
+          "wikidata": "Q3278033",
+          "wikimedia_commons": "Category:Terminal 21",
+          "wikipedia": "en:Terminal 21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "210310633",
+        "name": "The Siam Society",
+        "lat": 13.73924,
+        "lon": 100.561274,
+        "tags": {
+          "addr:district": "\u0e27\u0e31\u0e12\u0e19\u0e32",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22\u0e40\u0e2b\u0e19\u0e37\u0e2d",
+          "building": "cultural_centre",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e21\u0e32\u0e04\u0e21",
+          "name:en": "The Siam Society",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e21\u0e32\u0e04\u0e21",
+          "tourism": "museum"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "332206402",
+        "name": "Siam Commercial Bank",
+        "lat": 13.74008,
+        "lon": 100.562067,
+        "tags": {
+          "addr:district": "\u0e27\u0e31\u0e12\u0e19\u0e32",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22\u0e40\u0e2b\u0e19\u0e37\u0e2d",
+          "amenity": "bank",
+          "brand": "Siam Commercial Bank",
+          "brand:wikidata": "Q2038986",
+          "building": "yes",
+          "name": "Siam Commercial Bank",
+          "opening_hours": "Mo-Fr 09:00-16:30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "445167456",
+        "name": "Terminal 21",
+        "lat": 13.737924,
+        "lon": 100.560421,
+        "tags": {
+          "addr:district": "\u0e27\u0e31\u0e12\u0e19\u0e32",
+          "addr:housenumber": "88",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22\u0e40\u0e2b\u0e19\u0e37\u0e2d",
+          "building": "retail",
+          "building:part": "yes",
+          "contact:fax": "+66 2 108 0800",
+          "contact:phone": "+66 2 108 0888",
+          "height": "50",
+          "name": "Terminal 21",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "shop": "mall",
+          "source": "https://www.terminal21.co.th/asok/contactus/th"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "856466193",
+        "name": "Grande Centre Point Terminal 21",
+        "lat": 13.738175,
+        "lon": 100.560672,
+        "tags": {
+          "addr:district": "\u0e27\u0e31\u0e12\u0e19\u0e32",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22\u0e40\u0e2b\u0e19\u0e37\u0e2d",
+          "building": "yes",
+          "name": "Grande Centre Point Terminal 21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1346389322",
+        "name": "Canopy by Hilton Bangkok Sukhumvit",
+        "lat": 13.737483,
+        "lon": 100.557797,
+        "tags": {
+          "addr:district": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22",
+          "addr:housenumber": "98, 98/1",
+          "addr:postcode": "10110",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e0b\u0e2d\u0e22\u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17 12",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22",
+          "brand": "Canopy by Hilton",
+          "building": "yes",
+          "contact:facebook": "https://www.facebook.com/profile.php?id=61587382594233",
+          "contact:instagram": "https://www.instagram.com/canopybangkok",
+          "contact:linkedin": "https://www.linkedin.com/company/canopy-bangkok-sukhumvit/",
+          "email": "Canopy_BKK_Reservations@hilton.com",
+          "internet_access": "yes",
+          "internet_access:fee": "no",
+          "name": "Canopy by Hilton Bangkok Sukhumvit",
+          "name:en": "Canopy by Hilton Bangkok Sukhumvit",
+          "name:th": "\u0e41\u0e04\u0e42\u0e19\u0e1e\u0e35 \u0e1a\u0e32\u0e22 \u0e2e\u0e34\u0e25\u0e15\u0e31\u0e19 \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f \u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17",
+          "rooms": "174",
+          "tourism": "hotel",
+          "website": "https://www.hilton.com/en/hotels/bkkthpy-canopy-bangkok-sukhumvit/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.557,13.735,100.564,13.741"
+      }
+    ],
+    "oldtown": [
+      {
+        "osmType": "node",
+        "osmId": "2385416698",
+        "name": "Sanam Chai Gate",
+        "lat": 13.751776,
+        "lon": 100.491951,
+        "tags": {
+          "barrier": "sally_port",
+          "name:en": "Sanam Chai Gate"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2385416699",
+        "name": "Sanam Chai Gate",
+        "lat": 13.75178,
+        "lon": 100.492078,
+        "tags": {
+          "barrier": "sally_port",
+          "name:en": "Sanam Chai Gate"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3036908342",
+        "name": "Wat Suthat",
+        "lat": 13.750192,
+        "lon": 100.500344,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c\u0e2f",
+          "name:en": "Wat Suthat",
+          "name:th": "\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c\u0e2f",
+          "public_transport": "platform"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "3801040560",
+        "name": "Sanam Chai",
+        "lat": 13.744334,
+        "lon": 100.494692,
+        "tags": {
+          "air_conditioning": "yes",
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4825056444",
+        "name": "Opposite Wat Suthat",
+        "lat": 13.751321,
+        "lon": 100.500361,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c\u0e2f",
+          "name:en": "Opposite Wat Suthat",
+          "name:th": "\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c\u0e2f",
+          "public_transport": "platform"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6046136285",
+        "name": "Villa Siam & Spa",
+        "lat": 13.755764,
+        "lon": 100.500161,
+        "tags": {
+          "addr:housenumber": "35",
+          "addr:postcode": "10200",
+          "addr:street": "Trok Silp Dinso Road",
+          "internet_access": "wlan",
+          "name:en": "Villa Siam & Spa",
+          "phone": "+66 88 895 8219",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6315288885",
+        "name": "Sanam Luang (Opposite Supreme Court)",
+        "lat": 13.754528,
+        "lon": 100.493851,
+        "tags": {
+          "bench": "no",
+          "bus": "yes",
+          "colour": "blue",
+          "highway": "bus_stop",
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07 (\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e0e\u0e35\u0e01\u0e32)",
+          "name:en": "Sanam Luang (Opposite Supreme Court)",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07 (\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e0e\u0e35\u0e01\u0e32)",
+          "public_transport": "platform",
+          "ref": "10",
+          "route_ref": "2;3;6;9;30;33;44;47;59;60;65;70;80;91;123;124;203;503;507",
+          "shelter": "no"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6461412685",
+        "name": "Grand Palace Ticket Office",
+        "lat": 13.752083,
+        "lon": 100.493343,
+        "tags": {
+          "name:en": "Grand Palace Ticket Office",
+          "shop": "ticket"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "7049071585",
+        "name": "Siam Commercial Bank",
+        "lat": 13.751914,
+        "lon": 100.49337,
+        "tags": {
+          "amenity": "bureau_de_change",
+          "name:en": "Siam Commercial Bank",
+          "opening_hours": "Mo-Su 08:30-16:30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "10100721473",
+        "name": "Sao Chingcha Bus Terminal (42)",
+        "lat": 13.749336,
+        "lon": 100.50165,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e17\u0e48\u0e32\u0e23\u0e16\u0e40\u0e2a\u0e32\u0e0a\u0e34\u0e07\u0e0a\u0e49\u0e32 (\u0e2a\u0e32\u0e22 42)",
+          "name:en": "Sao Chingcha Bus Terminal (42)",
+          "name:th": "\u0e17\u0e48\u0e32\u0e23\u0e16\u0e40\u0e2a\u0e32\u0e0a\u0e34\u0e07\u0e0a\u0e49\u0e32 (\u0e2a\u0e32\u0e22 42)"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12313998767",
+        "name": "Sanam Luang Gate",
+        "lat": 13.756941,
+        "lon": 100.492394,
+        "tags": {
+          "access": "permit",
+          "door": "gate",
+          "entrance": "yes",
+          "name": "\u0e1b\u0e23\u0e30\u0e15\u0e39\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "name:en": "Sanam Luang Gate",
+          "name:th": "\u0e1b\u0e23\u0e30\u0e15\u0e39\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12800326727",
+        "name": "Sanam Chai",
+        "lat": 13.744318,
+        "lon": 100.494555,
+        "tags": {
+          "air_conditioning": "yes",
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "23482754",
+        "name": "Grand Palace",
+        "lat": 13.749571,
+        "lon": 100.491792,
+        "tags": {
+          "alt_name:en": "Grand Royal Palace;The Grand Palace & Wat Phra Kaew",
+          "barrier": "city_wall",
+          "castle_type": "palace",
+          "email": "ticket@palaces.mail.go.th",
+          "fee": "yes",
+          "historic": "castle",
+          "image": "https://photos.app.goo.gl/ExPw1koPgsE2wo2UA",
+          "mapillary": "https://www.mapillary.com/map/im/_U0NFzApfUtjloIjLzDgYQ",
+          "name": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "name:de": "Gro\u00dfer Palast",
+          "name:en": "Grand Palace",
+          "name:es": "Gran Palacio",
+          "name:it": "Grande palazzo reale",
+          "name:ja": "\u30b0\u30e9\u30f3\u30c9\u30d1\u30ec\u30b9",
+          "name:ko": "\ubc29\ucf55 \uc655\uad81",
+          "name:pt": "Grande Pal\u00e1cio",
+          "name:ru": "\u041a\u043e\u0440\u043e\u043b\u0435\u0432\u0441\u043a\u0438\u0439 \u0434\u0432\u043e\u0440\u0435\u0446",
+          "name:th": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "name:tr": "B\u00fcy\u00fck Saray",
+          "name:zh": "\u66fc\u8c37\u5927\u738b\u5bab",
+          "opening_hours": "Mo-Su 08:30-15:30",
+          "tourism": "attraction",
+          "website": "https://www.royalgrandpalace.th/en/home",
+          "wheelchair": "yes",
+          "wikidata": "Q873769",
+          "wikipedia": "th:\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "23630232",
+        "name": "Sanam Luang",
+        "lat": 13.755162,
+        "lon": 100.493069,
+        "tags": {
+          "alt_name": "\u0e17\u0e49\u0e2d\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "alt_name:th": "\u0e17\u0e49\u0e2d\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "designation": "Sanam Luang",
+          "leisure": "park",
+          "name": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "name:en": "Sanam Luang",
+          "name:ja": "\u30b5\u30ca\u30fc\u30e0\u30fb\u30eb\u30a2\u30f3",
+          "name:th": "\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07",
+          "name:tr": "Sanam Luang Park\u0131",
+          "old_name": "\u0e17\u0e38\u0e48\u0e07\u0e1e\u0e23\u0e30\u0e40\u0e21\u0e23\u0e38",
+          "old_name:en": "Thung Phra Meru",
+          "old_name:th": "\u0e17\u0e38\u0e48\u0e07\u0e1e\u0e23\u0e30\u0e40\u0e21\u0e23\u0e38",
+          "source": "Bing",
+          "wikidata": "Q767544",
+          "wikimedia_commons": "Category:Sanam Luang",
+          "wikipedia": "th:\u0e17\u0e49\u0e2d\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e2b\u0e25\u0e27\u0e07"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "30744368",
+        "name": "Trok Sanam Phra",
+        "lat": 13.755555,
+        "lon": 100.489039,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "name:en": "Trok Sanam Phra",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "30744369",
+        "name": "Trok Sanam Phra",
+        "lat": 13.755719,
+        "lon": 100.489069,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "name:en": "Trok Sanam Phra",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "32011053",
+        "name": "Wat Suthat Thep Wararam Ratchaworamahawihan",
+        "lat": 13.750117,
+        "lon": 100.500964,
+        "tags": {
+          "amenity": "place_of_worship",
+          "denomination": "thai_mahanikaya",
+          "fee": "20 THB",
+          "name": "\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21\u0e23\u0e32\u0e0a\u0e27\u0e23\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e2b\u0e32\u0e23",
+          "name:en": "Wat Suthat Thep Wararam Ratchaworamahawihan",
+          "name:th": "\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21\u0e23\u0e32\u0e0a\u0e27\u0e23\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e2b\u0e32\u0e23",
+          "name:tr": "Suthat Thep Wararam Tap\u0131na\u011f\u0131",
+          "opening_hours": "Mo-Su 08:30-21:00",
+          "religion": "buddhist",
+          "short_name": "\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21",
+          "tourism": "attraction",
+          "wikidata": "Q2166761",
+          "wikimedia_commons": "Category:Wat Suthat",
+          "wikipedia": "th:\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21\u0e23\u0e32\u0e0a\u0e27\u0e23\u0e21\u0e2b\u0e32\u0e27\u0e34\u0e2b\u0e32\u0e23"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "82541999",
+        "name": "Dusit Maha Prasat Hall",
+        "lat": 13.75016,
+        "lon": 100.490512,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "building": "yes",
+          "castle_type": "palace",
+          "description": "https://photos.app.goo.gl/dGAXJtzhd3cg8Rq78",
+          "historic": "castle",
+          "image": "https://images.mapillary.com/_BbyEjm3HwHY5zlVJi9jJA/thumb-2048.jpg",
+          "mapillary": "308463820652690",
+          "name": "\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e14\u0e38\u0e2a\u0e34\u0e15\u0e21\u0e2b\u0e32\u0e1b\u0e23\u0e32\u0e2a\u0e32\u0e17",
+          "name:en": "Dusit Maha Prasat Hall",
+          "name:th": "\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e14\u0e38\u0e2a\u0e34\u0e15\u0e21\u0e2b\u0e32\u0e1b\u0e23\u0e32\u0e2a\u0e32\u0e17",
+          "wikidata": "Q13017372",
+          "wikimedia_commons": "Category:Phra Thinang Dusit Maha Prasat",
+          "wikipedia": "th:\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e14\u0e38\u0e2a\u0e34\u0e15\u0e21\u0e2b\u0e32\u0e1b\u0e23\u0e32\u0e2a\u0e32\u0e17"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "121554541",
+        "name": "The Old Siam Plaza",
+        "lat": 13.745982,
+        "lon": 100.500229,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e1a\u0e39\u0e23\u0e1e\u0e32\u0e20\u0e34\u0e23\u0e21\u0e22\u0e4c",
+          "building": "yes",
+          "layer": "1",
+          "name": "\u0e14\u0e34\u0e42\u0e2d\u0e25\u0e14\u0e4c\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e25\u0e32\u0e0b\u0e48\u0e32",
+          "name:en": "The Old Siam Plaza",
+          "name:he": "\u05e7\u05e0\u05d9\u05d5\u05df \u05e1\u05d9\u05d0\u05dd \u05e4\u05dc\u05d0\u05d6\u05d4",
+          "name:th": "\u0e14\u0e34\u0e42\u0e2d\u0e25\u0e14\u0e4c\u0e2a\u0e22\u0e32\u0e21\u0e1e\u0e25\u0e32\u0e0b\u0e48\u0e32",
+          "shop": "mall",
+          "short_name:th": "\u0e14\u0e34\u0e42\u0e2d\u0e25\u0e14\u0e4c\u0e2a\u0e22\u0e32\u0e21",
+          "toilets": "yes",
+          "website": "https://www.theoldsiam.co.th/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "138948392",
+        "name": "Siam Commercial Bank",
+        "lat": 13.746298,
+        "lon": 100.49928,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "36",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e1a\u0e39\u0e23\u0e1e\u0e32\u0e20\u0e34\u0e23\u0e21\u0e22\u0e4c",
+          "amenity": "bank",
+          "atm": "yes",
+          "branch": "\u0e15\u0e23\u0e35\u0e40\u0e1e\u0e0a\u0e23",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "brand:wikipedia": "en:Siam Commercial Bank",
+          "building": "commercial",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "opening_hours": "Mo-Fr 08:30-16:00"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "156420653",
+        "name": "Sanam Chai Road",
+        "lat": 13.749397,
+        "lon": 100.494017,
+        "tags": {
+          "highway": "secondary",
+          "honking": "no",
+          "lanes": "4",
+          "lit": "yes",
+          "maxspeed": "50",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:ja": "\u30b5\u30ca\u30fc\u30e0\u30c1\u30e3\u30a4\u901a\u308a",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:zh": "\u6c99\u5357\u731c\u8def",
+          "sidewalk:both": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q6578441",
+          "wikipedia": "th:\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "162625798",
+        "name": "Sanam Chai Road",
+        "lat": 13.751744,
+        "lon": 100.493661,
+        "tags": {
+          "highway": "secondary",
+          "honking": "no",
+          "lit": "yes",
+          "maxspeed": "50",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:ja": "\u30b5\u30ca\u30fc\u30e0\u30c1\u30e3\u30a4\u901a\u308a",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:zh": "\u6c99\u5357\u731c\u8def",
+          "sidewalk": "both",
+          "sidewalk:both": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q6578441",
+          "wikipedia": "th:\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "162665311",
+        "name": "Sanam Chai Road",
+        "lat": 13.746421,
+        "lon": 100.494314,
+        "tags": {
+          "foot": "no",
+          "highway": "secondary",
+          "honking": "no",
+          "maxspeed": "50",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:ja": "\u30b5\u30ca\u30fc\u30e0\u30c1\u30e3\u30a4\u901a\u308a",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:zh": "\u6c99\u5357\u731c\u8def",
+          "surface": "asphalt",
+          "wikidata": "Q6578441",
+          "wikipedia": "th:\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "229891968",
+        "name": "Sanam Chan Hall",
+        "lat": 13.750257,
+        "lon": 100.491823,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "building": "yes",
+          "name": "\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c",
+          "name:en": "Sanam Chan Hall",
+          "name:th": "\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c",
+          "wikidata": "Q13017382",
+          "wikipedia": "th:\u0e1e\u0e23\u0e30\u0e17\u0e35\u0e48\u0e19\u0e31\u0e48\u0e07\u0e2a\u0e19\u0e32\u0e21\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "229910774",
+        "name": "Phupha Suthat Fort",
+        "lat": 13.746801,
+        "lon": 100.490891,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "building": "yes",
+          "man_made": "tower",
+          "name": "\u0e1b\u0e49\u0e2d\u0e21\u0e20\u0e39\u0e1c\u0e32\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c",
+          "name:en": "Phupha Suthat Fort",
+          "name:th": "\u0e1b\u0e49\u0e2d\u0e21\u0e20\u0e39\u0e1c\u0e32\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c",
+          "tower:type": "defensive"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "558978295",
+        "name": "Siam Rommani Bldg.",
+        "lat": 13.747525,
+        "lon": 100.501858,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e1a\u0e39\u0e23\u0e1e\u0e32\u0e20\u0e34\u0e23\u0e21\u0e22\u0e4c",
+          "building": "yes",
+          "building:levels": "10",
+          "name": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e23\u0e21\u0e13\u0e35\u0e22\u0e4c",
+          "name:en": "Siam Rommani Bldg.",
+          "name:th": "\u0e2d\u0e32\u0e04\u0e32\u0e23\u0e2a\u0e22\u0e32\u0e21\u0e23\u0e21\u0e13\u0e35\u0e22\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "997450677",
+        "name": "Siam Subway Hostel",
+        "lat": 13.747456,
+        "lon": 100.502253,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e1a\u0e39\u0e23\u0e1e\u0e32\u0e20\u0e34\u0e23\u0e21\u0e22\u0e4c",
+          "building": "yes",
+          "name": "Siam Subway Hostel",
+          "tourism": "hostel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1191859982",
+        "name": "Sanam Chai Road",
+        "lat": 13.751721,
+        "lon": 100.49357,
+        "tags": {
+          "crossing": "unmarked",
+          "crossing:markings": "no",
+          "footway": "crossing",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1194923900",
+        "name": "Wat Suthat Thepwararam Office",
+        "lat": 13.749874,
+        "lon": 100.500476,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e14\u0e23\u0e32\u0e0a\u0e1a\u0e1e\u0e34\u0e18",
+          "building": "temple",
+          "name": "\u0e2a\u0e33\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21",
+          "name:en": "Wat Suthat Thepwararam Office",
+          "name:th": "\u0e2a\u0e33\u0e19\u0e31\u0e01\u0e07\u0e32\u0e19\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e40\u0e17\u0e1e\u0e27\u0e23\u0e32\u0e23\u0e32\u0e21",
+          "office": "religion"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1194923979",
+        "name": "Wat Suthat School",
+        "lat": 13.748929,
+        "lon": 100.501319,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e27\u0e31\u0e14\u0e23\u0e32\u0e0a\u0e1a\u0e1e\u0e34\u0e18",
+          "amenity": "school",
+          "building": "yes",
+          "name": "\u0e42\u0e23\u0e07\u0e40\u0e23\u0e35\u0e22\u0e19\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c",
+          "name:en": "Wat Suthat School",
+          "name:th": "\u0e42\u0e23\u0e07\u0e40\u0e23\u0e35\u0e22\u0e19\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e17\u0e31\u0e28\u0e19\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1212060691",
+        "name": "Sanam Chai Road",
+        "lat": 13.75072,
+        "lon": 100.493722,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223444951",
+        "name": "Trok Sanam Phra",
+        "lat": 13.755529,
+        "lon": 100.489472,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "name:en": "Trok Sanam Phra",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "tunnel": "building_passage"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223445344",
+        "name": "Wian Ta Wang Siam",
+        "lat": 13.755641,
+        "lon": 100.489475,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "30",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a",
+          "addr:subdistrict": "\u0e1e\u0e23\u0e30\u0e1a\u0e23\u0e21\u0e21\u0e2b\u0e32\u0e23\u0e32\u0e0a\u0e27\u0e31\u0e07",
+          "building": "retail",
+          "building:levels": "4",
+          "name": "\u0e41\u0e27\u0e48\u0e19\u0e15\u0e32\u0e27\u0e31\u0e07\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Wian Ta Wang Siam",
+          "name:th": "\u0e41\u0e27\u0e48\u0e19\u0e15\u0e32\u0e27\u0e31\u0e07\u0e2a\u0e22\u0e32\u0e21",
+          "shop": "optician"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223450353",
+        "name": "Trok Sanam Phra",
+        "lat": 13.755533,
+        "lon": 100.489382,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "name:en": "Trok Sanam Phra",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223450354",
+        "name": "Trok Sanam Phra",
+        "lat": 13.755525,
+        "lon": 100.489557,
+        "tags": {
+          "highway": "footway",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30",
+          "name:en": "Trok Sanam Phra",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e2a\u0e19\u0e32\u0e21\u0e1e\u0e23\u0e30"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223464473",
+        "name": "Sanam Chai Road",
+        "lat": 13.745373,
+        "lon": 100.494347,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "source": "Bing",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223464484",
+        "name": "Sanam Chai Road",
+        "lat": 13.746789,
+        "lon": 100.494114,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "source": "Bing",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223464486",
+        "name": "Sanam Chai Road",
+        "lat": 13.752078,
+        "lon": 100.493486,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223464487",
+        "name": "Sanam Chai Road",
+        "lat": 13.752082,
+        "lon": 100.493815,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223464489",
+        "name": "Sanam Chai Road",
+        "lat": 13.751668,
+        "lon": 100.493763,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223465823",
+        "name": "Sanam Chai Road",
+        "lat": 13.7487,
+        "lon": 100.494015,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1223465825",
+        "name": "Sanam Chai Road",
+        "lat": 13.751295,
+        "lon": 100.493827,
+        "tags": {
+          "footway": "sidewalk",
+          "highway": "footway",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "surface": "paving_stones"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1267713481",
+        "name": "Old Siam",
+        "lat": 13.747297,
+        "lon": 100.499231,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "53",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e01\u0e23\u0e38\u0e07",
+          "addr:subdistrict": "\u0e27\u0e31\u0e07\u0e1a\u0e39\u0e23\u0e1e\u0e32\u0e20\u0e34\u0e23\u0e21\u0e22\u0e4c",
+          "building": "commercial",
+          "building:levels": "5",
+          "name": "\u0e42\u0e2d\u0e25\u0e14\u0e4c\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Old Siam",
+          "name:th": "\u0e42\u0e2d\u0e25\u0e14\u0e4c\u0e2a\u0e22\u0e32\u0e21",
+          "shop": "jewelry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1268556866",
+        "name": "Sanam Chai Road",
+        "lat": 13.74765,
+        "lon": 100.494269,
+        "tags": {
+          "foot": "no",
+          "highway": "secondary",
+          "honking": "no",
+          "lanes": "4",
+          "lit": "yes",
+          "maxspeed": "50",
+          "name": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:en": "Sanam Chai Road",
+          "name:ja": "\u30b5\u30ca\u30fc\u30e0\u30c1\u30e3\u30a4\u901a\u308a",
+          "name:th": "\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22",
+          "name:zh": "\u6c99\u5357\u731c\u8def",
+          "sidewalk:both": "separate",
+          "surface": "asphalt",
+          "wikidata": "Q6578441",
+          "wikipedia": "th:\u0e16\u0e19\u0e19\u0e2a\u0e19\u0e32\u0e21\u0e44\u0e0a\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1466730999",
+        "name": "Siam Sewing Machine",
+        "lat": 13.753102,
+        "lon": 100.502713,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "32/3",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e0b\u0e2d\u0e22\u0e2a\u0e33\u0e23\u0e32\u0e0d\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c",
+          "addr:subdistrict": "\u0e2a\u0e33\u0e23\u0e32\u0e0d\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c",
+          "building": "commercial",
+          "building:levels": "3",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e42\u0e0b\u0e2d\u0e34\u0e49\u0e07\u0e41\u0e21\u0e0a\u0e35\u0e19",
+          "name:en": "Siam Sewing Machine",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e42\u0e0b\u0e2d\u0e34\u0e49\u0e07\u0e41\u0e21\u0e0a\u0e35\u0e19",
+          "operator": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2a\u0e22\u0e32\u0e21\u0e42\u0e0b\u0e2d\u0e34\u0e49\u0e07\u0e41\u0e21\u0e0a\u0e35\u0e19 \u0e08\u0e33\u0e01\u0e31\u0e14",
+          "shop": "sewing"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1466735378",
+        "name": "Mook Siam",
+        "lat": 13.75205,
+        "lon": 100.502316,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "183",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1a\u0e33\u0e23\u0e38\u0e07\u0e40\u0e21\u0e37\u0e2d\u0e07",
+          "addr:subdistrict": "\u0e2a\u0e33\u0e23\u0e32\u0e0d\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c",
+          "building": "commercial",
+          "building:levels": "4",
+          "name": "\u0e21\u0e38\u0e01\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Mook Siam",
+          "name:th": "\u0e21\u0e38\u0e01\u0e2a\u0e22\u0e32\u0e21",
+          "shop": "religion"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1525191965",
+        "name": "Siam Champs-\u00c9lys\u00e9esi",
+        "lat": 13.755575,
+        "lon": 100.503183,
+        "tags": {
+          "addr:city": "\u0e41\u0e02\u0e27\u0e07\u0e1a\u0e27\u0e23\u0e19\u0e34\u0e40\u0e27\u0e28",
+          "addr:housenumber": "160",
+          "addr:postcode": "10200",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e23\u0e32\u0e0a\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e01\u0e25\u0e32\u0e07",
+          "building": "commercial",
+          "email": "rsvn@siam-champss.com",
+          "internet_access": "yes",
+          "internet_access:fee": "no",
+          "name": "Siam Champs-\u00c9lys\u00e9esi",
+          "name:en": "Siam Champs-\u00c9lys\u00e9esi",
+          "phone": "+6622240141",
+          "smoking": "no",
+          "tourism": "hotel",
+          "website": "https://www.siam-champss.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1547409650",
+        "name": "SiamPatra 2",
+        "lat": 13.754033,
+        "lon": 100.496078,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "22/1",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e2d\u0e31\u0e29\u0e0e\u0e32\u0e07\u0e04\u0e4c",
+          "addr:subdistrict": "\u0e28\u0e32\u0e25\u0e40\u0e08\u0e49\u0e32\u0e1e\u0e48\u0e2d\u0e40\u0e2a\u0e37\u0e2d",
+          "building": "commercial",
+          "building:levels": "5",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e20\u0e31\u0e17\u0e23 2",
+          "name:en": "SiamPatra 2",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e20\u0e31\u0e17\u0e23 2",
+          "shop": "clothes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1547414693",
+        "name": "SiamPatra",
+        "lat": 13.753997,
+        "lon": 100.496085,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "22/2",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e2d\u0e31\u0e29\u0e0e\u0e32\u0e07\u0e04\u0e4c",
+          "addr:subdistrict": "\u0e28\u0e32\u0e25\u0e40\u0e08\u0e49\u0e32\u0e1e\u0e48\u0e2d\u0e40\u0e2a\u0e37\u0e2d",
+          "building": "commercial",
+          "building:levels": "5",
+          "name": "\u0e2a\u0e22\u0e32\u0e21\u0e20\u0e31\u0e17\u0e23",
+          "name:en": "SiamPatra",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21\u0e20\u0e31\u0e17\u0e23",
+          "shop": "clothes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1547868816",
+        "name": "SiRi Oriental Bangkok Hotel",
+        "lat": 13.754441,
+        "lon": 100.497729,
+        "tags": {
+          "addr:district": "\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23",
+          "addr:housenumber": "120",
+          "addr:postcode": "10200",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e1a\u0e38\u0e0d\u0e28\u0e34\u0e23\u0e34",
+          "addr:subdistrict": "\u0e28\u0e32\u0e25\u0e40\u0e08\u0e49\u0e32\u0e1e\u0e48\u0e2d\u0e40\u0e2a\u0e37\u0e2d",
+          "building": "yes",
+          "building:levels": "5",
+          "contact:facebook": "https://www.facebook.com/siriorientalbkk120",
+          "mobile": "+66 90 909 2695",
+          "name": "SiRi Oriental Bangkok Hotel",
+          "name:en": "SiRi Oriental Bangkok Hotel",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.489,13.746,100.503,13.756"
+      }
+    ],
+    "riverfront": [
+      {
+        "osmType": "node",
+        "osmId": "269747411",
+        "name": "Icon Siam Pier 1",
+        "lat": 13.725849,
+        "lon": 100.511976,
+        "tags": {
+          "ferry": "yes",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 1",
+          "name:en": "Icon Siam Pier 1",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 1",
+          "public_transport": "stop_position",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1408521453",
+        "name": "Oriental Pier",
+        "lat": 13.723315,
+        "lon": 100.513519,
+        "tags": {
+          "amenity": "ferry_terminal",
+          "ferry": "yes",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "name:en": "Oriental Pier",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "public_transport": "stop_position",
+          "ref": "N1"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "1697004542",
+        "name": "Siam",
+        "lat": 13.745546,
+        "lon": 100.534205,
+        "tags": {
+          "local_ref": "4",
+          "name": "\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Siam",
+          "name:th": "\u0e2a\u0e22\u0e32\u0e21",
+          "public_transport": "stop_position",
+          "railway": "stop",
+          "subway": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "2774419689",
+        "name": "Siam Lan Card",
+        "lat": 13.725288,
+        "lon": 100.509301,
+        "tags": {
+          "addr:housenumber": "463",
+          "addr:postcode": "10600",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23 5/1 \u0e41\u0e02\u0e27\u0e07\u0e04\u0e25\u0e2d\u0e07\u0e15\u0e49\u0e19\u0e44\u0e17\u0e23 \u0e40\u0e02\u0e15 \u0e04\u0e25\u0e2d\u0e07\u0e2a\u0e32\u0e19",
+          "check_date": "2024-03-07",
+          "description": "Network Equipment Diskless",
+          "name": "Siam Lan Card",
+          "name:en": "Siam Lan Card",
+          "name:ru": "\u0421\u0435\u0442\u0435\u0432\u044b\u0435 \u043a\u0430\u0440\u0442\u044b \u0421\u0438\u0430\u043c\u0430",
+          "phone": "086-085-9994 , 084-944-8444",
+          "shop": "computer",
+          "url": "http://www.siamlancard.com/",
+          "website": "http://www.siamlancard.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "4665598589",
+        "name": "Siam",
+        "lat": 13.718869,
+        "lon": 100.514013,
+        "tags": {
+          "amenity": "bureau_de_change",
+          "name:en": "Siam"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "5979553525",
+        "name": "Oriental Pier",
+        "lat": 13.724562,
+        "lon": 100.516282,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e17\u0e48\u0e32\u0e19\u0e49\u0e33\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "name:en": "Oriental Pier",
+          "name:th": "\u0e17\u0e48\u0e32\u0e19\u0e49\u0e33\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "public_transport": "platform",
+          "ref": "3",
+          "source": "survey"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6149814397",
+        "name": "Shuttle bus Icon Siam to BTS Krung Thonburi",
+        "lat": 13.725805,
+        "lon": 100.510327,
+        "tags": {
+          "bench": "no",
+          "bin": "no",
+          "bus": "yes",
+          "highway": "bus_stop",
+          "lit": "yes",
+          "name": "Shuttle bus Icon Siam to BTS Krung Thonburi",
+          "public_transport": "platform",
+          "shelter": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6150815344",
+        "name": "Icon Siam Pier 2",
+        "lat": 13.726627,
+        "lon": 100.511854,
+        "tags": {
+          "amenity": "ferry_terminal",
+          "country": "\u0e44\u0e17\u0e22",
+          "ferry": "yes",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 2",
+          "name:en": "Icon Siam Pier 2",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 2",
+          "public_transport": "station",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6150815346",
+        "name": "Icon Siam Pier 4",
+        "lat": 13.727559,
+        "lon": 100.511795,
+        "tags": {
+          "amenity": "ferry_terminal",
+          "country": "Thailand",
+          "ferry": "yes",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 4",
+          "name:en": "Icon Siam Pier 4",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 4",
+          "province": "Bangkok",
+          "public_transport": "stop_position",
+          "ref": "N2/1"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6174365548",
+        "name": "Icon Siam Pontoon 1B",
+        "lat": 13.726204,
+        "lon": 100.511896,
+        "tags": {
+          "floating": "yes",
+          "man_made": "pier",
+          "name": "Icon Siam Pontoon 1B"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6342681687",
+        "name": "Opposite Oriental Pier",
+        "lat": 13.724814,
+        "lon": 100.516342,
+        "tags": {
+          "bus": "yes",
+          "highway": "bus_stop",
+          "name": "\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e17\u0e48\u0e32\u0e19\u0e49\u0e33\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "name:en": "Opposite Oriental Pier",
+          "name:th": "\u0e15\u0e23\u0e07\u0e02\u0e49\u0e32\u0e21\u0e17\u0e48\u0e32\u0e19\u0e49\u0e33\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "public_transport": "platform",
+          "ref": "4"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "6574814817",
+        "name": "Siam Commercial Bank",
+        "lat": 13.726292,
+        "lon": 100.516051,
+        "tags": {
+          "amenity": "atm",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "colour": "purple",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "operator": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "operator:wikidata": "Q2038986"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "9778499774",
+        "name": "HOBS Iconsiam the Pleasing Taste By the River",
+        "lat": 13.726666,
+        "lon": 100.511192,
+        "tags": {
+          "amenity": "pub",
+          "name": "HOBS Iconsiam the Pleasing Taste By the River"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "9907104255",
+        "name": "Siam Leather Works",
+        "lat": 13.730607,
+        "lon": 100.513036,
+        "tags": {
+          "craft": "shoemaker",
+          "email": "customer@siamleathergoods.com",
+          "name": "Siam Leather Works",
+          "phone": "+66 2 639 63 01",
+          "shop": "shoes",
+          "website": "https://www.siamleather.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "10100732387",
+        "name": "Apple Iconsiam",
+        "lat": 13.72637,
+        "lon": 100.510578,
+        "tags": {
+          "addr:postcode": "10600",
+          "brand": "Apple Store",
+          "brand:wikidata": "Q421253",
+          "check_date": "2026-01-17",
+          "check_date:opening_hours": "2026-01-17",
+          "internet_access": "no",
+          "level": "2",
+          "name": "Apple Iconsiam",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "opening_hours:signed": "no",
+          "payment:cards": "yes",
+          "payment:cash": "yes",
+          "shop": "electronics",
+          "short_name": "Apple",
+          "toilets": "no",
+          "website": "https://apple.com/th/retail/iconsiam",
+          "wheelchair": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "10568083534",
+        "name": "SOOKSIAM",
+        "lat": 13.726266,
+        "lon": 100.510016,
+        "tags": {
+          "name": "\u0e2a\u0e38\u0e02\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "SOOKSIAM",
+          "name:ko": "\uc465\uc2f8\uc58c",
+          "shop": "mall"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11052197852",
+        "name": "Hilton Pier",
+        "lat": 13.728596,
+        "lon": 100.511696,
+        "tags": {
+          "ferry": "yes",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2e\u0e34\u0e25\u0e15\u0e31\u0e19",
+          "name:en": "Hilton Pier",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2e\u0e34\u0e25\u0e15\u0e31\u0e19",
+          "public_transport": "stop_position"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "11081431887",
+        "name": "Relax Siam Massage",
+        "lat": 13.722691,
+        "lon": 100.509176,
+        "tags": {
+          "name": "\u0e23\u0e35\u0e41\u0e25\u0e47\u0e01\u0e0b\u0e4c\u0e2a\u0e22\u0e32\u0e21 \u0e21\u0e32\u0e2a\u0e0b\u0e32\u0e2a",
+          "name:en": "Relax Siam Massage",
+          "name:th": "\u0e23\u0e35\u0e41\u0e25\u0e47\u0e01\u0e0b\u0e4c\u0e2a\u0e22\u0e32\u0e21 \u0e21\u0e32\u0e2a\u0e0b\u0e32\u0e2a",
+          "opening_hours": "Mo-Su 10:00-23:00",
+          "shop": "massage"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12114197401",
+        "name": "Hilton Garden Inn Bangkok Riverside",
+        "lat": 13.726339,
+        "lon": 100.508674,
+        "tags": {
+          "addr:district": "\u0e04\u0e25\u0e2d\u0e07\u0e2a\u0e32\u0e19",
+          "addr:housenumber": "168",
+          "addr:place": "ICS Tower",
+          "addr:postcode": "10600",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e15\u0e49\u0e19\u0e44\u0e17\u0e23",
+          "brand": "Hilton Garden Inn",
+          "brand:wikidata": "Q1162859",
+          "brand:wikipedia": "https://www.wikidata.org/wiki/Q1162859",
+          "internet_access": "yes",
+          "name": "Hilton Garden Inn Bangkok Riverside",
+          "operator": "Hilton",
+          "phone": "+66 2 760 8900",
+          "tourism": "hotel",
+          "website": "https://www.hilton.com/en/hotels/bkkcpgi-hilton-garden-inn-bangkok-riverside/",
+          "wikipedia": "en:Hilton Garden Inn"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12304860756",
+        "name": "GATTA CAfe (ICONSIAM) - Specialty Coffee",
+        "lat": 13.726219,
+        "lon": 100.510294,
+        "tags": {
+          "addr:floor": "5",
+          "addr:housenumber": "299",
+          "addr:place": "ICONSIAM",
+          "addr:postcode": "10600",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23",
+          "amenity": "cafe",
+          "bar": "yes",
+          "currency:XBT": "no",
+          "name": "GATTA CAfe (ICONSIAM) - Specialty Coffee",
+          "opening_hours": "Mo-Su 10:30-21:00",
+          "payment:lightning": "no",
+          "payment:lightning_contactless": "no",
+          "payment:onchain": "no",
+          "phone": "095-697-8966",
+          "survey:date": "2024-11-01",
+          "website": "https://www.gattacafe.com/"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "12485814133",
+        "name": "J\u00c9R\u00d4ME Cheesecake Thailand @ICONSIAM",
+        "lat": 13.726075,
+        "lon": 100.5105,
+        "tags": {
+          "addr:district": "\u0e04\u0e25\u0e2d\u0e07\u0e2a\u0e32\u0e19",
+          "addr:housenumber": "The Veranda Zone",
+          "addr:place": "ICONSIAM",
+          "addr:postcode": "10600",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e15\u0e49\u0e19\u0e44\u0e17\u0e23",
+          "amenity": "cafe",
+          "cuisine": "cake;\u0e0a\u0e32\u0e40\u0e02\u0e35\u0e22\u0e27;coffee_shop",
+          "internet_access": "no",
+          "name": "J\u00c9R\u00d4ME Cheesecake Thailand @ICONSIAM",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "phone": "065 717 9030",
+          "website": "www.kyorollen.com/jerome"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "node",
+        "osmId": "13059082101",
+        "name": "Oriental heritage hotel",
+        "lat": 13.726225,
+        "lon": 100.51604,
+        "tags": {
+          "name": "Oriental heritage hotel",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "134464577",
+        "name": "Mandarin Oriental Hotel",
+        "lat": 13.723926,
+        "lon": 100.51435,
+        "tags": {
+          "addr:district": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:housename": "Mandarin Oriental",
+          "addr:housenumber": "48",
+          "addr:place": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:postcode": "10500",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "Oriental Avenue",
+          "addr:subdistrict": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "branch": "Bangkok",
+          "branch:th": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e",
+          "building:levels": "20",
+          "landuse": "commercial",
+          "leisure": "resort",
+          "name": "Mandarin Oriental Hotel",
+          "name:en": "Mandarin Oriental Hotel",
+          "name:th": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e41\u0e21\u0e19\u0e14\u0e32\u0e23\u0e34\u0e19 \u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "old_name:th": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "phone": "+6626599000",
+          "website": "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river?src=loc.yext.mobkk.ggl",
+          "wikidata": "Q1631000",
+          "wikimedia_commons": "Category:The Oriental Bangkok",
+          "wikipedia": "en:Mandarin Oriental, Bangkok"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "305102093",
+        "name": "Siam Commercial Bank",
+        "lat": 13.731943,
+        "lon": 100.512779,
+        "tags": {
+          "addr:district": "\u0e2a\u0e31\u0e21\u0e1e\u0e31\u0e19\u0e18\u0e27\u0e07\u0e28\u0e4c",
+          "addr:housenumber": "1280",
+          "addr:postcode": "10100",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e42\u0e22\u0e18\u0e32",
+          "addr:subdistrict": "\u0e15\u0e25\u0e32\u0e14\u0e19\u0e49\u0e2d\u0e22",
+          "air_conditioning": "yes",
+          "amenity": "bank",
+          "architect": "Annibale Rigotti",
+          "branch": "\u0e15\u0e25\u0e32\u0e14\u0e19\u0e49\u0e2d\u0e22",
+          "brand": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:en": "Siam Commercial Bank",
+          "brand:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "brand:wikidata": "Q2038986",
+          "building": "yes",
+          "drive_through": "no",
+          "historic": "building",
+          "name": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "name:en": "Siam Commercial Bank",
+          "name:th": "\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c",
+          "wikidata": "Q28408054",
+          "wikipedia": "th:\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e44\u0e17\u0e22\u0e1e\u0e32\u0e13\u0e34\u0e0a\u0e22\u0e4c \u0e2a\u0e32\u0e02\u0e32\u0e15\u0e25\u0e32\u0e14\u0e19\u0e49\u0e2d\u0e22"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "342182317",
+        "name": "River City",
+        "lat": 13.730349,
+        "lon": 100.513262,
+        "tags": {
+          "addr:district": "\u0e2a\u0e31\u0e21\u0e1e\u0e31\u0e19\u0e18\u0e27\u0e07\u0e28\u0e4c",
+          "addr:housenumber": "23",
+          "addr:postcode": "10100",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e0b\u0e2d\u0e22\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e01\u0e23\u0e38\u0e07 24",
+          "addr:subdistrict": "\u0e15\u0e25\u0e32\u0e14\u0e19\u0e49\u0e2d\u0e22",
+          "building": "yes",
+          "building:levels": "4",
+          "height": "15",
+          "name": "\u0e23\u0e34\u0e40\u0e27\u0e2d\u0e23\u0e4c\u0e0b\u0e34\u0e15\u0e35",
+          "name:en": "River City",
+          "name:th": "\u0e23\u0e34\u0e40\u0e27\u0e2d\u0e23\u0e4c\u0e0b\u0e34\u0e15\u0e35",
+          "name:zh": "\u6cb3\u57ce\u8d2d\u7269\u4e2d\u5fc3",
+          "opening_hours": "Mo-Su 10:00-20:00",
+          "phone": "+66 2 237 0077",
+          "shop": "mall",
+          "website": "https://rivercitybangkok.com",
+          "wikidata": "Q16434075",
+          "wikimedia_commons": "Category:River City Shopping Complex",
+          "wikipedia": "th:\u0e23\u0e34\u0e40\u0e27\u0e2d\u0e23\u0e4c\u0e0b\u0e34\u0e15\u0e35"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "342200086",
+        "name": "Shangri-La Hotel Bangkok",
+        "lat": 13.720781,
+        "lon": 100.513781,
+        "tags": {
+          "addr:housenumber": "89",
+          "addr:postcode": "10500",
+          "addr:street": "Soi Wat Suan Plu",
+          "landuse": "commercial",
+          "name": "Shangri-La Hotel Bangkok",
+          "name:th": "\u0e41\u0e0a\u0e07\u0e01\u0e23\u0e35-\u0e25\u0e32 \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f",
+          "tourism": "hotel",
+          "wikidata": "Q19840749",
+          "wikimedia_commons": "Category:Shangri-La Hotel, Bangkok",
+          "wikipedia": "en:Shangri-La Hotel, Bangkok"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "342554731",
+        "name": "The Peninsula",
+        "lat": 13.723302,
+        "lon": 100.510368,
+        "tags": {
+          "landuse": "residential",
+          "name": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e40\u0e1e\u0e19\u0e19\u0e34\u0e19\u0e0b\u0e39\u0e25\u0e32",
+          "name:de": "The Peninsula",
+          "name:en": "The Peninsula",
+          "name:th": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e40\u0e1e\u0e19\u0e19\u0e34\u0e19\u0e0b\u0e39\u0e25\u0e32",
+          "tourism": "hotel",
+          "wikidata": "Q7756548",
+          "wikimedia_commons": "Category:The Peninsula Bangkok",
+          "wikipedia": "th:\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e40\u0e1e\u0e19\u0e19\u0e34\u0e19\u0e0b\u0e39\u0e25\u0e48\u0e32"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "342556929",
+        "name": "Millennium Hilton Bangkok",
+        "lat": 13.728694,
+        "lon": 100.51096,
+        "tags": {
+          "addr:city": "\u0e41\u0e02\u0e27\u0e07\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:housenumber": "123",
+          "addr:postcode": "10600",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23",
+          "brand": "Millennium",
+          "brand:wikidata": "Q6858774",
+          "building": "yes",
+          "building:levels": "32",
+          "building:part": "yes",
+          "contact:facebook": "https://www.facebook.com/Hiltonbangkok",
+          "contact:instagram": "https://www.instagram.com/millenniumhiltonbangkok",
+          "contact:twitter": "https://twitter.com/hiltonbangkok",
+          "contact:youtube": "https://www.youtube.com/channel/UCGbgK6kYjOVNUhKsxfQ7MXg",
+          "email": "bkkhi.informations@hilton.com",
+          "internet_access": "wlan",
+          "internet_access:fee": "no",
+          "layer": "1",
+          "name": "Millennium Hilton Bangkok",
+          "official_name": "Millennium Hotels & Resorts",
+          "operator": "Hilton",
+          "payment:american_express": "yes",
+          "payment:cash": "yes",
+          "payment:credit_cards": "yes",
+          "payment:debit_cards": "yes",
+          "payment:diners_club": "yes",
+          "payment:eurocard": "yes",
+          "payment:jcb": "yes",
+          "payment:mastercard": "yes",
+          "payment:unionpay": "yes",
+          "payment:visa": "yes",
+          "phone": "+66 2 442 2000",
+          "rooms": "533",
+          "smoking": "yes",
+          "stars": "5",
+          "tourism": "hotel",
+          "website": "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/?SEO_id=OTHR-APAC-TW-BKKHITW",
+          "wheelchair": "yes",
+          "wikidata": "Q47518776",
+          "wikimedia_commons": "Category:Millennium Hilton Bangkok"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "391412195",
+        "name": "Oriental-Wat Suwan Ferry",
+        "lat": 13.723701,
+        "lon": 100.512681,
+        "tags": {
+          "foot": "yes",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e02\u0e49\u0e32\u0e21\u0e1f\u0e32\u0e01\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25-\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e27\u0e23\u0e23\u0e13",
+          "name:en": "Oriental-Wat Suwan Ferry",
+          "name:th": "\u0e40\u0e23\u0e37\u0e2d\u0e02\u0e49\u0e32\u0e21\u0e1f\u0e32\u0e01\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25-\u0e27\u0e31\u0e14\u0e2a\u0e38\u0e27\u0e23\u0e23\u0e13",
+          "route": "ferry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "659632136",
+        "name": "Icon Siam-Si Phraya Pier Shuttle Boat",
+        "lat": 13.727988,
+        "lon": 100.512451,
+        "tags": {
+          "access": "no",
+          "charge": "6 THB",
+          "check_date": "2023-07-27",
+          "duration": "00:05",
+          "fee": "no",
+          "foot": "yes",
+          "motor_vehicle": "no",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Icon Siam-Si Phraya Pier Shuttle Boat",
+          "name:ko": "\uc544\uc774\ucf58\uc330\uc58c-\uc2dc \ud504\ub77c\uc57c \ubd80\ub450 \uc21c\ud658 \ubcf4\ud2b8",
+          "name:th": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "operator": "Thai Smile Boat Co., Ltd.",
+          "route": "ferry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "659632137",
+        "name": "Icon Siam-CAT Tower Pier Shuttle Boat",
+        "lat": 13.727262,
+        "lon": 100.512631,
+        "tags": {
+          "access": "no",
+          "charge": "6 THB",
+          "duration": "00:05",
+          "fee": "no",
+          "foot": "yes",
+          "motor_vehicle": "no",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Icon Siam-CAT Tower Pier Shuttle Boat",
+          "name:ko": "\uc544\uc774\ucf58\uc330\uc58c-CAT \ud0c0\uc6cc \ubd80\ub450 \uc21c\ud658 \ubcf4\ud2b8",
+          "operator": "Thai Smile Boat Co., Ltd.",
+          "route": "ferry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "664353686",
+        "name": "Icon Siam-Sathorn Pier Shuttle Boat",
+        "lat": 13.7225,
+        "lon": 100.51221,
+        "tags": {
+          "bicycle": "no",
+          "charge": "10 THB",
+          "fee": "no",
+          "foot": "yes",
+          "horse": "no",
+          "motor_vehicle": "no",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21-\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2a\u0e32\u0e17\u0e23",
+          "name:en": "Icon Siam-Sathorn Pier Shuttle Boat",
+          "name:ko": "\uc544\uc774\ucf58\uc2f8\uc58c-\uc2f8\ud1a4 \ubd80\ub450 \uc21c\ud658 \uc120\ubc15",
+          "name:th": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21-\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2a\u0e32\u0e17\u0e23",
+          "operator": "Supatra Boat Co., Ltd.",
+          "route": "ferry",
+          "toll": "yes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "669044712",
+        "name": "Trok Oriental",
+        "lat": 13.724349,
+        "lon": 100.515123,
+        "tags": {
+          "highway": "residential",
+          "lanes": "1",
+          "maxspeed": "30",
+          "name": "\u0e15\u0e23\u0e2d\u0e01\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "name:en": "Trok Oriental",
+          "name:etymology:wikidata": "Q1631000",
+          "name:th": "\u0e15\u0e23\u0e2d\u0e01\u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25",
+          "oneway": "yes",
+          "surface": "asphalt"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "680735864",
+        "name": "ICONSIAM",
+        "lat": 13.726826,
+        "lon": 100.510325,
+        "tags": {
+          "addr:district": "\u0e04\u0e25\u0e2d\u0e07\u0e2a\u0e32\u0e19",
+          "addr:housenumber": "168;259;289;299",
+          "addr:postcode": "10600",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e04\u0e25\u0e2d\u0e07\u0e15\u0e49\u0e19\u0e44\u0e17\u0e23",
+          "alt_name": "\u0e44\u0e2d\u0e04\u0e2d\u0e19 \u0e2a\u0e22\u0e32\u0e21",
+          "alt_name:en": "Icon Siam",
+          "alt_name:ko": "\uc544\uc774\ucf58\uc2dc\uc554",
+          "alt_name:th": "\u0e44\u0e2d\u0e04\u0e2d\u0e19 \u0e2a\u0e22\u0e32\u0e21",
+          "building": "retail",
+          "building:levels": "8",
+          "check_date": "2022-10-14",
+          "name": "ICONSIAM",
+          "name:en": "ICONSIAM",
+          "name:ko": "\uc544\uc774\ucf58\uc2f8\uc58c",
+          "name:th": "\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "nohousenumber": "yes",
+          "opening_hours": "Mo-Su 10:00-22:00",
+          "operator": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 \u0e08\u0e33\u0e01\u0e31\u0e14;\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e44\u0e2d\u0e0b\u0e35\u0e40\u0e2d\u0e2a \u0e08\u0e33\u0e01\u0e31\u0e14",
+          "shop": "mall",
+          "toilets": "yes",
+          "website": "https://www.iconsiam.com/",
+          "wheelchair": "yes",
+          "wikidata": "Q20585880",
+          "wikimedia_commons": "Category:Iconsiam",
+          "wikipedia": "th:\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "680739268",
+        "name": "The Residences at Mandarin Oriental",
+        "lat": 13.727851,
+        "lon": 100.510911,
+        "tags": {
+          "building": "apartments",
+          "building:levels": "52",
+          "height": "272.2",
+          "name": "The Residences at Mandarin Oriental",
+          "name:en": "The Residences at Mandarin Oriental",
+          "name:th": "\u0e40\u0e14\u0e2d\u0e30 \u0e40\u0e23\u0e2a\u0e0b\u0e34\u0e40\u0e14\u0e19\u0e40\u0e0b\u0e2a \u0e41\u0e2d\u0e17 \u0e41\u0e21\u0e19\u0e14\u0e32\u0e23\u0e34\u0e19 \u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e19\u0e40\u0e15\u0e47\u0e25"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "838984928",
+        "name": "Icon Siam Shuttle Boat",
+        "lat": 13.732958,
+        "lon": 100.508599,
+        "tags": {
+          "fee": "no",
+          "foot": "yes",
+          "motor_vehicle": "no",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "name:en": "Icon Siam Shuttle Boat",
+          "name:th": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "route": "ferry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1057672409",
+        "name": "Hilton Pier",
+        "lat": 13.728573,
+        "lon": 100.511628,
+        "tags": {
+          "man_made": "pier",
+          "name": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2e\u0e34\u0e25\u0e15\u0e31\u0e19",
+          "name:en": "Hilton Pier",
+          "name:th": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2e\u0e34\u0e25\u0e15\u0e31\u0e19"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1133812405",
+        "name": "ICONSIAM-Si Phraya Pier Shuttle Boat",
+        "lat": 13.728532,
+        "lon": 100.512361,
+        "tags": {
+          "check_date": "2023-07-27",
+          "description": "As of May 2023, the route has been retired.",
+          "duration": "00:05",
+          "from": "\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21",
+          "name": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21-\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2a\u0e35\u0e48\u0e1e\u0e23\u0e30\u0e22\u0e32",
+          "name:en": "ICONSIAM-Si Phraya Pier Shuttle Boat",
+          "name:ko": "\uc544\uc774\ucf58\uc2f8\uc58c-\uc2dc\ud504\ub77c\uc57c \ubd80\ub450 \uc21c\ud658 \uc120\ubc15",
+          "name:th": "\u0e40\u0e23\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e2a\u0e48\u0e07\u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21-\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2a\u0e35\u0e48\u0e1e\u0e23\u0e30\u0e22\u0e32",
+          "operator": "ICON Siam",
+          "to": "\u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e2a\u0e23\u0e32\u0e1e\u0e23\u0e30\u0e22\u0e32",
+          "toll": "no",
+          "was:route": "ferry"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1232453013",
+        "name": "From Siam with Love",
+        "lat": 13.723939,
+        "lon": 100.515784,
+        "tags": {
+          "addr:district": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:housenumber": "14",
+          "addr:postcode": "10500",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e0b\u0e2d\u0e22\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e01\u0e23\u0e38\u0e07 40",
+          "addr:subdistrict": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "building": "commercial",
+          "building:levels": "2",
+          "name": "From Siam with Love",
+          "shop": "clothes"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1232461368",
+        "name": "Siam Bronze Factory",
+        "lat": 13.724793,
+        "lon": 100.516154,
+        "tags": {
+          "addr:district": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:housenumber": "1250",
+          "addr:postcode": "10500",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e01\u0e23\u0e38\u0e07",
+          "addr:subdistrict": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "building": "commercial",
+          "building:levels": "4",
+          "description": "Siam Bronze Factory has been shaped by the love of traditional Thai handicraft.",
+          "email": "sales@siambronzefactory.com",
+          "name": "Siam Bronze Factory",
+          "phone": "+66 2 237 1534",
+          "shop": "houseware",
+          "website": "https://www.siambronzefactory.com"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1236781879",
+        "name": "Oriental Art",
+        "lat": 13.723882,
+        "lon": 100.516201,
+        "tags": {
+          "addr:district": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:postcode": "10500",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "building": "commercial",
+          "building:levels": "4",
+          "name": "Oriental Art",
+          "shop": "antiques"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1236783008",
+        "name": "Oriental Dispensary",
+        "lat": 13.723837,
+        "lon": 100.516322,
+        "tags": {
+          "addr:district": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "addr:housenumber": "1286",
+          "addr:postcode": "10500",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:street": "\u0e16\u0e19\u0e19\u0e40\u0e08\u0e23\u0e34\u0e0d\u0e01\u0e23\u0e38\u0e07",
+          "addr:subdistrict": "\u0e1a\u0e32\u0e07\u0e23\u0e31\u0e01",
+          "amenity": "pharmacy",
+          "building": "commercial",
+          "building:levels": "4",
+          "healthcare": "pharmacy",
+          "name": "\u0e2b\u0e49\u0e32\u0e07\u0e02\u0e32\u0e22\u0e22\u0e32 \u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e25\u0e40\u0e15\u0e47\u0e25",
+          "name:en": "Oriental Dispensary",
+          "name:th": "\u0e2b\u0e49\u0e32\u0e07\u0e02\u0e32\u0e22\u0e22\u0e32 \u0e42\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e25\u0e40\u0e15\u0e47\u0e25"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1320414545",
+        "name": "Capella",
+        "lat": 13.71312,
+        "lon": 100.510896,
+        "tags": {
+          "addr:district": "\u0e2a\u0e32\u0e17\u0e23",
+          "addr:postcode": "10120",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e22\u0e32\u0e19\u0e19\u0e32\u0e27\u0e32",
+          "building": "hotel",
+          "name": "Capella",
+          "tourism": "hotel"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1320414578",
+        "name": "Four Seasons Private Residences",
+        "lat": 13.712408,
+        "lon": 100.51059,
+        "tags": {
+          "addr:district": "\u0e2a\u0e32\u0e17\u0e23",
+          "addr:postcode": "10120",
+          "addr:province": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+          "addr:subdistrict": "\u0e22\u0e32\u0e19\u0e19\u0e32\u0e27\u0e32",
+          "building": "apartments",
+          "name": "Four Seasons Private Residences",
+          "name:en": "Four Seasons Private Residences",
+          "name:th": "\u0e42\u0e1f\u0e23\u0e4c \u0e0b\u0e35\u0e0b\u0e31\u0e19\u0e2a\u0e4c \u0e44\u0e1e\u0e23\u0e40\u0e27\u0e17 \u0e40\u0e23\u0e2a\u0e2a\u0e34\u0e40\u0e14\u0e19\u0e0b\u0e4c"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      },
+      {
+        "osmType": "way",
+        "osmId": "1342088530",
+        "name": "Sheraton Royal Orchid - Iconsiam - Sathorn",
+        "lat": 13.723869,
+        "lon": 100.512584,
+        "tags": {
+          "foot": "yes",
+          "motor_vehicle": "no",
+          "name": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e23\u0e2d\u0e22\u0e31\u0e25\u0e2d\u0e2d\u0e04\u0e34\u0e14 \u0e40\u0e0a\u0e2d\u0e23\u0e32\u0e15\u0e31\u0e19- \u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 - \u0e2a\u0e32\u0e17\u0e23",
+          "name:en": "Sheraton Royal Orchid - Iconsiam - Sathorn",
+          "name:th": "\u0e42\u0e23\u0e07\u0e41\u0e23\u0e21\u0e23\u0e2d\u0e22\u0e31\u0e25\u0e2d\u0e2d\u0e04\u0e34\u0e14 \u0e40\u0e0a\u0e2d\u0e23\u0e32\u0e15\u0e31\u0e19- \u0e44\u0e2d\u0e04\u0e2d\u0e19\u0e2a\u0e22\u0e32\u0e21 - \u0e2a\u0e32\u0e17\u0e23",
+          "oneway": "yes",
+          "route": "ferry",
+          "toll": "no"
+        },
+        "source": "https://www.openstreetmap.org/api/0.6/map?bbox=100.508,13.709,100.517,13.732"
+      }
+    ]
+  }
+}

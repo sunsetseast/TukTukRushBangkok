@@ -1,5 +1,5 @@
 {
-  "title": "Tuk Tuk Rush - Compact Bangkok Layout v1",
+  "title": "Tuk Tuk Rush — authored geographic city v2",
   "status": "implemented_compact_arcade_layout",
   "coordinate_system": {
     "type": "compressed_design",
@@ -554,8 +554,8 @@
       835
     ],
     "sala_daeng": [
-      755,
-      810
+      766,
+      763
     ],
     "lump_nw": [
       750,
@@ -1053,7 +1053,7 @@
       "name": "Victory Monument",
       "position": [
         675,
-        228
+        230
       ]
     },
     {
@@ -1076,8 +1076,8 @@
       "id": "sanam",
       "name": "Sanam Luang",
       "position": [
-        285,
-        294
+        309,
+        285
       ]
     },
     {
@@ -1117,15 +1117,15 @@
       "name": "Giant Swing",
       "position": [
         410,
-        400
+        416.25
       ]
     },
     {
       "id": "flowers",
       "name": "Pak Khlong Talat",
       "position": [
-        337,
-        533
+        318,
+        535
       ]
     },
     {
@@ -1148,8 +1148,8 @@
       "id": "central",
       "name": "CentralWorld / Erawan",
       "position": [
-        805,
-        427
+        786,
+        429.8701257427382
       ]
     },
     {
@@ -1196,15 +1196,15 @@
       "id": "park",
       "name": "Lumphini Park",
       "position": [
-        807,
-        730
+        803.5,
+        729
       ]
     },
     {
       "id": "terminal",
       "name": "Terminal 21 / Asok",
       "position": [
-        948,
+        961,
         535
       ]
     },

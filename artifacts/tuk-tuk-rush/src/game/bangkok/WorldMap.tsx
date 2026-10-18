@@ -165,6 +165,37 @@ const BaseMap = memo(function BaseMap({
         />
       ))}
       {detail && <path d={cart.footprints} fill="#9eae91" opacity=".3" />}
+      {cart.publicSpaces?.map((s) => (
+        <g key={s.id} data-testid={`public-space-${s.id}`}>
+          <polygon
+            points={s.boundary}
+            fill="#72a967"
+            stroke="#b6caa0"
+            strokeWidth="1"
+          />
+          {s.water.map((water, i) => (
+            <path key={i} d={water} fill="#43aeb8" fillRule="evenodd" />
+          ))}
+          {s.paths.map((p, i) => (
+            <polyline
+              key={i}
+              points={p.points}
+              fill="none"
+              stroke="#d9cfab"
+              strokeWidth={p.width}
+            />
+          ))}
+          {s.gates.map((g) => (
+            <circle
+              key={g.name}
+              cx={g.x}
+              cy={g.y}
+              r={g.vehicle ? 1.8 : 1.1}
+              fill={g.vehicle ? "#e6a13d" : "#fff3d1"}
+            />
+          ))}
+        </g>
+      ))}
       {d.obstacles
         .filter((o) => o.protected)
         .map((o, i) => {
@@ -254,7 +285,10 @@ function MapLayers({
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
     const known = d.landmarks.filter(
-      (l) => (!detail || l.kind !== "hotel") && (!detail || l.id !== "state" || !placeNames) && (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
+      (l) =>
+        (!detail || l.kind !== "hotel") &&
+        (!detail || l.id !== "state" || !placeNames) &&
+        (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
     );
     if (!detail) return known;
     const priority = (l: Landmark) =>
@@ -282,7 +316,14 @@ function MapLayers({
         result.push(l);
     }
     return result;
-  }, [d, detail, placeNames, f.snap.discoveredLandmarks, f.snap.target.id, labelScale]);
+  }, [
+    d,
+    detail,
+    placeNames,
+    f.snap.discoveredLandmarks,
+    f.snap.target.id,
+    labelScale,
+  ]);
   const labels = useMemo(() => {
     const features: MapLabel[] = [];
     if (!detail) return placeMapLabels(features, labelScale);
@@ -1173,6 +1214,15 @@ export function WorldMap({
           <span className="tt-rail-legend">Sukhumvit · Silom · Gold Line</span>
         )}
         <span className="tt-map-scale">North up · compact game geography</span>
+        <small>
+          <a
+            href="https://www.openstreetmap.org/copyright"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Park outlines © OpenStreetMap contributors
+          </a>
+        </small>
       </footer>
     </div>
   );

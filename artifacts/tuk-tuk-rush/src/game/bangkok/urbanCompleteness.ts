@@ -4,11 +4,14 @@ import { placementIndex } from './environmentPlan';
 import { stableHash } from './buildingGrammar';
 import { distanceToSegment, orientedFootprintsOverlap } from '../world';
 import { inDestinationGrounds } from './destinationAccess';
-export type CompletenessReport={frontage:number;rear:number;screened:number;rejected:number};
+import type { ArtPiece } from './architecturalBatch';
+export type CompletenessReport={frontage:number;rear:number;screened:number;rejected:number;blockcourt:number};
+const completed = new WeakMap<District, CompletenessReport>();
 /** Fit smaller real parcels first, then rear courts. No scenery is placed inside
  * a road, waterway, public park, landmark plot or its viewing approach. */
 export function completeUrbanFabric(d:District):CompletenessReport{
-  const index=placementIndex(d),nodes=new Map(d.nodes.map(n=>[n.id,n])),report={frontage:0,rear:0,screened:0,rejected:0};
+  const prior = completed.get(d); if (prior) return prior;
+  const index=placementIndex(d),nodes=new Map(d.nodes.map(n=>[n.id,n])),report={frontage:0,rear:0,screened:0,rejected:0,blockcourt:0};
   const approaches=d.landmarks.filter(l=>l.plot&&['pho','arun','icon','paragon','paknam'].includes(l.id!)).map(l=>{
     const a=nodes.get(l.accessNode!)!,p=l.plot!,len=Math.hypot(p.x-a.x,p.z-a.z);
     return {x:(p.x+a.x)/2,z:(p.z+a.z)/2,w:22,d:Math.max(0,len-l.size!*.45),yaw:Math.atan2(p.x-a.x,p.z-a.z),height:1,color:'#aaa'};
@@ -74,5 +77,56 @@ export function completeUrbanFabric(d:District):CompletenessReport{
     const a=i*Math.PI/10,p={x:paknam.plot!.x+Math.sin(a)*radius,z:paknam.plot!.z+Math.cos(a)*radius};
     if(context<120&&add(p,a+Math.PI,12,10,'frontage'))context++;
   }
+  // Complete the visible gaps behind commercial ribbons with small paired
+  // residential/workshop masses. Previously these secondary blocks jumped
+  // from a single shallow row to broad green land. They remain physical,
+  // bounded parcels and use the district's existing architectural grammar.
+  // Cap the added work rather than recursively filling newly generated rows.
+  const targetCorridors = new Set(['ratchadamri','phaya','sathorn','charoen_s','silom','ramaiv','narathiwas','charoen_nakhon','songwat','old_siam']);
+  const seeds = d.buildings.filter(b => !b.artRole && b.height < 65)
+    .sort((a,b) => stableHash(`court:${a.x}:${a.z}`) - stableHash(`court:${b.x}:${b.z}`));
+  const used = new Set<string>();
+  const targetRoads = d.roads.filter(r=>targetCorridors.has(r.corridor??'')).map(r=>({r,a:nodes.get(r.a)!,b:nodes.get(r.b)!}));
+  for (const b of seeds) {
+    if (report.blockcourt >= 112) break;
+    const cell = `${Math.floor(b.x/95)}:${Math.floor(b.z/95)}`;
+    if (used.has(cell) || !targetRoads.some(r=>distanceToSegment(b,r.a,r.b).distance < 45)) continue;
+    const yaw=b.yaw??0, c=Math.cos(yaw), s=Math.sin(yaw), seed=stableHash(cell);
+    let placed = false;
+    for (const side of [-1,1]) {
+      if (report.blockcourt >= 112) break;
+      const back=b.d/2+43, lateral=side*(19+seed%7);
+      const p={x:b.x-s*back+c*lateral,z:b.z-c*back-s*lateral};
+      const region=regionAt(d,p)?.id??'connector', modern=['siam','silom','sukhumvit'].includes(region);
+      const o:Obstacle={...p,w:12+(seed%3)*2,d:12+(seed%2)*4,yaw,
+        height:modern?11+(seed%3)*3.2:7.5+(seed%3)*2.7,
+        color:modern?'#c6c9bd':'#d8c2a5',regionId:region,artRole:'background',
+        environmentId:`infill:blockcourt:${cell}:${side}`};
+      if(!clear(o))continue;
+      d.buildings.push(o);d.obstacles.push(o);index.insert(o);report.blockcourt++;placed=true;
+    }
+    if (placed) used.add(cell);
+  }
+  completed.set(d, report);
   return report;
+}
+
+/** Actual developed-parcel bases, not a replacement for the vacancy survey.
+ * A narrow mineral apron ties each physical rear/service building to the city.
+ * These patches neither create colliders nor reclassify empty land as a park.
+ * All edges lie within the clearance already reserved around the real parcel. */
+export function emitUrbanCompletenessGrounds(d: District, emit: (p: ArtPiece) => void) {
+  for (const b of d.buildings) {
+    if (!b.environmentId?.startsWith('infill:')) continue;
+    const seed = stableHash(b.environmentId);
+    emit({ x:b.x, z:b.z, y:-.075, w:b.w+1.2, d:b.d+1.2, h:.06,
+      color:seed%3===0?'#c2b7a2':seed%3===1?'#b4b1a1':'#c9bea9',
+      yaw:b.yaw??0, surface:'concrete', siteId:`ground:${b.environmentId}` });
+    if (b.environmentId.startsWith('infill:blockcourt:')) {
+      // Low masonry footing and an inset concrete threshold ground the small
+      // workshop/apartment masses without adding obstacles on the street.
+      emit({ x:b.x, z:b.z, y:.12, w:b.w+.16, d:b.d+.16, h:.24,
+        color:'#a59d8e', yaw:b.yaw??0, surface:'concrete', siteId:b.environmentId });
+    }
+  }
 }
