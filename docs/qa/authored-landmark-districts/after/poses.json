@@ -1,0 +1,415 @@
+[
+  {
+    "id": "mbk",
+    "o": {
+      "x": 632,
+      "z": -440
+    },
+    "n": {
+      "x": 555.2380952380952,
+      "z": -446.6666666666667,
+      "id": "bkk:760"
+    },
+    "height": 34,
+    "yaw": 0,
+    "hero": false,
+    "size": 65
+  },
+  {
+    "id": "paragon",
+    "o": {
+      "x": 920,
+      "z": -740
+    },
+    "n": {
+      "x": 864.139198026234,
+      "z": -716.8616982174283,
+      "id": "arrival:paragon:loop5",
+      "name": "Siam Paragon · visitor arrival"
+    },
+    "height": 34,
+    "yaw": 0,
+    "hero": false,
+    "size": 65
+  },
+  {
+    "id": "central",
+    "o": {
+      "x": 1192.2836140246613,
+      "z": -680.5194970290473
+    },
+    "n": {
+      "x": 1215.421915807233,
+      "z": -736.3802990028133,
+      "id": "arrival:central:loop5",
+      "name": "CentralWorld / Erawan · visitor arrival"
+    },
+    "height": 34,
+    "yaw": 0,
+    "hero": false,
+    "size": 65
+  },
+  {
+    "id": "icon",
+    "o": {
+      "x": -646.966991411009,
+      "z": 933.033008588991
+    },
+    "n": {
+      "x": -702.1027746375082,
+      "z": 922.0658194200764,
+      "id": "arrival:icon:loop5",
+      "name": "ICONSIAM · visitor arrival"
+    },
+    "height": 34,
+    "yaw": 1.5707963267948966,
+    "hero": true,
+    "size": 65
+  },
+  {
+    "id": "terminal",
+    "o": {
+      "x": 1822,
+      "z": -260
+    },
+    "n": {
+      "x": 1766.139198026234,
+      "z": -283.1383017825716,
+      "id": "arrival:terminal:loop5",
+      "name": "Terminal 21 / Asok · visitor arrival"
+    },
+    "height": 118,
+    "yaw": 0,
+    "hero": false,
+    "size": 65
+  },
+  {
+    "id": "mahanakhon",
+    "o": {
+      "x": 654.1939766255643,
+      "z": 1119.1341716182544
+    },
+    "n": {
+      "x": 600,
+      "z": 1100,
+      "id": "bkk:806"
+    },
+    "height": 150,
+    "yaw": 0,
+    "hero": true,
+    "size": 40
+  },
+  {
+    "id": "baiyoke",
+    "o": {
+      "x": 1020,
+      "z": -940
+    },
+    "n": {
+      "x": 1023.8095238095239,
+      "z": -998.0952380952381,
+      "id": "bkk:94"
+    },
+    "height": 150,
+    "yaw": 0,
+    "hero": true,
+    "size": 40
+  },
+  {
+    "id": "state",
+    "o": {
+      "x": 200,
+      "z": 1180
+    },
+    "n": {
+      "x": 84,
+      "z": 1148,
+      "id": "bkk:650"
+    },
+    "height": 138,
+    "yaw": 0,
+    "bank": "east",
+    "hero": true,
+    "size": 40
+  },
+  {
+    "id": "dusit",
+    "o": {
+      "x": 1000,
+      "z": 952
+    },
+    "n": {
+      "id": "real-arrival:dusit:3",
+      "x": 1000,
+      "z": 910
+    },
+    "height": 142,
+    "yaw": 0,
+    "hero": true,
+    "size": 96
+  },
+  {
+    "id": "okura",
+    "o": {
+      "x": 1372,
+      "z": -448
+    },
+    "n": {
+      "x": 1405.4545454545455,
+      "z": -490.9090909090909,
+      "id": "bkk:436"
+    },
+    "height": 115,
+    "yaw": 3.141592653589793,
+    "hero": true,
+    "size": 84
+  },
+  {
+    "id": "anantara",
+    "o": {
+      "x": -1020,
+      "z": 2180
+    },
+    "n": {
+      "id": "real-arrival:anantara:2",
+      "x": -1073.5,
+      "z": 2180
+    },
+    "height": 28,
+    "yaw": 1.5707963267948966,
+    "bank": "west",
+    "hero": true,
+    "size": 102
+  },
+  {
+    "id": "one-bangkok",
+    "o": {
+      "x": 1520,
+      "z": 716
+    },
+    "n": {
+      "id": "real-arrival:one-bangkok:5",
+      "x": 1520,
+      "z": 664
+    },
+    "height": 148,
+    "yaw": 0,
+    "hero": true,
+    "size": 120
+  },
+  {
+    "id": "oriental",
+    "o": {
+      "x": -200,
+      "z": 1040
+    },
+    "n": {
+      "id": "real-arrival:oriental:12",
+      "x": -160.5,
+      "z": 1040
+    },
+    "height": 52,
+    "yaw": -1.5707963267948966,
+    "bank": "east",
+    "hero": true,
+    "size": 112
+  },
+  {
+    "id": "peninsula",
+    "o": {
+      "x": -620,
+      "z": 1228
+    },
+    "n": {
+      "id": "real-arrival:peninsula:6",
+      "x": -664,
+      "z": 1228
+    },
+    "height": 116,
+    "yaw": 1.5707963267948966,
+    "bank": "west",
+    "hero": true,
+    "size": 72
+  },
+  {
+    "id": "hilton",
+    "o": {
+      "x": -756,
+      "z": 780
+    },
+    "n": {
+      "id": "real-arrival:hilton:5",
+      "x": -794,
+      "z": 780
+    },
+    "height": 120,
+    "yaw": 1.5707963267948966,
+    "bank": "west",
+    "hero": true,
+    "size": 52
+  },
+  {
+    "id": "shangri",
+    "o": {
+      "x": -160,
+      "z": 1324
+    },
+    "n": {
+      "id": "real-arrival:shangri:7",
+      "x": -123,
+      "z": 1324
+    },
+    "height": 81,
+    "yaw": -1.5707963267948966,
+    "bank": "east",
+    "hero": false,
+    "size": 124
+  },
+  {
+    "id": "four-seasons",
+    "o": {
+      "x": -280,
+      "z": 1716
+    },
+    "n": {
+      "id": "real-arrival:four-seasons:8",
+      "x": -228.5,
+      "z": 1716
+    },
+    "height": 40,
+    "yaw": -1.5707963267948966,
+    "bank": "east",
+    "hero": false,
+    "size": 180
+  },
+  {
+    "id": "capella",
+    "o": {
+      "x": -312,
+      "z": 1868
+    },
+    "n": {
+      "id": "real-arrival:capella:6",
+      "x": -269,
+      "z": 1868
+    },
+    "height": 30,
+    "yaw": -1.5707963267948966,
+    "bank": "east",
+    "hero": false,
+    "size": 98
+  },
+  {
+    "id": "rosewood",
+    "o": {
+      "x": 1400,
+      "z": -556
+    },
+    "n": {
+      "x": 1381.8181818181818,
+      "z": -503.6363636363636,
+      "id": "bkk:435"
+    },
+    "height": 119,
+    "yaw": 0,
+    "hero": true,
+    "size": 48
+  },
+  {
+    "id": "embassy",
+    "o": {
+      "x": 1324,
+      "z": -680
+    },
+    "n": {
+      "x": 1257.142857142857,
+      "z": -688.5714285714286,
+      "id": "bkk:176"
+    },
+    "height": 120,
+    "yaw": 0,
+    "hero": true,
+    "size": 100
+  },
+  {
+    "id": "erawan-hotel",
+    "o": {
+      "x": 1304,
+      "z": -416
+    },
+    "n": {
+      "x": 1200,
+      "z": -450,
+      "id": "bkk:185"
+    },
+    "height": 70,
+    "yaw": 1.5707963267948966,
+    "hero": false,
+    "size": 66
+  },
+  {
+    "id": "eastin",
+    "o": {
+      "x": 232,
+      "z": 1332
+    },
+    "n": {
+      "x": 240,
+      "z": 1420,
+      "id": "bkk:842"
+    },
+    "height": 111,
+    "yaw": 0,
+    "hero": false,
+    "size": 42
+  },
+  {
+    "id": "river-city",
+    "o": {
+      "x": -120,
+      "z": 784
+    },
+    "n": {
+      "id": "real-arrival:river-city:10",
+      "x": -82,
+      "z": 784
+    },
+    "height": 25,
+    "yaw": -1.5707963267948966,
+    "bank": "east",
+    "hero": false,
+    "size": 74
+  },
+  {
+    "id": "siam-center",
+    "o": {
+      "x": 728,
+      "z": -672
+    },
+    "n": {
+      "x": 811.7647058823529,
+      "z": -688.2352941176471,
+      "id": "bkk:109"
+    },
+    "height": 29,
+    "yaw": 3.141592653589793,
+    "hero": false,
+    "size": 112
+  },
+  {
+    "id": "jim-thompson",
+    "o": {
+      "x": 544,
+      "z": -644
+    },
+    "n": {
+      "x": 511.7241379310344,
+      "z": -606.2068965517242,
+      "id": "bkk:404"
+    },
+    "height": 19,
+    "yaw": 0,
+    "hero": false,
+    "size": 48
+  }
+]

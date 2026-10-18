@@ -1,3 +1,4 @@
+import { emitAuthoredGrounds } from './authoredGrounds';
 import { realCommercial } from './realCommercial';
 import { buildRealArchitecture, buildRealPlaceSigns } from './realArchitecture';
 import { installShopLight } from "./shopLighting";
@@ -203,6 +204,7 @@ export function buildBangkokGraybox(
   emitYaowaratLanterns(d, (piece) => benchmarkArchitecture.add(piece));
   emitRiverfront(d, (piece) => architecture.add(piece));
   emitLandscape(d, (piece) => architecture.add(piece));
+  emitAuthoredGrounds(d,piece=>architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
   emitDestinationGrounds(d, (piece) => architecture.add(piece));
   emitRailInfrastructure(d, (piece) => architecture.add(piece));

@@ -22,7 +22,7 @@ const d = createBangkokWorld(),
   plan = completeStreetFabric(d),
   nodes = new Map(d.nodes.map((n) => [n.id, n]));
 assert.equal(
-  roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:'))}),
+  roadGraphKey({...d,nodes:d.nodes.filter(n=>!n.id.startsWith('real-arrival:')&&!n.id.startsWith('site-road:')),roads:d.roads.filter(r=>!r.corridor?.startsWith('real-arrival:')&&r.corridor!=='charoen-nakhon-south')}),
   "2198517381",
   "Preserve every prior road; new hotel driveway/bake checks are separate",
 );

@@ -1,3 +1,4 @@
+import { inAuthoredSite } from './authoredSites';
 import type {
   DestinationAccess,
   District,
@@ -80,6 +81,7 @@ export function destinationReservation(a: DestinationAccess): Obstacle {
   return { ...a.origin, yaw: a.yaw, w: 60, d: 56, height: 0, color: "#eee" };
 }
 export function inDestinationGrounds(d: District, o: Obstacle) {
+  if(inAuthoredSite(d,o)) return true;
   return (
     d.destinations?.some((a) => {
       if (orientedFootprintsOverlap(o, destinationReservation(a), 2))

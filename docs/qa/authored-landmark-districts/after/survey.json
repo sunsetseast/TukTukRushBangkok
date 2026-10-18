@@ -1,0 +1,1243 @@
+{
+  "survey": [
+    {
+      "id": "icon",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -702.1027746375082,
+          "z": 922.0658194200764,
+          "heading": 1.3744467859455343,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 168,
+        "triangles": 173780,
+        "geometries": 388,
+        "textures": 14,
+        "frameMs": 1018
+      }
+    },
+    {
+      "id": "icon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -574.966991411009,
+            105,
+            866.433008588991
+          ],
+          "look": [
+            -646.966991411009,
+            14.28,
+            933.033008588991
+          ]
+        }
+      },
+      "stats": {
+        "calls": 226,
+        "triangles": 318196,
+        "geometries": 547,
+        "textures": 14,
+        "frameMs": 12.199999999953434
+      }
+    },
+    {
+      "id": "icon",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -543.466991411009,
+            10,
+            908.033008588991
+          ],
+          "look": [
+            -646.966991411009,
+            14.28,
+            933.033008588991
+          ]
+        }
+      },
+      "stats": {
+        "calls": 258,
+        "triangles": 333214,
+        "geometries": 622,
+        "textures": 14,
+        "frameMs": 1399.1999999999534
+      }
+    },
+    {
+      "id": "icon",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -556.966991411009,
+            10.88,
+            933.033008588991
+          ],
+          "look": [
+            -646.966991411009,
+            14.28,
+            933.033008588991
+          ]
+        }
+      },
+      "stats": {
+        "calls": 235,
+        "triangles": 289862,
+        "geometries": 638,
+        "textures": 14,
+        "frameMs": 761.1000000000931
+      }
+    },
+    {
+      "id": "mahanakhon",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208234,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 235,
+        "triangles": 415549,
+        "geometries": 832,
+        "textures": 14,
+        "frameMs": 1505.2000000001863
+      }
+    },
+    {
+      "id": "mahanakhon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            831.7939766255644,
+            142.5,
+            1311.1341716182544
+          ],
+          "look": [
+            654.1939766255643,
+            63,
+            1119.1341716182544
+          ]
+        }
+      },
+      "stats": {
+        "calls": 238,
+        "triangles": 423282,
+        "geometries": 957,
+        "textures": 14,
+        "frameMs": 772.9000000001397
+      }
+    },
+    {
+      "id": "mahanakhon",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            592.0774058009594,
+            48,
+            1350.956369927631
+          ],
+          "look": [
+            654.1939766255643,
+            63,
+            1119.1341716182544
+          ]
+        }
+      },
+      "stats": {
+        "calls": 223,
+        "triangles": 398417,
+        "geometries": 977,
+        "textures": 14,
+        "frameMs": 409.30000000004657
+      }
+    },
+    {
+      "id": "mahanakhon",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            592.0774058009594,
+            48,
+            1350.956369927631
+          ],
+          "look": [
+            654.1939766255643,
+            63,
+            1119.1341716182544
+          ]
+        }
+      },
+      "stats": {
+        "calls": 223,
+        "triangles": 398417,
+        "geometries": 977,
+        "textures": 14,
+        "frameMs": 777.2000000001863
+      }
+    },
+    {
+      "id": "dusit",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 1000,
+          "z": 910,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 203,
+        "triangles": 348043,
+        "geometries": 1007,
+        "textures": 14,
+        "frameMs": 453.5
+      }
+    },
+    {
+      "id": "dusit",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1168.128,
+            134.9,
+            1133.76
+          ],
+          "look": [
+            1000,
+            59.64,
+            952
+          ]
+        }
+      },
+      "stats": {
+        "calls": 232,
+        "triangles": 355148,
+        "geometries": 1058,
+        "textures": 14,
+        "frameMs": 378.4000000001397
+      }
+    },
+    {
+      "id": "dusit",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1160.6546606855836,
+            45.44,
+            1112.6546606855836
+          ],
+          "look": [
+            1000,
+            59.64,
+            952
+          ]
+        }
+      },
+      "stats": {
+        "calls": 241,
+        "triangles": 365244,
+        "geometries": 1067,
+        "textures": 14,
+        "frameMs": 711.3000000000466
+      }
+    },
+    {
+      "id": "dusit",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1160.6546606855836,
+            45.44,
+            1112.6546606855836
+          ],
+          "look": [
+            1000,
+            59.64,
+            952
+          ]
+        }
+      },
+      "stats": {
+        "calls": 248,
+        "triangles": 368804,
+        "geometries": 1067,
+        "textures": 14,
+        "frameMs": 382.5999999998603
+      }
+    },
+    {
+      "id": "okura",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 1405.4545454545455,
+          "z": -490.9090909090909,
+          "heading": -0.662215501256173,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 213,
+        "triangles": 326085,
+        "geometries": 1232,
+        "textures": 14,
+        "frameMs": 14.400000000139698
+      }
+    },
+    {
+      "id": "okura",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1235.84,
+            109.25,
+            -595.2
+          ],
+          "look": [
+            1372,
+            48.3,
+            -448
+          ]
+        }
+      },
+      "stats": {
+        "calls": 241,
+        "triangles": 336101,
+        "geometries": 1335,
+        "textures": 14,
+        "frameMs": 23.600000000093132
+      }
+    },
+    {
+      "id": "okura",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1372,
+            36.800000000000004,
+            -632
+          ],
+          "look": [
+            1372,
+            48.3,
+            -448
+          ]
+        }
+      },
+      "stats": {
+        "calls": 260,
+        "triangles": 362886,
+        "geometries": 1347,
+        "textures": 14,
+        "frameMs": 12.199999999953434
+      }
+    },
+    {
+      "id": "okura",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1372,
+            36.800000000000004,
+            -632
+          ],
+          "look": [
+            1372,
+            48.3,
+            -448
+          ]
+        }
+      },
+      "stats": {
+        "calls": 252,
+        "triangles": 359294,
+        "geometries": 1347,
+        "textures": 14,
+        "frameMs": 851.9000000001397
+      }
+    },
+    {
+      "id": "one-bangkok",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 1520,
+          "z": 664,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 218,
+        "triangles": 356150,
+        "geometries": 1572,
+        "textures": 14,
+        "frameMs": 912.5
+      }
+    },
+    {
+      "id": "one-bangkok",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1695.232,
+            140.6,
+            905.44
+          ],
+          "look": [
+            1520,
+            62.16,
+            716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 268,
+        "triangles": 422114,
+        "geometries": 1682,
+        "textures": 14,
+        "frameMs": 404.4000000001397
+      }
+    },
+    {
+      "id": "one-bangkok",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1520,
+            47.36,
+            952.8
+          ],
+          "look": [
+            1520,
+            62.16,
+            716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 235,
+        "triangles": 385702,
+        "geometries": 1704,
+        "textures": 14,
+        "frameMs": 25.300000000046566
+      }
+    },
+    {
+      "id": "one-bangkok",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1520,
+            47.36,
+            952.8
+          ],
+          "look": [
+            1520,
+            62.16,
+            716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 235,
+        "triangles": 385702,
+        "geometries": 1704,
+        "textures": 14,
+        "frameMs": 28.4000000001397
+      }
+    },
+    {
+      "id": "embassy",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 1257.142857142857,
+          "z": -688.5714285714286,
+          "heading": 1.4432867685796587,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 189,
+        "triangles": 246956,
+        "geometries": 1903,
+        "textures": 14,
+        "frameMs": 490.39999999990687
+      }
+    },
+    {
+      "id": "embassy",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1500.993346726898,
+            114,
+            -568.4068030101653
+          ],
+          "look": [
+            1324,
+            50.4,
+            -680
+          ]
+        }
+      },
+      "stats": {
+        "calls": 257,
+        "triangles": 313258,
+        "geometries": 2041,
+        "textures": 14,
+        "frameMs": 388.70000000018626
+      }
+    },
+    {
+      "id": "embassy",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1490.2768775266122,
+            38.4,
+            -584
+          ],
+          "look": [
+            1324,
+            50.4,
+            -680
+          ]
+        }
+      },
+      "stats": {
+        "calls": 264,
+        "triangles": 337566,
+        "geometries": 2049,
+        "textures": 14,
+        "frameMs": 17.799999999813735
+      }
+    },
+    {
+      "id": "embassy",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1490.2768775266122,
+            38.4,
+            -584
+          ],
+          "look": [
+            1324,
+            50.4,
+            -680
+          ]
+        }
+      },
+      "stats": {
+        "calls": 255,
+        "triangles": 333942,
+        "geometries": 2049,
+        "textures": 14,
+        "frameMs": 387.4000000001397
+      }
+    },
+    {
+      "id": "paragon",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 864.139198026234,
+          "z": -716.8616982174283,
+          "heading": 1.963495408493622,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 234,
+        "triangles": 274659,
+        "geometries": 2074,
+        "textures": 14,
+        "frameMs": 322.39999999990687
+      }
+    },
+    {
+      "id": "paragon",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            986.6,
+            105,
+            -668
+          ],
+          "look": [
+            920,
+            14.28,
+            -740
+          ]
+        }
+      },
+      "stats": {
+        "calls": 251,
+        "triangles": 338953,
+        "geometries": 2211,
+        "textures": 14,
+        "frameMs": 306.30000000004657
+      }
+    },
+    {
+      "id": "paragon",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            943.2937140592269,
+            10.88,
+            -653.0666756339839
+          ],
+          "look": [
+            920,
+            14.28,
+            -740
+          ]
+        }
+      },
+      "stats": {
+        "calls": 241,
+        "triangles": 295106,
+        "geometries": 2232,
+        "textures": 14,
+        "frameMs": 21.300000000046566
+      }
+    },
+    {
+      "id": "central",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": 1215.421915807233,
+          "z": -736.3802990028133,
+          "heading": -0.3926990816987254,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 264,
+        "triangles": 364146,
+        "geometries": 2265,
+        "textures": 14,
+        "frameMs": 416.5999999998603
+      }
+    },
+    {
+      "id": "central",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1258.8836140246613,
+            105,
+            -608.5194970290473
+          ],
+          "look": [
+            1192.2836140246613,
+            14.28,
+            -680.5194970290473
+          ]
+        }
+      },
+      "stats": {
+        "calls": 268,
+        "triangles": 387066,
+        "geometries": 2266,
+        "textures": 14,
+        "frameMs": 422
+      }
+    },
+    {
+      "id": "central",
+      "view": "front",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            1255.9232243314507,
+            10.88,
+            -616.8798867222581
+          ],
+          "look": [
+            1192.2836140246613,
+            14.28,
+            -680.5194970290473
+          ]
+        }
+      },
+      "stats": {
+        "calls": 272,
+        "triangles": 419544,
+        "geometries": 2272,
+        "textures": 14,
+        "frameMs": 350.10000000009313
+      }
+    },
+    {
+      "id": "anantara",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -1073.5,
+          "z": 2180,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 112,
+        "triangles": 139024,
+        "geometries": 345,
+        "textures": 14,
+        "frameMs": 565.3000000000466
+      }
+    },
+    {
+      "id": "anantara",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -948,
+            105,
+            2113.4
+          ],
+          "look": [
+            -1020,
+            11.76,
+            2180
+          ]
+        }
+      },
+      "stats": {
+        "calls": 94,
+        "triangles": 155924,
+        "geometries": 368,
+        "textures": 14,
+        "frameMs": 15.099999999976717
+      }
+    },
+    {
+      "id": "anantara",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -916.5,
+            10,
+            2155
+          ],
+          "look": [
+            -1020,
+            11.76,
+            2180
+          ]
+        }
+      },
+      "stats": {
+        "calls": 85,
+        "triangles": 139238,
+        "geometries": 372,
+        "textures": 14,
+        "frameMs": 9.600000000093132
+      }
+    },
+    {
+      "id": "anantara",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -930,
+            8.96,
+            2180
+          ],
+          "look": [
+            -1020,
+            11.76,
+            2180
+          ]
+        }
+      },
+      "stats": {
+        "calls": 82,
+        "triangles": 149316,
+        "geometries": 372,
+        "textures": 14,
+        "frameMs": 505.1999999999535
+      }
+    },
+    {
+      "id": "oriental",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -160.5,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 221703,
+        "geometries": 526,
+        "textures": 14,
+        "frameMs": 711.5999999999767
+      }
+    },
+    {
+      "id": "oriental",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -272,
+            105,
+            1106.6
+          ],
+          "look": [
+            -200,
+            21.84,
+            1040
+          ]
+        }
+      },
+      "stats": {
+        "calls": 222,
+        "triangles": 346884,
+        "geometries": 688,
+        "textures": 14,
+        "frameMs": 1686.3000000000466
+      }
+    },
+    {
+      "id": "oriental",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -303.5,
+            11.44,
+            1065
+          ],
+          "look": [
+            -200,
+            21.84,
+            1040
+          ]
+        }
+      },
+      "stats": {
+        "calls": 243,
+        "triangles": 402384,
+        "geometries": 735,
+        "textures": 14,
+        "frameMs": 1032.4000000000233
+      }
+    },
+    {
+      "id": "oriental",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -290,
+            16.64,
+            1040
+          ],
+          "look": [
+            -200,
+            21.84,
+            1040
+          ]
+        }
+      },
+      "stats": {
+        "calls": 268,
+        "triangles": 443756,
+        "geometries": 764,
+        "textures": 14,
+        "frameMs": 850.7000000000698
+      }
+    },
+    {
+      "id": "shangri",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -123,
+          "z": 1324,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 220,
+        "triangles": 295748,
+        "geometries": 444,
+        "textures": 14,
+        "frameMs": 689.4000000000233
+      }
+    },
+    {
+      "id": "shangri",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -263.68,
+            105,
+            1419.904
+          ],
+          "look": [
+            -160,
+            34.019999999999996,
+            1324
+          ]
+        }
+      },
+      "stats": {
+        "calls": 285,
+        "triangles": 496001,
+        "geometries": 657,
+        "textures": 14,
+        "frameMs": 1501.9000000000233
+      }
+    },
+    {
+      "id": "shangri",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -309.03999999999996,
+            17.82,
+            1349
+          ],
+          "look": [
+            -160,
+            34.019999999999996,
+            1324
+          ]
+        }
+      },
+      "stats": {
+        "calls": 261,
+        "triangles": 440974,
+        "geometries": 688,
+        "textures": 14,
+        "frameMs": 1226.5999999999767
+      }
+    },
+    {
+      "id": "shangri",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -289.6,
+            25.92,
+            1324
+          ],
+          "look": [
+            -160,
+            34.019999999999996,
+            1324
+          ]
+        }
+      },
+      "stats": {
+        "calls": 283,
+        "triangles": 441341,
+        "geometries": 704,
+        "textures": 14,
+        "frameMs": 583.9000000000233
+      }
+    },
+    {
+      "id": "four-seasons",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -228.5,
+          "z": 1716,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 172,
+        "triangles": 258572,
+        "geometries": 769,
+        "textures": 14,
+        "frameMs": 342.19999999995343
+      }
+    },
+    {
+      "id": "four-seasons",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -352,
+            105,
+            1782.6
+          ],
+          "look": [
+            -280,
+            16.8,
+            1716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 222,
+        "triangles": 329560,
+        "geometries": 817,
+        "textures": 14,
+        "frameMs": 545.5999999998603
+      }
+    },
+    {
+      "id": "four-seasons",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -383.5,
+            10,
+            1741
+          ],
+          "look": [
+            -280,
+            16.8,
+            1716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 225,
+        "triangles": 328678,
+        "geometries": 832,
+        "textures": 14,
+        "frameMs": 871
+      }
+    },
+    {
+      "id": "four-seasons",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -370,
+            12.8,
+            1716
+          ],
+          "look": [
+            -280,
+            16.8,
+            1716
+          ]
+        }
+      },
+      "stats": {
+        "calls": 202,
+        "triangles": 309530,
+        "geometries": 837,
+        "textures": 14,
+        "frameMs": 18.300000000046566
+      }
+    },
+    {
+      "id": "capella",
+      "view": "road",
+      "pose": {
+        "normalChaseCamera": true,
+        "player": {
+          "x": -269,
+          "z": 1868,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 153,
+        "triangles": 203500,
+        "geometries": 872,
+        "textures": 14,
+        "frameMs": 288.4000000001397
+      }
+    },
+    {
+      "id": "capella",
+      "view": "elevated",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -384,
+            105,
+            1934.6
+          ],
+          "look": [
+            -312,
+            12.6,
+            1868
+          ]
+        }
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 329799,
+        "geometries": 886,
+        "textures": 14,
+        "frameMs": 672.5999999998603
+      }
+    },
+    {
+      "id": "capella",
+      "view": "river",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -415.5,
+            10,
+            1893
+          ],
+          "look": [
+            -312,
+            12.6,
+            1868
+          ]
+        }
+      },
+      "stats": {
+        "calls": 212,
+        "triangles": 331868,
+        "geometries": 891,
+        "textures": 14,
+        "frameMs": 703.8999999999069
+      }
+    },
+    {
+      "id": "capella",
+      "view": "night",
+      "pose": {
+        "qaCamera": {
+          "position": [
+            -402,
+            9.6,
+            1868
+          ],
+          "look": [
+            -312,
+            12.6,
+            1868
+          ]
+        }
+      },
+      "stats": {
+        "calls": 185,
+        "triangles": 286997,
+        "geometries": 894,
+        "textures": 14,
+        "frameMs": 753.1999999999534
+      }
+    }
+  ],
+  "errors": [],
+  "renderer": "Chromium SwiftShader; QA cameras explicitly distinguished from normal chase camera"
+}
