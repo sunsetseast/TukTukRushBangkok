@@ -1,3 +1,8 @@
+import {publicSpaceLandmark,buildPublicSpaceSigns} from './publicSpaceArt';
+import {victoryMonument} from './victoryMonument';
+import {historicDistrictLandmark} from './historicDistricts';
+import {emitConvenienceStores,buildConvenienceStoreSigns} from './convenienceStores';
+import {emitUrbanCompletenessGrounds} from './urbanCompleteness';
 import { emitAuthoredGrounds } from './authoredGrounds';
 import { realCommercial } from './realCommercial';
 import { buildRealArchitecture, buildRealPlaceSigns } from './realArchitecture';
@@ -196,6 +201,8 @@ export function buildBangkokGraybox(
   );
   emitScala(scala, (piece) => architecture.add(piece));
   emitStreetFrontages(d, ordinary, p=>architecture.add(p));
+  emitConvenienceStores(d,p=>architecture.add(p));
+  emitUrbanCompletenessGrounds(d,p=>architecture.add(p));
   emitStreetGardens(d, p=>architecture.add(p));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d, (piece) => architecture.add(piece));
@@ -310,6 +317,10 @@ export function buildBangkokGraybox(
     const signs = buildBangkokSigns(d, ordinary);
     for (const child of [...signs.children]) group.add(child);
   }
+  const publicSigns=buildPublicSpaceSigns(d);
+  for(const child of [...publicSigns.children])group.add(child);
+  const storeSigns=buildConvenienceStoreSigns(d);
+  for(const child of [...storeSigns.children])group.add(child);
   const realSigns = buildRealPlaceSigns(d);
   group.add(realSigns);
   const scalaSigns = buildScalaSigns(scala);
@@ -324,7 +335,7 @@ export function buildBangkokGraybox(
     horizontalGreen = true,
     animationTime = 0;
   const heroes = d.landmarks.map((l) => {
-    const root = blockout(l, finishes);
+    const root = publicSpaceLandmark(d,l) ?? victoryMonument(l) ?? historicDistrictLandmark(l) ?? blockout(l, finishes);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
     root.rotation.y = l.yaw ?? 0;
     root.name = `BangkokLandmark:${l.id}`;
@@ -334,6 +345,7 @@ export function buildBangkokGraybox(
   // River sections span several cells. A cell-center test can hide their near
   // bank while the player is still looking at it; cull the full geometry bounds.
   group.updateMatrixWorld(true);
+  const parkBounds = new Map(heroes.filter(h=>h.userData.publicSpace).map(h=>[h,new T.Box3().setFromObject(h)]));
   const chunks = group.children
     .filter(
       (c) =>
@@ -466,10 +478,10 @@ export function buildBangkokGraybox(
           chunk.visible = quality === "medium" && distance < 150;
         else chunk.visible = distance < radius;
       }
-      for (const hero of heroes)
-        hero.visible =
-          Math.hypot(hero.position.x - camera.x, hero.position.z - camera.z) <
-          radius + 180;
+      for (const hero of heroes){
+        const bounds=parkBounds.get(hero);
+        hero.visible=bounds?Math.hypot(Math.max(bounds.min.x-camera.x,0,camera.x-bounds.max.x),Math.max(bounds.min.z-camera.z,0,camera.z-bounds.max.z))<radius:Math.hypot(hero.position.x-camera.x,hero.position.z-camera.z)<radius+180;
+      }
     },
     setInspection(id?: string) {
       if (id === inspectionId) return;

@@ -1,0 +1,48 @@
+{
+  "physicalIPhone": false,
+  "errors": [],
+  "checks": [
+    "Map uses sourced park/lake polygons, island holes and linked geographic attribution",
+    "Named hotel markers open and do not award discovery",
+    "Native emulated touch pedals drive/brake on park parking lane; Fast/Detailed scenes",
+    "Landscape and portrait map",
+    "Victory inspection opens; restart clears inspection and restores the driving scene"
+  ],
+  "drive": {
+    "setup": {
+      "start": {
+        "x": 1388,
+        "z": 320,
+        "heading": 3.141592653589793,
+        "speed": 0,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 0,
+        "collision": 0
+      },
+      "road": "Lumphini Wireless school-side parking"
+    },
+    "begin": {
+      "elapsed": 0.09039999999990687,
+      "x": 1388,
+      "z": 319.99779578649134
+    },
+    "end": {
+      "player": {
+        "x": 1388,
+        "z": 302.99404906947035,
+        "heading": 3.141592653589793,
+        "speed": -0.40250097651993394,
+        "steer": 0,
+        "lean": 0,
+        "wheelSpin": 44.75250244876115,
+        "collision": 0
+      },
+      "elapsed": 2.1123000000007464,
+      "quality": "low"
+    },
+    "controllerOnly": true,
+    "trafficDisabled": true,
+    "emulatedTouch": true
+  }
+}

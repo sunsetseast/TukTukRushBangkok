@@ -13,7 +13,9 @@ export function roadGraphKey(d: District) {
   return String(
     stableHash(
       JSON.stringify({
-        nodes: d.nodes.map((n) => [n.x, n.z]),
+        // Native trig differs by sub-nanometer amounts across JS engines. The
+        // graph identity uses the same 0.1 mm precision as node registration.
+        nodes: d.nodes.map((n) => [Math.round(n.x*1e4)/1e4, Math.round(n.z*1e4)/1e4]),
         roads: d.roads.map((r) => [r.a, r.b, r.width]),
       }),
     ),
@@ -56,7 +58,7 @@ export function surfaceGeometry(polygons: RoadPolygons, y: number) {
 export function buildRoadSurfaces(d: District) {
   if (baked.key !== roadGraphKey(d))
     throw new Error(
-      "Bangkok road geometry is stale. Run pnpm --filter @workspace/tuk-tuk-rush art:roads and commit the generated file.",
+      `Bangkok road geometry is stale (${roadGraphKey(d)} != ${baked.key}). Run pnpm --filter @workspace/tuk-tuk-rush art:roads and commit the generated file.`,
     );
   const road = baked.road as RoadPolygons,
     curb = baked.curb as RoadPolygons,

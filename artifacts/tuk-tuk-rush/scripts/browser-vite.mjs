@@ -7,6 +7,7 @@ export async function startQaServer(port) {
       "node_modules/vite/bin/vite.js",
       "--host",
       "127.0.0.1",
+      "--strictPort",
       "--port",
       String(port),
     ],

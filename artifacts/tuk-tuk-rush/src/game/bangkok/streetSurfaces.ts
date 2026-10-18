@@ -69,20 +69,23 @@ export function pavingMaterial() {
   return mat;
 }
 
-/** Soft ground color variation reads as landscaped land beyond the built plots. */
+/** The city-wide land base is compacted aggregate/concrete, never a fictitious
+ * park. Actual parks, gardens and ceremonial lawns own explicit green surfaces.
+ * This is only a material correction; vacant land remains in the spatial audit. */
 export function landscapeMaterial() {
   const size = 64,
     pixels = new Uint8Array(size * size * 4);
   for (let y = 0; y < size; y++)
     for (let x = 0; x < size; x++) {
       const i = (y * size + x) * 4,
-        v = Math.sin(x * 0.19) * Math.cos(y * 0.15) * 8;
-      pixels[i] = 122 + v;
-      pixels[i + 1] = 155 + v;
-      pixels[i + 2] = 93 + v * 0.6;
+        v = Math.sin(x * 0.19) * Math.cos(y * 0.15) * 3;
+      pixels[i] = 179 + v;
+      pixels[i + 1] = 175 + v;
+      pixels[i + 2] = 159 + v * 0.6;
       pixels[i + 3] = 255;
     }
   const texture = new T.DataTexture(pixels, size, size);
+  texture.name = 'Urban aggregate ground; explicit parks supply vegetation';
   texture.colorSpace = T.SRGBColorSpace;
   texture.wrapS = texture.wrapT = T.RepeatWrapping;
   texture.repeat.set(1 / 32, 1 / 32);
@@ -91,7 +94,7 @@ export function landscapeMaterial() {
   texture.needsUpdate = true;
   return new T.MeshStandardMaterial({
     map: texture,
-    color: "#dfecba",
+    color: "#e3ddce",
     roughness: 1,
   });
 }

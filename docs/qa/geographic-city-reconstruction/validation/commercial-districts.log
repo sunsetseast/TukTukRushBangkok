@@ -1,0 +1,142 @@
+{
+  "pass": true,
+  "contract": {
+    "mbk": {
+      "w": 120,
+      "d": 65,
+      "height": 35
+    },
+    "paragon": {
+      "w": 130,
+      "d": 90,
+      "height": 33
+    },
+    "central": {
+      "w": 140,
+      "d": 95,
+      "height": 45
+    },
+    "terminal": {
+      "w": 90,
+      "d": 80,
+      "height": 134
+    },
+    "siam-center": {
+      "w": 150,
+      "d": 60,
+      "height": 32
+    }
+  },
+  "budgets": {
+    "mbk": [
+      {
+        "calls": 4,
+        "triangles": 3724,
+        "bytes": 157224,
+        "bounds": [
+          119,
+          32.25,
+          64.5
+        ]
+      },
+      {
+        "calls": 4,
+        "triangles": 2328,
+        "bytes": 101808,
+        "bounds": [
+          119,
+          32.25,
+          64.5
+        ]
+      }
+    ],
+    "paragon": [
+      {
+        "calls": 4,
+        "triangles": 5480,
+        "bytes": 160460,
+        "bounds": [
+          128.6999969482422,
+          32.5,
+          86.5
+        ]
+      },
+      {
+        "calls": 4,
+        "triangles": 3350,
+        "bytes": 120120,
+        "bounds": [
+          128.6999969482422,
+          32.5,
+          86.5
+        ]
+      }
+    ],
+    "central": [
+      {
+        "calls": 4,
+        "triangles": 4792,
+        "bytes": 198712,
+        "bounds": [
+          138.5,
+          45.05000000074506,
+          90.5
+        ]
+      },
+      {
+        "calls": 4,
+        "triangles": 3292,
+        "bytes": 142672,
+        "bounds": [
+          138.5,
+          45.05000000074506,
+          90.5
+        ]
+      }
+    ],
+    "terminal": [
+      {
+        "calls": 5,
+        "triangles": 6320,
+        "bytes": 265980,
+        "bounds": [
+          88.64500045776367,
+          133.5,
+          77.5
+        ]
+      },
+      {
+        "calls": 5,
+        "triangles": 3756,
+        "bytes": 163236,
+        "bounds": [
+          88.64500045776367,
+          133.5,
+          77.5
+        ]
+      }
+    ],
+    "siam-center": [
+      {
+        "calls": 3,
+        "triangles": 7356,
+        "bytes": 338376,
+        "bounds": [
+          148,
+          31.399999618530273,
+          59.5
+        ]
+      },
+      {
+        "calls": 3,
+        "triangles": 4500,
+        "bytes": 207000,
+        "bounds": [
+          148,
+          31.399999618530273,
+          59.5
+        ]
+      }
+    ]
+  }
+}

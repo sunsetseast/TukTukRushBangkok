@@ -35,7 +35,7 @@ for(const id of COMMERCIAL_ASSETS){const g=realCommercial(d.landmarks.find(l=>l.
 assert.equal(d.landmarks.filter(l=>l.id==='state').length,1,'Never duplicate Lebua');
 const mp=(id:string)=>toMap(d.landmarks.find(l=>l.id===id)!.plot!);
 assert(mp('hilton').y<mp('icon').y&&mp('peninsula').y>mp('icon').y);
-assert(mp('oriental').y<mp('shangri').y&&mp('four-seasons').y<mp('capella').y);
+assert(mp('oriental').y<mp('shangri').y&&mp('capella').y<mp('four-seasons').y);
 assert(mp('embassy').x<mp('rosewood').x&&mp('jim-thompson').x<mp('siam-center').x);
 const newRoads=d.roads.filter(r=>r.corridor?.startsWith('real-arrival:'));
 for(const r of newRoads){const a=nodes.get(r.a)!,b=nodes.get(r.b)!;for(let i=0;i<=8;i++){const t=i/8,p={x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t};assert(riverDistance(d,p)>d.riverWidth!/2+2);assert(d.obstacles.every(o=>obstacleDistance(p,o)>2),`Driveway blocked: ${r.name}`);}}

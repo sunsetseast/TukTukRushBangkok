@@ -1,3 +1,4 @@
+import {HISTORIC_SITE_PLANS,historicBoundaryColliders,historicFurnitureColliders} from './historicDistricts';
 import type { District, Landmark, Obstacle, Point, RoadNode } from "../types";
 import type { RealPlace } from "./realPlaces";
 import {
@@ -52,6 +53,7 @@ const mass = (
 /** Physical wings, not a whole-property collider. These same dimensions drive
  * the new hero meshes. Courts and gaps remain genuinely empty in physics. */
 export function siteMasses(p: RealPlace): SiteMass[] {
+  if(HISTORIC_SITE_PLANS[p.id])return HISTORIC_SITE_PLANS[p.id]!.masses;
   switch (p.id) {
     case "oriental":
       return [
@@ -291,6 +293,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
         siteObstacle(origin, yaw, { ...m, w: m.w + 5, d: m.d + 5, h: 0 }),
       ),
       ...zones.map((m) => siteObstacle(origin, yaw, m)),
+      ...(HISTORIC_SITE_PLANS[p.id]?[siteObstacle(origin,yaw,mass('heritage grounds',0,0,p.footprint[0],p.footprint[1],0))]:[]),
     ];
     const cleared = new Set(
       d.buildings.filter((b) =>
@@ -302,6 +305,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
       (o) => !cleared.has(o) && o.landmarkId !== p.id,
     );
     d.obstacles.push(...solids);
+    if(HISTORIC_SITE_PLANS[p.id])d.obstacles.push(...[...historicBoundaryColliders(p.id),...historicFurnitureColliders(p.id)].map(m=>({...siteObstacle(origin,yaw,m,p.id),artRole:'furniture' as const})));
     const planting: Array<{
       x: number;
       z: number;
@@ -553,12 +557,13 @@ function extendCharoenNakhon(d: District) {
 export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
   icon: [338.25825214724773, 833.2582521472477],
   paragon: [730, 415],
-  central: [798.0709035061653, 429.8701257427382],
+  central: [786, 429.8701257427382],
   mahanakhon: [663.5484941563911, 879.7835429045635],
   state: [550, 895],
   baiyoke: [755, 365],
   mbk: [658, 490],
-  terminal: [955.5, 535],
+  terminal: [961, 535],
+  swing:[410,427],flowers:[318,535],
 };
 export function registerExistingSites(d: District) {
   for (const [id] of Object.entries(EXISTING_SITE_ANCHORS)) {
@@ -589,7 +594,7 @@ export function registerExistingSites(d: District) {
         height: 0,
         color: "#fff",
       }),
-      reservations: solids.map((o) => ({ ...o, height: 0 })),
+      reservations: [...solids.map((o) => ({ ...o, height: 0 })),...(HISTORIC_SITE_PLANS[id]?[{...origin,w:HISTORIC_SITE_PLANS[id]!.width,d:HISTORIC_SITE_PLANS[id]!.depth,yaw:l.yaw??0,height:0,color:'#c9b997'}]:[])],
       solids,
       zones: [],
       entrance: d.nodes.find((n) => n.id === l.accessNode)!,
@@ -604,9 +609,10 @@ export function registerExistingSites(d: District) {
 export const EXISTING_SITE_WORLD_ANCHORS: Record<string, Point> = {
   mbk: { x: 632, z: -440 },
   paragon: { x: 920, z: -740 },
-  central: { x: 1192.2836140246613, z: -680.5194970290473 },
+  central: { x: 1144, z: -680.5194970290473 },
   icon: { x: -646.966991411009, z: 933.033008588991 },
-  terminal: { x: 1822, z: -260 },
+  terminal: { x: 1844, z: -260 },
+  swing:{x:-360,z:-692},flowers:{x:-728,z:-260},
   mahanakhon: { x: 654.1939766255643, z: 1119.1341716182544 },
   baiyoke: { x: 1020, z: -940 },
   state: { x: 200, z: 1180 },

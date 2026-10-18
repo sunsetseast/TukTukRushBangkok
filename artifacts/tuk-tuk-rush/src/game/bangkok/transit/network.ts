@@ -91,7 +91,7 @@ const stops: Record<LineId, Stop[]> = {
       "Victory Monument",
       "อนุสาวรีย์ชัยสมรภูมิ",
       675,
-      245,
+      278,
       "business",
       "victory",
     ],
@@ -131,8 +131,8 @@ const stops: Record<LineId, Stop[]> = {
       "S2",
       "Sala Daeng",
       "ศาลาแดง",
-      755,
-      790,
+      763,
+      771,
       "silom",
       undefined,
       "MRT Si Lom",
@@ -202,12 +202,16 @@ export function createRailNetwork(d: District): RailNetwork {
   for (const id of ["sukhumvit", "silom", "gold"] as const) {
     const controls: Point[] = [];
     for (const stop of stops[id]) {
+      // N3 is south of the monument. The real guideway bends around the west
+      // edge of the traffic circle; it must not cut through the 50m memorial.
+      if (id === "sukhumvit" && stop[0] === "victory-monument")
+        controls.push(toWorld([683, 202]), toWorld([654, 211]), toWorld([650, 231]), toWorld([657, 254]));
       if (id === "sukhumvit" && stop[0] === "siam")
         controls.push(toWorld([695, 437]), toWorld([696, 455]));
       if (id === "silom" && stop[0] === "ratchadamri")
         controls.push(toWorld([750, 455]), toWorld([790, 475]));
       if (id === "silom" && stop[0] === "sala-daeng")
-        controls.push(toWorld([750, 650]), toWorld([753, 770]));
+        controls.push(toWorld([750, 650]), toWorld([761, 752]));
       if (id === "silom" && stop[0] === "chong-nonsi")
         controls.push(toWorld([650, 875]));
       if (id === "silom" && stop[0] === "saint-louis")

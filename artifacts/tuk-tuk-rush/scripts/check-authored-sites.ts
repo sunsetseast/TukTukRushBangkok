@@ -1,3 +1,4 @@
+import {assertProtectedGeography} from './protected-geography';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import crypto from "node:crypto";
@@ -50,18 +51,7 @@ const roadBodies = d.roads.map((r) => {
 });
 assert.equal(sites.length, REAL_PLACES.length - 1);
 assert.equal(new Set(d.landmarks.map((l) => l.id)).size, d.landmarks.length);
-const baseline = JSON.parse(
-  fs.readFileSync(new URL("public-road-baseline.json", root), "utf8"),
-);
-for (const r of baseline.roads) {
-  assert.deepEqual(
-    d.roads.find((q) => q.a === r.a && q.b === r.b),
-    (({ from, to, ...rest }) => rest)(r),
-    `Public edge preserved ${r.a}/${r.b}`,
-  );
-  assert.deepEqual(nodes.get(r.from.id), r.from);
-  assert.deepEqual(nodes.get(r.to.id), r.to);
-}
+assertProtectedGeography(d);
 const assetBudgets = [];
 for (const s of sites) {
   const p = REAL_PLACES.find((p) => p.id === s.id)!,

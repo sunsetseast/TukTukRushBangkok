@@ -23,6 +23,8 @@ export function inspectionSubject(l:Landmark,d?:District):InspectionSubject{
  if(l.id==='paknam')views.push({...view('face','Buddha close-up',[0,55,12],43,.12,.07),minDistance:30,maxDistance:75,pan:4,azimuthRange:[-1.1,1.1]});
  if(l.id==='arun')views.push({...view('ceramics','Porcelain terraces',[0,20,0],51,.8,.13),minDistance:38,maxDistance:80,pan:4});
  if(d&&['icon','paragon','central','terminal','mbk'].includes(l.id!)){const a=d.destinations?.find(a=>a.id===l.id);if(a){const dx=a.origin.x-(l.plot?.x??l.x),dz=a.origin.z-(l.plot?.z??l.z),c=Math.cos(l.yaw??0),s=Math.sin(l.yaw??0);views[0]!.azimuth=Math.atan2(c*dx-s*dz,s*dx+c*dz);}}
+ const space=d?.publicSpaces?.find(s=>s.id===l.id);
+ if(space){const o=space.origin,gate=space.gates[0]!,entry:Vec3=[gate.point.x-o.x,3,gate.point.z-o.z];const bounded=(v:InspectionView,min:number,max:number)=>({...v,minDistance:min,maxDistance:max,pan:12});views=[bounded(view('landscape','Park landscape',[0,5,0],Math.min(480,Math.max(220,size*.72)),-.65,.8),100,550),bounded(view('entrance','Street entrance',entry,55,gate.yaw??0,.25),25,100)];const lake=space.water.find(w=>!w.hole);if(lake){const p=lake.points.reduce((a,p)=>({x:a.x+p.x/lake.points.length,z:a.z+p.z/lake.points.length}),{x:0,z:0});views.unshift(bounded(view('lakes','Lakes and gardens',[p.x-o.x,2,p.z-o.z],170,-.5,.4),80,350));}}
  // Use the real compressed river, not a presumed opposite-of-entry angle.
  if(l.id==='icon'&&d?.river&&d.river.length>1){
   const p=l.plot??l,nearest=d.river.slice(1).map((q,i)=>distanceToSegment(p,d.river![i]!,q)).sort((a,b)=>a.distance-b.distance)[0]!.point;

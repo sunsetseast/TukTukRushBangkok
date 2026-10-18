@@ -1,0 +1,2863 @@
+{
+  "brand": {
+    "id": "7-eleven",
+    "name": "7-Eleven",
+    "orange": "#f58220",
+    "red": "#e3292e",
+    "green": "#00834b",
+    "white": "#fffdf4",
+    "artwork": "/brands/7-eleven-prototype.svg",
+    "status": "unlicensed prototype depiction; no affiliation or approval claimed"
+  },
+  "artwork": {
+    "local": "artifacts/tuk-tuk-rush/public/brands/7-eleven-prototype.svg",
+    "type": "Recreated original vector/canvas rendition",
+    "runtimeAtlas": {
+      "width": 512,
+      "height": 256,
+      "shared": true,
+      "hotlinked": false
+    }
+  },
+  "placement": {
+    "claim": "Representative compressed-neighborhood premises; not surveyed real branch coordinates",
+    "minimumSeparationGameMetres": 220,
+    "convertsExistingPremises": true
+  },
+  "sources": [
+    {
+      "url": "https://www.7eleven.co.th/find-store?filter=s",
+      "publisher": "7-Eleven Thailand",
+      "use": "Official brand identity and Thai store network context"
+    },
+    {
+      "url": "https://www.cpall.co.th/wp-content/uploads/2025/03/CP_ALL_56-1_-OneReport_2024_EN_25MAR-Final.pdf",
+      "publisher": "CP ALL",
+      "use": "Distinct premises in residential, office, academic and service-station settings"
+    },
+    {
+      "url": "https://www.bizzboard.com/business/7-eleven-สาขา-สุขุมวิท-24-อะริสตั้/",
+      "publisher": "BiZZBoard branch photography",
+      "use": "Street-level Sukhumvit 24 glass frontage and fascia"
+    },
+    {
+      "url": "https://unsplash.com/photos/a-7-eleven-store-is-busy-at-night-TO9WumSU650",
+      "publisher": "Ainur Iman / Unsplash",
+      "use": "Nighttime illuminated sign, occupied glazing and narrow street context"
+    },
+    {
+      "url": "https://www.businesstimes.com.sg/international/asean/billionaires-muscle-thai-convenience-store-kings-domain",
+      "publisher": "The Business Times",
+      "use": "Bangkok compact storefront and adjacent street trade"
+    }
+  ],
+  "stores": [
+    {
+      "id": "store:7-eleven:siam:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "siam",
+      "variant": "tower",
+      "front": {
+        "x": 528.1993962296106,
+        "z": -81.8330147605071
+      },
+      "yaw": 1.5350972141155723,
+      "width": 7.4,
+      "entrance": {
+        "x": 528.4492369431974,
+        "z": -81.824091877879
+      },
+      "publicStop": {
+        "x": 542.1904761904763,
+        "z": -81.33333333333331
+      },
+      "nearestNode": "bkk:774",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 529.698868809498,
+            "z": -84.59325496421503,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.5350972141155723,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:1:bin"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 632.0498490574026,
+        "y": 579.5417463098732
+      },
+      "parcel": {
+        "x": 523.2025819578728,
+        "z": -82.01147241306916,
+        "w": 8,
+        "d": 10,
+        "height": 40,
+        "yaw": 1.5350972141155723
+      },
+      "road": {
+        "a": "bkk:773",
+        "b": "bkk:774",
+        "name": "Banthat Thong / Sam Yan connector",
+        "corridor": "banthat"
+      }
+    },
+    {
+      "id": "store:7-eleven:oldtown:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "oldtown",
+      "variant": "corner",
+      "front": {
+        "x": -614.0391076745306,
+        "z": -1185.846412774632
+      },
+      "yaw": 1.5841288700890424,
+      "width": 11.4,
+      "entrance": {
+        "x": -613.7891298937902,
+        "z": -1185.8497458117085
+      },
+      "publicStop": {
+        "x": -601.0402630760349,
+        "z": -1186.019730702612
+      },
+      "nearestNode": "civic:-6010909:-11898182",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -612.6969869688471,
+            "z": -1190.1966927669287,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.5841288700890424,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:oldtown:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -612.0860812691627,
+            "z": -1181.8820984757983,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.5841288700890424,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:oldtown:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 346.4902230813674,
+        "y": 303.538396806342
+      },
+      "parcel": {
+        "x": -625.0381300271039,
+        "z": -1185.6997591432644,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 1.5841288700890424
+      },
+      "road": {
+        "a": "civic:-6010909:-11898182",
+        "b": "civic:-6007273:-11625455",
+        "name": "Sanam Chai perimeter",
+        "corridor": "old_e"
+      }
+    },
+    {
+      "id": "store:7-eleven:connector:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "connector",
+      "variant": "corner",
+      "front": {
+        "x": -615.7550600699655,
+        "z": -366.1446037008002
+      },
+      "yaw": -1.6756732655251305,
+      "width": 11.4,
+      "entrance": {
+        "x": -616.0036864331958,
+        "z": -366.1707748969297
+      },
+      "publicStop": {
+        "x": -628.6836309579437,
+        "z": -367.50550589953474
+      },
+      "nearestNode": "bkk:327",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -617.6008621905876,
+            "z": -361.98296477706987,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.6756732655251305,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -617.2269281402891,
+            "z": -370.31158154854086,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.6756732655251305,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 346.0612349825086,
+        "y": 508.46384907479995
+      },
+      "parcel": {
+        "x": -604.81550008783,
+        "z": -364.9930710711017,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -1.6756732655251305
+      },
+      "road": {
+        "a": "bkk:327",
+        "b": "bkk:328",
+        "name": "Sanam Chai perimeter",
+        "corridor": "old_e"
+      }
+    },
+    {
+      "id": "store:7-eleven:westbank:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "westbank",
+      "variant": "corner",
+      "front": {
+        "x": -1452.0284906328475,
+        "z": -1361.5539994832693
+      },
+      "yaw": -1.613323861414681,
+      "width": 11.4,
+      "entrance": {
+        "x": -1452.2782645930183,
+        "z": -1361.5646281624256
+      },
+      "publicStop": {
+        "x": -1465.016736561728,
+        "z": -1362.106690799392
+      },
+      "nearestNode": "bkk:978",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -1453.6113985622226,
+            "z": -1357.2854369047047,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.613323861414681,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -1453.7571390108124,
+            "z": -1365.621169849182,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.613323861414681,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 136.99287734178813,
+        "y": 259.6115001291827
+      },
+      "parcel": {
+        "x": -1441.0384363853332,
+        "z": -1361.0863376003963,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -1.613323861414681
+      },
+      "road": {
+        "a": "bkk:978",
+        "b": "bkk:979",
+        "name": "Itsaraphap / west-bank connector",
+        "corridor": "west"
+      }
+    },
+    {
+      "id": "store:7-eleven:north:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "north",
+      "variant": "corner",
+      "front": {
+        "x": 563.1358371376991,
+        "z": -1028.591453149077
+      },
+      "yaw": 3.1058935409104693,
+      "width": 11.4,
+      "entrance": {
+        "x": 563.1447600203272,
+        "z": -1028.841293862664
+      },
+      "publicStop": {
+        "x": 563.7425931564101,
+        "z": -1045.5806216729854
+      },
+      "nearestNode": "civic:5550000:-10458929",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 558.856565395383,
+            "z": -1030.1451768553434,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 3.1058935409104693,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 567.1911088345195,
+            "z": -1030.3478333655928,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 3.1058935409104693,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 640.7839592844248,
+        "y": 342.8521367127307
+      },
+      "parcel": {
+        "x": 562.7432303020626,
+        "z": -1017.598461751254,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 3.1058935409104693
+      },
+      "road": {
+        "a": "civic:5550000:-10458929",
+        "b": "civic:5825000:-10449107",
+        "name": "Phetchaburi corridor",
+        "corridor": "phetchaburi"
+      }
+    },
+    {
+      "id": "store:7-eleven:silom:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "silom",
+      "variant": "tower",
+      "front": {
+        "x": 1437,
+        "z": 1062
+      },
+      "yaw": -1.5707963267948966,
+      "width": 12.8,
+      "entrance": {
+        "x": 1436.75,
+        "z": 1062
+      },
+      "publicStop": {
+        "x": 1420,
+        "z": 1062
+      },
+      "nearestNode": "bkk:890",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1435.6,
+            "z": 1066.864,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.5707963267948966,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1435.1,
+            "z": 1057.52,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.5707963267948966,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 859.25,
+        "y": 865.5
+      },
+      "parcel": {
+        "x": 1448,
+        "z": 1062,
+        "w": 22,
+        "d": 22,
+        "height": 32,
+        "yaw": -1.5707963267948966
+      },
+      "road": {
+        "a": "bkk:889",
+        "b": "bkk:890",
+        "name": "Sathorn corridor",
+        "corridor": "sathorn"
+      }
+    },
+    {
+      "id": "store:7-eleven:westbank:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "westbank",
+      "variant": "standalone",
+      "front": {
+        "x": -1229.1344933120406,
+        "z": 730.9189716766678
+      },
+      "yaw": -0.38931672183314087,
+      "width": 11.4,
+      "entrance": {
+        "x": -1229.2293824011047,
+        "z": 731.1502638312614
+      },
+      "publicStop": {
+        "x": -1234.0687259433726,
+        "z": 742.9461637155395
+      },
+      "nearestNode": "bkk:1229",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -1225.658041756,
+            "z": 733.8584458776947,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -0.38931672183314087,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -1233.547073176243,
+            "z": 731.1623621901172,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -0.38931672183314087,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 192.71637667198985,
+        "y": 782.7297429191669
+      },
+      "parcel": {
+        "x": -1224.9593733932213,
+        "z": 720.7421168745456,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -0.38931672183314087
+      },
+      "road": {
+        "a": "bkk:1228",
+        "b": "bkk:1229",
+        "name": "Thonburi / Wat Paknam approach",
+        "corridor": "paknam"
+      }
+    },
+    {
+      "id": "store:7-eleven:oldtown:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "oldtown",
+      "variant": "narrow",
+      "front": {
+        "x": -901.3333333333334,
+        "z": -1046
+      },
+      "yaw": 3.141592653589793,
+      "width": 7.4,
+      "entrance": {
+        "x": -901.3333333333334,
+        "z": -1046.25
+      },
+      "publicStop": {
+        "x": -901.3333333333334,
+        "z": -1060
+      },
+      "nearestNode": "bkk:334",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -904.1453333333334,
+            "z": -1047.4,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 3.141592653589793,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:oldtown:2:bin"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 274.66666666666663,
+        "y": 338.5
+      },
+      "parcel": {
+        "x": -901.3333333333334,
+        "z": -1041,
+        "w": 8,
+        "d": 10,
+        "height": 17.5,
+        "yaw": 3.141592653589793
+      },
+      "road": {
+        "a": "bkk:333",
+        "b": "bkk:334",
+        "name": "Na Phra Lan perimeter",
+        "corridor": "palace_n"
+      }
+    },
+    {
+      "id": "store:7-eleven:siam:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "siam",
+      "variant": "tower",
+      "front": {
+        "x": 1240.4742844578009,
+        "z": -692.0043112488762
+      },
+      "yaw": 1.4141944498128813,
+      "width": 12.8,
+      "entrance": {
+        "x": 1240.7212251991332,
+        "z": -691.9653206055079
+      },
+      "publicStop": {
+        "x": 1257.266254868395,
+        "z": -689.3529474998351
+      },
+      "nearestNode": "bkk:176",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1242.6157545666345,
+            "z": -696.5904427093747,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.4141944498128813,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1241.652321762767,
+            "z": -687.2828042746032,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.4141944498128813,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 810.1185711144502,
+        "y": 426.998922187781
+      },
+      "parcel": {
+        "x": 1229.608891839181,
+        "z": -693.7198995570793,
+        "w": 22,
+        "d": 22,
+        "height": 62,
+        "yaw": 1.4141944498128813
+      },
+      "road": {
+        "a": "bkk:175",
+        "b": "bkk:176",
+        "name": "Ratchadamri",
+        "corridor": "ratchadamri"
+      }
+    },
+    {
+      "id": "store:7-eleven:silom:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "silom",
+      "variant": "tower",
+      "front": {
+        "x": 442.32110510220616,
+        "z": 1063.1541692748594
+      },
+      "yaw": 2.8068558162729786,
+      "width": 12.8,
+      "entrance": {
+        "x": 442.4032352584415,
+        "z": 1062.9180450756828
+      },
+      "publicStop": {
+        "x": 447.9059557262077,
+        "z": 1047.097723730855
+      },
+      "nearestNode": "bkk:800",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 438.1870015579452,
+            "z": 1060.2339494397565,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.8068558162729786,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 447.17663993883815,
+            "z": 1062.8313977608545,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.8068558162729786,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 610.5802762755516,
+        "y": 865.7885423187149
+      },
+      "parcel": {
+        "x": 438.7073782278522,
+        "z": 1073.5436340386273,
+        "w": 22,
+        "d": 22,
+        "height": 62,
+        "yaw": 2.8068558162729786
+      },
+      "road": {
+        "a": "bkk:800",
+        "b": "bkk:801",
+        "name": "Silom corridor",
+        "corridor": "silom"
+      }
+    },
+    {
+      "id": "store:7-eleven:north:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "north",
+      "variant": "standalone",
+      "front": {
+        "x": 1148.289921326024,
+        "z": -998.0864784282157
+      },
+      "yaw": -0.13706617431018764,
+      "width": 11.4,
+      "entrance": {
+        "x": 1148.2557619767397,
+        "z": -997.8388231459048
+      },
+      "publicStop": {
+        "x": 1145.9670855746942,
+        "z": -981.2459192310766
+      },
+      "nearestNode": "bkk:98",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1152.3899997019148,
+            "z": -996.1076956428773,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -0.13706617431018764,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1144.077731965782,
+            "z": -996.7494814972299,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -0.13706617431018764,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 787.072480331506,
+        "y": 350.47838039294606
+      },
+      "parcel": {
+        "x": 1149.7929326945311,
+        "z": -1008.983310849894,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -0.13706617431018764
+      },
+      "road": {
+        "a": "bkk:98",
+        "b": "bkk:99",
+        "name": "Phetchaburi corridor",
+        "corridor": "phetchaburi"
+      }
+    },
+    {
+      "id": "store:7-eleven:silom:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "silom",
+      "variant": "standalone",
+      "front": {
+        "x": 816.2120348527043,
+        "z": 458.6530811776988
+      },
+      "yaw": 2.4248693924243847,
+      "width": 11.4,
+      "entrance": {
+        "x": 816.3762642690648,
+        "z": 458.4645905975578
+      },
+      "publicStop": {
+        "x": 827.3796351652172,
+        "z": 445.83572172811006
+      },
+      "nearestNode": "civic:8216000:4408000",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 813.8655548116396,
+            "z": 454.7517666022147,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.4248693924243847,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 820.4684880760944,
+            "z": 459.8416542537405,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.4248693924243847,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 704.053008713176,
+        "y": 714.6632702944247
+      },
+      "parcel": {
+        "x": 808.985940532843,
+        "z": 466.9466667039033,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": 2.4248693924243847
+      },
+      "road": {
+        "a": "civic:8216000:4408000",
+        "b": "civic:8418000:4584000",
+        "name": "Rama IV corridor",
+        "corridor": "ramaiv"
+      }
+    },
+    {
+      "id": "store:7-eleven:silom:4",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "silom",
+      "variant": "tower",
+      "front": {
+        "x": 15.005662322369675,
+        "z": 1481.5378758996105
+      },
+      "yaw": -1.7178746821832993,
+      "width": 11.4,
+      "entrance": {
+        "x": 14.758361456781207,
+        "z": 1481.5012387343381
+      },
+      "publicStop": {
+        "x": -2.800000000000029,
+        "z": 1478.9
+      },
+      "nearestNode": "bkk:663",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 12.985928675234705,
+            "z": 1485.6179371730022,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.7178746821832993,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:4:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 13.710904901644277,
+            "z": 1477.3125116287486,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.7178746821832993,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:silom:4:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 503.75141558059244,
+        "y": 970.3844689749026
+      },
+      "parcel": {
+        "x": 21.93008655884677,
+        "z": 1482.5637165272367,
+        "w": 12,
+        "d": 14,
+        "height": 48,
+        "yaw": -1.7178746821832993
+      },
+      "road": {
+        "a": "bkk:662",
+        "b": "bkk:663",
+        "name": "Charoen Krung - riverside",
+        "corridor": "charoen_s"
+      }
+    },
+    {
+      "id": "store:7-eleven:khaosan:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "khaosan",
+      "variant": "corner",
+      "front": {
+        "x": -872.2061874710452,
+        "z": -1441.2344032264089
+      },
+      "yaw": 0.4423742229767449,
+      "width": 11.4,
+      "entrance": {
+        "x": -872.0991658848604,
+        "z": -1441.0084687666854
+      },
+      "publicStop": {
+        "x": -866.6410649894376,
+        "z": -1429.485811320793
+      },
+      "nearestNode": "civic:-8685714:-14285714",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -867.6918742703238,
+            "z": -1441.8236402973673,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 0.4423742229767449,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:khaosan:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -874.9987373932262,
+            "z": -1437.8092368170023,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 0.4423742229767449,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:khaosan:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 281.9484531322387,
+        "y": 239.69139919339779
+      },
+      "parcel": {
+        "x": -876.9151372631746,
+        "z": -1451.1755194542377,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 0.4423742229767449
+      },
+      "road": {
+        "a": "civic:-8468571:-14388571",
+        "b": "civic:-8685714:-14285714",
+        "name": "Maha Rat perimeter",
+        "corridor": "old_w"
+      }
+    },
+    {
+      "id": "store:7-eleven:north:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "north",
+      "variant": "transit",
+      "front": {
+        "x": 721.0410814479177,
+        "z": -1340.479477085239
+      },
+      "yaw": -1.5176549179499612,
+      "width": 11.4,
+      "entrance": {
+        "x": 720.7914343660191,
+        "z": -1340.466197985138
+      },
+      "publicStop": {
+        "x": 704.06507987881,
+        "z": -1339.5764982783717
+      },
+      "nearestNode": "civic:7042857:-13354286",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 719.8731580358353,
+            "z": -1336.0792294895336,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.5176549179499612,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 718.9318291878761,
+            "z": -1344.362923351574,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.5176549179499612,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:north:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 680.2602703619795,
+        "y": 264.88013072869023
+      },
+      "parcel": {
+        "x": 732.025553051458,
+        "z": -1341.0637574896828,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": -1.5176549179499612
+      },
+      "road": {
+        "a": "civic:7042857:-13354286",
+        "b": "civic:7028571:-13622857",
+        "name": "Phaya Thai / Phahonyothin",
+        "corridor": "phaya"
+      }
+    },
+    {
+      "id": "store:7-eleven:connector:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "connector",
+      "variant": "standalone",
+      "front": {
+        "x": 1544.7368605072309,
+        "z": -856.8751331929578
+      },
+      "yaw": 2.8068558162729786,
+      "width": 11.4,
+      "entrance": {
+        "x": 1544.8189906634661,
+        "z": -857.1112573921343
+      },
+      "publicStop": {
+        "x": 1550.3217111312324,
+        "z": -872.9315787369626
+      },
+      "nearestNode": "civic:15555556:-8711111",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1541.1052292588174,
+            "z": -859.6205800555921,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.8068558162729786,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1549.1295919134768,
+            "z": -857.3588798131839,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.8068558162729786,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 886.1842151268077,
+        "y": 385.7812167017605
+      },
+      "parcel": {
+        "x": 1541.123133632877,
+        "z": -846.4856684291901,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": 2.8068558162729786
+      },
+      "road": {
+        "a": "civic:15555556:-8711111",
+        "b": "civic:15300000:-8800000",
+        "name": "Asok Montri / Phetchaburi approach",
+        "corridor": "asok-north"
+      }
+    },
+    {
+      "id": "store:7-eleven:khaosan:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "khaosan",
+      "variant": "standalone",
+      "front": {
+        "x": -501.84239604317344,
+        "z": -1562.308271416451
+      },
+      "yaw": -0.7483780475235183,
+      "width": 11.4,
+      "entrance": {
+        "x": -502.01250881801525,
+        "z": -1562.1250730435443
+      },
+      "publicStop": {
+        "x": -510.6882603349481,
+        "z": -1552.781956025309
+      },
+      "nearestNode": "bkk:1174",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -499.6205661765625,
+            "z": -1558.3346463657151,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -0.7483780475235183,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:khaosan:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -506.0590991635602,
+            "z": -1563.6309636688363,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -0.7483780475235183,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:khaosan:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 374.5394009892066,
+        "y": 209.42293214588727
+      },
+      "parcel": {
+        "x": -494.3574339501334,
+        "z": -1570.36899982434,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -0.7483780475235183
+      },
+      "road": {
+        "a": "bkk:1174",
+        "b": "bkk:1175",
+        "name": "Khao San / Chakrabongse approach",
+        "corridor": "khaosan"
+      }
+    },
+    {
+      "id": "store:7-eleven:siam:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "siam",
+      "variant": "transit",
+      "front": {
+        "x": 544.6526418796627,
+        "z": -514.5060415097231
+      },
+      "yaw": 1.5350972141155728,
+      "width": 11.4,
+      "entrance": {
+        "x": 544.9024825932496,
+        "z": -514.497118627095
+      },
+      "publicStop": {
+        "x": 557.6443589861808,
+        "z": -514.0420516130617
+      },
+      "nearestNode": "bkk:757",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 546.206365585929,
+            "z": -518.7853132520393,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.5350972141155728,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 546.4090220961785,
+            "z": -510.4507698129028,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.5350972141155728,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 636.1631604699157,
+        "y": 471.3734896225692
+      },
+      "parcel": {
+        "x": 533.6596504818397,
+        "z": -514.8986483453597,
+        "w": 22,
+        "d": 22,
+        "height": 38,
+        "yaw": 1.5350972141155728
+      },
+      "road": {
+        "a": "bkk:757",
+        "b": "bkk:758",
+        "name": "Banthat Thong / Sam Yan connector",
+        "corridor": "banthat"
+      }
+    },
+    {
+      "id": "store:7-eleven:westbank:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "westbank",
+      "variant": "standalone",
+      "front": {
+        "x": -1467.5038474842795,
+        "z": -997.8831134746132
+      },
+      "yaw": -1.613323861414681,
+      "width": 11.4,
+      "entrance": {
+        "x": -1467.7536214444503,
+        "z": -997.8937421537694
+      },
+      "publicStop": {
+        "x": -1480.4920934131603,
+        "z": -998.4358047907358
+      },
+      "nearestNode": "bkk:991",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -1469.0867554136546,
+            "z": -993.6145508960487,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.613323861414681,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -1469.2324958622444,
+            "z": -1001.950283840526,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.613323861414681,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:westbank:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 133.12403812893012,
+        "y": 350.5292216313467
+      },
+      "parcel": {
+        "x": -1456.5137932367652,
+        "z": -997.4154515917403,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -1.613323861414681
+      },
+      "road": {
+        "a": "bkk:991",
+        "b": "bkk:992",
+        "name": "Itsaraphap / west-bank connector",
+        "corridor": "west"
+      }
+    },
+    {
+      "id": "store:7-eleven:talatnoi:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "talatnoi",
+      "variant": "corner",
+      "front": {
+        "x": 115.53480842246654,
+        "z": 352.3018460649819
+      },
+      "yaw": 2.677945044588987,
+      "width": 11.4,
+      "entrance": {
+        "x": 115.64661182134152,
+        "z": 352.0782392672319
+      },
+      "publicStop": {
+        "x": 121.34858516396598,
+        "z": 340.67429258198297
+      },
+      "nearestNode": "bkk:605",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 112.28624886475485,
+            "z": 349.1123187018762,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.677945044588987,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:talatnoi:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 119.95327874600613,
+            "z": 352.3868166481269,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.677945044588987,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:talatnoi:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 528.8837021056166,
+        "y": 688.0754615162455
+      },
+      "parcel": {
+        "x": 110.61545887196701,
+        "z": 362.14054516598094,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 2.677945044588987
+      },
+      "road": {
+        "a": "bkk:605",
+        "b": "bkk:606",
+        "name": "Song Wat / Talat Noi connector",
+        "corridor": "songwat"
+      }
+    },
+    {
+      "id": "store:7-eleven:icon:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "icon",
+      "variant": "tower",
+      "front": {
+        "x": -869.7343468369128,
+        "z": 1021.38242549416
+      },
+      "yaw": 1.8717165611553217,
+      "width": 12.8,
+      "entrance": {
+        "x": -869.4955808027099,
+        "z": 1021.3083256904418
+      },
+      "publicStop": {
+        "x": -857.3185130583668,
+        "z": 1017.5292357008182
+      },
+      "nearestNode": "bkk:1070",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -869.8389428265167,
+            "z": 1016.3220346318886,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.8717165611553217,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:icon:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -866.5918564943429,
+            "z": 1025.0979543188166,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.8717165611553217,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:icon:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 282.56641329077183,
+        "y": 855.34560637354
+      },
+      "parcel": {
+        "x": -880.2400523418364,
+        "z": 1024.642816857757,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": 1.8717165611553217
+      },
+      "road": {
+        "a": "bkk:1070",
+        "b": "bkk:1071",
+        "name": "Itsaraphap / west-bank connector",
+        "corridor": "west"
+      }
+    },
+    {
+      "id": "store:7-eleven:connector:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "connector",
+      "variant": "standalone",
+      "front": {
+        "x": -663.1627962328913,
+        "z": -17.371199420444825
+      },
+      "yaw": -1.7234456551901618,
+      "width": 11.4,
+      "entrance": {
+        "x": -663.409889157304,
+        "z": -17.40921371650831
+      },
+      "publicStop": {
+        "x": -677,
+        "z": -19.500000000000007
+      },
+      "nearestNode": "bkk:486",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -665.2052283317902,
+            "z": -13.302453284177869,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.7234456551901618,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -664.4339942932543,
+            "z": -21.603711144153273,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.7234456551901618,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:connector:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 334.2093009417772,
+        "y": 595.6572001448887
+      },
+      "parcel": {
+        "x": -656.244194349337,
+        "z": -16.306799130667237,
+        "w": 12,
+        "d": 14,
+        "height": 17.5,
+        "yaw": -1.7234456551901618
+      },
+      "road": {
+        "a": "bkk:486",
+        "b": "bkk:477",
+        "name": "Memorial Bridge approaches",
+        "corridor": "memorial_approach"
+      }
+    },
+    {
+      "id": "store:7-eleven:chinatown:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "chinatown",
+      "variant": "corner",
+      "front": {
+        "x": -329.29311092299884,
+        "z": -340.1310773177344
+      },
+      "yaw": -2.782821983319221,
+      "width": 11.4,
+      "entrance": {
+        "x": -329.38089178339595,
+        "z": -340.36515961212666
+      },
+      "publicStop": {
+        "x": -333.8577156636479,
+        "z": -352.30335662613203
+      },
+      "nearestNode": "bkk:528",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -333.8408617384517,
+            "z": -339.9208714173702,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -2.782821983319221,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -326.22429204351624,
+            "z": -343.3110852870533,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -2.782821983319221,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 417.67672226925026,
+        "y": 514.9672306705664
+      },
+      "parcel": {
+        "x": -325.4307530655265,
+        "z": -329.83145636447495,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": -2.782821983319221
+      },
+      "road": {
+        "a": "bkk:528",
+        "b": "bkk:529",
+        "name": "Charoen Krung - Chinatown arc",
+        "corridor": "charoen_n"
+      }
+    },
+    {
+      "id": "store:7-eleven:siam:4",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "siam",
+      "variant": "tower",
+      "front": {
+        "x": 984,
+        "z": -252
+      },
+      "yaw": 0,
+      "width": 12.8,
+      "entrance": {
+        "x": 984,
+        "z": -251.75
+      },
+      "publicStop": {
+        "x": 984,
+        "z": -240
+      },
+      "nearestNode": "civic:9775000:-2400000",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 988.864,
+            "z": -250.6,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 0,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:4:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 979.52,
+            "z": -250.1,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 0,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:siam:4:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 746,
+        "y": 537
+      },
+      "parcel": {
+        "x": 984,
+        "z": -263,
+        "w": 22,
+        "d": 22,
+        "height": 38,
+        "yaw": 0
+      },
+      "road": {
+        "a": "civic:9775000:-2400000",
+        "b": "civic:10050000:-2400000",
+        "name": "Siam Square commercial streets",
+        "corridor": "siam-square"
+      }
+    },
+    {
+      "id": "store:7-eleven:south:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "south",
+      "variant": "corner",
+      "front": {
+        "x": -250,
+        "z": 1987
+      },
+      "yaw": 0,
+      "width": 11.4,
+      "entrance": {
+        "x": -250,
+        "z": 1987.25
+      },
+      "publicStop": {
+        "x": -250,
+        "z": 2000
+      },
+      "nearestNode": "bkk:1129",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -245.668,
+            "z": 1988.4,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 0,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:south:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -253.99,
+            "z": 1988.9,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 0,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:south:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 437.5,
+        "y": 1096.75
+      },
+      "parcel": {
+        "x": -250,
+        "z": 1976,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 0
+      },
+      "road": {
+        "a": "bkk:1129",
+        "b": "bkk:1130",
+        "name": "Asiatique road entrance",
+        "corridor": "asiatique"
+      }
+    },
+    {
+      "id": "store:7-eleven:sukhumvit:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "sukhumvit",
+      "variant": "corner",
+      "front": {
+        "x": 1781.7596058924153,
+        "z": -80.79469899747168
+      },
+      "yaw": -1.6991195544806914,
+      "width": 11.4,
+      "entrance": {
+        "x": 1781.5116614257568,
+        "z": -80.82669183187923
+      },
+      "publicStop": {
+        "x": 1764.8993821596368,
+        "z": -82.97021173718504
+      },
+      "nearestNode": "bkk:901",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1779.8167450445137,
+            "z": -76.67747715189536,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.6991195544806914,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1780.385833582955,
+            "z": -84.99503822683882,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.6991195544806914,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 945.4399014731039,
+        "y": 579.8013252506321
+      },
+      "parcel": {
+        "x": 1792.6691624253895,
+        "z": -79.38701428353951,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": -1.6991195544806914
+      },
+      "road": {
+        "a": "bkk:901",
+        "b": "bkk:902",
+        "name": "Asok / Ratchadaphisek",
+        "corridor": "asok_ratchada"
+      }
+    },
+    {
+      "id": "store:7-eleven:chinatown:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "chinatown",
+      "variant": "standalone",
+      "front": {
+        "x": 292.24021692435133,
+        "z": -150.19207742247082
+      },
+      "yaw": 0.5426903220388831,
+      "width": 11.4,
+      "entrance": {
+        "x": 292.36932733455734,
+        "z": -149.9779968255536
+      },
+      "publicStop": {
+        "x": 298.9539582550626,
+        "z": -139.05988638277432
+      },
+      "nearestNode": "bkk:562",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 296.67282380488683,
+            "z": -151.23045126778362,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 0.5426903220388831,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 289.8047297151177,
+            "z": -146.50446273901227,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 0.5426903220388831,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 573.0600542310879,
+        "y": 562.4519806443823
+      },
+      "parcel": {
+        "x": 286.5593588752879,
+        "z": -159.61162368682938,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 0.5426903220388831
+      },
+      "road": {
+        "a": "bkk:562",
+        "b": "bkk:563",
+        "name": "Charoen Krung - Chinatown arc",
+        "corridor": "charoen_n"
+      }
+    },
+    {
+      "id": "store:7-eleven:paknam:1",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "paknam",
+      "variant": "corner",
+      "front": {
+        "x": -1503.6011834298818,
+        "z": 646.4202378651077
+      },
+      "yaw": 2.7522759317566523,
+      "width": 11.4,
+      "entrance": {
+        "x": -1503.5062943408177,
+        "z": 646.188945710514
+      },
+      "publicStop": {
+        "x": -1498.6669507985498,
+        "z": 634.3930458262361
+      },
+      "nearestNode": "bkk:1218",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -1507.0776349859223,
+            "z": 643.4807636640807,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.7522759317566523,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:paknam:1:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -1499.1886035656794,
+            "z": 646.1768473516582,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.7522759317566523,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:paknam:1:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 124.09970414252956,
+        "y": 761.6050594662769
+      },
+      "parcel": {
+        "x": -1507.776303348701,
+        "z": 656.5970926672298,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 2.7522759317566523
+      },
+      "road": {
+        "a": "bkk:1218",
+        "b": "bkk:1219",
+        "name": "Thonburi / Wat Paknam approach",
+        "corridor": "paknam"
+      }
+    },
+    {
+      "id": "store:7-eleven:chinatown:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "chinatown",
+      "variant": "standalone",
+      "front": {
+        "x": -117.01626123751157,
+        "z": 236.02631123499285
+      },
+      "yaw": 2.677945044588987,
+      "width": 11.4,
+      "entrance": {
+        "x": -116.90445783863659,
+        "z": 235.80270443724288
+      },
+      "publicStop": {
+        "x": -111.20248449601212,
+        "z": 224.39875775199394
+      },
+      "nearestNode": "bkk:596",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -120.26482079522326,
+            "z": 232.83678387188715,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.677945044588987,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -112.59779091397198,
+            "z": 236.11128181813783,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.677945044588987,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 470.7459346906221,
+        "y": 659.0065778087483
+      },
+      "parcel": {
+        "x": -121.9356107880111,
+        "z": 245.8650103359919,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 2.677945044588987
+      },
+      "road": {
+        "a": "bkk:596",
+        "b": "bkk:597",
+        "name": "Song Wat / Talat Noi connector",
+        "corridor": "songwat"
+      }
+    },
+    {
+      "id": "store:7-eleven:chinatown:4",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "chinatown",
+      "variant": "corner",
+      "front": {
+        "x": -69.56458157987109,
+        "z": -410.9709575495216
+      },
+      "yaw": 2.694072678432623,
+      "width": 11.4,
+      "entrance": {
+        "x": -69.4563988129749,
+        "z": -411.19633831388865
+      },
+      "publicStop": {
+        "x": -63.939077701269056,
+        "z": -422.69075729660915
+      },
+      "nearestNode": "bkk:539",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -72.86415597020498,
+            "z": -414.1076808147544,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 2.694072678432623,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:4:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -65.14531555216162,
+            "z": -410.95725439904805,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 2.694072678432623,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:chinatown:4:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 482.6088546050322,
+        "y": 497.2572606126196
+      },
+      "parcel": {
+        "x": -74.32462332330357,
+        "z": -401.05420391737056,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 2.694072678432623
+      },
+      "road": {
+        "a": "bkk:539",
+        "b": "bkk:540",
+        "name": "Charoen Krung - Chinatown arc",
+        "corridor": "charoen_n"
+      }
+    },
+    {
+      "id": "store:7-eleven:sukhumvit:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "sukhumvit",
+      "variant": "tower",
+      "front": {
+        "x": 1761.8140192268143,
+        "z": 687.4771523458164
+      },
+      "yaw": -1.4056476493802699,
+      "width": 12.8,
+      "entrance": {
+        "x": 1761.5674207458562,
+        "z": 687.5182520926428
+      },
+      "publicStop": {
+        "x": 1745.045322521668,
+        "z": 690.2719351300076
+      },
+      "nearestNode": "bkk:930",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1761.2327044077024,
+            "z": 692.5051309735635,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": -1.4056476493802699,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1759.2033633084052,
+            "z": 683.3704656429286,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": -1.4056476493802699,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 940.4535048067036,
+        "y": 771.8692880864542
+      },
+      "parcel": {
+        "x": 1772.664352388968,
+        "z": 685.6687634854575,
+        "w": 22,
+        "d": 22,
+        "height": 50,
+        "yaw": -1.4056476493802699
+      },
+      "road": {
+        "a": "bkk:930",
+        "b": "bkk:931",
+        "name": "Asok / Ratchadaphisek",
+        "corridor": "asok_ratchada"
+      }
+    },
+    {
+      "id": "store:7-eleven:sukhumvit:3",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "sukhumvit",
+      "variant": "tower",
+      "front": {
+        "x": 1751.2826163394657,
+        "z": -551.2382551427075
+      },
+      "yaw": 1.604117322673144,
+      "width": 12.8,
+      "entrance": {
+        "x": 1751.5324775662104,
+        "z": -551.2465838502657
+      },
+      "publicStop": {
+        "x": 1768.2731797581114,
+        "z": -551.8046072566623
+      },
+      "nearestNode": "civic:17681818:-5545455",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 1752.5197958749848,
+            "z": -556.1461959325798,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.604117322673144,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:3:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 1753.3308121021685,
+            "z": -546.8240401368829,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.604117322673144,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:sukhumvit:3:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 937.8206540848664,
+        "y": 462.1904362143231
+      },
+      "parcel": {
+        "x": 1740.288722362695,
+        "z": -550.8717920101485,
+        "w": 22,
+        "d": 22,
+        "height": 50,
+        "yaw": 1.604117322673144
+      },
+      "road": {
+        "a": "civic:17690909:-5272727",
+        "b": "civic:17681818:-5545455",
+        "name": "Asok Montri / Phetchaburi approach",
+        "corridor": "asok-north"
+      }
+    },
+    {
+      "id": "store:7-eleven:south:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "south",
+      "variant": "standalone",
+      "front": {
+        "x": -64.59132237518052,
+        "z": 1779.989001488841
+      },
+      "yaw": 1.423717971406494,
+      "width": 11.4,
+      "entrance": {
+        "x": -64.34402150959205,
+        "z": 1780.0256386541134
+      },
+      "publicStop": {
+        "x": -47.774863515164725,
+        "z": 1782.480328727362
+      },
+      "nearestNode": "bkk:674",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -62.571588728045555,
+            "z": 1775.9089402154493,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.423717971406494,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:south:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -63.29656495445512,
+            "z": 1784.214365759703,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.423717971406494,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:south:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 483.8521694062049,
+        "y": 1044.9972503722101
+      },
+      "parcel": {
+        "x": -75.4725604610731,
+        "z": 1778.376966216857,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 1.423717971406494
+      },
+      "road": {
+        "a": "bkk:673",
+        "b": "bkk:674",
+        "name": "Charoen Krung - riverside",
+        "corridor": "charoen_s"
+      }
+    },
+    {
+      "id": "store:7-eleven:talatnoi:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "talatnoi",
+      "variant": "standalone",
+      "front": {
+        "x": 130.87937691538687,
+        "z": 711.2050530831866
+      },
+      "yaw": 1.5363272257953886,
+      "width": 11.4,
+      "entrance": {
+        "x": 131.12922841522527,
+        "z": 711.2136686521466
+      },
+      "publicStop": {
+        "x": 147.86927890439785,
+        "z": 711.7909117724629
+      },
+      "nearestNode": "bkk:634",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": 132.42783589341983,
+            "z": 706.9238734801626,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.5363272257953886,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:talatnoi:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": 132.64074383355796,
+            "z": 715.258161344703,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.5363272257953886,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:talatnoi:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 532.7198442288467,
+        "y": 777.8012632707967
+      },
+      "parcel": {
+        "x": 119.8859109224974,
+        "z": 710.825968048949,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 1.5363272257953886
+      },
+      "road": {
+        "a": "bkk:633",
+        "b": "bkk:634",
+        "name": "Charoen Krung - riverside",
+        "corridor": "charoen_s"
+      }
+    },
+    {
+      "id": "store:7-eleven:icon:2",
+      "brand": "7-eleven",
+      "name": "7-Eleven",
+      "region": "icon",
+      "variant": "tower",
+      "front": {
+        "x": -777.2577917967075,
+        "z": 1319.362436179266
+      },
+      "yaw": 1.8717165611553217,
+      "width": 12.8,
+      "entrance": {
+        "x": -777.0190257625046,
+        "z": 1319.288336375548
+      },
+      "publicStop": {
+        "x": -764.8419580181614,
+        "z": 1315.5092463859241
+      },
+      "nearestNode": "bkk:1082",
+      "source": "representative-compressed-storefront",
+      "forecourt": [
+        {
+          "kind": "bin",
+          "body": {
+            "x": -777.3623877863114,
+            "z": 1314.3020453169947,
+            "w": 0.75,
+            "d": 0.7,
+            "height": 1.15,
+            "yaw": 1.8717165611553217,
+            "color": "#00834b",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:icon:2:bin"
+          }
+        },
+        {
+          "kind": "motorcycle",
+          "body": {
+            "x": -774.1153014541376,
+            "z": 1323.0779650039228,
+            "w": 2.2,
+            "d": 0.85,
+            "height": 1.35,
+            "yaw": 1.8717165611553217,
+            "color": "#496d77",
+            "artRole": "furniture",
+            "environmentId": "store:7-eleven:icon:2:motorcycle"
+          }
+        }
+      ],
+      "services": [
+        "water",
+        "refreshments",
+        "snacks"
+      ],
+      "interaction": {
+        "enabled": false,
+        "radius": 3.5,
+        "futureEnergy": true
+      },
+      "map": {
+        "x": 305.68555205082316,
+        "y": 929.8406090448166
+      },
+      "parcel": {
+        "x": -787.7634973016311,
+        "z": 1322.622827542863,
+        "w": 22,
+        "d": 22,
+        "height": 32,
+        "yaw": 1.8717165611553217
+      },
+      "road": {
+        "a": "bkk:1081",
+        "b": "bkk:1082",
+        "name": "Itsaraphap / west-bank connector",
+        "corridor": "west"
+      }
+    }
+  ]
+}

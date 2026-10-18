@@ -1,3 +1,5 @@
+import {victoryPublicGround} from './civicRoads';
+import {insidePublicPolygon} from './publicSpaces';
 import type { District, Obstacle, Point, Road } from "../types";
 import { distanceToSegment, obstacleDistance } from "../world";
 import { destinationReservation } from "./destinationAccess";
@@ -217,7 +219,8 @@ export function auditStreetEdges(d: District, spacing = 12): StreetEdge[] {
             sample.distance = distance;
             break;
           }
-          if (parks.some((o) => obstacleDistance(p, o) < 0.1)) {
+          if(victoryPublicGround(p)){sample.kind='station';sample.distance=distance;break;}
+          if (d.publicSpaces?.some(s=>insidePublicPolygon(p,s.boundary)) || parks.some((o) => obstacleDistance(p, o) < 0.1)) {
             sample.kind = "park";
             sample.distance = distance;
             break;

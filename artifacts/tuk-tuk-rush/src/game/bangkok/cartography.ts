@@ -1,3 +1,4 @@
+import { insidePublicPolygon } from "./publicSpaces";
 import type { District, Point } from "../types";
 import { regionAt, SCALE, toMap } from "./world";
 const cache = new WeakMap<District, ReturnType<typeof build>>();
@@ -59,6 +60,26 @@ function build(d: District) {
     .join("");
   return {
     roads,
+    publicSpaces: d.publicSpaces?.map((s) => ({
+      id: s.id,
+      boundary: points(s.boundary),
+      water: s.water
+        .filter((w) => !w.hole)
+        .map(
+          (w) =>
+            `M${points(w.points).replaceAll(" ", "L")}Z${s.water
+              .filter(
+                (h) => h.hole && insidePublicPolygon(h.points[0]!, w.points),
+              )
+              .map((h) => `M${points(h.points).replaceAll(" ", "L")}Z`)
+              .join("")}`,
+        ),
+      paths: s.paths.map((p) => ({
+        points: points(p.points),
+        width: p.width / SCALE,
+      })),
+      gates: s.gates.map((g) => ({ ...g, ...toMap(g.point) })),
+    })),
     footprints,
     river: points(d.river ?? []),
     canals: d.canals?.map((c) => points(c.points)),

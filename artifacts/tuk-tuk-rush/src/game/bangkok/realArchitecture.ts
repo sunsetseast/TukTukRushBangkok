@@ -1,4 +1,6 @@
 import { siteMasses } from './authoredSites';
+import { buildSiamCenterDiscovery } from './commercialDistrictArt';
+import { historicDistrictLandmark } from './historicDistricts';
 import { buildHeroArchitecture } from './heroArchitecture';
 import * as T from 'three';
 import type { District, Landmark } from '../types';
@@ -104,34 +106,9 @@ function eastin(b:B,detail:boolean){
  b.box(0,42,13,37,4,10,'#b3b8a2');b.box(0,44.2,13,31,.3,7,'#50b9bd');
  b.box(0,109,-3,33,2,28,IVORY);arrival(b,42,40,detail);
 }
-function riverCity(b:B,detail:boolean){
- slab(b,0,-3,70,28,20,4,detail,'#d8d4c2');
- for(const x of [-25,-15,15,25])b.box(x,12,12,2,24,4,IVORY);
- const outer=new T.Shape();outer.moveTo(-11,0);outer.lineTo(-11,8);outer.absarc(0,8,11,Math.PI,0,true);outer.lineTo(11,0);outer.closePath();
- b.sculpt(new T.ExtrudeGeometry(outer,{depth:.5,bevelEnabled:false}),0,1,13,'#689ca2','glass');
- for(let x=-31;x<=31;x+=4)b.box(x,1,20,3,2,5,'#c1b395');arrival(b,74,48,detail);
-}
-function siamCenter(b:B,detail:boolean){
- b.box(-29,10,0,52,20,44,'#294f5c');glass(b,-29,11,22.2,49,15,.2,'#3d696e');
- b.box(29,13,0,52,26,47,'#bfcac2');
- for(let row=0;row<4;row++)for(let col=0;col<6;col++){
-  const x=7+col*8.2,y=4+row*5.8,z=24+(row%2)*.5;
-  glass(b,x,y,z,7,4.5,.15,'#50797d');
-  for(const side of [-1,1])b.box(x+side*3.7,y,z+.2,.55,5.1,.55,IVORY);
-  for(const side of [-1,1])b.box(x,y+side*2.5,z+.2,8,.55,.55,IVORY);
- }
- if(detail)for(const x of [-48,-34,-20])b.box(x,20.5,21,5,1.6,1.5,'#d64d45',0,true);
-}
-function jimThompson(b:B,detail:boolean){
- for(const [x,z,w,d,h] of [[-13,-6,14,24,7],[6,-8,16,20,8],[12,11,15,14,6],[-11,14,16,12,6]]){
-  for(const u of [-1,1])for(const v of [-1,1])b.box(x!+u*w!*.4,2,z!+v*d!*.4,.6,4,.6,'#6d4835');
-  b.box(x!,4+h!/2,z!,w!,h!,d!,'#955739');thaiRoof(b,x!,4+h!,z!,w!+3,d!+4,4,'#a55c3d',detail);
-  for(let u=-w!/2+2;u<w!/2;u+=4)glass(b,x!+u,7,z!+d!/2+.1,1.4,2.5,.15,'#344e4d');
- }
- b.box(0,4,0,40,.35,5,'#ad744c');if(detail)for(const x of [-21,21])tree(b,x,15,8);
-}
-const builders:Record<string,(b:B,detail:boolean)=>void>={'peninsula':peninsula,'hilton':hilton,'rosewood':rosewood,'erawan-hotel':erawan,'eastin':eastin,'river-city':riverCity,'siam-center':siamCenter,'jim-thompson':jimThompson};
+const builders:Record<string,(b:B,detail:boolean)=>void>={'peninsula':peninsula,'hilton':hilton,'rosewood':rosewood,'erawan-hotel':erawan,'eastin':eastin,'siam-center':buildSiamCenterDiscovery};
 export function buildRealArchitecture(l:Landmark){
+ const historic=historicDistrictLandmark(l);if(historic)return historic;
  const p=realPlace(l.id),make=builders[l.id!];if(!p)return;
  const root=new T.LOD();
  for(const detail of [true,false]){let g=buildHeroArchitecture(p,detail);if(!g){if(!make)return;const b=new LandmarkBuilder();make(b,detail);g=b.finish(`${p.asset}-${detail?'near':'far'}`);}root.addLevel(g,detail?0:300,.12);}

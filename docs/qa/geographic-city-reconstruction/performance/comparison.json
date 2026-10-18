@@ -1,0 +1,244 @@
+{
+  "base": "9e24ada",
+  "hardware": "Chromium133 SwiftShader software renderer",
+  "poses": 10,
+  "qualities": [
+    "low",
+    "medium"
+  ],
+  "samplesPerPose": 5,
+  "comparisons": [
+    [
+      "siam",
+      "low",
+      199,
+      221,
+      255940,
+      315244,
+      114.5,
+      135.7
+    ],
+    [
+      "chong-nonsi",
+      "low",
+      169,
+      171,
+      290481,
+      306651,
+      22.2,
+      1015.2
+    ],
+    [
+      "asok",
+      "low",
+      118,
+      126,
+      164249,
+      200310,
+      609.6,
+      763.4
+    ],
+    [
+      "taksin",
+      "low",
+      140,
+      142,
+      249918,
+      277106,
+      749.3,
+      666
+    ],
+    [
+      "icon",
+      "low",
+      184,
+      181,
+      256101,
+      248747,
+      673.3,
+      582.3
+    ],
+    [
+      "pho",
+      "low",
+      173,
+      174,
+      318896,
+      322960,
+      585.9,
+      921.7
+    ],
+    [
+      "lumphini-wireless",
+      "low",
+      142,
+      141,
+      237276,
+      271695,
+      530.9,
+      606.1
+    ],
+    [
+      "victory-approach",
+      "low",
+      140,
+      151,
+      159836,
+      200770,
+      498.2,
+      828.1
+    ],
+    [
+      "flower-market",
+      "low",
+      158,
+      154,
+      259252,
+      276108,
+      496.6,
+      545.1
+    ],
+    [
+      "river-city",
+      "low",
+      116,
+      129,
+      184202,
+      232318,
+      363.2,
+      489.8
+    ],
+    [
+      "siam",
+      "medium",
+      346,
+      375,
+      391983,
+      489981,
+      274.6,
+      598.4
+    ],
+    [
+      "chong-nonsi",
+      "medium",
+      186,
+      189,
+      322757,
+      337591,
+      358.8,
+      613.9
+    ],
+    [
+      "asok",
+      "medium",
+      153,
+      163,
+      208969,
+      245566,
+      827.7,
+      1250.2
+    ],
+    [
+      "taksin",
+      "medium",
+      221,
+      227,
+      321904,
+      365464,
+      747.2,
+      915.6
+    ],
+    [
+      "icon",
+      "medium",
+      247,
+      246,
+      316813,
+      314977,
+      415.9,
+      1126
+    ],
+    [
+      "pho",
+      "medium",
+      305,
+      309,
+      537960,
+      561037,
+      431.8,
+      790.9
+    ],
+    [
+      "lumphini-wireless",
+      "medium",
+      274,
+      262,
+      431275,
+      448195,
+      405.2,
+      1416.7
+    ],
+    [
+      "victory-approach",
+      "medium",
+      186,
+      201,
+      203156,
+      269120,
+      395.3,
+      1064.5
+    ],
+    [
+      "flower-market",
+      "medium",
+      221,
+      216,
+      339212,
+      356880,
+      573.8,
+      735.8
+    ],
+    [
+      "river-city",
+      "medium",
+      157,
+      170,
+      227348,
+      277488,
+      304.4,
+      508.5
+    ]
+  ],
+  "resourcesBefore": {
+    "geometryBuffersBytes": 139294800,
+    "geometries": 6098,
+    "materials": 409,
+    "textures": 15,
+    "texturePixels": 6053888,
+    "approxTextureRGBABytes": 24215552
+  },
+  "resourcesAfter": {
+    "geometryBuffersBytes": 154656096,
+    "geometries": 6597,
+    "materials": 455,
+    "textures": 25,
+    "texturePixels": 6578176,
+    "approxTextureRGBABytes": 26312704
+  },
+  "bundleBefore": {
+    "bytes": 1972777,
+    "gzipBytes": 638385
+  },
+  "bundleAfter": {
+    "bytes": 2122403,
+    "gzipBytes": 692975
+  },
+  "budgets": {
+    "maxCalls": 400,
+    "maxTriangles": 600000,
+    "geometryBufferBytes": 160000000,
+    "materials": 470,
+    "textures": 28,
+    "jsBytes": 2200000
+  }
+}
