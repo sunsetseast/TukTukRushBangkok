@@ -1,3 +1,4 @@
+import { emitBlockArchitecture } from "./urbanBlocks";
 import { cinematicParcel, emitYaowaratFacade } from "./yaowarat";
 import type { District } from "../types";
 import {
@@ -43,6 +44,7 @@ export function emitDistrictArchitecture(
   emit: (piece: ArtPiece) => void,
 ) {
   for (const p of designs) {
+    if (emitBlockArchitecture(p.parcel, emit)) continue;
     if (cinematicParcel(p)) {
       emitYaowaratFacade(p, emit);
       continue;

@@ -1,4 +1,6 @@
-import { COMMERCIAL_DISTRICT_BOUNDS } from "./commercialDistrictArt";
+import { COMMERCIAL_DISTRICT_BOUNDS, commercialSiteMasses } from "./commercialDistrictArt";
+import { urbanCourtReserved } from "./urbanBlocks";
+import { WAT_PHO_MASSES, WAT_PHO_WALLS } from "./watPhoCompound";
 import { inPublicGround } from "./publicSpaces";
 import { inAuthoredSite } from "./authoredSites";
 import type {
@@ -83,7 +85,7 @@ export function destinationReservation(a: DestinationAccess): Obstacle {
   return { ...a.origin, yaw: a.yaw, w: 60, d: 56, height: 0, color: "#eee" };
 }
 export function inDestinationGrounds(d: District, o: Obstacle) {
-  if (inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
+  if (urbanCourtReserved(d,o) || inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
   return (
     d.destinations?.some((a) => {
       if (orientedFootprintsOverlap(o, destinationReservation(a), 2))
@@ -428,7 +430,7 @@ export function detailDestinationCollisions(d: District) {
     };
     const S = l.size!;
     const retail = COMMERCIAL_DISTRICT_BOUNDS[l.id!];
-    if (retail) add(0, 0, retail.w, retail.d, retail.height);
+    if (retail) for (const m of commercialSiteMasses(l.id!)) add(m.x,m.z,m.w,m.d,m.h);
     else if (["icon", "paragon", "central", "terminal"].includes(l.id!))
       add(
         0,
@@ -445,7 +447,8 @@ export function detailDestinationCollisions(d: District) {
       );
     else if (l.id === "pho") {
       add(0, 2, 48, 23, 20);
-      for (const x of [-18, -6, 6, 18]) add(x, -18, 8, 8, 18);
+      for (const x of [-18, -6, 6, 18]) add(x, -18, 8, 8, 20);
+      for (const m of [...WAT_PHO_MASSES,...WAT_PHO_WALLS]) add(m.x,m.z,m.w,m.d,m.h);
     } else if (l.id === "arun") {
       add(0, 0, 20, 20, 56);
       for (const x of [-16, 16]) for (const z of [-16, 16]) add(x, z, 9, 9, 23);
@@ -461,7 +464,7 @@ export function detailDestinationCollisions(d: District) {
     } else add(0, 0, S - 2, S - 2, 30);
     // Match existing wall positions, close pedestrian-only boundary explicitly.
     const edge = l.id === "paknam" ? 43 : l.id === "palace" ? 66 : S / 2 - 1;
-    if (!retail)
+    if (!retail && l.id!=="pho")
       for (const side of [-1, 1]) {
         add(side * edge, 0, 1, edge * 2 + 1, 3);
         add(0, side * edge, edge * 2 + 1, 1, 3);

@@ -1,4 +1,5 @@
 import * as T from 'three';
+import {buildWatPhoCourts} from './watPhoCompound';
 import type {Landmark} from '../types';
 import {LandmarkBuilder} from './landmarkBuilder';
 import {sectionLoft,ribbonPath,sculptedFace,sculptedHand,pearlSoleTexture,type Section} from './sculptureGeometry';
@@ -91,6 +92,6 @@ function seated(b:LandmarkBuilder,detail:boolean){
 }
 export function buddhaLandmark(l:Landmark){
  if(!['pho','paknam'].includes(l.id!))return;
- const make=(detail:boolean)=>{const b=new LandmarkBuilder();if(l.id==='pho'){hall(b,detail);reclining(b,detail);}else seated(b,detail);const g=b.finish(`sculpted-${l.id}-${detail?'hero':'road'}-v3`);g.userData.nightScale=.16;return g;};
+ const make=(detail:boolean)=>{const b=new LandmarkBuilder();if(l.id==='pho'){buildWatPhoCourts(b,detail);hall(b,detail);reclining(b,detail);}else seated(b,detail);const g=b.finish(`sculpted-${l.id}-${detail?'hero':'road'}-v3`);g.userData.nightScale=.16;return g;};
  const near=make(true),far=make(false),root=new T.LOD();root.addLevel(near,0);root.addLevel(far,l.id==='pho'?95:135);root.userData.authoredAsset=`sculpted-${l.id}-v3`;root.userData.inspection=true;root.userData.nightScale=.16;root.userData.nightMaterials=[...near.userData.nightMaterials,...far.userData.nightMaterials];return root;
 }

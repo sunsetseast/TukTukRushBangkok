@@ -4,6 +4,7 @@ import { LandmarkBuilder } from "../src/game/bangkok/landmarkBuilder";
 import {
   buildCommercialDistrictModel,
   COMMERCIAL_DISTRICT_BOUNDS,
+  commercialSiteMasses,
 } from "../src/game/bangkok/commercialDistrictArt";
 import { realCommercial } from "../src/game/bangkok/realCommercial";
 
@@ -152,9 +153,20 @@ console.log(
 const { createBangkokWorld } = await import("../src/game/bangkok/world");
 const city = createBangkokWorld();
 for (const id of ["paragon", "central", "terminal"]) {
-  const bounds = COMMERCIAL_DISTRICT_BOUNDS[id]!;
-  const body = city.obstacles.find((o) => o.landmarkId === id && !o.artRole)!;
-  assert.equal(body.w, bounds.w);
-  assert.equal(body.d, bounds.d);
-  assert.equal(body.height, bounds.height);
+  const l = city.landmarks.find((l) => l.id === id)!;
+  const bodies = city.obstacles.filter(
+    (o) => o.landmarkId === id && !o.artRole,
+  );
+  const masses = commercialSiteMasses(id);
+  assert.equal(
+    bodies.length,
+    masses.length,
+    `${id}: multipart collision retained`,
+  );
+  for (const [i, m] of masses.entries()) {
+    assert.equal(bodies[i]!.w, m.w);
+    assert.equal(bodies[i]!.d, m.d);
+    assert.equal(bodies[i]!.height, m.h);
+    assert.equal(bodies[i]!.yaw, l.yaw ?? 0);
+  }
 }

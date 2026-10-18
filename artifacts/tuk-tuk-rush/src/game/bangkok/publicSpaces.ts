@@ -9,7 +9,12 @@ export type PublicSpace = {
   origin: Point;
   boundary: Point[];
   water: { points: Point[]; hole: boolean }[];
-  paths: { points: Point[]; width: number; mode: "pedestrian" | "vehicle" }[];
+  paths: {
+    points: Point[];
+    width: number;
+    mode: "pedestrian" | "vehicle";
+    elevation?: number;
+  }[];
   gates: {
     name: string;
     point: Point;
@@ -19,6 +24,7 @@ export type PublicSpace = {
   }[];
   trees: Point[];
   fences: Obstacle[];
+  facilities?: Obstacle[];
   dropoff?: string;
   adaptation: string;
 };
@@ -53,7 +59,12 @@ export function publicWaterAt(d: District, p: Point) {
   );
 }
 export function inPublicGround(d: District, o: Obstacle) {
-  if (Math.hypot(o.x - 700, o.z + 1480) < 100 + Math.hypot(o.w, o.d) / 2)
+  const monument = d.landmarks.find((l) => l.id === "victory");
+  if (
+    monument &&
+    Math.hypot(o.x - monument.x, o.z - monument.z) <
+      100 + Math.hypot(o.w, o.d) / 2
+  )
     return true;
   const c = Math.cos(o.yaw ?? 0),
     s = Math.sin(o.yaw ?? 0),
@@ -335,49 +346,172 @@ export function planPublicSpaces(d: District) {
     ],
     [],
   );
+  // Turenscape/Arsomsilp: original lake east, three constructed wetlands
+  // and islet fields west. A compressed plan, not a survey-derived boundary.
   const benBoundary = [
-    [895, 681],
-    [911, 681],
-    [914, 742],
-    [896, 748],
+    [869, 674],
+    [913, 674],
+    [919, 741],
+    [911, 752],
+    [870, 752],
   ].map(map);
+  const benWater: PublicSpace["water"] = [
+    {
+      points: [
+        [899, 682],
+        [910, 680],
+        [914, 734],
+        [907, 743],
+        [899, 738],
+      ].map(map),
+      hole: false,
+    },
+    {
+      points: [
+        [873, 680],
+        [892, 680],
+        [893, 697],
+        [888, 703],
+        [873, 700],
+      ].map(map),
+      hole: false,
+    },
+    {
+      points: [
+        [873, 707],
+        [890, 705],
+        [894, 717],
+        [889, 725],
+        [873, 722],
+      ].map(map),
+      hole: false,
+    },
+    {
+      points: [
+        [874, 731],
+        [888, 728],
+        [896, 737],
+        [892, 747],
+        [875, 746],
+      ].map(map),
+      hole: false,
+    },
+  ];
+  // Islands are holes in the same water mesh and physical water query. Modest
+  // count is deliberate for mobile; it preserves the characteristic topology.
+  for (const [cx, cy, rows, cols] of [
+    [881, 690, 3, 4],
+    [881, 714, 2, 4],
+    [882, 738, 2, 4],
+  ])
+    for (let row = 0; row < rows!; row++)
+      for (let col = 0; col < cols!; col++) {
+        const x = cx! + (col! - (cols! - 1) / 2) * 3.7,
+          y = cy! + (row! - (rows! - 1) / 2) * 5;
+        benWater.push({
+          points: Array.from({ length: 8 }, (_, i) =>
+            map([
+              x + Math.cos((i * Math.PI) / 4) * 1.1,
+              y + Math.sin((i * Math.PI) / 4) * 1.6,
+            ]),
+          ),
+          hole: true,
+        });
+      }
   const ben = make(
     "benjakitti",
-    "Benjakitti Park",
-    [904, 714],
+    "Benjakitti Forest and Lake Park",
+    [894, 713],
     benBoundary,
+    benWater,
     [
       {
-        points: [
-          [899, 690],
-          [908, 690],
-          [910, 735],
-          [899, 739],
-        ].map(map),
-        hole: false,
+        name: "Ratchadaphisek lake gate",
+        point: map([917, 721]),
+        vehicle: false,
       },
-    ],
-    [
+      { name: "North forest gate", point: map([879, 674]), vehicle: false },
       {
-        name: "Ratchadaphisek park gate",
-        point: map([914, 721]),
+        name: "South convention centre gate",
+        point: map([902, 751]),
         vehicle: false,
       },
     ],
     [
       {
         points: [
-          [897, 685],
-          [911, 685],
-          [912, 743],
-          [896, 744],
-          [897, 685],
+          [871, 676],
+          [911, 676],
+          [917, 739],
+          [909, 750],
+          [872, 750],
+          [871, 676],
         ].map(map),
         width: 4,
         mode: "pedestrian",
       },
+      {
+        points: [
+          [896, 680],
+          [896, 743],
+          [905, 747],
+          [915, 738],
+          [911, 679],
+          [896, 680],
+        ].map(map),
+        width: 3.5,
+        mode: "pedestrian",
+      },
+      {
+        points: [
+          [872, 702],
+          [895, 702],
+          [895, 726],
+          [872, 726],
+        ].map(map),
+        width: 4,
+        mode: "pedestrian",
+      },
+      {
+        points: [
+          [876, 677],
+          [876, 694],
+          [889, 705],
+          [878, 716],
+          [890, 730],
+          [883, 747],
+        ].map(map),
+        width: 2.8,
+        mode: "pedestrian",
+        elevation: 6.2,
+      },
+      {
+        points: [
+          [872, 688],
+          [893, 695],
+          [881, 711],
+          [893, 718],
+          [881, 738],
+          [895, 742],
+        ].map(map),
+        width: 2.3,
+        mode: "pedestrian",
+        elevation: 1.8,
+      },
     ],
   );
+  ben.adaptation =
+    "Original east lake and three west wetland/islet fields based on Turenscape/Arsomsilp project plan. Width and southern convention-centre spacing compressed. Pedestrian skywalk/boardwalks have no road nodes; vehicle stops stay on Ratchadaphisek.";
+  ben.facilities = [-54, -24].map((x) => ({
+    x: ben.origin.x + x,
+    z: ben.origin.z - 142,
+    w: 22,
+    d: 10,
+    height: 9.6,
+    color: "#c4c2a5",
+    environmentId: `park-factory:${x}`,
+  }));
+  d.obstacles.push(...ben.facilities);
   d.publicSpaces = [park, field, ben];
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     roadSegments = d.roads.map((r) => ({
@@ -533,6 +667,36 @@ export function planPublicSpaces(d: District) {
           environmentId: `park-tree:${s.id}:${i}`,
         });
       }
+  }
+  // Micro-islands are smaller than the general tree grid. Plant dry centers
+  // explicitly; the forest park must not become a treeless water surface.
+  for (const [i, island] of ben.water.filter((w) => w.hole).entries()) {
+    const p = {
+      x: island.points.reduce((n, p) => n + p.x, 0) / island.points.length,
+      z: island.points.reduce((n, p) => n + p.z, 0) / island.points.length,
+    };
+    if (
+      publicWaterAt(d, p) ||
+      ben.paths.some((path) =>
+        path.points
+          .slice(1)
+          .some(
+            (q, j) =>
+              distanceToSegment(p, path.points[j]!, q).distance <
+              path.width + 2,
+          ),
+      )
+    )
+      continue;
+    ben.trees.push(p);
+    d.obstacles.push({
+      ...p,
+      w: 0.6,
+      d: 0.6,
+      height: 10,
+      color: "#748e64",
+      environmentId: `wetland-island-tree:${i}`,
+    });
   }
   return d.publicSpaces;
 }

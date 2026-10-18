@@ -1,0 +1,16 @@
+{
+  "base": "da733970864ff2cf1d670b04c4550dfdf38ab216",
+  "typescript": "pass",
+  "productionBuild": "pass",
+  "existingLargeChunkWarning": true,
+  "automatedGroups": {
+    "passed": 30,
+    "total": 30
+  },
+  "targetedPublicSpaceAndBlockChecks": "pass after final anchor-derived reservation change",
+  "browserScreenshots": "not captured",
+  "renderedDrawCalls": "not measured",
+  "physicalIPhoneSafari": "not tested",
+  "merge": false,
+  "deployment": false
+}

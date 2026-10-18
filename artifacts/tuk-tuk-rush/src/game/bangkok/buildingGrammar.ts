@@ -1,3 +1,4 @@
+import { inSiamSquare } from "./urbanBlocks";
 import { composeYaowarat } from "./yaowarat";
 import type { District, Obstacle } from "../types";
 import { distanceToSegment } from "../world";
@@ -309,25 +310,33 @@ export function designBuildings(d: District): ParcelDesign[] {
         width = (b.w * weight) / sum,
         u = edge + width / 2;
       edge += width;
-      const type = hero
-        ? hero.sequence[
-            (Math.floor(
-              (b.x * Math.cos(b.yaw ?? 0) - b.z * Math.sin(b.yaw ?? 0)) / 26,
-            ) +
-              i +
-              10000) %
-              hero.sequence.length
-          ]!
-        : g.types[(s >>> 4) % g.types.length]!;
+      const type = inSiamSquare(b)
+        ? (["retail", "shophouse", "noodle"] as const)[s % 3]!
+        : hero
+          ? hero.sequence[
+              (Math.floor(
+                (b.x * Math.cos(b.yaw ?? 0) - b.z * Math.sin(b.yaw ?? 0)) / 26,
+              ) +
+                i +
+                10000) %
+                hero.sequence.length
+            ]!
+          : g.types[(s >>> 4) % g.types.length]!;
       const tall = ["office", "apartment"].includes(type),
         modern = ["retail", "office", "apartment"].includes(type);
-      const floors = b.environmentId?.startsWith('street-infill:') ? (modern ? 3 : 2) : tall
-        ? 5 + (s % 8)
-        : type === "warehouse"
-          ? 1
-          : modern
-            ? 2 + (s % 3)
-            : 2 + (s % 3);
+      const floors = inSiamSquare(b)
+        ? 2 + (s % 2)
+        : b.environmentId?.startsWith("street-infill:")
+          ? modern
+            ? 3
+            : 2
+          : tall
+            ? 5 + (s % 8)
+            : type === "warehouse"
+              ? 1
+              : modern
+                ? 2 + (s % 3)
+                : 2 + (s % 3);
       const height = floors * (modern ? 3.9 : 3.35) + 1.5,
         front =
           b.d / 2 -

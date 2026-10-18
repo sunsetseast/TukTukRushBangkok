@@ -449,6 +449,11 @@ function giantSwing(b: B, detail: boolean) {
   b.box(0, 20.2, -43, 13.4, 0.48, 1.4, "#a72f27");
   // The temple is south of the swing, separated by its gate and forecourt.
   templeHall(b, 0, 10, 36, 32, 12.4, detail);
+  thaiRoof(b,0,18.2,10,22,25,5,'#a84a2e',false);
+  for(const side of [-1,1])for(const z of [-5,25]){
+    b.box(side*23,.7,z,2.2,1.4,2.2,'#c1b49b');
+    b.sculpt(new T.CylinderGeometry(.36,.54,2,6),side*23,2.4,z,'#929c89');
+  }
   templeHall(b, 0, 44, 46, 17, 8.3, detail);
   for (const side of [-1, 1]) {
     b.box(side * 32, 2.8, 19, 6, 4.4, 72, "#d0bda0");
@@ -796,7 +801,11 @@ function jimThompson(b: B, detail: boolean) {
     [4, 26, 8, true],
     [29, 8, 10],
   ];
-  for (const [x, z, h, palm] of trees) plants.tree(x, z, h, palm);
+  for (const [x, z, h, palm] of trees) plants.tree(Math.max(-25,Math.min(25,x)), Math.max(-24,Math.min(24,z)), h+3, palm);
+  for(const [x,z,h] of [[-27,-16,17],[24,-28,18],[-30,3,15],[30,18,17],[-25,28,16],[15,29,15]]) {
+    plants.tree(Math.max(-25,Math.min(25,x!)),Math.max(-24,Math.min(24,z!)),h!);
+    if(detail)b.sculpt(new T.IcosahedronGeometry(3.8,0).scale(1.4,.7,1.1),Math.max(-25,Math.min(25,x!)),h!*.8,Math.max(-24,Math.min(24,z!))+1,'#467650');
+  }
   if (detail) {
     for (const [x, z] of [
       [-5, 2],

@@ -2,6 +2,7 @@ import {publicSpaceLandmark,buildPublicSpaceSigns} from './publicSpaceArt';
 import {victoryMonument} from './victoryMonument';
 import {historicDistrictLandmark} from './historicDistricts';
 import {emitConvenienceStores,buildConvenienceStoreSigns} from './convenienceStores';
+import {emitBlockCourts} from "./urbanBlocks";
 import {emitUrbanCompletenessGrounds} from './urbanCompleteness';
 import { emitAuthoredGrounds } from './authoredGrounds';
 import { realCommercial } from './realCommercial';
@@ -203,6 +204,7 @@ export function buildBangkokGraybox(
   emitStreetFrontages(d, ordinary, p=>architecture.add(p));
   emitConvenienceStores(d,p=>architecture.add(p));
   emitUrbanCompletenessGrounds(d,p=>architecture.add(p));
+  emitBlockCourts(d,p=>architecture.add(p));
   emitStreetGardens(d, p=>architecture.add(p));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d, (piece) => architecture.add(piece));

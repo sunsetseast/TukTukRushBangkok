@@ -221,15 +221,22 @@ export class ArchitecturalBatch {
   }
   finish() {
     const roots: T.Group[] = [];
+    // Cell-specific tile ids/matrices stay independent. Immutable unit-box
+    // position/normal/UV/color/index buffers are shared across all city cells.
+    const unit = new T.BoxGeometry(1, 1, 1);
+    unit.setAttribute(
+      "color",
+      new T.Float32BufferAttribute(
+        new Float32Array(unit.attributes.position.count * 3).fill(1),
+        3,
+      ),
+    );
+    compactGeometry(unit);
     for (const b of this.instances.values()) {
-      const geo = new T.BoxGeometry(1, 1, 1); // One geometry per cell carries tile ids.
-      geo.setAttribute(
-        "color",
-        new T.Float32BufferAttribute(
-          new Float32Array(geo.attributes.position.count * 3).fill(1),
-          3,
-        ),
-      );
+      const geo = new T.BufferGeometry();
+      for (const [name, attribute] of Object.entries(unit.attributes))
+        geo.setAttribute(name, attribute);
+      geo.setIndex(unit.index);
       geo.setAttribute(
         "artSurface",
         new T.InstancedBufferAttribute(new Uint8Array(b.tiles), 1),
@@ -264,6 +271,7 @@ export class ArchitecturalBatch {
       root.add(mesh);
       roots.push(root);
     }
+    unit.dispose();
     this.instances.clear();
     for (const b of this.buckets.values()) {
       const g = new T.BufferGeometry();

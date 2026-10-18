@@ -84,13 +84,13 @@ const stops: Record<LineId, Stop[]> = {
     ],
     ["saphan-khwai", "N7", "Saphan Khwai", "สะพานควาย", 747, 107],
     ["ari", "N5", "Ari", "อารีย์", 725, 145],
-    ["sanam-pao", "N4", "Sanam Pao", "สนามเป้า", 700, 187],
+    ["sanam-pao", "N4", "Sanam Pao", "สนามเป้า", 728, 187],
     [
       "victory-monument",
       "N3",
       "Victory Monument",
       "อนุสาวรีย์ชัยสมรภูมิ",
-      675,
+      717,
       278,
       "business",
       "victory",
@@ -205,7 +205,7 @@ export function createRailNetwork(d: District): RailNetwork {
       // N3 is south of the monument. The real guideway bends around the west
       // edge of the traffic circle; it must not cut through the 50m memorial.
       if (id === "sukhumvit" && stop[0] === "victory-monument")
-        controls.push(toWorld([683, 202]), toWorld([654, 211]), toWorld([650, 231]), toWorld([657, 254]));
+        controls.push(toWorld([725, 202]), toWorld([696, 211]), toWorld([692, 231]), toWorld([699, 254]));
       if (id === "sukhumvit" && stop[0] === "siam")
         controls.push(toWorld([695, 437]), toWorld([696, 455]));
       if (id === "silom" && stop[0] === "ratchadamri")
