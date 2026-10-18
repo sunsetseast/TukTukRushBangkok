@@ -1,0 +1,359 @@
+[
+  {
+    "id": "dusit",
+    "near": {
+      "triangles": 19108,
+      "meshes": 5,
+      "materials": 5,
+      "bytes": 881128
+    },
+    "far": {
+      "triangles": 1428,
+      "meshes": 5,
+      "materials": 5,
+      "bytes": 63648
+    },
+    "bounds": [
+      91,
+      141.00000005722046,
+      68
+    ],
+    "height": 141
+  },
+  {
+    "id": "okura",
+    "near": {
+      "triangles": 3516,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 125596
+    },
+    "far": {
+      "triangles": 1448,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 51668
+    },
+    "bounds": [
+      48.849998474121094,
+      114.50000005722046,
+      57.5
+    ],
+    "height": 114.5
+  },
+  {
+    "id": "anantara",
+    "near": {
+      "triangles": 30252,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 943192
+    },
+    "far": {
+      "triangles": 6676,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 163896
+    },
+    "bounds": [
+      96.0999984741211,
+      26.07398229598999,
+      82
+    ],
+    "height": 26.07398223876953
+  },
+  {
+    "id": "one-bangkok",
+    "near": {
+      "triangles": 26448,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 1098688
+    },
+    "far": {
+      "triangles": 5000,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 206400
+    },
+    "bounds": [
+      106.52499771118164,
+      145.00000005722046,
+      84.95000076293945
+    ],
+    "height": 145
+  },
+  {
+    "id": "oriental",
+    "near": {
+      "triangles": 9348,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 403288
+    },
+    "far": {
+      "triangles": 3416,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 142416
+    },
+    "bounds": [
+      103.5,
+      50.00000005722046,
+      87
+    ],
+    "height": 50
+  },
+  {
+    "id": "peninsula",
+    "near": {
+      "triangles": 22528,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 1025648
+    },
+    "far": {
+      "triangles": 2184,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 95424
+    },
+    "bounds": [
+      69.944580078125,
+      116,
+      60
+    ],
+    "height": 116
+  },
+  {
+    "id": "hilton",
+    "near": {
+      "triangles": 6456,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 245576
+    },
+    "far": {
+      "triangles": 1988,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 80848
+    },
+    "bounds": [
+      46,
+      119.5,
+      43.25
+    ],
+    "height": 119.5
+  },
+  {
+    "id": "shangri",
+    "near": {
+      "triangles": 15752,
+      "meshes": 5,
+      "materials": 5,
+      "bytes": 593512
+    },
+    "far": {
+      "triangles": 4232,
+      "meshes": 5,
+      "materials": 5,
+      "bytes": 127992
+    },
+    "bounds": [
+      115.84215545654297,
+      79.94999700546265,
+      80.5
+    ],
+    "height": 79.94999694824219
+  },
+  {
+    "id": "four-seasons",
+    "near": {
+      "triangles": 26340,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 1210000
+    },
+    "far": {
+      "triangles": 2452,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 109792
+    },
+    "bounds": [
+      171,
+      39.75000005722046,
+      82.5
+    ],
+    "height": 39.75
+  },
+  {
+    "id": "capella",
+    "near": {
+      "triangles": 7616,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 349016
+    },
+    "far": {
+      "triangles": 1360,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 59560
+    },
+    "bounds": [
+      90.8499984741211,
+      29.500000057220458,
+      68.75
+    ],
+    "height": 29.5
+  },
+  {
+    "id": "rosewood",
+    "near": {
+      "triangles": 2572,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 97272
+    },
+    "far": {
+      "triangles": 1036,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 47496
+    },
+    "bounds": [
+      47.976661682128906,
+      119.14703369140625,
+      35.5
+    ],
+    "height": 119.14703369140625
+  },
+  {
+    "id": "embassy",
+    "near": {
+      "triangles": 10688,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 384488
+    },
+    "far": {
+      "triangles": 4456,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 160456
+    },
+    "bounds": [
+      95.5,
+      118.67748266220093,
+      68.75
+    ],
+    "height": 118.67748260498047
+  },
+  {
+    "id": "erawan-hotel",
+    "near": {
+      "triangles": 10848,
+      "meshes": 5,
+      "materials": 5,
+      "bytes": 456568
+    },
+    "far": {
+      "triangles": 2160,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 68080
+    },
+    "bounds": [
+      62,
+      70.13999938964844,
+      47
+    ],
+    "height": 70.13999938964844
+  },
+  {
+    "id": "eastin",
+    "near": {
+      "triangles": 10708,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 486968
+    },
+    "far": {
+      "triangles": 564,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 25944
+    },
+    "bounds": [
+      37.92000198364258,
+      110,
+      38.5
+    ],
+    "height": 110
+  },
+  {
+    "id": "river-city",
+    "near": {
+      "triangles": 3336,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 146936
+    },
+    "far": {
+      "triangles": 560,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 24840
+    },
+    "bounds": [
+      71,
+      24,
+      47
+    ],
+    "height": 24
+  },
+  {
+    "id": "siam-center",
+    "near": {
+      "triangles": 1512,
+      "meshes": 3,
+      "materials": 3,
+      "bytes": 69552
+    },
+    "far": {
+      "triangles": 1476,
+      "meshes": 2,
+      "materials": 2,
+      "bytes": 67896
+    },
+    "bounds": [
+      110,
+      26,
+      48.47500038146973
+    ],
+    "height": 26
+  },
+  {
+    "id": "jim-thompson",
+    "near": {
+      "triangles": 13536,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 375456
+    },
+    "far": {
+      "triangles": 4704,
+      "meshes": 4,
+      "materials": 4,
+      "bytes": 105664
+    },
+    "bounds": [
+      47.76000213623047,
+      18.373983478546144,
+      42.44499969482422
+    ],
+    "height": 18.37398338317871
+  }
+]

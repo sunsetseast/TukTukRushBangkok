@@ -1,0 +1,4452 @@
+{
+  "schema": 2,
+  "geography": "Condensed authored Bangkok, not GPS; north is -Z",
+  "sites": [
+    {
+      "id": "dusit",
+      "origin": {
+        "x": 1000,
+        "z": 952
+      },
+      "yaw": 0,
+      "district": "lumphini",
+      "boundary": [
+        {
+          "x": 950,
+          "z": 902
+        },
+        {
+          "x": 1050,
+          "z": 902
+        },
+        {
+          "x": 1050,
+          "z": 1002
+        },
+        {
+          "x": 950,
+          "z": 1002
+        }
+      ],
+      "reservations": [
+        {
+          "x": 976,
+          "z": 952,
+          "w": 39,
+          "d": 38,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1023,
+          "z": 938,
+          "w": 32,
+          "d": 33,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1000,
+          "z": 975,
+          "w": 96,
+          "d": 29,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1000,
+          "z": 910,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 976,
+          "z": 952,
+          "w": 34,
+          "d": 33,
+          "height": 110,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "dusit"
+        },
+        {
+          "x": 1023,
+          "z": 938,
+          "w": 27,
+          "d": 28,
+          "height": 125,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "dusit"
+        },
+        {
+          "x": 1000,
+          "z": 975,
+          "w": 91,
+          "d": 24,
+          "height": 14,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "dusit"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -42,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 1000,
+        "z": 910
+      },
+      "accessNode": "real-arrival:dusit:3",
+      "publicNode": "bkk:822",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 750,
+        "y": 838
+      },
+      "name": "Dusit Thani Bangkok / Dusit Central Park",
+      "geographicAddress": "98 Rama IV Road",
+      "references": [
+        "https://www.dusit.com/dusitthani-bangkok/",
+        "https://www.dusitcentralpark.com/en/"
+      ],
+      "definingFeatures": [
+        "Rebuilt park-facing hotel and restored gold spire",
+        "Distinct office tower and terraced retail roof garden",
+        "Southwest edge of Lumphini Park"
+      ],
+      "discoveryId": "dusit",
+      "passengerStop": "real-arrival:dusit:3"
+    },
+    {
+      "id": "okura",
+      "origin": {
+        "x": 1372,
+        "z": -448
+      },
+      "yaw": 3.141592653589793,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1405,
+          "z": -404
+        },
+        {
+          "x": 1339,
+          "z": -404
+        },
+        {
+          "x": 1339,
+          "z": -492
+        },
+        {
+          "x": 1405,
+          "z": -492
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1372,
+          "z": -444,
+          "w": 44,
+          "d": 37,
+          "height": 0,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1372,
+          "z": -466,
+          "w": 53,
+          "d": 18,
+          "height": 0,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1372,
+          "z": -414,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1372,
+          "z": -444,
+          "w": 39,
+          "d": 32,
+          "height": 111,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf",
+          "landmarkId": "okura"
+        },
+        {
+          "x": 1372,
+          "z": -466,
+          "w": 48,
+          "d": 13,
+          "height": 10,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf",
+          "landmarkId": "okura"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -34,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 1372,
+        "z": -414
+      },
+      "accessNode": "bkk:436",
+      "publicNode": "bkk:436",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 843,
+        "y": 488
+      },
+      "name": "The Okura Prestige Bangkok / Park Ventures",
+      "geographicAddress": "57 Wireless Road",
+      "references": [
+        "https://web.p-t-group.com/en/project-detail.php?projects_id=64",
+        "https://www.okurabangkok.com/"
+      ],
+      "definingFeatures": [
+        "Chamfered glass mixed-use tower",
+        "Recessed hotel terrace and projecting infinity pool",
+        "Landscaped podium on Wireless Road"
+      ],
+      "discoveryId": "okura",
+      "passengerStop": "bkk:436"
+    },
+    {
+      "id": "anantara",
+      "origin": {
+        "x": -1020,
+        "z": 2180
+      },
+      "yaw": 1.5707963267948966,
+      "district": "riverside",
+      "boundary": [
+        {
+          "x": -1100,
+          "z": 2234
+        },
+        {
+          "x": -1100,
+          "z": 2126
+        },
+        {
+          "x": -940,
+          "z": 2126
+        },
+        {
+          "x": -940,
+          "z": 2234
+        }
+      ],
+      "reservations": [
+        {
+          "x": -1024,
+          "z": 2218,
+          "w": 23,
+          "d": 72,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -1024,
+          "z": 2142,
+          "w": 23,
+          "d": 72,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -1051,
+          "z": 2180,
+          "w": 64,
+          "d": 22,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -991,
+          "z": 2210,
+          "w": 29,
+          "d": 22,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -991,
+          "z": 2149,
+          "w": 29,
+          "d": 22,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -1073.5,
+          "z": 2180,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -970,
+          "z": 2180,
+          "w": 108,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -958,
+          "z": 2180,
+          "w": 108,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -946,
+          "z": 2180,
+          "w": 108,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -1007,
+          "z": 2180,
+          "w": 48.96,
+          "d": 27,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -1024,
+          "z": 2218,
+          "w": 18,
+          "d": 67,
+          "height": 19,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara"
+        },
+        {
+          "x": -1024,
+          "z": 2142,
+          "w": 18,
+          "d": 67,
+          "height": 19,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara"
+        },
+        {
+          "x": -1051,
+          "z": 2180,
+          "w": 59,
+          "d": 17,
+          "height": 17,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara"
+        },
+        {
+          "x": -991,
+          "z": 2210,
+          "w": 24,
+          "d": 17,
+          "height": 9,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara"
+        },
+        {
+          "x": -991,
+          "z": 2149,
+          "w": 24,
+          "d": 17,
+          "height": 9,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -970,
+          "z": 2210.24,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -970,
+          "z": 2149.76,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -958,
+          "z": 2180,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:2",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -946,
+          "z": 2210.24,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:3",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -946,
+          "z": 2149.76,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:4",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -1035,
+          "z": 2203,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:5",
+          "planting": "tree",
+          "crownWidth": 6.5
+        },
+        {
+          "x": -1035,
+          "z": 2157,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:6",
+          "planting": "tree",
+          "crownWidth": 6.5
+        },
+        {
+          "x": -995,
+          "z": 2192,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:7",
+          "planting": "tree",
+          "crownWidth": 6.5
+        },
+        {
+          "x": -995,
+          "z": 2168,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "anantara",
+          "artRole": "furniture",
+          "environmentId": "site-planting:anantara:8",
+          "planting": "tree",
+          "crownWidth": 6.5
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -53.5,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 50,
+          "w": 108,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 62,
+          "w": 108,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 74,
+          "w": 108,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "interior garden",
+          "x": 0,
+          "z": 13,
+          "w": 48.96,
+          "d": 27,
+          "h": 0,
+          "yaw": 0,
+          "use": "garden",
+          "access": "private"
+        }
+      ],
+      "entrance": {
+        "x": -1073.5,
+        "z": 2180
+      },
+      "accessNode": "real-arrival:anantara:2",
+      "publicNode": "site-road:charoen-nakhon:2:10",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 245,
+        "y": 1145
+      },
+      "name": "Anantara Riverside Bangkok Resort",
+      "geographicAddress": "257/1-3 Charoen Nakhon Road",
+      "references": [
+        "https://www.anantara.com/en/riverside-bangkok",
+        "https://www.anantara.com/uploads/minor/anantara/documents/anantara-riverside-bangkok-resort/hotel-info/hotel-information-2025/anantara_riverside_resort_bangkok_resort_map_280125.pdf"
+      ],
+      "definingFeatures": [
+        "Low pitched-roof guest wings around tropical pool",
+        "Separate riverside pavilions and garden court",
+        "West-bank resort with public vehicle arrival"
+      ],
+      "discoveryId": "anantara",
+      "passengerStop": "real-arrival:anantara:2"
+    },
+    {
+      "id": "one-bangkok",
+      "origin": {
+        "x": 1520,
+        "z": 716
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1458,
+          "z": 656
+        },
+        {
+          "x": 1582,
+          "z": 656
+        },
+        {
+          "x": 1582,
+          "z": 776
+        },
+        {
+          "x": 1458,
+          "z": 776
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1483,
+          "z": 733,
+          "w": 33,
+          "d": 37,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1525,
+          "z": 693,
+          "w": 35,
+          "d": 35,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1561,
+          "z": 735,
+          "w": 33,
+          "d": 39,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1490,
+          "z": 690,
+          "w": 36,
+          "d": 28,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1524,
+          "z": 740,
+          "w": 34,
+          "d": 32,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1520,
+          "z": 664,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1520,
+          "z": 718,
+          "w": 22,
+          "d": 17,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1483,
+          "z": 733,
+          "w": 28,
+          "d": 32,
+          "height": 126,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "one-bangkok"
+        },
+        {
+          "x": 1525,
+          "z": 693,
+          "w": 30,
+          "d": 30,
+          "height": 145,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "one-bangkok"
+        },
+        {
+          "x": 1561,
+          "z": 735,
+          "w": 28,
+          "d": 34,
+          "height": 107,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "one-bangkok"
+        },
+        {
+          "x": 1490,
+          "z": 690,
+          "w": 31,
+          "d": 23,
+          "height": 18,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "one-bangkok"
+        },
+        {
+          "x": 1524,
+          "z": 740,
+          "w": 29,
+          "d": 27,
+          "height": 23,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "one-bangkok"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -52,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "public pedestrian court",
+          "x": 0,
+          "z": 2,
+          "w": 22,
+          "d": 17,
+          "h": 0,
+          "yaw": 0,
+          "use": "court",
+          "access": "pedestrian"
+        }
+      ],
+      "entrance": {
+        "x": 1520,
+        "z": 664
+      },
+      "accessNode": "real-arrival:one-bangkok:5",
+      "publicNode": "bkk:968",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 880,
+        "y": 779
+      },
+      "name": "One Bangkok / The Ritz-Carlton",
+      "geographicAddress": "189 Wireless Road / Rama IV",
+      "references": [
+        "https://www.som.com/projects/one-bangkok/",
+        "https://www.onebangkok.com/en/location/"
+      ],
+      "definingFeatures": [
+        "Distinct contemporary tower cluster",
+        "Ritz-Carlton/residential tower and separate office towers",
+        "Parade/Storeys retail, shaded courts east of Lumphini"
+      ],
+      "discoveryId": "one-bangkok",
+      "passengerStop": "real-arrival:one-bangkok:5"
+    },
+    {
+      "id": "oriental",
+      "origin": {
+        "x": -200,
+        "z": 1040
+      },
+      "yaw": -1.5707963267948966,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": -136,
+          "z": 981
+        },
+        {
+          "x": -136,
+          "z": 1099
+        },
+        {
+          "x": -264,
+          "z": 1099
+        },
+        {
+          "x": -264,
+          "z": 981
+        }
+      ],
+      "reservations": [
+        {
+          "x": -188,
+          "z": 1022,
+          "w": 73,
+          "d": 32,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -188,
+          "z": 1075,
+          "w": 28,
+          "d": 32,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -223,
+          "z": 1070,
+          "w": 45,
+          "d": 30,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -229,
+          "z": 1015,
+          "w": 49,
+          "d": 20,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -160.5,
+          "z": 1040,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -258,
+          "z": 1040,
+          "w": 118,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -213,
+          "z": 1040,
+          "w": 52,
+          "d": 27,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -188,
+          "z": 1022,
+          "w": 68,
+          "d": 27,
+          "height": 49,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental"
+        },
+        {
+          "x": -188,
+          "z": 1075,
+          "w": 23,
+          "d": 27,
+          "height": 35,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental"
+        },
+        {
+          "x": -223,
+          "z": 1070,
+          "w": 40,
+          "d": 25,
+          "height": 12,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental"
+        },
+        {
+          "x": -229,
+          "z": 1015,
+          "w": 44,
+          "d": 15,
+          "height": 6,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -258,
+          "z": 1006.96,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental",
+          "artRole": "furniture",
+          "environmentId": "site-planting:oriental:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -258,
+          "z": 1073.04,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "oriental",
+          "artRole": "furniture",
+          "environmentId": "site-planting:oriental:1",
+          "planting": "island",
+          "crownWidth": 8
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -39.5,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 58,
+          "w": 118,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "interior garden",
+          "x": 0,
+          "z": 13,
+          "w": 52,
+          "d": 27,
+          "h": 0,
+          "yaw": 0,
+          "use": "garden",
+          "access": "private"
+        }
+      ],
+      "entrance": {
+        "x": -160.5,
+        "z": 1040
+      },
+      "accessNode": "real-arrival:oriental:12",
+      "publicNode": "bkk:648",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 450,
+        "y": 860
+      },
+      "name": "Mandarin Oriental Bangkok",
+      "geographicAddress": "48 Oriental Avenue",
+      "references": [
+        "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+      ],
+      "definingFeatures": [
+        "Broad River Wing with repeated recessed bays",
+        "Historic Authors’ Wing and Garden Wing",
+        "White colonnades, pitched heritage roof and river terrace"
+      ],
+      "discoveryId": "oriental",
+      "passengerStop": "real-arrival:oriental:12"
+    },
+    {
+      "id": "peninsula",
+      "origin": {
+        "x": -620,
+        "z": 1228
+      },
+      "yaw": 1.5707963267948966,
+      "district": "khlong-san",
+      "boundary": [
+        {
+          "x": -674,
+          "z": 1267
+        },
+        {
+          "x": -674,
+          "z": 1189
+        },
+        {
+          "x": -566,
+          "z": 1189
+        },
+        {
+          "x": -566,
+          "z": 1267
+        }
+      ],
+      "reservations": [
+        {
+          "x": -620,
+          "z": 1228,
+          "w": 77,
+          "d": 65,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -664,
+          "z": 1228,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -584,
+          "z": 1228,
+          "w": 78,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -572,
+          "z": 1228,
+          "w": 78,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -620,
+          "z": 1228,
+          "w": 72,
+          "d": 60,
+          "height": 116,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "peninsula"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -584,
+          "z": 1249.84,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "peninsula",
+          "artRole": "furniture",
+          "environmentId": "site-planting:peninsula:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -584,
+          "z": 1206.16,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "peninsula",
+          "artRole": "furniture",
+          "environmentId": "site-planting:peninsula:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -572,
+          "z": 1228,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "peninsula",
+          "artRole": "furniture",
+          "environmentId": "site-planting:peninsula:2",
+          "planting": "island",
+          "crownWidth": 9
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -44,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 36,
+          "w": 78,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 48,
+          "w": 78,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        }
+      ],
+      "entrance": {
+        "x": -664,
+        "z": 1228
+      },
+      "accessNode": "real-arrival:peninsula:6",
+      "publicNode": "bkk:1080",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 345,
+        "y": 907
+      },
+      "name": "The Peninsula Bangkok",
+      "geographicAddress": "333 Charoen Nakhon Road",
+      "references": [
+        "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf",
+        "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+      ],
+      "definingFeatures": [
+        "Wave/W-shaped plan with angled river bays",
+        "Stepped tower crown",
+        "River terrace pavilions and garden"
+      ],
+      "discoveryId": "peninsula",
+      "passengerStop": "real-arrival:peninsula:6"
+    },
+    {
+      "id": "hilton",
+      "origin": {
+        "x": -756,
+        "z": 780
+      },
+      "yaw": 1.5707963267948966,
+      "district": "khlong-san",
+      "boundary": [
+        {
+          "x": -816,
+          "z": 809
+        },
+        {
+          "x": -816,
+          "z": 751
+        },
+        {
+          "x": -696,
+          "z": 751
+        },
+        {
+          "x": -696,
+          "z": 809
+        }
+      ],
+      "reservations": [
+        {
+          "x": -756,
+          "z": 780,
+          "w": 57,
+          "d": 53,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -794,
+          "z": 780,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -726,
+          "z": 780,
+          "w": 58,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -714,
+          "z": 780,
+          "w": 58,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -702,
+          "z": 780,
+          "w": 58,
+          "d": 12,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -756,
+          "z": 780,
+          "w": 52,
+          "d": 48,
+          "height": 120,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -726,
+          "z": 796.24,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton",
+          "artRole": "furniture",
+          "environmentId": "site-planting:hilton:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -726,
+          "z": 763.76,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton",
+          "artRole": "furniture",
+          "environmentId": "site-planting:hilton:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -714,
+          "z": 780,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton",
+          "artRole": "furniture",
+          "environmentId": "site-planting:hilton:2",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -702,
+          "z": 796.24,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton",
+          "artRole": "furniture",
+          "environmentId": "site-planting:hilton:3",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -702,
+          "z": 763.76,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "hilton",
+          "artRole": "furniture",
+          "environmentId": "site-planting:hilton:4",
+          "planting": "island",
+          "crownWidth": 7
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -38,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 30,
+          "w": 58,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 42,
+          "w": 58,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 54,
+          "w": 58,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        }
+      ],
+      "entrance": {
+        "x": -794,
+        "z": 780
+      },
+      "accessNode": "real-arrival:hilton:5",
+      "publicNode": "bkk:1094",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 311,
+        "y": 795
+      },
+      "name": "Millennium Hilton Bangkok",
+      "geographicAddress": "123 Charoen Nakhon Road",
+      "references": [
+        "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/",
+        "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok"
+      ],
+      "definingFeatures": [
+        "Slender pale slab with rounded river face",
+        "Vertical dark spine",
+        "Cantilevered ThreeSixty rooftop disc"
+      ],
+      "discoveryId": "hilton",
+      "passengerStop": "real-arrival:hilton:5"
+    },
+    {
+      "id": "shangri",
+      "origin": {
+        "x": -160,
+        "z": 1324
+      },
+      "yaw": -1.5707963267948966,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": -89,
+          "z": 1259
+        },
+        {
+          "x": -89,
+          "z": 1389
+        },
+        {
+          "x": -231,
+          "z": 1389
+        },
+        {
+          "x": -231,
+          "z": 1259
+        }
+      ],
+      "reservations": [
+        {
+          "x": -150,
+          "z": 1300,
+          "w": 74,
+          "d": 31,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -157,
+          "z": 1367,
+          "w": 29,
+          "d": 39,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -188,
+          "z": 1289,
+          "w": 31,
+          "d": 21,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -188,
+          "z": 1333,
+          "w": 27,
+          "d": 21,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -150,
+          "z": 1344,
+          "w": 27,
+          "d": 25,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -123,
+          "z": 1324,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -213,
+          "z": 1324,
+          "w": 130,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -225,
+          "z": 1324,
+          "w": 130,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -173,
+          "z": 1324,
+          "w": 52,
+          "d": 27,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -150,
+          "z": 1300,
+          "w": 69,
+          "d": 26,
+          "height": 77,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri"
+        },
+        {
+          "x": -157,
+          "z": 1367,
+          "w": 24,
+          "d": 34,
+          "height": 47,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri"
+        },
+        {
+          "x": -188,
+          "z": 1289,
+          "w": 26,
+          "d": 16,
+          "height": 8,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri"
+        },
+        {
+          "x": -188,
+          "z": 1333,
+          "w": 22,
+          "d": 16,
+          "height": 7,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri"
+        },
+        {
+          "x": -150,
+          "z": 1344,
+          "w": 22,
+          "d": 20,
+          "height": 9,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -213,
+          "z": 1287.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri",
+          "artRole": "furniture",
+          "environmentId": "site-planting:shangri:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -213,
+          "z": 1360.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri",
+          "artRole": "furniture",
+          "environmentId": "site-planting:shangri:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -225,
+          "z": 1324,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "shangri",
+          "artRole": "furniture",
+          "environmentId": "site-planting:shangri:2",
+          "planting": "island",
+          "crownWidth": 9
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -37,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 53,
+          "w": 130,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 65,
+          "w": 130,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "interior garden",
+          "x": 0,
+          "z": 13,
+          "w": 52,
+          "d": 27,
+          "h": 0,
+          "yaw": 0,
+          "use": "garden",
+          "access": "private"
+        }
+      ],
+      "entrance": {
+        "x": -123,
+        "z": 1324
+      },
+      "accessNode": "real-arrival:shangri:7",
+      "publicNode": "bkk:658",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 460,
+        "y": 931
+      },
+      "name": "Shangri-La Bangkok",
+      "geographicAddress": "89 Soi Wat Suan Plu, New Road",
+      "references": [
+        "https://www.shangri-la.com/bangkok/shangrila/",
+        "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/"
+      ],
+      "definingFeatures": [
+        "Shangri-La and Krungthep wings",
+        "Pale horizontal balcony bands",
+        "Thai riverside dining pavilions"
+      ],
+      "discoveryId": "shangri",
+      "passengerStop": "real-arrival:shangri:7"
+    },
+    {
+      "id": "four-seasons",
+      "origin": {
+        "x": -280,
+        "z": 1716
+      },
+      "yaw": -1.5707963267948966,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": -220.5,
+          "z": 1624
+        },
+        {
+          "x": -220.5,
+          "z": 1808
+        },
+        {
+          "x": -339.5,
+          "z": 1808
+        },
+        {
+          "x": -339.5,
+          "z": 1624
+        }
+      ],
+      "reservations": [
+        {
+          "x": -251,
+          "z": 1716,
+          "w": 173,
+          "d": 22,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -272,
+          "z": 1641,
+          "w": 22,
+          "d": 32,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -294,
+          "z": 1644,
+          "w": 26,
+          "d": 23,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -309,
+          "z": 1681,
+          "w": 67,
+          "d": 21,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -272,
+          "z": 1791,
+          "w": 22,
+          "d": 32,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -294,
+          "z": 1788,
+          "w": 26,
+          "d": 23,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -309,
+          "z": 1751,
+          "w": 67,
+          "d": 21,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -228.5,
+          "z": 1716,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -293,
+          "z": 1716,
+          "w": 52,
+          "d": 27,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -251,
+          "z": 1716,
+          "w": 168,
+          "d": 17,
+          "height": 39,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -272,
+          "z": 1641,
+          "w": 17,
+          "d": 27,
+          "height": 34,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -294,
+          "z": 1644,
+          "w": 21,
+          "d": 18,
+          "height": 25,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -309,
+          "z": 1681,
+          "w": 62,
+          "d": 16,
+          "height": 13,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -272,
+          "z": 1791,
+          "w": 17,
+          "d": 27,
+          "height": 34,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -294,
+          "z": 1788,
+          "w": 21,
+          "d": 18,
+          "height": 25,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        },
+        {
+          "x": -309,
+          "z": 1751,
+          "w": 62,
+          "d": 16,
+          "height": 13,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -273,
+          "z": 1660,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons",
+          "artRole": "furniture",
+          "environmentId": "site-planting:four-seasons:0",
+          "planting": "tree",
+          "crownWidth": 8
+        },
+        {
+          "x": -273,
+          "z": 1772,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons",
+          "artRole": "furniture",
+          "environmentId": "site-planting:four-seasons:1",
+          "planting": "tree",
+          "crownWidth": 8
+        },
+        {
+          "x": -294,
+          "z": 1666,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons",
+          "artRole": "furniture",
+          "environmentId": "site-planting:four-seasons:2",
+          "planting": "tree",
+          "crownWidth": 8
+        },
+        {
+          "x": -294,
+          "z": 1766,
+          "w": 0.7,
+          "d": 0.7,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "four-seasons",
+          "artRole": "furniture",
+          "environmentId": "site-planting:four-seasons:3",
+          "planting": "tree",
+          "crownWidth": 8
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -51.5,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "interior garden",
+          "x": 0,
+          "z": 13,
+          "w": 52,
+          "d": 27,
+          "h": 0,
+          "yaw": 0,
+          "use": "garden",
+          "access": "private"
+        }
+      ],
+      "entrance": {
+        "x": -228.5,
+        "z": 1716
+      },
+      "accessNode": "real-arrival:four-seasons:8",
+      "publicNode": "bkk:673",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 430,
+        "y": 1029
+      },
+      "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+      "geographicAddress": "300/1 Charoen Krung Road",
+      "references": [
+        "https://www.fourseasons.com/bangkok/",
+        "https://press.fourseasons.com/bangkok/hotel-facts/"
+      ],
+      "definingFeatures": [
+        "Cascading low-rise wings",
+        "Multiple open courtyards",
+        "Layered river terraces and reflecting pools"
+      ],
+      "discoveryId": "four-seasons",
+      "passengerStop": "real-arrival:four-seasons:8"
+    },
+    {
+      "id": "capella",
+      "origin": {
+        "x": -312,
+        "z": 1868
+      },
+      "yaw": -1.5707963267948966,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": -240,
+          "z": 1816
+        },
+        {
+          "x": -240,
+          "z": 1920
+        },
+        {
+          "x": -384,
+          "z": 1920
+        },
+        {
+          "x": -384,
+          "z": 1816
+        }
+      ],
+      "reservations": [
+        {
+          "x": -292,
+          "z": 1868,
+          "w": 95,
+          "d": 23,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -315,
+          "z": 1830,
+          "w": 19,
+          "d": 34,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -315,
+          "z": 1906,
+          "w": 19,
+          "d": 34,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -335,
+          "z": 1848,
+          "w": 22,
+          "d": 19,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -335,
+          "z": 1871,
+          "w": 22,
+          "d": 19,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -335,
+          "z": 1894,
+          "w": 22,
+          "d": 19,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -269,
+          "z": 1868,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -354,
+          "z": 1868,
+          "w": 104,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -366,
+          "z": 1868,
+          "w": 104,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -378,
+          "z": 1868,
+          "w": 104,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -325,
+          "z": 1868,
+          "w": 47.04,
+          "d": 27,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -292,
+          "z": 1868,
+          "w": 90,
+          "d": 18,
+          "height": 29,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        },
+        {
+          "x": -315,
+          "z": 1830,
+          "w": 14,
+          "d": 29,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        },
+        {
+          "x": -315,
+          "z": 1906,
+          "w": 14,
+          "d": 29,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        },
+        {
+          "x": -335,
+          "z": 1848,
+          "w": 17,
+          "d": 14,
+          "height": 6,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        },
+        {
+          "x": -335,
+          "z": 1871,
+          "w": 17,
+          "d": 14,
+          "height": 6,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        },
+        {
+          "x": -335,
+          "z": 1894,
+          "w": 17,
+          "d": 14,
+          "height": 6,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -354,
+          "z": 1838.88,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella",
+          "artRole": "furniture",
+          "environmentId": "site-planting:capella:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -354,
+          "z": 1897.12,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella",
+          "artRole": "furniture",
+          "environmentId": "site-planting:capella:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -366,
+          "z": 1868,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella",
+          "artRole": "furniture",
+          "environmentId": "site-planting:capella:2",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -378,
+          "z": 1838.88,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella",
+          "artRole": "furniture",
+          "environmentId": "site-planting:capella:3",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -378,
+          "z": 1897.12,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "capella",
+          "artRole": "furniture",
+          "environmentId": "site-planting:capella:4",
+          "planting": "island",
+          "crownWidth": 7
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -43,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 42,
+          "w": 104,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 54,
+          "w": 104,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 66,
+          "w": 104,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "interior garden",
+          "x": 0,
+          "z": 13,
+          "w": 47.04,
+          "d": 27,
+          "h": 0,
+          "yaw": 0,
+          "use": "garden",
+          "access": "private"
+        }
+      ],
+      "entrance": {
+        "x": -269,
+        "z": 1868
+      },
+      "accessNode": "real-arrival:capella:6",
+      "publicNode": "bkk:1129",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 422,
+        "y": 1067
+      },
+      "name": "Capella Bangkok",
+      "geographicAddress": "300/2 Charoen Krung Road",
+      "references": [
+        "https://capellahotels.com/en/capella-bangkok"
+      ],
+      "definingFeatures": [
+        "Seven-level rectilinear room wing",
+        "Deep glass balcony grid",
+        "Low U-shaped river court with villas"
+      ],
+      "discoveryId": "capella",
+      "passengerStop": "real-arrival:capella:6"
+    },
+    {
+      "id": "rosewood",
+      "origin": {
+        "x": 1400,
+        "z": -556
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1374,
+          "z": -599
+        },
+        {
+          "x": 1426,
+          "z": -599
+        },
+        {
+          "x": 1426,
+          "z": -513
+        },
+        {
+          "x": 1374,
+          "z": -513
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1400,
+          "z": -556,
+          "w": 53,
+          "d": 47,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1400,
+          "z": -591,
+          "w": 48,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1400,
+          "z": -556,
+          "w": 48,
+          "d": 42,
+          "height": 119,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "rosewood"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -35,
+          "w": 48,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 1400,
+        "z": -591
+      },
+      "accessNode": "bkk:435",
+      "publicNode": "bkk:435",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 850,
+        "y": 461
+      },
+      "name": "Rosewood Bangkok",
+      "geographicAddress": "1041/38 Phloen Chit Road",
+      "references": [
+        "https://www.kpf.com/project/rosewood-bangkok",
+        "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
+      ],
+      "definingFeatures": [
+        "Two sloping wai-inspired forms",
+        "Tall open central garden slot",
+        "Diagonal silver cladding and dark glass"
+      ],
+      "discoveryId": "rosewood",
+      "passengerStop": "bkk:435"
+    },
+    {
+      "id": "embassy",
+      "origin": {
+        "x": 1324,
+        "z": -680
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1272,
+          "z": -733
+        },
+        {
+          "x": 1376,
+          "z": -733
+        },
+        {
+          "x": 1376,
+          "z": -627
+        },
+        {
+          "x": 1272,
+          "z": -627
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1314,
+          "z": -680,
+          "w": 80,
+          "d": 67,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1349,
+          "z": -685,
+          "w": 40,
+          "d": 53,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1324,
+          "z": -725,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1314,
+          "z": -680,
+          "w": 75,
+          "d": 62,
+          "height": 25,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "embassy"
+        },
+        {
+          "x": 1349,
+          "z": -685,
+          "w": 35,
+          "d": 48,
+          "height": 116,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "embassy"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -45,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 1324,
+        "z": -725
+      },
+      "accessNode": "bkk:176",
+      "publicNode": "bkk:176",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 831,
+        "y": 430
+      },
+      "name": "Park Hyatt Bangkok / Central Embassy",
+      "geographicAddress": "88 Wireless Road",
+      "references": [
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+      ],
+      "definingFeatures": [
+        "Continuous curved retail podium and hotel",
+        "Twisting white ribbon around glass tower",
+        "Stepped open hotel terraces"
+      ],
+      "discoveryId": "embassy",
+      "passengerStop": "bkk:176"
+    },
+    {
+      "id": "erawan-hotel",
+      "origin": {
+        "x": 1304,
+        "z": -416
+      },
+      "yaw": 1.5707963267948966,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1256,
+          "z": -381
+        },
+        {
+          "x": 1256,
+          "z": -451
+        },
+        {
+          "x": 1352,
+          "z": -451
+        },
+        {
+          "x": 1352,
+          "z": -381
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1304,
+          "z": -416,
+          "w": 71,
+          "d": 57,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 1264,
+          "z": -416,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1304,
+          "z": -416,
+          "w": 66,
+          "d": 52,
+          "height": 70,
+          "yaw": 1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "erawan-hotel"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -40,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 1264,
+        "z": -416
+      },
+      "accessNode": "bkk:185",
+      "publicNode": "bkk:185",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 826,
+        "y": 496
+      },
+      "name": "Grand Hyatt Erawan Bangkok",
+      "geographicAddress": "494 Ratchadamri Road",
+      "references": [
+        "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+      ],
+      "definingFeatures": [
+        "Stepped ivory hotel crown",
+        "Deep green glazing and pilasters",
+        "Classical portico and Erawan shrine court"
+      ],
+      "discoveryId": "erawan-hotel",
+      "passengerStop": "bkk:185"
+    },
+    {
+      "id": "eastin",
+      "origin": {
+        "x": 232,
+        "z": 1332
+      },
+      "yaw": 0,
+      "district": "riverside",
+      "boundary": [
+        {
+          "x": 209,
+          "z": 1290
+        },
+        {
+          "x": 255,
+          "z": 1290
+        },
+        {
+          "x": 255,
+          "z": 1374
+        },
+        {
+          "x": 209,
+          "z": 1374
+        }
+      ],
+      "reservations": [
+        {
+          "x": 232,
+          "z": 1332,
+          "w": 47,
+          "d": 45,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 232,
+          "z": 1298,
+          "w": 42,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 232,
+          "z": 1332,
+          "w": 42,
+          "d": 40,
+          "height": 111,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "eastin"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -34,
+          "w": 42,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 232,
+        "z": 1298
+      },
+      "accessNode": "bkk:842",
+      "publicNode": "bkk:842",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 558,
+        "y": 933
+      },
+      "name": "Eastin Grand Hotel Sathorn",
+      "geographicAddress": "33/1 South Sathorn Road",
+      "references": [
+        "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+      ],
+      "definingFeatures": [
+        "Slender grid-glazed tower",
+        "Projecting mid-height pool terrace",
+        "Station-facing entrance near Surasak"
+      ],
+      "discoveryId": "eastin",
+      "passengerStop": "bkk:842"
+    },
+    {
+      "id": "river-city",
+      "origin": {
+        "x": -120,
+        "z": 784
+      },
+      "yaw": -1.5707963267948966,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": 72,
+          "z": 744
+        },
+        {
+          "x": 72,
+          "z": 824
+        },
+        {
+          "x": -312,
+          "z": 824
+        },
+        {
+          "x": -312,
+          "z": 744
+        }
+      ],
+      "reservations": [
+        {
+          "x": -120,
+          "z": 784,
+          "w": 79,
+          "d": 53,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -82,
+          "z": 784,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -150,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -162,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -174,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -186,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -198,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -210,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -222,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -234,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -246,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -258,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -270,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -282,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -294,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        },
+        {
+          "x": -306,
+          "z": 784,
+          "w": 80,
+          "d": 12,
+          "height": 0,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": -120,
+          "z": 784,
+          "w": 74,
+          "d": 48,
+          "height": 25,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city"
+        }
+      ],
+      "furniture": [
+        {
+          "x": -150,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:0",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -150,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:1",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -162,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:2",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -174,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:3",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -174,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:4",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -186,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:5",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -198,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:6",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -198,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:7",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -210,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:8",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -222,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:9",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -222,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:10",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -234,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:11",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -246,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:12",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -246,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:13",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -258,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:14",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -270,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:15",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -270,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:16",
+          "planting": "island",
+          "crownWidth": 9
+        },
+        {
+          "x": -282,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:17",
+          "planting": "island",
+          "crownWidth": 7
+        },
+        {
+          "x": -294,
+          "z": 761.6,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:18",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -294,
+          "z": 806.4,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:19",
+          "planting": "island",
+          "crownWidth": 8
+        },
+        {
+          "x": -306,
+          "z": 784,
+          "w": 6,
+          "d": 6,
+          "height": 10,
+          "yaw": -1.5707963267948966,
+          "color": "#ded6bf",
+          "landmarkId": "river-city",
+          "artRole": "furniture",
+          "environmentId": "site-planting:river-city:20",
+          "planting": "island",
+          "crownWidth": 9
+        }
+      ],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -38,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 30,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 42,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 54,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 66,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 78,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 90,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 102,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 114,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 126,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 138,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 150,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 162,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 174,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        },
+        {
+          "name": "river terrace",
+          "x": 0,
+          "z": 186,
+          "w": 80,
+          "d": 12,
+          "h": 0,
+          "yaw": 0,
+          "use": "terrace",
+          "access": "pedestrian"
+        }
+      ],
+      "entrance": {
+        "x": -82,
+        "z": 784
+      },
+      "accessNode": "real-arrival:river-city:10",
+      "publicNode": "bkk:637",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 470,
+        "y": 796
+      },
+      "name": "River City Bangkok",
+      "geographicAddress": "23 Soi Charoen Krung 24",
+      "references": [
+        "https://rivercitybangkok.com/"
+      ],
+      "definingFeatures": [
+        "Low riverfront arts mall",
+        "Broad arched glass opening",
+        "Deep vertical ribs and stepped terrace"
+      ],
+      "discoveryId": "river-city",
+      "passengerStop": "real-arrival:river-city:10"
+    },
+    {
+      "id": "siam-center",
+      "origin": {
+        "x": 728,
+        "z": -672
+      },
+      "yaw": 3.141592653589793,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 786,
+          "z": -624
+        },
+        {
+          "x": 670,
+          "z": -624
+        },
+        {
+          "x": 670,
+          "z": -720
+        },
+        {
+          "x": 786,
+          "z": -720
+        }
+      ],
+      "reservations": [
+        {
+          "x": 728,
+          "z": -672,
+          "w": 117,
+          "d": 57,
+          "height": 0,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 728,
+          "z": -632,
+          "w": 52,
+          "d": 16,
+          "height": 0,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 728,
+          "z": -672,
+          "w": 112,
+          "d": 52,
+          "height": 29,
+          "yaw": 3.141592653589793,
+          "color": "#ded6bf",
+          "landmarkId": "siam-center"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -40,
+          "w": 52,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 728,
+        "z": -632
+      },
+      "accessNode": "bkk:109",
+      "publicNode": "bkk:109",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 682,
+        "y": 432
+      },
+      "name": "Siam Center / Siam Discovery",
+      "geographicAddress": "Rama I Road, Pathum Wan",
+      "references": [
+        "https://www.siamdiscovery.co.th/",
+        "https://www.nendo.jp/en/works/siam-discovery/"
+      ],
+      "definingFeatures": [
+        "Two distinct low retail volumes",
+        "Discovery stacked white display frames",
+        "Siam Center dark glazed frontage"
+      ],
+      "discoveryId": "siam-center",
+      "passengerStop": "bkk:109"
+    },
+    {
+      "id": "jim-thompson",
+      "origin": {
+        "x": 544,
+        "z": -644
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 518,
+          "z": -688
+        },
+        {
+          "x": 570,
+          "z": -688
+        },
+        {
+          "x": 570,
+          "z": -600
+        },
+        {
+          "x": 518,
+          "z": -600
+        }
+      ],
+      "reservations": [
+        {
+          "x": 544,
+          "z": -644,
+          "w": 53,
+          "d": 49,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        },
+        {
+          "x": 544,
+          "z": -680,
+          "w": 48,
+          "d": 16,
+          "height": 0,
+          "yaw": 0,
+          "color": "#ded6bf"
+        }
+      ],
+      "solids": [
+        {
+          "x": 544,
+          "z": -644,
+          "w": 48,
+          "d": 44,
+          "height": 19,
+          "yaw": 0,
+          "color": "#ded6bf",
+          "landmarkId": "jim-thompson"
+        }
+      ],
+      "furniture": [],
+      "zones": [
+        {
+          "name": "arrival forecourt",
+          "x": 0,
+          "z": -36,
+          "w": 48,
+          "d": 16,
+          "h": 0,
+          "yaw": 0,
+          "use": "forecourt",
+          "access": "vehicle"
+        }
+      ],
+      "entrance": {
+        "x": 544,
+        "z": -680
+      },
+      "accessNode": "bkk:404",
+      "publicNode": "bkk:404",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 636,
+        "y": 439
+      },
+      "name": "Jim Thompson House",
+      "geographicAddress": "6 Soi Kasemsan 2, Rama I Road",
+      "references": [
+        "https://jimthompsonhouse.org/"
+      ],
+      "definingFeatures": [
+        "Cluster of elevated teak houses",
+        "Steep Thai gables",
+        "Garden court and raised connecting walkways"
+      ],
+      "discoveryId": "jim-thompson",
+      "passengerStop": "bkk:404"
+    },
+    {
+      "id": "icon",
+      "origin": {
+        "x": -646.966991411009,
+        "z": 933.033008588991
+      },
+      "yaw": 0,
+      "district": "khlong-san",
+      "boundary": [
+        {
+          "x": -681.466991411009,
+          "z": 898.533008588991
+        },
+        {
+          "x": -612.466991411009,
+          "z": 898.533008588991
+        },
+        {
+          "x": -612.466991411009,
+          "z": 967.533008588991
+        },
+        {
+          "x": -681.466991411009,
+          "z": 967.533008588991
+        }
+      ],
+      "reservations": [
+        {
+          "x": -646.966991411009,
+          "z": 933.033008588991,
+          "w": 65,
+          "d": 65,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon"
+        }
+      ],
+      "solids": [
+        {
+          "x": -646.966991411009,
+          "z": 933.033008588991,
+          "w": 65,
+          "d": 65,
+          "height": 39,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon",
+          "environmentId": "compound:icon:0"
+        },
+        {
+          "x": -678.466991411009,
+          "z": 933.033008588991,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon",
+          "environmentId": "compound:icon:1"
+        },
+        {
+          "x": -646.966991411009,
+          "z": 901.533008588991,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon",
+          "environmentId": "compound:icon:2"
+        },
+        {
+          "x": -615.466991411009,
+          "z": 933.033008588991,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon",
+          "environmentId": "compound:icon:3"
+        },
+        {
+          "x": -646.966991411009,
+          "z": 964.533008588991,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "icon",
+          "environmentId": "compound:icon:4"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": -702.1027746375082,
+        "z": 922.0658194200764,
+        "id": "arrival:icon:loop5",
+        "name": "ICONSIAM · visitor arrival"
+      },
+      "accessNode": "arrival:icon:loop5",
+      "publicNode": "arrival:icon:loop5",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 338.25825214724773,
+        "y": 833.2582521472477
+      },
+      "name": "ICONSIAM",
+      "discoveryId": "icon",
+      "passengerStop": "arrival:icon:loop5"
+    },
+    {
+      "id": "paragon",
+      "origin": {
+        "x": 920,
+        "z": -740
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 885.5,
+          "z": -774.5
+        },
+        {
+          "x": 954.5,
+          "z": -774.5
+        },
+        {
+          "x": 954.5,
+          "z": -705.5
+        },
+        {
+          "x": 885.5,
+          "z": -705.5
+        }
+      ],
+      "reservations": [
+        {
+          "x": 920,
+          "z": -740,
+          "w": 65,
+          "d": 65,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon"
+        }
+      ],
+      "solids": [
+        {
+          "x": 920,
+          "z": -740,
+          "w": 65,
+          "d": 65,
+          "height": 30,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon",
+          "environmentId": "compound:paragon:0"
+        },
+        {
+          "x": 888.5,
+          "z": -740,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon",
+          "environmentId": "compound:paragon:1"
+        },
+        {
+          "x": 920,
+          "z": -771.5,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon",
+          "environmentId": "compound:paragon:2"
+        },
+        {
+          "x": 951.5,
+          "z": -740,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon",
+          "environmentId": "compound:paragon:3"
+        },
+        {
+          "x": 920,
+          "z": -708.5,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "paragon",
+          "environmentId": "compound:paragon:4"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 864.139198026234,
+        "z": -716.8616982174283,
+        "id": "arrival:paragon:loop5",
+        "name": "Siam Paragon · visitor arrival"
+      },
+      "accessNode": "arrival:paragon:loop5",
+      "publicNode": "arrival:paragon:loop5",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 730,
+        "y": 415
+      },
+      "name": "Siam Paragon",
+      "discoveryId": "paragon",
+      "passengerStop": "arrival:paragon:loop5"
+    },
+    {
+      "id": "central",
+      "origin": {
+        "x": 1192.2836140246613,
+        "z": -680.5194970290473
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1157.7836140246613,
+          "z": -715.0194970290473
+        },
+        {
+          "x": 1226.7836140246613,
+          "z": -715.0194970290473
+        },
+        {
+          "x": 1226.7836140246613,
+          "z": -646.0194970290473
+        },
+        {
+          "x": 1157.7836140246613,
+          "z": -646.0194970290473
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1192.2836140246613,
+          "z": -680.5194970290473,
+          "w": 65,
+          "d": 65,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1192.2836140246613,
+          "z": -680.5194970290473,
+          "w": 65,
+          "d": 65,
+          "height": 36,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central",
+          "environmentId": "compound:central:0"
+        },
+        {
+          "x": 1160.7836140246613,
+          "z": -680.5194970290473,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central",
+          "environmentId": "compound:central:1"
+        },
+        {
+          "x": 1192.2836140246613,
+          "z": -712.0194970290473,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central",
+          "environmentId": "compound:central:2"
+        },
+        {
+          "x": 1223.7836140246613,
+          "z": -680.5194970290473,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central",
+          "environmentId": "compound:central:3"
+        },
+        {
+          "x": 1192.2836140246613,
+          "z": -649.0194970290473,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "central",
+          "environmentId": "compound:central:4"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 1215.421915807233,
+        "z": -736.3802990028133,
+        "id": "arrival:central:loop5",
+        "name": "CentralWorld / Erawan · visitor arrival"
+      },
+      "accessNode": "arrival:central:loop5",
+      "publicNode": "arrival:central:loop5",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 798.0709035061653,
+        "y": 429.8701257427382
+      },
+      "name": "CentralWorld / Erawan",
+      "discoveryId": "central",
+      "passengerStop": "arrival:central:loop5"
+    },
+    {
+      "id": "mahanakhon",
+      "origin": {
+        "x": 654.1939766255643,
+        "z": 1119.1341716182544
+      },
+      "yaw": 0,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": 632.1939766255643,
+          "z": 1097.1341716182544
+        },
+        {
+          "x": 676.1939766255643,
+          "z": 1097.1341716182544
+        },
+        {
+          "x": 676.1939766255643,
+          "z": 1141.1341716182544
+        },
+        {
+          "x": 632.1939766255643,
+          "z": 1141.1341716182544
+        }
+      ],
+      "reservations": [
+        {
+          "x": 654.1939766255643,
+          "z": 1119.1341716182544,
+          "w": 40,
+          "d": 40,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "mahanakhon"
+        }
+      ],
+      "solids": [
+        {
+          "x": 654.1939766255643,
+          "z": 1119.1341716182544,
+          "w": 40,
+          "d": 40,
+          "height": 156,
+          "color": "#dfbd83",
+          "landmarkId": "mahanakhon"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 600,
+        "z": 1100,
+        "id": "bkk:806"
+      },
+      "accessNode": "bkk:806",
+      "publicNode": "bkk:806",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 663.5484941563911,
+        "y": 879.7835429045635
+      },
+      "name": "Mahanakhon",
+      "discoveryId": "mahanakhon",
+      "passengerStop": "bkk:806"
+    },
+    {
+      "id": "state",
+      "origin": {
+        "x": 200,
+        "z": 1180
+      },
+      "yaw": 0,
+      "district": "bang-rak",
+      "boundary": [
+        {
+          "x": 178,
+          "z": 1158
+        },
+        {
+          "x": 222,
+          "z": 1158
+        },
+        {
+          "x": 222,
+          "z": 1202
+        },
+        {
+          "x": 178,
+          "z": 1202
+        }
+      ],
+      "reservations": [
+        {
+          "x": 200,
+          "z": 1180,
+          "w": 40,
+          "d": 40,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "state"
+        }
+      ],
+      "solids": [
+        {
+          "x": 200,
+          "z": 1180,
+          "w": 40,
+          "d": 40,
+          "height": 156,
+          "color": "#dfbd83",
+          "landmarkId": "state"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 84,
+        "z": 1148,
+        "id": "bkk:650"
+      },
+      "accessNode": "bkk:650",
+      "publicNode": "bkk:650",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 550,
+        "y": 895
+      },
+      "name": "State Tower / Lebua",
+      "geographicAddress": "1055 Silom Road",
+      "references": [
+        "https://lebua.com/"
+      ],
+      "definingFeatures": [
+        "Existing State Tower reused",
+        "Golden dome and open rooftop colonnade",
+        "Stepped pale balcony tower"
+      ],
+      "discoveryId": "state",
+      "passengerStop": "bkk:650"
+    },
+    {
+      "id": "baiyoke",
+      "origin": {
+        "x": 1020,
+        "z": -940
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 998,
+          "z": -962
+        },
+        {
+          "x": 1042,
+          "z": -962
+        },
+        {
+          "x": 1042,
+          "z": -918
+        },
+        {
+          "x": 998,
+          "z": -918
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1020,
+          "z": -940,
+          "w": 40,
+          "d": 40,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "baiyoke"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1020,
+          "z": -940,
+          "w": 40,
+          "d": 40,
+          "height": 156,
+          "color": "#dfbd83",
+          "landmarkId": "baiyoke"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 1023.8095238095239,
+        "z": -998.0952380952381,
+        "id": "bkk:94"
+      },
+      "accessNode": "bkk:94",
+      "publicNode": "bkk:94",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 755,
+        "y": 365
+      },
+      "name": "Baiyoke Tower II",
+      "discoveryId": "baiyoke",
+      "passengerStop": "bkk:94"
+    },
+    {
+      "id": "mbk",
+      "origin": {
+        "x": 632,
+        "z": -440
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 597.5,
+          "z": -474.5
+        },
+        {
+          "x": 666.5,
+          "z": -474.5
+        },
+        {
+          "x": 666.5,
+          "z": -405.5
+        },
+        {
+          "x": 597.5,
+          "z": -405.5
+        }
+      ],
+      "reservations": [
+        {
+          "x": 632,
+          "z": -440,
+          "w": 65,
+          "d": 65,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "mbk"
+        }
+      ],
+      "solids": [
+        {
+          "x": 632,
+          "z": -440,
+          "w": 65,
+          "d": 65,
+          "height": 18,
+          "color": "#dfbd83",
+          "landmarkId": "mbk"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 555.2380952380952,
+        "z": -446.6666666666667,
+        "id": "bkk:760"
+      },
+      "accessNode": "bkk:760",
+      "publicNode": "bkk:760",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 658,
+        "y": 490
+      },
+      "name": "MBK",
+      "discoveryId": "mbk",
+      "passengerStop": "bkk:760"
+    },
+    {
+      "id": "terminal",
+      "origin": {
+        "x": 1822,
+        "z": -260
+      },
+      "yaw": 0,
+      "district": "siam",
+      "boundary": [
+        {
+          "x": 1787.5,
+          "z": -294.5
+        },
+        {
+          "x": 1856.5,
+          "z": -294.5
+        },
+        {
+          "x": 1856.5,
+          "z": -225.5
+        },
+        {
+          "x": 1787.5,
+          "z": -225.5
+        }
+      ],
+      "reservations": [
+        {
+          "x": 1822,
+          "z": -260,
+          "w": 65,
+          "d": 65,
+          "height": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal"
+        }
+      ],
+      "solids": [
+        {
+          "x": 1822,
+          "z": -260,
+          "w": 65,
+          "d": 65,
+          "height": 118,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal",
+          "environmentId": "compound:terminal:0"
+        },
+        {
+          "x": 1790.5,
+          "z": -260,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal",
+          "environmentId": "compound:terminal:1"
+        },
+        {
+          "x": 1822,
+          "z": -291.5,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal",
+          "environmentId": "compound:terminal:2"
+        },
+        {
+          "x": 1853.5,
+          "z": -260,
+          "w": 1,
+          "d": 64,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal",
+          "environmentId": "compound:terminal:3"
+        },
+        {
+          "x": 1822,
+          "z": -228.5,
+          "w": 64,
+          "d": 1,
+          "height": 3,
+          "yaw": 0,
+          "color": "#dfbd83",
+          "landmarkId": "terminal",
+          "environmentId": "compound:terminal:4"
+        }
+      ],
+      "zones": [],
+      "entrance": {
+        "x": 1766.139198026234,
+        "z": -283.1383017825716,
+        "id": "arrival:terminal:loop5",
+        "name": "Terminal 21 / Asok · visitor arrival"
+      },
+      "accessNode": "arrival:terminal:loop5",
+      "publicNode": "arrival:terminal:loop5",
+      "lod": {
+        "near": 0,
+        "far": 300
+      },
+      "clearedParcels": 0,
+      "map": {
+        "x": 955.5,
+        "y": 535
+      },
+      "name": "Terminal 21 / Asok",
+      "discoveryId": "terminal",
+      "passengerStop": "arrival:terminal:loop5"
+    }
+  ]
+}

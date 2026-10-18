@@ -16,23 +16,30 @@ export function realCommercial(l:Landmark){
   const b=new LandmarkBuilder(),box=b.box.bind(b);
   const glass=(x:number,y:number,z:number,w:number,h:number,d:number,c=GLASS)=>b.sculpt(new T.BoxGeometry(w,h,d),x,y,z,c,'glass');
   if(l.id==='paragon'){
-   box(0,11,-3,62,22,55,'#cecbb3');glass(0,15,24.7,58,22,.3,'#5d929a');
-   for(let x=-28;x<=28;x+=detail?3.5:7)box(x,15,25,.22,25,.4,'#c9cbb3');
-   // Huge curved glazed jewel entrance and a framed gold portal.
-   b.sculpt(new T.CylinderGeometry(17,17,13,detail?36:16,1,false,-Math.PI/2,Math.PI).scale(1,1,.65),0,7,20,'#79a6ab','glass');
-   for(const y of [3,10,17,24])box(0,y,25.3,61,.45,.6,WHITE);
-   for(const x of [-10,10])box(x,9,29,1.3,17,1.5,GOLD);box(0,17.5,29,22,1.4,2,GOLD);
-   for(const side of [-1,1])glass(side*31.1,10,-3,.25,17,51);
-   box(0,25,-3,56,2,50,'#d0ccb0');box(0,27,-5,43,2,38,'#e1dfc8');
+   box(0,10,-5,62,20,49,'#c8c2a8');
+   // Broad stepped retail shoulders and the elliptical glass entrance jewel.
+   for(const side of [-1,1]){box(side*23,21,-8,15,5,43,'#d6ceae');box(side*25,24,-12,11,1.5,33,WHITE);}
+   const jewel=new T.CylinderGeometry(19,19,18,detail?48:20,1,false,-Math.PI/2,Math.PI).scale(1,1,.56);
+   b.sculpt(jewel,0,11,19,'#5b8c96','glass');
+   for(const y of [3,7,11,15,19])b.sculpt(new T.TorusGeometry(19,.14,4,detail?40:16,Math.PI).rotateX(Math.PI/2).scale(1,1,.56),0,y,19,WHITE);
+   for(let i=0;i<=12;i++){const a=-Math.PI/2+i*Math.PI/12,x=Math.sin(a)*19,z=19+Math.cos(a)*10.7;box(x,11,z,.18,18,.18,WHITE);}
+   for(const side of [-1,1]){glass(side*25,10,20,10,15,.3);box(side*18,10,26,1,17,1,GOLD);}
+   box(0,19,26,37,1.1,2,GOLD);box(0,22,-6,37,3,37,'#d8d0b2');
+   // Road approach remains open; scaled shallow plaza steps stay inside plot.
+   box(0,.22,28,38,.35,7,'#c0bca5');box(0,4.5,25,17,7,.25,'#3a6c78');
   }else if(l.id==='central'){
-   // Broad white retail blocks with a taller glass atrium and offset red-edged
-   // canopy; does not share Paragon's portal or MBK's rounded green facade.
-   box(0,9,-2,64,18,58,'#deded1');box(-13,20,-9,36,11,42,WHITE);box(20,24,-5,21,20,43,'#b4c4bd');
-   glass(-10,12,27.4,42,19,.3,'#66939a');glass(23,18,18,17,28,.4,'#477889');
-   for(const y of [7,17,27])box(-10,y,27.8,43,.4,.4,WHITE);
-   for(let x=-30;x<12;x+=detail?3.5:7)box(x,14,28,.3,25,.4,WHITE);
-   for(let i=0;i<4;i++)box(22+i*.8,33+i*.5,-5,22,1,44,'#e6e3d4');
-   box(0,5,30,25,.5,4,'#cb5545');box(-18,27,27,24,1.2,.7,'#d1d9cd');
+   // Long, asymmetric glazed retail frontage and separate department-store
+   // shoulders. Superimposed white fins and upper setbacks give depth.
+   box(0,10,-6,64,20,48,'#e0ded0');box(-20,22,-9,23,8,42,WHITE);box(22,24,-10,19,12,40,'#c6cdbf');
+   glass(0,13,18.2,40,23,.3,'#477887');glass(-24,11,18.3,13,18,.3,'#5e8c91');glass(25,15,13,12,23,.3,'#678f93');
+   for(const y of [5,11,17,24])box(0,y,18.7,41,.35,.8,WHITE);
+   for(let x=-19;x<=19;x+=detail?3.8:7.6)box(x,13,19,.32,23,1.1,WHITE);
+   // Zen/Isetan-era offset fronts are materially different, with vertical
+   // retail display fins and a folded, cantilevered event-entry canopy.
+   for(let i=0;i<4;i++){box(-29+i*3,13,19,1.2,22,1.7,i%2?'#cebb94':WHITE);box(21+i*1.5,30+i*.6,-10,18,1,39,'#e8e8db');}
+   const canopy=new T.Shape([new T.Vector2(-13,0),new T.Vector2(0,1.8),new T.Vector2(13,0),new T.Vector2(13,-.5),new T.Vector2(0,1),new T.Vector2(-13,-.5)]);
+   b.sculpt(new T.ExtrudeGeometry(canopy,{depth:7,bevelEnabled:false}),0,6,23,'#b84f45');
+   box(0,.22,28,44,.3,7,'#b5bbae');
   }else if(l.id==='mbk'){
    // Green banded, rounded shopping block with its characteristic large display
    // panels. Original color graphics only; no advertiser art.

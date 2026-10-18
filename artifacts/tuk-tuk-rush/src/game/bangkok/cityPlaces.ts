@@ -28,7 +28,7 @@ export function cityPlaces(d: District, designs?: ParcelDesign[]) {
     const l=d.landmarks.find(l=>l.id===p.id);
     if (!l?.plot) continue;
     result.push({...l.plot,id:`hotel:${p.id}`,name:p.name,kind:'hotel',region:p.region,
-      note:`${p.neighborhood}. ${p.features.join('. ')}. Passenger stop on the public street; hotel interior and gardens are pedestrian.`});
+      note:`${p.neighborhood}. ${p.features.join('. ')}. Passenger stop on the connected exterior approach; hotel interiors and gardens are pedestrian.`});
   }
   cache.set(d, result);
   return result;

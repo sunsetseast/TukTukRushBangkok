@@ -45,7 +45,7 @@ export function completeStreetFabric(d: District) {
     const { point, outward, road } = sample,
       yaw = Math.atan2(-outward.x, -outward.z);
     let fitted = false;
-    for (const along of [0, 5, -5, 10, -10]) {
+    for (const along of [0, 5, -5, 10, -10, 15, -15, 20, -20]) {
       if (fitted) break;
       for (const [w, depth] of [
         [18, 12],
@@ -53,6 +53,7 @@ export function completeStreetFabric(d: District) {
         [8, 8],
         [5.5, 7],
         [4.5, 4.5],
+        [3.5, 4.5],
       ]) {
         const off = (w! < 6 ? 5 : 8) + depth! / 2,
           p = {
@@ -69,7 +70,7 @@ export function completeStreetFabric(d: District) {
             w: w!,
             d: depth!,
             yaw,
-            height: modern ? 15.5 : 11.5,
+            height: w! < 6 ? 5.5 : modern ? 15.5 : 11.5,
             color: "#e3c99c",
             regionId: region,
             environmentId: `street-infill:${seed}`,
@@ -84,9 +85,12 @@ export function completeStreetFabric(d: District) {
           !index.clear(parcel, true)
         )
           continue;
-        if (rail.some((p) => obstacleDistance(p, parcel) < 6)) continue;
+        // Low street-food kiosks fit beneath the elevated railway; tall
+        // buildings still respect its swept clearance envelope. Supports and
+        // station entrances remain physical obstacles in index.clear().
+        if (parcel.height > 7 && rail.some((p) => obstacleDistance(p, parcel) < 6)) continue;
         if (
-          stations.some((s) =>
+          parcel.height > 7 && stations.some((s) =>
             orientedFootprintsOverlap(
               parcel,
               {

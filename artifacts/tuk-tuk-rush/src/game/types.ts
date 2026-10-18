@@ -11,7 +11,7 @@ export type DestinationAccess = {
   origin: Point; yaw: number; roadNodes: string[]; restricted: Obstacle[];
   arrivalRadius: number; adaptation: string;
 };
-export type District = { destinations?: DestinationAccess[]; transit?: import('./bangkok/transit/network').RailNetwork; worldId?: 'bangkok'; spawn?: Point & { heading: number }; bounds?: { minX: number; maxX: number; minZ: number; maxZ: number }; river?: Point[]; riverWidth?: number; canals?: { points: Point[]; width: number }[]; regions?: Region[]; nodes: RoadNode[]; roads: Road[]; buildings: Obstacle[]; obstacles: Obstacle[]; landmarks: Landmark[]; roundabout?: Point & { radius: number; laneWidth: number } };
+export type District = { authoredSites?: import('./bangkok/authoredSites').AuthoredSite[]; destinations?: DestinationAccess[]; transit?: import('./bangkok/transit/network').RailNetwork; worldId?: 'bangkok'; spawn?: Point & { heading: number }; bounds?: { minX: number; maxX: number; minZ: number; maxZ: number }; river?: Point[]; riverWidth?: number; canals?: { points: Point[]; width: number }[]; regions?: Region[]; nodes: RoadNode[]; roads: Road[]; buildings: Obstacle[]; obstacles: Obstacle[]; landmarks: Landmark[]; roundabout?: Point & { radius: number; laneWidth: number } };
 export type Vehicle = Point & { heading: number; speed: number; steer: number; lean: number; wheelSpin: number; collision: number };
 export type TrafficCar = Point & { id: number; heading: number; speed: number; kind: 'taxi' | 'car' | 'motorcycle'; color: string; from: string; to: string; wait: number; nearMissCooldown: number };
 export type Input = { steer: number; gas: boolean; brake: boolean; boost?: boolean };

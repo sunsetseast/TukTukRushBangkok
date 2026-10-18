@@ -1,3 +1,4 @@
+import { EXISTING_SITE_ANCHORS, EXISTING_SITE_WORLD_ANCHORS, registerExistingSites } from './authoredSites';
 import { placeRealArchitecture } from './realPlaces';
 import layout from './layout.json';
 import {planLandscape} from './landscape';
@@ -134,6 +135,11 @@ export function createBangkokWorld(): District {
     let plot: Point | undefined;
     // Site pins/roadside approaches are not building centers. Fit a meaningful
     // parcel nearby rather than shrinking a landmark into a pole on the road.
+    const authored=EXISTING_SITE_ANCHORS[l.id!];
+    if(authored){
+      plot={...EXISTING_SITE_WORLD_ANCHORS[l.id!]!};
+      world.obstacles.push({...plot,w:size,d:size,height:l.kind==='tower'?156:18,color:'#dfbd83',landmarkId:l.id});
+    }else {
     for (const distance of [0, 30, 50, 75, 100, 140, 180]) {
       for (let direction = 0; direction < 16; direction++) {
         const angle = direction * Math.PI * 2 / 16;
@@ -149,6 +155,7 @@ export function createBangkokWorld(): District {
       if (plot) break;
       if (l.kind === 'gate') break; // Gate stays on its protected circle island.
     }
+    }
     if (!plot) throw new Error(`No safe landmark parcel: ${l.id}`);
     l.size = size; l.plot = plot;
     if(l.id==='paknam'){const a=byId.get(l.accessNode!)!;l.yaw=Math.atan2(a.x-plot.x,a.z-plot.z);world.obstacles.find(o=>o.landmarkId===l.id)!.yaw=l.yaw;}
@@ -158,6 +165,7 @@ export function createBangkokWorld(): District {
   paknamLandmark.yaw=Math.atan2(paknamArrival.origin.x-paknamLandmark.plot!.x,paknamArrival.origin.z-paknamLandmark.plot!.z);
   world.obstacles.find(o=>o.landmarkId==='paknam')!.yaw=paknamLandmark.yaw;
   placeRealArchitecture(world);
+  registerExistingSites(world);
   world.transit=createRailNetwork(world);
   // Access roads were appended after public graph sampling.
   for(const n of nodes)byId.set(n.id,n);
@@ -228,6 +236,7 @@ export function createBangkokWorld(): District {
   (world as District & {completeness?:unknown}).completeness=completeUrbanFabric(world);
   reserveRailCorridors(world);
   detailDestinationCollisions(world);
+  registerExistingSites(world);
   completeStreetFabric(world);
   world.obstacles.push(...bridgeBarriers(world));planEnvironment(world);planLandscape(world);
   return world;

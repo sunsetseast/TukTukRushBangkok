@@ -6,25 +6,7 @@ export function skylineLandmark(l:Landmark){
   const b=new LandmarkBuilder();
   const glass=(x:number,y:number,z:number,w:number,h:number,d:number,color:string)=>b.sculpt(new T.BoxGeometry(w,h,d),x,y,z,color,'glass');
   if(l.id==='mahanakhon'){
-    b.box(0,4,0,39,8,39,'#b7c7cb');b.box(0,74,0,12,140,12,'#375f75');
-    // Spiral pixel ribbon is missing volume, not boxes glued to a rectangular shaft.
-    for(let level=0;level<35;level++)for(let x=0;x<5;x++)for(let z=0;z<5;z++){
-      if(x>0&&x<4&&z>0&&z<4)continue;
-      const perimeter=x===0?z:z===4?4+x:x===4?12-z:16-x;
-      const band=(level*.92+3)%16;
-      if(Math.min(Math.abs(perimeter-band),16-Math.abs(perimeter-band))<2.15&&level>5)continue;
-      const px=(x-2)*6.5,pz=(z-2)*6.5;
-      glass(px,10+level*4,pz,6.35,3.8,6.35,level%3?'#608eaa':'#436c83');
-      if((x===0||x===4)&&level%3===0)b.box(px+(x===0?-3.19:3.19),10+level*4,pz,.08,.65,5.8,'#a8d6d4',0,true);
-      if((z===0||z===4)&&level%4===0)b.box(px,10+level*4,pz+(z===0?-3.19:3.19),5.8,.65,.08,'#d7bb89',0,true);
-    }
-    // Real curtain wall rhythm remains quiet; the carved pixel ribbon is the
-    // primary silhouette. Thin floor lines do not fill the missing volumes.
-    for(let y=12;y<145;y+=4)for(const side of [-1,1]){
-      b.box(side*8.52,y,0,.05,.16,16.5,'#85aab5');
-      b.box(0,y,side*8.52,16.5,.16,.05,'#85aab5');
-    }
-    b.box(0,151,0,23,.8,23,'#b8d6d3',0,true);b.box(4,153,3,10,3,10,'#31576c');
+    emitMahanakhon(b,true);
   }else if(l.id==='baiyoke'){
     b.box(0,8,0,38,16,36,'#d7c7a6');
     for(let i=0;i<4;i++){
@@ -66,16 +48,7 @@ export function skylineLandmark(l:Landmark){
   for(const side of [-1,1])for(let x=-15;x<=15;x+=5){glass(x,4,side*18.6,3.7,5,.16,'#4b7280');b.box(x,7,side*18.8,4,.3,.4,'#d0c9ac',0,true);}
   const detailed=b.finish(`authored-${l.id}-skyline-v2`),coarse=new LandmarkBuilder();
   if(l.id==='mahanakhon'){
-    coarse.box(0,4,0,39,8,39,'#b7c7cb');coarse.box(0,76,0,12,144,12,'#375f75');
-    // Same square perimeter and ~two-turn removed ribbon as the near asset.
-    // A round radial proxy would erase its architectural identity in Fast mode.
-    for(let level=0;level<18;level++)for(let x=0;x<5;x++)for(let z=0;z<5;z++){
-      if(x>0&&x<4&&z>0&&z<4)continue;
-      const edge=x===0?z:z===4?4+x:x===4?12-z:16-x,band=(level*1.84+3)%16;
-      const delta=Math.abs(edge-band);if(Math.min(delta,16-delta)<2.15&&level>2)continue;
-      coarse.box((x-2)*6.5,12+level*8,(z-2)*6.5,6.35,7.8,6.35,'#608eaa');
-    }
-    coarse.box(0,151,0,23,.8,23,'#b8d6d3');coarse.box(4,153,3,10,3,10,'#31576c');
+    emitMahanakhon(coarse,false);
   }else if(l.id==='baiyoke'){
     coarse.box(0,5,0,39,10,36,'#d5c8a4');
     for(let i=0;i<4;i++)coarse.box(0,29.5+i*27,0,36-i*4,30,29-i*3,'#c7bea3');
@@ -85,4 +58,32 @@ export function skylineLandmark(l:Landmark){
   }
   const distant=coarse.finish(`${l.id}-distant`),root=new T.LOD();root.addLevel(detailed,0);root.addLevel(distant,360);
   root.userData.authoredAsset=detailed.userData.authoredAsset;root.userData.nightMaterials=[...detailed.userData.nightMaterials,...distant.userData.nightMaterials];return root;
+}
+
+/** One quiet, staggered carved ribbon. Fine cells maintain a mostly unbroken
+ * curtain wall; only the outer two cell depths are carved. Far mode groups
+ * pairs of floors but uses exactly the same pixel occupancy definition. */
+function emitMahanakhon(b:LandmarkBuilder,detail:boolean){
+ b.box(0,4,0,39,8,39,'#9eafb0');b.box(0,77,0,17,138,17,'#426a7b');
+ const cell=3.85,levels=38,step=detail?1:2;
+ for(let f=0;f<levels;f+=step)for(let x=0;x<7;x++)for(let z=0;z<7;z++){
+  if(x>1&&x<5&&z>1&&z<5)continue;
+  const outer=x===0||x===6||z===0||z===6;
+  const edge=x===0?z:z===6?6+x:x===6?18-z:24-x;
+  // Architectural cut moves through a little over one turn, in clustered
+  // steps with asymmetric widths, unlike PR25's large uniform double helix.
+  const center=4+Math.floor(Math.max(0,f-4)/3)*2,delta=Math.abs(((edge-center)%24+24)%24),dist=Math.min(delta,24-delta);
+  const cut=f>5&&outer&&dist<((Math.floor(f/5)%3===1)?2.2:1.3);
+  if(cut)continue;
+  const px=(x-3)*cell,pz=(z-3)*cell,y=10+f*3.65,h=3.65*step-.07;
+  b.sculpt(new T.BoxGeometry(cell-.025,h,cell-.025),px,y+h/2,pz,f%6===0?'#567f93':'#64899a','glass');
+  if(detail&&outer){
+   const side=x===0?-1:x===6?1:0;
+   if(side)b.box(px+side*cell/2,y,pz,.06,.12,cell,'#b3c4c3');
+   if(z===0||z===6)b.box(px,y,pz+(z===0?-1:1)*cell/2,cell,.12,.06,'#b3c4c3');
+   if((x*3+z+f)%37===0)b.box(px,y+1,pz,cell*.8,.3,cell*.8,'#c6b889',0,true);
+  }
+ }
+ b.box(0,149,0,26,.7,26,'#c3d6d1');b.box(0,151,0,23,.7,23,'#719ba6');
+ b.box(4,153,3,10,3,10,'#34566a');b.box(-8,150,8,7,.2,6,'#8bc0c5');
 }

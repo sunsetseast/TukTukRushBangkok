@@ -1,3 +1,5 @@
+import { siteMasses } from './authoredSites';
+import { buildHeroArchitecture } from './heroArchitecture';
 import * as T from 'three';
 import type { District, Landmark } from '../types';
 import { LandmarkBuilder } from './landmarkBuilder';
@@ -39,24 +41,6 @@ function arrival(b:B,w:number,d:number,detail:boolean){
  b.box(0,5.7,-d/2+3,Math.min(w*.45,22),.08,5,'#ffdca6',0,true);
  if(detail)for(const x of [-w*.4,w*.4])tree(b,x,-d*.34,6);
 }
-function oriental(b:B,detail:boolean){
- // Main River Wing is a broad horizontal composition with a shallower historic
- // Authors' Wing alongside, not a skyscraper substituted for the historic hotel.
- slab(b,-8,-13,68,20,41,16,detail,'#dcd4b8');
- slab(b,33,-12,20,18,35,11,detail,'#e8ddc0');
- b.box(-8,42,-13,69,1.8,21,IVORY);
- b.box(33,36,-12,21,1.4,19,IVORY);
- b.box(18,5,16,34,10,20,'#f5ebd3');
- b.roof(18,10,16,37,24,5,'#67766a');
- // Ornamental central Authors' Wing pediment and paired arched openings.
- const pediment=new T.Shape([new T.Vector2(-6,0),new T.Vector2(-6,2),new T.Vector2(-4,2),new T.Vector2(-4,4),new T.Vector2(-2,4),new T.Vector2(-2,6),new T.Vector2(2,6),new T.Vector2(2,4),new T.Vector2(4,4),new T.Vector2(4,2),new T.Vector2(6,2),new T.Vector2(6,0)]);
- b.sculpt(new T.ExtrudeGeometry(pediment,{depth:.5,bevelEnabled:false}),18,10,26.2,IVORY);
- for(const x of [15,21]){const arch=new T.Shape();arch.moveTo(-1.8,0);arch.lineTo(-1.8,3.5);arch.absarc(0,3.5,1.8,Math.PI,0,true);arch.lineTo(1.8,0);arch.closePath();b.sculpt(new T.ExtrudeGeometry(arch,{depth:.18,bevelEnabled:false}),x,4.6,26.3,'#7d9f90','glass');}
- for(const side of [-1,1])for(let x=4;x<=33;x+=5){glass(b,x,6,16+side*10.2,2.4,3,.2,'#618f88');b.sculpt(new T.CylinderGeometry(.2,.3,5,8),x,3,16+side*11,IVORY);}
- b.box(-20,1.2,19,43,2.4,20,'#bbad8d');b.box(-20,2.5,20,42,.3,18,'#d9c9a3');
- for(let x=-39;x<=-2;x+=6){tree(b,x,27,4);if(detail){b.box(x,2.9,21,2,.6,2,IVORY);b.roof(x,5,21,5,5,1.1,'#ded4b7');}}
- arrival(b,92,64,detail);
-}
 function peninsula(b:B,detail:boolean){
  // Four alternating angled slabs trace a W in plan. The uppermost floors step
  // down at the two outer shoulders; all four elevations retain the wave profile.
@@ -86,36 +70,6 @@ function hilton(b:B,detail:boolean){
  b.box(0,4,3,46,8,31,IVORY);glass(b,0,4,18.6,42,6,.3);
  arrival(b,52,48,detail);
 }
-function shangri(b:B,detail:boolean){
- slab(b,-15,-5,47,18,75,detail?23:12,detail,'#dedac5');
- slab(b,26,4,21,26,54,detail?16:8,detail,'#eee3cd');
- for(let i=0;i<4;i++)b.box(-15,76+i*.65,-5,46-i*4,1,18-i,IVORY);
- b.box(-8,.9,19,70,1.8,17,'#c7b394');
- for(const x of [-28,-10,10]){b.box(x,2.5,22,10,5,9,'#ae7950');thaiRoof(b,x,5,22,13,11,3.5,'#c7633f',detail);}
- for(const x of [-38,35])tree(b,x,21,7);
- arrival(b,86,58,detail);
-}
-function fourSeasons(b:B,detail:boolean){
- // Terraced low-rise perimeter around two actual open courts, no filled podium.
- for(const side of [-1,1])for(let step=0;step<3;step++){
-   slab(b,side*(32-step*3),-10+step*10,17,18,27-step*5,detail?7-step:3,detail,'#b9b4a3');
-   b.box(side*(32-step*3),28-step*5,-10+step*10,18,.5,18,'#729975');
- }
- slab(b,0,-22,68,12,27,7,detail,'#c8c2b0');
- for(const x of [-14,14]){
-   b.box(x,.6,9,17,1.2,24,'#bdb18e');b.box(x,1.3,9,15,.15,20,'#60b2b4');
-   b.box(x,3.5,23,20,6,10,'#c3b498');b.box(x,7,23,23,.8,12,IVORY);glass(b,x,3.6,28.1,18,5,.3);
- }
- b.box(0,.7,22,6,1.4,15,'#d7c7a5');arrival(b,94,64,detail);
-}
-function capella(b:B,detail:boolean){
- slab(b,0,-15,76,15,27,7,detail,'#d8d5c5');
- for(const side of [-1,1])slab(b,side*33,5,10,27,9,2,detail,'#dcd4bc');
- b.box(0,.4,13,49,.8,27,'#819d70');b.box(-13,.9,12,19,.25,11,'#67bbc0');
- b.box(6,3,15,17,6,13,'#c6b798');b.box(6,6.6,15,21,.8,17,IVORY);
- for(let x=-27;x<=28;x+=9){b.box(x,1,26,7,1.8,4,'#c6b89a');if(detail)tree(b,x,24,3.4);}
- arrival(b,84,58,detail);
-}
 function rosewood(b:B,detail:boolean){
  const left=[[-23,0],[-23,44],[-12,113],[-5,113],[0,44],[-7,0]],right=[[0,0],[5,45],[4,119],[12,119],[23,45],[23,0]];
  elevation(b,left,27,0,0,'#4c7278');elevation(b,right,27,0,0,'#65858b');
@@ -133,23 +87,6 @@ function rosewood(b:B,detail:boolean){
  }
  for(const y of [20,40,60,80]){b.box(0,y,0,9,.8,22,IVORY);if(detail){tree(b,0,0,3);b.box(0,y+.6,0,7,.4,16,'#508b65');}}
  arrival(b,48,42,detail);
-}
-function embassy(b:B,detail:boolean){
- // Flowing retail coil transitions into a ribbon hotel tower; rounded footprints
- // and rotating upper floor plates are authored rather than a cuboid stand-in.
- for(let i=0;i<7;i++)rounded(b,-4+i*.5,1+i*3.5,0,71-i*1.3,52-i*.5,3.4,i%3===0?'#d9ddd2':'#c7d1c9',detail,i*.015);
- for(let i=0;i<22;i++){
-   const t=i/21,y=26+i*3.6,twist=-.35+t*.8;
-   rounded(b,13, y,-4,27,22,3.55,'#5e8b92',detail,twist);
-   rounded(b,13,y+3.5,-4,28,23,.32,'#dfe1d1',detail,twist);
- }
- // White curved wrapping ribbons on two sides, with a tall glass opening.
- for(let i=0;i<22;i++){
-   const y=27+i*3.6,t=i/21,x=13+Math.sin(t*Math.PI*1.65)*11;
-   b.box(x,y,8,7,3.7,1.5,IVORY,0);b.box(26-x*.15,y,-15,5,3.7,1.5,'#cfd8cf');
- }
- rounded(b,12,106,-4,19,17,3,IVORY,detail,.45);
- glass(b,-17,9,26.2,28,9,.2);arrival(b,76,65,detail);
 }
 function erawan(b:B,detail:boolean){
  slab(b,0,-4,49,28,58,17,detail,'#d5cdb6');
@@ -193,11 +130,11 @@ function jimThompson(b:B,detail:boolean){
  }
  b.box(0,4,0,40,.35,5,'#ad744c');if(detail)for(const x of [-21,21])tree(b,x,15,8);
 }
-const builders:Record<string,(b:B,detail:boolean)=>void>={'oriental':oriental,'peninsula':peninsula,'hilton':hilton,'shangri':shangri,'four-seasons':fourSeasons,'capella':capella,'rosewood':rosewood,'embassy':embassy,'erawan-hotel':erawan,'eastin':eastin,'river-city':riverCity,'siam-center':siamCenter,'jim-thompson':jimThompson};
+const builders:Record<string,(b:B,detail:boolean)=>void>={'peninsula':peninsula,'hilton':hilton,'rosewood':rosewood,'erawan-hotel':erawan,'eastin':eastin,'river-city':riverCity,'siam-center':siamCenter,'jim-thompson':jimThompson};
 export function buildRealArchitecture(l:Landmark){
- const p=realPlace(l.id),make=builders[l.id!];if(!p||!make)return;
+ const p=realPlace(l.id),make=builders[l.id!];if(!p)return;
  const root=new T.LOD();
- for(const detail of [true,false]){const b=new LandmarkBuilder();make(b,detail);const g=b.finish(`${p.asset}-${detail?'near':'far'}`);root.addLevel(g,detail?0:300,.12);}
+ for(const detail of [true,false]){let g=buildHeroArchitecture(p,detail);if(!g){if(!make)return;const b=new LandmarkBuilder();make(b,detail);g=b.finish(`${p.asset}-${detail?'near':'far'}`);}root.addLevel(g,detail?0:300,.12);}
  root.userData.authoredAsset=p.asset;root.userData.realPlace=p.id;root.userData.nightMaterials=root.levels.flatMap(l=>l.object.userData.nightMaterials);
  return root;
 }
@@ -215,7 +152,7 @@ export function buildRealPlaceSigns(d:District){
   const l=d.landmarks.find(l=>l.id===p.id);if(!l?.plot)continue;
   const geo=new T.PlaneGeometry(Math.min(p.footprint[0]*.6,32),1.8),uv=geo.getAttribute('uv');
   for(let j=0;j<uv.count;j++)uv.setY(j,1-(i+1-uv.getY(j))/entries.length);
-  const m=new T.Mesh(geo,mat),yaw=p.yaw+Math.PI,z=-p.footprint[1]/2+.8;
+  const m=new T.Mesh(geo,mat),yaw=p.yaw+Math.PI,z=Math.min(...siteMasses(p).map(m=>m.z-m.d/2))-9;
   m.position.set(l.plot.x+Math.sin(p.yaw)*z,6.6,l.plot.z+Math.cos(p.yaw)*z);m.rotation.y=yaw;root.add(m);
  }
  root.userData.materials=[mat];return root;

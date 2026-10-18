@@ -3,7 +3,9 @@ import { StaticBatch } from "../staticBatch";
 
 /** Original low-poly authored silhouettes, baked into two materials per site. */
 export class LandmarkBuilder {
-  private batch = new StaticBatch(40);
+  // A landmark is already culled as a whole LOD. Subdividing its local facade
+  // into 80m city cells multiplies draw calls without improving culling.
+  private batch = new StaticBatch(256, 512);
   private plain = new T.MeshStandardMaterial({ roughness: 0.8 });
   readonly light = new T.MeshStandardMaterial({
     roughness: 0.42,
