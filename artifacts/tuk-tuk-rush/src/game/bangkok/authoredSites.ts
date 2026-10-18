@@ -555,6 +555,7 @@ function extendCharoenNakhon(d: District) {
 /** Chosen in the PR25 city audit and now authored explicitly. These important
  * destinations no longer search radial candidate plots during world creation. */
 export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
+  pho: [290,443],
   icon: [338.25825214724773, 833.2582521472477],
   paragon: [730, 415],
   central: [786, 429.8701257427382],
@@ -562,7 +563,7 @@ export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
   state: [550, 895],
   baiyoke: [755, 365],
   mbk: [658, 490],
-  terminal: [961, 535],
+  terminal: [918, 499],
   swing:[410,427],flowers:[318,535],
 };
 export function registerExistingSites(d: District) {
@@ -606,14 +607,6 @@ export function registerExistingSites(d: District) {
   }
 }
 
-export const EXISTING_SITE_WORLD_ANCHORS: Record<string, Point> = {
-  mbk: { x: 632, z: -440 },
-  paragon: { x: 920, z: -740 },
-  central: { x: 1144, z: -680.5194970290473 },
-  icon: { x: -646.966991411009, z: 933.033008588991 },
-  terminal: { x: 1844, z: -260 },
-  swing:{x:-360,z:-692},flowers:{x:-728,z:-260},
-  mahanakhon: { x: 654.1939766255643, z: 1119.1341716182544 },
-  baiyoke: { x: 1020, z: -940 },
-  state: { x: 200, z: 1180 },
-};
+export const EXISTING_SITE_WORLD_ANCHORS: Record<string, Point> = Object.fromEntries(
+  Object.entries(EXISTING_SITE_ANCHORS).map(([id,[x,y]]) => [id,{x:(x-500)*4,z:(y-600)*4}]),
+);

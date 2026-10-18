@@ -72,9 +72,10 @@ function parkModel(s: PublicSpace, detail: boolean) {
           !s.water.some((w) => w.hole && insidePublicPolygon(mid, w.points)),
         len = Math.hypot(q.x - a.x, q.z - a.z),
         yaw = Math.atan2(q.x - a.x, q.z - a.z);
+      const deckY = path.elevation ?? (wet ? 1.8 : 0.18);
       b.box(
         (a.x + q.x) / 2,
-        wet ? 1.8 : 0.18,
+        deckY,
         (a.z + q.z) / 2,
         path.width,
         wet ? 0.5 : 0.15,
@@ -82,14 +83,67 @@ function parkModel(s: PublicSpace, detail: boolean) {
         wet ? "#a4794e" : "#d5c7a7",
         yaw,
       );
-      if (wet)
+      if (wet || path.elevation)
         for (const side of [-1, 1]) {
           const x =
               (a.x + q.x) / 2 + Math.cos(yaw) * side * (path.width / 2 - 0.2),
             z = (a.z + q.z) / 2 - Math.sin(yaw) * side * (path.width / 2 - 0.2);
-          b.box(x, 2.7, z, 0.18, 0.18, len, "#e5d8b8", yaw);
+          b.box(x, deckY + 0.9, z, 0.18, 0.18, len, "#e5d8b8", yaw);
         }
     }
+  if (s.id === "benjakitti") {
+    for (const path of s.paths.filter((p) => p.elevation))
+      for (let i = 1; i < path.points.length; i++) {
+        const a = local(path.points[i - 1]!, o),
+          q = local(path.points[i]!, o),
+          len = Math.hypot(q.x - a.x, q.z - a.z),
+          yaw = Math.atan2(q.x - a.x, q.z - a.z),
+          h = path.elevation!;
+        for (let t = 0; t < len; t += detail ? 7 : 14) {
+          const x = a.x + ((q.x - a.x) * t) / len,
+            z = a.z + ((q.z - a.z) * t) / len;
+          if (t % 2 < 1) b.box(x, h / 2, z, 0.35, h, 0.35, "#a4aca1");
+          for (const side of [-1, 1])
+            b.box(
+              x + (Math.cos(yaw) * side * path.width) / 2,
+              h + 0.45,
+              z - (Math.sin(yaw) * side * path.width) / 2,
+              0.08,
+              0.9,
+              0.08,
+              "#d1d1ba",
+            );
+        }
+      }
+    // Reed beds on island rims; batched low-poly tufts, no alpha overdraw.
+    for (const [i, island] of s.water.filter((w) => w.hole).entries()) {
+      const p = local(island.points[0]!, o);
+      b.sculpt(
+        new T.IcosahedronGeometry(2.8, 0).scale(1, 0.23, 1.5),
+        p.x,
+        0.55,
+        p.z,
+        "#8b9d58",
+      );
+      if (detail)
+        for (let j = 0; j < 3; j++)
+          b.sculpt(
+            new T.ConeGeometry(0.3, 1.7, 3),
+            p.x + j * 0.65,
+            1.2,
+            p.z - 0.6,
+            "#8d9961",
+          );
+    }
+    // Reused factory/sports sheds occupy the dry northern service strip.
+    for (const facility of s.facilities ?? []) {
+      const x = facility.x - o.x;
+      b.box(x, 3.8, -142, 22, 7.6, 10, "#c4c2a5");
+      b.roof(x, 7.6, -142, 23, 11, 2, "#879386");
+      for (const u of [-7, 0, 7])
+        b.box(x + u, 3.6, -136.9, 4.2, 4, 0.2, "#56746a");
+    }
+  }
   for (const f of s.fences) {
     const p = local(f, o);
     b.box(p.x, 0.35, p.z, 0.65, 0.7, f.d, "#b8b59c", f.yaw);

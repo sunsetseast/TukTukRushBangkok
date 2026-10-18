@@ -9,9 +9,9 @@ export const COMMERCIAL_DISTRICT_BOUNDS: Record<
 > = {
   mbk: { w: 120, d: 65, height: 35 },
   paragon: { w: 130, d: 90, height: 33 },
-  central: { w: 140, d: 95, height: 45 },
+  central: { w: 140, d: 95, height: 136 },
   terminal: { w: 90, d: 80, height: 134 },
-  "siam-center": { w: 150, d: 60, height: 32 },
+  "siam-center": { w: 150, d: 64, height: 32 },
 };
 type B = LandmarkBuilder;
 const IVORY = "#e6e4db",
@@ -166,7 +166,7 @@ function lettering(
     if (glyph)
       for (let row = 0; row < 7; row++) {
         const line = glyph[row]!;
-        for (let col = 0; col < line.length; ) {
+        for (let col = 0; col < line.length;) {
           if (line[col] !== "1") {
             col++;
             continue;
@@ -238,6 +238,18 @@ function mbk(b: B, detail: boolean) {
   for (let x = -53; x <= 53; x += detail ? 2 : 4)
     b.box(x, 29.3, 28.8, 0.14, 3.2, 0.28, IVORY);
   b.box(0, 31.5, 18, 82, 1.5, 17, "#d6dccb");
+  b.sculpt(
+    new T.CylinderGeometry(8, 8, 63, detail ? 24 : 12, 1, false, 0, Math.PI)
+      .rotateZ(Math.PI / 2)
+      .scale(1, 0.35, 1),
+    0,
+    32.2,
+    -12,
+    "#c9d2c7",
+  );
+  for (const x of [-53, 53])
+    for (let z = -21; z < 10; z += detail ? 2.5 : 5)
+      b.box(x, 26, z, 0.3, 7, 1.2, "#e7e4d6");
   b.box(0, 26, 29, 36, 4.6, 0.45, "#385d65");
   lettering(b, "MBK CENTER", 0, 26, 29.4, 31);
   glass(b, 0, 4, 28.6, 20, 7, 0.3, "#2c626a");
@@ -320,6 +332,23 @@ function paragon(b: B, detail: boolean) {
   for (const x of [-48, 48]) planter(b, x, 35, 17, 8);
 }
 function central(b: B, detail: boolean) {
+  // Northern Centara/office context is part of the connected site, not random
+  // towers in front of the mall. Local -X points north once root yaw is east.
+  rounded(b, -50, 36, -25, 29, 32, 88, 6, "#c1c7bd", detail);
+  for (const side of [-1, 1]) {
+    glass(b, -50, 81, -25 + side * 16.1, 25, 84, 0.2, "#577c88");
+    for (let y = 41; y < 123; y += detail ? 3.1 : 6.2)
+      b.box(-50, y, -25 + side * 16.3, 28, 0.28, 0.3, "#d6d7c5");
+  }
+  rounded(b, -50, 124, -25, 31, 34, 2, 6, "#d7d7c3", detail);
+  rounded(b, -50, 126, -25, 24, 27, 4, 6, "#778e88", detail);
+  b.sculpt(
+    new T.CylinderGeometry(7, 8, 5, detail ? 24 : 12),
+    -50,
+    132,
+    -25,
+    "#bba779",
+  );
   // The long Ratchadamri frontage has a department-store shoulder, a broad
   // recessed glazed center, and a second independently stepped retail block.
   b.box(-43, 18, -11, 49, 36, 64, "#ddded4");
@@ -383,12 +412,52 @@ function central(b: B, detail: boolean) {
     for (const y of [6, 13, 20, 27, 33])
       b.box(side < 0 ? -67.85 : 69.35, y, -12, 0.3, 0.35, 53, "#e0e2d7");
   }
+  // Panoramic LED ribbon is integrated into the main elevation, not floating
+  // above a generic cube. Glass and mullions remain visible below it.
+  b.box(0, 28.6, 21.1, 61, 4.8, 0.25, "#37596c", 0, true);
+  for (let x = -26; x < 29; x += 6)
+    b.box(
+      x,
+      28.6,
+      21.3,
+      3.8,
+      3.1,
+      0.06,
+      ["#c66c92", "#5ab3bc", "#e7b674"][(((x + 26) / 6) % 3) | 0]!,
+      0,
+      true,
+    );
   // Slender red cantilever and deep entrance portico face a paved event square.
   b.box(5, 7, 26, 45, 0.7, 12, "#be5547");
   for (const x of [-15, 25]) b.box(x, 3.2, 24, 0.6, 6.5, 0.6, "#dedcca");
   glass(b, 5, 3.4, 24, 31, 6, 0.3, "#315860");
   b.box(0, 0.12, 36, 138, 0.2, 20, "#b9beb0");
   for (const x of [-59, -36, 37, 61]) planter(b, x, 36, 12, 5);
+  // Apple Central World: round glazed pavilion, broad floating circular roof
+  // and tree-column. Entirely inside the pedestrian event square.
+  b.sculpt(
+    new T.CylinderGeometry(6.5, 6.5, 7, detail ? 28 : 14),
+    43,
+    3.8,
+    35,
+    "#709c9d",
+    "glass",
+  );
+  b.sculpt(
+    new T.CylinderGeometry(8.8, 8.8, 0.45, detail ? 28 : 14),
+    43,
+    7.6,
+    35,
+    "#c7b998",
+  );
+  b.sculpt(
+    new T.CylinderGeometry(3.6, 0.8, 2.8, detail ? 20 : 10),
+    43,
+    6,
+    35,
+    "#a88c65",
+  );
+  b.sculpt(new T.CylinderGeometry(0.7, 0.8, 5, 8), 43, 2.8, 35, "#a88c65");
   if (detail)
     for (let i = 0; i < 5; i++)
       display(
@@ -405,8 +474,18 @@ export function buildSiamCenterDiscovery(b: B, detail: boolean) {
   // Kept one discovery identifier for old saves, rendered as distinct malls.
   // Local -X is geographic west; +Z faces Rama I to the south.
   // Positions are authored directly, with positive geometry scales and readable text.
-  b.box(36, 11, -2, 73, 22, 52, "#334b51");
-  glass(b, 36, 12, 24.1, 69, 18, 0.3, "#435f64");
+  b.box(36, 11, -4, 73, 22, 47, "#443c3c");
+  glass(b, 36, 5.4, 20.1, 68, 9.2, 0.3, "#5f7976");
+  for (const x of [5, 24, 48, 68]) b.box(x, 5.3, 21.2, 1, 10.6, 2.2, "#6d5450");
+  // Deep frames give the top storeys a layered bronze screen and warm voids.
+  for (let x = 3; x < 72; x += detail ? 1.9 : 3.8)
+    b.box(x, 15.5, 24.8, 0.22, 9.5, 1.3, x % 4 < 2 ? "#896b5c" : "#5a4c48");
+  glass(b, 36, 6.2, 25.8, 19, 10, 0.25, "#5d8787");
+  b.box(36, 11.6, 27.7, 24, 0.7, 4.8, "#aa493e");
+  for (const side of [-1, 1])
+    bar(b, 36 + side * 12, 1, 36 + side * 10, 11.6, 27.3, 0.65, 1.4, "#b35d49");
+  b.box(36, 3, 28, 12, 0.2, 3.2, "#b9b2a0");
+  glass(b, 36, 16, 24.1, 69, 8, 0.3, "#435f64");
   b.box(36, 23.4, -7, 73, 2.8, 42, "#42636a");
   for (const x of [62, 45, 28, 11]) {
     b.box(x, 12, 25, 1.3, 21, 1.9, "#1b363f");
@@ -419,7 +498,7 @@ export function buildSiamCenterDiscovery(b: B, detail: boolean) {
     [36, "#8b5f8b"],
     [13, "#ab7e54"],
   ] as const)
-    display(b, x, 10, 25.7, 16, 10, c);
+    display(b, x, 15.4, 25.7, 13, 5.5, c);
   // Discovery's transparent second skin has irregular frame widths/heights and
   // offsets, rather than the repeated square checkerboard from PR26.
   b.box(-39, 13, -2, 69, 26, 54, "#b9c8c2");
@@ -644,4 +723,26 @@ export function buildCommercialDistrictModel(
   if (!build) return false;
   build(b, detail);
   return true;
+}
+
+/** Physical masses exclude forecourts. Ground-level entrances/plazas must not
+ * inherit a single collider spanning the entire authored architectural asset. */
+export function commercialSiteMasses(id: string) {
+  if (id === "central")
+    return [
+      { x: -43, z: -11, w: 49, d: 64, h: 36 },
+      { x: 9, z: -13, w: 55, d: 62, h: 35 },
+      { x: 52, z: -14, w: 34, d: 60, h: 45 },
+      { x: -50, z: -25, w: 31, d: 34, h: 136 },
+      { x: 43, z: 35, w: 13, d: 13, h: 8 },
+    ];
+  if (id === "paragon")
+    return [
+      { x: 0, z: -10, w: 128, d: 65, h: 33 },
+      { x: 0, z: 21, w: 54, d: 26, h: 29 },
+    ];
+  const bounds = COMMERCIAL_DISTRICT_BOUNDS[id];
+  return bounds
+    ? [{ x: 0, z: 0, w: bounds.w, d: bounds.d, h: bounds.height }]
+    : [];
 }

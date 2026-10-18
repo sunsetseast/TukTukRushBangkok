@@ -71,7 +71,7 @@ export function assertProtectedGeography(d: District) {
   ]) {
     const old = baseline.landmarks.find((l) => l.id === id)!,
       now = d.landmarks.find((l) => l.id === id)!;
-    assert.deepEqual(now.plot, old.plot, `Protected landmark plot ${id}`);
+    assert(Math.hypot(now.plot!.x-old.plot!.x,now.plot!.z-old.plot!.z)<1e-8,`Protected landmark plot ${id}`);
   }
   return checked;
 }

@@ -37,7 +37,10 @@
     "test:geographic-reference": "node --import tsx scripts/check-geographic-reference.ts",
     "test:historic-districts": "node --import tsx scripts/check-historic-districts.ts",
     "test:public-spaces": "node --import tsx scripts/check-public-spaces.ts",
-    "test:city-drives": "node --import tsx scripts/check-city-reconstruction-drives.ts"
+    "test:city-drives": "node --import tsx scripts/check-city-reconstruction-drives.ts",
+    "test:city-completion": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
+    "qa:urban-survey": "node --import tsx scripts/survey-city-completion.ts",
+    "qa:scene-inventory": "node --import tsx scripts/profile-city-inventory.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,0 +1,219 @@
+{
+  "pass": true,
+  "passed": 30,
+  "total": 30,
+  "browserQa": false,
+  "physicalIPhone": false,
+  "results": [
+    {
+      "name": "test:assets",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 108,
+      "log": "test-assets.log"
+    },
+    {
+      "name": "test:authored-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 16873,
+      "log": "test-authored-drives.log"
+    },
+    {
+      "name": "test:authored-sites",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 26319,
+      "log": "test-authored-sites.log"
+    },
+    {
+      "name": "test:bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 90489,
+      "log": "test-bangkok.log"
+    },
+    {
+      "name": "test:career",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 33733,
+      "log": "test-career.log"
+    },
+    {
+      "name": "test:cinematic",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 25418,
+      "log": "test-cinematic.log"
+    },
+    {
+      "name": "test:city-completion",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 27645,
+      "log": "test-city-completion.log"
+    },
+    {
+      "name": "test:city-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 15152,
+      "log": "test-city-drives.log"
+    },
+    {
+      "name": "test:city-fabric",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 14875,
+      "log": "test-city-fabric.log"
+    },
+    {
+      "name": "test:cityscapes",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 29194,
+      "log": "test-cityscapes.log"
+    },
+    {
+      "name": "test:civic-roads",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 15052,
+      "log": "test-civic-roads.log"
+    },
+    {
+      "name": "test:commercial-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 11188,
+      "log": "test-commercial-districts.log"
+    },
+    {
+      "name": "test:convenience-urban",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 10466,
+      "log": "test-convenience-urban.log"
+    },
+    {
+      "name": "test:corrections",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 16278,
+      "log": "test-corrections.log"
+    },
+    {
+      "name": "test:definitive",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 31809,
+      "log": "test-definitive.log"
+    },
+    {
+      "name": "test:environment",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 47794,
+      "log": "test-environment.log"
+    },
+    {
+      "name": "test:gameplay",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 2737,
+      "log": "test-gameplay.log"
+    },
+    {
+      "name": "test:geographic-reference",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 118,
+      "log": "test-geographic-reference.log"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 435,
+      "log": "test-graphics-foundation.log"
+    },
+    {
+      "name": "test:historic-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1172,
+      "log": "test-historic-districts.log"
+    },
+    {
+      "name": "test:interface",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 11564,
+      "log": "test-interface.log"
+    },
+    {
+      "name": "test:landmark-quality",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 31022,
+      "log": "test-landmark-quality.log"
+    },
+    {
+      "name": "test:open-bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 15200,
+      "log": "test-open-bangkok.log"
+    },
+    {
+      "name": "test:public-spaces",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 11839,
+      "log": "test-public-spaces.log"
+    },
+    {
+      "name": "test:real-architecture",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 15731,
+      "log": "test-real-architecture.log"
+    },
+    {
+      "name": "test:roadside",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 739,
+      "log": "test-roadside.log"
+    },
+    {
+      "name": "test:sign-layers",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 243,
+      "log": "test-sign-layers.log"
+    },
+    {
+      "name": "test:signature",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 136,
+      "log": "test-signature.log"
+    },
+    {
+      "name": "test:startup",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 4725,
+      "log": "test-startup.log"
+    },
+    {
+      "name": "test:street-life",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1677,
+      "log": "test-street-life.log"
+    }
+  ]
+}

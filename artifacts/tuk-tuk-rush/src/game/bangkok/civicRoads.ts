@@ -10,7 +10,7 @@ const mapPoint = (x: number, z: number): Point => ({
   z: (z - 600) * 4,
 });
 export const VICTORY_SITE = Object.freeze({
-  center: Object.freeze(mapPoint(675, 230)),
+  center: Object.freeze(mapPoint(717, 230)),
   roadRadius: 64,
   roadWidth: 20,
   islandRadius: 42,

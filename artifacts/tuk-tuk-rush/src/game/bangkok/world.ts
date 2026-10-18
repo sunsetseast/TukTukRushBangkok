@@ -28,6 +28,7 @@ import {
 import { placeRealArchitecture } from "./realPlaces";
 import layout from "./layout.json";
 import { planLandscape } from "./landscape";
+import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
 import { completeStreetFabric } from "./streetFabric";
 import { scalaParcel } from "./scala";
@@ -410,15 +411,18 @@ export function createBangkokWorld(): District {
             artRole: "furniture" as const,
           })),
         );
-      } else
+      } else {
+        if (l.id === "central") l.yaw = Math.PI / 2;
         world.obstacles.push({
           ...plot,
+          yaw: l.yaw ?? 0,
           w: commercial?.w ?? size,
           d: commercial?.d ?? size,
           height: commercial?.height ?? (l.kind === "tower" ? 156 : 18),
           color: "#dfbd83",
           landmarkId: l.id,
         });
+      }
     } else {
       for (const distance of [0, 30, 50, 75, 100, 140, 180]) {
         for (let direction = 0; direction < 16; direction++) {
@@ -502,6 +506,11 @@ export function createBangkokWorld(): District {
       world.obstacles.find((o) => o.landmarkId === l.id)!.yaw = l.yaw;
     }
   }
+  const pho = world.landmarks.find((l) => l.id === "pho")!;
+  pho.size = 140;
+  const phoEnvelope = world.obstacles.find((o) => o.landmarkId === "pho")!;
+  phoEnvelope.w = 140;
+  phoEnvelope.d = 140;
   connectVictoryApproach(world);
   connectDestinations(world);
   const paknamArrival = world.destinations!.find((a) => a.id === "paknam")!,
@@ -716,6 +725,20 @@ export function createBangkokWorld(): District {
   reserveRailCorridors(world);
   detailDestinationCollisions(world);
   registerExistingSites(world);
+  for (const b of world.buildings) {
+    const x = b.x / 4 + 500,
+      y = b.z / 4 + 600;
+    if (
+      !b.landmarkId &&
+      !b.protected &&
+      x > 704 &&
+      x < 766 &&
+      y > 468 &&
+      y < 539
+    )
+      b.height = Math.min(b.height, 13.2);
+  }
+  planUrbanBlocks(world);
   completeStreetFabric(world);
   planConvenienceStores(world);
   world.obstacles.push(...bridgeBarriers(world));

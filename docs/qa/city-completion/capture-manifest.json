@@ -1,0 +1,648 @@
+{
+  "status": "NOT CAPTURED",
+  "reason": "Managed preview requires unavailable control-browser skill. No replacement browser was installed.",
+  "locations": [
+    {
+      "id": "lumphini-aerial",
+      "title": "Lumphini Park lake geography",
+      "target": [
+        805,
+        730
+      ],
+      "approach": [
+        855,
+        742
+      ],
+      "height": 12,
+      "radius": 390,
+      "views": [
+        "elevated"
+      ]
+    },
+    {
+      "id": "lumphini-entrance",
+      "title": "Lumphini Wireless Road entrance",
+      "target": [
+        848,
+        694
+      ],
+      "approach": [
+        855,
+        694
+      ],
+      "height": 9,
+      "radius": 90,
+      "views": [
+        "road",
+        "elevated",
+        "night"
+      ]
+    },
+    {
+      "id": "lumphini-lakes",
+      "title": "Lumphini lakes and island",
+      "target": [
+        795,
+        697
+      ],
+      "approach": [
+        752,
+        707
+      ],
+      "height": 8,
+      "radius": 155,
+      "views": [
+        "ground",
+        "elevated"
+      ]
+    },
+    {
+      "id": "victory-aerial",
+      "title": "Victory Monument roundabout",
+      "target": [
+        675,
+        230
+      ],
+      "approach": [
+        680,
+        267
+      ],
+      "height": 24,
+      "radius": 180,
+      "views": [
+        "elevated"
+      ]
+    },
+    {
+      "id": "victory-road",
+      "title": "Victory Monument Phaya Thai approach",
+      "target": [
+        675,
+        230
+      ],
+      "approach": [
+        678,
+        267
+      ],
+      "height": 24,
+      "radius": 130,
+      "views": [
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "sanam",
+      "title": "Sanam Luang ceremonial field",
+      "target": [
+        309,
+        285
+      ],
+      "approach": [
+        349,
+        285
+      ],
+      "height": 3,
+      "radius": 210,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "swing",
+      "title": "Giant Swing civic square",
+      "target": [
+        410,
+        416.25
+      ],
+      "approach": [
+        410,
+        400
+      ],
+      "height": 25,
+      "radius": 100,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "suthat",
+      "title": "Wat Suthat compound south of Giant Swing",
+      "target": [
+        410,
+        429.5
+      ],
+      "approach": [
+        450,
+        423
+      ],
+      "height": 24,
+      "radius": 150,
+      "views": [
+        "elevated",
+        "ground"
+      ]
+    },
+    {
+      "id": "flowers",
+      "title": "Pak Khlong Talat flower market",
+      "target": [
+        318,
+        535
+      ],
+      "approach": [
+        340,
+        535
+      ],
+      "height": 18,
+      "radius": 135,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "jim-thompson",
+      "title": "Jim Thompson House canal compound",
+      "target": [
+        626,
+        426
+      ],
+      "approach": [
+        640,
+        452
+      ],
+      "height": 18,
+      "radius": 90,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "mbk",
+      "title": "MBK Center / Pathum Wan",
+      "target": [
+        658,
+        490
+      ],
+      "approach": [
+        640,
+        460
+      ],
+      "height": 35,
+      "radius": 150,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "siam-discovery",
+      "title": "Siam Discovery",
+      "target": [
+        666,
+        432
+      ],
+      "approach": [
+        666,
+        455
+      ],
+      "height": 27,
+      "radius": 100,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "siam-center",
+      "title": "Siam Center",
+      "target": [
+        686,
+        432
+      ],
+      "approach": [
+        695,
+        455
+      ],
+      "height": 27,
+      "radius": 115,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "paragon",
+      "title": "Siam Paragon",
+      "target": [
+        730,
+        415
+      ],
+      "approach": [
+        727,
+        455
+      ],
+      "height": 38,
+      "radius": 160,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "central",
+      "title": "CentralWorld / Ratchaprasong",
+      "target": [
+        786,
+        430
+      ],
+      "approach": [
+        810,
+        479
+      ],
+      "height": 42,
+      "radius": 180,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "siam-square",
+      "title": "Siam Square commercial streets",
+      "target": [
+        710,
+        487
+      ],
+      "approach": [
+        710,
+        458
+      ],
+      "height": 21,
+      "radius": 150,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "terminal",
+      "title": "Terminal 21 / Asok",
+      "target": [
+        961,
+        535
+      ],
+      "approach": [
+        926,
+        533
+      ],
+      "height": 120,
+      "radius": 185,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "river-city",
+      "title": "River City Si Phraya waterfront",
+      "target": [
+        431,
+        796
+      ],
+      "approach": [
+        480,
+        800
+      ],
+      "height": 28,
+      "radius": 150,
+      "views": [
+        "elevated",
+        "road",
+        "river"
+      ]
+    },
+    {
+      "id": "seven-chinatown",
+      "title": "7-Eleven Chinatown storefront",
+      "target": [
+        417.67675,
+        514.96725
+      ],
+      "approach": [
+        416.5355,
+        511.92425
+      ],
+      "height": 9,
+      "radius": 60,
+      "views": [
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "seven-modern",
+      "title": "7-Eleven modern commercial storefront",
+      "target": [
+        785,
+        450.75
+      ],
+      "approach": [
+        785,
+        455
+      ],
+      "height": 10,
+      "radius": 60,
+      "views": [
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "bang-rak",
+      "title": "Bang Rak Charoen Krung corridor",
+      "target": [
+        500,
+        847
+      ],
+      "approach": [
+        537,
+        828
+      ],
+      "height": 55,
+      "radius": 185,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "repaired-corridor",
+      "title": "Ratchadamri formerly exposed corridor",
+      "target": [
+        792,
+        570
+      ],
+      "approach": [
+        785,
+        570
+      ],
+      "height": 40,
+      "radius": 160,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "icon-surroundings",
+      "title": "ICONSIAM / Khlong San surroundings",
+      "target": [
+        330,
+        835
+      ],
+      "approach": [
+        275,
+        820
+      ],
+      "height": 62,
+      "radius": 220,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "one-bangkok",
+      "title": "One Bangkok / Lumphini east edge",
+      "target": [
+        880,
+        779
+      ],
+      "approach": [
+        855,
+        780
+      ],
+      "height": 145,
+      "radius": 220,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "wat-pho",
+      "title": "Wat Pho historic perimeter",
+      "target": [
+        298,
+        436
+      ],
+      "approach": [
+        350,
+        440
+      ],
+      "height": 28,
+      "radius": 150,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "khaosan",
+      "title": "Khao San urban frontage",
+      "target": [
+        325,
+        205
+      ],
+      "approach": [
+        300,
+        205
+      ],
+      "height": 19,
+      "radius": 130,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "benjakitti",
+      "title": "Benjakitti accessible public space",
+      "target": [
+        904,
+        710
+      ],
+      "approach": [
+        925,
+        711
+      ],
+      "height": 9,
+      "radius": 175,
+      "views": [
+        "elevated",
+        "road"
+      ]
+    },
+    {
+      "id": "terminal-northwest",
+      "title": "Terminal 21 corrected northwest Asok site",
+      "target": [
+        918,
+        499
+      ],
+      "approach": [
+        945,
+        530
+      ],
+      "height": 85,
+      "radius": 180,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "asok-intersection",
+      "title": "Asok intersection and MRT/BTS context",
+      "target": [
+        945,
+        550
+      ],
+      "approach": [
+        927,
+        535
+      ],
+      "height": 25,
+      "radius": 180,
+      "views": [
+        "road",
+        "elevated"
+      ]
+    },
+    {
+      "id": "victory-commercial",
+      "title": "Victory commercial/bus quarter",
+      "target": [
+        735,
+        258
+      ],
+      "approach": [
+        727,
+        247
+      ],
+      "height": 20,
+      "radius": 175,
+      "views": [
+        "road",
+        "elevated"
+      ]
+    },
+    {
+      "id": "icon-riverfront",
+      "title": "ICONSIAM river-facing architecture",
+      "target": [
+        338,
+        833
+      ],
+      "approach": [
+        390,
+        835
+      ],
+      "height": 40,
+      "radius": 230,
+      "views": [
+        "river",
+        "elevated",
+        "night"
+      ]
+    },
+    {
+      "id": "oriental-surroundings",
+      "title": "Mandarin Oriental and Charoen Krung",
+      "target": [
+        450,
+        860
+      ],
+      "approach": [
+        490,
+        860
+      ],
+      "height": 35,
+      "radius": 190,
+      "views": [
+        "road",
+        "elevated",
+        "night"
+      ]
+    },
+    {
+      "id": "shangri-surroundings",
+      "title": "Shangri-La and Saphan Taksin context",
+      "target": [
+        460,
+        931
+      ],
+      "approach": [
+        498,
+        931
+      ],
+      "height": 45,
+      "radius": 210,
+      "views": [
+        "road",
+        "elevated",
+        "night"
+      ]
+    },
+    {
+      "id": "yaowarat-street",
+      "title": "Chinatown driving corridor",
+      "target": [
+        468,
+        568
+      ],
+      "approach": [
+        450,
+        555
+      ],
+      "height": 16,
+      "radius": 130,
+      "views": [
+        "road",
+        "night"
+      ]
+    },
+    {
+      "id": "benjakitti-wetlands",
+      "title": "Benjakitti western forest/wetland topology",
+      "target": [
+        883,
+        714
+      ],
+      "approach": [
+        925,
+        716
+      ],
+      "height": 15,
+      "radius": 230,
+      "views": [
+        "elevated",
+        "road",
+        "night"
+      ]
+    }
+  ]
+}
