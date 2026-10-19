@@ -1,0 +1,265 @@
+{
+  "pass": true,
+  "passed": 32,
+  "total": 32,
+  "method": "Latest passing results per group: full initial sweep; eight affected rechecks after track-envelope fix; final two groups after gate geometry and context styling. Original failed run retained.",
+  "physicalIPhone": false,
+  "results": [
+    {
+      "name": "test:assets",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 173,
+      "log": "test-assets.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:authored-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 37004,
+      "log": "test-authored-drives.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:authored-sites",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 68082,
+      "log": "test-authored-sites.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 208963,
+      "log": "test-bangkok.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:career",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 89808,
+      "log": "test-career.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:cinematic",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 57882,
+      "log": "test-cinematic.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:city-completion",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 68281,
+      "log": "test-city-completion.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:city-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 33052,
+      "log": "test-city-drives.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:city-fabric",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 33348,
+      "log": "test-city-fabric.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:cityscapes",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 77106,
+      "log": "test-cityscapes.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:civic-roads",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 39215,
+      "log": "test-civic-roads.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:commercial-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 25595,
+      "log": "test-commercial-districts.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:convenience-urban",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 28160,
+      "log": "test-convenience-urban.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:corrections",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 39444,
+      "log": "test-corrections.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:definitive",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 76941,
+      "log": "test-definitive.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:environment",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 94961,
+      "log": "test-environment.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:gameplay",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 3670,
+      "log": "test-gameplay.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:geographic-reference",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 315,
+      "log": "test-geographic-reference.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 704,
+      "log": "test-graphics-foundation.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:historic-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 2094,
+      "log": "test-historic-districts.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:interface",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 28529,
+      "log": "test-interface.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 64109,
+      "log": "test-landmark-accuracy.log",
+      "directory": "regression-last"
+    },
+    {
+      "name": "test:landmark-quality",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 73005,
+      "log": "test-landmark-quality.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:master-plan",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 61097,
+      "log": "test-master-plan.log",
+      "directory": "regression-last"
+    },
+    {
+      "name": "test:open-bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 33600,
+      "log": "test-open-bangkok.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:public-spaces",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 26671,
+      "log": "test-public-spaces.log",
+      "directory": "regression-final"
+    },
+    {
+      "name": "test:real-architecture",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 41045,
+      "log": "test-real-architecture.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:roadside",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1044,
+      "log": "test-roadside.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:sign-layers",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 391,
+      "log": "test-sign-layers.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:signature",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 273,
+      "log": "test-signature.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:startup",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 8924,
+      "log": "test-startup.log",
+      "directory": "regression"
+    },
+    {
+      "name": "test:street-life",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 2537,
+      "log": "test-street-life.log",
+      "directory": "regression"
+    }
+  ]
+}

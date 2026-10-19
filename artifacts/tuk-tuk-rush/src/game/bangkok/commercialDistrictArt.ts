@@ -333,18 +333,18 @@ function paragon(b: B, detail: boolean) {
 }
 function central(b: B, detail: boolean) {
   // Northern Centara/office context is part of the connected site, not random
-  // towers in front of the mall. Local -X points north once root yaw is east.
-  rounded(b, -50, 36, -25, 29, 32, 88, 6, "#c1c7bd", detail);
+  // towers in front of the mall. Local +X points north once root yaw is east.
+  rounded(b, 50, 36, -25, 29, 32, 88, 6, "#c1c7bd", detail);
   for (const side of [-1, 1]) {
-    glass(b, -50, 81, -25 + side * 16.1, 25, 84, 0.2, "#577c88");
+    glass(b, 50, 81, -25 + side * 16.1, 25, 84, 0.2, "#577c88");
     for (let y = 41; y < 123; y += detail ? 3.1 : 6.2)
-      b.box(-50, y, -25 + side * 16.3, 28, 0.28, 0.3, "#d6d7c5");
+      b.box(50, y, -25 + side * 16.3, 28, 0.28, 0.3, "#d6d7c5");
   }
-  rounded(b, -50, 124, -25, 31, 34, 2, 6, "#d7d7c3", detail);
-  rounded(b, -50, 126, -25, 24, 27, 4, 6, "#778e88", detail);
+  rounded(b, 50, 124, -25, 31, 34, 2, 6, "#d7d7c3", detail);
+  rounded(b, 50, 126, -25, 24, 27, 4, 6, "#778e88", detail);
   b.sculpt(
     new T.CylinderGeometry(7, 8, 5, detail ? 24 : 12),
-    -50,
+    50,
     132,
     -25,
     "#bba779",
@@ -733,7 +733,7 @@ export function commercialSiteMasses(id: string) {
       { x: -43, z: -11, w: 49, d: 64, h: 36 },
       { x: 9, z: -13, w: 55, d: 62, h: 35 },
       { x: 52, z: -14, w: 34, d: 60, h: 45 },
-      { x: -50, z: -25, w: 31, d: 34, h: 136 },
+      { x: 50, z: -25, w: 31, d: 34, h: 136 },
       { x: 43, z: 35, w: 13, d: 13, h: 8 },
     ];
   if (id === "paragon")

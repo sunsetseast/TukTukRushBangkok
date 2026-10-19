@@ -1,0 +1,34 @@
+{
+  "method": "Paired 960x540 medium-quality actual WebGL frames; software rendering on a shared host. Frame times are not hardware FPS. Geometry counters are progressive caches, not total memory.",
+  "physicalIPhone": false,
+  "render": {
+    "before": {
+      "calls": {
+        "median": 348.5,
+        "max": 438
+      },
+      "triangles": {
+        "median": 434309.0,
+        "max": 739123
+      },
+      "frameMs": {
+        "median": 1001.2999999998137,
+        "max": 4208.5999999996275
+      }
+    },
+    "after": {
+      "calls": {
+        "median": 340.5,
+        "max": 436
+      },
+      "triangles": {
+        "median": 443661.0,
+        "max": 731813
+      },
+      "frameMs": {
+        "median": 1211.6000000000931,
+        "max": 4358.399999999907
+      }
+    }
+  }
+}

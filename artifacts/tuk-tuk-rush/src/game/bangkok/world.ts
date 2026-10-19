@@ -1,3 +1,5 @@
+import { placeHuaLamphong } from './huaLamphong';
+import { completeLandmarkContext } from './landmarkContext';
 import {
   HISTORIC_SITE_PLANS,
   historicBoundaryColliders,
@@ -30,6 +32,7 @@ import layout from "./layout.json";
 import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
 import { planTropicalPlants } from "./tropicalPlan";
 import { planMrtEntrances } from "./mrtSurface";
+import { prepareLandmarkParcels } from './landmarkParcels';
 import { planLandscape } from "./landscape";
 import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
@@ -417,6 +420,7 @@ export function createBangkokWorld(): District {
         );
       } else {
         if (l.id === "central") l.yaw = Math.PI / 2;
+        if (l.id === "mbk") l.yaw = Math.PI;
         world.obstacles.push({
           ...plot,
           yaw: l.yaw ?? 0,
@@ -515,6 +519,7 @@ export function createBangkokWorld(): District {
   const phoEnvelope = world.obstacles.find((o) => o.landmarkId === "pho")!;
   phoEnvelope.w = 140;
   phoEnvelope.d = 140;
+  placeHuaLamphong(world);
   connectVictoryApproach(world);
   connectDestinations(world);
   const paknamArrival = world.destinations!.find((a) => a.id === "paknam")!,
@@ -529,6 +534,7 @@ export function createBangkokWorld(): District {
   registerExistingSites(world);
   world.transit = createRailNetwork(world);
   planMrtEntrances(world);
+  prepareLandmarkParcels(world);
   // Access roads were appended after public graph sampling.
   for (const n of nodes) byId.set(n.id, n);
   // Streets are assembled as nearly attached commercial rows, not isolated
@@ -744,6 +750,7 @@ export function createBangkokWorld(): District {
       b.height = Math.min(b.height, 13.2);
   }
   planUrbanBlocks(world);
+  completeLandmarkContext(world);
   completeStreetFabric(world);
   planConvenienceStores(world);
   world.obstacles.push(...bridgeBarriers(world));

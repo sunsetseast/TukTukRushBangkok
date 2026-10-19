@@ -1,0 +1,59 @@
+PASS actual rendered facade rays [
+  {
+    id: 'clock',
+    hitHua: true,
+    distanceToFeature: 0.03135701271222384,
+    firstObject: ''
+  },
+  {
+    id: 'entrance',
+    hitHua: true,
+    distanceToFeature: 0.15017455246643557,
+    firstObject: ''
+  },
+  {
+    id: 'arch-west',
+    hitHua: true,
+    distanceToFeature: 0.36630671184956143,
+    firstObject: ''
+  },
+  {
+    id: 'arch-east',
+    hitHua: true,
+    distanceToFeature: 0.34907186044793714,
+    firstObject: ''
+  }
+]
+Resize 375 812
+Resized 375 812
+Opened inspection 375 812
+Inspection frames ready 375 812
+Bounds checked 375 812
+Reset clicked 375 812
+Return clicked 375 812
+PASS viewport 375 812
+Resize 430 932
+Resized 430 932
+Opened inspection 430 932
+Inspection frames ready 430 932
+Bounds checked 430 932
+Reset clicked 430 932
+Return clicked 430 932
+PASS viewport 430 932
+Resize 844 390
+Resized 844 390
+Opened inspection 844 390
+Inspection frames ready 844 390
+Bounds checked 844 390
+Reset clicked 844 390
+Return clicked 844 390
+PASS viewport 844 390
+Resize 1280 800
+Resized 1280 800
+Opened inspection 1280 800
+Inspection frames ready 1280 800
+Bounds checked 1280 800
+Reset clicked 1280 800
+Return clicked 1280 800
+PASS viewport 1280 800
+PASS browser facade, mobile layouts and repeated ICONSIAM restart checks

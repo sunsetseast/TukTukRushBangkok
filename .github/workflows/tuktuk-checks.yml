@@ -33,6 +33,7 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:startup
       - run: pnpm --filter @workspace/tuk-tuk-rush run build
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:landmark-quality
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:landmark-accuracy
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:master-plan
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:open-bangkok
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:definitive

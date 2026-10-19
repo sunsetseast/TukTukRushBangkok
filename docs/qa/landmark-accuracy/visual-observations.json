@@ -1,0 +1,560 @@
+{
+  "victory": {
+    "before": {
+      "reviewed": true,
+      "note": "Protected traffic island and obelisk are recognizable; northern commercial fabric remains compressed.",
+      "evidence": [
+        "before/victory-ground.jpg",
+        "before/victory-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Roundabout geometry and road access retained. Station and bus-transfer architecture is still schematic.",
+      "evidence": [
+        "after/victory-ground.jpg",
+        "after/victory-elevated.jpg"
+      ]
+    }
+  },
+  "democracy": {
+    "before": {
+      "reviewed": true,
+      "note": "Monument is recognizable but sits offset from the compressed corridor rather than in a faithful civic traffic-island composition.",
+      "evidence": [
+        "before/democracy-ground.jpg",
+        "before/democracy-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Placement composition remains unresolved; added registry/QA does not count as a reconstruction.",
+      "evidence": [
+        "after/democracy-ground.jpg",
+        "after/democracy-elevated.jpg"
+      ]
+    }
+  },
+  "palace": {
+    "before": {
+      "reviewed": true,
+      "note": "North approach was blocked by commercial infill; the nominal gate was hidden behind its gallery.",
+      "evidence": [
+        "before/palace-ground.jpg",
+        "before/palace-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Principal north approach is clear and the exterior closed public gate is on the boundary. Internal ceremonial geometry and exact gate identity remain incomplete.",
+      "evidence": [
+        "after/palace-ground.jpg",
+        "after/palace-elevated.jpg"
+      ]
+    }
+  },
+  "pho": {
+    "before": {
+      "reviewed": true,
+      "note": "Recognizable walled compound and arrival loop; supporting urban fabric remains generic.",
+      "evidence": [
+        "before/pho-ground.jpg",
+        "before/pho-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Existing compound, reclining-Buddha precinct and arrival remain. No new architectural accuracy claim; peripheral empty surfaces and exact gates need work.",
+      "evidence": [
+        "after/pho-ground.jpg",
+        "after/pho-elevated.jpg"
+      ]
+    }
+  },
+  "arun": {
+    "before": {
+      "reviewed": true,
+      "note": "Prang silhouette and west-bank relationship are recognizable from the river.",
+      "evidence": [
+        "before/arun-ground.jpg",
+        "before/arun-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Existing river-facing composition retained. Compact river terrace, surrounding blocks and exact temple boundaries remain approximate.",
+      "evidence": [
+        "after/arun-ground.jpg",
+        "after/arun-elevated.jpg"
+      ]
+    }
+  },
+  "golden": {
+    "before": {
+      "reviewed": true,
+      "note": "Gold crown is recognizable, but the hill and stairs are schematic.",
+      "evidence": [
+        "before/golden-ground.jpg",
+        "before/golden-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Small low-rise context additions preserve the hill view. The green stacked hill form is still an architectural priority.",
+      "evidence": [
+        "after/golden-ground.jpg",
+        "after/golden-elevated.jpg"
+      ]
+    }
+  },
+  "swing": {
+    "before": {
+      "reviewed": true,
+      "note": "North street approach was hidden by intervening commercial buildings.",
+      "evidence": [
+        "before/swing-ground.jpg",
+        "before/swing-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Public approach now reveals the red swing with Wat Suthat behind it. The surrounding civic plaza and temple proportions remain simplified.",
+      "evidence": [
+        "after/swing-ground.jpg",
+        "after/swing-elevated.jpg"
+      ]
+    }
+  },
+  "mbk": {
+    "before": {
+      "reviewed": true,
+      "note": "Detailed branded entry faced south, away from Rama I.",
+      "evidence": [
+        "before/mbk-ground.jpg",
+        "before/mbk-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Model and collider now rotate together so the main facade faces north. Supporting block scale, full public plaza and hotel massing remain approximate.",
+      "evidence": [
+        "after/mbk-ground.jpg",
+        "after/mbk-elevated.jpg"
+      ]
+    }
+  },
+  "paragon": {
+    "before": {
+      "reviewed": true,
+      "note": "Glass entry is recognizable, but the inherited setback and neighboring blocks distort the full Rama I frontage.",
+      "evidence": [
+        "before/paragon-ground.jpg",
+        "before/paragon-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Central approach and modest apron are protected. The full real public frontage and current gold entrance crown remain a coordinated follow-up.",
+      "evidence": [
+        "after/paragon-ground.jpg",
+        "after/paragon-elevated.jpg"
+      ]
+    }
+  },
+  "central": {
+    "before": {
+      "reviewed": true,
+      "note": "The Centara mass was on the south side because a local-axis comment was reversed; street frontage was cluttered.",
+      "evidence": [
+        "before/central-ground.jpg",
+        "before/central-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Centara moves to the north in both rendered geometry and physical masses. East frontage remains protected; the condensed mall still needs finer current facade and plaza work.",
+      "evidence": [
+        "after/central-ground.jpg",
+        "after/central-elevated.jpg"
+      ]
+    }
+  },
+  "gate": {
+    "before": {
+      "reviewed": true,
+      "note": "Gate occupies the protected Odeon island; Chinatown context is visible.",
+      "evidence": [
+        "before/gate-ground.jpg",
+        "before/gate-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Existing island and street connections retained. Fine signage, proportions and neighboring facades are still miniature interpretations.",
+      "evidence": [
+        "after/gate-ground.jpg",
+        "after/gate-elevated.jpg"
+      ]
+    }
+  },
+  "hua": {
+    "before": {
+      "reviewed": true,
+      "note": "Shophouses occupied the principal frontage; the station used a generic radial placement and narrow arched model.",
+      "evidence": [
+        "before/hua-ground.jpg",
+        "before/hua-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Explicit south-facing plot, broad dark glazed arch, clock, recessed doors, colonnade and balustrade. Frontage is visible in the road and normal driving cameras. Railway grounds and precise proportions remain compressed.",
+      "evidence": [
+        "after/hua-ground.jpg",
+        "after/hua-elevated.jpg"
+      ]
+    }
+  },
+  "icon": {
+    "before": {
+      "reviewed": true,
+      "note": "West-bank river frontage is clear and recognizable; the road and riverside have different entrance roles.",
+      "evidence": [
+        "before/icon-ground.jpg",
+        "before/icon-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River elevation protected while west-side vehicle arrival remains separate. The model and surrounding towers are inherited miniature interpretations.",
+      "evidence": [
+        "after/icon-ground.jpg",
+        "after/icon-elevated.jpg"
+      ]
+    }
+  },
+  "terminal": {
+    "before": {
+      "reviewed": true,
+      "note": "Recognizable mall and Y-profile hotel, but street and station context obscure the retail frontage.",
+      "evidence": [
+        "before/terminal-ground.jpg",
+        "before/terminal-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Principal apron protected. One peripheral ray is still obstructed; the whole Asok/Sukhumvit corner and skywalks remain compressed.",
+      "evidence": [
+        "after/terminal-ground.jpg",
+        "after/terminal-elevated.jpg"
+      ]
+    }
+  },
+  "mahanakhon": {
+    "before": {
+      "reviewed": true,
+      "note": "Pixel tower silhouette is visible above generic dense supporting architecture.",
+      "evidence": [
+        "before/mahanakhon-ground.jpg",
+        "before/mahanakhon-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Small-scale context reviewed. The exact surrounding block, plaza and tower setback are not rebuilt.",
+      "evidence": [
+        "after/mahanakhon-ground.jpg",
+        "after/mahanakhon-elevated.jpg"
+      ]
+    }
+  },
+  "state": {
+    "before": {
+      "reviewed": true,
+      "note": "Golden dome and pale tower are recognizable above a generic supporting block.",
+      "evidence": [
+        "before/state-ground.jpg",
+        "before/state-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Existing Lebua asset is reused once. Full street entrance, base and neighboring parcels remain approximate.",
+      "evidence": [
+        "after/state-ground.jpg",
+        "after/state-elevated.jpg"
+      ]
+    }
+  },
+  "emporium": {
+    "before": {
+      "reviewed": true,
+      "note": "Mall is south of Sukhumvit with a north-facing entrance; immediate shops and BTS infrastructure affect the street view.",
+      "evidence": [
+        "before/emporium-ground.jpg",
+        "before/emporium-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "North entry apron reserved. Main property position, tower and side streets are retained; no exact footprint survey is claimed.",
+      "evidence": [
+        "after/emporium-ground.jpg",
+        "after/emporium-elevated.jpg"
+      ]
+    }
+  },
+  "emquartier": {
+    "before": {
+      "reviewed": true,
+      "note": "Three mall masses establish the district, but the compressed pedestrian frontage is cluttered.",
+      "evidence": [
+        "before/emquartier-ground.jpg",
+        "before/emquartier-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "South approach is reserved. Helix, waterfall, skywalk and current exterior proportions still need refinement.",
+      "evidence": [
+        "after/emquartier-ground.jpg",
+        "after/emquartier-elevated.jpg"
+      ]
+    }
+  },
+  "okura": {
+    "before": {
+      "reviewed": true,
+      "note": "Chamfered glass tower and pool terrace are visible from above; BTS/skywalk context affects street visibility.",
+      "evidence": [
+        "before/okura-ground.jpg",
+        "before/okura-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "No centre or orientation change. Exact Phloen Chit setback and detailed public entrance need review.",
+      "evidence": [
+        "after/okura-ground.jpg",
+        "after/okura-elevated.jpg"
+      ]
+    }
+  },
+  "anantara": {
+    "before": {
+      "reviewed": true,
+      "note": "West-bank low-rise resort is recognizable but surrounded by unfinished gaps.",
+      "evidence": [
+        "before/anantara-ground.jpg",
+        "before/anantara-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Nine bounded low-rise supporting parcels improve local continuity. Gardens, exact road frontage and property architecture remain an approximation.",
+      "evidence": [
+        "after/anantara-ground.jpg",
+        "after/anantara-elevated.jpg"
+      ]
+    }
+  },
+  "oriental": {
+    "before": {
+      "reviewed": true,
+      "note": "River/Authors wings and west-facing frontage are recognizable; broad lawns and supporting masses are simplified.",
+      "evidence": [
+        "before/oriental-ground.jpg",
+        "before/oriental-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River frontage protected and bounded low-rise context added. No hotel centre is relocated and no detailed property survey is claimed.",
+      "evidence": [
+        "after/oriental-ground.jpg",
+        "after/oriental-elevated.jpg"
+      ]
+    }
+  },
+  "peninsula": {
+    "before": {
+      "reviewed": true,
+      "note": "East-facing river facade and W-like tower profile are recognizable.",
+      "evidence": [
+        "before/peninsula-ground.jpg",
+        "before/peninsula-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River terrace reservation added. Driveway, tower proportions and full gardens remain inherited approximations.",
+      "evidence": [
+        "after/peninsula-ground.jpg",
+        "after/peninsula-elevated.jpg"
+      ]
+    }
+  },
+  "hilton": {
+    "before": {
+      "reviewed": true,
+      "note": "West-bank tower and rooftop disc establish the hotel; neighboring blocks are schematic.",
+      "evidence": [
+        "before/hilton-ground.jpg",
+        "before/hilton-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River facade protected with limited adjacent infill. Precise ICONSIAM/hotel/road boundaries remain to be researched.",
+      "evidence": [
+        "after/hilton-ground.jpg",
+        "after/hilton-elevated.jpg"
+      ]
+    }
+  },
+  "shangri": {
+    "before": {
+      "reviewed": true,
+      "note": "Two wings, west riverfront and southern transit relationship are coherent at miniature scale.",
+      "evidence": [
+        "before/shangri-ground.jpg",
+        "before/shangri-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River frontage protected with low-rise context. Street driveway, river terrace depth and wing proportions remain approximate.",
+      "evidence": [
+        "after/shangri-ground.jpg",
+        "after/shangri-elevated.jpg"
+      ]
+    }
+  },
+  "four-seasons": {
+    "before": {
+      "reviewed": true,
+      "note": "Low courtyard hotel is recognizable but its long property and immediate street context are simplified.",
+      "evidence": [
+        "before/four-seasons-ground.jpg",
+        "before/four-seasons-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River court reservation added; existing east-side arrival retained. Exact cascade proportions and neighboring property lines need a dedicated study.",
+      "evidence": [
+        "after/four-seasons-ground.jpg",
+        "after/four-seasons-elevated.jpg"
+      ]
+    }
+  },
+  "capella": {
+    "before": {
+      "reviewed": true,
+      "note": "River villas and low rectangular wing distinguish the property; garden and road relationships are compressed.",
+      "evidence": [
+        "before/capella-ground.jpg",
+        "before/capella-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River-facing reservation and a little supporting context added. Exact hotel footprint and street entrance are not newly reconstructed.",
+      "evidence": [
+        "after/capella-ground.jpg",
+        "after/capella-elevated.jpg"
+      ]
+    }
+  },
+  "rosewood": {
+    "before": {
+      "reviewed": true,
+      "note": "Wai-inspired twin forms are recognizable from above; the compressed street relationship remains unresolved.",
+      "evidence": [
+        "before/rosewood-ground.jpg",
+        "before/rosewood-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "No relocation is claimed. Position relative to Phloen Chit and exact entrance orientation need individual research.",
+      "evidence": [
+        "after/rosewood-ground.jpg",
+        "after/rosewood-elevated.jpg"
+      ]
+    }
+  },
+  "embassy": {
+    "before": {
+      "reviewed": true,
+      "note": "Curving retail/hotel silhouette is identifiable, but surrounding parcels and street entrance are schematic.",
+      "evidence": [
+        "before/embassy-ground.jpg",
+        "before/embassy-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "No relocation is claimed. Full podium frontage, property relationship and current pedestrian approach remain incomplete.",
+      "evidence": [
+        "after/embassy-ground.jpg",
+        "after/embassy-elevated.jpg"
+      ]
+    }
+  },
+  "river-city": {
+    "before": {
+      "reviewed": true,
+      "note": "West-facing arts-mall mass and river pier are present; supporting streets and terrace are simplified.",
+      "evidence": [
+        "before/river-city-ground.jpg",
+        "before/river-city-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "River facade protected with nearby low-rise context. Exact facade shape, entrance and Si Phraya parcel remain a follow-up.",
+      "evidence": [
+        "after/river-city-ground.jpg",
+        "after/river-city-elevated.jpg"
+      ]
+    }
+  },
+  "siam-center": {
+    "before": {
+      "reviewed": true,
+      "note": "Distinct Discovery and Center masses face south, but street frontage and BTS infrastructure partially obscure them.",
+      "evidence": [
+        "before/siam-center-ground.jpg",
+        "before/siam-center-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Principal approach is reserved; Nendo-inspired frame facade remains recognizable. Full skywalk and neighboring parcel composition is incomplete.",
+      "evidence": [
+        "after/siam-center-ground.jpg",
+        "after/siam-center-elevated.jpg"
+      ]
+    }
+  },
+  "yaowarat": {
+    "before": {
+      "reviewed": true,
+      "note": "Dense colorful signs and shophouse rows establish Chinatown; individual parcels and road curvature remain condensed.",
+      "evidence": [
+        "before/yaowarat-ground.jpg",
+        "before/yaowarat-elevated.jpg"
+      ]
+    },
+    "after": {
+      "reviewed": true,
+      "note": "Road-snapped street view and elevated audit retained. This PR does not rebuild the Yaowarat alignment or fill every rear gap.",
+      "evidence": [
+        "after/yaowarat-ground.jpg",
+        "after/yaowarat-elevated.jpg"
+      ]
+    }
+  }
+}

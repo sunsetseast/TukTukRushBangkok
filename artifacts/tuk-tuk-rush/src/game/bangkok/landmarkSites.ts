@@ -1,3 +1,4 @@
+import { buildHuaLamphong } from './huaLamphong';
 import * as T from 'three';
 import type { Landmark } from '../types';
 import { LandmarkBuilder } from './landmarkBuilder';
@@ -138,6 +139,17 @@ function palace(b: LandmarkBuilder, detail: boolean) {
   for (const z of [-62, 62]) gallery(b, 0, z, 125, false, detail);
   gallery(b, 9, 6, 99, false, detail);
   gallery(b, -40, -27, 63, true, detail);
+  // North public gate is on the outer boundary, rather than hidden behind
+  // the closed gallery. The door remains closed to vehicles; visitor driving
+  // uses the separate perimeter drop-off. Original compressed gate geometry.
+  for (const x of [-4, 4]) {
+    b.box(x, 3.6, -66.7, 1.2, 7.2, 2, IVORY);
+    b.box(x, 7.4, -66.7, 1.8, .5, 2.5, '#e5d5b9');
+  }
+  b.box(0, 2.9, -67.05, 6.8, 5.8, .25, '#654f43');
+  b.box(0, 6.3, -66.7, 9.5, 1, 2.6, IVORY);
+  thaiRoof(b, 0, 7, -66.7, 11, 4, 2.1, '#e6d9bf', detail);
+  bell(b, 0, 8.2, -66.7, 1.1, 4.8);
   // Upper terrace: bell chedi, square Phra Mondop and eastern Royal Pantheon.
   b.box(-3, 1.2, -45, 75, 1.7, 25, '#c9b386');
   bell(b, -27, 2, -45, 9, 37);
@@ -701,71 +713,6 @@ function democracy(b: LandmarkBuilder, detail: boolean) {
   b.sculpt(new T.CylinderGeometry(2, 1.1, 0.7, 16), 0, 6.1, 0, GOLD, 'gilded');
   b.box(0, 6.8, 0, 2.7, 0.55, 1.8, '#f1cb70');
 }
-function hua(b: LandmarkBuilder, detail: boolean) {
-  b.box(0, 0.2, 0, 71, 0.4, 64, '#ccba9d');
-  b.box(0, 4, -5, 67, 8, 47, '#eddbaf');
-  for (const x of [-26, 26]) {
-    b.box(x, 7, 23, 15, 13, 10, '#f0dfb9');
-    b.box(x, 14, 23, 16, 0.7, 11, '#c1a477');
-  }
-  const front = new T.Shape();
-  front.moveTo(-18, 0);
-  front.lineTo(-18, 3);
-  front.absarc(0, 3, 18, Math.PI, 0, true);
-  front.lineTo(18, 0);
-  front.closePath();
-  b.sculpt(new T.ExtrudeGeometry(front, { depth: 2.5, bevelEnabled: false }), 0, 5, 25, '#dfc391');
-  b.sculpt(new T.CircleGeometry(15.8, 40, 0, Math.PI), 0, 8, 27.6, '#689fa3', 'glass');
-  for (const r of [6, 10.8, 16])
-    b.sculpt(new T.TorusGeometry(r, 0.15, 5, 40, Math.PI), 0, 8, 27.9, IVORY);
-  for (let i = 0; i <= 12; i++) {
-    const a = (i * Math.PI) / 12;
-    b.sculpt(
-      ribbonPath(
-        [
-          [0, 8, 28],
-          [Math.cos(a) * 15.8, 8 + Math.sin(a) * 15.8, 28],
-        ],
-        0.1,
-        4,
-        1,
-      ),
-      0,
-      0,
-      0,
-      IVORY,
-    );
-  }
-  for (let x = -30; x <= 30; x += 5) {
-    b.box(x, 4, 28, 3.3, 5, 0.35, '#47787c');
-    b.box(x, 7.1, 28.3, 3.8, 0.4, 0.65, '#c4a976');
-    b.box(x + 2.1, 6, 28.2, 0.55, 10, 0.5, IVORY);
-  }
-  b.sculpt(new T.CircleGeometry(1.8, 24), 0, 17.5, 28.3, '#fff3cc');
-  b.sculpt(new T.TorusGeometry(1.8, 0.13, 4, 24), 0, 17.5, 28.4, GOLD);
-  for (let i = 0; i < 12; i++) {
-    const a = (i * Math.PI) / 6;
-    b.box(Math.sin(a) * 1.4, 17.5 + Math.cos(a) * 1.4, 28.5, 0.12, 0.2, 0.1, '#66543a');
-  }
-  b.box(0, 18, 28.6, 0.12, 1.3, 0.1, '#66543a');
-  b.box(0.55, 17.5, 28.6, 1.1, 0.12, 0.1, '#66543a');
-  // The train shed reads as a barrel vault behind the historic entrance.
-  b.sculpt(
-    new T.CylinderGeometry(16, 16, 44, 24, 1, true, -Math.PI / 2, Math.PI).rotateX(-Math.PI / 2),
-    0,
-    8,
-    1,
-    '#9fae9f',
-    'ceramic',
-  );
-  for (let z = -20; z < 23; z += 7)
-    b.sculpt(new T.TorusGeometry(16.1, 0.16, 4, 24, Math.PI), 0, 8, z, '#d7cfb4');
-  b.box(0, 1, 31, 69, 1, 5, '#ded0b3');
-  for (const x of [-25, 25]) {
-    b.box(x, 0.7, 34, 6, 0.6, 2, '#c8b18c');
-    if (detail) tree(b, x, 34, 4, 1);
-  }
-}
 const builders: Record<string, (b: LandmarkBuilder, detail: boolean) => void> = {
   palace,
   gate,
@@ -775,7 +722,7 @@ const builders: Record<string, (b: LandmarkBuilder, detail: boolean) => void> = 
   khaosan,
   swing,
   democracy,
-  hua,
+  hua: buildHuaLamphong,
 };
 export function reviewedLandmark(l: Landmark) {
   const make = builders[l.id!];

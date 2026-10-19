@@ -13,6 +13,7 @@ import type {
 import { distanceToSegment, orientedFootprintsOverlap } from "../world";
 import { blockedByRiver, riverDistance } from "./world";
 import { arrivalFurniturePoint } from "./arrivalDecoration";
+import { inLandmarkParcel } from './landmarkParcels';
 
 const sites = [
   [
@@ -86,7 +87,7 @@ export function destinationReservation(a: DestinationAccess): Obstacle {
   return { ...a.origin, yaw: a.yaw, w: 60, d: 56, height: 0, color: "#eee" };
 }
 export function inDestinationGrounds(d: District, o: Obstacle) {
-  if (urbanCourtReserved(d,o) || inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
+  if (inLandmarkParcel(d,o) || urbanCourtReserved(d,o) || inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
   return (
     d.destinations?.some((a) => {
       if (orientedFootprintsOverlap(o, destinationReservation(a), 2))
@@ -470,6 +471,9 @@ export function detailDestinationCollisions(d: District) {
         add(side * edge, 0, 1, edge * 2 + 1, 3);
         add(0, side * edge, edge * 2 + 1, 1, 3);
       }
+    if (l.id === "palace") {
+      add(-4,-66.7,1.2,2,7.7);add(4,-66.7,1.2,2,7.7);
+    }
     const furniture = (
       p: Point,
       w: number,

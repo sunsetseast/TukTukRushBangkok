@@ -1,0 +1,5886 @@
+[
+  {
+    "id": "chatuchak",
+    "name": "Chatuchak Market",
+    "category": "market",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1032,
+      "z": -2180
+    },
+    "map": {
+      "x": 758,
+      "y": 55
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1032,
+        "z": -2180,
+        "w": 30,
+        "d": 30,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": 1080,
+      "z": -2140,
+      "nodeId": "bkk:166"
+    },
+    "protectedParcels": [
+      "parcel:chatuchak:structure:0"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "victory",
+    "name": "Victory Monument",
+    "category": "monument",
+    "district": "Ratchathewi",
+    "geographicReference": {
+      "lat": 13.76493,
+      "lon": 100.53829
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 868,
+      "z": -1480
+    },
+    "map": {
+      "x": 717,
+      "y": 230
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 64,
+        "d": 50,
+        "yaw": 0,
+        "height": 1.25
+      },
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 50,
+        "d": 64,
+        "yaw": 0,
+        "height": 1.25
+      },
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 35,
+        "d": 73,
+        "yaw": 0,
+        "height": 1.25
+      },
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 73,
+        "d": 35,
+        "yaw": 0,
+        "height": 1.25
+      },
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 23,
+        "d": 23,
+        "yaw": 0,
+        "height": 12
+      },
+      {
+        "x": 868,
+        "z": -1480,
+        "w": 7,
+        "d": 7,
+        "yaw": 0,
+        "height": 50
+      }
+    ],
+    "height": 50,
+    "vehicleAccess": {
+      "x": 776.421052631579,
+      "z": -1480,
+      "nodeId": "civic:7764211:-14800000"
+    },
+    "protectedParcels": [
+      "parcel:victory:structure:1",
+      "parcel:victory:structure:2",
+      "parcel:victory:structure:3",
+      "parcel:victory:structure:4",
+      "parcel:victory:structure:5",
+      "parcel:victory:structure:6"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "victory-monument-bts",
+      "phaya-thai"
+    ],
+    "roadRelationships": [
+      "Phaya Thai",
+      "Phahonyothin",
+      "Ratchawithi"
+    ],
+    "references": [
+      "https://revolutionaryobjects.org/en/object/victory-monument",
+      "https://www.openstreetmap.org/way/158185227"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Victory is now east of Siam. The southern Phaya Thai approach bends west to retain the compressed street graph; distances remain shortened.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "khaosan",
+    "name": "Khao San Road",
+    "category": "market",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -867.7163859753387,
+      "z": -1516.5194970290472
+    },
+    "map": {
+      "x": 283.07090350616534,
+      "y": 220.8701257427382
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -867.7163859753387,
+        "z": -1516.5194970290472,
+        "w": 30,
+        "d": 30,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": -840,
+      "z": -1537.142857142857,
+      "nodeId": "bkk:1157"
+    },
+    "protectedParcels": [
+      "parcel:khaosan:structure:7"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "democracy",
+    "name": "Democracy Monument",
+    "category": "monument",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -248.5194970290473,
+      "z": -1355.7163859753387
+    },
+    "map": {
+      "x": 437.8701257427382,
+      "y": 261.07090350616534
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -248.5194970290473,
+        "z": -1355.7163859753387,
+        "w": 30,
+        "d": 30,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": -260,
+      "z": -1320,
+      "nodeId": "bkk:44"
+    },
+    "protectedParcels": [
+      "parcel:democracy:structure:8"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "sanam",
+    "name": "Sanam Luang",
+    "category": "park",
+    "district": "Phra Nakhon",
+    "geographicReference": {
+      "lat": 13.75516,
+      "lon": 100.49307
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -764,
+      "z": -1260
+    },
+    "map": {
+      "x": 309,
+      "y": 285
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": -786.6666666666666,
+      "z": -1060,
+      "nodeId": "bkk:338"
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "palace",
+      "khaosan"
+    ],
+    "roadRelationships": [
+      "Ratchadamnoen Nai",
+      "Na Phra That",
+      "Na Phra Lan"
+    ],
+    "references": [
+      "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/",
+      "https://www.openstreetmap.org/way/23630232"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Compressed field aspect and perimeter route; temporary ceremonial installations omitted.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "palace",
+    "name": "Grand Palace / Wat Phra Kaew",
+    "category": "palace",
+    "district": "Phra Nakhon",
+    "geographicReference": {
+      "lat": 13.75,
+      "lon": 100.4913
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -820,
+      "z": -940
+    },
+    "map": {
+      "x": 295,
+      "y": 365
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -865,
+        "z": -925,
+        "w": 30,
+        "d": 57,
+        "yaw": 0,
+        "height": 28
+      },
+      {
+        "x": -828,
+        "z": -925,
+        "w": 30,
+        "d": 57,
+        "yaw": 0,
+        "height": 28
+      },
+      {
+        "x": -790,
+        "z": -925,
+        "w": 30,
+        "d": 57,
+        "yaw": 0,
+        "height": 28
+      },
+      {
+        "x": -864,
+        "z": -982,
+        "w": 27,
+        "d": 27,
+        "yaw": 0,
+        "height": 42
+      },
+      {
+        "x": -827,
+        "z": -980,
+        "w": 21,
+        "d": 21,
+        "yaw": 0,
+        "height": 35
+      },
+      {
+        "x": -787,
+        "z": -977,
+        "w": 40,
+        "d": 32,
+        "yaw": 0,
+        "height": 45
+      },
+      {
+        "x": -886,
+        "z": -940,
+        "w": 1,
+        "d": 133,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -820,
+        "z": -1006,
+        "w": 133,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -754,
+        "z": -940,
+        "w": 1,
+        "d": 133,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -820,
+        "z": -874,
+        "w": 133,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -824,
+        "z": -1006.7,
+        "w": 1.2,
+        "d": 2,
+        "yaw": 0,
+        "height": 7.7
+      },
+      {
+        "x": -816,
+        "z": -1006.7,
+        "w": 1.2,
+        "d": 2,
+        "yaw": 0,
+        "height": 7.7
+      }
+    ],
+    "height": 45,
+    "facade": {
+      "x": -820,
+      "z": -1007.1,
+      "y": 6,
+      "yaw": 3.141592653589793
+    },
+    "mainEntrance": {
+      "x": -820,
+      "z": -1007.1
+    },
+    "vehicleAccess": {
+      "x": -912.8129530860235,
+      "z": -1002.015632574287,
+      "nodeId": "arrival:palace:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -820,
+      "z": -1007.1
+    },
+    "protectedParcels": [
+      "parcel:palace:structure:9",
+      "parcel:palace:forecourt:10",
+      "parcel:palace:entrance:11"
+    ],
+    "visibilityCorridors": [
+      "view:palace:0",
+      "view:palace:1",
+      "view:palace:2"
+    ],
+    "neighbors": [
+      "sanam",
+      "pho"
+    ],
+    "roadRelationships": [
+      "Na Phra Lan",
+      "Sanam Chai",
+      "Maha Rat"
+    ],
+    "references": [
+      "https://www.royalgrandpalace.th/en/home"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "North visitor gate toward Na Phra Lan, separate from the west-side vehicle stop.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "pho",
+    "name": "Wat Pho",
+    "category": "temple",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -840,
+      "z": -628
+    },
+    "map": {
+      "x": 290,
+      "y": 443
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -840,
+        "z": -626,
+        "w": 48,
+        "d": 23,
+        "yaw": 0,
+        "height": 20
+      },
+      {
+        "x": -858,
+        "z": -646,
+        "w": 8,
+        "d": 8,
+        "yaw": 0,
+        "height": 20
+      },
+      {
+        "x": -846,
+        "z": -646,
+        "w": 8,
+        "d": 8,
+        "yaw": 0,
+        "height": 20
+      },
+      {
+        "x": -834,
+        "z": -646,
+        "w": 8,
+        "d": 8,
+        "yaw": 0,
+        "height": 20
+      },
+      {
+        "x": -822,
+        "z": -646,
+        "w": 8,
+        "d": 8,
+        "yaw": 0,
+        "height": 20
+      },
+      {
+        "x": -812,
+        "z": -585,
+        "w": 27,
+        "d": 32,
+        "yaw": 0,
+        "height": 27
+      },
+      {
+        "x": -855,
+        "z": -585,
+        "w": 24,
+        "d": 24,
+        "yaw": 0,
+        "height": 22
+      },
+      {
+        "x": -782,
+        "z": -603,
+        "w": 5,
+        "d": 70,
+        "yaw": 0,
+        "height": 7
+      },
+      {
+        "x": -881,
+        "z": -600,
+        "w": 5,
+        "d": 64,
+        "yaw": 0,
+        "height": 7
+      },
+      {
+        "x": -831,
+        "z": -565,
+        "w": 93,
+        "d": 5,
+        "yaw": 0,
+        "height": 7
+      },
+      {
+        "x": -890,
+        "z": -610,
+        "w": 0.8,
+        "d": 100,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -775,
+        "z": -610,
+        "w": 0.8,
+        "d": 100,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -832.5,
+        "z": -660,
+        "w": 115,
+        "d": 0.8,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -864,
+        "z": -560,
+        "w": 52,
+        "d": 0.8,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -800,
+        "z": -560,
+        "w": 50,
+        "d": 0.8,
+        "yaw": 0,
+        "height": 3
+      }
+    ],
+    "height": 27,
+    "mainEntrance": {
+      "x": -840,
+      "z": -540,
+      "id": "arrival:pho:loop5",
+      "name": "Wat Pho \u00b7 visitor arrival"
+    },
+    "vehicleAccess": {
+      "x": -840,
+      "z": -540,
+      "nodeId": "arrival:pho:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -840,
+      "z": -540,
+      "id": "arrival:pho:loop5",
+      "name": "Wat Pho \u00b7 visitor arrival"
+    },
+    "protectedParcels": [
+      "parcel:pho:structure:12"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "arun",
+    "name": "Wat Arun",
+    "category": "temple",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1395.3553390593274,
+      "z": -504.6446609406726
+    },
+    "map": {
+      "x": 151.16116523516814,
+      "y": 473.83883476483186
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -1395.3553390593274,
+        "z": -504.6446609406726,
+        "w": 20,
+        "d": 20,
+        "yaw": 0,
+        "height": 56
+      },
+      {
+        "x": -1411.3553390593274,
+        "z": -520.6446609406726,
+        "w": 9,
+        "d": 9,
+        "yaw": 0,
+        "height": 23
+      },
+      {
+        "x": -1411.3553390593274,
+        "z": -488.6446609406726,
+        "w": 9,
+        "d": 9,
+        "yaw": 0,
+        "height": 23
+      },
+      {
+        "x": -1379.3553390593274,
+        "z": -520.6446609406726,
+        "w": 9,
+        "d": 9,
+        "yaw": 0,
+        "height": 23
+      },
+      {
+        "x": -1379.3553390593274,
+        "z": -488.6446609406726,
+        "w": 9,
+        "d": 9,
+        "yaw": 0,
+        "height": 23
+      },
+      {
+        "x": -1419.3553390593274,
+        "z": -504.6446609406726,
+        "w": 1,
+        "d": 49,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -1395.3553390593274,
+        "z": -528.6446609406726,
+        "w": 49,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -1371.3553390593274,
+        "z": -504.6446609406726,
+        "w": 1,
+        "d": 49,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -1395.3553390593274,
+        "z": -480.6446609406726,
+        "w": 49,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      }
+    ],
+    "height": 56,
+    "mainEntrance": {
+      "x": -1486.1243830389826,
+      "z": -515.1394926838095
+    },
+    "vehicleAccess": {
+      "x": -1441.8415111675404,
+      "z": -513.8913354851355,
+      "nodeId": "arrival:arun:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -1486.1243830389826,
+      "z": -515.1394926838095
+    },
+    "protectedParcels": [
+      "parcel:arun:structure:13"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "golden",
+    "name": "Golden Mount",
+    "category": "temple",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -90,
+      "z": -992
+    },
+    "map": {
+      "x": 477.5,
+      "y": 352
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -90,
+        "z": -992,
+        "w": 50,
+        "d": 50,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": -140,
+      "z": -960,
+      "nodeId": "bkk:377"
+    },
+    "protectedParcels": [
+      "parcel:golden:structure:14"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "swing",
+    "name": "Giant Swing",
+    "category": "monument",
+    "district": "Phra Nakhon",
+    "geographicReference": {
+      "lat": 13.75181,
+      "lon": 100.50128
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -360,
+      "z": -692
+    },
+    "map": {
+      "x": 410,
+      "y": 427
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -365.5,
+        "z": -735,
+        "w": 1.4,
+        "d": 2.4,
+        "yaw": 0,
+        "height": 21.2
+      },
+      {
+        "x": -354.5,
+        "z": -735,
+        "w": 1.4,
+        "d": 2.4,
+        "yaw": 0,
+        "height": 21.2
+      },
+      {
+        "x": -360,
+        "z": -682,
+        "w": 36,
+        "d": 32,
+        "yaw": 0,
+        "height": 22
+      },
+      {
+        "x": -360,
+        "z": -648,
+        "w": 46,
+        "d": 17,
+        "yaw": 0,
+        "height": 16
+      },
+      {
+        "x": -392,
+        "z": -673,
+        "w": 6,
+        "d": 72,
+        "yaw": 0,
+        "height": 6
+      },
+      {
+        "x": -328,
+        "z": -673,
+        "w": 6,
+        "d": 72,
+        "yaw": 0,
+        "height": 6
+      },
+      {
+        "x": -360,
+        "z": -637,
+        "w": 58,
+        "d": 5,
+        "yaw": 0,
+        "height": 6
+      }
+    ],
+    "height": 22,
+    "facade": {
+      "x": -360,
+      "z": -735,
+      "y": 15,
+      "yaw": 3.141592653589793
+    },
+    "mainEntrance": {
+      "x": -360,
+      "z": -735
+    },
+    "vehicleAccess": {
+      "x": -380,
+      "z": -780,
+      "nodeId": "bkk:366"
+    },
+    "pedestrianAccess": {
+      "x": -360,
+      "z": -735
+    },
+    "protectedParcels": [
+      "parcel:swing:structure:15",
+      "parcel:swing:structure:16",
+      "parcel:swing:structure:17",
+      "parcel:swing:structure:18",
+      "parcel:swing:structure:19",
+      "parcel:swing:structure:20",
+      "parcel:swing:structure:21",
+      "parcel:swing:structure:22",
+      "parcel:swing:forecourt:23",
+      "parcel:swing:entrance:24"
+    ],
+    "visibilityCorridors": [
+      "view:swing:0",
+      "view:swing:1",
+      "view:swing:2"
+    ],
+    "neighbors": [
+      "wat-suthat",
+      "palace"
+    ],
+    "roadRelationships": [
+      "Bamrung Mueang",
+      "Dinso"
+    ],
+    "references": [
+      "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
+      "https://www.openstreetmap.org/way/178353988"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "North public approach to the Giant Swing plaza, with Wat Suthat behind the swing.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "flowers",
+    "name": "Pak Khlong Talat",
+    "category": "market",
+    "district": "Phra Nakhon",
+    "geographicReference": {
+      "lat": 13.7414,
+      "lon": 100.4966
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -728,
+      "z": -260
+    },
+    "map": {
+      "x": 318,
+      "y": 535
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -720,
+        "z": -288,
+        "w": 34,
+        "d": 42,
+        "yaw": -1.5707963267948966,
+        "height": 9
+      },
+      {
+        "x": -720,
+        "z": -232,
+        "w": 34,
+        "d": 42,
+        "yaw": -1.5707963267948966,
+        "height": 9
+      },
+      {
+        "x": -755,
+        "z": -260,
+        "w": 94,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 13
+      }
+    ],
+    "height": 13,
+    "mainEntrance": {
+      "x": -677.8947368421052,
+      "z": -300,
+      "id": "bkk:283"
+    },
+    "vehicleAccess": {
+      "x": -677.8947368421052,
+      "z": -300,
+      "nodeId": "bkk:283"
+    },
+    "pedestrianAccess": {
+      "x": -677.8947368421052,
+      "z": -300,
+      "id": "bkk:283"
+    },
+    "protectedParcels": [
+      "parcel:flowers:structure:25",
+      "parcel:flowers:structure:26",
+      "parcel:flowers:structure:27",
+      "parcel:flowers:structure:28"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "pho",
+      "memorial-bridge",
+      "yodpiman"
+    ],
+    "roadRelationships": [
+      "Chak Phet",
+      "Atsadang"
+    ],
+    "references": [
+      "https://www.tourismthailand.org/Attraction/pak-khlong-talat-night-market",
+      "https://webportal.bangkok.go.th/upload/user/00000086/Innovation/PAK%20KLONG%20MARKET.pdf"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Wholesaler district represented by selected blocks rather than every market building.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "mbk",
+    "name": "MBK",
+    "category": "mall",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.744512,
+      "lon": 100.529857
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 632,
+      "z": -440
+    },
+    "map": {
+      "x": 658,
+      "y": 490
+    },
+    "rotation": 3.141592653589793,
+    "footprints": [
+      {
+        "x": 632,
+        "z": -440,
+        "w": 120,
+        "d": 65,
+        "yaw": 3.141592653589793,
+        "height": 35
+      }
+    ],
+    "height": 35,
+    "facade": {
+      "x": 632,
+      "z": -470,
+      "y": 14,
+      "yaw": 3.141592653589793
+    },
+    "mainEntrance": {
+      "x": 632,
+      "z": -470
+    },
+    "vehicleAccess": {
+      "x": 555.2380952380952,
+      "z": -446.6666666666667,
+      "nodeId": "bkk:760"
+    },
+    "pedestrianAccess": {
+      "x": 632,
+      "z": -470
+    },
+    "protectedParcels": [
+      "parcel:mbk:structure:29",
+      "parcel:mbk:forecourt:30",
+      "parcel:mbk:entrance:31"
+    ],
+    "visibilityCorridors": [
+      "view:mbk:0",
+      "view:mbk:1",
+      "view:mbk:2"
+    ],
+    "neighbors": [
+      "national-stadium",
+      "siam-discovery",
+      "siam-square"
+    ],
+    "roadRelationships": [
+      "Rama I",
+      "Phaya Thai"
+    ],
+    "references": [
+      "https://mbk-center.co.th/en/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "North Rama I frontage; south and east street elevations retained.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "paragon",
+    "name": "Siam Paragon",
+    "category": "mall",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.746801,
+      "lon": 100.534938
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 920,
+      "z": -740
+    },
+    "map": {
+      "x": 730,
+      "y": 415
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 920,
+        "z": -750,
+        "w": 128,
+        "d": 65,
+        "yaw": 0,
+        "height": 33
+      },
+      {
+        "x": 920,
+        "z": -719,
+        "w": 54,
+        "d": 26,
+        "yaw": 0,
+        "height": 29
+      }
+    ],
+    "height": 33,
+    "facade": {
+      "x": 920,
+      "z": -706,
+      "y": 15,
+      "yaw": 0
+    },
+    "mainEntrance": {
+      "x": 920,
+      "z": -706
+    },
+    "vehicleAccess": {
+      "x": 901.577247458461,
+      "z": -647.3825685942595,
+      "nodeId": "arrival:paragon:loop5"
+    },
+    "pedestrianAccess": {
+      "x": 920,
+      "z": -706
+    },
+    "protectedParcels": [
+      "parcel:paragon:structure:32",
+      "parcel:paragon:forecourt:33",
+      "parcel:paragon:entrance:34"
+    ],
+    "visibilityCorridors": [
+      "view:paragon:0",
+      "view:paragon:1",
+      "view:paragon:2"
+    ],
+    "neighbors": [
+      "siam-center",
+      "siam-bts",
+      "central"
+    ],
+    "roadRelationships": [
+      "Rama I"
+    ],
+    "references": [
+      "https://www.siamparagon.co.th/about"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "South retail approach and Siam pedestrian frontage.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "central",
+    "name": "CentralWorld / Erawan",
+    "category": "mall",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.7469,
+      "lon": 100.5397
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1144,
+      "z": -680.5194970290472
+    },
+    "map": {
+      "x": 786,
+      "y": 429.8701257427382
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": 1133,
+        "z": -637.5194970290472,
+        "w": 49,
+        "d": 64,
+        "yaw": 1.5707963267948966,
+        "height": 36
+      },
+      {
+        "x": 1131,
+        "z": -689.5194970290472,
+        "w": 55,
+        "d": 62,
+        "yaw": 1.5707963267948966,
+        "height": 35
+      },
+      {
+        "x": 1130,
+        "z": -732.5194970290472,
+        "w": 34,
+        "d": 60,
+        "yaw": 1.5707963267948966,
+        "height": 45
+      },
+      {
+        "x": 1119,
+        "z": -730.5194970290472,
+        "w": 31,
+        "d": 34,
+        "yaw": 1.5707963267948966,
+        "height": 136
+      },
+      {
+        "x": 1179,
+        "z": -723.5194970290472,
+        "w": 13,
+        "d": 13,
+        "yaw": 1.5707963267948966,
+        "height": 8
+      }
+    ],
+    "height": 136,
+    "facade": {
+      "x": 1166,
+      "z": -680.5194970290472,
+      "y": 16,
+      "yaw": 1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": 1166,
+      "z": -680.5194970290472
+    },
+    "vehicleAccess": {
+      "x": 1207.94212769947,
+      "z": -776.2156538211661,
+      "nodeId": "arrival:central:loop5"
+    },
+    "pedestrianAccess": {
+      "x": 1166,
+      "z": -680.5194970290472
+    },
+    "protectedParcels": [
+      "parcel:central:structure:35",
+      "parcel:central:forecourt:36",
+      "parcel:central:entrance:37"
+    ],
+    "visibilityCorridors": [
+      "view:central:0",
+      "view:central:1",
+      "view:central:2"
+    ],
+    "neighbors": [
+      "paragon",
+      "erawan-hotel",
+      "embassy"
+    ],
+    "roadRelationships": [
+      "Ratchadamri",
+      "Rama I"
+    ],
+    "references": [
+      "https://www.centralworld.co.th/en"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West-of-Ratchadamri site compressed to retain junction driving clearance; full north hotel/office complex omitted.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "gate",
+    "name": "Chinatown Gate",
+    "category": "gate",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 140,
+      "z": -40
+    },
+    "map": {
+      "x": 535,
+      "y": 590
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 140,
+        "z": -40,
+        "w": 28,
+        "d": 28,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": 149.88854381999832,
+      "z": -9.566191478555087,
+      "nodeId": "bkk:1269"
+    },
+    "protectedParcels": [
+      "parcel:gate:structure:38"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "traimit",
+    "name": "Wat Traimit",
+    "category": "temple",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 298.19397662556435,
+      "z": -84.86582838174552
+    },
+    "map": {
+      "x": 574.5484941563911,
+      "y": 578.7835429045637
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 298.19397662556435,
+        "z": -84.86582838174552,
+        "w": 48,
+        "d": 48,
+        "yaw": 0,
+        "height": 30
+      },
+      {
+        "x": 274.19397662556435,
+        "z": -84.86582838174552,
+        "w": 1,
+        "d": 49,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": 298.19397662556435,
+        "z": -108.86582838174552,
+        "w": 49,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": 322.19397662556435,
+        "z": -84.86582838174552,
+        "w": 1,
+        "d": 49,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": 298.19397662556435,
+        "z": -60.865828381745516,
+        "w": 49,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      }
+    ],
+    "height": 30,
+    "mainEntrance": {
+      "x": 372.18256351180474,
+      "z": -163.99832688565516
+    },
+    "vehicleAccess": {
+      "x": 341.9924667079649,
+      "z": -114.1310438279258,
+      "nodeId": "arrival:traimit:loop5"
+    },
+    "pedestrianAccess": {
+      "x": 372.18256351180474,
+      "z": -163.99832688565516
+    },
+    "protectedParcels": [
+      "parcel:traimit:structure:39"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "hua",
+    "name": "Hua Lamphong",
+    "category": "station",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.73922,
+      "lon": 100.5167605
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 400,
+      "z": -288
+    },
+    "map": {
+      "x": 600,
+      "y": 528
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 400,
+        "z": -292,
+        "w": 58,
+        "d": 66,
+        "yaw": 0,
+        "height": 27
+      },
+      {
+        "x": 365,
+        "z": -292,
+        "w": 13,
+        "d": 67,
+        "yaw": 0,
+        "height": 12.5
+      },
+      {
+        "x": 435,
+        "z": -292,
+        "w": 13,
+        "d": 67,
+        "yaw": 0,
+        "height": 12.5
+      }
+    ],
+    "height": 27,
+    "facade": {
+      "x": 400,
+      "z": -258,
+      "y": 19,
+      "yaw": 0
+    },
+    "mainEntrance": {
+      "x": 400,
+      "z": -255
+    },
+    "vehicleAccess": {
+      "x": 400,
+      "z": -200,
+      "nodeId": "bkk:558"
+    },
+    "pedestrianAccess": {
+      "x": 400,
+      "z": -255
+    },
+    "protectedParcels": [
+      "parcel:hua:structure:40",
+      "parcel:hua:structure:41",
+      "parcel:hua:structure:42",
+      "parcel:hua:forecourt:43",
+      "parcel:hua:entrance:44"
+    ],
+    "visibilityCorridors": [
+      "view:hua:0",
+      "view:hua:1",
+      "view:hua:2",
+      "view:hua:3"
+    ],
+    "neighbors": [],
+    "roadRelationships": [
+      "Rama IV south approach",
+      "Historic mainline station; BL28 underground",
+      "Train shed extends behind north facade"
+    ],
+    "references": [
+      "https://www.thailandtravel.or.jp/hua-lamphong-station/",
+      "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28",
+      "https://commons.wikimedia.org/wiki/File:Gare_Hua_Lamphong.jpg"
+    ],
+    "confidence": "photo-and-operator-checked",
+    "compression": "South-facing model; 84\u00d780 game-metre parcel shifted 18 game metres north of PR29 plot. Diagonal road approach and short train shed are explicit miniature compromises.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "food",
+    "name": "Banthat Thong",
+    "category": "market",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 590,
+      "z": -20
+    },
+    "map": {
+      "x": 647.5,
+      "y": 595
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 590,
+        "z": -20,
+        "w": 30,
+        "d": 30,
+        "yaw": 0,
+        "height": 18
+      }
+    ],
+    "height": 18,
+    "vehicleAccess": {
+      "x": 540,
+      "z": -20,
+      "nodeId": "bkk:776"
+    },
+    "protectedParcels": [
+      "parcel:food:structure:45"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "icon",
+    "name": "ICONSIAM",
+    "category": "mall",
+    "district": "Khlong San",
+    "geographicReference": {
+      "lat": 13.726826,
+      "lon": 100.510325
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -646.9669914110091,
+      "z": 933.0330085889909
+    },
+    "map": {
+      "x": 338.25825214724773,
+      "y": 833.2582521472477
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -646.9669914110091,
+        "z": 933.0330085889909,
+        "w": 65,
+        "d": 65,
+        "yaw": 0,
+        "height": 39
+      },
+      {
+        "x": -678.4669914110091,
+        "z": 933.0330085889909,
+        "w": 1,
+        "d": 64,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -646.9669914110091,
+        "z": 901.5330085889909,
+        "w": 64,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -615.4669914110091,
+        "z": 933.0330085889909,
+        "w": 1,
+        "d": 64,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -646.9669914110091,
+        "z": 964.5330085889909,
+        "w": 64,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      }
+    ],
+    "height": 39,
+    "facade": {
+      "x": -614.4669914110091,
+      "z": 933.0330085889909,
+      "y": 14,
+      "yaw": 1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -702.1027746375084,
+      "z": 922.0658194200763,
+      "id": "arrival:icon:loop5",
+      "name": "ICONSIAM \u00b7 visitor arrival"
+    },
+    "vehicleAccess": {
+      "x": -702.1027746375084,
+      "z": 922.0658194200763,
+      "nodeId": "arrival:icon:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -702.1027746375084,
+      "z": 922.0658194200763,
+      "id": "arrival:icon:loop5",
+      "name": "ICONSIAM \u00b7 visitor arrival"
+    },
+    "protectedParcels": [
+      "parcel:icon:structure:46",
+      "parcel:icon:forecourt:47"
+    ],
+    "visibilityCorridors": [
+      "view:icon:0",
+      "view:icon:1",
+      "view:icon:2"
+    ],
+    "neighbors": [
+      "hilton",
+      "peninsula",
+      "river-city"
+    ],
+    "roadRelationships": [
+      "Charoen Nakhon"
+    ],
+    "references": [
+      "https://www.iconsiam.com/en/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "East river elevation. Charoen Nakhon vehicle entrance remains on west side.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "park",
+    "name": "Lumphini Park",
+    "category": "park",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.73048,
+      "lon": 100.54165
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1214,
+      "z": 516
+    },
+    "map": {
+      "x": 803.5,
+      "y": 729
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": 1388,
+      "z": 376,
+      "nodeId": "civic:13880000:3760000"
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "dusit",
+      "one-bangkok",
+      "sala-daeng"
+    ],
+    "roadRelationships": [
+      "Rama IV",
+      "Ratchadamri",
+      "Wireless",
+      "Sarasin"
+    ],
+    "references": [
+      "https://greener.bangkok.go.th/park/suan-lumpini/",
+      "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966",
+      "https://www.openstreetmap.org/way/23483299"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Actual outline is compressed inside existing four perimeter roads; north-south aspect is stretched.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "terminal",
+    "name": "Terminal 21 / Asok",
+    "category": "mall",
+    "district": "Watthana",
+    "geographicReference": {
+      "lat": 13.737924,
+      "lon": 100.560421
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1672,
+      "z": -404
+    },
+    "map": {
+      "x": 918,
+      "y": 499
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1672,
+        "z": -404,
+        "w": 90,
+        "d": 80,
+        "yaw": 0,
+        "height": 134
+      }
+    ],
+    "height": 134,
+    "facade": {
+      "x": 1645,
+      "z": -370,
+      "y": 12,
+      "yaw": 0
+    },
+    "mainEntrance": {
+      "x": 1645,
+      "z": -370
+    },
+    "vehicleAccess": {
+      "x": 1602.4481982430234,
+      "z": -417.8347135430009,
+      "nodeId": "arrival:terminal:loop5"
+    },
+    "pedestrianAccess": {
+      "x": 1645,
+      "z": -370
+    },
+    "protectedParcels": [
+      "parcel:terminal:structure:48",
+      "parcel:terminal:forecourt:49",
+      "parcel:terminal:entrance:50"
+    ],
+    "visibilityCorridors": [
+      "view:terminal:0",
+      "view:terminal:1",
+      "view:terminal:2"
+    ],
+    "neighbors": [
+      "asok-bts",
+      "sukhumvit-mrt"
+    ],
+    "roadRelationships": [
+      "Sukhumvit",
+      "Asok Montri"
+    ],
+    "references": [
+      "https://www.terminal21.co.th/asok/contactus/th",
+      "https://www.openstreetmap.org/way/157656710"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Northwest Asok plot corrected; the oblique compressed Sukhumvit approach requires a larger northward setback than the real parcel.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "benjakitti",
+    "name": "Benjakitti Park",
+    "category": "park",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1576,
+      "z": 452
+    },
+    "map": {
+      "x": 894,
+      "y": 713
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": 1708.888888888889,
+      "z": 473.3333333333333,
+      "nodeId": "bkk:922"
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "mahanakhon",
+    "name": "Mahanakhon",
+    "category": "tower",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 654.1939766255646,
+      "z": 1119.1341716182542
+    },
+    "map": {
+      "x": 663.5484941563911,
+      "y": 879.7835429045635
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 654.1939766255646,
+        "z": 1119.1341716182542,
+        "w": 40,
+        "d": 40,
+        "yaw": 0,
+        "height": 156
+      }
+    ],
+    "height": 156,
+    "mainEntrance": {
+      "x": 600,
+      "z": 1100,
+      "id": "bkk:806"
+    },
+    "vehicleAccess": {
+      "x": 600,
+      "z": 1100,
+      "nodeId": "bkk:806"
+    },
+    "pedestrianAccess": {
+      "x": 600,
+      "z": 1100,
+      "id": "bkk:806"
+    },
+    "protectedParcels": [
+      "parcel:mahanakhon:structure:51"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "asiatique",
+    "name": "Asiatique",
+    "category": "wheel",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -340.86582838174553,
+      "z": 2046.1939766255643
+    },
+    "map": {
+      "x": 414.7835429045636,
+      "y": 1111.5484941563911
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -340.86582838174553,
+        "z": 2046.1939766255643,
+        "w": 43,
+        "d": 43,
+        "yaw": 0,
+        "height": 30
+      },
+      {
+        "x": -362.36582838174553,
+        "z": 2046.1939766255643,
+        "w": 1,
+        "d": 44,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -340.86582838174553,
+        "z": 2024.6939766255643,
+        "w": 44,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -319.36582838174553,
+        "z": 2046.1939766255643,
+        "w": 1,
+        "d": 44,
+        "yaw": 0,
+        "height": 3
+      },
+      {
+        "x": -340.86582838174553,
+        "z": 2067.6939766255646,
+        "w": 44,
+        "d": 1,
+        "yaw": 0,
+        "height": 3
+      }
+    ],
+    "height": 30,
+    "mainEntrance": {
+      "x": -246.11872705031442,
+      "z": 2023.0403662872698
+    },
+    "vehicleAccess": {
+      "x": -300.36582838174553,
+      "z": 2046.1939766255643,
+      "nodeId": "arrival:asiatique:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -246.11872705031442,
+      "z": 2023.0403662872698
+    },
+    "protectedParcels": [
+      "parcel:asiatique:structure:52"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "paknam",
+    "name": "Wat Paknam / Big Buddha",
+    "category": "temple",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1878.9949493661165,
+      "z": 586.9949493661167
+    },
+    "map": {
+      "x": 30.251262658470864,
+      "y": 746.7487373415291
+    },
+    "rotation": 0.7853981633974474,
+    "footprints": [
+      {
+        "x": -1869.0954544295048,
+        "z": 596.8944443027283,
+        "w": 49,
+        "d": 32,
+        "yaw": 0.7853981633974474,
+        "height": 69
+      },
+      {
+        "x": -1898.0868324581534,
+        "z": 567.9030662740798,
+        "w": 30,
+        "d": 30,
+        "yaw": 0.7853981633974474,
+        "height": 79
+      },
+      {
+        "x": -1906.5721138323918,
+        "z": 607.5010460205265,
+        "w": 17,
+        "d": 23,
+        "yaw": 0.7853981633974474,
+        "height": 12
+      },
+      {
+        "x": -1858.4888527117066,
+        "z": 559.4177848998413,
+        "w": 17,
+        "d": 23,
+        "yaw": 0.7853981633974474,
+        "height": 12
+      },
+      {
+        "x": -1909.4005409571382,
+        "z": 617.4005409571382,
+        "w": 1,
+        "d": 87,
+        "yaw": 0.7853981633974474,
+        "height": 3
+      },
+      {
+        "x": -1909.400540957138,
+        "z": 556.5893577750951,
+        "w": 87,
+        "d": 1,
+        "yaw": 0.7853981633974474,
+        "height": 3
+      },
+      {
+        "x": -1848.5893577750949,
+        "z": 556.5893577750951,
+        "w": 1,
+        "d": 87,
+        "yaw": 0.7853981633974474,
+        "height": 3
+      },
+      {
+        "x": -1848.589357775095,
+        "z": 617.4005409571382,
+        "w": 87,
+        "d": 1,
+        "yaw": 0.7853981633974474,
+        "height": 3
+      }
+    ],
+    "height": 79,
+    "mainEntrance": {
+      "x": -1772.2924801628117,
+      "z": 654.377787956139
+    },
+    "vehicleAccess": {
+      "x": -1826.7843044043539,
+      "z": 639.2055943278796,
+      "nodeId": "arrival:paknam:loop5"
+    },
+    "pedestrianAccess": {
+      "x": -1772.2924801628117,
+      "z": 654.377787956139
+    },
+    "protectedParcels": [
+      "parcel:paknam:structure:53"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "baiyoke",
+    "name": "Baiyoke Tower II",
+    "category": "tower",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1020,
+      "z": -940
+    },
+    "map": {
+      "x": 755,
+      "y": 365
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1020,
+        "z": -940,
+        "w": 40,
+        "d": 40,
+        "yaw": 0,
+        "height": 156
+      }
+    ],
+    "height": 156,
+    "mainEntrance": {
+      "x": 1023.8095238095239,
+      "z": -998.0952380952381,
+      "id": "bkk:94"
+    },
+    "vehicleAccess": {
+      "x": 1023.8095238095239,
+      "z": -998.0952380952381,
+      "nodeId": "bkk:94"
+    },
+    "pedestrianAccess": {
+      "x": 1023.8095238095239,
+      "z": -998.0952380952381,
+      "id": "bkk:94"
+    },
+    "protectedParcels": [
+      "parcel:baiyoke:structure:54"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "state",
+    "name": "State Tower / Lebua",
+    "category": "tower",
+    "district": "Bang Rak",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 200,
+      "z": 1180
+    },
+    "map": {
+      "x": 550,
+      "y": 895
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 200,
+        "z": 1180,
+        "w": 40,
+        "d": 40,
+        "yaw": 0,
+        "height": 156
+      }
+    ],
+    "height": 156,
+    "mainEntrance": {
+      "x": 84,
+      "z": 1148,
+      "id": "bkk:650"
+    },
+    "vehicleAccess": {
+      "x": 84,
+      "z": 1148,
+      "nodeId": "bkk:650"
+    },
+    "pedestrianAccess": {
+      "x": 84,
+      "z": 1148,
+      "id": "bkk:650"
+    },
+    "protectedParcels": [
+      "parcel:state:structure:55"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "shangri",
+      "oriental"
+    ],
+    "roadRelationships": [
+      "1055 Silom Road"
+    ],
+    "references": [
+      "https://lebua.com/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "benchasiri",
+    "name": "Benchasiri Park",
+    "category": "park",
+    "district": "Khlong Toei",
+    "geographicReference": {
+      "lat": 13.7313966,
+      "lon": 100.56793
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 2036,
+      "z": 204
+    },
+    "map": {
+      "x": 1009,
+      "y": 651
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": 1937.7142857142858,
+      "z": 86.28571428571428,
+      "nodeId": "civic:19377143:862857"
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "emporium",
+      "emsphere"
+    ],
+    "roadRelationships": [
+      "Sukhumvit",
+      "Soi 22",
+      "Soi 24"
+    ],
+    "references": [
+      "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
+      "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Boundary/pond are interpreted, not a surveyed footprint; playing fields and full sculpture collection omitted.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "chatuchak-park",
+    "name": "Chatuchak Park",
+    "category": "park",
+    "district": "Chatuchak",
+    "geographicReference": {
+      "lat": 13.807484,
+      "lon": 100.5554198
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1200,
+      "z": -2112
+    },
+    "map": {
+      "x": 800,
+      "y": 72
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": 1080,
+      "z": -2140,
+      "nodeId": "bkk:166"
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "chatuchak",
+      "mo-chit"
+    ],
+    "roadRelationships": [
+      "Phahonyothin"
+    ],
+    "references": [
+      "https://greener.bangkok.go.th/park/suan-chatuchak/",
+      "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Northern latitude is heavily compressed; Queen Sirikit and Rot Fai parks remain outside this reconstruction.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "emporium",
+    "name": "Emporium",
+    "category": "mall",
+    "district": "Khlong Toei",
+    "geographicReference": {
+      "lat": 13.7304938,
+      "lon": 100.5689016
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 2172,
+      "z": 176
+    },
+    "map": {
+      "x": 1043,
+      "y": 644
+    },
+    "rotation": 3.141592653589793,
+    "footprints": [
+      {
+        "x": 2172,
+        "z": 176,
+        "w": 84,
+        "d": 84,
+        "yaw": 3.141592653589793,
+        "height": 29
+      },
+      {
+        "x": 2153,
+        "z": 193,
+        "w": 32,
+        "d": 34,
+        "yaw": 3.141592653589793,
+        "height": 102
+      },
+      {
+        "x": 2188,
+        "z": 130,
+        "w": 32,
+        "d": 8,
+        "yaw": 3.141592653589793,
+        "height": 8
+      }
+    ],
+    "height": 102,
+    "facade": {
+      "x": 2188,
+      "z": 126,
+      "y": 5,
+      "yaw": 3.141592653589793
+    },
+    "mainEntrance": {
+      "x": 2188,
+      "z": 126
+    },
+    "vehicleAccess": {
+      "x": 2220.000000008,
+      "z": 106.666666672,
+      "nodeId": "civic:22200000:1066667"
+    },
+    "pedestrianAccess": {
+      "x": 2188,
+      "z": 126
+    },
+    "protectedParcels": [
+      "parcel:emporium:structure:56",
+      "parcel:emporium:structure:57",
+      "parcel:emporium:structure:58",
+      "parcel:emporium:structure:59",
+      "parcel:emporium:forecourt:60",
+      "parcel:emporium:entrance:61",
+      "parcel:emporium:entrance:62"
+    ],
+    "visibilityCorridors": [
+      "view:emporium:0",
+      "view:emporium:1",
+      "view:emporium:2"
+    ],
+    "neighbors": [
+      "emquartier",
+      "benchasiri"
+    ],
+    "roadRelationships": [
+      "Sukhumvit",
+      "Soi 24"
+    ],
+    "references": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/29qga3VN6E2sfehZ8",
+      "https://emdistrict.com/whats-em-district/",
+      "https://emsphere.co.th/en/about-us/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Eastern expansion lengthens the previous Asok boundary; hotel/podium are original miniature interpretations.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "emquartier",
+    "name": "EmQuartier",
+    "category": "mall",
+    "district": "Watthana",
+    "geographicReference": {
+      "lat": 13.7312253,
+      "lon": 100.5694763
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 2172,
+      "z": -100
+    },
+    "map": {
+      "x": 1043,
+      "y": 575
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 2144,
+        "z": -92,
+        "w": 39,
+        "d": 72,
+        "yaw": 0,
+        "height": 38
+      },
+      {
+        "x": 2197,
+        "z": -86,
+        "w": 39,
+        "d": 61,
+        "yaw": 0,
+        "height": 46
+      },
+      {
+        "x": 2180,
+        "z": -127,
+        "w": 49,
+        "d": 36,
+        "yaw": 0,
+        "height": 82
+      }
+    ],
+    "height": 82,
+    "facade": {
+      "x": 2172,
+      "z": -51,
+      "y": 17,
+      "yaw": 0
+    },
+    "mainEntrance": {
+      "x": 2172,
+      "z": -51
+    },
+    "vehicleAccess": {
+      "x": 2273.846153846154,
+      "z": -67.07692307692315,
+      "nodeId": "civic:22738462:-670769"
+    },
+    "pedestrianAccess": {
+      "x": 2172,
+      "z": -51
+    },
+    "protectedParcels": [
+      "parcel:emquartier:structure:63",
+      "parcel:emquartier:structure:64",
+      "parcel:emquartier:structure:65",
+      "parcel:emquartier:structure:66",
+      "parcel:emquartier:forecourt:67",
+      "parcel:emquartier:entrance:68",
+      "parcel:emquartier:entrance:69"
+    ],
+    "visibilityCorridors": [
+      "view:emquartier:0",
+      "view:emquartier:1",
+      "view:emquartier:2"
+    ],
+    "neighbors": [
+      "emporium",
+      "benchasiri"
+    ],
+    "roadRelationships": [
+      "Sukhumvit",
+      "Soi 39"
+    ],
+    "references": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/k4KwPVYhrrynJGhb9",
+      "https://emdistrict.com/whats-em-district/",
+      "https://emsphere.co.th/en/about-us/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Three retail masses, terraces and hotel height interpreted; full internal plan omitted.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "emsphere",
+    "name": "EmSphere",
+    "category": "mall",
+    "district": "Khlong Toei",
+    "geographicReference": {
+      "lat": 13.7323522,
+      "lon": 100.5663462
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1840,
+      "z": 52
+    },
+    "map": {
+      "x": 960,
+      "y": 613
+    },
+    "rotation": 3.141592653589793,
+    "footprints": [
+      {
+        "x": 1840,
+        "z": 52,
+        "w": 80,
+        "d": 70,
+        "yaw": 3.141592653589793,
+        "height": 32
+      },
+      {
+        "x": 1840,
+        "z": 14,
+        "w": 58,
+        "d": 6,
+        "yaw": 3.141592653589793,
+        "height": 10
+      }
+    ],
+    "height": 32,
+    "facade": {
+      "x": 1840,
+      "z": 11,
+      "y": 8,
+      "yaw": 3.141592653589793
+    },
+    "mainEntrance": {
+      "x": 1840,
+      "z": 11
+    },
+    "vehicleAccess": {
+      "x": 1748.695652173913,
+      "z": 42.608695652173935,
+      "nodeId": "bkk:906"
+    },
+    "pedestrianAccess": {
+      "x": 1840,
+      "z": 11
+    },
+    "protectedParcels": [
+      "parcel:emsphere:structure:70",
+      "parcel:emsphere:structure:71",
+      "parcel:emsphere:structure:72",
+      "parcel:emsphere:forecourt:73",
+      "parcel:emsphere:entrance:74",
+      "parcel:emsphere:entrance:75"
+    ],
+    "visibilityCorridors": [
+      "view:emsphere:0",
+      "view:emsphere:1",
+      "view:emsphere:2"
+    ],
+    "neighbors": [
+      "benchasiri",
+      "emporium"
+    ],
+    "roadRelationships": [
+      "Sukhumvit",
+      "Soi 22"
+    ],
+    "references": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/hy1cPD1Ffhzxs8oZA",
+      "https://emdistrict.com/whats-em-district/",
+      "https://emsphere.co.th/en/about-us/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Strong local x/y residual keeps the compound west of the park and leaves the compressed Soi 22 drivable.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "dusit",
+    "name": "Dusit Thani Bangkok / Dusit Central Park",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.7281,
+      "lon": 100.5372
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1024,
+      "z": 816
+    },
+    "map": {
+      "x": 756,
+      "y": 804
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1000,
+        "z": 816,
+        "w": 34,
+        "d": 33,
+        "yaw": 0,
+        "height": 110
+      },
+      {
+        "x": 1047,
+        "z": 802,
+        "w": 27,
+        "d": 28,
+        "yaw": 0,
+        "height": 125
+      },
+      {
+        "x": 1024,
+        "z": 839,
+        "w": 91,
+        "d": 24,
+        "yaw": 0,
+        "height": 14
+      }
+    ],
+    "height": 125,
+    "mainEntrance": {
+      "x": 1024,
+      "z": 774
+    },
+    "vehicleAccess": {
+      "x": 1024,
+      "z": 774,
+      "nodeId": "real-arrival:dusit:3"
+    },
+    "pedestrianAccess": {
+      "x": 1024,
+      "z": 774
+    },
+    "protectedParcels": [
+      "parcel:dusit:structure:76",
+      "parcel:dusit:structure:77",
+      "parcel:dusit:structure:78",
+      "parcel:dusit:structure:79"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "park",
+      "sala-daeng",
+      "one-bangkok"
+    ],
+    "roadRelationships": [
+      "Rama IV",
+      "Silom"
+    ],
+    "references": [
+      "https://www.dusit.com/dusitthani-bangkok/",
+      "https://www.dusitcentralpark.com/en/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "okura",
+    "name": "The Okura Prestige Bangkok / Park Ventures",
+    "category": "hotel",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.74269,
+      "lon": 100.5477
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1372,
+      "z": -448
+    },
+    "map": {
+      "x": 843,
+      "y": 488
+    },
+    "rotation": 3.141592653589793,
+    "footprints": [
+      {
+        "x": 1372,
+        "z": -444,
+        "w": 39,
+        "d": 32,
+        "yaw": 3.141592653589793,
+        "height": 111
+      },
+      {
+        "x": 1372,
+        "z": -466,
+        "w": 48,
+        "d": 13,
+        "yaw": 3.141592653589793,
+        "height": 10
+      }
+    ],
+    "height": 111,
+    "mainEntrance": {
+      "x": 1372,
+      "z": -414
+    },
+    "vehicleAccess": {
+      "x": 1405.4545454545455,
+      "z": -490.9090909090909,
+      "nodeId": "bkk:436"
+    },
+    "pedestrianAccess": {
+      "x": 1372,
+      "z": -414
+    },
+    "protectedParcels": [
+      "parcel:okura:structure:80",
+      "parcel:okura:structure:81",
+      "parcel:okura:structure:82"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "embassy",
+      "rosewood",
+      "phloen-chit-bts"
+    ],
+    "roadRelationships": [
+      "Wireless",
+      "Phloen Chit"
+    ],
+    "references": [
+      "https://www.okurabangkok.com/contact-location",
+      "https://www.openstreetmap.org/way/176332744",
+      "https://web.p-t-group.com/en/project-detail.php?projects_id=64",
+      "https://www.okurabangkok.com/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "anantara",
+    "name": "Anantara Riverside Bangkok Resort",
+    "category": "hotel",
+    "district": "Thon Buri",
+    "geographicReference": {
+      "lat": 13.7045,
+      "lon": 100.4919
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -1020,
+      "z": 2180
+    },
+    "map": {
+      "x": 245,
+      "y": 1145
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": -1024,
+        "z": 2218,
+        "w": 18,
+        "d": 67,
+        "yaw": 1.5707963267948966,
+        "height": 19
+      },
+      {
+        "x": -1024,
+        "z": 2142,
+        "w": 18,
+        "d": 67,
+        "yaw": 1.5707963267948966,
+        "height": 19
+      },
+      {
+        "x": -1051,
+        "z": 2180,
+        "w": 59,
+        "d": 17,
+        "yaw": 1.5707963267948966,
+        "height": 17
+      },
+      {
+        "x": -991,
+        "z": 2210,
+        "w": 24,
+        "d": 17,
+        "yaw": 1.5707963267948966,
+        "height": 9
+      },
+      {
+        "x": -991,
+        "z": 2149,
+        "w": 24,
+        "d": 17,
+        "yaw": 1.5707963267948966,
+        "height": 9
+      }
+    ],
+    "height": 19,
+    "facade": {
+      "x": -982,
+      "z": 2180,
+      "y": 12,
+      "yaw": 1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -1073.5,
+      "z": 2180
+    },
+    "vehicleAccess": {
+      "x": -1073.5,
+      "z": 2180,
+      "nodeId": "real-arrival:anantara:2"
+    },
+    "pedestrianAccess": {
+      "x": -1073.5,
+      "z": 2180
+    },
+    "protectedParcels": [
+      "parcel:anantara:structure:83",
+      "parcel:anantara:structure:84",
+      "parcel:anantara:structure:85",
+      "parcel:anantara:structure:86",
+      "parcel:anantara:structure:87",
+      "parcel:anantara:structure:88",
+      "parcel:anantara:structure:89",
+      "parcel:anantara:structure:90",
+      "parcel:anantara:structure:91",
+      "parcel:anantara:structure:92",
+      "parcel:anantara:forecourt:93"
+    ],
+    "visibilityCorridors": [
+      "view:anantara:0",
+      "view:anantara:1",
+      "view:anantara:2"
+    ],
+    "neighbors": [
+      "asiatique",
+      "peninsula"
+    ],
+    "roadRelationships": [
+      "Charoen Nakhon"
+    ],
+    "references": [
+      "https://www.anantara.com/en/riverside-bangkok",
+      "https://www.anantara.com/uploads/minor/anantara/documents/anantara-riverside-bangkok-resort/hotel-info/hotel-information-2025/anantara_riverside_resort_bangkok_resort_map_280125.pdf"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "East river garden, west Charoen Nakhon approach.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "one-bangkok",
+    "name": "One Bangkok / The Ritz-Carlton",
+    "category": "mall",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.7269,
+      "lon": 100.548
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 1520,
+      "z": 716
+    },
+    "map": {
+      "x": 880,
+      "y": 779
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1483,
+        "z": 733,
+        "w": 28,
+        "d": 32,
+        "yaw": 0,
+        "height": 126
+      },
+      {
+        "x": 1525,
+        "z": 693,
+        "w": 30,
+        "d": 30,
+        "yaw": 0,
+        "height": 145
+      },
+      {
+        "x": 1561,
+        "z": 735,
+        "w": 28,
+        "d": 34,
+        "yaw": 0,
+        "height": 107
+      },
+      {
+        "x": 1490,
+        "z": 690,
+        "w": 31,
+        "d": 23,
+        "yaw": 0,
+        "height": 18
+      },
+      {
+        "x": 1524,
+        "z": 740,
+        "w": 29,
+        "d": 27,
+        "yaw": 0,
+        "height": 23
+      }
+    ],
+    "height": 145,
+    "mainEntrance": {
+      "x": 1520,
+      "z": 664
+    },
+    "vehicleAccess": {
+      "x": 1520,
+      "z": 664,
+      "nodeId": "real-arrival:one-bangkok:5"
+    },
+    "pedestrianAccess": {
+      "x": 1520,
+      "z": 664
+    },
+    "protectedParcels": [
+      "parcel:one-bangkok:structure:94",
+      "parcel:one-bangkok:structure:95",
+      "parcel:one-bangkok:structure:96",
+      "parcel:one-bangkok:structure:97",
+      "parcel:one-bangkok:structure:98",
+      "parcel:one-bangkok:structure:99",
+      "parcel:one-bangkok:structure:100"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "park",
+      "dusit"
+    ],
+    "roadRelationships": [
+      "Wireless",
+      "Rama IV"
+    ],
+    "references": [
+      "https://www.onebangkok.com/en/location/",
+      "https://www.som.com/projects/one-bangkok/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "oriental",
+    "name": "Mandarin Oriental Bangkok",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.72393,
+      "lon": 100.5144
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -200,
+      "z": 1040
+    },
+    "map": {
+      "x": 450,
+      "y": 860
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -188,
+        "z": 1022,
+        "w": 68,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 49
+      },
+      {
+        "x": -188,
+        "z": 1075,
+        "w": 23,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 35
+      },
+      {
+        "x": -223,
+        "z": 1070,
+        "w": 40,
+        "d": 25,
+        "yaw": -1.5707963267948966,
+        "height": 12
+      },
+      {
+        "x": -229,
+        "z": 1015,
+        "w": 44,
+        "d": 15,
+        "yaw": -1.5707963267948966,
+        "height": 6
+      }
+    ],
+    "height": 49,
+    "facade": {
+      "x": -236,
+      "z": 1040,
+      "y": 19,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -160.5,
+      "z": 1040
+    },
+    "vehicleAccess": {
+      "x": -160.5,
+      "z": 1040,
+      "nodeId": "real-arrival:oriental:12"
+    },
+    "pedestrianAccess": {
+      "x": -160.5,
+      "z": 1040
+    },
+    "protectedParcels": [
+      "parcel:oriental:structure:101",
+      "parcel:oriental:structure:102",
+      "parcel:oriental:structure:103",
+      "parcel:oriental:structure:104",
+      "parcel:oriental:structure:105",
+      "parcel:oriental:structure:106",
+      "parcel:oriental:structure:107",
+      "parcel:oriental:forecourt:108"
+    ],
+    "visibilityCorridors": [
+      "view:oriental:0",
+      "view:oriental:1",
+      "view:oriental:2"
+    ],
+    "neighbors": [
+      "river-city",
+      "shangri",
+      "peninsula"
+    ],
+    "roadRelationships": [
+      "Oriental Avenue",
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river",
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West-facing river terrace, distinct from Oriental Avenue arrival.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "peninsula",
+    "name": "The Peninsula Bangkok",
+    "category": "hotel",
+    "district": "Khlong San",
+    "geographicReference": {
+      "lat": 13.723302,
+      "lon": 100.510368
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -620,
+      "z": 1228
+    },
+    "map": {
+      "x": 345,
+      "y": 907
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": -620,
+        "z": 1228,
+        "w": 72,
+        "d": 60,
+        "yaw": 1.5707963267948966,
+        "height": 116
+      }
+    ],
+    "height": 116,
+    "facade": {
+      "x": -592,
+      "z": 1228,
+      "y": 22,
+      "yaw": 1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -664,
+      "z": 1228
+    },
+    "vehicleAccess": {
+      "x": -664,
+      "z": 1228,
+      "nodeId": "real-arrival:peninsula:6"
+    },
+    "pedestrianAccess": {
+      "x": -664,
+      "z": 1228
+    },
+    "protectedParcels": [
+      "parcel:peninsula:structure:109",
+      "parcel:peninsula:structure:110",
+      "parcel:peninsula:structure:111",
+      "parcel:peninsula:structure:112",
+      "parcel:peninsula:forecourt:113"
+    ],
+    "visibilityCorridors": [
+      "view:peninsula:0",
+      "view:peninsula:1",
+      "view:peninsula:2"
+    ],
+    "neighbors": [
+      "oriental",
+      "icon",
+      "hilton"
+    ],
+    "roadRelationships": [
+      "Charoen Nakhon"
+    ],
+    "references": [
+      "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside",
+      "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "East river-facing W-profile and terrace.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "hilton",
+    "name": "Millennium Hilton Bangkok",
+    "category": "hotel",
+    "district": "Khlong San",
+    "geographicReference": {
+      "lat": 13.728694,
+      "lon": 100.51096
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -756,
+      "z": 780
+    },
+    "map": {
+      "x": 311,
+      "y": 795
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": -756,
+        "z": 780,
+        "w": 52,
+        "d": 48,
+        "yaw": 1.5707963267948966,
+        "height": 120
+      }
+    ],
+    "height": 120,
+    "facade": {
+      "x": -734,
+      "z": 780,
+      "y": 24,
+      "yaw": 1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -794,
+      "z": 780
+    },
+    "vehicleAccess": {
+      "x": -794,
+      "z": 780,
+      "nodeId": "real-arrival:hilton:5"
+    },
+    "pedestrianAccess": {
+      "x": -794,
+      "z": 780
+    },
+    "protectedParcels": [
+      "parcel:hilton:structure:114",
+      "parcel:hilton:structure:115",
+      "parcel:hilton:structure:116",
+      "parcel:hilton:structure:117",
+      "parcel:hilton:structure:118",
+      "parcel:hilton:forecourt:119"
+    ],
+    "visibilityCorridors": [
+      "view:hilton:0",
+      "view:hilton:1",
+      "view:hilton:2"
+    ],
+    "neighbors": [
+      "river-city",
+      "icon",
+      "peninsula"
+    ],
+    "roadRelationships": [
+      "Charoen Nakhon"
+    ],
+    "references": [
+      "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/",
+      "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "East river elevation; preserve ThreeSixty silhouette.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "shangri",
+    "name": "Shangri-La Bangkok",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.720781,
+      "lon": 100.513781
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -160,
+      "z": 1324
+    },
+    "map": {
+      "x": 460,
+      "y": 931
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -150,
+        "z": 1300,
+        "w": 69,
+        "d": 26,
+        "yaw": -1.5707963267948966,
+        "height": 77
+      },
+      {
+        "x": -157,
+        "z": 1367,
+        "w": 24,
+        "d": 34,
+        "yaw": -1.5707963267948966,
+        "height": 47
+      },
+      {
+        "x": -188,
+        "z": 1289,
+        "w": 26,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 8
+      },
+      {
+        "x": -188,
+        "z": 1333,
+        "w": 22,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 7
+      },
+      {
+        "x": -150,
+        "z": 1344,
+        "w": 22,
+        "d": 20,
+        "yaw": -1.5707963267948966,
+        "height": 9
+      }
+    ],
+    "height": 77,
+    "facade": {
+      "x": -198,
+      "z": 1324,
+      "y": 22,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -123,
+      "z": 1324
+    },
+    "vehicleAccess": {
+      "x": -123,
+      "z": 1324,
+      "nodeId": "real-arrival:shangri:7"
+    },
+    "pedestrianAccess": {
+      "x": -123,
+      "z": 1324
+    },
+    "protectedParcels": [
+      "parcel:shangri:structure:120",
+      "parcel:shangri:structure:121",
+      "parcel:shangri:structure:122",
+      "parcel:shangri:structure:123",
+      "parcel:shangri:structure:124",
+      "parcel:shangri:structure:125",
+      "parcel:shangri:structure:126",
+      "parcel:shangri:structure:127",
+      "parcel:shangri:structure:128",
+      "parcel:shangri:forecourt:129"
+    ],
+    "visibilityCorridors": [
+      "view:shangri:0",
+      "view:shangri:1",
+      "view:shangri:2"
+    ],
+    "neighbors": [
+      "oriental",
+      "state",
+      "saphan-taksin"
+    ],
+    "roadRelationships": [
+      "Soi Wat Suan Phlu",
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/",
+      "https://www.shangri-la.com/bangkok/shangrila/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "River-facing west elevation; separate street driveway.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "four-seasons",
+    "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+    "category": "hotel",
+    "district": "Sathon",
+    "geographicReference": {
+      "lat": 13.7119,
+      "lon": 100.5101
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -280,
+      "z": 1832
+    },
+    "map": {
+      "x": 430,
+      "y": 1058
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -251,
+        "z": 1832,
+        "w": 168,
+        "d": 17,
+        "yaw": -1.5707963267948966,
+        "height": 39
+      },
+      {
+        "x": -272,
+        "z": 1757,
+        "w": 17,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 34
+      },
+      {
+        "x": -294,
+        "z": 1760,
+        "w": 21,
+        "d": 18,
+        "yaw": -1.5707963267948966,
+        "height": 25
+      },
+      {
+        "x": -309,
+        "z": 1797,
+        "w": 62,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 13
+      },
+      {
+        "x": -272,
+        "z": 1907,
+        "w": 17,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 34
+      },
+      {
+        "x": -294,
+        "z": 1904,
+        "w": 21,
+        "d": 18,
+        "yaw": -1.5707963267948966,
+        "height": 25
+      },
+      {
+        "x": -309,
+        "z": 1867,
+        "w": 62,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 13
+      }
+    ],
+    "height": 39,
+    "facade": {
+      "x": -317,
+      "z": 1832,
+      "y": 18,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -228.5,
+      "z": 1832
+    },
+    "vehicleAccess": {
+      "x": -228.5,
+      "z": 1832,
+      "nodeId": "real-arrival:four-seasons:8"
+    },
+    "pedestrianAccess": {
+      "x": -228.5,
+      "z": 1832
+    },
+    "protectedParcels": [
+      "parcel:four-seasons:structure:130",
+      "parcel:four-seasons:structure:131",
+      "parcel:four-seasons:structure:132",
+      "parcel:four-seasons:structure:133",
+      "parcel:four-seasons:structure:134",
+      "parcel:four-seasons:structure:135",
+      "parcel:four-seasons:structure:136",
+      "parcel:four-seasons:structure:137",
+      "parcel:four-seasons:structure:138",
+      "parcel:four-seasons:structure:139",
+      "parcel:four-seasons:structure:140",
+      "parcel:four-seasons:forecourt:141"
+    ],
+    "visibilityCorridors": [
+      "view:four-seasons:0",
+      "view:four-seasons:1",
+      "view:four-seasons:2"
+    ],
+    "neighbors": [
+      "capella",
+      "asiatique"
+    ],
+    "roadRelationships": [
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://www.fourseasons.com/bangkok/getting-here/",
+      "https://www.fourseasons.com/bangkok/",
+      "https://press.fourseasons.com/bangkok/hotel-facts/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West river courts, with east road arrival.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "capella",
+    "name": "Capella Bangkok",
+    "category": "hotel",
+    "district": "Sathon",
+    "geographicReference": {
+      "lat": 13.71312,
+      "lon": 100.510896
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -280,
+      "z": 1652
+    },
+    "map": {
+      "x": 430,
+      "y": 1013
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -260,
+        "z": 1652,
+        "w": 90,
+        "d": 18,
+        "yaw": -1.5707963267948966,
+        "height": 29
+      },
+      {
+        "x": -283,
+        "z": 1614,
+        "w": 14,
+        "d": 29,
+        "yaw": -1.5707963267948966,
+        "height": 10
+      },
+      {
+        "x": -283,
+        "z": 1690,
+        "w": 14,
+        "d": 29,
+        "yaw": -1.5707963267948966,
+        "height": 10
+      },
+      {
+        "x": -303,
+        "z": 1632,
+        "w": 17,
+        "d": 14,
+        "yaw": -1.5707963267948966,
+        "height": 6
+      },
+      {
+        "x": -303,
+        "z": 1655,
+        "w": 17,
+        "d": 14,
+        "yaw": -1.5707963267948966,
+        "height": 6
+      },
+      {
+        "x": -303,
+        "z": 1678,
+        "w": 17,
+        "d": 14,
+        "yaw": -1.5707963267948966,
+        "height": 6
+      }
+    ],
+    "height": 29,
+    "facade": {
+      "x": -311,
+      "z": 1652,
+      "y": 16,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -237,
+      "z": 1652
+    },
+    "vehicleAccess": {
+      "x": -237,
+      "z": 1652,
+      "nodeId": "real-arrival:capella:9"
+    },
+    "pedestrianAccess": {
+      "x": -237,
+      "z": 1652
+    },
+    "protectedParcels": [
+      "parcel:capella:structure:142",
+      "parcel:capella:structure:143",
+      "parcel:capella:structure:144",
+      "parcel:capella:structure:145",
+      "parcel:capella:structure:146",
+      "parcel:capella:structure:147",
+      "parcel:capella:structure:148",
+      "parcel:capella:structure:149",
+      "parcel:capella:forecourt:150"
+    ],
+    "visibilityCorridors": [
+      "view:capella:0",
+      "view:capella:1",
+      "view:capella:2"
+    ],
+    "neighbors": [
+      "four-seasons"
+    ],
+    "roadRelationships": [
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://capellahotels.com/en/capella-bangkok/contact",
+      "https://capellahotels.com/en/capella-bangkok"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Shared estate realigned: Capella is north of the broader Four Seasons cascade; distances and individual plots remain compressed.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "rosewood",
+    "name": "Rosewood Bangkok",
+    "category": "hotel",
+    "district": "Phloen Chit",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1400,
+      "z": -556
+    },
+    "map": {
+      "x": 850,
+      "y": 461
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1400,
+        "z": -556,
+        "w": 48,
+        "d": 42,
+        "yaw": 0,
+        "height": 119
+      }
+    ],
+    "height": 119,
+    "mainEntrance": {
+      "x": 1400,
+      "z": -591
+    },
+    "vehicleAccess": {
+      "x": 1381.8181818181818,
+      "z": -503.6363636363636,
+      "nodeId": "bkk:435"
+    },
+    "pedestrianAccess": {
+      "x": 1400,
+      "z": -591
+    },
+    "protectedParcels": [
+      "parcel:rosewood:structure:151",
+      "parcel:rosewood:structure:152"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "embassy",
+      "phloen-chit"
+    ],
+    "roadRelationships": [
+      "1041/38 Phloen Chit Road"
+    ],
+    "references": [
+      "https://www.kpf.com/project/rosewood-bangkok",
+      "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "embassy",
+    "name": "Park Hyatt Bangkok / Central Embassy",
+    "category": "hotel",
+    "district": "Phloen Chit / Lumphini",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1324,
+      "z": -680
+    },
+    "map": {
+      "x": 831,
+      "y": 430
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 1314,
+        "z": -680,
+        "w": 75,
+        "d": 62,
+        "yaw": 0,
+        "height": 25
+      },
+      {
+        "x": 1349,
+        "z": -685,
+        "w": 35,
+        "d": 48,
+        "yaw": 0,
+        "height": 116
+      }
+    ],
+    "height": 116,
+    "mainEntrance": {
+      "x": 1324,
+      "z": -725
+    },
+    "vehicleAccess": {
+      "x": 1257.142857142857,
+      "z": -688.5714285714286,
+      "nodeId": "bkk:176"
+    },
+    "pedestrianAccess": {
+      "x": 1324,
+      "z": -725
+    },
+    "protectedParcels": [
+      "parcel:embassy:structure:153",
+      "parcel:embassy:structure:154",
+      "parcel:embassy:structure:155"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "rosewood",
+      "central",
+      "phloen-chit"
+    ],
+    "roadRelationships": [
+      "88 Wireless Road"
+    ],
+    "references": [
+      "https://www.ala.uk.com/selected-projects/central-embassy/",
+      "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "erawan-hotel",
+    "name": "Grand Hyatt Erawan Bangkok",
+    "category": "hotel",
+    "district": "Ratchaprasong",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1304,
+      "z": -416
+    },
+    "map": {
+      "x": 826,
+      "y": 496
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": 1304,
+        "z": -416,
+        "w": 66,
+        "d": 52,
+        "yaw": 1.5707963267948966,
+        "height": 70
+      }
+    ],
+    "height": 70,
+    "mainEntrance": {
+      "x": 1264,
+      "z": -416
+    },
+    "vehicleAccess": {
+      "x": 1200,
+      "z": -450,
+      "nodeId": "bkk:185"
+    },
+    "pedestrianAccess": {
+      "x": 1264,
+      "z": -416
+    },
+    "protectedParcels": [
+      "parcel:erawan-hotel:structure:156",
+      "parcel:erawan-hotel:structure:157"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "central",
+      "erawan-shrine"
+    ],
+    "roadRelationships": [
+      "494 Ratchadamri Road"
+    ],
+    "references": [
+      "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "eastin",
+    "name": "Eastin Grand Hotel Sathorn",
+    "category": "hotel",
+    "district": "Sathorn / Surasak",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 232,
+      "z": 1332
+    },
+    "map": {
+      "x": 558,
+      "y": 933
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 232,
+        "z": 1332,
+        "w": 42,
+        "d": 40,
+        "yaw": 0,
+        "height": 111
+      }
+    ],
+    "height": 111,
+    "mainEntrance": {
+      "x": 232,
+      "z": 1298
+    },
+    "vehicleAccess": {
+      "x": 240,
+      "z": 1420,
+      "nodeId": "bkk:842"
+    },
+    "pedestrianAccess": {
+      "x": 232,
+      "z": 1298
+    },
+    "protectedParcels": [
+      "parcel:eastin:structure:158",
+      "parcel:eastin:structure:159"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "surasak",
+      "state"
+    ],
+    "roadRelationships": [
+      "33/1 South Sathorn Road"
+    ],
+    "references": [
+      "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "river-city",
+    "name": "River City Bangkok",
+    "category": "mall",
+    "district": "Samphanthawong",
+    "geographicReference": {
+      "lat": 13.730349,
+      "lon": 100.513262
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -276,
+      "z": 784
+    },
+    "map": {
+      "x": 431,
+      "y": 796
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -269,
+        "z": 784,
+        "w": 90,
+        "d": 36,
+        "yaw": -1.5707963267948966,
+        "height": 23
+      },
+      {
+        "x": -294,
+        "z": 752,
+        "w": 23,
+        "d": 9,
+        "yaw": -1.5707963267948966,
+        "height": 5
+      },
+      {
+        "x": -294,
+        "z": 816,
+        "w": 23,
+        "d": 9,
+        "yaw": -1.5707963267948966,
+        "height": 5
+      }
+    ],
+    "height": 23,
+    "facade": {
+      "x": -300,
+      "z": 784,
+      "y": 11,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -237,
+      "z": 784
+    },
+    "vehicleAccess": {
+      "x": -237,
+      "z": 784,
+      "nodeId": "real-arrival:river-city:16"
+    },
+    "pedestrianAccess": {
+      "x": -237,
+      "z": 784
+    },
+    "protectedParcels": [
+      "parcel:river-city:structure:160",
+      "parcel:river-city:structure:161",
+      "parcel:river-city:structure:162",
+      "parcel:river-city:structure:163",
+      "parcel:river-city:structure:164",
+      "parcel:river-city:forecourt:165"
+    ],
+    "visibilityCorridors": [
+      "view:river-city:0",
+      "view:river-city:1",
+      "view:river-city:2"
+    ],
+    "neighbors": [
+      "hilton",
+      "icon",
+      "oriental"
+    ],
+    "roadRelationships": [
+      "Charoen Krung 24",
+      "Si Phraya"
+    ],
+    "references": [
+      "https://rivercitybangkok.com/plan-your-visit/",
+      "https://www.openstreetmap.org/way/342182317",
+      "https://rivercitybangkok.com/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West river elevation; east street entrance separately recorded.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "siam-center",
+    "name": "Siam Center / Siam Discovery",
+    "category": "mall",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.746277,
+      "lon": 100.532798
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 704,
+      "z": -672
+    },
+    "map": {
+      "x": 676,
+      "y": 432
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 704,
+        "z": -672,
+        "w": 154,
+        "d": 64,
+        "yaw": 0,
+        "height": 33
+      }
+    ],
+    "height": 33,
+    "facade": {
+      "x": 704,
+      "z": -644,
+      "y": 13,
+      "yaw": 0
+    },
+    "mainEntrance": {
+      "x": 704,
+      "z": -644
+    },
+    "vehicleAccess": {
+      "x": 700,
+      "z": -580,
+      "nodeId": "bkk:411"
+    },
+    "pedestrianAccess": {
+      "x": 704,
+      "z": -644
+    },
+    "protectedParcels": [
+      "parcel:siam-center:structure:166",
+      "parcel:siam-center:structure:167",
+      "parcel:siam-center:forecourt:168",
+      "parcel:siam-center:entrance:169",
+      "parcel:siam-center:entrance:170"
+    ],
+    "visibilityCorridors": [
+      "view:siam-center:0",
+      "view:siam-center:1",
+      "view:siam-center:2"
+    ],
+    "neighbors": [
+      "siam-discovery",
+      "paragon",
+      "siam-bts"
+    ],
+    "roadRelationships": [
+      "Rama I"
+    ],
+    "references": [
+      "https://www.siamcenter.co.th/",
+      "https://www.openstreetmap.org/way/25701334",
+      "https://www.siamdiscovery.co.th/",
+      "https://www.nendo.jp/en/works/siam-discovery/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "South Rama I frontage; Discovery west of Center.",
+    "visualQa": "street-and-elevated-reviewed"
+  },
+  {
+    "id": "jim-thompson",
+    "name": "Jim Thompson House",
+    "category": "museum",
+    "district": "Pathum Wan",
+    "geographicReference": {
+      "lat": 13.74931,
+      "lon": 100.52848
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": 504,
+      "z": -696
+    },
+    "map": {
+      "x": 626,
+      "y": 426
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 493,
+        "z": -709,
+        "w": 19,
+        "d": 17,
+        "yaw": 0,
+        "height": 13
+      },
+      {
+        "x": 515,
+        "z": -711,
+        "w": 16,
+        "d": 19,
+        "yaw": 0,
+        "height": 14
+      },
+      {
+        "x": 523,
+        "z": -691,
+        "w": 13,
+        "d": 16,
+        "yaw": 0,
+        "height": 12
+      },
+      {
+        "x": 488,
+        "z": -690,
+        "w": 15,
+        "d": 15,
+        "yaw": 0,
+        "height": 12
+      },
+      {
+        "x": 490,
+        "z": -673,
+        "w": 12,
+        "d": 10,
+        "yaw": 0,
+        "height": 9
+      },
+      {
+        "x": 519,
+        "z": -674,
+        "w": 13,
+        "d": 11,
+        "yaw": 0,
+        "height": 9
+      }
+    ],
+    "height": 14,
+    "mainEntrance": {
+      "x": 504,
+      "z": -734.5
+    },
+    "vehicleAccess": {
+      "x": 504,
+      "z": -640,
+      "nodeId": "civic:5040000:-6400000"
+    },
+    "pedestrianAccess": {
+      "x": 504,
+      "z": -734.5
+    },
+    "protectedParcels": [
+      "parcel:jim-thompson:structure:171",
+      "parcel:jim-thompson:structure:172",
+      "parcel:jim-thompson:structure:173",
+      "parcel:jim-thompson:structure:174",
+      "parcel:jim-thompson:structure:175",
+      "parcel:jim-thompson:structure:176",
+      "parcel:jim-thompson:structure:177",
+      "parcel:jim-thompson:structure:178"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "national-stadium",
+      "mbk",
+      "siam-discovery"
+    ],
+    "roadRelationships": [
+      "Soi Kasemsan 2",
+      "Rama I"
+    ],
+    "references": [
+      "https://jimthompsonhouse.org/visitor-information/",
+      "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+      "https://www.openstreetmap.org/way/897909009",
+      "https://jimthompsonhouse.org/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:mo-chit",
+    "name": "Mo Chit",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1080.032805953395,
+      "z": -2140.0599065235906
+    },
+    "map": {
+      "x": 770.0082014883487,
+      "y": 64.98502336910235
+    },
+    "rotation": -0.5010133868037738,
+    "footprints": [
+      {
+        "x": 1080.032805953395,
+        "z": -2140.0599065235906,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.5010133868037738,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1087.780489652671,
+      "z": -2191.6832868594033,
+      "yaw": -0.5010133868037738
+    },
+    "pedestrianAccess": {
+      "x": 1087.780489652671,
+      "z": -2191.6832868594033,
+      "yaw": -0.5010133868037738
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N8)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:saphan-khwai",
+    "name": "Saphan Khwai",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 988.7551505809855,
+      "z": -1973.6332820110392
+    },
+    "map": {
+      "x": 747.1887876452464,
+      "y": 106.5916794972402
+    },
+    "rotation": -0.5120157686271394,
+    "footprints": [
+      {
+        "x": 988.7551505809855,
+        "z": -1973.6332820110392,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.5120157686271394,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 973.0634942903598,
+      "z": -1982.4521210988596,
+      "yaw": -0.5120157686271394
+    },
+    "pedestrianAccess": {
+      "x": 973.0634942903598,
+      "z": -1982.4521210988596,
+      "yaw": -0.5120157686271394
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N7)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:ari",
+    "name": "Ari",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 903.8835687913618,
+      "z": -1821.050578767319
+    },
+    "map": {
+      "x": 725.9708921978404,
+      "y": 144.73735530817027
+    },
+    "rotation": -0.25213666156722614,
+    "footprints": [
+      {
+        "x": 903.8835687913618,
+        "z": -1821.050578767319,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.25213666156722614,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 898.6769080502631,
+      "z": -1872.991802125333,
+      "yaw": -0.25213666156722614
+    },
+    "pedestrianAccess": {
+      "x": 898.6769080502631,
+      "z": -1872.991802125333,
+      "yaw": -0.25213666156722614
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N5)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:sanam-pao",
+    "name": "Sanam Pao",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 910.9991329188286,
+      "z": -1651.7628838817525
+    },
+    "map": {
+      "x": 727.7497832297072,
+      "y": 187.05927902956188
+    },
+    "rotation": -0.06582763532905746,
+    "footprints": [
+      {
+        "x": 910.9991329188286,
+        "z": -1651.7628838817525,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.06582763532905746,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 932.1833726005104,
+      "z": -1699.4727150395868,
+      "yaw": -0.06582763532905746
+    },
+    "pedestrianAccess": {
+      "x": 932.1833726005104,
+      "z": -1699.4727150395868,
+      "yaw": -0.06582763532905746
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N4)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:victory-monument",
+    "name": "Victory Monument",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 808.1406825212453,
+      "z": -1308.3986732861636
+    },
+    "map": {
+      "x": 702.0351706303113,
+      "y": 272.9003316784591
+    },
+    "rotation": -0.058512694022112524,
+    "footprints": [
+      {
+        "x": 808.1406825212453,
+        "z": -1308.3986732861636,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.058512694022112524,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 793.0369735916607,
+      "z": -1358.3674432987464,
+      "yaw": -0.058512694022112524
+    },
+    "pedestrianAccess": {
+      "x": 793.0369735916607,
+      "z": -1358.3674432987464,
+      "yaw": -0.058512694022112524
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "victory"
+    ],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N3)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:phaya-thai",
+    "name": "Phaya Thai",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 719.2983004606624,
+      "z": -1038.1146424905046
+    },
+    "map": {
+      "x": 679.8245751151655,
+      "y": 340.47133937737385
+    },
+    "rotation": -0.33079170560638543,
+    "footprints": [
+      {
+        "x": 719.2983004606624,
+        "z": -1038.1146424905046,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.33079170560638543,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 720.4076356919112,
+      "z": -985.9248985234692,
+      "yaw": -0.33079170560638543
+    },
+    "pedestrianAccess": {
+      "x": 720.4076356919112,
+      "z": -985.9248985234692,
+      "yaw": -0.33079170560638543
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N2)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:ratchathewi",
+    "name": "Ratchathewi",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 638.8647839858205,
+      "z": -806.9474287358674
+    },
+    "map": {
+      "x": 659.7161959964551,
+      "y": 398.2631428160331
+    },
+    "rotation": -0.34025629309067307,
+    "footprints": [
+      {
+        "x": 638.8647839858205,
+        "z": -806.9474287358674,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.34025629309067307,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 605.5440325995748,
+      "z": -766.7637563420207,
+      "yaw": -0.34025629309067307
+    },
+    "pedestrianAccess": {
+      "x": 605.5440325995748,
+      "z": -766.7637563420207,
+      "yaw": -0.34025629309067307
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (N1)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:siam",
+    "name": "Siam",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 841.1411436745389,
+      "z": -580
+    },
+    "map": {
+      "x": 710.2852859186347,
+      "y": 455
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": 841.1411436745389,
+        "z": -580,
+        "w": 22,
+        "d": 94,
+        "yaw": 1.5707963267948966,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 781.1411436745389,
+      "z": -562,
+      "yaw": 1.5707963267948966
+    },
+    "pedestrianAccess": {
+      "x": 781.1411436745389,
+      "z": -562,
+      "yaw": 1.5707963267948966
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "paragon"
+    ],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (CEN)",
+      "BTS Silom Line (CEN)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:chit-lom",
+    "name": "Chit Lom",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1289.5046051786985,
+      "z": -553.343674134547
+    },
+    "map": {
+      "x": 822.3761512946746,
+      "y": 461.66408146636326
+    },
+    "rotation": 1.0768549578752193,
+    "footprints": [
+      {
+        "x": 1289.5046051786985,
+        "z": -553.343674134547,
+        "w": 22,
+        "d": 72,
+        "yaw": 1.0768549578752193,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1324.113892260251,
+      "z": -514.2643030072287,
+      "yaw": 1.0768549578752193
+    },
+    "pedestrianAccess": {
+      "x": 1324.113892260251,
+      "z": -514.2643030072287,
+      "yaw": 1.0768549578752193
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "central"
+    ],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (E1)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:phloen-chit",
+    "name": "Phloen Chit",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1399.4561051191733,
+      "z": -494.13902032044496
+    },
+    "map": {
+      "x": 849.8640262797933,
+      "y": 476.46524491988873
+    },
+    "rotation": 1.0768549578752193,
+    "footprints": [
+      {
+        "x": 1399.4561051191733,
+        "z": -494.13902032044496,
+        "w": 22,
+        "d": 72,
+        "yaw": 1.0768549578752193,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1434.065392200726,
+      "z": -455.05964919312663,
+      "yaw": 1.0768549578752193
+    },
+    "pedestrianAccess": {
+      "x": 1434.065392200726,
+      "z": -455.05964919312663,
+      "yaw": 1.0768549578752193
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (E2)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:nana",
+    "name": "Nana",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1499.920518099465,
+      "z": -438.4937474072301
+    },
+    "map": {
+      "x": 874.9801295248662,
+      "y": 490.3765631481925
+    },
+    "rotation": 0.9659605919415541,
+    "footprints": [
+      {
+        "x": 1499.920518099465,
+        "z": -438.4937474072301,
+        "w": 22,
+        "d": 72,
+        "yaw": 0.9659605919415541,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1489.6852328166146,
+      "z": -423.68702814945163,
+      "yaw": 0.9659605919415541
+    },
+    "pedestrianAccess": {
+      "x": 1489.6852328166146,
+      "z": -423.68702814945163,
+      "yaw": 0.9659605919415541
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (E3)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:asok",
+    "name": "Asok",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1781.845929569805,
+      "z": -199.5139598292598
+    },
+    "map": {
+      "x": 945.4614823924512,
+      "y": 550.121510042685
+    },
+    "rotation": 0.9269304827950037,
+    "footprints": [
+      {
+        "x": 1781.845929569805,
+        "z": -199.5139598292598,
+        "w": 22,
+        "d": 72,
+        "yaw": 0.9269304827950037,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1731.8514039235772,
+      "z": -214.53219559144762,
+      "yaw": 0.9269304827950037
+    },
+    "pedestrianAccess": {
+      "x": 1731.8514039235772,
+      "z": -214.53219559144762,
+      "yaw": 0.9269304827950037
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "terminal"
+    ],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (E4)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:phrom-phong",
+    "name": "Phrom Phong",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 2120.054640773915,
+      "z": 40.04098058043605
+    },
+    "map": {
+      "x": 1030.0136601934787,
+      "y": 610.010245145109
+    },
+    "rotation": 0.9272952180015491,
+    "footprints": [
+      {
+        "x": 2120.054640773915,
+        "z": 40.04098058043605,
+        "w": 22,
+        "d": 72,
+        "yaw": 0.9272952180015491,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 2148.4546407739117,
+      "z": 83.84098058043784,
+      "yaw": 0.9272952180015491
+    },
+    "pedestrianAccess": {
+      "x": 2148.4546407739117,
+      "z": 83.84098058043784,
+      "yaw": 0.9272952180015491
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "emporium"
+    ],
+    "roadRelationships": [
+      "BTS Sukhumvit Line (E5)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:national-stadium",
+    "name": "National Stadium",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 559.9318311689597,
+      "z": -580
+    },
+    "map": {
+      "x": 639.9829577922399,
+      "y": 455
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": 559.9318311689597,
+        "z": -580,
+        "w": 22,
+        "d": 72,
+        "yaw": 1.5707963267948966,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 510.93183116895966,
+      "z": -562,
+      "yaw": 1.5707963267948966
+    },
+    "pedestrianAccess": {
+      "x": 510.93183116895966,
+      "z": -562,
+      "yaw": 1.5707963267948966
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "mbk"
+    ],
+    "roadRelationships": [
+      "BTS Silom Line (W1)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:ratchadamri",
+    "name": "Ratchadamri",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1097.3614621492313,
+      "z": -115.0716199892347
+    },
+    "map": {
+      "x": 774.3403655373079,
+      "y": 571.2320950026913
+    },
+    "rotation": -0.32927214958492523,
+    "footprints": [
+      {
+        "x": 1097.3614621492313,
+        "z": -115.0716199892347,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.32927214958492523,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1064.484095189201,
+      "z": -74.5243791240969,
+      "yaw": -0.32927214958492523
+    },
+    "pedestrianAccess": {
+      "x": 1064.484095189201,
+      "z": -74.5243791240969,
+      "yaw": -0.32927214958492523
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S1)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:sala-daeng",
+    "name": "Sala Daeng",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1001.6504694159917,
+      "z": 712.1995467707667
+    },
+    "map": {
+      "x": 750.4126173539979,
+      "y": 778.0498866926916
+    },
+    "rotation": -0.8029402234546921,
+    "footprints": [
+      {
+        "x": 1001.6504694159917,
+        "z": 712.1995467707667,
+        "w": 22,
+        "d": 72,
+        "yaw": -0.8029402234546921,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 1024.398439739645,
+      "z": 665.2151893083709,
+      "yaw": -0.8029402234546921
+    },
+    "pedestrianAccess": {
+      "x": 1024.398439739645,
+      "z": 665.2151893083709,
+      "yaw": -0.8029402234546921
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S2)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:chong-nonsi",
+    "name": "Chong Nonsi",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 656.8406761097019,
+      "z": 1213.6813522194036
+    },
+    "map": {
+      "x": 664.2101690274255,
+      "y": 903.4203380548508
+    },
+    "rotation": 0.46364760900091023,
+    "footprints": [
+      {
+        "x": 656.8406761097019,
+        "z": 1213.6813522194036,
+        "w": 22,
+        "d": 72,
+        "yaw": 0.46364760900091023,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 618.8275204922018,
+      "z": 1177.904264579411,
+      "yaw": 0.46364760900091023
+    },
+    "pedestrianAccess": {
+      "x": 618.8275204922018,
+      "z": 1177.904264579411,
+      "yaw": 0.46364760900091023
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "mahanakhon"
+    ],
+    "roadRelationships": [
+      "BTS Silom Line (S3)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:saint-louis",
+    "name": "Saint Louis",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 438.2071482812051,
+      "z": 1386.9654752864658
+    },
+    "map": {
+      "x": 609.5517870703013,
+      "y": 946.7413688216164
+    },
+    "rotation": -1.4056476493801837,
+    "footprints": [
+      {
+        "x": 438.2071482812051,
+        "z": 1386.9654752864658,
+        "w": 22,
+        "d": 72,
+        "yaw": -1.4056476493801837,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 483.58126877748145,
+      "z": 1361.1548342795209,
+      "yaw": -1.4056476493801837
+    },
+    "pedestrianAccess": {
+      "x": 483.58126877748145,
+      "z": 1361.1548342795209,
+      "yaw": -1.4056476493801837
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S4)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:surasak",
+    "name": "Surasak",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 211.50901686265178,
+      "z": 1424.4337256892281
+    },
+    "map": {
+      "x": 552.8772542156629,
+      "y": 956.108431422307
+    },
+    "rotation": -1.4309387803150204,
+    "footprints": [
+      {
+        "x": 211.50901686265178,
+        "z": 1424.4337256892281,
+        "w": 22,
+        "d": 72,
+        "yaw": -1.4309387803150204,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": 160.47822253602254,
+      "z": 1413.4401807471604,
+      "yaw": -1.4309387803150204
+    },
+    "pedestrianAccess": {
+      "x": 160.47822253602254,
+      "z": 1413.4401807471604,
+      "yaw": -1.4309387803150204
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S5)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:saphan-taksin",
+    "name": "Saphan Taksin",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -91.183442630853,
+      "z": 1459.2566711992104
+    },
+    "map": {
+      "x": 477.20413934228674,
+      "y": 964.8141677998026
+    },
+    "rotation": -1.5108582091680256,
+    "footprints": [
+      {
+        "x": -91.183442630853,
+        "z": 1459.2566711992104,
+        "w": 22,
+        "d": 72,
+        "yaw": -1.5108582091680256,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -43.94869703234334,
+      "z": 1428.3717427025458,
+      "yaw": -1.5108582091680256
+    },
+    "pedestrianAccess": {
+      "x": -43.94869703234334,
+      "z": 1428.3717427025458,
+      "yaw": -1.5108582091680256
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "state"
+    ],
+    "roadRelationships": [
+      "BTS Silom Line (S6)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:krung-thon-buri",
+    "name": "Krung Thon Buri",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -920.3603209640696,
+      "z": 1460
+    },
+    "map": {
+      "x": 269.9099197589826,
+      "y": 965
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -920.3603209640696,
+        "z": 1460,
+        "w": 22,
+        "d": 72,
+        "yaw": -1.5707963267948966,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -969.3603209640696,
+      "z": 1442,
+      "yaw": -1.5707963267948966
+    },
+    "pedestrianAccess": {
+      "x": -969.3603209640696,
+      "z": 1442,
+      "yaw": -1.5707963267948966
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S7)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:wongwian-yai",
+    "name": "Wongwian Yai",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1220.0681688310422,
+      "z": 1460
+    },
+    "map": {
+      "x": 194.98295779223946,
+      "y": 965
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -1220.0681688310422,
+        "z": 1460,
+        "w": 22,
+        "d": 72,
+        "yaw": -1.5707963267948966,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -1171.0681688310422,
+      "z": 1442,
+      "yaw": -1.5707963267948966
+    },
+    "pedestrianAccess": {
+      "x": -1171.0681688310422,
+      "z": 1442,
+      "yaw": -1.5707963267948966
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "BTS Silom Line (S8)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:krung-thon-buri-gold",
+    "name": "Krung Thon Buri",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -880.0376308844193,
+      "z": 1360.0522651172491
+    },
+    "map": {
+      "x": 279.9905922788952,
+      "y": 940.0130662793123
+    },
+    "rotation": 2.5175696006126573,
+    "footprints": [
+      {
+        "x": -880.0376308844193,
+        "z": 1360.0522651172491,
+        "w": 22,
+        "d": 45,
+        "yaw": 2.5175696006126573,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -886.1728305058075,
+      "z": 1399.3792193039862,
+      "yaw": 2.5175696006126573
+    },
+    "pedestrianAccess": {
+      "x": -886.1728305058075,
+      "z": 1399.3792193039862,
+      "yaw": 2.5175696006126573
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "Gold Line (G1)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:charoen-nakhon",
+    "name": "Charoen Nakhon",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -861.4050648306168,
+      "z": 881.911287350592
+    },
+    "map": {
+      "x": 284.6487337923458,
+      "y": 820.477821837648
+    },
+    "rotation": -2.7681064965003905,
+    "footprints": [
+      {
+        "x": -861.4050648306168,
+        "z": 881.911287350592,
+        "w": 22,
+        "d": 45,
+        "yaw": -2.7681064965003905,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -831.6933131104928,
+      "z": 908.3964116606969,
+      "yaw": -2.7681064965003905
+    },
+    "pedestrianAccess": {
+      "x": -831.6933131104928,
+      "z": 908.3964116606969,
+      "yaw": -2.7681064965003905
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "icon"
+    ],
+    "roadRelationships": [
+      "Gold Line (G2)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "bts:khlong-san",
+    "name": "Khlong San",
+    "category": "bts-station",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1032.0337096131084,
+      "z": 599.9451238856376
+    },
+    "map": {
+      "x": 241.9915725967229,
+      "y": 749.9862809714094
+    },
+    "rotation": -2.590735119056983,
+    "footprints": [
+      {
+        "x": -1032.0337096131084,
+        "z": 599.9451238856376,
+        "w": 22,
+        "d": 45,
+        "yaw": -2.590735119056983,
+        "height": 26
+      }
+    ],
+    "height": 26,
+    "mainEntrance": {
+      "x": -998.1149991009895,
+      "z": 620.7722954937815,
+      "yaw": -2.590735119056983
+    },
+    "pedestrianAccess": {
+      "x": -998.1149991009895,
+      "z": 620.7722954937815,
+      "yaw": -2.590735119056983
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "Gold Line (G3)"
+    ],
+    "references": [
+      "https://www.bts.co.th/eng/routemap.html"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Station length, stairs and guideway are compressed; exact entrance survey remains pending.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "sukhumvit-mrt",
+    "name": "MRT Sukhumvit (BL22)",
+    "category": "underground-mrt-entrance",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1812,
+      "z": -240
+    },
+    "map": {
+      "x": 953,
+      "y": 540
+    },
+    "rotation": -3.1082716577115477,
+    "footprints": [
+      {
+        "x": 1812,
+        "z": -240,
+        "w": 3.6,
+        "d": 7,
+        "height": 3.2,
+        "yaw": -3.1082716577115477,
+        "color": "#375d85",
+        "environmentId": "sukhumvit-mrt"
+      }
+    ],
+    "height": 3.2,
+    "mainEntrance": {
+      "x": 1812,
+      "z": -240
+    },
+    "pedestrianAccess": {
+      "x": 1812,
+      "z": -240
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "bts:asok"
+    ],
+    "roadRelationships": [
+      "Surface entrance only; no elevated MRT guideway"
+    ],
+    "references": [
+      "https://metro.bemplc.co.th/Line-Maps"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Surface canopy placement, not a model of the underground station.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "silom-mrt",
+    "name": "MRT Si Lom (BL26)",
+    "category": "underground-mrt-entrance",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1084,
+      "z": 724
+    },
+    "map": {
+      "x": 771,
+      "y": 781
+    },
+    "rotation": 1.084930152467369,
+    "footprints": [
+      {
+        "x": 1084,
+        "z": 724,
+        "w": 3.6,
+        "d": 7,
+        "height": 3.2,
+        "yaw": 1.084930152467369,
+        "color": "#375d85",
+        "environmentId": "silom-mrt"
+      }
+    ],
+    "height": 3.2,
+    "mainEntrance": {
+      "x": 1084,
+      "z": 724
+    },
+    "pedestrianAccess": {
+      "x": 1084,
+      "z": 724
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "bts:sala-daeng"
+    ],
+    "roadRelationships": [
+      "Surface entrance only; no elevated MRT guideway"
+    ],
+    "references": [
+      "https://metro.bemplc.co.th/Line-Maps"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Surface canopy placement, not a model of the underground station.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "hua-lamphong-mrt",
+    "name": "MRT Hua Lamphong (BL28)",
+    "category": "underground-mrt-entrance",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 404.03009757777727,
+      "z": -147.69565074044422
+    },
+    "map": {
+      "x": 601.0075243944443,
+      "y": 563.0760873148889
+    },
+    "rotation": 0.47951929199259496,
+    "footprints": [
+      {
+        "x": 404.03009757777727,
+        "z": -147.69565074044422,
+        "w": 3.6,
+        "d": 7,
+        "height": 3.2,
+        "yaw": 0.47951929199259496,
+        "color": "#375d85",
+        "environmentId": "hua-lamphong-mrt"
+      }
+    ],
+    "height": 3.2,
+    "mainEntrance": {
+      "x": 404.03009757777727,
+      "z": -147.69565074044422
+    },
+    "pedestrianAccess": {
+      "x": 404.03009757777727,
+      "z": -147.69565074044422
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "Surface entrance only; no elevated MRT guideway"
+    ],
+    "references": [
+      "https://metro.bemplc.co.th/Line-Maps"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Surface canopy placement, not a model of the underground station.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "chatuchak-mrt",
+    "name": "MRT Chatuchak Park (BL13)",
+    "category": "underground-mrt-entrance",
+    "district": "Transit corridor",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1116,
+      "z": -2132
+    },
+    "map": {
+      "x": 779,
+      "y": 67
+    },
+    "rotation": -0.5010133868035884,
+    "footprints": [
+      {
+        "x": 1116,
+        "z": -2132,
+        "w": 3.6,
+        "d": 7,
+        "height": 3.2,
+        "yaw": -0.5010133868035884,
+        "color": "#375d85",
+        "environmentId": "chatuchak-mrt"
+      }
+    ],
+    "height": 3.2,
+    "mainEntrance": {
+      "x": 1116,
+      "z": -2132
+    },
+    "pedestrianAccess": {
+      "x": 1116,
+      "z": -2132
+    },
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "bts:mo-chit"
+    ],
+    "roadRelationships": [
+      "Surface entrance only; no elevated MRT guideway"
+    ],
+    "references": [
+      "https://metro.bemplc.co.th/Line-Maps"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Surface canopy placement, not a model of the underground station.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "suthat",
+    "name": "Wat Suthat",
+    "category": "temple",
+    "district": "Phra Nakhon",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -360,
+      "z": -653
+    },
+    "map": {
+      "x": 410,
+      "y": 436.75
+    },
+    "rotation": 0,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": -380,
+      "z": -780,
+      "nodeId": "bkk:366"
+    },
+    "pedestrianAccess": {
+      "x": -360,
+      "z": -653
+    },
+    "protectedParcels": [
+      "parcel:swing:structure:15",
+      "parcel:swing:structure:16",
+      "parcel:swing:structure:17",
+      "parcel:swing:structure:18",
+      "parcel:swing:structure:19",
+      "parcel:swing:structure:20",
+      "parcel:swing:structure:21",
+      "parcel:swing:structure:22",
+      "parcel:swing:forecourt:23",
+      "parcel:swing:entrance:24"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "swing"
+    ],
+    "roadRelationships": [
+      "Bamrung Mueang",
+      "Dinso"
+    ],
+    "references": [
+      "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
+      "https://www.openstreetmap.org/way/178353988"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Rendered inside Giant Swing; existing compound geometry and access retained. Separate nominal pin has not been researched.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "erawan-shrine",
+    "name": "Erawan Shrine",
+    "category": "shrine",
+    "district": "Ratchaprasong",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 1286,
+      "z": -389
+    },
+    "map": {
+      "x": 821.5,
+      "y": 502.75
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [],
+    "vehicleAccess": {
+      "x": 1200,
+      "z": -450,
+      "nodeId": "bkk:185"
+    },
+    "pedestrianAccess": {
+      "x": 1286,
+      "z": -389
+    },
+    "protectedParcels": [
+      "parcel:erawan-hotel:structure:156",
+      "parcel:erawan-hotel:structure:157"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "erawan-hotel"
+    ],
+    "roadRelationships": [
+      "494 Ratchadamri Road"
+    ],
+    "references": [
+      "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Rendered inside Grand Hyatt Erawan Bangkok; existing compound geometry and access retained. Separate nominal pin has not been researched.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "scala-yaowarat",
+    "name": "Scala Yaowarat",
+    "category": "historic-commercial-building",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 63.110452835451014,
+      "z": -45.661920212009605
+    },
+    "map": {
+      "x": 515.7776132088627,
+      "y": 588.5845199469976
+    },
+    "rotation": 2.6919050866786645,
+    "footprints": [
+      {
+        "x": 63.110452835451014,
+        "z": -45.661920212009605,
+        "w": 22,
+        "d": 22,
+        "height": 36,
+        "yaw": 2.6919050866786645,
+        "color": "#a34d54",
+        "regionId": "chinatown"
+      }
+    ],
+    "height": 36,
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "gate"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing named Yaowarat facade override. Exact real property position and historical identity require review.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:pho",
+    "name": "Wat Pho pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1079.1858797514042,
+      "z": -609.601086172969
+    },
+    "map": {
+      "x": 230.20353006214896,
+      "y": 447.59972845675776
+    },
+    "rotation": 3.218364544859571,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "pho"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:arun",
+    "name": "Wat Arun pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -1342.224331609114,
+      "z": -508.73166151376597
+    },
+    "map": {
+      "x": 164.4439170977215,
+      "y": 472.8170846215585
+    },
+    "rotation": 0.07677189126977768,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "arun"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:icon",
+    "name": "ICONSIAM pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -589.6163943086115,
+      "z": 923.4745757385913
+    },
+    "map": {
+      "x": 352.59590142284713,
+      "y": 830.8686439346478
+    },
+    "rotation": 0.1651486774146267,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "icon"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:asiatique",
+    "name": "Asiatique pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -480.95737841659,
+      "z": 1969.1436241063998
+    },
+    "map": {
+      "x": 379.7606553958525,
+      "y": 1092.2859060266
+    },
+    "rotation": 2.6387494426619322,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "asiatique"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:oriental",
+    "name": "Mandarin Oriental Bangkok pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -293.8638473096876,
+      "z": 1055.6439745516147
+    },
+    "map": {
+      "x": 426.5340381725781,
+      "y": 863.9109936379036
+    },
+    "rotation": 3.3067413310044205,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "oriental"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:peninsula",
+    "name": "The Peninsula Bangkok pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -541.0550716092313,
+      "z": 1214.842511934872
+    },
+    "map": {
+      "x": 364.7362320976922,
+      "y": 903.710627983718
+    },
+    "rotation": 0.16514867741462624,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "peninsula"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:hilton",
+    "name": "Millennium Hilton Bangkok pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -699.4362163615336,
+      "z": 725.8955113023366
+    },
+    "map": {
+      "x": 325.14094590961656,
+      "y": 781.4738778255842
+    },
+    "rotation": 0.7631795980707295,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "hilton"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:shangri",
+    "name": "Shangri-La Bangkok pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -246.7719313088038,
+      "z": 1338.1990433050769
+    },
+    "map": {
+      "x": 438.3070171727991,
+      "y": 934.5497608262692
+    },
+    "rotation": 3.303791487053176,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "shangri"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:river-city",
+    "name": "River City Bangkok pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -337.4314148772552,
+      "z": 794.2385691462092
+    },
+    "map": {
+      "x": 415.64214628068623,
+      "y": 798.5596422865523
+    },
+    "rotation": 3.30674133100442,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "river-city"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:sathorn",
+    "name": "Sathorn river pier",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -252.3290451672878,
+      "z": 1403.8762725411304
+    },
+    "map": {
+      "x": 436.91773870817804,
+      "y": 950.9690681352827
+    },
+    "rotation": 2.8105709581672653,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "sathorn"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  },
+  {
+    "id": "pier:songwat",
+    "name": "Song Wat river landing",
+    "category": "river-pier",
+    "district": "District requires verification",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -567.4779001241525,
+      "z": 473.2397305535372
+    },
+    "map": {
+      "x": 358.1305249689619,
+      "y": 718.3099326383843
+    },
+    "rotation": 3.9047722516605226,
+    "footprints": [],
+    "protectedParcels": [],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "songwat"
+    ],
+    "roadRelationships": [],
+    "references": [],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+    "visualQa": "volume-audit-only"
+  }
+]

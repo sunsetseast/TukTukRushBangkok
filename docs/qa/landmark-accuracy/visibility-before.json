@@ -1,0 +1,1515 @@
+{
+  "orientation": [
+    {
+      "id": "palace",
+      "expected": 3.141592653589793,
+      "actual": 3.141592653589793,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "swing",
+      "expected": 3.141592653589793,
+      "actual": 3.141592653589793,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "hua",
+      "expected": 0,
+      "actual": 0,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "paragon",
+      "expected": 0,
+      "actual": 0,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "siam-center",
+      "expected": 0,
+      "actual": 0,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "mbk",
+      "expected": 3.141592653589793,
+      "actual": 0,
+      "errorDegrees": 180,
+      "pass": false
+    },
+    {
+      "id": "central",
+      "expected": 1.5707963267948966,
+      "actual": 1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "terminal",
+      "expected": 0,
+      "actual": 0,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "emporium",
+      "expected": 3.141592653589793,
+      "actual": 3.141592653589793,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "emquartier",
+      "expected": 0,
+      "actual": 0,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "emsphere",
+      "expected": 3.141592653589793,
+      "actual": 3.141592653589793,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "icon",
+      "expected": 1.5707963267948966,
+      "actual": 1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "river-city",
+      "expected": -1.5707963267948966,
+      "actual": -1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "oriental",
+      "expected": -1.5707963267948966,
+      "actual": -1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "shangri",
+      "expected": -1.5707963267948966,
+      "actual": -1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "peninsula",
+      "expected": 1.5707963267948966,
+      "actual": 1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "hilton",
+      "expected": 1.5707963267948966,
+      "actual": 1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "four-seasons",
+      "expected": -1.5707963267948966,
+      "actual": -1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "capella",
+      "expected": -1.5707963267948966,
+      "actual": -1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    },
+    {
+      "id": "anantara",
+      "expected": 1.5707963267948966,
+      "actual": 1.5707963267948966,
+      "errorDegrees": 0,
+      "pass": true
+    }
+  ],
+  "visibility": [
+    {
+      "id": "view:palace:0",
+      "landmarkId": "palace",
+      "from": {
+        "x": -820,
+        "y": 3.4,
+        "z": -1060
+      },
+      "target": {
+        "x": -820,
+        "z": -1007.1,
+        "y": 6
+      },
+      "approach": "palace_n",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": [
+        {
+          "objectId": "building:2277",
+          "kind": "procedural-building",
+          "t": 0.24574669187145567
+        }
+      ]
+    },
+    {
+      "id": "view:palace:1",
+      "landmarkId": "palace",
+      "from": {
+        "x": -820,
+        "y": 3.4,
+        "z": -1060
+      },
+      "target": {
+        "x": -832,
+        "z": -1007.1,
+        "y": 6
+      },
+      "approach": "palace_n",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9752233206890228,
+      "blockers": [
+        {
+          "objectId": "building:2277",
+          "kind": "procedural-building",
+          "t": 0.24574669187145567
+        }
+      ]
+    },
+    {
+      "id": "view:palace:2",
+      "landmarkId": "palace",
+      "from": {
+        "x": -820,
+        "y": 3.4,
+        "z": -1060
+      },
+      "target": {
+        "x": -808,
+        "z": -1007.1,
+        "y": 6
+      },
+      "approach": "palace_n",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9752233206890228,
+      "blockers": [
+        {
+          "objectId": "building:2279",
+          "kind": "procedural-building",
+          "t": 0.41666666666666674
+        }
+      ]
+    },
+    {
+      "id": "view:swing:0",
+      "landmarkId": "swing",
+      "from": {
+        "x": -352.8,
+        "y": 3.4,
+        "z": -800.4
+      },
+      "target": {
+        "x": -360,
+        "z": -735,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.993994440640866,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:9595429",
+          "kind": "procedural-building",
+          "t": 0.37499999999999867
+        },
+        {
+          "objectId": "infill:frontage:978144577",
+          "kind": "procedural-building",
+          "t": 0.4707070707070703
+        }
+      ]
+    },
+    {
+      "id": "view:swing:1",
+      "landmarkId": "swing",
+      "from": {
+        "x": -352.8,
+        "y": 3.4,
+        "z": -800.4
+      },
+      "target": {
+        "x": -371.6,
+        "z": -735,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9610790592599403,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:978144577",
+          "kind": "procedural-building",
+          "t": 0.4385964912280693
+        }
+      ]
+    },
+    {
+      "id": "view:swing:2",
+      "landmarkId": "swing",
+      "from": {
+        "x": -352.8,
+        "y": 3.4,
+        "z": -800.4
+      },
+      "target": {
+        "x": -348.4,
+        "z": -735,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9977444701549407,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:9595429",
+          "kind": "procedural-building",
+          "t": 0.3275109170305664
+        }
+      ]
+    },
+    {
+      "id": "view:paragon:0",
+      "landmarkId": "paragon",
+      "from": {
+        "x": 920,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 920,
+        "z": -706,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:paragon:1",
+      "landmarkId": "paragon",
+      "from": {
+        "x": 920,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 908,
+        "z": -706,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9954954725939523,
+      "blockers": []
+    },
+    {
+      "id": "view:paragon:2",
+      "landmarkId": "paragon",
+      "from": {
+        "x": 920,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 932,
+        "z": -706,
+        "y": 15
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9954954725939523,
+      "blockers": []
+    },
+    {
+      "id": "view:central:0",
+      "landmarkId": "central",
+      "from": {
+        "x": 1255.5097603531235,
+        "y": 3.4,
+        "z": -678.2284822364488
+      },
+      "target": {
+        "x": 1166,
+        "z": -680.5194970290472,
+        "y": 16
+      },
+      "approach": "ratchadamri",
+      "outwardYaw": 1.5707963267948966,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9996726052710956,
+      "blockers": [
+        {
+          "objectId": "building:2109",
+          "kind": "procedural-building",
+          "t": 0.3195397216662895
+        }
+      ]
+    },
+    {
+      "id": "view:central:1",
+      "landmarkId": "central",
+      "from": {
+        "x": 1255.5097603531235,
+        "y": 3.4,
+        "z": -678.2284822364488
+      },
+      "target": {
+        "x": 1166,
+        "z": -668.5194970290472,
+        "y": 16
+      },
+      "approach": "ratchadamri",
+      "outwardYaw": 1.5707963267948966,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9941687029088606,
+      "blockers": [
+        {
+          "objectId": "building:2109",
+          "kind": "procedural-building",
+          "t": 0.19562673444692838
+        }
+      ]
+    },
+    {
+      "id": "view:central:2",
+      "landmarkId": "central",
+      "from": {
+        "x": 1255.5097603531235,
+        "y": 3.4,
+        "z": -678.2284822364488
+      },
+      "target": {
+        "x": 1166,
+        "z": -692.5194970290472,
+        "y": 16
+      },
+      "approach": "ratchadamri",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874931513995289,
+      "blockers": []
+    },
+    {
+      "id": "view:hua:0",
+      "landmarkId": "hua",
+      "from": {
+        "x": 414.32619647355165,
+        "y": 3.4,
+        "z": -172.44962216624685
+      },
+      "target": {
+        "x": 400,
+        "z": -239.5,
+        "y": 19.2
+      },
+      "approach": "ramaiv",
+      "outwardYaw": 0,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9779269705817579,
+      "blockers": []
+    },
+    {
+      "id": "view:hua:1",
+      "landmarkId": "hua",
+      "from": {
+        "x": 414.32619647355165,
+        "y": 3.4,
+        "z": -172.44962216624685
+      },
+      "target": {
+        "x": 400,
+        "z": -237.5,
+        "y": 4
+      },
+      "approach": "ramaiv",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9765968301259064,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:3138310457",
+          "kind": "procedural-building",
+          "t": 0.6613111777961593
+        }
+      ]
+    },
+    {
+      "id": "view:hua:2",
+      "landmarkId": "hua",
+      "from": {
+        "x": 414.32619647355165,
+        "y": 3.4,
+        "z": -172.44962216624685
+      },
+      "target": {
+        "x": 383,
+        "z": -239.8,
+        "y": 18
+      },
+      "approach": "ramaiv",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9067188501290822,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:1099613886",
+          "kind": "procedural-building",
+          "t": 0.7255344176756405
+        }
+      ]
+    },
+    {
+      "id": "view:hua:3",
+      "landmarkId": "hua",
+      "from": {
+        "x": 414.32619647355165,
+        "y": 3.4,
+        "z": -172.44962216624685
+      },
+      "target": {
+        "x": 417,
+        "z": -239.8,
+        "y": 18
+      },
+      "approach": "ramaiv",
+      "outwardYaw": 0,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9992128891074564,
+      "blockers": []
+    },
+    {
+      "id": "view:icon:0",
+      "landmarkId": "icon",
+      "from": {
+        "x": -539.4669914110091,
+        "y": 3.4,
+        "z": 933.0330085889909
+      },
+      "target": {
+        "x": -614.4669914110091,
+        "z": 933.0330085889909,
+        "y": 14
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:icon:1",
+      "landmarkId": "icon",
+      "from": {
+        "x": -539.4669914110091,
+        "y": 3.4,
+        "z": 933.0330085889909
+      },
+      "target": {
+        "x": -625.6669914110091,
+        "z": 933.0330085889909,
+        "y": 14
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:icon:2",
+      "landmarkId": "icon",
+      "from": {
+        "x": -539.4669914110091,
+        "y": 3.4,
+        "z": 933.0330085889909
+      },
+      "target": {
+        "x": -603.266991411009,
+        "z": 933.0330085889909,
+        "y": 14
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:terminal:0",
+      "landmarkId": "terminal",
+      "from": {
+        "x": 1655.235294117647,
+        "y": 3.4,
+        "z": -306.94117647058823
+      },
+      "target": {
+        "x": 1645,
+        "z": -370,
+        "y": 12
+      },
+      "approach": "sukhumvit",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9870818739494915,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:854452899",
+          "kind": "procedural-building",
+          "t": 0.450088613585302
+        }
+      ]
+    },
+    {
+      "id": "view:terminal:1",
+      "landmarkId": "terminal",
+      "from": {
+        "x": 1655.235294117647,
+        "y": 3.4,
+        "z": -306.94117647058823
+      },
+      "target": {
+        "x": 1633,
+        "z": -370,
+        "y": 12
+      },
+      "approach": "sukhumvit",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9430877419523073,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:854452899",
+          "kind": "procedural-building",
+          "t": 0.5388045462054288
+        },
+        {
+          "objectId": "infill:frontage:3423615745",
+          "kind": "procedural-building",
+          "t": 0.6184731822353663
+        }
+      ]
+    },
+    {
+      "id": "view:terminal:2",
+      "landmarkId": "terminal",
+      "from": {
+        "x": 1655.235294117647,
+        "y": 3.4,
+        "z": -306.94117647058823
+      },
+      "target": {
+        "x": 1657,
+        "z": -370,
+        "y": 12
+      },
+      "approach": "sukhumvit",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9996086476539875,
+      "blockers": [
+        {
+          "objectId": "building:2437",
+          "kind": "procedural-building",
+          "t": 0.34675277826101375
+        },
+        {
+          "objectId": "infill:frontage:854452899",
+          "kind": "procedural-building",
+          "t": 0.5533876396540597
+        }
+      ]
+    },
+    {
+      "id": "view:emporium:0",
+      "landmarkId": "emporium",
+      "from": {
+        "x": 2172.153846153846,
+        "y": 3.4,
+        "z": 74.76923076923073
+      },
+      "target": {
+        "x": 2188,
+        "z": 126,
+        "y": 5
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9553437550084184,
+      "blockers": [
+        {
+          "objectId": "infill:frontage:3225056259",
+          "kind": "procedural-building",
+          "t": 0.5615202806050529
+        }
+      ]
+    },
+    {
+      "id": "view:emporium:1",
+      "landmarkId": "emporium",
+      "from": {
+        "x": 2172.153846153846,
+        "y": 3.4,
+        "z": 74.76923076923073
+      },
+      "target": {
+        "x": 2200,
+        "z": 126,
+        "y": 5
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.8786004438839302,
+      "blockers": []
+    },
+    {
+      "id": "view:emporium:2",
+      "landmarkId": "emporium",
+      "from": {
+        "x": 2172.153846153846,
+        "y": 3.4,
+        "z": 74.76923076923073
+      },
+      "target": {
+        "x": 2176,
+        "z": 126,
+        "y": 5
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9971937236868251,
+      "blockers": [
+        {
+          "objectId": "building:3714",
+          "kind": "procedural-building",
+          "t": 0.44452002026268805
+        },
+        {
+          "objectId": "infill:frontage:3225056259",
+          "kind": "procedural-building",
+          "t": 0.6406435003468057
+        }
+      ]
+    },
+    {
+      "id": "view:emquartier:0",
+      "landmarkId": "emquartier",
+      "from": {
+        "x": 2148.6153846153848,
+        "y": 3.4,
+        "z": 59.07692307692326
+      },
+      "target": {
+        "x": 2172,
+        "z": -51,
+        "y": 17
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9781710100094705,
+      "blockers": [
+        {
+          "objectId": "building:3712",
+          "kind": "procedural-building",
+          "t": 0.22574145408933755
+        },
+        {
+          "objectId": "building:4840",
+          "kind": "procedural-building",
+          "t": 0.46384412960213306
+        }
+      ]
+    },
+    {
+      "id": "view:emquartier:1",
+      "landmarkId": "emquartier",
+      "from": {
+        "x": 2148.6153846153848,
+        "y": 3.4,
+        "z": 59.07692307692326
+      },
+      "target": {
+        "x": 2160,
+        "z": -51,
+        "y": 17
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9946942468531208,
+      "blockers": [
+        {
+          "objectId": "building:3712",
+          "kind": "procedural-building",
+          "t": 0.1838524729698362
+        },
+        {
+          "objectId": "building:4840",
+          "kind": "procedural-building",
+          "t": 0.4953802743909466
+        }
+      ]
+    },
+    {
+      "id": "view:emquartier:2",
+      "landmarkId": "emquartier",
+      "from": {
+        "x": 2148.6153846153848,
+        "y": 3.4,
+        "z": 59.07692307692326
+      },
+      "target": {
+        "x": 2184,
+        "z": -51,
+        "y": 17
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9520216390099314,
+      "blockers": [
+        {
+          "objectId": "building:3713",
+          "kind": "procedural-building",
+          "t": 0.16184519440985595
+        },
+        {
+          "objectId": "building:3712",
+          "kind": "procedural-building",
+          "t": 0.2970282290649173
+        },
+        {
+          "objectId": "building:4840",
+          "kind": "procedural-building",
+          "t": 0.4360828849376663
+        }
+      ]
+    },
+    {
+      "id": "view:emsphere:0",
+      "landmarkId": "emsphere",
+      "from": {
+        "x": 1884.3076923076924,
+        "y": 3.4,
+        "z": -130.46153846153845
+      },
+      "target": {
+        "x": 1840,
+        "z": 11,
+        "y": 8
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9542858754904316,
+      "blockers": [
+        {
+          "objectId": "building:3695",
+          "kind": "procedural-building",
+          "t": 0.1835887975780709
+        },
+        {
+          "objectId": "infill:screened:3969158984",
+          "kind": "procedural-building",
+          "t": 0.414673538503656
+        },
+        {
+          "objectId": "infill:rear:1703853232",
+          "kind": "procedural-building",
+          "t": 0.5404753797951175
+        }
+      ]
+    },
+    {
+      "id": "view:emsphere:1",
+      "landmarkId": "emsphere",
+      "from": {
+        "x": 1884.3076923076924,
+        "y": 3.4,
+        "z": -130.46153846153845
+      },
+      "target": {
+        "x": 1852,
+        "z": 11,
+        "y": 8
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9748979729606696,
+      "blockers": [
+        {
+          "objectId": "building:3695",
+          "kind": "procedural-building",
+          "t": 0.14805548191779908
+        },
+        {
+          "objectId": "infill:screened:3969158984",
+          "kind": "procedural-building",
+          "t": 0.4350256140130379
+        },
+        {
+          "objectId": "infill:rear:1703853232",
+          "kind": "procedural-building",
+          "t": 0.6254791619801253
+        }
+      ]
+    },
+    {
+      "id": "view:emsphere:2",
+      "landmarkId": "emsphere",
+      "from": {
+        "x": 1884.3076923076924,
+        "y": 3.4,
+        "z": -130.46153846153845
+      },
+      "target": {
+        "x": 1828,
+        "z": 11,
+        "y": 8
+      },
+      "approach": "sukhumvit-east",
+      "outwardYaw": 3.141592653589793,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9291025386467979,
+      "blockers": [
+        {
+          "objectId": "building:3695",
+          "kind": "procedural-building",
+          "t": 0.2415642073395671
+        },
+        {
+          "objectId": "infill:rear:1703853232",
+          "kind": "procedural-building",
+          "t": 0.5346420114949961
+        }
+      ]
+    },
+    {
+      "id": "view:anantara:0",
+      "landmarkId": "anantara",
+      "from": {
+        "x": -907,
+        "y": 3.4,
+        "z": 2180
+      },
+      "target": {
+        "x": -982,
+        "z": 2180,
+        "y": 12
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:anantara:1",
+      "landmarkId": "anantara",
+      "from": {
+        "x": -907,
+        "y": 3.4,
+        "z": 2180
+      },
+      "target": {
+        "x": -982,
+        "z": 2192,
+        "y": 12
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:anantara:2",
+      "landmarkId": "anantara",
+      "from": {
+        "x": -907,
+        "y": 3.4,
+        "z": 2180
+      },
+      "target": {
+        "x": -982,
+        "z": 2168,
+        "y": 12
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:oriental:0",
+      "landmarkId": "oriental",
+      "from": {
+        "x": -311,
+        "y": 3.4,
+        "z": 1040
+      },
+      "target": {
+        "x": -236,
+        "z": 1040,
+        "y": 19
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:oriental:1",
+      "landmarkId": "oriental",
+      "from": {
+        "x": -311,
+        "y": 3.4,
+        "z": 1040
+      },
+      "target": {
+        "x": -236,
+        "z": 1028,
+        "y": 19
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:oriental:2",
+      "landmarkId": "oriental",
+      "from": {
+        "x": -311,
+        "y": 3.4,
+        "z": 1040
+      },
+      "target": {
+        "x": -236,
+        "z": 1052,
+        "y": 19
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:peninsula:0",
+      "landmarkId": "peninsula",
+      "from": {
+        "x": -517,
+        "y": 3.4,
+        "z": 1228
+      },
+      "target": {
+        "x": -592,
+        "z": 1228,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:peninsula:1",
+      "landmarkId": "peninsula",
+      "from": {
+        "x": -517,
+        "y": 3.4,
+        "z": 1228
+      },
+      "target": {
+        "x": -592,
+        "z": 1240,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:peninsula:2",
+      "landmarkId": "peninsula",
+      "from": {
+        "x": -517,
+        "y": 3.4,
+        "z": 1228
+      },
+      "target": {
+        "x": -592,
+        "z": 1216,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:hilton:0",
+      "landmarkId": "hilton",
+      "from": {
+        "x": -659,
+        "y": 3.4,
+        "z": 780
+      },
+      "target": {
+        "x": -734,
+        "z": 780,
+        "y": 24
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:hilton:1",
+      "landmarkId": "hilton",
+      "from": {
+        "x": -659,
+        "y": 3.4,
+        "z": 780
+      },
+      "target": {
+        "x": -734,
+        "z": 788.6,
+        "y": 24
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9934899061002224,
+      "blockers": []
+    },
+    {
+      "id": "view:hilton:2",
+      "landmarkId": "hilton",
+      "from": {
+        "x": -659,
+        "y": 3.4,
+        "z": 780
+      },
+      "target": {
+        "x": -734,
+        "z": 771.4,
+        "y": 24
+      },
+      "approach": "river",
+      "outwardYaw": 1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9934899061002224,
+      "blockers": []
+    },
+    {
+      "id": "view:shangri:0",
+      "landmarkId": "shangri",
+      "from": {
+        "x": -273,
+        "y": 3.4,
+        "z": 1324
+      },
+      "target": {
+        "x": -198,
+        "z": 1324,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:shangri:1",
+      "landmarkId": "shangri",
+      "from": {
+        "x": -273,
+        "y": 3.4,
+        "z": 1324
+      },
+      "target": {
+        "x": -198,
+        "z": 1312,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:shangri:2",
+      "landmarkId": "shangri",
+      "from": {
+        "x": -273,
+        "y": 3.4,
+        "z": 1324
+      },
+      "target": {
+        "x": -198,
+        "z": 1336,
+        "y": 22
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:four-seasons:0",
+      "landmarkId": "four-seasons",
+      "from": {
+        "x": -392,
+        "y": 3.4,
+        "z": 1832
+      },
+      "target": {
+        "x": -317,
+        "z": 1832,
+        "y": 18
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:four-seasons:1",
+      "landmarkId": "four-seasons",
+      "from": {
+        "x": -392,
+        "y": 3.4,
+        "z": 1832
+      },
+      "target": {
+        "x": -317,
+        "z": 1820,
+        "y": 18
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:four-seasons:2",
+      "landmarkId": "four-seasons",
+      "from": {
+        "x": -392,
+        "y": 3.4,
+        "z": 1832
+      },
+      "target": {
+        "x": -317,
+        "z": 1844,
+        "y": 18
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:capella:0",
+      "landmarkId": "capella",
+      "from": {
+        "x": -386,
+        "y": 3.4,
+        "z": 1652
+      },
+      "target": {
+        "x": -311,
+        "z": 1652,
+        "y": 16
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:capella:1",
+      "landmarkId": "capella",
+      "from": {
+        "x": -386,
+        "y": 3.4,
+        "z": 1652
+      },
+      "target": {
+        "x": -311,
+        "z": 1640,
+        "y": 16
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:capella:2",
+      "landmarkId": "capella",
+      "from": {
+        "x": -386,
+        "y": 3.4,
+        "z": 1652
+      },
+      "target": {
+        "x": -311,
+        "z": 1664,
+        "y": 16
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:river-city:0",
+      "landmarkId": "river-city",
+      "from": {
+        "x": -375,
+        "y": 3.4,
+        "z": 784
+      },
+      "target": {
+        "x": -300,
+        "z": 784,
+        "y": 11
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": []
+    },
+    {
+      "id": "view:river-city:1",
+      "landmarkId": "river-city",
+      "from": {
+        "x": -375,
+        "y": 3.4,
+        "z": 784
+      },
+      "target": {
+        "x": -300,
+        "z": 772,
+        "y": 11
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:river-city:2",
+      "landmarkId": "river-city",
+      "from": {
+        "x": -375,
+        "y": 3.4,
+        "z": 784
+      },
+      "target": {
+        "x": -300,
+        "z": 796,
+        "y": 11
+      },
+      "approach": "river",
+      "outwardYaw": -1.5707963267948966,
+      "visible": true,
+      "frontFacing": true,
+      "facingCosine": 0.9874406319167054,
+      "blockers": []
+    },
+    {
+      "id": "view:siam-center:0",
+      "landmarkId": "siam-center",
+      "from": {
+        "x": 704,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 704,
+        "z": -644,
+        "y": 13
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 1,
+      "blockers": [
+        {
+          "objectId": "building:2400",
+          "kind": "procedural-building",
+          "t": 0.265625
+        }
+      ]
+    },
+    {
+      "id": "view:siam-center:1",
+      "landmarkId": "siam-center",
+      "from": {
+        "x": 704,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 692,
+        "z": -644,
+        "y": 13
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9828721869343219,
+      "blockers": [
+        {
+          "objectId": "building:2400",
+          "kind": "procedural-building",
+          "t": 0.265625
+        }
+      ]
+    },
+    {
+      "id": "view:siam-center:2",
+      "landmarkId": "siam-center",
+      "from": {
+        "x": 704,
+        "y": 3.4,
+        "z": -580
+      },
+      "target": {
+        "x": 716,
+        "z": -644,
+        "y": 13
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0,
+      "visible": false,
+      "frontFacing": true,
+      "facingCosine": 0.9828721869343219,
+      "blockers": [
+        {
+          "objectId": "building:2400",
+          "kind": "procedural-building",
+          "t": 0.265625
+        }
+      ]
+    }
+  ]
+}

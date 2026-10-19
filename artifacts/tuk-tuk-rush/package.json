@@ -41,7 +41,9 @@
     "test:city-completion": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
     "qa:urban-survey": "node --import tsx scripts/survey-city-completion.ts",
     "qa:scene-inventory": "node --import tsx scripts/profile-city-inventory.ts",
-    "test:master-plan": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts"
+    "test:master-plan": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts",
+    "test:landmark-accuracy": "node --import tsx scripts/check-landmark-accuracy.ts && node --import tsx scripts/check-landmark-accuracy-drives.ts",
+    "qa:landmark-accuracy": "node --import tsx scripts/survey-landmark-accuracy.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "passed": 2,
+  "total": 2,
+  "browserQa": false,
+  "physicalIPhone": false,
+  "results": [
+    {
+      "name": "test:landmark-accuracy",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 64109,
+      "log": "test-landmark-accuracy.log"
+    },
+    {
+      "name": "test:master-plan",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 61097,
+      "log": "test-master-plan.log"
+    }
+  ]
+}
