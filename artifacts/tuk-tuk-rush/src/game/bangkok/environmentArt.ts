@@ -160,19 +160,7 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
               : "concrete",
       );
     if (["tree", "palm"].includes(site.kind)) {
-      const H = site.kind === "palm" ? 9.5 : 5.8 + (seed % 4) * 0.5;
-      B(0, 0.5, 0, b.w, 0.6, b.d, "#b7b08e");
-      B(0, H / 2 + 0.25, 0, 0.32, H, 0.32, "#7c6950", "cylinder");
-      if (site.kind === "tree")
-        for (const [u, y, v, w, h, depth] of [
-          [0, H, 0, 5, 3.5, 5],
-          [-1.5, H - 0.6, 0.4, 3.9, 3, 3.7],
-          [1.4, H + 0.6, -0.5, 3.7, 3.2, 4],
-        ])
-          B(u!, y!, v!, w!, h!, depth!, green, "orb");
-      else
-        for (let i = 0; i < 6; i++)
-          B(0, H, 0, 0.65, 0.38, 7, green, "orb", "core", (i * Math.PI) / 3);
+      continue; // Shared species geometry and crown validation in tropicalPlan.
     } else if (["lamp", "signal"].includes(site.kind)) {
       B(0, 3.5, 0, 0.25, 6.6, 0.25, "#5c6d66", "cylinder");
       B(0, 6.65, 0.6, 0.22, 0.18, 1.5, "#5c6d66");

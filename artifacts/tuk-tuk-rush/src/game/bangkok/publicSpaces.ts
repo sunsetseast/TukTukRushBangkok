@@ -512,7 +512,21 @@ export function planPublicSpaces(d: District) {
     environmentId: `park-factory:${x}`,
   }));
   d.obstacles.push(...ben.facilities);
-  d.publicSpaces = [park, field, ben];
+  const oval=(x:number,y:number,rx:number,ry:number)=>Array.from({length:24},(_,i)=>map([x+Math.sin(i*Math.PI/12)*rx,y+Math.cos(i*Math.PI/12)*ry]));
+  const benchasiri=make("benchasiri","Benchasiri Park",[1009,651],
+    [[990,622],[1024,629],[1024,679],[991,682]].map(map),
+    [{points:oval(1010,652,8,12),hole:false}],
+    [{name:"Sukhumvit pedestrian gate",point:map([1004,625]),vehicle:false},{name:"Soi 22 perimeter gate",point:map([991,658]),vehicle:false}],
+    [{points:[[995,632],[1019,636],[1019,674],[996,675],[995,632]].map(map),width:3,mode:"pedestrian"}]);
+  benchasiri.adaptation="Compact sculpture garden south of Sukhumvit, west of Emporium and east of EmSphere. Pond and perimeter paths interpreted; no vehicles inside the park.";
+  const chatPark=make("chatuchak-park","Chatuchak Park",[800,72],
+    [[783,16],[826,21],[832,75],[793,136],[770,126]].map(map),
+    [{points:oval(805,65,8,32),hole:false}],
+    [{name:"Mo Chit / MRT public gate",point:map([784,64]),vehicle:false},{name:"Phahonyothin southern gate",point:map([774,118]),vehicle:false}],
+    [{points:[[787,31],[819,32],[821,76],[791,124],[780,117],[787,31]].map(map),width:3.5,mode:"pedestrian"}]);
+  chatPark.adaptation="Long north-south lake and shaded walking circuits east of Mo Chit, northeast of Weekend Market. Queen Sirikit/Rot Fai parks and northern interchange complex deferred.";
+  for(const s of [benchasiri,chatPark])d.landmarks.push({...s.origin,id:s.id,name:s.name,kind:"park",plot:s.origin});
+  d.publicSpaces = [park, field, ben,benchasiri,chatPark];
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     roadSegments = d.roads.map((r) => ({
       r,

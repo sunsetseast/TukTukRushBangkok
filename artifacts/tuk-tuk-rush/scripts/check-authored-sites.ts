@@ -92,7 +92,7 @@ for (const s of sites) {
       roadBodies.every((r) => !orientedFootprintsOverlap(o, r, 0.2)),
       `Planted island blocks road ${s.id}`,
     );
-    assert(o.crownWidth > 0 && o.height <= 10, "Bounded vegetation geometry");
+    assert(o.crownWidth > 0 && o.height > 0 && o.height <= 18, "Bounded tropical vegetation, including tall palms");
   }
   const stop = nodes.get(l.accessNode!)!;
   assert(stop);

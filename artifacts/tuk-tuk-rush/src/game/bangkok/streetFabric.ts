@@ -1,6 +1,7 @@
 import type { District, Obstacle } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
+import { stationEnvelope } from './transit/stationGeometry';
 import { regionAt } from "./world";
 import { obstacleDistance, orientedFootprintsOverlap } from "../world";
 import {
@@ -90,18 +91,12 @@ export function completeStreetFabric(d: District) {
         // Low street-food kiosks fit beneath the elevated railway; tall
         // buildings still respect its swept clearance envelope. Supports and
         // station entrances remain physical obstacles in index.clear().
-        if (parcel.height > 7 && rail.some((p) => obstacleDistance(p, parcel) < 6)) continue;
+        if (parcel.height > 7 && rail.some((p) => obstacleDistance(p, parcel) < 9)) continue;
         if (
           parcel.height > 7 && stations.some((s) =>
             orientedFootprintsOverlap(
               parcel,
-              {
-                ...s,
-                w: s.id === "siam" ? 24 : s.line === "gold" ? 17 : 20,
-                d: s.length + 10,
-                height: 26,
-                color: "#fff",
-              },
+              stationEnvelope(s),
               1,
             ),
           )

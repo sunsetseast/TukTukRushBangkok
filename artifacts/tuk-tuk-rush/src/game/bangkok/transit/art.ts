@@ -257,6 +257,12 @@ export function emitRailInfrastructure(
       for(const side of [-1,1])at(side*(width/2-.8),roofY-.65,z,.14,.12,3.8,'#e7c78c','night');
     }
     if(s.id==='asok')for(const side of [-1,1])at(side*8.7,10.4,0,.25,.6,L,'#557e9a');
+    if(s.id==='phrom-phong'){
+      for(const side of [-1,1]){at(side*8.7,10.5,0,.3,.7,L,'#5e9260');for(const z of [-L*.3,0,L*.3])at(side*8.5,12,z,1.4,.6,4,'#618e52');}
+      // EM District's commercial skywalk apron, above five metre road clearance.
+      at(0,7.8,L*.3,46,.6,5,'#c3cab9');
+      for(const side of [-1,1])at(side*22.5,8.55,L*.3,.2,1.3,5,'#9dbaac');
+    }
     if(s.id==='national-stadium')for(const side of [-1,1])at(side*8.5,11,0,.2,.6,L,'#859cbb');
     if(gold)for(const side of [-1,1])at(side*6.5,10.4,0,.22,.55,L,'#d0a541','night');
     if (siam) {
@@ -354,7 +360,7 @@ export function emitRailInfrastructure(
     // Real mall linkage uses an elevated walkway, never a vehicle road.
     if (
       s.landmark &&
-      ["siam", "asok", "charoen-nakhon", "national-stadium"].includes(s.id)
+      ["siam", "asok", "charoen-nakhon", "national-stadium", "phrom-phong"].includes(s.id)
     ) {
       const l = d.landmarks.find((l) => l.id === s.landmark)!,
         p = l.plot!,

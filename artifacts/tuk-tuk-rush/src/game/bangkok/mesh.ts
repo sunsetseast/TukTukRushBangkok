@@ -14,6 +14,8 @@ import { emitStreetFrontages, emitStreetGardens } from './streetFabric';
 import * as T from "three";
 import { landscapeMaterial } from "./streetSurfaces";
 import { emitLandscape } from "./landscape";
+import { emitTropicalVegetation } from "./tropicalPlan";
+import { emitMrtEntrances } from "./mrtSurface";
 import { facadeFinishes, installFacadeFinish } from "./facadeFinish";
 import { cityShadows } from "./cityShadows";
 import { riverWater, riverMotion, emitRiverfront } from "./riverfront";
@@ -213,6 +215,8 @@ export function buildBangkokGraybox(
   emitYaowaratLanterns(d, (piece) => benchmarkArchitecture.add(piece));
   emitRiverfront(d, (piece) => architecture.add(piece));
   emitLandscape(d, (piece) => architecture.add(piece));
+  emitTropicalVegetation(d, (piece) => architecture.add(piece));
+  emitMrtEntrances(d, (piece) => architecture.add(piece));
   emitAuthoredGrounds(d,piece=>architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
   emitDestinationGrounds(d, (piece) => architecture.add(piece));

@@ -41,11 +41,7 @@ export function emitLandscape(d: District, emit: (p: ArtPiece) => void) {
         const seed = stableHash(o.environmentId!), put = (x: number, y: number, z: number, w: number, h: number, depth: number, color: string, shape: ArtPiece['shape'] = 'box', surface: ArtPiece['surface'] = 'plaster') => emit({ x, y, z, w, h, d: depth, color, yaw: o.yaw ?? 0, shape, surface });
         put(o.x, .13, o.z, 6, .24, 8, '#d2bf91');
         put(o.x, .3, o.z, 5.5, .15, 7.5, '#6da865');
-        put(o.x, 2, o.z, .55, 3.8, .55, '#9b744d', 'cylinder', 'wood');
-        // Three overlapping tapered crowns make softer, asymmetric tropical silhouettes.
-        put(o.x, 5.2, o.z, 5.5, 4.5, 5.5, seed % 2 ? '#48a16b' : '#72ad58', 'orb');
-        put(o.x + 1.3, 4.9, o.z + .5, 3.7, 3.3, 3.8, '#8bc86a', 'orb');
-        put(o.x - 1.3, 5.4, o.z - .7, 3.4, 3.5, 3.5, '#4c9460', 'orb');
+        // Species planting is emitted once through tropicalPlan.
         if (seed % 3 === 0)
             put(o.x, .65, o.z + 2.5, 3, .35, .9, '#c99c60', 'box', 'wood');
     }

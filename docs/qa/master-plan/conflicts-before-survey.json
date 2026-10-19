@@ -1,0 +1,122 @@
+[
+  {
+    "objectId": "arrival-prop:pho:6900",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "old_w:bkk:272:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "arrival-prop:pho:6900",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "turn:bkk:273:bkk:273:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:34",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "old_w:bkk:272:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:34",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "turn:bkk:273:bkk:273:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:35",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "old_w:bkk:272:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:35",
+    "location": {
+      "x": -868,
+      "z": -526
+    },
+    "conflictId": "turn:bkk:273:bkk:273:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:36",
+    "location": {
+      "x": -868,
+      "z": -508
+    },
+    "conflictId": "old_w:bkk:272:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:37",
+    "location": {
+      "x": -868,
+      "z": -508
+    },
+    "conflictId": "old_w:bkk:272:bkk:273",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:90",
+    "location": {
+      "x": -1461.035034109637,
+      "z": -489.1606121420708
+    },
+    "conflictId": "west:bkk:1009:bkk:1010",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:736",
+    "location": {
+      "x": -286.36582838174553,
+      "z": 2021.1939766255643
+    },
+    "conflictId": "arrival:asiatique:arrival:asiatique:loop2:arrival:asiatique:loop3",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:736",
+    "location": {
+      "x": -286.36582838174553,
+      "z": 2021.1939766255643
+    },
+    "conflictId": "turn:arrival:asiatique:loop2:arrival:asiatique:loop2:arrival:asiatique:loop2",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  },
+  {
+    "objectId": "destinationArt:736",
+    "location": {
+      "x": -286.36582838174553,
+      "z": 2021.1939766255643
+    },
+    "conflictId": "turn:arrival:asiatique:loop3:arrival:asiatique:loop3:arrival:asiatique:loop3",
+    "type": "vehicle-lane",
+    "severity": "severe"
+  }
+]

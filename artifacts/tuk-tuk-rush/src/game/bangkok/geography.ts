@@ -82,6 +82,14 @@ const reference = (
   compromise,
 });
 export const GEOGRAPHIC_REFERENCES: GeographicReference[] = [
+  // Nominal operator/BMA map pins checked 2026-10-18. Individual point facts,
+  // not copied map imagery or cadastral boundaries. Local arcade residuals are
+  // deliberately explicit in master-plan-after.json and the compression audit.
+  reference("emporium","Emporium",13.7304938,100.5689016,[1043,644],"Khlong Toei","Phrom Phong",["Sukhumvit","Soi 24"],"North-facing retail frontage south of Sukhumvit",["emquartier","benchasiri"],"Connected exterior mall stop; interior pedestrian",["https://emdistrict.com/contact-us/","https://maps.app.goo.gl/29qga3VN6E2sfehZ8"],"east","Eastern expansion lengthens the previous Asok boundary; hotel/podium are original miniature interpretations."),
+  reference("emquartier","EmQuartier",13.7312253,100.5694763,[1043,575],"Watthana","Phrom Phong",["Sukhumvit","Soi 39"],"South-facing three-part mall north of Sukhumvit",["emporium","benchasiri"],"Connected exterior stop and elevated station approach",["https://emdistrict.com/contact-us/","https://maps.app.goo.gl/k4KwPVYhrrynJGhb9"],"east","Three retail masses, terraces and hotel height interpreted; full internal plan omitted."),
+  reference("emsphere","EmSphere",13.7323522,100.5663462,[960,613],"Khlong Toei","Phrom Phong",["Sukhumvit","Soi 22"],"South of Sukhumvit, west of Benchasiri",["benchasiri","emporium"],"Public Soi 22 exterior stop",["https://emdistrict.com/contact-us/","https://maps.app.goo.gl/hy1cPD1Ffhzxs8oZA"],"east","Strong local x/y residual keeps the compound west of the park and leaves the compressed Soi 22 drivable."),
+  reference("benchasiri","Benchasiri Park",13.7313966,100.56793,[1009,651],"Khlong Toei","Phrom Phong",["Sukhumvit","Soi 22","Soi 24"],"Sculpture garden between Sois 22 and 24",["emporium","emsphere"],"Pedestrian gates and perimeter passenger stops",["https://greener.bangkok.go.th/park/utthayan-benjasiri/","https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"],"east","Boundary/pond are interpreted, not a surveyed footprint; playing fields and full sculpture collection omitted."),
+  reference("chatuchak-park","Chatuchak Park",13.807484,100.5554198,[800,72],"Chatuchak","Chatuchak",["Phahonyothin"],"East of Mo Chit, northeast of Weekend Market",["chatuchak","mo-chit"],"Perimeter drop-off and pedestrian lake circuits",["https://greener.bangkok.go.th/park/suan-chatuchak/","https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"],"east","Northern latitude is heavily compressed; Queen Sirikit and Rot Fai parks remain outside this reconstruction."),
   reference(
     "park",
     "Lumphini Park",

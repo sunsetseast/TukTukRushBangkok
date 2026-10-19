@@ -1,8 +1,9 @@
 import * as T from "three";
 import { compactGeometry } from "../compactGeometry";
 import type { Surface } from "./buildingGrammar";
+import { tropicalLeafGeometry } from "./tropicalVegetation";
 export type Shape =
-  "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow";
+  "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow" | "frond" | "leaf";
 export type Layer = "core" | "near" | "coarse" | "detail" | "night";
 export type ArtPiece = {
   x: number;
@@ -43,6 +44,7 @@ export class ArchitecturalBatch {
       tiles: number[];
       layer: Layer;
       cell: T.Vector3;
+      shape: Shape;
     }
   >();
   pieces = 0;
@@ -56,17 +58,19 @@ export class ArchitecturalBatch {
       cx = Math.floor(o.x / 120),
       cz = Math.floor(o.z / 120),
       key = `${cx}:${cz}:${layer}`;
-    if (shape === "box") {
-      let bucket = this.instances.get(key);
+    if (["box","frond","leaf","orb","cylinder"].includes(shape)) {
+      const instanceKey=`${key}:${shape}`;
+      let bucket = this.instances.get(instanceKey);
       if (!bucket) {
         bucket = {
           matrices: [],
           colors: [],
           tiles: [],
           layer,
+          shape,
           cell: new T.Vector3((cx + 0.5) * 120, 0, (cz + 0.5) * 120),
         };
-        this.instances.set(key, bucket);
+        this.instances.set(instanceKey, bucket);
       }
       const c = Math.cos(o.yaw),
         s = Math.sin(o.yaw),
@@ -156,6 +160,7 @@ export class ArchitecturalBatch {
       else if (shape === "cylinder")
         geo = new T.CylinderGeometry(0.5, 0.5, 1, 8);
       else if (shape === "orb") geo = new T.IcosahedronGeometry(0.5, 0);
+      else if (shape === "frond" || shape === "leaf") geo = tropicalLeafGeometry(shape);
       else if (shape === "arrow") {
         geo = new T.BufferGeometry();
         geo.setAttribute(
@@ -196,8 +201,11 @@ export class ArchitecturalBatch {
       ty = Math.floor(tile / 4);
     for (let i = 0; i < p.count; i++) {
       const x = p.getX(i) * o.w,
-        y = p.getY(i) * o.h,
-        z = p.getZ(i) * o.d;
+        y0 = p.getY(i) * o.h,
+        z0 = p.getZ(i) * o.d,
+        cp = Math.cos(o.pitch ?? 0), sp = Math.sin(o.pitch ?? 0),
+        y = cp*y0-sp*z0,
+        z = sp*y0+cp*z0;
       b.p.push(o.x + c * x + s * z, o.y + y, o.z - s * x + c * z);
       let nx = n.getX(i) / o.w,
         ny = n.getY(i) / o.h,
@@ -206,7 +214,8 @@ export class ArchitecturalBatch {
       nx /= l;
       ny /= l;
       nz /= l;
-      b.n.push(c * nx + s * nz, ny, -s * nx + c * nz);
+      const ny1=cp*ny-sp*nz,nz1=sp*ny+cp*nz;
+      b.n.push(c * nx + s * nz1, ny1, -s * nx + c * nz1);
       b.c.push(color.r, color.g, color.b);
       b.uv.push(
         (tx + 0.025 + T.MathUtils.clamp(uv.getX(i), 0, 1) * 0.95) / 4,
@@ -223,16 +232,16 @@ export class ArchitecturalBatch {
     const roots: T.Group[] = [];
     // Cell-specific tile ids/matrices stay independent. Immutable unit-box
     // position/normal/UV/color/index buffers are shared across all city cells.
-    const unit = new T.BoxGeometry(1, 1, 1);
-    unit.setAttribute(
-      "color",
-      new T.Float32BufferAttribute(
-        new Float32Array(unit.attributes.position.count * 3).fill(1),
-        3,
-      ),
-    );
-    compactGeometry(unit);
+    const units=new Map<Shape,T.BufferGeometry>();
+    const unitFor=(shape:Shape)=>{
+      let unit=units.get(shape);if(unit)return unit;
+      unit=shape==='frond'||shape==='leaf'?tropicalLeafGeometry(shape):shape==='orb'?new T.IcosahedronGeometry(.5,0):shape==='cylinder'?new T.CylinderGeometry(.5,.5,1,8):new T.BoxGeometry(1,1,1);
+      if(!unit.attributes.uv)unit.setAttribute('uv',new T.Float32BufferAttribute(new Float32Array(unit.attributes.position.count*2),2));
+      unit.setAttribute('color',new T.Float32BufferAttribute(new Float32Array(unit.attributes.position.count*3).fill(1),3));
+      compactGeometry(unit);units.set(shape,unit);return unit;
+    };
     for (const b of this.instances.values()) {
+      const unit=unitFor(b.shape);
       const geo = new T.BufferGeometry();
       for (const [name, attribute] of Object.entries(unit.attributes))
         geo.setAttribute(name, attribute);
@@ -271,7 +280,7 @@ export class ArchitecturalBatch {
       root.add(mesh);
       roots.push(root);
     }
-    unit.dispose();
+    units.forEach(unit=>unit.dispose());
     this.instances.clear();
     for (const b of this.buckets.values()) {
       const g = new T.BufferGeometry();

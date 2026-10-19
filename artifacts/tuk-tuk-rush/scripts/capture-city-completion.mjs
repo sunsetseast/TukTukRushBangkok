@@ -15,6 +15,9 @@ const output =
   height = Number(process.env.CITY_HEIGHT || 480);
 const selection = process.env.CITY_NAMES?.split(","),
   views = process.env.CITY_VIEWS?.split(",");
+const locations = process.env.CITY_POSES
+  ? (await import(new URL(process.env.CITY_POSES, import.meta.url))).MASTER_PLAN_LOCATIONS
+  : CITY_COMPLETION_LOCATIONS;
 await fs.mkdir(`${output}/${label}`, { recursive: true });
 const server = await startQaServer(port),
   browser = await chromium.launch({
@@ -43,7 +46,7 @@ try {
   console.log("Free roam ready");
   await page.addStyleTag({ content: ".tt-ui{visibility:hidden!important}" });
   const survey = [];
-  for (const spec of CITY_COMPLETION_LOCATIONS.filter(
+  for (const spec of locations.filter(
     (s) => !selection || selection.includes(s.id),
   ))
     for (const view of spec.views.filter((v) => !views || views.includes(v))) {

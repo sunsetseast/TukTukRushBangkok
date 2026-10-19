@@ -13,6 +13,9 @@ import {
   inPublicGround,
   insidePublicPolygon,
 } from "../src/game/bangkok/publicSpaces";
+import { ArchitecturalBatch } from "../src/game/bangkok/architecturalBatch";
+import { planTropicalPlants } from "../src/game/bangkok/tropicalPlan";
+import { emitTropicalPlant } from "../src/game/bangkok/tropicalVegetation";
 import { publicSpaceLandmark } from "../src/game/bangkok/publicSpaceArt";
 import {
   obstacleDistance,
@@ -163,7 +166,19 @@ for (const s of d.publicSpaces!) {
     return { meshes, triangles };
   });
   assert(costs[0]!.meshes <= 12 && costs[0]!.triangles < 110000);
-  assert(costs[1]!.triangles < costs[0]!.triangles * 0.65);
+  // Vegetation now lives in spatially culled shared batches, outside this
+  // landmark group. Measure both retained components to preserve the real
+  // whole-park LOD reduction instead of penalizing identical ground polygons.
+  const plantingCosts = [true,false].map(detail=>{
+    const mat=new T.MeshBasicMaterial(),batch=new ArchitecturalBatch(mat,mat);
+    for(const plant of planTropicalPlants(d).filter(p=>p.context===s.id))
+      emitTropicalPlant(plant.body,plant.species,plant.seed,p=>batch.add(p),detail,plant.scale);
+    const root=new T.Group();root.add(...batch.finish());let triangles=0;
+    root.traverse(o=>{if(o instanceof T.Mesh)triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3*(o instanceof T.InstancedMesh?o.count:1);});
+    disposeObject(root);return triangles;
+  });
+  assert(costs[1]!.triangles <= costs[0]!.triangles,'Coarse park structures must not add geometry');
+  assert(costs[1]!.triangles+plantingCosts[1]! < (costs[0]!.triangles+plantingCosts[0]!)*.65,'Whole park including spatially batched tropical planting retains the 35% LOD reduction');
   let disposed = 0;
   g.traverse((o) => {
     if (o instanceof T.Mesh)

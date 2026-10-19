@@ -1,0 +1,98 @@
+{
+  "pass": true,
+  "roads": 1991,
+  "nodes": 1946,
+  "connectedDirectedNodes": 1946,
+  "buildings": 6951,
+  "landmarks": 49,
+  "publicSpaces": 5,
+  "stations": [
+    {
+      "line": "sukhumvit",
+      "count": 13
+    },
+    {
+      "line": "silom",
+      "count": 10
+    },
+    {
+      "line": "gold",
+      "count": 3
+    }
+  ],
+  "plantsBySpecies": {
+    "understory": 368,
+    "royal-palm": 105,
+    "frangipani": 22,
+    "coconut": 183,
+    "banana": 12,
+    "bougainvillea": 29,
+    "shade-tree": 239,
+    "rain-tree": 391,
+    "ratchaphruek": 87
+  },
+  "mrtEntrances": [
+    {
+      "id": "sukhumvit-mrt",
+      "name": "Sukhumvit",
+      "thai": "สุขุมวิท",
+      "code": "BL22",
+      "design": [
+        953,
+        540
+      ],
+      "interchange": "asok",
+      "x": 1812,
+      "z": -240,
+      "yaw": -3.1082716577115477
+    },
+    {
+      "id": "silom-mrt",
+      "name": "Si Lom",
+      "thai": "สีลม",
+      "code": "BL26",
+      "design": [
+        771,
+        781
+      ],
+      "interchange": "sala-daeng",
+      "x": 1084,
+      "z": 724,
+      "yaw": 1.084930152467369
+    },
+    {
+      "id": "hua-lamphong-mrt",
+      "name": "Hua Lamphong",
+      "thai": "หัวลำโพง",
+      "code": "BL28",
+      "design": [
+        605,
+        561
+      ],
+      "x": 404.03009757777727,
+      "z": -147.69565074044422,
+      "yaw": 0.47951929199259496
+    },
+    {
+      "id": "chatuchak-mrt",
+      "name": "Chatuchak Park",
+      "thai": "สวนจตุจักร",
+      "code": "BL13",
+      "design": [
+        779,
+        67
+      ],
+      "interchange": "mo-chit",
+      "x": 1116,
+      "z": -2132,
+      "yaw": -0.5010133868035884
+    }
+  ],
+  "colliderVolumes": 11503,
+  "decorationVolumes": 18277,
+  "plantVolumes": 36853,
+  "severeLaneConflicts": 0,
+  "railBuildingConflicts": 0,
+  "plantConflicts": 0,
+  "ms": 18960
+}

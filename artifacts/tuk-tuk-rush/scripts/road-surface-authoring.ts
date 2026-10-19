@@ -3,6 +3,7 @@ import clipping, {type MultiPolygon,type Polygon,type Ring} from 'polygon-clippi
 import type {District,Point} from '../src/game/types';
 import baked from '../src/game/bangkok/roadSurfaces.generated.json';
 import {roadGraphKey} from '../src/game/bangkok/roadSurfaceGraph';
+import {integerBoolean} from './integer-road-clipping';
 
 export function roadEnvelopes(d: District, extra = 0, force=false): MultiPolygon {
   if(!force&&extra===0&&baked.key===roadGraphKey(d))return baked.road as MultiPolygon;
@@ -23,5 +24,5 @@ export function roadEnvelopes(d: District, extra = 0, force=false): MultiPolygon
   }
   // Millimetre snapping removes near-coincident sampled endpoints before the sweep.
   for(const polygon of polys)for(const ring of polygon)for(const p of ring){p[0]=Math.round(p[0]*1000)/1000;p[1]=Math.round(p[1]*1000)/1000;}
-  return clipping.union(polys[0]!,...polys.slice(1));
+  return integerBoolean(polys);
 }
