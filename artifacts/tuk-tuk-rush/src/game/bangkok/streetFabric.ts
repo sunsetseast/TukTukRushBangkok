@@ -1,3 +1,4 @@
+import { sampleTrack } from './transit/network';
 import type { District, Obstacle } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
@@ -37,9 +38,7 @@ export function completeStreetFabric(d: District) {
     pockets: Obstacle[] = [],
     ends: Obstacle[] = [],
     rail =
-      d.transit?.lines.flatMap((l) =>
-        l.samples.filter((_, i) => i % 2 === 0),
-      ) ?? [],
+      d.transit?.lines.flatMap(line => line.samples.filter((_,i)=>i%2===0).flatMap(p=>[-1,1].map(direction=>sampleTrack(line,p.distance,direction,{...p})))) ?? [],
     stations = d.transit?.lines.flatMap((l) => l.stations) ?? [];
   for (const sample of before) {
     if (sample.kind !== "open" || sample.road.destinationId) continue;

@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Building / transit clearance: [{"objectId":"street-infill:3088874991","location":{"x":595.9048710974785,"z":-614.7376538071425},"conflictId":"bts:sukhumvit","type":"rail-envelope","severity":"severe"},{"objectId":"street-infill:3704243622","location":{"x":592.9419081345155,"z":-606.2191352886239},"conflictId":"bts:sukhumvit","type":"rail-envelope","severity":"severe"}]
+
+2 !== 0
+
+    at <anonymous> (/workspace/scratch/0f15cf57c26c/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-master-plan.ts:45:8)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 2,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

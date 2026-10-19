@@ -1,0 +1,106 @@
+{
+  "pass": true,
+  "physicalIPhone": false,
+  "errors": [],
+  "rays": [
+    {
+      "id": "clock",
+      "hitHua": true,
+      "distanceToFeature": 0.03135701271222384,
+      "firstObject": ""
+    },
+    {
+      "id": "entrance",
+      "hitHua": true,
+      "distanceToFeature": 0.15017455246643557,
+      "firstObject": ""
+    },
+    {
+      "id": "arch-west",
+      "hitHua": true,
+      "distanceToFeature": 0.36630671184956143,
+      "firstObject": ""
+    },
+    {
+      "id": "arch-east",
+      "hitHua": true,
+      "distanceToFeature": 0.34907186044793714,
+      "firstObject": ""
+    }
+  ],
+  "viewports": [
+    {
+      "width": 375,
+      "height": 812,
+      "inspection": false,
+      "cameraY": 3.3,
+      "artOverride": false,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "inspection": false,
+      "cameraY": 3.3,
+      "artOverride": false,
+      "pass": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "inspection": false,
+      "cameraY": 3.3,
+      "artOverride": false,
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "inspection": false,
+      "cameraY": 3.3,
+      "artOverride": false,
+      "pass": true
+    }
+  ],
+  "restarts": [
+    {
+      "artOverride": false,
+      "inspection": false,
+      "cameraY": 3.3,
+      "playerDistance": 7.800000000000002,
+      "stats": {
+        "calls": 332,
+        "triangles": 520763,
+        "geometries": 816,
+        "textures": 15,
+        "frameMs": 25.399999999965075
+      }
+    },
+    {
+      "artOverride": false,
+      "inspection": false,
+      "cameraY": 3.3,
+      "playerDistance": 7.800000000000002,
+      "stats": {
+        "calls": 332,
+        "triangles": 520763,
+        "geometries": 816,
+        "textures": 15,
+        "frameMs": 41
+      }
+    },
+    {
+      "artOverride": false,
+      "inspection": false,
+      "cameraY": 3.3,
+      "playerDistance": 7.800000000000002,
+      "stats": {
+        "calls": 332,
+        "triangles": 520763,
+        "geometries": 816,
+        "textures": 15,
+        "frameMs": 796.5
+      }
+    }
+  ]
+}

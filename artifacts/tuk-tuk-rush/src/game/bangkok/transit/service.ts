@@ -1,5 +1,5 @@
 import type { RailLine, RailNetwork, RailSample } from "./network";
-import { sampleRail,SIAM_JUNCTION } from "./network";
+import { sampleTrack } from "./network";
 
 type Leg = {
   start: number;
@@ -131,30 +131,5 @@ export class RailService {
   }
 }
 
-/** Direction-separated tracks, with a continuous taper into terminal crossovers.
- * At Siam each level has one track from EACH line beside an island platform. */
-export function trainSample(
-  line: RailLine,
-  distance: number,
-  direction: number,
-  out: RailSample,
-) {
-  const siam = line.stations.find((s) => s.id === "siam");
-  const blend = siam
-    ? Math.max(0, Math.min(1, (SIAM_JUNCTION.offsetApproach - Math.abs(distance - siam.distance)) / SIAM_JUNCTION.offsetRun))
-    : 0;
-  const normal = line.id === "gold" ? 1.9 : 2.1,
-    atSiam = line.id === "silom" ? -4.8 : 4.8;
-  const taksin = line.stations.find((s) => s.id === "saphan-taksin");
-  const throat = taksin
-    ? Math.max(0, Math.min(1, (Math.abs(distance - taksin.distance) - 44) / 55))
-    : 1;
-  const offset =
-    throat *
-    (normal * direction * (1 - blend) + atSiam * blend) *
-    Math.max(
-      0,
-      Math.min(1, (distance - 80) / 55, (line.length - distance - 80) / 55),
-    );
-  return sampleRail(line, distance, out, offset, direction);
-}
+/** The guideway, train bodies and clearance planner share one track sampler. */
+export const trainSample = sampleTrack;

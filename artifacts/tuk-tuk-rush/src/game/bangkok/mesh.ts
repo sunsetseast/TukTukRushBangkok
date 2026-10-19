@@ -1,3 +1,6 @@
+import { emitHuaGrounds } from './huaLamphong';
+import { emitLandmarkApproaches } from './landmarkParcels';
+import { emitLandmarkContextGrounds } from './landmarkContext';
 import {publicSpaceLandmark,buildPublicSpaceSigns} from './publicSpaceArt';
 import {victoryMonument} from './victoryMonument';
 import {historicDistrictLandmark} from './historicDistricts';
@@ -218,6 +221,9 @@ export function buildBangkokGraybox(
   emitTropicalVegetation(d, (piece) => architecture.add(piece));
   emitMrtEntrances(d, (piece) => architecture.add(piece));
   emitAuthoredGrounds(d,piece=>architecture.add(piece));
+  emitHuaGrounds(d,piece=>architecture.add(piece));
+  emitLandmarkApproaches(d,piece=>architecture.add(piece));
+  emitLandmarkContextGrounds(d,piece=>architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
   emitDestinationGrounds(d, (piece) => architecture.add(piece));
   emitRailInfrastructure(d, (piece) => architecture.add(piece));

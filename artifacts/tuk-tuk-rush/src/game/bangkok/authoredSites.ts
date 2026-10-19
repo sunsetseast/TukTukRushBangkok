@@ -1,3 +1,4 @@
+import { HUA_PLAN } from './huaLamphong';
 import {HISTORIC_SITE_PLANS,historicBoundaryColliders,historicFurnitureColliders} from './historicDistricts';
 import type { District, Landmark, Obstacle, Point, RoadNode } from "../types";
 import type { RealPlace } from "./realPlaces";
@@ -558,6 +559,7 @@ function extendCharoenNakhon(d: District) {
 /** Chosen in the PR25 city audit and now authored explicitly. These important
  * destinations no longer search radial candidate plots during world creation. */
 export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
+  hua: HUA_PLAN.map,
   pho: [290,443],
   icon: [338.25825214724773, 833.2582521472477],
   paragon: [730, 415],

@@ -7,10 +7,18 @@ import {
 } from "../../world";
 import { blockedByRiver, toWorld } from "../world";
 import { MASTER_PLAN } from "../masterPlan";
-import { stationEnvelope } from './stationGeometry';
+import { stationEnvelope } from "./stationGeometry";
 
 export type LineId = "sukhumvit" | "silom" | "gold";
-export const SIAM_JUNCTION={offsetApproach:450,offsetRun:100,gradeApproach:650,gradeRun:200} as const;
+// Grade separation completes before the lateral crossover, then returns to
+// ordinary platform height before National Stadium and Chit Lom. Distances are
+// compressed game metres; a 650m ramp passed through those station canopies.
+export const SIAM_JUNCTION = {
+  offsetApproach: 145,
+  offsetRun: 35,
+  gradeApproach: 220,
+  gradeRun: 60,
+} as const;
 export type RailStation = Point & {
   entrances?: (Point & { yaw: number })[];
   id: string;
@@ -99,7 +107,14 @@ const stops: Record<LineId, Stop[]> = {
       "victory",
     ],
     ["phaya-thai", "N2", "Phaya Thai", "พญาไท", 680, 340],
-    ["ratchathewi", "N1", "Ratchathewi", "ราชเทวี", 680-(398-340)*40/115, 398],
+    [
+      "ratchathewi",
+      "N1",
+      "Ratchathewi",
+      "ราชเทวี",
+      680 - ((398 - 340) * 40) / 115,
+      398,
+    ],
     ["siam", "CEN", "Siam", "สยาม", 710, 455, "siam", "paragon"],
     ["chit-lom", "E1", "Chit Lom", "ชิดลม", 822, 461.46, "side", "central"],
     ["phloen-chit", "E2", "Phloen Chit", "เพลินจิต", 850, 476.538],
@@ -115,7 +130,15 @@ const stops: Record<LineId, Stop[]> = {
       "terminal",
       "MRT Sukhumvit",
     ],
-    ["phrom-phong","E5","Phrom Phong","พร้อมพงษ์",...MASTER_PLAN.phromPhong,"business","emporium"],
+    [
+      "phrom-phong",
+      "E5",
+      "Phrom Phong",
+      "พร้อมพงษ์",
+      ...MASTER_PLAN.phromPhong,
+      "business",
+      "emporium",
+    ],
   ],
   silom: [
     [
@@ -203,13 +226,30 @@ const stops: Record<LineId, Stop[]> = {
  * above the same Sukhumvit road controls as the reconstructed EM District. */
 export function createRailNetwork(d: District): RailNetwork {
   const lines: RailLine[] = [];
-  const nodes=new Map(d.nodes.map(n=>[n.id,n]));
-  const anchor=(stop:Stop,id:LineId)=>{
-    const corridors=id==="sukhumvit"?(stop[1].startsWith("N")?["phaya"]:["old_siam","sukhumvit","sukhumvit-east"]):id==="silom"?["old_siam","ratchadamri","silom","narathiwas","sathorn","taksin","krung_thon_buri"]:[];
-    const p=toWorld([stop[4],stop[5]]);
-    if(!corridors.length)return p;
-    const candidates=d.roads.filter(r=>corridors.includes(r.corridor??"")).map(r=>distanceToSegment(p,nodes.get(r.a)!,nodes.get(r.b)!));
-    return candidates.reduce((a,b)=>a.distance<b.distance?a:b).point;
+  const nodes = new Map(d.nodes.map((n) => [n.id, n]));
+  const anchor = (stop: Stop, id: LineId) => {
+    const corridors =
+      id === "sukhumvit"
+        ? stop[1].startsWith("N")
+          ? ["phaya"]
+          : ["old_siam", "sukhumvit", "sukhumvit-east"]
+        : id === "silom"
+          ? [
+              "old_siam",
+              "ratchadamri",
+              "silom",
+              "narathiwas",
+              "sathorn",
+              "taksin",
+              "krung_thon_buri",
+            ]
+          : [];
+    const p = toWorld([stop[4], stop[5]]);
+    if (!corridors.length) return p;
+    const candidates = d.roads
+      .filter((r) => corridors.includes(r.corridor ?? ""))
+      .map((r) => distanceToSegment(p, nodes.get(r.a)!, nodes.get(r.b)!));
+    return candidates.reduce((a, b) => (a.distance < b.distance ? a : b)).point;
   };
   for (const id of ["sukhumvit", "silom", "gold"] as const) {
     const controls: Point[] = [];
@@ -217,13 +257,33 @@ export function createRailNetwork(d: District): RailNetwork {
       // N3 is south of the monument. The real guideway bends around the west
       // edge of the traffic circle; it must not cut through the 50m memorial.
       if (id === "sukhumvit" && stop[0] === "victory-monument")
-        controls.push(toWorld([725, 202]), toWorld([696, 211]), toWorld([692, 231]), toWorld([699, 254]));
+        controls.push(
+          toWorld([725, 202]),
+          toWorld([696, 211]),
+          toWorld([692, 231]),
+          toWorld([699, 254]),
+        );
       if (id === "sukhumvit" && stop[0] === "siam")
-        controls.push(toWorld([644,442]),toWorld([645,455]),toWorld([660,455]),toWorld([680,455]));
-      if(id === "sukhumvit" && stop[0] === "chit-lom")controls.push(toWorld([750,455]),toWorld([790,455]),toWorld([810,455]));
-      if(id === "sukhumvit" && stop[0] === "phrom-phong") controls.push(toWorld([...MASTER_PLAN.sukhumvit[3]]));
+        controls.push(
+          toWorld([644, 442]),
+          toWorld([645, 455]),
+          toWorld([660, 455]),
+          toWorld([680, 455]),
+        );
+      if (id === "sukhumvit" && stop[0] === "chit-lom")
+        controls.push(
+          toWorld([750, 455]),
+          toWorld([790, 455]),
+          toWorld([810, 455]),
+        );
+      if (id === "sukhumvit" && stop[0] === "phrom-phong")
+        controls.push(toWorld([...MASTER_PLAN.sukhumvit[3]]));
       if (id === "silom" && stop[0] === "ratchadamri")
-        controls.push(toWorld([750, 455]), toWorld([792,455]),toWorld([810,475]));
+        controls.push(
+          toWorld([750, 455]),
+          toWorld([792, 455]),
+          toWorld([810, 475]),
+        );
       if (id === "silom" && stop[0] === "sala-daeng")
         controls.push(toWorld([750, 650]), toWorld([766, 763]));
       if (id === "silom" && stop[0] === "chong-nonsi")
@@ -234,7 +294,7 @@ export function createRailNetwork(d: District): RailNetwork {
         controls.push(toWorld([320, 965]));
       if (id === "gold" && stop[0] === "charoen-nakhon")
         controls.push(toWorld([298, 915]), toWorld([295, 866]));
-      controls.push(anchor(stop,id));
+      controls.push(anchor(stop, id));
     }
     const first = controls[0]!,
       second = controls[1]!,
@@ -254,18 +314,30 @@ export function createRailNetwork(d: District): RailNetwork {
     // Tangential quadratic corner fillets stay inside the control polyline's
     // convex corridor, retain true straight sections and have continuous turns.
     const curve = new T.CurvePath<T.Vector3>();
-    let previous=new T.Vector3(controls[0]!.x,0,controls[0]!.z);
-    for(let i=1;i<controls.length-1;i++){
-      const p=new T.Vector3(controls[i]!.x,0,controls[i]!.z),
-        before=new T.Vector3(controls[i-1]!.x,0,controls[i-1]!.z),
-        after=new T.Vector3(controls[i+1]!.x,0,controls[i+1]!.z),
-        trim=Math.min(24,p.distanceTo(before)*.24,p.distanceTo(after)*.24),
-        entry=p.clone().add(before.sub(p).normalize().multiplyScalar(trim)),
-        leave=p.clone().add(after.sub(p).normalize().multiplyScalar(trim));
-      if(previous.distanceTo(entry)>.001)curve.add(new T.LineCurve3(previous,entry));
-      curve.add(new T.QuadraticBezierCurve3(entry,p,leave));previous=leave;
+    let previous = new T.Vector3(controls[0]!.x, 0, controls[0]!.z);
+    for (let i = 1; i < controls.length - 1; i++) {
+      const p = new T.Vector3(controls[i]!.x, 0, controls[i]!.z),
+        before = new T.Vector3(controls[i - 1]!.x, 0, controls[i - 1]!.z),
+        after = new T.Vector3(controls[i + 1]!.x, 0, controls[i + 1]!.z),
+        trim = Math.min(
+          24,
+          p.distanceTo(before) * 0.24,
+          p.distanceTo(after) * 0.24,
+        ),
+        entry = p.clone().add(before.sub(p).normalize().multiplyScalar(trim)),
+        leave = p.clone().add(after.sub(p).normalize().multiplyScalar(trim));
+      if (previous.distanceTo(entry) > 0.001)
+        curve.add(new T.LineCurve3(previous, entry));
+      curve.add(new T.QuadraticBezierCurve3(entry, p, leave));
+      previous = leave;
     }
-    curve.add(new T.LineCurve3(previous,new T.Vector3(last.x,0,last.z)));
+    const terminalRunOut = controls.at(-1)!;
+    curve.add(
+      new T.LineCurve3(
+        previous,
+        new T.Vector3(terminalRunOut.x, 0, terminalRunOut.z),
+      ),
+    );
     curve.arcLengthDivisions = controls.length * 160;
     curve.updateArcLengths();
     const count = Math.ceil(curve.getLength() / 5),
@@ -287,7 +359,7 @@ export function createRailNetwork(d: District): RailNetwork {
     }
     const stations = stops[id].map(
       ([station, code, name, thai, x, z, family = "side", landmark, mrt]) => {
-        const p = anchor([station,code,name,thai,x,z],id),
+        const p = anchor([station, code, name, thai, x, z], id),
           near = samples.reduce((best, s) =>
             Math.hypot(s.x - p.x, s.z - p.z) <
             Math.hypot(best.x - p.x, best.z - p.z)
@@ -372,10 +444,17 @@ export function sampleRail(
   if (siam) {
     const fade = Math.max(
       0,
-      Math.min(1, (SIAM_JUNCTION.gradeApproach - Math.abs(ds - siam.distance)) / SIAM_JUNCTION.gradeRun),
+      Math.min(
+        1,
+        (SIAM_JUNCTION.gradeApproach - Math.abs(ds - siam.distance)) /
+          SIAM_JUNCTION.gradeRun,
+      ),
     );
     // Both directions meet at the same elevation in the terminal crossover.
-    const runout = Math.max(0, Math.min(1, (ds - 80) / 55, (line.length - ds - 80) / 55));
+    const runout = Math.max(
+      0,
+      Math.min(1, (ds - 80) / 55, (line.length - ds - 80) / 55),
+    );
     if (direction < 0) out.y += 6 * fade * runout;
   }
   return out;
@@ -384,8 +463,14 @@ export function sampleRail(
 export function reserveRailCorridors(d: District) {
   const net = d.transit!,
     nodes = new Map(d.nodes.map((n) => [n.id, n]));
-  const samples = net.lines.flatMap((l) =>
-    l.samples.filter((_, i) => i % 2 === 0),
+  const samples = net.lines.flatMap((line) =>
+    line.samples
+      .filter((_, i) => i % 2 === 0)
+      .flatMap((p) =>
+        [-1, 1].map((direction) =>
+          sampleTrack(line, p.distance, direction, { ...p }),
+        ),
+      ),
   );
   const removed = new Set(
     d.buildings.filter(
@@ -411,7 +496,11 @@ export function reserveRailCorridors(d: District) {
   for (const line of net.lines)
     for (let distance = 18; distance < line.length; distance += 34) {
       const s: RailSample = { x: 0, z: 0, tx: 0, tz: 0, distance: 0, y: 0 };
+      const forward = sampleTrack(line, distance, 1, { ...s }),
+        reverse = sampleTrack(line, distance, -1, { ...s });
       sampleRail(line, distance, s);
+      s.x = (forward.x + reverse.x) / 2;
+      s.z = (forward.z + reverse.z) / 2;
       // Side cantilevers put solid columns OUTSIDE live lanes and water. Span
       // concrete bears the guideway across intersections/river without fake piers.
       for (const arm of [0, 15, -15, 20, -20, 25, -25]) {
@@ -528,4 +617,48 @@ export function reserveRailCorridors(d: District) {
       }
     }
   }
+}
+
+/** Direction-separated tracks, with a continuous taper into terminal crossovers.
+ * At Siam each level has one track from EACH line beside an island platform. */
+export function sampleTrack(
+  line: RailLine,
+  distance: number,
+  direction: number,
+  out: RailSample,
+) {
+  const siam = line.stations.find((s) => s.id === "siam");
+  const blend = siam
+    ? Math.max(
+        0,
+        Math.min(
+          1,
+          (SIAM_JUNCTION.offsetApproach - Math.abs(distance - siam.distance)) /
+            SIAM_JUNCTION.offsetRun,
+        ),
+      )
+    : 0;
+  const normal = line.id === "gold" ? 1.9 : 2.1,
+    atSiam = line.id === "silom" ? -4.8 : 4.8;
+  const taksin = line.stations.find((s) => s.id === "saphan-taksin");
+  const throat = taksin
+    ? Math.max(0, Math.min(1, (Math.abs(distance - taksin.distance) - 44) / 55))
+    : 1;
+  const offset =
+    throat *
+    (normal * direction * (1 - blend) +
+      atSiam * blend +
+      (line.id === "sukhumvit" && siam
+        ? 12 *
+          Math.max(
+            0,
+            Math.min(1, (380 - Math.abs(distance - siam.distance)) / 60),
+          ) *
+          (1 - blend)
+        : 0)) *
+    Math.max(
+      0,
+      Math.min(1, (distance - 80) / 55, (line.length - distance - 80) / 55),
+    );
+  return sampleRail(line, distance, out, offset, direction);
 }

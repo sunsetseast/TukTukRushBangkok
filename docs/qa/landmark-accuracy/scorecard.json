@@ -1,0 +1,1898 @@
+{
+  "registeredPlaces": 92,
+  "extraStreetAuditCases": 1,
+  "grading": "A excellent; B good/minor refinements; C incomplete/important inaccuracies; D poor/significant problems; F broken; null not visually graded. No place is graded A overall.",
+  "places": [
+    {
+      "id": "chatuchak",
+      "name": "Chatuchak Market",
+      "category": "market",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "victory",
+      "name": "Victory Monument",
+      "category": "monument",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Protected traffic island and obelisk are recognizable; northern commercial fabric remains compressed.",
+        "evidence": [
+          "before/victory-ground.jpg",
+          "before/victory-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Roundabout geometry and road access retained. Station and bus-transfer architecture is still schematic.",
+        "evidence": [
+          "after/victory-ground.jpg",
+          "after/victory-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "khaosan",
+      "name": "Khao San Road",
+      "category": "market",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy Monument",
+      "category": "monument",
+      "scope": "audited-backlog",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Monument is recognizable but sits offset from the compressed corridor rather than in a faithful civic traffic-island composition.",
+        "evidence": [
+          "before/democracy-ground.jpg",
+          "before/democracy-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Placement composition remains unresolved; added registry/QA does not count as a reconstruction.",
+        "evidence": [
+          "after/democracy-ground.jpg",
+          "after/democracy-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "sanam",
+      "name": "Sanam Luang",
+      "category": "park",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "palace",
+      "name": "Grand Palace / Wat Phra Kaew",
+      "category": "palace",
+      "scope": "frontage-and-gate-corrected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "F",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "North approach was blocked by commercial infill; the nominal gate was hidden behind its gallery.",
+        "evidence": [
+          "before/palace-ground.jpg",
+          "before/palace-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Principal north approach is clear and the exterior closed public gate is on the boundary. Internal ceremonial geometry and exact gate identity remain incomplete.",
+        "evidence": [
+          "after/palace-ground.jpg",
+          "after/palace-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "pho",
+      "name": "Wat Pho",
+      "category": "temple",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Recognizable walled compound and arrival loop; supporting urban fabric remains generic.",
+        "evidence": [
+          "before/pho-ground.jpg",
+          "before/pho-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Existing compound, reclining-Buddha precinct and arrival remain. No new architectural accuracy claim; peripheral empty surfaces and exact gates need work.",
+        "evidence": [
+          "after/pho-ground.jpg",
+          "after/pho-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "arun",
+      "name": "Wat Arun",
+      "category": "temple",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Prang silhouette and west-bank relationship are recognizable from the river.",
+        "evidence": [
+          "before/arun-ground.jpg",
+          "before/arun-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Existing river-facing composition retained. Compact river terrace, surrounding blocks and exact temple boundaries remain approximate.",
+        "evidence": [
+          "after/arun-ground.jpg",
+          "after/arun-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "golden",
+      "name": "Golden Mount",
+      "category": "temple",
+      "scope": "context-infill",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Gold crown is recognizable, but the hill and stairs are schematic.",
+        "evidence": [
+          "before/golden-ground.jpg",
+          "before/golden-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Small low-rise context additions preserve the hill view. The green stacked hill form is still an architectural priority.",
+        "evidence": [
+          "after/golden-ground.jpg",
+          "after/golden-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "swing",
+      "name": "Giant Swing",
+      "category": "monument",
+      "scope": "frontage-corrected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "F",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "North street approach was hidden by intervening commercial buildings.",
+        "evidence": [
+          "before/swing-ground.jpg",
+          "before/swing-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Public approach now reveals the red swing with Wat Suthat behind it. The surrounding civic plaza and temple proportions remain simplified.",
+        "evidence": [
+          "after/swing-ground.jpg",
+          "after/swing-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "flowers",
+      "name": "Pak Khlong Talat",
+      "category": "market",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "mbk",
+      "name": "MBK",
+      "category": "mall",
+      "scope": "orientation-and-frontage-corrected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "F",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Detailed branded entry faced south, away from Rama I.",
+        "evidence": [
+          "before/mbk-ground.jpg",
+          "before/mbk-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Model and collider now rotate together so the main facade faces north. Supporting block scale, full public plaza and hotel massing remain approximate.",
+        "evidence": [
+          "after/mbk-ground.jpg",
+          "after/mbk-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "paragon",
+      "name": "Siam Paragon",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Glass entry is recognizable, but the inherited setback and neighboring blocks distort the full Rama I frontage.",
+        "evidence": [
+          "before/paragon-ground.jpg",
+          "before/paragon-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Central approach and modest apron are protected. The full real public frontage and current gold entrance crown remain a coordinated follow-up.",
+        "evidence": [
+          "after/paragon-ground.jpg",
+          "after/paragon-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "central",
+      "name": "CentralWorld / Erawan",
+      "category": "mall",
+      "scope": "massing-and-frontage-corrected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "D",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "The Centara mass was on the south side because a local-axis comment was reversed; street frontage was cluttered.",
+        "evidence": [
+          "before/central-ground.jpg",
+          "before/central-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "B",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Centara moves to the north in both rendered geometry and physical masses. East frontage remains protected; the condensed mall still needs finer current facade and plaza work.",
+        "evidence": [
+          "after/central-ground.jpg",
+          "after/central-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "name": "Chinatown Gate",
+      "category": "gate",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Gate occupies the protected Odeon island; Chinatown context is visible.",
+        "evidence": [
+          "before/gate-ground.jpg",
+          "before/gate-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "B",
+          "visibility": "B",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Existing island and street connections retained. Fine signage, proportions and neighboring facades are still miniature interpretations.",
+        "evidence": [
+          "after/gate-ground.jpg",
+          "after/gate-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "traimit",
+      "name": "Wat Traimit",
+      "category": "temple",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "hua",
+      "name": "Hua Lamphong",
+      "category": "station",
+      "scope": "reconstructed",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "D",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "B",
+          "footprint": "D",
+          "architecture": "D",
+          "visibility": "F",
+          "urbanFabric": "D",
+          "access": "C",
+          "visualCompleteness": "D"
+        },
+        "note": "Shophouses occupied the principal frontage; the station used a generic radial placement and narrow arched model.",
+        "evidence": [
+          "before/hua-ground.jpg",
+          "before/hua-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "B",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "B",
+          "architecture": "B",
+          "visibility": "A",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "B"
+        },
+        "note": "Explicit south-facing plot, broad dark glazed arch, clock, recessed doors, colonnade and balustrade. Frontage is visible in the road and normal driving cameras. Railway grounds and precise proportions remain compressed.",
+        "evidence": [
+          "after/hua-ground.jpg",
+          "after/hua-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "food",
+      "name": "Banthat Thong",
+      "category": "market",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "icon",
+      "name": "ICONSIAM",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "West-bank river frontage is clear and recognizable; the road and riverside have different entrance roles.",
+        "evidence": [
+          "before/icon-ground.jpg",
+          "before/icon-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River elevation protected while west-side vehicle arrival remains separate. The model and surrounding towers are inherited miniature interpretations.",
+        "evidence": [
+          "after/icon-ground.jpg",
+          "after/icon-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "park",
+      "name": "Lumphini Park",
+      "category": "park",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal 21 / Asok",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Recognizable mall and Y-profile hotel, but street and station context obscure the retail frontage.",
+        "evidence": [
+          "before/terminal-ground.jpg",
+          "before/terminal-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Principal apron protected. One peripheral ray is still obstructed; the whole Asok/Sukhumvit corner and skywalks remain compressed.",
+        "evidence": [
+          "after/terminal-ground.jpg",
+          "after/terminal-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "benjakitti",
+      "name": "Benjakitti Park",
+      "category": "park",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "mahanakhon",
+      "name": "Mahanakhon",
+      "category": "tower",
+      "scope": "audited-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Pixel tower silhouette is visible above generic dense supporting architecture.",
+        "evidence": [
+          "before/mahanakhon-ground.jpg",
+          "before/mahanakhon-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Small-scale context reviewed. The exact surrounding block, plaza and tower setback are not rebuilt.",
+        "evidence": [
+          "after/mahanakhon-ground.jpg",
+          "after/mahanakhon-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "asiatique",
+      "name": "Asiatique",
+      "category": "wheel",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "paknam",
+      "name": "Wat Paknam / Big Buddha",
+      "category": "temple",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "baiyoke",
+      "name": "Baiyoke Tower II",
+      "category": "tower",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "state",
+      "name": "State Tower / Lebua",
+      "category": "tower",
+      "scope": "audited-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Golden dome and pale tower are recognizable above a generic supporting block.",
+        "evidence": [
+          "before/state-ground.jpg",
+          "before/state-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Existing Lebua asset is reused once. Full street entrance, base and neighboring parcels remain approximate.",
+        "evidence": [
+          "after/state-ground.jpg",
+          "after/state-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "benchasiri",
+      "name": "Benchasiri Park",
+      "category": "park",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "chatuchak-park",
+      "name": "Chatuchak Park",
+      "category": "park",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "emporium",
+      "name": "Emporium",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Mall is south of Sukhumvit with a north-facing entrance; immediate shops and BTS infrastructure affect the street view.",
+        "evidence": [
+          "before/emporium-ground.jpg",
+          "before/emporium-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "North entry apron reserved. Main property position, tower and side streets are retained; no exact footprint survey is claimed.",
+        "evidence": [
+          "after/emporium-ground.jpg",
+          "after/emporium-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "emquartier",
+      "name": "EmQuartier",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Three mall masses establish the district, but the compressed pedestrian frontage is cluttered.",
+        "evidence": [
+          "before/emquartier-ground.jpg",
+          "before/emquartier-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "South approach is reserved. Helix, waterfall, skywalk and current exterior proportions still need refinement.",
+        "evidence": [
+          "after/emquartier-ground.jpg",
+          "after/emquartier-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "emsphere",
+      "name": "EmSphere",
+      "category": "mall",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "dusit",
+      "name": "Dusit Thani Bangkok / Dusit Central Park",
+      "category": "hotel",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "okura",
+      "name": "The Okura Prestige Bangkok / Park Ventures",
+      "category": "hotel",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Chamfered glass tower and pool terrace are visible from above; BTS/skywalk context affects street visibility.",
+        "evidence": [
+          "before/okura-ground.jpg",
+          "before/okura-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "No centre or orientation change. Exact Phloen Chit setback and detailed public entrance need review.",
+        "evidence": [
+          "after/okura-ground.jpg",
+          "after/okura-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "anantara",
+      "name": "Anantara Riverside Bangkok Resort",
+      "category": "hotel",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "West-bank low-rise resort is recognizable but surrounded by unfinished gaps.",
+        "evidence": [
+          "before/anantara-ground.jpg",
+          "before/anantara-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Nine bounded low-rise supporting parcels improve local continuity. Gardens, exact road frontage and property architecture remain an approximation.",
+        "evidence": [
+          "after/anantara-ground.jpg",
+          "after/anantara-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "one-bangkok",
+      "name": "One Bangkok / The Ritz-Carlton",
+      "category": "mall",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "oriental",
+      "name": "Mandarin Oriental Bangkok",
+      "category": "hotel",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River/Authors wings and west-facing frontage are recognizable; broad lawns and supporting masses are simplified.",
+        "evidence": [
+          "before/oriental-ground.jpg",
+          "before/oriental-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River frontage protected and bounded low-rise context added. No hotel centre is relocated and no detailed property survey is claimed.",
+        "evidence": [
+          "after/oriental-ground.jpg",
+          "after/oriental-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "peninsula",
+      "name": "The Peninsula Bangkok",
+      "category": "hotel",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "East-facing river facade and W-like tower profile are recognizable.",
+        "evidence": [
+          "before/peninsula-ground.jpg",
+          "before/peninsula-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River terrace reservation added. Driveway, tower proportions and full gardens remain inherited approximations.",
+        "evidence": [
+          "after/peninsula-ground.jpg",
+          "after/peninsula-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "hilton",
+      "name": "Millennium Hilton Bangkok",
+      "category": "hotel",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "West-bank tower and rooftop disc establish the hotel; neighboring blocks are schematic.",
+        "evidence": [
+          "before/hilton-ground.jpg",
+          "before/hilton-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River facade protected with limited adjacent infill. Precise ICONSIAM/hotel/road boundaries remain to be researched.",
+        "evidence": [
+          "after/hilton-ground.jpg",
+          "after/hilton-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "shangri",
+      "name": "Shangri-La Bangkok",
+      "category": "hotel",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Two wings, west riverfront and southern transit relationship are coherent at miniature scale.",
+        "evidence": [
+          "before/shangri-ground.jpg",
+          "before/shangri-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River frontage protected with low-rise context. Street driveway, river terrace depth and wing proportions remain approximate.",
+        "evidence": [
+          "after/shangri-ground.jpg",
+          "after/shangri-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "four-seasons",
+      "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+      "category": "hotel",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Low courtyard hotel is recognizable but its long property and immediate street context are simplified.",
+        "evidence": [
+          "before/four-seasons-ground.jpg",
+          "before/four-seasons-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River court reservation added; existing east-side arrival retained. Exact cascade proportions and neighboring property lines need a dedicated study.",
+        "evidence": [
+          "after/four-seasons-ground.jpg",
+          "after/four-seasons-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "capella",
+      "name": "Capella Bangkok",
+      "category": "hotel",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River villas and low rectangular wing distinguish the property; garden and road relationships are compressed.",
+        "evidence": [
+          "before/capella-ground.jpg",
+          "before/capella-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River-facing reservation and a little supporting context added. Exact hotel footprint and street entrance are not newly reconstructed.",
+        "evidence": [
+          "after/capella-ground.jpg",
+          "after/capella-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "rosewood",
+      "name": "Rosewood Bangkok",
+      "category": "hotel",
+      "scope": "audited-backlog",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Wai-inspired twin forms are recognizable from above; the compressed street relationship remains unresolved.",
+        "evidence": [
+          "before/rosewood-ground.jpg",
+          "before/rosewood-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "No relocation is claimed. Position relative to Phloen Chit and exact entrance orientation need individual research.",
+        "evidence": [
+          "after/rosewood-ground.jpg",
+          "after/rosewood-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "embassy",
+      "name": "Park Hyatt Bangkok / Central Embassy",
+      "category": "hotel",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Curving retail/hotel silhouette is identifiable, but surrounding parcels and street entrance are schematic.",
+        "evidence": [
+          "before/embassy-ground.jpg",
+          "before/embassy-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "No relocation is claimed. Full podium frontage, property relationship and current pedestrian approach remain incomplete.",
+        "evidence": [
+          "after/embassy-ground.jpg",
+          "after/embassy-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "erawan-hotel",
+      "name": "Grand Hyatt Erawan Bangkok",
+      "category": "hotel",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "eastin",
+      "name": "Eastin Grand Hotel Sathorn",
+      "category": "hotel",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "river-city",
+      "name": "River City Bangkok",
+      "category": "mall",
+      "scope": "frontage-and-context",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "West-facing arts-mall mass and river pier are present; supporting streets and terrace are simplified.",
+        "evidence": [
+          "before/river-city-ground.jpg",
+          "before/river-city-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "River facade protected with nearby low-rise context. Exact facade shape, entrance and Si Phraya parcel remain a follow-up.",
+        "evidence": [
+          "after/river-city-ground.jpg",
+          "after/river-city-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "siam-center",
+      "name": "Siam Center / Siam Discovery",
+      "category": "mall",
+      "scope": "frontage-protected",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Distinct Discovery and Center masses face south, but street frontage and BTS infrastructure partially obscure them.",
+        "evidence": [
+          "before/siam-center-ground.jpg",
+          "before/siam-center-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "B",
+          "orientation": "B",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Principal approach is reserved; Nendo-inspired frame facade remains recognizable. Full skywalk and neighboring parcel composition is incomplete.",
+        "evidence": [
+          "after/siam-center-ground.jpg",
+          "after/siam-center-elevated.jpg"
+        ]
+      }
+    },
+    {
+      "id": "jim-thompson",
+      "name": "Jim Thompson House",
+      "category": "museum",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:mo-chit",
+      "name": "Mo Chit",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:saphan-khwai",
+      "name": "Saphan Khwai",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:ari",
+      "name": "Ari",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:sanam-pao",
+      "name": "Sanam Pao",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:victory-monument",
+      "name": "Victory Monument",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:phaya-thai",
+      "name": "Phaya Thai",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:ratchathewi",
+      "name": "Ratchathewi",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:siam",
+      "name": "Siam",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:chit-lom",
+      "name": "Chit Lom",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:phloen-chit",
+      "name": "Phloen Chit",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:nana",
+      "name": "Nana",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:asok",
+      "name": "Asok",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:phrom-phong",
+      "name": "Phrom Phong",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:national-stadium",
+      "name": "National Stadium",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:ratchadamri",
+      "name": "Ratchadamri",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:sala-daeng",
+      "name": "Sala Daeng",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:chong-nonsi",
+      "name": "Chong Nonsi",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:saint-louis",
+      "name": "Saint Louis",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:surasak",
+      "name": "Surasak",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:saphan-taksin",
+      "name": "Saphan Taksin",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:krung-thon-buri",
+      "name": "Krung Thon Buri",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:wongwian-yai",
+      "name": "Wongwian Yai",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:krung-thon-buri-gold",
+      "name": "Krung Thon Buri",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:charoen-nakhon",
+      "name": "Charoen Nakhon",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "bts:khlong-san",
+      "name": "Khlong San",
+      "category": "bts-station",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "sukhumvit-mrt",
+      "name": "MRT Sukhumvit (BL22)",
+      "category": "underground-mrt-entrance",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "silom-mrt",
+      "name": "MRT Si Lom (BL26)",
+      "category": "underground-mrt-entrance",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "hua-lamphong-mrt",
+      "name": "MRT Hua Lamphong (BL28)",
+      "category": "underground-mrt-entrance",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "chatuchak-mrt",
+      "name": "MRT Chatuchak Park (BL13)",
+      "category": "underground-mrt-entrance",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "suthat",
+      "name": "Wat Suthat",
+      "category": "temple",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "erawan-shrine",
+      "name": "Erawan Shrine",
+      "category": "shrine",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "scala-yaowarat",
+      "name": "Scala Yaowarat",
+      "category": "historic-commercial-building",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:pho",
+      "name": "Wat Pho pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:arun",
+      "name": "Wat Arun pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:icon",
+      "name": "ICONSIAM pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:asiatique",
+      "name": "Asiatique pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:oriental",
+      "name": "Mandarin Oriental Bangkok pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:peninsula",
+      "name": "The Peninsula Bangkok pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:hilton",
+      "name": "Millennium Hilton Bangkok pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:shangri",
+      "name": "Shangri-La Bangkok pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:river-city",
+      "name": "River City Bangkok pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:sathorn",
+      "name": "Sathorn river pier",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "pier:songwat",
+      "name": "Song Wat river landing",
+      "category": "river-pier",
+      "review": "source/volume inventory only; visual grading pending",
+      "before": null,
+      "after": null,
+      "priority": "Individual rendered and geographic review required."
+    },
+    {
+      "id": "yaowarat",
+      "name": "Yaowarat Road \u2014 street audit",
+      "category": "street-view-case",
+      "scope": "audited-retained",
+      "review": "Street/river and elevated frames manually inspected; grades are human judgments, not collision scores.",
+      "before": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Dense colorful signs and shophouse rows establish Chinatown; individual parcels and road curvature remain condensed.",
+        "evidence": [
+          "before/yaowarat-ground.jpg",
+          "before/yaowarat-elevated.jpg"
+        ]
+      },
+      "after": {
+        "overall": "C",
+        "dimensions": {
+          "geographicPlacement": "C",
+          "orientation": "C",
+          "footprint": "C",
+          "architecture": "C",
+          "visibility": "C",
+          "urbanFabric": "C",
+          "access": "B",
+          "visualCompleteness": "C"
+        },
+        "note": "Road-snapped street view and elevated audit retained. This PR does not rebuild the Yaowarat alignment or fill every rear gap.",
+        "evidence": [
+          "after/yaowarat-ground.jpg",
+          "after/yaowarat-elevated.jpg"
+        ]
+      }
+    }
+  ]
+}
