@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "trafficDisabledForDeterminism": true,
+  "metres": 4263,
+  "routes": [
+    {
+      "from": "terminal",
+      "to": "emporium",
+      "metres": 940,
+      "simulatedSeconds": 98,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    },
+    {
+      "from": "emporium",
+      "to": "emquartier",
+      "metres": 175,
+      "simulatedSeconds": 21,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    },
+    {
+      "from": "emquartier",
+      "to": "emsphere",
+      "metres": 954,
+      "simulatedSeconds": 99,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    },
+    {
+      "from": "emsphere",
+      "to": "benchasiri",
+      "metres": 620,
+      "simulatedSeconds": 66,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    },
+    {
+      "from": "benchasiri",
+      "to": "terminal",
+      "metres": 787,
+      "simulatedSeconds": 84,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    },
+    {
+      "from": "victory",
+      "to": "chatuchak-park",
+      "metres": 787,
+      "simulatedSeconds": 83,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true
+    }
+  ]
+}

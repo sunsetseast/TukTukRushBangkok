@@ -7,7 +7,7 @@ const selection = process.env.CITY_TEST_NAMES?.split(",");
 const tasks = Object.entries(pkg.scripts).filter(
   ([n]) => n.startsWith("test:") && (!selection || selection.includes(n)),
 );
-const directory = new URL(
+const directory = process.env.CITY_SUITE_OUTPUT ? new URL(process.env.CITY_SUITE_OUTPUT,"file:///") : new URL(
   "../../../docs/qa/city-completion/validation/",
   import.meta.url,
 );

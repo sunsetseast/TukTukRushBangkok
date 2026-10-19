@@ -32,20 +32,7 @@ export function emitAuthoredGrounds(d: District, emit: (p: ArtPiece) => void) {
         put(0.3, 6, 0.6, 6, "#c7b48b");
         put(0.65, 5.5, 0.1, 5.5, "#53925d");
       }
-      put(3, 0.45, 6, 0.45, "#937349", "cylinder", "wood");
-      put(7, o.crownWidth, 5.5, o.crownWidth, "#3d8c60", "orb");
-      emit({
-        x: o.x + 1.5,
-        z: o.z - 0.9,
-        y: 7.5,
-        w: o.crownWidth * 0.7,
-        h: 4,
-        d: o.crownWidth * 0.7,
-        color: "#70a45f",
-        yaw: 0,
-        shape: "orb",
-        surface: "plaster",
-      });
+      // Trunks and crowns share tropicalPlan geometry/clearance.
     }
     for (const [i, z] of s.zones.entries()) {
       const p = sitePoint(s.origin, s.yaw, z.x, z.z),

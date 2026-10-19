@@ -1,4 +1,5 @@
 import type { RailStation } from './network';
+export const stationEnvelope=(s:RailStation)=>({...s,w:s.id==='siam'?25:s.line==='gold'?18:22,d:s.length+10,height:26,color:'#fff'});
 /** Shared concourse dimensions keep wayfinding attached to real station fascia. */
 export function stationShell(s: RailStation) { return { concourseWidth: s.id === 'siam' ? 20 : s.line === 'gold' ? 13 : 16, concourseY: 8.9, concourseHeight: 1.5 }; }
 export function stationSignPlacements(s: RailStation) {

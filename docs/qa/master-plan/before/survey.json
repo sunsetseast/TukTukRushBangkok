@@ -1,0 +1,2202 @@
+{
+  "label": "before",
+  "viewport": [
+    844,
+    480
+  ],
+  "renderer": "Chromium / SwiftShader software WebGL; not physical iPhone Safari",
+  "cameraPolicy": "Fixed paired camera poses. No obstruction removal, object hiding, or screenshot-only geometry. Road views use the normal chase camera.",
+  "survey": [
+    {
+      "id": "palace-pho",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "palace pho",
+      "view": "road",
+      "file": "palace-pho-road.jpg",
+      "pose": {
+        "player": {
+          "x": -600,
+          "z": -940,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 223,
+        "triangles": 425727,
+        "geometries": 455,
+        "textures": 15,
+        "frameMs": 34.70000000006985
+      }
+    },
+    {
+      "id": "palace-pho",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "palace pho",
+      "view": "elevated",
+      "file": "palace-pho-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -600,
+          "z": -940,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -666.4,
+            172.79999999999998,
+            -757.6
+          ],
+          "look": [
+            -820,
+            14,
+            -940
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 247,
+        "triangles": 447400,
+        "geometries": 530,
+        "textures": 15,
+        "frameMs": 20.099999999976717
+      }
+    },
+    {
+      "id": "swing-suthat",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "swing suthat",
+      "view": "road",
+      "file": "swing-suthat-road.jpg",
+      "pose": {
+        "player": {
+          "x": -357.6,
+          "z": -796.8,
+          "heading": -0.020902878445609226,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 312,
+        "triangles": 520497,
+        "geometries": 701,
+        "textures": 17,
+        "frameMs": 1557.3999999999069
+      }
+    },
+    {
+      "id": "swing-suthat",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "swing suthat",
+      "view": "elevated",
+      "file": "swing-suthat-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -360,
+          "z": -800,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -276.8,
+            93.6,
+            -583.2
+          ],
+          "look": [
+            -360,
+            14,
+            -682
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 269,
+        "triangles": 451728,
+        "geometries": 803,
+        "textures": 17,
+        "frameMs": 518
+      }
+    },
+    {
+      "id": "golden-mount",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "golden mount",
+      "view": "road",
+      "file": "golden-mount-road.jpg",
+      "pose": {
+        "player": {
+          "x": -140,
+          "z": -960,
+          "heading": 2.2455372690184494,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 247,
+        "triangles": 368629,
+        "geometries": 988,
+        "textures": 17,
+        "frameMs": 473.69999999995343
+      }
+    },
+    {
+      "id": "golden-mount",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "golden mount",
+      "view": "elevated",
+      "file": "golden-mount-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -140,
+          "z": -960,
+          "heading": 2.2455372690184494,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            25.60000000000001,
+            118.8,
+            -882.6
+          ],
+          "look": [
+            -80,
+            14,
+            -1008
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 270,
+        "triangles": 421810,
+        "geometries": 1046,
+        "textures": 17,
+        "frameMs": 1047.3000000000466
+      }
+    },
+    {
+      "id": "yaowarat",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "yaowarat",
+      "view": "road",
+      "file": "yaowarat-road.jpg",
+      "pose": {
+        "player": {
+          "x": -191.0091743119266,
+          "z": -196.69724770642202,
+          "heading": 0.7422374665419418,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 369,
+        "triangles": 564996,
+        "geometries": 1236,
+        "textures": 17,
+        "frameMs": 26
+      }
+    },
+    {
+      "id": "yaowarat",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "yaowarat",
+      "view": "elevated",
+      "file": "yaowarat-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -200,
+          "z": -180,
+          "heading": 0.9453112865556675,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -32,
+            108,
+            -14
+          ],
+          "look": [
+            -128,
+            14,
+            -128
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 383,
+        "triangles": 686357,
+        "geometries": 1277,
+        "textures": 17,
+        "frameMs": 19.600000000093132
+      }
+    },
+    {
+      "id": "talat-noi",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "talat noi",
+      "view": "road",
+      "file": "talat-noi-road.jpg",
+      "pose": {
+        "player": {
+          "x": 160,
+          "z": 360,
+          "heading": -0.7853981633974483,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 255,
+        "triangles": 438861,
+        "geometries": 1442,
+        "textures": 19,
+        "frameMs": 613.7000000000698
+      }
+    },
+    {
+      "id": "talat-noi",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "talat noi",
+      "view": "elevated",
+      "file": "talat-noi-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 160,
+          "z": 360,
+          "heading": -0.7853981633974483,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            232,
+            126,
+            533
+          ],
+          "look": [
+            120,
+            14,
+            400
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 306,
+        "triangles": 474015,
+        "geometries": 1462,
+        "textures": 19,
+        "frameMs": 23.20000000006985
+      }
+    },
+    {
+      "id": "paragon",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "paragon",
+      "view": "road",
+      "file": "paragon-road.jpg",
+      "pose": {
+        "player": {
+          "x": 908,
+          "z": -580,
+          "heading": 3.066732805879026,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 309,
+        "triangles": 436064,
+        "geometries": 1697,
+        "textures": 19,
+        "frameMs": 730.9000000000233
+      }
+    },
+    {
+      "id": "paragon",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "paragon",
+      "view": "elevated",
+      "file": "paragon-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 908,
+          "z": -580,
+          "heading": 3.066732805879026,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1035.2,
+            129.6,
+            -603.2
+          ],
+          "look": [
+            920,
+            14,
+            -740
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 301,
+        "triangles": 402485,
+        "geometries": 1772,
+        "textures": 20,
+        "frameMs": 718.8000000000466
+      }
+    },
+    {
+      "id": "siam-center-discovery",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "siam center discovery",
+      "view": "road",
+      "file": "siam-center-discovery-road.jpg",
+      "pose": {
+        "player": {
+          "x": 728,
+          "z": -580,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 304,
+        "triangles": 413520,
+        "geometries": 1788,
+        "textures": 20,
+        "frameMs": 2292.899999999907
+      }
+    },
+    {
+      "id": "siam-center-discovery",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "siam center discovery",
+      "view": "elevated",
+      "file": "siam-center-discovery-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 728,
+          "z": -580,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            830.4,
+            115.19999999999999,
+            -550.4
+          ],
+          "look": [
+            728,
+            14,
+            -672
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 334,
+        "triangles": 437139,
+        "geometries": 1836,
+        "textures": 20,
+        "frameMs": 2121
+      }
+    },
+    {
+      "id": "centralworld",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "centralworld",
+      "view": "road",
+      "file": "centralworld-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1213.0162162162162,
+          "z": -492.3027027027027,
+          "heading": -2.7892376677159976,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 319,
+        "triangles": 443891,
+        "geometries": 1925,
+        "textures": 20,
+        "frameMs": 900.6000000000931
+      }
+    },
+    {
+      "id": "centralworld",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "centralworld",
+      "view": "elevated",
+      "file": "centralworld-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1240,
+          "z": -484,
+          "heading": -2.6861415823389,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1272,
+            144,
+            -528
+          ],
+          "look": [
+            1144,
+            14,
+            -680
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 336,
+        "triangles": 507543,
+        "geometries": 1950,
+        "textures": 20,
+        "frameMs": 1912
+      }
+    },
+    {
+      "id": "mbk",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "mbk",
+      "view": "road",
+      "file": "mbk-road.jpg",
+      "pose": {
+        "player": {
+          "x": 559.2866242038217,
+          "z": -560.0254777070064,
+          "heading": 0.5446851281021828,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 298,
+        "triangles": 471757,
+        "geometries": 2122,
+        "textures": 20,
+        "frameMs": 2336.5
+      }
+    },
+    {
+      "id": "mbk",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "mbk",
+      "view": "elevated",
+      "file": "mbk-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 560,
+          "z": -560,
+          "heading": 0.5404195002705842,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            747.2,
+            129.6,
+            -303.2
+          ],
+          "look": [
+            632,
+            14,
+            -440
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 307,
+        "triangles": 444407,
+        "geometries": 2150,
+        "textures": 20,
+        "frameMs": 2200.70000000007
+      }
+    },
+    {
+      "id": "asok-terminal",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "asok terminal",
+      "view": "road",
+      "file": "asok-terminal-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1777.3362930077692,
+          "z": -279.91120976692565,
+          "heading": -2.4377500997309967,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 333,
+        "triangles": 465911,
+        "geometries": 2373,
+        "textures": 20,
+        "frameMs": 814.5
+      }
+    },
+    {
+      "id": "asok-terminal",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "asok terminal",
+      "view": "elevated",
+      "file": "asok-terminal-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1780,
+          "z": -280,
+          "heading": -2.4250509794933897,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1806.4,
+            151.2,
+            -244.4
+          ],
+          "look": [
+            1672,
+            14,
+            -404
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 438499,
+        "geometries": 2389,
+        "textures": 20,
+        "frameMs": 842.5999999999767
+      }
+    },
+    {
+      "id": "phrom-phong",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "phrom phong",
+      "view": "road",
+      "file": "phrom-phong-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1757.3183213920165,
+          "z": -24.21699078812723,
+          "heading": 1.395551043496529,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 88,
+        "triangles": 127459,
+        "geometries": 2436,
+        "textures": 20,
+        "frameMs": 385.0999999999767
+      }
+    },
+    {
+      "id": "phrom-phong",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "phrom phong",
+      "view": "elevated",
+      "file": "phrom-phong-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 2100,
+          "z": 20,
+          "heading": 0.7853981633974483,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            2280,
+            180,
+            230
+          ],
+          "look": [
+            2120,
+            14,
+            40
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 126,
+        "triangles": 170737,
+        "geometries": 2481,
+        "textures": 20,
+        "frameMs": 43.10000000009313
+      }
+    },
+    {
+      "id": "lumphini",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "lumphini",
+      "view": "road",
+      "file": "lumphini-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 568,
+          "heading": -1.80634130751576,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 260,
+        "triangles": 447000,
+        "geometries": 2696,
+        "textures": 20,
+        "frameMs": 2208.3000000000466
+      }
+    },
+    {
+      "id": "lumphini",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "lumphini",
+      "view": "elevated",
+      "file": "lumphini-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1420,
+          "z": 568,
+          "heading": -1.80634130751576,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1469.6,
+            280.8,
+            816.4
+          ],
+          "look": [
+            1220,
+            14,
+            520
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 277,
+        "triangles": 480815,
+        "geometries": 2781,
+        "textures": 20,
+        "frameMs": 26.70000000006985
+      }
+    },
+    {
+      "id": "benjakitti",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "benjakitti",
+      "view": "road",
+      "file": "benjakitti-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1703.8918918918919,
+          "z": 443.35135135135135,
+          "heading": -1.6089082446187744,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 238,
+        "triangles": 381691,
+        "geometries": 2821,
+        "textures": 20,
+        "frameMs": 487.0999999999767
+      }
+    },
+    {
+      "id": "benjakitti",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "benjakitti",
+      "view": "elevated",
+      "file": "benjakitti-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1700,
+          "z": 444,
+          "heading": -1.6183794300718801,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1808,
+            216,
+            668
+          ],
+          "look": [
+            1616,
+            14,
+            440
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 232,
+        "triangles": 350127,
+        "geometries": 2875,
+        "textures": 20,
+        "frameMs": 549.7000000000698
+      }
+    },
+    {
+      "id": "chatuchak-market",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "chatuchak market",
+      "view": "road",
+      "file": "chatuchak-market-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 112,
+        "triangles": 149276,
+        "geometries": 2945,
+        "textures": 20,
+        "frameMs": 1525
+      }
+    },
+    {
+      "id": "chatuchak-market",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "chatuchak market",
+      "view": "elevated",
+      "file": "chatuchak-market-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1100.8,
+            158.4,
+            -1972.8
+          ],
+          "look": [
+            960,
+            14,
+            -2140
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 116,
+        "triangles": 145978,
+        "geometries": 2964,
+        "textures": 20,
+        "frameMs": 843.5
+      }
+    },
+    {
+      "id": "chatuchak-park",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "chatuchak park",
+      "view": "road",
+      "file": "chatuchak-park-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": 1.7359450042095235,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 60,
+        "triangles": 87284,
+        "geometries": 2965,
+        "textures": 20,
+        "frameMs": 285.0999999999767
+      }
+    },
+    {
+      "id": "chatuchak-park",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "chatuchak park",
+      "view": "elevated",
+      "file": "chatuchak-park-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": 1.7359450042095235,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1340.8,
+            158.4,
+            -1992.8
+          ],
+          "look": [
+            1200,
+            14,
+            -2160
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 95,
+        "triangles": 96256,
+        "geometries": 2969,
+        "textures": 20,
+        "frameMs": 121.60000000009313
+      }
+    },
+    {
+      "id": "victory-monument",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "victory monument",
+      "view": "road",
+      "file": "victory-monument-road.jpg",
+      "pose": {
+        "player": {
+          "x": 816.0972009227173,
+          "z": -1324.1423588870434,
+          "heading": 2.8201293963093823,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 242,
+        "triangles": 304763,
+        "geometries": 3100,
+        "textures": 20,
+        "frameMs": 615.5
+      }
+    },
+    {
+      "id": "victory-monument",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "victory monument",
+      "view": "elevated",
+      "file": "victory-monument-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 852,
+          "z": -1312,
+          "heading": 3.046640947247037,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            989.6,
+            136.79999999999998,
+            -1335.6
+          ],
+          "look": [
+            868,
+            14,
+            -1480
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 240,
+        "triangles": 324033,
+        "geometries": 3143,
+        "textures": 20,
+        "frameMs": 1995.5
+      }
+    },
+    {
+      "id": "iconsiam",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "iconsiam",
+      "view": "road",
+      "file": "iconsiam-road.jpg",
+      "pose": {
+        "player": {
+          "x": -900,
+          "z": 880,
+          "heading": 1.3673032815373338,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 211,
+        "triangles": 273437,
+        "geometries": 3273,
+        "textures": 20,
+        "frameMs": 658.8000000000466
+      }
+    },
+    {
+      "id": "iconsiam",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "iconsiam",
+      "view": "elevated",
+      "file": "iconsiam-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -900,
+          "z": 880,
+          "heading": 1.3673032815373338,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -494.4,
+            172.79999999999998,
+            1114.4
+          ],
+          "look": [
+            -648,
+            14,
+            932
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 230,
+        "triangles": 235383,
+        "geometries": 3372,
+        "textures": 20,
+        "frameMs": 1101.1000000000931
+      }
+    },
+    {
+      "id": "wat-arun",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "wat arun",
+      "view": "road",
+      "file": "wat-arun-road.jpg",
+      "pose": {
+        "player": {
+          "x": -1500,
+          "z": -540,
+          "heading": 1.6856729322117958,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 188,
+        "triangles": 347222,
+        "geometries": 3440,
+        "textures": 22,
+        "frameMs": 21
+      }
+    },
+    {
+      "id": "wat-arun",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "wat arun",
+      "view": "elevated",
+      "file": "wat-arun-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -1500,
+          "z": -540,
+          "heading": 1.6856729322117958,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -1268,
+            144,
+            -400
+          ],
+          "look": [
+            -1396,
+            14,
+            -552
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 165,
+        "triangles": 204406,
+        "geometries": 3537,
+        "textures": 22,
+        "frameMs": 291.39999999990687
+      }
+    },
+    {
+      "id": "river-city",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "river city",
+      "view": "road",
+      "file": "river-city-road.jpg",
+      "pose": {
+        "player": {
+          "x": -79.59582737606998,
+          "z": 791.3823087073217,
+          "heading": -1.6083659718751595,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 207,
+        "triangles": 237729,
+        "geometries": 3563,
+        "textures": 22,
+        "frameMs": 557
+      }
+    },
+    {
+      "id": "river-city",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "river city",
+      "view": "elevated",
+      "file": "river-city-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -80,
+          "z": 800,
+          "heading": -1.6522483711007676,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -160.8,
+            129.6,
+            920.8
+          ],
+          "look": [
+            -276,
+            14,
+            784
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 149,
+        "triangles": 198911,
+        "geometries": 3565,
+        "textures": 22,
+        "frameMs": 33.89999999990687
+      }
+    },
+    {
+      "id": "charoen-krung",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "charoen krung",
+      "view": "road",
+      "file": "charoen-krung-road.jpg",
+      "pose": {
+        "player": {
+          "x": 140.97387173396675,
+          "z": 911.7577197149644,
+          "heading": -1.0750240684456136,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 260,
+        "triangles": 460286,
+        "geometries": 3693,
+        "textures": 22,
+        "frameMs": 1468.1999999999534
+      }
+    },
+    {
+      "id": "charoen-krung",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "charoen krung",
+      "view": "elevated",
+      "file": "charoen-krung-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 148,
+          "z": 912,
+          "heading": -1.0963964440029892,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            121.60000000000001,
+            136.79999999999998,
+            1132.4
+          ],
+          "look": [
+            0,
+            14,
+            988
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 263,
+        "triangles": 461027,
+        "geometries": 3712,
+        "textures": 22,
+        "frameMs": 1463.3999999999069
+      }
+    },
+    {
+      "id": "silom",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "silom",
+      "view": "road",
+      "file": "silom-road.jpg",
+      "pose": {
+        "player": {
+          "x": 860.4824615384615,
+          "z": 848.4996923076923,
+          "heading": -1.267009239931765,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 275,
+        "triangles": 435190,
+        "geometries": 3903,
+        "textures": 22,
+        "frameMs": 709.8999999999069
+      }
+    },
+    {
+      "id": "silom",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "silom",
+      "view": "elevated",
+      "file": "silom-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 860,
+          "z": 848,
+          "heading": -1.2610933822524404,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            875.2,
+            129.6,
+            1016.8
+          ],
+          "look": [
+            760,
+            14,
+            880
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 252,
+        "triangles": 404272,
+        "geometries": 3927,
+        "textures": 22,
+        "frameMs": 716
+      }
+    },
+    {
+      "id": "sathorn",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "sathorn",
+      "view": "road",
+      "file": "sathorn-road.jpg",
+      "pose": {
+        "player": {
+          "x": 720,
+          "z": 1340,
+          "heading": -1.8157749899217608,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 297,
+        "triangles": 499699,
+        "geometries": 4014,
+        "textures": 22,
+        "frameMs": 773.3999999999069
+      }
+    },
+    {
+      "id": "sathorn",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "sathorn",
+      "view": "elevated",
+      "file": "sathorn-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 720,
+          "z": 1340,
+          "heading": -1.8157749899217608,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            761.6,
+            136.79999999999998,
+            1464.4
+          ],
+          "look": [
+            640,
+            14,
+            1320
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 297,
+        "triangles": 484672,
+        "geometries": 4034,
+        "textures": 22,
+        "frameMs": 1101.1999999999534
+      }
+    },
+    {
+      "id": "bts-siam",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts siam",
+      "view": "road",
+      "file": "bts-siam-road.jpg",
+      "pose": {
+        "player": {
+          "x": 896,
+          "z": -580,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 350,
+        "triangles": 508416,
+        "geometries": 4052,
+        "textures": 22,
+        "frameMs": 18.5
+      }
+    },
+    {
+      "id": "bts-siam",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts siam",
+      "view": "elevated",
+      "file": "bts-siam-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 896,
+          "z": -580,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            942.4,
+            115.19999999999999,
+            -458.4
+          ],
+          "look": [
+            840,
+            14,
+            -580
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 337,
+        "triangles": 437407,
+        "geometries": 4052,
+        "textures": 22,
+        "frameMs": 1518.6999999999534
+      }
+    },
+    {
+      "id": "bts-asok",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts asok",
+      "view": "road",
+      "file": "bts-asok-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1732.5647058823529,
+          "z": -240.65882352941176,
+          "heading": 0.862170054667227,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 151,
+        "triangles": 233265,
+        "geometries": 4057,
+        "textures": 22,
+        "frameMs": 1743.5
+      }
+    },
+    {
+      "id": "bts-asok",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts asok",
+      "view": "elevated",
+      "file": "bts-asok-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1732,
+          "z": -240,
+          "heading": 0.8760580505981934,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1882.4,
+            115.19999999999999,
+            -78.4
+          ],
+          "look": [
+            1780,
+            14,
+            -200
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 291,
+        "triangles": 366833,
+        "geometries": 4074,
+        "textures": 22,
+        "frameMs": 669.9000000001397
+      }
+    },
+    {
+      "id": "bts-saphan-taksin",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts saphan taksin",
+      "view": "road",
+      "file": "bts-saphan-taksin-road.jpg",
+      "pose": {
+        "player": {
+          "x": 0,
+          "z": 1460,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 215,
+        "triangles": 389444,
+        "geometries": 4167,
+        "textures": 22,
+        "frameMs": 761.6999999999534
+      }
+    },
+    {
+      "id": "bts-saphan-taksin",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts saphan taksin",
+      "view": "elevated",
+      "file": "bts-saphan-taksin-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 0,
+          "z": 1460,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            23.200000000000003,
+            129.6,
+            1596.8
+          ],
+          "look": [
+            -92,
+            14,
+            1460
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 284,
+        "triangles": 515513,
+        "geometries": 4178,
+        "textures": 22,
+        "frameMs": 2385.8000000000466
+      }
+    },
+    {
+      "id": "bts-victory",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts victory",
+      "view": "road",
+      "file": "bts-victory-road.jpg",
+      "pose": {
+        "player": {
+          "x": 795.8528503978553,
+          "z": -1264.2834092294304,
+          "heading": 1.8883939011031645,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 224,
+        "triangles": 293021,
+        "geometries": 4217,
+        "textures": 22,
+        "frameMs": 21
+      }
+    },
+    {
+      "id": "bts-victory",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "bts victory",
+      "view": "elevated",
+      "file": "bts-victory-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 844,
+          "z": -1248,
+          "heading": 2.601173153319209,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            970.4,
+            115.19999999999999,
+            -1166.4
+          ],
+          "look": [
+            868,
+            14,
+            -1288
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 253,
+        "triangles": 308614,
+        "geometries": 4228,
+        "textures": 22,
+        "frameMs": 563.8999999999069
+      }
+    },
+    {
+      "id": "riverside-palms",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "riverside palms",
+      "view": "road",
+      "file": "riverside-palms-road.jpg",
+      "pose": {
+        "player": {
+          "x": -45.401621681502974,
+          "z": 1064.9342715119374,
+          "heading": -1.73070345577024,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 219,
+        "triangles": 243961,
+        "geometries": 4236,
+        "textures": 22,
+        "frameMs": 1425.3999999999069
+      }
+    },
+    {
+      "id": "riverside-palms",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "riverside palms",
+      "view": "elevated",
+      "file": "riverside-palms-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -40,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -91.2,
+            122.39999999999999,
+            1169.2
+          ],
+          "look": [
+            -200,
+            14,
+            1040
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 179,
+        "triangles": 233646,
+        "geometries": 4236,
+        "textures": 22,
+        "frameMs": 354.89999999990687
+      }
+    },
+    {
+      "id": "tropical-park",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "tropical park",
+      "view": "road",
+      "file": "tropical-park-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1031.8059117082532,
+          "z": 424.6292514395392,
+          "heading": 1.813110446498037,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 200,
+        "triangles": 344167,
+        "geometries": 4249,
+        "textures": 22,
+        "frameMs": 938.6000000000931
+      }
+    },
+    {
+      "id": "tropical-park",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "tropical park",
+      "view": "elevated",
+      "file": "tropical-park-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1008,
+          "z": 428,
+          "heading": 1.799292966086759,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1295.2,
+            129.6,
+            524.8
+          ],
+          "look": [
+            1180,
+            14,
+            388
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 248,
+        "triangles": 376342,
+        "geometries": 4280,
+        "textures": 22,
+        "frameMs": 533
+      }
+    },
+    {
+      "id": "dense-commercial",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "dense commercial",
+      "view": "road",
+      "file": "dense-commercial-road.jpg",
+      "pose": {
+        "player": {
+          "x": 1500,
+          "z": -440,
+          "heading": 0.7853981633974483,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 221,
+        "triangles": 320684,
+        "geometries": 4290,
+        "textures": 22,
+        "frameMs": 713.3000000000466
+      }
+    },
+    {
+      "id": "dense-commercial",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "dense commercial",
+      "view": "elevated",
+      "file": "dense-commercial-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": 1500,
+          "z": -440,
+          "heading": 0.7853981633974483,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            1616,
+            108,
+            -306
+          ],
+          "look": [
+            1520,
+            14,
+            -420
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 342,
+        "triangles": 472001,
+        "geometries": 4301,
+        "textures": 22,
+        "frameMs": 2987.6999999999534
+      }
+    },
+    {
+      "id": "wat-pho-overlap",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "wat pho overlap",
+      "view": "road",
+      "file": "wat-pho-overlap-road.jpg",
+      "pose": {
+        "player": {
+          "x": -1000,
+          "z": -640,
+          "heading": 1.4959364790841299,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": null,
+        "mode": "normal gameplay chase camera"
+      },
+      "stats": {
+        "calls": 320,
+        "triangles": 470480,
+        "geometries": 4324,
+        "textures": 22,
+        "frameMs": 808.1999999999534
+      }
+    },
+    {
+      "id": "wat-pho-overlap",
+      "viewport": [
+        844,
+        480
+      ],
+      "title": "wat pho overlap",
+      "view": "elevated",
+      "file": "wat-pho-overlap-elevated.jpg",
+      "pose": {
+        "player": {
+          "x": -1000,
+          "z": -640,
+          "heading": 1.4959364790841299,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "camera": {
+          "position": [
+            -731.2,
+            122.39999999999999,
+            -498.8
+          ],
+          "look": [
+            -840,
+            14,
+            -628
+          ]
+        },
+        "mode": "fixed inspection camera"
+      },
+      "stats": {
+        "calls": 242,
+        "triangles": 413229,
+        "geometries": 4331,
+        "textures": 22,
+        "frameMs": 778.1999999999534
+      }
+    }
+  ],
+  "errors": []
+}

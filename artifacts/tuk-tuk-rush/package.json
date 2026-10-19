@@ -40,7 +40,8 @@
     "test:city-drives": "node --import tsx scripts/check-city-reconstruction-drives.ts",
     "test:city-completion": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
     "qa:urban-survey": "node --import tsx scripts/survey-city-completion.ts",
-    "qa:scene-inventory": "node --import tsx scripts/profile-city-inventory.ts"
+    "qa:scene-inventory": "node --import tsx scripts/profile-city-inventory.ts",
+    "test:master-plan": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -84,6 +85,7 @@
     "@vitejs/plugin-react": "catalog:",
     "@workspace/api-client-react": "workspace:*",
     "class-variance-authority": "catalog:",
+    "clipper-lib": "6.4.2",
     "clsx": "catalog:",
     "cmdk": "^1.1.1",
     "date-fns": "^3.6.0",

@@ -131,10 +131,17 @@ export function planConvenienceStores(d: District) {
         },
       ];
     })
-    .sort((a, b) => a.seed - b.seed);
+    .sort((a,b)=>a.seed-b.seed);
+  // Reserve one suitable example of the constrained physical types before a
+  // region's quota is exhausted; keep the remaining seed order and spacing.
+  const priority:typeof candidates=[];
+  for(const kind of ["narrow","transit","tower"]){const candidate=candidates.find(c=>
+    (kind==="narrow"?!c.transit&&c.b.w<12&&c.b.height<=29:kind==="transit"?c.transit:!c.transit&&c.b.height>29)&&
+    priority.every(p=>Math.hypot(p.b.x-c.b.x,p.b.z-c.b.z)>=220));if(candidate)priority.push(candidate);}
+  const ordered=[...priority,...candidates.filter(c=>!priority.includes(c))];
   const stores: ConvenienceStore[] = [],
     counts = new Map<string, number>();
-  for (const c of candidates) {
+  for (const c of ordered) {
     const count = counts.get(c.region) ?? 0;
     if (
       count >= (QUOTAS[c.region] ?? 1) ||

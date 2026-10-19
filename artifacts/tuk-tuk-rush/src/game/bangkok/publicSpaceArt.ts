@@ -18,6 +18,12 @@ const local = (p: Point, o: Point) => ({ x: p.x - o.x, z: p.z - o.z });
 function parkModel(s: PublicSpace, detail: boolean) {
   const b = new LandmarkBuilder(),
     o = s.origin;
+  if(s.id==="benchasiri"){
+    // Sculpture garden's commemorative coin and smaller abstract public art.
+    b.sculpt(new T.CylinderGeometry(3.2,3.2,.45,24).rotateX(Math.PI/2),-7,4,-86,"#b99b62","bronze");
+    b.box(-7,.7,-86,8,1.4,3,"#c8c0a2");
+    for(const x of [-36,34]){b.sculpt(new T.TorusKnotGeometry(1.7,.28,24,4),x,2.4,25,"#b6b8a6","bronze");b.box(x,.45,25,4,.9,4,"#b9b69d");}
+  }
   b.sculpt(
     polygon(s.boundary, o),
     0,
@@ -152,55 +158,7 @@ function parkModel(s: PublicSpace, detail: boolean) {
       b.box(p.x, 1, p.z, 0.13, 1, f.d * 0.06, "#4e6554", f.yaw);
     }
   }
-  for (const [i, p] of s.trees.entries()) {
-    if (!detail && i % 2) continue;
-    const q = local(p, o),
-      h = 8 + (i % 7) * 1.25,
-      r = 5 + (i % 5) * 0.7;
-    b.sculpt(
-      new T.CylinderGeometry(0.25, 0.5, h * 0.7, 5),
-      q.x,
-      h * 0.35,
-      q.z,
-      "#8e7151",
-    );
-    if (i % 5 === 0) {
-      for (let j = 0; j < (detail ? 6 : 4); j++) {
-        const angle = (j * Math.PI) / 3;
-        b.sculpt(
-          new T.ConeGeometry(r * 0.42, r * 1.4, 3)
-            .rotateZ(Math.PI / 2.6)
-            .rotateY(angle),
-          q.x + Math.sin(angle) * r * 0.4,
-          h,
-          q.z + Math.cos(angle) * r * 0.4,
-          "#487e4e",
-        );
-      }
-    } else {
-      b.sculpt(
-        new T.IcosahedronGeometry(r, detail ? 1 : 0).scale(1, 1.1, 0.85),
-        q.x,
-        h * 0.87,
-        q.z,
-        ["#3f7b53", "#528d55", "#659c5a", "#719f57"][i % 4]!,
-      );
-      if (detail)
-        b.sculpt(
-          new T.IcosahedronGeometry(r * 0.65, 0),
-          q.x + 2,
-          h * 1.12,
-          q.z + 1,
-          "#6a9e62",
-        );
-    }
-    if (detail && i % 7 === 0) {
-      b.box(q.x + 6, 0.8, q.z, 3.6, 0.25, 1, "#a7774c");
-      b.box(q.x + 6, 1.3, q.z + 0.4, 3.6, 0.7, 0.15, "#a7774c");
-      b.box(q.x + 3, 3, q.z, 0.17, 6, 0.17, "#596c63");
-      b.box(q.x + 3, 6, q.z, 1, 0.5, 1, "#f5ce77", 0, true);
-    }
-  }
+  // Planting is emitted by tropicalPlan with shared full-crown clearance.
   for (const g of s.gates) {
     const p = local(g.point, o),
       yaw = g.yaw ?? 0;

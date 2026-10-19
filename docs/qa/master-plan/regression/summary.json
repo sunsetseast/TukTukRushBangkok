@@ -1,0 +1,240 @@
+{
+  "pass": true,
+  "passed": 31,
+  "total": 31,
+  "browserQa": false,
+  "physicalIPhone": false,
+  "results": [
+    {
+      "name": "test:assets",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 130,
+      "log": "test-assets.log"
+    },
+    {
+      "name": "test:authored-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 30676,
+      "log": "test-authored-drives.log"
+    },
+    {
+      "name": "test:authored-sites",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 45643,
+      "log": "test-authored-sites.log"
+    },
+    {
+      "name": "test:bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 163947,
+      "log": "test-bangkok.log"
+    },
+    {
+      "name": "test:career",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 69063,
+      "log": "test-career.log"
+    },
+    {
+      "name": "test:cinematic",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 44711,
+      "log": "test-cinematic.log"
+    },
+    {
+      "name": "test:city-completion",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 58221,
+      "log": "test-city-completion.log"
+    },
+    {
+      "name": "test:city-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 29555,
+      "log": "test-city-drives.log"
+    },
+    {
+      "name": "test:city-fabric",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 27794,
+      "log": "test-city-fabric.log"
+    },
+    {
+      "name": "test:cityscapes",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 58558,
+      "log": "test-cityscapes.log"
+    },
+    {
+      "name": "test:civic-roads",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 32068,
+      "log": "test-civic-roads.log"
+    },
+    {
+      "name": "test:commercial-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 20784,
+      "log": "test-commercial-districts.log"
+    },
+    {
+      "name": "test:convenience-urban",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 21175,
+      "log": "test-convenience-urban.log"
+    },
+    {
+      "name": "test:corrections",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 33536,
+      "log": "test-corrections.log"
+    },
+    {
+      "name": "test:definitive",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 58602,
+      "log": "test-definitive.log"
+    },
+    {
+      "name": "test:environment",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 73543,
+      "log": "test-environment.log"
+    },
+    {
+      "name": "test:gameplay",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 3232,
+      "log": "test-gameplay.log"
+    },
+    {
+      "name": "test:geographic-reference",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 251,
+      "log": "test-geographic-reference.log"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 497,
+      "log": "test-graphics-foundation.log"
+    },
+    {
+      "name": "test:historic-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1659,
+      "log": "test-historic-districts.log"
+    },
+    {
+      "name": "test:interface",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 23007,
+      "log": "test-interface.log"
+    },
+    {
+      "name": "test:landmark-quality",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 59472,
+      "log": "test-landmark-quality.log"
+    },
+    {
+      "name": "test:master-plan",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 45274,
+      "log": "test-master-plan.log"
+    },
+    {
+      "name": "test:open-bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 27457,
+      "log": "test-open-bangkok.log"
+    },
+    {
+      "name": "test:public-spaces",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 21072,
+      "log": "test-public-spaces.log"
+    },
+    {
+      "name": "test:real-architecture",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 25563,
+      "log": "test-real-architecture.log"
+    },
+    {
+      "name": "test:roadside",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 964,
+      "log": "test-roadside.log"
+    },
+    {
+      "name": "test:sign-layers",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 464,
+      "log": "test-sign-layers.log"
+    },
+    {
+      "name": "test:signature",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 304,
+      "log": "test-signature.log"
+    },
+    {
+      "name": "test:startup",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 6338,
+      "log": "test-startup.log"
+    },
+    {
+      "name": "test:street-life",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1898,
+      "log": "test-street-life.log"
+    }
+  ],
+  "rechecks": [
+    {
+      "name": "test:public-spaces",
+      "reason": "Public planting moved from landmark mesh to shared spatial batches; whole-park LOD assertion includes both components, preserving the 35% reduction requirement."
+    },
+    {
+      "names": [
+        "test:authored-sites",
+        "test:master-plan",
+        "test:public-spaces"
+      ],
+      "reason": "Final Emporium rear/side fa\u00e7ades and pitch-aware physical planting heights; relevant source and scene budgets rechecked."
+    }
+  ]
+}

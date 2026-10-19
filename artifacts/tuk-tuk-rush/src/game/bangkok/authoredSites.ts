@@ -55,6 +55,9 @@ const mass = (
 export function siteMasses(p: RealPlace): SiteMass[] {
   if(HISTORIC_SITE_PLANS[p.id])return HISTORIC_SITE_PLANS[p.id]!.masses;
   switch (p.id) {
+    case "emporium": return [mass("ivory retail podium",0,0,84,84,29),mass("hotel tower",19,-17,32,34,102),mass("entrance",-16,46,32,8,8)];
+    case "emquartier": return [mass("Glass Quartier",-28,8,39,72,38),mass("Helix Quartier",25,14,39,61,46),mass("Waterfall tower",8,-27,49,36,82)];
+    case "emsphere": return [mass("bronze retail and arena",0,0,80,70,32),mass("retail entrance",0,38,58,6,10)];
     case "oriental":
       return [
         mass("River Wing", -18, -12, 68, 27, 49),

@@ -12,6 +12,7 @@ import type {
 } from "../types";
 import { distanceToSegment, orientedFootprintsOverlap } from "../world";
 import { blockedByRiver, riverDistance } from "./world";
+import { arrivalFurniturePoint } from "./arrivalDecoration";
 
 const sites = [
   [
@@ -477,7 +478,7 @@ export function detailDestinationCollisions(d: District) {
       yaw = a.yaw,
     ) =>
       d.obstacles.push({
-        ...p,
+        ...arrivalFurniturePoint(d,a,p),
         w,
         d: depth,
         height,

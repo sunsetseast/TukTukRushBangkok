@@ -1,5 +1,5 @@
 import type { RailLine, RailNetwork, RailSample } from "./network";
-import { sampleRail } from "./network";
+import { sampleRail,SIAM_JUNCTION } from "./network";
 
 type Leg = {
   start: number;
@@ -141,7 +141,7 @@ export function trainSample(
 ) {
   const siam = line.stations.find((s) => s.id === "siam");
   const blend = siam
-    ? Math.max(0, Math.min(1, (190 - Math.abs(distance - siam.distance)) / 100))
+    ? Math.max(0, Math.min(1, (SIAM_JUNCTION.offsetApproach - Math.abs(distance - siam.distance)) / SIAM_JUNCTION.offsetRun))
     : 0;
   const normal = line.id === "gold" ? 1.9 : 2.1,
     atSiam = line.id === "silom" ? -4.8 : 4.8;

@@ -1,4 +1,5 @@
 import { siteMasses } from './authoredSites';
+import { buildEmDistrict } from './phromPhong';
 import { buildSiamCenterDiscovery } from './commercialDistrictArt';
 import { historicDistrictLandmark } from './historicDistricts';
 import { buildHeroArchitecture } from './heroArchitecture';
@@ -109,7 +110,7 @@ function eastin(b:B,detail:boolean){
 const builders:Record<string,(b:B,detail:boolean)=>void>={'peninsula':peninsula,'hilton':hilton,'rosewood':rosewood,'erawan-hotel':erawan,'eastin':eastin,'siam-center':buildSiamCenterDiscovery};
 export function buildRealArchitecture(l:Landmark){
  const historic=historicDistrictLandmark(l);if(historic)return historic;
- const p=realPlace(l.id),make=builders[l.id!];if(!p)return;
+ const p=realPlace(l.id),make=['emporium','emquartier','emsphere'].includes(l.id!)?((b:B,detail:boolean)=>buildEmDistrict(l.id!,b,detail)):builders[l.id!];if(!p)return;
  const root=new T.LOD();
  for(const detail of [true,false]){let g=buildHeroArchitecture(p,detail);if(!g){if(!make)return;const b=new LandmarkBuilder();make(b,detail);g=b.finish(`${p.asset}-${detail?'near':'far'}`);}root.addLevel(g,detail?0:300,.12);}
  root.userData.authoredAsset=p.asset;root.userData.realPlace=p.id;root.userData.nightMaterials=root.levels.flatMap(l=>l.object.userData.nightMaterials);

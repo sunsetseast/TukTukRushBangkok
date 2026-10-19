@@ -27,6 +27,9 @@ import {
 } from "./authoredSites";
 import { placeRealArchitecture } from "./realPlaces";
 import layout from "./layout.json";
+import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
+import { planTropicalPlants } from "./tropicalPlan";
+import { planMrtEntrances } from "./mrtSurface";
 import { planLandscape } from "./landscape";
 import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
@@ -197,6 +200,7 @@ export function createBangkokWorld(): District {
         },
       });
   }
+  reconstructMasterPlanRoads(segments, controls);
   reconstructCivicRoads(segments, controls);
   reconstructPublicRoads(segments, controls);
   // The gateway occupies a protected island. Route approaching streets around it.
@@ -341,7 +345,7 @@ export function createBangkokWorld(): District {
     landmarks,
     buildings: [],
     obstacles: [],
-    bounds: { minX: -1980, maxX: 1980, minZ: -2380, maxZ: 2380 },
+    bounds: { minX: -1980, maxX: (MASTER_PLAN.bounds.east-500)*4, minZ: -2380, maxZ: 2380 },
   };
   const byId = new Map(nodes.map((n) => [n.id, n]));
   planPublicSpaces(world);
@@ -524,6 +528,7 @@ export function createBangkokWorld(): District {
   placeRealArchitecture(world);
   registerExistingSites(world);
   world.transit = createRailNetwork(world);
+  planMrtEntrances(world);
   // Access roads were appended after public graph sampling.
   for (const n of nodes) byId.set(n.id, n);
   // Streets are assembled as nearly attached commercial rows, not isolated
@@ -744,6 +749,7 @@ export function createBangkokWorld(): District {
   world.obstacles.push(...bridgeBarriers(world));
   planEnvironment(world);
   planLandscape(world);
+  planTropicalPlants(world);
   return world;
 }
 

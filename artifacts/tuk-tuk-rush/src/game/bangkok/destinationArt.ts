@@ -1,6 +1,7 @@
 import type { District } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { accessPoint, arrivalPortal } from "./destinationAccess";
+import { arrivalFurniturePoint } from "./arrivalDecoration";
 
 /** Outer visitor environments are authored around real graph loops. Tile courts,
  * temple galleries, garden islands and retail canopies are separate from roads. */
@@ -23,7 +24,8 @@ export function emitDestinationGrounds(
       layer: ArtPiece["layer"] = "core",
       yaw = 0,
     ) => {
-      const p = accessPoint(a, x, z);
+      const raw = accessPoint(a, x, z);
+      const p = y+h/2>.3 ? arrivalFurniturePoint(d,a,raw) : raw;
       emit({
         ...p,
         y,

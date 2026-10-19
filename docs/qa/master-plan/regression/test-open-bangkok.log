@@ -1,0 +1,97 @@
+{
+  "pass": true,
+  "journeys": [
+    {
+      "id": "pho",
+      "metres": 233,
+      "frames": 2220,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "arun",
+      "metres": 215,
+      "frames": 2050,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "paknam",
+      "metres": 734,
+      "frames": 6511,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "palace",
+      "metres": 259,
+      "frames": 2420,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "icon",
+      "metres": 246,
+      "frames": 2300,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "paragon",
+      "metres": 244,
+      "frames": 2297,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "central",
+      "metres": 286,
+      "frames": 2630,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "terminal",
+      "metres": 242,
+      "frames": 2271,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "asiatique",
+      "metres": 317,
+      "frames": 2941,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "traimit",
+      "metres": 293,
+      "frames": 2780,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    }
+  ],
+  "stationsServed": 26,
+  "trainFrames": 36000,
+  "crossLineChecks": 3404,
+  "carBodyChecks": 1457,
+  "maxStep": 0.7585847243890308,
+  "minTrainCentreSeparation": 3.8005276196698325,
+  "supports": 151,
+  "clearedParcels": 115,
+  "nodes": 1946,
+  "roads": 1991,
+  "buildings": 6951,
+  "pauseRestart": true
+}

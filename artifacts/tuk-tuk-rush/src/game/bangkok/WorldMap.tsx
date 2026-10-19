@@ -7,6 +7,7 @@ import {
   useState,
   type PointerEvent,
 } from "react";
+import { planMrtEntrances } from './mrtSurface';
 import {
   ArrowLeft,
   Building2,
@@ -534,6 +535,9 @@ function MapLayers({
             })}
           </g>
         ))}
+      {transit && detail && planMrtEntrances(d).map(s=>{
+        const p=toMap(s);return <g key={s.id} data-testid={`map-${s.id}`}><rect x={p.x-2.4*labelScale} y={p.y-2.4*labelScale} width={4.8*labelScale} height={4.8*labelScale} fill="#547fc9" stroke="#e6f1ff" strokeWidth={labelScale}/><title>{`${s.code} MRT ${s.name} — underground line entrance`}</title></g>;
+      })}
       <polyline
         points={points(path)}
         stroke="#fff4cd"

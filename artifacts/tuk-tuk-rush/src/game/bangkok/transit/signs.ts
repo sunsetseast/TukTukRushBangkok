@@ -4,6 +4,7 @@ import {LandmarkBuilder} from "../landmarkBuilder";
 import type { District } from "../../types";
 import { StaticBatch } from "../../staticBatch";
 import {stationSignPlacements} from './stationGeometry';
+import { planMrtEntrances } from '../mrtSurface';
 
 /** One locally shaped atlas for station and destination wayfinding. Original
  * typography/sign faces; no photographs or operator logo images are shipped. */
@@ -15,6 +16,7 @@ export function buildTransitSigns(d: District) {
     .transit!.lines.flatMap((l) => l.stations)
     .filter((s, i, all) => all.findIndex((q) => q.id === s.id) === i);
   const entries = [
+    ...planMrtEntrances(d).map(s=>({key:s.id,top:`${s.code} ${s.thai}`,bottom:`MRT ${s.name}`,color:'#254e88'})),
     {key:"historic:gate",top:"ซุ้มประตูเฉลิมพระเกียรติ",bottom:"Chinatown Gate",color:"#174a45"},
     ...stations.map((s) => ({
       key: s.id,
@@ -113,6 +115,7 @@ export function buildTransitSigns(d: District) {
   for(const a of d.destinations??[]){const p=arrivalSign(a),g=a.entrance;add(p.key,p.x,p.y,p.z,p.yaw,p.w);
    const c=Math.cos(g.yaw),s=Math.sin(g.yaw);for(const u of [-5.3,5.3]){structure.box(g.x+c*u-s*1.7,6.8,g.z-s*u-c*1.7,.12,.16,3.5,'#9b8c62',g.yaw);structure.box(p.x+c*u,6.25,p.z-s*u,.12,1.1,.12,'#9b8c62');}}
   for(const p of municipalSigns(d)){add(p.key,p.x,p.y,p.z,p.yaw,p.w);const px=p.x-Math.cos(p.yaw)*3.15,pz=p.z+Math.sin(p.yaw)*3.15;structure.sculpt(new T.CylinderGeometry(.07,.12,4.5,8),px,2.25,pz,'#54746d','ceramic');structure.sculpt(new T.ConeGeometry(.22,.55,8),px,4.7,pz,'#cbb77b','ceramic');structure.box(px,.3,pz,.6,.6,.6,'#9d9e8c');structure.box(p.x,3.08,p.z,6.2,.12,.12,'#54746d',p.yaw);}
+  for(const s of planMrtEntrances(d))add(s.id,s.x+Math.sin(s.yaw)*3.65,2.75,s.z+Math.cos(s.yaw)*3.65,s.yaw,3.4,false);
   root.add(structure.finish('wayfinding-mounts-v3'));
   const materials: T.Material[] = [];
   for (const g of batch.finish()) {

@@ -20,7 +20,7 @@ for(const site of d.destinations!){
  }assert(state.done,`Cannot complete ${site.id}: ${JSON.stringify(p)}`);}
  assert.equal(collisions,0,`Collision in ${site.id}`);journeys.push({id:site.id,metres:Math.round(metres),frames,collisionFrames:collisions,boost:true,publicRoadEntryExit:true});
 }
-const expected={sukhumvit:['N8','N7','N5','N4','N3','N2','N1','CEN','E1','E2','E3','E4'],silom:['W1','CEN','S1','S2','S3','S4','S5','S6','S7','S8'],gold:['G1','G2','G3']};
+const expected={sukhumvit:['N8','N7','N5','N4','N3','N2','N1','CEN','E1','E2','E3','E4','E5'],silom:['W1','CEN','S1','S2','S3','S4','S5','S6','S7','S8'],gold:['G1','G2','G3']};
 for(const line of net.lines){assert.deepEqual(line.stations.map(s=>s.code),expected[line.id]);for(let i=1;i<line.samples.length;i++){const a=line.samples[i-1]!,b=line.samples[i]!;assert(Math.hypot(a.x-b.x,a.z-b.z)<6);assert(b.y>=11.9);}for(const s of line.stations)assert(net.lines.flatMap(l=>l.stations).some(q=>q.id===s.id&&q.entrances?.length));}
 for(const support of net.supports){assert(support.height>8);assert(!d.roads.some(r=>{const a=d.nodes.find(n=>n.id===r.a)!,b=d.nodes.find(n=>n.id===r.b)!;return distanceToSegment(support,a,b).distance<r.width/2+1.2;}),'Column blocks a road');}
 let crossLineChecks=0;
@@ -39,5 +39,5 @@ for(let frame=1;frame<=36000;frame++){
  }
  for(let i=0;i<6;i+=2){const a=service.trains[i]!,b=service.trains[i+1]!;const dist=Math.hypot(a.sample.x-b.sample.x,a.sample.z-b.sample.z,a.sample.y-b.sample.y);minSeparation=Math.min(minSeparation,dist);assert(dist>3.2,'Opposing trains collide');}
 }
-assert.equal(visited.size,25);const frozen=JSON.stringify(service.trains);service.update(1200);assert.equal(JSON.stringify(service.trains),frozen);service.update(0);assert.equal(JSON.stringify(service.trains),JSON.stringify(new RailService(net).trains));
+assert.equal(visited.size,26);const frozen=JSON.stringify(service.trains);service.update(1200);assert.equal(JSON.stringify(service.trains),frozen);service.update(0);assert.equal(JSON.stringify(service.trains),JSON.stringify(new RailService(net).trains));
 console.log(JSON.stringify({pass:true,journeys,stationsServed:visited.size,trainFrames:36000,crossLineChecks,carBodyChecks,maxStep,minTrainCentreSeparation:minSeparation,supports:net.supports.length,clearedParcels:net.removedParcels,nodes:d.nodes.length,roads:d.roads.length,buildings:d.buildings.length,pauseRestart:true},null,2));
