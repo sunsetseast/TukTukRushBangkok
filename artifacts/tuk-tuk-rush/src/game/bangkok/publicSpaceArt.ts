@@ -24,8 +24,9 @@ function parkModel(s: PublicSpace, detail: boolean) {
     b.box(-7,.7,-86,8,1.4,3,"#c8c0a2");
     for(const x of [-36,34]){b.sculpt(new T.TorusKnotGeometry(1.7,.28,24,4),x,2.4,25,"#b6b8a6","bronze");b.box(x,.45,25,4,.9,4,"#b9b69d");}
   }
+  if(s.lawnBoundary)b.sculpt(polygon(s.boundary,o),0,.055,0,'#c9c0a9');
   b.sculpt(
-    polygon(s.boundary, o),
+    polygon(s.lawnBoundary??s.boundary, o),
     0,
     0.07,
     0,

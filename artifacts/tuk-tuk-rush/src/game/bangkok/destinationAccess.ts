@@ -1,3 +1,4 @@
+import { HISTORIC_PLAN, TRAIMIT_SITE_MASSES } from './historicPlan';
 import { COMMERCIAL_DISTRICT_BOUNDS, commercialSiteMasses } from "./commercialDistrictArt";
 import { urbanCourtReserved } from "./urbanBlocks";
 import { WAT_PHO_MASSES, WAT_PHO_WALLS } from "./watPhoCompound";
@@ -73,7 +74,7 @@ const sites = [
   [
     "traimit",
     "temple",
-    "charoen_n",
+    "tri-mit",
     "Outer temple visitor forecourt; Golden Buddha hall and stairs remain pedestrian.",
   ],
 ] as const;
@@ -84,7 +85,7 @@ export function accessPoint(a: DestinationAccess, x: number, z: number): Point {
   return { x: a.origin.x + c * x + s * z, z: a.origin.z - s * x + c * z };
 }
 export function destinationReservation(a: DestinationAccess): Obstacle {
-  return { ...a.origin, yaw: a.yaw, w: 60, d: 56, height: 0, color: "#eee" };
+  return { ...a.origin, yaw: a.yaw, w: a.curbside ? 30 : 60, d: a.curbside ? 18 : 56, height: 0, color: "#eee" };
 }
 export function inDestinationGrounds(d: District, o: Obstacle) {
   if (inLandmarkParcel(d,o) || urbanCourtReserved(d,o) || inPublicGround(d, o) || inAuthoredSite(d, o)) return true;
@@ -120,6 +121,18 @@ export function connectDestinations(d: District) {
     const l = d.landmarks.find((l) => l.id === id)!,
       plot = l.plot!;
     const original = d.obstacles.find((o) => o.landmarkId === id)!;
+    if(id==='palace') {
+      // Na Phra Lan is the visitor approach. A fabricated 60m vehicle loop
+      // cannot fit between the real-inspired perimeter streets and the closed
+      // Palace wall. Reuse a live public-road stop; do not cut through heritage.
+      const target={x:plot.x,z:plot.z-120};
+      const candidates=publicNodes.filter(n=>publicRoads.some(r=>r.corridor==='palace_n'&&(r.a===n.id||r.b===n.id)));
+      const n=candidates.reduce((a,b)=>Math.hypot(a.x-target.x,a.z-target.z)<Math.hypot(b.x-target.x,b.z-target.z)?a:b);
+      const yaw=Math.atan2(plot.x-n.x,plot.z-n.z);
+      d.destinations.push({id,landmarkId:id,kind,curbside:true,origin:{x:n.x,z:n.z},yaw,publicNode:n.id,arrivalNode:n.id,roadNodes:[],restricted:[],arrivalRadius:9,entrance:{x:n.x,z:n.z,yaw,width:12},adaptation:'Public Na Phra Lan curbside arrival; north visitor gate is pedestrian, no Palace vehicle shortcut.'});
+      l.accessNode=n.id;
+      continue;
+    }
     let winner: { a: DestinationAccess; n: RoadNode; cost: number } | undefined;
     // Leave the existing architecture in its successful location/orientation.
     // Fit a forecourt outside its rotated envelope and connect at an existing node.
@@ -294,7 +307,7 @@ export function connectDestinations(d: District) {
     ];
     const pullIn = ["asiatique", "traimit"].includes(id);
     if (pullIn) loopCoords.splice(6);
-    const twoWay = pullIn || id === "palace";
+    const twoWay = pullIn;
     const loop = loopCoords.map(([x, z], i) =>
       addNode(`loop${i}`, accessPoint(a, x!, z!)),
     );
@@ -374,6 +387,7 @@ export function connectDestinations(d: District) {
  * offsets put Wat Pho's gateway in the chase-camera clearance of the diagonal
  * public street. Art and collision use this same pose; no road is moved. */
 export function arrivalPortal(d: District, a: DestinationAccess) {
+  if(a.curbside)return;
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     g = a.entrance,
     halfSpan = 9;
@@ -413,6 +427,7 @@ export function detailDestinationCollisions(d: District) {
       old = d.obstacles.find((o) => o.landmarkId === l.id)!;
     d.obstacles = d.obstacles.filter((o) => o !== old);
     const add = (x: number, z: number, w: number, depth: number, h: number) => {
+      if(l.id === "palace") {const k=HISTORIC_PLAN.palaceScale;x*=k;z*=k;w*=k;depth*=k;}
       const yaw = l.yaw ?? 0,
         c = Math.cos(yaw),
         s = Math.sin(yaw);
@@ -447,6 +462,7 @@ export function detailDestinationCollisions(d: District) {
               ? 36
               : 30,
       );
+    else if (l.id === "traimit") {for(const m of TRAIMIT_SITE_MASSES)add(m.x,m.z,m.w,m.d,m.h);}
     else if (l.id === "pho") {
       add(0, 2, 48, 23, 20);
       for (const x of [-18, -6, 6, 18]) add(x, -18, 8, 8, 20);
@@ -466,7 +482,7 @@ export function detailDestinationCollisions(d: District) {
     } else add(0, 0, S - 2, S - 2, 30);
     // Match existing wall positions, close pedestrian-only boundary explicitly.
     const edge = l.id === "paknam" ? 43 : l.id === "palace" ? 66 : S / 2 - 1;
-    if (!retail && l.id!=="pho")
+    if (!retail && l.id!=="pho" && l.id!=="traimit")
       for (const side of [-1, 1]) {
         add(side * edge, 0, 1, edge * 2 + 1, 3);
         add(0, side * edge, edge * 2 + 1, 1, 3);
@@ -474,6 +490,7 @@ export function detailDestinationCollisions(d: District) {
     if (l.id === "palace") {
       add(-4,-66.7,1.2,2,7.7);add(4,-66.7,1.2,2,7.7);
     }
+    if(a.curbside)continue;
     const furniture = (
       p: Point,
       w: number,

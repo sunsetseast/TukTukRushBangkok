@@ -1,0 +1,112 @@
+{
+  "pass": true,
+  "baseline": "76b2e6c6994c4c2b9576c9d290b8669eee14166f",
+  "roadGraphKey": "1652953968",
+  "roads": 2089,
+  "nodes": 2036,
+  "buildings": 7091,
+  "registry": 92,
+  "parcels": 206,
+  "conflicts": 0,
+  "ringArms": 4,
+  "publicApproachRays": 24,
+  "clearVolumeRays": 18,
+  "blockedVolumeRays": [
+    {
+      "id": "historic:palace:1",
+      "blockers": [
+        {
+          "objectId": "building:2125",
+          "kind": "procedural-building",
+          "t": 0.2
+        },
+        {
+          "objectId": "building:2124",
+          "kind": "procedural-building",
+          "t": 0.33689839572192515
+        }
+      ]
+    },
+    {
+      "id": "historic:pho:0",
+      "blockers": [
+        {
+          "objectId": "infill:frontage:2966853057",
+          "kind": "procedural-building",
+          "t": 0.2613679466254523
+        }
+      ]
+    },
+    {
+      "id": "historic:swing:2",
+      "blockers": [
+        {
+          "objectId": "building:4075",
+          "kind": "procedural-building",
+          "t": 0.15286624203821655
+        }
+      ]
+    },
+    {
+      "id": "historic:golden:2",
+      "blockers": [
+        {
+          "objectId": "building:4008",
+          "kind": "procedural-building",
+          "t": 0.12239928247222748
+        }
+      ]
+    },
+    {
+      "id": "historic:hua:1",
+      "blockers": [
+        {
+          "objectId": "building:2315",
+          "kind": "procedural-building",
+          "t": 0.2904923772928387
+        }
+      ]
+    },
+    {
+      "id": "historic:traimit:2",
+      "blockers": [
+        {
+          "objectId": "building:2312",
+          "kind": "procedural-building",
+          "t": 0.08733067834796862
+        }
+      ]
+    }
+  ],
+  "local": [
+    {
+      "label": "before",
+      "buildings": 867,
+      "samples": 1014,
+      "uses": {
+        "water": 6,
+        "developed": 699,
+        "road": 121,
+        "authored-reservation": 53,
+        "public-space": 32,
+        "vacant": 103
+      }
+    },
+    {
+      "label": "after",
+      "buildings": 973,
+      "samples": 1014,
+      "uses": {
+        "water": 6,
+        "vacant": 12,
+        "developed": 677,
+        "road": 146,
+        "public-space": 75,
+        "authored-reservation": 98
+      }
+    }
+  ],
+  "constructionAndAuditMs": 17700,
+  "physicalIPhone": false,
+  "geographicCertification": "Relative placement and graph validated; approximate footprints and arcaded distances are not surveyed geometry."
+}

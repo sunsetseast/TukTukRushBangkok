@@ -40,7 +40,8 @@ assert(
 for (const l of d.landmarks) {
   const entry = registry.find((r) => r.id === l.id)!;
   assert(entry);
-  assert.deepEqual(entry.map, toMap(l.plot ?? l));
+  assert.deepEqual(entry.map, toMap(l.id==='swing'?{x:l.plot!.x,z:l.plot!.z-58}:l.plot??l));
+  assert.deepEqual(entry.modelOrigin,l.plot??l);
   assert.equal(entry.rotation, l.yaw ?? 0);
   assert(entry.vehicleAccess, `Public passenger stop for ${l.id}`);
   assert(

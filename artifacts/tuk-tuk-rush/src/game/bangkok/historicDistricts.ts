@@ -21,12 +21,12 @@ export const HISTORIC_SITE_PLANS: Record<
 > = {
   swing: {
     width: 86,
-    depth: 118,
+    depth: 148,
     masses: [
       {
         name: "Giant Swing west timber",
         x: -5.5,
-        z: -43,
+        z: -58,
         w: 1.4,
         d: 2.4,
         h: 21.2,
@@ -34,7 +34,7 @@ export const HISTORIC_SITE_PLANS: Record<
       {
         name: "Giant Swing east timber",
         x: 5.5,
-        z: -43,
+        z: -58,
         w: 1.4,
         d: 2.4,
         h: 21.2,
@@ -87,9 +87,9 @@ export function historicBoundaryColliders(id: string): HistoricMass[] {
         {
           name: "Wat Suthat compound side wall",
           x: side * 41,
-          z: 15,
+          z: 17,
           w: 0.65,
-          d: 86,
+          d: 82,
           h: 3,
         },
         {
@@ -409,21 +409,21 @@ function templeHall(
 }
 
 function giantSwing(b: B, detail: boolean) {
-  b.box(0, 0.09, 0, 86, 0.18, 118, "#c5bda7");
+  b.box(0, 0.09, 17, 86, 0.18, 84, "#c5bda7");
   // Distinct paved civic forecourt, a low circular island, then the gated temple.
-  b.box(0, 0.2, -40, 78, 0.12, 34, "#d8c5a6");
+  b.box(0, 0.2, -58, 78, 0.12, 30, "#d8c5a6");
   b.sculpt(
     new T.CylinderGeometry(11, 11.3, 0.35, detail ? 40 : 20),
     0,
     0.42,
-    -43,
+    -58,
     "#e8d5af",
   );
   for (const x of [-5.5, 5.5]) {
-    b.box(x, 0.8, -43, 2.3, 0.8, 3.8, "#c6b18b");
-    for (const z of [-43.65, -42.35])
+    b.box(x, 0.8, -58, 2.3, 0.8, 3.8, "#c6b18b");
+    for (const z of [-58.65, -57.35])
       b.sculpt(new T.CylinderGeometry(0.26, 0.46, 19.9, 8), x, 10.95, z, RED);
-    b.box(x, 20.5, -43, 1.1, 1.6, 2.1, "#c54b36");
+    b.box(x, 20.5, -58, 1.1, 1.6, 2.1, "#c54b36");
   }
   const beam = new T.Shape([
     new T.Vector2(-8.4, 1.25),
@@ -443,10 +443,10 @@ function giantSwing(b: B, detail: boolean) {
     ),
     0,
     21,
-    -43,
+    -58,
     "#c54832",
   );
-  b.box(0, 20.2, -43, 13.4, 0.48, 1.4, "#a72f27");
+  b.box(0, 20.2, -58, 13.4, 0.48, 1.4, "#a72f27");
   // The temple is south of the swing, separated by its gate and forecourt.
   templeHall(b, 0, 10, 36, 32, 12.4, detail);
   thaiRoof(b,0,18.2,10,22,25,5,'#a84a2e',false);
@@ -463,7 +463,7 @@ function giantSwing(b: B, detail: boolean) {
         b.box(side * 28.8, 2.8, z, 0.23, 3.7, 2.5, "#655b43");
         b.box(side * 28.6, 2.8, z + 1.5, 0.5, 4.6, 0.5, "#e6d5af");
       }
-    b.box(side * 41, 1.5, 15, 0.65, 3, 86, "#ede2c5");
+    b.box(side * 41, 1.5, 17, 0.65, 3, 82, "#ede2c5");
     b.box(side * 23, 1.5, -24, 37, 3, 0.65, "#ede2c5");
     b.box(side * 6, 3, -24, 1.8, 6, 1.8, "#f1e3bd");
     b.roof(side * 6, 5.8, -24, 3.8, 3.6, 1.6, "#c9643b");
@@ -479,7 +479,7 @@ function giantSwing(b: B, detail: boolean) {
     }
   if (detail)
     for (const x of [-22, 22])
-      for (const z of [-47, -35]) {
+      for (const z of [-67, -52]) {
         b.box(x, 0.5, z, 4, 0.5, 1.1, "#9c8566");
         b.box(x, 0.95, z - 0.45, 4, 0.8, 0.18, "#b49b74");
         b.box(x + 2.8, 2.5, z, 0.15, 5, 0.15, "#5c6555");

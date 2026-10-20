@@ -1,3 +1,4 @@
+import { HISTORIC_PLAN } from './historicPlan';
 import { emitHuaGrounds } from './huaLamphong';
 import { emitLandmarkApproaches } from './landmarkParcels';
 import { emitLandmarkContextGrounds } from './landmarkContext';
@@ -350,6 +351,7 @@ export function buildBangkokGraybox(
     const root = publicSpaceLandmark(d,l) ?? victoryMonument(l) ?? historicDistrictLandmark(l) ?? blockout(l, finishes);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
     root.rotation.y = l.yaw ?? 0;
+    if(l.id === "palace") root.scale.set(HISTORIC_PLAN.palaceScale,1,HISTORIC_PLAN.palaceScale);
     root.name = `BangkokLandmark:${l.id}`;
     group.add(root);
     return root;

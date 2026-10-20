@@ -1,0 +1,5 @@
+$ node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts
+{"pass":true,"nodes":2036,"roads":2089,"roadSamples":18801,"bridgeSamples":702,"protectedGate":true,"reachableFares":11,"trafficTransitions":499,"discoveryPersistence":true,"meshConstructionAndDisposal":true,"bridgeViewChecks":156}
+{"pass":true,"drivenFares":11,"noTeleports":true,"metres":10403,"simulatedSeconds":1120,"collisions":0,"pauseRecoveryRestart":true,"trafficDisabledForDeterminism":true}
+{"pass":true,"mapMarkup":true,"modalAndLocation":true,"discoveryNotMutatedByMap":true,"culledMinimapRoads":89}
+{"pass":true,"buildings":7091,"aligned":6381,"families":["chinatown","connector","icon","khaosan","north","oldtown","paknam","siam","silom","south","sukhumvit","talatnoi","westbank"],"alwaysVisiblePieces":729360,"details":71848,"windows":44266}

@@ -9,7 +9,7 @@ export type DestinationAccess = {
   id: string; landmarkId: string; kind: 'temple' | 'mall' | 'palace' | 'waterfront';
   publicNode: string; entrance: Point & { yaw: number; width: number }; arrivalNode: string;
   origin: Point; yaw: number; roadNodes: string[]; restricted: Obstacle[];
-  arrivalRadius: number; adaptation: string;
+  arrivalRadius: number; adaptation: string; curbside?: boolean;
 };
 export type District = { publicSpaces?: import('./bangkok/publicSpaces').PublicSpace[]; authoredSites?: import('./bangkok/authoredSites').AuthoredSite[]; destinations?: DestinationAccess[]; transit?: import('./bangkok/transit/network').RailNetwork; worldId?: 'bangkok'; spawn?: Point & { heading: number }; bounds?: { minX: number; maxX: number; minZ: number; maxZ: number }; river?: Point[]; riverWidth?: number; canals?: { points: Point[]; width: number }[]; regions?: Region[]; nodes: RoadNode[]; roads: Road[]; buildings: Obstacle[]; obstacles: Obstacle[]; landmarks: Landmark[]; roundabout?: Point & { radius: number; laneWidth: number } };
 export type Vehicle = Point & { heading: number; speed: number; steer: number; lean: number; wheelSpin: number; collision: number };

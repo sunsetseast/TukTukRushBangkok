@@ -40,7 +40,7 @@ for(let frame=0;frame<7200;frame++){
     const r=d.roads.find(r=>r.a===c.from&&r.b===c.to||!r.oneWay&&r.b===c.from&&r.a===c.to)!;assert(r);
     assert(!blockedByRiver(d,c,1),`Traffic water: ${r.corridor}`);
     assert(grid.query(c).every(i=>obstacleDistance(c,d.obstacles[i]!)>.8),`Traffic solid: ${r.corridor}`);
-    if(r.roundabout&&step>.001&&(!traffic.motionPhase(c).turning||traffic.motionPhase(c).nextRoundabout)){const center=r.corridor==='victory-circle'?d.landmarks.find(l=>l.id==='victory')!:gate;const angular=(old.x-center.x)*(c.z-old.z)-(old.z-center.z)*(c.x-old.x);assert(angular>-.01,'Counterclockwise circle');clockwise++;}
+    if(r.roundabout&&step>.001&&(!traffic.motionPhase(c).turning||traffic.motionPhase(c).nextRoundabout)){const center=r.corridor==='victory-circle'?d.landmarks.find(l=>l.id==='victory')!:r.corridor==='democracy-circle'?d.landmarks.find(l=>l.id==='democracy')!:gate;const angular=(old.x-center.x)*(c.z-old.z)-(old.z-center.z)*(c.x-old.x);assert(angular>-.01,'Counterclockwise circle');clockwise++;}
     if(old.from!==c.from){transitions++;const a=nodes.get(c.from)!,b=nodes.get(c.to)!,len=Math.hypot(b.x-a.x,b.z-a.z);
       if(!r.roundabout)assert(((c.x-a.x)*(b.z-a.z)-(c.z-a.z)*(b.x-a.x))/len>1,'Wrong destination lane');
     }

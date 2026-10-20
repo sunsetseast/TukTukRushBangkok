@@ -1,3 +1,4 @@
+import { HUA_PLAN } from './huaLamphong';
 import type { District, Landmark, Obstacle, Point } from "../types";
 import { principalApproach } from "./landmarkVisibility";
 import type { ArtPiece } from "./architecturalBatch";
@@ -22,19 +23,19 @@ export type FacadeApproach = {
  * neighbours outside a modest entrance apron rather than clearing a vista cone. */
 export const FACADE_APPROACHES: Record<string, FacadeApproach> = {
   palace: {
-    feature: [0, 6, -67.1],
+    feature: [0, 6, -100.65],
     outward: Math.PI,
     width: 60,
     depth: 50,
     road: "palace_n",
-    note: "North visitor gate toward Na Phra Lan, separate from the west-side vehicle stop.",
+    note: "North visitor gate toward the public Na Phra Lan curbside stop.",
   },
   swing: {
-    feature: [0, 15, -43],
+    feature: [0, 15, -58],
     outward: Math.PI,
     width: 58,
     depth: 60,
-    road: "old_siam",
+    road: "sao-chingcha",
     note: "North public approach to the Giant Swing plaza, with Wat Suthat behind the swing.",
   },
   hua: {
@@ -45,6 +46,11 @@ export const FACADE_APPROACHES: Record<string, FacadeApproach> = {
     road: "ramaiv",
     note: "Historic south facade toward Rama IV; compressed diagonal junction retained. MRT BL28 is underground.",
   },
+  golden: {feature:[0,46,0],outward:Math.PI/2,width:30,depth:16,road:"boripat",note:"Temple hill seen from Boripat; lower courts remain pedestrian."},
+  traimit: {feature:[0,20,26],outward:0,width:56,depth:24,road:"tri-mit",note:"Golden Buddha mondop and south Tri Mit approach, northeast of Odeon."},
+  democracy: {feature:[0,20,0],outward:0,width:42,depth:20,road:"democracy-circle",note:"Civic island in the live clockwise traffic ring."},
+  gate: {feature:[0,13,4.3],outward:0,width:30,depth:10,road:"odeon",note:"Chinese gateway on Odeon island; Yaowarat leaves toward the west."},
+  pho: {feature:[8,7,68],outward:0,width:34,depth:16,road:"old_w",note:"Retained Wat Pho compound and south gate; river and Tha Tien west."},
   paragon: {
     feature: [0, 15, 34],
     outward: 0,
@@ -277,6 +283,14 @@ export function prepareLandmarkParcels(d: District): ProtectedParcel[] {
     for (const o of site?.reservations ??
       d.obstacles.filter((o) => o.landmarkId === l.id && !o.artRole))
       add(l.id!, "structure", rectangleBoundary(o));
+    const grounds: Record<string, [number,number,number,number]> = {
+      golden:[0,12,106,132], traimit:[0,4,64,66],
+      hua:[0,HUA_PLAN.yard.centerZ,HUA_PLAN.yard.width,HUA_PLAN.yard.depth], palace:[0,0,202.5,202.5], pho:[7.5,18,119,104],
+      swing:[0,0,86,150],
+    };
+    if(l.id==='democracy')add(l.id,'compound',Array.from({length:32},(_,i)=>localPoint(l.plot!,0,Math.cos(i*Math.PI/16)*28,Math.sin(i*Math.PI/16)*28)));
+    const ground=grounds[l.id!];
+    if(ground) add(l.id!,"compound",rectangleBoundary({...localPoint(l.plot!,l.yaw??0,ground[0],ground[1]),w:ground[2],d:ground[3],yaw:l.yaw??0}));
     const spec = FACADE_APPROACHES[l.id!],
       f = facadeFeature(l, spec);
     if (!spec || !f) continue;
