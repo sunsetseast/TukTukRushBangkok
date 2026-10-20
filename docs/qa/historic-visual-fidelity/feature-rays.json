@@ -1,0 +1,668 @@
+[
+  {
+    "id": "historic:palace:0",
+    "landmarkId": "palace",
+    "from": {
+      "x": -820,
+      "z": -1060,
+      "y": 3.4
+    },
+    "target": {
+      "x": -820,
+      "z": -1040.65,
+      "y": 6
+    },
+    "approach": "palace_n",
+    "outwardYaw": 3.141592653589793,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:palace:1",
+    "landmarkId": "palace",
+    "from": {
+      "x": -600,
+      "z": -1060,
+      "y": 3.4
+    },
+    "target": {
+      "x": -787,
+      "z": -995,
+      "y": 40
+    },
+    "approach": "old_e",
+    "outwardYaw": 1.905325738269426,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:palace:2",
+    "landmarkId": "palace",
+    "from": {
+      "x": -940,
+      "z": -970,
+      "y": 3.4
+    },
+    "target": {
+      "x": -860,
+      "z": -1007.5,
+      "y": 39
+    },
+    "approach": "old_w",
+    "outwardYaw": -1.1324597669369387,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:pho:0",
+    "landmarkId": "pho",
+    "from": {
+      "x": -913.1059506531204,
+      "z": -748.3599419448476,
+      "y": 3.4
+    },
+    "target": {
+      "x": -800,
+      "z": -698,
+      "y": 22
+    },
+    "approach": "old_w",
+    "outwardYaw": -1.9896895748876713,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:pho:1",
+    "landmarkId": "pho",
+    "from": {
+      "x": -800,
+      "z": -780,
+      "y": 3.4
+    },
+    "target": {
+      "x": -818,
+      "z": -718,
+      "y": 18
+    },
+    "approach": "thai-wang",
+    "outwardYaw": 2.8590377011202057,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:pho:2",
+    "landmarkId": "pho",
+    "from": {
+      "x": -712,
+      "z": -680,
+      "y": 3.4
+    },
+    "target": {
+      "x": -772,
+      "z": -657,
+      "y": 23
+    },
+    "approach": "old_e",
+    "outwardYaw": 1.936852842642315,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:swing:0",
+    "landmarkId": "swing",
+    "from": {
+      "x": -360,
+      "z": -1040,
+      "y": 3.4
+    },
+    "target": {
+      "x": -365.5,
+      "z": -998,
+      "y": 17
+    },
+    "approach": "sao-chingcha",
+    "outwardYaw": 3.0113812106253968,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:swing:1",
+    "landmarkId": "swing",
+    "from": {
+      "x": -450,
+      "z": -975,
+      "y": 3.4
+    },
+    "target": {
+      "x": -365.5,
+      "z": -998,
+      "y": 17
+    },
+    "approach": "old_siam",
+    "outwardYaw": -1.3050450287288067,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:swing:2",
+    "landmarkId": "swing",
+    "from": {
+      "x": -444,
+      "z": -995,
+      "y": 3.4
+    },
+    "target": {
+      "x": -365.5,
+      "z": -998,
+      "y": 17
+    },
+    "approach": "ti-thong",
+    "outwardYaw": -1.532598355164133,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:golden:0",
+    "landmarkId": "golden",
+    "from": {
+      "x": 20,
+      "z": -1080,
+      "y": 3.4
+    },
+    "target": {
+      "x": -80,
+      "z": -1080,
+      "y": 54
+    },
+    "approach": "boripat",
+    "outwardYaw": 1.5707963267948966,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:golden:1",
+    "landmarkId": "golden",
+    "from": {
+      "x": -200,
+      "z": -1080,
+      "y": 3.4
+    },
+    "target": {
+      "x": -80,
+      "z": -1080,
+      "y": 54
+    },
+    "approach": "maha-chai",
+    "outwardYaw": -1.5707963267948966,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:golden:2",
+    "landmarkId": "golden",
+    "from": {
+      "x": -77.53148614609572,
+      "z": -955.5163727959698,
+      "y": 3.4
+    },
+    "target": {
+      "x": -80,
+      "z": -1080,
+      "y": 54
+    },
+    "approach": "old_siam",
+    "outwardYaw": 0.01982742968753394,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:democracy:0",
+    "landmarkId": "democracy",
+    "from": {
+      "x": -376.83562860836435,
+      "z": -1360.113520564038,
+      "y": 3.4
+    },
+    "target": {
+      "x": -260,
+      "z": -1320,
+      "y": 20
+    },
+    "approach": "north_old",
+    "outwardYaw": -1.901519374615573,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:democracy:1",
+    "landmarkId": "democracy",
+    "from": {
+      "x": -142.44751907161827,
+      "z": -1246.0206236460099,
+      "y": 3.4
+    },
+    "target": {
+      "x": -260,
+      "z": -1320,
+      "y": 20
+    },
+    "approach": "north_old",
+    "outwardYaw": 1.0090889132449294,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:democracy:2",
+    "landmarkId": "democracy",
+    "from": {
+      "x": -301.79126190087067,
+      "z": -1228.0493285689586,
+      "y": 3.4
+    },
+    "target": {
+      "x": -260,
+      "z": -1320,
+      "y": 20
+    },
+    "approach": "dinso",
+    "outwardYaw": -0.4265869525742787,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:hua:0",
+    "landmarkId": "hua",
+    "from": {
+      "x": 400,
+      "z": -200,
+      "y": 3.4
+    },
+    "target": {
+      "x": 400,
+      "z": -257.5,
+      "y": 19.2
+    },
+    "approach": "ramaiv",
+    "outwardYaw": 0,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:hua:1",
+    "landmarkId": "hua",
+    "from": {
+      "x": 292.19765929778936,
+      "z": -251.74512353706112,
+      "y": 3.4
+    },
+    "target": {
+      "x": 383,
+      "z": -257.8,
+      "y": 18
+    },
+    "approach": "charoen_n",
+    "outwardYaw": -1.5042129547783365,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:hua:2",
+    "landmarkId": "hua",
+    "from": {
+      "x": 391.8711409395973,
+      "z": -145.13020134228188,
+      "y": 3.4
+    },
+    "target": {
+      "x": 417,
+      "z": -257.8,
+      "y": 18
+    },
+    "approach": "tri-mit",
+    "outwardYaw": -0.21943954150167388,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:traimit:0",
+    "landmarkId": "traimit",
+    "from": {
+      "x": 256,
+      "z": 40,
+      "y": 3.4
+    },
+    "target": {
+      "x": 256,
+      "z": -104,
+      "y": 32
+    },
+    "approach": "tri-mit",
+    "outwardYaw": 0,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:traimit:1",
+    "landmarkId": "traimit",
+    "from": {
+      "x": 372.4246575342466,
+      "z": -66.53424657534246,
+      "y": 3.4
+    },
+    "target": {
+      "x": 256,
+      "z": -104,
+      "y": 32
+    },
+    "approach": "tri-mit",
+    "outwardYaw": 1.2594591109161244,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:traimit:2",
+    "landmarkId": "traimit",
+    "from": {
+      "x": 281.40442132639794,
+      "z": -256.925877763329,
+      "y": 3.4
+    },
+    "target": {
+      "x": 256,
+      "z": -104,
+      "y": 40
+    },
+    "approach": "charoen_n",
+    "outwardYaw": 2.9769735319607085,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:gate:0",
+    "landmarkId": "gate",
+    "from": {
+      "x": 140,
+      "z": -8,
+      "y": 3.4
+    },
+    "target": {
+      "x": 140,
+      "z": -35.7,
+      "y": 13
+    },
+    "approach": "odeon",
+    "outwardYaw": 0,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:gate:1",
+    "landmarkId": "gate",
+    "from": {
+      "x": 188.09027467639208,
+      "z": 18.098696217238423,
+      "y": 3.4
+    },
+    "target": {
+      "x": 140,
+      "z": -40,
+      "y": 17
+    },
+    "approach": "tri-mit",
+    "outwardYaw": 0.6914247251322679,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "historic:gate:2",
+    "landmarkId": "gate",
+    "from": {
+      "x": 41.35684882144545,
+      "z": -82.81113270074549,
+      "y": 3.4
+    },
+    "target": {
+      "x": 140,
+      "z": -40,
+      "y": 17
+    },
+    "approach": "yaowarat",
+    "outwardYaw": -1.9802653348407329,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:palace:0",
+    "landmarkId": "palace",
+    "from": {
+      "x": -820,
+      "z": -1060,
+      "y": 3.4
+    },
+    "target": {
+      "x": -820,
+      "z": -1040.65,
+      "y": 6
+    },
+    "approach": "palace_n",
+    "outwardYaw": 3.141592653589793,
+    "feature": "entrance",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:pho:1",
+    "landmarkId": "pho",
+    "from": {
+      "x": -883.4978229317852,
+      "z": -713.5268505079825,
+      "y": 3.4
+    },
+    "target": {
+      "x": -850,
+      "z": -713,
+      "y": 4
+    },
+    "approach": "old_w",
+    "outwardYaw": -1.5865229330792532,
+    "feature": "entrance",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:swing:2",
+    "landmarkId": "swing",
+    "from": {
+      "x": -360,
+      "z": -1040,
+      "y": 3.4
+    },
+    "target": {
+      "x": -365.5,
+      "z": -998.65,
+      "y": 17
+    },
+    "approach": "sao-chingcha",
+    "outwardYaw": 3.009357952965686,
+    "feature": "principal-architecture",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:golden:3",
+    "landmarkId": "golden",
+    "from": {
+      "x": 20,
+      "z": -1080,
+      "y": 3.4
+    },
+    "target": {
+      "x": -80,
+      "z": -1080,
+      "y": 49
+    },
+    "approach": "boripat",
+    "outwardYaw": 1.5707963267948966,
+    "feature": "roof-or-tower",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:golden:4",
+    "landmarkId": "golden",
+    "from": {
+      "x": -77.53148614609572,
+      "z": -955.5163727959698,
+      "y": 3.4
+    },
+    "target": {
+      "x": -80,
+      "z": -1014,
+      "y": 3
+    },
+    "approach": "old_siam",
+    "outwardYaw": 0.04218359213760476,
+    "feature": "entrance",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:traimit:5",
+    "landmarkId": "traimit",
+    "from": {
+      "x": 256,
+      "z": 40,
+      "y": 3.4
+    },
+    "target": {
+      "x": 256,
+      "z": -91.7,
+      "y": 14
+    },
+    "approach": "tri-mit",
+    "outwardYaw": 0,
+    "feature": "entrance",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:hua:6",
+    "landmarkId": "hua",
+    "from": {
+      "x": 400,
+      "z": -200,
+      "y": 3.4
+    },
+    "target": {
+      "x": 402.25,
+      "z": -259.9,
+      "y": 3.5
+    },
+    "approach": "ramaiv",
+    "outwardYaw": -0.03754495297186138,
+    "feature": "entrance",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:democracy:7",
+    "landmarkId": "democracy",
+    "from": {
+      "x": -142.44751907161827,
+      "z": -1246.0206236460099,
+      "y": 3.4
+    },
+    "target": {
+      "x": -252.93,
+      "z": -1312.93,
+      "y": 15
+    },
+    "approach": "north_old",
+    "outwardYaw": 1.0262614969825046,
+    "feature": "principal-architecture",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:gate:8",
+    "landmarkId": "gate",
+    "from": {
+      "x": 140,
+      "z": -8,
+      "y": 3.4
+    },
+    "target": {
+      "x": 140,
+      "z": -35.7,
+      "y": 13
+    },
+    "approach": "odeon",
+    "outwardYaw": 0,
+    "feature": "principal-architecture",
+    "viewpoint": "public-street"
+  },
+  {
+    "id": "feature:palace:river",
+    "landmarkId": "palace",
+    "from": {
+      "x": -1037.2577496975507,
+      "z": -973.4242691842386,
+      "y": 3.4
+    },
+    "target": {
+      "x": -820,
+      "y": 32,
+      "z": -940
+    },
+    "approach": "river",
+    "outwardYaw": -1.723445655190162,
+    "feature": "landmark",
+    "viewpoint": "river"
+  },
+  {
+    "id": "feature:palace:elevated",
+    "landmarkId": "palace",
+    "from": {
+      "x": -640,
+      "z": -730,
+      "y": 160
+    },
+    "target": {
+      "x": -820,
+      "y": 32,
+      "z": -940
+    },
+    "approach": "elevated",
+    "outwardYaw": 0.7086262721276703,
+    "feature": "landmark",
+    "viewpoint": "elevated"
+  },
+  {
+    "id": "feature:pho:river",
+    "landmarkId": "pho",
+    "from": {
+      "x": -1072.8646861137356,
+      "z": -741.9791824790362,
+      "y": 3.4
+    },
+    "target": {
+      "x": -800,
+      "y": 18,
+      "z": -700
+    },
+    "approach": "river",
+    "outwardYaw": -1.7234456551901618,
+    "feature": "landmark",
+    "viewpoint": "river"
+  },
+  {
+    "id": "feature:pho:elevated",
+    "landmarkId": "pho",
+    "from": {
+      "x": -620,
+      "z": -490,
+      "y": 160
+    },
+    "target": {
+      "x": -800,
+      "y": 18,
+      "z": -700
+    },
+    "approach": "elevated",
+    "outwardYaw": 0.7086262721276703,
+    "feature": "landmark",
+    "viewpoint": "elevated"
+  }
+]

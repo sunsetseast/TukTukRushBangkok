@@ -1,0 +1,12 @@
+# Remaining work, in priority order
+
+1. Verify the real properties corresponding to the five retained secondary obstruction blocks. Their type and neighborhood relationship are plausible, but a footprint-level authenticity claim is not supported. Preserve dense context while refining individual parcels only when evidence supports it.
+2. Refine the Palace–Tha Tien riverbank's individual historic properties and commercial roof profiles. The current two-storey masonry band is a substantial improvement over generic towers, but repeated bays remain visible and the riverbank is still compressed.
+3. Wat Pho's west gate, cloisters and chedis are recognizable components; its whole compound remains simplified. Research/author more precise reclining-Buddha precinct massing and gate hierarchy within current protected grounds.
+4. Golden Mount's planting, terraces and lower halls remain stylized. Improve the stepped pedestrian route's architectural specificity and botanical diversity without expanding collision boundaries or mobile draw budgets.
+5. Sanam Luang now has appropriate tamarind silhouettes and an open ceremonial field. Civic boundary buildings, bark/foliage detail and ground variation are approximate; avoid filling legitimate open space with props.
+6. Further differentiate Ratchadamnoen civic facades, Ti Thong institutions and Traimit's surrounding shops. This pass preserves Hua Lamphong and the Gate corridor rather than claiming their secondary streets were individually reconstructed.
+7. Investigate the inherited Pho → Hua Lamphong traffic collision sequence. All deliveries complete, but both main and this branch record 31 collision frames with the deterministic traffic seed.
+8. Physical iPhone Safari validation (including iPhone 17 Pro Max), sustained frame pacing, thermal behavior and mobile memory pressure remain required before hardware performance certification. Software WebGL is insufficient.
+
+These are reviewable limitations of this draft. A clear collision ray, a completed delivery or a roof matching a reference color does not constitute full architectural certification.

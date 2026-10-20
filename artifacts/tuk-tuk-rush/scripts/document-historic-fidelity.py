@@ -8,7 +8,7 @@ from matplotlib.patches import Polygon, Circle
 
 repo=Path(__file__).resolve().parents[3]
 out=repo/'docs/qa/historic-visual-fidelity'
-before=json.loads(gzip.decompress((repo/'docs/qa/historic-bangkok/after-world.json.gz').read_bytes()))
+before=json.loads(gzip.decompress((out/'baseline-world.json.gz').read_bytes()))
 after=json.loads((out/'map-after.json').read_text())
 deltas=json.loads((out/'footprint-deltas.json').read_text())
 def corners(b):
