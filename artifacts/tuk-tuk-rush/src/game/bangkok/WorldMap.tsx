@@ -1225,7 +1225,7 @@ export function WorldMap({
             target="_blank"
             rel="noreferrer"
           >
-            Park outlines © OpenStreetMap contributors
+            Geographic references and park outlines © OpenStreetMap contributors
           </a>
         </small>
       </footer>

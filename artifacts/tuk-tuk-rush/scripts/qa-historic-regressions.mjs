@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 const phase=process.env.QA_PHASE??'regression';
-const out=new URL('../../../docs/qa/historic-bangkok/'+phase+'/',import.meta.url);
+const out=new URL(process.env.QA_OUTPUT??'../../../docs/qa/historic-bangkok/'+phase+'/',import.meta.url);
 await fs.mkdir(out,{recursive:true});
 const pkg=JSON.parse(await fs.readFile(new URL('../package.json',import.meta.url),'utf8'));
 const selected=Object.keys(pkg.scripts).filter(k=>k.startsWith('test:')&&k!=='test:historic-core'&&(!process.env.QA_ONLY||process.env.QA_ONLY.split(',').includes(k)));

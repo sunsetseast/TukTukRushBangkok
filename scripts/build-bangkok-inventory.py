@@ -4,7 +4,7 @@ No geometry import, no geocoding service, no fabricated coordinates.
 import json,pathlib,csv,re
 root=pathlib.Path(__file__).resolve().parents[1]
 city=json.loads((root/'artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json').read_text())
-registry=json.loads((root/'docs/qa/world-blueprint/canonical-registry.json').read_text())
+registry=json.loads((root/'docs/qa/world-blueprint/after-registry.json').read_text())
 osm=json.loads((root/'data/bangkok/osm-places.v1.json').read_text())['places']
 refs={g['id']:g for g in city['geographicReferences']}
 # Explicit reviewed name aliases; matching never changes the playable world.

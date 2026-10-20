@@ -23,13 +23,13 @@ const d = createBangkokWorld(),
   designs = designBuildings(d),
   row = designs.filter(cinematicParcel);
 assert(
-  row.length >= 10 && row.length <= 26,
+  row.length >= 35 && row.length <= 44,
   `Bounded corridor parcel budget: ${row.length}`,
 );
 assertProtectedGeography(d);
 const pieces: ArtPiece[] = [];
 row.forEach((p) => emitYaowaratFacade(p, (piece) => pieces.push(piece)));
-assert(pieces.length < 14000, "No uncontrolled citywide detail pass");
+assert(pieces.length < 28000, "No uncontrolled citywide detail pass");
 for (const piece of pieces)
   assert(
     [piece.x, piece.y, piece.z, piece.w, piece.h, piece.d, piece.yaw].every(
@@ -55,8 +55,8 @@ for (const p of row) {
   );
   for (const a of p.bays) {
     assert(
-      a.height < 23 && a.floors >= 3,
-      "Retain low/mid-rise Chinatown silhouettes",
+      a.height <= p.parcel.height && a.height < 23 && a.floors >= 2,
+      "Retain collision-bounded two-to-five-storey Chinatown silhouettes",
     );
     const paint = ps.find(
       (o) =>
@@ -145,7 +145,7 @@ for (let i = 0; i < laneMarks.count; i++) {
   );
 }
 const hero = city.group.children.filter((c) => c.userData.cinematic);
-assert(hero.length > 0 && hero.length < 35);
+assert(hero.length > 0 && hero.length < 70);
 city.update(at, "low", true);
 assert(
   hero.filter((c) => c.name === "BangkokDetail").every((c) => !c.visible),

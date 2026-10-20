@@ -212,7 +212,10 @@ export function emitYaowaratFacade(
               side * 0.32,
             );
         }
-        put(u, y + wh / 2 + 0.16, F - 0.11, ww + 0.6, 0.22, 0.6, cream);
+        if(!cinematicParcel(p)) {
+          put(u,y+.62,F-.08,ww+.22,1.12,.22,cream,'plaster','near','arch');
+          put(u,y+.66,F-.19,ww*.86,.9,.06,a.trim,'wood','near','arch');
+        } else put(u, y + wh / 2 + 0.16, F - 0.11, ww + 0.6, 0.22, 0.6, cream);
         put(u, y - wh / 2 - 0.15, F + 0.1, ww + 0.65, 0.2, 0.8, a.trim);
         put(u, y, F - 1.27, 0.08, wh, 0.11, cream, "wood");
         if ((a.seed + f + n) % 3 === 0) {

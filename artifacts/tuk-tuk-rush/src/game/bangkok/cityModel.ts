@@ -1,6 +1,6 @@
 import data from './cityData.v1.json';
 import type {District,Point} from '../types';
-import {roadGraphKey} from './roadIdentity';
+import {roadGraphKey,cityGraphApprovalKey} from './roadIdentity';
 
 /** Versioned approval data, not a second generated world or landmark registry.
  * Facts, compression and model origins have separate contracts. Existing road,
@@ -11,7 +11,7 @@ export type GeographicFact = {
  district:string;bank:'east'|'west'|'not-verified';
  sources:string[];confidence:'operator-and-map'|'inherited'|'research-needed';
 };
-export type CityGeometryKind='street-corridor'|'intersection'|'district'|'parcel'|'landmark-footprint'|'entrance'|'transit-station'|'bridge'|'pier'|'public-space'|'waterway';
+export type CityGeometryKind='street-corridor'|'intersection'|'district'|'parcel'|'landmark-site'|'landmark-footprint'|'entrance'|'transit-station'|'bridge'|'pier'|'public-space'|'waterway';
 export type CityGeometryContract = {
  id:string;kind:CityGeometryKind;geometry:Point[];
  coordinates:'game-world';provenance:string;approvalVersion:string;
@@ -35,9 +35,10 @@ export function canonicalFeaturePoint(id:string,origin:Point,yaw=0):Point {
  * This guard is intentionally independent of subjective visual grades. */
 export function assertApprovedCityGeometry(d:District) {
  if(roadGraphKey(d)!==data.roadBaseline.key)throw Error('City road baseline changed without an explicit versioned approval');
+ if(cityGraphApprovalKey(d)!==data.roadBaseline.fullGraphKey)throw Error('City road names, directions or topology differ from the approved baseline');
  for(const p of data.features) {
   const l=d.landmarks.find(l=>l.id===p.id),q=l?.plot??l;
-  if(!q||Math.hypot(q.x-p.model.origin.x,q.z-p.model.origin.z)>1e-6)
+  if(!q||Math.hypot(q.x-p.model.origin.x,q.z-p.model.origin.z)>1e-6||Math.abs((l!.yaw??0)-p.model.rotation)>1e-6||Math.abs((l!.size??0)-p.model.size)>1e-6)
    throw Error('City placement differs from approved model origin: '+p.id);
  }
 }

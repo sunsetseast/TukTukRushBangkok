@@ -15,7 +15,8 @@ export default function CityInspector({d,onClose}:{d:District;onClose:()=>void})
  const projected=fact?geographicToDesign(fact):null;
  const w=5400/zoom,h=5400/zoom;
  const choose=(id:string)=>{setSelected(id);const q=places.find(p=>p.id===id);if(q)setCenter(q.world);};
- return <section data-testid="city-inspector" style={{position:'fixed',inset:0,zIndex:1000,background:'#142530',color:'#eef4ed',display:'flex',font:'14px system-ui',overflow:'auto'}}>
+ return <section className="city-inspector" data-testid="city-inspector" style={{position:'fixed',inset:0,zIndex:1000,background:'#142530',color:'#eef4ed',display:'flex',font:'14px system-ui',overflow:'auto'}}>
+  <style>{`.city-inspector p,.city-inspector h2,.city-inspector h3,.city-inspector b,.city-inspector small,.city-inspector label{color:#eef4ed}.city-inspector button{color:#eef4ed;background:#284956;padding:5px 9px;border:1px solid #6a8d96;border-radius:4px}.city-inspector select,.city-inspector input,.city-inspector option{color:#132a32;background:#fff}.city-inspector h2{font-size:20px;margin:12px 0}.city-inspector p{margin:9px 0;line-height:1.4}`}</style>
   <div style={{flex:1,minWidth:300,position:'relative'}}>
    <div style={{padding:12,display:'flex',flexWrap:'wrap',gap:10}}><b>Bangkok {CITY_MODEL.id} · actual world · N ↑</b><button onClick={onClose}>Close</button>
     <button onClick={()=>setZoom(Math.min(8,zoom*1.5))}>+</button><button onClick={()=>setZoom(Math.max(.7,zoom/1.5))}>−</button><button onClick={()=>{setZoom(1);setCenter({x:0,z:0});}}>Entire world</button>
