@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "rawSnapshots": [
+    {
+      "tile": "osm-riverside",
+      "sha256": "c0c193af841a72a39af46992aa9258a4858153bdb1c6d51d88fd53e86adc1e33",
+      "bytes": 6171309
+    },
+    {
+      "tile": "osm-north",
+      "sha256": "2f9724f2b100eb66ae068c4c84418ecf0b77eda39e564937e8c442fe599235d8",
+      "bytes": 5673144
+    },
+    {
+      "tile": "osm-thonburi",
+      "sha256": "a0357b574a5b732243a423d37d27bf1f6b21e36fd763ecb70acaa0387b0d72d7",
+      "bytes": 1400034
+    },
+    {
+      "tile": "osm-silom",
+      "sha256": "0e9d49e1f7bff37833424746cb132a9cea9ab0d00210fb7b9f2967d13714697f",
+      "bytes": 8688622
+    },
+    {
+      "tile": "osm-sukhumvit",
+      "sha256": "1d6acbebcccefc6882ab69224f0de9e269f956354a180f1e99c75cbbb3bb4c90",
+      "bytes": 6285170
+    },
+    {
+      "tile": "osm-oldtown",
+      "sha256": "70bb6f7dcbe9449e25feabaae281d64eebaacc670601f4690a3ccb2a4c4122cd",
+      "bytes": 15840144
+    },
+    {
+      "tile": "osm-chinatown",
+      "sha256": "9784b9fbf070ebf236f2d37b7c65deb919bebdb424ad0c940f5bb6497f2d92fb",
+      "bytes": 4642530
+    },
+    {
+      "tile": "osm-siam",
+      "sha256": "c8162878e4843afb6e5aaff6e90c10542ff2dcd8cb13afae576f8d0bab54b0be",
+      "bytes": 8505887
+    }
+  ],
+  "ways": 2644,
+  "places": 1330,
+  "method": "OSM API bounding-box extracts; personal contributor metadata discarded. Named roads, bridges and waterways only; source facts are not automatically projected into the game."
+}

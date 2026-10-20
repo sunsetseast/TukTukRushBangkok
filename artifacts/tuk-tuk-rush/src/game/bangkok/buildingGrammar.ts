@@ -1,3 +1,5 @@
+import {stableHash} from './stableHash';
+export {stableHash} from './stableHash';
 import { inSiamSquare } from "./urbanBlocks";
 import { isHistoricWaterfront } from './historicPlan';
 import { composeYaowarat } from "./yaowarat";
@@ -73,12 +75,6 @@ export type ParcelDesign = {
   corridor: string;
   hero?: string;
   bays: Bay[];
-};
-export const stableHash = (text: string) => {
-  let h = 2166136261;
-  for (let i = 0; i < text.length; i++)
-    h = Math.imul(h ^ text.charCodeAt(i), 16777619);
-  return h >>> 0;
 };
 export const buildingIdentity = (b: Obstacle) =>
   `bkk:${Math.round(b.x * 100)}:${Math.round(b.z * 100)}:${Math.round((b.yaw ?? 0) * 10000)}`;

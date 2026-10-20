@@ -1,0 +1,4545 @@
+{
+  "schemaVersion": 1,
+  "id": "bangkok-arcade-2026.1",
+  "baselineCommit": "c5f2e210efb3146b782f00ea58f144f7005bc110",
+  "coordinateSystems": {
+    "real": "WGS84 EPSG:4326 latitude/longitude",
+    "design": "north-up design units; y south",
+    "world": "x east, z south, metres"
+  },
+  "compression": {
+    "version": "legacy-piecewise-v1",
+    "scale": 4,
+    "origin": [
+      500,
+      600
+    ],
+    "longitudeKnots": [
+      [
+        100.455,
+        55
+      ],
+      [
+        100.49307,
+        309
+      ],
+      [
+        100.50128,
+        410
+      ],
+      [
+        100.51326,
+        470
+      ],
+      [
+        100.5298,
+        658
+      ],
+      [
+        100.534,
+        710
+      ],
+      [
+        100.54165,
+        805
+      ],
+      [
+        100.5477,
+        843
+      ],
+      [
+        100.5605,
+        961
+      ],
+      [
+        100.58,
+        1030
+      ]
+    ],
+    "southingKnots": [
+      [
+        -13.82,
+        10
+      ],
+      [
+        -13.76493,
+        230
+      ],
+      [
+        -13.75516,
+        285
+      ],
+      [
+        -13.75181,
+        416.25
+      ],
+      [
+        -13.74931,
+        426
+      ],
+      [
+        -13.74668,
+        432
+      ],
+      [
+        -13.7446,
+        490
+      ],
+      [
+        -13.7379,
+        535
+      ],
+      [
+        -13.73048,
+        730
+      ],
+      [
+        -13.72393,
+        860
+      ],
+      [
+        -13.721,
+        965
+      ],
+      [
+        -13.7119,
+        1029
+      ],
+      [
+        -13.7045,
+        1145
+      ],
+      [
+        -13.69,
+        1200
+      ]
+    ],
+    "policy": "Projection is an overview. Approved site-local residuals take precedence. Do not retune global knots to fit one landmark.",
+    "masterPlan": {
+      "version": 3,
+      "bounds": {
+        "east": 1120
+      },
+      "phromPhong": [
+        1030,
+        610
+      ],
+      "north": [
+        [
+          770,
+          65
+        ],
+        [
+          747,
+          107
+        ],
+        [
+          725,
+          145
+        ],
+        [
+          728,
+          187
+        ]
+      ],
+      "sukhumvit": [
+        [
+          810,
+          455
+        ],
+        [
+          875,
+          490
+        ],
+        [
+          945,
+          550
+        ],
+        [
+          990,
+          580
+        ],
+        [
+          1030,
+          610
+        ],
+        [
+          1090,
+          650
+        ]
+      ],
+      "malls": {
+        "emporium": [
+          1043,
+          644
+        ],
+        "emquartier": [
+          1043,
+          575
+        ],
+        "emsphere": [
+          960,
+          613
+        ]
+      },
+      "benchasiri": [
+        1010,
+        650
+      ]
+    }
+  },
+  "roadBaseline": {
+    "version": 1,
+    "key": "1652953968",
+    "roads": 2089,
+    "nodes": 2036,
+    "sourceStages": [
+      "layout-v1",
+      "master-plan-v3",
+      "civic",
+      "public-space",
+      "historic-pr32"
+    ],
+    "status": "approved-arcade-network",
+    "geographicConfidence": "interpreted-compressed; not cadastral"
+  },
+  "geographicReferences": [
+    {
+      "id": "pho",
+      "name": "Wat Pho",
+      "coordinate": {
+        "lat": 13.7466,
+        "lon": 100.4927
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Phra Borom Maha Ratchawang",
+      "bank": "east",
+      "corridors": [
+        "Maha Rat",
+        "Thai Wang",
+        "Sanam Chai",
+        "Chetuphon"
+      ],
+      "frontage": "Walled compound immediately south of the Palace; Tha Tien west",
+      "neighbors": [
+        "palace",
+        "arun"
+      ],
+      "publicAccess": "Public exterior drop-off; sacred courts pedestrian",
+      "design": [
+        300,
+        425
+      ],
+      "sources": [
+        "https://www.watpho.com/en/"
+      ],
+      "compromise": "Retained sculpted Reclining Buddha and compact compound; footprints are not surveyed."
+    },
+    {
+      "id": "golden",
+      "name": "Golden Mount / Wat Saket",
+      "coordinate": {
+        "lat": 13.75392,
+        "lon": 100.50661
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pom Prap Sattru Phai",
+      "neighborhood": "Ban Bat",
+      "bank": "east",
+      "corridors": [
+        "Boripat",
+        "Maha Chai",
+        "Bamrung Mueang"
+      ],
+      "frontage": "Temple hill northeast of Giant Swing and southeast of Democracy Monument",
+      "neighbors": [
+        "swing",
+        "democracy"
+      ],
+      "publicAccess": "Perimeter roads; stairways pedestrian",
+      "design": [
+        480,
+        330
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/wat-saket-and-the-golden-mount"
+      ],
+      "compromise": "Hill, lower compound and distances compressed; retaining terraces are an original interpretation."
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy Monument",
+      "coordinate": {
+        "lat": 13.75673,
+        "lon": 100.50182
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Bowon Niwet",
+      "bank": "east",
+      "corridors": [
+        "Ratchadamnoen Klang",
+        "Dinso"
+      ],
+      "frontage": "Central civic island at Ratchadamnoen and Dinso",
+      "neighbors": [
+        "sanam",
+        "golden",
+        "swing"
+      ],
+      "publicAccess": "Clockwise public vehicle ring; island pedestrian",
+      "design": [
+        435,
+        270
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/democracy-monument"
+      ],
+      "compromise": "Circular arcade island and 38m road radius; avenue remains diagonally compressed toward Lan Luang."
+    },
+    {
+      "id": "traimit",
+      "name": "Wat Traimit",
+      "coordinate": {
+        "lat": 13.73768,
+        "lon": 100.51357
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Samphanthawong",
+      "neighborhood": "Talat Noi",
+      "bank": "east",
+      "corridors": [
+        "Tri Mit",
+        "Charoen Krung"
+      ],
+      "frontage": "Golden Buddha mondop northeast of Odeon and southwest of Hua Lamphong",
+      "neighbors": [
+        "hua",
+        "gate"
+      ],
+      "publicAccess": "Outer drop-off with pedestrian stairs",
+      "design": [
+        564,
+        574
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"
+      ],
+      "compromise": "South-facing miniature mondop, approximate compound; Tri Mit bends preserve the station and MRT approaches."
+    },
+    {
+      "id": "gate",
+      "name": "Chinatown Gate / Odeon Circle",
+      "coordinate": {
+        "lat": 13.73701,
+        "lon": 100.51286
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Samphanthawong",
+      "neighborhood": "Talat Noi",
+      "bank": "east",
+      "corridors": [
+        "Yaowarat",
+        "Tri Mit",
+        "Charoen Krung"
+      ],
+      "frontage": "Gateway island southwest of Wat Traimit",
+      "neighbors": [
+        "traimit",
+        "hua"
+      ],
+      "publicAccess": "Clockwise public circle; Yaowarat departs west",
+      "design": [
+        535,
+        590
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/yaowarat-road"
+      ],
+      "compromise": "Existing 32m-radius arcade ring retained; exact Odeon junction outline not surveyed."
+    },
+    {
+      "id": "emporium",
+      "name": "Emporium",
+      "coordinate": {
+        "lat": 13.7304938,
+        "lon": 100.5689016
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong Toei",
+      "neighborhood": "Phrom Phong",
+      "bank": "east",
+      "corridors": [
+        "Sukhumvit",
+        "Soi 24"
+      ],
+      "frontage": "North-facing retail frontage south of Sukhumvit",
+      "neighbors": [
+        "emquartier",
+        "benchasiri"
+      ],
+      "publicAccess": "Connected exterior mall stop; interior pedestrian",
+      "design": [
+        1043,
+        644
+      ],
+      "sources": [
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/29qga3VN6E2sfehZ8"
+      ],
+      "compromise": "Eastern expansion lengthens the previous Asok boundary; hotel/podium are original miniature interpretations."
+    },
+    {
+      "id": "emquartier",
+      "name": "EmQuartier",
+      "coordinate": {
+        "lat": 13.7312253,
+        "lon": 100.5694763
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Watthana",
+      "neighborhood": "Phrom Phong",
+      "bank": "east",
+      "corridors": [
+        "Sukhumvit",
+        "Soi 39"
+      ],
+      "frontage": "South-facing three-part mall north of Sukhumvit",
+      "neighbors": [
+        "emporium",
+        "benchasiri"
+      ],
+      "publicAccess": "Connected exterior stop and elevated station approach",
+      "design": [
+        1043,
+        575
+      ],
+      "sources": [
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/k4KwPVYhrrynJGhb9"
+      ],
+      "compromise": "Three retail masses, terraces and hotel height interpreted; full internal plan omitted."
+    },
+    {
+      "id": "emsphere",
+      "name": "EmSphere",
+      "coordinate": {
+        "lat": 13.7323522,
+        "lon": 100.5663462
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong Toei",
+      "neighborhood": "Phrom Phong",
+      "bank": "east",
+      "corridors": [
+        "Sukhumvit",
+        "Soi 22"
+      ],
+      "frontage": "South of Sukhumvit, west of Benchasiri",
+      "neighbors": [
+        "benchasiri",
+        "emporium"
+      ],
+      "publicAccess": "Public Soi 22 exterior stop",
+      "design": [
+        960,
+        613
+      ],
+      "sources": [
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/hy1cPD1Ffhzxs8oZA"
+      ],
+      "compromise": "Strong local x/y residual keeps the compound west of the park and leaves the compressed Soi 22 drivable."
+    },
+    {
+      "id": "benchasiri",
+      "name": "Benchasiri Park",
+      "coordinate": {
+        "lat": 13.7313966,
+        "lon": 100.56793
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong Toei",
+      "neighborhood": "Phrom Phong",
+      "bank": "east",
+      "corridors": [
+        "Sukhumvit",
+        "Soi 22",
+        "Soi 24"
+      ],
+      "frontage": "Sculpture garden between Sois 22 and 24",
+      "neighbors": [
+        "emporium",
+        "emsphere"
+      ],
+      "publicAccess": "Pedestrian gates and perimeter passenger stops",
+      "design": [
+        1009,
+        651
+      ],
+      "sources": [
+        "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
+        "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
+      ],
+      "compromise": "Boundary/pond are interpreted, not a surveyed footprint; playing fields and full sculpture collection omitted."
+    },
+    {
+      "id": "chatuchak-park",
+      "name": "Chatuchak Park",
+      "coordinate": {
+        "lat": 13.807484,
+        "lon": 100.5554198
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Chatuchak",
+      "neighborhood": "Chatuchak",
+      "bank": "east",
+      "corridors": [
+        "Phahonyothin"
+      ],
+      "frontage": "East of Mo Chit, northeast of Weekend Market",
+      "neighbors": [
+        "chatuchak",
+        "mo-chit"
+      ],
+      "publicAccess": "Perimeter drop-off and pedestrian lake circuits",
+      "design": [
+        800,
+        72
+      ],
+      "sources": [
+        "https://greener.bangkok.go.th/park/suan-chatuchak/",
+        "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
+      ],
+      "compromise": "Northern latitude is heavily compressed; Queen Sirikit and Rot Fai parks remain outside this reconstruction."
+    },
+    {
+      "id": "park",
+      "name": "Lumphini Park",
+      "coordinate": {
+        "lat": 13.73048,
+        "lon": 100.54165
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Lumphini",
+      "bank": "east",
+      "corridors": [
+        "Rama IV",
+        "Ratchadamri",
+        "Wireless",
+        "Sarasin"
+      ],
+      "frontage": "Rama VI monument southwest; school/vehicle entrance east",
+      "neighbors": [
+        "dusit",
+        "one-bangkok",
+        "sala-daeng"
+      ],
+      "publicAccess": "Perimeter drop-offs; Wireless school-side vehicle gate and parking strip; lake paths pedestrian",
+      "design": [
+        805,
+        730
+      ],
+      "sources": [
+        "https://greener.bangkok.go.th/park/suan-lumpini/",
+        "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966",
+        "https://www.openstreetmap.org/way/23483299"
+      ],
+      "compromise": "Actual outline is compressed inside existing four perimeter roads; north-south aspect is stretched."
+    },
+    {
+      "id": "victory",
+      "name": "Victory Monument",
+      "coordinate": {
+        "lat": 13.76493,
+        "lon": 100.53829
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Ratchathewi",
+      "neighborhood": "Thanon Phaya Thai",
+      "bank": "east",
+      "corridors": [
+        "Phaya Thai",
+        "Phahonyothin",
+        "Ratchawithi"
+      ],
+      "frontage": "Traffic island inside clockwise one-way roundabout",
+      "neighbors": [
+        "victory-monument-bts",
+        "phaya-thai"
+      ],
+      "publicAccess": "Roundabout driving; monument island reached by pedestrian infrastructure",
+      "design": [
+        717,
+        230
+      ],
+      "sources": [
+        "https://revolutionaryobjects.org/en/object/victory-monument",
+        "https://www.openstreetmap.org/way/158185227"
+      ],
+      "compromise": "Victory is now east of Siam. The southern Phaya Thai approach bends west to retain the compressed street graph; distances remain shortened."
+    },
+    {
+      "id": "sanam",
+      "name": "Sanam Luang",
+      "coordinate": {
+        "lat": 13.75516,
+        "lon": 100.49307
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Phra Borom Maha Ratchawang",
+      "bank": "east",
+      "corridors": [
+        "Ratchadamnoen Nai",
+        "Na Phra That",
+        "Na Phra Lan"
+      ],
+      "frontage": "Long ceremonial field north of Grand Palace",
+      "neighbors": [
+        "palace",
+        "khaosan"
+      ],
+      "publicAccess": "Public perimeter streets and pedestrian field entrances; no routine vehicle route across lawn",
+      "design": [
+        309,
+        285
+      ],
+      "sources": [
+        "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/",
+        "https://www.openstreetmap.org/way/23630232"
+      ],
+      "compromise": "Compressed field aspect and perimeter route; temporary ceremonial installations omitted."
+    },
+    {
+      "id": "palace",
+      "name": "Grand Palace",
+      "coordinate": {
+        "lat": 13.75,
+        "lon": 100.4913
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Phra Borom Maha Ratchawang",
+      "bank": "east",
+      "corridors": [
+        "Na Phra Lan",
+        "Sanam Chai",
+        "Maha Rat"
+      ],
+      "frontage": "Main public approach north on Na Phra Lan",
+      "neighbors": [
+        "sanam",
+        "pho"
+      ],
+      "publicAccess": "Exterior public-road stop; heritage interior vehicle restrictions retained",
+      "design": [
+        295,
+        365
+      ],
+      "sources": [
+        "https://www.royalgrandpalace.th/en/home"
+      ]
+    },
+    {
+      "id": "swing",
+      "name": "Giant Swing",
+      "coordinate": {
+        "lat": 13.75181,
+        "lon": 100.50128
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Sao Chingcha",
+      "bank": "east",
+      "corridors": [
+        "Bamrung Mueang",
+        "Dinso"
+      ],
+      "frontage": "Civic square immediately north of Wat Suthat",
+      "neighbors": [
+        "wat-suthat",
+        "palace"
+      ],
+      "publicAccess": "Exterior street approach to pedestrian paved square",
+      "design": [
+        410,
+        350.5
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
+        "https://www.openstreetmap.org/way/178353988"
+      ]
+    },
+    {
+      "id": "wat-suthat",
+      "name": "Wat Suthat",
+      "coordinate": {
+        "lat": 13.7501,
+        "lon": 100.5012
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Sao Chingcha",
+      "bank": "east",
+      "corridors": [
+        "Bamrung Mueang",
+        "Ti Thong",
+        "Unakan"
+      ],
+      "frontage": "North gate faces Giant Swing; layered roofs within walled court",
+      "neighbors": [
+        "swing"
+      ],
+      "publicAccess": "Exterior drop-off and pedestrian gates; no shortcut through temple solids",
+      "design": [
+        410,
+        367.5
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan"
+      ],
+      "compromise": "The separation from Giant Swing is reduced to 53 game meters."
+    },
+    {
+      "id": "flowers",
+      "name": "Pak Khlong Talat / Yodpiman",
+      "coordinate": {
+        "lat": 13.7414,
+        "lon": 100.4966
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Phra Nakhon",
+      "neighborhood": "Wang Burapha Phirom",
+      "bank": "east",
+      "corridors": [
+        "Chak Phet",
+        "Atsadang"
+      ],
+      "frontage": "Flower market blocks beside east-bank river and Memorial Bridge approach",
+      "neighbors": [
+        "pho",
+        "memorial-bridge",
+        "yodpiman"
+      ],
+      "publicAccess": "Public Chak Phet approach and loading frontage; covered flower aisles pedestrian",
+      "design": [
+        318,
+        535
+      ],
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/pak-khlong-talat-night-market",
+        "https://webportal.bangkok.go.th/upload/user/00000086/Innovation/PAK%20KLONG%20MARKET.pdf"
+      ],
+      "compromise": "Wholesaler district represented by selected blocks rather than every market building."
+    },
+    {
+      "id": "jim-thompson",
+      "name": "Jim Thompson House",
+      "coordinate": {
+        "lat": 13.74931,
+        "lon": 100.52848
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Wang Mai",
+      "bank": "east",
+      "corridors": [
+        "Soi Kasemsan 2",
+        "Rama I"
+      ],
+      "frontage": "South entrance lane, Saen Saep canal north",
+      "neighbors": [
+        "national-stadium",
+        "mbk",
+        "siam-discovery"
+      ],
+      "publicAccess": "Tuk-tuk drop-off at the lane outside heritage compound; raised house courts pedestrian",
+      "design": [
+        626,
+        426
+      ],
+      "sources": [
+        "https://jimthompsonhouse.org/visitor-information/",
+        "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+        "https://www.openstreetmap.org/way/897909009"
+      ]
+    },
+    {
+      "id": "mbk",
+      "name": "MBK Center",
+      "coordinate": {
+        "lat": 13.744512,
+        "lon": 100.529857
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Wang Mai",
+      "bank": "east",
+      "corridors": [
+        "Rama I",
+        "Phaya Thai"
+      ],
+      "frontage": "Long frontage south of Rama I and west side of Phaya Thai",
+      "neighbors": [
+        "national-stadium",
+        "siam-discovery",
+        "siam-square"
+      ],
+      "publicAccess": "Mall forecourt and road stop; elevated pedestrian approach to BTS",
+      "design": [
+        658,
+        490
+      ],
+      "sources": [
+        "https://mbk-center.co.th/en/"
+      ]
+    },
+    {
+      "id": "siam-discovery",
+      "name": "Siam Discovery",
+      "coordinate": {
+        "lat": 13.74668,
+        "lon": 100.531499
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Pathum Wan",
+      "bank": "east",
+      "corridors": [
+        "Rama I",
+        "Phaya Thai"
+      ],
+      "frontage": "Contemporary framed facade north of Rama I, west of Siam Center",
+      "neighbors": [
+        "mbk",
+        "siam-center",
+        "national-stadium"
+      ],
+      "publicAccess": "Street forecourt and pedestrian skywalk",
+      "design": [
+        668,
+        432
+      ],
+      "sources": [
+        "https://www.nendo.jp/en/works/siam-discovery/",
+        "https://www.openstreetmap.org/way/157770877"
+      ]
+    },
+    {
+      "id": "siam-center",
+      "name": "Siam Center",
+      "coordinate": {
+        "lat": 13.746277,
+        "lon": 100.532798
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Pathum Wan",
+      "bank": "east",
+      "corridors": [
+        "Rama I"
+      ],
+      "frontage": "Dark, lower retail frontage north of Rama I between Discovery and Paragon",
+      "neighbors": [
+        "siam-discovery",
+        "paragon",
+        "siam-bts"
+      ],
+      "publicAccess": "Rama I drop-off with pedestrian mall/BTS connection",
+      "design": [
+        696,
+        432
+      ],
+      "sources": [
+        "https://www.siamcenter.co.th/",
+        "https://www.openstreetmap.org/way/25701334"
+      ]
+    },
+    {
+      "id": "paragon",
+      "name": "Siam Paragon",
+      "coordinate": {
+        "lat": 13.746801,
+        "lon": 100.534938
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Pathum Wan",
+      "bank": "east",
+      "corridors": [
+        "Rama I"
+      ],
+      "frontage": "Curved glazed main approach south; broad mall extends north",
+      "neighbors": [
+        "siam-center",
+        "siam-bts",
+        "central"
+      ],
+      "publicAccess": "South plaza pedestrian; road-facing passenger stop",
+      "design": [
+        730,
+        415
+      ],
+      "sources": [
+        "https://www.siamparagon.co.th/about"
+      ]
+    },
+    {
+      "id": "central",
+      "name": "CentralWorld",
+      "coordinate": {
+        "lat": 13.7469,
+        "lon": 100.5397
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Ratchaprasong",
+      "bank": "east",
+      "corridors": [
+        "Ratchadamri",
+        "Rama I"
+      ],
+      "frontage": "Main retail/event plaza faces east toward Ratchadamri",
+      "neighbors": [
+        "paragon",
+        "erawan-hotel",
+        "embassy"
+      ],
+      "publicAccess": "Roadside/plaza stop; mall and skywalk pedestrian",
+      "design": [
+        786,
+        430
+      ],
+      "sources": [
+        "https://www.centralworld.co.th/en"
+      ],
+      "compromise": "West-of-Ratchadamri site compressed to retain junction driving clearance; full north hotel/office complex omitted."
+    },
+    {
+      "id": "siam-square",
+      "name": "Siam Square",
+      "coordinate": {
+        "lat": 13.7447,
+        "lon": 100.5338
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Pathum Wan",
+      "bank": "east",
+      "corridors": [
+        "Rama I",
+        "Phaya Thai",
+        "Henri Dunant"
+      ],
+      "frontage": "Low-rise commercial lanes south of BTS Siam",
+      "neighbors": [
+        "mbk",
+        "siam-center",
+        "paragon"
+      ],
+      "publicAccess": "Selected service lanes driveable; pedestrian retail courts remain separate",
+      "design": [
+        710,
+        487
+      ],
+      "sources": [
+        "https://www.siamsquare.co.th/"
+      ]
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal 21 Asok",
+      "coordinate": {
+        "lat": 13.737924,
+        "lon": 100.560421
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Watthana",
+      "neighborhood": "Khlong Toei Nuea",
+      "bank": "east",
+      "corridors": [
+        "Sukhumvit",
+        "Asok Montri"
+      ],
+      "frontage": "North of Sukhumvit, west of Asok; hotel above podium",
+      "neighbors": [
+        "asok-bts",
+        "sukhumvit-mrt"
+      ],
+      "publicAccess": "Connected Sukhumvit arrival and elevated pedestrian link",
+      "design": [
+        918,
+        499
+      ],
+      "sources": [
+        "https://www.terminal21.co.th/asok/contactus/th",
+        "https://www.openstreetmap.org/way/157656710"
+      ],
+      "compromise": "Northwest Asok plot corrected; the oblique compressed Sukhumvit approach requires a larger northward setback than the real parcel."
+    },
+    {
+      "id": "river-city",
+      "name": "River City Bangkok",
+      "coordinate": {
+        "lat": 13.730349,
+        "lon": 100.513262
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Samphanthawong",
+      "neighborhood": "Talat Noi / Si Phraya",
+      "bank": "east",
+      "corridors": [
+        "Charoen Krung 24",
+        "Si Phraya"
+      ],
+      "frontage": "West-facing riverfront mall and adjacent piers",
+      "neighbors": [
+        "hilton",
+        "icon",
+        "oriental"
+      ],
+      "publicAccess": "East-side road arrival; west river promenade and passenger piers",
+      "design": [
+        431,
+        796
+      ],
+      "sources": [
+        "https://rivercitybangkok.com/plan-your-visit/",
+        "https://www.openstreetmap.org/way/342182317"
+      ]
+    },
+    {
+      "id": "dusit",
+      "name": "Dusit Thani / Dusit Central Park",
+      "coordinate": {
+        "lat": 13.7281,
+        "lon": 100.5372
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Bang Rak",
+      "neighborhood": "Silom",
+      "bank": "east",
+      "corridors": [
+        "Rama IV",
+        "Silom"
+      ],
+      "frontage": "Southwest Lumphini corner across Rama IV",
+      "neighbors": [
+        "park",
+        "sala-daeng",
+        "one-bangkok"
+      ],
+      "publicAccess": "Rama IV/Silom road arrival, park-facing pedestrian edge",
+      "design": [
+        756,
+        804
+      ],
+      "sources": [
+        "https://www.dusit.com/dusitthani-bangkok/"
+      ]
+    },
+    {
+      "id": "one-bangkok",
+      "name": "One Bangkok",
+      "coordinate": {
+        "lat": 13.7269,
+        "lon": 100.548
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Lumphini",
+      "bank": "east",
+      "corridors": [
+        "Wireless",
+        "Rama IV"
+      ],
+      "frontage": "Southeast of park, east side of Wireless",
+      "neighbors": [
+        "park",
+        "dusit"
+      ],
+      "publicAccess": "Exterior road arrival, retail plaza pedestrian",
+      "design": [
+        880,
+        779
+      ],
+      "sources": [
+        "https://www.onebangkok.com/en/location/"
+      ]
+    },
+    {
+      "id": "okura",
+      "name": "Okura Prestige / Park Ventures",
+      "coordinate": {
+        "lat": 13.74269,
+        "lon": 100.5477
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Pathum Wan",
+      "neighborhood": "Lumphini",
+      "bank": "east",
+      "corridors": [
+        "Wireless",
+        "Phloen Chit"
+      ],
+      "frontage": "Southwest corner of Wireless/Phloen Chit",
+      "neighbors": [
+        "embassy",
+        "rosewood",
+        "phloen-chit-bts"
+      ],
+      "publicAccess": "Wireless-side road arrival, integrated BTS pedestrian connection",
+      "design": [
+        843,
+        488
+      ],
+      "sources": [
+        "https://www.okurabangkok.com/contact-location",
+        "https://www.openstreetmap.org/way/176332744"
+      ]
+    },
+    {
+      "id": "oriental",
+      "name": "Mandarin Oriental Bangkok",
+      "coordinate": {
+        "lat": 13.72393,
+        "lon": 100.5144
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Bang Rak",
+      "neighborhood": "Bang Rak",
+      "bank": "east",
+      "corridors": [
+        "Oriental Avenue",
+        "Charoen Krung"
+      ],
+      "frontage": "West-facing east-bank hotel, historic garden/Authors wing inland",
+      "neighbors": [
+        "river-city",
+        "shangri",
+        "peninsula"
+      ],
+      "publicAccess": "Oriental Avenue connected hotel drop-off; river terrace pedestrian",
+      "design": [
+        450,
+        860
+      ],
+      "sources": [
+        "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river"
+      ]
+    },
+    {
+      "id": "shangri",
+      "name": "Shangri-La Bangkok",
+      "coordinate": {
+        "lat": 13.720781,
+        "lon": 100.513781
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Bang Rak",
+      "neighborhood": "Bang Rak",
+      "bank": "east",
+      "corridors": [
+        "Soi Wat Suan Phlu",
+        "Charoen Krung"
+      ],
+      "frontage": "Riverside wings north of Saphan Taksin",
+      "neighbors": [
+        "oriental",
+        "state",
+        "saphan-taksin"
+      ],
+      "publicAccess": "Separate road-connected hotel stops, river pavilions pedestrian",
+      "design": [
+        460,
+        931
+      ],
+      "sources": [
+        "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/"
+      ]
+    },
+    {
+      "id": "peninsula",
+      "name": "The Peninsula Bangkok",
+      "coordinate": {
+        "lat": 13.723302,
+        "lon": 100.510368
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong San",
+      "neighborhood": "Khlong Ton Sai",
+      "bank": "west",
+      "corridors": [
+        "Charoen Nakhon"
+      ],
+      "frontage": "East-facing west-bank hotel opposite Bang Rak",
+      "neighbors": [
+        "oriental",
+        "icon",
+        "hilton"
+      ],
+      "publicAccess": "Charoen Nakhon arrival with internal drop-off",
+      "design": [
+        345,
+        907
+      ],
+      "sources": [
+        "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+      ]
+    },
+    {
+      "id": "hilton",
+      "name": "Millennium Hilton Bangkok",
+      "coordinate": {
+        "lat": 13.728694,
+        "lon": 100.51096
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong San",
+      "neighborhood": "Khlong San",
+      "bank": "west",
+      "corridors": [
+        "Charoen Nakhon"
+      ],
+      "frontage": "East-facing west-bank hotel north of ICONSIAM",
+      "neighbors": [
+        "river-city",
+        "icon",
+        "peninsula"
+      ],
+      "publicAccess": "Charoen Nakhon arrival, riverside terrace and pier pedestrian",
+      "design": [
+        311,
+        795
+      ],
+      "sources": [
+        "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/"
+      ]
+    },
+    {
+      "id": "icon",
+      "name": "ICONSIAM",
+      "coordinate": {
+        "lat": 13.726826,
+        "lon": 100.510325
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Khlong San",
+      "neighborhood": "Khlong Ton Sai",
+      "bank": "west",
+      "corridors": [
+        "Charoen Nakhon"
+      ],
+      "frontage": "East-facing glass/terrace riverfront, road arrival west",
+      "neighbors": [
+        "hilton",
+        "peninsula",
+        "river-city"
+      ],
+      "publicAccess": "Driveable west-side arrival; river promenade pedestrian",
+      "design": [
+        338.25825214724773,
+        833.2582521472477
+      ],
+      "sources": [
+        "https://www.iconsiam.com/en/"
+      ]
+    },
+    {
+      "id": "four-seasons",
+      "name": "Four Seasons Hotel at Chao Phraya",
+      "coordinate": {
+        "lat": 13.7119,
+        "lon": 100.5101
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Sathon",
+      "neighborhood": "Yan Nawa",
+      "bank": "east",
+      "corridors": [
+        "Charoen Krung"
+      ],
+      "frontage": "Low-rise east-bank compound; separate high-rise residences",
+      "neighbors": [
+        "capella",
+        "asiatique"
+      ],
+      "publicAccess": "Charoen Krung arrival; reflecting courts pedestrian",
+      "design": [
+        430,
+        1058
+      ],
+      "sources": [
+        "https://www.fourseasons.com/bangkok/getting-here/"
+      ]
+    },
+    {
+      "id": "capella",
+      "name": "Capella Bangkok",
+      "coordinate": {
+        "lat": 13.71312,
+        "lon": 100.510896
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Sathon",
+      "neighborhood": "Yan Nawa",
+      "bank": "east",
+      "corridors": [
+        "Charoen Krung"
+      ],
+      "frontage": "East-bank river villas and hotel adjoining Four Seasons",
+      "neighbors": [
+        "four-seasons"
+      ],
+      "publicAccess": "Charoen Krung arrival; villa courts pedestrian",
+      "design": [
+        430,
+        1013
+      ],
+      "sources": [
+        "https://capellahotels.com/en/capella-bangkok/contact"
+      ],
+      "compromise": "Shared estate realigned: Capella is north of the broader Four Seasons cascade; distances and individual plots remain compressed."
+    },
+    {
+      "id": "anantara",
+      "name": "Anantara Riverside Bangkok",
+      "coordinate": {
+        "lat": 13.7045,
+        "lon": 100.4919
+      },
+      "coordinateAccuracy": "approximate-site-center",
+      "district": "Thon Buri",
+      "neighborhood": "Samre",
+      "bank": "west",
+      "corridors": [
+        "Charoen Nakhon"
+      ],
+      "frontage": "West-bank low-rise resort opposite/south of Asiatique",
+      "neighbors": [
+        "asiatique",
+        "peninsula"
+      ],
+      "publicAccess": "Charoen Nakhon arrival, garden/river terraces pedestrian",
+      "design": [
+        245,
+        1145
+      ],
+      "sources": [
+        "https://www.anantara.com/en/riverside-bangkok"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "id": "chatuchak",
+      "name": "Chatuchak Market",
+      "category": "market",
+      "model": {
+        "origin": {
+          "x": 1032,
+          "z": -2180
+        },
+        "rotation": 0,
+        "size": 30,
+        "placement": "approved-pr33",
+        "builder": "chatuchak",
+        "design": [
+          758,
+          55
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        758,
+        55
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "victory",
+      "name": "Victory Monument",
+      "category": "monument",
+      "model": {
+        "origin": {
+          "x": 868,
+          "z": -1480
+        },
+        "rotation": 0,
+        "size": 208,
+        "placement": "approved-pr33",
+        "builder": "victory",
+        "design": [
+          717,
+          230
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        717,
+        230
+      ],
+      "compressionReason": "Victory is now east of Siam. The southern Phaya Thai approach bends west to retain the compressed street graph; distances remain shortened."
+    },
+    {
+      "id": "khaosan",
+      "name": "Khao San Road",
+      "category": "market",
+      "model": {
+        "origin": {
+          "x": -867.7163859753387,
+          "z": -1516.5194970290472
+        },
+        "rotation": 0,
+        "size": 30,
+        "placement": "approved-pr33",
+        "builder": "khaosan",
+        "design": [
+          283.07090350616534,
+          220.8701257427382
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        290,
+        218
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy Monument",
+      "category": "monument",
+      "model": {
+        "origin": {
+          "x": -260,
+          "z": -1320
+        },
+        "rotation": 0,
+        "size": 52,
+        "placement": "approved-pr33",
+        "builder": "democracy",
+        "design": [
+          435,
+          270
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        435,
+        270
+      ],
+      "compressionReason": "Circular arcade island and 38m road radius; avenue remains diagonally compressed toward Lan Luang."
+    },
+    {
+      "id": "sanam",
+      "name": "Sanam Luang",
+      "category": "park",
+      "model": {
+        "origin": {
+          "x": -764,
+          "z": -1260
+        },
+        "rotation": 0,
+        "size": 481.6637831516918,
+        "placement": "approved-pr33",
+        "builder": "sanam",
+        "design": [
+          309,
+          285
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        309,
+        285
+      ],
+      "compressionReason": "Compressed field aspect and perimeter route; temporary ceremonial installations omitted."
+    },
+    {
+      "id": "palace",
+      "name": "Grand Palace / Wat Phra Kaew",
+      "category": "palace",
+      "model": {
+        "origin": {
+          "x": -820,
+          "z": -940
+        },
+        "rotation": 0,
+        "size": 202.5,
+        "placement": "approved-pr33",
+        "builder": "palace",
+        "design": [
+          295,
+          365
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        295,
+        365
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "pho",
+      "name": "Wat Pho",
+      "category": "temple",
+      "model": {
+        "origin": {
+          "x": -800,
+          "z": -700
+        },
+        "rotation": 0,
+        "size": 140,
+        "placement": "approved-pr33",
+        "builder": "pho",
+        "design": [
+          300,
+          425
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        300,
+        425
+      ],
+      "compressionReason": "Retained sculpted Reclining Buddha and compact compound; footprints are not surveyed."
+    },
+    {
+      "id": "arun",
+      "name": "Wat Arun",
+      "category": "temple",
+      "model": {
+        "origin": {
+          "x": -1395.3553390593274,
+          "z": -504.6446609406726
+        },
+        "rotation": 0,
+        "size": 50,
+        "placement": "approved-pr33",
+        "builder": "arun",
+        "design": [
+          151.16116523516814,
+          473.83883476483186
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        160,
+        465
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "golden",
+      "name": "Golden Mount",
+      "category": "temple",
+      "model": {
+        "origin": {
+          "x": -80,
+          "z": -1080
+        },
+        "rotation": 0,
+        "size": 134,
+        "placement": "approved-pr33",
+        "builder": "golden",
+        "design": [
+          480,
+          330
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        480,
+        330
+      ],
+      "compressionReason": "Hill, lower compound and distances compressed; retaining terraces are an original interpretation."
+    },
+    {
+      "id": "swing",
+      "name": "Giant Swing",
+      "category": "monument",
+      "model": {
+        "origin": {
+          "x": -360,
+          "z": -940
+        },
+        "rotation": 0,
+        "size": 148,
+        "placement": "approved-pr33",
+        "builder": "swing",
+        "design": [
+          410,
+          365
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": -58
+      },
+      "requestPin": [
+        410,
+        350.5
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "flowers",
+      "name": "Pak Khlong Talat",
+      "category": "market",
+      "model": {
+        "origin": {
+          "x": -728,
+          "z": -260
+        },
+        "rotation": -1.5707963267948966,
+        "size": 104,
+        "placement": "approved-pr33",
+        "builder": "flowers",
+        "design": [
+          318,
+          535
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        318,
+        535
+      ],
+      "compressionReason": "Wholesaler district represented by selected blocks rather than every market building."
+    },
+    {
+      "id": "mbk",
+      "name": "MBK",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 632,
+          "z": -440
+        },
+        "rotation": 3.141592653589793,
+        "size": 120,
+        "placement": "approved-pr33",
+        "builder": "mbk",
+        "design": [
+          658,
+          490
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        658,
+        490
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "paragon",
+      "name": "Siam Paragon",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 920,
+          "z": -740
+        },
+        "rotation": 0,
+        "size": 130,
+        "placement": "approved-pr33",
+        "builder": "paragon",
+        "design": [
+          730,
+          415
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        730,
+        415
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "central",
+      "name": "CentralWorld / Erawan",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 1144,
+          "z": -680.5194970290472
+        },
+        "rotation": 1.5707963267948966,
+        "size": 140,
+        "placement": "approved-pr33",
+        "builder": "central",
+        "design": [
+          786,
+          429.8701257427382
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        786,
+        429.8701257427382
+      ],
+      "compressionReason": "West-of-Ratchadamri site compressed to retain junction driving clearance; full north hotel/office complex omitted."
+    },
+    {
+      "id": "gate",
+      "name": "Chinatown Gate",
+      "category": "gate",
+      "model": {
+        "origin": {
+          "x": 140,
+          "z": -40
+        },
+        "rotation": 0,
+        "size": 28,
+        "placement": "approved-pr33",
+        "builder": "gate",
+        "design": [
+          535,
+          590
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        535,
+        590
+      ],
+      "compressionReason": "Existing 32m-radius arcade ring retained; exact Odeon junction outline not surveyed."
+    },
+    {
+      "id": "traimit",
+      "name": "Wat Traimit",
+      "category": "temple",
+      "model": {
+        "origin": {
+          "x": 256,
+          "z": -104
+        },
+        "rotation": 0,
+        "size": 66,
+        "placement": "approved-pr33",
+        "builder": "traimit",
+        "design": [
+          564,
+          574
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        564,
+        574
+      ],
+      "compressionReason": "South-facing miniature mondop, approximate compound; Tri Mit bends preserve the station and MRT approaches."
+    },
+    {
+      "id": "hua",
+      "name": "Hua Lamphong",
+      "category": "station",
+      "model": {
+        "origin": {
+          "x": 400,
+          "z": -288
+        },
+        "rotation": 0,
+        "size": 84,
+        "placement": "approved-pr33",
+        "builder": "hua",
+        "design": [
+          600,
+          528
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        600,
+        540
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "food",
+      "name": "Banthat Thong",
+      "category": "market",
+      "model": {
+        "origin": {
+          "x": 590,
+          "z": -20
+        },
+        "rotation": 0,
+        "size": 30,
+        "placement": "approved-pr33",
+        "builder": "food",
+        "design": [
+          647.5,
+          595
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        635,
+        595
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "icon",
+      "name": "ICONSIAM",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": -646.9669914110091,
+          "z": 933.0330085889909
+        },
+        "rotation": 0,
+        "size": 65,
+        "placement": "approved-pr33",
+        "builder": "icon",
+        "design": [
+          338.25825214724773,
+          833.2582521472477
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        325,
+        820
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "park",
+      "name": "Lumphini Park",
+      "category": "park",
+      "model": {
+        "origin": {
+          "x": 1214,
+          "z": 516
+        },
+        "rotation": 0,
+        "size": 641.5055611294414,
+        "placement": "approved-pr33",
+        "builder": "park",
+        "design": [
+          803.5,
+          729
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        803.5,
+        729
+      ],
+      "compressionReason": "Actual outline is compressed inside existing four perimeter roads; north-south aspect is stretched."
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal 21 / Asok",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 1672,
+          "z": -404
+        },
+        "rotation": 0,
+        "size": 90,
+        "placement": "approved-pr33",
+        "builder": "terminal",
+        "design": [
+          918,
+          499
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        918,
+        499
+      ],
+      "compressionReason": "Northwest Asok plot corrected; the oblique compressed Sukhumvit approach requires a larger northward setback than the real parcel."
+    },
+    {
+      "id": "benjakitti",
+      "name": "Benjakitti Park",
+      "category": "park",
+      "model": {
+        "origin": {
+          "x": 1576,
+          "z": 452
+        },
+        "rotation": 0,
+        "size": 370.599514300815,
+        "placement": "approved-pr33",
+        "builder": "benjakitti",
+        "design": [
+          894,
+          713
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        904,
+        710
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "mahanakhon",
+      "name": "Mahanakhon",
+      "category": "tower",
+      "model": {
+        "origin": {
+          "x": 654.1939766255646,
+          "z": 1119.1341716182542
+        },
+        "rotation": 0,
+        "size": 40,
+        "placement": "approved-pr33",
+        "builder": "mahanakhon",
+        "design": [
+          663.5484941563911,
+          879.7835429045635
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        652,
+        875
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "asiatique",
+      "name": "Asiatique",
+      "category": "wheel",
+      "model": {
+        "origin": {
+          "x": -340.86582838174553,
+          "z": 2046.1939766255643
+        },
+        "rotation": 0,
+        "size": 45,
+        "placement": "approved-pr33",
+        "builder": "asiatique",
+        "design": [
+          414.7835429045636,
+          1111.5484941563911
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        410,
+        1100
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "paknam",
+      "name": "Wat Paknam / Big Buddha",
+      "category": "temple",
+      "model": {
+        "origin": {
+          "x": -1878.9949493661165,
+          "z": 586.9949493661167
+        },
+        "rotation": 0.7853981633974474,
+        "size": 90,
+        "placement": "approved-pr33",
+        "builder": "paknam",
+        "design": [
+          30.251262658470864,
+          746.7487373415291
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        55,
+        722
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "baiyoke",
+      "name": "Baiyoke Tower II",
+      "category": "tower",
+      "model": {
+        "origin": {
+          "x": 1020,
+          "z": -940
+        },
+        "rotation": 0,
+        "size": 40,
+        "placement": "approved-pr33",
+        "builder": "baiyoke",
+        "design": [
+          755,
+          365
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        755,
+        365
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "state",
+      "name": "State Tower / Lebua",
+      "category": "tower",
+      "model": {
+        "origin": {
+          "x": 200,
+          "z": 1180
+        },
+        "rotation": 0,
+        "size": 40,
+        "placement": "approved-pr33",
+        "builder": "state",
+        "design": [
+          550,
+          895
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": [
+        550,
+        895
+      ],
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "benchasiri",
+      "name": "Benchasiri Park",
+      "category": "park",
+      "model": {
+        "origin": {
+          "x": 2036,
+          "z": 204
+        },
+        "rotation": 0,
+        "size": 286.7751732629588,
+        "placement": "approved-pr33",
+        "builder": "benchasiri",
+        "design": [
+          1009,
+          651
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Boundary/pond are interpreted, not a surveyed footprint; playing fields and full sculpture collection omitted."
+    },
+    {
+      "id": "chatuchak-park",
+      "name": "Chatuchak Park",
+      "category": "park",
+      "model": {
+        "origin": {
+          "x": 1200,
+          "z": -2112
+        },
+        "rotation": 0,
+        "size": 515.0533952902359,
+        "placement": "approved-pr33",
+        "builder": "chatuchak-park",
+        "design": [
+          800,
+          72
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Northern latitude is heavily compressed; Queen Sirikit and Rot Fai parks remain outside this reconstruction."
+    },
+    {
+      "id": "emporium",
+      "name": "Emporium",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 2172,
+          "z": 176
+        },
+        "rotation": 3.141592653589793,
+        "size": 106,
+        "placement": "approved-pr33",
+        "builder": "emporium",
+        "design": [
+          1043,
+          644
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Eastern expansion lengthens the previous Asok boundary; hotel/podium are original miniature interpretations."
+    },
+    {
+      "id": "emquartier",
+      "name": "EmQuartier",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 2172,
+          "z": -100
+        },
+        "rotation": 0,
+        "size": 118,
+        "placement": "approved-pr33",
+        "builder": "emquartier",
+        "design": [
+          1043,
+          575
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Three retail masses, terraces and hotel height interpreted; full internal plan omitted."
+    },
+    {
+      "id": "emsphere",
+      "name": "EmSphere",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 1840,
+          "z": 52
+        },
+        "rotation": 3.141592653589793,
+        "size": 84,
+        "placement": "approved-pr33",
+        "builder": "emsphere",
+        "design": [
+          960,
+          613
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Strong local x/y residual keeps the compound west of the park and leaves the compressed Soi 22 drivable."
+    },
+    {
+      "id": "dusit",
+      "name": "Dusit Thani Bangkok / Dusit Central Park",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 1024,
+          "z": 816
+        },
+        "rotation": 0,
+        "size": 96,
+        "placement": "approved-pr33",
+        "builder": "dusit",
+        "design": [
+          756,
+          804
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "okura",
+      "name": "The Okura Prestige Bangkok / Park Ventures",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 1372,
+          "z": -448
+        },
+        "rotation": 3.141592653589793,
+        "size": 84,
+        "placement": "approved-pr33",
+        "builder": "okura",
+        "design": [
+          843,
+          488
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "anantara",
+      "name": "Anantara Riverside Bangkok Resort",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -1020,
+          "z": 2180
+        },
+        "rotation": 1.5707963267948966,
+        "size": 102,
+        "placement": "approved-pr33",
+        "builder": "anantara",
+        "design": [
+          245,
+          1145
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "one-bangkok",
+      "name": "One Bangkok / The Ritz-Carlton",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 1520,
+          "z": 716
+        },
+        "rotation": 0,
+        "size": 120,
+        "placement": "approved-pr33",
+        "builder": "one-bangkok",
+        "design": [
+          880,
+          779
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "oriental",
+      "name": "Mandarin Oriental Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -200,
+          "z": 1040
+        },
+        "rotation": -1.5707963267948966,
+        "size": 112,
+        "placement": "approved-pr33",
+        "builder": "oriental",
+        "design": [
+          450,
+          860
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "peninsula",
+      "name": "The Peninsula Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -620,
+          "z": 1228
+        },
+        "rotation": 1.5707963267948966,
+        "size": 72,
+        "placement": "approved-pr33",
+        "builder": "peninsula",
+        "design": [
+          345,
+          907
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "hilton",
+      "name": "Millennium Hilton Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -756,
+          "z": 780
+        },
+        "rotation": 1.5707963267948966,
+        "size": 52,
+        "placement": "approved-pr33",
+        "builder": "hilton",
+        "design": [
+          311,
+          795
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "shangri",
+      "name": "Shangri-La Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -160,
+          "z": 1324
+        },
+        "rotation": -1.5707963267948966,
+        "size": 124,
+        "placement": "approved-pr33",
+        "builder": "shangri",
+        "design": [
+          460,
+          931
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "four-seasons",
+      "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -280,
+          "z": 1832
+        },
+        "rotation": -1.5707963267948966,
+        "size": 180,
+        "placement": "approved-pr33",
+        "builder": "four-seasons",
+        "design": [
+          430,
+          1058
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "capella",
+      "name": "Capella Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -280,
+          "z": 1652
+        },
+        "rotation": -1.5707963267948966,
+        "size": 98,
+        "placement": "approved-pr33",
+        "builder": "capella",
+        "design": [
+          430,
+          1013
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Shared estate realigned: Capella is north of the broader Four Seasons cascade; distances and individual plots remain compressed."
+    },
+    {
+      "id": "rosewood",
+      "name": "Rosewood Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 1400,
+          "z": -556
+        },
+        "rotation": 0,
+        "size": 48,
+        "placement": "approved-pr33",
+        "builder": "rosewood",
+        "design": [
+          850,
+          461
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "embassy",
+      "name": "Park Hyatt Bangkok / Central Embassy",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 1324,
+          "z": -680
+        },
+        "rotation": 0,
+        "size": 100,
+        "placement": "approved-pr33",
+        "builder": "embassy",
+        "design": [
+          831,
+          430
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "erawan-hotel",
+      "name": "Grand Hyatt Erawan Bangkok",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 1304,
+          "z": -416
+        },
+        "rotation": 1.5707963267948966,
+        "size": 66,
+        "placement": "approved-pr33",
+        "builder": "erawan-hotel",
+        "design": [
+          826,
+          496
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "eastin",
+      "name": "Eastin Grand Hotel Sathorn",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": 232,
+          "z": 1332
+        },
+        "rotation": 0,
+        "size": 42,
+        "placement": "approved-pr33",
+        "builder": "eastin",
+        "design": [
+          558,
+          933
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "river-city",
+      "name": "River City Bangkok",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": -276,
+          "z": 784
+        },
+        "rotation": -1.5707963267948966,
+        "size": 102,
+        "placement": "approved-pr33",
+        "builder": "river-city",
+        "design": [
+          431,
+          796
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "siam-center",
+      "name": "Siam Center / Siam Discovery",
+      "category": "mall",
+      "model": {
+        "origin": {
+          "x": 704,
+          "z": -672
+        },
+        "rotation": 0,
+        "size": 154,
+        "placement": "approved-pr33",
+        "builder": "siam-center",
+        "design": [
+          676,
+          432
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "jim-thompson",
+      "name": "Jim Thompson House",
+      "category": "museum",
+      "model": {
+        "origin": {
+          "x": 504,
+          "z": -696
+        },
+        "rotation": 0,
+        "size": 72,
+        "placement": "approved-pr33",
+        "builder": "jim-thompson",
+        "design": [
+          626,
+          426
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    }
+  ],
+  "baseLayout": {
+    "title": "Tuk Tuk Rush — authored geographic city v2",
+    "status": "implemented_compact_arcade_layout",
+    "coordinate_system": {
+      "type": "compressed_design",
+      "x": "east",
+      "y": "south",
+      "bounds": [
+        0,
+        0,
+        1000,
+        1200
+      ],
+      "candidate_world_transform": "worldX=(x-500)*4; worldZ=(y-600)*4; meters_per_design_unit=4 (graybox tuning only)"
+    },
+    "river": {
+      "centerline": [
+        [
+          230,
+          -20
+        ],
+        [
+          240,
+          120
+        ],
+        [
+          215,
+          300
+        ],
+        [
+          195,
+          430
+        ],
+        [
+          205,
+          560
+        ],
+        [
+          270,
+          675
+        ],
+        [
+          380,
+          790
+        ],
+        [
+          405,
+          940
+        ],
+        [
+          370,
+          1040
+        ],
+        [
+          315,
+          1140
+        ],
+        [
+          280,
+          1220
+        ]
+      ],
+      "design_width": 72
+    },
+    "districts": [
+      {
+        "id": "north",
+        "name": "NORTH / CHATUCHAK",
+        "color": "#497b6c",
+        "polygon": [
+          [
+            630,
+            10
+          ],
+          [
+            875,
+            10
+          ],
+          [
+            835,
+            375
+          ],
+          [
+            610,
+            355
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "khaosan",
+        "name": "KHAO SAN / CIVIC CORE",
+        "color": "#927453",
+        "polygon": [
+          [
+            260,
+            170
+          ],
+          [
+            460,
+            180
+          ],
+          [
+            500,
+            345
+          ],
+          [
+            385,
+            365
+          ],
+          [
+            375,
+            265
+          ],
+          [
+            245,
+            255
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "oldtown",
+        "name": "RATTANAKOSIN",
+        "color": "#a08745",
+        "polygon": [
+          [
+            245,
+            260
+          ],
+          [
+            375,
+            270
+          ],
+          [
+            515,
+            310
+          ],
+          [
+            515,
+            450
+          ],
+          [
+            385,
+            475
+          ],
+          [
+            320,
+            525
+          ],
+          [
+            250,
+            505
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "westbank",
+        "name": "THONBURI",
+        "color": "#467c73",
+        "polygon": [
+          [
+            70,
+            195
+          ],
+          [
+            185,
+            195
+          ],
+          [
+            150,
+            510
+          ],
+          [
+            220,
+            655
+          ],
+          [
+            300,
+            720
+          ],
+          [
+            260,
+            1000
+          ],
+          [
+            70,
+            1000
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "chinatown",
+        "name": "CHINATOWN",
+        "color": "#a34d54",
+        "polygon": [
+          [
+            375,
+            470
+          ],
+          [
+            620,
+            510
+          ],
+          [
+            610,
+            625
+          ],
+          [
+            475,
+            700
+          ],
+          [
+            330,
+            590
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "siam",
+        "name": "SIAM / RATCHAPRASONG",
+        "color": "#775889",
+        "polygon": [
+          [
+            600,
+            380
+          ],
+          [
+            835,
+            385
+          ],
+          [
+            850,
+            575
+          ],
+          [
+            640,
+            615
+          ],
+          [
+            605,
+            510
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "talatnoi",
+        "name": "TALAT NOI / BANG RAK",
+        "color": "#9a704f",
+        "polygon": [
+          [
+            495,
+            670
+          ],
+          [
+            620,
+            655
+          ],
+          [
+            640,
+            805
+          ],
+          [
+            475,
+            865
+          ],
+          [
+            425,
+            765
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "sukhumvit",
+        "name": "SUKHUMVIT / ASOK / PHROM PHONG",
+        "color": "#506aa0",
+        "polygon": [
+          [
+            855,
+            400
+          ],
+          [
+            1110,
+            450
+          ],
+          [
+            1110,
+            795
+          ],
+          [
+            875,
+            795
+          ],
+          [
+            875,
+            600
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "icon",
+        "name": "KHLONG SAN",
+        "color": "#498e9d",
+        "polygon": [
+          [
+            265,
+            730
+          ],
+          [
+            350,
+            750
+          ],
+          [
+            360,
+            850
+          ],
+          [
+            355,
+            930
+          ],
+          [
+            285,
+            950
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "silom",
+        "name": "SILOM / SATHORN",
+        "color": "#507e9c",
+        "polygon": [
+          [
+            625,
+            730
+          ],
+          [
+            740,
+            625
+          ],
+          [
+            865,
+            625
+          ],
+          [
+            885,
+            875
+          ],
+          [
+            885,
+            1040
+          ],
+          [
+            465,
+            1040
+          ],
+          [
+            475,
+            870
+          ],
+          [
+            640,
+            805
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "south",
+        "name": "RIVERSIDE SOUTH",
+        "color": "#8d6859",
+        "polygon": [
+          [
+            450,
+            1030
+          ],
+          [
+            665,
+            1030
+          ],
+          [
+            665,
+            1185
+          ],
+          [
+            375,
+            1185
+          ],
+          [
+            360,
+            1150
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      },
+      {
+        "id": "paknam",
+        "name": "PHASI CHAROEN / CANALS",
+        "color": "#71965c",
+        "polygon": [
+          [
+            12,
+            620
+          ],
+          [
+            135,
+            620
+          ],
+          [
+            160,
+            805
+          ],
+          [
+            12,
+            820
+          ]
+        ],
+        "boundary_type": "gameplay_region_not_administrative"
+      }
+    ],
+    "road_nodes": {
+      "pinklao_w": [
+        135,
+        230
+      ],
+      "pinklao_e": [
+        310,
+        230
+      ],
+      "democracy": [
+        435,
+        270
+      ],
+      "lan_luang": [
+        540,
+        335
+      ],
+      "phaya_thai": [
+        680,
+        340
+      ],
+      "phetchaburi_e": [
+        825,
+        360
+      ],
+      "victory": [
+        717,
+        230
+      ],
+      "ari": [
+        725,
+        145
+      ],
+      "chatuchak": [
+        770,
+        65
+      ],
+      "palace_w": [
+        250,
+        335
+      ],
+      "palace_e": [
+        350,
+        335
+      ],
+      "pho_w": [
+        250,
+        440
+      ],
+      "pho_e": [
+        350,
+        440
+      ],
+      "flower_market": [
+        340,
+        535
+      ],
+      "memorial_e": [
+        330,
+        600
+      ],
+      "memorial_w": [
+        190,
+        650
+      ],
+      "giant_swing": [
+        405,
+        405
+      ],
+      "golden_mount": [
+        465,
+        360
+      ],
+      "national_stadium": [
+        640,
+        455
+      ],
+      "siam": [
+        710,
+        455
+      ],
+      "ratchaprasong": [
+        810,
+        455
+      ],
+      "nana": [
+        875,
+        490
+      ],
+      "asok": [
+        945,
+        550
+      ],
+      "yaowarat_w": [
+        395,
+        520
+      ],
+      "yaowarat_mid": [
+        460,
+        555
+      ],
+      "odeon": [
+        535,
+        590
+      ],
+      "charoen_mid": [
+        475,
+        490
+      ],
+      "hua_lamphong": [
+        600,
+        550
+      ],
+      "song_wat": [
+        440,
+        640
+      ],
+      "ratchawong": [
+        425,
+        575
+      ],
+      "talat_noi": [
+        540,
+        690
+      ],
+      "sam_yan": [
+        665,
+        675
+      ],
+      "banthat_thong": [
+        635,
+        595
+      ],
+      "bang_rak": [
+        535,
+        835
+      ],
+      "sala_daeng": [
+        766,
+        763
+      ],
+      "lump_nw": [
+        750,
+        650
+      ],
+      "lump_ne": [
+        855,
+        650
+      ],
+      "lump_se": [
+        855,
+        810
+      ],
+      "mahanakhon": [
+        650,
+        875
+      ],
+      "chong_nonsi": [
+        680,
+        935
+      ],
+      "sathorn_e": [
+        855,
+        895
+      ],
+      "benjakitti": [
+        925,
+        705
+      ],
+      "khlong_toei": [
+        945,
+        825
+      ],
+      "arun_road": [
+        125,
+        465
+      ],
+      "west_link": [
+        175,
+        665
+      ],
+      "icon_road": [
+        275,
+        820
+      ],
+      "icon_access": [
+        325,
+        820
+      ],
+      "taksin_w": [
+        320,
+        965
+      ],
+      "taksin_e": [
+        500,
+        965
+      ],
+      "charoen_south": [
+        480,
+        1100
+      ],
+      "asiatique_access": [
+        410,
+        1100
+      ],
+      "khaosan_w": [
+        275,
+        205
+      ],
+      "khaosan_e": [
+        365,
+        205
+      ],
+      "paknam_link": [
+        80,
+        665
+      ],
+      "paknam_access": [
+        80,
+        740
+      ],
+      "krung_thon_buri": [
+        270,
+        965
+      ],
+      "wongwian_yai": [
+        195,
+        965
+      ]
+    },
+    "road_corridors": [
+      {
+        "id": "pinklao",
+        "name": "Phra Pinklao Bridge",
+        "nodes": [
+          "pinklao_w",
+          "pinklao_e"
+        ],
+        "kind": "bridge",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "north_old",
+        "name": "Ratchadamnoen / Lan Luang connector",
+        "nodes": [
+          "pinklao_e",
+          "democracy",
+          "lan_luang"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "phetchaburi",
+        "name": "Phetchaburi corridor",
+        "nodes": [
+          "lan_luang",
+          "phaya_thai",
+          "phetchaburi_e"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "phaya",
+        "name": "Phaya Thai / Phahonyothin",
+        "nodes": [
+          "siam",
+          "phaya_thai",
+          "victory",
+          "ari",
+          "chatuchak"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "ratchadamri",
+        "name": "Ratchadamri",
+        "nodes": [
+          "phetchaburi_e",
+          "ratchaprasong",
+          "lump_nw",
+          "sala_daeng"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "old_w",
+        "name": "Maha Rat perimeter",
+        "nodes": [
+          "pinklao_e",
+          "palace_w",
+          "pho_w",
+          "flower_market"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "old_e",
+        "name": "Sanam Chai perimeter",
+        "nodes": [
+          "pinklao_e",
+          "palace_e",
+          "pho_e",
+          "flower_market"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "palace_n",
+        "name": "Na Phra Lan perimeter",
+        "nodes": [
+          "palace_w",
+          "palace_e"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "old_china",
+        "name": "Chak Phet / Phahurat connector",
+        "nodes": [
+          "flower_market",
+          "yaowarat_w"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "old_siam",
+        "name": "Bamrung Mueang / Rama I connector",
+        "nodes": [
+          "palace_e",
+          "giant_swing",
+          "golden_mount",
+          "national_stadium",
+          "siam",
+          "ratchaprasong"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "sukhumvit",
+        "name": "Phloen Chit / Sukhumvit",
+        "nodes": [
+          "ratchaprasong",
+          "nana",
+          "asok"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "memorial",
+        "name": "Memorial Bridge",
+        "nodes": [
+          "memorial_w",
+          "memorial_e"
+        ],
+        "kind": "bridge",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "memorial_approach",
+        "name": "Memorial Bridge approaches",
+        "nodes": [
+          "flower_market",
+          "memorial_e",
+          "song_wat"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "yaowarat",
+        "name": "Yaowarat Road",
+        "nodes": [
+          "yaowarat_w",
+          "yaowarat_mid",
+          "odeon"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "charoen_n",
+        "name": "Charoen Krung - Chinatown arc",
+        "nodes": [
+          "yaowarat_w",
+          "charoen_mid",
+          "hua_lamphong",
+          "odeon"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "ratchawong",
+        "name": "Ratchawong link",
+        "nodes": [
+          "charoen_mid",
+          "ratchawong",
+          "song_wat"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "songwat",
+        "name": "Song Wat / Talat Noi connector",
+        "nodes": [
+          "song_wat",
+          "talat_noi"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "charoen_s",
+        "name": "Charoen Krung - riverside",
+        "nodes": [
+          "odeon",
+          "talat_noi",
+          "bang_rak",
+          "taksin_e",
+          "charoen_south"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "ramaiv",
+        "name": "Rama IV corridor",
+        "nodes": [
+          "hua_lamphong",
+          "sam_yan",
+          "sala_daeng",
+          "lump_se",
+          "khlong_toei"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "banthat",
+        "name": "Banthat Thong / Sam Yan connector",
+        "nodes": [
+          "national_stadium",
+          "banthat_thong",
+          "sam_yan"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "silom",
+        "name": "Silom corridor",
+        "nodes": [
+          "bang_rak",
+          "mahanakhon",
+          "sala_daeng"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "narathiwas",
+        "name": "Narathiwas link",
+        "nodes": [
+          "mahanakhon",
+          "chong_nonsi"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "sathorn",
+        "name": "Sathorn corridor",
+        "nodes": [
+          "taksin_e",
+          "chong_nonsi",
+          "sathorn_e",
+          "lump_se"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "asok_ratchada",
+        "name": "Asok / Ratchadaphisek",
+        "nodes": [
+          "asok",
+          "benjakitti",
+          "khlong_toei"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "park_n",
+        "name": "Sarasin / Wireless perimeter",
+        "nodes": [
+          "lump_nw",
+          "lump_ne",
+          "lump_se"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "west",
+        "name": "Itsaraphap / west-bank connector",
+        "nodes": [
+          "pinklao_w",
+          "arun_road",
+          "west_link",
+          "icon_road",
+          "taksin_w"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "memorial_w_access",
+        "name": "West-bank bridge approach",
+        "nodes": [
+          "west_link",
+          "memorial_w"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "charoen_nakhon",
+        "name": "Charoen Nakhon / ICONSIAM access",
+        "nodes": [
+          "icon_road",
+          "icon_access"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "taksin",
+        "name": "Taksin Bridge",
+        "nodes": [
+          "taksin_w",
+          "taksin_e"
+        ],
+        "kind": "bridge",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "asiatique",
+        "name": "Asiatique road entrance",
+        "nodes": [
+          "charoen_south",
+          "asiatique_access"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "shortcut_1",
+        "name": "Workshop lane",
+        "nodes": [
+          "yaowarat_mid",
+          "song_wat"
+        ],
+        "kind": "shortcut",
+        "geography_basis": "invented_gameplay_connector"
+      },
+      {
+        "id": "shortcut_2",
+        "name": "University service lane",
+        "nodes": [
+          "banthat_thong",
+          "hua_lamphong"
+        ],
+        "kind": "shortcut",
+        "geography_basis": "invented_gameplay_connector"
+      },
+      {
+        "id": "khaosan",
+        "name": "Khao San / Chakrabongse approach",
+        "nodes": [
+          "pinklao_e",
+          "khaosan_w",
+          "khaosan_e",
+          "democracy"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "paknam",
+        "name": "Thonburi / Wat Paknam approach",
+        "nodes": [
+          "west_link",
+          "paknam_link",
+          "paknam_access",
+          "icon_road"
+        ],
+        "kind": "district",
+        "geography_basis": "real_corridor_compressed"
+      },
+      {
+        "id": "krung_thon_buri",
+        "name": "Krung Thon Buri Road / Wongwian Yai",
+        "nodes": [
+          "taksin_w",
+          "krung_thon_buri",
+          "wongwian_yai"
+        ],
+        "kind": "main",
+        "geography_basis": "real_corridor_compressed"
+      }
+    ],
+    "landmarks": [
+      {
+        "id": "chatuchak",
+        "name": "Chatuchak Market",
+        "position": [
+          758,
+          55
+        ]
+      },
+      {
+        "id": "victory",
+        "name": "Victory Monument",
+        "position": [
+          717,
+          230
+        ]
+      },
+      {
+        "id": "khaosan",
+        "name": "Khao San Road",
+        "position": [
+          290,
+          218
+        ]
+      },
+      {
+        "id": "democracy",
+        "name": "Democracy Monument",
+        "position": [
+          435,
+          270
+        ]
+      },
+      {
+        "id": "sanam",
+        "name": "Sanam Luang",
+        "position": [
+          309,
+          285
+        ]
+      },
+      {
+        "id": "palace",
+        "name": "Grand Palace / Wat Phra Kaew",
+        "position": [
+          295,
+          365
+        ]
+      },
+      {
+        "id": "pho",
+        "name": "Wat Pho",
+        "position": [
+          300,
+          425
+        ]
+      },
+      {
+        "id": "arun",
+        "name": "Wat Arun",
+        "position": [
+          160,
+          465
+        ]
+      },
+      {
+        "id": "golden",
+        "name": "Golden Mount",
+        "position": [
+          480,
+          330
+        ]
+      },
+      {
+        "id": "swing",
+        "name": "Giant Swing",
+        "position": [
+          410,
+          350.5
+        ]
+      },
+      {
+        "id": "flowers",
+        "name": "Pak Khlong Talat",
+        "position": [
+          318,
+          535
+        ]
+      },
+      {
+        "id": "mbk",
+        "name": "MBK",
+        "position": [
+          658,
+          490
+        ]
+      },
+      {
+        "id": "paragon",
+        "name": "Siam Paragon",
+        "position": [
+          730,
+          415
+        ]
+      },
+      {
+        "id": "central",
+        "name": "CentralWorld / Erawan",
+        "position": [
+          786,
+          429.8701257427382
+        ]
+      },
+      {
+        "id": "gate",
+        "name": "Chinatown Gate",
+        "position": [
+          535,
+          590
+        ]
+      },
+      {
+        "id": "traimit",
+        "name": "Wat Traimit",
+        "position": [
+          564,
+          574
+        ]
+      },
+      {
+        "id": "hua",
+        "name": "Hua Lamphong",
+        "position": [
+          600,
+          540
+        ]
+      },
+      {
+        "id": "food",
+        "name": "Banthat Thong",
+        "position": [
+          635,
+          595
+        ]
+      },
+      {
+        "id": "icon",
+        "name": "ICONSIAM",
+        "position": [
+          325,
+          820
+        ]
+      },
+      {
+        "id": "park",
+        "name": "Lumphini Park",
+        "position": [
+          803.5,
+          729
+        ]
+      },
+      {
+        "id": "terminal",
+        "name": "Terminal 21 / Asok",
+        "position": [
+          918,
+          499
+        ]
+      },
+      {
+        "id": "benjakitti",
+        "name": "Benjakitti Park",
+        "position": [
+          904,
+          710
+        ]
+      },
+      {
+        "id": "mahanakhon",
+        "name": "Mahanakhon",
+        "position": [
+          652,
+          875
+        ]
+      },
+      {
+        "id": "asiatique",
+        "name": "Asiatique",
+        "position": [
+          410,
+          1100
+        ]
+      },
+      {
+        "id": "paknam",
+        "name": "Wat Paknam / Big Buddha",
+        "position": [
+          55,
+          722
+        ]
+      },
+      {
+        "id": "baiyoke",
+        "name": "Baiyoke Tower II",
+        "position": [
+          755,
+          365
+        ]
+      },
+      {
+        "id": "state",
+        "name": "State Tower / Lebua",
+        "position": [
+          550,
+          895
+        ]
+      }
+    ],
+    "notes": [
+      "Road polylines are compressed corridor intent. Not surveyed alignments or final lane geometry.",
+      "Unmarked intersections do not imply road connections. Split every at-grade crossing into graph nodes during graybox.",
+      "Exact turns, lane directions, road widths, junction tangents and access spurs require local reference and driving validation.",
+      "All areas remain drive-accessible. Discovery reveals knowledge, not invisible city locks.",
+      "No driving through temple courts, park interiors, pedestrian market lanes or expressways.",
+      "Passenger ferries are scenery, not vehicle crossings. Bridges are the driving crossings.",
+      "Roads tagged invented_gameplay_connector must remain explicitly fictional."
+    ],
+    "canals": [
+      {
+        "name": "Khlong Bangkok Yai / Phasi Charoen (compressed)",
+        "centerline": [
+          [
+            250,
+            640
+          ],
+          [
+            125,
+            645
+          ],
+          [
+            65,
+            655
+          ],
+          [
+            42,
+            720
+          ],
+          [
+            80,
+            785
+          ]
+        ],
+        "design_width": 8
+      }
+    ]
+  },
+  "facadeApproaches": {
+    "palace": {
+      "feature": [
+        0,
+        6,
+        -100.65
+      ],
+      "outward": 3.141592653589793,
+      "width": 60,
+      "depth": 50,
+      "road": "palace_n",
+      "note": "North visitor gate toward the public Na Phra Lan curbside stop."
+    },
+    "swing": {
+      "feature": [
+        0,
+        15,
+        -58
+      ],
+      "outward": 3.141592653589793,
+      "width": 58,
+      "depth": 60,
+      "road": "sao-chingcha",
+      "note": "North public approach to the Giant Swing plaza, with Wat Suthat behind the swing."
+    },
+    "hua": {
+      "feature": [
+        0,
+        19,
+        30
+      ],
+      "outward": 0,
+      "width": 80,
+      "depth": 39,
+      "road": "ramaiv",
+      "note": "Historic south facade toward Rama IV; compressed diagonal junction retained. MRT BL28 is underground."
+    },
+    "golden": {
+      "feature": [
+        0,
+        46,
+        0
+      ],
+      "outward": 1.5707963267948966,
+      "width": 30,
+      "depth": 16,
+      "road": "boripat",
+      "note": "Temple hill seen from Boripat; lower courts remain pedestrian."
+    },
+    "traimit": {
+      "feature": [
+        0,
+        20,
+        26
+      ],
+      "outward": 0,
+      "width": 56,
+      "depth": 24,
+      "road": "tri-mit",
+      "note": "Golden Buddha mondop and south Tri Mit approach, northeast of Odeon."
+    },
+    "democracy": {
+      "feature": [
+        0,
+        20,
+        0
+      ],
+      "outward": 0,
+      "width": 42,
+      "depth": 20,
+      "road": "democracy-circle",
+      "note": "Civic island in the live clockwise traffic ring."
+    },
+    "gate": {
+      "feature": [
+        0,
+        13,
+        4.3
+      ],
+      "outward": 0,
+      "width": 30,
+      "depth": 10,
+      "road": "odeon",
+      "note": "Chinese gateway on Odeon island; Yaowarat leaves toward the west."
+    },
+    "pho": {
+      "feature": [
+        8,
+        7,
+        68
+      ],
+      "outward": 0,
+      "width": 34,
+      "depth": 16,
+      "road": "old_w",
+      "note": "Retained Wat Pho compound and south gate; river and Tha Tien west."
+    },
+    "paragon": {
+      "feature": [
+        0,
+        15,
+        34
+      ],
+      "outward": 0,
+      "width": 78,
+      "depth": 36,
+      "road": "old_siam",
+      "note": "South retail approach and Siam pedestrian frontage."
+    },
+    "siam-center": {
+      "feature": [
+        0,
+        13,
+        28
+      ],
+      "outward": 0,
+      "width": 146,
+      "depth": 34,
+      "road": "old_siam",
+      "note": "South Rama I frontage; Discovery west of Center."
+    },
+    "mbk": {
+      "feature": [
+        0,
+        14,
+        30
+      ],
+      "outward": 0,
+      "width": 112,
+      "depth": 32,
+      "road": "old_siam",
+      "note": "North Rama I frontage; south and east street elevations retained."
+    },
+    "central": {
+      "feature": [
+        0,
+        16,
+        22
+      ],
+      "outward": 0,
+      "width": 115,
+      "depth": 40,
+      "road": "ratchadamri",
+      "note": "East Ratchadamri shopping frontage after owner rotation."
+    },
+    "terminal": {
+      "feature": [
+        -27,
+        12,
+        34
+      ],
+      "outward": 0,
+      "width": 72,
+      "depth": 30,
+      "road": "sukhumvit",
+      "note": "South Sukhumvit frontage; Asok-side vehicle arrival remains separate."
+    },
+    "emporium": {
+      "feature": [
+        -16,
+        5,
+        50
+      ],
+      "outward": 0,
+      "width": 68,
+      "depth": 20,
+      "road": "sukhumvit-east",
+      "note": "North shopping facade south of Sukhumvit."
+    },
+    "emquartier": {
+      "feature": [
+        0,
+        17,
+        49
+      ],
+      "outward": 0,
+      "width": 78,
+      "depth": 24,
+      "road": "sukhumvit-east",
+      "note": "South frontage north of Sukhumvit; several real entrances."
+    },
+    "emsphere": {
+      "feature": [
+        0,
+        8,
+        41
+      ],
+      "outward": 0,
+      "width": 64,
+      "depth": 20,
+      "road": "sukhumvit-east",
+      "note": "North shopping frontage; Soi 22 drop-off separate."
+    },
+    "icon": {
+      "feature": [
+        32.5,
+        14,
+        0
+      ],
+      "outward": 1.5707963267948966,
+      "width": 56,
+      "depth": 22,
+      "note": "East river elevation. Charoen Nakhon vehicle entrance remains on west side."
+    },
+    "river-city": {
+      "feature": [
+        0,
+        11,
+        24
+      ],
+      "outward": 0,
+      "width": 76,
+      "depth": 18,
+      "note": "West river elevation; east street entrance separately recorded."
+    },
+    "oriental": {
+      "feature": [
+        0,
+        19,
+        36
+      ],
+      "outward": 0,
+      "width": 90,
+      "depth": 18,
+      "note": "West-facing river terrace, distinct from Oriental Avenue arrival."
+    },
+    "shangri": {
+      "feature": [
+        0,
+        22,
+        38
+      ],
+      "outward": 0,
+      "width": 96,
+      "depth": 18,
+      "note": "River-facing west elevation; separate street driveway."
+    },
+    "peninsula": {
+      "feature": [
+        0,
+        22,
+        28
+      ],
+      "outward": 0,
+      "width": 62,
+      "depth": 18,
+      "note": "East river-facing W-profile and terrace."
+    },
+    "hilton": {
+      "feature": [
+        0,
+        24,
+        22
+      ],
+      "outward": 0,
+      "width": 43,
+      "depth": 16,
+      "note": "East river elevation; preserve ThreeSixty silhouette."
+    },
+    "four-seasons": {
+      "feature": [
+        0,
+        18,
+        37
+      ],
+      "outward": 0,
+      "width": 150,
+      "depth": 15,
+      "note": "West river courts, with east road arrival."
+    },
+    "capella": {
+      "feature": [
+        0,
+        16,
+        31
+      ],
+      "outward": 0,
+      "width": 78,
+      "depth": 16,
+      "note": "West river villas, east street arrival."
+    },
+    "anantara": {
+      "feature": [
+        0,
+        12,
+        38
+      ],
+      "outward": 0,
+      "width": 82,
+      "depth": 17,
+      "note": "East river garden, west Charoen Nakhon approach."
+    }
+  },
+  "infrastructure": {
+    "mrt": [
+      {
+        "id": "sukhumvit-mrt",
+        "name": "Sukhumvit",
+        "thai": "สุขุมวิท",
+        "code": "BL22",
+        "design": [
+          953,
+          540
+        ],
+        "interchange": "asok",
+        "introduced": 29,
+        "district": "Watthana",
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=22"
+        ]
+      },
+      {
+        "id": "silom-mrt",
+        "name": "Si Lom",
+        "thai": "สีลม",
+        "code": "BL26",
+        "design": [
+          771,
+          781
+        ],
+        "interchange": "sala-daeng",
+        "introduced": 29,
+        "district": "Bang Rak",
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=26"
+        ]
+      },
+      {
+        "id": "hua-lamphong-mrt",
+        "name": "Hua Lamphong",
+        "thai": "หัวลำโพง",
+        "code": "BL28",
+        "design": [
+          605,
+          561
+        ],
+        "introduced": 29,
+        "district": "Pathum Wan",
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28"
+        ]
+      },
+      {
+        "id": "chatuchak-mrt",
+        "name": "Chatuchak Park",
+        "thai": "สวนจตุจักร",
+        "code": "BL13",
+        "design": [
+          779,
+          67
+        ],
+        "interchange": "mo-chit",
+        "introduced": 29,
+        "district": "Chatuchak",
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=13"
+        ]
+      },
+      {
+        "id": "sanam-chai-mrt",
+        "name": "Sanam Chai",
+        "thai": "สนามไชย",
+        "code": "BL31",
+        "design": [
+          321,
+          465
+        ],
+        "introduced": 34,
+        "district": "Phra Nakhon",
+        "coordinate": {
+          "lat": 13.7443259,
+          "lon": 100.4946239
+        },
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=31",
+          "https://www.openstreetmap.org/copyright"
+        ],
+        "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit."
+      },
+      {
+        "id": "sam-yot-mrt",
+        "name": "Sam Yot",
+        "thai": "สามยอด",
+        "code": "BL30",
+        "design": [
+          443,
+          430
+        ],
+        "introduced": 34,
+        "district": "Phra Nakhon",
+        "coordinate": {
+          "lat": 13.7470004,
+          "lon": 100.5023022
+        },
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=30",
+          "https://www.openstreetmap.org/copyright"
+        ],
+        "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit."
+      },
+      {
+        "id": "wat-mangkon-mrt",
+        "name": "Wat Mangkon",
+        "thai": "วัดมังกร",
+        "code": "BL29",
+        "design": [
+          448,
+          523
+        ],
+        "introduced": 34,
+        "district": "Samphanthawong",
+        "coordinate": {
+          "lat": 13.7422095,
+          "lon": 100.5099097
+        },
+        "sources": [
+          "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
+          "https://www.openstreetmap.org/copyright"
+        ],
+        "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit."
+      }
+    ],
+    "piers": [
+      {
+        "id": "arun",
+        "district": "Bangkok Yai",
+        "bank": "west",
+        "streets": [
+          "Wang Doem Road"
+        ],
+        "owner": "arun",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "pho",
+        "district": "Phra Nakhon",
+        "bank": "east",
+        "streets": [
+          "Maha Rat Road",
+          "Thai Wang Road"
+        ],
+        "owner": "pho",
+        "coordinate": {
+          "lat": 13.7459776,
+          "lon": 100.4900083
+        },
+        "sources": [
+          "https://www.openstreetmap.org/node/249403520"
+        ]
+      },
+      {
+        "id": "icon",
+        "district": "Khlong San",
+        "bank": "west",
+        "streets": [
+          "Charoen Nakhon Road"
+        ],
+        "owner": "icon",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "asiatique",
+        "district": "Bang Kho Laem",
+        "bank": "east",
+        "streets": [
+          "Charoen Krung Road"
+        ],
+        "owner": "asiatique",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "river-city",
+        "district": "Samphanthawong",
+        "bank": "east",
+        "streets": [
+          "Charoen Krung Soi 24",
+          "Si Phraya"
+        ],
+        "owner": "river-city",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "oriental",
+        "district": "Bang Rak",
+        "bank": "east",
+        "streets": [
+          "Oriental Avenue",
+          "Charoen Krung Road"
+        ],
+        "owner": "oriental",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "shangri",
+        "district": "Bang Rak",
+        "bank": "east",
+        "streets": [
+          "Soi Wat Suan Phlu",
+          "Charoen Krung Road"
+        ],
+        "owner": "shangri",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "hilton",
+        "district": "Khlong San",
+        "bank": "west",
+        "streets": [
+          "Charoen Nakhon Road"
+        ],
+        "owner": "hilton",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "peninsula",
+        "district": "Khlong San",
+        "bank": "west",
+        "streets": [
+          "Charoen Nakhon Road"
+        ],
+        "owner": "peninsula",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      },
+      {
+        "id": "tha-chang",
+        "district": "Phra Nakhon",
+        "bank": "east",
+        "streets": [
+          "Maha Rat Road",
+          "Na Phra Lan Road"
+        ],
+        "owner": "palace",
+        "coordinate": {
+          "lat": 13.7525602,
+          "lon": 100.4882707
+        },
+        "sources": [
+          "https://www.openstreetmap.org/node/88122604"
+        ]
+      },
+      {
+        "id": "sathorn",
+        "district": "Bang Rak",
+        "bank": "east",
+        "streets": [
+          "Charoen Krung Road",
+          "Saphan Taksin interchange"
+        ],
+        "owner": "bts:saphan-taksin",
+        "coordinate": {
+          "lat": 13.7183726,
+          "lon": 100.5125661
+        },
+        "sources": [
+          "https://www.openstreetmap.org/node/4566970962"
+        ]
+      },
+      {
+        "id": "songwat",
+        "district": "Samphanthawong",
+        "bank": "east",
+        "streets": [
+          "Song Wat Road"
+        ],
+        "owner": "gate",
+        "coordinate": null,
+        "sources": [
+          "https://www.chaophrayaexpressboat.com/"
+        ]
+      }
+    ]
+  }
+}

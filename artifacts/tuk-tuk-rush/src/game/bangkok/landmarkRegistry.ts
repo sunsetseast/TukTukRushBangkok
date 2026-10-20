@@ -1,3 +1,4 @@
+import {CITY_MODEL,canonicalFeaturePoint} from './cityModel';
 import type { District, Obstacle, Point } from "../types";
 import { GEOGRAPHIC_REFERENCES } from "./geography";
 import { REAL_PLACES } from "./realPlaces";
@@ -88,9 +89,9 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         : geo?.coordinate,
       coordinateAccuracy:
         hua || geo ? "approximate-site-center" : "not-verified",
-      world: l.id==='swing' ? {x:position.x,z:position.z-58} : { ...position },
+      world: canonicalFeaturePoint(l.id!,position,l.yaw??0),
       modelOrigin:{...position},
-      map: { x: position.x / 4 + 500, y: (position.z-(l.id==='swing'?58:0)) / 4 + 600 },
+      map: { x: canonicalFeaturePoint(l.id!,position,l.yaw??0).x / 4 + 500, y: canonicalFeaturePoint(l.id!,position,l.yaw??0).z / 4 + 600 },
       rotation: l.yaw ?? 0,
       footprints: solids.map((o) => ({
         x: o.x,
@@ -186,8 +187,9 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
       id: s.id,
       name: `MRT ${s.name} (${s.code})`,
       category: "underground-mrt-entrance",
-      district: "Transit corridor",
-      coordinateAccuracy: "not-verified",
+      district: s.district,
+      geographicReference: CITY_MODEL.infrastructure.mrt.find(m=>m.id===s.id && 'coordinate' in m)?.coordinate,
+      coordinateAccuracy: "approximate-site-center",
       world: { x: o.x, z: o.z },
       map: { x: o.x / 4 + 500, y: o.z / 4 + 600 },
       rotation: o.yaw ?? 0,
@@ -199,7 +201,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
       visibilityCorridors: [],
       neighbors: s.interchange ? [`bts:${s.interchange}`] : [],
       roadRelationships: ["Surface entrance only; no elevated MRT guideway"],
-      references: ["https://metro.bemplc.co.th/Line-Maps"],
+      references: s.sources,
       confidence: "inherited-reference",
       compression:
         "Surface canopy placement, not a model of the underground station.",
@@ -227,7 +229,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     },
   ]) {
     const owner = entries.find((e) => e.id === sub.owner)!;
-    const world = localPoint(owner.world, owner.rotation, sub.x, sub.z);
+    const world = localPoint(owner.modelOrigin??owner.world, owner.rotation, sub.x, sub.z);
     entries.push({
       ...owner,
       id: sub.id,
@@ -273,30 +275,20 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     compression:
       "Existing named Yaowarat facade override. Exact real property position and historical identity require review.",
   });
-  for (const pier of riverPiers(d))
+  for (const pier of riverPiers(d)) {
+    const fact=CITY_MODEL.infrastructure.piers.find(p=>p.id===pier.id);
+    if(!fact)throw Error('Pier has no canonical metadata: '+pier.id);
     entries.push({
-      ...parent,
-      id: `pier:${pier.id}`,
-      name: pier.name,
-      category: "river-pier",
-      world: { x: pier.x, z: pier.z },
-      map: { x: pier.x / 4 + 500, y: pier.z / 4 + 600 },
-      rotation: pier.yaw,
-      footprints: [],
-      height: undefined,
-      geographicReference: undefined,
-      coordinateAccuracy: "not-verified",
-      facade: undefined,
-      mainEntrance: undefined,
-      vehicleAccess: undefined,
-      pedestrianAccess: undefined,
-      protectedParcels: [],
-      visibilityCorridors: [],
-      neighbors: [pier.id],
-      references: [],
-      confidence: "unverified-this-pass",
-      compression:
-        "Existing physical/map pier anchor derived from the river edge; exact named pier identity and footprint need a geographic survey.",
+      id:`pier:${pier.id}`,name:pier.name,category:'river-pier',district:fact.district,
+      world:{x:pier.x,z:pier.z},map:{x:pier.x/4+500,y:pier.z/4+600},rotation:pier.yaw,
+      geographicReference:fact.coordinate??undefined,
+      coordinateAccuracy:fact.coordinate?'approximate-site-center':'not-verified',
+      footprints:[],protectedParcels:[],visibilityCorridors:[],neighbors:[fact.owner],
+      roadRelationships:[...fact.streets,`${fact.bank} bank of Chao Phraya`],references:fact.sources,
+      confidence:fact.coordinate?'inherited-reference':'unverified-this-pass',
+      compression:'Named landing context is pier-specific. Emitted position is fitted to the compressed river edge, not surveyed dock geometry.',
+      visualQa:'pending-render-review',
     });
+  }
   return entries;
 }

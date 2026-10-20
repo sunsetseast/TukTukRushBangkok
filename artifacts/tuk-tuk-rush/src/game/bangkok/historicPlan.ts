@@ -1,14 +1,15 @@
+import {approvedDesign,approvedSite} from './cityModel';
 import type { CivicSegment } from './civicRoads';
 import type { District, Obstacle, Point } from '../types';
 
 /** Research observations live in geography.ts. These controls are an authored
  * arcade compression, never surveyed outlines. +x east; +z south. */
 export const HISTORIC_PLAN = {
-  palace: [295,365], pho: [300,425], swing: [410,365],
-  golden: [480,330], democracy: [435,270], traimit: [564,574],
-  hua: [600,528], gate: [535,590],
+  palace: approvedDesign("palace"), pho: approvedDesign("pho"), swing: approvedDesign("swing"),
+  golden: approvedDesign("golden"), democracy: approvedDesign("democracy"), traimit: approvedDesign("traimit"),
+  hua: approvedDesign("hua"), gate: approvedDesign("gate"),
   palaceScale: 1.5,
-  swingFeatureZ: -58,
+  swingFeatureZ: approvedSite("swing")!.featureOffset.z,
   democracyRadius: 38,
   democracyWidth: 16,
 } as const;

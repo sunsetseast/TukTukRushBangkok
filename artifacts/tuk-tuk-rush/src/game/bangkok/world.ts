@@ -1,3 +1,4 @@
+import {approvedOrigin,assertApprovedCityGeometry} from './cityModel';
 import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland, isHistoricWaterfront } from './historicPlan';
 import { placeHuaLamphong } from './huaLamphong';
 import { completeLandmarkContext } from './landmarkContext';
@@ -29,7 +30,7 @@ import {
   siteObstacle,
 } from "./authoredSites";
 import { placeRealArchitecture } from "./realPlaces";
-import layout from "./layout.json";
+import layout from "./cityLayout";
 import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
 import { planTropicalPlants } from "./tropicalPlan";
 import { planMrtEntrances } from "./mrtSurface";
@@ -443,10 +444,10 @@ export function createBangkokWorld(): District {
         });
       }
     } else {
-      for (const distance of [0, 30, 50, 75, 100, 140, 180]) {
-        for (let direction = 0; direction < 16; direction++) {
+      for (const distance of approvedOrigin(l.id!) ? [0] : [0, 30, 50, 75, 100, 140, 180]) {
+        for (let direction = 0; direction < (approvedOrigin(l.id!) ? 1 : 16); direction++) {
           const angle = (direction * Math.PI * 2) / 16;
-          const candidate = {
+          const candidate = approvedOrigin(l.id!) ?? {
             x: l.x + Math.cos(angle) * distance,
             z: l.z + Math.sin(angle) * distance,
           };
@@ -544,7 +545,7 @@ export function createBangkokWorld(): District {
   placeRealArchitecture(world);
   registerExistingSites(world);
   world.transit = createRailNetwork(world);
-  planMrtEntrances(world);
+  planMrtEntrances(world,true);
   prepareLandmarkParcels(world, false);
   // Access roads were appended after public graph sampling.
   for (const n of nodes) byId.set(n.id, n);
@@ -675,6 +676,7 @@ export function createBangkokWorld(): District {
   // Establish the corrected public footprints before every later infill pass.
   // The original base-row enumeration is retained above: its legacy i%3 rear
   // row must not reshuffle unrelated Bangkok blocks after a local exclusion.
+  planMrtEntrances(world);
   prepareLandmarkParcels(world);
   const invalidHistoric = new Set(world.buildings.filter(b=>parcelConflicts(world,b).length));
   world.buildings = world.buildings.filter(b=>!invalidHistoric.has(b));
@@ -781,6 +783,7 @@ export function createBangkokWorld(): District {
   planEnvironment(world);
   planLandscape(world);
   planTropicalPlants(world);
+  assertApprovedCityGeometry(world);
   return world;
 }
 

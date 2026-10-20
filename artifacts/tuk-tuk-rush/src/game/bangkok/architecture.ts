@@ -55,6 +55,9 @@ export function emitDistrictArchitecture(
       put(0,.06,0,b.w+1,.1,b.d+1,'#bcb093','concrete');
       put(0,H-.25,back,b.w+.4,.35,.6,'#eee1bd');
       put(0,H*.5,back,b.w,.22,.4,'#e3d2aa');
+      // A continuous tiled pitched roof belongs to the low-rise trading block,
+      // rather than an unrelated Thai temple roof on every commercial bay.
+      if(b.w>12&&b.d>12)emit({x:b.x,z:b.z,y:H+.05,w:b.w+.2,h:1.65,d:b.d+.4,yaw:b.yaw??0,color:'#806148',surface:'tile',shape:'gable',layer:'core'});
       for(let u=-b.w/2+2.8;u<b.w/2-1.5;u+=5.2) {
         put(u,H*.73,back-.1,2.4,H*.27,.17,'#365346','wood');
         for(const side of [-1,1])put(u+side*1.3,H*.73,back-.22,.16,H*.3,.22,'#efdfb9');
@@ -68,7 +71,7 @@ export function emitDistrictArchitecture(
       }
     }
     if (!isHistoricWaterfront(p.parcel) && emitBlockArchitecture(p.parcel, emit)) continue;
-    if (cinematicParcel(p)) {
+    if (cinematicParcel(p) || isHistoricWaterfront(p.parcel)) {
       emitYaowaratFacade(p, emit);
       continue;
     }

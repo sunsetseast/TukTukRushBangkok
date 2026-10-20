@@ -1,18 +1,11 @@
+import {CITY_MODEL} from './cityModel';
 import type { Point } from "../types";
 import type { CivicSegment } from "./civicRoads";
 
 /** Authoritative local design controls. All consumers convert with the same
  * north-up 4:1 transform. WGS84 observations stay in geography.ts; these are
  * explicit miniature-city adjustments, not purported surveyed coordinates. */
-export const MASTER_PLAN = {
-  version: 3,
-  bounds: { east: 1120 },
-  phromPhong: [1030, 610] as const,
-  north: [[770,65],[747,107],[725,145],[728,187]] as const,
-  sukhumvit: [[810,455],[875,490],[945,550],[990,580],[1030,610],[1090,650]] as const,
-  malls: { emporium: [1043,644], emquartier: [1043,575], emsphere: [960,613] },
-  benchasiri: [1010,650],
-} as const;
+export const MASTER_PLAN = {...CITY_MODEL.compression.masterPlan, phromPhong:CITY_MODEL.compression.masterPlan.phromPhong as [number,number]};
 export const planPoint = (p: readonly number[]): Point => ({x:(p[0]!-500)*4,z:(p[1]!-600)*4});
 
 /** Runs BEFORE intersection splitting, rendering, collision, traffic and route
@@ -50,9 +43,5 @@ export function reconstructMasterPlanRoads(segments: CivicSegment[], controls: R
   controls.phrom_phong=planPoint(MASTER_PLAN.phromPhong);
 }
 
-export const MRT_ENTRANCES = [
-  {id:"sukhumvit-mrt",name:"Sukhumvit",thai:"สุขุมวิท",code:"BL22",design:[953,540],interchange:"asok"},
-  {id:"silom-mrt",name:"Si Lom",thai:"สีลม",code:"BL26",design:[771,781],interchange:"sala-daeng"},
-  {id:"hua-lamphong-mrt",name:"Hua Lamphong",thai:"หัวลำโพง",code:"BL28",design:[605,561],interchange:undefined},
-  {id:"chatuchak-mrt",name:"Chatuchak Park",thai:"สวนจตุจักร",code:"BL13",design:[779,67],interchange:"mo-chit"},
-] as const;
+export type MrtSpecification={id:string;name:string;thai:string;code:string;design:number[];interchange?:string;introduced:number;district:string;sources:string[]};
+export const MRT_ENTRANCES:MrtSpecification[] = CITY_MODEL.infrastructure.mrt;

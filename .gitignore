@@ -48,3 +48,6 @@ Thumbs.db
 .cache/
 .local/
 /generated-artifacts/
+
+# Raw OSM API responses contain contributor metadata; retain stripped derivatives.
+docs/qa/world-blueprint/sources/*.osm

@@ -1,4 +1,5 @@
 import { DISTRICT_SIGN_ENTRIES, districtSigns } from './districtSigns';
+import {CURATED_SIGNS,curatedSignKey} from './curatedSigns';
 import {completeStreetFabric} from './streetFabric';
 import {cityPlaces} from './cityPlaces';
 import * as T from "three";
@@ -40,7 +41,7 @@ export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS).flatMap(
       style: v.style,
       variant: i,
     })),
-).concat(DISTRICT_SIGN_ENTRIES, [{key:'odeon-inscription',text:'聖壽無疆',style:'heritage',variant:0}]);
+).concat(DISTRICT_SIGN_ENTRIES,CURATED_SIGNS, [{key:'odeon-inscription',text:'聖壽無疆',style:'heritage',variant:0}]);
 export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
     batch = new StaticBatch(),
@@ -103,7 +104,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   for (const p of designs.filter(p=>!p.parcel.artRole))
     for (const a of p.bays) {
       if (a.trade === "residence" || a.trade === "closed") continue;
-      const i = atlas.index.get(`${a.trade}:${a.sign}`)!;
+      const i = atlas.index.get(curatedSignKey(p,a)??`${a.trade}:${a.sign}`)!;
       const W = a.width - 0.16,
         sw = Math.min(W - 0.55, a.type === "workshop" ? W * 0.65 : W - 0.55);
       place(p, a.u, 4.32, a.front + 0.558, sw - 0.1, 0.95, i);

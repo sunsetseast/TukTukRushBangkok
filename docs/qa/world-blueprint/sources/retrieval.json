@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-20",
+  "licence": "ODbL-1.0",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "requests": [
+    {
+      "id": "oldtown",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.489,13.738,100.505,13.758",
+      "bytes": 15840144,
+      "status": "retrieved"
+    },
+    {
+      "id": "siam",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.525,13.74,100.55,13.752",
+      "bytes": 8505887,
+      "status": "retrieved"
+    },
+    {
+      "id": "riverside",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.507,13.71,100.517,13.733",
+      "bytes": 6171309,
+      "status": "retrieved"
+    },
+    {
+      "id": "sukhumvit",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.557,13.725,100.574,13.741",
+      "bytes": 6285170,
+      "status": "retrieved"
+    },
+    {
+      "id": "silom",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.531,13.722,100.548,13.735",
+      "bytes": 8688622,
+      "status": "retrieved"
+    },
+    {
+      "id": "north",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.53,13.8,100.558,13.813",
+      "bytes": 5673144,
+      "status": "retrieved"
+    },
+    {
+      "id": "thonburi",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.468,13.718,100.477,13.725",
+      "bytes": 1400034,
+      "status": "retrieved"
+    }
+  ]
+}

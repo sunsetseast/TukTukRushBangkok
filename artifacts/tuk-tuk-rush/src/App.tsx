@@ -1,11 +1,12 @@
 import type { CSSProperties } from "react";
 import { usePreferences } from "./game/ui/preferences";
 import { learn } from "./game/ui/Onboarding";
-import bangkokLayout from "./game/bangkok/layout.json";
+import bangkokLayout from "./game/bangkok/cityLayout";
 import { DriverCareer } from "./game/Career";
 import { Inspection } from "./game/Inspection";
 import {
   Component,
+  lazy, Suspense,
   useCallback,
   useEffect,
   useRef,
@@ -20,6 +21,7 @@ import { Controls } from "./game/Controls";
 import { PauseMenu, Results, Settings, Title } from "./game/Menus";
 import { sfx } from "./game/audio";
 
+const CityInspector=import.meta.env.DEV?lazy(()=>import('./game/bangkok/CityInspector')):null;
 let engineSingleton: GameEngine | null = null;
 function getEngine() {
   if (!engineSingleton)
@@ -84,6 +86,7 @@ function App() {
   const [frame, setFrame] = useState<Frame>(() => read(engine));
   const [careerOpen, setCareerOpen] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
+  const [cityInspect,setCityInspect]=useState(import.meta.env.DEV&&new URLSearchParams(location.search).has('inspect'));
   const resumeAfterMap = useRef(false);
   const [prefs, updatePreferences] = usePreferences();
   const audio = prefs.audio;
@@ -297,6 +300,8 @@ function App() {
         />
       )}
       {cameraReturn && <div className="tt-camera-return" aria-hidden="true" />}
+      {CityInspector&&<button data-testid="button-city-inspector" style={{position:'fixed',left:8,bottom:8,zIndex:50}} onClick={()=>{engine.pause();setCityInspect(true);}}>Inspect city</button>}
+      {CityInspector&&cityInspect&&<Suspense fallback={null}><CityInspector d={engine.model.district} onClose={()=>setCityInspect(false)}/></Suspense>}
       {mapOpen && (
         <WorldMap d={engine.model.district} f={frame} onClose={closeMap} />
       )}
