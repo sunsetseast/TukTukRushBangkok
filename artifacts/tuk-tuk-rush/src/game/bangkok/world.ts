@@ -1,4 +1,4 @@
-import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland } from './historicPlan';
+import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland, isHistoricWaterfront } from './historicPlan';
 import { placeHuaLamphong } from './huaLamphong';
 import { completeLandmarkContext } from './landmarkContext';
 import {
@@ -33,7 +33,7 @@ import layout from "./layout.json";
 import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
 import { planTropicalPlants } from "./tropicalPlan";
 import { planMrtEntrances } from "./mrtSurface";
-import { prepareLandmarkParcels } from './landmarkParcels';
+import { prepareLandmarkParcels, parcelConflicts } from './landmarkParcels';
 import { planLandscape } from "./landscape";
 import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
@@ -545,7 +545,7 @@ export function createBangkokWorld(): District {
   registerExistingSites(world);
   world.transit = createRailNetwork(world);
   planMrtEntrances(world);
-  prepareLandmarkParcels(world);
+  prepareLandmarkParcels(world, false);
   // Access roads were appended after public graph sampling.
   for (const n of nodes) byId.set(n.id, n);
   // Streets are assembled as nearly attached commercial rows, not isolated
@@ -672,6 +672,13 @@ export function createBangkokWorld(): District {
     world.buildings.push(infill);
     world.obstacles.push(infill);
   }
+  // Establish the corrected public footprints before every later infill pass.
+  // The original base-row enumeration is retained above: its legacy i%3 rear
+  // row must not reshuffle unrelated Bangkok blocks after a local exclusion.
+  prepareLandmarkParcels(world);
+  const invalidHistoric = new Set(world.buildings.filter(b=>parcelConflicts(world,b).length));
+  world.buildings = world.buildings.filter(b=>!invalidHistoric.has(b));
+  world.obstacles = world.obstacles.filter(b=>!invalidHistoric.has(b));
   // Mall approach planters are solid furniture, validated independently of
   // the original mall plot. The broad road/river contract remains unchanged.
   for (const l of landmarks.filter((l) => l.kind === "mall"))
@@ -763,6 +770,12 @@ export function createBangkokWorld(): District {
   planUrbanBlocks(world);
   completeLandmarkContext(world);
   completeStreetFabric(world);
+  // Refine only the researched western Maha Rat commercial band. Keep every
+  // trading footprint and its collision; remove no buildings for a camera ray.
+  for (const b of world.buildings) if (isHistoricWaterfront(b)) {
+    b.height = Math.min(b.height, 8.4);
+    b.color = '#e1c58e';
+  }
   planConvenienceStores(world);
   world.obstacles.push(...bridgeBarriers(world));
   planEnvironment(world);

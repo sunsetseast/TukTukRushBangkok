@@ -1,0 +1,240 @@
+{
+  "pass": true,
+  "groups": 33,
+  "expected": 33,
+  "records": [
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "elapsedMs": 161,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "elapsedMs": 2834,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "elapsedMs": 4074,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "elapsedMs": 1132,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "elapsedMs": 344,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "elapsedMs": 433,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:environment",
+      "command": "node --import tsx scripts/check-environment-art.ts",
+      "exitCode": 0,
+      "elapsedMs": 88243,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:cityscapes",
+      "command": "node --import tsx scripts/check-cityscapes.ts",
+      "exitCode": 0,
+      "elapsedMs": 98441,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "exitCode": 0,
+      "elapsedMs": 234497,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:open-bangkok",
+      "command": "node --import tsx scripts/check-open-bangkok.ts",
+      "exitCode": 0,
+      "elapsedMs": 30162,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:startup",
+      "command": "node scripts/check-startup.mjs",
+      "exitCode": 0,
+      "elapsedMs": 9658,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:definitive",
+      "command": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
+      "exitCode": 0,
+      "elapsedMs": 92338,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:interface",
+      "command": "node --import tsx scripts/check-navigation-ui.ts",
+      "exitCode": 0,
+      "elapsedMs": 37466,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "command": "node --import tsx scripts/check-graphics-foundation.ts",
+      "exitCode": 0,
+      "elapsedMs": 762,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 0,
+      "elapsedMs": 84808,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:corrections",
+      "command": "node --import tsx scripts/check-corrections.ts",
+      "exitCode": 0,
+      "elapsedMs": 47139,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:cinematic",
+      "command": "node --import tsx scripts/check-cinematic.ts",
+      "exitCode": 0,
+      "elapsedMs": 69155,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:career",
+      "command": "node --import tsx scripts/check-career.ts",
+      "exitCode": 0,
+      "elapsedMs": 108459,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:city-fabric",
+      "command": "node --import tsx scripts/check-city-fabric.ts",
+      "exitCode": 0,
+      "elapsedMs": 42376,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:real-architecture",
+      "command": "node --import tsx scripts/check-real-architecture.ts",
+      "exitCode": 0,
+      "elapsedMs": 39706,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:authored-drives",
+      "command": "node --import tsx scripts/check-authored-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 30523,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:authored-sites",
+      "command": "node --import tsx scripts/check-authored-sites.ts",
+      "exitCode": 0,
+      "elapsedMs": 67469,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:commercial-districts",
+      "command": "node --import tsx scripts/check-commercial-districts.ts",
+      "exitCode": 0,
+      "elapsedMs": 36509,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:civic-roads",
+      "command": "node --import tsx scripts/check-civic-roads.ts",
+      "exitCode": 0,
+      "elapsedMs": 48138,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:geographic-reference",
+      "command": "node --import tsx scripts/check-geographic-reference.ts",
+      "exitCode": 0,
+      "elapsedMs": 358,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:historic-districts",
+      "command": "node --import tsx scripts/check-historic-districts.ts",
+      "exitCode": 0,
+      "elapsedMs": 3072,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:convenience-urban",
+      "command": "node --import tsx scripts/check-convenience-urban.ts",
+      "exitCode": 0,
+      "elapsedMs": 36248,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:public-spaces",
+      "command": "node --import tsx scripts/check-public-spaces.ts",
+      "exitCode": 0,
+      "elapsedMs": 40972,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:city-drives",
+      "command": "node --import tsx scripts/check-city-reconstruction-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 50710,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:city-completion",
+      "command": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 98679,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:master-plan",
+      "command": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts",
+      "exitCode": 0,
+      "elapsedMs": 73194,
+      "evidencePhase": "regression-initial"
+    },
+    {
+      "name": "test:historic-fidelity",
+      "command": "node --import tsx scripts/check-historic-fidelity.ts",
+      "exitCode": 0,
+      "evidence": "regression-final/test-historic-fidelity.log",
+      "reason": "Final immutable registry, full landing-path and conservative river-bound coverage",
+      "evidencePhase": "regression-final"
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "command": "node --import tsx scripts/check-landmark-accuracy.ts && node --import tsx scripts/check-landmark-accuracy-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 54715,
+      "evidencePhase": "regression-initial"
+    }
+  ],
+  "method": "32 existing groups plus fidelity; later affected reruns supersede retained initial failures"
+}

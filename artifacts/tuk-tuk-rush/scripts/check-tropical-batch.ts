@@ -4,6 +4,7 @@ import {ArchitecturalBatch, type ArtPiece} from '../src/game/bangkok/architectur
 import {pieceVolume} from '../src/game/bangkok/spatialValidation';
 import {obstacleDistance} from '../src/game/world';
 import {disposeObject} from '../src/game/assets';
+import {emitTropicalPlant} from '../src/game/bangkok/tropicalVegetation';
 const material=new T.MeshBasicMaterial(), night=new T.MeshBasicMaterial(), batch=new ArchitecturalBatch(material,night);
 const pieces:ArtPiece[]=[0,240].map(x=>({x,y:12,z:30,w:4,h:2,d:7,yaw:.7,pitch:.6,shape:'frond',color:'#3f8238'}));
 for(const p of pieces)batch.add(p);
@@ -23,4 +24,17 @@ for(let i=0;i<meshes.length;i++){
  assert(mesh.boundingBox!.containsPoint(new T.Vector3(p.x,p.y,p.z)));
 }
 let disposed=0;material.addEventListener('dispose',()=>disposed++);const root=new T.Group();root.add(...roots);disposeObject(root);assert.equal(disposed,1);
+// Test the rendered branch transforms, not only a nominal tree bounding box.
+// Branch bottoms must join the trunk; reversed pitch previously made floating
+// support-like limbs even though the overall canopy clearance was valid.
+for(const detail of [true,false]) {
+ const art:ArtPiece[]=[];emitTropicalPlant({x:100,z:200},'tamarind',47,p=>art.push(p),detail);
+ const trunk=art[0]!;
+ for(const branch of art.filter(p=>p.shape==='cylinder').slice(1)) {
+  const m=new T.Matrix4().compose(new T.Vector3(branch.x,branch.y,branch.z),new T.Quaternion().setFromEuler(new T.Euler(branch.pitch??0,branch.yaw,0,'YXZ')),new T.Vector3(branch.w,branch.h,branch.d));
+  const bottom=new T.Vector3(0,-.5,0).applyMatrix4(m);
+  assert(Math.hypot(bottom.x-trunk.x,bottom.z-trunk.z)<.01,'Tamarind limb must physically join its trunk');
+  assert(bottom.y<=trunk.y+trunk.h/2&&bottom.y>=trunk.y,'Tree joint must lie on the upper trunk');
+ }
+}
 console.log(JSON.stringify({pass:true,sharedLeaves:true,pitchedVisibleGeometryInsideClearance:true,sharedDisposalOnce:true}));

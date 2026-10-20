@@ -1,0 +1,10 @@
+Scope: all 9 workspace projects
+✓ Lockfile passes supply-chain policies (verified 5m ago)
+
+devDependencies:
++ @workspace/api-client-react 0.0.0 <- ../../lib/api-client-react
+
+../.. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+../.. preinstall: Done
+Done in 3.3s using pnpm v11.25.0
+$ tsc -p tsconfig.json --noEmit

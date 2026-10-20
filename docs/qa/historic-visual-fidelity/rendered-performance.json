@@ -1,0 +1,114 @@
+{
+  "renderer": "Chrome 138 headless / SwiftShader",
+  "physicalIPhone": false,
+  "samples": [
+    {
+      "id": "palace",
+      "view": "driving",
+      "before": {
+        "calls": 423,
+        "triangles": 668884,
+        "geometries": 1082,
+        "textures": 18,
+        "frameMs": 1195.5999999999767
+      },
+      "after": {
+        "calls": 420,
+        "triangles": 688350,
+        "geometries": 1083,
+        "textures": 18,
+        "frameMs": 1175.8000000000466
+      }
+    },
+    {
+      "id": "palace",
+      "view": "river",
+      "before": {
+        "calls": 351,
+        "triangles": 540864,
+        "geometries": 1096,
+        "textures": 18,
+        "frameMs": 1216.5999999999767
+      },
+      "after": {
+        "calls": 357,
+        "triangles": 576466,
+        "geometries": 1096,
+        "textures": 18,
+        "frameMs": 1210.4000000000233
+      }
+    },
+    {
+      "id": "pho",
+      "view": "driving",
+      "before": {
+        "calls": 315,
+        "triangles": 396966,
+        "geometries": 1519,
+        "textures": 18,
+        "frameMs": 48.70000000006985
+      },
+      "after": {
+        "calls": 315,
+        "triangles": 393982,
+        "geometries": 1518,
+        "textures": 18,
+        "frameMs": 909.7999999999302
+      }
+    },
+    {
+      "id": "golden",
+      "view": "ground",
+      "before": {
+        "calls": 467,
+        "triangles": 783380,
+        "geometries": 775,
+        "textures": 14,
+        "frameMs": 3654.3000000000466
+      },
+      "after": {
+        "calls": 467,
+        "triangles": 820836,
+        "geometries": 1702,
+        "textures": 18,
+        "frameMs": 3831.3000000000466
+      }
+    },
+    {
+      "id": "sanam",
+      "view": "driving",
+      "before": {
+        "calls": 428,
+        "triangles": 675896,
+        "geometries": 1308,
+        "textures": 18,
+        "frameMs": 2368.600000000093
+      },
+      "after": {
+        "calls": 425,
+        "triangles": 695372,
+        "geometries": 1308,
+        "textures": 18,
+        "frameMs": 5671.5
+      }
+    },
+    {
+      "id": "traimit",
+      "view": "ground",
+      "before": {
+        "calls": 405,
+        "triangles": 697638,
+        "geometries": 1055,
+        "textures": 16,
+        "frameMs": 3207.79999999993
+      },
+      "after": {
+        "calls": 371,
+        "triangles": 650548,
+        "geometries": 1525,
+        "textures": 17,
+        "frameMs": 2443.600000000093
+      }
+    }
+  ]
+}

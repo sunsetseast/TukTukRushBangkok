@@ -18,6 +18,22 @@ export function inHistoricCore(p: Point) {
   const x=p.x/4+500,y=p.z/4+600;
   return (x>=245&&x<=515&&y>=240&&y<=485)||(x>=515&&x<=625&&y>=455&&y<=610);
 }
+/** The narrow commercial band WEST of Maha Rat, not the temple-side pavement.
+ * Two-storey masonry trading blocks are retained here (Tha Chang / Tha Tien).
+ * These are bounded miniature controls, not cadastral property identifications. */
+export function isHistoricWaterfront(p: Point) {
+  if (p.z < -1048 || p.z > -620 || p.x < -1080) return false;
+  const roadX = p.z < -780 ? -940 : p.z < -700 ? -940 + (p.z + 780) * .85 : -872;
+  return p.x < roadX - 12;
+}
+/** Public temple-side pavement follows the existing Maha Rat bend. Protecting
+ * this actual ground wedge fixes ALL infill passes, rather than one ray/object. */
+export const PHO_WEST_APPROACH: Point[] = [
+  {x:-930,z:-777},{x:-851,z:-777},{x:-851,z:-625},
+  {x:-864,z:-625},{x:-864,z:-703},
+];
+// A single pier alley through the trading blocks, not a waterfront boulevard.
+export const PHO_PIER_PASSAGE = {from:{x:-1062,z:-740},to:{x:-921,z:-749},width:7};
 export function democracyRing() {
   const c=historicPoint(HISTORIC_PLAN.democracy);
   return Array.from({length:32},(_,i)=>{

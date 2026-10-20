@@ -1,0 +1,15 @@
+historic:palace:0 named feature visible
+historic:palace:1 foreground obstruction
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'engine')
+    at eval (eval at evaluate (:370:30), <anonymous>:1:38)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /workspace/scratch/58afd6b610d4/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/browser-historic-fidelity.mjs:18:11 {
+  log: []
+}
+
+Node.js v24.19.0

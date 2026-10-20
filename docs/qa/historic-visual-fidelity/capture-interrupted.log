@@ -1,0 +1,38 @@
+after loading
+after scene ready 70785
+after palace-ground.jpg
+after palace-elevated.jpg
+after palace-driving.jpg
+after palace-night.jpg
+after palace-river.jpg
+after sanam-ground.jpg
+after sanam-elevated.jpg
+after sanam-driving.jpg
+after sanam-night.jpg
+after pho-ground.jpg
+after pho-elevated.jpg
+after pho-driving.jpg
+after pho-night.jpg
+after pho-river.jpg
+after swing-ground.jpg
+after swing-elevated.jpg
+after swing-driving.jpg
+after swing-night.jpg
+after golden-ground.jpg
+after golden-elevated.jpg
+after golden-driving.jpg
+after golden-night.jpg
+after democracy-ground.jpg
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'stats')
+    at eval (eval at evaluate (:370:30), <anonymous>:1:25)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at /workspace/scratch/58afd6b610d4/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/capture-historic-bangkok.mjs:262:27 {
+  log: []
+}
+
+Node.js v24.19.0

@@ -1,0 +1,2010 @@
+{
+  "label": "after",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "hudHidden": true,
+  "cityObjectsHidden": false,
+  "trafficDisabled": true,
+  "physicalIPhone": false,
+  "startupMs": 52964,
+  "captureElapsedMs": 373434,
+  "errors": [],
+  "records": [
+    {
+      "id": "palace",
+      "view": "ground",
+      "file": "palace-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -820,
+            3.4,
+            -1060
+          ],
+          "look": [
+            -820,
+            14.4,
+            -940
+          ]
+        },
+        "player": {
+          "x": -820,
+          "z": -1060,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.666666666666742,
+          "tz": 0
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -820,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 358,
+        "triangles": 576490,
+        "geometries": 666,
+        "textures": 17,
+        "frameMs": 2142.2999999999884
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "palace",
+      "view": "elevated",
+      "file": "palace-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -621.6,
+            248,
+            -704.4
+          ],
+          "look": [
+            -820,
+            13.5,
+            -940
+          ]
+        },
+        "player": {
+          "x": -820,
+          "z": -1060,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.666666666666742,
+          "tz": 0
+        },
+        "view": "elevated",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -820,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 357,
+        "triangles": 576466,
+        "geometries": 846,
+        "textures": 18,
+        "frameMs": 3869.8000000000466
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "palace",
+      "view": "driving",
+      "file": "palace-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": -820,
+          "z": -1060,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.666666666666742,
+          "tz": 0
+        },
+        "view": "driving",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -820,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 420,
+        "triangles": 688350,
+        "geometries": 1083,
+        "textures": 18,
+        "frameMs": 1175.8000000000466
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "palace",
+      "view": "night",
+      "file": "palace-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -820,
+            3.4,
+            -1060
+          ],
+          "look": [
+            -820,
+            14.4,
+            -940
+          ]
+        },
+        "player": {
+          "x": -820,
+          "z": -1060,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.666666666666742,
+          "tz": 0
+        },
+        "view": "night",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -820,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 357,
+        "triangles": 576466,
+        "geometries": 1083,
+        "textures": 18,
+        "frameMs": 4205
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "palace",
+      "view": "river",
+      "file": "palace-river.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -1037.2577496975507,
+            3.4,
+            -973.4242691842386
+          ],
+          "look": [
+            -820,
+            14.4,
+            -940
+          ]
+        },
+        "player": {
+          "x": -820,
+          "z": -1060,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.666666666666742,
+          "tz": 0
+        },
+        "view": "river",
+        "roadVerified": false,
+        "publicRoad": {
+          "x": -820,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "river inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "river inspection at boat height"
+      },
+      "stats": {
+        "calls": 357,
+        "triangles": 576466,
+        "geometries": 1096,
+        "textures": 18,
+        "frameMs": 1210.4000000000233
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "sanam",
+      "view": "ground",
+      "file": "sanam-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -784,
+            3.4,
+            -1060
+          ],
+          "look": [
+            -764,
+            9,
+            -1260
+          ]
+        },
+        "player": {
+          "x": -784,
+          "z": -1060,
+          "heading": 3.0419240010986313,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.66666666666663,
+          "tz": 0
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -784,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 325,
+        "triangles": 477850,
+        "geometries": 1270,
+        "textures": 18,
+        "frameMs": 1635.1000000000931
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "sanam",
+      "view": "elevated",
+      "file": "sanam-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -540,
+            280,
+            -994
+          ],
+          "look": [
+            -764,
+            3.5999999999999996,
+            -1260
+          ]
+        },
+        "player": {
+          "x": -784,
+          "z": -1060,
+          "heading": 3.0419240010986313,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.66666666666663,
+          "tz": 0
+        },
+        "view": "elevated",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -784,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 322,
+        "triangles": 476698,
+        "geometries": 1279,
+        "textures": 18,
+        "frameMs": 4806.800000000047
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "sanam",
+      "view": "driving",
+      "file": "sanam-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": -784,
+          "z": -1060,
+          "heading": 1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.66666666666663,
+          "tz": 0
+        },
+        "view": "driving",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -784,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 425,
+        "triangles": 695372,
+        "geometries": 1308,
+        "textures": 18,
+        "frameMs": 5671.5
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "sanam",
+      "view": "night",
+      "file": "sanam-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -784,
+            3.4,
+            -1060
+          ],
+          "look": [
+            -764,
+            9,
+            -1260
+          ]
+        },
+        "player": {
+          "x": -784,
+          "z": -1060,
+          "heading": 3.0419240010986313,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 26.66666666666663,
+          "tz": 0
+        },
+        "view": "night",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -784,
+          "z": -1060,
+          "width": 12,
+          "corridor": "palace_n"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 322,
+        "triangles": 476698,
+        "geometries": 1308,
+        "textures": 18,
+        "frameMs": 1040.9000000000233
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "pho",
+      "view": "ground",
+      "file": "pho-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -872,
+            3.4,
+            -608
+          ],
+          "look": [
+            -800,
+            9,
+            -700
+          ]
+        },
+        "player": {
+          "x": -872,
+          "z": -608,
+          "heading": 2.4775464907631086,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": 24
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -872,
+          "z": -608,
+          "width": 12,
+          "corridor": "old_w"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 430,
+        "triangles": 692543,
+        "geometries": 1322,
+        "textures": 18,
+        "frameMs": 5314.199999999953
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "pho",
+      "view": "elevated",
+      "file": "pho-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -665.6,
+            168,
+            -540.4
+          ],
+          "look": [
+            -800,
+            8.4,
+            -700
+          ]
+        },
+        "player": {
+          "x": -872,
+          "z": -608,
+          "heading": 2.4775464907631086,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": 24
+        },
+        "view": "elevated",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -872,
+          "z": -608,
+          "width": 12,
+          "corridor": "old_w"
+        },
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 421,
+        "triangles": 666123,
+        "geometries": 1335,
+        "textures": 18,
+        "frameMs": 1336.1000000000931
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "pho",
+      "view": "driving",
+      "file": "pho-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": -872,
+          "z": -608,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": 24
+        },
+        "view": "driving",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -872,
+          "z": -608,
+          "width": 12,
+          "corridor": "old_w"
+        },
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 315,
+        "triangles": 393982,
+        "geometries": 1518,
+        "textures": 18,
+        "frameMs": 909.7999999999302
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "pho",
+      "view": "night",
+      "file": "pho-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -872,
+            3.4,
+            -608
+          ],
+          "look": [
+            -800,
+            9,
+            -700
+          ]
+        },
+        "player": {
+          "x": -872,
+          "z": -608,
+          "heading": 2.4775464907631086,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": 24
+        },
+        "view": "night",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -872,
+          "z": -608,
+          "width": 12,
+          "corridor": "old_w"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 384,
+        "triangles": 623875,
+        "geometries": 1518,
+        "textures": 18,
+        "frameMs": 3203.79999999993
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "pho",
+      "view": "river",
+      "file": "pho-river.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -1072.8646861137356,
+            3.4,
+            -741.9791824790362
+          ],
+          "look": [
+            -800,
+            9,
+            -700
+          ]
+        },
+        "player": {
+          "x": -872,
+          "z": -608,
+          "heading": 2.4775464907631086,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": 24
+        },
+        "view": "river",
+        "roadVerified": false,
+        "publicRoad": {
+          "x": -872,
+          "z": -608,
+          "width": 12,
+          "corridor": "old_w"
+        },
+        "approachType": "river inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "river inspection at boat height"
+      },
+      "stats": {
+        "calls": 434,
+        "triangles": 717015,
+        "geometries": 1529,
+        "textures": 18,
+        "frameMs": 2816.5999999999767
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "swing",
+      "view": "ground",
+      "file": "swing-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -360,
+            3.4,
+            -1040
+          ],
+          "look": [
+            -360,
+            9,
+            -940
+          ]
+        },
+        "player": {
+          "x": -360,
+          "z": -1040,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -4,
+          "tz": 25
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -360,
+          "z": -1040,
+          "width": 12,
+          "corridor": "dinso"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 409,
+        "triangles": 775762,
+        "geometries": 1619,
+        "textures": 18,
+        "frameMs": 3123.20000000007
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "swing",
+      "view": "elevated",
+      "file": "swing-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -254.39999999999998,
+            132,
+            -814.6
+          ],
+          "look": [
+            -360,
+            7.5,
+            -940
+          ]
+        },
+        "player": {
+          "x": -360,
+          "z": -1040,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -4,
+          "tz": 25
+        },
+        "view": "elevated",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -360,
+          "z": -1040,
+          "width": 12,
+          "corridor": "dinso"
+        },
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 399,
+        "triangles": 774508,
+        "geometries": 1630,
+        "textures": 18,
+        "frameMs": 3789.1999999999534
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "swing",
+      "view": "driving",
+      "file": "swing-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": -360,
+          "z": -1040,
+          "heading": -0.1586552621864014,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -4,
+          "tz": 25
+        },
+        "view": "driving",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -360,
+          "z": -1040,
+          "width": 12,
+          "corridor": "dinso"
+        },
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 418,
+        "triangles": 773579,
+        "geometries": 1632,
+        "textures": 18,
+        "frameMs": 1507.7000000000698
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "swing",
+      "view": "night",
+      "file": "swing-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -360,
+            3.4,
+            -1040
+          ],
+          "look": [
+            -360,
+            9,
+            -940
+          ]
+        },
+        "player": {
+          "x": -360,
+          "z": -1040,
+          "heading": 0,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -4,
+          "tz": 25
+        },
+        "view": "night",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -360,
+          "z": -1040,
+          "width": 12,
+          "corridor": "dinso"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 399,
+        "triangles": 774508,
+        "geometries": 1632,
+        "textures": 18,
+        "frameMs": 999.8999999999069
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "golden",
+      "view": "ground",
+      "file": "golden-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            20,
+            3.4,
+            -1080
+          ],
+          "look": [
+            -80,
+            19.84,
+            -1080
+          ]
+        },
+        "player": {
+          "x": 20,
+          "z": -1080,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": -28
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 20,
+          "z": -1080,
+          "width": 10,
+          "corridor": "boripat"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 467,
+        "triangles": 820836,
+        "geometries": 1702,
+        "textures": 18,
+        "frameMs": 3831.3000000000466
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "golden",
+      "view": "elevated",
+      "file": "golden-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            67.20000000000002,
+            184,
+            -905.2
+          ],
+          "look": [
+            -80,
+            18.599999999999998,
+            -1080
+          ]
+        },
+        "player": {
+          "x": 20,
+          "z": -1080,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": -28
+        },
+        "view": "elevated",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 20,
+          "z": -1080,
+          "width": 10,
+          "corridor": "boripat"
+        },
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 462,
+        "triangles": 819070,
+        "geometries": 1769,
+        "textures": 18,
+        "frameMs": 2950.9000000001397
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "golden",
+      "view": "driving",
+      "file": "golden-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": 20,
+          "z": -1080,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": -28
+        },
+        "view": "driving",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 20,
+          "z": -1080,
+          "width": 10,
+          "corridor": "boripat"
+        },
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 241,
+        "triangles": 349378,
+        "geometries": 1827,
+        "textures": 18,
+        "frameMs": 884.8000000000466
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "golden",
+      "view": "night",
+      "file": "golden-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            20,
+            3.4,
+            -1080
+          ],
+          "look": [
+            -80,
+            19.84,
+            -1080
+          ]
+        },
+        "player": {
+          "x": 20,
+          "z": -1080,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 0,
+          "tz": -28
+        },
+        "view": "night",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 20,
+          "z": -1080,
+          "width": 10,
+          "corridor": "boripat"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 461,
+        "triangles": 819038,
+        "geometries": 1827,
+        "textures": 18,
+        "frameMs": 1709.0999999998603
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "democracy",
+      "view": "ground",
+      "file": "democracy-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -335.27259760722205,
+            3.4,
+            -1347.1090612942025
+          ],
+          "look": [
+            -260,
+            9.6,
+            -1320
+          ]
+        },
+        "player": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "heading": 1.2251122513691992,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 25.82736543136508,
+          "tz": 8.081001642784713
+        },
+        "view": "ground",
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "width": 20,
+          "corridor": "north_old"
+        },
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 376,
+        "triangles": 536718,
+        "geometries": 1907,
+        "textures": 18,
+        "frameMs": 1723.3999999999069
+      },
+      "captureSession": "Completed frame before QA-script reload"
+    },
+    {
+      "id": "democracy",
+      "view": "elevated",
+      "file": "democracy-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -138.39999999999998,
+            152,
+            -1175.6
+          ],
+          "look": [
+            -260,
+            9,
+            -1320
+          ]
+        },
+        "player": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "heading": 1.2251122513691992,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 25.82736543136508,
+          "tz": 8.081001642784713
+        },
+        "view": "elevated",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "width": 20,
+          "corridor": "north_old"
+        },
+        "approachType": "elevated inspection",
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 373,
+        "triangles": 536046,
+        "geometries": 849,
+        "textures": 15,
+        "frameMs": 639
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "democracy",
+      "view": "driving",
+      "file": "democracy-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "heading": 1.2675605234952387,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 25.82736543136508,
+          "tz": 8.081001642784713
+        },
+        "view": "driving",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "width": 20,
+          "corridor": "north_old"
+        },
+        "approachType": "normal driving camera",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 374,
+        "triangles": 536118,
+        "geometries": 850,
+        "textures": 15,
+        "frameMs": 1229.3999999999069
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "democracy",
+      "view": "night",
+      "file": "democracy-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            -335.27259760722205,
+            3.4,
+            -1347.1090612942025
+          ],
+          "look": [
+            -260,
+            9.6,
+            -1320
+          ]
+        },
+        "player": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "heading": 1.2251122513691992,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 25.82736543136508,
+          "tz": 8.081001642784713
+        },
+        "view": "night",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": -335.27259760722205,
+          "z": -1347.1090612942025,
+          "width": 20,
+          "corridor": "north_old"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 340,
+        "triangles": 482962,
+        "geometries": 850,
+        "textures": 15,
+        "frameMs": 26.600000000093132
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "hua",
+      "view": "ground",
+      "file": "hua-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            405,
+            3.4,
+            -203
+          ],
+          "look": [
+            400,
+            12,
+            -258
+          ]
+        },
+        "player": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "heading": -3.122939336604022,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 12.380952380952408,
+          "tz": 23.809523809523796
+        },
+        "view": "ground",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "width": 20,
+          "corridor": "ramaiv"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 368,
+        "triangles": 490952,
+        "geometries": 1167,
+        "textures": 17,
+        "frameMs": 612.5
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "hua",
+      "view": "elevated",
+      "file": "hua-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            572.8,
+            216,
+            -82.80000000000001
+          ],
+          "look": [
+            400,
+            8.4,
+            -288
+          ]
+        },
+        "player": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "heading": -3.122939336604022,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 12.380952380952408,
+          "tz": 23.809523809523796
+        },
+        "view": "elevated",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "width": 20,
+          "corridor": "ramaiv"
+        },
+        "approachType": "elevated inspection",
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 446,
+        "triangles": 632263,
+        "geometries": 1287,
+        "textures": 17,
+        "frameMs": 2211.4000000001397
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "hua",
+      "view": "driving",
+      "file": "hua-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "heading": 0.4795192919925973,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 12.380952380952408,
+          "tz": 23.809523809523796
+        },
+        "view": "driving",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "width": 20,
+          "corridor": "ramaiv"
+        },
+        "approachType": "normal driving camera",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 420040,
+        "geometries": 1475,
+        "textures": 17,
+        "frameMs": 1258.8999999999069
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "hua",
+      "view": "night",
+      "file": "hua-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            405,
+            3.4,
+            -203
+          ],
+          "look": [
+            400,
+            12,
+            -258
+          ]
+        },
+        "player": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "heading": -3.122939336604022,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": 12.380952380952408,
+          "tz": 23.809523809523796
+        },
+        "view": "night",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 401.70277078085644,
+          "z": -196.72544080604533,
+          "width": 20,
+          "corridor": "ramaiv"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 322,
+        "triangles": 435551,
+        "geometries": 1475,
+        "textures": 17,
+        "frameMs": 514.3000000000466
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "traimit",
+      "view": "ground",
+      "file": "traimit-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            256,
+            3.4,
+            40
+          ],
+          "look": [
+            256,
+            15.68,
+            -104
+          ]
+        },
+        "player": {
+          "x": 256,
+          "z": 40,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -23.200000000000017,
+          "tz": 0
+        },
+        "view": "ground",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 256,
+          "z": 40,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 371,
+        "triangles": 650548,
+        "geometries": 1525,
+        "textures": 17,
+        "frameMs": 2443.600000000093
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "traimit",
+      "view": "elevated",
+      "file": "traimit-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            364.8,
+            136,
+            25.19999999999999
+          ],
+          "look": [
+            256,
+            14.7,
+            -104
+          ]
+        },
+        "player": {
+          "x": 256,
+          "z": 40,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -23.200000000000017,
+          "tz": 0
+        },
+        "view": "elevated",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 256,
+          "z": 40,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "elevated inspection",
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 396,
+        "triangles": 696460,
+        "geometries": 1536,
+        "textures": 17,
+        "frameMs": 2509.600000000093
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "traimit",
+      "view": "driving",
+      "file": "traimit-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": 256,
+          "z": 40,
+          "heading": -1.5707963267948966,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -23.200000000000017,
+          "tz": 0
+        },
+        "view": "driving",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 256,
+          "z": 40,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "normal driving camera",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 434,
+        "triangles": 740195,
+        "geometries": 1669,
+        "textures": 17,
+        "frameMs": 3811
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "traimit",
+      "view": "night",
+      "file": "traimit-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            256,
+            3.4,
+            40
+          ],
+          "look": [
+            256,
+            15.68,
+            -104
+          ]
+        },
+        "player": {
+          "x": 256,
+          "z": 40,
+          "heading": 3.141592653589793,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -23.200000000000017,
+          "tz": 0
+        },
+        "view": "night",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 256,
+          "z": 40,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 391,
+        "triangles": 684128,
+        "geometries": 1669,
+        "textures": 17,
+        "frameMs": 25.600000000093132
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "gate",
+      "view": "ground",
+      "file": "gate-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            204.3802001647112,
+            3.4,
+            36.018110017246386
+          ],
+          "look": [
+            140,
+            9,
+            -40
+          ]
+        },
+        "player": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "heading": -2.438897509290544,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -16.396957308880275,
+          "tz": -18.037152060000558
+        },
+        "view": "ground",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 395,
+        "triangles": 713430,
+        "geometries": 1684,
+        "textures": 17,
+        "frameMs": 2598
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "gate",
+      "view": "elevated",
+      "file": "gate-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            236,
+            120,
+            74
+          ],
+          "look": [
+            140,
+            7.5,
+            -40
+          ]
+        },
+        "player": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "heading": -2.438897509290544,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -16.396957308880275,
+          "tz": -18.037152060000558
+        },
+        "view": "elevated",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "elevated inspection",
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 417,
+        "triangles": 714050,
+        "geometries": 1685,
+        "textures": 17,
+        "frameMs": 1938.8000000000466
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "gate",
+      "view": "driving",
+      "file": "gate-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "heading": -2.4037913641699173,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -16.396957308880275,
+          "tz": -18.037152060000558
+        },
+        "view": "driving",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "normal driving camera",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 417,
+        "triangles": 710766,
+        "geometries": 1685,
+        "textures": 17,
+        "frameMs": 877.6000000000931
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "gate",
+      "view": "night",
+      "file": "gate-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            204.3802001647112,
+            3.4,
+            36.018110017246386
+          ],
+          "look": [
+            140,
+            9,
+            -40
+          ]
+        },
+        "player": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "heading": -2.438897509290544,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -16.396957308880275,
+          "tz": -18.037152060000558
+        },
+        "view": "night",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 204.3802001647112,
+          "z": 36.018110017246386,
+          "width": 12,
+          "corridor": "tri-mit"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 416,
+        "triangles": 714018,
+        "geometries": 1685,
+        "textures": 17,
+        "frameMs": 807.8000000000466
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "yaowarat",
+      "view": "ground",
+      "file": "yaowarat-ground.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            59.143718702550544,
+            3.4,
+            -74.2259480066964
+          ],
+          "look": [
+            0.605826560761507,
+            4,
+            -102.48041992878817
+          ]
+        },
+        "player": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "heading": 0.36723153720801377,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -24.50601740714137,
+          "tz": -11.828314198181971
+        },
+        "view": "ground",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "width": 12,
+          "corridor": "yaowarat"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 439,
+        "triangles": 771830,
+        "geometries": 1828,
+        "textures": 18,
+        "frameMs": 3143.5
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "yaowarat",
+      "view": "elevated",
+      "file": "yaowarat-elevated.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            168.8,
+            136,
+            57.19999999999999
+          ],
+          "look": [
+            60,
+            8.4,
+            -72
+          ]
+        },
+        "player": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "heading": 0.36723153720801377,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -24.50601740714137,
+          "tz": -11.828314198181971
+        },
+        "view": "elevated",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "width": 12,
+          "corridor": "yaowarat"
+        },
+        "approachType": "elevated inspection",
+        "cameraSurface": "elevated inspection"
+      },
+      "stats": {
+        "calls": 356,
+        "triangles": 460340,
+        "geometries": 1896,
+        "textures": 18,
+        "frameMs": 31.199999999953434
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "yaowarat",
+      "view": "driving",
+      "file": "yaowarat-driving.jpg",
+      "pose": {
+        "camera": null,
+        "player": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "heading": -2.020483893706025,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -24.50601740714137,
+          "tz": -11.828314198181971
+        },
+        "view": "driving",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "width": 12,
+          "corridor": "yaowarat"
+        },
+        "approachType": "normal driving camera",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 475,
+        "triangles": 796546,
+        "geometries": 1897,
+        "textures": 18,
+        "frameMs": 1841.1000000000931
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    },
+    {
+      "id": "yaowarat",
+      "view": "night",
+      "file": "yaowarat-night.jpg",
+      "pose": {
+        "camera": {
+          "position": [
+            59.143718702550544,
+            3.4,
+            -74.2259480066964
+          ],
+          "look": [
+            0.605826560761507,
+            4,
+            -102.48041992878817
+          ]
+        },
+        "player": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "heading": 0.36723153720801377,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0,
+          "tx": -24.50601740714137,
+          "tz": -11.828314198181971
+        },
+        "view": "night",
+        "playerRoadVerified": true,
+        "roadVerified": true,
+        "publicRoad": {
+          "x": 59.143718702550544,
+          "z": -74.2259480066964,
+          "width": 12,
+          "corridor": "yaowarat"
+        },
+        "approachType": "road-level inspection",
+        "cameraSurface": "public road"
+      },
+      "stats": {
+        "calls": 356,
+        "triangles": 460340,
+        "geometries": 1897,
+        "textures": 18,
+        "frameMs": 1019.8000000000467
+      },
+      "captureSession": "Resumed capture with HMR disabled"
+    }
+  ],
+  "baselineCommit": "341e02f52b04d07dda7688e2f07b47abc19d44a8",
+  "provenance": "Published implementation; resumed after a QA-script reload. Only completed verified frames retained. See capture-interrupted.log.",
+  "timingNote": "Multi-session evidence: startup/capture elapsed fields belong to the latest session, not a total or hardware performance comparison."
+}

@@ -23,14 +23,19 @@ export const REVIEWED_SITES = [
 ];
 function tree(b: LandmarkBuilder, x: number, z: number, h = 7, y = 0) {
   b.sculpt(new T.CylinderGeometry(0.2, 0.4, h * 0.55, 6), x, y + h * 0.27, z, '#926741');
-  b.sculpt(
-    new T.IcosahedronGeometry(h * 0.37, 1).scale(1, 1.15, 0.9),
-    x,
-    y + h * 0.73,
-    z,
-    '#4c9b60',
-  );
-  b.sculpt(new T.IcosahedronGeometry(h * 0.24, 0), x + h * 0.22, y + h * 0.85, z + 0.3, '#78b86b');
+  for(let i=0;i<4;i++) {
+    const a=i*2.4+x*.1+z*.13,dx=Math.sin(a)*h*.17,dz=Math.cos(a)*h*.17;
+    b.sculpt(new T.CylinderGeometry(.08,.15,h*.42,5).rotateZ(.6).rotateY(a),x+dx*.5,y+h*.52,z+dz*.5,'#806b48');
+    b.sculpt(new T.SphereGeometry(h*.27,8,5).scale(1.25,.68,1),x+dx,y+h*(.69+(i%2)*.1),z+dz,i%2?'#638d50':'#477748');
+  }
+}
+/** Square, receding prasat crown rather than a bell-shaped stupa. */
+function prasat(b:LandmarkBuilder,x:number,y:number,z:number,scale=1) {
+  for(let i=0;i<6;i++) {
+    const r=(2.9-i*.38)*scale;
+    b.sculpt(new T.CylinderGeometry(r*.67,r,1.4*scale,4),x,y+i*1.45*scale,z,GOLD,'gilded',Math.PI/4);
+  }
+  b.sculpt(new T.ConeGeometry(.65*scale,7.5*scale,8),x,y+12*scale,z,GOLD,'gilded');
 }
 function bell(b: LandmarkBuilder, x: number, y: number, z: number, r: number, h: number) {
   const p = [
@@ -135,8 +140,23 @@ function palace(b: LandmarkBuilder, detail: boolean) {
   b.box(0, 0.28, 0, 133, 0.56, 133, '#e4cda3');
   // Northern royal chapel precinct; palace halls to its south. Deliberately dense courts, not scattered icons.
   b.box(9, 0.63, -29, 99, 0.2, 63, '#e5d5ad');
-  for (const x of [-62, 62]) gallery(b, x, 0, 125, true, detail);
-  for (const z of [-62, 62]) gallery(b, 0, z, 125, false, detail);
+  // Roofed inner cloisters sit behind the WHITE outer fortified perimeter.
+  // The old model made the entire palace boundary a red-roofed gallery.
+  for (const x of [-58, 58]) gallery(b, x, 0, 115, true, detail);
+  for (const z of [-58, 58]) gallery(b, 0, z, 115, false, detail);
+  for(const side of [-1,1]) {
+    b.box(side*66,2.35,0,.9,4.7,132,'#f3edda');
+    for(const x of [-36,36])b.box(x,2.35,side*66,60,4.7,.9,'#f3edda');
+    b.box(side*66,4.7,0,1.15,.35,132,'#ddd7c7');
+    for(let q=-63;q<=63;q+=detail?3:6) {
+      b.box(side*66,5.2,q,1.05,1,1.4,'#f4eedc');
+      if(Math.abs(q)>6)b.box(q,5.2,side*66,1.4,1,1.05,'#f4eedc');
+    }
+    for(const z of [-65,65]) {
+      b.box(side*65,3,z,3.8,6,3.8,IVORY);
+      thaiRoof(b,side*65,6,z,5.3,5.3,2.3,'#d9d5bf',false);
+    }
+  }
   gallery(b, 9, 6, 99, false, detail);
   gallery(b, -40, -27, 63, true, detail);
   // North public gate is on the outer boundary, rather than hidden behind
@@ -178,7 +198,7 @@ function palace(b: LandmarkBuilder, detail: boolean) {
   for (const x of [-16, 9, 34]) {
     b.box(x, 16.5, 30, 15, 7, 23, IVORY);
     thaiRoof(b, x, 20.5, 30, 18, 26, 6, GREEN, false);
-    bell(b, x, 25, 30, 2.8, 16);
+    prasat(b, x, 25, 30);
   }
   for (let x = -25; x < 47; x += 4)
     for (const y of [4.5, 10]) framedWindow(b, x, y, 41.2, 1.8, 3.5, false, '#bd9c60');
@@ -341,11 +361,13 @@ function golden(b: LandmarkBuilder, detail: boolean) {
   g.setIndex(idx);
   g.computeVertexNormals();
   b.sculpt(g, 0, 0, 0, '#719b5e');
-  for (let i = 0; i < (detail ? 44 : 24); i++) {
+  for (let i = 0; i < (detail ? 102 : 42); i++) {
     const a = i * 2.4,
-      t = (i % 7) / 10 + 0.06,
-      r = 38 * Math.pow(1 - t, 0.58) + 3;
-    tree(b, Math.sin(a) * (r - 2), Math.cos(a) * (r - 2) * 0.92, 5 + (i % 3), 1 + 33 * t);
+      t = (i % 13) / 15 + 0.025,
+      r = (38 * Math.pow(1 - t, 0.58) + 3) * (1 + .075*Math.sin(a*3+t*3)+.035*Math.cos(a*7));
+    // Match the actual terrain radius at this height. The old r-2 roots were
+    // embedded uphill, burying crowns and leaving a bare geometric cone.
+    tree(b, Math.sin(a) * r, Math.cos(a) * r * .92, 7 + (i % 4)*1.2, 1 + 33 * t);
   }
   const steps = detail ? 172 : 80;
   for (let i = 0; i < steps; i++) {
@@ -376,9 +398,23 @@ function golden(b: LandmarkBuilder, detail: boolean) {
   // temple hill from a free-standing gold tower. Lower Wat Saket lies south.
   for(let j=0;j<3;j++) {
     const y=3+j*8, r=37-j*7;
-    const arc=new T.TorusGeometry(r,.7,4,detail?64:32,Math.PI*1.7).rotateX(Math.PI/2);
-    b.sculpt(arc,0,y,0,'#e4d7bd');
+    // Retaining walls follow the SAME irregular terrain contour at this height;
+    // circular torus bands previously floated away from the sloping hillside.
+    const t=(y-1)/33,base=38*Math.pow(1-t,.58)+3,pts=Array.from({length:49},(_,i)=>{
+      const a=i/48*Math.PI*1.8,rr=base*(1+.075*Math.sin(a*3+t*3)+.035*Math.cos(a*7));
+      return [Math.sin(a)*rr,y,Math.cos(a)*rr*.92] as [number,number,number];
+    });
+    b.sculpt(ribbonPath(pts,.48,4,detail?96:48),0,0,0,'#e4d7bd');
   }
+  // Landings, white stair parapets and bell pavilion punctuate the planted hill.
+  for(const [x,z,y,a] of [[-29,12,10,-1.2],[17,-23,19,2.5],[15,11,29,.8]]) {
+    b.box(x!,y!,z!,6,.35,5,'#c9ae8d',a!);
+    b.box(x!,y!+1,z!+2.3,6,1.3,.4,IVORY,a!);
+  }
+  b.box(-32,1,45,10,1,8,IVORY);
+  for(const x of [-36,-28])for(const z of [42,48])b.box(x,3.3,z,.35,4,.35,IVORY);
+  thaiRoof(b,-32,5.3,45,12,10,3,RED,detail);
+  for(const x of [-34,-30])b.sculpt(new T.LatheGeometry([new T.Vector2(1,0),new T.Vector2(.8,1.2),new T.Vector2(.2,1.5)],10),x,2.7,45,'#8c7751','bronze');
   hall(b, -18, 49, 25, 23, 8, RED, detail);
   hall(b, 25, 44, 16, 20, 6, GREEN, false);
   b.box(0,.12,48,98,.18,36,'#c4b99b');
@@ -452,6 +488,21 @@ function traimit(b: LandmarkBuilder, detail: boolean) {
       b.box(x, 14, z, 5, 2, 5, IVORY);
       thaiRoof(b, x, 15, z, 6, 6, 3, GOLD, false);
     }
+  // Marble balustrades, recessed upper doors and gilded columns articulate the
+  // ceremonial terraces instead of three undifferentiated stacked boxes.
+  for(const side of [-1,1]) {
+    for(let u=-20;u<=20;u+=detail?2:4) {
+      b.box(u,5.2,side*23.2,.24,1.5,.24,IVORY);
+      b.box(side*23.2,5.2,u,.24,1.5,.24,IVORY);
+    }
+    b.box(0,6,side*23.2,46,.25,.35,'#d0b77d');
+    b.box(side*23.2,6,0,.35,.25,46,'#d0b77d');
+    for(const x of [-9,-3,3,9]) {
+      b.box(x,17,side*12.2,3,6,.22,'#52645d');
+      b.box(x-1.7,17,side*12.5,.36,6.5,.5,'#e7c674');
+    }
+  }
+  for(let i=0;i<12;i++)b.box(0,9+i*.25,12-i*.42,7,.3,.8,'#f3ead7');
 
   for (const x of [-15, 15])
     for (const z of [-15, 15]) {
@@ -743,6 +794,15 @@ function democracy(b: LandmarkBuilder, detail: boolean) {
   b.sculpt(new T.CylinderGeometry(1.6, 0.6, 0.9, 16), 0, 5.3, 0, GOLD, 'gilded');
   b.sculpt(new T.CylinderGeometry(2, 1.1, 0.7, 16), 0, 6.1, 0, GOLD, 'gilded');
   b.box(0, 6.8, 0, 2.7, 0.55, 1.8, '#f1cb70');
+  // Radial paving and recessed relief panels remain wholly inside the island.
+  for(let i=0;i<24;i++) {
+    const a=i*Math.PI/12;
+    b.box(Math.sin(a)*20,.28,Math.cos(a)*20,.22,.06,9,'#ddd0b6',a);
+  }
+  for(const x of [-7.1,7.1])for(const z of [-7.1,7.1]) {
+    b.box(x,2.8,z+2.1,4.6,1.4,.12,'#b2a082');
+    b.box(x,4,z+2.2,5.2,.24,.35,'#e7dcc5');
+  }
 }
 const builders: Record<string, (b: LandmarkBuilder, detail: boolean) => void> = {
   palace,

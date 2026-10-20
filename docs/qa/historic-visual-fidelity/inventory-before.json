@@ -1,0 +1,19 @@
+{
+  "method": "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
+  "physicalIPhone": false,
+  "buildings": 7091,
+  "roads": 2089,
+  "geometryBuffersBytes": 111453180,
+  "geometries": 9706,
+  "materials": 388,
+  "textures": 8,
+  "trianglesAllLevels": 14425878,
+  "instances": 972371,
+  "constructionMs": 44070,
+  "constructionCpuMs": 49990,
+  "disposal": {
+    "geometries": 9706,
+    "materials": 388,
+    "textures": 8
+  }
+}

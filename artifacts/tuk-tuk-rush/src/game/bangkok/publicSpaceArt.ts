@@ -30,7 +30,7 @@ function parkModel(s: PublicSpace, detail: boolean) {
     0,
     0.07,
     0,
-    s.id === "sanam" ? "#8fba67" : "#6e9e5d",
+    s.id === "sanam" ? "#929f68" : "#6e9e5d",
   );
   // Authentic island is a hole in water geometry, not a green box laid over it.
   for (const w of s.water.filter((w) => !w.hole)) {
