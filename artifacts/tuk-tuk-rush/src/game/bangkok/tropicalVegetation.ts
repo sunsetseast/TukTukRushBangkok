@@ -1,8 +1,8 @@
 import * as T from "three";
 import type { ArtPiece, Shape } from "./architecturalBatch";
 import type { Point } from "../types";
-export type TropicalSpecies = "coconut" | "royal-palm" | "rain-tree" | "ratchaphruek" | "shade-tree" | "frangipani" | "banana" | "understory" | "bougainvillea";
-export const TROPICAL_SPECIES: TropicalSpecies[] = ["coconut","royal-palm","rain-tree","ratchaphruek","shade-tree","frangipani","banana","understory","bougainvillea"];
+export type TropicalSpecies = "coconut" | "royal-palm" | "rain-tree" | "tamarind" | "ratchaphruek" | "shade-tree" | "frangipani" | "banana" | "understory" | "bougainvillea";
+export const TROPICAL_SPECIES: TropicalSpecies[] = ["coconut","royal-palm","rain-tree","tamarind","ratchaphruek","shade-tree","frangipani","banana","understory","bougainvillea"];
 export const tropicalSpecies = (region:string,seed:number,palm=false):TropicalSpecies => palm
   ? (["icon","riverside","south","paknam"].includes(region)?"coconut":"royal-palm")
   : region==="chinatown" ? (["frangipani","bougainvillea","understory"] as const)[seed%3]!
@@ -24,12 +24,27 @@ export function tropicalLeafGeometry(shape: "frond" | "leaf") {
   }
   const g=new T.BufferGeometry();g.setAttribute("position",new T.Float32BufferAttribute(p,3));g.setAttribute("uv",new T.Float32BufferAttribute(p.flatMap((_,i)=>i%3===0?[.5,.5]:[]),2));g.setIndex(ix);g.computeVertexNormals();return g;
 }
-export const plantRadius = (species:TropicalSpecies,scale=1) => scale*(species==="rain-tree"?10:species==="shade-tree"?7:species==="ratchaphruek"?6:species==="coconut"?5:species==="royal-palm"?4:species==="frangipani"?4:species==="banana"?3:2);
+export const plantRadius = (species:TropicalSpecies,scale=1) => scale*(species==="rain-tree"?10:species==="tamarind"?8:species==="shade-tree"?7:species==="ratchaphruek"?6:species==="coconut"?5:species==="royal-palm"?4:species==="frangipani"?4:species==="banana"?3:2);
 export function emitTropicalPlant(p:Point,species:TropicalSpecies,seed:number,emit:(p:ArtPiece)=>void,detail=true,scale=1) {
   const yaw=seed*.618, color=["#367857","#4d955b","#638f4b"][seed%3]!;
   const put=(x:number,y:number,z:number,w:number,h:number,d:number,c:string,shape:Shape="box",a=0,pitch=0)=>emit({x:p.x+x*scale,y:y*scale,z:p.z+z*scale,w:w*scale,h:h*scale,d:d*scale,color:c,shape,yaw:a,pitch,surface:shape==="cylinder"?"wood":"plaster"});
   const radial=(radius:number,a:number)=>({x:Math.sin(a)*radius,z:Math.cos(a)*radius});
   const crown=(x:number,y:number,z:number,w:number,c:string)=>put(x,y,z,w,w*.34,w,c,"orb");
+  if(species==='tamarind') {
+    const h=9+(seed%5)*.4;
+    put(0,h*.25,0,.75,h*.5,.75,'#78684e','cylinder');
+    for(let i=0;i<(detail?6:3);i++) {
+      const a=yaw+i*2.4,r=2.5+(i%3)*.5,q=radial(r,a);
+      const rise=h*.32,reach=r*.8,length=Math.hypot(rise,reach);
+      // A real Y-junction: local cylinder +Y leans outward with positive pitch.
+      // Compute midpoint/length from the trunk joint, avoiding floating limbs.
+      put(q.x*.4,h*.62,q.z*.4,.26,length,.26,'#78684e','cylinder',a,Math.atan2(reach,rise));
+      // Overlapping asymmetric lobes preserve a broad shade canopy, without
+      // the single angular icosahedron silhouette of the previous park trees.
+      put(q.x,h*.8+(i%3)*.4,q.z,6.5+(i%2),3.7,5.7,color,'canopy',a);
+    }
+    return;
+  }
   if(species==="coconut"||species==="royal-palm"){
     const coconut=species==="coconut",h=(coconut?12:14)+(seed%5)*.55,lean=coconut?1.2:0;
     for(let j=0;j<3;j++)put(lean*(j+.5)/3,h*(j+.5)/3,0,.4-j*.055,h/3+.1,.4-j*.055,coconut?"#967954":"#a1a08a","cylinder",Math.PI/2,coconut?-.1:0);

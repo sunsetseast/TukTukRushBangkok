@@ -17,7 +17,7 @@ export function planTropicalPlants(d:District) {
   for(const s of d.publicSpaces??[])s.trees.forEach((p,i)=>{
     const id=`park-tropical:${s.id}:${i}`;
     const body=d.obstacles.find(o=>o.x===p.x&&o.z===p.z&&o.environmentId?.includes("tree"));
-    if(body)add(body,id,s.id==="benjakitti"?(i%5===0?"banana":"shade-tree"):(i%9===0?"royal-palm":i%7===0?"ratchaphruek":i%3===0?"shade-tree":"rain-tree"),s.id,s.id==="benjakitti"?.8:1);
+    if(body)add(body,id,s.id==='sanam'?'tamarind':s.id==="benjakitti"?(i%5===0?"banana":"shade-tree"):(i%9===0?"royal-palm":i%7===0?"ratchaphruek":i%3===0?"shade-tree":"rain-tree"),s.id,s.id==="benjakitti"?.8:1);
   });
   for(const s of d.authoredSites??[])for(const [i,body] of (s.furniture??[]).entries())add(body,`site-tropical:${s.id}:${i}`,s.district==="riverside"||["bang-rak","khlong-san"].includes(s.district)?(i%3?"coconut":"frangipani"):tropicalSpecies("oldtown",i),s.id,.8);
   const pieces=(plant:TropicalPlant)=>{

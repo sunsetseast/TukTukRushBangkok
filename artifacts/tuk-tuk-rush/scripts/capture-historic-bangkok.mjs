@@ -70,7 +70,7 @@ try {
     for (const view of [
       "ground",
       "elevated",
-      "driving", ...(["golden","gate","hua"].includes(spec.id)?["night"]:[]), ...(["palace","pho"].includes(spec.id)?["river"]:[]),
+      "driving", ...((process.env.CITY_NIGHT_ALL==='1'||["golden","gate","hua"].includes(spec.id))?["night"]:[]), ...(["palace","pho"].includes(spec.id)?["river"]:[]),
     ].filter(v=>!process.env.CITY_VIEWS||process.env.CITY_VIEWS.split(",").includes(v))) {
       if (
         process.env.CITY_RESUME === "1" &&

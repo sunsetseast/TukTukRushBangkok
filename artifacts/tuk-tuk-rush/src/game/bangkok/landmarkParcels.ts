@@ -1,4 +1,5 @@
 import { HUA_PLAN } from './huaLamphong';
+import { PHO_WEST_APPROACH, PHO_PIER_PASSAGE } from './historicPlan';
 import type { District, Landmark, Obstacle, Point } from "../types";
 import { principalApproach } from "./landmarkVisibility";
 import type { ArtPiece } from "./architecturalBatch";
@@ -257,7 +258,7 @@ export function facadeFeature(l: Landmark, spec = FACADE_APPROACHES[l.id!]) {
     yaw: (l.yaw ?? 0) + spec.outward,
   };
 }
-export function prepareLandmarkParcels(d: District): ProtectedParcel[] {
+export function prepareLandmarkParcels(d: District, includeHistoricApproaches = true): ProtectedParcel[] {
   const parcels: ProtectedParcel[] = [],
     cells = new Map<string, ProtectedParcel[]>();
   const add = (
@@ -279,6 +280,11 @@ export function prepareLandmarkParcels(d: District): ProtectedParcel[] {
   };
   for (const l of d.landmarks) {
     if (!l.plot) continue;
+    if (l.id === 'pho' && includeHistoricApproaches) {
+      add(l.id, 'forecourt', PHO_WEST_APPROACH);
+      const {from:a,to:b,width}=PHO_PIER_PASSAGE;
+      add(l.id,'entrance',rectangleBoundary({x:(a.x+b.x)/2,z:(a.z+b.z)/2,w:width,d:Math.hypot(a.x-b.x,a.z-b.z),yaw:Math.atan2(b.x-a.x,b.z-a.z)}));
+    }
     const site = d.authoredSites?.find((s) => s.id === l.id);
     for (const o of site?.reservations ??
       d.obstacles.filter((o) => o.landmarkId === l.id && !o.artRole))
@@ -394,6 +400,13 @@ export function emitLandmarkApproaches(
   d: District,
   emit: (p: ArtPiece) => void,
 ) {
+  // Public pavement belongs to the city ground batch, outside the sacred
+  // landmark's physical model/collider envelope. Narrow strips follow the
+  // same protected polygon without paving across Maha Rat's asphalt.
+  for(let z=-776;z<-626;z+=2) {
+    const west=z<-703?-930+(z+777)*66/74:-864,east=-851;
+    emit({x:(west+east)/2,z,y:.07,w:east-west-.6,h:.06,d:2,yaw:0,color:'#c9bd9f',surface:'concrete',siteId:'pho-west-pavement'});
+  }
   for (const p of landmarkParcels(d).filter((p) => p.use === "entrance")) {
     const [a, b, c] = p.boundary;
     if (!a || !b || !c) continue;

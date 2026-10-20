@@ -3,7 +3,7 @@ import { compactGeometry } from "../compactGeometry";
 import type { Surface } from "./buildingGrammar";
 import { tropicalLeafGeometry } from "./tropicalVegetation";
 export type Shape =
-  "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "arrow" | "frond" | "leaf";
+  "box" | "gable" | "arch" | "vault" | "cylinder" | "orb" | "canopy" | "arrow" | "frond" | "leaf";
 export type Layer = "core" | "near" | "coarse" | "detail" | "night";
 export type ArtPiece = {
   x: number;
@@ -58,7 +58,7 @@ export class ArchitecturalBatch {
       cx = Math.floor(o.x / 120),
       cz = Math.floor(o.z / 120),
       key = `${cx}:${cz}:${layer}`;
-    if (["box","frond","leaf","orb","cylinder"].includes(shape)) {
+    if (["box","frond","leaf","orb","canopy","cylinder"].includes(shape)) {
       const instanceKey=`${key}:${shape}`;
       let bucket = this.instances.get(instanceKey);
       if (!bucket) {
@@ -160,6 +160,7 @@ export class ArchitecturalBatch {
       else if (shape === "cylinder")
         geo = new T.CylinderGeometry(0.5, 0.5, 1, 8);
       else if (shape === "orb") geo = new T.IcosahedronGeometry(0.5, 0);
+      else if (shape === "canopy") geo = new T.SphereGeometry(.5,8,5);
       else if (shape === "frond" || shape === "leaf") geo = tropicalLeafGeometry(shape);
       else if (shape === "arrow") {
         geo = new T.BufferGeometry();
@@ -235,7 +236,7 @@ export class ArchitecturalBatch {
     const units=new Map<Shape,T.BufferGeometry>();
     const unitFor=(shape:Shape)=>{
       let unit=units.get(shape);if(unit)return unit;
-      unit=shape==='frond'||shape==='leaf'?tropicalLeafGeometry(shape):shape==='orb'?new T.IcosahedronGeometry(.5,0):shape==='cylinder'?new T.CylinderGeometry(.5,.5,1,8):new T.BoxGeometry(1,1,1);
+      unit=shape==='frond'||shape==='leaf'?tropicalLeafGeometry(shape):shape==='canopy'?new T.SphereGeometry(.5,8,5):shape==='orb'?new T.IcosahedronGeometry(.5,0):shape==='cylinder'?new T.CylinderGeometry(.5,.5,1,8):new T.BoxGeometry(1,1,1);
       if(!unit.attributes.uv)unit.setAttribute('uv',new T.Float32BufferAttribute(new Float32Array(unit.attributes.position.count*2),2));
       unit.setAttribute('color',new T.Float32BufferAttribute(new Float32Array(unit.attributes.position.count*3).fill(1),3));
       compactGeometry(unit);units.set(shape,unit);return unit;

@@ -4,11 +4,7 @@ export async function startQaServer(port) {
   const server = spawn(
     process.execPath,
     [
-      "node_modules/vite/bin/vite.js",
-      "--host",
-      "127.0.0.1",
-      "--strictPort",
-      "--port",
+      new URL('./browser-vite-server.mjs',import.meta.url).pathname,
       String(port),
     ],
     {

@@ -3,6 +3,7 @@ import type { District, Point } from "../types";
 import { riverDistance, blockedByRiver } from "./world";
 import { distanceToSegment } from "../world";
 import { LandmarkBuilder } from "./landmarkBuilder";
+import { PHO_PIER_PASSAGE } from './historicPlan';
 import type { ArtPiece } from "./architecturalBatch";
 export type BoatRoute = {
   center: Point;
@@ -15,6 +16,9 @@ export type BoatRoute = {
 /** Shared emitted/map locations; compressed scenic stops, not boat gameplay. */
 export function riverPiers(d:District){
   const anchors=d.landmarks.filter(l=>['arun','pho','icon','asiatique','river-city','oriental','shangri','hilton','peninsula'].includes(l.id!)).map(l=>({id:l.id!,name:`${l.name} pier`,point:l.plot!}));
+  const palace=d.landmarks.find(l=>l.id==='palace');
+  if(palace?.plot)anchors.push({id:'tha-chang',name:'Tha Chang public landing',point:{x:palace.plot.x-95,z:palace.plot.z-108}});
+  const pho=anchors.find(a=>a.id==='pho');if(pho)pho.name='Tha Tien ferry landing';
   const station=d.transit?.lines.flatMap(l=>l.stations).find(s=>s.code==='S6');if(station)anchors.push({id:'sathorn',name:'Sathorn river pier',point:station});
   const nodes=new Map(d.nodes.map(n=>[n.id,n])),song=d.roads.filter(r=>r.corridor==='songwat').flatMap(r=>[nodes.get(r.a)!,nodes.get(r.b)!]).sort((a,b)=>riverDistance(d,a)-riverDistance(d,b))[0];if(song)anchors.push({id:'songwat',name:'Song Wat river landing',point:song});
   return anchors.map(anchor=>{const nearest=d.river!.slice(1).map((b,i)=>distanceToSegment(anchor.point,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!,dx=anchor.point.x-nearest.point.x,dz=anchor.point.z-nearest.point.z,len=Math.hypot(dx,dz),nx=dx/len,nz=dz/len;return {...anchor,x:nearest.point.x+nx*(d.riverWidth!/2-9),z:nearest.point.z+nz*(d.riverWidth!/2-9),nx,nz,yaw:Math.atan2(nx,nz)+Math.PI/2};}).filter(p=>!d.roads.some(r=>distanceToSegment(p,nodes.get(r.a)!,nodes.get(r.b)!).distance<r.width/2+14));
@@ -297,6 +301,19 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
     }
   for (const p of riverPiers(d)) {
     const {nx,nz,yaw}=p;
+    if(p.id==='pho'||p.id==='tha-chang') {
+      const end=p.id==='pho'?PHO_PIER_PASSAGE.to:{x:-1008,z:-1060};
+      const dx=end.x-p.x,dz=end.z-p.z,len=Math.hypot(dx,dz);
+      put({x:(p.x+end.x)/2,z:(p.z+end.z)/2},.14,5.5,.18,len,'#c9b995',Math.atan2(dx,dz));
+      // Bounded landing paving, bollards and waiting benches. No solids or
+      // furniture on the lane, and no continuous invented waterside street.
+      const shore={x:p.x+nx*13,z:p.z+nz*13};
+      put(shore,.2,18,.15,7,'#c9bc9f',yaw);
+      for(const side of [-1,1]) {
+        const q={x:shore.x+Math.cos(yaw)*side*7,z:shore.z-Math.sin(yaw)*side*7};
+        put(q,.55,3.5,.22,.8,'#947e5a',yaw);
+      }
+    }
     put(p, 0.12, 21, 0.2, 10, "#bfb497", yaw);
     put(p, 2.7, 14, 0.25, 6, "#bfab79", yaw);
     emit({

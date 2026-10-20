@@ -1,4 +1,5 @@
 import { emitBlockArchitecture } from "./urbanBlocks";
+import { isHistoricWaterfront } from './historicPlan';
 import { cinematicParcel, emitYaowaratFacade } from "./yaowarat";
 import type { District } from "../types";
 import {
@@ -44,7 +45,29 @@ export function emitDistrictArchitecture(
   emit: (piece: ArtPiece) => void,
 ) {
   for (const p of designs) {
-    if (emitBlockArchitecture(p.parcel, emit)) continue;
+    if (isHistoricWaterfront(p.parcel)) {
+      const b=p.parcel,c=Math.cos(b.yaw??0),s=Math.sin(b.yaw??0),H=b.height;
+      const put=(u:number,y:number,v:number,w:number,h:number,d:number,color:string,surface:Surface='plaster')=>emit({x:b.x+c*u+s*v,z:b.z-s*u+c*v,y,w,h,d,yaw:b.yaw??0,color,surface,layer:'core'});
+      // River observers see the SERVICE elevation, not the street shop signs.
+      // Give it shutters, masonry piers and eaves too; the previous full facade
+      // grammar only articulated +Z, leaving these exposed backs as blank boxes.
+      const back=-b.d/2-.14;
+      put(0,.06,0,b.w+1,.1,b.d+1,'#bcb093','concrete');
+      put(0,H-.25,back,b.w+.4,.35,.6,'#eee1bd');
+      put(0,H*.5,back,b.w,.22,.4,'#e3d2aa');
+      for(let u=-b.w/2+2.8;u<b.w/2-1.5;u+=5.2) {
+        put(u,H*.73,back-.1,2.4,H*.27,.17,'#365346','wood');
+        for(const side of [-1,1])put(u+side*1.3,H*.73,back-.22,.16,H*.3,.22,'#efdfb9');
+        put(u,H*.57,back-.25,2.9,.18,.5,'#e6d6b1');
+        put(u,1.65,back-.05,2.8,3.1,.2,'#536550','wood');
+        put(u,H*.73,back-.25,.12,H*.25,.15,'#c6b787');
+      }
+      for(const side of [-1,1])for(const z of [-b.d*.26,b.d*.26]) {
+        put(side*(b.w/2+.08),H*.73,z,.14,H*.27,1.8,'#496555','wood');
+        put(side*(b.w/2+.18),H*.55,z,.3,.18,2.2,'#e9dab7');
+      }
+    }
+    if (!isHistoricWaterfront(p.parcel) && emitBlockArchitecture(p.parcel, emit)) continue;
     if (cinematicParcel(p)) {
       emitYaowaratFacade(p, emit);
       continue;
@@ -53,7 +76,7 @@ export function emitDistrictArchitecture(
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
       s = Math.sin(yaw);
-    if (b.artRole === "background") {
+    if (b.artRole === "background" && !isHistoricWaterfront(b)) {
       const a = p.bays[0]!,
         H = ["siam", "silom", "sukhumvit"].includes(p.region)
           ? Math.min(b.height, 80)

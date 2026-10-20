@@ -13,6 +13,8 @@ export type Sightline = {
   target: ViewPoint;
   approach: string;
   outwardYaw: number;
+  feature?: 'landmark' | 'entrance' | 'roof-or-tower' | 'principal-architecture';
+  viewpoint?: 'public-street' | 'river' | 'elevated';
 };
 /** Independently documented cardinal frontage directions in the north-up
  * miniature. These are coarse composition expectations, not exact bearings. */
@@ -58,6 +60,39 @@ export function validateFacadeOrientation(d: District) {
       ];
     },
   );
+}
+
+/** Feature-labelled rays complement, rather than replace, the original 24
+ * views. An entrance and a skyline are independently reported by the browser. */
+export function historicFeatureSightlines(d: District): Sightline[] {
+  const original=historicSightlines(d).map(v=>({...v,feature:'roof-or-tower' as const,viewpoint:'public-street' as const}));
+  const features: {id:string;local:[number,number,number];road:string;offset:[number,number];feature:Sightline['feature']}[]=[
+    {id:'palace',local:[0,6,-100.65],road:'palace_n',offset:[0,-135],feature:'entrance'},
+    {id:'pho',local:[-50,4,-13],road:'old_w',offset:[-90,-8],feature:'entrance'},
+    {id:'swing',local:[-5.5,17,-58.65],road:'sao-chingcha',offset:[0,-110],feature:'principal-architecture'},
+    {id:'golden',local:[0,49,0],road:'boripat',offset:[110,0],feature:'roof-or-tower'},
+    {id:'golden',local:[0,3,66],road:'old_siam',offset:[0,140],feature:'entrance'},
+    {id:'traimit',local:[0,14,12.3],road:'tri-mit',offset:[0,90],feature:'entrance'},
+    {id:'hua',local:[2.25,3.5,28.1],road:'ramaiv',offset:[5,85],feature:'entrance'},
+    {id:'democracy',local:[7.07,15,7.07],road:'north_old',offset:[120,70],feature:'principal-architecture'},
+    {id:'gate',local:[0,13,4.3],road:'odeon',offset:[0,32],feature:'principal-architecture'},
+  ];
+  const nodes=new Map(d.nodes.map(n=>[n.id,n]));
+  const extra:Sightline[]=features.map((v,i)=>{
+    const l=d.landmarks.find(l=>l.id===v.id)!,ideal={x:l.plot!.x+v.offset[0],z:l.plot!.z+v.offset[1]},
+      from=d.roads.filter(r=>r.corridor===v.road).map(r=>distanceToSegment(ideal,nodes.get(r.a)!,nodes.get(r.b)!)).sort((a,b)=>a.distance-b.distance)[0]!.point,
+      target={...localPoint(l.plot!,l.yaw??0,v.local[0],v.local[2]),y:v.local[1]};
+    return {id:`feature:${v.id}:${i}`,landmarkId:v.id,from:{...from,y:3.4},target,approach:v.road,outwardYaw:Math.atan2(from.x-target.x,from.z-target.z),feature:v.feature,viewpoint:'public-street' as const};
+  });
+  for(const id of ['palace','pho']) {
+    const l=d.landmarks.find(l=>l.id===id)!,center=l.plot!,target={x:center.x,y:id==='palace'?32:18,z:center.z};
+    const river=d.river!.slice(1).map((b,i)=>distanceToSegment(center,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!,off=d.riverWidth!/2-8;
+    for(const viewpoint of ['river','elevated'] as const) {
+      const from=viewpoint==='river'?{x:river.point.x+(center.x-river.point.x)/river.distance*off,z:river.point.z+(center.z-river.point.z)/river.distance*off,y:3.4}:{x:center.x+180,z:center.z+210,y:160};
+      extra.push({id:`feature:${id}:${viewpoint}`,landmarkId:id,from,target,approach:viewpoint,outwardYaw:Math.atan2(from.x-target.x,from.z-target.z),feature:'landmark',viewpoint});
+    }
+  }
+  return [...original,...extra];
 }
 /** Nearest point on the documented corridor IN FRONT of the principal facade.
  * This is intentionally not the existing mission stop (which may be a side

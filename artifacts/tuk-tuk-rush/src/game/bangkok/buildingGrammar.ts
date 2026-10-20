@@ -1,4 +1,5 @@
 import { inSiamSquare } from "./urbanBlocks";
+import { isHistoricWaterfront } from './historicPlan';
 import { composeYaowarat } from "./yaowarat";
 import type { District, Obstacle } from "../types";
 import { distanceToSegment } from "../world";
@@ -275,6 +276,7 @@ export function designBuildings(d: District): ParcelDesign[] {
     .filter((r) => !r.bridge && !r.shortcut)
     .map((r) => ({ r, a: nodes.get(r.a)!, b: nodes.get(r.b)! }));
   return d.buildings.map((b) => {
+    const waterfront = isHistoricWaterfront(b);
     const id = buildingIdentity(b),
       seed = stableHash(id),
       region = b.regionId ?? "connector",
@@ -310,7 +312,9 @@ export function designBuildings(d: District): ParcelDesign[] {
         width = (b.w * weight) / sum,
         u = edge + width / 2;
       edge += width;
-      const type = inSiamSquare(b)
+      const type = waterfront
+        ? (["arcade", "shophouse", "guesthouse"] as const)[s % 3]!
+        : inSiamSquare(b)
         ? (["retail", "shophouse", "noodle"] as const)[s % 3]!
         : hero
           ? hero.sequence[
@@ -324,7 +328,7 @@ export function designBuildings(d: District): ParcelDesign[] {
           : g.types[(s >>> 4) % g.types.length]!;
       const tall = ["office", "apartment"].includes(type),
         modern = ["retail", "office", "apartment"].includes(type);
-      const floors = inSiamSquare(b)
+      const floors = waterfront ? 2 : inSiamSquare(b)
         ? 2 + (s % 2)
         : b.environmentId?.startsWith("street-infill:")
           ? modern
@@ -337,7 +341,7 @@ export function designBuildings(d: District): ParcelDesign[] {
               : modern
                 ? 2 + (s % 3)
                 : 2 + (s % 3);
-      const height = floors * (modern ? 3.9 : 3.35) + 1.5,
+      const height = waterfront ? Math.min(b.height, 8.4) : floors * (modern ? 3.9 : 3.35) + 1.5,
         front =
           b.d / 2 -
           (type === "residence" ? 1.6 : modern ? 1.1 : ((s >>> 8) % 3) * 0.23);
@@ -376,9 +380,9 @@ export function designBuildings(d: District): ParcelDesign[] {
               : type === "apartment" || type === "office"
                 ? "terrace"
                 : "parapet",
-        wall: g.walls[(s >>> 6) % g.walls.length]!,
-        trim: g.trims[(s >>> 10) % g.trims.length]!,
-        accent: g.accents[(s >>> 14) % g.accents.length]!,
+        wall: waterfront ? ['#e4cb94','#d7ba7d','#eee0be'][s % 3]! : g.walls[(s >>> 6) % g.walls.length]!,
+        trim: waterfront ? '#f3e8cd' : g.trims[(s >>> 10) % g.trims.length]!,
+        accent: waterfront ? '#456653' : g.accents[(s >>> 14) % g.accents.length]!,
         surface:
           type === "workshop"
             ? "brick"

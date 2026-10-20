@@ -14,8 +14,17 @@ const e = new GameEngine({ seed: 26 }),
   d = e.model.district,
   results = [];
 const intersectionMode=process.env.HISTORIC_INTERSECTIONS==='1';
+const trafficMode=process.env.HISTORIC_TRAFFIC==='1';
+const waterfrontMode=process.env.HISTORIC_WATERFRONT==='1';
 const armStops=new Map<string,(typeof d.nodes)[number]>();
 const armApproaches: {id:string;corridor:string|undefined;name:string|undefined;node:string;x:number;z:number}[]=[];
+if(waterfrontMode) {
+ for(const [id,corridor,x,z] of [['tha-chang','old_w',-940,-1030],['tha-tien','old_w',-872,-650],['thai-wang','thai-wang',-930,-780],['sanam-chai','old_e',-704,-700]] as const) {
+  const ids=new Set(d.roads.filter(r=>r.corridor===corridor).flatMap(r=>[r.a,r.b]));
+  armStops.set(id,d.nodes.filter(n=>ids.has(n.id)).sort((a,b)=>Math.hypot(a.x-x,a.z-z)-Math.hypot(b.x-x,b.z-z))[0]!);
+ }
+ pairs=[['tha-chang','tha-tien'],['tha-tien','tha-chang'],['thai-wang','sanam-chai']];
+}
 if(intersectionMode){
  const ring=new Set(d.roads.filter(r=>r.corridor==='democracy-circle').flatMap(r=>[r.a,r.b]));
  const arms=d.roads.filter(r=>r.corridor!=='democracy-circle'&&!r.noTraffic&&(ring.has(r.a)!==ring.has(r.b)));
@@ -29,7 +38,8 @@ if(intersectionMode){
 let total = 0;
 for (const [from, to] of pairs) {
   e.start("free");
-  e.model.traffic.length = 0;
+  if(!trafficMode)e.model.traffic.length = 0;
+  const trafficVehicles=e.model.traffic.length;
   const stop = (id: string) => {
     if(armStops.has(id))return armStops.get(id)!;
     if (id === 'yaowarat-entry') {
@@ -101,7 +111,7 @@ for (const [from, to] of pairs) {
     1,
     `${from} → ${to} must complete via actual controller`,
   );
-  assert.equal(hits, 0, `${from} → ${to} static collision`);
+  if(!trafficMode)assert.equal(hits, 0, `${from} → ${to} static collision`);
   total += metres;
   results.push({
     from,
@@ -111,19 +121,21 @@ for (const [from, to] of pairs) {
     collisionFrames: hits,
     controllerDriven: true,
     setupOnlyAtStart: true,
+    trafficVehicles,
   });
 }
 e.dispose();
 const out = {
   pass: true,
-  trafficDisabledForDeterminism: true,
+  trafficDisabledForDeterminism: !trafficMode,
+  trafficEnabled: trafficMode,
   metres: Math.round(total),
   routes: results,
   intersectionArms:intersectionMode?armApproaches:undefined,
 };
 fs.writeFileSync(
   new URL(
-    `../../../docs/qa/historic-bangkok/${intersectionMode?"intersection-drives":"driven-routes"}.json`,
+    process.env.HISTORIC_OUTPUT ?? `../../../docs/qa/historic-bangkok/${intersectionMode?"intersection-drives":"driven-routes"}.json`,
     import.meta.url,
   ),
   JSON.stringify(out, null, 2),
