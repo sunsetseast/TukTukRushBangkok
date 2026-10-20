@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "groups": 1,
+  "records": [
+    {
+      "name": "test:historic-fidelity",
+      "command": "node --import tsx scripts/check-historic-fidelity.ts",
+      "exitCode": 0,
+      "evidence": "regression-final/test-historic-fidelity.log",
+      "reason": "Final immutable registry, full landing-path and conservative river-bound coverage"
+    }
+  ]
+}

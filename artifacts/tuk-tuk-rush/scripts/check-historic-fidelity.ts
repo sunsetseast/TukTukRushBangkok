@@ -9,6 +9,7 @@ import {isHistoricWaterfront,PHO_PIER_PASSAGE} from '../src/game/bangkok/histori
 import {designBuildings} from '../src/game/bangkok/buildingGrammar';
 import {planTropicalPlants} from '../src/game/bangkok/tropicalPlan';
 import {riverPiers} from '../src/game/bangkok/riverfront';
+import {buildLandmarkRegistry} from '../src/game/bangkok/landmarkRegistry';
 import {obstacleDistance} from '../src/game/world';
 const out=new URL('../../../docs/qa/historic-visual-fidelity/',import.meta.url);
 fs.mkdirSync(out,{recursive:true});
@@ -20,6 +21,9 @@ assert.deepEqual(d.landmarks,before.landmarks,'Landmark positions, identities an
 assert.deepEqual(JSON.parse(JSON.stringify(d.transit)),before.transit,'BTS and Gold Line geometry preserved');
 assert.deepEqual(d.river,before.river,'River alignment preserved');
 assert.equal(d.riverWidth,before.riverWidth);
+const registry=buildLandmarkRegistry(d),oldRegistry=JSON.parse(fs.readFileSync(new URL('baseline-registry.json',out),'utf8'));
+assert(oldRegistry.every((p:{id:string})=>registry.some(q=>q.id===p.id)),'All 92 PR32 place identifiers remain save/discovery compatible');
+assert.deepEqual(registry.filter(p=>!oldRegistry.some((q:{id:string})=>q.id===p.id)).map(p=>p.id),['pier:tha-chang'],'Only the researched public landing adds a registered place');
 const key=(o:Obstacle)=>[o.x,o.z,o.w,o.d,o.yaw??0].map(n=>n.toFixed(4)).join(':');
 const current=new Set(d.buildings.map(key)),old=new Set(before.buildings.map(key));
 const removed=before.buildings.filter(o=>!current.has(key(o))),added=d.buildings.filter(o=>!old.has(key(o)));
@@ -40,7 +44,15 @@ for(let i=0;i<=40;i++) {
   const t=i/40,p={x:passage.from.x+(passage.to.x-passage.from.x)*t,z:passage.from.z+(passage.to.z-passage.from.z)*t};
   assert(d.buildings.every(b=>obstacleDistance(p,b)>passage.width/2),'Physical pier passage remains unobstructed');
 }
-assert(riverPiers(d).some(p=>p.id==='pho')&&riverPiers(d).some(p=>p.id==='tha-chang'),'Both public landings remain represented');
+const piers=riverPiers(d).filter(p=>p.id==='pho'||p.id==='tha-chang');
+assert.equal(piers.length,2,'Both public landings remain represented');
+for(const pier of piers) {
+  const end=pier.id==='pho'?PHO_PIER_PASSAGE.to:{x:-1008,z:-1060};
+  for(let i=0;i<=80;i++) {
+    const t=i/80,p={x:pier.x+(end.x-pier.x)*t,z:pier.z+(end.z-pier.z)*t};
+    assert(d.buildings.every(b=>obstacleDistance(p,b)>2.75),'Full paved landing connection stays clear: '+pier.id);
+  }
+}
 const planting=planTropicalPlants(d).filter(p=>p.context==='sanam');
 assert(planting.length>10&&planting.every(p=>p.species==='tamarind'||p.species==='understory'),'Sanam has bounded tamarind planting rather than palms');
 const lines=historicFeatureSightlines(d),rays=validateLandmarkVisibility(d,lines);

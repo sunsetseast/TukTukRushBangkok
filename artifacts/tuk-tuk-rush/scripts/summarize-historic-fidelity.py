@@ -18,7 +18,7 @@ for label,checkout in [('before',baseline),('after',repo)]:
     bundles[label]={'files':[p.name for p in js],'jsBytes':sum(p.stat().st_size for p in js),'gzipBytes':sum(len(gzip.compress(p.read_bytes(),mtime=0)) for p in js)}
 (out/'bundle-comparison.json').write_text(json.dumps(bundles,indent=2))
 metrics=[('Retained geometry + instance buffers (bytes)','geometryBuffersBytes'),('Retained geometries','geometries'),('Materials','materials'),('Textures (Node, no canvas labels)','textures'),('All retained LOD triangles','trianglesAllLevels'),('Construction wall time (ms)','constructionMs'),('Construction CPU time (ms)','constructionCpuMs')]
-lines=['# Measured performance comparison','','Same host, identical world/scene builder and dependencies. Final Node inventories run sequentially after the browser checks. Counts include retained near/far models and spatial batches; they are not on-screen draw calls. No physical iPhone or Safari measurement is claimed.','','| Metric | PR32 main | PR33 final | Change |','|---|---:|---:|---:|']
+lines=['# Measured performance comparison','','Same host, identical inventory script and dependencies. PR32 and PR33 Node inventories run sequentially; browser QA overlaps these wall-time measurements. Counts include retained near/far models and spatial batches; they are not on-screen draw calls. No physical iPhone or Safari measurement is claimed.','','| Metric | PR32 main | PR33 final | Change |','|---|---:|---:|---:|']
 for label,key in metrics:
     b,a=before[key],after[key];lines.append(f'| {label} | {b:,} | {a:,} | {(a/b-1)*100:+.2f}% |')
 for label,key in [('Production JS bytes','jsBytes'),('Production JS gzip bytes','gzipBytes')]:

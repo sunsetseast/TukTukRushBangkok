@@ -1,0 +1,67 @@
+{
+  "before": {
+    "label": "after",
+    "buildings": 973,
+    "samples": 1014,
+    "uses": {
+      "water": 6,
+      "vacant": 12,
+      "developed": 677,
+      "road": 146,
+      "public-space": 75,
+      "authored-reservation": 98
+    }
+  },
+  "after": {
+    "label": "after",
+    "buildings": 967,
+    "samples": 1014,
+    "uses": {
+      "water": 6,
+      "vacant": 13,
+      "developed": 674,
+      "road": 146,
+      "authored-reservation": 100,
+      "public-space": 75
+    }
+  },
+  "changes": [
+    {
+      "before": {
+        "x": -990,
+        "z": -742,
+        "use": "developed"
+      },
+      "after": {
+        "x": -990,
+        "z": -742,
+        "use": "authored-reservation"
+      }
+    },
+    {
+      "before": {
+        "x": -882,
+        "z": -742,
+        "use": "developed"
+      },
+      "after": {
+        "x": -882,
+        "z": -742,
+        "use": "authored-reservation"
+      }
+    },
+    {
+      "before": {
+        "x": -882,
+        "z": -670,
+        "use": "developed"
+      },
+      "after": {
+        "x": -882,
+        "z": -670,
+        "use": "vacant"
+      }
+    }
+  ],
+  "method": "Same inherited 36m grid and proximity classifier; vacant means unclassified, not automatically developable land."
+}

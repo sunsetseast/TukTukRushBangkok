@@ -1,0 +1,5088 @@
+{
+  "local": {
+    "label": "after",
+    "buildings": 967,
+    "samples": 1014,
+    "uses": {
+      "water": 6,
+      "vacant": 13,
+      "developed": 674,
+      "road": 146,
+      "authored-reservation": 100,
+      "public-space": 75
+    }
+  },
+  "cells": [
+    {
+      "x": -990,
+      "z": -1426,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1390,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1354,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1318,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1282,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1246,
+      "use": "water"
+    },
+    {
+      "x": -990,
+      "z": -1210,
+      "use": "vacant"
+    },
+    {
+      "x": -990,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -990,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -990,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -990,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -1102,
+      "use": "road"
+    },
+    {
+      "x": -954,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -954,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -954,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -1390,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1318,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1282,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1246,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1210,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -918,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -918,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -918,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -918,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -742,
+      "use": "road"
+    },
+    {
+      "x": -918,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -918,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -1426,
+      "use": "road"
+    },
+    {
+      "x": -882,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -882,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -882,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -882,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -882,
+      "z": -706,
+      "use": "road"
+    },
+    {
+      "x": -882,
+      "z": -670,
+      "use": "vacant"
+    },
+    {
+      "x": -882,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -882,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -846,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -846,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -846,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -846,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -846,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -846,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -706,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -670,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -634,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -846,
+      "z": -598,
+      "use": "road"
+    },
+    {
+      "x": -846,
+      "z": -562,
+      "use": "road"
+    },
+    {
+      "x": -846,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -846,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -810,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -810,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -810,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -810,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -810,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -810,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -706,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -670,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -634,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -810,
+      "z": -598,
+      "use": "road"
+    },
+    {
+      "x": -810,
+      "z": -562,
+      "use": "vacant"
+    },
+    {
+      "x": -810,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -810,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -774,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -774,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -774,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -706,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -670,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -634,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -774,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -774,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -738,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -738,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -850,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -738,
+      "z": -742,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -706,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -670,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -634,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -738,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -738,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -702,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -702,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -702,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -922,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -886,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -850,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -814,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -742,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -706,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -702,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -702,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -702,
+      "z": -562,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -526,
+      "use": "road"
+    },
+    {
+      "x": -702,
+      "z": -490,
+      "use": "road"
+    },
+    {
+      "x": -666,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -666,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -666,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -666,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -666,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -1426,
+      "use": "road"
+    },
+    {
+      "x": -630,
+      "z": -1390,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1354,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1318,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1282,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1246,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1210,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1174,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1138,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1102,
+      "use": "public-space"
+    },
+    {
+      "x": -630,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -630,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -630,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -630,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -1426,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -1318,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1282,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1246,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1210,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1174,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1138,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1102,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -594,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -594,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1426,
+      "use": "road"
+    },
+    {
+      "x": -558,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -558,
+      "z": -922,
+      "use": "road"
+    },
+    {
+      "x": -558,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -558,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -558,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -522,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -522,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1390,
+      "use": "road"
+    },
+    {
+      "x": -486,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -486,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -486,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1390,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -922,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -886,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -850,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -814,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -778,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -742,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -706,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -670,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -634,
+      "use": "road"
+    },
+    {
+      "x": -450,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -450,
+      "z": -490,
+      "use": "road"
+    },
+    {
+      "x": -414,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -414,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1426,
+      "use": "road"
+    },
+    {
+      "x": -378,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -378,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -378,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -378,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -378,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -378,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -378,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -378,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1390,
+      "use": "road"
+    },
+    {
+      "x": -342,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -342,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1138,
+      "use": "road"
+    },
+    {
+      "x": -342,
+      "z": -1102,
+      "use": "road"
+    },
+    {
+      "x": -342,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -342,
+      "z": -994,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -342,
+      "z": -958,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -342,
+      "z": -922,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -342,
+      "z": -886,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -342,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -342,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -306,
+      "z": -1318,
+      "use": "road"
+    },
+    {
+      "x": -306,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1210,
+      "use": "road"
+    },
+    {
+      "x": -306,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -306,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -1318,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -270,
+      "z": -1282,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -922,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -886,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -850,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -814,
+      "use": "road"
+    },
+    {
+      "x": -270,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -270,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1354,
+      "use": "road"
+    },
+    {
+      "x": -234,
+      "z": -1318,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -234,
+      "z": -1282,
+      "use": "road"
+    },
+    {
+      "x": -234,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -742,
+      "use": "road"
+    },
+    {
+      "x": -234,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -234,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1282,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -1138,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -1102,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -670,
+      "use": "road"
+    },
+    {
+      "x": -198,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -198,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1246,
+      "use": "road"
+    },
+    {
+      "x": -162,
+      "z": -1210,
+      "use": "road"
+    },
+    {
+      "x": -162,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -162,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -598,
+      "use": "road"
+    },
+    {
+      "x": -162,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -162,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1246,
+      "use": "road"
+    },
+    {
+      "x": -126,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -1102,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -126,
+      "z": -1066,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -126,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -126,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -126,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -126,
+      "z": -490,
+      "use": "road"
+    },
+    {
+      "x": -90,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1210,
+      "use": "road"
+    },
+    {
+      "x": -90,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -1102,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -90,
+      "z": -1066,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -90,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -90,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -90,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -90,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -1102,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -54,
+      "z": -1066,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -54,
+      "z": -1030,
+      "use": "authored-reservation"
+    },
+    {
+      "x": -54,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": -54,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -54,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1174,
+      "use": "road"
+    },
+    {
+      "x": -18,
+      "z": -1138,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": -18,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1426,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1390,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1354,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -1138,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -1102,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -1066,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -1030,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -994,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -958,
+      "use": "road"
+    },
+    {
+      "x": 18,
+      "z": -922,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -634,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -598,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 18,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1426,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -1390,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -1354,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -1318,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1282,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1246,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1210,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1174,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1138,
+      "use": "road"
+    },
+    {
+      "x": 54,
+      "z": -1102,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1066,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -1030,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -994,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -958,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -922,
+      "use": "road"
+    },
+    {
+      "x": 54,
+      "z": -886,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -850,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -814,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -778,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -742,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -706,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -670,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -634,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -598,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -562,
+      "use": "vacant"
+    },
+    {
+      "x": 54,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 54,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -346,
+      "use": "road"
+    },
+    {
+      "x": 90,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 90,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 90,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 126,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 126,
+      "z": -22,
+      "use": "road"
+    },
+    {
+      "x": 126,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -310,
+      "use": "road"
+    },
+    {
+      "x": 162,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 162,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 162,
+      "z": -22,
+      "use": "road"
+    },
+    {
+      "x": 162,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -58,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 198,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -562,
+      "use": "vacant"
+    },
+    {
+      "x": 234,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -274,
+      "use": "road"
+    },
+    {
+      "x": 234,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": -130,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 234,
+      "z": -94,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 234,
+      "z": -58,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 234,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 234,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": -130,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 270,
+      "z": -94,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 270,
+      "z": -58,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 270,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 270,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -238,
+      "use": "road"
+    },
+    {
+      "x": 306,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": -58,
+      "use": "vacant"
+    },
+    {
+      "x": 306,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 306,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -454,
+      "use": "vacant"
+    },
+    {
+      "x": 342,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 342,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 342,
+      "z": 14,
+      "use": "road"
+    },
+    {
+      "x": 378,
+      "z": -562,
+      "use": "vacant"
+    },
+    {
+      "x": 378,
+      "z": -526,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -490,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -454,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -418,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -382,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -346,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -310,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -274,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -238,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 378,
+      "z": -202,
+      "use": "road"
+    },
+    {
+      "x": 378,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 378,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 378,
+      "z": -94,
+      "use": "road"
+    },
+    {
+      "x": 378,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 378,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 378,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": -526,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -490,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -454,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -418,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -382,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -346,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -310,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -274,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -238,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -202,
+      "use": "authored-reservation"
+    },
+    {
+      "x": 414,
+      "z": -166,
+      "use": "road"
+    },
+    {
+      "x": 414,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": -94,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": -58,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 414,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -130,
+      "use": "road"
+    },
+    {
+      "x": 450,
+      "z": -94,
+      "use": "road"
+    },
+    {
+      "x": 450,
+      "z": -58,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": -22,
+      "use": "developed"
+    },
+    {
+      "x": 450,
+      "z": 14,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -562,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -526,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -490,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -454,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -418,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -382,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -346,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -310,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -274,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -238,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -202,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -166,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -130,
+      "use": "developed"
+    },
+    {
+      "x": 486,
+      "z": -94,
+      "use": "road"
+    },
+    {
+      "x": 486,
+      "z": -58,
+      "use": "road"
+    },
+    {
+      "x": 486,
+      "z": -22,
+      "use": "road"
+    },
+    {
+      "x": 486,
+      "z": 14,
+      "use": "developed"
+    }
+  ],
+  "method": "Identical 36m grid in the same historic area. Baseline uses committed PR31 parcel polygons; current uses live parcel index. Road, park and water classes take precedence over development."
+}

@@ -5,7 +5,7 @@
 3. Wat Pho's west gate, cloisters and chedis are recognizable components; its whole compound remains simplified. Research/author more precise reclining-Buddha precinct massing and gate hierarchy within current protected grounds.
 4. Golden Mount's planting, terraces and lower halls remain stylized. Improve the stepped pedestrian route's architectural specificity and botanical diversity without expanding collision boundaries or mobile draw budgets.
 5. Sanam Luang now has appropriate tamarind silhouettes and an open ceremonial field. Civic boundary buildings, bark/foliage detail and ground variation are approximate; avoid filling legitimate open space with props.
-6. Further differentiate Ratchadamnoen civic facades, Ti Thong institutions and Traimit's surrounding shops. This pass preserves Hua Lamphong and the Gate corridor rather than claiming their secondary streets were individually reconstructed.
+6. Further differentiate Ratchadamnoen civic facades, Ti Thong institutions and Traimit's surrounding shops. Survey the unclassified road-margin sample (-882,-670), exposed after local infill correction: the inherited grid is 13 unclassified versus 12. This pass preserves Hua Lamphong and the Gate corridor rather than claiming their secondary streets were individually reconstructed.
 7. Investigate the inherited Pho → Hua Lamphong traffic collision sequence. All deliveries complete, but both main and this branch record 31 collision frames with the deterministic traffic seed.
 8. Physical iPhone Safari validation (including iPhone 17 Pro Max), sustained frame pacing, thermal behavior and mobile memory pressure remain required before hardware performance certification. Software WebGL is insufficient.
 

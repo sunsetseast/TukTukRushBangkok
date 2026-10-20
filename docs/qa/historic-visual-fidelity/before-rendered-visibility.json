@@ -1,0 +1,204 @@
+{
+  "label": "before",
+  "renderer": "Chrome 138 headless / SwiftShader",
+  "viewport": [
+    768,
+    432
+  ],
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "trafficDisabled": true,
+  "rays": [
+    {
+      "id": "historic:palace:1",
+      "landmarkId": "palace",
+      "from": {
+        "x": -600,
+        "z": -1060,
+        "y": 3.4
+      },
+      "target": {
+        "x": -787,
+        "z": -995,
+        "y": 40
+      },
+      "approach": "old_e",
+      "outwardYaw": 1.905325738269426,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "firstObject": "",
+      "firstHitDistance": 41.07139561465677,
+      "featureDistance": 160.25808558469467,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "foreground obstruction",
+      "stats": {
+        "calls": 268,
+        "triangles": 372268,
+        "geometries": 591,
+        "textures": 16,
+        "frameMs": 31.400000000023283
+      },
+      "file": "historic-palace-1.jpg"
+    },
+    {
+      "id": "historic:pho:0",
+      "landmarkId": "pho",
+      "from": {
+        "x": -913.1059506531204,
+        "z": -748.3599419448476,
+        "y": 3.4
+      },
+      "target": {
+        "x": -800,
+        "z": -698,
+        "y": 22
+      },
+      "approach": "old_w",
+      "outwardYaw": -1.9896895748876713,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "firstObject": "",
+      "firstHitDistance": 35.99556616365657,
+      "featureDistance": 89.20443314079444,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "foreground obstruction",
+      "stats": {
+        "calls": 226,
+        "triangles": 380920,
+        "geometries": 796,
+        "textures": 17,
+        "frameMs": 38.89999999990687
+      },
+      "file": "historic-pho-0.jpg"
+    },
+    {
+      "id": "historic:swing:2",
+      "landmarkId": "swing",
+      "from": {
+        "x": -444,
+        "z": -995,
+        "y": 3.4
+      },
+      "target": {
+        "x": -365.5,
+        "z": -998,
+        "y": 17
+      },
+      "approach": "ti-thong",
+      "outwardYaw": -1.532598355164133,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "featureDistance": null,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "no rendered surface at target",
+      "stats": {
+        "calls": 192,
+        "triangles": 392082,
+        "geometries": 999,
+        "textures": 17,
+        "frameMs": 27.5
+      },
+      "file": "historic-swing-2.jpg"
+    },
+    {
+      "id": "historic:golden:2",
+      "landmarkId": "golden",
+      "from": {
+        "x": -77.53148614609572,
+        "z": -955.5163727959698,
+        "y": 3.4
+      },
+      "target": {
+        "x": -80,
+        "z": -1080,
+        "y": 54
+      },
+      "approach": "old_siam",
+      "outwardYaw": 0.01982742968753394,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "firstObject": "",
+      "firstHitDistance": 16.74623437597672,
+      "featureDistance": 117.65103867120563,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "foreground obstruction",
+      "stats": {
+        "calls": 187,
+        "triangles": 326352,
+        "geometries": 1146,
+        "textures": 17,
+        "frameMs": 1026.0999999998603
+      },
+      "file": "historic-golden-2.jpg"
+    },
+    {
+      "id": "historic:hua:1",
+      "landmarkId": "hua",
+      "from": {
+        "x": 292.19765929778936,
+        "z": -251.74512353706112,
+        "y": 3.4
+      },
+      "target": {
+        "x": 383,
+        "z": -257.8,
+        "y": 18
+      },
+      "approach": "charoen_n",
+      "outwardYaw": -1.5042129547783365,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "firstObject": "",
+      "firstHitDistance": 23.756773361568918,
+      "featureDistance": 68.41093576685519,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "foreground obstruction",
+      "stats": {
+        "calls": 191,
+        "triangles": 293639,
+        "geometries": 1352,
+        "textures": 18,
+        "frameMs": 753.1000000000931
+      },
+      "file": "historic-hua-1.jpg"
+    },
+    {
+      "id": "historic:traimit:2",
+      "landmarkId": "traimit",
+      "from": {
+        "x": 281.40442132639794,
+        "z": -256.925877763329,
+        "y": 3.4
+      },
+      "target": {
+        "x": 256,
+        "z": -104,
+        "y": 40
+      },
+      "approach": "charoen_n",
+      "outwardYaw": 2.9769735319607085,
+      "feature": "roof-or-tower",
+      "viewpoint": "public-street",
+      "firstObject": "",
+      "firstHitDistance": 16.210902248502965,
+      "featureDistance": 143.07270868687795,
+      "landmarkVisible": false,
+      "namedFeatureVerified": false,
+      "classification": "foreground obstruction",
+      "stats": {
+        "calls": 206,
+        "triangles": 353627,
+        "geometries": 1509,
+        "textures": 18,
+        "frameMs": 1181.3999999999069
+      },
+      "file": "historic-traimit-2.jpg"
+    }
+  ],
+  "errors": []
+}

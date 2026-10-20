@@ -11,7 +11,9 @@ This is an architectural and environmental refinement of merged PR32 (`341e02f52
 - Rework Golden Mount's retaining terraces to follow the irregular hill, join trees to the terrain, add layered planting and intermediate temple details. Improve Traimit's terrace balustrades, columns, doors and ceremonial stairs; add Democracy Monument's radial paving and relief panels.
 - Replace Sanam Luang's generic crowns with instanced tamarind silhouettes and physically joined branches on the existing perimeter planting positions. Preserve the large ceremonial field. Near/far crown counts are bounded; no new vegetation system was added.
 
-The building seed order is preserved before local approach filtering, so unrelated neighborhoods do not reshuffle. The result has 7,084 procedural buildings and 208 protected parcels. All 23 removed and 16 added/reflowed footprints lie inside the bounded western study area. Forty-two commercial footprints remain in the waterfront grammar band. See [map](riverfront-before-after.png) and [footprint deltas](footprint-deltas.json).
+The building seed order is preserved before local approach filtering, so unrelated neighborhoods do not reshuffle. The result has 7,084 procedural buildings and 208 protected parcels. All 23 removed and 16 added/reflowed footprints lie inside the bounded western study area. Forty-two commercial footprints remain in the waterfront grammar band. The 49 scene landmarks and all 92 existing registered place IDs remain; Tha Chang adds one place through the existing registry. See [map](riverfront-before-after.png) and [footprint deltas](footprint-deltas.json).
+
+The inherited 36m land-use survey now has 13 unclassified samples versus 12, not a blanket completeness improvement. Two former development samples become protected public access; one near (-882,-670) becomes unclassified after neighboring infill removal. It lies near the Maha Rat road margin and needs a more precise frontage/verge survey. The coarse proximity classifier alone does not justify another building. [Exact changes](landuse-comparison.json).
 
 ## Review evidence
 

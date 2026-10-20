@@ -222,7 +222,8 @@ try {
         },
         { camera, approach: {...street,tx:legal.tangent.x,tz:legal.tangent.z}, target, view },
       );
-      pose.roadVerified = true;
+      pose.playerRoadVerified = true;
+      pose.roadVerified = view !== 'river' && !riverView;
       pose.publicRoad = {
         x: street.x,
         z: street.z,
@@ -234,9 +235,11 @@ try {
           ? "normal driving camera"
           : view === "elevated"
             ? "elevated inspection"
-            : riverView
+            : riverView || view === 'river'
               ? "river-facing inspection"
               : "road-level inspection";
+      pose.cameraSurface = view === 'elevated' ? 'elevated inspection'
+        : view === 'river' || riverView ? 'river inspection at boat height' : 'public road';
       const frame = await page.evaluate(() => window.__graphics.frameId);
       await page.waitForFunction(
         (f) => window.__graphics.frameId >= f + 2,
