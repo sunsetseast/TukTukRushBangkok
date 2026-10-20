@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "baseline": "341e02f52b04d07dda7688e2f07b47abc19d44a8",
+  "baselineFrames": 35,
+  "matchedCameraPoses": 35,
+  "finalFrames": 42,
+  "baselineMeshRays": 6,
+  "finalMeshRays": 37,
+  "regressionGroups": 33,
+  "viewports": 4,
+  "restartCycles": 3,
+  "verifiedImageFiles": 103,
+  "immutableBaselineBlobs": {
+    "baseline-world.json.gz": "133db01ff36d68482f2bef38dd832c659b86b681",
+    "baseline-visibility.json": "d20f3dca07bc371674127444ef608c44b54cde0b",
+    "baseline-registry.json": "52647aada47ef3708a75898dc4e3ce8d5945d749"
+  },
+  "allLocalMarkdownLinksResolve": true,
+  "trafficMatchesMain": true,
+  "retainedInterruptedLogs": [
+    "capture-interrupted.log",
+    "mesh-interrupted.log"
+  ],
+  "physicalIPhone": false,
+  "softwareWebGLOnly": true
+}

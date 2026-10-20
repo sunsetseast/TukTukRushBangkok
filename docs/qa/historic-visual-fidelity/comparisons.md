@@ -90,6 +90,8 @@ Ovedc, CC BY-SA 4.0.
 | Elevated inspection | ![Before elevated](before/traimit-elevated.jpg) | ![After elevated](after/traimit-elevated.jpg) |
 | Normal driving camera | ![Before driving](before/traimit-driving.jpg) | ![After driving](after/traimit-driving.jpg) |
 
+[Actual night view](after/traimit-night.jpg)
+
 ## democracy
 
 | Real photograph | PR32 before | PR33 after |
@@ -102,6 +104,8 @@ Marcin Konsek, CC BY-SA 4.0.
 |---|---|---|
 | Elevated inspection | ![Before elevated](before/democracy-elevated.jpg) | ![After elevated](after/democracy-elevated.jpg) |
 | Normal driving camera | ![Before driving](before/democracy-driving.jpg) | ![After driving](after/democracy-driving.jpg) |
+
+[Actual night view](after/democracy-night.jpg)
 
 ## swing
 
@@ -146,6 +150,8 @@ KarlDubost, CC BY-SA 3.0.
 | Elevated inspection | ![Before elevated](before/hua-elevated.jpg) | ![After elevated](after/hua-elevated.jpg) |
 | Normal driving camera | ![Before driving](before/hua-driving.jpg) | ![After driving](after/hua-driving.jpg) |
 
+[Actual night view](after/hua-night.jpg)
+
 ## gate
 
 | Real photograph | PR32 before | PR33 after |
@@ -158,4 +164,6 @@ Marcin Konsek, CC BY-SA 4.0.
 |---|---|---|
 | Elevated inspection | ![Before elevated](before/gate-elevated.jpg) | ![After elevated](after/gate-elevated.jpg) |
 | Normal driving camera | ![Before driving](before/gate-driving.jpg) | ![After driving](after/gate-driving.jpg) |
+
+[Actual night view](after/gate-night.jpg)
 

@@ -50,7 +50,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "road-level inspection"
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 352,
@@ -98,7 +100,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "elevated inspection"
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
       },
       "stats": {
         "calls": 351,
@@ -135,7 +139,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "normal driving camera"
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 423,
@@ -176,14 +182,16 @@
           "tz": 0
         },
         "view": "river",
-        "roadVerified": true,
+        "roadVerified": false,
         "publicRoad": {
           "x": -820,
           "z": -1060,
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "road-level inspection"
+        "approachType": "river inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "river inspection at boat height"
       },
       "stats": {
         "calls": 351,
@@ -231,7 +239,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "road-level inspection"
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 330,
@@ -279,7 +289,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "elevated inspection"
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
       },
       "stats": {
         "calls": 327,
@@ -316,7 +328,9 @@
           "width": 12,
           "corridor": "palace_n"
         },
-        "approachType": "normal driving camera"
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 428,
@@ -364,7 +378,9 @@
           "width": 12,
           "corridor": "old_w"
         },
-        "approachType": "road-level inspection"
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 432,
@@ -412,7 +428,9 @@
           "width": 12,
           "corridor": "old_w"
         },
-        "approachType": "elevated inspection"
+        "approachType": "elevated inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "elevated inspection"
       },
       "stats": {
         "calls": 422,
@@ -449,7 +467,9 @@
           "width": 12,
           "corridor": "old_w"
         },
-        "approachType": "normal driving camera"
+        "approachType": "normal driving camera",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 315,
@@ -498,7 +518,8 @@
         },
         "approachType": "river inspection",
         "cameraSurface": "river inspection at boat height",
-        "playerRoadVerified": true
+        "playerRoadVerified": true,
+        "roadVerified": false
       },
       "stats": {
         "calls": 452,
@@ -547,7 +568,8 @@
           "corridor": "dinso"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 401,
@@ -596,7 +618,8 @@
           "corridor": "dinso"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 390,
@@ -634,7 +657,8 @@
           "corridor": "dinso"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 416,
@@ -683,7 +707,8 @@
           "corridor": "boripat"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 465,
@@ -721,7 +746,8 @@
           "corridor": "boripat"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 241,
@@ -770,7 +796,8 @@
           "corridor": "boripat"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 464,
@@ -819,7 +846,8 @@
           "corridor": "north_old"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 376,
@@ -868,7 +896,8 @@
           "corridor": "north_old"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 349,
@@ -906,7 +935,8 @@
           "corridor": "north_old"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 372,
@@ -955,7 +985,8 @@
           "corridor": "ramaiv"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 370,
@@ -1004,7 +1035,8 @@
           "corridor": "ramaiv"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 445,
@@ -1042,7 +1074,8 @@
           "corridor": "ramaiv"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 307,
@@ -1091,7 +1124,8 @@
           "corridor": "ramaiv"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 326,
@@ -1140,7 +1174,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 396,
@@ -1178,7 +1213,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 429,
@@ -1227,7 +1263,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 395,
@@ -1276,7 +1313,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 407,
@@ -1314,7 +1352,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 418,
@@ -1363,7 +1402,8 @@
           "corridor": "tri-mit"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 387,
@@ -1412,7 +1452,8 @@
           "corridor": "yaowarat"
         },
         "approachType": "road-level inspection",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 438,
@@ -1461,7 +1502,8 @@
           "corridor": "yaowarat"
         },
         "approachType": "elevated inspection",
-        "cameraSurface": "elevated inspection"
+        "cameraSurface": "elevated inspection",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 433,
@@ -1499,7 +1541,8 @@
           "corridor": "yaowarat"
         },
         "approachType": "normal driving camera",
-        "cameraSurface": "public road"
+        "cameraSurface": "public road",
+        "playerRoadVerified": true
       },
       "stats": {
         "calls": 462,
@@ -1547,7 +1590,9 @@
           "width": 10,
           "corridor": "boripat"
         },
-        "approachType": "road-level inspection"
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 467,
@@ -1555,7 +1600,8 @@
         "geometries": 775,
         "textures": 14,
         "frameMs": 3654.3000000000466
-      }
+      },
+      "provenance": "Fresh unchanged-main worktree capture, PR33 QA"
     },
     {
       "id": "traimit",
@@ -1594,7 +1640,9 @@
           "width": 12,
           "corridor": "tri-mit"
         },
-        "approachType": "road-level inspection"
+        "approachType": "road-level inspection",
+        "playerRoadVerified": true,
+        "cameraSurface": "public road"
       },
       "stats": {
         "calls": 405,
@@ -1602,7 +1650,11 @@
         "geometries": 1055,
         "textures": 16,
         "frameMs": 3207.79999999993
-      }
+      },
+      "provenance": "Fresh unchanged-main worktree capture, PR33 QA"
     }
-  ]
+  ],
+  "baselineCommit": "341e02f52b04d07dda7688e2f07b47abc19d44a8",
+  "provenance": "Fresh unchanged-main frames and explicitly identified inherited PR32 WebGL frames; per-record provenance applies.",
+  "timingNote": "Multi-session evidence: startup/capture elapsed fields belong to the latest session, not a total or hardware performance comparison."
 }
