@@ -10,9 +10,10 @@ export const HUA_PLAN = {
   map: [600, 528] as [number, number],
   yaw: 0,
   width: 84,
-  depth: 80,
+  depth: 180,
   front: 30,
   height: 27,
+  yard: { centerZ: -110, width: 91, depth: 302 },
 };
 export function placeHuaLamphong(d: District) {
   const l = d.landmarks.find((l) => l.id === "hua")!,
@@ -38,9 +39,11 @@ export function placeHuaLamphong(d: District) {
     landmarkId: l.id,
   });
   d.obstacles.push(
-    mass(0, -4, 58, 66, 27),
+    mass(0, -54, 58, 166, 27),
     mass(-35, -4, 13, 67, 12.5),
     mass(35, -4, 13, 67, 12.5),
+    mass(-44.5,-110,.8,300,2), mass(44.5,-110,.8,300,2),
+    mass(0,-260,90,.8,2),
   );
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   const access = d.roads
@@ -65,9 +68,9 @@ export function buildHuaLamphong(b: LandmarkBuilder, detail: boolean) {
     DARK = "#193e47",
     BASE = "#765a4d",
     n = detail ? 40 : 20;
-  b.box(0, 0.3, -3, 84, 0.6, 78, "#c6bda6");
+  b.box(0, 0.3, -53, 84, 0.6, 178, "#c6bda6");
   // Long train shed and low classical side wings; no roof pretending to be a tower.
-  b.box(0, 4, -4, 58, 8, 60, "#d4c9ae");
+  b.box(0, 4, -54, 58, 8, 160, "#d4c9ae");
   for (const side of [-1, 1]) {
     b.box(side * 35, 5.3, -4, 13, 10.6, 67, CREAM);
     b.box(side * 35, 11, -4, 14, 0.7, 68, IVORY);
@@ -146,7 +149,7 @@ export function buildHuaLamphong(b: LandmarkBuilder, detail: boolean) {
   // Barrel vault: same ellipse behind the front, not a competing circular dome.
   const verts: number[] = [],
     indices: number[] = [];
-  for (const z of [-37, 28])
+  for (const z of [-137, 28])
     for (const [x, y] of ellipse(29, 17, n)) verts.push(x, y, z);
   for (let i = 0; i < n; i++) {
     const j = i + n + 1;
@@ -158,7 +161,7 @@ export function buildHuaLamphong(b: LandmarkBuilder, detail: boolean) {
   roof.computeVertexNormals();
   b.sculpt(roof, 0, 0, 0, "#879991", "ceramic");
   if (detail)
-    for (const z of [-34, -23, -12, -1, 10, 21])
+    for (const z of [-134,-112,-90,-68,-46,-24,-1,21])
       for (let i = 0; i < n; i++) {
         const [x1, y1] = outline[i]!,
           [x2, y2] = outline[i + 1]!;
@@ -172,6 +175,19 @@ export function buildHuaLamphong(b: LandmarkBuilder, detail: boolean) {
           "#bdc2ad",
         );
       }
+  // Mainline tracks remain ground-level north of the shed. This is a compact
+  // station reservation, distinct from underground MRT BL28 southeast.
+  b.box(0,.08,-198,88,.12,124,'#898a78');
+  for(const x of [-22,-11,0,11,22]) {
+    for(const side of [-1,1])b.box(x+side*.8,.2,-195,.1,.18,116,'#5e6762');
+    if(detail)for(let z=-248;z<-137;z+=3.5)b.box(x,.15,z,2.7,.15,.27,'#6e5e4e');
+    b.box(x,.5,-247,2.4,.7,.6,'#935a43');
+  }
+  for(const x of [-44.5,44.5]) {
+    b.box(x,1,-110,.8,2,300,'#b7b49f');
+    if(detail)for(let z=-255;z<35;z+=10)b.box(x,1.6,z,.22,3.2,.22,'#6b776a');
+  }
+  b.box(0,1,-260,90,2,.8,'#b7b49f');
   // Recessed entrance wall, columned portico and continuous balustrade.
   b.box(0, 3.8, 27.7, 60, 7.6, 0.5, "#cbbd9e");
   for (let x = -27; x <= 27; x += 4.5) {

@@ -1,0 +1,258 @@
+{
+  "renderer": "Chromium SwiftShader; actual rendered meshes",
+  "physicalIPhone": false,
+  "hiddenCityObjects": false,
+  "rays": [
+    {
+      "id": "historic:palace:0",
+      "landmarkId": "palace",
+      "approach": "palace_n",
+      "from": {
+        "x": -820,
+        "z": -1060,
+        "y": 3.4
+      },
+      "target": {
+        "x": -820,
+        "z": -1040.65,
+        "y": 6
+      },
+      "firstObject": "",
+      "firstLandmark": "palace",
+      "featureDistance": 1.3621322522352677,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": false,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:pho:0",
+      "landmarkId": "pho",
+      "approach": "old_w",
+      "from": {
+        "x": -913.1059506531204,
+        "z": -748.3599419448476,
+        "y": 3.4
+      },
+      "target": {
+        "x": -800,
+        "z": -698,
+        "y": 22
+      },
+      "firstObject": "",
+      "featureDistance": 89.20443314079444,
+      "heroIsFirstHit": false,
+      "actualSurfaceWithinOneMetreOfFeature": false,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:pho:1",
+      "landmarkId": "pho",
+      "approach": "thai-wang",
+      "from": {
+        "x": -800,
+        "z": -780,
+        "y": 3.4
+      },
+      "target": {
+        "x": -818,
+        "z": -718,
+        "y": 18
+      },
+      "firstObject": "",
+      "firstLandmark": "pho",
+      "featureDistance": 0.4427181948006001,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:swing:0",
+      "landmarkId": "swing",
+      "approach": "sao-chingcha",
+      "from": {
+        "x": -360,
+        "z": -1040,
+        "y": 3.4
+      },
+      "target": {
+        "x": -365.5,
+        "z": -998,
+        "y": 17
+      },
+      "firstObject": "",
+      "firstLandmark": "swing",
+      "featureDistance": 0.9566536492137802,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:swing:1",
+      "landmarkId": "swing",
+      "approach": "old_siam",
+      "from": {
+        "x": -450,
+        "z": -975,
+        "y": 3.4
+      },
+      "target": {
+        "x": -365.5,
+        "y": 17,
+        "z": -998.65
+      },
+      "firstObject": "",
+      "firstLandmark": "swing",
+      "featureDistance": 0.2821495910007279,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:golden:0",
+      "landmarkId": "golden",
+      "approach": "boripat",
+      "from": {
+        "x": 20,
+        "z": -1080,
+        "y": 3.4
+      },
+      "target": {
+        "x": -71.4,
+        "y": 37,
+        "z": -1080
+      },
+      "firstObject": "",
+      "firstLandmark": "golden",
+      "featureDistance": 0.15981447288699388,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:golden:1",
+      "landmarkId": "golden",
+      "approach": "maha-chai",
+      "from": {
+        "x": -200,
+        "z": -1080,
+        "y": 3.4
+      },
+      "target": {
+        "x": -88.6,
+        "y": 37,
+        "z": -1080
+      },
+      "firstObject": "",
+      "firstLandmark": "golden",
+      "featureDistance": 0.15667441408410843,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:democracy:0",
+      "landmarkId": "democracy",
+      "approach": "north_old",
+      "from": {
+        "x": -376.83562860836435,
+        "z": -1360.113520564038,
+        "y": 3.4
+      },
+      "target": {
+        "x": -267.071,
+        "y": 12,
+        "z": -1327.071
+      },
+      "firstObject": "",
+      "firstLandmark": "democracy",
+      "featureDistance": 0.853885813322014,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:democracy:1",
+      "landmarkId": "democracy",
+      "approach": "north_old",
+      "from": {
+        "x": -142.44751907161827,
+        "z": -1246.0206236460099,
+        "y": 3.4
+      },
+      "target": {
+        "x": -252.929,
+        "y": 12,
+        "z": -1312.929
+      },
+      "firstObject": "",
+      "firstLandmark": "democracy",
+      "featureDistance": 0.7741039511931571,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:hua:0",
+      "landmarkId": "hua",
+      "approach": "ramaiv",
+      "from": {
+        "x": 400,
+        "z": -200,
+        "y": 3.4
+      },
+      "target": {
+        "x": 400,
+        "z": -257.5,
+        "y": 19.2
+      },
+      "firstObject": "",
+      "firstLandmark": "hua",
+      "featureDistance": 0.031112686219692123,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:traimit:0",
+      "landmarkId": "traimit",
+      "approach": "tri-mit",
+      "from": {
+        "x": 256,
+        "z": 40,
+        "y": 3.4
+      },
+      "target": {
+        "x": 256,
+        "z": -104,
+        "y": 32
+      },
+      "firstObject": "",
+      "firstLandmark": "traimit",
+      "featureDistance": 7.330438221699154,
+      "heroIsFirstHit": true,
+      "actualSurfaceWithinOneMetreOfFeature": false,
+      "rootVisible": true
+    },
+    {
+      "id": "historic:gate:0",
+      "landmarkId": "gate",
+      "approach": "odeon",
+      "from": {
+        "x": 140,
+        "z": -8,
+        "y": 3.4
+      },
+      "target": {
+        "x": 140,
+        "z": -35.7,
+        "y": 13
+      },
+      "firstObject": "",
+      "featureDistance": 0.10583691338523453,
+      "heroIsFirstHit": false,
+      "actualSurfaceWithinOneMetreOfFeature": true,
+      "rootVisible": true
+    }
+  ],
+  "errors": []
+}

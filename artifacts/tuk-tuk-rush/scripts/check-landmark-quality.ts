@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import * as T from 'three';
+import {HUA_PLAN} from '../src/game/bangkok/huaLamphong';
 import {distanceToSegment} from '../src/game/world';
 import {createBangkokWorld} from '../src/game/bangkok/world';
 import {sculptedLandmark} from '../src/game/bangkok/sculptedLandmarks';
@@ -12,7 +13,9 @@ for(const l of d.landmarks){
  const g=sculptedLandmark(l);assert(g,`Placeholder remains: ${l.id}`);let triangles=0,bytes=0,disposed=0;
  g.traverse(o=>{if(!(o instanceof T.Mesh))return;const p=o.geometry.attributes.position!;for(const v of p.array)assert(Number.isFinite(v),`Invalid mesh ${l.id}`);triangles+=(o.geometry.index?.count??p.count)/3;for(const a of Object.values(o.geometry.attributes))bytes+=a.array.byteLength;o.geometry.addEventListener('dispose',()=>disposed++);});
  assert(triangles>50);assert(triangles<300000,`Unbounded hero geometry ${l.id}`);
- const bbox=new T.Box3().setFromObject(g),s=bbox.getSize(new T.Vector3());assert(s.x<l.size!+3&&s.z<l.size!+5,`Art escapes restricted site envelope: ${l.id}: ${s.toArray()}`);
+ const bbox=new T.Box3().setFromObject(g),s=bbox.getSize(new T.Vector3());if(l.id==='hua'){
+  const y=HUA_PLAN.yard;assert(bbox.min.x>=-y.width/2&&bbox.max.x<=y.width/2&&bbox.min.z>=y.centerZ-y.depth/2&&bbox.max.z<=y.centerZ+y.depth/2,'Station mesh must fit its explicitly protected asymmetric mainline yard');
+ }else assert(s.x<l.size!+3&&s.z<l.size!+5,`Art escapes restricted site envelope: ${l.id}: ${s.toArray()}`);
  if(l.id==='icon'){
   const subject=inspectionSubject(l,d),v=subject.views.find(v=>v.id==='riverfront')!,p=l.plot!,nearest=d.river!.slice(1).map((q,i)=>distanceToSegment(p,d.river![i]!,q)).sort((a,b)=>a.distance-b.distance)[0]!.point;
   const a=v.azimuth+subject.yaw,dx=nearest.x-p.x,dz=nearest.z-p.z;

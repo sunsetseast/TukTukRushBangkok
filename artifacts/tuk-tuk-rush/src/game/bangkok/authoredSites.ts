@@ -1,3 +1,4 @@
+import { HISTORIC_PLAN } from './historicPlan';
 import { HUA_PLAN } from './huaLamphong';
 import {HISTORIC_SITE_PLANS,historicBoundaryColliders,historicFurnitureColliders} from './historicDistricts';
 import type { District, Landmark, Obstacle, Point, RoadNode } from "../types";
@@ -28,7 +29,7 @@ export type SiteFurniture = Obstacle & {
 };
 export type AuthoredSite = {
   id: string;
-  district: "bang-rak" | "khlong-san" | "siam" | "lumphini" | "riverside";
+  district: "bang-rak" | "khlong-san" | "siam" | "lumphini" | "riverside" | "phra-nakhon" | "samphanthawong" | "pathum-wan";
   origin: Point;
   yaw: number;
   boundary: Point[];
@@ -560,7 +561,11 @@ function extendCharoenNakhon(d: District) {
  * destinations no longer search radial candidate plots during world creation. */
 export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
   hua: HUA_PLAN.map,
-  pho: [290,443],
+  pho: [...HISTORIC_PLAN.pho],
+  palace: [...HISTORIC_PLAN.palace],
+  golden: [...HISTORIC_PLAN.golden],
+  democracy: [...HISTORIC_PLAN.democracy],
+  traimit: [...HISTORIC_PLAN.traimit],
   icon: [338.25825214724773, 833.2582521472477],
   paragon: [730, 415],
   central: [786, 429.8701257427382],
@@ -569,7 +574,7 @@ export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
   baiyoke: [755, 365],
   mbk: [658, 490],
   terminal: [918, 499],
-  swing:[410,427],flowers:[318,535],
+  swing:[...HISTORIC_PLAN.swing],flowers:[318,535],
 };
 export function registerExistingSites(d: District) {
   for (const [id] of Object.entries(EXISTING_SITE_ANCHORS)) {
@@ -588,6 +593,7 @@ export function registerExistingSites(d: District) {
       origin,
       yaw: l.yaw ?? 0,
       district:
+        ["palace","pho","golden","democracy","swing"].includes(id) ? "phra-nakhon" : id==="traimit" ? "samphanthawong" : id==="hua" ? "pathum-wan" :
         id === "icon"
           ? "khlong-san"
           : id === "state" || id === "mahanakhon"
@@ -595,8 +601,9 @@ export function registerExistingSites(d: District) {
             : "siam",
       boundary: corners({
         ...origin,
-        w: l.size! + 4,
-        d: l.size! + 4,
+        z:origin.z+(id==='hua'?HUA_PLAN.yard.centerZ:0),
+        w: id==='hua'?HUA_PLAN.yard.width:l.size! + 4,
+        d: id==='hua'?HUA_PLAN.yard.depth:l.size! + 4,
         height: 0,
         color: "#fff",
       }),

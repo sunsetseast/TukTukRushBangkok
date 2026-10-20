@@ -325,11 +325,11 @@ function golden(b: LandmarkBuilder, detail: boolean) {
     idx: number[] = [];
   for (let j = 0; j <= rings; j++) {
     const t = j / rings,
-      base = 20 * Math.pow(1 - t, 0.58) + 3;
+      base = 38 * Math.pow(1 - t, 0.58) + 3;
     for (let i = 0; i <= n; i++) {
       const a = (i / n) * Math.PI * 2,
         r = base * (1 + 0.075 * Math.sin(a * 3 + t * 3) + 0.035 * Math.cos(a * 7));
-      p.push(Math.sin(a) * r, 1 + 25 * t, Math.cos(a) * r * 0.92);
+      p.push(Math.sin(a) * r, 1 + 33 * t, Math.cos(a) * r * 0.92);
       if (j < rings && i < n) {
         const k = j * (n + 1) + i;
         idx.push(k, k + 1, k + n + 1, k + 1, k + n + 2, k + n + 1);
@@ -341,39 +341,55 @@ function golden(b: LandmarkBuilder, detail: boolean) {
   g.setIndex(idx);
   g.computeVertexNormals();
   b.sculpt(g, 0, 0, 0, '#719b5e');
-  for (let i = 0; i < (detail ? 58 : 30); i++) {
+  for (let i = 0; i < (detail ? 44 : 24); i++) {
     const a = i * 2.4,
       t = (i % 7) / 10 + 0.06,
-      r = 20 * Math.pow(1 - t, 0.58) + 3;
-    tree(b, Math.sin(a) * (r - 2), Math.cos(a) * (r - 2) * 0.92, 6 + (i % 3), 1 + 25 * t);
+      r = 38 * Math.pow(1 - t, 0.58) + 3;
+    tree(b, Math.sin(a) * (r - 2), Math.cos(a) * (r - 2) * 0.92, 5 + (i % 3), 1 + 33 * t);
   }
-  const steps = detail ? 150 : 72;
+  const steps = detail ? 172 : 80;
   for (let i = 0; i < steps; i++) {
     const t = i / (steps - 1),
       a = -2 + t * Math.PI * 3.7,
-      r = 20 * Math.pow(1 - t, 0.58) + 3.8,
+      r = 38 * Math.pow(1 - t, 0.58) + 3.8,
       x = Math.sin(a) * r,
       z = Math.cos(a) * r * 0.92,
-      y = 1 + 25 * t;
-    b.box(x, y, z, 2.1, 0.35, 2.5, '#d0a078', a);
+      y = 1 + 33 * t;
+    b.box(x, y, z, 3.1, 0.35, 3.4, '#d0a078', a);
     if (i % 3 === 0) {
       b.box(x + Math.sin(a) * 1.1, y + 0.7, z + Math.cos(a) * 1.1, 0.12, 1.4, 0.12, IVORY);
     }
   }
-  for (let i = 0; i < 3; i++) b.box(0, 26 + i * 0.6, 0, 18 - i * 0.8, 0.7, 18 - i * 0.8, IVORY);
-  b.box(0, 29.1, 0, 14, 4.5, 14, '#f5edcf');
+  for (let i = 0; i < 3; i++) b.box(0, 34 + i * 0.6, 0, 18 - i * 0.8, 0.7, 18 - i * 0.8, IVORY);
+  b.box(0, 37.1, 0, 14, 4.5, 14, '#f5edcf');
   for (const side of [-1, 1])
     for (let q = -8; q <= 8; q += 2) {
-      b.box(q, 29, side * 8.6, 0.3, 2.2, 0.3, IVORY);
-      b.box(side * 8.6, 29, q, 0.3, 2.2, 0.3, IVORY);
+      b.box(q, 37, side * 8.6, 0.3, 2.2, 0.3, IVORY);
+      b.box(side * 8.6, 37, q, 0.3, 2.2, 0.3, IVORY);
     }
   for (const side of [-1, 1]) {
-    b.box(0, 30, side * 8.6, 18, 0.35, 0.45, IVORY);
-    b.box(side * 8.6, 30, 0, 0.45, 0.35, 18, IVORY);
+    b.box(0, 38, side * 8.6, 18, 0.35, 0.45, IVORY);
+    b.box(side * 8.6, 38, 0, 0.45, 0.35, 18, IVORY);
   }
-  bell(b, 0, 31, 0, 6, 21);
-  hall(b, -17, 20, 11, 17, 6, RED, false);
-  tree(b, 21, 17, 8);
+  bell(b, 0, 39, 0, 6.5, 23);
+  // White retaining terraces and red stair balustrades distinguish the built
+  // temple hill from a free-standing gold tower. Lower Wat Saket lies south.
+  for(let j=0;j<3;j++) {
+    const y=3+j*8, r=37-j*7;
+    const arc=new T.TorusGeometry(r,.7,4,detail?64:32,Math.PI*1.7).rotateX(Math.PI/2);
+    b.sculpt(arc,0,y,0,'#e4d7bd');
+  }
+  hall(b, -18, 49, 25, 23, 8, RED, detail);
+  hall(b, 25, 44, 16, 20, 6, GREEN, false);
+  b.box(0,.12,48,98,.18,36,'#c4b99b');
+  for(const x of [-48,48]) {
+    b.box(x,1.4,10,.7,2.8,118,'#e8dec5');
+    for(const z of [-40,-16,13,45])tree(b,x*.87,z,8);
+  }
+  b.box(0,1.4,-49,96,2.8,.7,'#e8dec5');
+  for(const x of [-30,30])b.box(x,1.4,66,36,2.8,.7,'#e8dec5');
+  for(const x of [-10,10]){b.box(x,2.4,66,1.7,4.8,1.7,IVORY);thaiRoof(b,x,4.8,66,4,4,2,RED,false);}
+
 }
 function traimit(b: LandmarkBuilder, detail: boolean) {
   b.box(0, 0.35, 0, 52, 0.7, 52, '#dcc9a3');
@@ -442,7 +458,17 @@ function traimit(b: LandmarkBuilder, detail: boolean) {
       b.box(x, 13, z, 3, 1, 3, IVORY);
       bell(b, x, 13.5, z, 1.4, 10);
     }
-  for (const x of [-24, 24]) for (const z of [-22, 22]) tree(b, x, z, 5);
+  for (const x of [-29,29]) {
+    b.box(x,1.35,0,.65,2.7,62,'#f2e8d1');
+    for(const z of [-24,22])tree(b,x*.88,z,5);
+  }
+  b.box(0,1.35,-31,58,2.7,.65,'#f2e8d1');
+  for(const x of [-19,19])b.box(x,1.35,31,20,2.7,.65,'#f2e8d1');
+  for(const x of [-8,8]){
+    b.box(x,3,31,1.5,6,1.7,'#f7edd8');
+    thaiRoof(b,x,6,31,4,4,1.6,GOLD,false);
+  }
+  b.box(0,.12,30,15,.18,12,'#d8c9aa');
 }
 function icon(b: LandmarkBuilder, detail: boolean) {
   b.box(0, 0.4, 0, 65, 0.8, 65, '#decaa5');
@@ -661,6 +687,11 @@ function swing(b: LandmarkBuilder, detail: boolean) {
   }
 }
 function democracy(b: LandmarkBuilder, detail: boolean) {
+  b.sculpt(new T.CylinderGeometry(26,26,.25,detail?64:32),0,.13,0,'#c4b89b');
+  for(let i=0;i<12;i++){
+    const a=i*Math.PI/6;
+    b.box(Math.sin(a)*23,.35,Math.cos(a)*23,2.4,.4,2.4,'#5e8463',a);
+  }
   b.sculpt(new T.CylinderGeometry(16, 16, 0.6, 48), 0, 0.4, 0, '#d7c3a1');
   for (let i = 0; i < 4; i++) {
     const a = Math.PI / 4 + (i * Math.PI) / 2,

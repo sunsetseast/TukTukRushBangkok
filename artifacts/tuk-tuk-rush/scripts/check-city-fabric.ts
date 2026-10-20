@@ -113,8 +113,10 @@ for (const p of pieces)
   );
 // Real Wat Pho / diagonal-public-road repro: the entrance post used to push
 // the native camera to 1.56m behind the player, inside the canopy.
-const pa = nodes.get("bkk:270")!,
-  pb = nodes.get("bkk:271")!,
+const phoPlot=d.landmarks.find(l=>l.id==='pho')!.plot!;
+const phoEdge=d.roads.filter(r=>r.corridor==='old_e').sort((a,b)=>distanceToSegment(phoPlot,nodes.get(a.a)!,nodes.get(a.b)!).distance-distanceToSegment(phoPlot,nodes.get(b.a)!,nodes.get(b.b)!).distance)[0]!;
+const pa = nodes.get(phoEdge.a)!,
+  pb = nodes.get(phoEdge.b)!,
   heading = Math.atan2(pb.x - pa.x, pb.z - pa.z),
   driver = {
     ...createVehicle(d),

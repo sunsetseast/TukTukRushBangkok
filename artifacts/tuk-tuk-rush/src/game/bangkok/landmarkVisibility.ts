@@ -206,3 +206,31 @@ export function validateLandmarkVisibility(
     };
   });
 }
+
+/** Distinct, legal public approaches in the reconstructed historic core.
+ * A blocked perpendicular view is reported, never 'fixed' by deleting an
+ * authentic neighboring building or moving the observer off the road. */
+export function historicSightlines(d: District): Sightline[] {
+  const approaches: Record<string, {road:string;offset:[number,number];target:[number,number,number]}[]> = {
+    palace:[{road:'palace_n',offset:[0,-140],target:[0,6,-100.65]},{road:'old_e',offset:[200,-50],target:[33,40,-55]},{road:'old_w',offset:[-180,-30],target:[-40,39,-67.5]}],
+    pho:[{road:'old_w',offset:[-170,0],target:[0,22,2]},{road:'thai-wang',offset:[0,-160],target:[-18,18,-18]},{road:'old_e',offset:[240,20],target:[28,23,43]}],
+    swing:[{road:'sao-chingcha',offset:[0,-110],target:[-5.5,17,-58]},{road:'old_siam',offset:[-90,-35],target:[-5.5,17,-58]},{road:'ti-thong',offset:[-100,-55],target:[-5.5,17,-58]}],
+    golden:[{road:'boripat',offset:[110,0],target:[0,54,0]},{road:'maha-chai',offset:[-120,0],target:[0,54,0]},{road:'old_siam',offset:[0,140],target:[0,54,0]}],
+    democracy:[{road:'north_old',offset:[-120,-30],target:[0,20,0]},{road:'north_old',offset:[120,70],target:[0,20,0]},{road:'dinso',offset:[-25,100],target:[0,20,0]}],
+    hua:[{road:'ramaiv',offset:[5,85],target:[0,19.2,30.5]},{road:'charoen_n',offset:[-100,20],target:[-17,18,30.2]},{road:'tri-mit',offset:[40,150],target:[17,18,30.2]}],
+    traimit:[{road:'tri-mit',offset:[0,90],target:[0,32,0]},{road:'tri-mit',offset:[100,30],target:[0,32,0]},{road:'charoen_n',offset:[0,-100],target:[0,40,0]}],
+    gate:[{road:'odeon',offset:[0,32],target:[0,13,4.3]},{road:'tri-mit',offset:[90,20],target:[0,17,0]},{road:'yaowarat',offset:[-100,-40],target:[0,17,0]}],
+  };
+  const nodes=new Map(d.nodes.map(n=>[n.id,n]));
+  return Object.entries(approaches).flatMap(([id,views])=>{
+    const l=d.landmarks.find(l=>l.id===id);if(!l?.plot)return [];
+    return views.map((v,i)=>{
+      const preferred={x:l.plot!.x+v.offset[0],z:l.plot!.z+v.offset[1]};
+      const candidates=d.roads.filter(r=>r.corridor===v.road).map(r=>distanceToSegment(preferred,nodes.get(r.a)!,nodes.get(r.b)!));
+      if(!candidates.length)throw Error(`Missing public historic approach ${id}:${v.road}`);
+      const from=candidates.reduce((a,b)=>a.distance<b.distance?a:b).point;
+      const target=localPoint(l.plot!,l.yaw??0,v.target[0],v.target[2]);
+      return {id:`historic:${id}:${i}`,landmarkId:id,from:{...from,y:3.4},target:{...target,y:v.target[1]},approach:v.road,outwardYaw:Math.atan2(from.x-target.x,from.z-target.z)};
+    });
+  });
+}

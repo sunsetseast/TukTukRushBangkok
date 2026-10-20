@@ -1,0 +1,100 @@
+{
+  "pass": true,
+  "roads": 2089,
+  "nodes": 2036,
+  "connectedDirectedNodes": 2036,
+  "buildings": 7144,
+  "landmarks": 49,
+  "publicSpaces": 5,
+  "stations": [
+    {
+      "line": "sukhumvit",
+      "count": 13
+    },
+    {
+      "line": "silom",
+      "count": 10
+    },
+    {
+      "line": "gold",
+      "count": 3
+    }
+  ],
+  "plantsBySpecies": {
+    "understory": 364,
+    "royal-palm": 105,
+    "frangipani": 21,
+    "coconut": 184,
+    "banana": 12,
+    "bougainvillea": 27,
+    "shade-tree": 240,
+    "rain-tree": 391,
+    "ratchaphruek": 87
+  },
+  "mrtEntrances": [
+    {
+      "id": "sukhumvit-mrt",
+      "name": "Sukhumvit",
+      "thai": "สุขุมวิท",
+      "code": "BL22",
+      "design": [
+        953,
+        540
+      ],
+      "interchange": "asok",
+      "x": 1812,
+      "z": -240,
+      "yaw": -3.1082716577115477
+    },
+    {
+      "id": "silom-mrt",
+      "name": "Si Lom",
+      "thai": "สีลม",
+      "code": "BL26",
+      "design": [
+        771,
+        781
+      ],
+      "interchange": "sala-daeng",
+      "x": 1084,
+      "z": 724,
+      "yaw": 1.084930152467369
+    },
+    {
+      "id": "hua-lamphong-mrt",
+      "name": "Hua Lamphong",
+      "thai": "หัวลำโพง",
+      "code": "BL28",
+      "design": [
+        605,
+        561
+      ],
+      "x": 404.03009757777727,
+      "z": -147.69565074044422,
+      "yaw": 0.47951929199259496
+    },
+    {
+      "id": "chatuchak-mrt",
+      "name": "Chatuchak Park",
+      "thai": "สวนจตุจักร",
+      "code": "BL13",
+      "design": [
+        779,
+        67
+      ],
+      "interchange": "mo-chit",
+      "x": 1116,
+      "z": -2132,
+      "yaw": -0.5010133868035884
+    }
+  ],
+  "colliderVolumes": 11764,
+  "decorationVolumes": 18820,
+  "plantVolumes": 36703,
+  "severeLaneConflicts": 0,
+  "railBuildingConflicts": 0,
+  "plantConflicts": 0,
+  "ms": 24030
+}
+{"pass":true,"trafficDisabledForDeterminism":true,"metres":4263,"routes":[{"from":"terminal","to":"emporium","metres":940,"simulatedSeconds":98,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emporium","to":"emquartier","metres":175,"simulatedSeconds":21,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emquartier","to":"emsphere","metres":954,"simulatedSeconds":99,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emsphere","to":"benchasiri","metres":620,"simulatedSeconds":66,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"benchasiri","to":"terminal","metres":787,"simulatedSeconds":84,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"victory","to":"chatuchak-park","metres":787,"simulatedSeconds":83,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true}]}
+{"pass":true,"sharedLeaves":true,"pitchedVisibleGeometryInsideClearance":true,"sharedDisposalOnce":true}

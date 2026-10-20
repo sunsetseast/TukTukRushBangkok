@@ -39,6 +39,13 @@ export function emitDestinationGrounds(
         surface: y < 0.2 ? "concrete" : temple ? "plaster" : "concrete",
       });
     };
+    if(a.curbside) {
+      // A modest pedestrian boarding pad beside the live public carriageway.
+      // No invented loop, planted traffic island or overhead portal.
+      put(0,.05,11,26,.08,8,'#d3c7ab');
+      put(0,.25,7,24,.04,.25,'#edd4a1');
+      continue;
+    }
     const plot = d.landmarks.find((l) => l.id === a.landmarkId)!.plot!,
       length = Math.hypot(plot.x - a.origin.x, plot.z - a.origin.z);
     // A paved pedestrian approach closes the cleared sightline. It sits below

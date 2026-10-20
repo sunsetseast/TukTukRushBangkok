@@ -24,6 +24,8 @@ export type LandmarkRegistryEntry = {
   geographicReference?: { lat: number; lon: number };
   coordinateAccuracy: "approximate-site-center" | "not-verified";
   world: Point;
+  /** Asset origin can differ from the named visible feature (Swing/Suthat). */
+  modelOrigin?: Point;
   map: { x: number; y: number };
   rotation: number;
   footprints: Pick<Obstacle, "x" | "z" | "w" | "d" | "yaw" | "height">[];
@@ -86,8 +88,9 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         : geo?.coordinate,
       coordinateAccuracy:
         hua || geo ? "approximate-site-center" : "not-verified",
-      world: { ...position },
-      map: { x: position.x / 4 + 500, y: position.z / 4 + 600 },
+      world: l.id==='swing' ? {x:position.x,z:position.z-58} : { ...position },
+      modelOrigin:{...position},
+      map: { x: position.x / 4 + 500, y: (position.z-(l.id==='swing'?58:0)) / 4 + 600 },
       rotation: l.yaw ?? 0,
       footprints: solids.map((o) => ({
         x: o.x,
@@ -117,7 +120,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         ? [
             "Rama IV south approach",
             "Historic mainline station; BL28 underground",
-            "Train shed extends behind north facade",
+            "Train shed and mainline yard extend north behind the south facade",
           ]
         : (geo?.corridors ?? (real ? [real.address] : [])),
       references: [
@@ -133,7 +136,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
           ? "inherited-reference"
           : "unverified-this-pass",
       compression: hua
-        ? "South-facing model; 84×80 game-metre parcel shifted 18 game metres north of PR29 plot. Diagonal road approach and short train shed are explicit miniature compromises."
+        ? "South-facing model; 84m-wide south facade retained from PR31; train shed extends north into a protected 90×300m mainline reservation. Tracks and yard are compressed, not surveyed geometry."
         : (geo?.compromise ??
           FACADE_APPROACHES[l.id!]?.note ??
           "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified."),

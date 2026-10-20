@@ -66,13 +66,17 @@ export const BLOCK_DISTRICTS = [
   },
   {
     id: "old-town-blocks",
-    box: [245, 260, 385, 525],
-    cap: 64,
+    box: [245, 240, 515, 485],
+    cap: 190,
     h: [8, 16],
     w: 19,
     d: 24,
     palette: ["#e0cfad", "#c2cbb1", "#d9b291"],
     kind: "heritage",
+  },
+  {
+    id: "station-gateway-blocks", box:[515,455,625,610],cap:120,
+    h:[9,18],w:16,d:22,palette:["#e0cba9","#b2c5b3","#d0aa91"],kind:"heritage",
   },
   {
     id: "yaowarat-blocks",

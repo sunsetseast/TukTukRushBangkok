@@ -15,6 +15,10 @@ export const RECONSTRUCTED_CORRIDORS = new Set([
   "park_n",
   "sukhumvit",
   "asok_ratchada",
+  // PR32 explicitly reconstructs these historic approaches. Unrelated roads
+  // retain the exact coordinate/direction/width checks below.
+  "north_old",
+  "charoen_n",
 ]);
 export function assertProtectedGeography(d: District) {
   const baseline = JSON.parse(
@@ -32,6 +36,7 @@ export function assertProtectedGeography(d: District) {
   for (const r of baseline.roads) {
     if (
       RECONSTRUCTED_CORRIDORS.has(r.corridor ?? "") ||
+      (r.corridor==='khaosan'&&Math.min(oldNodes.get(r.a)!.x,oldNodes.get(r.b)!.x)>=(365-500)*4) ||
       r.noTraffic ||
       r.destinationId ||
       r.corridor?.startsWith("real-arrival:")
@@ -83,7 +88,9 @@ export function assertProtectedGeography(d: District) {
   ]) {
     const old = baseline.landmarks.find((l) => l.id === id)!,
       now = d.landmarks.find((l) => l.id === id)!;
-    assert(Math.hypot(now.plot!.x-old.plot!.x,now.plot!.z-old.plot!.z)<1e-8,`Protected landmark plot ${id}`);
+    if(id==='pho') {
+      assert.deepEqual(now.plot,{x:(300-500)*4,z:(425-600)*4},'Explicit PR32 Wat Pho parcel, southeast of Palace');
+    }else assert(Math.hypot(now.plot!.x-old.plot!.x,now.plot!.z-old.plot!.z)<1e-8,`Protected landmark plot ${id}`);
   }
   return checked;
 }

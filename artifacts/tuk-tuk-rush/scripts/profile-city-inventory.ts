@@ -10,6 +10,7 @@ const { createBangkokWorld } = await import(
 const { buildBangkokGraybox } = await import(
   pathToFileURL(`${source}/bangkok/mesh.ts`).href
 );
+const startCpu=process.cpuUsage();
 const begin = performance.now(),
   d = createBangkokWorld(),
   city = buildBangkokGraybox(d),
@@ -57,6 +58,7 @@ const report = {
   trianglesAllLevels: triangles,
   instances,
   constructionMs: Math.round(performance.now() - begin),
+  constructionCpuMs:(()=>{const c=process.cpuUsage(startCpu);return Math.round((c.user+c.system)/1000);})(),
   disposal: { geometries: 0, materials: 0, textures: 0 },
 };
 for (const g of geometries)

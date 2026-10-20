@@ -1,3 +1,4 @@
+import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland } from './historicPlan';
 import { placeHuaLamphong } from './huaLamphong';
 import { completeLandmarkContext } from './landmarkContext';
 import {
@@ -206,6 +207,7 @@ export function createBangkokWorld(): District {
   reconstructMasterPlanRoads(segments, controls);
   reconstructCivicRoads(segments, controls);
   reconstructPublicRoads(segments, controls);
+  reconstructHistoricRoads(segments, controls);
   // The gateway occupies a protected island. Route approaching streets around it.
   const gateCenter = controls.odeon!,
     circleRadius = 32,
@@ -354,6 +356,7 @@ export function createBangkokWorld(): District {
   planPublicSpaces(world);
   world.obstacles.push(
     ...victoryIslandCollisions(),
+    ...democracyIsland(),
     ...victorySkywalkColumns(),
     ...victoryShelterCollisions(),
   );
@@ -380,6 +383,10 @@ export function createBangkokWorld(): District {
       continue;
     }
     const size =
+      l.id === "palace" ? 135 * HISTORIC_PLAN.palaceScale :
+      l.id === "golden" ? 134 :
+      l.id === "democracy" ? 52 :
+      l.id === "traimit" ? 66 :
       l.id === "paknam"
         ? 90
         : l.kind === "palace"
@@ -418,6 +425,10 @@ export function createBangkokWorld(): District {
             artRole: "furniture" as const,
           })),
         );
+      } else if(l.id === "democracy") {
+        world.obstacles.push({...plot,w:28,d:28,height:26,color:"#e4d8bd",landmarkId:l.id});
+      } else if(l.id === "golden") {
+        world.obstacles.push(...GOLDEN_SITE_MASSES.map(m=>siteObstacle(plot!,0,m,l.id)));
       } else {
         if (l.id === "central") l.yaw = Math.PI / 2;
         if (l.id === "mbk") l.yaw = Math.PI;

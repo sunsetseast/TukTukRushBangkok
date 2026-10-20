@@ -82,6 +82,11 @@ const reference = (
   compromise,
 });
 export const GEOGRAPHIC_REFERENCES: GeographicReference[] = [
+  reference("pho","Wat Pho",13.7466,100.4927,[300,425],"Phra Nakhon","Phra Borom Maha Ratchawang",["Maha Rat","Thai Wang","Sanam Chai","Chetuphon"],"Walled compound immediately south of the Palace; Tha Tien west",["palace","arun"],"Public exterior drop-off; sacred courts pedestrian",["https://www.watpho.com/en/"],"east","Retained sculpted Reclining Buddha and compact compound; footprints are not surveyed."),
+  reference("golden","Golden Mount / Wat Saket",13.75392,100.50661,[480,330],"Pom Prap Sattru Phai","Ban Bat",["Boripat","Maha Chai","Bamrung Mueang"],"Temple hill northeast of Giant Swing and southeast of Democracy Monument",["swing","democracy"],"Perimeter roads; stairways pedestrian",["https://www.tourismthailand.org/Attraction/wat-saket-and-the-golden-mount"],"east","Hill, lower compound and distances compressed; retaining terraces are an original interpretation."),
+  reference("democracy","Democracy Monument",13.75673,100.50182,[435,270],"Phra Nakhon","Bowon Niwet",["Ratchadamnoen Klang","Dinso"],"Central civic island at Ratchadamnoen and Dinso",["sanam","golden","swing"],"Clockwise public vehicle ring; island pedestrian",["https://www.tourismthailand.org/Attraction/democracy-monument"],"east","Circular arcade island and 38m road radius; avenue remains diagonally compressed toward Lan Luang."),
+  reference("traimit","Wat Traimit",13.73768,100.51357,[564,574],"Samphanthawong","Talat Noi",["Tri Mit","Charoen Krung"],"Golden Buddha mondop northeast of Odeon and southwest of Hua Lamphong",["hua","gate"],"Outer drop-off with pedestrian stairs",["https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"],"east","South-facing miniature mondop, approximate compound; Tri Mit bends preserve the station and MRT approaches."),
+  reference("gate","Chinatown Gate / Odeon Circle",13.73701,100.51286,[535,590],"Samphanthawong","Talat Noi",["Yaowarat","Tri Mit","Charoen Krung"],"Gateway island southwest of Wat Traimit",["traimit","hua"],"Clockwise public circle; Yaowarat departs west",["https://www.tourismthailand.org/Attraction/yaowarat-road"],"east","Existing 32m-radius arcade ring retained; exact Odeon junction outline not surveyed."),
   // Nominal operator/BMA map pins checked 2026-10-18. Individual point facts,
   // not copied map imagery or cadastral boundaries. Local arcade residuals are
   // deliberately explicit in master-plan-after.json and the compression audit.
@@ -161,7 +166,7 @@ export const GEOGRAPHIC_REFERENCES: GeographicReference[] = [
     "Giant Swing",
     13.75181,
     100.50128,
-    [410, 416.25],
+    [410,350.5],
     "Phra Nakhon",
     "Sao Chingcha",
     ["Bamrung Mueang", "Dinso"],
@@ -175,7 +180,7 @@ export const GEOGRAPHIC_REFERENCES: GeographicReference[] = [
     "Wat Suthat",
     13.7501,
     100.5012,
-    [410, 429.5],
+    [410,367.5],
     "Phra Nakhon",
     "Sao Chingcha",
     ["Bamrung Mueang", "Ti Thong", "Unakan"],

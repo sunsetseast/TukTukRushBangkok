@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Protected edge lost: north_old bkk:25/bkk:26
+    at assertProtectedGeography (/workspace/scratch/8eede5e791f0/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/protected-geography.ts:54:7)
+    at <anonymous> (/workspace/scratch/8eede5e791f0/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-authored-sites.ts:54:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -8,6 +8,8 @@ export type PublicSpace = {
   name: string;
   origin: Point;
   boundary: Point[];
+  /** Ceremonial lawn inside a larger public paved/tree-lined perimeter. */
+  lawnBoundary?: Point[];
   water: { points: Point[]; hole: boolean }[];
   paths: {
     points: Point[];
@@ -346,6 +348,12 @@ export function planPublicSpaces(d: District) {
     ],
     [],
   );
+  // Preserve the sourced ceremonial lawn, and reserve its PUBLIC perimeter
+  // to the surrounding roads. It was previously populated by procedural shops
+  // between the field and its own perimeter street.
+  field.lawnBoundary=field.boundary;
+  field.boundary=[[272,248],[347,248],[348,330],[269,330],[267,322]].map(map);
+  field.adaptation='Sourced ceremonial lawn retained inside an authored paved/tree-lined public perimeter. Perimeter width is compressed, not a surveyed property boundary; no ordinary vehicles cross the field.';
   // Turenscape/Arsomsilp: original lake east, three constructed wetlands
   // and islet fields west. A compressed plan, not a survey-derived boundary.
   const benBoundary = [
