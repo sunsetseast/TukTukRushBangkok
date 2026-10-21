@@ -1,3 +1,4 @@
+import {curtain,entrance,planter as gardenBox,palm as gardenPalm} from './heroCraft';
 import * as T from "three";
 import { LandmarkBuilder } from "./landmarkBuilder";
 import { siteMasses, type SiteMass } from "./authoredSites";
@@ -364,7 +365,11 @@ function oriental(b: B, detail: boolean, p: RealPlace) {
   b.roof(-25, 6, 29, 46, 17, 3, "#6b7b70");
   terrace(b, -25, 44, 48, 10, detail);
   pool(b, 9, 20, 10, 18);
-  canopy(b, 27, -34, detail);
+  entrance(b,20,-34.6,detail);
+  curtain(b,-18,25,-25.8,66,46,detail,Math.PI,20,14);
+  for(const x of [-13,13])gardenBox(b,x,-35,4,4,detail);
+  for(const x of [-43,-28,-13]){gardenBox(b,x,46,5,4,detail);gardenPalm(b,x,46,5,detail);}
+  if(detail)for(const x of [15,25,35,45])for(const y of [7,11]){b.box(x-1.2,y,36.05,.8,2,.15,'#597361');b.box(x+1.2,y,36.05,.8,2,.15,'#597361');}
 }
 function shangri(b: B, detail: boolean, p: RealPlace) {
   const [main, krung, pav1, pav2] = siteMasses(p);

@@ -36,6 +36,27 @@ export function familyForRegion(id: string | undefined) {
         : "heritage";
 }
 
+/** Bounded Tier-B replacement, with recessed mass behind visible window planes. */
+function emitHeroContextBlock(p:ParcelDesign,emit:(piece:ArtPiece)=>void){
+ const b=p.parcel,yaw=b.yaw??0,c=Math.cos(yaw),s=Math.sin(yaw),a=p.bays[0]!,H=Math.min(b.height,p.premiumContext==='riverside'?48:80),w=b.w,d=b.d,variant=a.seed%4,floors=Math.max(2,Math.floor(H/3.7)),fh=H/floors;
+ const put=(u:number,y:number,v:number,W:number,h:number,D:number,color:string,surface:Surface='concrete',layer:Layer='core')=>emit({x:b.x+c*u+s*v,z:b.z-s*u+c*v,y,w:W,h,d:D,color,surface,layer,yaw});
+ const warm=p.premiumContext==='riverside',wall=warm?'#c8bca6':variant%2?'#b2b9b6':'#c5c9c1',glass=warm?'#496263':p.premiumContext==='asok'?'#496873':'#4c6270';
+ put(0,H/2,0,w-.8,H,d-.8,wall);put(0,H-.2,0,w,.35,d,'#858e85');put(-w*.16,H-.7,-d*.1,w*.35,1.2,d*.46,'#717e79','metal');
+ for(const side of [-1,1]){
+  for(let f=0;f<floors;f++){
+   const y=fh*(f+.5),v=side*(d/2-.12),width=w-(variant===2?3:1.2);
+   put(0,y,v,width,fh*(f===0?.8:.68),.18,glass,'panel');put(0,fh*(f+1)-.2,v,w-.15,.28,.22,wall);
+   if(variant===1&&f>0){put(0,y-fh*.4,side*(d/2-.32),w-.5,.2,.6,'#d0c9b8');put(0,y,side*(d/2-.05),w-.7,.12,.13,'#949e99','metal');}
+   if((f+a.seed)%6===0)put(-w*.2,y,side*(d/2-.03),w*.23,fh*.5,.05,'#d7bc8c','panel','night');
+   put(side*(w/2-.12),y,0,.18,fh*.68,d-1.2,glass,'panel');
+  }
+  const count=variant===0?3:variant===2?5:2;
+  for(let i=0;i<=count;i++)put(-w/2+.4+(w-.8)*i/count,H*.5,side*(d/2-.1),variant===0?.3:.16,H-.3,.17,wall,'metal');
+  for(let i=0;i<3;i++)put(side*(w/2-.1),H*.5,-d/2+1+(d-2)*i/2,.18,H-.5,.25,wall);
+ }
+ put(0,2.1,d/2-.06,Math.min(w*.46,7),3.8,.15,'#293f46','panel');put(0,4.2,d/2-.04,w-.6,.25,.16,'#b4a98c','metal');put(0,4.02,d/2-.015,w*.6,.08,.06,'#d4b98c','panel','night');
+}
+
 /** A shell is segmented around real openings. The dark room sits 2.2m behind
  * its columns; upper windows have masonry reveals, not plates on a solid box.
  * Ground props stay inside the original collider. Steps explain the closed
@@ -70,6 +91,7 @@ export function emitDistrictArchitecture(
         put(side*(b.w/2+.18),H*.55,z,.3,.18,2.2,'#e9dab7');
       }
     }
+    if(p.premiumContext){emitHeroContextBlock(p,emit);continue;}
     if (!isHistoricWaterfront(p.parcel) && emitBlockArchitecture(p.parcel, emit)) continue;
     if (cinematicParcel(p) || isHistoricWaterfront(p.parcel)) {
       emitYaowaratFacade(p, emit);

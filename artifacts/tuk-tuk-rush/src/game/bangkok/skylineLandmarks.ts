@@ -57,33 +57,34 @@ export function skylineLandmark(l:Landmark){
     coarse.box(0,60,0,33,120,29,'#cccdbd');coarse.box(0,122,0,28,5,26,'#ded5b8');for(const x of [-7,7])coarse.box(x,125.5,0,1,3,1,'#e7dab5');coarse.shape(new T.SphereGeometry(11,12,6,0,Math.PI*2,0,Math.PI/2).scale(1,.8,1),0,126,0,'#e4b854',0,true);
   }
   const distant=coarse.finish(`${l.id}-distant`),root=new T.LOD();root.addLevel(detailed,0);root.addLevel(distant,360);
-  root.userData.authoredAsset=detailed.userData.authoredAsset;root.userData.nightMaterials=[...detailed.userData.nightMaterials,...distant.userData.nightMaterials];return root;
+  if(l.id==='mahanakhon')root.userData.nightScale=.3;root.userData.authoredAsset=detailed.userData.authoredAsset;root.userData.nightMaterials=[...detailed.userData.nightMaterials,...distant.userData.nightMaterials];return root;
 }
 
-/** One quiet, staggered carved ribbon. Fine cells maintain a mostly unbroken
- * curtain wall; only the outer two cell depths are carved. Far mode groups
- * pairs of floors but uses exactly the same pixel occupancy definition. */
+/** Continuous architectural cut; identical near/far occupancy, connected core. */
+export function mahanakhonOccupied(x:number,z:number,f:number){
+ if(x<0||x>6||z<0||z>6||f<0||f>=38)return false;
+ const ring=Math.min(x,z,6-x,6-z);if(ring>=2||f<5)return true;
+ const edge=x<=1?z:z>=5?6+x:x>=5?18-z:24-x,
+  center=4+Math.floor((f-4)/3)*2,delta=((edge-center)%24+24)%24,dist=Math.min(delta,24-delta);
+ return dist>=(ring===0?2.8:1.6);
+}
 function emitMahanakhon(b:LandmarkBuilder,detail:boolean){
- b.box(0,4,0,39,8,39,'#9eafb0');b.box(0,77,0,17,138,17,'#426a7b');
- const cell=3.85,levels=38,step=detail?1:2;
- for(let f=0;f<levels;f+=step)for(let x=0;x<7;x++)for(let z=0;z<7;z++){
-  if(x>1&&x<5&&z>1&&z<5)continue;
-  const outer=x===0||x===6||z===0||z===6;
-  const edge=x===0?z:z===6?6+x:x===6?18-z:24-x;
-  // Architectural cut moves through a little over one turn, in clustered
-  // steps with asymmetric widths, unlike PR25's large uniform double helix.
-  const center=4+Math.floor(Math.max(0,f-4)/3)*2,delta=Math.abs(((edge-center)%24+24)%24),dist=Math.min(delta,24-delta);
-  const cut=f>5&&outer&&dist<((Math.floor(f/5)%3===1)?2.2:1.3);
-  if(cut)continue;
-  const px=(x-3)*cell,pz=(z-3)*cell,y=10+f*3.65,h=3.65*step-.07;
-  b.sculpt(new T.BoxGeometry(cell-.025,h,cell-.025),px,y+h/2,pz,f%6===0?'#567f93':'#64899a','glass');
-  if(detail&&outer){
-   const side=x===0?-1:x===6?1:0;
-   if(side)b.box(px+side*cell/2,y,pz,.06,.12,cell,'#b3c4c3');
-   if(z===0||z===6)b.box(px,y,pz+(z===0?-1:1)*cell/2,cell,.12,.06,'#b3c4c3');
-   if((x*3+z+f)%37===0)b.box(px,y+1,pz,cell*.8,.3,cell*.8,'#c6b889',0,true);
+ b.box(0,4,0,38,8,38,'#aab4ac');
+ for(const side of [-1,1]){
+  b.sculpt(new T.BoxGeometry(32,5.5,.18),0,3.5,side*19.05,'#385867','glass');
+  b.sculpt(new T.BoxGeometry(.18,5.5,32),side*19.05,3.5,0,'#385867','glass');
+ }
+ const pos:number[]=[],norm:number[]=[],ix:number[]=[],cell=3.85,fh=3.65;
+ const faces=[{d:[1,0,0],v:[[1,-1,-1],[1,1,-1],[1,1,1],[1,-1,1]]},{d:[-1,0,0],v:[[-1,-1,1],[-1,1,1],[-1,1,-1],[-1,-1,-1]]},{d:[0,0,1],v:[[1,-1,1],[1,1,1],[-1,1,1],[-1,-1,1]]},{d:[0,0,-1],v:[[-1,-1,-1],[-1,1,-1],[1,1,-1],[1,-1,-1]]},{d:[0,1,0],v:[[-1,1,1],[1,1,1],[1,1,-1],[-1,1,-1]]},{d:[0,-1,0],v:[[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]]}];
+ for(let f=0;f<38;f++)for(let x=0;x<7;x++)for(let z=0;z<7;z++)if(mahanakhonOccupied(x,z,f)){
+  for(const face of faces){const[dx,dy,dz]=face.d;if(mahanakhonOccupied(x+dx!,z+dz!,f+dy!))continue;const n=pos.length/3;
+   for(const v of face.v){pos.push((x-3)*cell+v[0]!*cell/2,10+(f+.5)*fh+v[1]!*fh/2,(z-3)*cell+v[2]!*cell/2);norm.push(...face.d);}ix.push(n,n+1,n+2,n,n+2,n+3);
+  }
+  if(detail&&(x===0||x===6||z===0||z===6)&&f%2===0){const y=10+f*fh;
+   if(z===0||z===6)b.box((x-3)*cell,y,(z-3)*cell+(z===0?-1:1)*cell/2,cell,.1,.08,'#9bafb4');
+   if((x*3+z+f)%29===0)b.box((x-3)*cell,y+1.4,(z-3)*cell,cell*.7,.55,cell*.7,'#baa584',0,true);
   }
  }
- b.box(0,149,0,26,.7,26,'#c3d6d1');b.box(0,151,0,23,.7,23,'#719ba6');
- b.box(4,153,3,10,3,10,'#34566a');b.box(-8,150,8,7,.2,6,'#8bc0c5');
+ const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('normal',new T.Float32BufferAttribute(norm,3));g.setIndex(ix);b.sculpt(g,0,0,0,'#53798b','glass');
+ b.box(0,149,0,26,.6,26,'#bac9c6');b.box(4,152,3,10,4,10,'#34566a');b.box(-7,150,7,8,.25,8,'#8aaeb4');
 }

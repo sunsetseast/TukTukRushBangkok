@@ -1,3 +1,4 @@
+import {curtain,glazing,foldedRoof,planter,palm,entrance} from './heroCraft';
 import { buildHuaLamphong } from './huaLamphong';
 import * as T from 'three';
 import type { Landmark } from '../types';
@@ -521,109 +522,31 @@ function traimit(b: LandmarkBuilder, detail: boolean) {
   }
   b.box(0,.12,30,15,.18,12,'#d8c9aa');
 }
-function icon(b: LandmarkBuilder, detail: boolean) {
-  b.box(0, 0.4, 0, 65, 0.8, 65, '#decaa5');
-  // Lower pleated ICONLUXE river frontage and three progressively set-back mall terraces.
-  for (let i = 0; i < 3; i++) {
-    const w = 62 - i * 8,
-      d = 52 - i * 7;
-    b.box(-i * 2, 5.5 + i * 8, -i * 3, w, 9, d, '#d5c7a4');
-    b.box(-i * 2, 10.2 + i * 8, -i * 3, w + 1, 0.6, d + 1, '#edc66c');
-  }
-  for (const side of [-1, 1])
-    for (let x = -29; x < 30; x += 2.5) {
-      const fold = Math.round((x + 29) / 2.5) % 2 ? -0.22 : 0.22;
-      b.sculpt(new T.BoxGeometry(2.65, 18, 0.2), x, 10.7, side * 26.3, '#6bbec3', 'glass', fold);
-      if (detail) b.box(x, 10.7, side * 26.7, 0.13, 18.5, 0.16, '#ecdaa0');
-    }
-  for (const side of [-1, 1])
-    for (let z = -22; z <= 20; z += 4) {
-      b.sculpt(new T.BoxGeometry(0.2, 20, 3.65), side * 31.2, 12, z, '#619eaf', 'glass');
-      b.box(side * 31.4, 12, z, 0.2, 21, 0.17, '#edd8a0');
-    }
-  // Thin, triangulated folded canopies and planted roof terraces replace the solid gold roof block.
-  for (const [x, w, y] of [
-    [-20, 19, 26],
-    [-0.5, 21, 27],
-    [20, 19, 25],
-  ]) {
-    const v = [
-      x! - w! / 2,
-      y!,
-      10,
-      x!,
-      y! + 6,
-      16,
-      x! + w! / 2,
-      y! + 1,
-      10,
-      x! + w! * 0.3,
-      y!,
-      -7,
-      x! - w! * 0.36,
-      y!,
-      -10,
-      x!,
-      y! + 3,
-      -1,
-    ];
-    const g = new T.BufferGeometry();
-    g.setAttribute('position', new T.Float32BufferAttribute(v, 3));
-    const front = [0, 5, 1, 1, 5, 2, 2, 5, 3, 3, 5, 4, 4, 5, 0];
-    g.setIndex([...front, ...front.slice().reverse()]);
-    const faces = g.toNonIndexed();
-    faces.computeVertexNormals();
-    g.dispose();
-    b.sculpt(faces, 0, 0, 0, '#dfbb69', 'gilded');
-    b.sculpt(
-      ribbonPath(
-        [
-          [v[0]!, v[1]!, v[2]!],
-          [v[3]!, v[4]!, v[5]!],
-          [v[6]!, v[7]!, v[8]!],
-        ],
-        0.15,
-        5,
-        8,
-      ),
-      0,
-      0,
-      0,
-      '#f7dda0',
-      'gilded',
-    );
-  }
-  for (let f = 1; f < 3; f++)
-    for (const side of [-1, 1]) {
-      const w = 62 - f * 8,
-        d = 52 - f * 7,
-        x = -f * 2,
-        z = -f * 3;
-      for (let u = -w / 2 + 2; u < w / 2 - 1; u += 3.5)
-        b.sculpt(
-          new T.BoxGeometry(3.3, 6, 0.14),
-          x + u,
-          6 + f * 8,
-          z + side * (d / 2 + 0.05),
-          u % 7 ? '#70b7bc' : '#85c3c3',
-          'glass',
-        );
-    }
-  for (const side of [-1, 1]) {
-    for (const x of [-19, 0, 19]) {
-      b.box(x, 4, side * 27, 6, 6, 0.9, '#ddb85d');
-      b.sculpt(new T.BoxGeometry(4.8, 5, 0.18), x, 3.5, side * 27.6, '#327b8b', 'glass');
-    }
-    b.box(0, 7.7, side * 28.5, 24, 0.5, 3, '#f0d58e');
-    for (const x of [-25, -12, 12, 25]) {
-      b.box(x, 1, side * 30.5, 5, 1, 2, '#a4b878');
-      tree(b, x, side * 30.5, 4, 1);
-    }
-  }
-  for (const x of [-17, -6, 6, 17]) {
-    b.box(x, 26.5, -19, 5, 0.8, 4, '#82a96a');
-    tree(b, x, -19, 4, 26.8);
-  }
+function icon(b:LandmarkBuilder,detail:boolean){
+ b.box(0,.4,0,65,.8,65,'#cfc4ad');
+ // Layered retail depth; the existing internal rotation faces +Z to river east.
+ for(let i=0;i<3;i++){const w=60-i*8,d=47-i*7,y=5+i*8;b.box(-i, y,-i*3,w,9,d,'#c2bca8');b.box(-i,y+4.7,-i*3,w+1,.55,d+1,'#d6b263');}
+ for(let i=0;i<12;i++){
+  const x=-27.5+i*5,yaw=i%2?.6:-.6;
+  glazing(b,x,12,26.1,5.5,20,.22,i%2?'#537f8c':'#3c6677',yaw);
+  b.box(x,12,27,.14,20.3,.22,'#cdb57b');
+ }
+ for(const y of [4.5,11,19.5,22])b.box(0,y,26.7,59,.23,.5,'#c5c3a8');
+ for(const side of [-1,1])curtain(b,side*30.45,12,0,43,21,detail,side*Math.PI/2,10,4);
+ // Separate road elevation, rather than a second copy of the river facade.
+ curtain(b,0,12,-24.1,54,21,detail,Math.PI,12,4);
+ entrance(b,20,-26.1,detail);
+ for(const x of [-25,25]){planter(b,x,-29,6,3,detail);palm(b,x,-29,5.2,detail);}
+ // Thai-inspired peaked gold profile, set-back upper glazed gable and roofs.
+ foldedRoof(b,0,25,10,37,12,3.5,detail);
+ for(const x of [-23,23])foldedRoof(b,x,24,4,16,5.5,8,detail);
+ curtain(b,0,25.8,10.3,30,6,detail,0,10,1);
+ b.box(0,22.5,16,53,.6,7,'#b5aa8d');
+ for(const x of [-24,24]){b.box(x,7,28,1,12,1,'#c7ac68');b.box(x,13,27,5,.5,3,'#c8a15d');}
+ curtain(b,0,3.7,27.2,18,5.8,detail,0,6,1);
+ b.box(0,7,29,23,.4,4,'#c1b28b');b.box(0,6.76,29,20,.08,3,'#d3b17a',0,true);
+ for(const x of [-24,24]){planter(b,x,30,7,3,detail);palm(b,x,30,5,detail);}
+ for(const x of [-17,-6,6,17])planter(b,x,-17,5,4,detail,26.1);
 }
 function khaosan(b: LandmarkBuilder, detail: boolean) {
   b.box(0, 0.2, 0, 31, 0.4, 34, '#cfb998');
