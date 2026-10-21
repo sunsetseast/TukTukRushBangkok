@@ -1,0 +1,79 @@
+{
+  "benchmarkMode": false,
+  "pass": true,
+  "trafficDisabledForDeterminism": false,
+  "trafficEnabled": true,
+  "metres": 4452,
+  "routes": [
+    {
+      "from": "palace",
+      "to": "swing",
+      "metres": 487,
+      "simulatedSeconds": 52,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "swing",
+      "to": "golden",
+      "metres": 525,
+      "simulatedSeconds": 56,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "democracy",
+      "to": "sanam",
+      "metres": 919,
+      "simulatedSeconds": 97,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "pho",
+      "to": "hua",
+      "metres": 1604,
+      "simulatedSeconds": 165,
+      "collisionFrames": 31,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "hua",
+      "to": "traimit",
+      "metres": 237,
+      "simulatedSeconds": 28,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "traimit",
+      "to": "gate",
+      "metres": 373,
+      "simulatedSeconds": 42,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "gate",
+      "to": "yaowarat-entry",
+      "metres": 307,
+      "simulatedSeconds": 34,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    }
+  ]
+}

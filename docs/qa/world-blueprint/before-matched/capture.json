@@ -1,0 +1,613 @@
+{
+  "label": "before-matched",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "missionTarget": [
+    2000,
+    -2000
+  ],
+  "trafficDisabled": true,
+  "records": [
+    {
+      "id": "gate-drive",
+      "light": "sunset",
+      "file": "gate-drive-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 143.28407904384042,
+          "z": -8.520147021340202,
+          "heading": 3.141592653589793
+        },
+        "requestedCamera": null,
+        "publicRoad": "odeon",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 410,
+        "triangles": 663519,
+        "geometries": 583,
+        "textures": 16,
+        "frameMs": 25.20000000001164,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          143.28407904384042,
+          3.3,
+          -0.7201470213402024
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "gate-drive",
+      "light": "night",
+      "file": "gate-drive-night.jpg",
+      "pose": {
+        "player": {
+          "x": 143.28407904384042,
+          "z": -8.520147021340202,
+          "heading": 3.141592653589793
+        },
+        "requestedCamera": null,
+        "publicRoad": "odeon",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 410,
+        "triangles": 663519,
+        "geometries": 583,
+        "textures": 16,
+        "frameMs": 539.2999999999884,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          143.28407904384042,
+          3.3,
+          -0.7201470213402024
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-entry",
+      "light": "sunset",
+      "file": "yaowarat-entry-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 69.60303031046271,
+          "z": -69.17755430242094,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 454,
+        "triangles": 766258,
+        "geometries": 723,
+        "textures": 17,
+        "frameMs": 1547,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          76.6275773674774,
+          3.3,
+          -65.78701767176993
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-entry",
+      "light": "night",
+      "file": "yaowarat-entry-night.jpg",
+      "pose": {
+        "player": {
+          "x": 69.60303031046271,
+          "z": -69.17755430242094,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 453,
+        "triangles": 766226,
+        "geometries": 723,
+        "textures": 17,
+        "frameMs": 1786.2000000000116,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          76.6275773674774,
+          3.3,
+          -65.78701767176993
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-gold-row",
+      "light": "sunset",
+      "file": "yaowarat-gold-row-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -95.53769705013,
+          "z": -148.8859939760241,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 467,
+        "triangles": 875387,
+        "geometries": 911,
+        "textures": 18,
+        "frameMs": 1187.9000000000233,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -88.51314999311532,
+          3.3,
+          -145.4954573453731
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-gold-row",
+      "light": "night",
+      "file": "yaowarat-gold-row-night.jpg",
+      "pose": {
+        "player": {
+          "x": -95.53769705013,
+          "z": -148.8859939760241,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 468,
+        "triangles": 875661,
+        "geometries": 912,
+        "textures": 18,
+        "frameMs": 1439.2999999999884,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -88.51314999311532,
+          3.3,
+          -145.4954573453731
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-curve",
+      "light": "sunset",
+      "file": "yaowarat-curve-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -325.77981651376143,
+          "z": -269.26605504587155,
+          "heading": -2.064737695714477
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 425,
+        "triangles": 750708,
+        "geometries": 1098,
+        "textures": 19,
+        "frameMs": 4903.099999999977,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -318.91214193436844,
+          3.3,
+          -265.56807642619845
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-curve",
+      "light": "night",
+      "file": "yaowarat-curve-night.jpg",
+      "pose": {
+        "player": {
+          "x": -325.77981651376143,
+          "z": -269.26605504587155,
+          "heading": -2.064737695714477
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 422,
+        "triangles": 750370,
+        "geometries": 1098,
+        "textures": 19,
+        "frameMs": 1590.5,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -318.91214193436844,
+          3.3,
+          -265.56807642619845
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-elevated",
+      "light": "sunset",
+      "file": "yaowarat-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -119.72863023571091,
+          "z": -160.56222654014908,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": {
+          "position": [
+            80,
+            110,
+            70
+          ],
+          "look": [
+            -170,
+            6,
+            -200
+          ]
+        },
+        "publicRoad": "yaowarat",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 472,
+        "triangles": 923377,
+        "geometries": 1118,
+        "textures": 19,
+        "frameMs": 1790.100000000035,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -112.70408317869622,
+          3.3,
+          -157.17168990949807
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-elevated",
+      "light": "night",
+      "file": "yaowarat-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": -119.72863023571091,
+          "z": -160.56222654014908,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": {
+          "position": [
+            80,
+            110,
+            70
+          ],
+          "look": [
+            -170,
+            6,
+            -200
+          ]
+        },
+        "publicRoad": "yaowarat",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 473,
+        "triangles": 923651,
+        "geometries": 1118,
+        "textures": 19,
+        "frameMs": 4925.300000000047,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -112.70408317869622,
+          3.3,
+          -157.17168990949807
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-drive",
+      "light": "sunset",
+      "file": "tha-tien-drive-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -940,
+          "z": -880,
+          "heading": 3.141592653589793
+        },
+        "requestedCamera": null,
+        "publicRoad": "old_w",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 333,
+        "triangles": 457075,
+        "geometries": 1394,
+        "textures": 20,
+        "frameMs": 777,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -940,
+          3.3,
+          -872.2
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-drive",
+      "light": "night",
+      "file": "tha-tien-drive-night.jpg",
+      "pose": {
+        "player": {
+          "x": -940,
+          "z": -880,
+          "heading": 3.141592653589793
+        },
+        "requestedCamera": null,
+        "publicRoad": "old_w",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 331,
+        "triangles": 456949,
+        "geometries": 1394,
+        "textures": 20,
+        "frameMs": 699.0999999999767,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -940,
+          3.3,
+          -872.2
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-river",
+      "light": "sunset",
+      "file": "tha-tien-river-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -898.5486211901306,
+          "z": -731.233671988389,
+          "heading": 0.7044940642422177
+        },
+        "requestedCamera": {
+          "position": [
+            -1040,
+            3.4,
+            -735
+          ],
+          "look": [
+            -900,
+            5,
+            -720
+          ]
+        },
+        "publicRoad": "old_w",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 387,
+        "triangles": 626908,
+        "geometries": 1520,
+        "textures": 20,
+        "frameMs": 1266.0999999999767,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -903.6002788668758,
+          3.3,
+          -737.1767986669128
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-river",
+      "light": "night",
+      "file": "tha-tien-river-night.jpg",
+      "pose": {
+        "player": {
+          "x": -898.5486211901306,
+          "z": -731.233671988389,
+          "heading": 0.7044940642422177
+        },
+        "requestedCamera": {
+          "position": [
+            -1040,
+            3.4,
+            -735
+          ],
+          "look": [
+            -900,
+            5,
+            -720
+          ]
+        },
+        "publicRoad": "old_w",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 387,
+        "triangles": 626908,
+        "geometries": 1520,
+        "textures": 20,
+        "frameMs": 2392,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -903.6002788668758,
+          3.3,
+          -737.1767986669128
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-elevated",
+      "light": "sunset",
+      "file": "tha-tien-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -940,
+          "z": -810,
+          "heading": 0
+        },
+        "requestedCamera": {
+          "position": [
+            -1050,
+            95,
+            -610
+          ],
+          "look": [
+            -960,
+            3,
+            -795
+          ]
+        },
+        "publicRoad": "old_w",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 309,
+        "triangles": 442200,
+        "geometries": 1583,
+        "textures": 20,
+        "frameMs": 712.2999999999302,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -940,
+          3.3,
+          -817.8
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "tha-tien-elevated",
+      "light": "night",
+      "file": "tha-tien-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": -940,
+          "z": -810,
+          "heading": 0
+        },
+        "requestedCamera": {
+          "position": [
+            -1050,
+            95,
+            -610
+          ],
+          "look": [
+            -960,
+            3,
+            -795
+          ]
+        },
+        "publicRoad": "old_w",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 328,
+        "triangles": 513257,
+        "geometries": 1583,
+        "textures": 20,
+        "frameMs": 859.7000000000698,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -940,
+          3.3,
+          -817.8
+        ],
+        "sky": [
+          1
+        ]
+      }
+    }
+  ],
+  "errors": []
+}
