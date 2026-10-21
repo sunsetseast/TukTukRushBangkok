@@ -1,0 +1,581 @@
+{
+  "method": "Rejected intermediate camera states, retained as failure report; final image paths now contain verified recaptures.",
+  "records": [
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "yaowarat-elevated",
+        "light": "sunset",
+        "file": "yaowarat-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": -119.72863023571091,
+            "z": -160.56222654014908,
+            "heading": -2.020483893706025
+          },
+          "requestedCamera": {
+            "position": [
+              80,
+              110,
+              70
+            ],
+            "look": [
+              -170,
+              6,
+              -200
+            ]
+          },
+          "publicRoad": "yaowarat",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 472,
+          "triangles": 923377,
+          "geometries": 1118,
+          "textures": 19,
+          "frameMs": 1790.100000000035,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            -112.70408317869622,
+            3.3,
+            -157.17168990949807
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "yaowarat-elevated",
+        "light": "night",
+        "file": "yaowarat-elevated-night.jpg",
+        "pose": {
+          "player": {
+            "x": -119.72863023571091,
+            "z": -160.56222654014908,
+            "heading": -2.020483893706025
+          },
+          "requestedCamera": {
+            "position": [
+              80,
+              110,
+              70
+            ],
+            "look": [
+              -170,
+              6,
+              -200
+            ]
+          },
+          "publicRoad": "yaowarat",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 473,
+          "triangles": 923651,
+          "geometries": 1118,
+          "textures": 19,
+          "frameMs": 4925.300000000047,
+          "quality": "medium",
+          "elapsed": 720,
+          "phase": "paused",
+          "camera": [
+            -112.70408317869622,
+            3.3,
+            -157.17168990949807
+          ],
+          "sky": [
+            1
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "tha-tien-river",
+        "light": "sunset",
+        "file": "tha-tien-river-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": -898.5486211901306,
+            "z": -731.233671988389,
+            "heading": 0.7044940642422177
+          },
+          "requestedCamera": {
+            "position": [
+              -1040,
+              3.4,
+              -735
+            ],
+            "look": [
+              -900,
+              5,
+              -720
+            ]
+          },
+          "publicRoad": "old_w",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 387,
+          "triangles": 626908,
+          "geometries": 1520,
+          "textures": 20,
+          "frameMs": 1266.0999999999767,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            -903.6002788668758,
+            3.3,
+            -737.1767986669128
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "tha-tien-river",
+        "light": "night",
+        "file": "tha-tien-river-night.jpg",
+        "pose": {
+          "player": {
+            "x": -898.5486211901306,
+            "z": -731.233671988389,
+            "heading": 0.7044940642422177
+          },
+          "requestedCamera": {
+            "position": [
+              -1040,
+              3.4,
+              -735
+            ],
+            "look": [
+              -900,
+              5,
+              -720
+            ]
+          },
+          "publicRoad": "old_w",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 387,
+          "triangles": 626908,
+          "geometries": 1520,
+          "textures": 20,
+          "frameMs": 2392,
+          "quality": "medium",
+          "elapsed": 720,
+          "phase": "paused",
+          "camera": [
+            -903.6002788668758,
+            3.3,
+            -737.1767986669128
+          ],
+          "sky": [
+            1
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "tha-tien-elevated",
+        "light": "sunset",
+        "file": "tha-tien-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": -940,
+            "z": -810,
+            "heading": 0
+          },
+          "requestedCamera": {
+            "position": [
+              -1050,
+              95,
+              -610
+            ],
+            "look": [
+              -960,
+              3,
+              -795
+            ]
+          },
+          "publicRoad": "old_w",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 309,
+          "triangles": 442200,
+          "geometries": 1583,
+          "textures": 20,
+          "frameMs": 712.2999999999302,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            -940,
+            3.3,
+            -817.8
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "before-matched",
+      "record": {
+        "id": "tha-tien-elevated",
+        "light": "night",
+        "file": "tha-tien-elevated-night.jpg",
+        "pose": {
+          "player": {
+            "x": -940,
+            "z": -810,
+            "heading": 0
+          },
+          "requestedCamera": {
+            "position": [
+              -1050,
+              95,
+              -610
+            ],
+            "look": [
+              -960,
+              3,
+              -795
+            ]
+          },
+          "publicRoad": "old_w",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 328,
+          "triangles": 513257,
+          "geometries": 1583,
+          "textures": 20,
+          "frameMs": 859.7000000000698,
+          "quality": "medium",
+          "elapsed": 720,
+          "phase": "paused",
+          "camera": [
+            -940,
+            3.3,
+            -817.8
+          ],
+          "sky": [
+            1
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "after",
+      "record": {
+        "id": "yaowarat-elevated",
+        "light": "sunset",
+        "file": "yaowarat-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": -119.72863023571091,
+            "z": -160.56222654014908,
+            "heading": -2.020483893706025
+          },
+          "requestedCamera": {
+            "position": [
+              80,
+              110,
+              70
+            ],
+            "look": [
+              -170,
+              6,
+              -200
+            ]
+          },
+          "publicRoad": "yaowarat",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 489,
+          "triangles": 959675,
+          "geometries": 1159,
+          "textures": 19,
+          "frameMs": 1351.3000000000466,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            -112.70408317869622,
+            3.3,
+            -157.17168990949807
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "citywide-remaining",
+      "record": {
+        "id": "district-terminal-elevated",
+        "light": "sunset",
+        "file": "district-terminal-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": 1602.4481982430234,
+            "z": -417.8347135430009,
+            "heading": 1.3744467859455345
+          },
+          "requestedCamera": {
+            "position": [
+              1822,
+              110,
+              -244
+            ],
+            "look": [
+              1672,
+              15,
+              -404
+            ]
+          },
+          "publicRoad": "actual destination access",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 369,
+          "triangles": 517994,
+          "geometries": 975,
+          "textures": 15,
+          "frameMs": 2942.6999999999534,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            1594.7980730558781,
+            3.3,
+            -419.35641805472665
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "citywide-remaining",
+      "record": {
+        "id": "district-terminal-elevated",
+        "light": "night",
+        "file": "district-terminal-elevated-night.jpg",
+        "pose": {
+          "player": {
+            "x": 1602.4481982430234,
+            "z": -417.8347135430009,
+            "heading": 1.3744467859455345
+          },
+          "requestedCamera": {
+            "position": [
+              1822,
+              110,
+              -244
+            ],
+            "look": [
+              1672,
+              15,
+              -404
+            ]
+          },
+          "publicRoad": "actual destination access",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 361,
+          "triangles": 514402,
+          "geometries": 975,
+          "textures": 15,
+          "frameMs": 59.59999999997672,
+          "quality": "medium",
+          "elapsed": 720,
+          "phase": "paused",
+          "camera": [
+            1594.7980730558781,
+            3.3,
+            -419.35641805472665
+          ],
+          "sky": [
+            1
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "citywide-remaining",
+      "record": {
+        "id": "district-icon-elevated",
+        "light": "sunset",
+        "file": "district-icon-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": -702.1027746375084,
+            "z": 922.0658194200763,
+            "heading": 1.3744467859455347
+          },
+          "requestedCamera": {
+            "position": [
+              -496.9669914110091,
+              110,
+              1093.033008588991
+            ],
+            "look": [
+              -646.9669914110091,
+              15,
+              933.0330085889909
+            ]
+          },
+          "publicRoad": "actual destination access",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 303,
+          "triangles": 258174,
+          "geometries": 1646,
+          "textures": 16,
+          "frameMs": 1458.7000000000698,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            -709.7528998246537,
+            3.3,
+            920.5441149083505
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "citywide-remaining",
+      "record": {
+        "id": "district-chatuchak-elevated",
+        "light": "sunset",
+        "file": "district-chatuchak-elevated-sunset.jpg",
+        "pose": {
+          "player": {
+            "x": 1080,
+            "z": -2140,
+            "heading": -2.2655346029916
+          },
+          "requestedCamera": {
+            "position": [
+              1182,
+              110,
+              -2020
+            ],
+            "look": [
+              1032,
+              15,
+              -2180
+            ]
+          },
+          "publicRoad": "actual destination access",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 96,
+          "triangles": 138955,
+          "geometries": 2251,
+          "textures": 21,
+          "frameMs": 848.0999999999767,
+          "quality": "medium",
+          "elapsed": 40,
+          "phase": "paused",
+          "camera": [
+            1085.9921259808596,
+            3.3,
+            -2135.006561682617
+          ],
+          "sky": [
+            0
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    },
+    {
+      "folder": "citywide-remaining",
+      "record": {
+        "id": "district-chatuchak-elevated",
+        "light": "night",
+        "file": "district-chatuchak-elevated-night.jpg",
+        "pose": {
+          "player": {
+            "x": 1080,
+            "z": -2140,
+            "heading": -2.2655346029916
+          },
+          "requestedCamera": {
+            "position": [
+              1182,
+              110,
+              -2020
+            ],
+            "look": [
+              1032,
+              15,
+              -2180
+            ]
+          },
+          "publicRoad": "actual destination access",
+          "normalDriving": false
+        },
+        "stats": {
+          "calls": 95,
+          "triangles": 138923,
+          "geometries": 2251,
+          "textures": 21,
+          "frameMs": 1694,
+          "quality": "medium",
+          "elapsed": 720,
+          "phase": "paused",
+          "camera": [
+            1085.9921259808596,
+            3.3,
+            -2135.006561682617
+          ],
+          "sky": [
+            1
+          ]
+        }
+      },
+      "reason": "15-second QA camera lease expired during software WebGL capture"
+    }
+  ]
+}

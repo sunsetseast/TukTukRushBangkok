@@ -9,7 +9,7 @@ This change establishes **bangkok-arcade-2026.1**, an approved, reproducible geo
 | [Machine change report](change-report.json) | Unchanged road/node/hero/transit arrays; map-pin displacements, Suthat offset and MRT additions. |
 | [Independent audit](initial-audit.md) / [geographic contract](geographic-contract.md) | Authority decisions, compatibility adapters, compression and migration rules. |
 | [Coverage matrix](coverage.csv) / [permanent inventory](../../../data/bangkok/iconic-inventory.v1.json) | 138 iconic places, current presence, approximate coordinates, provenance, missing assets and research warnings. |
-| [Art standard](art-standard.md) / [visual scorecard](scorecard.md) | Tier A/B/C production rules and candid photographic review. |
+| [Citywide inspection findings](citywide-findings.md) / [art standard](art-standard.md) / [visual scorecard](scorecard.md) | Tier A/B/C production rules and candid photographic review. |
 | [Testing](testing.md) / [performance](performance.md) | 34 regression groups, controller routes, viewport/restart/raycast checks and measured resource growth. |
 | [Source library](sources.md) / [transit review](transit-review.md) | Primary geographic/architectural references, licences, represented station sequences and limits. |
 | [Remaining production sequence](roadmap.md) | Concrete district/hotel work, dependencies and acceptance criteria. |

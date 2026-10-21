@@ -1,0 +1,383 @@
+{
+  "base": "c5f2e210efb3146b782f00ea58f144f7005bc110",
+  "physicalIPhone": false,
+  "method": "Unretouched actual renderer; source record / state in capture.json",
+  "files": [
+    {
+      "path": "before-matched/gate-drive-night.jpg",
+      "bytes": 62210,
+      "sha256": "ef3ea2db4aedacb6c183522a1cf0eab6f45197328cb3028fd4d873ab7b821441"
+    },
+    {
+      "path": "before-matched/gate-drive-sunset.jpg",
+      "bytes": 67570,
+      "sha256": "f03c793578a6ac1935a5c493530e52801c6e4c76630ee5223682651f5d68a230"
+    },
+    {
+      "path": "before-matched/tha-tien-drive-night.jpg",
+      "bytes": 48422,
+      "sha256": "517aed6b71a0a6bf23f46dcc50b978033a69bc423644ae89b9b989a9693c634a"
+    },
+    {
+      "path": "before-matched/tha-tien-drive-sunset.jpg",
+      "bytes": 51815,
+      "sha256": "c9230be21f5c64829190c45261df37934a5c30d623844705b6ad152480616196"
+    },
+    {
+      "path": "before-matched/tha-tien-elevated-night.jpg",
+      "bytes": 75318,
+      "sha256": "5313c9ca2456f18df3601d0af2dfc3cd2e0beab0457e190129c6b26bbbe8dc94"
+    },
+    {
+      "path": "before-matched/tha-tien-elevated-sunset.jpg",
+      "bytes": 73696,
+      "sha256": "05f7591ebcda76e69643614f6f6c092f1bc6bdef77412ec9af44790834e3ee9e"
+    },
+    {
+      "path": "before-matched/tha-tien-river-night.jpg",
+      "bytes": 27509,
+      "sha256": "066a6420ca720b83c90c985880e3a9cc276c16efd7579261a4198bfddd6d92e4"
+    },
+    {
+      "path": "before-matched/tha-tien-river-sunset.jpg",
+      "bytes": 30663,
+      "sha256": "7f1a945e8a0fbc0f4672ea225c611e34d2db0dc1e67e3bd33bacaee731dc563c"
+    },
+    {
+      "path": "before-matched/yaowarat-curve-night.jpg",
+      "bytes": 78037,
+      "sha256": "eb2edad5d7774c839f69325c4324b60233f4bb3c34c91bf0c4375fe282a32a00"
+    },
+    {
+      "path": "before-matched/yaowarat-curve-sunset.jpg",
+      "bytes": 80312,
+      "sha256": "56a96c1d14208ce49cfa47a287a49d5f3d282741b759ea551fbabe83dcc170cf"
+    },
+    {
+      "path": "before-matched/yaowarat-elevated-night.jpg",
+      "bytes": 77580,
+      "sha256": "bc69bd08c9d4cfba674f55a7470ef22351de8ff91d1b29583508d98ab60b454b"
+    },
+    {
+      "path": "before-matched/yaowarat-elevated-sunset.jpg",
+      "bytes": 84000,
+      "sha256": "5dbe9f3fff0e5f7f5b121348f4da8685cd632c992ceb007c2dff337872818145"
+    },
+    {
+      "path": "before-matched/yaowarat-entry-night.jpg",
+      "bytes": 79762,
+      "sha256": "fc6ea23392edf030abfa0e546b5caf36060f49ebd7beaf816312f19890df5bf5"
+    },
+    {
+      "path": "before-matched/yaowarat-entry-sunset.jpg",
+      "bytes": 81905,
+      "sha256": "7ddd9a79dddde19323afed58a6eed0500ae32dddea64262ac75f7c77958a271d"
+    },
+    {
+      "path": "before-matched/yaowarat-gold-row-night.jpg",
+      "bytes": 82250,
+      "sha256": "c2faa6292b3813d7e6516869b527f11f861a280bf6e51b2946532fcf51f5942c"
+    },
+    {
+      "path": "before-matched/yaowarat-gold-row-sunset.jpg",
+      "bytes": 83371,
+      "sha256": "71a23e1f2cfbef9b1b92b4a2117a420b24546a2af4c87c48d741aabe46763ca8"
+    },
+    {
+      "path": "after/gate-drive-night.jpg",
+      "bytes": 61745,
+      "sha256": "81926fe994e29680150b8a6fb9b839e51ae9fd9478d55ac7706d2d37317e2679"
+    },
+    {
+      "path": "after/gate-drive-sunset.jpg",
+      "bytes": 67197,
+      "sha256": "f70bf7aff37b946bc60b0958ff158f337dabbb8f3c2f864aef4677aaf634faec"
+    },
+    {
+      "path": "after/tha-tien-drive-night.jpg",
+      "bytes": 50620,
+      "sha256": "ea43cc60dd54109885b89673529d21e0f316ca13708271ba7341d7341652a2ee"
+    },
+    {
+      "path": "after/tha-tien-drive-sunset.jpg",
+      "bytes": 54464,
+      "sha256": "1253bea7cc0d2a9304e96fe35b34bb1d9116e2d375b147e09eeb9a90ecc107df"
+    },
+    {
+      "path": "after/tha-tien-elevated-night.jpg",
+      "bytes": 76654,
+      "sha256": "b4d0d270afd717bcd0197e00e9df78b2ffcdfe2c35088c6a6e524e0d5cbb4e87"
+    },
+    {
+      "path": "after/tha-tien-elevated-sunset.jpg",
+      "bytes": 76123,
+      "sha256": "ceb3d5c44fe46bbdfa6e1a330a95511521206379953995f09b7a5632f574ff81"
+    },
+    {
+      "path": "after/tha-tien-river-night.jpg",
+      "bytes": 27677,
+      "sha256": "01cb178a9ac83d4f1ea1706ea594c734983b29b3a8e25fc4605a1bf1f010e5ed"
+    },
+    {
+      "path": "after/tha-tien-river-sunset.jpg",
+      "bytes": 30687,
+      "sha256": "0cca4d8a630846c29e5406f08f68c20fb18cdaa620e06a5ea610c2f43854949f"
+    },
+    {
+      "path": "after/yaowarat-curve-night.jpg",
+      "bytes": 85989,
+      "sha256": "faf2bbb1538e8ba37d246d6dfae5af5340fc22b95718561035e9a76daeb1836c"
+    },
+    {
+      "path": "after/yaowarat-curve-sunset.jpg",
+      "bytes": 86988,
+      "sha256": "b002b81a569c2aadc9b17d0fa87628f302bc9b93b9c4a6743029f2c6267f23a0"
+    },
+    {
+      "path": "after/yaowarat-elevated-night.jpg",
+      "bytes": 75957,
+      "sha256": "83e5d10ee2654abe4b1b0c56809f85b912e8d8689c85104e42f3b5088dec8a46"
+    },
+    {
+      "path": "after/yaowarat-elevated-sunset.jpg",
+      "bytes": 82205,
+      "sha256": "85a38ff4cb36ef0af9179fb4fc440e695bc892bd93ee946e4786b08d725315e1"
+    },
+    {
+      "path": "after/yaowarat-entry-night.jpg",
+      "bytes": 79442,
+      "sha256": "5d2518261871528c86bdb74ac1ceb8d44d561a780e81e9e6880558810d8ad30d"
+    },
+    {
+      "path": "after/yaowarat-entry-sunset.jpg",
+      "bytes": 81028,
+      "sha256": "40f34fa42ed9be1d5bf5bd7ccd1b9d02e5ea219b2a97635971fc98526de393cb"
+    },
+    {
+      "path": "after/yaowarat-gold-row-night.jpg",
+      "bytes": 81795,
+      "sha256": "916f956c98b06b2ba65ea7218bfad709d95b201578d0fbbff63c2fdbdcb34224"
+    },
+    {
+      "path": "after/yaowarat-gold-row-sunset.jpg",
+      "bytes": 82673,
+      "sha256": "4a7036e2fdf7cb025451cf85c63a5104916ffdee47e6687e88ea5069ada05d0f"
+    },
+    {
+      "path": "browser/inspection-1280x800.jpg",
+      "bytes": 98998,
+      "sha256": "4bf25c5051cae6d3fc64b247d5a33c64137fcce8014f71e389e711063cf59c27"
+    },
+    {
+      "path": "browser/inspection-375x812.jpg",
+      "bytes": 36677,
+      "sha256": "a03c00dc0b96122a48bad42a8b0e0a09dee4794c4fa3a54cce9a912cbc514585"
+    },
+    {
+      "path": "browser/inspection-430x932.jpg",
+      "bytes": 42591,
+      "sha256": "316da5fec17acd99df4295a575535144a51ea1947e4c563ccbef71c06fd53f3a"
+    },
+    {
+      "path": "browser/inspection-844x390.jpg",
+      "bytes": 49269,
+      "sha256": "be1226656e454fcbf9eedb946c0860edefa210bd95aa0e9dd6667ea59d171a35"
+    },
+    {
+      "path": "browser/inspector.jpg",
+      "bytes": 132687,
+      "sha256": "168e010e8a6a1a37654e726cffe3b74b1995c0f990a53061fefa8169752f27c5"
+    },
+    {
+      "path": "citywide/district-arun-night.jpg",
+      "bytes": 40893,
+      "sha256": "e4edddcc3d2b4b11480f1f96e056774d91bfa53ccbb4fa3d2e3a4cf925ca910a"
+    },
+    {
+      "path": "citywide/district-arun-sunset.jpg",
+      "bytes": 43605,
+      "sha256": "b3cd9d2995219a0469ff29348e9949ff006a530ea2b7d7788d583d71cbd27207"
+    },
+    {
+      "path": "citywide/district-asiatique-night.jpg",
+      "bytes": 41149,
+      "sha256": "8895259e625841dec2cd99a5f42fedc363c85a9f88758d5cc25c1b1d264bd484"
+    },
+    {
+      "path": "citywide/district-asiatique-sunset.jpg",
+      "bytes": 45471,
+      "sha256": "4424f5737056d2571a4c56f1adff504a48b25da87d9499623f2d59cfd7e0652f"
+    },
+    {
+      "path": "citywide/district-chatuchak-elevated-night.jpg",
+      "bytes": 62971,
+      "sha256": "62f4b5d2a160583cda67dc7fd7b2bb063d9fafb10bd2fc4e4ee172b3130ace96"
+    },
+    {
+      "path": "citywide/district-chatuchak-elevated-sunset.jpg",
+      "bytes": 68106,
+      "sha256": "dede11d6803de030c0463b278b5545e1050101a0f377e38d761f97aaf5f8c07d"
+    },
+    {
+      "path": "citywide/district-chatuchak-night.jpg",
+      "bytes": 34807,
+      "sha256": "0d2f058ff15f72c98e3ccf65d79e981b68ced0b8b5414552ae5bdda9520eeafd"
+    },
+    {
+      "path": "citywide/district-chatuchak-sunset.jpg",
+      "bytes": 40089,
+      "sha256": "db47d6b7d0df0b7aedf0faf14e25d9e3e2ff953d7cde2bcd4928c1d9f983337a"
+    },
+    {
+      "path": "citywide/district-embassy-night.jpg",
+      "bytes": 24315,
+      "sha256": "0caa62a7c68066f66bfab9e2b69f86625e3238db2bf29fae8188d89110ca5b66"
+    },
+    {
+      "path": "citywide/district-embassy-sunset.jpg",
+      "bytes": 26243,
+      "sha256": "9274bb713a82d066c9954950ce183002d85223e450f3d43e366cd4f5cc0e035b"
+    },
+    {
+      "path": "citywide/district-gate-night.jpg",
+      "bytes": 59751,
+      "sha256": "6615f07fc67b5464ab0cc8c0e13c82444d85b07e59f479ebd588c9bbf19bbf20"
+    },
+    {
+      "path": "citywide/district-gate-sunset.jpg",
+      "bytes": 65306,
+      "sha256": "e1dccb79e48fa4658095f96259ddb7ccd8564d6fa76539db91252336cad2257a"
+    },
+    {
+      "path": "citywide/district-icon-elevated-night.jpg",
+      "bytes": 70231,
+      "sha256": "285f4ffaee1c064e6a36ddc053aa8c4dba9ffa86857815621eac40b1b26e50d9"
+    },
+    {
+      "path": "citywide/district-icon-elevated-sunset.jpg",
+      "bytes": 67433,
+      "sha256": "1d14b521b4efc9fe8235ab27b63b3e801569b50245a6c1cb306159ec5671bc2f"
+    },
+    {
+      "path": "citywide/district-icon-night.jpg",
+      "bytes": 51886,
+      "sha256": "69a9634593eb8aa0c529d7426027a01864ae5ad46494fe8fc1bb4cf44eeb6356"
+    },
+    {
+      "path": "citywide/district-icon-sunset.jpg",
+      "bytes": 55397,
+      "sha256": "9bf43011b400acd016273c026ef7bdcc336998f9e0a1539e29424105ad38b83a"
+    },
+    {
+      "path": "citywide/district-khaosan-night.jpg",
+      "bytes": 54047,
+      "sha256": "7e5286f35a12a1bc7110c8a6a9aff16836ce4def8dfbfd228fb7393a4c432ad4"
+    },
+    {
+      "path": "citywide/district-khaosan-sunset.jpg",
+      "bytes": 60278,
+      "sha256": "7a0e82531b2561d74cc051927a1c203e5912dcfee3a2a1e77b681d2607928092"
+    },
+    {
+      "path": "citywide/district-mahanakhon-night.jpg",
+      "bytes": 64186,
+      "sha256": "f93045fda34aa510b98fa20de4b91da8f46caedb9baedcdd24c27bec270271f3"
+    },
+    {
+      "path": "citywide/district-mahanakhon-sunset.jpg",
+      "bytes": 71773,
+      "sha256": "44cf1733a40eba571ded834e1055f14d6fe531e8b3c1fe3f014e701cbe8b15d8"
+    },
+    {
+      "path": "citywide/district-paknam-elevated-night.jpg",
+      "bytes": 52528,
+      "sha256": "0d37217472baf5b265f6f749da883125b59efb9125eed2814edf215129781dcc"
+    },
+    {
+      "path": "citywide/district-paknam-elevated-sunset.jpg",
+      "bytes": 53789,
+      "sha256": "179cc019f14b68d8812fa6cc2ba087c640dd23af438a7bf3d76d191a2ed33ee8"
+    },
+    {
+      "path": "citywide/district-paknam-night.jpg",
+      "bytes": 35657,
+      "sha256": "61902d6f10612dd47676ec73deb5efdd1039f45d6433d731d88d8093c274f151"
+    },
+    {
+      "path": "citywide/district-paknam-sunset.jpg",
+      "bytes": 40273,
+      "sha256": "ebcc6c870ad0fc13bc6f50e5c54a91c7dcaf84539a40fa3969f764d9b2caea86"
+    },
+    {
+      "path": "citywide/district-palace-elevated-night.jpg",
+      "bytes": 82361,
+      "sha256": "b30ba09b7d85079116be4d29f183d84be7ba9b73396425e041fb06e7d01cbe36"
+    },
+    {
+      "path": "citywide/district-palace-elevated-sunset.jpg",
+      "bytes": 84745,
+      "sha256": "ee325a76173f0da80ebd050e20684d621a8799480dbaf5655b6bc8f0b6996ca8"
+    },
+    {
+      "path": "citywide/district-palace-night.jpg",
+      "bytes": 42702,
+      "sha256": "32b7eaa1447fe15568614dc97968b29f8d1c64f28d81cd3b8ea745ef6dcf5f92"
+    },
+    {
+      "path": "citywide/district-palace-sunset.jpg",
+      "bytes": 45015,
+      "sha256": "6bd3b6f2ef27df6b0332514a2214458bfb877e8a84938b5db0c6974a086ef31b"
+    },
+    {
+      "path": "citywide/district-paragon-night.jpg",
+      "bytes": 56097,
+      "sha256": "d79f87c0bf41ebcb57ad5edc3e2898dbd7906b24e5cc6fa66e4a89cac71d771f"
+    },
+    {
+      "path": "citywide/district-paragon-sunset.jpg",
+      "bytes": 56650,
+      "sha256": "efd36efe01eb2c5ef19a315d2143efa371bcc2128ddd050f38a12d4b9e0b33ac"
+    },
+    {
+      "path": "citywide/district-river-city-night.jpg",
+      "bytes": 35183,
+      "sha256": "71ade14a3ffc8c662859a2aaf105be44082a4d70106e056e495459623b63ad2f"
+    },
+    {
+      "path": "citywide/district-river-city-sunset.jpg",
+      "bytes": 37206,
+      "sha256": "742e097289165634c94d42770ee65adb325951ad488cc57bcaad9832ef188fca"
+    },
+    {
+      "path": "citywide/district-terminal-elevated-night.jpg",
+      "bytes": 98857,
+      "sha256": "8e1d211125ae06ee28879f26a41f9e50fd4dfc255d0e3e2a008b1bdeb07d30fa"
+    },
+    {
+      "path": "citywide/district-terminal-elevated-sunset.jpg",
+      "bytes": 105243,
+      "sha256": "07395e08334c84127436069fa6e2abe6347e153bd9fa35f2c3d22723f22e6577"
+    },
+    {
+      "path": "citywide/district-terminal-night.jpg",
+      "bytes": 45749,
+      "sha256": "04b27dbd6e26d276c78ea686179b2fef0224cb988fed93fb0b35c3c6647116a4"
+    },
+    {
+      "path": "citywide/district-terminal-sunset.jpg",
+      "bytes": 51320,
+      "sha256": "4dfcd098139324eefe61341e713ca87eed24641c1942be357a88facb6421e0e5"
+    },
+    {
+      "path": "citywide/district-victory-night.jpg",
+      "bytes": 43414,
+      "sha256": "8f3efb9241822021cf670fc688e680a03e7d584f8332a28e11a019f48ae3bd47"
+    },
+    {
+      "path": "citywide/district-victory-sunset.jpg",
+      "bytes": 48691,
+      "sha256": "a6edbace85fa1c5c230b03d39f10f816714d8ae90f74ef360ea534d4901a8658"
+    }
+  ],
+  "screenshots": 75
+}

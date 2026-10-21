@@ -1,0 +1,1384 @@
+{
+  "label": "citywide",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "missionTarget": [
+    2000,
+    -2000
+  ],
+  "trafficDisabled": true,
+  "records": [
+    {
+      "id": "district-arun",
+      "light": "sunset",
+      "file": "district-arun-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -1441.8415111675404,
+          "z": -513.8913354851355,
+          "heading": 1.3744467859455336
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 236,
+        "triangles": 372998,
+        "geometries": 1839,
+        "textures": 20,
+        "frameMs": 29.900000000023283,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -1449.4916363546856,
+          3.3,
+          -515.4130399968614
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-arun",
+      "light": "night",
+      "file": "district-arun-night.jpg",
+      "pose": {
+        "player": {
+          "x": -1441.8415111675404,
+          "z": -513.8913354851355,
+          "heading": 1.3744467859455336
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 236,
+        "triangles": 372998,
+        "geometries": 1839,
+        "textures": 20,
+        "frameMs": 108.09999999997672,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -1449.4916363546856,
+          3.3,
+          -515.4130399968614
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-asiatique",
+      "light": "sunset",
+      "file": "district-asiatique-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -300.36582838174553,
+          "z": 2046.1939766255643,
+          "heading": -1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 167,
+        "triangles": 141164,
+        "geometries": 2145,
+        "textures": 20,
+        "frameMs": 29.70000000006985,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -292.5658283817455,
+          3.3,
+          2046.1939766255643
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-asiatique",
+      "light": "night",
+      "file": "district-asiatique-night.jpg",
+      "pose": {
+        "player": {
+          "x": -300.36582838174553,
+          "z": 2046.1939766255643,
+          "heading": -1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 166,
+        "triangles": 141132,
+        "geometries": 2145,
+        "textures": 20,
+        "frameMs": 420.70000000006985,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -292.5658283817455,
+          3.3,
+          2046.1939766255643
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-chatuchak",
+      "light": "sunset",
+      "file": "district-chatuchak-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -2.2655346029916
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 96,
+        "triangles": 138955,
+        "geometries": 2199,
+        "textures": 20,
+        "frameMs": 483.69999999995343,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          1085.9921259808596,
+          3.3,
+          -2135.006561682617
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-chatuchak",
+      "light": "night",
+      "file": "district-chatuchak-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -2.2655346029916
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 95,
+        "triangles": 138923,
+        "geometries": 2199,
+        "textures": 20,
+        "frameMs": 140.59999999997672,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          1085.9921259808596,
+          3.3,
+          -2135.006561682617
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-chatuchak-elevated",
+      "light": "sunset",
+      "file": "district-chatuchak-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -2.2655346029916
+        },
+        "requestedCamera": {
+          "position": [
+            1182,
+            110,
+            -2020
+          ],
+          "look": [
+            1032,
+            15,
+            -2180
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 136,
+        "triangles": 228897,
+        "geometries": 1106,
+        "textures": 16,
+        "frameMs": 1593.5,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          1182,
+          110,
+          -2020
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-chatuchak-elevated",
+      "light": "night",
+      "file": "district-chatuchak-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1080,
+          "z": -2140,
+          "heading": -2.2655346029916
+        },
+        "requestedCamera": {
+          "position": [
+            1182,
+            110,
+            -2020
+          ],
+          "look": [
+            1032,
+            15,
+            -2180
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 136,
+        "triangles": 228897,
+        "geometries": 1106,
+        "textures": 16,
+        "frameMs": 677.2000000001863,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          1182,
+          110,
+          -2020
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-embassy",
+      "light": "sunset",
+      "file": "district-embassy-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 1257.142857142857,
+          "z": -688.5714285714286,
+          "heading": 1.4432867685796587
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 385,
+        "triangles": 482142,
+        "geometries": 2782,
+        "textures": 21,
+        "frameMs": 2265.899999999907,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          1249.4061801583075,
+          3.3,
+          -689.5633102361144
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-embassy",
+      "light": "night",
+      "file": "district-embassy-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1257.142857142857,
+          "z": -688.5714285714286,
+          "heading": 1.4432867685796587
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 385,
+        "triangles": 482142,
+        "geometries": 2782,
+        "textures": 21,
+        "frameMs": 1854.6000000000931,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          1249.4061801583075,
+          3.3,
+          -689.5633102361144
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-gate",
+      "light": "sunset",
+      "file": "district-gate-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 149.88854381999832,
+          "z": -9.566191478555087,
+          "heading": -2.827433388230814
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 446,
+        "triangles": 747290,
+        "geometries": 1021,
+        "textures": 19,
+        "frameMs": 602.2000000001863,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          152.2988763761229,
+          3.3,
+          -2.1479506514528897
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-gate",
+      "light": "night",
+      "file": "district-gate-night.jpg",
+      "pose": {
+        "player": {
+          "x": 149.88854381999832,
+          "z": -9.566191478555087,
+          "heading": -2.827433388230814
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 446,
+        "triangles": 747290,
+        "geometries": 1021,
+        "textures": 19,
+        "frameMs": 1034.7999999998137,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          152.2988763761229,
+          3.3,
+          -2.1479506514528897
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-icon",
+      "light": "sunset",
+      "file": "district-icon-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1427,
+        "textures": 16,
+        "frameMs": 688.8000000000466,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -709.7528998246537,
+          3.3,
+          920.5441149083505
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-icon",
+      "light": "night",
+      "file": "district-icon-night.jpg",
+      "pose": {
+        "player": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1427,
+        "textures": 16,
+        "frameMs": 719.3000000000466,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -709.7528998246537,
+          3.3,
+          920.5441149083505
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-icon-elevated",
+      "light": "sunset",
+      "file": "district-icon-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347
+        },
+        "requestedCamera": {
+          "position": [
+            -496.9669914110091,
+            110,
+            1093.033008588991
+          ],
+          "look": [
+            -646.9669914110091,
+            15,
+            933.0330085889909
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 303,
+        "triangles": 258174,
+        "geometries": 1011,
+        "textures": 15,
+        "frameMs": 57,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -496.9669914110091,
+          110,
+          1093.033008588991
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-icon-elevated",
+      "light": "night",
+      "file": "district-icon-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347
+        },
+        "requestedCamera": {
+          "position": [
+            -496.9669914110091,
+            110,
+            1093.033008588991
+          ],
+          "look": [
+            -646.9669914110091,
+            15,
+            933.0330085889909
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 299,
+        "triangles": 256550,
+        "geometries": 1011,
+        "textures": 15,
+        "frameMs": 1093.1999999997206,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -496.9669914110091,
+          110,
+          1093.033008588991
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-khaosan",
+      "light": "sunset",
+      "file": "district-khaosan-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -840,
+          "z": -1537.142857142857,
+          "heading": -0.9310912752654633
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 323,
+        "triangles": 432359,
+        "geometries": 2704,
+        "textures": 21,
+        "frameMs": 991.3000000000466,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -833.7422794539766,
+          3.3,
+          -1541.799136082942
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-khaosan",
+      "light": "night",
+      "file": "district-khaosan-night.jpg",
+      "pose": {
+        "player": {
+          "x": -840,
+          "z": -1537.142857142857,
+          "heading": -0.9310912752654633
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 323,
+        "triangles": 432359,
+        "geometries": 2704,
+        "textures": 21,
+        "frameMs": 1087.1999999999534,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -833.7422794539766,
+          3.3,
+          -1541.799136082942
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-mahanakhon",
+      "light": "sunset",
+      "file": "district-mahanakhon-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 268,
+        "triangles": 435879,
+        "geometries": 1202,
+        "textures": 15,
+        "frameMs": 2170.1999999999534,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-mahanakhon",
+      "light": "night",
+      "file": "district-mahanakhon-night.jpg",
+      "pose": {
+        "player": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 268,
+        "triangles": 435879,
+        "geometries": 1202,
+        "textures": 15,
+        "frameMs": 1200.5,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-paknam",
+      "light": "sunset",
+      "file": "district-paknam-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -1826.7843044043539,
+          "z": 639.2055943278796,
+          "heading": -2.356194490192347
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 118,
+        "triangles": 197904,
+        "geometries": 1916,
+        "textures": 20,
+        "frameMs": 55.09999999997672,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -1821.2688715110987,
+          3.3,
+          644.7210272211347
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-paknam",
+      "light": "night",
+      "file": "district-paknam-night.jpg",
+      "pose": {
+        "player": {
+          "x": -1826.7843044043539,
+          "z": 639.2055943278796,
+          "heading": -2.356194490192347
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 117,
+        "triangles": 197872,
+        "geometries": 1916,
+        "textures": 20,
+        "frameMs": 374.30000000004657,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -1821.2688715110987,
+          3.3,
+          644.7210272211347
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-paknam-elevated",
+      "light": "sunset",
+      "file": "district-paknam-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -1826.7843044043539,
+          "z": 639.2055943278796,
+          "heading": -2.356194490192347
+        },
+        "requestedCamera": {
+          "position": [
+            -1728.9949493661165,
+            110,
+            746.9949493661167
+          ],
+          "look": [
+            -1878.9949493661165,
+            15,
+            586.9949493661167
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 206,
+        "triangles": 246511,
+        "geometries": 2020,
+        "textures": 20,
+        "frameMs": 522,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -1728.9949493661165,
+          110,
+          746.9949493661167
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-paknam-elevated",
+      "light": "night",
+      "file": "district-paknam-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": -1826.7843044043539,
+          "z": 639.2055943278796,
+          "heading": -2.356194490192347
+        },
+        "requestedCamera": {
+          "position": [
+            -1728.9949493661165,
+            110,
+            746.9949493661167
+          ],
+          "look": [
+            -1878.9949493661165,
+            15,
+            586.9949493661167
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 206,
+        "triangles": 246511,
+        "geometries": 2020,
+        "textures": 20,
+        "frameMs": 1439.1999999999534,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -1728.9949493661165,
+          110,
+          746.9949493661167
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-palace",
+      "light": "sunset",
+      "file": "district-palace-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -806.6666666666666,
+          "z": -1060,
+          "heading": -0.11065722117389595
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 349,
+        "triangles": 543080,
+        "geometries": 669,
+        "textures": 17,
+        "frameMs": 408.5,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -805.8053007632828,
+          3.3,
+          -1067.7522931304543
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-palace",
+      "light": "night",
+      "file": "district-palace-night.jpg",
+      "pose": {
+        "player": {
+          "x": -806.6666666666666,
+          "z": -1060,
+          "heading": -0.11065722117389595
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 349,
+        "triangles": 543080,
+        "geometries": 669,
+        "textures": 17,
+        "frameMs": 1313.8000000000466,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -805.8053007632828,
+          3.3,
+          -1067.7522931304543
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-palace-elevated",
+      "light": "sunset",
+      "file": "district-palace-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -806.6666666666666,
+          "z": -1060,
+          "heading": -0.11065722117389595
+        },
+        "requestedCamera": {
+          "position": [
+            -670,
+            110,
+            -780
+          ],
+          "look": [
+            -820,
+            15,
+            -940
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 441899,
+        "geometries": 839,
+        "textures": 18,
+        "frameMs": 289.5,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -670,
+          110,
+          -780
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-palace-elevated",
+      "light": "night",
+      "file": "district-palace-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": -806.6666666666666,
+          "z": -1060,
+          "heading": -0.11065722117389595
+        },
+        "requestedCamera": {
+          "position": [
+            -670,
+            110,
+            -780
+          ],
+          "look": [
+            -820,
+            15,
+            -940
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 441899,
+        "geometries": 839,
+        "textures": 18,
+        "frameMs": 1049.0999999999767,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -670,
+          110,
+          -780
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-paragon",
+      "light": "sunset",
+      "file": "district-paragon-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 901.577247458461,
+          "z": -647.3825685942595,
+          "heading": 2.9452431127404304
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 328,
+        "triangles": 356850,
+        "geometries": 1535,
+        "textures": 20,
+        "frameMs": 39,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          900.0555429467352,
+          3.3,
+          -639.7324434071143
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-paragon",
+      "light": "night",
+      "file": "district-paragon-night.jpg",
+      "pose": {
+        "player": {
+          "x": 901.577247458461,
+          "z": -647.3825685942595,
+          "heading": 2.9452431127404304
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 336,
+        "triangles": 360442,
+        "geometries": 1539,
+        "textures": 20,
+        "frameMs": 1080.9000000001397,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          900.0555429467352,
+          3.3,
+          -639.7324434071143
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-river-city",
+      "light": "sunset",
+      "file": "district-river-city-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": -237,
+          "z": 784,
+          "heading": -1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 303,
+        "triangles": 285952,
+        "geometries": 1262,
+        "textures": 20,
+        "frameMs": 32.89999999990687,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          -229.2,
+          3.3,
+          784
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-river-city",
+      "light": "night",
+      "file": "district-river-city-night.jpg",
+      "pose": {
+        "player": {
+          "x": -237,
+          "z": 784,
+          "heading": -1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 294,
+        "triangles": 282672,
+        "geometries": 1262,
+        "textures": 20,
+        "frameMs": 298.9000000001397,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          -229.2,
+          3.3,
+          784
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-terminal",
+      "light": "sunset",
+      "file": "district-terminal-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 369,
+        "triangles": 517994,
+        "geometries": 649,
+        "textures": 15,
+        "frameMs": 1569.1000000000931,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-terminal",
+      "light": "night",
+      "file": "district-terminal-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 361,
+        "triangles": 514402,
+        "geometries": 649,
+        "textures": 15,
+        "frameMs": 1368.1000000000931,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-terminal-elevated",
+      "light": "sunset",
+      "file": "district-terminal-elevated-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345
+        },
+        "requestedCamera": {
+          "position": [
+            1822,
+            110,
+            -244
+          ],
+          "look": [
+            1672,
+            15,
+            -404
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 423,
+        "triangles": 527039,
+        "geometries": 746,
+        "textures": 15,
+        "frameMs": 1489.6000000000931,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-terminal-elevated",
+      "light": "night",
+      "file": "district-terminal-elevated-night.jpg",
+      "pose": {
+        "player": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345
+        },
+        "requestedCamera": {
+          "position": [
+            1822,
+            110,
+            -244
+          ],
+          "look": [
+            1672,
+            15,
+            -404
+          ]
+        },
+        "publicRoad": "actual destination access",
+        "normalDriving": false
+      },
+      "stats": {
+        "calls": 431,
+        "triangles": 530631,
+        "geometries": 750,
+        "textures": 15,
+        "frameMs": 8517.19999999972,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "sky": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "district-victory",
+      "light": "sunset",
+      "file": "district-victory-sunset.jpg",
+      "pose": {
+        "player": {
+          "x": 776.421052631579,
+          "z": -1480,
+          "heading": 1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 238,
+        "triangles": 302459,
+        "geometries": 2447,
+        "textures": 21,
+        "frameMs": 3244.4000000000233,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          768.621052631579,
+          3.3,
+          -1480
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "district-victory",
+      "light": "night",
+      "file": "district-victory-night.jpg",
+      "pose": {
+        "player": {
+          "x": 776.421052631579,
+          "z": -1480,
+          "heading": 1.5707963267948966
+        },
+        "requestedCamera": null,
+        "publicRoad": "actual destination access",
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 238,
+        "triangles": 302459,
+        "geometries": 2447,
+        "textures": 21,
+        "frameMs": 828,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          768.621052631579,
+          3.3,
+          -1480
+        ],
+        "sky": [
+          1
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "cameraValidation": "Requested inspection pose verified against actual camera; expired leases recaptured without changing city objects."
+}

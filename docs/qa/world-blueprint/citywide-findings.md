@@ -9,3 +9,25 @@ The Palace and Wat Arun retain recognizable roof/spire language, but arrival cam
 The survey proves that the repeatable capture system observes the live world and exposes uneven quality. It does not certify every district, hotel orientation, entrance or silhouette. No new citywide A grades are awarded. Priorities: (1) source/entrance bearings and named-model checks, (2) hotel/hero massing and arrival composition, (3) coherent district fabric, (4) nuanced night lighting and planting. See the concrete phased roadmap.
 
 [All raw states and render counters](citywide/capture.json). The gallery below links the actual images.
+
+| Site / inspection | Sunset | Night |
+|---|---|---|
+| district-arun | [actual WebGL](citywide/district-arun-sunset.jpg) | [actual WebGL](citywide/district-arun-night.jpg) |
+| district-asiatique | [actual WebGL](citywide/district-asiatique-sunset.jpg) | [actual WebGL](citywide/district-asiatique-night.jpg) |
+| district-chatuchak | [actual WebGL](citywide/district-chatuchak-sunset.jpg) | [actual WebGL](citywide/district-chatuchak-night.jpg) |
+| district-chatuchak-elevated | [actual WebGL](citywide/district-chatuchak-elevated-sunset.jpg) | [actual WebGL](citywide/district-chatuchak-elevated-night.jpg) |
+| district-embassy | [actual WebGL](citywide/district-embassy-sunset.jpg) | [actual WebGL](citywide/district-embassy-night.jpg) |
+| district-gate | [actual WebGL](citywide/district-gate-sunset.jpg) | [actual WebGL](citywide/district-gate-night.jpg) |
+| district-icon | [actual WebGL](citywide/district-icon-sunset.jpg) | [actual WebGL](citywide/district-icon-night.jpg) |
+| district-icon-elevated | [actual WebGL](citywide/district-icon-elevated-sunset.jpg) | [actual WebGL](citywide/district-icon-elevated-night.jpg) |
+| district-khaosan | [actual WebGL](citywide/district-khaosan-sunset.jpg) | [actual WebGL](citywide/district-khaosan-night.jpg) |
+| district-mahanakhon | [actual WebGL](citywide/district-mahanakhon-sunset.jpg) | [actual WebGL](citywide/district-mahanakhon-night.jpg) |
+| district-paknam | [actual WebGL](citywide/district-paknam-sunset.jpg) | [actual WebGL](citywide/district-paknam-night.jpg) |
+| district-paknam-elevated | [actual WebGL](citywide/district-paknam-elevated-sunset.jpg) | [actual WebGL](citywide/district-paknam-elevated-night.jpg) |
+| district-palace | [actual WebGL](citywide/district-palace-sunset.jpg) | [actual WebGL](citywide/district-palace-night.jpg) |
+| district-palace-elevated | [actual WebGL](citywide/district-palace-elevated-sunset.jpg) | [actual WebGL](citywide/district-palace-elevated-night.jpg) |
+| district-paragon | [actual WebGL](citywide/district-paragon-sunset.jpg) | [actual WebGL](citywide/district-paragon-night.jpg) |
+| district-river-city | [actual WebGL](citywide/district-river-city-sunset.jpg) | [actual WebGL](citywide/district-river-city-night.jpg) |
+| district-terminal | [actual WebGL](citywide/district-terminal-sunset.jpg) | [actual WebGL](citywide/district-terminal-night.jpg) |
+| district-terminal-elevated | [actual WebGL](citywide/district-terminal-elevated-sunset.jpg) | [actual WebGL](citywide/district-terminal-elevated-night.jpg) |
+| district-victory | [actual WebGL](citywide/district-victory-sunset.jpg) | [actual WebGL](citywide/district-victory-night.jpg) |

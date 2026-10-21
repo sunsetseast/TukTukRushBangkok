@@ -1,0 +1,409 @@
+{
+  "label": "profile-after",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "missionTarget": [
+    2000,
+    -2000
+  ],
+  "trafficDisabled": true,
+  "records": [
+    {
+      "id": "yaowarat-entry",
+      "light": "sunset",
+      "file": null,
+      "pose": {
+        "player": {
+          "x": 69.60303031046271,
+          "z": -69.17755430242094,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "samples": [
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1391.6000000000931,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2729.1999999999534,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1553.3000000000466,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1772.3000000000466,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 28.5,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 174.5999999998603,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 167.80000000004657,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 128.80000000004657,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 464.39999999990687,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 35.9000000001397,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1340.3999999999069,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2501.6999999999534,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2826.600000000093,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2902.100000000093,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2061.0999999998603,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1958.5,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2269.9000000001397,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 4230.59999999986,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 58.5,
+          "quality": "medium"
+        },
+        {
+          "calls": 478,
+          "triangles": 785412,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2232.6999999999534,
+          "quality": "medium"
+        }
+      ],
+      "stats": {
+        "calls": 478,
+        "triangles": 785412,
+        "geometries": 556,
+        "textures": 15,
+        "frameMs": 2232.6999999999534,
+        "quality": "medium",
+        "elapsed": 40,
+        "phase": "paused",
+        "camera": [
+          76.6275773674774,
+          3.3,
+          -65.78701767176993
+        ],
+        "sky": [
+          0
+        ]
+      }
+    },
+    {
+      "id": "yaowarat-entry",
+      "light": "night",
+      "file": null,
+      "pose": {
+        "player": {
+          "x": 69.60303031046271,
+          "z": -69.17755430242094,
+          "heading": -2.020483893706025
+        },
+        "requestedCamera": null,
+        "publicRoad": "yaowarat",
+        "normalDriving": true
+      },
+      "samples": [
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2896.100000000093,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2411.5999999998603,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 4082.300000000046,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2166.8000000000466,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2050.399999999907,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1896.1999999999534,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1878,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1881.6000000000931,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2084,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 54.800000000046566,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1967.6999999999534,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1849.1999999999534,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 3644.8000000000466,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2014.6999999999532,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2037.3000000000468,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1712.3000000000466,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 1692.8999999999069,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 3485.4000000001397,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2216.5999999998603,
+          "quality": "medium"
+        },
+        {
+          "calls": 477,
+          "triangles": 785380,
+          "geometries": 556,
+          "textures": 15,
+          "frameMs": 2394.600000000093,
+          "quality": "medium"
+        }
+      ],
+      "stats": {
+        "calls": 477,
+        "triangles": 785380,
+        "geometries": 556,
+        "textures": 15,
+        "frameMs": 2394.600000000093,
+        "quality": "medium",
+        "elapsed": 720,
+        "phase": "paused",
+        "camera": [
+          76.6275773674774,
+          3.3,
+          -65.78701767176993
+        ],
+        "sky": [
+          1
+        ]
+      }
+    }
+  ],
+  "errors": []
+}
