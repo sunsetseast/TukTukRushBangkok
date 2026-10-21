@@ -3,34 +3,6 @@ import type { ParcelDesign } from "./buildingGrammar";
 import type { ArtPiece } from "./architecturalBatch";
 import type { SignEntry } from "../signArt";
 export const DISTRICT_SIGN_ENTRIES: SignEntry[] = [
-  {
-    key: "hua418",
-    text: "ฮั่วเซ่งเฮง",
-    style: "gold",
-    variant: 0,
-    signatureId: "hua418",
-  },
-  {
-    key: "nai442",
-    text: "ก๋วยจั๊บนายเอ็ก",
-    style: "noodle",
-    variant: 0,
-    signatureId: "nai442",
-  },
-  {
-    key: "thong444",
-    text: "ทองใบเยาวราช",
-    style: "gold",
-    variant: 0,
-    signatureId: "thong444",
-  },
-  {
-    key: "so456",
-    text: "โซวเซ่งเฮง",
-    style: "gold",
-    variant: 0,
-    signatureId: "so456",
-  },
   { key: "canyon-gold", text: "ทองคำ", style: "gold", variant: 0 },
   { key: "canyon-chinese", text: "金店", style: "gold", variant: 1 },
   { key: "canyon-tea", text: "茶樓", style: "heritage", variant: 0 },
@@ -59,24 +31,15 @@ export type DistrictSign = {
   round?: boolean;
   hero?: boolean;
 };
-/** Authored shop sequence on compressed Yaowarat. Names are real; these parcels
- * are arcade adaptations, never claimed surveyed branches or exact replicas. */
+/** Ordinary trade labels only; real branches require verified properties. */
 export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
-  const signs: DistrictSign[] = [],
-    yaowarat = designs
-      .filter((p) => p.corridor === "yaowarat" && !p.parcel.artRole)
-      .sort((a, b) => a.parcel.x - b.parcel.x);
-  const heroes = new Map<string, string>();
-  ["hua418", "nai442", "thong444", "so456"].forEach((key, i) => {
-    const p = yaowarat[Math.floor(yaowarat.length * (0.15 + i * 0.2))];
-    if (p) heroes.set(p.id, key);
-  });
+  const signs: DistrictSign[] = [];
   for (const p of designs) {
     const b = p.parcel;
     if (b.artRole || !["chinatown", "khaosan"].includes(p.region)) continue;
     const seed = p.bays[0]!.seed,
       F = b.d / 2,
-      key = heroes.get(p.id),
+      key: string|undefined = undefined,
       khao = p.region === "khaosan";
     const menu = khao
       ? [
@@ -100,12 +63,12 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
         ];
     const showcase = cinematicParcel(p);
     const height = showcase
-        ? 5.4 + (seed % 3) * 0.8
+        ? Math.min(5.4 + (seed % 3) * 0.8,Math.min(...p.bays.map(a=>a.height))-5.8)
         : khao
           ? 2 + (seed % 3) * 0.65
           : 5.5 + (seed % 4) * 1.2,
       y = showcase
-        ? Math.min(...p.bays.map((a) => a.height)) - 0.6
+        ? 5.2+height/2
         : khao
           ? 7.4 + (seed % 4) * 0.7
           : Math.max(9, Math.min(15, b.height - 2));

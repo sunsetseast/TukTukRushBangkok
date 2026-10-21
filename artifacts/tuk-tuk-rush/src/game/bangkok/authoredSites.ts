@@ -1,3 +1,4 @@
+import {approvedDesign} from './cityModel';
 import { HISTORIC_PLAN } from './historicPlan';
 import { HUA_PLAN } from './huaLamphong';
 import {HISTORIC_SITE_PLANS,historicBoundaryColliders,historicFurnitureColliders} from './historicDistricts';
@@ -559,23 +560,9 @@ function extendCharoenNakhon(d: District) {
 
 /** Chosen in the PR25 city audit and now authored explicitly. These important
  * destinations no longer search radial candidate plots during world creation. */
-export const EXISTING_SITE_ANCHORS: Record<string, [number, number]> = {
-  hua: HUA_PLAN.map,
-  pho: [...HISTORIC_PLAN.pho],
-  palace: [...HISTORIC_PLAN.palace],
-  golden: [...HISTORIC_PLAN.golden],
-  democracy: [...HISTORIC_PLAN.democracy],
-  traimit: [...HISTORIC_PLAN.traimit],
-  icon: [338.25825214724773, 833.2582521472477],
-  paragon: [730, 415],
-  central: [786, 429.8701257427382],
-  mahanakhon: [663.5484941563911, 879.7835429045635],
-  state: [550, 895],
-  baiyoke: [755, 365],
-  mbk: [658, 490],
-  terminal: [918, 499],
-  swing:[...HISTORIC_PLAN.swing],flowers:[318,535],
-};
+export const EXISTING_SITE_ANCHORS: Record<string,[number,number]> = Object.fromEntries(
+  ["hua", "pho", "palace", "golden", "democracy", "traimit", "icon", "paragon", "central", "mahanakhon", "state", "baiyoke", "mbk", "terminal", "swing", "flowers"].map(id=>[id,approvedDesign(id)]),
+);
 export function registerExistingSites(d: District) {
   for (const [id] of Object.entries(EXISTING_SITE_ANCHORS)) {
     const prior = d.authoredSites?.find((s) => s.id === id);

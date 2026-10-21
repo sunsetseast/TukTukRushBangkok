@@ -1,0 +1,11 @@
+{
+  "canonicalGateAfterSourceIdentityFix": {
+    "exitCode": 0,
+    "geographicReferences": 83,
+    "log": "regression/final-city-blueprint.log"
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "reason": "Metadata matcher and camera capture tooling tightened after full 34-group regression. Runtime geometry unchanged."
+}

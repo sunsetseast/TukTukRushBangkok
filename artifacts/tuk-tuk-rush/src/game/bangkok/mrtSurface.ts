@@ -4,20 +4,26 @@ import { MRT_ENTRANCES, planPoint } from "./masterPlan";
 import { distanceToSegment, orientedFootprintsOverlap } from "../world";
 export type MrtEntrance=typeof MRT_ENTRANCES[number] & {x:number;z:number;yaw:number};
 const cache=new WeakMap<District,MrtEntrance[]>();
-export function planMrtEntrances(d:District){
-  const old=cache.get(d);if(old)return old;
-  const nodes=new Map(d.nodes.map(n=>[n.id,n])),result:MrtEntrance[]=[];
-  for(const spec of MRT_ENTRANCES){
+export function planMrtEntrances(d:District,legacyOnly=false){
+  const old=cache.get(d)??[];
+  const specs=MRT_ENTRANCES.filter(s=>(!legacyOnly||s.introduced<34)&&!old.some(o=>o.id===s.id));
+  if(!specs.length)return old;
+  const nodes=new Map(d.nodes.map(n=>[n.id,n])),result:MrtEntrance[]=[...old];
+  for(const spec of specs){
     const target=planPoint(spec.design),road=d.roads.filter(r=>!r.destinationId&&!r.shortcut).map(r=>({r,a:nodes.get(r.a)!,b:nodes.get(r.b)!})).sort((u,v)=>distanceToSegment(target,u.a,u.b).distance-distanceToSegment(target,v.a,v.b).distance)[0]!;
     const yaw=Math.atan2(road.b.x-road.a.x,road.b.z-road.a.z);
     let chosen:Obstacle|undefined;
     for(const [along,side] of [[0,0],[0,18],[0,-18],[0,26],[0,-26],[8,18],[-8,-18],[12,26],[-12,-26]]){
       const o:Obstacle={x:target.x+Math.sin(yaw)*along!+Math.cos(yaw)*side!,z:target.z+Math.cos(yaw)*along!-Math.sin(yaw)*side!,w:3.6,d:7,height:3.2,yaw,color:"#375d85",environmentId:spec.id};
-      if(d.obstacles.some(q=>orientedFootprintsOverlap(o,q,1)))continue;
+      if(d.obstacles.some(q=>(spec.introduced<34||!d.buildings.includes(q))&&orientedFootprintsOverlap(o,q,1)))continue;
       if(d.roads.some(r=>{const a=nodes.get(r.a)!,b=nodes.get(r.b)!;return distanceToSegment(o,a,b).distance<r.width/2+5;}))continue;
       chosen=o;break;
     }
     if(!chosen)throw Error(`MRT surface entrance parcel is obstructed: ${spec.id}`);
+    if(spec.introduced>=34){
+      const replaced=new Set(d.buildings.filter(b=>orientedFootprintsOverlap(chosen!,b,1)));
+      d.buildings=d.buildings.filter(b=>!replaced.has(b));d.obstacles=d.obstacles.filter(b=>!replaced.has(b));
+    }
     d.obstacles.push(chosen);result.push({...spec,x:chosen.x,z:chosen.z,yaw});
   }
   cache.set(d,result);return result;

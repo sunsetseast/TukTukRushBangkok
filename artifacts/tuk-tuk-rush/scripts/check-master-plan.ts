@@ -54,7 +54,7 @@ for(const station of suk.stations)assert(roadDistance(station)<3.5,`Station alig
 const service=new RailService(d.transit!),visited=new Set<string>();for(let t=0;t<1800;t+=.5){service.update(t);for(const train of service.trains)if(train.station)visited.add(`${train.line.id}:${train.station}`);}
 assert(visited.has("sukhumvit:phrom-phong"),"New E5 station receives service");
 service.update(0);assert.equal(JSON.stringify(service.trains),JSON.stringify(new RailService(d.transit!).trains),"Restart deterministic");
-const mrt=planMrtEntrances(d);assert.equal(mrt.length,4);assert(mrt.every(s=>d.obstacles.some(o=>o.environmentId===s.id)));
+const mrt=planMrtEntrances(d);assert.equal(mrt.length,7);assert(mrt.every(s=>d.obstacles.some(o=>o.environmentId===s.id)));
 const store=new Map<string,string>(),storage={getItem:(k:string)=>store.get(k)??null,setItem:(k:string,v:string)=>{store.set(k,v);}},discovery=readDiscovery(storage);
 for(const id of ["emporium","benchasiri","chatuchak-park"]){const l=d.landmarks.find(l=>l.id===id)!;discover(d,nodes.get(l.accessNode!)!,discovery,storage);assert(discovery.landmarks.includes(id));}
 assert.deepEqual(readDiscovery(storage),discovery,"Save/load includes new places without renaming existing IDs");

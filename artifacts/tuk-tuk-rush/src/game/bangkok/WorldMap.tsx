@@ -1,3 +1,4 @@
+import {canonicalFeaturePoint} from './cityModel';
 import {
   memo,
   useEffect,
@@ -285,7 +286,7 @@ function MapLayers({
     p = toMap({ x: f.px, z: f.pz }),
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
-    const known = d.landmarks.filter(
+    const known = d.landmarks.map(l=>({...l,...canonicalFeaturePoint(l.id!,l.plot??l,l.yaw??0)})).filter(
       (l) =>
         (!detail || l.kind !== "hotel") &&
         (!detail || l.id !== "state" || !placeNames) &&
@@ -1224,7 +1225,7 @@ export function WorldMap({
             target="_blank"
             rel="noreferrer"
           >
-            Park outlines © OpenStreetMap contributors
+            Geographic references and park outlines © OpenStreetMap contributors
           </a>
         </small>
       </footer>

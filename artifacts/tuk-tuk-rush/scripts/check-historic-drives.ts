@@ -16,8 +16,13 @@ const e = new GameEngine({ seed: 26 }),
 const intersectionMode=process.env.HISTORIC_INTERSECTIONS==='1';
 const trafficMode=process.env.HISTORIC_TRAFFIC==='1';
 const waterfrontMode=process.env.HISTORIC_WATERFRONT==='1';
+const benchmarkMode=process.env.CITY_BENCHMARK==='1';
 const armStops=new Map<string,(typeof d.nodes)[number]>();
 const armApproaches: {id:string;corridor:string|undefined;name:string|undefined;node:string;x:number;z:number}[]=[];
+if(benchmarkMode){
+ for(const [id,corridor,x,z] of [['yaowarat-benchmark-end','yaowarat',-485,-390],['tha-tien-south','old_w',-872,-650],['tha-tien-north','old_w',-940,-1010]] as const){const ids=new Set(d.roads.filter(r=>r.corridor===corridor).flatMap(r=>[r.a,r.b]));armStops.set(id,d.nodes.filter(n=>ids.has(n.id)).sort((a,b)=>Math.hypot(a.x-x,a.z-z)-Math.hypot(b.x-x,b.z-z))[0]!);}
+ pairs=[['gate','yaowarat-benchmark-end'],['tha-tien-south','tha-tien-north']];
+}
 if(waterfrontMode) {
  for(const [id,corridor,x,z] of [['tha-chang','old_w',-940,-1030],['tha-tien','old_w',-872,-650],['thai-wang','thai-wang',-930,-780],['sanam-chai','old_e',-704,-700]] as const) {
   const ids=new Set(d.roads.filter(r=>r.corridor===corridor).flatMap(r=>[r.a,r.b]));
@@ -126,6 +131,7 @@ for (const [from, to] of pairs) {
 }
 e.dispose();
 const out = {
+  benchmarkMode,
   pass: true,
   trafficDisabledForDeterminism: !trafficMode,
   trafficEnabled: trafficMode,

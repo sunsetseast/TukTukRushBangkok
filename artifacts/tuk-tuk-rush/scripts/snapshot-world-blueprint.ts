@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import {gzipSync} from 'node:zlib';
+import {createBangkokWorld} from '../src/game/bangkok/world';
+import {buildLandmarkRegistry} from '../src/game/bangkok/landmarkRegistry';
+import {landmarkParcels} from '../src/game/bangkok/landmarkParcels';
+import {designBuildings} from '../src/game/bangkok/buildingGrammar';
+import {cinematicParcel} from '../src/game/bangkok/yaowarat';
+import {roadGraphKey} from '../src/game/bangkok/roadSurfaceGraph';
+const out=new URL('../../../docs/qa/world-blueprint/',import.meta.url);
+fs.mkdirSync(out,{recursive:true});
+const d=createBangkokWorld(),registry=buildLandmarkRegistry(d),designs=designBuildings(d);
+const label=process.env.CITY_LABEL??'before';
+fs.writeFileSync(new URL(label+'-world.json.gz',out),gzipSync(JSON.stringify(d)));
+fs.writeFileSync(new URL(label+'-registry.json',out),JSON.stringify(registry,null,2));
+fs.writeFileSync(new URL(label+'-parcels.json',out),JSON.stringify(landmarkParcels(d)));
+const report={roads:d.roads.length,nodes:d.nodes.length,buildings:d.buildings.length,landmarks:d.landmarks.length,places:registry.length,parcels:landmarkParcels(d).length,roadGraphKey:roadGraphKey(d),transit:d.transit?.lines.map(l=>({id:l.id,stops:l.stations.map(s=>s.code)})),benchmarkParcels:designs.filter(cinematicParcel).map(p=>({id:p.id,x:p.parcel.x,z:p.parcel.z,corridor:p.corridor,role:p.parcel.artRole,bays:p.bays.length,heights:p.bays.map(b=>b.height)}))};
+fs.writeFileSync(new URL(label+'-audit.json',out),JSON.stringify(report,null,2));
+console.log(JSON.stringify(report));

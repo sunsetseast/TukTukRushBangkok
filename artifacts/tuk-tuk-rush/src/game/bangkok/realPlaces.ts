@@ -1,3 +1,4 @@
+import {approvedDesign,approvedSite} from './cityModel';
 import { placeAuthoredSites } from './authoredSites';
 import type { District } from '../types';
 import { MASTER_PLAN } from './masterPlan';
@@ -13,7 +14,7 @@ export type RealPlace = {
 const hotel = (id:string,name:string,address:string,neighborhood:string,region:string,bank:RealPlace['bank'],map:[number,number],footprint:[number,number],height:number,yaw:number,nearby:string[],references:string[],features:string[],tier:RealPlace['tier']='major'):RealPlace => ({id,name,address,neighborhood,region,bank,map,footprint,height,yaw,nearby,references,features,tier,category:'hotel',access:'public-roadside',asset:`real-${id}-v2`});
 /** Curated design anchors, NOT a GPS projection. North is -Z. Source addresses
  * verify geography; footprints are deliberately compressed. No random fitting. */
-export const REAL_PLACES: RealPlace[] = [
+const placeSpecifications: RealPlace[] = [
   ...(['emporium','emquartier','emsphere'] as const).map(id=>({id,name:id==='emporium'?'Emporium':id==='emquartier'?'EmQuartier':'EmSphere',category:'architecture' as const,address:'Sukhumvit Road / Phrom Phong',neighborhood:'Phrom Phong',region:'sukhumvit',nearby:['phrom-phong','benchasiri'],map:[...MASTER_PLAN.malls[id]] as [number,number],asset:`real-${id}-master-plan-v1`,tier:'hero' as const,access:'public-roadside' as const,footprint:(id==='emquartier'?[100,118]:id==='emporium'?[88,106]:[84,80]) as [number,number],height:id==='emporium'?102:id==='emquartier'?82:32,yaw:id==='emquartier'?0:Math.PI,references:['https://emdistrict.com/contact-us/','https://emdistrict.com/whats-em-district/','https://emsphere.co.th/en/about-us/'],features:id==='emquartier'?['Separate Glass/Helix/Waterfall masses','White terrace ribbons and planted helix','North of Sukhumvit']:id==='emporium'?['Ivory retail podium and hotel tower','Gold cornice bands','South of Phrom Phong station']:['Bronze arena crown','Open glazed retail frontage','West of Benchasiri Park']})),
   hotel('dusit','Dusit Thani Bangkok / Dusit Central Park','98 Rama IV Road','Silom / Lumphini','silom',undefined,[756,804],[96,78],142,0,['park','one-bangkok'],['https://www.dusit.com/dusitthani-bangkok/','https://www.dusitcentralpark.com/en/'],['Rebuilt park-facing hotel and restored gold spire','Distinct office tower and terraced retail roof garden','Southwest edge of Lumphini Park'],'hero'),
   hotel('okura','The Okura Prestige Bangkok / Park Ventures','57 Wireless Road','Phloen Chit','sukhumvit',undefined,[843,488],[62,84],115,Math.PI,['embassy','rosewood','phloen-chit'],['https://web.p-t-group.com/en/project-detail.php?projects_id=64','https://www.okurabangkok.com/'],['Chamfered glass mixed-use tower','Recessed hotel terrace and projecting infinity pool','Landscaped podium on Wireless Road'],'hero'),
@@ -35,6 +36,7 @@ export const REAL_PLACES: RealPlace[] = [
   {id:'siam-center',name:'Siam Center / Siam Discovery',category:'architecture',address:'Rama I Road, Pathum Wan',neighborhood:'Siam',region:'siam',nearby:['paragon','mbk','siam'],map:[676,432],asset:'real-siam-center-v1',tier:'major',access:'public-roadside',footprint:[154,64],height:33,yaw:0,references:['https://www.siamdiscovery.co.th/','https://www.nendo.jp/en/works/siam-discovery/'],features:['Two distinct low retail volumes','Discovery stacked white display frames','Siam Center dark glazed frontage']},
   {id:'jim-thompson',name:'Jim Thompson House',category:'heritage',address:'6 Soi Kasemsan 2, Rama I Road',neighborhood:'Wang Mai / Siam',region:'siam',nearby:['mbk','siam-center'],map:[626,426],asset:'real-jim-thompson-v1',tier:'major',access:'public-roadside',footprint:[72,68],height:22,yaw:0,references:['https://jimthompsonhouse.org/'],features:['Cluster of elevated teak houses','Steep Thai gables','Garden court and raised connecting walkways']},
 ];
+export const REAL_PLACES:RealPlace[]=placeSpecifications.map(p=>({...p,map:approvedDesign(p.id),yaw:approvedSite(p.id)!.model.rotation}));
 export const realPlace = (id?:string) => REAL_PLACES.find(p=>p.id===id);
 
 export function placeRealArchitecture(d:District) { placeAuthoredSites(d,REAL_PLACES); }

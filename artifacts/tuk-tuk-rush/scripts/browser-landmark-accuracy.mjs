@@ -212,6 +212,15 @@ try {
     report.restarts[2].stats.geometries,
   );
   assert.deepEqual(report.errors, []);
+  await p.setViewportSize({width:1280,height:800});
+  await p.getByTestId('button-city-inspector').click();
+  await p.getByTestId('city-inspector').waitFor();
+  await p.getByLabel('Select destination').selectOption('swing');
+  const inspectorText=await p.getByTestId('city-inspector').innerText();
+  assert(inspectorText.includes('263.0')&&inspectorText.includes('13.75181'));
+  await p.screenshot({path:`${out}/inspector.jpg`,type:'jpeg',quality:85});
+  report.inspector={pass:true,source:'live generated District',selected:'swing',projectionResidual:263};
+  await p.getByRole('button',{name:'Close',exact:true}).click();
   report.pass = true;
   await fs.writeFile(`${out}/checks.json`, JSON.stringify(report, null, 2));
   console.log(

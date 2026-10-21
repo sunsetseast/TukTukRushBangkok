@@ -3,7 +3,7 @@ import type { ArtPiece } from "./architecturalBatch";
 import type { ParcelDesign, Surface } from "./buildingGrammar";
 import { distanceToSegment } from "../world";
 
-/** The first 250m of the existing one-way road. No alternate layout or colliders. */
+/** Bounded gateway-to-curve slice of the existing one-way road. */
 export const YAOWARAT_BENCHMARK = {
   firstNode: "bkk:504",
   lastNode: "bkk:514",
@@ -15,31 +15,26 @@ export function cinematicParcel(p: ParcelDesign) {
     p.region === "chinatown" &&
     p.corridor === "yaowarat" &&
     !p.parcel.artRole &&
-    p.parcel.x > -145 &&
+    p.parcel.x > -510 &&
     p.parcel.x < 100 &&
-    distanceToSegment(
-      p.parcel,
-      { x: 109.56619147855508, z: -49.88854381999831 },
-      { x: -135.49398259285863, z: -168.17168580181803 },
-    ).distance < 34
+    p.parcel.z > -445 && p.parcel.z < -30
   );
 }
 /** Composed row, not independently randomized decorations. Retains each shop's trade. */
 export function composeYaowarat(p: ParcelDesign) {
   if (!cinematicParcel(p)) return p;
   const walls = [
-    "#e5af71",
-    "#df805c",
-    "#54afa3",
-    "#ebcf9a",
-    "#adb1d3",
-    "#e8b28d",
+    "#d8c29d", "#cfa184", "#8da99a", "#ead7b4", "#b2b5ad", "#d8b59b",
   ];
   const trims = ["#335b59", "#72433b", "#245b60", "#45685f"];
   p.bays.forEach((a, i) => {
     const n = (Math.round((p.parcel.x + 150) / 23) + i + 18) % walls.length;
-    a.floors = 3 + (a.seed % 3);
-    a.height = a.floors * 3.5 + 1.1;
+    a.floors = Math.max(2,Math.min(5,Math.floor((p.parcel.height-1.1)/3.2)));
+    a.height = Math.min(p.parcel.height,a.floors * 3.2 + 1.1);
+    const trades=['gold','tea','noodle','food','retail','hotel','fruit','coffee','clothes'] as const;
+    a.trade=trades[(Math.floor((100-p.parcel.x)/26)+i*2)%trades.length]!;
+    a.type=a.trade==='gold'?'gold':n%3===0?'arcade':'shophouse';
+    a.occupied=true;
     a.wall = walls[n]!;
     a.trim = trims[(n + i) % trims.length]!;
     a.accent =
@@ -49,7 +44,7 @@ export function composeYaowarat(p: ParcelDesign) {
           ? "#267f70"
           : ["#d26348", "#2c8c8c", "#b46469"][n % 3]!;
     a.roof = n % 4 === 0 ? "gable" : "parapet";
-    a.cabinet = false;
+    a.cabinet = i===0 && (a.seed%3!==0);
     a.windows = Math.max(1, Math.min(3, Math.floor(a.width / 2.7)));
   });
   return p;
@@ -98,7 +93,7 @@ export function emitYaowaratFacade(
         shape,
         yaw: yaw + rotation,
         pitch,
-        siteId: "yaowarat",
+        siteId: cinematicParcel(p)?"yaowarat":"tha-tien",
       });
     // Continuous side/rear walls, deep shop room, and independently articulated front skin.
     put(
@@ -164,12 +159,12 @@ export function emitYaowaratFacade(
     put(0, 4.32, F + 0.28, W - 0.5, 1.25, 0.5, a.accent, "metal", "core");
     put(0, 4.32, F + 0.5, W - 0.68, 1.04, 0.04, cream, "panel", "core");
     put(0, 4.99, F + 0.25, W + 0.1, 0.18, 0.9, cream, "plaster", "core");
-    const floor = 3.5,
+    const floor = Math.min(3.2,(H-4.5)/Math.max(1,a.floors-1)),
       span = (W - 0.6) / a.windows,
       ww = Math.min(1.9, span * 0.66),
       wh = 2.05;
     for (let f = 1; f < a.floors; f++) {
-      const y = 6.25 + (f - 1) * floor;
+      const y = 6.0 + (f - 1) * floor;
       put(0, y - 1.4, F - 0.65, W, 0.78, 1.7, a.wall);
       put(0, y + 1.36, F - 0.65, W, 0.67, 1.7, a.wall);
       for (let n = 0; n <= a.windows; n++) {
@@ -217,7 +212,10 @@ export function emitYaowaratFacade(
               side * 0.32,
             );
         }
-        put(u, y + wh / 2 + 0.16, F - 0.11, ww + 0.6, 0.22, 0.6, cream);
+        if(!cinematicParcel(p)) {
+          put(u,y+.62,F-.08,ww+.22,1.12,.22,cream,'plaster','near','arch');
+          put(u,y+.66,F-.19,ww*.86,.9,.06,a.trim,'wood','near','arch');
+        } else put(u, y + wh / 2 + 0.16, F - 0.11, ww + 0.6, 0.22, 0.6, cream);
         put(u, y - wh / 2 - 0.15, F + 0.1, ww + 0.65, 0.2, 0.8, a.trim);
         put(u, y, F - 1.27, 0.08, wh, 0.11, cream, "wood");
         if ((a.seed + f + n) % 3 === 0) {
@@ -279,7 +277,7 @@ export function emitYaowaratFacade(
     for (let f = 1; f < a.floors; f++)
       put(
         0,
-        6.25 + (f - 1) * floor,
+        6.0 + (f - 1) * floor,
         F + 0.14,
         W * 0.7,
         1.8,
@@ -292,7 +290,7 @@ export function emitYaowaratFacade(
     put(0, H + 0.15, F - b.d / 2, W, 0.3, b.d, cream, "concrete", "core");
     put(0, H + 0.65, F - 0.35, W, 1, 0.7, a.wall, "plaster", "core");
     put(0, H + 1.2, F - 0.32, W + 0.17, 0.22, 1.05, cream, "plaster", "core");
-    if (index % 3 === 0) {
+    if (a.roof === 'gable') {
       put(
         0,
         H + 1,
@@ -357,6 +355,33 @@ export function emitYaowaratFacade(
         "metal",
         "detail",
       );
+    // Projecting, two-sided trade blade: real brackets and cabinet support the
+    // shared atlas lettering. Its lower edge stays well above the walkway.
+    if(a.cabinet) {
+      const u=W*.31,y=Math.min(H-2,8.1);
+      put(u,y,F+.75,.55,5,1.6,iron,'metal','core');
+      put(u,y,F+1.25,.77,4.8,1.35,a.accent,'metal','core');
+      for(const yy of [y-1.8,y+1.8])put(u,yy,F+.3,.13,.16,1.6,iron,'metal');
+      for(const yy of [y-2.4,y+2.4])put(u,yy,F+1.25,.82,.12,1.4,cream,'metal');
+    }
+    // Arcade fanlights, tiled stall thresholds and a drained pedestrian edge
+    // distinguish the row during daylight without making whole walls emissive.
+    if(a.type==='arcade'||a.type==='gold') {
+      put(0,2.85,F-.65,W-.85,.72,.18,cream,'plaster','near','arch');
+      for(const side of [-1,1])put(side*(W/2-.42),1.65,F-.65,.23,2.5,.3,cream,'tile');
+    }
+    put(0,.035,F+.9,W,.06,2.5,'#a29b8c','concrete','core');
+    put(0,.078,F+2.15,W-.2,.05,.28,'#44514c','metal','near');
+    for(let k=0;k<Math.floor(W/.45);k++)put(-W/2+.3+k*.45,.11,F+2.15,.06,.025,.22,'#a8a58f','metal','detail');
+    // Coherent side/rear windows rather than an exposed blank colored box.
+    if(index===0||index===p.bays.length-1) {
+      const side=index===0?-1:1;
+      for(let f=1;f<a.floors;f++) {
+        const y=6+(f-1)*floor;
+        put(side*(W/2-.08),y,-b.d*.18,.12,1.8,1.5,a.trim,'wood');
+        put(side*(W/2+.04),y-1,-b.d*.18,.32,.18,1.9,cream,'plaster');
+      }
+    }
     // Constructed awning: sloping canvas, scalloped valance, tubular supports.
     if (a.occupied) {
       put(

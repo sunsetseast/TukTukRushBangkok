@@ -1,0 +1,29 @@
+{
+  "benchmarkMode": true,
+  "pass": true,
+  "trafficDisabledForDeterminism": true,
+  "trafficEnabled": false,
+  "metres": 1025,
+  "routes": [
+    {
+      "from": "gate",
+      "to": "yaowarat-benchmark-end",
+      "metres": 656,
+      "simulatedSeconds": 69,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 0
+    },
+    {
+      "from": "tha-tien-south",
+      "to": "tha-tien-north",
+      "metres": 369,
+      "simulatedSeconds": 40,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 0
+    }
+  ]
+}

@@ -1,0 +1,5627 @@
+{
+  "schemaVersion": 1,
+  "version": "bangkok-icons-2026.1",
+  "date": "2026-10-20",
+  "approval": "Coverage audit, not blanket geographic or art certification",
+  "attribution": "OSM-derived facts © OpenStreetMap contributors, ODbL 1.0. No OSM geometry imported into the playable graph.",
+  "places": [
+    {
+      "id": "chatuchak",
+      "name": "Chatuchak Market",
+      "category": "market",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/37911198"
+      ],
+      "coordinate": {
+        "lat": 13.799787971830986,
+        "lon": 100.55031439154929
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1032,
+        "z": -2180
+      },
+      "modelOwner": "chatuchak",
+      "modelOrigin": {
+        "x": 1032,
+        "z": -2180
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/37911198"
+      ],
+      "implementation": "rendered market",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "victory",
+      "name": "Victory Monument",
+      "category": "monument",
+      "geographicSource": [
+        "https://revolutionaryobjects.org/en/object/victory-monument",
+        "https://www.openstreetmap.org/way/158185227"
+      ],
+      "coordinate": {
+        "lat": 13.76493,
+        "lon": 100.53829
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 868,
+        "z": -1480
+      },
+      "modelOwner": "victory",
+      "modelOrigin": {
+        "x": 868,
+        "z": -1480
+      },
+      "district": "Ratchathewi",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "victory-monument-bts",
+        "phaya-thai"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://revolutionaryobjects.org/en/object/victory-monument",
+        "https://www.openstreetmap.org/way/158185227"
+      ],
+      "implementation": "rendered monument",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "khaosan",
+      "name": "Khao San Road",
+      "category": "market",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1516377328"
+      ],
+      "coordinate": {
+        "lat": 13.75882551494253,
+        "lon": 100.49745256609195
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -867.7163859753387,
+        "z": -1516.5194970290472
+      },
+      "modelOwner": "khaosan",
+      "modelOrigin": {
+        "x": -867.7163859753387,
+        "z": -1516.5194970290472
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1516377328"
+      ],
+      "implementation": "rendered market",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy Monument",
+      "category": "monument",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/13971907544"
+      ],
+      "coordinate": {
+        "lat": 13.7566773,
+        "lon": 100.5042404
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": -260,
+        "z": -1320
+      },
+      "modelOwner": "democracy",
+      "modelOrigin": {
+        "x": -260,
+        "z": -1320
+      },
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "sanam",
+        "golden",
+        "swing"
+      ],
+      "entrance": {
+        "x": -260,
+        "z": -1320
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/13971907544",
+        "https://www.tourismthailand.org/Attraction/democracy-monument"
+      ],
+      "implementation": "rendered monument",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "sanam",
+      "name": "Sanam Luang",
+      "category": "park",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23630232"
+      ],
+      "coordinate": {
+        "lat": 13.75523391,
+        "lon": 100.49309141600001
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -764,
+        "z": -1260
+      },
+      "modelOwner": "sanam",
+      "modelOrigin": {
+        "x": -764,
+        "z": -1260
+      },
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "palace",
+        "khaosan"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23630232",
+        "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/"
+      ],
+      "implementation": "rendered park",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "palace",
+      "name": "Grand Palace / Wat Phra Kaew",
+      "category": "palace",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23482754"
+      ],
+      "coordinate": {
+        "lat": 13.750127526415096,
+        "lon": 100.4916836226415
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -820,
+        "z": -940
+      },
+      "modelOwner": "palace",
+      "modelOrigin": {
+        "x": -820,
+        "z": -940
+      },
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "sanam",
+        "pho"
+      ],
+      "entrance": {
+        "x": -820,
+        "z": -1040.65
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23482754",
+        "https://www.royalgrandpalace.th/en/home"
+      ],
+      "implementation": "rendered palace",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pho",
+      "name": "Wat Pho",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.watpho.com/en/"
+      ],
+      "coordinate": {
+        "lat": 13.7466,
+        "lon": 100.4927
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -800,
+        "z": -700
+      },
+      "modelOwner": "pho",
+      "modelOrigin": {
+        "x": -800,
+        "z": -700
+      },
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "palace",
+        "arun"
+      ],
+      "entrance": {
+        "x": -792,
+        "z": -632
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.watpho.com/en/"
+      ],
+      "implementation": "rendered temple",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "arun",
+      "name": "Wat Arun",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23481741"
+      ],
+      "coordinate": {
+        "lat": 13.744127216666667,
+        "lon": 100.48892829583333
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -1395.3553390593274,
+        "z": -504.6446609406726
+      },
+      "modelOwner": "arun",
+      "modelOrigin": {
+        "x": -1395.3553390593274,
+        "z": -504.6446609406726
+      },
+      "district": "District requires verification",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -1486.1243830389826,
+        "z": -515.1394926838095
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23481741"
+      ],
+      "implementation": "rendered temple",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "golden",
+      "name": "Golden Mount",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.tourismthailand.org/Attraction/wat-saket-and-the-golden-mount"
+      ],
+      "coordinate": {
+        "lat": 13.75392,
+        "lon": 100.50661
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -80,
+        "z": -1080
+      },
+      "modelOwner": "golden",
+      "modelOrigin": {
+        "x": -80,
+        "z": -1080
+      },
+      "district": "Pom Prap Sattru Phai",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "swing",
+        "democracy"
+      ],
+      "entrance": {
+        "x": -80,
+        "z": -1080
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.tourismthailand.org/Attraction/wat-saket-and-the-golden-mount"
+      ],
+      "implementation": "rendered temple",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "swing",
+      "name": "Giant Swing",
+      "category": "monument",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/178353988"
+      ],
+      "coordinate": {
+        "lat": 13.75181091,
+        "lon": 100.501275225
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -360,
+        "z": -998
+      },
+      "modelOwner": "swing",
+      "modelOrigin": {
+        "x": -360,
+        "z": -940
+      },
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "wat-suthat",
+        "palace"
+      ],
+      "entrance": {
+        "x": -360,
+        "z": -998
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/178353988",
+        "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan"
+      ],
+      "implementation": "rendered monument",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "flowers",
+      "name": "Pak Khlong Talat",
+      "category": "market",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1423814928"
+      ],
+      "coordinate": {
+        "lat": 13.741746119999998,
+        "lon": 100.496303
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -728,
+        "z": -260
+      },
+      "modelOwner": "flowers",
+      "modelOrigin": {
+        "x": -728,
+        "z": -260
+      },
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "pho",
+        "memorial-bridge",
+        "yodpiman"
+      ],
+      "entrance": {
+        "x": -692.8,
+        "z": -308,
+        "id": "civic:-6928000:-3080000"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1423814928",
+        "https://www.tourismthailand.org/Attraction/pak-khlong-talat-night-market",
+        "https://webportal.bangkok.go.th/upload/user/00000086/Innovation/PAK%20KLONG%20MARKET.pdf"
+      ],
+      "implementation": "rendered market",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "mbk",
+      "name": "MBK",
+      "category": "mall",
+      "geographicSource": [
+        "https://mbk-center.co.th/en/"
+      ],
+      "coordinate": {
+        "lat": 13.744512,
+        "lon": 100.529857
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 632,
+        "z": -440
+      },
+      "modelOwner": "mbk",
+      "modelOrigin": {
+        "x": 632,
+        "z": -440
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "national-stadium",
+        "siam-discovery",
+        "siam-square"
+      ],
+      "entrance": {
+        "x": 632,
+        "z": -470
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://mbk-center.co.th/en/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "paragon",
+      "name": "Siam Paragon",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/781138575"
+      ],
+      "coordinate": {
+        "lat": 13.746561475555556,
+        "lon": 100.53471253333333
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 920,
+        "z": -740
+      },
+      "modelOwner": "paragon",
+      "modelOrigin": {
+        "x": 920,
+        "z": -740
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "siam-center",
+        "siam-bts",
+        "central"
+      ],
+      "entrance": {
+        "x": 920,
+        "z": -706
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/781138575",
+        "https://www.siamparagon.co.th/about"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "central",
+      "name": "CentralWorld / Erawan",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.centralworld.co.th/en"
+      ],
+      "coordinate": {
+        "lat": 13.7469,
+        "lon": 100.5397
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 1144,
+        "z": -680.5194970290472
+      },
+      "modelOwner": "central",
+      "modelOrigin": {
+        "x": 1144,
+        "z": -680.5194970290472
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "paragon",
+        "erawan-hotel",
+        "embassy"
+      ],
+      "entrance": {
+        "x": 1166,
+        "z": -680.5194970290472
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.centralworld.co.th/en"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "gate",
+      "name": "Chinatown Gate",
+      "category": "gate",
+      "geographicSource": [
+        "https://www.tourismthailand.org/Attraction/yaowarat-road"
+      ],
+      "coordinate": {
+        "lat": 13.73701,
+        "lon": 100.51286
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 140,
+        "z": -40
+      },
+      "modelOwner": "gate",
+      "modelOrigin": {
+        "x": 140,
+        "z": -40
+      },
+      "district": "Samphanthawong",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "traimit",
+        "hua"
+      ],
+      "entrance": {
+        "x": 140,
+        "z": -35.7
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.tourismthailand.org/Attraction/yaowarat-road"
+      ],
+      "implementation": "rendered gate",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "traimit",
+      "name": "Wat Traimit",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"
+      ],
+      "coordinate": {
+        "lat": 13.73768,
+        "lon": 100.51357
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 256,
+        "z": -104
+      },
+      "modelOwner": "traimit",
+      "modelOrigin": {
+        "x": 256,
+        "z": -104
+      },
+      "district": "Samphanthawong",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "hua",
+        "gate"
+      ],
+      "entrance": {
+        "x": 256,
+        "z": -78
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"
+      ],
+      "implementation": "rendered temple",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "hua",
+      "name": "Hua Lamphong",
+      "category": "station",
+      "geographicSource": [
+        "https://www.thailandtravel.or.jp/hua-lamphong-station/",
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28",
+        "https://commons.wikimedia.org/wiki/File:Gare_Hua_Lamphong.jpg"
+      ],
+      "coordinate": {
+        "lat": 13.73922,
+        "lon": 100.5167605
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 400,
+        "z": -288
+      },
+      "modelOwner": "hua",
+      "modelOrigin": {
+        "x": 400,
+        "z": -288
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 400,
+        "z": -255
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.thailandtravel.or.jp/hua-lamphong-station/",
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28",
+        "https://commons.wikimedia.org/wiki/File:Gare_Hua_Lamphong.jpg"
+      ],
+      "implementation": "rendered station",
+      "status": "present but visually inadequate",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "food",
+      "name": "Banthat Thong",
+      "category": "market",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 590,
+        "z": -20
+      },
+      "modelOwner": "food",
+      "modelOrigin": {
+        "x": 590,
+        "z": -20
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "rendered market",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "icon",
+      "name": "ICONSIAM",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/680735864"
+      ],
+      "coordinate": {
+        "lat": 13.72667384117647,
+        "lon": 100.51073990588236
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -646.9669914110091,
+        "z": 933.0330085889909
+      },
+      "modelOwner": "icon",
+      "modelOrigin": {
+        "x": -646.9669914110091,
+        "z": 933.0330085889909
+      },
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "hilton",
+        "peninsula",
+        "river-city"
+      ],
+      "entrance": {
+        "x": -702.1027746375084,
+        "z": 922.0658194200763,
+        "id": "arrival:icon:loop5",
+        "name": "ICONSIAM · visitor arrival"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/680735864",
+        "https://www.iconsiam.com/en/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "park",
+      "name": "Lumphini Park",
+      "category": "park",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23483299"
+      ],
+      "coordinate": {
+        "lat": 13.73111442962963,
+        "lon": 100.54171388333333
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1214,
+        "z": 516
+      },
+      "modelOwner": "park",
+      "modelOrigin": {
+        "x": 1214,
+        "z": 516
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "dusit",
+        "one-bangkok",
+        "sala-daeng"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23483299",
+        "https://greener.bangkok.go.th/park/suan-lumpini/",
+        "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966"
+      ],
+      "implementation": "rendered park",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal 21 / Asok",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.terminal21.co.th/asok/contactus/th",
+        "https://www.openstreetmap.org/way/157656710"
+      ],
+      "coordinate": {
+        "lat": 13.737924,
+        "lon": 100.560421
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 1672,
+        "z": -404
+      },
+      "modelOwner": "terminal",
+      "modelOrigin": {
+        "x": 1672,
+        "z": -404
+      },
+      "district": "Watthana",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "asok-bts",
+        "sukhumvit-mrt"
+      ],
+      "entrance": {
+        "x": 1645,
+        "z": -370
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.terminal21.co.th/asok/contactus/th",
+        "https://www.openstreetmap.org/way/157656710"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "benjakitti",
+      "name": "Benjakitti Park",
+      "category": "park",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1306732424"
+      ],
+      "coordinate": {
+        "lat": 13.728924037499999,
+        "lon": 100.5585997225
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1576,
+        "z": 452
+      },
+      "modelOwner": "benjakitti",
+      "modelOrigin": {
+        "x": 1576,
+        "z": 452
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1306732424"
+      ],
+      "implementation": "rendered park",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "mahanakhon",
+      "name": "Mahanakhon",
+      "category": "tower",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 654.1939766255646,
+        "z": 1119.1341716182542
+      },
+      "modelOwner": "mahanakhon",
+      "modelOrigin": {
+        "x": 654.1939766255646,
+        "z": 1119.1341716182542
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 600,
+        "z": 1100,
+        "id": "bkk:806"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [],
+      "implementation": "rendered tower",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "asiatique",
+      "name": "Asiatique",
+      "category": "wheel",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -340.86582838174553,
+        "z": 2046.1939766255643
+      },
+      "modelOwner": "asiatique",
+      "modelOrigin": {
+        "x": -340.86582838174553,
+        "z": 2046.1939766255643
+      },
+      "district": "District requires verification",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -246.11872705031442,
+        "z": 2023.0403662872698
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [],
+      "implementation": "rendered wheel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "paknam",
+      "name": "Wat Paknam / Big Buddha",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/376675947"
+      ],
+      "coordinate": {
+        "lat": 13.721602377272728,
+        "lon": 100.47036996363636
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -1878.9949493661165,
+        "z": 586.9949493661167
+      },
+      "modelOwner": "paknam",
+      "modelOrigin": {
+        "x": -1878.9949493661165,
+        "z": 586.9949493661167
+      },
+      "district": "District requires verification",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -1772.2924801628117,
+        "z": 654.377787956139
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/376675947"
+      ],
+      "implementation": "rendered temple",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "baiyoke",
+      "name": "Baiyoke Tower II",
+      "category": "tower",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1020,
+        "z": -940
+      },
+      "modelOwner": "baiyoke",
+      "modelOrigin": {
+        "x": 1020,
+        "z": -940
+      },
+      "district": "District requires verification",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1023.8095238095239,
+        "z": -998.0952380952381,
+        "id": "bkk:94"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [],
+      "implementation": "rendered tower",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "state",
+      "name": "State Tower / Lebua",
+      "category": "tower",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/257066461"
+      ],
+      "coordinate": {
+        "lat": 13.7215136,
+        "lon": 100.516885
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 200,
+        "z": 1180
+      },
+      "modelOwner": "state",
+      "modelOrigin": {
+        "x": 200,
+        "z": 1180
+      },
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "shangri",
+        "oriental"
+      ],
+      "entrance": {
+        "x": 84,
+        "z": 1148,
+        "id": "bkk:650"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/257066461",
+        "https://lebua.com/"
+      ],
+      "implementation": "rendered tower",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "benchasiri",
+      "name": "Benchasiri Park",
+      "category": "park",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23487144"
+      ],
+      "coordinate": {
+        "lat": 13.73050668,
+        "lon": 100.56737036
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 2036,
+        "z": 204
+      },
+      "modelOwner": "benchasiri",
+      "modelOrigin": {
+        "x": 2036,
+        "z": 204
+      },
+      "district": "Khlong Toei",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "emporium",
+        "emsphere"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23487144",
+        "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
+        "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
+      ],
+      "implementation": "rendered park",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "chatuchak-park",
+      "name": "Chatuchak Park",
+      "category": "park",
+      "geographicSource": [
+        "https://greener.bangkok.go.th/park/suan-chatuchak/",
+        "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
+      ],
+      "coordinate": {
+        "lat": 13.807484,
+        "lon": 100.5554198
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 1200,
+        "z": -2112
+      },
+      "modelOwner": "chatuchak-park",
+      "modelOrigin": {
+        "x": 1200,
+        "z": -2112
+      },
+      "district": "Chatuchak",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "chatuchak",
+        "mo-chit"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://greener.bangkok.go.th/park/suan-chatuchak/",
+        "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
+      ],
+      "implementation": "rendered park",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "emporium",
+      "name": "Emporium",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/25505429"
+      ],
+      "coordinate": {
+        "lat": 13.730394530434783,
+        "lon": 100.56889374782608
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 2172,
+        "z": 176
+      },
+      "modelOwner": "emporium",
+      "modelOrigin": {
+        "x": 2172,
+        "z": 176
+      },
+      "district": "Khlong Toei",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "emquartier",
+        "benchasiri"
+      ],
+      "entrance": {
+        "x": 2188,
+        "z": 126
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/25505429",
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/29qga3VN6E2sfehZ8",
+        "https://emdistrict.com/whats-em-district/",
+        "https://emsphere.co.th/en/about-us/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "emquartier",
+      "name": "EmQuartier",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/318785712"
+      ],
+      "coordinate": {
+        "lat": 13.731603968421053,
+        "lon": 100.56943274342105
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 2172,
+        "z": -100
+      },
+      "modelOwner": "emquartier",
+      "modelOrigin": {
+        "x": 2172,
+        "z": -100
+      },
+      "district": "Watthana",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "emporium",
+        "benchasiri"
+      ],
+      "entrance": {
+        "x": 2172,
+        "z": -51
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/318785712",
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/k4KwPVYhrrynJGhb9",
+        "https://emdistrict.com/whats-em-district/",
+        "https://emsphere.co.th/en/about-us/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "emsphere",
+      "name": "EmSphere",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/405853851"
+      ],
+      "coordinate": {
+        "lat": 13.73199888,
+        "lon": 100.5660461
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1840,
+        "z": 52
+      },
+      "modelOwner": "emsphere",
+      "modelOrigin": {
+        "x": 1840,
+        "z": 52
+      },
+      "district": "Khlong Toei",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "benchasiri",
+        "emporium"
+      ],
+      "entrance": {
+        "x": 1840,
+        "z": 11
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/405853851",
+        "https://emdistrict.com/contact-us/",
+        "https://maps.app.goo.gl/hy1cPD1Ffhzxs8oZA",
+        "https://emdistrict.com/whats-em-district/",
+        "https://emsphere.co.th/en/about-us/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "dusit",
+      "name": "Dusit Thani Bangkok / Dusit Central Park",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1266545781"
+      ],
+      "coordinate": {
+        "lat": 13.72818871111111,
+        "lon": 100.53827255555555
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1024,
+        "z": 816
+      },
+      "modelOwner": "dusit",
+      "modelOrigin": {
+        "x": 1024,
+        "z": 816
+      },
+      "district": "Bang Rak",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "park",
+        "sala-daeng",
+        "one-bangkok"
+      ],
+      "entrance": {
+        "x": 1024,
+        "z": 774
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1266545781",
+        "https://www.dusit.com/dusitthani-bangkok/",
+        "https://www.dusitcentralpark.com/en/"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "okura",
+      "name": "The Okura Prestige Bangkok / Park Ventures",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/3705421625"
+      ],
+      "coordinate": {
+        "lat": 13.7426085,
+        "lon": 100.5476474
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1372,
+        "z": -448
+      },
+      "modelOwner": "okura",
+      "modelOrigin": {
+        "x": 1372,
+        "z": -448
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "embassy",
+        "rosewood",
+        "phloen-chit-bts"
+      ],
+      "entrance": {
+        "x": 1372,
+        "z": -414
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/3705421625",
+        "https://www.okurabangkok.com/contact-location",
+        "https://www.openstreetmap.org/way/176332744",
+        "https://web.p-t-group.com/en/project-detail.php?projects_id=64",
+        "https://www.okurabangkok.com/"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "anantara",
+      "name": "Anantara Riverside Bangkok Resort",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.anantara.com/en/riverside-bangkok"
+      ],
+      "coordinate": {
+        "lat": 13.7045,
+        "lon": 100.4919
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -1020,
+        "z": 2180
+      },
+      "modelOwner": "anantara",
+      "modelOrigin": {
+        "x": -1020,
+        "z": 2180
+      },
+      "district": "Thon Buri",
+      "bank": "west",
+      "requiredNeighbors": [
+        "asiatique",
+        "peninsula"
+      ],
+      "entrance": {
+        "x": -1073.5,
+        "z": 2180
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.anantara.com/en/riverside-bangkok",
+        "https://www.anantara.com/uploads/minor/anantara/documents/anantara-riverside-bangkok-resort/hotel-info/hotel-information-2025/anantara_riverside_resort_bangkok_resort_map_280125.pdf"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "one-bangkok",
+      "name": "One Bangkok / The Ritz-Carlton",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.onebangkok.com/en/location/"
+      ],
+      "coordinate": {
+        "lat": 13.7269,
+        "lon": 100.548
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 1520,
+        "z": 716
+      },
+      "modelOwner": "one-bangkok",
+      "modelOrigin": {
+        "x": 1520,
+        "z": 716
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "park",
+        "dusit"
+      ],
+      "entrance": {
+        "x": 1520,
+        "z": 664
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.onebangkok.com/en/location/",
+        "https://www.som.com/projects/one-bangkok/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "oriental",
+      "name": "Mandarin Oriental Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river"
+      ],
+      "coordinate": {
+        "lat": 13.72393,
+        "lon": 100.5144
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -200,
+        "z": 1040
+      },
+      "modelOwner": "oriental",
+      "modelOrigin": {
+        "x": -200,
+        "z": 1040
+      },
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "river-city",
+        "shangri",
+        "peninsula"
+      ],
+      "entrance": {
+        "x": -160.5,
+        "z": 1040
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river",
+        "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "peninsula",
+      "name": "The Peninsula Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+      ],
+      "coordinate": {
+        "lat": 13.723302,
+        "lon": 100.510368
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -620,
+        "z": 1228
+      },
+      "modelOwner": "peninsula",
+      "modelOrigin": {
+        "x": -620,
+        "z": 1228
+      },
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "oriental",
+        "icon",
+        "hilton"
+      ],
+      "entrance": {
+        "x": -664,
+        "z": 1228
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside",
+        "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "hilton",
+      "name": "Millennium Hilton Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/342556929"
+      ],
+      "coordinate": {
+        "lat": 13.728693737037036,
+        "lon": 100.51101173703704
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -756,
+        "z": 780
+      },
+      "modelOwner": "hilton",
+      "modelOrigin": {
+        "x": -756,
+        "z": 780
+      },
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "river-city",
+        "icon",
+        "peninsula"
+      ],
+      "entrance": {
+        "x": -794,
+        "z": 780
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/342556929",
+        "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/",
+        "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "shangri",
+      "name": "Shangri-La Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/342200086"
+      ],
+      "coordinate": {
+        "lat": 13.720790336,
+        "lon": 100.51356836000001
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -160,
+        "z": 1324
+      },
+      "modelOwner": "shangri",
+      "modelOrigin": {
+        "x": -160,
+        "z": 1324
+      },
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "oriental",
+        "state",
+        "saphan-taksin"
+      ],
+      "entrance": {
+        "x": -123,
+        "z": 1324
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/342200086",
+        "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/",
+        "https://www.shangri-la.com/bangkok/shangrila/"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "four-seasons",
+      "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.fourseasons.com/bangkok/getting-here/"
+      ],
+      "coordinate": {
+        "lat": 13.7119,
+        "lon": 100.5101
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -280,
+        "z": 1832
+      },
+      "modelOwner": "four-seasons",
+      "modelOrigin": {
+        "x": -280,
+        "z": 1832
+      },
+      "district": "Sathon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "capella",
+        "asiatique"
+      ],
+      "entrance": {
+        "x": -228.5,
+        "z": 1832
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.fourseasons.com/bangkok/getting-here/",
+        "https://www.fourseasons.com/bangkok/",
+        "https://press.fourseasons.com/bangkok/hotel-facts/"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "capella",
+      "name": "Capella Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1320414545"
+      ],
+      "coordinate": {
+        "lat": 13.7131566375,
+        "lon": 100.51096461875
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -280,
+        "z": 1652
+      },
+      "modelOwner": "capella",
+      "modelOrigin": {
+        "x": -280,
+        "z": 1652
+      },
+      "district": "Sathon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "four-seasons"
+      ],
+      "entrance": {
+        "x": -237,
+        "z": 1652
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1320414545",
+        "https://capellahotels.com/en/capella-bangkok/contact",
+        "https://capellahotels.com/en/capella-bangkok"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "rosewood",
+      "name": "Rosewood Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.kpf.com/project/rosewood-bangkok",
+        "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1400,
+        "z": -556
+      },
+      "modelOwner": "rosewood",
+      "modelOrigin": {
+        "x": 1400,
+        "z": -556
+      },
+      "district": "Phloen Chit",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "embassy",
+        "phloen-chit"
+      ],
+      "entrance": {
+        "x": 1400,
+        "z": -591
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.kpf.com/project/rosewood-bangkok",
+        "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "embassy",
+      "name": "Park Hyatt Bangkok / Central Embassy",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1324,
+        "z": -680
+      },
+      "modelOwner": "embassy",
+      "modelOrigin": {
+        "x": 1324,
+        "z": -680
+      },
+      "district": "Phloen Chit / Lumphini",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "rosewood",
+        "central",
+        "phloen-chit"
+      ],
+      "entrance": {
+        "x": 1324,
+        "z": -725
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "erawan-hotel",
+      "name": "Grand Hyatt Erawan Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/341383514"
+      ],
+      "coordinate": {
+        "lat": 13.743529039999999,
+        "lon": 100.54064711999999
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1304,
+        "z": -416
+      },
+      "modelOwner": "erawan-hotel",
+      "modelOrigin": {
+        "x": 1304,
+        "z": -416
+      },
+      "district": "Ratchaprasong",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "central",
+        "erawan-shrine"
+      ],
+      "entrance": {
+        "x": 1264,
+        "z": -416
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/341383514",
+        "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "eastin",
+      "name": "Eastin Grand Hotel Sathorn",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 232,
+        "z": 1332
+      },
+      "modelOwner": "eastin",
+      "modelOrigin": {
+        "x": 232,
+        "z": 1332
+      },
+      "district": "Sathorn / Surasak",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "surasak",
+        "state"
+      ],
+      "entrance": {
+        "x": 232,
+        "z": 1298
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+      ],
+      "implementation": "rendered hotel",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "river-city",
+      "name": "River City Bangkok",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/342182317"
+      ],
+      "coordinate": {
+        "lat": 13.73027929375,
+        "lon": 100.51333286875
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -276,
+        "z": 784
+      },
+      "modelOwner": "river-city",
+      "modelOrigin": {
+        "x": -276,
+        "z": 784
+      },
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [
+        "hilton",
+        "icon",
+        "oriental"
+      ],
+      "entrance": {
+        "x": -237,
+        "z": 784
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/342182317",
+        "https://rivercitybangkok.com/plan-your-visit/",
+        "https://rivercitybangkok.com/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "siam-center",
+      "name": "Siam Center / Siam Discovery",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/25701334"
+      ],
+      "coordinate": {
+        "lat": 13.746271830000001,
+        "lon": 100.53283677499999
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 704,
+        "z": -672
+      },
+      "modelOwner": "siam-center",
+      "modelOrigin": {
+        "x": 704,
+        "z": -672
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "siam-discovery",
+        "paragon",
+        "siam-bts"
+      ],
+      "entrance": {
+        "x": 704,
+        "z": -644
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/25701334",
+        "https://www.siamcenter.co.th/",
+        "https://www.siamdiscovery.co.th/",
+        "https://www.nendo.jp/en/works/siam-discovery/"
+      ],
+      "implementation": "rendered mall",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "jim-thompson",
+      "name": "Jim Thompson House",
+      "category": "museum",
+      "geographicSource": [
+        "https://jimthompsonhouse.org/visitor-information/",
+        "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+        "https://www.openstreetmap.org/way/897909009"
+      ],
+      "coordinate": {
+        "lat": 13.74931,
+        "lon": 100.52848
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 504,
+        "z": -696
+      },
+      "modelOwner": "jim-thompson",
+      "modelOrigin": {
+        "x": 504,
+        "z": -696
+      },
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "national-stadium",
+        "mbk",
+        "siam-discovery"
+      ],
+      "entrance": {
+        "x": 504,
+        "z": -734.5
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://jimthompsonhouse.org/visitor-information/",
+        "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+        "https://www.openstreetmap.org/way/897909009",
+        "https://jimthompsonhouse.org/"
+      ],
+      "implementation": "rendered museum",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:mo-chit",
+      "name": "Mo Chit",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5388599065"
+      ],
+      "coordinate": {
+        "lat": 13.8025991,
+        "lon": 100.5537913
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1080.032805953395,
+        "z": -2140.0599065235906
+      },
+      "modelOwner": "bts:mo-chit",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1087.780489652671,
+        "z": -2191.6832868594033,
+        "yaw": -0.5010133868037738
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5388599065",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:saphan-khwai",
+      "name": "Saphan Khwai",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 988.7551505809855,
+        "z": -1973.6332820110392
+      },
+      "modelOwner": "bts:saphan-khwai",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 973.0634942903598,
+        "z": -1982.4521210988596,
+        "yaw": -0.5120157686271394
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:ari",
+      "name": "Ari",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 903.8835687913618,
+        "z": -1821.050578767319
+      },
+      "modelOwner": "bts:ari",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 898.6769080502631,
+        "z": -1872.991802125333,
+        "yaw": -0.25213666156722614
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:sanam-pao",
+      "name": "Sanam Pao",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 910.9991329188286,
+        "z": -1651.7628838817525
+      },
+      "modelOwner": "bts:sanam-pao",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 932.1833726005104,
+        "z": -1699.4727150395868,
+        "yaw": -0.06582763532905746
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:victory-monument",
+      "name": "Victory Monument",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 808.1406825212453,
+        "z": -1308.3986732861636
+      },
+      "modelOwner": "bts:victory-monument",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "victory"
+      ],
+      "entrance": {
+        "x": 793.0369735916607,
+        "z": -1358.3674432987464,
+        "yaw": -0.058512694022112524
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:phaya-thai",
+      "name": "Phaya Thai",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 719.2983004606624,
+        "z": -1038.1146424905046
+      },
+      "modelOwner": "bts:phaya-thai",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 720.4076356919112,
+        "z": -985.9248985234692,
+        "yaw": -0.33079170560638543
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:ratchathewi",
+      "name": "Ratchathewi",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5388611982"
+      ],
+      "coordinate": {
+        "lat": 13.7518605,
+        "lon": 100.5315534
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 638.8647839858205,
+        "z": -806.9474287358674
+      },
+      "modelOwner": "bts:ratchathewi",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 605.5440325995748,
+        "z": -766.7637563420207,
+        "yaw": -0.34025629309067307
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5388611982",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:siam",
+      "name": "Siam",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/1692209237"
+      ],
+      "coordinate": {
+        "lat": 13.7456236,
+        "lon": 100.5342199
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 841.1411436745389,
+        "z": -580
+      },
+      "modelOwner": "bts:siam",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "paragon"
+      ],
+      "entrance": {
+        "x": 781.1411436745389,
+        "z": -562,
+        "yaw": 1.5707963267948966
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/1692209237",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:chit-lom",
+      "name": "Chit Lom",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5391636575"
+      ],
+      "coordinate": {
+        "lat": 13.7440974,
+        "lon": 100.5430684
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1289.5046051786985,
+        "z": -553.343674134547
+      },
+      "modelOwner": "bts:chit-lom",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "central"
+      ],
+      "entrance": {
+        "x": 1324.113892260251,
+        "z": -514.2643030072287,
+        "yaw": 1.0768549578752193
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5391636575",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:phloen-chit",
+      "name": "Phloen Chit",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5391631777"
+      ],
+      "coordinate": {
+        "lat": 13.7430684,
+        "lon": 100.5489762
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1399.4561051191733,
+        "z": -494.13902032044496
+      },
+      "modelOwner": "bts:phloen-chit",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1434.065392200726,
+        "z": -455.05964919312663,
+        "yaw": 1.0768549578752193
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5391631777",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:nana",
+      "name": "Nana",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1499.920518099465,
+        "z": -438.4937474072301
+      },
+      "modelOwner": "bts:nana",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1489.6852328166146,
+        "z": -423.68702814945163,
+        "yaw": 0.9659605919415541
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:asok",
+      "name": "Asok",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5391625873"
+      ],
+      "coordinate": {
+        "lat": 13.7370432,
+        "lon": 100.5603571
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1781.845929569805,
+        "z": -199.5139598292598
+      },
+      "modelOwner": "bts:asok",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "terminal"
+      ],
+      "entrance": {
+        "x": 1731.8514039235772,
+        "z": -214.53219559144762,
+        "yaw": 0.9269304827950037
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5391625873",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:phrom-phong",
+      "name": "Phrom Phong",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5391626093"
+      ],
+      "coordinate": {
+        "lat": 13.7304345,
+        "lon": 100.5697129
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 2120.054640773915,
+        "z": 40.04098058043605
+      },
+      "modelOwner": "bts:phrom-phong",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "emporium"
+      ],
+      "entrance": {
+        "x": 2148.4546407739117,
+        "z": 83.84098058043784,
+        "yaw": 0.9272952180015491
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5391626093",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:national-stadium",
+      "name": "National Stadium",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/11505460640"
+      ],
+      "coordinate": {
+        "lat": 13.74651,
+        "lon": 100.5290855
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 559.9318311689597,
+        "z": -580
+      },
+      "modelOwner": "bts:national-stadium",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "mbk"
+      ],
+      "entrance": {
+        "x": 510.93183116895966,
+        "z": -562,
+        "yaw": 1.5707963267948966
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/11505460640",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:ratchadamri",
+      "name": "Ratchadamri",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1097.3614621492313,
+        "z": -115.0716199892347
+      },
+      "modelOwner": "bts:ratchadamri",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1064.484095189201,
+        "z": -74.5243791240969,
+        "yaw": -0.32927214958492523
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:sala-daeng",
+      "name": "Sala Daeng",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/451697335"
+      ],
+      "coordinate": {
+        "lat": 13.7285677,
+        "lon": 100.5343416
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1001.6504694159917,
+        "z": 712.1995467707667
+      },
+      "modelOwner": "bts:sala-daeng",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 1024.398439739645,
+        "z": 665.2151893083709,
+        "yaw": -0.8029402234546921
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/451697335",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:chong-nonsi",
+      "name": "Chong Nonsi",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 656.8406761097019,
+        "z": 1213.6813522194036
+      },
+      "modelOwner": "bts:chong-nonsi",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "mahanakhon"
+      ],
+      "entrance": {
+        "x": 618.8275204922018,
+        "z": 1177.904264579411,
+        "yaw": 0.46364760900091023
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:saint-louis",
+      "name": "Saint Louis",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 438.2071482812051,
+        "z": 1386.9654752864658
+      },
+      "modelOwner": "bts:saint-louis",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 483.58126877748145,
+        "z": 1361.1548342795209,
+        "yaw": -1.4056476493801837
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:surasak",
+      "name": "Surasak",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 211.50901686265178,
+        "z": 1424.4337256892281
+      },
+      "modelOwner": "bts:surasak",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 160.47822253602254,
+        "z": 1413.4401807471604,
+        "yaw": -1.4309387803150204
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:saphan-taksin",
+      "name": "Saphan Taksin",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/257067085"
+      ],
+      "coordinate": {
+        "lat": 13.7188128,
+        "lon": 100.514223
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": -91.183442630853,
+        "z": 1459.2566711992104
+      },
+      "modelOwner": "bts:saphan-taksin",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "state"
+      ],
+      "entrance": {
+        "x": -43.94869703234334,
+        "z": 1428.3717427025458,
+        "yaw": -1.5108582091680256
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/257067085",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:krung-thon-buri",
+      "name": "Krung Thon Buri",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -920.3603209640696,
+        "z": 1460
+      },
+      "modelOwner": "bts:krung-thon-buri",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -969.3603209640696,
+        "z": 1442,
+        "yaw": -1.5707963267948966
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:wongwian-yai",
+      "name": "Wongwian Yai",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -1220.0681688310422,
+        "z": 1460
+      },
+      "modelOwner": "bts:wongwian-yai",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -1171.0681688310422,
+        "z": 1442,
+        "yaw": -1.5707963267948966
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:krung-thon-buri-gold",
+      "name": "Krung Thon Buri",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -880.0376308844193,
+        "z": 1360.0522651172491
+      },
+      "modelOwner": "bts:krung-thon-buri-gold",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -886.1728305058075,
+        "z": 1399.3792193039862,
+        "yaw": 2.5175696006126573
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:charoen-nakhon",
+      "name": "Charoen Nakhon",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5812248586"
+      ],
+      "coordinate": {
+        "lat": 13.7264621,
+        "lon": 100.5090694
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": -861.4050648306168,
+        "z": 881.911287350592
+      },
+      "modelOwner": "bts:charoen-nakhon",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "icon"
+      ],
+      "entrance": {
+        "x": -831.6933131104928,
+        "z": 908.3964116606969,
+        "yaw": -2.7681064965003905
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5812248586",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "bts:khlong-san",
+      "name": "Khlong San",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/5812248587"
+      ],
+      "coordinate": {
+        "lat": 13.7303066,
+        "lon": 100.5077213
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": -1032.0337096131084,
+        "z": 599.9451238856376
+      },
+      "modelOwner": "bts:khlong-san",
+      "modelOrigin": null,
+      "district": "Transit corridor",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -998.1149991009895,
+        "z": 620.7722954937815,
+        "yaw": -2.590735119056983
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/5812248587",
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "rendered bts-station",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "sukhumvit-mrt",
+      "name": "MRT Sukhumvit (BL22)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=22"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1812,
+        "z": -240
+      },
+      "modelOwner": "sukhumvit-mrt",
+      "modelOrigin": null,
+      "district": "Watthana",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "bts:asok"
+      ],
+      "entrance": {
+        "x": 1812,
+        "z": -240
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=22"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "silom-mrt",
+      "name": "MRT Si Lom (BL26)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=26"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1084,
+        "z": 724
+      },
+      "modelOwner": "silom-mrt",
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "bts:sala-daeng"
+      ],
+      "entrance": {
+        "x": 1084,
+        "z": 724
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=26"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "hua-lamphong-mrt",
+      "name": "MRT Hua Lamphong (BL28)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 404.03009757777727,
+        "z": -147.69565074044422
+      },
+      "modelOwner": "hua-lamphong-mrt",
+      "modelOrigin": null,
+      "district": "Pathum Wan",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": 404.03009757777727,
+        "z": -147.69565074044422
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "chatuchak-mrt",
+      "name": "MRT Chatuchak Park (BL13)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=13"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 1116,
+        "z": -2132
+      },
+      "modelOwner": "chatuchak-mrt",
+      "modelOrigin": null,
+      "district": "Chatuchak",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "bts:mo-chit"
+      ],
+      "entrance": {
+        "x": 1116,
+        "z": -2132
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=13"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "sanam-chai-mrt",
+      "name": "MRT Sanam Chai (BL31)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=31",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "coordinate": {
+        "lat": 13.7443259,
+        "lon": 100.4946239
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -716,
+        "z": -540
+      },
+      "modelOwner": "sanam-chai-mrt",
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -716,
+        "z": -540
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=31",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "sam-yot-mrt",
+      "name": "MRT Sam Yot (BL30)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=30",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "coordinate": {
+        "lat": 13.7470004,
+        "lon": 100.5023022
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -228,
+        "z": -680
+      },
+      "modelOwner": "sam-yot-mrt",
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -228,
+        "z": -680
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=30",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "wat-mangkon-mrt",
+      "name": "MRT Wat Mangkon (BL29)",
+      "category": "underground-mrt-entrance",
+      "geographicSource": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "coordinate": {
+        "lat": 13.7422095,
+        "lon": 100.5099097
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -208,
+        "z": -308
+      },
+      "modelOwner": "wat-mangkon-mrt",
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "not-verified",
+      "requiredNeighbors": [],
+      "entrance": {
+        "x": -208,
+        "z": -308
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "implementation": "rendered underground-mrt-entrance",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "suthat",
+      "name": "Wat Suthat",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/32011053"
+      ],
+      "coordinate": {
+        "lat": 13.750137093548387,
+        "lon": 100.50081464838709
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -360,
+        "z": -901
+      },
+      "modelOwner": "suthat",
+      "modelOrigin": {
+        "x": -360,
+        "z": -940
+      },
+      "district": "Phra Nakhon",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "swing"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/32011053",
+        "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
+        "https://www.openstreetmap.org/way/178353988"
+      ],
+      "implementation": "rendered temple",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "erawan-shrine",
+      "name": "Erawan Shrine",
+      "category": "shrine",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/373104218"
+      ],
+      "coordinate": {
+        "lat": 13.7443205,
+        "lon": 100.5404211
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1286,
+        "z": -389
+      },
+      "modelOwner": "erawan-shrine",
+      "modelOrigin": {
+        "x": 1304,
+        "z": -416
+      },
+      "district": "Ratchaprasong",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "erawan-hotel"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/373104218",
+        "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
+      ],
+      "implementation": "rendered shrine",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "scala-yaowarat",
+      "name": "Scala Yaowarat",
+      "category": "historic-commercial-building",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": 63.110452835451014,
+        "z": -45.661920212009605
+      },
+      "modelOwner": "scala-yaowarat",
+      "modelOrigin": {
+        "x": 140,
+        "z": -40
+      },
+      "district": "Samphanthawong",
+      "bank": "not-verified",
+      "requiredNeighbors": [
+        "gate"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "rendered historic-commercial-building",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:pho",
+      "name": "Tha Tien ferry landing",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/249403520"
+      ],
+      "coordinate": {
+        "lat": 13.7459776,
+        "lon": 100.4900083
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -1073.8530578113862,
+        "z": -742.1312396632901
+      },
+      "modelOwner": "pier:pho",
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "pho"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/249403520"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:arun",
+      "name": "Wat Arun pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/3493488226"
+      ],
+      "coordinate": {
+        "lat": 13.7449657,
+        "lon": 100.4892081
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": -1342.224331609114,
+        "z": -508.73166151376597
+      },
+      "modelOwner": "pier:arun",
+      "modelOrigin": null,
+      "district": "Bangkok Yai",
+      "bank": "west",
+      "requiredNeighbors": [
+        "arun"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/3493488226",
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:icon",
+      "name": "ICONSIAM pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -589.6163943086115,
+        "z": 923.4745757385913
+      },
+      "modelOwner": "pier:icon",
+      "modelOrigin": null,
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "icon"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:asiatique",
+      "name": "Asiatique pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -480.95737841659,
+        "z": 1969.1436241063998
+      },
+      "modelOwner": "pier:asiatique",
+      "modelOrigin": null,
+      "district": "Bang Kho Laem",
+      "bank": "east",
+      "requiredNeighbors": [
+        "asiatique"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:oriental",
+      "name": "Mandarin Oriental Bangkok pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -293.8638473096876,
+        "z": 1055.6439745516147
+      },
+      "modelOwner": "pier:oriental",
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "oriental"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:peninsula",
+      "name": "The Peninsula Bangkok pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -541.0550716092313,
+        "z": 1214.842511934872
+      },
+      "modelOwner": "pier:peninsula",
+      "modelOrigin": null,
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "peninsula"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:hilton",
+      "name": "Millennium Hilton Bangkok pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -699.4362163615336,
+        "z": 725.8955113023366
+      },
+      "modelOwner": "pier:hilton",
+      "modelOrigin": null,
+      "district": "Khlong San",
+      "bank": "west",
+      "requiredNeighbors": [
+        "hilton"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:shangri",
+      "name": "Shangri-La Bangkok pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -246.7719313088038,
+        "z": 1338.1990433050769
+      },
+      "modelOwner": "pier:shangri",
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "shangri"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:river-city",
+      "name": "River City Bangkok pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -337.4314148772552,
+        "z": 794.2385691462092
+      },
+      "modelOwner": "pier:river-city",
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [
+        "river-city"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:tha-chang",
+      "name": "Tha Chang public landing",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/88122604"
+      ],
+      "coordinate": {
+        "lat": 13.7525602,
+        "lon": 100.4882707
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -1024.2114393142765,
+        "z": -1064.8017598945041
+      },
+      "modelOwner": "pier:tha-chang",
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "palace"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/88122604"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:sathorn",
+      "name": "Sathorn river pier",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/4566970962"
+      ],
+      "coordinate": {
+        "lat": 13.7183726,
+        "lon": 100.5125661
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": -252.3290451672878,
+        "z": 1403.8762725411304
+      },
+      "modelOwner": "pier:sathorn",
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "bts:saphan-taksin"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/4566970962"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "pier:songwat",
+      "name": "Song Wat river landing",
+      "category": "river-pier",
+      "geographicSource": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": {
+        "x": -567.4779001241525,
+        "z": 473.2397305535372
+      },
+      "modelOwner": "pier:songwat",
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [
+        "gate"
+      ],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.chaophrayaexpressboat.com/"
+      ],
+      "implementation": "rendered river-pier",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "wat-phra-kaew",
+      "name": "Wat Phra Kaew",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/230010054"
+      ],
+      "coordinate": {
+        "lat": 13.751571174074073,
+        "lon": 100.49236878888888
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": -820,
+        "z": -940
+      },
+      "modelOwner": "palace",
+      "modelOrigin": {
+        "x": -820,
+        "z": -940
+      },
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [
+        "sanam",
+        "pho"
+      ],
+      "entrance": {
+        "x": -820,
+        "z": -1040.65
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/230010054",
+        "https://www.royalgrandpalace.th/en/home"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "loha-prasat",
+      "name": "Loha Prasat",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/103097698"
+      ],
+      "coordinate": {
+        "lat": 13.75481264,
+        "lon": 100.50416322
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/103097698"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "ratchanatdaram",
+      "name": "Wat Ratchanatdaram",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/103022363"
+      ],
+      "coordinate": {
+        "lat": 13.75495621764706,
+        "lon": 100.50422346470589
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/103022363"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "benchamabophit",
+      "name": "Wat Benchamabophit",
+      "category": "temple",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Dusit",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "bowonniwet",
+      "name": "Wat Bowonniwet",
+      "category": "temple",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "phra-sumen",
+      "name": "Phra Sumen Fort",
+      "category": "fort",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "ananta-samakhom",
+      "name": "Ananta Samakhom Throne Hall",
+      "category": "palace",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Dusit",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "national-museum",
+      "name": "Bangkok National Museum",
+      "category": "museum",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "wat-mangkon",
+      "name": "Wat Mangkon Kamalawat",
+      "category": "temple",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/301157259"
+      ],
+      "coordinate": {
+        "lat": 13.743447216666667,
+        "lon": 100.50943550833334
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/301157259"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "holy-rosary",
+      "name": "Holy Rosary Church",
+      "category": "church",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/245676490"
+      ],
+      "coordinate": {
+        "lat": 13.73126309032258,
+        "lon": 100.51345491290323
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/245676490"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "grand-postal",
+      "name": "Grand Postal Building",
+      "category": "cultural-building",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "songwat-warehouses",
+      "name": "Song Wat warehouses",
+      "category": "heritage-streetscape",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "talat-noi",
+      "name": "Talat Noi",
+      "category": "heritage-neighborhood",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "hua-seng-heng",
+      "name": "Hua Seng Heng",
+      "category": "gold-shop",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/3096836177"
+      ],
+      "coordinate": {
+        "lat": 13.7405891,
+        "lon": 100.5097206
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/3096836177",
+        "https://www.huasengheng.com/en/contact/"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "tang-to-kang",
+      "name": "Tang To Kang",
+      "category": "gold-shop",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/305102098"
+      ],
+      "coordinate": {
+        "lat": 13.740618425,
+        "lon": 100.5072872625
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Samphanthawong",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/305102098"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "siam-discovery",
+      "name": "Siam Discovery",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/157770877"
+      ],
+      "coordinate": {
+        "lat": 13.746655723529411,
+        "lon": 100.53150990588236
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 704,
+        "z": -672
+      },
+      "modelOwner": "siam-center",
+      "modelOrigin": {
+        "x": 704,
+        "z": -672
+      },
+      "district": "Pathum Wan",
+      "bank": "east",
+      "requiredNeighbors": [
+        "siam-discovery",
+        "paragon",
+        "siam-bts"
+      ],
+      "entrance": {
+        "x": 704,
+        "z": -644
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/157770877",
+        "https://www.siamcenter.co.th/",
+        "https://www.openstreetmap.org/way/25701334",
+        "https://www.siamdiscovery.co.th/",
+        "https://www.nendo.jp/en/works/siam-discovery/"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P2"
+    },
+    {
+      "id": "central-embassy",
+      "name": "Central Embassy",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/244115004"
+      ],
+      "coordinate": {
+        "lat": 13.743938953846152,
+        "lon": 100.54662958461539
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": {
+        "x": 1324,
+        "z": -680
+      },
+      "modelOwner": "embassy",
+      "modelOrigin": {
+        "x": 1324,
+        "z": -680
+      },
+      "district": "Pathum Wan",
+      "bank": "east",
+      "requiredNeighbors": [
+        "rosewood",
+        "central",
+        "phloen-chit"
+      ],
+      "entrance": {
+        "x": 1324,
+        "z": -725
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/244115004",
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "park-hyatt",
+      "name": "Park Hyatt Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/6688470995"
+      ],
+      "coordinate": {
+        "lat": 13.7438989,
+        "lon": 100.5471378
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 1324,
+        "z": -680
+      },
+      "modelOwner": "embassy",
+      "modelOrigin": {
+        "x": 1324,
+        "z": -680
+      },
+      "district": "Pathum Wan",
+      "bank": "east",
+      "requiredNeighbors": [
+        "rosewood",
+        "central",
+        "phloen-chit"
+      ],
+      "entrance": {
+        "x": 1324,
+        "z": -725
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/6688470995",
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "lebua",
+      "name": "Lebua at State Tower",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/257066461"
+      ],
+      "coordinate": {
+        "lat": 13.7215136,
+        "lon": 100.516885
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": {
+        "x": 200,
+        "z": 1180
+      },
+      "modelOwner": "state",
+      "modelOrigin": {
+        "x": 200,
+        "z": 1180
+      },
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "shangri",
+        "oriental"
+      ],
+      "entrance": {
+        "x": 84,
+        "z": 1148,
+        "id": "bkk:650"
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/257066461",
+        "https://lebua.com/"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "dusit-central-park",
+      "name": "Dusit Central Park",
+      "category": "mixed-use",
+      "geographicSource": [
+        "https://www.dusit.com/dusitthani-bangkok/"
+      ],
+      "coordinate": {
+        "lat": 13.7281,
+        "lon": 100.5372
+      },
+      "coordinateAccuracy": "inherited approximate center",
+      "gameCoordinate": {
+        "x": 1024,
+        "z": 816
+      },
+      "modelOwner": "dusit",
+      "modelOrigin": {
+        "x": 1024,
+        "z": 816
+      },
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [
+        "park",
+        "sala-daeng",
+        "one-bangkok"
+      ],
+      "entrance": {
+        "x": 1024,
+        "z": 774
+      },
+      "entranceDirection": "Authored approach; exact real bearing unverified",
+      "architectureReferences": [
+        "https://www.dusit.com/dusitthani-bangkok/",
+        "https://www.dusitcentralpark.com/en/"
+      ],
+      "implementation": "compound sub-place",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No photographic recognizability certification this pass",
+      "geographicConfidence": "inherited approximate reference",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "priority": "P1"
+    },
+    {
+      "id": "silom-complex",
+      "name": "Silom Complex",
+      "category": "mall",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/30135300"
+      ],
+      "coordinate": {
+        "lat": 13.728360215384615,
+        "lon": 100.53521999230769
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/30135300"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "qsncc",
+      "name": "Queen Sirikit National Convention Center",
+      "category": "convention-center",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Khlong Toei",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "wat-kalayanamit",
+      "name": "Wat Kalayanamit",
+      "category": "temple",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Thon Buri",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "santa-cruz",
+      "name": "Santa Cruz Church",
+      "category": "church",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/304092134"
+      ],
+      "coordinate": {
+        "lat": 13.73890886,
+        "lon": 100.4937464
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Thon Buri",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/304092134"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "kudi-chin",
+      "name": "Kudi Chin",
+      "category": "heritage-neighborhood",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Thon Buri",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "wang-lang",
+      "name": "Wang Lang Market",
+      "category": "market",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bangkok Noi",
+      "bank": "west",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "queen-sirikit-park",
+      "name": "Queen Sirikit Park",
+      "category": "park",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23487332"
+      ],
+      "coordinate": {
+        "lat": 13.807178366666667,
+        "lon": 100.55149917777779
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Chatuchak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23487332"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "or-tor-kor",
+      "name": "Or Tor Kor Market",
+      "category": "market",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Chatuchak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "krung-thep-aphiwat",
+      "name": "Krung Thep Aphiwat Central Terminal",
+      "category": "railway-station",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Chatuchak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "marriott-marquis",
+      "name": "Bangkok Marriott Marquis Queen’s Park",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1230362491"
+      ],
+      "coordinate": {
+        "lat": 13.7303703875,
+        "lon": 100.5656138625
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Khlong Toei",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1230362491"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "siam-kempinski",
+      "name": "Siam Kempinski Hotel Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/534768993"
+      ],
+      "coordinate": {
+        "lat": 13.74858708367347,
+        "lon": 100.53546239591837
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Pathum Wan",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/534768993"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "chatrium-riverside",
+      "name": "Chatrium Hotel Riverside Bangkok",
+      "category": "hotel",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Kho Laem",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "sheraton-orchid",
+      "name": "Royal Orchid Sheraton",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1537453215"
+      ],
+      "coordinate": {
+        "lat": 13.729145926666666,
+        "lon": 100.51358155333334
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Rak",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1537453215"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "the-siam",
+      "name": "The Siam",
+      "category": "hotel",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Dusit",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P3"
+    },
+    {
+      "id": "sukhothai-hotel",
+      "name": "The Sukhothai Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/30135060"
+      ],
+      "coordinate": {
+        "lat": 13.7229055625,
+        "lon": 100.54112810625
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Sathon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/30135060"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "banyan-tree",
+      "name": "Banyan Tree Bangkok",
+      "category": "hotel",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/4420339595"
+      ],
+      "coordinate": {
+        "lat": 13.7235907,
+        "lon": 100.5397921
+      },
+      "coordinateAccuracy": "OSM point",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Sathon",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/4420339595"
+      ],
+      "implementation": "not authored",
+      "status": "missing",
+      "recognizabilityGrade": "F",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Independent hotel orientation/height review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "phra-pinklao-bridge",
+      "name": "Phra Pinklao Bridge",
+      "category": "bridge",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon / Bangkok Noi",
+      "bank": "both",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "rama-viii-bridge",
+      "name": "Rama VIII Bridge",
+      "category": "bridge",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Phlat / Phra Nakhon",
+      "bank": "both",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "memorial-bridge",
+      "name": "Memorial Bridge",
+      "category": "bridge",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phra Nakhon / Thon Buri",
+      "bank": "both",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "taksin-bridge",
+      "name": "Taksin Bridge",
+      "category": "bridge",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Rak / Khlong San",
+      "bank": "both",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P1"
+    },
+    {
+      "id": "rama-iii-bridge",
+      "name": "Rama III Bridge",
+      "category": "bridge",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Bang Kho Laem / Thon Buri",
+      "bank": "both",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [],
+      "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
+      "status": "requires further research",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "research needed",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "priority": "P2"
+    },
+    {
+      "id": "sena-ruam-bts",
+      "name": "Sena Ruam (N6)",
+      "category": "bts-station",
+      "geographicSource": [
+        "https://www.bts.co.th/btsroutes/btsroutes.pdf"
+      ],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
+      "gameCoordinate": null,
+      "modelOwner": null,
+      "modelOrigin": null,
+      "district": "Phaya Thai",
+      "bank": "east",
+      "requiredNeighbors": [],
+      "entrance": null,
+      "entranceDirection": "Requires research",
+      "architectureReferences": [
+        "https://www.bts.co.th/eng/routemap.html"
+      ],
+      "implementation": "Future-station symbol on BTS operator map; no arcade station added",
+      "status": "intentionally excluded from the playable scope",
+      "recognizabilityGrade": "unreviewed",
+      "gradeBasis": "No site-specific rendered asset",
+      "geographicConfidence": "Operator map distinguishes future station; no coordinate asserted",
+      "missingFeatures": [
+        "Exact site boundary and entrance survey",
+        "Full architectural likeness review"
+      ],
+      "recommendedCorrection": "Retain existing station sequence. Recheck operator service status before any future implementation.",
+      "priority": "P2"
+    }
+  ]
+}
