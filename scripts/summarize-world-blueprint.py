@@ -1,0 +1,34 @@
+"""Summarize measured evidence, never infer physical-device performance."""
+import json, pathlib, statistics, hashlib
+root=pathlib.Path(__file__).resolve().parents[1]
+p=root/'docs/qa/world-blueprint'
+def read(name):return json.loads((p/name).read_text())
+before,after=read('resources-before.json'),read('resources-after.json')
+lines=['# Measured performance comparison','', 'Baseline: main PR33 `c5f2e210`. Same Node scene-inventory procedure; browser comparisons use Chromium 138 SwiftShader, 768×432, medium, fixed camera/player/lighting and no traffic. **No physical iPhone/Safari measurements are available.**','', '## Retained scene resources','', '| Metric | Before | After | Change |','|---|---:|---:|---:|']
+for key,label in [('geometryBuffersBytes','Geometry attribute/index bytes'),('geometries','Retained geometries'),('materials','Materials'),('textures','Textures'),('trianglesAllLevels','Triangles across all retained LODs'),('instances','Instances across all retained LODs'),('constructionMs','Node construction wall ms'),('constructionCpuMs','Node construction CPU ms')]:
+ a,b=before[key],after[key];lines.append(f'| {label} | {a:,} | {b:,} | {b-a:+,} ({(b-a)/a*100:+.2f}%) |')
+lines+=['','These are retained CPU-side geometry buffers and resource counts from all chunks/LOD levels, not simultaneously visible triangles, GPU allocation or hardware FPS. Canvas labels are absent from this Node inventory. The measured +1,005,664 geometry bytes comes from longer bounded facade coverage and three MRT surface representations. Materials/textures are unchanged. Construction cost increased: this is reported, not described as an optimization. One run per revision under a shared host is insufficient for a statistical startup-speed claim. CPU growth is consistent with additional emitted facade pieces; physical-device startup remains a gate.','', 'Disposal emits exactly one dispose event for every distinct retained geometry/material/texture in each revision: 9,702/390/8 before and 9,757/390/8 after. Browser restart checks separately retain 828 rendered geometries and 15 textures across three ICONSIAM restarts; this does not prove long-session Safari memory behavior.','', '## Matched visible render work','', 'Taken from the matched screenshot frame counters, not a synthetic Node estimate. All eight camera pairs were checked for identical pose, quality and elapsed shift time.','', '| View | Light | Calls before → after | Visible triangles before → after |','|---|---|---:|---:|']
+ba,aa=read('before-matched/capture.json'),read('after/capture.json')
+for b,a in zip(ba['records'],aa['records']):
+ assert (b['id'],b['light'],b['pose'])==(a['id'],a['light'],a['pose'])
+ assert all(abs(x-y)<1e-6 for x,y in zip(b['stats']['camera'],a['stats']['camera']))
+ assert b['stats']['elapsed']==a['stats']['elapsed'] and b['stats']['quality']==a['stats']['quality']=='medium'
+ lines.append(f"| {a['id']} | {a['light']} | {b['stats']['calls']} → {a['stats']['calls']} | {b['stats']['triangles']:,} → {a['stats']['triangles']:,} |")
+lines+=['','At the Yaowarat entry, +24 calls and +19,154 triangles accompany doubled corridor facade coverage. At the curve, +19 calls and +26,352 triangles replace shallow generic massing. Tha Tien adds +9 calls and +30,656 triangles. The additional near-detail material batches are bounded to selected cells, with shared materials/instancing and existing distance detail. This is a measured cost for richer architecture, not a claim of reduced draw calls. Existing mobile draw-call levels remain a concern for physical-device review.','', '## Software timing samples','', 'The sequential before/after profiler warms eight RAFs, then records twenty samples per matched Yaowarat-entry lighting state. No concurrent browser QA or scene construction is intentionally scheduled during these paired runs. Raw files are retained. The shared software host has extreme scheduling stalls: RAF interval is neither isolated GPU time nor trustworthy mobile FPS. Percentiles below expose that variability and must not be used to certify frame rate.','', '| State | Revision | Samples | RAF median ms | RAF p95 ms | Range ms |','|---|---|---:|---:|---:|---:|']
+for folder in ['profile-before','profile-after']:
+ d=read(folder+'/capture.json');assert not d['errors']
+ for r in d['records']:
+  if r['id']!='yaowarat-entry':continue
+  vals=sorted(s['frameMs'] for s in r['samples']);assert len(vals)==20
+  lines.append(f"| {r['light']} | {folder} | {len(vals)} | {statistics.median(vals):.1f} | {vals[int(.95*(len(vals)-1))]:.1f} | {vals[0]:.1f}–{vals[-1]:.1f} |")
+lines+=['','Any completed unpaired profile scene is retained as raw evidence but is excluded from this timing comparison. Capture-frame `frameMs` values include setup/warmup and are not used as performance samples. No optimization conclusion is drawn from timing differences.','', '## Production bundle','', '| Asset | Before raw / gzip bytes | After raw / gzip bytes | Change raw / gzip |','|---|---:|---:|---:|']
+for b,a in zip(read('bundle-before.json')['files'],read('bundle-after.json')['files']):
+ kind='JavaScript' if a['name'].endswith('.js') else 'CSS';lines.append(f"| {kind} | {b['bytes']:,} / {b['gzip']:,} | {a['bytes']:,} / {a['gzip']:,} | {a['bytes']-b['bytes']:+,} / {a['gzip']-b['gzip']:+,} |")
+lines+=['','Vite production build passes. The inherited large-chunk warning remains. Developer inspector and full iconic inventory are excluded from the production bundle. No photographic textures, new global lighting/postprocessing, or texture downloads are added. Physical iPhone GPU memory, thermal throttling, touch controls, long drives and context loss remain phase-8 acceptance work.','', '## Reproduction','', 'Use `scripts/profile-city-inventory.ts` for retained scene inventory and `scripts/capture-world-benchmarks.mjs` for browser measurements. Run the same capture script from the **baseline app directory** and then the changed app directory, with `CITY_PERF=1 CITY_SCENES=yaowarat-entry`, distinct ports/labels and identical `CHROMIUM_PATH`. The working directory selects the Vite world. Keep the two browsers sequential; close other QA browsers. Run this summary script from the repository after measurements. See raw JSON method fields for limits.']
+(p/'performance.md').write_text('\n'.join(lines)+'\n')
+manifest={ 'base':'c5f2e210efb3146b782f00ea58f144f7005bc110','physicalIPhone':False,'method':'Unretouched actual renderer; source record / state in capture.json','files':[]}
+for folder in ['before-matched','after','browser','citywide']:
+ for f in sorted((p/folder).glob('*.jpg')):manifest['files'].append({'path':str(f.relative_to(p)),'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()})
+manifest['screenshots']=len(manifest['files'])
+(p/'evidence-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+print('Wrote performance report and',manifest['screenshots'],'image hashes')

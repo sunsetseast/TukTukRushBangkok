@@ -34,7 +34,9 @@ try {
    const g=window.__graphics,e=g.engine,d=e.model.district,nodes=new Map(d.nodes.map(n=>[n.id,n]));
    const near=s.pose??d.roads.filter(r=>r.corridor===s.road).map(r=>{const a=nodes.get(r.a),b=nodes.get(r.b),dx=b.x-a.x,dz=b.z-a.z,t=Math.max(0,Math.min(1,((s.at[0]-a.x)*dx+(s.at[1]-a.z)*dz)/(dx*dx+dz*dz))),x=a.x+t*dx,z=a.z+t*dz;return {x,z,heading:Math.atan2(dx,dz),distance:Math.hypot(x-s.at[0],z-s.at[1]),road:r.corridor};}).sort((a,b)=>a.distance-b.distance)[0];
    Object.assign(e.model.player,{x:near.x,z:near.z,heading:s.heading??near.heading,speed:0,collision:0});e.model.snapshot.elapsed=light==='night'?720:40;e.model.snapshot.target={x:2000,z:-2000};e.cameraRevision++;e.frameTime=-100000;
-   delete window.__artCamera;if(s.camera)window.__artCamera={position:s.camera,look:s.look};
+   // Renew the existing QA lease on every read; slow software frames can exceed
+   // its 15s safety timeout. This changes camera instrumentation only.
+   delete window.__artCamera;if(s.camera)Object.defineProperty(window,'__artCamera',{configurable:true,get:()=>({position:[...s.camera],look:[...s.look]})});
    return {player:{x:near.x,z:near.z,heading:e.model.player.heading},requestedCamera:s.camera?{position:s.camera,look:s.look}:null,publicRoad:near.road,normalDriving:!s.camera};
   },{s,light});
   const f=await p.evaluate(()=>window.__graphics.frameId);await p.waitForFunction(f=>window.__graphics.frameId>f+2,f);await p.evaluate(()=>window.__graphics.gl.getContext().finish());
@@ -43,6 +45,7 @@ try {
   const file=`${s.id}-${light}.jpg`;
   if(!perf)await p.screenshot({path:`${out}/${label}/${file}`,type:'jpeg',quality:88,timeout:180000});
   const stats=await p.evaluate(()=>{const g=window.__graphics;return {...g.stats,quality:g.engine.model.snapshot.quality,elapsed:g.engine.model.snapshot.elapsed,phase:g.engine.model.snapshot.phase,camera:g.camera.position.toArray(),sky:g.scene.children.filter(o=>o.material?.uniforms?.night).map(o=>o.material.uniforms.night.value)};});
+  if(s.camera&&stats.camera.some((v,i)=>Math.abs(v-s.camera[i])>1e-6))throw Error('Inspection camera lease expired: '+s.id);
   if(stats.quality!=='medium'||stats.elapsed!==(light==='night'?720:40))throw Error('Capture state drift');
   report.records.push({id:s.id,light,file:perf?null:file,pose,samples,stats});
   await fs.writeFile(`${out}/${label}/capture.json`,JSON.stringify(report,null,2));console.log(label,file);

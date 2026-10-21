@@ -44,5 +44,16 @@ const conflicts=validateSpatialVolumes({...d,transit:undefined},pieces.map((p,i)
 assert(waterfront.length>20);assert(cityGeometry(d).every(f=>f.geometry.length&&f.geometry.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.z))));
 const inv=JSON.parse(fs.readFileSync(new URL('../../../data/bangkok/iconic-inventory.v1.json',import.meta.url),'utf8'));
 assert(inv.places.length>=130);assert.equal(new Set(inv.places.map((p:any)=>p.id)).size,inv.places.length);assert(inv.places.every((p:any)=>!p.coordinate||p.geographicSource.length));assert(inv.places.every((p:any)=>p.recognizabilityGrade!=='A'));
+// A name alone cannot certify object identity: temple/bridge names also label
+// ferry stops, and The Siam Society is not The Siam hotel.
+const osm=JSON.parse(fs.readFileSync(new URL('../../../data/bangkok/osm-places.v1.json',import.meta.url),'utf8')).places;
+for(const p of inv.places)for(const url of p.geographicSource){
+ const candidate=osm.find((o:any)=>o.source===url);if(!candidate)continue;
+ if(p.category!=='river-pier')assert.notEqual(candidate.tags.amenity,'ferry_terminal','Wrong source feature class for '+p.id);
+ if(p.category==='hotel')assert(candidate.tags.tourism==='hotel'||candidate.tags.building==='hotel','Hotel source must identify a hotel: '+p.id);
+ if(p.category==='bts-station')assert(['station','halt'].includes(candidate.tags.railway),'Station source must identify rail infrastructure: '+p.id);
+}
+assert.equal(inv.places.find((p:any)=>p.id==='the-siam').coordinate,null,'Ambiguous museum name must not supply hotel coordinates');
+assert.equal(inv.places.find((p:any)=>p.id==='sena-ruam-bts').status,'intentionally excluded from the playable scope');
 const summary={pass:true,roads:d.roads.length,nodes:d.nodes.length,buildings:d.buildings.length,places:registry.length,parcels:landmarkParcels(d).length,benchmarkParcels:row.length,benchmarkPieces:pieces.length,waterfrontParcels:waterfront.length,emittedLaneConflicts:conflicts.length,mrt:newMrt,footprintDeltas:{removed,added},inventory:inv.places.length,geographicReferences:inv.places.filter((p:any)=>p.coordinate).length};
 fs.writeFileSync(new URL('certification.json',out),JSON.stringify(summary,null,2));console.log(JSON.stringify(summary));

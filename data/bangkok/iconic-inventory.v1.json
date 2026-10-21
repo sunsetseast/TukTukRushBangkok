@@ -280,13 +280,13 @@
       "name": "Wat Pho",
       "category": "temple",
       "geographicSource": [
-        "https://www.openstreetmap.org/node/13452383201"
+        "https://www.watpho.com/en/"
       ],
       "coordinate": {
-        "lat": 13.7440374,
-        "lon": 100.4915217
+        "lat": 13.7466,
+        "lon": 100.4927
       },
-      "coordinateAccuracy": "OSM point",
+      "coordinateAccuracy": "inherited approximate center",
       "gameCoordinate": {
         "x": -800,
         "z": -700
@@ -308,14 +308,13 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/node/13452383201",
         "https://www.watpho.com/en/"
       ],
       "implementation": "rendered temple",
       "status": "present but visually inadequate",
       "recognizabilityGrade": "C",
       "gradeBasis": "PR31–33 photographic review; PR34 benchmark review required",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "inherited approximate reference",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -615,13 +614,13 @@
       "name": "CentralWorld / Erawan",
       "category": "mall",
       "geographicSource": [
-        "https://www.openstreetmap.org/node/4410702935"
+        "https://www.centralworld.co.th/en"
       ],
       "coordinate": {
-        "lat": 13.745438,
-        "lon": 100.5382485
+        "lat": 13.7469,
+        "lon": 100.5397
       },
-      "coordinateAccuracy": "OSM point",
+      "coordinateAccuracy": "inherited approximate center",
       "gameCoordinate": {
         "x": 1144,
         "z": -680.5194970290472
@@ -644,14 +643,13 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/node/4410702935",
         "https://www.centralworld.co.th/en"
       ],
       "implementation": "rendered mall",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "inherited approximate reference",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -1065,14 +1063,9 @@
       "id": "asiatique",
       "name": "Asiatique",
       "category": "wheel",
-      "geographicSource": [
-        "https://www.openstreetmap.org/node/2074694261"
-      ],
-      "coordinate": {
-        "lat": 13.7049496,
-        "lon": 100.5016875
-      },
-      "coordinateAccuracy": "OSM point",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": {
         "x": -340.86582838174553,
         "z": 2046.1939766255643
@@ -1090,14 +1083,12 @@
         "z": 2023.0403662872698
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
-      "architectureReferences": [
-        "https://www.openstreetmap.org/node/2074694261"
-      ],
+      "architectureReferences": [],
       "implementation": "rendered wheel",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -1287,13 +1278,14 @@
       "name": "Chatuchak Park",
       "category": "park",
       "geographicSource": [
-        "https://www.openstreetmap.org/node/280240585"
+        "https://greener.bangkok.go.th/park/suan-chatuchak/",
+        "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
       ],
       "coordinate": {
-        "lat": 13.8029643,
-        "lon": 100.5532845
+        "lat": 13.807484,
+        "lon": 100.5554198
       },
-      "coordinateAccuracy": "OSM point",
+      "coordinateAccuracy": "inherited approximate center",
       "gameCoordinate": {
         "x": 1200,
         "z": -2112
@@ -1312,7 +1304,6 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
-        "https://www.openstreetmap.org/node/280240585",
         "https://greener.bangkok.go.th/park/suan-chatuchak/",
         "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
       ],
@@ -1320,7 +1311,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "inherited approximate reference",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -1979,13 +1970,11 @@
       "name": "Rosewood Bangkok",
       "category": "hotel",
       "geographicSource": [
-        "https://www.openstreetmap.org/way/579376348"
+        "https://www.kpf.com/project/rosewood-bangkok",
+        "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
       ],
-      "coordinate": {
-        "lat": 13.74349632,
-        "lon": 100.54896045999999
-      },
-      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": {
         "x": 1400,
         "z": -556
@@ -2007,7 +1996,6 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/579376348",
         "https://www.kpf.com/project/rosewood-bangkok",
         "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
       ],
@@ -2015,7 +2003,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Independent hotel orientation/height review"
@@ -2028,13 +2016,11 @@
       "name": "Park Hyatt Bangkok / Central Embassy",
       "category": "hotel",
       "geographicSource": [
-        "https://www.openstreetmap.org/way/244115004"
+        "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
       ],
-      "coordinate": {
-        "lat": 13.743938953846152,
-        "lon": 100.54662958461539
-      },
-      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": {
         "x": 1324,
         "z": -680
@@ -2057,7 +2043,6 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/244115004",
         "https://www.ala.uk.com/selected-projects/central-embassy/",
         "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
       ],
@@ -2065,7 +2050,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Independent hotel orientation/height review"
@@ -2271,13 +2256,15 @@
       "name": "Jim Thompson House",
       "category": "museum",
       "geographicSource": [
-        "https://www.openstreetmap.org/way/341577338"
+        "https://jimthompsonhouse.org/visitor-information/",
+        "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+        "https://www.openstreetmap.org/way/897909009"
       ],
       "coordinate": {
-        "lat": 13.749214685714284,
-        "lon": 100.52817478571428
+        "lat": 13.74931,
+        "lon": 100.52848
       },
-      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "coordinateAccuracy": "inherited approximate center",
       "gameCoordinate": {
         "x": 504,
         "z": -696
@@ -2300,7 +2287,6 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/341577338",
         "https://jimthompsonhouse.org/visitor-information/",
         "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
         "https://www.openstreetmap.org/way/897909009",
@@ -2310,7 +2296,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "inherited approximate reference",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -2913,13 +2899,10 @@
       "name": "Ratchadamri",
       "category": "bts-station",
       "geographicSource": [
-        "https://www.openstreetmap.org/way/157522277"
+        "https://www.bts.co.th/eng/routemap.html"
       ],
-      "coordinate": {
-        "lat": 13.74186625625,
-        "lon": 100.54094264375
-      },
-      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": {
         "x": 1097.3614621492313,
         "z": -115.0716199892347
@@ -2936,14 +2919,13 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/157522277",
         "https://www.bts.co.th/eng/routemap.html"
       ],
       "implementation": "rendered bts-station",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -5061,13 +5043,13 @@
       "name": "Santa Cruz Church",
       "category": "church",
       "geographicSource": [
-        "https://www.openstreetmap.org/node/13377689098"
+        "https://www.openstreetmap.org/way/304092134"
       ],
       "coordinate": {
-        "lat": 13.7397308,
-        "lon": 100.4941534
+        "lat": 13.73890886,
+        "lon": 100.4937464
       },
-      "coordinateAccuracy": "OSM point",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5077,7 +5059,7 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
-        "https://www.openstreetmap.org/node/13377689098"
+        "https://www.openstreetmap.org/way/304092134"
       ],
       "implementation": "not authored",
       "status": "missing",
@@ -5277,9 +5259,14 @@
       "id": "siam-kempinski",
       "name": "Siam Kempinski Hotel Bangkok",
       "category": "hotel",
-      "geographicSource": [],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/534768993"
+      ],
+      "coordinate": {
+        "lat": 13.74858708367347,
+        "lon": 100.53546239591837
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5288,12 +5275,14 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [],
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/534768993"
+      ],
       "implementation": "not authored",
       "status": "missing",
       "recognizabilityGrade": "F",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Independent hotel orientation/height review"
@@ -5368,14 +5357,9 @@
       "id": "the-siam",
       "name": "The Siam",
       "category": "hotel",
-      "geographicSource": [
-        "https://www.openstreetmap.org/way/210310633"
-      ],
-      "coordinate": {
-        "lat": 13.739176338095238,
-        "lon": 100.56130966666667
-      },
-      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5384,14 +5368,12 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [
-        "https://www.openstreetmap.org/way/210310633"
-      ],
+      "architectureReferences": [],
       "implementation": "not authored",
       "status": "missing",
       "recognizabilityGrade": "F",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Independent hotel orientation/height review"
@@ -5473,14 +5455,9 @@
       "id": "phra-pinklao-bridge",
       "name": "Phra Pinklao Bridge",
       "category": "bridge",
-      "geographicSource": [
-        "https://www.openstreetmap.org/node/269347981"
-      ],
-      "coordinate": {
-        "lat": 13.762992,
-        "lon": 100.4906911
-      },
-      "coordinateAccuracy": "OSM point",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5489,14 +5466,12 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [
-        "https://www.openstreetmap.org/node/269347981"
-      ],
+      "architectureReferences": [],
       "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -5536,14 +5511,9 @@
       "id": "memorial-bridge",
       "name": "Memorial Bridge",
       "category": "bridge",
-      "geographicSource": [
-        "https://www.openstreetmap.org/node/2367398625"
-      ],
-      "coordinate": {
-        "lat": 13.7397402,
-        "lon": 100.4982194
-      },
-      "coordinateAccuracy": "OSM point",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5552,14 +5522,12 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [
-        "https://www.openstreetmap.org/node/2367398625"
-      ],
+      "architectureReferences": [],
       "implementation": "Generic corridor/bridge fabric may exist; no separate named site/model certified",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -5627,7 +5595,9 @@
       "id": "sena-ruam-bts",
       "name": "Sena Ruam (N6)",
       "category": "bts-station",
-      "geographicSource": [],
+      "geographicSource": [
+        "https://www.bts.co.th/btsroutes/btsroutes.pdf"
+      ],
       "coordinate": null,
       "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
@@ -5641,16 +5611,16 @@
       "architectureReferences": [
         "https://www.bts.co.th/eng/routemap.html"
       ],
-      "implementation": "not authored",
-      "status": "requires further research",
-      "recognizabilityGrade": "F",
+      "implementation": "Future-station symbol on BTS operator map; no arcade station added",
+      "status": "intentionally excluded from the playable scope",
+      "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "Operator map distinguishes future station; no coordinate asserted",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
       ],
-      "recommendedCorrection": "Check current operator station coverage and deliberate arcade station omissions; preserve existing train IDs until reviewed",
+      "recommendedCorrection": "Retain existing station sequence. Recheck operator service status before any future implementation.",
       "priority": "P2"
     }
   ]

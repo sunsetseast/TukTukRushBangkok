@@ -75,3 +75,5 @@ Tha Tien gains restrained cream-and-green elevations, deep storefronts, arched u
 Night signs remain readable and selectively emissive, but ambient storefront illumination is too even for a finished premium night scene. Geometry/readability are ahead of lighting nuance. The [scorecard](scorecard.md) records these limits.
 
 The [citywide survey](citywide/capture.json) uses actual destination arrival nodes, with additional elevated views. These are uncurated inspection views, including obstructions and weak composition; they do not certify all hotels or districts.
+
+Capture validation also checks the actual rendered camera position against the requested pose. Slow software rendering initially expired the QA camera lease; those elevated/river frames were recaptured with per-read lease renewal and replaced. Normal driving camera behavior is unchanged.

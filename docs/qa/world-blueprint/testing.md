@@ -19,7 +19,7 @@ These 24 deterministic journeys/turns use the real GameEngine controller, naviga
 
 [Browser checks](browser/checks.json): four requested viewports (375×812, 430×932, 844×390, 1280×800) pass inspection-control containment, return/reset and camera-state checks. Three ICONSIAM restarts clear inspection overrides and retain stable rendered geometry/texture counts. Four actual-mesh Hua Lamphong feature rays hit the clock, entrance and two arches. The developer inspector selects the real Swing feature and shows its 263m local compression residual. No browser errors recorded. These rays are targeted regressions, not an all-city visibility certificate.
 
-The [matched gallery](gallery.md) uses real WebGL, identical states, and no hidden city objects. Screenshot poses are separate from controller journeys. [Performance](performance.md) distinguishes retained scene resources from rendered frame statistics.
+The city-blueprint group is rerun after the final source-identity audit; it also rejects temple/bridge names geocoded to ferry stops and museum names geocoded to hotels. The [matched gallery](gallery.md) uses real WebGL, identical states, and no hidden city objects. Screenshot poses are separate from controller journeys. [Performance](performance.md) distinguishes retained scene resources from rendered frame statistics.
 
 ## Reproduction
 
@@ -35,4 +35,4 @@ CHROMIUM_PATH=/path/to/chrome CITY_LABEL=after node scripts/capture-world-benchm
 CHROMIUM_PATH=/path/to/chrome CITY_LABEL=citywide CITY_WIDE=1 node scripts/capture-world-benchmarks.mjs
 ```
 
-Use the script's actual output-variable contract when relocating results. Chromium 138 SwiftShader is software comparative evidence. **Physical iPhone/Safari, thermal behavior, mobile GPU memory and touch-driven long-session performance remain untested.**
+Chromium 138 SwiftShader is software comparative evidence. **Physical iPhone/Safari, thermal behavior, mobile GPU memory and touch-driven long-session performance remain untested.**

@@ -9,15 +9,24 @@ osm=json.loads((root/'data/bangkok/osm-places.v1.json').read_text())['places']
 refs={g['id']:g for g in city['geographicReferences']}
 # Explicit reviewed name aliases; matching never changes the playable world.
 aliases={'palace':['Grand Palace'],'pho':['Wat Pho'],'arun':['Wat Arun'],'golden':['Golden Mount'],'swing':['Giant Swing'],'hua':['Hua Lamphong'],'gate':['Chinatown Gate'],'state':['lebua at State Tower'],'hilton':['Millennium Hilton'],'embassy':['Central Embassy'],'okura':['The Okura Prestige'],'erawan-hotel':['Grand Hyatt Erawan'],'dusit':['Dusit Thani Hotel'],'river-city':['River City'],'paknam':['Wat Paknam Bhasicharoen'],'siam-center':['Siam Center'],'paragon':['Siam Paragon'],'central':['CentralWorld'],'park':['Lumphini Park'],'peninsula':['The Peninsula Bangkok'],'oriental':['Mandarin Oriental'],'shangri':['Shangri-La'],'rosewood':['Rosewood'],'capella':['Capella'],'suthat':['Wat Suthat']}
-def match(names):
+# Exact reviewed aliases only: substring geocoding confused piers with temples
+# and The Siam Society museum with The Siam hotel. Type-filter candidates first.
+def match(names,category):
+ def compatible(x):
+  t=x['tags']
+  if t.get('amenity')=='ferry_terminal':return category=='river-pier'
+  if category=='hotel':return t.get('tourism')=='hotel' or t.get('building')=='hotel'
+  if category=='bts-station':return t.get('railway') in ['station','halt']
+  if category in ['temple','church','shrine']:return t.get('amenity')=='place_of_worship' or t.get('tourism')=='attraction'
+  if category=='bridge':return t.get('bridge')=='yes' or t.get('man_made')=='bridge'
+  return True
  for n in names:
-  exact=[x for x in osm if x['name'].casefold()==n.casefold()]
-  if exact:return exact[0]
-  partial=[x for x in osm if n.casefold() in x['name'].casefold() and len(n)>7]
-  if len(partial)==1:return partial[0]
+  exact=[x for x in osm if x['name'].casefold()==n.casefold() and compatible(x)]
+  if len(exact)==1:return exact[0]
  return None
+aliases.update({'hilton':['Millennium Hilton Bangkok'],'okura':['The Okura Prestige Bangkok Hotel'],'shangri':['Shangri-La Hotel Bangkok'],'erawan-hotel':['Grand Hyatt Erawan'],'suthat':['Wat Suthat Thep Wararam Ratchaworamahawihan'],'ratchanatdaram':['Wat Ratchanatdaram Worawihan'],'tang-to-kang':['Tang To Kang Gold Shop'],'siam-kempinski':['Siam Kempinski']})
 def record(id,name,category,owner=None,district='Requires verification',bank='not-verified',priority='P2',names=None,reference=None):
- r=next((p for p in registry if p['id']==(owner or id)),None);g=refs.get(owner or id);o=match(names or aliases.get(id,[name]));
+ r=next((p for p in registry if p['id']==(owner or id)),None);g=refs.get(owner or id);o=match(names or aliases.get(id,[name]),category);
  coordinate=o['coordinate'] if o else g['coordinate'] if g else r.get('geographicReference') if r else None
  source=[o['source']] if o else g.get('sources',[]) if g else r.get('references',[]) if r else []
  references=list(dict.fromkeys(source+([reference] if reference else [])+(r.get('references',[]) if r else [])))
@@ -77,11 +86,12 @@ for row in extra:
  item=record(*row[:3],owner,dist,bank,pri,reference='https://www.huasengheng.com/en/contact/' if id=='hua-seng-heng' else 'https://www.bts.co.th/eng/routemap.html' if id=='sena-ruam-bts' else None)
  if cat in ['bridge','heritage-neighborhood','heritage-streetscape']:
   item['status']='requires further research';item['implementation']='Generic corridor/bridge fabric may exist; no separate named site/model certified';item['recognizabilityGrade']='unreviewed'
- if id=='sena-ruam-bts':item['status']='requires further research';item['recommendedCorrection']='Check current operator station coverage and deliberate arcade station omissions; preserve existing train IDs until reviewed'
+ if id=='sena-ruam-bts':
+  item['status']='intentionally excluded from the playable scope';item['recognizabilityGrade']='unreviewed';item['implementation']='Future-station symbol on BTS operator map; no arcade station added';item['geographicSource']=['https://www.bts.co.th/btsroutes/btsroutes.pdf'];item['geographicConfidence']='Operator map distinguishes future station; no coordinate asserted';item['recommendedCorrection']='Retain existing station sequence. Recheck operator service status before any future implementation.'
  items.append(item)
 out={'schemaVersion':1,'version':'bangkok-icons-2026.1','date':'2026-10-20','approval':'Coverage audit, not blanket geographic or art certification','attribution':'OSM-derived facts © OpenStreetMap contributors, ODbL 1.0. No OSM geometry imported into the playable graph.','places':items}
 (root/'data/bangkok/iconic-inventory.v1.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
 with (root/'docs/qa/world-blueprint/coverage.csv').open('w') as f:
- w=csv.writer(f);w.writerow(['id','name','category','status','district','bank','coordinate','gameCoordinate','recognizability','confidence','priority','sources'])
+ w=csv.writer(f,lineterminator='\n');w.writerow(['id','name','category','status','district','bank','coordinate','gameCoordinate','recognizability','confidence','priority','sources'])
  for p in items:w.writerow([p[k] if k not in ['coordinate','gameCoordinate','geographicSource'] else json.dumps(p[k],ensure_ascii=False) for k in ['id','name','category','status','district','bank','coordinate','gameCoordinate','recognizabilityGrade','geographicConfidence','priority','geographicSource']])
 print(len(items),'inventory records;',sum(bool(p['coordinate']) for p in items),'have reference coordinates;',sum(p['status']=='missing' for p in items),'missing')
