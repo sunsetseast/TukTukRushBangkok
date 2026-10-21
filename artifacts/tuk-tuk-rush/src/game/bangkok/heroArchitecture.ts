@@ -365,7 +365,7 @@ function oriental(b: B, detail: boolean, p: RealPlace) {
   b.roof(-25, 6, 29, 46, 17, 3, "#6b7b70");
   terrace(b, -25, 44, 48, 10, detail);
   pool(b, 9, 20, 10, 18);
-  entrance(b,20,-34.6,detail);
+  entrance(b,20,-34.6,detail);b.box(0,5.8,-34.8,21,1.8,.18,'#344b50');
   curtain(b,-18,25,-25.8,66,46,detail,Math.PI,20,14);
   for(const x of [-13,13])gardenBox(b,x,-35,4,4,detail);
   for(const x of [-43,-28,-13]){gardenBox(b,x,46,5,4,detail);gardenPalm(b,x,46,5,detail);}

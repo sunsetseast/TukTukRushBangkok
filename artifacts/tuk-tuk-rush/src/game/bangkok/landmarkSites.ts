@@ -536,7 +536,7 @@ function icon(b:LandmarkBuilder,detail:boolean){
  // Separate road elevation, rather than a second copy of the river facade.
  curtain(b,0,12,-24.1,54,21,detail,Math.PI,12,4);
  entrance(b,20,-26.1,detail);
- for(const x of [-25,25]){planter(b,x,-29,6,3,detail);palm(b,x,-29,5.2,detail);}
+ for(const x of [-25,25]){planter(b,x,-28,6,3,detail);palm(b,x,-28,5.2,detail);}
  // Thai-inspired peaked gold profile, set-back upper glazed gable and roofs.
  foldedRoof(b,0,25,10,37,12,3.5,detail);
  for(const x of [-23,23])foldedRoof(b,x,24,4,16,5.5,8,detail);
@@ -545,7 +545,7 @@ function icon(b:LandmarkBuilder,detail:boolean){
  for(const x of [-24,24]){b.box(x,7,28,1,12,1,'#c7ac68');b.box(x,13,27,5,.5,3,'#c8a15d');}
  curtain(b,0,3.7,27.2,18,5.8,detail,0,6,1);
  b.box(0,7,29,23,.4,4,'#c1b28b');b.box(0,6.76,29,20,.08,3,'#d3b17a',0,true);
- for(const x of [-24,24]){planter(b,x,30,7,3,detail);palm(b,x,30,5,detail);}
+ for(const x of [-24,24]){planter(b,x,29,7,3,detail);palm(b,x,28,5,detail);}
  for(const x of [-17,-6,6,17])planter(b,x,-17,5,4,detail,26.1);
 }
 function khaosan(b: LandmarkBuilder, detail: boolean) {

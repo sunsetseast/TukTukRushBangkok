@@ -216,6 +216,8 @@ export function prepareLandmarkParcels(d: District, includeHistoricApproaches = 
         );
     }
   }
+  // Append after all existing parcels, and only after legacy base-row enumeration.
+  if(includeHistoricApproaches)for(const a of CITY_MODEL.architecturalAprons){const l=d.landmarks.find(l=>l.id===a.landmarkId)!;add(a.landmarkId,'forecourt',rectangleBoundary({...localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!),w:a.width,d:a.depth,yaw:l.yaw??0}));}
   plans.set(d, { parcels, cells });
   return parcels;
 }
@@ -244,6 +246,13 @@ export function emitLandmarkApproaches(
   d: District,
   emit: (p: ArtPiece) => void,
 ) {
+  for(const a of CITY_MODEL.architecturalAprons){
+   const l=d.landmarks.find(l=>l.id===a.landmarkId)!,yaw=l.yaw??0;
+   const put=(u:number,y:number,v:number,w:number,h:number,depth:number,color:string)=>emit({...localPoint(l.plot!,yaw,a.center[0]!+u,a.center[1]!+v),y,w,h,d:depth,yaw,color,surface:'concrete',siteId:a.id});
+   put(0,.06,0,a.width,.12,a.depth,'#b5b7ab');put(a.width/2-.25,.18,0,.5,.24,a.depth,'#d1d0be');
+   for(const side of [-1,1])put(0,.18,side*(a.depth/2-.25),a.width,.24,.5,'#d1d0be');
+   for(let u=-a.width/2+5;u<a.width/2;u+=5)put(u,.13,0,.07,.025,a.depth-1,'#939e97');
+  }
   // Public pavement belongs to the city ground batch, outside the sacred
   // landmark's physical model/collider envelope. Narrow strips follow the
   // same protected polygon without paving across Maha Rat's asphalt.

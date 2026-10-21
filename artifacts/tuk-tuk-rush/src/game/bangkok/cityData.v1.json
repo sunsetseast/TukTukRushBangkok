@@ -4542,5 +4542,25 @@
         ]
       }
     ]
-  }
+  },
+  "architecturalAprons": [
+    {
+      "id": "terminal-asok-east-pr35",
+      "landmarkId": "terminal",
+      "center": [
+        65,
+        -5
+      ],
+      "width": 40,
+      "depth": 60,
+      "use": "pedestrian",
+      "contextReflowMargin": 30,
+      "approval": "PR35 architectural approach correction / 2026-10-21",
+      "sources": [
+        "https://www.terminal21.co.th/asok/howtogo/en",
+        "https://commons.wikimedia.org/wiki/File:Sukhumvit_Road_Terminal_21_IMG_7011.jpg"
+      ],
+      "reason": "Remove invented detached shop row between east mall facade and Asok Montri. Pedestrian arcade setback adaptation, not a surveyed boundary or new driveway. Residual side infill is bounded to the 30m collar."
+    }
+  ]
 }

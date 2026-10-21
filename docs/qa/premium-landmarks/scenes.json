@@ -1,0 +1,272 @@
+[
+  {
+    "id": "terminal-arrival",
+    "pose": {
+      "x": 1602.4481982430234,
+      "z": -417.8347135430009,
+      "heading": 1.3744467859455345,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "terminal-street",
+    "pose": {
+      "x": 1683.6470588235295,
+      "z": -282.5882352941176,
+      "heading": -3.045955076298344,
+      "road": "Phloen Chit / Sukhumvit"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "terminal-asok",
+    "pose": {
+      "x": 1772.8768035516093,
+      "z": -413.69589345172034,
+      "heading": -1.4749744965596405,
+      "road": "Asok Montri / Phetchaburi approach"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "terminal-overview",
+    "pose": {
+      "x": 1602.4481982430234,
+      "z": -417.8347135430009,
+      "heading": 1.3744467859455345,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      1822,
+      110,
+      -244
+    ],
+    "look": [
+      1672,
+      30,
+      -404
+    ]
+  },
+  {
+    "id": "icon-arrival",
+    "pose": {
+      "x": -702.1027746375084,
+      "z": 922.0658194200763,
+      "heading": 1.3744467859455347,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "icon-street",
+    "pose": {
+      "x": -786.9669914110091,
+      "z": 880,
+      "heading": 1.2086920186821517,
+      "road": "Charoen Nakhon / ICONSIAM access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "icon-goldline",
+    "pose": {
+      "x": -766.9669914110091,
+      "z": 880,
+      "heading": 1.1546638258251118,
+      "road": "Charoen Nakhon / ICONSIAM access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "icon-river",
+    "pose": {
+      "x": -702.1027746375084,
+      "z": 922.0658194200763,
+      "heading": 1.3744467859455347,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -526.9669914110091,
+      8,
+      933.0330085889909
+    ],
+    "look": [
+      -646.9669914110091,
+      15,
+      933.0330085889909
+    ]
+  },
+  {
+    "id": "mahanakhon-arrival",
+    "pose": {
+      "x": 600,
+      "z": 1100,
+      "heading": 1.2313907334208285,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "mahanakhon-street",
+    "pose": {
+      "x": 277.28381317484383,
+      "z": 987.7508915390762,
+      "heading": 1.2353872535489598,
+      "road": "Silom corridor"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "mahanakhon-silhouette",
+    "pose": {
+      "x": 600,
+      "z": 1100,
+      "heading": 1.2313907334208285,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      479.1939766255646,
+      65,
+      1319.1341716182542
+    ],
+    "look": [
+      654.1939766255646,
+      75,
+      1119.1341716182542
+    ]
+  },
+  {
+    "id": "hilton-arrival",
+    "pose": {
+      "x": -794,
+      "z": 780,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "hilton-river",
+    "pose": {
+      "x": -794,
+      "z": 780,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -636,
+      32,
+      780
+    ],
+    "look": [
+      -756,
+      38,
+      780
+    ]
+  },
+  {
+    "id": "hilton-river-full",
+    "pose": {
+      "x": -794,
+      "z": 780,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -636,
+      32,
+      780
+    ],
+    "look": [
+      -756,
+      55,
+      780
+    ]
+  },
+  {
+    "id": "peninsula-arrival",
+    "pose": {
+      "x": -664,
+      "z": 1228,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "peninsula-river",
+    "pose": {
+      "x": -664,
+      "z": 1228,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -500,
+      32,
+      1228
+    ],
+    "look": [
+      -620,
+      38,
+      1228
+    ]
+  },
+  {
+    "id": "peninsula-river-full",
+    "pose": {
+      "x": -664,
+      "z": 1228,
+      "heading": 1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -500,
+      32,
+      1228
+    ],
+    "look": [
+      -620,
+      55,
+      1228
+    ]
+  },
+  {
+    "id": "oriental-arrival",
+    "pose": {
+      "x": -160.5,
+      "z": 1040,
+      "heading": -1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": true
+  },
+  {
+    "id": "oriental-river",
+    "pose": {
+      "x": -160.5,
+      "z": 1040,
+      "heading": -1.5707963267948966,
+      "road": "approved destination access"
+    },
+    "normalDriving": false,
+    "camera": [
+      -320,
+      32,
+      1040
+    ],
+    "look": [
+      -200,
+      38,
+      1040
+    ]
+  }
+]

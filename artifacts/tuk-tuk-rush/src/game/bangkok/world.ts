@@ -1,4 +1,4 @@
-import {approvedOrigin,assertApprovedCityGeometry} from './cityModel';
+import {approvedOrigin,assertApprovedCityGeometry,CITY_MODEL} from './cityModel';
 import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland, isHistoricWaterfront } from './historicPlan';
 import { placeHuaLamphong } from './huaLamphong';
 import { completeLandmarkContext } from './landmarkContext';
@@ -34,7 +34,7 @@ import layout from "./cityLayout";
 import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
 import { planTropicalPlants } from "./tropicalPlan";
 import { planMrtEntrances } from "./mrtSurface";
-import { prepareLandmarkParcels, parcelConflicts } from './landmarkParcels';
+import { prepareLandmarkParcels, parcelConflicts,localPoint } from './landmarkParcels';
 import { planLandscape } from "./landscape";
 import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
@@ -756,6 +756,9 @@ export function createBangkokWorld(): District {
   reserveRailCorridors(world);
   detailDestinationCollisions(world);
   registerExistingSites(world);
+  // A low matching pedestrian collider prevents an invented vehicle shortcut.
+  for(const a of CITY_MODEL.architecturalAprons){const l=world.landmarks.find(l=>l.id===a.landmarkId)!;world.obstacles.push({...localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!),w:a.width,d:a.depth,height:.24,yaw:l.yaw??0,color:'#b5b7ab',artRole:'furniture',environmentId:a.id});}
+
   for (const b of world.buildings) {
     const x = b.x / 4 + 500,
       y = b.z / 4 + 600;

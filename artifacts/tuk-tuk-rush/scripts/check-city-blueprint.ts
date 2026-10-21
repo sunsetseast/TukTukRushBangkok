@@ -5,7 +5,7 @@ import {createBangkokWorld} from '../src/game/bangkok/world';
 import {CITY_MODEL,assertApprovedCityGeometry,canonicalFeaturePoint} from '../src/game/bangkok/cityModel';
 import {cityGraphApprovalKey} from '../src/game/bangkok/roadIdentity';
 import {buildLandmarkRegistry} from '../src/game/bangkok/landmarkRegistry';
-import {landmarkParcels,parcelConflicts} from '../src/game/bangkok/landmarkParcels';
+import {landmarkParcels,parcelConflicts,localPoint,rectangleBoundary,polygonsOverlap} from '../src/game/bangkok/landmarkParcels';
 import {geographicToWorld} from '../src/game/bangkok/geography';
 import {planMrtEntrances} from '../src/game/bangkok/mrtSurface';
 import {designBuildings} from '../src/game/bangkok/buildingGrammar';
@@ -23,7 +23,7 @@ assert.notEqual(cityGraphApprovalKey({...d,roads:d.roads.map((r,i)=>i? r:{...r,o
 assert.equal(new Set(CITY_MODEL.features.map(p=>p.id)).size,49);
 for(const p of CITY_MODEL.geographicReferences)assert(Number.isFinite(p.coordinate.lat)&&Number.isFinite(p.coordinate.lon)&&p.sources.length);
 const registry=buildLandmarkRegistry(d),old=JSON.parse(fs.readFileSync(new URL('before-registry.json',out),'utf8'));
-assert(old.every((p:{id:string})=>registry.some(q=>q.id===p.id)));assert.equal(registry.length,96);assert.equal(landmarkParcels(d).length,208);
+assert(old.every((p:{id:string})=>registry.some(q=>q.id===p.id)));assert.equal(registry.length,96);assert.equal(landmarkParcels(d).length,208+CITY_MODEL.architecturalAprons.length);
 const swing=registry.find(p=>p.id==='swing')!,suthat=registry.find(p=>p.id==='suthat')!;
 assert.deepEqual(swing.world,{x:-360,z:-998});assert.deepEqual(suthat.world,{x:-360,z:-901});
 const g=CITY_MODEL.geographicReferences.find(g=>g.id==='swing')!,projected=geographicToWorld(g.coordinate);
@@ -35,7 +35,13 @@ const mrt=planMrtEntrances(d);assert.equal(mrt.length,7);for(const s of mrt.filt
 assert.equal(d.buildings.flatMap(b=>parcelConflicts(d,b)).length,0);
 const key=(o:Obstacle)=>JSON.stringify([o.x,o.z,o.w,o.d,o.yaw??0]),a=new Set(before.buildings.map(key)),b=new Set(d.buildings.map(key));
 const removed=before.buildings.filter(o=>!b.has(key(o))),added=d.buildings.filter(o=>!a.has(key(o))),newMrt=mrt.filter(s=>s.introduced>=34);
-for(const o of [...removed,...added])assert(newMrt.some(s=>Math.hypot(s.x-o.x,s.z-o.z)<140),'Only local MRT entrance reflow changes footprints');
+const aprons=CITY_MODEL.architecturalAprons.map(a=>{const l=d.landmarks.find(l=>l.id===a.landmarkId)!;return{...localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!),w:a.width,d:a.depth,yaw:l.yaw??0,margin:a.contextReflowMargin};});
+const localApronContext=(o:Obstacle)=>aprons.some(a=>rectangleBoundary(o).every(p=>{const dx=p.x-a.x,dz=p.z-a.z,c=Math.cos(a.yaw),s=Math.sin(a.yaw);return Math.abs(c*dx-s*dz)<=a.w/2+a.margin&&Math.abs(s*dx+c*dz)<=a.d/2+a.margin;}));
+for(const o of [...removed,...added])assert(newMrt.some(s=>Math.hypot(s.x-o.x,s.z-o.z)<140)||localApronContext(o),'No footprint churn outside approved MRT/apron collar');
+const pr34=JSON.parse(gunzipSync(fs.readFileSync(new URL('after-world.json.gz',out))).toString()) as District,pr34Keys=new Set(pr34.buildings.map(key));
+assert(pr34.buildings.filter(o=>!b.has(key(o))).every(o=>aprons.some(a=>polygonsOverlap(rectangleBoundary(a),rectangleBoundary(o)))),'Removed PR34 buildings must intersect the researched apron');
+assert(d.buildings.filter(o=>!pr34Keys.has(key(o))).every(localApronContext),'Every new PR35 infill must stay in the approved collar');
+
 const designs=designBuildings(d),row=designs.filter(cinematicParcel),waterfront=designs.filter(p=>isHistoricWaterfront(p.parcel)),pieces:Parameters<typeof pieceVolume>[0][]=[];
 row.forEach(p=>emitYaowaratFacade(p,o=>pieces.push(o)));
 assert(row.length>=35&&row.length<=44);assert(new Set(row.flatMap(p=>p.bays.map(b=>b.trade))).size>=8);
