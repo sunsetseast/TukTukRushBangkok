@@ -1,0 +1,976 @@
+{
+  "version": "bangkok-arcade-2026.1",
+  "base": "c5f2e210efb3146b782f00ea58f144f7005bc110",
+  "roadGeometryUnchanged": true,
+  "nodesUnchanged": true,
+  "landmarksUnchanged": true,
+  "transitUnchanged": true,
+  "movedRegistryFeatures": [
+    {
+      "id": "suthat",
+      "before": {
+        "x": -360,
+        "z": -959
+      },
+      "after": {
+        "x": -360,
+        "z": -901
+      },
+      "reason": "Compound-origin metadata correction"
+    }
+  ],
+  "playerMapMarkerDeltas": [
+    {
+      "id": "khaosan",
+      "before": {
+        "x": -840,
+        "z": -1528
+      },
+      "after": {
+        "x": -867.7163859753387,
+        "z": -1516.5194970290472
+      },
+      "metres": 30.00000000000008
+    },
+    {
+      "id": "arun",
+      "before": {
+        "x": -1360,
+        "z": -540
+      },
+      "after": {
+        "x": -1395.3553390593274,
+        "z": -504.6446609406726
+      },
+      "metres": 50.00000000000005
+    },
+    {
+      "id": "food",
+      "before": {
+        "x": 540,
+        "z": -20
+      },
+      "after": {
+        "x": 590,
+        "z": -20
+      },
+      "metres": 50
+    },
+    {
+      "id": "icon",
+      "before": {
+        "x": -700,
+        "z": 880
+      },
+      "after": {
+        "x": -646.9669914110091,
+        "z": 933.0330085889909
+      },
+      "metres": 74.9999999999998
+    },
+    {
+      "id": "mahanakhon",
+      "before": {
+        "x": 608,
+        "z": 1100
+      },
+      "after": {
+        "x": 654.1939766255646,
+        "z": 1119.1341716182542
+      },
+      "metres": 50.00000000000011
+    },
+    {
+      "id": "asiatique",
+      "before": {
+        "x": -360,
+        "z": 2000
+      },
+      "after": {
+        "x": -340.86582838174553,
+        "z": 2046.1939766255643
+      },
+      "metres": 50
+    },
+    {
+      "id": "paknam",
+      "before": {
+        "x": -1780,
+        "z": 488
+      },
+      "after": {
+        "x": -1878.9949493661165,
+        "z": 586.9949493661167
+      },
+      "metres": 139.99999999999991
+    }
+  ],
+  "newPlaces": [
+    "sanam-chai-mrt",
+    "sam-yot-mrt",
+    "wat-mangkon-mrt"
+  ],
+  "projectionResiduals": [
+    {
+      "id": "victory",
+      "real": {
+        "lat": 13.76493,
+        "lon": 100.53829
+      },
+      "projected": {
+        "x": 1053.0980392156116,
+        "z": -1480
+      },
+      "approved": {
+        "x": 868,
+        "z": -1480
+      },
+      "residual": {
+        "x": -185.0980392156116,
+        "z": 0
+      },
+      "metres": 185.0980392156116,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "democracy",
+      "real": {
+        "lat": 13.75673,
+        "lon": 100.50182
+      },
+      "projected": {
+        "x": -349.1819699499065,
+        "z": -1295.353121801416
+      },
+      "approved": {
+        "x": -260,
+        "z": -1320
+      },
+      "residual": {
+        "x": 89.18196994990649,
+        "z": -24.64687819858409
+      },
+      "metres": 92.5250904840512,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "sanam",
+      "real": {
+        "lat": 13.75516,
+        "lon": 100.49307
+      },
+      "projected": {
+        "x": -764,
+        "z": -1260
+      },
+      "approved": {
+        "x": -764,
+        "z": -1260
+      },
+      "residual": {
+        "x": 0,
+        "z": 0
+      },
+      "metres": 0,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "palace",
+      "real": {
+        "lat": 13.75,
+        "lon": 100.4913
+      },
+      "projected": {
+        "x": -811.237194641647,
+        "z": -706.7640000000026
+      },
+      "approved": {
+        "x": -820,
+        "z": -940
+      },
+      "residual": {
+        "x": -8.762805358353035,
+        "z": -233.23599999999738
+      },
+      "metres": 233.4005536706097,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "pho",
+      "real": {
+        "lat": 13.7466,
+        "lon": 100.4927
+      },
+      "projected": {
+        "x": -773.8744418178032,
+        "z": -663.0769230770602
+      },
+      "approved": {
+        "x": -800,
+        "z": -700
+      },
+      "residual": {
+        "x": -26.125558182196755,
+        "z": -36.9230769229398
+      },
+      "metres": 45.23116624395923,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "golden",
+      "real": {
+        "lat": 13.75392,
+        "lon": 100.50661
+      },
+      "projected": {
+        "x": -253.22203672793944,
+        "z": -1065.671641791123
+      },
+      "approved": {
+        "x": -80,
+        "z": -1080
+      },
+      "residual": {
+        "x": 173.22203672793944,
+        "z": -14.328358208877034
+      },
+      "metres": 173.81362391118105,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "swing",
+      "real": {
+        "lat": 13.75181,
+        "lon": 100.50128
+      },
+      "projected": {
+        "x": -360,
+        "z": -735
+      },
+      "approved": {
+        "x": -360,
+        "z": -998
+      },
+      "residual": {
+        "x": 0,
+        "z": -263
+      },
+      "metres": 263,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "flowers",
+      "real": {
+        "lat": 13.7414,
+        "lon": 100.4966
+      },
+      "projected": {
+        "x": -590.2947624846954,
+        "z": -354.0298507462828
+      },
+      "approved": {
+        "x": -728,
+        "z": -260
+      },
+      "residual": {
+        "x": -137.7052375153046,
+        "z": 94.02985074628282
+      },
+      "metres": 166.74635009653036,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "mbk",
+      "real": {
+        "lat": 13.744512,
+        "lon": 100.529857
+      },
+      "projected": {
+        "x": 634.8228571434638,
+        "z": -437.6358208955262
+      },
+      "approved": {
+        "x": 632,
+        "z": -440
+      },
+      "residual": {
+        "x": -2.822857143463807,
+        "z": -2.3641791044738056
+      },
+      "metres": 3.6821006627243653,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "paragon",
+      "real": {
+        "lat": 13.746801,
+        "lon": 100.534938
+      },
+      "projected": {
+        "x": 886.5934640518408,
+        "z": -673.104182509506
+      },
+      "approved": {
+        "x": 920,
+        "z": -740
+      },
+      "residual": {
+        "x": 33.40653594815922,
+        "z": -66.89581749049398
+      },
+      "metres": 74.77330433902955,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "central",
+      "real": {
+        "lat": 13.7469,
+        "lon": 100.5397
+      },
+      "projected": {
+        "x": 1123.1372549015455,
+        "z": -674.0076045627427
+      },
+      "approved": {
+        "x": 1144,
+        "z": -680.5194970290472
+      },
+      "residual": {
+        "x": 20.862745098454525,
+        "z": -6.511892466304516
+      },
+      "metres": 21.85540840469017,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "gate",
+      "real": {
+        "lat": 13.73701,
+        "lon": 100.51286
+      },
+      "projected": {
+        "x": -128.0133555926302,
+        "z": -166.442048517511
+      },
+      "approved": {
+        "x": 140,
+        "z": -40
+      },
+      "residual": {
+        "x": 268.0133555926302,
+        "z": 126.44204851751101
+      },
+      "metres": 296.34228589475083,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "traimit",
+      "real": {
+        "lat": 13.73768,
+        "lon": 100.51357
+      },
+      "projected": {
+        "x": -105.90568319230329,
+        "z": -236.8733153638227
+      },
+      "approved": {
+        "x": 256,
+        "z": -104
+      },
+      "residual": {
+        "x": 361.9056831923033,
+        "z": 132.8733153638227
+      },
+      "metres": 385.5269659345007,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "hua",
+      "real": {
+        "lat": 13.73922,
+        "lon": 100.5167605
+      },
+      "projected": {
+        "x": 39.152116082358134,
+        "z": -295.46268656715574
+      },
+      "approved": {
+        "x": 400,
+        "z": -288
+      },
+      "residual": {
+        "x": 360.84788391764187,
+        "z": 7.4626865671557425
+      },
+      "metres": 360.92504349052797,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "icon",
+      "real": {
+        "lat": 13.726826,
+        "lon": 100.510325
+      },
+      "projected": {
+        "x": -178.79799666121926,
+        "z": 810.0885496182218
+      },
+      "approved": {
+        "x": -646.9669914110091,
+        "z": 933.0330085889909
+      },
+      "residual": {
+        "x": -468.1689947497898,
+        "z": 122.94445897076912
+      },
+      "metres": 484.04291920928233,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "park",
+      "real": {
+        "lat": 13.73048,
+        "lon": 100.54165
+      },
+      "projected": {
+        "x": 1220,
+        "z": 520
+      },
+      "approved": {
+        "x": 1214,
+        "z": 516
+      },
+      "residual": {
+        "x": -6,
+        "z": -4
+      },
+      "metres": 7.211102550927979,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "terminal",
+      "real": {
+        "lat": 13.737924,
+        "lon": 100.560421
+      },
+      "projected": {
+        "x": 1841.0868750000182,
+        "z": -260.64477611939765
+      },
+      "approved": {
+        "x": 1672,
+        "z": -404
+      },
+      "residual": {
+        "x": -169.08687500001815,
+        "z": -143.35522388060235
+      },
+      "metres": 221.67790036701763,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "benchasiri",
+      "real": {
+        "lat": 13.7313966,
+        "lon": 100.56793
+      },
+      "projected": {
+        "x": 1949.1630769231024,
+        "z": 423.64582210241815
+      },
+      "approved": {
+        "x": 2036,
+        "z": 204
+      },
+      "residual": {
+        "x": 86.83692307689762,
+        "z": -219.64582210241815
+      },
+      "metres": 236.1883536004901,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "chatuchak-park",
+      "real": {
+        "lat": 13.807484,
+        "lon": 100.5554198
+      },
+      "projected": {
+        "x": 1656.6676249996485,
+        "z": -2159.998547303438
+      },
+      "approved": {
+        "x": 1200,
+        "z": -2112
+      },
+      "residual": {
+        "x": -456.6676249996485,
+        "z": 47.998547303438045
+      },
+      "metres": 459.1831663574569,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "emporium",
+      "real": {
+        "lat": 13.7304938,
+        "lon": 100.5689016
+      },
+      "projected": {
+        "x": 1962.9149538461802,
+        "z": 518.5493261455927
+      },
+      "approved": {
+        "x": 2172,
+        "z": 176
+      },
+      "residual": {
+        "x": 209.0850461538198,
+        "z": -342.54932614559266
+      },
+      "metres": 401.31857341511693,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "emquartier",
+      "real": {
+        "lat": 13.7312253,
+        "lon": 100.5694763
+      },
+      "projected": {
+        "x": 1971.0491692308178,
+        "z": 441.6530997304376
+      },
+      "approved": {
+        "x": 2172,
+        "z": -100
+      },
+      "residual": {
+        "x": 200.95083076918218,
+        "z": -541.6530997304376
+      },
+      "metres": 577.7277185962397,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "emsphere",
+      "real": {
+        "lat": 13.7323522,
+        "lon": 100.5663462
+      },
+      "projected": {
+        "x": 1926.74621538455,
+        "z": 323.19191374669526
+      },
+      "approved": {
+        "x": 1840,
+        "z": 52
+      },
+      "residual": {
+        "x": -86.74621538454994,
+        "z": -271.19191374669526
+      },
+      "metres": 284.7278700182645,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "dusit",
+      "real": {
+        "lat": 13.7281,
+        "lon": 100.5372
+      },
+      "projected": {
+        "x": 998.954248365681,
+        "z": 708.9465648855144
+      },
+      "approved": {
+        "x": 1024,
+        "z": 816
+      },
+      "residual": {
+        "x": 25.045751634319004,
+        "z": 107.05343511448564
+      },
+      "metres": 109.94420241531327,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "okura",
+      "real": {
+        "lat": 13.74269,
+        "lon": 100.5477
+      },
+      "projected": {
+        "x": 1372,
+        "z": -388.68656716416785
+      },
+      "approved": {
+        "x": 1372,
+        "z": -448
+      },
+      "residual": {
+        "x": 0,
+        "z": -59.313432835832145
+      },
+      "metres": 59.313432835832145,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "anantara",
+      "real": {
+        "lat": 13.7045,
+        "lon": 100.4919
+      },
+      "projected": {
+        "x": -795.2245862884627,
+        "z": 2180
+      },
+      "approved": {
+        "x": -1020,
+        "z": 2180
+      },
+      "residual": {
+        "x": -224.77541371153734,
+        "z": 0
+      },
+      "metres": 224.77541371153734,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "one-bangkok",
+      "real": {
+        "lat": 13.7269,
+        "lon": 100.548
+      },
+      "projected": {
+        "x": 1383.0624999998445,
+        "z": 804.2137404579421
+      },
+      "approved": {
+        "x": 1520,
+        "z": 716
+      },
+      "residual": {
+        "x": 136.93750000015552,
+        "z": -88.2137404579421
+      },
+      "metres": 162.8911996145702,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "oriental",
+      "real": {
+        "lat": 13.72393,
+        "lon": 100.5144
+      },
+      "projected": {
+        "x": -68.16928657831454,
+        "z": 1040
+      },
+      "approved": {
+        "x": -200,
+        "z": 1040
+      },
+      "residual": {
+        "x": -131.83071342168546,
+        "z": 0
+      },
+      "metres": 131.83071342168546,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "peninsula",
+      "real": {
+        "lat": 13.723302,
+        "lon": 100.510368
+      },
+      "projected": {
+        "x": -177.936560934907,
+        "z": 1130.0204778155753
+      },
+      "approved": {
+        "x": -620,
+        "z": 1228
+      },
+      "residual": {
+        "x": -442.063439065093,
+        "z": 97.9795221844247
+      },
+      "metres": 452.7914209937566,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "hilton",
+      "real": {
+        "lat": 13.728694,
+        "lon": 100.51096
+      },
+      "projected": {
+        "x": -166.07679465783713,
+        "z": 661.7893129770182
+      },
+      "approved": {
+        "x": -756,
+        "z": 780
+      },
+      "residual": {
+        "x": -589.9232053421629,
+        "z": 118.2106870229818
+      },
+      "metres": 601.6503592017684,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "shangri",
+      "real": {
+        "lat": 13.720781,
+        "lon": 100.513781
+      },
+      "projected": {
+        "x": -96.31245465573306,
+        "z": 1466.1608791208655
+      },
+      "approved": {
+        "x": -160,
+        "z": 1324
+      },
+      "residual": {
+        "x": -63.68754534426694,
+        "z": -142.1608791208655
+      },
+      "metres": 155.77489844129377,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "four-seasons",
+      "real": {
+        "lat": 13.7119,
+        "lon": 100.5101
+      },
+      "projected": {
+        "x": -183.30550918209155,
+        "z": 1716
+      },
+      "approved": {
+        "x": -280,
+        "z": 1832
+      },
+      "residual": {
+        "x": -96.69449081790845,
+        "z": 116
+      },
+      "metres": 151.0159745011586,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "capella",
+      "real": {
+        "lat": 13.71312,
+        "lon": 100.510896
+      },
+      "projected": {
+        "x": -167.35893155255553,
+        "z": 1681.6791208791215
+      },
+      "approved": {
+        "x": -280,
+        "z": 1652
+      },
+      "residual": {
+        "x": -112.64106844744447,
+        "z": -29.679120879121456
+      },
+      "metres": 116.48545195490883,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "river-city",
+      "real": {
+        "lat": 13.730349,
+        "lon": 100.513262
+      },
+      "projected": {
+        "x": -119.90906892405064,
+        "z": 530.3999999999719
+      },
+      "approved": {
+        "x": -276,
+        "z": 784
+      },
+      "residual": {
+        "x": -156.09093107594936,
+        "z": 253.6000000000281
+      },
+      "metres": 297.78740531488404,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "siam-center",
+      "real": {
+        "lat": 13.746277,
+        "lon": 100.532798
+      },
+      "projected": {
+        "x": 780.4723809522293,
+        "z": -627.0499999999456
+      },
+      "approved": {
+        "x": 704,
+        "z": -672
+      },
+      "residual": {
+        "x": -76.47238095222929,
+        "z": -44.95000000005439
+      },
+      "metres": 88.70472111735525,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "jim-thompson",
+      "real": {
+        "lat": 13.74931,
+        "lon": 100.52848
+      },
+      "projected": {
+        "x": 571.9854897221912,
+        "z": -696
+      },
+      "approved": {
+        "x": 504,
+        "z": -696
+      },
+      "residual": {
+        "x": -67.98548972219123,
+        "z": 0
+      },
+      "metres": 67.98548972219123,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "sanam-chai-mrt",
+      "real": {
+        "lat": 13.7443259,
+        "lon": 100.4946239
+      },
+      "projected": {
+        "x": -687.535249695881,
+        "z": -432.63611940297505
+      },
+      "approved": {
+        "x": -716,
+        "z": -540
+      },
+      "residual": {
+        "x": -28.46475030411898,
+        "z": -107.36388059702495
+      },
+      "metres": 111.07315097145697,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "sam-yot-mrt",
+      "real": {
+        "lat": 13.7470004,
+        "lon": 100.5023022
+      },
+      "projected": {
+        "x": -339.52186978281725,
+        "z": -674.9238022813659
+      },
+      "approved": {
+        "x": -228,
+        "z": -680
+      },
+      "residual": {
+        "x": 111.52186978281725,
+        "z": -5.076197718634148
+      },
+      "metres": 111.6373379436034,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "wat-mangkon-mrt",
+      "real": {
+        "lat": 13.7422095,
+        "lon": 100.5099097
+      },
+      "projected": {
+        "x": -187.1178631052917,
+        "z": -375.77761194028517
+      },
+      "approved": {
+        "x": -208,
+        "z": -308
+      },
+      "residual": {
+        "x": -20.88213689470831,
+        "z": 67.77761194028517
+      },
+      "metres": 70.92156457395187,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "pier:pho",
+      "real": {
+        "lat": 13.7459776,
+        "lon": 100.4900083
+      },
+      "projected": {
+        "x": -845.7096716575563,
+        "z": -593.6553846153884
+      },
+      "approved": {
+        "x": -1073.8530578113862,
+        "z": -742.1312396632901
+      },
+      "residual": {
+        "x": -228.14338615382985,
+        "z": -148.47585504790175
+      },
+      "metres": 272.2030201484566,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "pier:tha-chang",
+      "real": {
+        "lat": 13.7525602,
+        "lon": 100.4882707
+      },
+      "projected": {
+        "x": -892.0821854478954,
+        "z": -852.5686567162566
+      },
+      "approved": {
+        "x": -1024.2114393142765,
+        "z": -1064.8017598945041
+      },
+      "residual": {
+        "x": -132.12925386638108,
+        "z": -212.23310317824757
+      },
+      "metres": 250.00205961542648,
+      "interpretation": "Approved arcade compression, not GPS error"
+    },
+    {
+      "id": "pier:sathorn",
+      "real": {
+        "lat": 13.7183726,
+        "lon": 100.5125661
+      },
+      "projected": {
+        "x": -133.9011686143815,
+        "z": 1533.9136703296617
+      },
+      "approved": {
+        "x": -252.3290451672878,
+        "z": 1403.8762725411304
+      },
+      "residual": {
+        "x": -118.4278765529063,
+        "z": -130.03739778853128
+      },
+      "metres": 175.88316226530364,
+      "interpretation": "Approved arcade compression, not GPS error"
+    }
+  ]
+}

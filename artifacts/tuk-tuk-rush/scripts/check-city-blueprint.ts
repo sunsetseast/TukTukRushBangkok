@@ -16,6 +16,8 @@ import {pieceVolume,validateSpatialVolumes} from '../src/game/bangkok/spatialVal
 import type {District,Obstacle} from '../src/game/types';
 const out=new URL('../../../docs/qa/world-blueprint/',import.meta.url),before=JSON.parse(gunzipSync(fs.readFileSync(new URL('before-world.json.gz',out))).toString()) as District,d=createBangkokWorld();
 for(const key of ['roads','nodes','landmarks','transit','river'] as const)assert.deepEqual(JSON.parse(JSON.stringify(d[key])),before[key],key+' unchanged from approved main');
+const sourceRoot=new URL('../src/',import.meta.url);
+for(const file of fs.readdirSync(sourceRoot,{recursive:true}).filter(f=>typeof f==='string'&&/\.tsx?$/.test(f as string)) as string[])assert(!/from\s+["'][^"']*layout\.json["']/.test(fs.readFileSync(new URL(file,sourceRoot),'utf8')),'Runtime must use canonical cityLayout adapter: '+file);
 assertApprovedCityGeometry(d);assert.equal(cityGraphApprovalKey(d),CITY_MODEL.roadBaseline.fullGraphKey);
 assert.notEqual(cityGraphApprovalKey({...d,roads:d.roads.map((r,i)=>i? r:{...r,oneWay:!r.oneWay})}),CITY_MODEL.roadBaseline.fullGraphKey,'Direction changes invalidate approval');
 assert.equal(new Set(CITY_MODEL.features.map(p=>p.id)).size,49);

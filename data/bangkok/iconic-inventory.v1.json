@@ -16,7 +16,7 @@
         "lat": 13.799787971830986,
         "lon": 100.55031439154929
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1032,
         "z": -2180
@@ -103,7 +103,7 @@
         "lat": 13.75882551494253,
         "lon": 100.49745256609195
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -867.7163859753387,
         "z": -1516.5194970290472
@@ -138,13 +138,13 @@
       "name": "Democracy Monument",
       "category": "monument",
       "geographicSource": [
-        "https://www.tourismthailand.org/Attraction/democracy-monument"
+        "https://www.openstreetmap.org/node/13971907544"
       ],
       "coordinate": {
-        "lat": 13.75673,
-        "lon": 100.50182
+        "lat": 13.7566773,
+        "lon": 100.5042404
       },
-      "coordinateAccuracy": "inherited approximate center",
+      "coordinateAccuracy": "OSM point",
       "gameCoordinate": {
         "x": -260,
         "z": -1320
@@ -167,13 +167,14 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
+        "https://www.openstreetmap.org/node/13971907544",
         "https://www.tourismthailand.org/Attraction/democracy-monument"
       ],
       "implementation": "rendered monument",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -186,14 +187,13 @@
       "name": "Sanam Luang",
       "category": "park",
       "geographicSource": [
-        "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/",
         "https://www.openstreetmap.org/way/23630232"
       ],
       "coordinate": {
-        "lat": 13.75516,
-        "lon": 100.49307
+        "lat": 13.75523391,
+        "lon": 100.49309141600001
       },
-      "coordinateAccuracy": "inherited approximate center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -764,
         "z": -1260
@@ -212,14 +212,14 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
-        "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/",
-        "https://www.openstreetmap.org/way/23630232"
+        "https://www.openstreetmap.org/way/23630232",
+        "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/"
       ],
       "implementation": "rendered park",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -238,7 +238,7 @@
         "lat": 13.750127526415096,
         "lon": 100.4916836226415
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -820,
         "z": -940
@@ -334,7 +334,7 @@
         "lat": 13.744127216666667,
         "lon": 100.48892829583333
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -1395.3553390593274,
         "z": -504.6446609406726
@@ -425,7 +425,7 @@
         "lat": 13.75181091,
         "lon": 100.501275225
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -360,
         "z": -998
@@ -473,7 +473,7 @@
         "lat": 13.741746119999998,
         "lon": 100.496303
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -728,
         "z": -260
@@ -572,7 +572,7 @@
         "lat": 13.746561475555556,
         "lon": 100.53471253333333
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 920,
         "z": -740
@@ -846,7 +846,7 @@
         "lat": 13.72667384117647,
         "lon": 100.51073990588236
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -646.9669914110091,
         "z": 933.0330085889909
@@ -891,15 +891,13 @@
       "name": "Lumphini Park",
       "category": "park",
       "geographicSource": [
-        "https://greener.bangkok.go.th/park/suan-lumpini/",
-        "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966",
         "https://www.openstreetmap.org/way/23483299"
       ],
       "coordinate": {
-        "lat": 13.73048,
-        "lon": 100.54165
+        "lat": 13.73111442962963,
+        "lon": 100.54171388333333
       },
-      "coordinateAccuracy": "inherited approximate center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1214,
         "z": 516
@@ -919,15 +917,15 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
+        "https://www.openstreetmap.org/way/23483299",
         "https://greener.bangkok.go.th/park/suan-lumpini/",
-        "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966",
-        "https://www.openstreetmap.org/way/23483299"
+        "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966"
       ],
       "implementation": "rendered park",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -988,9 +986,14 @@
       "id": "benjakitti",
       "name": "Benjakitti Park",
       "category": "park",
-      "geographicSource": [],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/1306732424"
+      ],
+      "coordinate": {
+        "lat": 13.728924037499999,
+        "lon": 100.5585997225
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1576,
         "z": 452
@@ -1005,12 +1008,14 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [],
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/1306732424"
+      ],
       "implementation": "rendered park",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -1111,7 +1116,7 @@
         "lat": 13.721602377272728,
         "lon": 100.47036996363636
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -1878.9949493661165,
         "z": 586.9949493661167
@@ -1236,14 +1241,13 @@
       "name": "Benchasiri Park",
       "category": "park",
       "geographicSource": [
-        "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
-        "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
+        "https://www.openstreetmap.org/way/23487144"
       ],
       "coordinate": {
-        "lat": 13.7313966,
-        "lon": 100.56793
+        "lat": 13.73050668,
+        "lon": 100.56737036
       },
-      "coordinateAccuracy": "inherited approximate center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 2036,
         "z": 204
@@ -1262,6 +1266,7 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
+        "https://www.openstreetmap.org/way/23487144",
         "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
         "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
       ],
@@ -1269,7 +1274,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -1334,7 +1339,7 @@
         "lat": 13.730394530434783,
         "lon": 100.56889374782608
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 2172,
         "z": 176
@@ -1379,13 +1384,13 @@
       "name": "EmQuartier",
       "category": "mall",
       "geographicSource": [
-        "https://www.openstreetmap.org/node/1726130572"
+        "https://www.openstreetmap.org/way/318785712"
       ],
       "coordinate": {
-        "lat": 13.7308831,
-        "lon": 100.5692378
+        "lat": 13.731603968421053,
+        "lon": 100.56943274342105
       },
-      "coordinateAccuracy": "OSM point",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 2172,
         "z": -100
@@ -1407,7 +1412,7 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
-        "https://www.openstreetmap.org/node/1726130572",
+        "https://www.openstreetmap.org/way/318785712",
         "https://emdistrict.com/contact-us/",
         "https://maps.app.goo.gl/k4KwPVYhrrynJGhb9",
         "https://emdistrict.com/whats-em-district/",
@@ -1436,7 +1441,7 @@
         "lat": 13.73199888,
         "lon": 100.5660461
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1840,
         "z": 52
@@ -1487,7 +1492,7 @@
         "lat": 13.72818871111111,
         "lon": 100.53827255555555
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1024,
         "z": 816
@@ -1783,7 +1788,7 @@
         "lat": 13.728693737037036,
         "lon": 100.51101173703704
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -756,
         "z": 780
@@ -1833,7 +1838,7 @@
         "lat": 13.720790336,
         "lon": 100.51356836000001
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -160,
         "z": 1324
@@ -1932,7 +1937,7 @@
         "lat": 13.7131566375,
         "lon": 100.51096461875
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -280,
         "z": 1652
@@ -1980,7 +1985,7 @@
         "lat": 13.74349632,
         "lon": 100.54896045999999
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1400,
         "z": -556
@@ -2029,7 +2034,7 @@
         "lat": 13.743938953846152,
         "lon": 100.54662958461539
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1324,
         "z": -680
@@ -2079,7 +2084,7 @@
         "lat": 13.743529039999999,
         "lon": 100.54064711999999
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1304,
         "z": -416
@@ -2171,7 +2176,7 @@
         "lat": 13.73027929375,
         "lon": 100.51333286875
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -276,
         "z": 784
@@ -2221,7 +2226,7 @@
         "lat": 13.746271830000001,
         "lon": 100.53283677499999
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 704,
         "z": -672
@@ -2272,7 +2277,7 @@
         "lat": 13.749214685714284,
         "lon": 100.52817478571428
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 504,
         "z": -696
@@ -2908,10 +2913,13 @@
       "name": "Ratchadamri",
       "category": "bts-station",
       "geographicSource": [
-        "https://www.bts.co.th/eng/routemap.html"
+        "https://www.openstreetmap.org/way/157522277"
       ],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "coordinate": {
+        "lat": 13.74186625625,
+        "lon": 100.54094264375
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1097.3614621492313,
         "z": -115.0716199892347
@@ -2928,13 +2936,14 @@
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
+        "https://www.openstreetmap.org/way/157522277",
         "https://www.bts.co.th/eng/routemap.html"
       ],
       "implementation": "rendered bts-station",
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -3646,11 +3655,13 @@
       "name": "Wat Suthat",
       "category": "temple",
       "geographicSource": [
-        "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
-        "https://www.openstreetmap.org/way/178353988"
+        "https://www.openstreetmap.org/way/32011053"
       ],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "coordinate": {
+        "lat": 13.750137093548387,
+        "lon": 100.50081464838709
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -360,
         "z": -901
@@ -3668,6 +3679,7 @@
       "entrance": null,
       "entranceDirection": "Requires research",
       "architectureReferences": [
+        "https://www.openstreetmap.org/way/32011053",
         "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
         "https://www.openstreetmap.org/way/178353988"
       ],
@@ -3675,7 +3687,7 @@
       "status": "requires further research",
       "recognizabilityGrade": "unreviewed",
       "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -4231,7 +4243,7 @@
         "lat": 13.751571174074073,
         "lon": 100.49236878888888
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": -820,
         "z": -940
@@ -4279,7 +4291,7 @@
         "lat": 13.75481264,
         "lon": 100.50416322
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -4314,7 +4326,7 @@
         "lat": 13.75495621764706,
         "lon": 100.50422346470589
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -4489,7 +4501,7 @@
         "lat": 13.743447216666667,
         "lon": 100.50943550833334
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -4524,7 +4536,7 @@
         "lat": 13.73126309032258,
         "lon": 100.51345491290323
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -4679,7 +4691,7 @@
         "lat": 13.740618425,
         "lon": 100.5072872625
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -4714,7 +4726,7 @@
         "lat": 13.746655723529411,
         "lon": 100.53150990588236
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 704,
         "z": -672
@@ -4766,7 +4778,7 @@
         "lat": 13.743938953846152,
         "lon": 100.54662958461539
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": {
         "x": 1324,
         "z": -680
@@ -4964,7 +4976,7 @@
         "lat": 13.728360215384615,
         "lon": 100.53521999230769
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5139,9 +5151,14 @@
       "id": "queen-sirikit-park",
       "name": "Queen Sirikit Park",
       "category": "park",
-      "geographicSource": [],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "geographicSource": [
+        "https://www.openstreetmap.org/way/23487332"
+      ],
+      "coordinate": {
+        "lat": 13.807178366666667,
+        "lon": 100.55149917777779
+      },
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5150,12 +5167,14 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [],
+      "architectureReferences": [
+        "https://www.openstreetmap.org/way/23487332"
+      ],
       "implementation": "not authored",
       "status": "missing",
       "recognizabilityGrade": "F",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "research needed",
+      "geographicConfidence": "OSM snapshot cross-check; approximate",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -5195,14 +5214,9 @@
       "id": "krung-thep-aphiwat",
       "name": "Krung Thep Aphiwat Central Terminal",
       "category": "railway-station",
-      "geographicSource": [
-        "https://www.openstreetmap.org/way/539144057"
-      ],
-      "coordinate": {
-        "lat": 13.8042729925,
-        "lon": 100.54182995875
-      },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "geographicSource": [],
+      "coordinate": null,
+      "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5211,14 +5225,12 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [
-        "https://www.openstreetmap.org/way/539144057"
-      ],
+      "architectureReferences": [],
       "implementation": "not authored",
       "status": "missing",
       "recognizabilityGrade": "F",
       "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "geographicConfidence": "research needed",
       "missingFeatures": [
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
@@ -5237,7 +5249,7 @@
         "lat": 13.7303703875,
         "lon": 100.5656138625
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5328,7 +5340,7 @@
         "lat": 13.729145926666666,
         "lon": 100.51358155333334
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5363,7 +5375,7 @@
         "lat": 13.739176338095238,
         "lon": 100.56130966666667
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,
@@ -5398,7 +5410,7 @@
         "lat": 13.7229055625,
         "lon": 100.54112810625
       },
-      "coordinateAccuracy": "unweighted building vertex centroid; approximate site center",
+      "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
       "gameCoordinate": null,
       "modelOwner": null,
       "modelOrigin": null,

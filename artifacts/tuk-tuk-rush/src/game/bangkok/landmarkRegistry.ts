@@ -182,14 +182,15 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     }
   for (const s of MRT_ENTRANCES) {
     const o = d.obstacles.find((o) => o.environmentId === s.id);
+    const fact=CITY_MODEL.infrastructure.mrt.find(m=>m.id===s.id);
     if (!o) continue;
     entries.push({
       id: s.id,
       name: `MRT ${s.name} (${s.code})`,
       category: "underground-mrt-entrance",
       district: s.district,
-      geographicReference: CITY_MODEL.infrastructure.mrt.find(m=>m.id===s.id && 'coordinate' in m)?.coordinate,
-      coordinateAccuracy: "approximate-site-center",
+      geographicReference: fact&&'coordinate' in fact?fact.coordinate:undefined,
+      coordinateAccuracy: fact&&'coordinate' in fact?'approximate-site-center':'not-verified',
       world: { x: o.x, z: o.z },
       map: { x: o.x / 4 + 500, y: o.z / 4 + 600 },
       rotation: o.yaw ?? 0,

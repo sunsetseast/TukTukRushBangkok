@@ -22,9 +22,9 @@ for r in requests:
   if e.tag=='way' and name and any(k in t for k in ['highway','waterway','bridge']):ways[id]=dict(type='Feature',id=id,properties={**t,'source':source},geometry=dict(type='LineString',coordinates=coords))
   if name and (t.get('tourism') or t.get('railway') in ['station','halt'] or t.get('public_transport')=='station' or t.get('amenity') in ['place_of_worship','ferry_terminal','marketplace'] or t.get('leisure')=='park' or t.get('shop') in ['mall','gold','jewelry']):
    places[id]=dict(id=id,name=name,coordinate=dict(lat=sum(p[1] for p in coords)/len(coords),lon=sum(p[0] for p in coords)/len(coords)),tags=t,accuracy='OSM point' if e.tag=='node' else 'unweighted way-vertex centroid; approximate',source=source)
- snapshots.append(dict(id=r['id'],url=r['url'],sha256=hashlib.sha256(data).hexdigest(),bytes=len(data),date='2026-10-20',method='OSM API bbox; no contributor metadata retained'))
+ snapshots.append(dict(id=r['id'],url=r['url'],sha256=hashlib.sha256(data).hexdigest(),bytes=len(data),retrievedAtUTC=__import__('datetime').datetime.fromtimestamp(path.stat().st_mtime,__import__('datetime').timezone.utc).isoformat(),method='OSM API bbox; no contributor metadata retained'))
 common=dict(schemaVersion=1,attribution='© OpenStreetMap contributors, ODbL 1.0',date='2026-10-20')
-(root/'data/bangkok/osm-reference.v1.geojson').write_text(json.dumps(dict(type='FeatureCollection',**common,features=list(ways.values())),ensure_ascii=False,indent=2)+'\n')
+(root/'data/bangkok/osm-reference.v1.geojson').write_text(json.dumps(dict(type='FeatureCollection',**common,features=list(ways.values())),ensure_ascii=False,separators=(',',':'))+'\n')
 (root/'data/bangkok/osm-places.v1.json').write_text(json.dumps(dict(**common,places=list(places.values())),ensure_ascii=False,indent=2)+'\n')
 (root/'docs/qa/world-blueprint/sources/snapshots.json').write_text(json.dumps(snapshots,indent=2)+'\n')
 print(len(ways),'named corridor features',len(places),'place facts')

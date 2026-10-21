@@ -1,48 +1,66 @@
-{
-  "date": "2026-10-20",
-  "rawSnapshots": [
-    {
-      "tile": "osm-riverside",
-      "sha256": "c0c193af841a72a39af46992aa9258a4858153bdb1c6d51d88fd53e86adc1e33",
-      "bytes": 6171309
-    },
-    {
-      "tile": "osm-north",
-      "sha256": "2f9724f2b100eb66ae068c4c84418ecf0b77eda39e564937e8c442fe599235d8",
-      "bytes": 5673144
-    },
-    {
-      "tile": "osm-thonburi",
-      "sha256": "a0357b574a5b732243a423d37d27bf1f6b21e36fd763ecb70acaa0387b0d72d7",
-      "bytes": 1400034
-    },
-    {
-      "tile": "osm-silom",
-      "sha256": "0e9d49e1f7bff37833424746cb132a9cea9ab0d00210fb7b9f2967d13714697f",
-      "bytes": 8688622
-    },
-    {
-      "tile": "osm-sukhumvit",
-      "sha256": "1d6acbebcccefc6882ab69224f0de9e269f956354a180f1e99c75cbbb3bb4c90",
-      "bytes": 6285170
-    },
-    {
-      "tile": "osm-oldtown",
-      "sha256": "70bb6f7dcbe9449e25feabaae281d64eebaacc670601f4690a3ccb2a4c4122cd",
-      "bytes": 15840144
-    },
-    {
-      "tile": "osm-chinatown",
-      "sha256": "9784b9fbf070ebf236f2d37b7c65deb919bebdb424ad0c940f5bb6497f2d92fb",
-      "bytes": 4642530
-    },
-    {
-      "tile": "osm-siam",
-      "sha256": "c8162878e4843afb6e5aaff6e90c10542ff2dcd8cb13afae576f8d0bab54b0be",
-      "bytes": 8505887
-    }
-  ],
-  "ways": 2644,
-  "places": 1330,
-  "method": "OSM API bounding-box extracts; personal contributor metadata discarded. Named roads, bridges and waterways only; source facts are not automatically projected into the game."
-}
+[
+  {
+    "id": "chinatown",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.505,13.735,100.515,13.744",
+    "sha256": "9276f058de87100e40fca91f850a88dc212a0db3620456437c1dc2030aef2fd7",
+    "bytes": 4642530,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "oldtown",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.489,13.738,100.505,13.758",
+    "sha256": "70d21cb61e320ea939a4c320b23c1812c30c037afd6c94e2f05500f4461e4742",
+    "bytes": 15840144,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "siam",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.525,13.74,100.55,13.752",
+    "sha256": "b916ace4cc5c2b93bc4145092475cd63daf1a1aab8e0ff6d1dc0c05b74e67b40",
+    "bytes": 8505887,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "riverside",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.507,13.71,100.517,13.733",
+    "sha256": "a0191d5cd3d79fe5eb22bf80eb5feafa5ac5649730e986a3b450c5600aa3abec",
+    "bytes": 6171312,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "sukhumvit",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.557,13.725,100.574,13.741",
+    "sha256": "9d95aebc174bebbd8fb1e10053e5f711d964fb6f7e8ce7bc2381cdaeb13b3d72",
+    "bytes": 6285170,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "silom",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.531,13.722,100.548,13.735",
+    "sha256": "d8f36cd54e893134d5d9c84b572fd79165a9fb1900d990d031af09aa4c45ab41",
+    "bytes": 8688622,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "north",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.53,13.8,100.558,13.813",
+    "sha256": "275611bbcc9bf67d5b35384f7662b3ed962dce4907ee4c58fc15280471362e04",
+    "bytes": 5673144,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  },
+  {
+    "id": "thonburi",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.468,13.718,100.477,13.725",
+    "sha256": "e570c422bc890a9f27013782450d288274628ebc260f5eec427fc37fc334d579",
+    "bytes": 1400034,
+    "date": "2026-10-20",
+    "method": "OSM API bbox; no contributor metadata retained"
+  }
+]
