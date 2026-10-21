@@ -1,0 +1,139 @@
+{
+  "label": "after",
+  "sourceCommit": "a7442146afd140ddfd5e8ffd3032ecaa6f80840f",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "records": [
+    {
+      "id": "terminal-arrival",
+      "light": "sunset",
+      "file": "terminal-arrival-sunset.jpg",
+      "scene": {
+        "id": "terminal-arrival",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 371,
+        "triangles": 517094,
+        "geometries": 690,
+        "textures": 15,
+        "frameMs": 107.5,
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-arrival",
+      "light": "night",
+      "file": "terminal-arrival-night.jpg",
+      "scene": {
+        "id": "terminal-arrival",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 363,
+        "triangles": 513502,
+        "geometries": 690,
+        "textures": 15,
+        "frameMs": 25.600000000093132,
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-street",
+      "light": "sunset",
+      "file": "terminal-street-sunset.jpg",
+      "scene": {
+        "id": "terminal-street",
+        "pose": {
+          "x": 1683.6470588235295,
+          "z": -282.5882352941176,
+          "heading": -3.045955076298344,
+          "road": "Phloen Chit / Sukhumvit"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 369,
+        "triangles": 480937,
+        "geometries": 919,
+        "textures": 15,
+        "frameMs": 770.5,
+        "camera": [
+          1684.391895266779,
+          3.3,
+          -274.82387964327273
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-street",
+      "light": "night",
+      "file": "terminal-street-night.jpg",
+      "scene": {
+        "id": "terminal-street",
+        "pose": {
+          "x": 1683.6470588235295,
+          "z": -282.5882352941176,
+          "heading": -3.045955076298344,
+          "road": "Phloen Chit / Sukhumvit"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 367,
+        "triangles": 480465,
+        "geometries": 921,
+        "textures": 15,
+        "frameMs": 267.69999999995343,
+        "camera": [
+          1684.391895266779,
+          3.3,
+          -274.82387964327273
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    }
+  ],
+  "errors": []
+}

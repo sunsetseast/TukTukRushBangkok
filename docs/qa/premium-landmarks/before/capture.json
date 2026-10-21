@@ -195,6 +195,387 @@
         "quality": "medium",
         "glError": 0
       }
+    },
+    {
+      "id": "terminal-overview",
+      "light": "sunset",
+      "file": "terminal-overview-sunset.jpg",
+      "scene": {
+        "id": "terminal-overview",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "look": [
+          1672,
+          30,
+          -404
+        ]
+      },
+      "stats": {
+        "calls": 421,
+        "triangles": 525601,
+        "geometries": 1070,
+        "textures": 15,
+        "frameMs": 117.9000000001397,
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-overview",
+      "light": "night",
+      "file": "terminal-overview-night.jpg",
+      "scene": {
+        "id": "terminal-overview",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "look": [
+          1672,
+          30,
+          -404
+        ]
+      },
+      "stats": {
+        "calls": 428,
+        "triangles": 529161,
+        "geometries": 1070,
+        "textures": 15,
+        "frameMs": 1513.7000000001863,
+        "camera": [
+          1822,
+          110,
+          -244
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-arrival",
+      "light": "sunset",
+      "file": "icon-arrival-sunset.jpg",
+      "scene": {
+        "id": "icon-arrival",
+        "pose": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1295,
+        "textures": 16,
+        "frameMs": 165.10000000009313,
+        "camera": [
+          -709.7528998246537,
+          3.3,
+          920.5441149083505
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-arrival",
+      "light": "night",
+      "file": "icon-arrival-night.jpg",
+      "scene": {
+        "id": "icon-arrival",
+        "pose": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1295,
+        "textures": 16,
+        "frameMs": 32.800000000046566,
+        "camera": [
+          -709.7528998246537,
+          3.3,
+          920.5441149083505
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-street",
+      "light": "sunset",
+      "file": "icon-street-sunset.jpg",
+      "scene": {
+        "id": "icon-street",
+        "pose": {
+          "x": -786.9669914110091,
+          "z": 880,
+          "heading": 1.2086920186821517,
+          "road": "Charoen Nakhon / ICONSIAM access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 278,
+        "triangles": 244852,
+        "geometries": 1366,
+        "textures": 16,
+        "frameMs": 222,
+        "camera": [
+          -794.2611883878592,
+          3.3,
+          877.2369056362637
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-street",
+      "light": "night",
+      "file": "icon-street-night.jpg",
+      "scene": {
+        "id": "icon-street",
+        "pose": {
+          "x": -786.9669914110091,
+          "z": 880,
+          "heading": 1.2086920186821517,
+          "road": "Charoen Nakhon / ICONSIAM access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 279,
+        "triangles": 244952,
+        "geometries": 1367,
+        "textures": 16,
+        "frameMs": 72.5,
+        "camera": [
+          -794.2611883878592,
+          3.3,
+          877.2369056362637
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-goldline",
+      "light": "sunset",
+      "file": "icon-goldline-sunset.jpg",
+      "scene": {
+        "id": "icon-goldline",
+        "pose": {
+          "x": -766.9669914110091,
+          "z": 880,
+          "heading": 1.1546638258251118,
+          "road": "Charoen Nakhon / ICONSIAM access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 290,
+        "triangles": 265548,
+        "geometries": 1369,
+        "textures": 16,
+        "frameMs": 75.19999999995343,
+        "camera": [
+          -774.1013325529375,
+          3.3,
+          876.8470368745277
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-goldline",
+      "light": "night",
+      "file": "icon-goldline-night.jpg",
+      "scene": {
+        "id": "icon-goldline",
+        "pose": {
+          "x": -766.9669914110091,
+          "z": 880,
+          "heading": 1.1546638258251118,
+          "road": "Charoen Nakhon / ICONSIAM access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 290,
+        "triangles": 265548,
+        "geometries": 1369,
+        "textures": 16,
+        "frameMs": 34.9000000001397,
+        "camera": [
+          -774.1013325529375,
+          3.3,
+          876.8470368745277
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-river",
+      "light": "sunset",
+      "file": "icon-river-sunset.jpg",
+      "scene": {
+        "id": "icon-river",
+        "pose": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -526.9669914110091,
+          8,
+          933.0330085889909
+        ],
+        "look": [
+          -646.9669914110091,
+          15,
+          933.0330085889909
+        ]
+      },
+      "stats": {
+        "calls": 349,
+        "triangles": 328448,
+        "geometries": 1598,
+        "textures": 16,
+        "frameMs": 1145,
+        "camera": [
+          -526.9669914110091,
+          8,
+          933.0330085889909
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "icon-river",
+      "light": "night",
+      "file": "icon-river-night.jpg",
+      "scene": {
+        "id": "icon-river",
+        "pose": {
+          "x": -702.1027746375084,
+          "z": 922.0658194200763,
+          "heading": 1.3744467859455347,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -526.9669914110091,
+          8,
+          933.0330085889909
+        ],
+        "look": [
+          -646.9669914110091,
+          15,
+          933.0330085889909
+        ]
+      },
+      "stats": {
+        "calls": 346,
+        "triangles": 326918,
+        "geometries": 1599,
+        "textures": 16,
+        "frameMs": 892.3000000002794,
+        "camera": [
+          -526.9669914110091,
+          8,
+          933.0330085889909
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "mahanakhon-arrival",
+      "light": "sunset",
+      "file": "mahanakhon-arrival-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-arrival",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 267,
+        "triangles": 430743,
+        "geometries": 1825,
+        "textures": 16,
+        "frameMs": 749.3999999999069,
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
     }
   ],
   "errors": []

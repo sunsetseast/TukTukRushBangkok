@@ -1,7 +1,8 @@
 {
   "complete": false,
-  "status": "Fresh restored-build QA in progress; no draft handoff yet",
-  "sourceCommit": "a744214",
+  "status": "Fresh QA in progress; no draft handoff yet",
+  "beforeImages": 17,
+  "afterImages": 4,
   "targetPairs": 38,
   "testsExpected": 35
 }

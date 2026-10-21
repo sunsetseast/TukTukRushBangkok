@@ -1,0 +1,35 @@
+{
+  "method": "Same Vite production build; exact file bytes and Node zlib gzip default",
+  "records": [
+    {
+      "label": "before",
+      "assets": {
+        "js": {
+          "file": "index-C85tz0xG.js",
+          "bytes": 2173049,
+          "gzipBytes": 702205
+        },
+        "css": {
+          "file": "index-CEHkrjtZ.css",
+          "bytes": 135806,
+          "gzipBytes": 24705
+        }
+      }
+    },
+    {
+      "label": "after",
+      "assets": {
+        "js": {
+          "file": "index-BprVDtvQ.js",
+          "bytes": 2181133,
+          "gzipBytes": 704795
+        },
+        "css": {
+          "file": "index-CEHkrjtZ.css",
+          "bytes": 135806,
+          "gzipBytes": 24705
+        }
+      }
+    }
+  ]
+}
