@@ -535,7 +535,7 @@ function icon(b:LandmarkBuilder,detail:boolean){
  for(const side of [-1,1])curtain(b,side*30.45,12,0,43,21,detail,side*Math.PI/2,10,4);
  // Separate road elevation, rather than a second copy of the river facade.
  curtain(b,0,12,-24.1,54,21,detail,Math.PI,12,4);
- entrance(b,20,-26.1,detail);
+ b.box(0,3.2,-24.5,23,6.4,3,'#bdb59f');entrance(b,20,-26.1,detail);
  for(const x of [-25,25]){planter(b,x,-28,6,3,detail);palm(b,x,-28,5.2,detail);}
  // Thai-inspired peaked gold profile, set-back upper glazed gable and roofs.
  foldedRoof(b,0,25,10,37,12,3.5,detail);

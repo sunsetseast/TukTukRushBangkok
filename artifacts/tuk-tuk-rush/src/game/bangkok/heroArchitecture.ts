@@ -275,10 +275,10 @@ function oriental(b: B, detail: boolean, p: RealPlace) {
       new T.Vector2(-3.35, 2),
     ]);
     extrusion(b, plan, x, 1, 2, 47, "#547c88", detail, "glass");
-    b.box(x - 3.3, 24.5, 2.35, 0.45, 49, 0.8, IVORY);
+    b.box(x - 3.3, 24.5, 2.35, 0.9, 49, 0.8, IVORY);
     b.box(x, 24.5, 4.15, 0.18, 47, 0.2, IVORY);
     for (let f = 1; f < 15; f += detail ? 1 : 2)
-      extrusion(b, plan, x, 1 + f * 3.2, 2.2, 0.22, IVORY, detail);
+      extrusion(b, plan, x, 1 + f * 3.2, 2.2, 0.6, IVORY, detail);
     if (detail)
       for (const f of [3, 7, 11])
         if ((i + f) % 3 === 0)
@@ -365,8 +365,10 @@ function oriental(b: B, detail: boolean, p: RealPlace) {
   b.roof(-25, 6, 29, 46, 17, 3, "#6b7b70");
   terrace(b, -25, 44, 48, 10, detail);
   pool(b, 9, 20, 10, 18);
-  entrance(b,20,-34.6,detail);b.box(0,5.8,-34.8,21,1.8,.18,'#344b50');
+  b.box(0,3.2,-29.9,22,6.4,9.2,'#d6d0bb');entrance(b,20,-34.6,detail);b.box(0,5.8,-34.8,21,1.8,.18,'#344b50');
   curtain(b,-18,25,-25.8,66,46,detail,Math.PI,20,14);
+  for(let i=0;i<10;i++)b.box(-48.6+i*6.8,25,-26.1,.9,47,.6,IVORY);
+  for(let f=1;f<15;f+=detail?1:2)b.box(-18,1+f*3.2,-26.1,66,.55,.6,IVORY);
   for(const x of [-13,13])gardenBox(b,x,-35,4,4,detail);
   for(const x of [-43,-28,-13]){gardenBox(b,x,46,5,4,detail);gardenPalm(b,x,46,5,detail);}
   if(detail)for(const x of [15,25,35,45])for(const y of [7,11]){b.box(x-1.2,y,36.05,.8,2,.15,'#597361');b.box(x+1.2,y,36.05,.8,2,.15,'#597361');}

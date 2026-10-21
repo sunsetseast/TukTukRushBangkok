@@ -563,17 +563,27 @@ export function buildSiamCenterDiscovery(b: B, detail: boolean) {
 }
 function terminal(b: B, detail: boolean) {
   // Detailed west vehicle frontage and separate east pedestrian elevation.
-  rounded(b,0,0,-3,87,69,29,8,'#c6cbc6',detail);
+  // Real ground-floor recesses, not glass plates over a complete solid box.
+  rounded(b,0,7,-3,87,69,22,8,'#c6cbc6',detail);
+  b.box(0,3.5,-3,70,7,69,'#c6cbc6');
+  for(const side of [-1,1]){
+   b.box(side*39.25,3.5,-31,8.5,7,13,'#c6cbc6');
+   b.box(side*39.25,3.5,16,8.5,7,31,'#c6cbc6');
+   curtain(b,side*44.2,3.4,-31,12.7,6.2,detail,side*Math.PI/2,4,1);
+   curtain(b,side*44.2,3.4,16,30.7,6.2,detail,side*Math.PI/2,9,1);
+   b.box(side*42,.12,-12,4.4,.24,25,'#b8b5a8');
+   b.box(side*42,6.8,-12,4.4,.12,25,'#c8b28a',0,true);
+  }
   rounded(b,-29,.2,18,29,29,28.8,11,'#466a78',detail,'glass');
   for(const y of [4,9,14,19,24,29])rounded(b,-29,y,18,29.5,29.5,.35,11.2,IVORY,detail);
-  curtain(b,-44.2,15,-9,49,27,detail,-Math.PI/2,12,5);
-  curtain(b,44.2,15,-9,49,27,detail,Math.PI/2,12,5);
+  curtain(b,-44.2,18,-9,49,20,detail,-Math.PI/2,12,4);
+  curtain(b,44.2,18,-9,49,20,detail,Math.PI/2,12,4);
   curtain(b,13,15,32.05,59,27,detail,0,14,5);
   curtain(b,4,15,-37.7,65,27,detail,Math.PI,12,5);
   b.box(-43.95,15,-30,.6,28,10,'#d6d7cc');
   for(let y=2;y<28;y+=detail?1.3:2.6)b.box(-44.3,y,-30,.12,.12,10.1,'#b2bcb9');
   for(const side of [-1,1]){
-   curtain(b,side*44.2,3.5,-12,25,6,detail,side*Math.PI/2,8,1);
+   curtain(b,side*40,3.5,-12,25,6,detail,side*Math.PI/2,8,1);
    b.box(side*44.35,8.8,-12,.35,3.2,28,'#d8d9cd');
    b.box(side*43.7,7,-12,2,.3,29,'#c0cbc8');
    b.box(side*43.75,6.8,-12,1.8,.06,27,'#d2bc94',0,true);

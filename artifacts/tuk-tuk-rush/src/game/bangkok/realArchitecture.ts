@@ -59,7 +59,7 @@ function peninsula(b:B,detail:boolean){
  }
  b.box(0,5,15,62,10,15,'#c6c0ab');curtain(b,0,5,22.7,60,8,detail,0,16,2);
  for(const x of [-22,0,22]){b.roof(x,5,25,13,7,3,'#c1ad87');if(detail)for(const u of [-5,5])b.box(x+u,2.5,26,.2,5,.2,STONE);}
- entrance(b,23,-23.8,detail);b.box(0,7.6,-24,25,2.3,.18,'#344b50');
+ b.box(0,3.2,-17.8,26,6.4,11.8,'#c9c5b4');entrance(b,23,-23.8,detail);b.box(0,7.6,-24,25,2.3,.18,'#344b50');
  for(const x of [-28,28]){planter(b,x,-22,6,6,detail);palm(b,x,-22,7,detail);}
 }
 function hilton(b:B,detail:boolean){
@@ -77,7 +77,7 @@ function hilton(b:B,detail:boolean){
  for(let i=0;i<(detail?18:9);i++){const a=i*Math.PI*2/(detail?18:9);b.box(4+Math.sin(a)*12.9,105.5,Math.cos(a)*12.9,.15,4,.15,'#b5c0bb');}
  b.sculpt(new T.CylinderGeometry(.15,.35,9,6),-10,115,-4,'#c9d0c7');
  b.box(0,4,3,46,8,31,'#d2d0c0');curtain(b,0,4,18.7,42,6,detail,0,12,1);
- entrance(b,27,-21,detail);b.box(0,7.8,-21,29,2.4,.18,'#344b50');
+ b.box(0,3.2,-16.7,30,6.4,8.6,'#d0d0bf');entrance(b,27,-21,detail);b.box(0,7.8,-21,29,2.4,.18,'#344b50');
  for(const x of [-20,20]){planter(b,x,-18,5,5,detail);palm(b,x,-18,6,detail);}
  for(const x of [-19,19])planter(b,x,20,6,4,detail);
 }

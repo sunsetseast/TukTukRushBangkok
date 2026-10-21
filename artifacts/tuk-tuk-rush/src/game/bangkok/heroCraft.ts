@@ -16,7 +16,13 @@ export function palm(b:B,x:number,z:number,h=7,detail=true,y=0){
  for(let i=0;i<(detail?7:5);i++){const a=i*Math.PI*2/(detail?7:5);b.sculpt(tropicalLeafGeometry('frond').scale(1.15,1.5,4.6).rotateY(a),x+Math.sin(a)*1.6,y+h,z+Math.cos(a)*1.6,i%2?'#527e56':'#356c51');}
 }
 export function planter(b:B,x:number,z:number,w:number,d:number,detail:boolean,y=0){b.box(x,y+.4,z,w,.8,d,'#b5ad96');b.box(x,y+.86,z,w-.45,.12,d-.45,'#3d6c4c');if(detail)for(let i=0;i<3;i++)b.sculpt(new T.IcosahedronGeometry(Math.min(.8,w*.2,d*.2),0).scale(1,.5,1),x+(i-1)*w*.22,y+1.1,z,i%2?'#6b8a55':'#4e7750');}
-export function entrance(b:B,w:number,z:number,detail:boolean){curtain(b,0,3.2,z,w,5.8,detail,0,Math.max(4,Math.round(w/3)),1);b.box(0,6.4,z+1.7,w+3,.4,4.4,'#d6d3c3');b.box(0,6.12,z+1.7,w+1,.08,3.8,'#efcf9c',0,true);for(const x of [-w/2,w/2])b.box(x,3,z+1,.3,6,.3,'#a8a28f');}
+/** Street-facing portico: negative-Z arrivals face outward, and columns
+ * physically join the soffit. All callers remain within their closed parcel. */
+export function entrance(b:B,w:number,z:number,detail:boolean){
+ const outward=z<0?-1:1;curtain(b,0,3.2,z,w,5.8,detail,outward<0?Math.PI:0,Math.max(4,Math.round(w/3)),1);
+ b.box(0,6.4,z+outward,w+3,.4,3.6,'#d6d3c3');b.box(0,6.12,z+outward,w+1,.08,3.1,'#d8bf95',0,true);
+ for(const x of [-w/2,w/2])b.box(x,3.1,z+outward,.3,6.2,.3,'#a8a28f');
+}
 export function foldedRoof(b:B,x:number,y:number,z:number,w:number,h:number,d:number,detail:boolean){
  const s=new T.Shape();s.moveTo(-w/2,0);s.bezierCurveTo(-w*.36,h*.63,-w*.12,h*.94,0,h);s.bezierCurveTo(w*.14,h*.9,w*.36,h*.58,w/2,0);s.lineTo(w/2-.8,.3);s.bezierCurveTo(w*.32,h*.52,w*.1,h*.84,0,h-.9);s.bezierCurveTo(-w*.12,h*.86,-w*.33,h*.53,-w/2+.8,.3);s.closePath();b.sculpt(new T.ExtrudeGeometry(s,{depth:d,bevelEnabled:false,curveSegments:detail?12:5}).translate(0,0,-d/2),x,y,z,'#c9a052','gilded');
 }

@@ -576,6 +576,777 @@
         "quality": "medium",
         "glError": 0
       }
+    },
+    {
+      "id": "mahanakhon-arrival",
+      "light": "night",
+      "file": "mahanakhon-arrival-night.jpg",
+      "scene": {
+        "id": "mahanakhon-arrival",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 267,
+        "triangles": 430743,
+        "geometries": 1826,
+        "textures": 16,
+        "frameMs": 42.799999999813735,
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "sunset",
+      "file": "mahanakhon-street-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-street",
+        "pose": {
+          "x": 277.28381317484383,
+          "z": 987.7508915390762,
+          "heading": 1.2353872535489598,
+          "road": "Silom corridor"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 330,
+        "triangles": 411481,
+        "geometries": 2016,
+        "textures": 16,
+        "frameMs": 270.39999999990687,
+        "camera": [
+          269.91846240326765,
+          3.3,
+          985.1834788313796
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "night",
+      "file": "mahanakhon-street-night.jpg",
+      "scene": {
+        "id": "mahanakhon-street",
+        "pose": {
+          "x": 277.28381317484383,
+          "z": 987.7508915390762,
+          "heading": 1.2353872535489598,
+          "road": "Silom corridor"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 330,
+        "triangles": 411481,
+        "geometries": 2016,
+        "textures": 16,
+        "frameMs": 29.100000000093132,
+        "camera": [
+          269.91846240326765,
+          3.3,
+          985.1834788313796
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "sunset",
+      "file": "mahanakhon-silhouette-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-silhouette",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "look": [
+          654.1939766255646,
+          75,
+          1119.1341716182542
+        ]
+      },
+      "stats": {
+        "calls": 304,
+        "triangles": 446763,
+        "geometries": 2039,
+        "textures": 16,
+        "frameMs": 1928.3000000002794,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "night",
+      "file": "mahanakhon-silhouette-night.jpg",
+      "scene": {
+        "id": "mahanakhon-silhouette",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "look": [
+          654.1939766255646,
+          75,
+          1119.1341716182542
+        ]
+      },
+      "stats": {
+        "calls": 304,
+        "triangles": 446763,
+        "geometries": 2039,
+        "textures": 16,
+        "frameMs": 64.10000000009313,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "sunset",
+      "file": "hilton-arrival-sunset.jpg",
+      "scene": {
+        "id": "hilton-arrival",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 242,
+        "triangles": 217258,
+        "geometries": 2065,
+        "textures": 16,
+        "frameMs": 24.5,
+        "camera": [
+          -801.8,
+          3.3,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "night",
+      "file": "hilton-arrival-night.jpg",
+      "scene": {
+        "id": "hilton-arrival",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 242,
+        "triangles": 217258,
+        "geometries": 2065,
+        "textures": 16,
+        "frameMs": 631.6999999997206,
+        "camera": [
+          -801.8,
+          3.3,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-river",
+      "light": "sunset",
+      "file": "hilton-river-sunset.jpg",
+      "scene": {
+        "id": "hilton-river",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          38,
+          780
+        ]
+      },
+      "stats": {
+        "calls": 341,
+        "triangles": 316287,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 1005.2999999998137,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-river",
+      "light": "night",
+      "file": "hilton-river-night.jpg",
+      "scene": {
+        "id": "hilton-river",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          38,
+          780
+        ]
+      },
+      "stats": {
+        "calls": 340,
+        "triangles": 316255,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 1470.1000000000931,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "sunset",
+      "file": "hilton-river-full-sunset.jpg",
+      "scene": {
+        "id": "hilton-river-full",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          55,
+          780
+        ]
+      },
+      "stats": {
+        "calls": 332,
+        "triangles": 314255,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 2206.899999999907,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "night",
+      "file": "hilton-river-full-night.jpg",
+      "scene": {
+        "id": "hilton-river-full",
+        "pose": {
+          "x": -794,
+          "z": 780,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          55,
+          780
+        ]
+      },
+      "stats": {
+        "calls": 331,
+        "triangles": 314223,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 2657.1999999997206,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "sunset",
+      "file": "peninsula-arrival-sunset.jpg",
+      "scene": {
+        "id": "peninsula-arrival",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 332,
+        "triangles": 342640,
+        "geometries": 2255,
+        "textures": 16,
+        "frameMs": 1165.3999999999069,
+        "camera": [
+          -671.8,
+          3.3,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "night",
+      "file": "peninsula-arrival-night.jpg",
+      "scene": {
+        "id": "peninsula-arrival",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 332,
+        "triangles": 342640,
+        "geometries": 2255,
+        "textures": 16,
+        "frameMs": 137,
+        "camera": [
+          -671.8,
+          3.3,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-river",
+      "light": "sunset",
+      "file": "peninsula-river-sunset.jpg",
+      "scene": {
+        "id": "peninsula-river",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          38,
+          1228
+        ]
+      },
+      "stats": {
+        "calls": 381,
+        "triangles": 420700,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 21,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-river",
+      "light": "night",
+      "file": "peninsula-river-night.jpg",
+      "scene": {
+        "id": "peninsula-river",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          38,
+          1228
+        ]
+      },
+      "stats": {
+        "calls": 372,
+        "triangles": 417076,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 410.8000000002794,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "sunset",
+      "file": "peninsula-river-full-sunset.jpg",
+      "scene": {
+        "id": "peninsula-river-full",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          55,
+          1228
+        ]
+      },
+      "stats": {
+        "calls": 368,
+        "triangles": 411886,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 90.1999999997206,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "night",
+      "file": "peninsula-river-full-night.jpg",
+      "scene": {
+        "id": "peninsula-river-full",
+        "pose": {
+          "x": -664,
+          "z": 1228,
+          "heading": 1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          55,
+          1228
+        ]
+      },
+      "stats": {
+        "calls": 359,
+        "triangles": 408262,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 34.1999999997206,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "sunset",
+      "file": "oriental-arrival-sunset.jpg",
+      "scene": {
+        "id": "oriental-arrival",
+        "pose": {
+          "x": -160.5,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 257883,
+        "geometries": 2446,
+        "textures": 16,
+        "frameMs": 30.5,
+        "camera": [
+          -152.7,
+          3.3,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "night",
+      "file": "oriental-arrival-night.jpg",
+      "scene": {
+        "id": "oriental-arrival",
+        "pose": {
+          "x": -160.5,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 300,
+        "triangles": 256227,
+        "geometries": 2446,
+        "textures": 16,
+        "frameMs": 312.39999999990687,
+        "camera": [
+          -152.7,
+          3.3,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "oriental-river",
+      "light": "sunset",
+      "file": "oriental-river-sunset.jpg",
+      "scene": {
+        "id": "oriental-river",
+        "pose": {
+          "x": -160.5,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          38,
+          1040
+        ]
+      },
+      "stats": {
+        "calls": 394,
+        "triangles": 511136,
+        "geometries": 2686,
+        "textures": 16,
+        "frameMs": 88.8000000002794,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "oriental-river",
+      "light": "night",
+      "file": "oriental-river-night.jpg",
+      "scene": {
+        "id": "oriental-river",
+        "pose": {
+          "x": -160.5,
+          "z": 1040,
+          "heading": -1.5707963267948966,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          38,
+          1040
+        ]
+      },
+      "stats": {
+        "calls": 394,
+        "triangles": 511136,
+        "geometries": 2686,
+        "textures": 16,
+        "frameMs": 1344.5,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
     }
   ],
   "errors": []
