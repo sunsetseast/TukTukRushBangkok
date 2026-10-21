@@ -1,0 +1,702 @@
+{
+  "physicalSurvey": false,
+  "records": [
+    {
+      "id": "oriental",
+      "modelOwner": "oriental",
+      "asset": "real-oriental-v2",
+      "origin": {
+        "x": -200,
+        "z": 1040
+      },
+      "yaw": -1.5707963267948966,
+      "approvedFootprint": [
+        112,
+        104
+      ],
+      "declaredHeight": 52,
+      "bounds": {
+        "min": [
+          -52.5,
+          0,
+          -37
+        ],
+        "max": [
+          51,
+          50,
+          49.900001525878906
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:oriental:12",
+        "x": -160.5,
+        "z": 1040
+      },
+      "roads": [
+        "real-arrival:oriental"
+      ],
+      "coordinate": {
+        "lat": 13.72393,
+        "lon": 100.5144
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "48 Oriental Avenue",
+        "bankReview": "east",
+        "recognitionFeatures": "River/Garden/Authors wings; west river terraces, east street arrival",
+        "source": "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery",
+        "remaining": "Historic compound and wing proportions compressed; exact entrance/grounds unverified",
+        "basis": "implemented; WebGL validation pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "peninsula",
+      "modelOwner": "peninsula",
+      "asset": "real-peninsula-v2",
+      "origin": {
+        "x": -620,
+        "z": 1228
+      },
+      "yaw": 1.5707963267948966,
+      "approvedFootprint": [
+        72,
+        60
+      ],
+      "declaredHeight": 116,
+      "bounds": {
+        "min": [
+          -34.78085708618164,
+          0,
+          -25.513778686523438
+        ],
+        "max": [
+          34.78085708618164,
+          114.5,
+          28.649999618530273
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:peninsula:6",
+        "x": -664,
+        "z": 1228
+      },
+      "roads": [
+        "real-arrival:peninsula"
+      ],
+      "coordinate": {
+        "lat": 13.723302,
+        "lon": 100.510368
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "333 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "East river-facing W/wave plan; west street court",
+        "source": "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf",
+        "remaining": "Precise W geometry and full gardens/pool remain approximate",
+        "basis": "implemented; WebGL validation pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "B"
+    },
+    {
+      "id": "hilton",
+      "modelOwner": "hilton",
+      "asset": "real-hilton-v2",
+      "origin": {
+        "x": -756,
+        "z": 780
+      },
+      "yaw": 1.5707963267948966,
+      "approvedFootprint": [
+        52,
+        48
+      ],
+      "declaredHeight": 120,
+      "bounds": {
+        "min": [
+          -23.80221939086914,
+          0,
+          -21.513778686523438
+        ],
+        "max": [
+          23.80221939086914,
+          119.5,
+          22
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:hilton:5",
+        "x": -794,
+        "z": 780
+      },
+      "roads": [
+        "real-arrival:hilton"
+      ],
+      "coordinate": {
+        "lat": 13.728693737037036,
+        "lon": 100.51101173703704
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "123 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "Pale rounded slab, ThreeSixty roof; north of ICONSIAM",
+        "source": "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/gallery/",
+        "remaining": "Storey/lounge dimensions compressed; exact property grounds unverified",
+        "basis": "implemented; WebGL validation pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "B"
+    },
+    {
+      "id": "shangri",
+      "modelOwner": "shangri",
+      "asset": "real-shangri-v2",
+      "origin": {
+        "x": -160,
+        "z": 1324
+      },
+      "yaw": -1.5707963267948966,
+      "approvedFootprint": [
+        124,
+        94
+      ],
+      "declaredHeight": 81,
+      "bounds": {
+        "min": [
+          -59,
+          -5.7220457705398076e-8,
+          -39
+        ],
+        "max": [
+          56.84215545654297,
+          79.94999694824219,
+          41.5
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:shangri:7",
+        "x": -123,
+        "z": 1324
+      },
+      "roads": [
+        "real-arrival:shangri"
+      ],
+      "coordinate": {
+        "lat": 13.720790336,
+        "lon": 100.51356836000001
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "89 Soi Wat Suan Plu",
+        "bankReview": "east",
+        "recognitionFeatures": "Main and Krungthep wings; west river frontage, south of Oriental",
+        "source": "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/",
+        "remaining": "Verify Krungthep wing, pool and street lobby bearing",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "state",
+      "modelOwner": "state",
+      "asset": "authored-state-skyline-v2",
+      "origin": {
+        "x": 200,
+        "z": 1180
+      },
+      "yaw": 0,
+      "approvedFootprint": [
+        40,
+        40
+      ],
+      "declaredHeight": 138,
+      "bounds": {
+        "min": [
+          -20.049999237060547,
+          0,
+          -19
+        ],
+        "max": [
+          20.049999237060547,
+          137.5,
+          19
+        ]
+      },
+      "arrival": {
+        "x": 84,
+        "z": 1148,
+        "id": "bkk:650"
+      },
+      "roads": [
+        "charoen_s",
+        "charoen_s"
+      ],
+      "coordinate": {
+        "lat": 13.7215136,
+        "lon": 100.516885
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "1055 Silom Road",
+        "bankReview": "east",
+        "recognitionFeatures": "Inland Bang Rak State Tower, stepped balconies and gold dome",
+        "source": "https://lebua.com/",
+        "remaining": "Street podium and rooftop terrace proportions need photographic refinement",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "four-seasons",
+      "modelOwner": "four-seasons",
+      "asset": "real-four-seasons-v2",
+      "origin": {
+        "x": -280,
+        "z": 1832
+      },
+      "yaw": -1.5707963267948966,
+      "approvedFootprint": [
+        180,
+        94
+      ],
+      "declaredHeight": 40,
+      "bounds": {
+        "min": [
+          -85.5,
+          -5.7220457705398076e-8,
+          -40
+        ],
+        "max": [
+          85.5,
+          39.75,
+          42.5
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:four-seasons:8",
+        "x": -228.5,
+        "z": 1832
+      },
+      "roads": [
+        "real-arrival:four-seasons"
+      ],
+      "coordinate": {
+        "lat": 13.7119,
+        "lon": 100.5101
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "300 Charoen Krung Road",
+        "bankReview": "east",
+        "recognitionFeatures": "12-storey Cascade, 4-storey Palm; south of Capella, west river frontage",
+        "source": "https://press.fourseasons.com/bangkok/hotel-facts/",
+        "remaining": "Shared estate, residence tower context, exact access/landscape unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "capella",
+      "modelOwner": "capella",
+      "asset": "real-capella-v2",
+      "origin": {
+        "x": -280,
+        "z": 1652
+      },
+      "yaw": -1.5707963267948966,
+      "approvedFootprint": [
+        98,
+        72
+      ],
+      "declaredHeight": 30,
+      "bounds": {
+        "min": [
+          -45.42499923706055,
+          -5.7220457705398076e-8,
+          -34
+        ],
+        "max": [
+          45.42499923706055,
+          29.5,
+          34.75
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:capella:9",
+        "x": -237,
+        "z": 1652
+      },
+      "roads": [
+        "real-arrival:capella"
+      ],
+      "coordinate": {
+        "lat": 13.7131566375,
+        "lon": 100.51096461875
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "300/2 Charoen Krung Road",
+        "bankReview": "east",
+        "recognitionFeatures": "Balcony-grid hotel and river villas; north of Four Seasons",
+        "source": "https://capellahotels.com/en/capella-bangkok",
+        "remaining": "Verify villas, pools and shared vehicle gates before remodeling",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "anantara",
+      "modelOwner": "anantara",
+      "asset": "real-anantara-v2",
+      "origin": {
+        "x": -1020,
+        "z": 2180
+      },
+      "yaw": 1.5707963267948966,
+      "approvedFootprint": [
+        102,
+        88
+      ],
+      "declaredHeight": 28,
+      "bounds": {
+        "min": [
+          -48.04999923706055,
+          -5.7220457705398076e-8,
+          -41
+        ],
+        "max": [
+          48.04999923706055,
+          26.07398223876953,
+          41
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:anantara:2",
+        "x": -1073.5,
+        "z": 2180
+      },
+      "roads": [
+        "real-arrival:anantara"
+      ],
+      "coordinate": {
+        "lat": 13.7045,
+        "lon": 100.4919
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "257/1-3 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "Low pitched-roof resort wings around tropical gardens; east river frontage",
+        "source": "https://www.anantara.com/en/riverside-bangkok",
+        "remaining": "Implement official resort-map wing, garden and pier relationships",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "okura",
+      "modelOwner": "okura",
+      "asset": "real-okura-v2",
+      "origin": {
+        "x": 1372,
+        "z": -448
+      },
+      "yaw": 3.141592653589793,
+      "approvedFootprint": [
+        62,
+        84
+      ],
+      "declaredHeight": 115,
+      "bounds": {
+        "min": [
+          -24.424999237060547,
+          -5.7220457705398076e-8,
+          -20
+        ],
+        "max": [
+          24.424999237060547,
+          114.5,
+          37.5
+        ]
+      },
+      "arrival": {
+        "x": 1405.4545454545455,
+        "z": -490.9090909090909,
+        "id": "bkk:436"
+      },
+      "roads": [
+        "sukhumvit",
+        "sukhumvit"
+      ],
+      "coordinate": {
+        "lat": 13.7426085,
+        "lon": 100.5476474
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "57 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Park Ventures at Wireless/Phloen Chit, chamfered tower and projecting pool",
+        "source": "https://www.okurabangkok.com/",
+        "remaining": "Pool identity present; exact podium entrance/bearing unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "rosewood",
+      "modelOwner": "rosewood",
+      "asset": "real-rosewood-v2",
+      "origin": {
+        "x": 1400,
+        "z": -556
+      },
+      "yaw": 0,
+      "approvedFootprint": [
+        48,
+        42
+      ],
+      "declaredHeight": 119,
+      "bounds": {
+        "min": [
+          -23.987529754638672,
+          0,
+          -21.5
+        ],
+        "max": [
+          23.989131927490234,
+          119.14703369140625,
+          14
+        ]
+      },
+      "arrival": {
+        "x": 1381.8181818181818,
+        "z": -503.6363636363636,
+        "id": "bkk:435"
+      },
+      "roads": [
+        "sukhumvit",
+        "sukhumvit"
+      ],
+      "coordinate": null,
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "1041/38 Phloen Chit Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Two wai-inspired sloping forms, east of Embassy, Phloen Chit connection",
+        "source": "https://www.kpf.com/project/rosewood-bangkok",
+        "remaining": "Independent coordinate, entrance and facade inclinations remain unresolved",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "embassy",
+      "modelOwner": "embassy",
+      "asset": "real-embassy-v2",
+      "origin": {
+        "x": 1324,
+        "z": -680
+      },
+      "yaw": 0,
+      "approvedFootprint": [
+        100,
+        78
+      ],
+      "declaredHeight": 120,
+      "bounds": {
+        "min": [
+          -47.75,
+          -5.7220457705398076e-8,
+          -36
+        ],
+        "max": [
+          47.75,
+          118.67748260498047,
+          32.75
+        ]
+      },
+      "arrival": {
+        "x": 1257.142857142857,
+        "z": -688.5714285714286,
+        "id": "bkk:176"
+      },
+      "roads": [
+        "ratchadamri",
+        "ratchadamri"
+      ],
+      "coordinate": null,
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "88 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Continuous silver retail/hotel loop; west of Rosewood",
+        "source": "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "remaining": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "erawan-hotel",
+      "modelOwner": "erawan-hotel",
+      "asset": "real-erawan-hotel-v2",
+      "origin": {
+        "x": 1304,
+        "z": -416
+      },
+      "yaw": 1.5707963267948966,
+      "approvedFootprint": [
+        66,
+        52
+      ],
+      "declaredHeight": 70,
+      "bounds": {
+        "min": [
+          -31.5,
+          0,
+          -22.5
+        ],
+        "max": [
+          30.5,
+          70.13999938964844,
+          24.5
+        ]
+      },
+      "arrival": {
+        "x": 1200,
+        "z": -450,
+        "id": "bkk:185"
+      },
+      "roads": [
+        "ratchadamri",
+        "ratchadamri"
+      ],
+      "coordinate": {
+        "lat": 13.743529039999999,
+        "lon": 100.54064711999999
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "494 Ratchadamri Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Stepped ivory hotel with colonnade beside Erawan Shrine",
+        "source": "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok",
+        "remaining": "Verify shrine corner and exact street-facing portico",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "dusit",
+      "modelOwner": "dusit",
+      "asset": "real-dusit-v2",
+      "origin": {
+        "x": 1024,
+        "z": 816
+      },
+      "yaw": 0,
+      "approvedFootprint": [
+        96,
+        78
+      ],
+      "declaredHeight": 142,
+      "bounds": {
+        "min": [
+          -45.5,
+          -5.7220457705398076e-8,
+          -33
+        ],
+        "max": [
+          45.5,
+          141,
+          35
+        ]
+      },
+      "arrival": {
+        "id": "real-arrival:dusit:3",
+        "x": 1024,
+        "z": 774
+      },
+      "roads": [
+        "real-arrival:dusit"
+      ],
+      "coordinate": {
+        "lat": 13.72818871111111,
+        "lon": 100.53827255555555
+      },
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "98 Rama IV Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Rebuilt park-facing tower, spire, Central Park podium at Silom/Rama IV",
+        "source": "https://www.dusit.com/dusitthani-bangkok/",
+        "remaining": "Verify current podium and park-facing arrival plan",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    },
+    {
+      "id": "eastin",
+      "modelOwner": "eastin",
+      "asset": "real-eastin-v2",
+      "origin": {
+        "x": 232,
+        "z": 1332
+      },
+      "yaw": 0,
+      "approvedFootprint": [
+        42,
+        40
+      ],
+      "declaredHeight": 111,
+      "bounds": {
+        "min": [
+          -18.96000099182129,
+          0,
+          -20.5
+        ],
+        "max": [
+          18.96000099182129,
+          110,
+          18
+        ]
+      },
+      "arrival": {
+        "x": 240,
+        "z": 1420,
+        "id": "bkk:842"
+      },
+      "roads": [
+        "sathorn",
+        "sathorn"
+      ],
+      "coordinate": null,
+      "review": {
+        "review": "PR35 / 2026-10-21",
+        "address": "33/1 South Sathorn Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Slender grid tower, pool terrace and Surasak BTS relationship",
+        "source": "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery",
+        "remaining": "Exact rear gate, skybridge and independent coordinate unresolved",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      },
+      "grade": "C"
+    }
+  ]
+}

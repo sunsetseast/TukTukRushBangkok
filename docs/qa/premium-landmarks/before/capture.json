@@ -1,0 +1,201 @@
+{
+  "label": "before",
+  "sourceCommit": "1fb92d765d98157b7015543ee9d4f29500c26323",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "records": [
+    {
+      "id": "terminal-arrival",
+      "light": "sunset",
+      "file": "terminal-arrival-sunset.jpg",
+      "scene": {
+        "id": "terminal-arrival",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 369,
+        "triangles": 517994,
+        "geometries": 688,
+        "textures": 15,
+        "frameMs": 42.5,
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-arrival",
+      "light": "night",
+      "file": "terminal-arrival-night.jpg",
+      "scene": {
+        "id": "terminal-arrival",
+        "pose": {
+          "x": 1602.4481982430234,
+          "z": -417.8347135430009,
+          "heading": 1.3744467859455345,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 361,
+        "triangles": 514402,
+        "geometries": 688,
+        "textures": 15,
+        "frameMs": 91.89999999990687,
+        "camera": [
+          1594.7980730558781,
+          3.3,
+          -419.35641805472665
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-street",
+      "light": "sunset",
+      "file": "terminal-street-sunset.jpg",
+      "scene": {
+        "id": "terminal-street",
+        "pose": {
+          "x": 1683.6470588235295,
+          "z": -282.5882352941176,
+          "heading": -3.045955076298344,
+          "road": "Phloen Chit / Sukhumvit"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 367,
+        "triangles": 482913,
+        "geometries": 920,
+        "textures": 15,
+        "frameMs": 224.80000000004657,
+        "camera": [
+          1684.391895266779,
+          3.3,
+          -274.82387964327273
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-street",
+      "light": "night",
+      "file": "terminal-street-night.jpg",
+      "scene": {
+        "id": "terminal-street",
+        "pose": {
+          "x": 1683.6470588235295,
+          "z": -282.5882352941176,
+          "heading": -3.045955076298344,
+          "road": "Phloen Chit / Sukhumvit"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 367,
+        "triangles": 482913,
+        "geometries": 923,
+        "textures": 15,
+        "frameMs": 147.10000000009313,
+        "camera": [
+          1684.391895266779,
+          3.3,
+          -274.82387964327273
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-asok",
+      "light": "sunset",
+      "file": "terminal-asok-sunset.jpg",
+      "scene": {
+        "id": "terminal-asok",
+        "pose": {
+          "x": 1772.8768035516093,
+          "z": -413.69589345172034,
+          "heading": -1.4749744965596405,
+          "road": "Asok Montri / Phetchaburi approach"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 362,
+        "triangles": 465732,
+        "geometries": 1060,
+        "textures": 15,
+        "frameMs": 6244.5,
+        "camera": [
+          1780.641021832351,
+          3.3,
+          -414.44216048770403
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0
+      }
+    },
+    {
+      "id": "terminal-asok",
+      "light": "night",
+      "file": "terminal-asok-night.jpg",
+      "scene": {
+        "id": "terminal-asok",
+        "pose": {
+          "x": 1772.8768035516093,
+          "z": -413.69589345172034,
+          "heading": -1.4749744965596405,
+          "road": "Asok Montri / Phetchaburi approach"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 369,
+        "triangles": 469292,
+        "geometries": 1060,
+        "textures": 15,
+        "frameMs": 49.700000000186265,
+        "camera": [
+          1780.641021832351,
+          3.3,
+          -414.44216048770403
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0
+      }
+    }
+  ],
+  "errors": []
+}

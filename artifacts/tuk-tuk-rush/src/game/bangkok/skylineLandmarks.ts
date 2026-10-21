@@ -82,7 +82,10 @@ function emitMahanakhon(b:LandmarkBuilder,detail:boolean){
   }
   if(detail&&(x===0||x===6||z===0||z===6)&&f%2===0){const y=10+f*fh;
    if(z===0||z===6)b.box((x-3)*cell,y,(z-3)*cell+(z===0?-1:1)*cell/2,cell,.1,.08,'#9bafb4');
-   if((x*3+z+f)%29===0)b.box((x-3)*cell,y+1.4,(z-3)*cell,cell*.7,.55,cell*.7,'#baa584',0,true);
+   if((x*3+z+f)%29===0){
+    if(z===0||z===6)b.box((x-3)*cell,y+1.4,(z===0?-1:1)*(3.5*cell+.035),cell*.6,.8,.045,'#baa584',0,true);
+    if(x===0||x===6)b.box((x===0?-1:1)*(3.5*cell+.035),y+1.4,(z-3)*cell,.045,.8,cell*.6,'#baa584',0,true);
+   }
   }
  }
  const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('normal',new T.Float32BufferAttribute(norm,3));g.setIndex(ix);b.sculpt(g,0,0,0,'#53798b','glass');
