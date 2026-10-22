@@ -185,6 +185,7 @@ const report = {
   preserved: preservation.files.length,
   allRoadAndRiverGeometryIdentical: true,
 };
+fs.mkdirSync(new URL("validation/", out), { recursive: true });
 fs.writeFileSync(
   new URL("validation/clearance.json", out),
   JSON.stringify(report, null, 2) + "\n",
