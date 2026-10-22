@@ -1,0 +1,254 @@
+{
+  "type": "FeatureCollection",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "osm:way/1497639309",
+      "properties": {
+        "kind": "bridge-support",
+        "source": "https://www.openstreetmap.org/way/1497639309",
+        "interpretation": "Overwater structure exclusion, not a natural terrain island"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100.4917115,
+              13.7012104
+            ],
+            [
+              100.4916157,
+              13.7010563
+            ],
+            [
+              100.4916206,
+              13.7010335
+            ],
+            [
+              100.4916483,
+              13.701001
+            ],
+            [
+              100.4916882,
+              13.7009823
+            ],
+            [
+              100.4917288,
+              13.7009885
+            ],
+            [
+              100.4918261,
+              13.7011572
+            ],
+            [
+              100.4918102,
+              13.7011764
+            ],
+            [
+              100.4917405,
+              13.7012168
+            ],
+            [
+              100.4917115,
+              13.7012104
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1497639310",
+      "properties": {
+        "kind": "bridge-support",
+        "source": "https://www.openstreetmap.org/way/1497639310",
+        "interpretation": "Overwater structure exclusion, not a natural terrain island"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100.4923238,
+              13.7008599
+            ],
+            [
+              100.492228,
+              13.7007059
+            ],
+            [
+              100.4922329,
+              13.700683
+            ],
+            [
+              100.4922606,
+              13.7006505
+            ],
+            [
+              100.4923005,
+              13.7006319
+            ],
+            [
+              100.4923411,
+              13.700638
+            ],
+            [
+              100.4924384,
+              13.7008067
+            ],
+            [
+              100.4924225,
+              13.7008259
+            ],
+            [
+              100.4923528,
+              13.7008663
+            ],
+            [
+              100.4923238,
+              13.7008599
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1418240678",
+      "properties": {
+        "kind": "boathouse",
+        "source": "https://www.openstreetmap.org/way/1418240678",
+        "interpretation": "Overwater structure exclusion, not a natural terrain island"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100.5007665,
+              13.773573
+            ],
+            [
+              100.5006946,
+              13.7734398
+            ],
+            [
+              100.5008346,
+              13.7733684
+            ],
+            [
+              100.5009066,
+              13.7735016
+            ],
+            [
+              100.5008903,
+              13.7735099
+            ],
+            [
+              100.5007856,
+              13.7735632
+            ],
+            [
+              100.5007665,
+              13.773573
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1418240679",
+      "properties": {
+        "kind": "boathouse",
+        "source": "https://www.openstreetmap.org/way/1418240679",
+        "interpretation": "Overwater structure exclusion, not a natural terrain island"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100.5008532,
+              13.7737828
+            ],
+            [
+              100.5007577,
+              13.7736137
+            ],
+            [
+              100.5008,
+              13.7735912
+            ],
+            [
+              100.5009017,
+              13.7735371
+            ],
+            [
+              100.5009417,
+              13.7735158
+            ],
+            [
+              100.5010372,
+              13.7736849
+            ],
+            [
+              100.5010218,
+              13.7736931
+            ],
+            [
+              100.5008532,
+              13.7737828
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1422792055",
+      "properties": {
+        "kind": "boathouse",
+        "source": "https://www.openstreetmap.org/way/1422792055",
+        "interpretation": "Overwater structure exclusion, not a natural terrain island"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              100.4974724,
+              13.7734613
+            ],
+            [
+              100.4977194,
+              13.7733793
+            ],
+            [
+              100.4976471,
+              13.773174
+            ],
+            [
+              100.4975276,
+              13.7732137
+            ],
+            [
+              100.4975282,
+              13.7732224
+            ],
+            [
+              100.497403,
+              13.773264
+            ],
+            [
+              100.4974724,
+              13.7734613
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

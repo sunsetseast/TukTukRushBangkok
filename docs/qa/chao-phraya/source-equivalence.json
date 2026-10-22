@@ -1,0 +1,839 @@
+{
+  "capturedRuntimeCommit": "5a68832635ebb219967909ea0d404782944b4bc1",
+  "allRuntimeFilesMatchCapture": true,
+  "publicAssetsUnchangedFromPR35": true,
+  "files": [
+    {
+      "path": "artifacts/tuk-tuk-rush/src/App.tsx",
+      "blob": "373fc03d5547449abbe921275dd81c5a39cbf59a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/error-boundary.tsx",
+      "blob": "b0ed4ff61afac721a6d3309999e56542f9747075"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/accordion.tsx",
+      "blob": "5ad3b624eceb523632608a74ff6ed76a2cb86940"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/alert-dialog.tsx",
+      "blob": "82985dcdbb1ff47c3a814661e49fc52fde9f2200"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/alert.tsx",
+      "blob": "8bdb5e1f2a4021a7d665dbee584dc2acfff78668"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/aspect-ratio.tsx",
+      "blob": "5dfdf1e67a885c95b0e2993d8154c0e9f73ab2c4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/avatar.tsx",
+      "blob": "e1cde8ea04c64b58629003b702a6a451dfbd7135"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/badge.tsx",
+      "blob": "4cd80531fc7f2da8baa3929f6cf53f9d97e6bd52"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/breadcrumb.tsx",
+      "blob": "2e43292d8a56e676c8ac5c9e99feedb6c4f015ba"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/button-group.tsx",
+      "blob": "90c86e4486415caa7ead88d13a6565cd123288be"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/button.tsx",
+      "blob": "87508a551e9f40a7d5e93bb25fa116f0ef8c9386"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/calendar.tsx",
+      "blob": "3686a1b708124cb6044f5643eaedc276788c179f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/card.tsx",
+      "blob": "bc1c974f566d550adf17dca73fbab1b0e4553bca"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/carousel.tsx",
+      "blob": "b705b6b2138133e05ba2666b9ed94f832ccda660"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/chart.tsx",
+      "blob": "b71c184d2aa94ae2c4aac094fd5bd63c0bc76339"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/checkbox.tsx",
+      "blob": "7965822fa0a17015e52952eb858c166889038008"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/collapsible.tsx",
+      "blob": "86ab87d88e06375de0ee5084c3d28f2e2465c8bc"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/command.tsx",
+      "blob": "ddbb486b1949caee42890d712fb52f8f814802c2"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/context-menu.tsx",
+      "blob": "03a6053b34a7770cc541e279ec46289384cc01cd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/dialog.tsx",
+      "blob": "d9593d8532b833dd66fd9b0dcd849c3cb73020cd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/drawer.tsx",
+      "blob": "5b76128b8c31d34e52444b0b5c008b6d35289ad3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/dropdown-menu.tsx",
+      "blob": "6a20e22d0d437c5eb5ffefcece22ce909f880287"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/empty.tsx",
+      "blob": "848baed120db63cba4bfacaba9ed0b5953ad50b9"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/field.tsx",
+      "blob": "768cd1342c9c85a47844a3675b77cdbb0db5ccc4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/form.tsx",
+      "blob": "1c1451f06827a21a2c7f34ddad17c8f946f58cdf"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/hover-card.tsx",
+      "blob": "fde491a0144dd4885fe0d52e458e3e956394c27c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/input-group.tsx",
+      "blob": "c1c2027f0b5fc7a7f5742cf9f7d1057b84a15d8e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/input-otp.tsx",
+      "blob": "571c7d803915728771afcdda8d9c7c9147e2a9af"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/input.tsx",
+      "blob": "e1b9850b4b73fd4e27e9d3c4ee469aab2b5e1b42"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/item.tsx",
+      "blob": "e0948b8db406074f448dbae422f5084ed1f81529"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/kbd.tsx",
+      "blob": "c213d8ab8b7aa02acde6b2925d8e27f3d4d9cfca"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/label.tsx",
+      "blob": "f55bff04799f2d776930c19ec041ac3eb968ceae"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/menubar.tsx",
+      "blob": "f93b746f5578ccdcf3cd1c5a90f835ed657fe067"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/navigation-menu.tsx",
+      "blob": "3c470896d73caa5ad1c2b03550be3b2014894a08"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/pagination.tsx",
+      "blob": "631b0386a45c83a9ffdc2b3683d8745615d534a7"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/popover.tsx",
+      "blob": "dddd6f178bbdee3ccf30d06ae7b9d8ce0d9d151b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/progress.tsx",
+      "blob": "6e759cbb30a6589f569d7fdc7cd7e15f794165e3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/radio-group.tsx",
+      "blob": "f41a4783e715bc2da7066d9a2bfa7e7722210019"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/resizable.tsx",
+      "blob": "7aa8bc4354058c77a724b899d7a4383e29b592a9"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/scroll-area.tsx",
+      "blob": "eec263473cac8ad7e59badae39299380702f68da"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/select.tsx",
+      "blob": "df57107882081ab130aed307a8208c5ed176b122"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/separator.tsx",
+      "blob": "bbc78be61a00868ced168d40600e01b2ad494ba0"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/sheet.tsx",
+      "blob": "655c1cc7f80c1a641327ae65f95bf80680fec803"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/sidebar.tsx",
+      "blob": "be587147aa45a9e2304fa620244392c0d28e455c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/skeleton.tsx",
+      "blob": "cb09f16aa84e12eba069417ad9df183850b868da"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/slider.tsx",
+      "blob": "1f4a44991e41ed2acd4fbad51e80356dc49ba3d7"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/sonner.tsx",
+      "blob": "b38ad1e0d65af2a3c1f37606324fd20292bd2c1d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/spinner.tsx",
+      "blob": "a6a4dea2c72cc03907695783d336f14ab04daabd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/switch.tsx",
+      "blob": "96ad9a00b8064e30da7e8ee95880a17d4606c51f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/table.tsx",
+      "blob": "bcdac4a3184ad3b43bbdede63080bfec9942e39e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/tabs.tsx",
+      "blob": "e9904924c79fa84ddfa94c61f73f6ae3cac3a02d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/textarea.tsx",
+      "blob": "f3d314c3f866e756ed79125fe2116edd01e45c4d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/toast.tsx",
+      "blob": "c291dd959da688ec43acf418a9786bd4233482c6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/toaster.tsx",
+      "blob": "c8c9713a2b442f170235b5a0d5abc419e974fdba"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/toggle-group.tsx",
+      "blob": "4a2071052cf403d818d1df29adf851046a553923"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/toggle.tsx",
+      "blob": "ad58c359b080412bddf66cb5e1a23fc7d57397ad"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/components/ui/tooltip.tsx",
+      "blob": "acdf96b18167238f69ff461e017eae5d68f767f0"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Career.tsx",
+      "blob": "bc67b95403f77083152dbd7d5362b6e1997ca9bd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Controls.tsx",
+      "blob": "1bc7e669d769510fb0e83256562392173032585d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Hud.tsx",
+      "blob": "582e325ae2b813d4cb66d682da0d3fcc880980f2"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Inspection.tsx",
+      "blob": "85c096f415442024f553aa4e92e4e0877d020160"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Menus.tsx",
+      "blob": "461d988056a7d36bf637f1925d05349f55231970"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/Renderer.tsx",
+      "blob": "78e36a2b8f1fc21abb314b2aa81ff81e72d222b4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/assets.ts",
+      "blob": "bc144064730d57fbf19c158adbbdde815818f4f5"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/audio.ts",
+      "blob": "6991a81df06918c10fd67318104346f8803d710f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/CityInspector.tsx",
+      "blob": "148654631a766ae28dbc96fcfa358d26ae90484f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/WorldMap.tsx",
+      "blob": "51740449e8893fd7d705b9afbd261f1013b82473"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/architecturalBatch.ts",
+      "blob": "df0dd62dfb7742de2dcdaa0bd8cc29e7b29c1e42"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/architecture.ts",
+      "blob": "1e191a822e538700311840b936ce94171c30069a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/arrivalDecoration.ts",
+      "blob": "dc88738256da96436b7de0a1f1ff7622a6384954"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/atmosphere.ts",
+      "blob": "3c740f681c63b07b455547ddfc2c1f6c8fec90b2"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/authoredGrounds.ts",
+      "blob": "f6da45a7572a6e8fbb96c5b0f2bbb8f7f6723eac"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/authoredSites.ts",
+      "blob": "5b1f8cbd1ec9a7b2a068f97bbd0454b03c7e1324"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/bridgeArt.ts",
+      "blob": "fb51b3e627b718dfe19fb24de54994bebdbdcbd3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/bridgeBarriers.ts",
+      "blob": "b9e1dd8f6026034ddeae48814c24337e7997e8ec"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/buddhaLandmarks.ts",
+      "blob": "683951343618d73db3be88f7bdf813c3c8db911d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/buildingGrammar.ts",
+      "blob": "0075df2144dda52db1e3dac3f135b5bfdf90f687"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cartography.ts",
+      "blob": "035a64c4505235bfd8ad28fa422ff68129a244cb"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json",
+      "blob": "b483e9c7ec6afb408ed2774d22a1e035cfe2f7c3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityGeometry.ts",
+      "blob": "441a05feb7bccc94deacbe130d09a2e4a877726e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityLayout.ts",
+      "blob": "70f2ab7b53d50244fe07631540747f893ec66e4e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityModel.ts",
+      "blob": "c494f48fb99020ae08765b340da12a52272e303c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityPlaces.ts",
+      "blob": "b91d9c7d6968bba6ac80f18d1bdf8bae8d628928"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityShadows.ts",
+      "blob": "032d20e3bbcffebbb9eeea69d7a84651928f1d16"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/civicRoads.ts",
+      "blob": "61cb250020b4597bbfccd89563d7b637a30c682c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/clearanceIndex.ts",
+      "blob": "0e86218440f5d24c8914fa1e4e523eb23bbaaff6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/commercialDistrictArt.ts",
+      "blob": "ea098b76d38ea32c4e91ae234fc68ba64e4c411f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/convenienceStores.ts",
+      "blob": "61bb447a209536ed2e2c0a96e91ce6a294c20137"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/curatedSigns.ts",
+      "blob": "3ccb370ab3ee300ba4a90754f56413ed45bd291a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/destinationAccess.ts",
+      "blob": "344dc8cd6d1c3f6b2ee9bd33acae5ab12d38b374"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/destinationArt.ts",
+      "blob": "e931e2af2248ad635ec5648dc887ef4879aeae06"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/discovery.ts",
+      "blob": "7d1c757f7d61f37bd5725c7b9323f0f398ce0494"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/districtSigns.ts",
+      "blob": "54c4bb5c12134347b618d19a5e4a349563648b64"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/environmentArt.ts",
+      "blob": "49485e6c6efdd93d50f377ca42cfad13097c8e9b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/environmentCables.ts",
+      "blob": "0d711eb1949a8333a6918d35bdb2d8c5afd33e8f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/environmentEffects.ts",
+      "blob": "9c0ca40eac19ab96ca14ae96dd703ba02498fe63"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/environmentPlan.ts",
+      "blob": "cef75108bf96ab13c59ed15a6bc05276e75d21e1"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/facadeFinish.ts",
+      "blob": "249cd65f835192d820a47e9284f0b9680749e3a2"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/geography.ts",
+      "blob": "4834cc16d0d1d4c4e5a905e6a5afe40ebd46a64b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heritageLandmarks.ts",
+      "blob": "c5cdac534fbee10bb715f3ba758716f9a670b55f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heroArchitecture.ts",
+      "blob": "2c162afae3bf09ca3d9382111073082292e1af09"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heroCraft.ts",
+      "blob": "01c5e67e3d226de150aef9f246dc84837f8c8715"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/historicDistricts.ts",
+      "blob": "ea3c70a19973ee35a173885ff1d08956fbc2bd18"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/historicPlan.ts",
+      "blob": "6e573c05448e6ee2b86c7fd471d8c600a774daf5"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/huaLamphong.ts",
+      "blob": "f30fbdc15ffae9cae432a0aa262d4c146fbb8dfa"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkArchitecture.ts",
+      "blob": "a3a590cc39c3c9de5db4d776409c93ce2e678506"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkBuilder.ts",
+      "blob": "b87acccf1c88c8af5af5a03d4a3799c26d627753"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkContext.ts",
+      "blob": "9052a14645a874041b2ea6a36eb9cab44e8ac0e6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkParcels.ts",
+      "blob": "f192fa830ec71550cb3422fb0c44b69755a1067b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkRegistry.ts",
+      "blob": "adf02283ae12173ab98aad9dc80b6ea868cd780d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkSites.ts",
+      "blob": "e968c765fe779c986a9a21eb19496f218287b685"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkVisibility.ts",
+      "blob": "dfce9af2352d4bc74637f0f4880170963f078010"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landscape.ts",
+      "blob": "f5ca6b220d8c5cfc31a8fe63d5323c166f9d5c08"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/layout.json",
+      "blob": "b3dda819042f057affc1d85077ed956c0c548e92"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/legacyNodeIds.json",
+      "blob": "8baa255f8bb91944c9e069eb5032b0b8be66fc97"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/lighting.ts",
+      "blob": "94445eedbd2d6833e8450d761fe38f564efacf1d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/lumphini-normalized.json",
+      "blob": "67af33b898adb8a5d9dc44d2597d2fd512b08048"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/masterPlan.ts",
+      "blob": "27070372fa118f81003bce2077e5a8a4eedaafd6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/mesh.ts",
+      "blob": "67d6bd54935541a54e66781fb2686e5ecac5a30d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/mrtSurface.ts",
+      "blob": "2f486b9c367bb8fb2da37373c663e25f84934494"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/phromPhong.ts",
+      "blob": "4439527691cd8e4ff2ff1d4d05ab6d5614a9bef9"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/publicSpaceArt.ts",
+      "blob": "654e787a38ce108003fdd70de20a15e214436b95"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/publicSpaces.ts",
+      "blob": "d60d1cd1d222956f5c16cfcae019dddc9bde9f3c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts",
+      "blob": "116da119702fc2a2ac4038c648adb11c536f1ddb"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realCommercial.ts",
+      "blob": "d3512b082fe6262c3c09336fd85ccc3970b37bf1"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realPlaces.ts",
+      "blob": "04810a64c9a4fec292d8a6b3c2f5503f039ca1dd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/riverfront.ts",
+      "blob": "808c3dcd64520b95548b056cad6fea1619ec6b0d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/roadIdentity.ts",
+      "blob": "0cd6c9cc4333521dc9b96e634d4a18c80e383411"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/roadSurfaceGraph.ts",
+      "blob": "833b65f7cfe4ee44ecd9475e315a5f11a7b9f388"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/roadSurfaces.generated.json",
+      "blob": "824b77b8832f5aa07aaf3807ba86b0208653af56"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/sanam-normalized.json",
+      "blob": "8cd1d31df1045e87b8ef074901544d207b515579"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/scala.ts",
+      "blob": "6880e4dc963515925a04ac86d474370ed9a4ee14"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/sculptedLandmarks.ts",
+      "blob": "3b74050df641f5b6a00d89b02f7582130e3b799d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/sculptureGeometry.ts",
+      "blob": "80625196555cbee64eaf2bfe99be552ef7dfc28f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/shopLighting.ts",
+      "blob": "4dbeef851fc05390e0168279bdcf99a07bfd274a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/signPlacement.ts",
+      "blob": "bd7a4045000be7fd8b4b4b8e7d150237ef0add54"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/signage.ts",
+      "blob": "c50937385679fa6b5ce663e221e90064b15eb36c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/skylineLandmarks.ts",
+      "blob": "0e2d37a2da2e53064ad8cdfadf9503ac7ab5938a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/spatialValidation.ts",
+      "blob": "afa91ca2f6a9217595894643ac1a0e5776d888f0"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/stableHash.ts",
+      "blob": "5ac3a1d648ae3bc05c81ecd51c56330e1b9b8d88"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/storeBrand.ts",
+      "blob": "51df064e9f0a243eb1f1bbead97d62190a58fb44"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/streetEdges.ts",
+      "blob": "fca062d73d9785de1a53fdc9224a9fb5db6bf2b4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/streetFabric.ts",
+      "blob": "f3022625a00f1b65ca52dcf35c3e96c8719f9f57"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/streetSurfaces.ts",
+      "blob": "80791a99b119448028a8d10c45c406677fce9dc0"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/templeCraft.ts",
+      "blob": "3f04c07353ec59110556e2d50e5ad258bbf9243f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/transit/art.ts",
+      "blob": "a68596c7687036f7c67e5b488be4ecf1cc74b2c9"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/transit/network.ts",
+      "blob": "f777c50689cfcf3976db6f0849a243e3768bfa22"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/transit/service.ts",
+      "blob": "712887e4038e4b7b1fae50bae6845141f62a3371"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/transit/signs.ts",
+      "blob": "9f08d0c75d263b7a7b058d08958f4cf4700e6a76"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/transit/stationGeometry.ts",
+      "blob": "ebbe906b7824e52f582a44bf64468b7fdbc725ad"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/tropicalPlan.ts",
+      "blob": "3b7faa40b778760098571eb41680c8414939fa4f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/tropicalVegetation.ts",
+      "blob": "617f5d545c725e30600b743e6b7b45a2c2c41649"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/urbanBlocks.ts",
+      "blob": "febde1e3acd78cc77e4fe5012cc3dcc9e8619806"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/urbanCompleteness.ts",
+      "blob": "623ed7cb7f993ee3d88a629d370f0e3921772898"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/urbanLayers.ts",
+      "blob": "4724557c55cd3c51b72d9f88fcfa87056cef098c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/victoryMonument.ts",
+      "blob": "0cf34a449da057ce2518d52bbd27e621d80a5bc4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/watPhoCompound.ts",
+      "blob": "1d31a4c6880dd47421a652d313b6763724949feb"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/waterGeometry.ts",
+      "blob": "56aefe1b068419445763f8c87838271ea1491b96"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/world.ts",
+      "blob": "539319d0435cfcf0be9190bacfc2e1b7f1843cf1"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/yaowarat.ts",
+      "blob": "0e9cbd0611e3d688d5a47882c7724c423b688967"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/yaowaratRoad.ts",
+      "blob": "bd58f3cbd976d80906b37a7d5b5747d59f3f8d74"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/boost.ts",
+      "blob": "9a1019dc08eab8a57b894d8658ccfa3a8f9e9773"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/career.ts",
+      "blob": "dbcddfea56c3c0ad96c00da9686698686adcfce7"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/chaseCamera.ts",
+      "blob": "c624d49872c8ea3723ae37de498e1d1d04d51023"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/cityMesh.ts",
+      "blob": "f3cf20d863b2573ed1582eb12f3ee1b8dbbd03de"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/compactGeometry.ts",
+      "blob": "27515b100c3f4f1c3e02a124964e132137ef4a5a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/contactShadows.ts",
+      "blob": "847afca09db5b9a37a81ffd4d3b9f500ef71c5af"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/engine.ts",
+      "blob": "b77881f99677e50d1f51680c30a3af2940ddf91f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/inspection.ts",
+      "blob": "d4b205f4ce6f85cad93dfbf7618b3ac6ba84591a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/landmarkArt.ts",
+      "blob": "e4732cc6dd4cd4b5f11926245f74fe53bc8d6a2d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/mapData.ts",
+      "blob": "0aa0e317e50f73026872467fe4bf50309f137f72"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/meshUtil.ts",
+      "blob": "c51ac9a17b737624fad2c29e3d2bf4cab2b8e828"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/miniatureFacade.ts",
+      "blob": "cea69a400d393fdcf04da217dd5f3c22a39fc1df"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/missions.ts",
+      "blob": "73ada6599d12f4ee82ee445b8a0e62e0551f6fc3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/navigation.ts",
+      "blob": "9f8fd0eab6f397a497f1a90ca1a75eb2eac92c7f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/roadGeometry.ts",
+      "blob": "dfc7445f3ac0be4f7ab3c06b35bccb38dbcc43c8"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/signArt.ts",
+      "blob": "98cf0fdfc93198e2aea844b1809a5e749f32185e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/signatureCorridor.ts",
+      "blob": "df7e709f57c0b7697491f47fe2b47c99220cd481"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/signatureFacadeArt.ts",
+      "blob": "9a7e0d2d0f37a135e2ad453dfef76f2f0e81919c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/staticBatch.ts",
+      "blob": "3f2ccf7169770f34c1f175b31fec391d7dfabbaa"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/streetLife.ts",
+      "blob": "332037b77028272d5c5eaa9780a8d8f59cf21f01"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/streetscape.ts",
+      "blob": "00bc3a1cdce64270988919c3e245312be6667b11"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/titleCamera.ts",
+      "blob": "090cffe34ba33c28471da7e42cb6b0d76c06596e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/traffic.ts",
+      "blob": "3f1cd19a8edf604b4e2ca4420cf4f7f7170b1dc7"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/trafficMesh.ts",
+      "blob": "9afdf3ef22a75d59f5eaddecf90ee274eba9a1ae"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/tukMesh.ts",
+      "blob": "27e37ef8c9736a465f9e6c36d00e7a8707aa5f88"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/types.ts",
+      "blob": "f0e5118f8fdc400fef9318121ddf2fd702529663"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/ArcadeTitle.tsx",
+      "blob": "191969f495795e2707005b4e2bb665e39dbba396"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/Destination.tsx",
+      "blob": "4c37a85af92f34a5bc50e3cb804e3b9d52f61ba3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/Onboarding.tsx",
+      "blob": "359bda0ff108e61f0a24749b2b6ea666b1ad89bd"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/Surface.tsx",
+      "blob": "a94809ff4c9f575f595cdecfee12a3b4e5224c0f"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/arcade-title.css",
+      "blob": "dff7b3779af3ab652a936eb35000a7280fff0053"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/banner.ts",
+      "blob": "c52c8d74a52d300a288cfc9ca078507309a4c53c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/destinationLabel.ts",
+      "blob": "0f49946b78ff972116ccc7bc5cd6e43ed1919066"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/format.ts",
+      "blob": "1832ded5319c7a392fbc5f7d5c5a1ab661d6e91c"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/mapLabels.ts",
+      "blob": "0b7a8e1f85f7aabd3836270b4169d64f1a45418d"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/night-drive.css",
+      "blob": "955a911e0f5227ae791d909f79bd16193dc4be1e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/preferences.ts",
+      "blob": "d8f1e1c8b6b0a87cfe1356252f0ca9de76c8acf4"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/ui/useMapMotion.ts",
+      "blob": "2345934f2850e6a14e53bd84bbe9def225a36f85"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/vehicle.ts",
+      "blob": "579ff64d8badd92650107427ea01bb84f3f86e99"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/world.ts",
+      "blob": "0997d5eea03940ad92f7d3521085b5df47359a11"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/yaowaratSignLayers.ts",
+      "blob": "cc0b41dc6ac4741705666b225a0f486cac7db833"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/hooks/use-mobile.tsx",
+      "blob": "821f8ff4aa7d77756564f8aecda940d02f2a6c99"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/hooks/use-toast.ts",
+      "blob": "1db1c035ddd39c98c27fe2f84025bebb2d8096ed"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/index.css",
+      "blob": "7edf6bb33dd7d1f28e5b9f457315a561b3e5c328"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/lib/utils.ts",
+      "blob": "17d6d86c73530712ed8c6cadfa586136423b5a9b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/main.tsx",
+      "blob": "eba89cdd676fee794f096adf0766b7d105498a4e"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/pages/not-found.tsx",
+      "blob": "b9d6438a5443d90a364eb29ef34dbaa1e53f70a2"
+    }
+  ]
+}

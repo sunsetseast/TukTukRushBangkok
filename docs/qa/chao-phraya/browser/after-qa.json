@@ -1,0 +1,811 @@
+{
+  "label": "after",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "sharedHost": true,
+  "errors": [],
+  "layouts": [
+    {
+      "width": 375,
+      "height": 812,
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "overflow": false,
+      "canonicalRiverPath": true,
+      "wholePlayableBoundaryVisible": true,
+      "file": "after-map-375x812.jpg"
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932
+      },
+      "overflow": false,
+      "canonicalRiverPath": true,
+      "wholePlayableBoundaryVisible": true,
+      "file": "after-map-430x932.jpg"
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390
+      },
+      "overflow": false,
+      "canonicalRiverPath": true,
+      "wholePlayableBoundaryVisible": true,
+      "file": "after-map-844x390.jpg"
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 800
+      },
+      "overflow": false,
+      "canonicalRiverPath": true,
+      "wholePlayableBoundaryVisible": true,
+      "file": "after-map-1280x800.jpg"
+    }
+  ],
+  "resets": [
+    {
+      "i": 0,
+      "state": {
+        "inspected": true,
+        "override": false,
+        "pose": {
+          "x": 103.75922414816708,
+          "z": -49.360215868999724,
+          "heading": -2.020483893706025,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 361,
+        "triangles": 524787,
+        "geometries": 379,
+        "textures": 12,
+        "frameMs": 293.8999999994412,
+        "glError": 0,
+        "camera": [
+          110.78377120518176,
+          3.3,
+          -45.96967923834871
+        ]
+      },
+      "memory": {
+        "usedSize": 86226516,
+        "totalSize": 87400448,
+        "embedderHeapUsedSize": 2502200,
+        "backingStorageSize": 136025011
+      }
+    },
+    {
+      "i": 1,
+      "state": {
+        "inspected": true,
+        "override": false,
+        "pose": {
+          "x": 103.75922414816708,
+          "z": -49.360215868999724,
+          "heading": -2.020483893706025,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 361,
+        "triangles": 524787,
+        "geometries": 379,
+        "textures": 12,
+        "frameMs": 98,
+        "glError": 0,
+        "camera": [
+          110.78377120518176,
+          3.3,
+          -45.96967923834871
+        ]
+      },
+      "memory": {
+        "usedSize": 86709108,
+        "totalSize": 87924736,
+        "embedderHeapUsedSize": 2909032,
+        "backingStorageSize": 136025031
+      }
+    },
+    {
+      "i": 2,
+      "state": {
+        "inspected": true,
+        "override": false,
+        "pose": {
+          "x": 103.75922414816708,
+          "z": -49.360215868999724,
+          "heading": -2.020483893706025,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        }
+      },
+      "stats": {
+        "calls": 361,
+        "triangles": 524787,
+        "geometries": 379,
+        "textures": 12,
+        "frameMs": 926.7000000001863,
+        "glError": 0,
+        "camera": [
+          110.78377120518176,
+          3.3,
+          -45.96967923834871
+        ]
+      },
+      "memory": {
+        "usedSize": 86394740,
+        "totalSize": 87662592,
+        "embedderHeapUsedSize": 2508760,
+        "backingStorageSize": 136024982
+      }
+    }
+  ],
+  "performance": [
+    {
+      "id": "icon-street",
+      "scene": {
+        "id": "icon-street",
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "look": [
+          -646.9669914110091,
+          10,
+          933.0330085889909
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "viewport": [
+        640,
+        360
+      ],
+      "quality": "medium",
+      "elapsed": 40,
+      "warmupFrames": 8,
+      "samples": [
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 17.399999999441206
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 31.700000000186268
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 26.5
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 455.5
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 3792.0999999996275
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 1021.9000000003726
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 1006
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 950.0999999996275
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 4181.700000000186
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 21.100000000558794
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 169.09999999962747
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 91.09999999962747
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 132.80000000074506
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 286.29999999981374
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 2397
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 755.7999999998137
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 214.79999999981374
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 152.5
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 536.2000000001863
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 561.7000000001863
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 25
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 541.3999999994412
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 983
+        },
+        {
+          "calls": 349,
+          "triangles": 345563,
+          "geometries": 670,
+          "textures": 16,
+          "frameMs": 454.70000000018626
+        }
+      ],
+      "memory": {
+        "usedSize": 85703428,
+        "totalSize": 87400448,
+        "embedderHeapUsedSize": 2617776,
+        "backingStorageSize": 136030394
+      }
+    },
+    {
+      "id": "taksin-driving",
+      "scene": {
+        "id": "taksin-driving",
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "look": [
+          -600,
+          5,
+          1460
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "viewport": [
+        640,
+        360
+      ],
+      "quality": "medium",
+      "elapsed": 40,
+      "warmupFrames": 8,
+      "samples": [
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 33.299999999813735
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 556.2000000001863
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 1193.0999999996275
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 535.4000000003725
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 571.3999999994412
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 540.7999999998137
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 640.1000000005588
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 460.8999999994412
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 29.5
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 746.6000000005588
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 1092.5
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 733.7000000001863
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 581.1999999992549
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 542.6000000005588
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 531.8999999994412
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 506.40000000037253
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 418.79999999981374
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 424.90000000037253
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 898.2000000001863
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 945.6999999992549
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 713.7000000001863
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 736
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 761.2000000001863
+        },
+        {
+          "calls": 334,
+          "triangles": 387893,
+          "geometries": 921,
+          "textures": 16,
+          "frameMs": 782.4000000003725
+        }
+      ],
+      "memory": {
+        "usedSize": 83433464,
+        "totalSize": 91332608,
+        "embedderHeapUsedSize": 2822000,
+        "backingStorageSize": 136037098
+      }
+    },
+    {
+      "id": "oriental-river",
+      "scene": {
+        "id": "oriental-river",
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          24,
+          1040
+        ],
+        "owner": "oriental",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "viewport": [
+        640,
+        360
+      ],
+      "quality": "medium",
+      "elapsed": 40,
+      "warmupFrames": 8,
+      "samples": [
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 144.09999999962747
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 723
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1698.7999999998137
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 69.1000000005588
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1636.699999999255
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 836.4000000003725
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 837.4000000003725
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 788.7999999998137
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 713.8999999994412
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 678
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 625.1000000005588
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 658.8999999994412
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 731.2000000001863
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1319.9000000003725
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1437.2999999998137
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 29.90000000037253
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1958.5
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1052.8999999994412
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1079.1000000005588
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1035.5
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 997.3999999994412
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 1037.6000000005588
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 905.5999999996275
+        },
+        {
+          "calls": 396,
+          "triangles": 529893,
+          "geometries": 1225,
+          "textures": 16,
+          "frameMs": 953.7000000001863
+        }
+      ],
+      "memory": {
+        "usedSize": 84028828,
+        "totalSize": 91332608,
+        "embedderHeapUsedSize": 3070336,
+        "backingStorageSize": 136043720
+      }
+    }
+  ],
+  "recovery": {
+    "old": {
+      "x": -510.8409999999999,
+      "z": 1769.5900000000001
+    },
+    "recovered": {
+      "x": -403.04551457445945,
+      "z": 1991.3903587774066,
+      "heading": -1.6019971902296495,
+      "speed": 0,
+      "steer": 0,
+      "lean": 0,
+      "wheelSpin": 0,
+      "collision": 0
+    },
+    "sameProgress": true,
+    "sameMission": true,
+    "sameDeliveries": true,
+    "cameraReset": true
+  },
+  "performanceSourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1",
+  "performanceProtocol": "Fresh browser context, 3 matched cameras, no prior layout/restart warmup",
+  "layoutAndRestartSourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+}

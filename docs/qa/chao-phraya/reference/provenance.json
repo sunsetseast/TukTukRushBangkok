@@ -1,0 +1,40 @@
+{
+  "retrieval": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/relation/14038959/full",
+      "retrievedAtUTC": "2026-10-22T13:16:46.374155+00:00",
+      "rawSha256": "0b576f4f01bd27c0294efeaf572b977dd8ba09270c8411f4a7b49d03ad20b260",
+      "rawBytes": 255232,
+      "method": "Complete OSM multipolygon relation with member-way node topology; no contributor metadata retained."
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/relation/14038958/full",
+      "retrievedAtUTC": "2026-10-22T13:19:35.962549+00:00",
+      "rawSha256": "8199adff6da882875aafad8fe3e2f4f8a2aa04b791bd338ee2af03a1cfdfb882",
+      "rawBytes": 242749,
+      "method": "Complete OSM multipolygon relation with member-way node topology; no contributor metadata retained."
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/relation/18576208/full",
+      "retrievedAtUTC": "2026-10-22T13:19:35.924583+00:00",
+      "rawSha256": "ec88060ce3fd6f1fcb37d18590f609b1eb145bbb1d2828eaa6e3518c20def1ec",
+      "rawBytes": 168802,
+      "method": "Complete OSM multipolygon relation with member-way node topology; no contributor metadata retained."
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/relation/227317/full",
+      "rawSha256": "df10f8dae73228ba79a7e002ad3d4adf089c7dd4ff0f5140d38659a8683b38f1",
+      "rawBytes": 509760,
+      "retrievedAtUTC": "2026-10-22T13:21:02.913695+00:00",
+      "method": "Complete main-stream way-member relation; dissolved and clipped to bounded river reference"
+    }
+  ],
+  "legacyRiverbankQueryInvestigated": true,
+  "modernTag": "natural=water + water=river",
+  "overpassAttempt": "overpass-api.de returned 502; overpass.kumi.systems timed out; used OSM API relation/full and bbox discovery",
+  "software": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "shapely": "2.2.0"
+  }
+}

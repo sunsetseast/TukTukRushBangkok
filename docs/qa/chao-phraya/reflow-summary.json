@@ -1,0 +1,178 @@
+{
+  "before": 7086,
+  "after": 7205,
+  "removed": 258,
+  "added": 377,
+  "fartherThan400FromNewBank": [
+    {
+      "id": "infill:rear:4137957985",
+      "key": "-1234.8198:-2303.5211:18.0000:13.0000:1.6421",
+      "distance": 418.17
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-8:0",
+      "key": "-239.5531:-453.3947:19.0000:20.0000:-0.4939",
+      "distance": 677.24
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-8:1",
+      "key": "-238.9103:-479.0347:29.4500:13.9200:-0.4939",
+      "distance": 699.94
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-9:0",
+      "key": "-289.4756:-486.4267:19.0000:24.0000:0.3588",
+      "distance": 680.27
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-9:1",
+      "key": "-267.0693:-492.6931:19.0000:20.0000:0.3588",
+      "distance": 697.42
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-29:-11:1",
+      "key": "-1676.3865:-616.7486:32.5500:15.6600:1.5283",
+      "distance": 410.66
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-30:-11:0",
+      "key": "-1702.4181:-605.0347:21.0000:27.0000:1.5283",
+      "distance": 439.09
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-30:-11:1",
+      "key": "-1699.3307:-630.5466:21.0000:23.0000:1.5283",
+      "distance": 427.82
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-30:-11:2",
+      "key": "-1725.3422:-618.8318:32.5500:15.6600:1.5283",
+      "distance": 456.24
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-29:-10:0",
+      "key": "-1655.8153:-547.6574:21.0000:27.0000:1.5283",
+      "distance": 405.09
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-29:-10:1",
+      "key": "-1678.7395:-561.4545:32.5500:15.6600:1.5283",
+      "distance": 425.91
+    },
+    {
+      "id": "urban-block:thonburi-blocks:-30:-10:0",
+      "key": "-1704.7710:-549.7406:21.0000:27.0000:1.5283",
+      "distance": 453.3
+    },
+    {
+      "id": "street-infill:2495114993",
+      "key": "-194.4707:-109.9056:18.0000:12.0000:1.3397",
+      "distance": 450.83
+    },
+    {
+      "id": "street-infill:3856946512",
+      "key": "-202.6758:-75.0338:18.0000:12.0000:1.3397",
+      "distance": 423.61
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:1:0",
+      "key": "-55.9761:97.8395:17.0000:26.0000:2.6919",
+      "distance": 470.44
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:1:1",
+      "key": "-73.7848:87.0230:17.0000:22.0000:2.6919",
+      "distance": 456.51
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:1:2",
+      "key": "-75.1477:113.7030:26.3500:15.0800:2.6919",
+      "distance": 447.79
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:0:-3:0",
+      "key": "38.6802:-184.7268:26.3500:15.0800:-0.4497",
+      "distance": 684.25
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:0:0",
+      "key": "-78.3542:57.7462:26.3500:15.0800:2.6919",
+      "distance": 461.99
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:0:-5:0",
+      "key": "52.4264:-275.8064:26.3500:15.0800:-0.4497",
+      "distance": 747.89
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-1:-4:0",
+      "key": "-10.3318:-208.3834:26.3500:15.0800:-0.4497",
+      "distance": 657.66
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:-2:0",
+      "key": "-69.9424:-61.0253:17.0000:26.0000:2.6919",
+      "distance": 524.22
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-3:0:0",
+      "key": "-129.4941:62.3546:17.0000:26.0000:2.6919",
+      "distance": 412.93
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-3:0:1",
+      "key": "-147.3029:51.5381:17.0000:22.0000:2.6919",
+      "distance": 401.22
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-1:-5:0",
+      "key": "2.0515:-272.7830:17.0000:22.0000:-0.4497",
+      "distance": 705.98
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-1:-6:0",
+      "key": "-40.2633:-295.4278:17.0000:26.0000:-0.4497",
+      "distance": 686.22
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-4:-2:0",
+      "key": "-204.0319:-81.3306:17.0000:22.0000:2.6919",
+      "distance": 426.12
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-4:-3:0",
+      "key": "-194.8723:-121.5460:17.0000:26.0000:2.6477",
+      "distance": 457.73
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-4:-8:0",
+      "key": "-236.7972:-454.1822:17.0000:26.0000:-0.4939",
+      "distance": 679.29
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-7:-4:0",
+      "key": "-386.4211:-226.9592:17.0000:22.0000:2.6477",
+      "distance": 408.09
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-9:0",
+      "key": "-260.0532:-490.4193:29.4500:13.9200:-0.4939",
+      "distance": 699.3
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-7:-8:0",
+      "key": "-364.2116:-456.2647:17.0000:22.0000:0.3588",
+      "distance": 617.06
+    },
+    {
+      "id": "urban-block:yaowarat-blocks:-2:-5:0",
+      "key": "-89.7944:-236.9700:26.3500:15.0800:2.6941",
+      "distance": 611.14
+    },
+    {
+      "id": "urban-block:old-town-blocks:-5:-8:0",
+      "key": "-281.6115:-475.4677:19.0000:20.0000:1.9656",
+      "distance": 675.08
+    }
+  ]
+}

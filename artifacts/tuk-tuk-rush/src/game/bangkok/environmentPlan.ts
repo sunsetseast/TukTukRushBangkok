@@ -1,10 +1,11 @@
+import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
 import type { District, Obstacle, Point } from "../types";
 import {
   distanceToSegment,
   orientedFootprintsOverlap,
   obstacleDistance,
 } from "../world";
-import { riverDistance, regionAt } from "./world";
+import { regionAt } from "./world";
 import { stableHash } from "./buildingGrammar";
 import { degreeMap } from "../roadGeometry";
 import { inDestinationGrounds } from './destinationAccess';
@@ -92,7 +93,7 @@ export function placementIndex(d: District) {
     const radius = Math.hypot(o.w, o.d) / 2,
       q = nearby(o, radius + 2);
     return (
-      riverDistance(d, o) > d.riverWidth! / 2 + radius + 2 &&
+      riverClearance(d, o) > radius + 2 &&
       !(d.canals??[]).some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(o,c.points[i]!,b).distance<c.width/2+radius+2)) &&
       [...q.os].every((b) => !orientedFootprintsOverlap(o, b, 0.6)) &&
       [...q.rs].every((i) => {

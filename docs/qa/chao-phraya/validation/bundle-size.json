@@ -1,0 +1,34 @@
+{
+  "before": {
+    "sourceCommit": "9cfac02c7ccc960b2e153f407e0a6543d44b5a19",
+    "initialLargest": {
+      "file": "index-CwRIVK_Q.js",
+      "bytes": 2182994,
+      "gzipBytes": 702678
+    },
+    "totalGzipBytes": 702678,
+    "chunks": [
+      {
+        "file": "index-CwRIVK_Q.js",
+        "bytes": 2182994,
+        "gzipBytes": 702678
+      }
+    ]
+  },
+  "after": {
+    "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1",
+    "initialLargest": {
+      "file": "index-DIBAF-Df.js",
+      "bytes": 2256850,
+      "gzipBytes": 733940
+    },
+    "totalGzipBytes": 733940,
+    "chunks": [
+      {
+        "file": "index-DIBAF-Df.js",
+        "bytes": 2256850,
+        "gzipBytes": 733940
+      }
+    ]
+  }
+}

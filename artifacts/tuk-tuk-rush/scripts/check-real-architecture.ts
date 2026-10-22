@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import * as T from 'three';
@@ -38,7 +39,7 @@ assert(mp('hilton').y<mp('icon').y&&mp('peninsula').y>mp('icon').y);
 assert(mp('oriental').y<mp('shangri').y&&mp('capella').y<mp('four-seasons').y);
 assert(mp('embassy').x<mp('rosewood').x&&mp('jim-thompson').x<mp('siam-center').x);
 const newRoads=d.roads.filter(r=>r.corridor?.startsWith('real-arrival:'));
-for(const r of newRoads){const a=nodes.get(r.a)!,b=nodes.get(r.b)!;for(let i=0;i<=8;i++){const t=i/8,p={x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t};assert(riverDistance(d,p)>d.riverWidth!/2+2);assert(d.obstacles.every(o=>obstacleDistance(p,o)>2),`Driveway blocked: ${r.name}`);}}
+for(const r of newRoads){const a=nodes.get(r.a)!,b=nodes.get(r.b)!;for(let i=0;i<=8;i++){const t=i/8,p={x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t};assert(riverClearance(d,p)>2);assert(d.obstacles.every(o=>obstacleDistance(p,o)>2),`Driveway blocked: ${r.name}`);}}
 const edges=auditStreetEdges(d),open=edges.filter(s=>s.kind==='open'),root=new URL('../../../docs/qa/real-bangkok-architecture/',import.meta.url);fs.mkdirSync(root,{recursive:true});
 fs.writeFileSync(new URL('asset-budgets.json',root),JSON.stringify(models,null,2));
 fs.writeFileSync(new URL('remaining-edges.json',root),JSON.stringify(open.map(s=>({roadIndex:s.roadIndex,corridor:s.road.corridor,point:s.point,map:toMap(s.point),outward:s.outward,status:'unresolved-open-ray',note:'Not reclassified as a park/compound without physical evidence.'})),null,2));

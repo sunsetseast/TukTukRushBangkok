@@ -1,0 +1,140 @@
+{
+  "version": "chao-phraya-osm-v2",
+  "baseCommit": "9cfac02c7ccc960b2e153f407e0a6543d44b5a19",
+  "oldApproval": {
+    "version": 1,
+    "key": "1652953968",
+    "roads": 2089,
+    "nodes": 2036,
+    "sourceStages": [
+      "layout-v1",
+      "master-plan-v3",
+      "civic",
+      "public-space",
+      "historic-pr32"
+    ],
+    "status": "approved-arcade-network",
+    "geographicConfidence": "interpreted-compressed; not cadastral",
+    "fullGraphKey": 1950347083
+  },
+  "newApproval": {
+    "key": "1314511305",
+    "fullGraphKey": 3918878619,
+    "roads": 2087,
+    "nodes": 2034
+  },
+  "changedNodes": [
+    {
+      "x": -386.6693928609692,
+      "z": 2003.299289780018,
+      "id": "arrival:asiatique:loop0",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -394.44737612324366,
+      "z": 1991.6587152077823,
+      "id": "arrival:asiatique:loop1",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -403.04551457445945,
+      "z": 1991.3903587774066,
+      "id": "arrival:asiatique:loop2",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -414.6860891466951,
+      "z": 1999.1683420396812,
+      "id": "arrival:asiatique:loop3",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -417.7285252677149,
+      "z": 2007.214681732331,
+      "id": "arrival:asiatique:loop4",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -409.9505420054405,
+      "z": 2018.8552563045666,
+      "id": "arrival:asiatique:loop5",
+      "name": "Asiatique · visitor arrival"
+    },
+    {
+      "x": -373.3346964304846,
+      "z": 2001.6496448900089,
+      "id": "arrival:asiatique:drive1",
+      "name": "Asiatique · visitor arrival"
+    }
+  ],
+  "addedRoads": [
+    {
+      "a": "bkk:1133",
+      "b": "arrival:asiatique:drive1",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    },
+    {
+      "a": "arrival:asiatique:drive1",
+      "b": "arrival:asiatique:loop0",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    }
+  ],
+  "removedRoads": [
+    {
+      "a": "bkk:1128",
+      "b": "arrival:asiatique:drive1",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    },
+    {
+      "a": "arrival:asiatique:drive1",
+      "b": "arrival:asiatique:drive2",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    },
+    {
+      "a": "arrival:asiatique:drive2",
+      "b": "arrival:asiatique:drive3",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    },
+    {
+      "a": "arrival:asiatique:drive3",
+      "b": "arrival:asiatique:loop0",
+      "bridge": false,
+      "width": 12,
+      "name": "Asiatique entrance",
+      "destinationId": "asiatique",
+      "corridor": "arrival:asiatique",
+      "noTraffic": true,
+      "surface": "arrival"
+    }
+  ]
+}

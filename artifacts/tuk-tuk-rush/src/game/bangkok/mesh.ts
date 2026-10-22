@@ -1,3 +1,4 @@
+import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
 import { HISTORIC_PLAN } from './historicPlan';
 import { emitHuaGrounds } from './huaLamphong';
 import { emitLandmarkApproaches } from './landmarkParcels';
@@ -43,7 +44,6 @@ import { buildLandmarkArt } from "../landmarkArt";
 import { emitDistrictArchitecture } from "./architecture";
 import { designBuildings } from "./buildingGrammar";
 import { emitUrbanLayers } from "./urbanLayers";
-import { riverDistance } from "./world";
 import { ArchitecturalBatch, type ArtPiece } from "./architecturalBatch";
 import { buildBangkokSigns } from "./signage";
 import { buildCommercialLandmark } from "./landmarkArchitecture";
@@ -59,7 +59,7 @@ export function buildBangkokGraybox(
 } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
-  const ground = new T.Mesh(channelGeometry("land"), landscapeMaterial());
+  const ground = new T.Mesh(channelGeometry("land",d), landscapeMaterial());
   ground.name = "DevelopedLand";
   group.add(ground);
   const batch = new StaticBatch(),
@@ -140,7 +140,7 @@ export function buildBangkokGraybox(
   );
   const waterStyle = riverWater();
   const waterSurface = new T.Mesh(
-    channelGeometry("water"),
+    channelGeometry("water",d),
     waterStyle.material,
   );
   waterSurface.name = "BangkokChannels";
@@ -232,8 +232,7 @@ export function buildBangkokGraybox(
     const site = l.plot!,
       size = l.size!;
     const plaza =
-      riverDistance(d, site) >
-      d.riverWidth! / 2 + ((size + 24) * Math.SQRT2) / 2 + 3
+      riverClearance(d, site) > ((size + 24) * Math.SQRT2) / 2 + 3
         ? size + 24
         : size;
     architecture.add({

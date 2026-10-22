@@ -1,3 +1,4 @@
+import {nearestRiverShore} from './waterGeometry';
 import type { District, Landmark, Obstacle, Point } from "../types";
 import { distanceToSegment } from "../world";
 import {
@@ -86,9 +87,9 @@ export function historicFeatureSightlines(d: District): Sightline[] {
   });
   for(const id of ['palace','pho']) {
     const l=d.landmarks.find(l=>l.id===id)!,center=l.plot!,target={x:center.x,y:id==='palace'?32:18,z:center.z};
-    const river=d.river!.slice(1).map((b,i)=>distanceToSegment(center,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!,off=d.riverWidth!/2-8;
+    const shore=nearestRiverShore(d,center);
     for(const viewpoint of ['river','elevated'] as const) {
-      const from=viewpoint==='river'?{x:river.point.x+(center.x-river.point.x)/river.distance*off,z:river.point.z+(center.z-river.point.z)/river.distance*off,y:3.4}:{x:center.x+180,z:center.z+210,y:160};
+      const from=viewpoint==='river'?{x:shore.point.x-shore.nx*8,z:shore.point.z-shore.nz*8,y:3.4}:{x:center.x+180,z:center.z+210,y:160};
       extra.push({id:`feature:${id}:${viewpoint}`,landmarkId:id,from,target,approach:viewpoint,outwardYaw:Math.atan2(from.x-target.x,from.z-target.z),feature:'landmark',viewpoint});
     }
   }

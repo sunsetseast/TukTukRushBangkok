@@ -1,6 +1,7 @@
 import { insidePublicPolygon } from "./publicSpaces";
 import type { District, Point } from "../types";
 import { regionAt, SCALE, toMap } from "./world";
+import {riverPolygonPath} from './waterGeometry';
 const cache = new WeakMap<District, ReturnType<typeof build>>();
 const points = (ps: Point[]) =>
   ps
@@ -82,6 +83,7 @@ function build(d: District) {
     })),
     footprints,
     river: points(d.river ?? []),
+    riverPolygon: riverPolygonPath(d,true),
     canals: d.canals?.map((c) => points(c.points)),
     regions: d.regions?.map((r) => points(r.polygon)),
     transit: d.transit?.lines.map((l) => points(l.samples)),

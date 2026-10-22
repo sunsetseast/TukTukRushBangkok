@@ -1,0 +1,55 @@
+[
+  {
+    "id": "icon-street",
+    "camera": [
+      -760.9498914617022,
+      8,
+      910.3604000991086
+    ],
+    "look": [
+      -646.9669914110091,
+      10,
+      933.0330085889909
+    ],
+    "owner": "icon",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "taksin-driving",
+    "camera": [
+      -220,
+      5,
+      1460
+    ],
+    "look": [
+      -600,
+      5,
+      1460
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "oriental-river",
+    "camera": [
+      -320,
+      32,
+      1040
+    ],
+    "look": [
+      -200,
+      24,
+      1040
+    ],
+    "owner": "oriental",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  }
+]

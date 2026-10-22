@@ -1,3 +1,4 @@
+import {inRiverWater} from './waterGeometry';
 import {victoryPublicGround} from './civicRoads';
 import {insidePublicPolygon} from './publicSpaces';
 import type { District, Obstacle, Point, Road } from "../types";
@@ -129,7 +130,7 @@ export function auditStreetEdges(d: District, spacing = 12): StreetEdge[] {
     buildings = new Set(d.buildings),
     result: StreetEdge[] = [],
     waters = [
-      ...(d.river ? [{ points: d.river, width: d.riverWidth! }] : []),
+      
       ...(d.canals ?? []),
     ],
     parks = d.obstacles.filter((o) => o.protected),
@@ -205,7 +206,7 @@ export function auditStreetEdges(d: District, spacing = 12): StreetEdge[] {
             break;
           }
           if (
-            waters.some((w) =>
+            inRiverWater(d,p) || waters.some((w) =>
               w.points
                 .slice(1)
                 .some(

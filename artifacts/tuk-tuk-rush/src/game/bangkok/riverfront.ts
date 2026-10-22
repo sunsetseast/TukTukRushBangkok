@@ -1,10 +1,11 @@
 import * as T from "three";
 import type { District, Point } from "../types";
-import { riverDistance, blockedByRiver } from "./world";
-import { distanceToSegment } from "../world";
+import { blockedByRiver } from "./world";
+import { obstacleDistance, distanceToSegment } from "../world";
 import { LandmarkBuilder } from "./landmarkBuilder";
 import { PHO_PIER_PASSAGE } from './historicPlan';
 import type { ArtPiece } from "./architecturalBatch";
+import {riverClearance,nearestRiverShore,riverBank,inRiverWater} from './waterGeometry';
 export type BoatRoute = {
   center: Point;
   dx: number;
@@ -12,18 +13,59 @@ export type BoatRoute = {
   length: number;
   phase: number;
   period: number;
+  path?: Point[];
+  loop?: boolean;
 };
 /** Shared emitted/map locations; compressed scenic stops, not boat gameplay. */
-export function riverPiers(d:District){
+function computeRiverPiers(d:District){
   const anchors=d.landmarks.filter(l=>['arun','pho','icon','asiatique','river-city','oriental','shangri','hilton','peninsula'].includes(l.id!)).map(l=>({id:l.id!,name:`${l.name} pier`,point:l.plot!}));
   const palace=d.landmarks.find(l=>l.id==='palace');
   if(palace?.plot)anchors.push({id:'tha-chang',name:'Tha Chang public landing',point:{x:palace.plot.x-95,z:palace.plot.z-108}});
-  const pho=anchors.find(a=>a.id==='pho');if(pho)pho.name='Tha Tien ferry landing';
+  const pho=anchors.find(a=>a.id==='pho');if(pho){pho.name='Tha Tien ferry landing';pho.point=PHO_PIER_PASSAGE.to;}
   const station=d.transit?.lines.flatMap(l=>l.stations).find(s=>s.code==='S6');if(station)anchors.push({id:'sathorn',name:'Sathorn river pier',point:station});
-  const nodes=new Map(d.nodes.map(n=>[n.id,n])),song=d.roads.filter(r=>r.corridor==='songwat').flatMap(r=>[nodes.get(r.a)!,nodes.get(r.b)!]).sort((a,b)=>riverDistance(d,a)-riverDistance(d,b))[0];if(song)anchors.push({id:'songwat',name:'Song Wat river landing',point:song});
-  return anchors.map(anchor=>{const nearest=d.river!.slice(1).map((b,i)=>distanceToSegment(anchor.point,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!,dx=anchor.point.x-nearest.point.x,dz=anchor.point.z-nearest.point.z,len=Math.hypot(dx,dz),nx=dx/len,nz=dz/len;return {...anchor,x:nearest.point.x+nx*(d.riverWidth!/2-9),z:nearest.point.z+nz*(d.riverWidth!/2-9),nx,nz,yaw:Math.atan2(nx,nz)+Math.PI/2};}).filter(p=>!d.roads.some(r=>distanceToSegment(p,nodes.get(r.a)!,nodes.get(r.b)!).distance<r.width/2+14));
+  const nodes=new Map(d.nodes.map(n=>[n.id,n])),song=d.roads.filter(r=>r.corridor==='songwat').flatMap(r=>[nodes.get(r.a)!,nodes.get(r.b)!]).sort((a,b)=>riverClearance(d,a)-riverClearance(d,b))[0];if(song)anchors.push({id:'songwat',name:'Song Wat river landing',point:song});
+  return anchors.map(anchor=>{
+    let best:ReturnType<typeof nearestRiverShore>|undefined,score=Infinity;
+    const expected=riverBank(d,anchor.point);
+    for(const ring of d.riverPolygon??[])for(let i=1;i<ring.length;i++){
+      const a=ring[i-1]!,b=ring[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);if(len<22)continue;
+      const projection=distanceToSegment(anchor.point,a,b),t=Math.max(11/len,Math.min(1-11/len,projection.t)),shore={x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t};
+      let nx=(b.z-a.z)/len,nz=-(b.x-a.x)/len;
+      const mid={x:(a.x+b.x)/2,z:(a.z+b.z)/2};if(inRiverWater(d,{x:mid.x+nx*.1,z:mid.z+nz*.1})){nx=-nx;nz=-nz;}
+      const water={x:shore.x-nx*9,z:shore.z-nz*9},land={x:shore.x+nx*8,z:shore.z+nz*8};
+      const distance=Math.hypot(shore.x-anchor.point.x,shore.z-anchor.point.z);
+      if(distance>=score||riverBank(d,land)!==expected||!inRiverWater(d,water)||inRiverWater(d,land))continue;
+      if(d.roads.some(r=>distanceToSegment(water,nodes.get(r.a)!,nodes.get(r.b)!).distance<r.width/2+14))continue;
+      if([-8,8].some(v=>!inRiverWater(d,{x:water.x+nz*v,z:water.z-nx*v})))continue;
+      if(anchor.id==='pho'||anchor.id==='tha-chang'){
+        const end=anchor.id==='pho'?PHO_PIER_PASSAGE.to:{x:-1008,z:-1060};
+        const nearby=d.buildings.filter(b=>distanceToSegment(b,water,end).distance<Math.hypot(b.w,b.d)/2+3);
+        if(Array.from({length:41},(_,j)=>({x:water.x+(end.x-water.x)*j/40,z:water.z+(end.z-water.z)*j/40})).some(p=>nearby.some(b=>obstacleDistance(p,b)<2.75)))continue;
+      }
+
+      best={point:shore,distance,nx,nz};score=distance;
+    }
+    if(!best)throw Error('No connected river landing: '+anchor.id);
+    const {nx,nz}=best;return {...anchor,x:best.point.x-nx*9,z:best.point.z-nz*9,nx,nz,shore:best.point,bank:expected,yaw:Math.atan2(nx,nz)+Math.PI/2};
+  });
+}
+const boatPathCache=new WeakMap<BoatRoute,{lengths:number[];total:number}>();
+const pierCache=new WeakMap<District,{buildings:number;roads:number;polygon:District['riverPolygon'];piers:ReturnType<typeof computeRiverPiers>}>();
+export function riverPiers(d:District){
+  let cached=pierCache.get(d);
+  if(!cached||cached.buildings!==d.buildings.length||cached.roads!==d.roads.length||cached.polygon!==d.riverPolygon){cached={buildings:d.buildings.length,roads:d.roads.length,polygon:d.riverPolygon,piers:computeRiverPiers(d)};pierCache.set(d,cached);}
+  return cached.piers;
 }
 export function boatPose(r: BoatRoute, time: number) {
+  if(r.path){
+    const path=r.path;
+    let metrics=boatPathCache.get(r);
+    if(!metrics){const lengths=path.slice(1).map((p,i)=>Math.hypot(p.x-path[i]!.x,p.z-path[i]!.z));metrics={lengths,total:lengths.reduce((a,b)=>a+b,0)};boatPathCache.set(r,metrics);}
+    const {lengths,total}=metrics,phase=(time/r.period+r.phase)*Math.PI*2,t=r.loop?((time/r.period+r.phase)%1+1)%1*total:(Math.sin(phase)*.5+.5)*total;
+    const at=(s:number)=>{let n=r.loop?((s%total)+total)%total:Math.max(0,Math.min(total,s));for(let i=0;i<lengths.length;i++){const len=lengths[i]!,a=path[i]!,b=path[i+1]!;if(n<=len||i===lengths.length-1){const f=Math.min(1,n/len);return{x:a.x+(b.x-a.x)*f,z:a.z+(b.z-a.z)*f};}n-=len;}return path[0]!;};
+    const p=at(t),a=at(t-4),b=at(t+4),direction=r.loop||Math.cos(phase)>=0?1:-1;
+    return{...p,heading:Math.atan2((b.x-a.x)*direction,(b.z-a.z)*direction)};
+  }
   const a = (time / r.period + r.phase) * Math.PI * 2,
     t = Math.sin(a) * r.length,
     s = Math.cos(a) * 8,
@@ -35,12 +77,41 @@ export function boatPose(r: BoatRoute, time: number) {
     heading: Math.atan2(vx, vz),
   };
 }
+function nearRiverStructure(d:District,p:Point,radius:number){
+  return (d.riverStructures??[]).some(r=>{
+    let inside=false;for(let i=1;i<r.length;i++){const a=r[i-1]!,b=r[i]!;if(distanceToSegment(p,a,b).distance<radius)return true;if((a.z>p.z)!==(b.z>p.z)&&p.x<(b.x-a.x)*(p.z-a.z)/(b.z-a.z)+a.x)inside=!inside;}return inside;
+  });
+}
 export function boatRoutes(d: District) {
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     bridges = d.roads
       .filter((r) => r.bridge)
       .map((r) => ({ r, a: nodes.get(r.a)!, b: nodes.get(r.b)! })),
     routes: BoatRoute[] = [];
+  if(d.riverPolygon){
+    const samples:Point[]=[];
+    for(let i=1;i<d.river!.length;i++){const a=d.river![i-1]!,b=d.river![i]!,len=Math.hypot(b.x-a.x,b.z-a.z);for(let j=0;j<Math.ceil(len/8);j++){const t=j/Math.ceil(len/8);samples.push({x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t});}}
+    for(let k=0;k<7;k++){
+      const desired=Math.floor((k+.5)*samples.length/7);
+      for(let offset=0;offset<100;offset++){
+        const start=Math.max(0,Math.min(samples.length-19,desired+offset-45)),path=samples.slice(start,start+18);
+        if(path.length<18||!path.every(p=>riverClearance(d,p)<-30&&!nearRiverStructure(d,p,30)&&bridges.every(b=>distanceToSegment(p,b.a,b.b).distance>b.r.width/2+25)))continue;
+        if(routes.some(r=>Math.hypot(r.center.x-path[8]!.x,r.center.z-path[8]!.z)<100))continue;
+        // Parallel lanes and rounded end turns form a continuous ambient loop;
+        // boats do not snap through a 180-degree heading at a ping-pong end.
+        const tangents=path.map((p,i)=>{const a=path[Math.max(0,i-1)]!,b=path[Math.min(path.length-1,i+1)]!,len=Math.hypot(b.x-a.x,b.z-a.z);return{x:(b.x-a.x)/len,z:(b.z-a.z)/len};});
+        const loop=path.map((p,i)=>({x:p.x+tangents[i]!.z*10,z:p.z-tangents[i]!.x*10}));
+        const end=path.at(-1)!,forward=tangents.at(-1)!;
+        for(let j=1;j<=10;j++){const a=j*Math.PI/10;loop.push({x:end.x+forward.z*10*Math.cos(a)+forward.x*10*Math.sin(a),z:end.z-forward.x*10*Math.cos(a)+forward.z*10*Math.sin(a)});}
+        loop.push(...path.map((p,i)=>({x:p.x-tangents[i]!.z*10,z:p.z+tangents[i]!.x*10})).reverse().slice(1));
+        const startPoint=path[0]!,back=tangents[0]!;
+        for(let j=1;j<=10;j++){const a=j*Math.PI/10;loop.push({x:startPoint.x-back.z*10*Math.cos(a)-back.x*10*Math.sin(a),z:startPoint.z+back.x*10*Math.cos(a)-back.z*10*Math.sin(a)});}
+        if(!loop.every(p=>riverClearance(d,p)<-15&&!nearRiverStructure(d,p,15)&&bridges.every(b=>distanceToSegment(p,b.a,b.b).distance>b.r.width/2+18)))continue;
+        routes.push({center:path[8]!,dx:0,dz:1,length:60,phase:k*.137,period:125+k*7,path:loop,loop:true});break;
+      }
+    }
+    return routes;
+  }
   for (let i = 1; i < d.river!.length - 2 && routes.length < 7; i++) {
     const a = d.river![i]!,
       b = d.river![i + 1]!,
@@ -61,7 +132,7 @@ export function boatRoutes(d: District) {
           boatPose(r, (j * r.period) / 256),
         ).every(
           (p) =>
-            riverDistance(d, p) < d.riverWidth! / 2 - 17 &&
+            riverClearance(d, p) < -17 &&
             bridges.every(
               (b) =>
                 distanceToSegment(p, b.a, b.b).distance > b.r.width / 2 + 18,
@@ -222,42 +293,34 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
     color: string,
     yaw = 0,
   ) => emit({ ...p, y, w, h, d: depth, color, yaw, surface: "concrete" });
-  for (let i = 1; i < d.river!.length; i++) {
-    const a = d.river![i - 1]!,
-      b = d.river![i]!,
-      len = Math.hypot(b.x - a.x, b.z - a.z),
-      dx = (b.x - a.x) / len,
-      dz = (b.z - a.z) / len,
-      yaw = Math.atan2(dx, dz);
-    for (let t = 6; t < len; t += 12)
-      for (const side of [-1, 1]) {
-        const p = {
-          x: a.x + dx * t + dz * (d.riverWidth! / 2 - 1) * side,
-          z: a.z + dz * t - dx * (d.riverWidth! / 2 - 1) * side,
-        };
-        if (!blockedByRiver(d, p, 1)) continue;
-        put(p, -0.85, 2, 1.7, 12, "#737f72", yaw);
-        put(p, 0.18, 5.5, 0.08, 12, "#bdb79d", yaw);
-        const q = { x: p.x - dz * side * 1.5, z: p.z + dx * side * 1.5 };
-        if (!blockedByRiver(d, q, 0.3)) continue;
-        put(q, 0.65, 0.18, 1.25, 0.18, "#63776e");
-        put(q, 1.2, 0.1, 0.1, 12, "#697d73", yaw);
-        if (Math.floor(t / 12) % 4 === 0) {
-          put(p, 2, 0.16, 3.8, 0.16, "#55716b");
-          emit({
-            ...p,
-            y: 4,
-            w: 0.65,
-            h: 0.55,
-            d: 0.65,
-            yaw: 0,
-            color: "#f4c98a",
-            surface: "panel",
-            layer: "night",
-          });
-          put(p, 0.65, 1.8, 0.18, 0.7, "#9c805b", yaw);
-        }
+  // Actual bank edges, with local commercial/historic/hotel treatments. The
+  // source polygon controls the wall, its cap and land-side normal together.
+  const shoreRings=d.riverPolygon??[];
+  const roadNodes=new Map(d.nodes.map(n=>[n.id,n]));
+  let station=0;
+  for(const ring of shoreRings)for(let i=1;i<ring.length;i++){
+    const a=ring[i-1]!,b=ring[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);
+    if(len<.2)continue;
+    const dx=(b.x-a.x)/len,dz=(b.z-a.z)/len,yaw=Math.atan2(dx,dz);
+    const mid={x:(a.x+b.x)/2,z:(a.z+b.z)/2},normal=nearestRiverShore(d,mid);
+    const near=d.landmarks.filter(l=>l.plot).map(l=>({l,distance:Math.hypot(l.plot!.x-mid.x,l.plot!.z-mid.z)})).sort((a,b)=>a.distance-b.distance)[0];
+    const id=near&&near.distance<230?near.l.id:'background';
+    const historic=['palace','pho','arun'].includes(id!),commercial=['river-city','asiatique','gate'].includes(id!);
+    const color=historic?'#8b8977':commercial?'#998b7a':'#758378';
+    const pieces=Math.max(1,Math.ceil(len/16));
+    for(let j=0;j<pieces;j++){
+      const t=(j+.5)/pieces,point={x:a.x+dx*len*t,z:a.z+dz*len*t};
+      if(d.roads.some(r=>r.bridge&&distanceToSegment(point,roadNodes.get(r.a)!,roadNodes.get(r.b)!).distance<r.width/2+5))continue;
+      const p={x:point.x+normal.nx*.6,z:point.z+normal.nz*.6};
+      put(p,-.8,1.4,1.7,len/pieces+.12,color,yaw);
+      put(p,.08,historic?3.1:2,.12,len/pieces+.12,historic?'#c4b99b':'#a7ac97',yaw);
+      const spacing=commercial?48:historic?72:128;
+      if((commercial||historic)&&Math.floor((station+len*t)/spacing)!==Math.floor((station+len*(t-.5/pieces))/spacing)){
+        const q={x:p.x+normal.nx*2,z:p.z+normal.nz*2};
+        if(riverClearance(d,q)>1){put(q,1.5,.16,3,.16,'#5b6861');emit({...q,y:3.1,w:.6,h:.4,d:.6,yaw:0,color:'#f4c98a',surface:'panel',layer:'night'});}
       }
+    }
+    station+=len;
   }
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   for (const canal of d.canals ?? [])
@@ -301,6 +364,10 @@ export function emitRiverfront(d: District, emit: (p: ArtPiece) => void) {
     }
   for (const p of riverPiers(d)) {
     const {nx,nz,yaw}=p;
+    // Every landing has a physical gangway across the bank; a roof in the
+    // water alone is not an accessible pier.
+    const land={x:p.shore.x+nx*8,z:p.shore.z+nz*8};
+    put({x:(p.x+land.x)/2,z:(p.z+land.z)/2},.14,5.5,.2,Math.hypot(p.x-land.x,p.z-land.z)+2,'#bbae8e',Math.atan2(land.x-p.x,land.z-p.z));
     if(p.id==='pho'||p.id==='tha-chang') {
       const end=p.id==='pho'?PHO_PIER_PASSAGE.to:{x:-1008,z:-1060};
       const dx=end.x-p.x,dz=end.z-p.z,len=Math.hypot(dx,dz);

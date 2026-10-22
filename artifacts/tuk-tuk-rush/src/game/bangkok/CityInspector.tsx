@@ -4,6 +4,7 @@ import {buildLandmarkRegistry} from './landmarkRegistry';
 import {landmarkParcels,rectangleBoundary} from './landmarkParcels';
 import {CITY_MODEL,approvedSite} from './cityModel';
 import {geographicToDesign} from './geography';
+import {riverPolygonPath} from './waterGeometry';
 import inventory from '../../../../../data/bangkok/iconic-inventory.v1.json';
 const points=(ps:Point[])=>ps.map(p=>`${p.x},${p.z}`).join(' ');
 /** DEV-only, lazy loaded. Reads the live generated District; never rebuilds roads. */
@@ -24,7 +25,7 @@ export default function CityInspector({d,onClose}:{d:District;onClose:()=>void})
    </div>
    <svg role="img" aria-label="Actual generated world inspection map" viewBox={`${center.x-w/2} ${center.z-h/2} ${w} ${h}`} style={{width:'100%',height:'calc(100vh - 110px)',background:'#243b3c'}} onDoubleClick={e=>{const r=e.currentTarget.getBoundingClientRect();setCenter({x:center.x-w/2+(e.clientX-r.left)/r.width*w,z:center.z-h/2+(e.clientY-r.top)/r.height*h});setZoom(Math.min(8,zoom*1.5));}}>
     {layers.districts&&d.regions?.map(r=><polygon key={r.id} points={points(r.polygon)} fill="none" stroke="#668574" strokeWidth={3}><title>{r.name}</title></polygon>)}
-    {layers.water&&<g fill="none" stroke="#548baf"><polyline points={points(d.river??[])} strokeWidth={d.riverWidth}/>{d.canals?.map((c,i)=><polyline key={i} points={points(c.points)} strokeWidth={c.width}/>)}</g>}
+    {layers.water&&<g fill="none" stroke="#548baf"><path d={riverPolygonPath(d)} fill="#427f94" fillRule="evenodd" strokeWidth={1}/><polyline points={points(d.river??[])} strokeWidth={2} strokeDasharray="8 6"/>{d.canals?.map((c,i)=><polyline key={i} points={points(c.points)} strokeWidth={c.width}/>)}</g>}
     {layers.parks&&d.publicSpaces?.map(s=><polygon key={s.id} points={points(s.boundary)} fill="#71815b"><title>{s.name}</title></polygon>)}
     {layers.roads&&d.roads.map((r,i)=>{const a=d.nodes.find(n=>n.id===r.a)!,b=d.nodes.find(n=>n.id===r.b)!;return <g key={i}><line x1={a.x} y1={a.z} x2={b.x} y2={b.z} stroke={r.bridge?'#ffe4b2':r.oneWay?'#e9ae75':'#b7bdaf'} strokeWidth={r.width}><title>{r.name} · {r.corridor} · {r.oneWay?'one way':'two way'}</title></line>{layers.names&&i%5===0&&<text x={(a.x+b.x)/2} y={(a.z+b.z)/2} fontSize={14} fill="white">{r.name}</text>}</g>;})}
     {layers.buildings&&d.buildings.map((b,i)=><polygon key={i} points={points(rectangleBoundary(b))} fill="#747e79"/>)}

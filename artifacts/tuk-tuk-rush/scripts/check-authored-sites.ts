@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import {assertProtectedGeography} from './protected-geography';
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -81,8 +82,7 @@ for (const s of sites) {
       [-o.w / 2, o.d / 2],
     ])
       assert(
-        riverDistance(d, sitePoint(o, o.yaw ?? 0, x!, z!)) >
-          d.riverWidth! / 2 + 1,
+        riverClearance(d, sitePoint(o, o.yaw ?? 0, x!, z!)) > 1,
         `Dry wing ${s.id}`,
       );
   }

@@ -1,9 +1,10 @@
+import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
 import type { District, Obstacle, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
 import { inDestinationGrounds } from "./destinationAccess";
 import { insidePublicPolygon } from "./publicSpaces";
-import { regionAt, riverDistance } from "./world";
+import { regionAt } from "./world";
 import {
   distanceToSegment,
   obstacleDistance,
@@ -519,7 +520,7 @@ export function auditUrbanLand(d: District, step = 36) {
       if (nearest > 230) continue;
       let use = "vacant";
       if (
-        riverDistance(d, p) < d.riverWidth! / 2 ||
+        riverClearance(d, p) < 0 ||
         d.canals?.some((c) =>
           c.points
             .slice(1)

@@ -1,0 +1,7 @@
+/workspace/scratch/b8d41d1d667e/TukTukRushBangkok/scripts/reconstruct-chao-reference.py:40: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  proposed=transform(project,geo).simplify(3,preserve_topology=True)
+/workspace/scratch/b8d41d1d667e/TukTukRushBangkok/scripts/reconstruct-chao-reference.py:42: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  center=transform(project,spine).simplify(2)
+/workspace/scratch/b8d41d1d667e/TukTukRushBangkok/scripts/reconstruct-chao-reference.py:45: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  structures=[dict(source=f['properties']['source'],kind=f['properties']['kind'],ring=ring(transform(project,shape(f['geometry'])).simplify(3,preserve_topology=True).exterior)) for f in structure_features]
+{'waterVertices': 1099, 'spineVertices': 60, 'roadConflicts': 0, 'parcelConflicts': 99, 'valid': True}

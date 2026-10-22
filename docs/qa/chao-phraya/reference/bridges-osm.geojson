@@ -1,0 +1,742 @@
+{
+  "type": "FeatureCollection",
+  "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "osm:way/25715010",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "lanes": "3",
+        "layer": "2",
+        "name": "ถนนสมเด็จพระปิ่นเกล้า",
+        "name:en": "Somdet Phra Pinklao Road",
+        "name:th": "ถนนสมเด็จพระปิ่นเกล้า",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4894821,
+            13.7639111
+          ],
+          [
+            100.4901164,
+            13.7631132
+          ],
+          [
+            100.4916592,
+            13.7611173
+          ],
+          [
+            100.4929336,
+            13.7595061
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/25715011",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "lanes": "3",
+        "layer": "2",
+        "name": "ถนนสมเด็จพระปิ่นเกล้า",
+        "name:en": "Somdet Phra Pinklao Road",
+        "name:th": "ถนนสมเด็จพระปิ่นเกล้า",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4928505,
+            13.7594376
+          ],
+          [
+            100.4915755,
+            13.761061
+          ],
+          [
+            100.4900356,
+            13.7630606
+          ],
+          [
+            100.4894034,
+            13.7638544
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/112799316",
+      "properties": {
+        "bridge": "yes",
+        "highway": "residential",
+        "lanes": "1",
+        "layer": "1",
+        "name": "ถนนลำพู",
+        "name:en": "Lamphu Road",
+        "name:th": "ถนนลำพู",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4962894,
+            13.7640123
+          ],
+          [
+            100.4964701,
+            13.7642498
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/300803478",
+      "properties": {
+        "bridge": "yes",
+        "highway": "tertiary",
+        "layer": "1",
+        "name": "ถนนพระอาทิตย์",
+        "name:en": "Phra Athit Road",
+        "name:th": "ถนนพระอาทิตย์",
+        "oneway": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4918219,
+            13.7607319
+          ],
+          [
+            100.4919154,
+            13.7608185
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/690440124",
+      "properties": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "name": "ซอยสมเด็จพระปิ่นเกล้า 1",
+        "name:en": "Soi Somdet Phra Pinklao 1",
+        "name:th": "ซอยสมเด็จพระปิ่นเกล้า 1"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4882505,
+            13.7641331
+          ],
+          [
+            100.4883257,
+            13.7641405
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/690440142",
+      "properties": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4880139,
+            13.7620998
+          ],
+          [
+            100.4881178,
+            13.7621901
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/25706395",
+      "properties": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "2",
+        "name": "สะพานพระพุทธยอดฟ้า",
+        "name:en": "Memorial Bridge",
+        "name:th": "สะพานพระพุทธยอดฟ้า"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4970257,
+            13.7377115
+          ],
+          [
+            100.4979181,
+            13.7402813
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/28152385",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนประชาธิปก",
+        "name:en": "Prajadhipok Road",
+        "name:th": "ถนนประชาธิปก",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4995422,
+            13.7401576
+          ],
+          [
+            100.497184,
+            13.7370939
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/28152580",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนประชาธิปก",
+        "name:en": "Prajadhipok Road",
+        "name:th": "ถนนประชาธิปก",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4959908,
+            13.7349984
+          ],
+          [
+            100.4963402,
+            13.7360163
+          ],
+          [
+            100.4964206,
+            13.7362186
+          ],
+          [
+            100.4965027,
+            13.7364037
+          ],
+          [
+            100.4965891,
+            13.7365789
+          ],
+          [
+            100.4966883,
+            13.7367576
+          ],
+          [
+            100.4968073,
+            13.7369503
+          ],
+          [
+            100.4969633,
+            13.7371715
+          ],
+          [
+            100.4971352,
+            13.737391
+          ],
+          [
+            100.497633,
+            13.7380276
+          ],
+          [
+            100.4992188,
+            13.7400634
+          ],
+          [
+            100.4994802,
+            13.7403997
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/627706686",
+      "properties": {
+        "bridge": "yes",
+        "highway": "cycleway",
+        "layer": "1",
+        "name": "ทางเดินริมน้ำแม่น้ำเจ้าพระยา",
+        "name:th": "ทางเดินริมน้ำแม่น้ำเจ้าพระยา"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4946288,
+            13.7393812
+          ],
+          [
+            100.4947732,
+            13.7391753
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/627719060",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary_link",
+        "layer": "1",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5007371,
+            13.7409834
+          ],
+          [
+            100.5006381,
+            13.7410333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/627722181",
+      "properties": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1",
+        "name": "ซอยอุทัย",
+        "name:en": "Soi Uthai",
+        "name:th": "ซอยอุทัย"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4980051,
+            13.7363471
+          ],
+          [
+            100.4981151,
+            13.7363054
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/627722183",
+      "properties": {
+        "bridge": "yes",
+        "highway": "residential",
+        "layer": "1"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.4976887,
+            13.7355383
+          ],
+          [
+            100.4978044,
+            13.7354905
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/138367145",
+      "properties": {
+        "bridge": "viaduct",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนกรุงธนบุรี",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5133767,
+            13.7191363
+          ],
+          [
+            100.5149606,
+            13.7187324
+          ],
+          [
+            100.5152065,
+            13.7186697
+          ],
+          [
+            100.5168731,
+            13.7182083
+          ],
+          [
+            100.5169818,
+            13.7181848
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/138367146",
+      "properties": {
+        "bridge": "viaduct",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนกรุงธนบุรี",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5169603,
+            13.7179881
+          ],
+          [
+            100.5168698,
+            13.7179946
+          ],
+          [
+            100.5167793,
+            13.7180115
+          ],
+          [
+            100.5133268,
+            13.7189078
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/139497771",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนกรุงธนบุรี",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5133268,
+            13.7189078
+          ],
+          [
+            100.5129785,
+            13.7189903
+          ],
+          [
+            100.5081772,
+            13.720157
+          ],
+          [
+            100.5079706,
+            13.720204
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/156261465",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5086227,
+            13.7202824
+          ],
+          [
+            100.5106829,
+            13.7197783
+          ],
+          [
+            100.5130381,
+            13.719218
+          ],
+          [
+            100.5133767,
+            13.7191363
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/156261489",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary_link",
+        "layer": "1",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5079706,
+            13.720204
+          ],
+          [
+            100.507286,
+            13.7202983
+          ],
+          [
+            100.5069834,
+            13.7203357
+          ],
+          [
+            100.5066101,
+            13.7203692
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/199907531",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary_link",
+        "layer": "1",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5067103,
+            13.7208198
+          ],
+          [
+            100.5073344,
+            13.7206623
+          ],
+          [
+            100.507708,
+            13.7205624
+          ],
+          [
+            100.5080702,
+            13.7204562
+          ],
+          [
+            100.5086227,
+            13.7202824
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/630496721",
+      "properties": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "ถนนเจริญนคร",
+        "name:en": "Charoen Nakhon Road",
+        "name:th": "ถนนเจริญนคร",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5081298,
+            13.7185898
+          ],
+          [
+            100.5080917,
+            13.7184953
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/630496722",
+      "properties": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "ถนนเจริญนคร",
+        "name:en": "Charoen Nakhon Road",
+        "name:th": "ถนนเจริญนคร",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5079682,
+            13.7185442
+          ],
+          [
+            100.5080035,
+            13.7186388
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/730920873",
+      "properties": {
+        "bridge": "yes",
+        "highway": "secondary",
+        "layer": "1",
+        "name": "ถนนเจริญกรุง",
+        "name:en": "Charoen Krung Road",
+        "name:th": "ถนนเจริญกรุง",
+        "oneway": "no"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.515138,
+            13.7186298
+          ],
+          [
+            100.5150773,
+            13.7184884
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1173447192",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนกรุงธนบุรี",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5064782,
+            13.720778
+          ],
+          [
+            100.5070173,
+            13.7206645
+          ],
+          [
+            100.5075588,
+            13.7205391
+          ],
+          [
+            100.5080384,
+            13.7204221
+          ],
+          [
+            100.5086227,
+            13.7202824
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osm:way/1173447194",
+      "properties": {
+        "bridge": "yes",
+        "highway": "primary",
+        "layer": "1",
+        "name": "ถนนกรุงธนบุรี",
+        "name:en": "Krung Thon Buri Road",
+        "name:th": "ถนนกรุงธนบุรี",
+        "oneway": "yes"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            100.5079706,
+            13.720204
+          ],
+          [
+            100.5072538,
+            13.720374
+          ],
+          [
+            100.5068493,
+            13.7204633
+          ],
+          [
+            100.5064238,
+            13.7205497
+          ]
+        ]
+      }
+    }
+  ]
+}

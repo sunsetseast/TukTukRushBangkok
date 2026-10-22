@@ -1,3 +1,4 @@
+import {assertUnmovedParcels} from './river-migration-contract';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import * as T from 'three';
@@ -25,5 +26,5 @@ for(const p of contexts){const b=p.parcel,c=Math.cos(b.yaw??0),s=Math.sin(b.yaw?
 const apronArt:any[]=[];emitLandmarkApproaches(d,p=>{if(p.siteId==='terminal-asok-east-pr35')apronArt.push(p);});
 const nodes=new Map(d.nodes.map(n=>[n.id,n]));
 for(const p of apronArt)for(const r of d.roads){const a=nodes.get(r.a)!,b=nodes.get(r.b)!,road={x:(a.x+b.x)/2,z:(a.z+b.z)/2,w:r.width,d:Math.hypot(b.x-a.x,b.z-a.z),yaw:Math.atan2(b.x-a.x,b.z-a.z)};if(Math.hypot(road.x-p.x,road.z-p.z)>road.d/2+70)continue;assert(!polygonsOverlap(rectangleBoundary({x:p.x,z:p.z,w:p.w,d:p.d,yaw:p.yaw}),rectangleBoundary(road),.1),'Asok public art must not intersect a road');}
-const old=JSON.parse(fs.readFileSync(new URL('../../../docs/qa/premium-landmarks/before-parcels.json',import.meta.url),'utf8'));assert.deepEqual(landmarkParcels(d).slice(0,208),old.parcels);
+const old=JSON.parse(fs.readFileSync(new URL('../../../docs/qa/premium-landmarks/before-parcels.json',import.meta.url),'utf8'));assertUnmovedParcels(landmarkParcels(d),old.parcels);
 for(const root of roots.values())disposeObject(root);const report={pass:true,roads:d.roads.length,nodes:d.nodes.length,buildings:d.buildings.length,parcels:landmarkParcels(d).length,contexts:contexts.length,contextSurfaceRays:variants.size*20,actualEntranceRays:3,physicallyRecessedTerminal:true,apronPieces:apronArt.length,records};fs.writeFileSync(new URL('../../../docs/qa/premium-landmarks/validation/architecture.json',import.meta.url),JSON.stringify(report,null,2));console.log(JSON.stringify(report));

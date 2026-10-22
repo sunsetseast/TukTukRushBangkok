@@ -1,0 +1,301 @@
+[
+  {
+    "id": "historic-overhead",
+    "camera": [
+      -1050,
+      1250,
+      -800
+    ],
+    "look": [
+      -1050,
+      0,
+      -801
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "pho-driving",
+    "camera": [
+      -831.2751816121412,
+      8,
+      -542.7690443578748
+    ],
+    "look": [
+      -800,
+      10,
+      -700
+    ],
+    "owner": "pho",
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "pho-elevated",
+    "camera": [
+      -740,
+      400,
+      -480
+    ],
+    "look": [
+      -800,
+      0,
+      -700
+    ],
+    "owner": "pho",
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "chinatown-talatnoi-bend",
+    "camera": [
+      -650,
+      1500,
+      650
+    ],
+    "look": [
+      -650,
+      0,
+      200
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "river-city-hilton",
+    "camera": [
+      -510,
+      140,
+      920
+    ],
+    "look": [
+      -510,
+      12,
+      780
+    ],
+    "owner": null,
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "icon-river",
+    "camera": [
+      -420,
+      38,
+      1000
+    ],
+    "look": [
+      -650,
+      12,
+      933
+    ],
+    "owner": "icon",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "icon-street",
+    "camera": [
+      -760.9498914617022,
+      8,
+      910.3604000991086
+    ],
+    "look": [
+      -646.9669914110091,
+      10,
+      933.0330085889909
+    ],
+    "owner": "icon",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "oriental-peninsula",
+    "camera": [
+      -370,
+      150,
+      1480
+    ],
+    "look": [
+      -380,
+      15,
+      1120
+    ],
+    "owner": null,
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "taksin-elevated",
+    "camera": [
+      -430,
+      700,
+      1570
+    ],
+    "look": [
+      -430,
+      0,
+      1420
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "taksin-driving",
+    "camera": [
+      -220,
+      5,
+      1460
+    ],
+    "look": [
+      -600,
+      5,
+      1460
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "four-seasons-capella",
+    "camera": [
+      -500,
+      230,
+      1930
+    ],
+    "look": [
+      -280,
+      10,
+      1760
+    ],
+    "owner": null,
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "asiatique-anantara",
+    "camera": [
+      -650,
+      900,
+      2390
+    ],
+    "look": [
+      -650,
+      0,
+      2160
+    ],
+    "owner": null,
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "full-river-overview",
+    "camera": [
+      -700,
+      5900,
+      100
+    ],
+    "look": [
+      -700,
+      0,
+      99
+    ],
+    "owner": null,
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "hilton-river",
+    "camera": [
+      -636,
+      32,
+      780
+    ],
+    "look": [
+      -756,
+      55,
+      780
+    ],
+    "owner": "hilton",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "peninsula-river",
+    "camera": [
+      -500,
+      32,
+      1228
+    ],
+    "look": [
+      -620,
+      55,
+      1228
+    ],
+    "owner": "peninsula",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "oriental-river",
+    "camera": [
+      -320,
+      32,
+      1040
+    ],
+    "look": [
+      -200,
+      24,
+      1040
+    ],
+    "owner": "oriental",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "anantara-river",
+    "camera": [
+      -850,
+      42,
+      2180
+    ],
+    "look": [
+      -1020,
+      14,
+      2180
+    ],
+    "owner": "anantara",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  }
+]

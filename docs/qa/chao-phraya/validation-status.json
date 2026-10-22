@@ -1,0 +1,40 @@
+{
+  "runtimeSourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1",
+  "testGroups": {
+    "passed": 37,
+    "total": 38,
+    "knownFailures": [
+      "test:bangkok"
+    ]
+  },
+  "geometry": true,
+  "typecheck": true,
+  "productionBuild": true,
+  "webglPairs": 27,
+  "webglErrors": 0,
+  "viewports": [
+    [
+      375,
+      812
+    ],
+    [
+      430,
+      932
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1280,
+      800
+    ]
+  ],
+  "iconRestarts": 3,
+  "physicalIPhone": false,
+  "staticRoutes": 15,
+  "staticDistance": 16616,
+  "staticContactFrames": 0,
+  "noMerge": true,
+  "noDeployment": true
+}

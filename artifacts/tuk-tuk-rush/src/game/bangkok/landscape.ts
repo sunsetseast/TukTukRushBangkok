@@ -1,3 +1,4 @@
+import {nearestRiverShore} from './waterGeometry';
 import { REAL_PLACES } from './realPlaces';
 import type { District, Obstacle } from '../types';
 import type { ArtPiece } from './architecturalBatch';
@@ -26,7 +27,18 @@ export function planLandscape(d: District) {
             for (const radius of [l.size! * .65 + 18, l.size! * .65 + 45])
                 add(p.x + Math.sin(a) * radius, p.z + Math.cos(a) * radius, a);
     }
-    for (const water of [{ points: d.river!, width: d.riverWidth! }, ...(d.canals ?? [])])
+    // Source-derived bank samples, spaced by physical distance rather than by
+    // the old nominal width. Existing destination gardens retain their plots.
+    for(const ring of d.riverPolygon??[]) {
+      let distance=0;
+      for(let i=1;i<ring.length;i++){
+        const a=ring[i-1]!,b=ring[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);
+        if(len<.1)continue;
+        for(let t=54-distance;t<len;t+=54){const p={x:a.x+(b.x-a.x)*t/len,z:a.z+(b.z-a.z)*t/len},n=nearestRiverShore(d,p);add(p.x+n.nx*12,p.z+n.nz*12,Math.atan2(b.x-a.x,b.z-a.z));}
+        distance=(distance+len)%54;
+      }
+    }
+    for (const water of d.canals ?? [])
         for (let i = 1; i < water.points.length; i++) {
             const a = water.points[i - 1]!, b = water.points[i]!, length = Math.hypot(b.x - a.x, b.z - a.z), ux = (b.x - a.x) / length, uz = (b.z - a.z) / length;
             for (let t = 18; t < length; t += 54)
