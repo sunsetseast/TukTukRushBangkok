@@ -65,29 +65,37 @@ export function mahanakhonOccupied(x:number,z:number,f:number){
  if(x<0||x>6||z<0||z>6||f<0||f>=38)return false;
  const ring=Math.min(x,z,6-x,6-z);if(ring>=2||f<5)return true;
  const edge=x<=1?z:z>=5?6+x:x>=5?18-z:24-x,
-  center=4+Math.floor((f-4)/3)*2,delta=((edge-center)%24+24)%24,dist=Math.min(delta,24-delta);
+  center=-8+Math.floor((f-4)/3)*2,delta=((edge-center)%24+24)%24,dist=Math.min(delta,24-delta);
  return dist>=(ring===0?2.8:1.6);
 }
 function emitMahanakhon(b:LandmarkBuilder,detail:boolean){
- b.box(0,4,0,38,8,38,'#aab4ac');
+ b.box(0,5,0,38,10,38,'#aab4ac');b.box(-19.15,7.4,-1,.12,2.2,26,'#344b50');
+ for(const x of [-16,16])for(const z of [-16,16]){b.box(x,10.4,z,3,.7,3,'#b6af9a');b.box(x,10.83,z,2.6,.18,2.6,'#496d51');}
  for(const side of [-1,1]){
   b.sculpt(new T.BoxGeometry(32,5.5,.18),0,3.5,side*19.05,'#385867','glass');
   b.sculpt(new T.BoxGeometry(.18,5.5,32),side*19.05,3.5,0,'#385867','glass');
  }
- const pos:number[]=[],norm:number[]=[],ix:number[]=[],cell=3.85,fh=3.65;
+ const buckets=Array.from({length:4},()=>({pos:[] as number[],norm:[] as number[],ix:[] as number[]})),cell=3.85,fh=3.65;
  const faces=[{d:[1,0,0],v:[[1,-1,-1],[1,1,-1],[1,1,1],[1,-1,1]]},{d:[-1,0,0],v:[[-1,-1,1],[-1,1,1],[-1,1,-1],[-1,-1,-1]]},{d:[0,0,1],v:[[1,-1,1],[1,1,1],[-1,1,1],[-1,-1,1]]},{d:[0,0,-1],v:[[-1,-1,-1],[-1,1,-1],[1,1,-1],[1,-1,-1]]},{d:[0,1,0],v:[[-1,1,1],[1,1,1],[1,1,-1],[-1,1,-1]]},{d:[0,-1,0],v:[[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1]]}];
  for(let f=0;f<38;f++)for(let x=0;x<7;x++)for(let z=0;z<7;z++)if(mahanakhonOccupied(x,z,f)){
-  for(const face of faces){const[dx,dy,dz]=face.d;if(mahanakhonOccupied(x+dx!,z+dz!,f+dy!))continue;const n=pos.length/3;
-   for(const v of face.v){pos.push((x-3)*cell+v[0]!*cell/2,10+(f+.5)*fh+v[1]!*fh/2,(z-3)*cell+v[2]!*cell/2);norm.push(...face.d);}ix.push(n,n+1,n+2,n,n+2,n+3);
+  for(const face of faces){const[dx,dy,dz]=face.d,nx=x+dx!,nz=z+dz!,nf=f+dy!;if(mahanakhonOccupied(nx,nz,nf))continue;
+   const cut=nx>=0&&nx<=6&&nz>=0&&nz<=6&&nf>=0&&nf<38,
+    bucket=buckets[dy===1?2:dy===-1?3:cut?1:0]!,n=bucket.pos.length/3;
+   for(const v of face.v){bucket.pos.push((x-3)*cell+v[0]!*cell/2,10+(f+.5)*fh+v[1]!*fh/2,(z-3)*cell+v[2]!*cell/2);bucket.norm.push(...face.d);}bucket.ix.push(n,n+1,n+2,n,n+2,n+3);
+   // Pale structural terrace edges reveal the carved volume from street height.
+   if(detail&&cut&&dy===0){const y=10+f*fh+.05;
+    b.box((x-3)*cell+dx!*cell/2,y,(z-3)*cell+dz!*cell/2,dx?.12:cell,.18,dz?.12:cell,'#b6c3c1');
+   }
   }
   if(detail&&(x===0||x===6||z===0||z===6)&&f%2===0){const y=10+f*fh;
    if(z===0||z===6)b.box((x-3)*cell,y,(z-3)*cell+(z===0?-1:1)*cell/2,cell,.1,.08,'#9bafb4');
+   if(x===0||x===6)b.box((x-3)*cell+(x===0?-1:1)*cell/2,y,(z-3)*cell,.08,.1,cell,'#9bafb4');
    if((x*3+z+f)%29===0){
     if(z===0||z===6)b.box((x-3)*cell,y+1.4,(z===0?-1:1)*(3.5*cell+.035),cell*.6,.8,.045,'#baa584',0,true);
     if(x===0||x===6)b.box((x===0?-1:1)*(3.5*cell+.035),y+1.4,(z-3)*cell,.045,.8,cell*.6,'#baa584',0,true);
    }
   }
  }
- const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('normal',new T.Float32BufferAttribute(norm,3));g.setIndex(ix);b.sculpt(g,0,0,0,'#53798b','glass');
+ for(const[i,bucket]of buckets.entries())if(bucket.ix.length){const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(bucket.pos,3));g.setAttribute('normal',new T.Float32BufferAttribute(bucket.norm,3));g.setIndex(bucket.ix);b.sculpt(g,0,0,0,['#53798b','#315365','#b5c1bd','#4b6269'][i]!,i<2?'glass':'ceramic');}
  b.box(0,149,0,26,.6,26,'#bac9c6');b.box(4,152,3,10,4,10,'#34566a');b.box(-7,150,7,8,.25,8,'#8aaeb4');
 }

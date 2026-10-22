@@ -14,3 +14,17 @@ Build on `LandmarkBuilder`, existing authored/retail/skyline dispatch, `Architec
 10. Compare matched visible calls/triangles, memory, construction, texture/material counts and production bundle bytes. Certify physical Safari separately; software WebGL is not a hardware FPS result.
 
 [Active hotel audit](hotel-model-audit.json) records origin, yaw, approved footprint, declared/measured heights, actual asset and arrival roads for fourteen properties. [Scene poses](scenes.json) are the reusable visual fixture. [Architecture validation](validation/architecture.json) records six authored near/far bounds and budgets. Existing `bangkok-arcade-2026.1` remains the authority; approval hashes are not edited.
+
+
+## Six hero model and arrival reference sheet
+
+Compressed game X/Z and heights; these are not surveyed physical dimensions. All canonical origins/yaws/access nodes remain fixed. ICONSIAM has an existing internal +90° model rotation in addition to canonical yaw 0°, facing its river elevation east. Heights include details/antenna where present; Peninsula’s main hotel body is taller than Hilton’s roof, despite Hilton’s antenna maximum.
+
+| ID | Canonical origin X/Z | Yaw | Envelope / height | Existing vehicle arrival X/Z |
+|---|---|---|---|---|
+| terminal | 1672.000, -404.000 | 0° | 90×80 / 134 | 1602.448, -417.835 |
+| icon | -646.967, 933.033 | 0° | 65×65 / 37 | -702.103, 922.066 |
+| mahanakhon | 654.194, 1119.134 | 0° | 40×40 / 154 | 600.000, 1100.000 |
+| hilton | -756.000, 780.000 | 90° | 52×48 / 120 | -794.000, 780.000 |
+| peninsula | -620.000, 1228.000 | 90° | 72×60 / 116 | -664.000, 1228.000 |
+| oriental | -200.000, 1040.000 | -90° | 112×104 / 52 | -160.500, 1040.000 |
