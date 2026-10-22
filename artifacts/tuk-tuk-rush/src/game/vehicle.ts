@@ -3,6 +3,7 @@ import { nearestRoad, obstacleLocal, obstacleDistance } from './world';
 import { blockedByRiver } from './bangkok/world';
 import { physicsObstacleIndex } from './bangkok/clearanceIndex';
 import { BOOST_ACCELERATION, BOOST_SPEED_CAP } from './boost';
+import { VEHICLE_COLLISION_RADIUS, STEERING_RESPONSE, steeringYawRate } from './vehicleEnvelope';
 import { YAOWARAT_TRACE } from './mapData';
 
 export function createVehicle(district?: District): Vehicle {
@@ -12,7 +13,17 @@ export function createVehicle(district?: District): Vehicle {
   return { x: a.x, z: a.z, heading, speed: 0, steer: 0, lean: 0, wheelSpin: 0, collision: 0 };
 }
 
+export type VehicleContact = {
+  kind: 'static' | 'traffic' | 'water' | 'boundary';
+  x: number; z: number; heading: number; speed: number;
+  obstacle?: District['obstacles'][number]; trafficId?: number;
+  normal?: { x: number; z: number }; penetration?: number;
+};
+
 export class VehicleController {
+  /** Optional QA/inspector observer. No event allocation when not observed;
+   * collision resolution, cooldown and steering remain production physics. */
+  constructor(private readonly observeContact?: (contact: VehicleContact) => void) {}
   private vx = 0;
   private vz = 0;
   update(player: Vehicle, input: Input, district: District, traffic: TrafficCar[], dt: number) {
@@ -23,7 +34,7 @@ export class VehicleController {
   }
   private step(p: Vehicle, input: Input, district: District, traffic: TrafficCar[], dt: number) {
     p.collision = Math.max(0, p.collision - dt * 2);
-    p.steer += (input.steer - p.steer) * Math.min(1, dt * 11);
+    p.steer += (input.steer - p.steer) * Math.min(1, dt * STEERING_RESPONSE);
     const oldX = p.x, oldZ = p.z;
     let speed = this.vx * Math.sin(p.heading) + this.vz * Math.cos(p.heading);
     if (input.brake) speed += (speed > 0.6 ? -27 : -9) * dt;
@@ -34,7 +45,7 @@ export class VehicleController {
     if (Math.abs(speed) < 0.08 && !input.gas && !input.brake) speed = 0;
     // A blocked tuk-tuk must still be steerable while creeping or reversing.
     const steeringSpeed = Math.max(Math.abs(speed), p.collision > 0.05 && (input.gas || input.brake) ? 2.2 : 0);
-    const turn = p.steer * Math.min(steeringSpeed / 5, 1) * (1.7 - Math.min(Math.abs(speed) / 45, 0.55)) * Math.sign(speed || (input.brake ? -1 : 1));
+    const turn = p.steer * Math.min(steeringSpeed / 5, 1) * steeringYawRate(speed) * Math.sign(speed || (input.brake ? -1 : 1));
     p.heading -= turn * dt;
     const forwardX = Math.sin(p.heading), forwardZ = Math.cos(p.heading);
     const sideX = Math.cos(p.heading), sideZ = -Math.sin(p.heading);
@@ -43,7 +54,7 @@ export class VehicleController {
     this.vx = forwardX * speed + sideX * lateral;
     this.vz = forwardZ * speed + sideZ * lateral;
     p.x += this.vx * dt; p.z += this.vz * dt;
-    const radius = 1.5;
+    const radius = VEHICLE_COLLISION_RADIUS;
     let collided = false;
     const index=district.worldId==='bangkok'?physicsObstacleIndex(district):undefined;
     let candidates=index?.query(p),cursor=0,last=-1;
@@ -85,6 +96,7 @@ export class VehicleController {
         this.vz -= inward * nz;
       }
       collided = true;
+      this.observeContact?.({kind:'static',x:p.x,z:p.z,heading:p.heading,speed,obstacle:b,normal:{x:nx,z:nz},penetration});
       if(index){candidates=index.query(p);cursor=0;}
     }
     for (const car of traffic) {
@@ -105,11 +117,13 @@ export class VehicleController {
         }
         car.wait = Math.max(car.wait, 0.35);
         collided = true;
+        this.observeContact?.({kind:'traffic',x:p.x,z:p.z,heading:p.heading,speed,trafficId:car.id,normal:{x:nx,z:nz},penetration:safe-distance});
       }
     }
-    if (blockedByRiver(district, p)) { p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }
+    if (blockedByRiver(district, p)) { this.observeContact?.({kind:'water',x:p.x,z:p.z,heading:p.heading,speed});p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }
     const bounds = district.bounds ?? { minX: -342, maxX: 342, minZ: -342, maxZ: 342 };
     if (p.x < bounds.minX || p.x > bounds.maxX || p.z < bounds.minZ || p.z > bounds.maxZ) {
+      this.observeContact?.({kind:'boundary',x:p.x,z:p.z,heading:p.heading,speed});
       p.x = Math.max(bounds.minX, Math.min(bounds.maxX, p.x)); p.z = Math.max(bounds.minZ, Math.min(bounds.maxZ, p.z));
       this.vx *= -.2; this.vz *= -.2; collided = true;
     }

@@ -49,7 +49,9 @@
     "test:city-blueprint": "node --import tsx scripts/check-city-blueprint.ts",
     "test:premium-landmarks": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
     "test:river-geography": "node --import tsx scripts/check-chao-phraya.ts",
-    "test:river-drives": "node --import tsx scripts/check-chao-drives.ts"
+    "test:river-drives": "node --import tsx scripts/check-chao-drives.ts",
+    "test:waterfront-clearance": "node --import tsx scripts/check-waterfront-clearance.ts",
+    "test:waterfront-drives": "node --import tsx scripts/check-waterfront-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

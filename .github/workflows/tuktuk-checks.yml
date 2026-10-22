@@ -46,9 +46,19 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:graphics-foundation
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:interface
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:bangkok
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:waterfront-clearance
+      - run: pnpm --filter @workspace/tuk-tuk-rush run test:waterfront-drives
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:street-life
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:roadside
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:signature
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:sign-layers
       - run: pnpm --filter @workspace/tuk-tuk-rush run test:assets
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: waterfront-controller-certification
+          path: |
+            docs/qa/waterfront-certification/static-routes.json
+            docs/qa/waterfront-certification/validation/clearance.json
+          retention-days: 30

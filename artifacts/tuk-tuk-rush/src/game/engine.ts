@@ -7,7 +7,7 @@ import { readDiscovery, discover, type Discovery } from './bangkok/discovery';
 import { destinationAt } from './bangkok/destinationAccess';
 import { RailService } from './bangkok/transit/service';
 import { createDistrict } from './world';
-import { VehicleController, createVehicle } from './vehicle';
+import { VehicleController, createVehicle, type VehicleContact } from './vehicle';
 import { TrafficSystem } from './traffic';
 import { FareDispatcher, seededRandom } from './missions';
 
@@ -22,7 +22,7 @@ export class GameEngine {
   readonly boost = new TurboBoost();
   readonly inspection = new InspectionCamera();
   readonly railService?:RailService;
-  private controller = new VehicleController();
+  private controller: VehicleController;
   private trafficSystem: TrafficSystem;
   private fares: FareDispatcher;
   private readonly missionSeed?: number;
@@ -39,7 +39,8 @@ export class GameEngine {
   private discoveryTime = 0;
   private arrivalId = '';
   private storage: Storage | undefined;
-  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number } = {}) {
+  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number; observeContact?: (contact: VehicleContact) => void } = {}) {
+    this.controller = new VehicleController(options.observeContact);
     const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
     if(district.transit)this.railService=new RailService(district.transit);
     try { this.storage = window.localStorage; } catch { /* Browser storage is optional. */ }

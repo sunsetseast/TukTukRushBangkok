@@ -79,14 +79,16 @@ export function completeStreetFabric(d: District) {
           },
           radius = Math.hypot(parcel.w, parcel.d) / 2,
           bd = d.bounds!;
+        const fittedParcel=index.fit(parcel,true);
         if (
           p.x < bd.minX + radius ||
           p.x > bd.maxX - radius ||
           p.z < bd.minZ + radius ||
           p.z > bd.maxZ - radius ||
-          !index.clear(parcel, true)
+          !fittedParcel
         )
           continue;
+        Object.assign(parcel,fittedParcel);
         // Low street-food kiosks fit beneath the elevated railway; tall
         // buildings still respect its swept clearance envelope. Supports and
         // station entrances remain physical obstacles in index.clear().
