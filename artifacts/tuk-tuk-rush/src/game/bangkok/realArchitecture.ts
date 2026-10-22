@@ -1,3 +1,4 @@
+import {curtain,glazing,entrance,planter,palm} from './heroCraft';
 import { siteMasses } from './authoredSites';
 import { buildEmDistrict } from './phromPhong';
 import { buildSiamCenterDiscovery } from './commercialDistrictArt';
@@ -45,33 +46,40 @@ function arrival(b:B,w:number,d:number,detail:boolean){
  if(detail)for(const x of [-w*.4,w*.4])tree(b,x,-d*.34,6);
 }
 function peninsula(b:B,detail:boolean){
- // Four alternating angled slabs trace a W in plan. The uppermost floors step
- // down at the two outer shoulders; all four elevations retain the wave profile.
- const parts=[[-24,0,-.38,91],[-8,-5,.38,112],[8,-5,-.38,112],[24,0,.38,96]];
- for(const [x,z,yaw,h] of parts)slab(b,x!,z!,16,16,h!,detail?29:14,detail,'#d6d1bc',yaw!);
- for(const x of [-8,8]){b.box(x,113,-5,14,2,14,IVORY);b.box(x,115,-5,8,2,9,'#a3b5ae');}
- b.box(0,6,15,62,12,15,'#c4bda8');
- for(let x=-25;x<=25;x+=10){glass(b,x,6,22.6,6,8,.3,DARK);b.sculpt(new T.CylinderGeometry(.6,.7,10,10),x+4,5,23,IVORY);}
- b.box(0,.9,25,64,1.6,9,'#c4b594');
- for(const x of [-22,0,22]){b.roof(x,5,25,13,7,3,'#e8d8b7');if(detail)for(const u of [-5,5])b.box(x+u,2.5,26,.2,5,.2,STONE);}
- arrival(b,72,60,detail);
+ for(const [x,z,yaw,h] of [[-24,0,-.38,91],[-8,-5,.38,112],[8,-5,-.38,112],[24,0,.38,96]]){
+  const c=Math.cos(yaw!),s=Math.sin(yaw!),put=(u:number,v:number,y:number,w:number,H:number,d:number,color:string,lit=false)=>b.box(x!+c*u+s*v,y,z!-s*u+c*v,w,H,d,color,yaw!,lit);
+  put(0,0,h!/2,16,h!,16,'#d6d4c5');const floor=3.55,count=Math.floor((h!-4)/floor),step=detail?1:2;
+  for(const side of [-1,1]){
+   for(let f=0;f<count;f+=step)for(const u of [-5.4,-1.8,1.8,5.4]){const px=x!+c*u+s*side*8.04,pz=z!-s*u+c*side*8.04,y=4+f*floor;glazing(b,px,y,pz,2.3,2.5*step,.16,'#365664',yaw!);if(detail&&(f+Math.round(u*5))%17===0)put(u,side*8.16,y,1.8,1.7,.06,'#c6ad85',true);}
+   for(let f=0;f<count;f+=step)put(0,side*8.26,2.7+f*floor,16.4,.25,.55,'#b9baad');
+   for(const u of [-7.5,0,7.5])put(u,side*8.35,h!/2,.6,h!,.7,'#e4e2d1');
+   glazing(b,x!+c*side*8.1,h!/2,z!-s*side*8.1,.18,h!-3,13,'#42616b',yaw!);
+  }
+  put(0,0,h!+.7,16,1.4,16,'#e5e0cd');put(0,0,h!+2,12,1,12,'#babeb1');
+ }
+ b.box(0,5,15,62,10,15,'#c6c0ab');curtain(b,0,5,22.7,60,8,detail,0,16,2);
+ for(const x of [-22,0,22]){b.roof(x,5,25,13,7,3,'#c1ad87');if(detail)for(const u of [-5,5])b.box(x+u,2.5,26,.2,5,.2,STONE);}
+ b.box(0,3.2,-17.8,26,6.4,11.8,'#c9c5b4');entrance(b,23,-23.8,detail);b.box(0,7.6,-24,25,2.3,.18,'#344b50');
+ for(const x of [-28,28]){planter(b,x,-22,6,6,detail);palm(b,x,-22,7,detail);}
 }
 function hilton(b:B,detail:boolean){
- // Round-ended slab, continuous cream frame, off-centre rooftop lounge plate.
- rounded(b,0,6,-2,40,23,94,'#cbd5cd',detail);
- for(let f=0;f<(detail?30:15);f++){
-   const y=9+f*(detail?3:6);rounded(b,0,y,0,40.5,24,.36,IVORY,detail);
-   glass(b,0,y+1.5,12.1,34,2.2,.16,'#598f9b');
-   glass(b,0,y+1.5,-13.6,34,2.2,.16,'#598f9b');
-   for(const side of [-1,1])glass(b,side*20.1,y+1.5,-2,.16,2.2,15,'#598f9b');
+ rounded(b,0,7,-2,35,22,94,'#deded0',detail);
+ for(let f=0;f<(detail?29:15);f++){
+  const y=10+f*(detail?3.15:6.3);
+  for(const side of [-1,1])glazing(b,0,y+1,side>0?9.12:-13.12,32,2,.17,'#4a7180');
+  rounded(b,0,y+2.6,-2,35.6,23,.95,'#d8dcd0',detail);
+  if(detail&&f%7===0)b.box(5,y+1,9.24,3,1.5,.08,'#d3ba91',0,true);
  }
- for(const x of [-18,-11,11,18])b.box(x,54,12.4,.7,92,.6,IVORY);
- b.box(-13,58,-9,9,106,7,'#8d9994');b.box(-13,111,-9,9,2,8,IVORY);
- b.sculpt(new T.CylinderGeometry(13.5,12.5,2.8,detail?36:16),5,105,0,'#bed7d0','glass');
- b.sculpt(new T.CylinderGeometry(16,16,.9,detail?36:16),5,107,0,'#d5d8c7');
- b.sculpt(new T.CylinderGeometry(.15,.35,9,6),-10,115,-4,'#d2d9c9');
- b.box(0,4,3,46,8,31,IVORY);glass(b,0,4,18.6,42,6,.3);
- arrival(b,52,48,detail);
+ for(const x of [-16.6,16.6])b.box(x,55,-2,.7,94,23,'#dee0d3');
+ b.box(-10,56,-10,7,104,7,'#536b70');b.box(-10,109,-10,7,2,8,'#d2d7cb');
+ b.sculpt(new T.CylinderGeometry(12.8,12.8,4,detail?32:16),4,105.5,0,'#31525e','glass');
+ b.sculpt(new T.CylinderGeometry(15.3,15.3,.8,detail?32:16),4,108,0,'#d8dbcf');
+ for(let i=0;i<(detail?18:9);i++){const a=i*Math.PI*2/(detail?18:9);b.box(4+Math.sin(a)*12.9,105.5,Math.cos(a)*12.9,.15,4,.15,'#b5c0bb');}
+ b.sculpt(new T.CylinderGeometry(.15,.35,9,6),-10,115,-4,'#c9d0c7');
+ b.box(0,4,3,46,8,31,'#d2d0c0');curtain(b,0,4,18.7,42,6,detail,0,12,1);
+ b.box(0,3.2,-16.7,30,6.4,8.6,'#d0d0bf');entrance(b,27,-21,detail);b.box(0,7.8,-21,29,2.4,.18,'#344b50');
+ for(const x of [-20,20]){planter(b,x,-18,5,5,detail);palm(b,x,-18,6,detail);}
+ for(const x of [-19,19])planter(b,x,20,6,4,detail);
 }
 function rosewood(b:B,detail:boolean){
  const left=[[-23,0],[-23,44],[-12,113],[-5,113],[0,44],[-7,0]],right=[[0,0],[5,45],[4,119],[12,119],[23,45],[23,0]];
@@ -113,25 +121,21 @@ export function buildRealArchitecture(l:Landmark){
  const p=realPlace(l.id),make=['emporium','emquartier','emsphere'].includes(l.id!)?((b:B,detail:boolean)=>buildEmDistrict(l.id!,b,detail)):builders[l.id!];if(!p)return;
  const root=new T.LOD();
  for(const detail of [true,false]){let g=buildHeroArchitecture(p,detail);if(!g){if(!make)return;const b=new LandmarkBuilder();make(b,detail);g=b.finish(`${p.asset}-${detail?'near':'far'}`);}root.addLevel(g,detail?0:300,.12);}
- root.userData.authoredAsset=p.asset;root.userData.realPlace=p.id;root.userData.nightMaterials=root.levels.flatMap(l=>l.object.userData.nightMaterials);
+ if(['hilton','peninsula','oriental'].includes(l.id!))root.userData.nightScale=.38;root.userData.authoredAsset=p.asset;root.userData.realPlace=p.id;root.userData.nightMaterials=root.levels.flatMap(l=>l.object.userData.nightMaterials);
  return root;
 }
 /** One original text atlas for all real-place names. No hotel logos or photo
  * textures. Canvas exists only in the renderer, never in registry/physics. */
 export function buildRealPlaceSigns(d:District){
  if(typeof document==='undefined')return new T.Group();
- const canvas=document.createElement('canvas');canvas.width=1024;canvas.height=1024;const c=canvas.getContext('2d')!;
- c.fillStyle='#214a55';c.fillRect(0,0,1024,1024);c.textAlign='center';c.textBaseline='middle';
- const entries=REAL_PLACES.filter(p=>p.id!=='state'),row=1024/entries.length;
- for(const [i,p] of entries.entries()){c.fillStyle='#edce8f';c.font=`600 ${p.name.length>35?23:28}px sans-serif`;c.fillText(p.name,512,row*(i+.5),990);}
+ type Label={id:string;text:string;x:number;y:number;z:number;w:number;yaw:number;modelYaw?:number;plain?:boolean};
+ const labels:Label[]=REAL_PLACES.filter(p=>!['state','oriental','hilton','peninsula'].includes(p.id)).map(p=>({id:p.id,text:p.name,x:0,y:6.6,z:Math.min(...siteMasses(p).map(m=>m.z-m.d/2))-9,w:Math.min(p.footprint[0]*.6,32),yaw:Math.PI,plain:true}));
+ labels.push({id:'terminal',text:'TERMINAL21',x:-44.65,y:8.8,z:-12,w:24,yaw:-Math.PI/2},{id:'terminal',text:'TERMINAL21',x:44.65,y:8.8,z:-12,w:24,yaw:Math.PI/2},{id:'terminal',text:'TERMINAL21',x:17,y:27.3,z:32.3,w:39,yaw:0},{id:'icon',text:'ICONSIAM',x:0,y:8.8,z:-26.8,w:22,yaw:Math.PI,modelYaw:Math.PI/2},{id:'icon',text:'ICONSIAM',x:0,y:27,z:12,w:24,yaw:0,modelYaw:Math.PI/2},{id:'mahanakhon',text:'MAHANAKHON',x:-19.25,y:7.4,z:-1,w:25,yaw:-Math.PI/2},{id:'hilton',text:'MILLENNIUM HILTON',x:0,y:7.8,z:-21.1,w:28,yaw:Math.PI},{id:'peninsula',text:'THE PENINSULA',x:0,y:7.6,z:-24.1,w:24,yaw:Math.PI},{id:'oriental',text:'MANDARIN ORIENTAL',x:0,y:5.8,z:-34.9,w:20,yaw:Math.PI});
+ const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;const ctx=canvas.getContext('2d')!,cols=2,rows=Math.ceil(labels.length/cols),cw=1024,rh=1024/rows,tiles:{left:number;top:number;width:number;height:number}[]=[];
+ ctx.textAlign='center';ctx.textBaseline='middle';
+ for(const[i,e]of labels.entries()){const x=i%cols*cw,y=Math.floor(i/cols)*rh;if(e.plain){ctx.fillStyle='#214a55';ctx.fillRect(x,y,cw,rh);}ctx.font=`600 ${Math.floor(rh*.55)}px "Rush Thai",sans-serif`;ctx.fillStyle=e.id==='terminal'?'#36515c':e.id==='icon'&&e.y<10?'#454c42':'#e7dbc1';const tw=Math.min(cw-24,ctx.measureText(e.text).width);ctx.fillText(e.text,x+cw/2,y+rh/2,cw-24);tiles.push({left:x+cw/2-tw/2-3,top:y+rh*.12,width:tw+6,height:rh*.76});}
  const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.minFilter=T.LinearFilter;tex.generateMipmaps=false;
- const mat=new T.MeshStandardMaterial({map:tex,roughness:.75,emissive:'#ffffff',emissiveMap:tex,emissiveIntensity:.35}),root=new T.Group();
- for(const [i,p] of entries.entries()){
-  const l=d.landmarks.find(l=>l.id===p.id);if(!l?.plot)continue;
-  const geo=new T.PlaneGeometry(Math.min(p.footprint[0]*.6,32),1.8),uv=geo.getAttribute('uv');
-  for(let j=0;j<uv.count;j++)uv.setY(j,1-(i+1-uv.getY(j))/entries.length);
-  const m=new T.Mesh(geo,mat),yaw=p.yaw+Math.PI,z=Math.min(...siteMasses(p).map(m=>m.z-m.d/2))-9;
-  m.position.set(l.plot.x+Math.sin(p.yaw)*z,6.6,l.plot.z+Math.cos(p.yaw)*z);m.rotation.y=yaw;root.add(m);
- }
+ const mat=new T.MeshStandardMaterial({map:tex,alphaTest:.25,roughness:.75,emissive:'#ffffff',emissiveMap:tex,emissiveIntensity:.1}),root=new T.Group();
+ for(const[i,e]of labels.entries()){const l=d.landmarks.find(l=>l.id===e.id);if(!l?.plot)continue;const t=tiles[i]!,geo=new T.PlaneGeometry(e.w,e.plain?1.8:e.w*t.height/t.width),uv=geo.getAttribute('uv');for(let j=0;j<uv.count;j++)uv.setXY(j,(t.left+uv.getX(j)*t.width)/2048,1-(t.top+(1-uv.getY(j))*t.height)/1024);const yaw=(l.yaw??0)+(e.modelYaw??0),c=Math.cos(yaw),s=Math.sin(yaw),m=new T.Mesh(geo,mat);m.position.set(l.plot.x+c*e.x+s*e.z,e.y,l.plot.z-s*e.x+c*e.z);m.rotation.y=yaw+e.yaw;m.name='ArchitecturalIdentity:'+e.id;root.add(m);}
  root.userData.materials=[mat];return root;
 }

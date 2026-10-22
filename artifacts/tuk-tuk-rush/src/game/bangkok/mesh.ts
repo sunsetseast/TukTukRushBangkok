@@ -430,6 +430,7 @@ export function buildBangkokGraybox(
       }
       const scalaMat = scalaSigns.userData.nightMaterial as
         T.MeshStandardMaterial | undefined;
+      for(const m of realSigns.userData.materials??[])m.emissiveIntensity=.1+night*.45;
       if (scalaMat) scalaMat.emissiveIntensity = 0.12 + night * 0.85;
       for (const mat of new Set(signMaterials))
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.15;

@@ -216,6 +216,8 @@ export function prepareLandmarkParcels(d: District, includeHistoricApproaches = 
         );
     }
   }
+  // Append after all existing parcels, and only after legacy base-row enumeration.
+  if(includeHistoricApproaches)for(const a of CITY_MODEL.architecturalAprons){const l=d.landmarks.find(l=>l.id===a.landmarkId)!;add(a.landmarkId,'forecourt',rectangleBoundary({...localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!),w:a.width,d:a.depth,yaw:l.yaw??0}));}
   plans.set(d, { parcels, cells });
   return parcels;
 }
@@ -244,6 +246,23 @@ export function emitLandmarkApproaches(
   d: District,
   emit: (p: ArtPiece) => void,
 ) {
+  for(const a of CITY_MODEL.architecturalAprons){
+   const l=d.landmarks.find(l=>l.id===a.landmarkId)!,yaw=l.yaw??0;
+   const put=(u:number,y:number,v:number,w:number,h:number,depth:number,color:string)=>emit({...localPoint(l.plot!,yaw,a.center[0]!+u,a.center[1]!+v),y,w,h,d:depth,yaw,color,surface:'concrete',siteId:a.id});
+   put(0,.06,0,a.width,.12,a.depth,'#b5b7ab');put(a.width/2-.25,.18,0,.5,.24,a.depth,'#d1d0be');
+   for(const side of [-1,1])put(0,.18,side*(a.depth/2-.25),a.width,.24,.5,'#d1d0be');
+   for(let u=-a.width/2+5;u<a.width/2;u+=5)put(u,.13,0,.07,.025,a.depth-1,'#939e97');
+   // Authored mall-side planters and seats keep the central pedestrian axis clear.
+   for(const side of [-1,1]){
+    const u=-a.width/2+3,v=side*(a.depth/2-5);put(u,.5,v,3,.9,5,'#b2aa95');put(u,.99,v,2.6,.12,4.6,'#496c4e');
+    for(const dz of [-1.3,1.3])for(const dx of [-.65,.65])emit({...localPoint(l.plot!,yaw,a.center[0]!+u+dx,a.center[1]!+v+dz),y:1.35,w:.7,h:.8,d:1.1,yaw:yaw+side*.7,pitch:.4,color:'#60804f',surface:'plaster',shape:'leaf',siteId:a.id});
+    for(const dz of [-.3,0,.3])put(-5,.56,side*(a.depth/2-7)+dz,2.8,.14,.22,'#8f856e');
+    for(const dx of [-1,1])put(-5+dx,.29,side*(a.depth/2-7),.15,.5,.8,'#757d76');
+    put(9,.64,side*(a.depth/2-6),.3,1.2,.3,'#787e72');
+    emit({...localPoint(l.plot!,yaw,a.center[0]!+9,a.center[1]!+side*(a.depth/2-6)),y:1.26,w:.28,h:.08,d:.28,yaw,color:'#dcc49a',layer:'night',siteId:a.id});
+   }
+
+  }
   // Public pavement belongs to the city ground batch, outside the sacred
   // landmark's physical model/collider envelope. Narrow strips follow the
   // same protected polygon without paving across Maha Rat's asphalt.

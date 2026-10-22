@@ -1,0 +1,31 @@
+{
+  "pass": true,
+  "groups": 4,
+  "expected": 4,
+  "records": [
+    {
+      "name": "test:real-architecture",
+      "command": "node --import tsx scripts/check-real-architecture.ts",
+      "exitCode": 0,
+      "elapsedMs": 88054
+    },
+    {
+      "name": "test:commercial-districts",
+      "command": "node --import tsx scripts/check-commercial-districts.ts",
+      "exitCode": 0,
+      "elapsedMs": 74412
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 0,
+      "elapsedMs": 173962
+    },
+    {
+      "name": "test:premium-landmarks",
+      "command": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 147551
+    }
+  ]
+}

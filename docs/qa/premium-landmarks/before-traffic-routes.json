@@ -1,0 +1,99 @@
+{
+  "benchmarkMode": false,
+  "pass": true,
+  "trafficDisabledForDeterminism": false,
+  "trafficEnabled": true,
+  "metres": 6420,
+  "routes": [
+    {
+      "from": "asok-intersection",
+      "to": "terminal",
+      "metres": 513,
+      "simulatedSeconds": 57,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "terminal",
+      "to": "emporium",
+      "metres": 940,
+      "simulatedSeconds": 98,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "silom-corridor",
+      "to": "mahanakhon",
+      "metres": 129,
+      "simulatedSeconds": 16,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "mahanakhon",
+      "to": "chong-nonsi",
+      "metres": 47,
+      "simulatedSeconds": 8,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "icon",
+      "to": "charoen-nakhon",
+      "metres": 489,
+      "simulatedSeconds": 54,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "icon",
+      "to": "hilton",
+      "metres": 240,
+      "simulatedSeconds": 29,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "peninsula",
+      "to": "icon",
+      "metres": 775,
+      "simulatedSeconds": 82,
+      "collisionFrames": 31,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "oriental",
+      "to": "river-city",
+      "metres": 937,
+      "simulatedSeconds": 98,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    },
+    {
+      "from": "terminal",
+      "to": "mahanakhon",
+      "metres": 2351,
+      "simulatedSeconds": 240,
+      "collisionFrames": 0,
+      "controllerDriven": true,
+      "setupOnlyAtStart": true,
+      "trafficVehicles": 38
+    }
+  ]
+}

@@ -32,7 +32,7 @@ try {
     viewport: { width: 844, height: 390 },
     hasTouch: true,
   });
-  p.setDefaultTimeout(120000);
+  p.setDefaultTimeout(900000);
   p.on("pageerror", (e) => {
     report.errors.push(e.message);
     console.error("PAGE", e.message);

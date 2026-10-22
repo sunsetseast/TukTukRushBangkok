@@ -1,0 +1,355 @@
+{
+  "pass": true,
+  "roads": 2089,
+  "nodes": 2036,
+  "buildings": 7086,
+  "places": 96,
+  "parcels": 209,
+  "benchmarkParcels": 38,
+  "benchmarkPieces": 19433,
+  "waterfrontParcels": 42,
+  "emittedLaneConflicts": 0,
+  "mrt": [
+    {
+      "id": "sanam-chai-mrt",
+      "name": "Sanam Chai",
+      "thai": "สนามไชย",
+      "code": "BL31",
+      "design": [
+        321,
+        465
+      ],
+      "introduced": 34,
+      "district": "Phra Nakhon",
+      "coordinate": {
+        "lat": 13.7443259,
+        "lon": 100.4946239
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=31",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit.",
+      "x": -716,
+      "z": -540,
+      "yaw": 0.1973955598498775
+    },
+    {
+      "id": "sam-yot-mrt",
+      "name": "Sam Yot",
+      "thai": "สามยอด",
+      "code": "BL30",
+      "design": [
+        443,
+        430
+      ],
+      "introduced": 34,
+      "district": "Phra Nakhon",
+      "coordinate": {
+        "lat": 13.7470004,
+        "lon": 100.5023022
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=30",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit.",
+      "x": -228,
+      "z": -680,
+      "yaw": 0.5404195002705843
+    },
+    {
+      "id": "wat-mangkon-mrt",
+      "name": "Wat Mangkon",
+      "thai": "วัดมังกร",
+      "code": "BL29",
+      "design": [
+        448,
+        523
+      ],
+      "introduced": 34,
+      "district": "Samphanthawong",
+      "coordinate": {
+        "lat": 13.7422095,
+        "lon": 100.5099097
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit.",
+      "x": -208,
+      "z": -308,
+      "yaw": -0.5317240672588056
+    }
+  ],
+  "footprintDeltas": {
+    "removed": [
+      {
+        "x": -206.8798426795634,
+        "z": -305.63966646070065,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 1.039072259536091,
+        "color": "#a34d54",
+        "regionId": "chinatown"
+      },
+      {
+        "x": 1746.3520214650353,
+        "z": -368.9728189399424,
+        "w": 22,
+        "d": 22,
+        "height": 62,
+        "yaw": 1.604117322673144,
+        "color": "#506aa0",
+        "regionId": "sukhumvit"
+      },
+      {
+        "x": 1745.4858358789866,
+        "z": -394.95838652140037,
+        "w": 22,
+        "d": 22,
+        "height": 32,
+        "yaw": 1.604117322673144,
+        "color": "#506aa0",
+        "regionId": "sukhumvit"
+      },
+      {
+        "x": 1744.619650292938,
+        "z": -420.94395410285836,
+        "w": 22,
+        "d": 22,
+        "height": 44,
+        "yaw": 1.604117322673144,
+        "color": "#506aa0",
+        "regionId": "sukhumvit"
+      },
+      {
+        "x": 1743.7534647068894,
+        "z": -446.9295216843164,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": 1.604117322673144,
+        "color": "#506aa0",
+        "regionId": "sukhumvit"
+      },
+      {
+        "x": -727.6892908110548,
+        "z": -536.0699857290468,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 1.7681918866447774,
+        "color": "#a08745",
+        "regionId": "oldtown"
+      },
+      {
+        "x": -231.0118381509404,
+        "z": -686.9824323910867,
+        "w": 22,
+        "d": 22,
+        "height": 18.2,
+        "yaw": 2.1112158270654806,
+        "color": "#a08745",
+        "regionId": "oldtown"
+      },
+      {
+        "x": -227.78747947349567,
+        "z": -306.43919276312425,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": -1.747505182864933,
+        "height": 7,
+        "color": "#b7baa2",
+        "regionId": "chinatown",
+        "environmentId": "infill:frontage:2660007168"
+      },
+      {
+        "x": -300.98326088908397,
+        "z": -646.1657691271696,
+        "w": 27,
+        "d": 20,
+        "yaw": 2.1112158270654806,
+        "height": 10.5,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "artRole": "background",
+        "environmentId": "infill:rear:2290252893"
+      },
+      {
+        "x": -327.65129087874413,
+        "z": -637.162093407188,
+        "w": 18,
+        "d": 20,
+        "yaw": 2.1112158270654806,
+        "height": 14,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "artRole": "background",
+        "environmentId": "infill:rear:2157813230"
+      },
+      {
+        "x": -214.4049009599756,
+        "z": -676.7970594240147,
+        "w": 5.5,
+        "d": 7,
+        "yaw": 2.111215827065481,
+        "height": 5.5,
+        "color": "#e3c99c",
+        "regionId": "oldtown",
+        "environmentId": "street-infill:1420013590"
+      }
+    ],
+    "added": [
+      {
+        "x": -196.9144525940504,
+        "z": -310.25390277900027,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": 1.039072259536091,
+        "height": 14,
+        "color": "#b7baa2",
+        "regionId": "chinatown",
+        "environmentId": "infill:frontage:511263298"
+      },
+      {
+        "x": -202.7907412538504,
+        "z": -300.2642120573403,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": 1.039072259536091,
+        "height": 17.5,
+        "color": "#b7baa2",
+        "regionId": "chinatown",
+        "environmentId": "infill:frontage:1201902723"
+      },
+      {
+        "x": -226.55694500411005,
+        "z": -306.2194544650197,
+        "w": 8,
+        "d": 10,
+        "yaw": -1.747505182864933,
+        "height": 17.5,
+        "color": "#b7baa2",
+        "regionId": "chinatown",
+        "environmentId": "infill:frontage:4244623683"
+      },
+      {
+        "x": 1749.3001107341752,
+        "z": -370.5801269845685,
+        "w": 12,
+        "d": 14,
+        "yaw": 1.6041173226731504,
+        "height": 24,
+        "color": "#b7baa2",
+        "regionId": "sukhumvit",
+        "environmentId": "infill:frontage:4178223768"
+      },
+      {
+        "x": 1746.557502770329,
+        "z": -452.8583658999533,
+        "w": 12,
+        "d": 14,
+        "yaw": 1.6041173226731422,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "sukhumvit",
+        "environmentId": "infill:frontage:3168653623"
+      },
+      {
+        "x": -720.3386403268472,
+        "z": -531.1856052679639,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": 1.7681918866447741,
+        "height": 10.5,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "environmentId": "infill:frontage:2131139717"
+      },
+      {
+        "x": -225.16300650568513,
+        "z": -689.3821960965889,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": 2.111215827065481,
+        "height": 17.5,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "environmentId": "infill:frontage:1409739759"
+      },
+      {
+        "x": -218.6830065056851,
+        "z": -678.582196096589,
+        "w": 5.8,
+        "d": 7.5,
+        "yaw": 2.111215827065481,
+        "height": 10.5,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "environmentId": "infill:frontage:3130042641"
+      },
+      {
+        "x": -298.49653140451767,
+        "z": -654.6549490917239,
+        "w": 18,
+        "d": 20,
+        "yaw": 2.1112158270654806,
+        "height": 14,
+        "color": "#b7baa2",
+        "regionId": "oldtown",
+        "artRole": "background",
+        "environmentId": "infill:rear:1035857958"
+      },
+      {
+        "x": -322.530257419609,
+        "z": -656.2452585253658,
+        "w": 29.45,
+        "d": 13.919999999999998,
+        "yaw": -1.649995397764348,
+        "height": 11,
+        "color": "#e0cfad",
+        "regionId": "oldtown",
+        "artRole": "background",
+        "environmentId": "urban-block:old-town-blocks:-6:-12:0"
+      },
+      {
+        "x": 1752.1796407743793,
+        "z": -359.23588087745804,
+        "w": 8,
+        "d": 8,
+        "yaw": 1.6041173226731422,
+        "height": 15.5,
+        "color": "#e3c99c",
+        "regionId": "sukhumvit",
+        "environmentId": "street-infill:4022710210"
+      },
+      {
+        "x": -724.2852874252679,
+        "z": -541.9955566112803,
+        "w": 13,
+        "d": 10,
+        "yaw": 1.7681918866447741,
+        "height": 11.5,
+        "color": "#e3c99c",
+        "regionId": "oldtown",
+        "environmentId": "street-infill:881921576"
+      },
+      {
+        "x": -228.8049009599756,
+        "z": -700.7970594240147,
+        "w": 5.5,
+        "d": 7,
+        "yaw": 2.111215827065481,
+        "height": 5.5,
+        "color": "#e3c99c",
+        "regionId": "oldtown",
+        "environmentId": "street-infill:2038724020"
+      }
+    ]
+  },
+  "inventory": 138,
+  "geographicReferences": 83
+}

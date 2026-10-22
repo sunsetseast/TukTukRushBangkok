@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import * as T from 'three';
+import {createBangkokWorld} from '../src/game/bangkok/world';
+import {buildRealArchitecture} from '../src/game/bangkok/realArchitecture';
+import {realCommercial} from '../src/game/bangkok/realCommercial';
+import {sculptedLandmark} from '../src/game/bangkok/sculptedLandmarks';
+import {realPlace} from '../src/game/bangkok/realPlaces';
+import {disposeObject} from '../src/game/assets';
+const d=createBangkokWorld(),inventory=JSON.parse(fs.readFileSync(new URL('../../../data/bangkok/iconic-inventory.v1.json',import.meta.url),'utf8'));
+const records=['oriental','peninsula','hilton','shangri','state','four-seasons','capella','anantara','okura','rosewood','embassy','erawan-hotel','dusit','eastin'].map(id=>{const l=d.landmarks.find(l=>l.id===id)!,p=realPlace(id)!,review=inventory.places.find((p:any)=>p.id===id),root=(buildRealArchitecture(l)??realCommercial(l)??sculptedLandmark(l))!;if(!root)throw Error(id+' missing actual builder');const near=root instanceof T.LOD?root.levels[0]!.object:root;near.updateMatrixWorld(true);const box=new T.Box3().setFromObject(near),arrival=d.nodes.find(n=>n.id===l.accessNode)!;const result={id,modelOwner:review.modelOwner,asset:root.userData.authoredAsset??p.asset,origin:l.plot,yaw:l.yaw??0,approvedFootprint:p.footprint,declaredHeight:p.height,bounds:{min:box.min.toArray(),max:box.max.toArray()},arrival,roads:d.roads.filter(r=>r.a===arrival.id||r.b===arrival.id).map(r=>r.corridor),coordinate:review.coordinate,review:review.architectureReview,grade:review.recognizabilityGrade};disposeObject(root);return result;});
+fs.writeFileSync(new URL('../../../docs/qa/premium-landmarks/hotel-model-audit.json',import.meta.url),JSON.stringify({physicalSurvey:false,records},null,2));console.log('Audited',records.length,'active hotel models');

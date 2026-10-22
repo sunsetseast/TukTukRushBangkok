@@ -9,12 +9,12 @@ export const COMMERCIAL_ASSETS=['icon','paragon','central','mbk','terminal'];
 export function realCommercial(l:Landmark){
  if(!COMMERCIAL_ASSETS.includes(l.id!))return;
  // Preserve the existing folded riverfront ICONSIAM model.
- if(l.id==='icon'){const root=reviewedLandmark(l)!;for(const level of root.levels)level.object.rotation.y=Math.PI/2;root.userData.authoredAsset='real-icon-river-oriented-v5';return root;}
+ if(l.id==='icon'){const root=reviewedLandmark(l)!;for(const level of root.levels)level.object.rotation.y=Math.PI/2;root.userData.nightScale=.38;root.userData.authoredAsset='real-icon-river-oriented-v6';return root;}
  const lod=new T.LOD();
  for(const detail of [true,false]){
   const b=new LandmarkBuilder();buildCommercialDistrictModel(l.id!,b,detail);
   lod.addLevel(b.finish(`real-${l.id}-district-v6-${detail?'near':'far'}`),detail?0:300,.12);
  }
- lod.userData.authoredAsset=`real-${l.id}-district-v6`;
+ if(l.id==='terminal')lod.userData.nightScale=.38;lod.userData.authoredAsset=`real-${l.id}-district-v6`;
  lod.userData.nightMaterials=lod.levels.flatMap(l=>l.object.userData.nightMaterials);return lod;
 }

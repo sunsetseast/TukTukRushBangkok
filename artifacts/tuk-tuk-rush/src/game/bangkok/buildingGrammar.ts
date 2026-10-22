@@ -74,6 +74,7 @@ export type ParcelDesign = {
   region: string;
   corridor: string;
   hero?: string;
+  premiumContext?: 'asok'|'sathorn'|'riverside';
   bays: Bay[];
 };
 export const buildingIdentity = (b: Obstacle) =>
@@ -267,6 +268,7 @@ const TRADE: Record<Typology, Trade[]> = {
   residence: ["residence"],
 };
 export function designBuildings(d: District): ParcelDesign[] {
+  const heroContexts=d.landmarks.filter(l=>['terminal','icon','mahanakhon','hilton','peninsula','oriental'].includes(l.id!));
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   const roads = d.roads
     .filter((r) => !r.bridge && !r.shortcut)
@@ -402,6 +404,7 @@ export function designBuildings(d: District): ParcelDesign[] {
       region,
       corridor: road.r.corridor ?? "",
       hero: hero?.id,
+      premiumContext:(()=>{if(b.artRole!=='background'||waterfront)return undefined;const near=heroContexts.filter(l=>Math.hypot((l.plot??l).x-b.x,(l.plot??l).z-b.z)<150).sort((a,c)=>Math.hypot((a.plot??a).x-b.x,(a.plot??a).z-b.z)-Math.hypot((c.plot??c).x-b.x,(c.plot??c).z-b.z))[0];return near?.id==='terminal'?'asok':near?.id==='mahanakhon'?'sathorn':near?'riverside':undefined;})(),
       bays,
     });
   });

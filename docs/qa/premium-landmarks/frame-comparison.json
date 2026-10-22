@@ -1,0 +1,851 @@
+{
+  "pass": true,
+  "pairs": 38,
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cameraHeadingAndRenderConfigurationMatched": true,
+  "records": [
+    {
+      "id": "terminal-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 369,
+        "triangles": 517994,
+        "geometries": 688,
+        "textures": 15,
+        "frameMs": 42.5,
+        "imageSha256": "ea97d4ff260c21779438ba90b8823544180a9dcfa512dfee8ab9abd71db96d71"
+      },
+      "after": {
+        "calls": 372,
+        "triangles": 518290,
+        "geometries": 691,
+        "textures": 15,
+        "frameMs": 20,
+        "imageSha256": "86ac30b3a4881bc41b3155188fcd292d498fee1fde98242f9ff9be96225b09e0"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 361,
+        "triangles": 514402,
+        "geometries": 688,
+        "textures": 15,
+        "frameMs": 91.89999999990687,
+        "imageSha256": "6dc72925999f118ba2d53532eeb8e2e292000833e161d6655f2e2c3e793a0797"
+      },
+      "after": {
+        "calls": 364,
+        "triangles": 514698,
+        "geometries": 691,
+        "textures": 15,
+        "frameMs": 217.20000000018626,
+        "imageSha256": "abb28c11d71a931b4a584d9d7149454b2e81331b3b1e94bb3e9973cf6f6ebceb"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-street",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 367,
+        "triangles": 482913,
+        "geometries": 920,
+        "textures": 15,
+        "frameMs": 224.80000000004657,
+        "imageSha256": "9308090432ff2614fc615ccccacf8ecefb497a673c301ee65da6ed7be01475a0"
+      },
+      "after": {
+        "calls": 370,
+        "triangles": 482133,
+        "geometries": 920,
+        "textures": 15,
+        "frameMs": 585,
+        "imageSha256": "7e2d5df8549d51b709a538edf76d8784ee9b9327772e64023d4aa41df373495d"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-street",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 367,
+        "triangles": 482913,
+        "geometries": 923,
+        "textures": 15,
+        "frameMs": 147.10000000009313,
+        "imageSha256": "9787a5eebc4dd1b7af97a9562eb8b00a5bf8024f9af4f280f1a6260b31cb8891"
+      },
+      "after": {
+        "calls": 368,
+        "triangles": 481661,
+        "geometries": 922,
+        "textures": 15,
+        "frameMs": 1153.6999999997206,
+        "imageSha256": "d791bf11dea6ceb4b722b7c52592ef331472e710d4cbd9dbe6c0ab67fef51d7f"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-asok",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 362,
+        "triangles": 465732,
+        "geometries": 1060,
+        "textures": 15,
+        "frameMs": 6244.5,
+        "imageSha256": "c535db929f99acec957254e4f9925a14eeb632dd2990c0456d82effcccaf1225"
+      },
+      "after": {
+        "calls": 366,
+        "triangles": 455708,
+        "geometries": 1059,
+        "textures": 15,
+        "frameMs": 53.10000000009313,
+        "imageSha256": "9d9aa371f172f2dd0e8b1ffa05cc4c0457e4f6122b820162d4bb8acf72ac23b3"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-asok",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 369,
+        "triangles": 469292,
+        "geometries": 1060,
+        "textures": 15,
+        "frameMs": 49.700000000186265,
+        "imageSha256": "de55eabd4c9519cd405ef610175347c94bf7f694282560ffa6381e158e482063"
+      },
+      "after": {
+        "calls": 373,
+        "triangles": 459268,
+        "geometries": 1059,
+        "textures": 15,
+        "frameMs": 26.300000000279397,
+        "imageSha256": "e9a03ff8d0bc726c385773a41763d24eda29ee84b1a30bd14824155a89fd4ed4"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-overview",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 421,
+        "triangles": 525601,
+        "geometries": 1070,
+        "textures": 15,
+        "frameMs": 117.9000000001397,
+        "imageSha256": "22b7c43997a0eba285315bfedcdda355c94562ccc812aa551394cf0ce8980f3d"
+      },
+      "after": {
+        "calls": 426,
+        "triangles": 526997,
+        "geometries": 1069,
+        "textures": 15,
+        "frameMs": 194.39999999990687,
+        "imageSha256": "742c6b703aa11426c894dd08304d4f6dfd24fba566c086a8674d4f4288e1702b"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "terminal-overview",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 428,
+        "triangles": 529161,
+        "geometries": 1070,
+        "textures": 15,
+        "frameMs": 1513.7000000001863,
+        "imageSha256": "7762d62e9960ae68ee9e3adf4201679528f3edad34970ca3eb39c4f43f96a9bd"
+      },
+      "after": {
+        "calls": 433,
+        "triangles": 530557,
+        "geometries": 1069,
+        "textures": 15,
+        "frameMs": 1317.6000000000931,
+        "imageSha256": "7d4717722534342df3c4b81a5619597cf0541ec6602f13b51f543b01c9d08b38"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1295,
+        "textures": 16,
+        "frameMs": 165.10000000009313,
+        "imageSha256": "9bf43011b400acd016273c026ef7bdcc336998f9e0a1539e29424105ad38b83a"
+      },
+      "after": {
+        "calls": 274,
+        "triangles": 271868,
+        "geometries": 1289,
+        "textures": 16,
+        "frameMs": 28,
+        "imageSha256": "ba63fcbdf7d9f3aaa58042357cb1eddac2535c69682582aac32131d154e73e6f"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 279,
+        "triangles": 253862,
+        "geometries": 1295,
+        "textures": 16,
+        "frameMs": 32.800000000046566,
+        "imageSha256": "69a9634593eb8aa0c529d7426027a01864ae5ad46494fe8fc1bb4cf44eeb6356"
+      },
+      "after": {
+        "calls": 274,
+        "triangles": 271868,
+        "geometries": 1289,
+        "textures": 16,
+        "frameMs": 42.60000000009313,
+        "imageSha256": "75afb80c8fcc1460e474d0d73196fa503f172339c6d6f2ff80569f54157d4711"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-street",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 278,
+        "triangles": 244852,
+        "geometries": 1366,
+        "textures": 16,
+        "frameMs": 222,
+        "imageSha256": "075498310ee26ba8c1cfa735c3567eea12c455b3d774e0d83cf678fa49658d46"
+      },
+      "after": {
+        "calls": 271,
+        "triangles": 292370,
+        "geometries": 1357,
+        "textures": 16,
+        "frameMs": 31.5,
+        "imageSha256": "4c70f74050d5e01ec615921ca9d566a6ee467c5fa9b8c92ccbb002c6ca7f8f8e"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-street",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 279,
+        "triangles": 244952,
+        "geometries": 1367,
+        "textures": 16,
+        "frameMs": 72.5,
+        "imageSha256": "a60df3e9948675a27fd901a2820cebaa076c9de2e61b6f405e40bcc272c6ef22"
+      },
+      "after": {
+        "calls": 272,
+        "triangles": 292470,
+        "geometries": 1358,
+        "textures": 16,
+        "frameMs": 1346.7000000001863,
+        "imageSha256": "a6939d85291d70efa1c58a469cc6468bf36b9c86fa97c94dade46ac48b3ee948"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-goldline",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 290,
+        "triangles": 265548,
+        "geometries": 1369,
+        "textures": 16,
+        "frameMs": 75.19999999995343,
+        "imageSha256": "654bb17a64993d953b089dd3cca4a3d20af11aec7ebdd044a007efbc5ffb75b7"
+      },
+      "after": {
+        "calls": 283,
+        "triangles": 299550,
+        "geometries": 1359,
+        "textures": 16,
+        "frameMs": 49.1999999997206,
+        "imageSha256": "d6e3b72af044c2730296308a0a9541add323616eb6d3c4681fea81917e5a8807"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-goldline",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 290,
+        "triangles": 265548,
+        "geometries": 1369,
+        "textures": 16,
+        "frameMs": 34.9000000001397,
+        "imageSha256": "f5a84ab1a2be38e75f86e52c5a868919aaa2832a18541855093c2a9ae7d74dd9"
+      },
+      "after": {
+        "calls": 283,
+        "triangles": 299550,
+        "geometries": 1359,
+        "textures": 16,
+        "frameMs": 724.7000000001863,
+        "imageSha256": "dca5ef8c07c03b8123621bee4fe7ceaf4f0bed098c3158a6dd89f4fb387ac283"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-river",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 349,
+        "triangles": 328448,
+        "geometries": 1598,
+        "textures": 16,
+        "frameMs": 1145,
+        "imageSha256": "ba10af6d2c84e8dc359284f97d3d30da3f0fa0abedc389fd1db3d3e09b1eb7bd"
+      },
+      "after": {
+        "calls": 345,
+        "triangles": 351226,
+        "geometries": 1587,
+        "textures": 16,
+        "frameMs": 33,
+        "imageSha256": "726293a7ce4871f25df0daa19e7e807ef7142f974268c818a38bba64651cb875"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "icon-river",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 346,
+        "triangles": 326918,
+        "geometries": 1599,
+        "textures": 16,
+        "frameMs": 892.3000000002794,
+        "imageSha256": "84f3c26097a5d7b00caebf8f7b7b4e7ac7cfe334a1fbc3d5a25fecb3e934171b"
+      },
+      "after": {
+        "calls": 342,
+        "triangles": 349696,
+        "geometries": 1588,
+        "textures": 16,
+        "frameMs": 66.79999999981374,
+        "imageSha256": "63ecef75b1dca1b9b74a6ea144d8279dfae0d2252af4f286570314aa46ea8760"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "mahanakhon-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 267,
+        "triangles": 430743,
+        "geometries": 1825,
+        "textures": 16,
+        "frameMs": 749.3999999999069,
+        "imageSha256": "84b3a982a797091f0cbae8733794cca8146679fe37b55a20749f3d4c7067c66c"
+      },
+      "after": {
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1814,
+        "textures": 16,
+        "frameMs": 239.09999999997672,
+        "imageSha256": "642f8fe24c1cfab05b05197e42833bac395d508954f7af49d24b7148a32a0001"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 267,
+        "triangles": 430743,
+        "geometries": 1826,
+        "textures": 16,
+        "frameMs": 42.799999999813735,
+        "imageSha256": "1490a9fead9a5991410b62b79ffd466c8cbdc36018946b1ecd76af248b17a9c0"
+      },
+      "after": {
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1817,
+        "textures": 16,
+        "frameMs": 501.20000000001164,
+        "imageSha256": "d545706033ecbb6343161dc42525ed203c313c2d7811cb194daaaa2b479d3405"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 330,
+        "triangles": 411481,
+        "geometries": 2016,
+        "textures": 16,
+        "frameMs": 270.39999999990687,
+        "imageSha256": "0c3aefc1b183947870b31548d9f738a7f5d7e630dc2eb91935b210b3c3120dc3"
+      },
+      "after": {
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
+        "textures": 16,
+        "frameMs": 13.5,
+        "imageSha256": "8d698c4b8a83177224422796659704fbb508a61b5c7c8e3e7bbf6e7b379e1196"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 330,
+        "triangles": 411481,
+        "geometries": 2016,
+        "textures": 16,
+        "frameMs": 29.100000000093132,
+        "imageSha256": "939e302ff0eb232a5eef0378e245a1adf05ea88e69c6061837fd2b1726824b6b"
+      },
+      "after": {
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
+        "textures": 16,
+        "frameMs": 705.5,
+        "imageSha256": "c235a30f5bce9e76e473645f5096955cef468384ee033e16101527e444796d8c"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 304,
+        "triangles": 446763,
+        "geometries": 2039,
+        "textures": 16,
+        "frameMs": 1928.3000000002794,
+        "imageSha256": "83d660de5d2d1cd90fee0b9db152cc52128ddbc7961e96af4cfb5462fdece24c"
+      },
+      "after": {
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
+        "textures": 16,
+        "frameMs": 444.0999999999767,
+        "imageSha256": "57aeae40fe297b7b9fb6b4709a406d682d44a403f05fc5d1bbcdeaaaa10081f9"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 304,
+        "triangles": 446763,
+        "geometries": 2039,
+        "textures": 16,
+        "frameMs": 64.10000000009313,
+        "imageSha256": "337b93026566f7ba925a99dfb0ff9701856bb95c0551b07b24f3f1d35423c8fc"
+      },
+      "after": {
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
+        "textures": 16,
+        "frameMs": 370,
+        "imageSha256": "f49fa88325195c32f85a26a603198aa352df2c27d0b274949f61ee2a2016bda8"
+      },
+      "afterSourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 242,
+        "triangles": 217258,
+        "geometries": 2065,
+        "textures": 16,
+        "frameMs": 24.5,
+        "imageSha256": "2670b4435c495a909fcf4eb4caf49cbab296f2d4fd289340c3a672ac1dc3bd46"
+      },
+      "after": {
+        "calls": 236,
+        "triangles": 237202,
+        "geometries": 2056,
+        "textures": 16,
+        "frameMs": 21.399999999906868,
+        "imageSha256": "bee69993a7c564f9bdbcc82528cec0aadfe26bdaaf985f8d83efd694ca14c02d"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 242,
+        "triangles": 217258,
+        "geometries": 2065,
+        "textures": 16,
+        "frameMs": 631.6999999997206,
+        "imageSha256": "30a5d9ef20af129de715f8968ba64c258a7e7244de82d406ecf31e92841e7b8c"
+      },
+      "after": {
+        "calls": 236,
+        "triangles": 237202,
+        "geometries": 2056,
+        "textures": 16,
+        "frameMs": 67.5,
+        "imageSha256": "c90eaa9baca1ee6e01aef10c29c8bca8bb0cee20d81caf7f0b074ac7f74f1ede"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "hilton-river",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 341,
+        "triangles": 316287,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 1005.2999999998137,
+        "imageSha256": "2ca5fef375f4b35241f45316ed5bba30e09d7b9ed28438d57a93583cfb489727"
+      },
+      "after": {
+        "calls": 339,
+        "triangles": 330383,
+        "geometries": 2126,
+        "textures": 16,
+        "frameMs": 29.299999999813735,
+        "imageSha256": "fc49fee1e9835238816965a38d00303c721685c713b730f630918d7ad45ef125"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "hilton-river",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 340,
+        "triangles": 316255,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 1470.1000000000931,
+        "imageSha256": "5648de4a982b5cc84e5568f45e64804ebd6fae36b967b7f641fef50d103596b0"
+      },
+      "after": {
+        "calls": 338,
+        "triangles": 330351,
+        "geometries": 2126,
+        "textures": 16,
+        "frameMs": 1078.7999999998137,
+        "imageSha256": "5e3b405933c4c7b5329175981265b82871ba58b0d607b0fbc8b828637e7c8dea"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 332,
+        "triangles": 314255,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 2206.899999999907,
+        "imageSha256": "6fa3a3495258986a1d221a45d00916e2387e8c9ae36bc445302be5c128474288"
+      },
+      "after": {
+        "calls": 332,
+        "triangles": 329815,
+        "geometries": 2126,
+        "textures": 16,
+        "frameMs": 28.700000000186265,
+        "imageSha256": "818795f9ca1819e78762959a1c7d57259a356c14d414f877bc76318a13485594"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 331,
+        "triangles": 314223,
+        "geometries": 2135,
+        "textures": 16,
+        "frameMs": 2657.1999999997206,
+        "imageSha256": "72903db4854fbcc3c8ffaf5c39d731d57e5d75389932723e4e6f6539c4459069"
+      },
+      "after": {
+        "calls": 331,
+        "triangles": 329783,
+        "geometries": 2126,
+        "textures": 16,
+        "frameMs": 92,
+        "imageSha256": "8f934a201c62d7b8d0b01084ca2ac609f296020568d36894b21f2d14f446751e"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 332,
+        "triangles": 342640,
+        "geometries": 2255,
+        "textures": 16,
+        "frameMs": 1165.3999999999069,
+        "imageSha256": "8a934c556765f9204562c30f4bc5ae0e5ccad65476309552b1684b3bf41c5d32"
+      },
+      "after": {
+        "calls": 326,
+        "triangles": 358410,
+        "geometries": 2242,
+        "textures": 16,
+        "frameMs": 28.100000000093132,
+        "imageSha256": "9b7e2f8f71f3b164e52dfbdcce339c8d145fdabacf8633fa2b8eef644685e871"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 332,
+        "triangles": 342640,
+        "geometries": 2255,
+        "textures": 16,
+        "frameMs": 137,
+        "imageSha256": "41130ab98e433ff5cf74b26062414f104c9237294329bb3106317e9d69756f05"
+      },
+      "after": {
+        "calls": 326,
+        "triangles": 358410,
+        "geometries": 2242,
+        "textures": 16,
+        "frameMs": 1568.2000000001863,
+        "imageSha256": "93bbfa596859f8ea7dde6961c454470184f52c0958d56072dfa4ea1a77fb86f2"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-river",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 381,
+        "triangles": 420700,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 21,
+        "imageSha256": "8bdf073f337c4582e1ebf5a77915f87033bef0b848b32252c9219a7818a6cf85"
+      },
+      "after": {
+        "calls": 375,
+        "triangles": 438928,
+        "geometries": 2377,
+        "textures": 16,
+        "frameMs": 713.3000000002794,
+        "imageSha256": "43aa790a50ffde69dfc477d00d9659610b122405dac5c592e144ee5298f0bc46"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-river",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 372,
+        "triangles": 417076,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 410.8000000002794,
+        "imageSha256": "fd4f66d7665c219bdd4b540829218c3b3d771b78552a37e225b34f42620f1dfa"
+      },
+      "after": {
+        "calls": 366,
+        "triangles": 435304,
+        "geometries": 2377,
+        "textures": 16,
+        "frameMs": 888.3000000002794,
+        "imageSha256": "44e61583b7427b2747e3eab57514f50b2c18f80de4e05beb337bd279fd9e500d"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 368,
+        "triangles": 411886,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 90.1999999997206,
+        "imageSha256": "ab1479e90415f6a5ce433e2037a64544a6aec1813c6c336696d04b6e4ab7babc"
+      },
+      "after": {
+        "calls": 363,
+        "triangles": 437098,
+        "geometries": 2377,
+        "textures": 16,
+        "frameMs": 1583.1000000000931,
+        "imageSha256": "4f8e55a534b6cc4464e30d24279a3e76647543b32a57394632fb6caf3e2d958f"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 359,
+        "triangles": 408262,
+        "geometries": 2388,
+        "textures": 16,
+        "frameMs": 34.1999999997206,
+        "imageSha256": "e5c06c91023d709aab0579c7615ddccbbbafb70248b497fbfe2a957ef3840cf9"
+      },
+      "after": {
+        "calls": 354,
+        "triangles": 433474,
+        "geometries": 2377,
+        "textures": 16,
+        "frameMs": 181.70000000018626,
+        "imageSha256": "738b2f58cf998c7bdd479ef52331df766fe9992505968ff0df276b11b86da8a5"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 305,
+        "triangles": 257883,
+        "geometries": 2446,
+        "textures": 16,
+        "frameMs": 30.5,
+        "imageSha256": "c47dc853f4cd5ed78c8291f62357f7a1a726f4f212083779030fda2ae38400fc"
+      },
+      "after": {
+        "calls": 302,
+        "triangles": 309744,
+        "geometries": 2431,
+        "textures": 16,
+        "frameMs": 51.39999999990687,
+        "imageSha256": "03eb3b488ca7f483a2f8354e5b6030a235d2a7f2b00430da3796fc9031c35ba5"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 300,
+        "triangles": 256227,
+        "geometries": 2446,
+        "textures": 16,
+        "frameMs": 312.39999999990687,
+        "imageSha256": "a64abc0b07405a0560ebd75887a270707c4ef141ef4b201a99320d331bb03d92"
+      },
+      "after": {
+        "calls": 297,
+        "triangles": 308088,
+        "geometries": 2431,
+        "textures": 16,
+        "frameMs": 431.10000000009313,
+        "imageSha256": "d746a0801b0d9a6a2a260bb43b97ddb56549f67243008d9b8f21cd7793ab2018"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "oriental-river",
+      "light": "sunset",
+      "cameraMatched": true,
+      "before": {
+        "calls": 394,
+        "triangles": 511136,
+        "geometries": 2686,
+        "textures": 16,
+        "frameMs": 88.8000000002794,
+        "imageSha256": "c73a9e3b78e1f94e06f753cd81cd9d76903aaf54e4146048397024f55df427fc"
+      },
+      "after": {
+        "calls": 388,
+        "triangles": 518208,
+        "geometries": 2669,
+        "textures": 16,
+        "frameMs": 54.5,
+        "imageSha256": "34d990d7c413a07afb1cbea4750cb02583991baacb8e3fa8acb2d52413db6e88"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    },
+    {
+      "id": "oriental-river",
+      "light": "night",
+      "cameraMatched": true,
+      "before": {
+        "calls": 394,
+        "triangles": 511136,
+        "geometries": 2686,
+        "textures": 16,
+        "frameMs": 1344.5,
+        "imageSha256": "0121ef67de094ffdfba2219a463052b4d01e992b0423ae0ee90c26111a95a0cb"
+      },
+      "after": {
+        "calls": 388,
+        "triangles": 518208,
+        "geometries": 2669,
+        "textures": 16,
+        "frameMs": 237.10000000009313,
+        "imageSha256": "a1ad25b3b74e755ca86f1e7db209143fc4bd5044c02f346f7281c078efbe01ab"
+      },
+      "afterSourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
+    }
+  ],
+  "residentCountCaveat": "32 retained frames carry resource counts measured before the tower-only refinement; their image geometry is unchanged under the visibility check. Six tower frames carry the final runtime counts. Use the final all-city inventory for authoritative final retained totals."
+}

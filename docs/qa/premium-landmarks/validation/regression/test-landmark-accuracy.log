@@ -1,0 +1,15 @@
+{
+  pass: true,
+  registryEntries: 96,
+  landmarks: 49,
+  protectedParcels: 209,
+  facadeOrientations: 20,
+  sightlines: 76,
+  clearSightlines: 75,
+  huaFeatures: 4,
+  parcelConflicts: 0,
+  contextPockets: 1150,
+  improvedPockets: 30,
+  physicalIPhone: false
+}
+{"pass":true,"trafficDisabledForDeterminism":true,"metres":4523,"routes":[{"from":"hua","to":"mbk","metres":649,"simulatedSeconds":69,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"mbk","to":"paragon","metres":554,"simulatedSeconds":60,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"palace","to":"swing","metres":487,"simulatedSeconds":52,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"oriental","to":"hilton","metres":2155,"simulatedSeconds":220,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"shangri","to":"capella","metres":677,"simulatedSeconds":72,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true}]}

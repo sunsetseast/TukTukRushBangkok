@@ -1,3 +1,4 @@
+import {curtain,planter as gardenBox} from './heroCraft';
 import * as T from "three";
 import { LandmarkBuilder } from "./landmarkBuilder";
 
@@ -561,24 +562,37 @@ export function buildSiamCenterDiscovery(b: B, detail: boolean) {
   b.box(0, 0.1, 28, 148, 0.2, 3, "#aeb7a5");
 }
 function terminal(b: B, detail: boolean) {
-  rounded(b, 0, 0, -3, 88, 70, 29, 8, "#c0c4ba", detail);
-  // Rounded corner glazing and horizontally lined silver shopping podium.
-  rounded(b, -29, 0, 18, 29, 29, 29, 11, "#557f87", detail, "glass");
-  for (const y of [4, 9, 14, 19, 24, 29]) {
-    rounded(b, -29, y, 18, 29.5, 29.5, 0.45, 11.2, IVORY, detail);
-    b.box(10, y, 31, 64, 0.3, 0.5, "#d7d9cb");
+  // Detailed west vehicle frontage and separate east pedestrian elevation.
+  // Real ground-floor recesses, not glass plates over a complete solid box.
+  rounded(b,0,7,-3,87,69,22,8,'#c6cbc6',detail);
+  b.box(0,3.5,-3,70,7,69,'#c6cbc6');
+  for(const side of [-1,1]){
+   b.box(side*39.25,3.5,-31,8.5,7,13,'#c6cbc6');
+   b.box(side*39.25,3.5,16,8.5,7,31,'#c6cbc6');
+   curtain(b,side*44.2,3.4,-31,12.7,6.2,detail,side*Math.PI/2,4,1);
+   curtain(b,side*44.2,3.4,16,30.7,6.2,detail,side*Math.PI/2,9,1);
+   b.box(side*42,.12,-12,4.4,.24,25,'#b8b5a8');
+   b.box(side*42,6.8,-12,4.4,.12,25,'#c8b28a',0,true);
   }
-  for (let y = 2; y < 29; y += detail ? 1 : 2) {
-    b.box(13, y, 31.2, 59, 0.13, 0.3, "#e3e0d3");
-    for (const side of [-1, 1])
-      b.box(side * 44.12, y, -3, 0.15, 0.13, 50, "#e3e0d3");
+  rounded(b,-29,.2,18,29,29,28.8,11,'#466a78',detail,'glass');
+  for(const y of [4,9,14,19,24,29])rounded(b,-29,y,18,29.5,29.5,.35,11.2,IVORY,detail);
+  curtain(b,-44.2,18,-9,49,20,detail,-Math.PI/2,12,4);
+  curtain(b,44.2,18,-9,49,20,detail,Math.PI/2,12,4);
+  curtain(b,13,15,32.05,59,27,detail,0,14,5);
+  curtain(b,4,15,-37.7,65,27,detail,Math.PI,12,5);
+  b.box(-43.95,15,-30,.6,28,10,'#d6d7cc');
+  for(let y=2;y<28;y+=detail?1.3:2.6)b.box(-44.3,y,-30,.12,.12,10.1,'#b2bcb9');
+  for(const side of [-1,1]){
+   curtain(b,side*40,3.5,-12,25,6,detail,side*Math.PI/2,8,1);
+   b.box(side*44.35,8.8,-12,.35,3.2,28,'#d8d9cd');
+   b.box(side*43.7,7,-12,2,.3,29,'#c0cbc8');
+   b.box(side*43.75,6.8,-12,1.8,.06,27,'#d2bc94',0,true);
   }
-  for (const z of [-18, -4, 10]) b.box(44.2, 15, z, 0.5, 25, 1.3, "#b0a16f");
-  for (const x of [-13, -4, 5, 14]) b.box(x, 15, 32.2, 2.1, 29, 2.2, "#b0a16f");
-  b.box(20, 29, 31.6, 39, 5, 0.7, "#d9dbcd");
-  lettering(b, "TERMINAL21", 20, 29, 32.1, 34, "#7196a0");
-  glass(b, -27, 4, 32, 21, 7, 0.2, "#31535f");
-  b.box(-27, 8, 34, 25, 0.5, 6, IVORY);
+  for(const z of [-24,0])gardenBox(b,-44.2,z,1.1,3.2,detail);
+  b.box(17,27.3,31.95,46,4.7,.55,'#d6d8ce');
+  for(const x of [-12,2,16,30])b.box(x,15,31.9,.65,25,.55,'#b9ad88');
+  glass(b,-26,3.7,32.5,23,6.4,.2,'#2c4c58');
+  b.box(-26,7.4,34,25,.3,5,'#c9cbc0');
   // Documented 60-degree Y hotel plan: three differently visible slabs and
   // round-ended vertical glass bays; central Thai-inspired gold crown.
   const cx = 0,

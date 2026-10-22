@@ -1,0 +1,217 @@
+{
+  "pass": true,
+  "groups": 35,
+  "expected": 35,
+  "records": [
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "elapsedMs": 609
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "elapsedMs": 6064
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "elapsedMs": 9198
+    },
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "elapsedMs": 16759
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "elapsedMs": 845
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "elapsedMs": 1143
+    },
+    {
+      "name": "test:environment",
+      "command": "node --import tsx scripts/check-environment-art.ts",
+      "exitCode": 0,
+      "elapsedMs": 273377
+    },
+    {
+      "name": "test:cityscapes",
+      "command": "node --import tsx scripts/check-cityscapes.ts",
+      "exitCode": 0,
+      "elapsedMs": 209464
+    },
+    {
+      "name": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "exitCode": 0,
+      "elapsedMs": 650242
+    },
+    {
+      "name": "test:open-bangkok",
+      "command": "node --import tsx scripts/check-open-bangkok.ts",
+      "exitCode": 0,
+      "elapsedMs": 85565
+    },
+    {
+      "name": "test:definitive",
+      "command": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
+      "exitCode": 0,
+      "elapsedMs": 254584
+    },
+    {
+      "name": "test:startup",
+      "command": "node scripts/check-startup.mjs",
+      "exitCode": 0,
+      "elapsedMs": 16944
+    },
+    {
+      "name": "test:interface",
+      "command": "node --import tsx scripts/check-navigation-ui.ts",
+      "exitCode": 0,
+      "elapsedMs": 77884
+    },
+    {
+      "name": "test:graphics-foundation",
+      "command": "node --import tsx scripts/check-graphics-foundation.ts",
+      "exitCode": 0,
+      "elapsedMs": 2741
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 0,
+      "elapsedMs": 194980
+    },
+    {
+      "name": "test:corrections",
+      "command": "node --import tsx scripts/check-corrections.ts",
+      "exitCode": 0,
+      "elapsedMs": 124740
+    },
+    {
+      "name": "test:cinematic",
+      "command": "node --import tsx scripts/check-cinematic.ts",
+      "exitCode": 0,
+      "elapsedMs": 145820
+    },
+    {
+      "name": "test:career",
+      "command": "node --import tsx scripts/check-career.ts",
+      "exitCode": 0,
+      "elapsedMs": 199063
+    },
+    {
+      "name": "test:city-fabric",
+      "command": "node --import tsx scripts/check-city-fabric.ts",
+      "exitCode": 0,
+      "elapsedMs": 54516
+    },
+    {
+      "name": "test:real-architecture",
+      "command": "node --import tsx scripts/check-real-architecture.ts",
+      "exitCode": 0,
+      "elapsedMs": 72826
+    },
+    {
+      "name": "test:authored-sites",
+      "command": "node --import tsx scripts/check-authored-sites.ts",
+      "exitCode": 0,
+      "elapsedMs": 113617
+    },
+    {
+      "name": "test:authored-drives",
+      "command": "node --import tsx scripts/check-authored-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 100336
+    },
+    {
+      "name": "test:commercial-districts",
+      "command": "node --import tsx scripts/check-commercial-districts.ts",
+      "exitCode": 0,
+      "elapsedMs": 64247
+    },
+    {
+      "name": "test:civic-roads",
+      "command": "node --import tsx scripts/check-civic-roads.ts",
+      "exitCode": 0,
+      "elapsedMs": 134553
+    },
+    {
+      "name": "test:geographic-reference",
+      "command": "node --import tsx scripts/check-geographic-reference.ts",
+      "exitCode": 0,
+      "elapsedMs": 742
+    },
+    {
+      "name": "test:historic-districts",
+      "command": "node --import tsx scripts/check-historic-districts.ts",
+      "exitCode": 0,
+      "elapsedMs": 6800
+    },
+    {
+      "name": "test:convenience-urban",
+      "command": "node --import tsx scripts/check-convenience-urban.ts",
+      "exitCode": 0,
+      "elapsedMs": 65614
+    },
+    {
+      "name": "test:public-spaces",
+      "command": "node --import tsx scripts/check-public-spaces.ts",
+      "exitCode": 0,
+      "elapsedMs": 63382
+    },
+    {
+      "name": "test:city-drives",
+      "command": "node --import tsx scripts/check-city-reconstruction-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 83839
+    },
+    {
+      "name": "test:master-plan",
+      "command": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts",
+      "exitCode": 0,
+      "elapsedMs": 135377
+    },
+    {
+      "name": "test:city-completion",
+      "command": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 190596
+    },
+    {
+      "name": "test:historic-fidelity",
+      "command": "node --import tsx scripts/check-historic-fidelity.ts",
+      "exitCode": 0,
+      "elapsedMs": 64737
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "command": "node --import tsx scripts/check-landmark-accuracy.ts && node --import tsx scripts/check-landmark-accuracy-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 118731
+    },
+    {
+      "name": "test:city-blueprint",
+      "command": "node --import tsx scripts/check-city-blueprint.ts",
+      "exitCode": 0,
+      "elapsedMs": 61348
+    },
+    {
+      "name": "test:premium-landmarks",
+      "command": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
+      "exitCode": 0,
+      "elapsedMs": 85402
+    }
+  ]
+}

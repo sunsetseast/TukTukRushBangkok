@@ -1216,16 +1216,26 @@
         "https://lebua.com/"
       ],
       "implementation": "rendered tower",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Street podium and rooftop terrace proportions need photographic refinement",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P2"
+      "recommendedCorrection": "Street podium and rooftop terrace proportions need photographic refinement",
+      "priority": "P2",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "1055 Silom Road",
+        "bankReview": "east",
+        "recognitionFeatures": "Inland Bang Rak State Tower, stepped balconies and gold dome",
+        "source": "https://lebua.com/",
+        "remaining": "Street podium and rooftop terrace proportions need photographic refinement",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "benchasiri",
@@ -1511,16 +1521,26 @@
         "https://www.dusitcentralpark.com/en/"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Verify current podium and park-facing arrival plan",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Verify current podium and park-facing arrival plan",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "98 Rama IV Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Rebuilt park-facing tower, spire, Central Park podium at Silom/Rama IV",
+        "source": "https://www.dusit.com/dusitthani-bangkok/",
+        "remaining": "Verify current podium and park-facing arrival plan",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "okura",
@@ -1563,16 +1583,26 @@
         "https://www.okurabangkok.com/"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Pool identity present; exact podium entrance/bearing unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Pool identity present; exact podium entrance/bearing unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "57 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Park Ventures at Wireless/Phloen Chit, chamfered tower and projecting pool",
+        "source": "https://www.okurabangkok.com/",
+        "remaining": "Pool identity present; exact podium entrance/bearing unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "anantara",
@@ -1611,16 +1641,26 @@
         "https://www.anantara.com/uploads/minor/anantara/documents/anantara-riverside-bangkok-resort/hotel-info/hotel-information-2025/anantara_riverside_resort_bangkok_resort_map_280125.pdf"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Implement official resort-map wing, garden and pier relationships",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Implement official resort-map wing, garden and pier relationships",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "257/1-3 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "Low pitched-roof resort wings around tropical gardens; east river frontage",
+        "source": "https://www.anantara.com/en/riverside-bangkok",
+        "remaining": "Implement official resort-map wing, garden and pier relationships",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "one-bangkok",
@@ -1708,16 +1748,26 @@
         "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "status": "reconstructed; certification outstanding",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Historic compound and wing proportions compressed; exact entrance/grounds unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Historic compound and wing proportions compressed; exact entrance/grounds unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "48 Oriental Avenue",
+        "bankReview": "east",
+        "recognitionFeatures": "River/Garden/Authors wings; west river terraces, east street arrival",
+        "source": "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery",
+        "remaining": "Historic compound and wing proportions compressed; exact entrance/grounds unverified",
+        "basis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "peninsula",
@@ -1757,16 +1807,26 @@
         "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "status": "reconstructed; certification outstanding",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Precise W geometry and full gardens/pool remain approximate",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Precise W geometry and full gardens/pool remain approximate",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "333 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "East river-facing W/wave plan; west street court",
+        "source": "https://www.peninsula.com/en/-/media/09---bangkok/the-peninsula-bangkok-presentation.pdf",
+        "remaining": "Precise W geometry and full gardens/pool remain approximate",
+        "basis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "hilton",
@@ -1804,19 +1864,30 @@
       "architectureReferences": [
         "https://www.openstreetmap.org/way/342556929",
         "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/",
-        "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok"
+        "https://stories.hilton.com/destination-spotlight/rooms-with-a-view-millennium-hilton-bangkok",
+        "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/gallery/"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reconstructed; certification outstanding",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Storey/lounge dimensions compressed; exact property grounds unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Storey/lounge dimensions compressed; exact property grounds unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "123 Charoen Nakhon Road",
+        "bankReview": "west",
+        "recognitionFeatures": "Pale rounded slab, ThreeSixty roof; north of ICONSIAM",
+        "source": "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/gallery/",
+        "remaining": "Storey/lounge dimensions compressed; exact property grounds unverified",
+        "basis": "implemented; matched PR35 software WebGL/reference review complete; independent certification pending",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "shangri",
@@ -1857,16 +1928,26 @@
         "https://www.shangri-la.com/bangkok/shangrila/"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Verify Krungthep wing, pool and street lobby bearing",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Verify Krungthep wing, pool and street lobby bearing",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "89 Soi Wat Suan Plu",
+        "bankReview": "east",
+        "recognitionFeatures": "Main and Krungthep wings; west river frontage, south of Oriental",
+        "source": "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/",
+        "remaining": "Verify Krungthep wing, pool and street lobby bearing",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "four-seasons",
@@ -1906,16 +1987,26 @@
         "https://press.fourseasons.com/bangkok/hotel-facts/"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Shared estate, residence tower context, exact access/landscape unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Shared estate, residence tower context, exact access/landscape unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "300 Charoen Krung Road",
+        "bankReview": "east",
+        "recognitionFeatures": "12-storey Cascade, 4-storey Palm; south of Capella, west river frontage",
+        "source": "https://press.fourseasons.com/bangkok/hotel-facts/",
+        "remaining": "Shared estate, residence tower context, exact access/landscape unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "capella",
@@ -1954,16 +2045,26 @@
         "https://capellahotels.com/en/capella-bangkok"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Verify villas, pools and shared vehicle gates before remodeling",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Verify villas, pools and shared vehicle gates before remodeling",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "300/2 Charoen Krung Road",
+        "bankReview": "east",
+        "recognitionFeatures": "Balcony-grid hotel and river villas; north of Four Seasons",
+        "source": "https://capellahotels.com/en/capella-bangkok",
+        "remaining": "Verify villas, pools and shared vehicle gates before remodeling",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "rosewood",
@@ -2000,16 +2101,26 @@
         "https://www.rosewoodhotels.com/en/bangkok/overview/our-story"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Independent coordinate, entrance and facade inclinations remain unresolved",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Independent coordinate, entrance and facade inclinations remain unresolved",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "1041/38 Phloen Chit Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Two wai-inspired sloping forms, east of Embassy, Phloen Chit connection",
+        "source": "https://www.kpf.com/project/rosewood-bangkok",
+        "remaining": "Independent coordinate, entrance and facade inclinations remain unresolved",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "embassy",
@@ -2047,16 +2158,26 @@
         "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "88 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Continuous silver retail/hotel loop; west of Rosewood",
+        "source": "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "remaining": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "erawan-hotel",
@@ -2095,16 +2216,26 @@
         "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Verify shrine corner and exact street-facing portico",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Verify shrine corner and exact street-facing portico",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "494 Ratchadamri Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Stepped ivory hotel with colonnade beside Erawan Shrine",
+        "source": "https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok",
+        "remaining": "Verify shrine corner and exact street-facing portico",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "eastin",
@@ -2139,16 +2270,26 @@
         "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
       ],
       "implementation": "rendered hotel",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Exact rear gate, skybridge and independent coordinate unresolved",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Exact rear gate, skybridge and independent coordinate unresolved",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "33/1 South Sathorn Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Slender grid tower, pool terrace and Surasak BTS relationship",
+        "source": "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery",
+        "remaining": "Exact rear gate, skybridge and independent coordinate unresolved",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "river-city",
@@ -4788,16 +4929,26 @@
         "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
       ],
       "implementation": "compound sub-place",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "88 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Continuous silver retail/hotel loop; west of Rosewood",
+        "source": "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "remaining": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "park-hyatt",
@@ -4838,16 +4989,26 @@
         "https://newsroom.hyatt.com/2012-02-17-HYATT-AND-CENTRAL-EMBASSY-ANNOUNCE-PLANS-FOR-ICONIC-PARK-HYATT-BANGKOK-TWISTED-COIL-DESIGN-TO-BE-SKYLINE-STANDOUT"
       ],
       "implementation": "compound sub-place",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "88 Wireless Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Continuous silver retail/hotel loop; west of Rosewood",
+        "source": "https://www.ala.uk.com/selected-projects/central-embassy/",
+        "remaining": "Separate Park Hyatt hotel gate from retail approach; coordinate unverified",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "lebua",
@@ -4887,16 +5048,26 @@
         "https://lebua.com/"
       ],
       "implementation": "compound sub-place",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Independent hotel orientation/height review"
+        "Street podium and rooftop terrace proportions need photographic refinement",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Street podium and rooftop terrace proportions need photographic refinement",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "1055 Silom Road",
+        "bankReview": "east",
+        "recognitionFeatures": "Inland Bang Rak State Tower, stepped balconies and gold dome",
+        "source": "https://lebua.com/",
+        "remaining": "Street podium and rooftop terrace proportions need photographic refinement",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "dusit-central-park",
@@ -4936,16 +5107,26 @@
         "https://www.dusitcentralpark.com/en/"
       ],
       "implementation": "compound sub-place",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "inherited approximate reference",
+      "status": "reviewed; architectural follow-up",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "provisional active-code / primary-source audit",
+      "geographicConfidence": "Operator address and coarse relationships reviewed; exact bearings/entrance and existing approximate coordinates remain uncertified",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Verify current podium and park-facing arrival plan",
+        "Surveyed boundary and exact entrance dimensions"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
-      "priority": "P1"
+      "recommendedCorrection": "Verify current podium and park-facing arrival plan",
+      "priority": "P1",
+      "architectureReview": {
+        "review": "PR35 / 2026-10-21",
+        "address": "98 Rama IV Road",
+        "bankReview": "not-riverside",
+        "recognitionFeatures": "Rebuilt park-facing tower, spire, Central Park podium at Silom/Rama IV",
+        "source": "https://www.dusit.com/dusitthani-bangkok/",
+        "remaining": "Verify current podium and park-facing arrival plan",
+        "basis": "provisional active-code / primary-source audit",
+        "geographyVerdict": "Coarse bank/address/neighbor identity reviewed; retained approved arcade origin. No surveyed property or exact legal curb certification."
+      }
     },
     {
       "id": "silom-complex",
