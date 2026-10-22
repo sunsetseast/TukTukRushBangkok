@@ -1,6 +1,5 @@
 {
   "label": "after",
-  "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3",
   "viewport": [
     768,
     432
@@ -39,7 +38,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-arrival",
@@ -70,7 +70,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-street",
@@ -101,7 +102,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-street",
@@ -132,7 +134,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-asok",
@@ -163,7 +166,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-asok",
@@ -194,7 +198,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-overview",
@@ -235,7 +240,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "terminal-overview",
@@ -276,7 +282,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-arrival",
@@ -307,7 +314,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-arrival",
@@ -338,7 +346,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-street",
@@ -369,7 +378,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-street",
@@ -400,7 +410,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-goldline",
@@ -431,7 +442,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-goldline",
@@ -462,7 +474,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-river",
@@ -503,7 +516,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "icon-river",
@@ -544,7 +558,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "mahanakhon-arrival",
@@ -561,11 +576,11 @@
         "normalDriving": true
       },
       "stats": {
-        "calls": 268,
-        "triangles": 410769,
-        "geometries": 1815,
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1814,
         "textures": 16,
-        "frameMs": 23.90000000037253,
+        "frameMs": 239.09999999997672,
         "camera": [
           592.6449687379236,
           3.3,
@@ -574,8 +589,10 @@
         "fov": 58,
         "elapsed": 40,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "mahanakhon-arrival",
@@ -592,11 +609,11 @@
         "normalDriving": true
       },
       "stats": {
-        "calls": 268,
-        "triangles": 410769,
-        "geometries": 1816,
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1817,
         "textures": 16,
-        "frameMs": 36.6999999997206,
+        "frameMs": 501.20000000001164,
         "camera": [
           592.6449687379236,
           3.3,
@@ -605,8 +622,10 @@
         "fov": 58,
         "elapsed": 720,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "mahanakhon-street",
@@ -623,11 +642,11 @@
         "normalDriving": true
       },
       "stats": {
-        "calls": 331,
-        "triangles": 408271,
-        "geometries": 2006,
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
         "textures": 16,
-        "frameMs": 879.1000000000931,
+        "frameMs": 13.5,
         "camera": [
           269.91846240326765,
           3.3,
@@ -636,8 +655,10 @@
         "fov": 58,
         "elapsed": 40,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "mahanakhon-street",
@@ -654,11 +675,11 @@
         "normalDriving": true
       },
       "stats": {
-        "calls": 331,
-        "triangles": 408271,
-        "geometries": 2006,
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
         "textures": 16,
-        "frameMs": 926.2000000001863,
+        "frameMs": 705.5,
         "camera": [
           269.91846240326765,
           3.3,
@@ -667,8 +688,10 @@
         "fov": 58,
         "elapsed": 720,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "mahanakhon-silhouette",
@@ -695,11 +718,11 @@
         ]
       },
       "stats": {
-        "calls": 305,
-        "triangles": 426561,
-        "geometries": 2029,
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
         "textures": 16,
-        "frameMs": 37.3000000002794,
+        "frameMs": 444.0999999999767,
         "camera": [
           479.1939766255646,
           65,
@@ -708,8 +731,10 @@
         "fov": 58,
         "elapsed": 40,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "mahanakhon-silhouette",
@@ -736,11 +761,11 @@
         ]
       },
       "stats": {
-        "calls": 305,
-        "triangles": 426561,
-        "geometries": 2029,
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
         "textures": 16,
-        "frameMs": 623.3999999999069,
+        "frameMs": 370,
         "camera": [
           479.1939766255646,
           65,
@@ -749,8 +774,10 @@
         "fov": 58,
         "elapsed": 720,
         "quality": "medium",
-        "glError": 0
-      }
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
     },
     {
       "id": "hilton-arrival",
@@ -781,7 +808,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "hilton-arrival",
@@ -812,7 +840,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "hilton-river",
@@ -853,7 +882,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "hilton-river",
@@ -894,7 +924,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "hilton-river-full",
@@ -935,7 +966,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "hilton-river-full",
@@ -976,7 +1008,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-arrival",
@@ -1007,7 +1040,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-arrival",
@@ -1038,7 +1072,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-river",
@@ -1079,7 +1114,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-river",
@@ -1120,7 +1156,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-river-full",
@@ -1161,7 +1198,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "peninsula-river-full",
@@ -1202,7 +1240,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "oriental-arrival",
@@ -1233,7 +1272,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "oriental-arrival",
@@ -1264,7 +1304,8 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "oriental-river",
@@ -1305,7 +1346,8 @@
         "elapsed": 40,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     },
     {
       "id": "oriental-river",
@@ -1346,8 +1388,14 @@
         "elapsed": 720,
         "quality": "medium",
         "glError": 0
-      }
+      },
+      "sourceCommit": "606b36f7de91560c61bb601a889c97b4281297b3"
     }
   ],
-  "errors": []
+  "errors": [],
+  "sourceCommits": [
+    "606b36f7de91560c61bb601a889c97b4281297b3",
+    "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+  ],
+  "provenance": "32 unchanged frames use the final arrival-art mesh; 6 MahaNakhon frames use the final tower refinement. All 38 poses were replayed in order; the changed landmark is not visible under the frustum/root-visibility check in retained frames. See validation/mahanakhon-recapture.json and source-equivalence.json."
 }

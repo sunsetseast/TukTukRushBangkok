@@ -1,0 +1,96 @@
+{
+  "pass": true,
+  "mainBase": "1fb92d765d98157b7015543ee9d4f29500c26323",
+  "localArrivalCaptureCommit": "606b36f7de91560c61bb601a889c97b4281297b3",
+  "localTowerRecaptureCommit": "4a43d3f55c8efa9a01d470ace0f1a680ae598cc2",
+  "mirroredRemoteCheckpoint": "d7a3e68a806232517f9e1d3284d54a2357ac8a48",
+  "mirroredCheckpointTree": "2b4258da915569f72122795cbb6e7a6813f71600",
+  "provenance": "GitHub API commits have different commit IDs from the local capture history. The uploaded checkpoint tree was checked equal to local c0979f8 tree. Blob identities below prove delivered rendering source equals final captured source. Later inventory edits change review status strings only. Capture commit IDs are local provenance, not GitHub links.",
+  "runtimeSourceChangesBetweenCaptureStages": [
+    "artifacts/tuk-tuk-rush/src/game/bangkok/skylineLandmarks.ts"
+  ],
+  "retainedEarlierFrames": 32,
+  "recapturedFrames": 6,
+  "visibilityProof": "validation/mahanakhon-recapture.json",
+  "records": [
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/architecture.ts",
+      "arrivalCaptureBlob": "1e191a822e538700311840b936ce94171c30069a",
+      "finalTowerCaptureAndDeliveredBlob": "1e191a822e538700311840b936ce94171c30069a",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/buildingGrammar.ts",
+      "arrivalCaptureBlob": "0075df2144dda52db1e3dac3f135b5bfdf90f687",
+      "finalTowerCaptureAndDeliveredBlob": "0075df2144dda52db1e3dac3f135b5bfdf90f687",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json",
+      "arrivalCaptureBlob": "2284c8cbdbc9f9f0faf1ade611c7227a50d802b6",
+      "finalTowerCaptureAndDeliveredBlob": "2284c8cbdbc9f9f0faf1ade611c7227a50d802b6",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/commercialDistrictArt.ts",
+      "arrivalCaptureBlob": "ea098b76d38ea32c4e91ae234fc68ba64e4c411f",
+      "finalTowerCaptureAndDeliveredBlob": "ea098b76d38ea32c4e91ae234fc68ba64e4c411f",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heroArchitecture.ts",
+      "arrivalCaptureBlob": "2c162afae3bf09ca3d9382111073082292e1af09",
+      "finalTowerCaptureAndDeliveredBlob": "2c162afae3bf09ca3d9382111073082292e1af09",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heroCraft.ts",
+      "arrivalCaptureBlob": "01c5e67e3d226de150aef9f246dc84837f8c8715",
+      "finalTowerCaptureAndDeliveredBlob": "01c5e67e3d226de150aef9f246dc84837f8c8715",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkParcels.ts",
+      "arrivalCaptureBlob": "f192fa830ec71550cb3422fb0c44b69755a1067b",
+      "finalTowerCaptureAndDeliveredBlob": "f192fa830ec71550cb3422fb0c44b69755a1067b",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/landmarkSites.ts",
+      "arrivalCaptureBlob": "e968c765fe779c986a9a21eb19496f218287b685",
+      "finalTowerCaptureAndDeliveredBlob": "e968c765fe779c986a9a21eb19496f218287b685",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/mesh.ts",
+      "arrivalCaptureBlob": "427c05755a98c5ec054413628b4b84530c898333",
+      "finalTowerCaptureAndDeliveredBlob": "427c05755a98c5ec054413628b4b84530c898333",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts",
+      "arrivalCaptureBlob": "116da119702fc2a2ac4038c648adb11c536f1ddb",
+      "finalTowerCaptureAndDeliveredBlob": "116da119702fc2a2ac4038c648adb11c536f1ddb",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realCommercial.ts",
+      "arrivalCaptureBlob": "d3512b082fe6262c3c09336fd85ccc3970b37bf1",
+      "finalTowerCaptureAndDeliveredBlob": "d3512b082fe6262c3c09336fd85ccc3970b37bf1",
+      "changedAfterArrivalCapture": false
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/skylineLandmarks.ts",
+      "arrivalCaptureBlob": "2921d83165815a3af51d3c9bf778503ef9b78908",
+      "finalTowerCaptureAndDeliveredBlob": "0e2d37a2da2e53064ad8cdfadf9503ac7ab5938a",
+      "changedAfterArrivalCapture": true
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/world.ts",
+      "arrivalCaptureBlob": "24002d5caafac3fa00b4b131b812080c346a8c7f",
+      "finalTowerCaptureAndDeliveredBlob": "24002d5caafac3fa00b4b131b812080c346a8c7f",
+      "changedAfterArrivalCapture": false
+    }
+  ],
+  "postCaptureInventoryChange": "Six review/basis status strings only; JSON equality after that replacement verified."
+}

@@ -11,4 +11,4 @@ dist/public/assets/index-CwRIVK_Q.js   2,182.99 kB │ gzip: 705.51 kB
 - Using dynamic import() to code-split the application
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 11.66s
+✓ built in 4.25s

@@ -1,0 +1,395 @@
+{
+  "label": "after-maha-final",
+  "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "records": [
+    {
+      "id": "mahanakhon-arrival",
+      "light": "sunset",
+      "file": "mahanakhon-arrival-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-arrival",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1814,
+        "textures": 16,
+        "frameMs": 239.09999999997672,
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-arrival",
+      "light": "night",
+      "file": "mahanakhon-arrival-night.jpg",
+      "scene": {
+        "id": "mahanakhon-arrival",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 267,
+        "triangles": 416155,
+        "geometries": 1817,
+        "textures": 16,
+        "frameMs": 501.20000000001164,
+        "camera": [
+          592.6449687379236,
+          3.3,
+          1097.4031721016056
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "sunset",
+      "file": "mahanakhon-street-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-street",
+        "pose": {
+          "x": 277.28381317484383,
+          "z": 987.7508915390762,
+          "heading": 1.2353872535489598,
+          "road": "Silom corridor"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
+        "textures": 16,
+        "frameMs": 13.5,
+        "camera": [
+          269.91846240326765,
+          3.3,
+          985.1834788313796
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-street",
+      "light": "night",
+      "file": "mahanakhon-street-night.jpg",
+      "scene": {
+        "id": "mahanakhon-street",
+        "pose": {
+          "x": 277.28381317484383,
+          "z": 987.7508915390762,
+          "heading": 1.2353872535489598,
+          "road": "Silom corridor"
+        },
+        "normalDriving": true
+      },
+      "stats": {
+        "calls": 332,
+        "triangles": 408379,
+        "geometries": 2008,
+        "textures": 16,
+        "frameMs": 705.5,
+        "camera": [
+          269.91846240326765,
+          3.3,
+          985.1834788313796
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "sunset",
+      "file": "mahanakhon-silhouette-sunset.jpg",
+      "scene": {
+        "id": "mahanakhon-silhouette",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "look": [
+          654.1939766255646,
+          75,
+          1119.1341716182542
+        ]
+      },
+      "stats": {
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
+        "textures": 16,
+        "frameMs": 444.0999999999767,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    },
+    {
+      "id": "mahanakhon-silhouette",
+      "light": "night",
+      "file": "mahanakhon-silhouette-night.jpg",
+      "scene": {
+        "id": "mahanakhon-silhouette",
+        "pose": {
+          "x": 600,
+          "z": 1100,
+          "heading": 1.2313907334208285,
+          "road": "approved destination access"
+        },
+        "normalDriving": false,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "look": [
+          654.1939766255646,
+          75,
+          1119.1341716182542
+        ]
+      },
+      "stats": {
+        "calls": 306,
+        "triangles": 432021,
+        "geometries": 2031,
+        "textures": 16,
+        "frameMs": 370,
+        "camera": [
+          479.1939766255646,
+          65,
+          1319.1341716182542
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": true
+      },
+      "sourceCommit": "c0979f87c71f42e6d0f1c193c935fa14206ba440"
+    }
+  ],
+  "errors": [],
+  "warmedOnly": [
+    {
+      "id": "terminal-arrival",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-arrival",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-street",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-street",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-asok",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-asok",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-overview",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "terminal-overview",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-arrival",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-arrival",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-street",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-street",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-goldline",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-goldline",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-river",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "icon-river",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-arrival",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-river",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-river",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "hilton-river-full",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-arrival",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-river",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-river",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "peninsula-river-full",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "oriental-arrival",
+      "light": "night",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "oriental-river",
+      "light": "sunset",
+      "changedLandmarkVisible": false
+    },
+    {
+      "id": "oriental-river",
+      "light": "night",
+      "changedLandmarkVisible": false
+    }
+  ]
+}
