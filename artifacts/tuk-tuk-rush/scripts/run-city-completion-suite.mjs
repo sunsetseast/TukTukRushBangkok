@@ -46,7 +46,8 @@ async function worker() {
     console.log(JSON.stringify(r));
   }
 }
-await Promise.all([worker(), worker()]);
+const workers=Math.max(1,Math.min(4,Number(process.env.CITY_TEST_WORKERS??2)));
+await Promise.all(Array.from({length:workers},()=>worker()));
 results.sort((a, b) => a.name.localeCompare(b.name));
 await fs.writeFile(
   new URL("summary.json", directory),

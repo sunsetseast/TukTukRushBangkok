@@ -1,0 +1,53 @@
+{
+  "base": "d3823427bced0b04729beafe87a68ab444f98329",
+  "files": [
+    {
+      "path": "artifacts/tuk-tuk-rush/scripts/check-bangkok-driven.ts",
+      "sha256": "423d3e2da161966001c51bbadf18b046942ab733175cec0cef3e470d7d3703c2"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json",
+      "sha256": "0ab487d0bf9d806cd46167941c9f91768a3629b4c6fb53b1e0d8d46d67ad464a"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/roadSurfaces.generated.json",
+      "sha256": "b3038b43f6de95e17e1fa46953559f97680a7396aaa54aa469afb96f06c72871"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/waterGeometry.ts",
+      "sha256": "232549ef070c50bfa912698a3455cfac943809f352768b22b3e116e074f50efc"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/riverfront.ts",
+      "sha256": "3354f8fa422f2fb66d724cc9d07221637fa566745aac6842ef91b996d18345b6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/geography.ts",
+      "sha256": "64edb063e0080ec19ca648890367cb53b59fbb440c8990a203c7a85dcc56493b"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/heroArchitecture.ts",
+      "sha256": "684061f186e5e5a1a96bc29d08d1f3c98665ad9fc2f5439a950469dbd63945d3"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts",
+      "sha256": "0c197bf7ed6c1910738773e647e7de5e8f99720e57326ef87fe89ab610483909"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/bangkok/realPlaces.ts",
+      "sha256": "82935a0c08c1392b94bfa19a4145769aedfb803f1622f578a6ecbf3d3a011c64"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/boost.ts",
+      "sha256": "090ec360d8f843612a564ef507ad76ec7385e5c4e7db2e7b634af732b81d6622"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/missions.ts",
+      "sha256": "88a94336fa020f6b539ec7bfb18a51e19d8acfa6a61ac243868088dde348a2d6"
+    },
+    {
+      "path": "artifacts/tuk-tuk-rush/src/game/navigation.ts",
+      "sha256": "f6939ee03fe7b075e0f57de9d6b7b841cc22677c9592805d08df544bb0e99f02"
+    }
+  ]
+}

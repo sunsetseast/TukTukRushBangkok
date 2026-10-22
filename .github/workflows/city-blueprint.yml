@@ -25,6 +25,8 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush test:city-blueprint
       - run: pnpm --filter @workspace/tuk-tuk-rush test:river-geography
       - run: pnpm --filter @workspace/tuk-tuk-rush test:river-drives
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:waterfront-clearance
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:waterfront-drives
       - run: pnpm --filter @workspace/tuk-tuk-rush test:cinematic
       - run: pnpm --filter @workspace/tuk-tuk-rush test:master-plan
       - run: pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity

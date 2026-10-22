@@ -10,6 +10,7 @@ import { stableHash } from "./buildingGrammar";
 import { degreeMap } from "../roadGeometry";
 import { inDestinationGrounds } from './destinationAccess';
 import type { StreetPerson } from "../streetLife";
+import { roadManeuvers } from './roadManeuvers';
 export type SiteKind =
   | "clothing"
   | "wok"
@@ -36,6 +37,7 @@ export type EnvironmentSite = {
 const cache = new WeakMap<District, EnvironmentSite[]>();
 /** Mutable broad phase for deterministic placement. Exact oriented tests win. */
 export function placementIndex(d: District) {
+  const maneuvers = roadManeuvers(d);
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     grid = new Map<string, Set<Obstacle>>(),
     roads = new Map<string, Set<number>>(),
@@ -88,7 +90,7 @@ export function placementIndex(d: District) {
     });
     return { os, rs };
   };
-  const clear = (o: Obstacle, exactRoadFootprint = false) => {
+  const baseClear = (o: Obstacle, exactRoadFootprint = false) => {
     if(inDestinationGrounds(d,o))return false;
     const radius = Math.hypot(o.w, o.d) / 2,
       q = nearby(o, radius + 2);
@@ -105,6 +107,22 @@ export function placementIndex(d: District) {
       })
     );
   };
+  const clear = (o:Obstacle,exactRoadFootprint=false)=>baseClear(o,exactRoadFootprint)&&maneuvers.clear(o);
+  // Refit only a candidate that otherwise passed the existing placement rules.
+  // Preserve its dimensions, identity and facade orientation, and search a
+  // short outward translation; never remove existing rows or collision shells.
+  const fit = (o:Obstacle,exactRoadFootprint=false):Obstacle|undefined=>{
+    if(!baseClear(o,exactRoadFootprint))return undefined;
+    const conflicts=maneuvers.conflicts(o);if(!conflicts.length)return o;
+    for(const sweep of conflicts){const q=distanceToSegment(o,sweep.a,sweep.b).point,dx=o.x-q.x,dz=o.z-q.z,len=Math.hypot(dx,dz);if(len<1e-4)continue;
+      for(const step of [.5,1,1.5,2,3,4,5,6,8,10,12])for(const along of [0,2,-2]){
+        const p={...o,x:o.x+dx/len*step-dz/len*along,z:o.z+dz/len*step+dx/len*along},radius=Math.hypot(p.w,p.d)/2,b=d.bounds;
+        if(b&&(p.x-radius<b.minX||p.x+radius>b.maxX||p.z-radius<b.minZ||p.z+radius>b.maxZ))continue;
+        if(clear(p,exactRoadFootprint))return p;
+      }
+    }
+    return undefined;
+  };
   const person = (p: Point) => {
     const q = nearby(p, 1);
     return (
@@ -115,7 +133,7 @@ export function placementIndex(d: District) {
       })
     );
   };
-  return { insert, clear, person };
+  return { insert, clear, fit, person };
 }
 export function planEnvironment(d: District) {
   const prior = cache.get(d);
@@ -159,7 +177,7 @@ export function planEnvironment(d: District) {
         artRole: "furniture",
         environmentId: id,
       };
-    if (!index.clear(body)) return;
+    const fitted=index.fit(body);if(!fitted)return;Object.assign(body,fitted);
     d.obstacles.push(body);
     index.insert(body);
     sites.push({ id, kind, region, seed, body, axis });
