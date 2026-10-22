@@ -1,0 +1,239 @@
+{
+  "version": "waterfront-maneuvers-v1",
+  "base": "d3823427bced0b04729beafe87a68ab444f98329",
+  "removed": [
+    {
+      "x": -68.12751945120854,
+      "z": 1684.4440711924137,
+      "w": 8,
+      "d": 8,
+      "yaw": 1.423717971406494,
+      "height": 15.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:1954720125"
+    },
+    {
+      "x": -60.52712641039531,
+      "z": 1685.749025491903,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 3.0250500001031297,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:2937109868"
+    },
+    {
+      "x": 76.92036515305585,
+      "z": 1101.211407048967,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.3078015951139772,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3445522820"
+    },
+    {
+      "x": -52.326429034398814,
+      "z": 1683.5536273746084,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.423717971406494,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:4121637094"
+    },
+    {
+      "x": -809.1666666666666,
+      "z": 865,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 0,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "icon",
+      "environmentId": "street-infill:1887496892"
+    },
+    {
+      "x": 125.44214923625755,
+      "z": 810.8501832637487,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.5363272257953882,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "talatnoi",
+      "environmentId": "street-infill:875864343"
+    },
+    {
+      "x": -760.10113278256,
+      "z": 1280.1778173094544,
+      "w": 5.5,
+      "d": 7,
+      "yaw": -1.269876092434472,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "icon",
+      "environmentId": "street-infill:504595187"
+    },
+    {
+      "x": 8.740179467190957,
+      "z": 1340.9891847214863,
+      "w": 8,
+      "d": 8,
+      "yaw": 1.3078015951139772,
+      "height": 15.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3518305799"
+    },
+    {
+      "x": -234,
+      "z": 1969.5,
+      "w": 8,
+      "d": 8,
+      "yaw": 0,
+      "height": 11.5,
+      "color": "#e3c99c",
+      "regionId": "south",
+      "environmentId": "street-infill:779699404"
+    },
+    {
+      "x": 0.9724006529675275,
+      "z": 1341.9534739945125,
+      "w": 4.5,
+      "d": 4.5,
+      "yaw": 1.3078015951139772,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3542809922"
+    },
+    {
+      "x": -230.33333333333334,
+      "z": 1985,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 0,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "south",
+      "environmentId": "street-infill:3078309632"
+    }
+  ],
+  "added": [
+    {
+      "x": 129.91797633681233,
+      "z": 812.5023753392857,
+      "w": 4.5,
+      "d": 4.5,
+      "yaw": 1.5363272257953882,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "talatnoi",
+      "environmentId": "street-infill:3881199985"
+    },
+    {
+      "x": 12.430809125241343,
+      "z": 1340.4316809414463,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.3078015951139772,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3867572760"
+    },
+    {
+      "x": -234,
+      "z": 1973,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 0,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "south",
+      "environmentId": "street-infill:830032261"
+    },
+    {
+      "x": -233.3295008725632,
+      "z": 1985.1515918100206,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 0,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "south",
+      "environmentId": "street-infill:3078309632"
+    },
+    {
+      "x": -761.1017620857124,
+      "z": 1281.0094816179983,
+      "w": 4.5,
+      "d": 4.5,
+      "yaw": -1.269876092434472,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "icon",
+      "environmentId": "street-infill:757022501"
+    },
+    {
+      "x": 1.208520778096524,
+      "z": 1338.3556625366248,
+      "w": 4.5,
+      "d": 4.5,
+      "yaw": 1.3078015951139772,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3542809922"
+    },
+    {
+      "x": -811.1630763575982,
+      "z": 864.8802154185441,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 0,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "icon",
+      "environmentId": "street-infill:1887496892"
+    },
+    {
+      "x": -52.558987064754014,
+      "z": 1685.540060550559,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.423717971406494,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:4121637094"
+    },
+    {
+      "x": 77.70393834480437,
+      "z": 1103.4910332105092,
+      "w": 4.5,
+      "d": 4.5,
+      "yaw": 1.3078015951139772,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:2067870354"
+    },
+    {
+      "x": -64.66530733296999,
+      "z": 1684.9569915062268,
+      "w": 5.5,
+      "d": 7,
+      "yaw": 1.423717971406494,
+      "height": 5.5,
+      "color": "#e3c99c",
+      "regionId": "silom",
+      "environmentId": "street-infill:3690449899"
+    }
+  ]
+}

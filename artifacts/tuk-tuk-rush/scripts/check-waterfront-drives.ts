@@ -3,6 +3,8 @@ import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
 import type { Point, RoadNode } from "../src/game/types";
 import type { VehicleContact } from "../src/game/vehicle";
+import { lanePoint } from "../src/game/traffic";
+import { distanceToSegment } from "../src/game/world";
 Object.assign(globalThis, {
   window: { addEventListener() {}, removeEventListener() {} },
   document: { addEventListener() {}, removeEventListener() {}, hidden: false },
@@ -130,10 +132,40 @@ for (const [goal, stage] of [
 }
 const results: any[] = [],
   traffic = process.env.WATERFRONT_TRAFFIC === "1";
-for (const c of cases) {
+const laneMode = process.env.WATERFRONT_LANES === "1";
+for (const c of cases.filter(
+  (c) => !laneMode || /^(pinklao|memorial|taksin)-/.test(c.id),
+)) {
   e.start("free");
   if (!traffic) e.model.traffic.length = 0;
-  const path = routeFromPoint(d, c.a, c.b).slice(1);
+  const full = routeFromPoint(d, c.a, c.b);
+  const laneSegments = full.slice(1).map((b, i) => ({ a: full[i]!, b }));
+  let path = full.slice(1);
+  if (laneMode) {
+    const points = full.map((p, i) => {
+      const offsets = [];
+      for (const j of [i - 1, i])
+        if (j >= 0 && j < full.length - 1) {
+          const a = full[j] as RoadNode,
+            b = full[j + 1] as RoadNode,
+            r = d.roads.find(
+              (r) =>
+                (r.a === a.id && r.b === b.id) ||
+                (!r.oneWay && r.b === a.id && r.a === b.id),
+            );
+          assert(r, "Legal directed lane edge");
+          offsets.push(lanePoint(a, b, r, j === i ? 0 : 1));
+        }
+      return {
+        ...p,
+        x: offsets.reduce((n, q) => n + q.x, 0) / offsets.length,
+        z: offsets.reduce((n, q) => n + q.z, 0) / offsets.length,
+      };
+    });
+    c.a = { ...c.a, ...points[0]! };
+    c.b = { ...c.b, ...points.at(-1)! };
+    path = points.slice(1);
+  }
   assert(path.length, c.id + " connected");
   Object.assign(
     e.model.player,
@@ -159,7 +191,8 @@ for (const c of cases) {
   let index = 0,
     metres = 0,
     frames = 0,
-    indicatorFrames = 0;
+    indicatorFrames = 0,
+    minLeftOffset = Infinity;
   const physicalFrames: Record<string, number> = {
       static: 0,
       prop: 0,
@@ -196,6 +229,18 @@ for (const c of cases) {
       z = p.z;
     contacts = [];
     e.update(1 / 60);
+    if (laneMode) {
+      const nearest = laneSegments
+          .map((s) => ({ ...s, q: distanceToSegment(p, s.a, s.b) }))
+          .sort((a, b) => a.q.distance - b.q.distance)[0]!,
+        dx = nearest.b.x - nearest.a.x,
+        dz = nearest.b.z - nearest.a.z;
+      minLeftOffset = Math.min(
+        minLeftOffset,
+        ((p.x - nearest.q.point.x) * dz - (p.z - nearest.q.point.z) * dx) /
+          Math.hypot(dx, dz),
+      );
+    }
     metres += Math.hypot(p.x - x, p.z - z);
     if (p.collision) indicatorFrames++;
     frames++;
@@ -231,6 +276,7 @@ for (const c of cases) {
   }
   results.push({
     id: c.id,
+    ...(laneMode ? { minLeftOffset } : {}),
     from: c.a,
     to: c.b,
     complete: e.model.snapshot.deliveries === 1,
@@ -291,9 +337,13 @@ assert.equal(e.model.snapshot.mode, "free");
 e.dispose();
 const report = {
   pass: results.every(
-    (r) => r.complete && (traffic || r.indicatorFrames === 0),
+    (r) =>
+      r.complete &&
+      (traffic || r.indicatorFrames === 0) &&
+      (!laneMode || r.minLeftOffset > 0.2),
   ),
   traffic,
+  laneMode,
   seed: Number(process.env.WATERFRONT_SEED ?? 26),
   noMidRouteTeleports: true,
   physicsObserver: true,
@@ -312,7 +362,10 @@ const out = new URL(
   import.meta.url,
 );
 fs.writeFileSync(
-  new URL(`${traffic ? "traffic" : "static"}-routes.json`, out),
+  new URL(
+    `${laneMode ? "left-lane" : traffic ? "traffic" : "static"}-routes.json`,
+    out,
+  ),
   JSON.stringify(report, null, 2) + "\n",
 );
 assert(

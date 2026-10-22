@@ -51,7 +51,7 @@
     "test:river-geography": "node --import tsx scripts/check-chao-phraya.ts",
     "test:river-drives": "node --import tsx scripts/check-chao-drives.ts",
     "test:waterfront-clearance": "node --import tsx scripts/check-waterfront-clearance.ts",
-    "test:waterfront-drives": "node --import tsx scripts/check-waterfront-drives.ts"
+    "test:waterfront-drives": "node --import tsx scripts/check-waterfront-drives.ts && WATERFRONT_LANES=1 node --import tsx scripts/check-waterfront-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

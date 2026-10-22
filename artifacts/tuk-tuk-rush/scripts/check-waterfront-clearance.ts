@@ -15,6 +15,7 @@ import {
   steeringYawRate,
 } from "../src/game/vehicleEnvelope";
 import { VehicleController } from "../src/game/vehicle";
+import { assertApprovedManeuverMigration } from "./waterfront-migration-contract";
 import { distanceToSegment, obstacleDistance } from "../src/game/world";
 import type { District, Obstacle } from "../src/game/types";
 const root = new URL("../../../", import.meta.url),
@@ -27,6 +28,7 @@ const root = new URL("../../../", import.meta.url),
 const d = createBangkokWorld(),
   maneuvers = roadManeuvers(d),
   known = ["street-infill:3445522820", "env:tree:-14844:103535"];
+assertApprovedManeuverMigration(d);
 assert.equal(VEHICLE_COLLISION_RADIUS, 1.5);
 for (const speed of [0, 2, 5, 10, 31, 37])
   assert.equal(

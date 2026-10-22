@@ -23,9 +23,11 @@ const contacts: any[] = [],
   trajectory: any[] = [],
   journeys: any[] = [];
 const named = e.model.district.obstacles.filter((o) =>
-  ["street-infill:3445522820", "env:tree:-14844:103535"].includes(
-    o.environmentId ?? "",
-  ),
+  [
+    "street-infill:3445522820",
+    "street-infill:2067870354",
+    "env:tree:-14844:103535",
+  ].includes(o.environmentId ?? ""),
 );
 const nodes = new Map(e.model.district.nodes.map((n) => [n.id, n]));
 const geometry = named.map((o) => ({
@@ -102,7 +104,10 @@ const drive = (expected: "pickup" | "delivery", goal: number) => {
     }
     if (
       frames % 30 === 0 ||
-      named.some((o) => Math.hypot(o.x - p.x, o.z - p.z) < 65)
+      [
+        { x: 77, z: 1101 },
+        { x: -148, z: 1035 },
+      ].some((o) => Math.hypot(o.x - p.x, o.z - p.z) < 65)
     )
       trajectory.push({
         frame: frames,
@@ -140,6 +145,17 @@ const report = {
   }).trim(),
   seed: Number(process.env.FARE_SEED ?? 20),
   collisionRadius: 1.5,
+  sourceFiles: Object.fromEntries(
+    [
+      "src/game/bangkok/roadManeuvers.ts",
+      "src/game/bangkok/environmentPlan.ts",
+      "src/game/bangkok/streetFabric.ts",
+      "src/game/vehicle.ts",
+    ].map((p) => [
+      p,
+      execFileSync("git", ["hash-object", p], { encoding: "utf8" }).trim(),
+    ]),
+  ),
   frames,
   metres,
   collisions,

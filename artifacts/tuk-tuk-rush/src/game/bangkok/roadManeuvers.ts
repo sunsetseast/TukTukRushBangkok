@@ -52,6 +52,22 @@ export function segmentFootprintDistance(a: Point, b: Point, o: Obstacle) {
   return result;
 }
 const cache = new WeakMap<District, ReturnType<typeof build>>();
+/** Scope this approval to existing riverfront forecourts. Other neighborhoods
+ * retain their current frontage pending their own reviewed street pass. */
+const waterfront = new Set([
+  "pho",
+  "arun",
+  "icon",
+  "asiatique",
+  "river-city",
+  "hilton",
+  "oriental",
+  "peninsula",
+  "shangri",
+  "capella",
+  "four-seasons",
+  "anantara",
+]);
 function build(d: District) {
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
     sweeps: ManeuverSweep[] = [];
@@ -62,7 +78,13 @@ function build(d: District) {
       list.push(r);
       links.set(id, list);
     }
-    if (!r.oneWay && (r.noTraffic || r.surface === "arrival"))
+    const owner = r.destinationId ?? r.corridor?.split(":").at(-1);
+    if (
+      !r.oneWay &&
+      (r.noTraffic || r.surface === "arrival") &&
+      owner &&
+      waterfront.has(owner)
+    )
       sweeps.push({
         id: `reversal:${r.a}:${r.b}`,
         kind: "arrival-reversal",

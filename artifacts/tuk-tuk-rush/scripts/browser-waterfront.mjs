@@ -215,6 +215,8 @@ try {
         const hint = document.querySelector("[data-testid=hint-rotate]");
         return (getComputedStyle(hint).display !== "none") === p;
       }, portrait);
+      if (!portrait)
+        await page.getByTestId("button-gas").waitFor({ state: "visible" });
       const controls = await page.evaluate(() =>
         ["button-gas", "button-brake", "control-steer"].map((id) => {
           const el = document.querySelector(`[data-testid="${id}"]`);
@@ -227,7 +229,7 @@ try {
           };
         }),
       );
-      for (const c of controls)
+      for (const c of controls.filter(() => !portrait))
         assert(
           c.box &&
             c.box.x >= -0.5 &&

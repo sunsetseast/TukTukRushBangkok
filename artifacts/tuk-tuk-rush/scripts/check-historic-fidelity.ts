@@ -1,3 +1,4 @@
+import {approvedWaterfrontParcel} from './waterfront-migration-contract';
 import {assertRiverMigration,approvedRiverParcel} from './river-migration-contract';
 import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from 'node:assert/strict';
@@ -29,7 +30,7 @@ fs.writeFileSync(new URL('footprint-deltas.json',out),JSON.stringify({removed,ad
 const newParcels=landmarkParcels(d).filter(p=>p.landmarkId==='pho'&&(p.use==='entrance'||p.use==='forecourt'));
 assert(removed.length>0,'Incorrect infill must actually be corrected');
 const newMrt=d.obstacles.filter(o=>['sanam-chai-mrt','sam-yot-mrt','wat-mangkon-mrt'].includes(o.environmentId??''));
-for(const o of [...removed,...added])assert(approvedRiverParcel(o)||(o.x>-1120&&o.x<-820&&o.z>-1120&&o.z<-520)||newMrt.some(m=>Math.hypot(o.x-m.x,o.z-m.z)<140)||CITY_MODEL.architecturalAprons.some(a=>{const l=d.landmarks.find(l=>l.id===a.landmarkId)!,c=localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!);return polygonsOverlap(rectangleBoundary({...c,w:a.width+2*a.contextReflowMargin,d:a.depth+2*a.contextReflowMargin,yaw:l.yaw??0}),rectangleBoundary(o));}),'No infill churn outside the bounded waterfront/public approach: '+key(o));
+for(const o of [...removed,...added])assert(approvedRiverParcel(o)||approvedWaterfrontParcel(o)||(o.x>-1120&&o.x<-820&&o.z>-1120&&o.z<-520)||newMrt.some(m=>Math.hypot(o.x-m.x,o.z-m.z)<140)||CITY_MODEL.architecturalAprons.some(a=>{const l=d.landmarks.find(l=>l.id===a.landmarkId)!,c=localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!);return polygonsOverlap(rectangleBoundary({...c,w:a.width+2*a.contextReflowMargin,d:a.depth+2*a.contextReflowMargin,yaw:l.yaw??0}),rectangleBoundary(o));}),'No infill churn outside the bounded waterfront/public approach: '+key(o));
 assert.equal(d.buildings.flatMap(b=>parcelConflicts(d,b)).length,0);
 const waterfront=designBuildings(d).filter(p=>isHistoricWaterfront(p.parcel));
 assert(waterfront.length>20,'Retain dense waterfront commercial blocks');
