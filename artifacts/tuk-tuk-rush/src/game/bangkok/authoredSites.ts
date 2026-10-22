@@ -1,3 +1,4 @@
+import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
 import {approvedDesign} from './cityModel';
 import { HISTORIC_PLAN } from './historicPlan';
 import { HUA_PLAN } from './huaLamphong';
@@ -9,7 +10,7 @@ import {
   obstacleDistance,
   orientedFootprintsOverlap,
 } from "../world";
-import { riverDistance, toWorld } from "./world";
+import { toWorld } from "./world";
 
 export type SiteMass = {
   name: string;
@@ -185,7 +186,7 @@ function zonesFor(d: District, p: RealPlace, origin: Point): SiteZone[] {
     },
   ];
   if (p.bank) {
-    const shore = riverDistance(d, origin) - d.riverWidth! / 2 - 7;
+    const shore = riverClearance(d, origin) - 7;
     // A bounded river-facing esplanade replaces the previous unplanned grass.
     // Corner-water and road tests below clip this design to actual dry land.
     for (let z = depth / 2 + 6; z < shore; z += 12)
@@ -237,14 +238,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
       yaw = p.yaw,
       masses = siteMasses(p),
       solids = masses.map((m) => siteObstacle(origin, yaw, m, p.id));
-    const sameBank = (q: Point) => {
-      if (!p.bank) return true;
-      const nearest = d
-        .river!.slice(1)
-        .map((b, i) => distanceToSegment(q, d.river![i]!, b))
-        .sort((a, b) => a.distance - b.distance)[0]!.point;
-      return p.bank === "east" ? q.x > nearest.x : q.x < nearest.x;
-    };
+    const sameBank = (q: Point) => !p.bank || riverBank(d,q)===p.bank;
     const streets = d.roads.filter(
       (r) =>
         !r.bridge &&
@@ -258,7 +252,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
       roadBody(nodes.get(r.a)!, nodes.get(r.b)!, r.width + 4),
     );
     for (const o of solids) {
-      if (corners(o).some((q) => riverDistance(d, q) < d.riverWidth! / 2 + 2))
+      if (corners(o).some((q) => riverClearance(d, q) < 2))
         throw Error(`Authored wing in water: ${p.id}`);
       if (bodies.some((r) => orientedFootprintsOverlap(o, r)))
         throw Error(
@@ -277,7 +271,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
     const zones = zonesFor(d, p, origin).filter((z) => {
       const o = siteObstacle(origin, yaw, z);
       return (
-        corners(o).every((q) => riverDistance(d, q) > d.riverWidth! / 2 + 2) &&
+        corners(o).every((q) => riverClearance(d, q) > 2) &&
         !bodies.some((r) => orientedFootprintsOverlap(o, r))
       );
     });
@@ -424,7 +418,7 @@ export function placeAuthoredSites(d: District, places: RealPlace[]) {
       const wet = Array.from({ length: samples + 1 }, (_, i) => ({
         x: candidate.x + ((entrance.x - candidate.x) * i) / samples,
         z: candidate.z + ((entrance.z - candidate.z) * i) / samples,
-      })).some((q) => riverDistance(d, q) < d.riverWidth! / 2 + 8);
+      })).some((q) => riverClearance(d, q) < 8);
       if (blocked || crossing || wet) continue;
       publicNode = candidate;
       let previous: RoadNode = candidate;
@@ -543,7 +537,7 @@ function extendCharoenNakhon(d: District) {
         x: start.x + ((end.x - start.x) * i) / count,
         z: start.z + ((end.z - start.z) * i) / count,
       };
-      if (riverDistance(d, n) < d.riverWidth! / 2 + 10)
+      if (riverClearance(d, n) < 10)
         throw Error("Charoen Nakhon extension in water");
       d.nodes.push(n);
       d.roads.push({

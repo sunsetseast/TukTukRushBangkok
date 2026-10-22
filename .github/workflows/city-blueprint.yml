@@ -23,6 +23,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:city-blueprint
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:river-geography
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:river-drives
       - run: pnpm --filter @workspace/tuk-tuk-rush test:cinematic
       - run: pnpm --filter @workspace/tuk-tuk-rush test:master-plan
       - run: pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity

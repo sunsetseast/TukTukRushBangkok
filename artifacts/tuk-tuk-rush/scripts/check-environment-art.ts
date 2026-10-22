@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from "node:assert/strict";
 import {
   Box3,
@@ -61,8 +62,7 @@ for (const p of designs) {
   }
   if (p.parcel.artRole === "background")
     assert(
-      riverDistance(d, p.parcel) >
-        d.riverWidth! / 2 + Math.hypot(p.parcel.w, p.parcel.d) / 2 + 2,
+      riverClearance(d, p.parcel) > 0 + Math.hypot(p.parcel.w, p.parcel.d) / 2 + 2,
       "Background parcel must clear water by its own radius",
     );
 }

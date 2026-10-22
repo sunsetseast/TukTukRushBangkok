@@ -99,7 +99,7 @@ for (const s of d.transit!.lines.flatMap(l => l.stations))
         assert(Math.abs(Math.hypot(p.x - s.x, p.z - s.z) - (shell.concourseWidth / 2 + .075)) < 1e-6);
         assert(Math.sin(p.yaw) * (p.x - s.x) + Math.cos(p.yaw) * (p.z - s.z) > 0, 'Exterior signs face away from station walls');
     }
-const water = new T.Mesh(channelGeometry('water'), new T.MeshBasicMaterial()), land = new T.Mesh(channelGeometry('land'), new T.MeshBasicMaterial()), ray = new T.Raycaster();
+const water = new T.Mesh(channelGeometry('water',d), new T.MeshBasicMaterial()), land = new T.Mesh(channelGeometry('land',d), new T.MeshBasicMaterial()), ray = new T.Raycaster();
 water.updateMatrixWorld();
 land.updateMatrixWorld();
 for (const channel of [{ points: d.river! }, ...(d.canals ?? [])])

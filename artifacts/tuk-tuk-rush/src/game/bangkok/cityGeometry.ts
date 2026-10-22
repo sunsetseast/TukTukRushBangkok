@@ -15,6 +15,7 @@ export function cityGeometry(d:District):CityGeometryContract[] {
   ...buildLandmarkRegistry(d).flatMap(p=>[f(p.id,p.category==='river-pier'?'pier':p.category.includes('station')||p.category.includes('mrt')?'transit-station':'landmark-site',[p.world],p.references.join(' ')||'research required'),...p.footprints.map((b,i)=>f(p.id+':solid:'+i,'landmark-footprint',rectangleBoundary(b),'actual compressed model collision footprint')),...(p.mainEntrance?[f(p.id+':entrance','entrance',[p.mainEntrance],'actual model/public entrance; real bearing may be approximate')]:[])]),
   ...(d.publicSpaces??[]).map(p=>f(p.id,'public-space',p.boundary,p.adaptation)),
   ...(d.river?[f('chao-phraya','waterway',d.river,'approved compressed river spine')]:[]),
+  ...(d.riverPolygon??[]).map((r,i)=>f(`chao-phraya:bank-ring:${i}`,'waterway',r,'OSM riverbank polygon; '+d.waterVersion+'; © OpenStreetMap contributors, ODbL 1.0; explicit river-local compression')),
   ...(d.canals??[]).map((c,i)=>f('canal:'+i,'waterway',c.points,'compressed canal')),
  ];
 }

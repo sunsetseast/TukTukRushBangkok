@@ -116,6 +116,7 @@ export class GameEngine {
   }
   resume() {
     if (this.model.snapshot.phase !== 'paused') return;
+    if(this.controller.reconcileGeography(this.model.player,this.model.district))this.resetCamera();
     const wasInspecting=!!this.model.snapshot.viewingLandmark;if(wasInspecting)this.resetCamera();this.clearInput();this.inspection.close();this.model.snapshot.viewingLandmark=undefined;const portrait=typeof window.matchMedia==='function'&&window.matchMedia('(orientation: portrait)').matches;if(wasInspecting&&(document.hidden||portrait)){this.publish();return;}this.model.snapshot.phase='playing';this.publish();
   }
   returnToTitle() { this.career.flush(); this.resetCamera(); this.clearInput(); this.inspection.close(); Object.assign(this.model.player, createVehicle(this.model.district)); this.model.snapshot.viewingLandmark = undefined; this.model.snapshot.elapsed = 0; this.model.snapshot.phase = 'title'; this.publish(); }

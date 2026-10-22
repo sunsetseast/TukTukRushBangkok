@@ -4,6 +4,7 @@ export {roadGraphKey} from "./roadIdentity";
 import * as T from "three";
 import type { District } from "../types";
 import { asphaltMaterial, pavingMaterial } from "./streetSurfaces";
+import {waterTerrainKey} from './waterGeometry';
 
 // Runtime consumes committed geometry; polygon boolean operations belong to art:roads.
 export type RoadPolygons = [number, number][][][];
@@ -45,6 +46,7 @@ export function surfaceGeometry(polygons: RoadPolygons, y: number) {
   return g;
 }
 export function buildRoadSurfaces(d: District) {
+  assertWaterTerrainFresh(d);
   if (baked.key !== roadGraphKey(d))
     throw new Error(
       `Bangkok road geometry is stale (${roadGraphKey(d)} != ${baked.key}). Run pnpm --filter @workspace/tuk-tuk-rush art:roads and commit the generated file.`,
@@ -74,6 +76,11 @@ export function buildRoadSurfaces(d: District) {
   return root;
 }
 export const WATER_LEVEL = -1.2;
-export function channelGeometry(kind:'land'|'water') {
+export function assertWaterTerrainFresh(d:District){
+  if(('waterKey' in baked ? baked.waterKey : undefined)!==waterTerrainKey(d))
+    throw Error('Bangkok water/terrain geometry is stale. Run art:roads and commit the generated surface.');
+}
+export function channelGeometry(kind:'land'|'water',d:District) {
+  assertWaterTerrainFresh(d);
   return surfaceGeometry(baked[kind] as RoadPolygons,kind==='land'?-.25:WATER_LEVEL);
 }

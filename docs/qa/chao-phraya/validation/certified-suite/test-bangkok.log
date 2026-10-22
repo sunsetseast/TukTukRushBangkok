@@ -1,0 +1,19 @@
+{"pass":true,"nodes":2034,"roads":2087,"roadSamples":18783,"bridgeSamples":702,"protectedGate":true,"reachableFares":11,"trafficTransitions":499,"discoveryPersistence":true,"meshConstructionAndDisposal":true,"bridgeViewChecks":156}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Driven routes must clear physical geometry
+
+119 !== 0
+
+    at <anonymous> (/workspace/scratch/b8d41d1d667e/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-bangkok-driven.ts:24:82) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 119,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

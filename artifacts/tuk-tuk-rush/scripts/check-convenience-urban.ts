@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createBangkokWorld, riverDistance } from '../src/game/bangkok/world';
@@ -26,7 +27,7 @@ for (const s of stores) {
   assert.deepEqual(s.services,['water','refreshments','snacks']);
   assert(!s.interaction.enabled && s.interaction.futureEnergy, 'Future data does not start a second gameplay loop');
   assert(obstacleDistance(s.entrance,s.parcel) >= .24, 'Entrance stays outside the solid shop');
-  assert(riverDistance(d,s.front) > d.riverWidth!/2 + 3);
+  assert(riverClearance(d,s.front) > 3);
   const a=nodes.get(s.road.a)!, b=nodes.get(s.road.b)!;
   assert(distanceToSegment(s.publicStop,a,b).distance < .01, 'Stopping target is on a connected public lane');
   assert((s.publicStop.x-s.front.x)*Math.sin(s.yaw)+(s.publicStop.z-s.front.z)*Math.cos(s.yaw)>s.road.width/2+1);

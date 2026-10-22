@@ -1,5 +1,6 @@
+import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
 import type { District, Obstacle, Point } from '../types';
-import { regionAt, riverDistance } from './world';
+import { regionAt } from './world';
 import { placementIndex } from './environmentPlan';
 import { stableHash } from './buildingGrammar';
 import { distanceToSegment, orientedFootprintsOverlap } from '../world';
@@ -51,14 +52,16 @@ export function completeUrbanFabric(d:District):CompletenessReport{
   for(const r of d.roads.filter(r=>!r.roundabout&&!r.shortcut)){
     const a=nodes.get(r.a)!,b=nodes.get(r.b)!,seed=stableHash(`${r.a}:${r.b}`);if(seed%4)continue;
     const yaw=Math.atan2(b.x-a.x,b.z-a.z),side=seed%2?1:-1,p={x:(a.x+b.x)/2+Math.cos(yaw)*65*side,z:(a.z+b.z)/2-Math.sin(yaw)*65*side};
-    if(riverDistance(d,p)<d.riverWidth!/2+20)continue;
+    if(riverClearance(d,p)<20)continue;
     add(p,yaw+side*Math.PI/2,14,12,'screened');
   }
-  for(let i=1;i<d.river!.length;i++){
-    const a=d.river![i-1]!,b=d.river![i]!,len=Math.hypot(b.x-a.x,b.z-a.z),ux=(b.x-a.x)/len,uz=(b.z-a.z)/len;
-    for(let t=25;t<len-20;t+=70)for(const side of [-1,1]){
-      const off=d.riverWidth!/2+23,p={x:a.x+ux*t+uz*off*side,z:a.z+uz*t-ux*off*side};
-      add(p,Math.atan2(-uz*side,ux*side),18,13,'rear');
+  for(const ring of d.riverPolygon??[]){
+    let station=0;
+    for(let i=1;i<ring.length;i++){
+      const a=ring[i-1]!,b=ring[i]!,len=Math.hypot(b.x-a.x,b.z-a.z);
+      if(len<.1)continue;
+      for(let t=70-station;t<len;t+=70){const p={x:a.x+(b.x-a.x)*t/len,z:a.z+(b.z-a.z)*t/len},n=nearestRiverShore(d,p);add({x:p.x+n.nx*23,z:p.z+n.nz*23},Math.atan2(-n.nx,-n.nz),18,13,'rear');}
+      station=(station+len)%70;
     }
   }
   // Canal communities and small temple-edge residences connect the cleared hero

@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Driven routes must clear physical geometry
+
+119 !== 0
+
+    at <anonymous> (/workspace/scratch/b8d41d1d667e/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/diagnose-river-fares.ts:28:82) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 119,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

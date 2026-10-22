@@ -1,3 +1,4 @@
+import {riverClearance} from './waterGeometry';
 import { HISTORIC_PLAN, TRAIMIT_SITE_MASSES } from './historicPlan';
 import { COMMERCIAL_DISTRICT_BOUNDS, commercialSiteMasses } from "./commercialDistrictArt";
 import { urbanCourtReserved } from "./urbanBlocks";
@@ -12,7 +13,7 @@ import type {
   RoadNode,
 } from "../types";
 import { distanceToSegment, orientedFootprintsOverlap } from "../world";
-import { blockedByRiver, riverDistance } from "./world";
+import { blockedByRiver } from "./world";
 import { arrivalFurniturePoint } from "./arrivalDecoration";
 import { inLandmarkParcel } from './landmarkParcels';
 
@@ -258,7 +259,7 @@ export function connectDestinations(d: District) {
             z: n.z + ((loop.z - n.z) * t) / len,
           };
           if (
-            riverDistance(d, p) < d.riverWidth! / 2 + 7 ||
+            riverClearance(d, p) < 7 ||
             publicRoads.some(
               (r) =>
                 distanceToSegment(p, byId.get(r.a)!, byId.get(r.b)!).distance <

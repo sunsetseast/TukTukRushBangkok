@@ -214,7 +214,7 @@ const BaseMap = memo(function BaseMap({
             />
           );
         })}
-      <polyline
+      {cart.riverPolygon ? <path data-testid="map-river-surface" d={cart.riverPolygon} fill="#40b8cd" fillRule="evenodd" stroke="#f6e6b6" strokeWidth={1.4}/> : <><polyline
         points={cart.river}
         stroke="#f6e6b6"
         strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
@@ -230,6 +230,7 @@ const BaseMap = memo(function BaseMap({
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      </>}
       {d.canals?.map((c, i) => (
         <polyline
           key={i}
@@ -784,6 +785,12 @@ export function WorldMap({
     cameraMotion.current = true;
     setView(next);
   };
+  const wholeCity = () => {
+    const bounds=d.bounds;
+    if(!bounds)return {cx:490,cy:600,span:1250};
+    const a=toMap({x:bounds.minX,z:bounds.minZ}),b=toMap({x:bounds.maxX,z:bounds.maxZ});
+    return {cx:(a.x+b.x)/2,cy:(a.y+b.y)/2,span:Math.max((b.x-a.x+80)/Math.max(aspect,1),(b.y-a.y+80)/Math.max(1/aspect,1))};
+  };
   const nearbyStations = useMemo(
     () =>
       d.transit?.lines
@@ -1069,7 +1076,7 @@ export function WorldMap({
           <button
             className="tt-icon-btn"
             aria-label="Whole city"
-            onClick={() => moveTo({ cx: 490, cy: 600, span: 1250 })}
+            onClick={() => moveTo(wholeCity())}
             data-testid="button-whole-city"
           >
             <Maximize size={19} />

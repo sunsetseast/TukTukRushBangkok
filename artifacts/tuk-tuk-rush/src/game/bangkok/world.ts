@@ -1,4 +1,5 @@
-import {approvedOrigin,assertApprovedCityGeometry,CITY_MODEL} from './cityModel';
+import {riverClearance,riverBank} from './waterGeometry';
+import {CITY_MODEL,approvedOrigin,assertApprovedCityGeometry} from './cityModel';
 import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland, isHistoricWaterfront } from './historicPlan';
 import { placeHuaLamphong } from './huaLamphong';
 import { completeLandmarkContext } from './landmarkContext';
@@ -109,7 +110,7 @@ const bridgeCache = new WeakMap<
 /** Render and physics use the same buffered river. Only actual bridge lanes cross water. */
 export function blockedByRiver(d: District, p: Point, radius = 1.5) {
   if (publicWaterAt(d, p)) return true;
-  const main = !!d.river && riverDistance(d, p) < d.riverWidth! / 2 + radius;
+  const main = !!d.river && riverClearance(d, p) < radius;
   const canal = d.canals?.some((c) =>
     c.points
       .slice(1)
@@ -162,7 +163,7 @@ const kinds: Record<string, Landmark["kind"]> = {
   asiatique: "wheel",
 };
 
-export function createBangkokWorld(): District {
+export function createBangkokWorld(options: {authoring?:boolean} = {}): District {
   const canals = layout.canals.map((c) => ({
     points: c.centerline.map(toWorld),
     width: c.design_width * SCALE,
@@ -346,12 +347,15 @@ export function createBangkokWorld(): District {
     roads,
     river,
     riverWidth,
+    riverPolygon: CITY_MODEL.waterApproval.polygon.map(r=>r.map(([x,z])=>({x:x!,z:z!}))),
+    waterVersion: CITY_MODEL.waterApproval.version,
+    riverStructures: CITY_MODEL.waterApproval.structureExclusions.map(s=>s.ring.map(([x,z])=>({x:x!,z:z!}))),
     canals,
     regions,
     landmarks,
     buildings: [],
     obstacles: [],
-    bounds: { minX: -1980, maxX: (MASTER_PLAN.bounds.east-500)*4, minZ: -2380, maxZ: 2380 },
+    bounds: { minX: -1980, maxX: (MASTER_PLAN.bounds.east-500)*4, minZ: -2380, maxZ: CITY_MODEL.waterApproval.southernBoundary.maxZ },
   };
   const byId = new Map(nodes.map((n) => [n.id, n]));
   planPublicSpaces(world);
@@ -361,13 +365,7 @@ export function createBangkokWorld(): District {
     ...victorySkywalkColumns(),
     ...victoryShelterCollisions(),
   );
-  const bank = (p: Point) => {
-    const closest = river
-      .slice(1)
-      .map((b, i) => distanceToSegment(p, river[i]!, b))
-      .sort((a, b) => a.distance - b.distance)[0]!;
-    return Math.sign(p.x - closest.point.x);
-  };
+  const bank = (p: Point) => riverBank(world,p);
   for (const l of landmarks) {
     if (l.kind === "park") continue;
     l.accessNode = nodes.reduce((best, n) =>
@@ -465,7 +463,7 @@ export function createBangkokWorld(): District {
             continue;
           if (
             bank(candidate) !== bank(l) ||
-            riverDistance(world, candidate) < riverWidth / 2 + radius + 3
+            riverClearance(world, candidate) < radius + 3
           )
             continue;
           if (
@@ -592,7 +590,7 @@ export function createBangkokWorld(): District {
         index++;
         if (inDestinationGrounds(world, building)) continue;
         if (
-          riverDistance(world, p) < riverWidth / 2 + 18 ||
+          riverClearance(world, p) < 18 ||
           world.canals?.some((c) =>
             c.points
               .slice(1)
@@ -628,8 +626,9 @@ export function createBangkokWorld(): District {
   // solid parcels, screened by the same road, river, park and landmark rules.
   // No fake roads, no skyline props floating outside the physical city.
   const frontages = [...world.buildings];
+  const rearParents=new Set(CITY_MODEL.proceduralHistory.rearRowParents);
   for (const [i, b] of frontages.entries()) {
-    if (i % 3 !== 0) continue;
+    if (!rearParents.has(`${Math.round(b.x*1000)}:${Math.round(b.z*1000)}`)) continue;
     const yaw = b.yaw ?? 0;
     const p = { x: b.x - Math.sin(yaw) * 29, z: b.z - Math.cos(yaw) * 29 };
     const infill: Obstacle = {
@@ -649,7 +648,7 @@ export function createBangkokWorld(): District {
     )
       continue;
     if (
-      riverDistance(world, p) < riverWidth / 2 + 18 ||
+      riverClearance(world, p) < 18 ||
       world.canals?.some((c) =>
         c.points
           .slice(1)
@@ -697,7 +696,7 @@ export function createBangkokWorld(): District {
           artRole: "furniture",
           landmarkId: l.id,
         };
-        if (riverDistance(world, p) < riverWidth / 2 + 2) continue;
+        if (riverClearance(world, p) < 2) continue;
         if (
           roads.some(
             (r) =>
@@ -786,7 +785,7 @@ export function createBangkokWorld(): District {
   planEnvironment(world);
   planLandscape(world);
   planTropicalPlants(world);
-  assertApprovedCityGeometry(world);
+  if(!options.authoring)assertApprovedCityGeometry(world);
   return world;
 }
 

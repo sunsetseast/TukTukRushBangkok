@@ -47,7 +47,9 @@
     "test:historic-core": "node --import tsx scripts/check-historic-reconstruction.ts && node --import tsx scripts/check-historic-drives.ts && HISTORIC_INTERSECTIONS=1 node --import tsx scripts/check-historic-drives.ts",
     "test:historic-fidelity": "node --import tsx scripts/check-historic-fidelity.ts",
     "test:city-blueprint": "node --import tsx scripts/check-city-blueprint.ts",
-    "test:premium-landmarks": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts"
+    "test:premium-landmarks": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
+    "test:river-geography": "node --import tsx scripts/check-chao-phraya.ts",
+    "test:river-drives": "node --import tsx scripts/check-chao-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,0 +1,56 @@
+{
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=100.498,13.703,100.507,13.709",
+  "rawSha256": "e6be5d30aff2656d142f4c23012d2c5de25848af621aeba9a77c420ea722a946",
+  "features": [
+    {
+      "type": "node",
+      "id": "2074694261",
+      "tags": {
+        "amenity": "ferry_terminal",
+        "name": "เอเชียทีค",
+        "name:en": "Asiatique",
+        "name:th": "เอเชียทีค"
+      },
+      "coordinate": {
+        "lon": 100.5016875,
+        "lat": 13.7049496
+      },
+      "accuracy": "OSM point or unweighted way-vertex centroid, not surveyed entrance",
+      "source": "https://www.openstreetmap.org/node/2074694261"
+    },
+    {
+      "type": "way",
+      "id": "196107455",
+      "tags": {
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "Asiatique The Riverfront",
+        "name:en": "Asiatique The Riverfront",
+        "name:th": "เอเชียทีค เดอะ ริเวอร์ฟร้อนท์",
+        "shop": "mall"
+      },
+      "coordinate": {
+        "lon": 100.50240005555555,
+        "lat": 13.704375519444445
+      },
+      "accuracy": "OSM point or unweighted way-vertex centroid, not surveyed entrance",
+      "source": "https://www.openstreetmap.org/way/196107455"
+    },
+    {
+      "type": "way",
+      "id": "342522015",
+      "tags": {
+        "attraction": "big_wheel",
+        "building": "yes",
+        "name": "Asiatique Sky Ferris Wheel",
+        "tourism": "attraction"
+      },
+      "coordinate": {
+        "lon": 100.5033468142857,
+        "lat": 13.705145242857142
+      },
+      "accuracy": "OSM point or unweighted way-vertex centroid, not surveyed entrance",
+      "source": "https://www.openstreetmap.org/way/342522015"
+    }
+  ]
+}

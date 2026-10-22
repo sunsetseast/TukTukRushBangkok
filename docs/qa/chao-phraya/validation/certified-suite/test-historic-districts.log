@@ -1,0 +1,53 @@
+{
+  "pass": true,
+  "assets": {
+    "swing": [
+      {
+        "triangles": 17152,
+        "calls": 4,
+        "bytes": 578372
+      },
+      {
+        "triangles": 8272,
+        "calls": 4,
+        "bytes": 237592
+      }
+    ],
+    "flowers": [
+      {
+        "triangles": 17208,
+        "calls": 3,
+        "bytes": 710368
+      },
+      {
+        "triangles": 3348,
+        "calls": 3,
+        "bytes": 146008
+      }
+    ],
+    "jim-thompson": [
+      {
+        "triangles": 7048,
+        "calls": 3,
+        "bytes": 326928
+      },
+      {
+        "triangles": 3912,
+        "calls": 3,
+        "bytes": 177552
+      }
+    ],
+    "river-city": [
+      {
+        "triangles": 12432,
+        "calls": 4,
+        "bytes": 565552
+      },
+      {
+        "triangles": 4032,
+        "calls": 4,
+        "bytes": 183712
+      }
+    ]
+  }
+}

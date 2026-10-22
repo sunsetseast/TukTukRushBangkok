@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {gunzipSync,gzipSync} from 'node:zlib';
@@ -28,7 +29,7 @@ assert(d.buildings.every(b=>!pointInPolygon(b,field.boundary)),'No procedural ho
 assert(traimit.x>gate.x&&traimit.z<gate.z&&hua.x>traimit.x&&hua.z<traimit.z,'Station–temple–gate relative geography');
 for(const id of HISTORIC_IDS){
  const l=place(id),p=l.plot??l;
- assert(riverDistance(d,p)>d.riverWidth!/2,'Selected sites on dry east bank');
+ assert(riverClearance(d,p)>0,'Selected sites on dry east bank');
  const closest=d.river!.slice(1).map((b,i)=>distanceToSegment(p,d.river![i]!,b)).sort((a,b)=>a.distance-b.distance)[0]!;assert(p.x>closest.point.x,'Correct east riverbank '+id);
  assert(l.accessNode&&nodes.has(l.accessNode));
  assert(navigationPath(d,d.nodes[0]!,nodes.get(l.accessNode!)!).length,'Connected directed public access '+id);

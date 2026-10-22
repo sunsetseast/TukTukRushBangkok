@@ -1,5 +1,5 @@
 import type { District, Input, TrafficCar, Vehicle } from './types';
-import { nearestRoad, obstacleLocal } from './world';
+import { nearestRoad, obstacleLocal, obstacleDistance } from './world';
 import { blockedByRiver } from './bangkok/world';
 import { physicsObstacleIndex } from './bangkok/clearanceIndex';
 import { BOOST_ACCELERATION, BOOST_SPEED_CAP } from './boost';
@@ -127,6 +127,21 @@ export class VehicleController {
     }
     p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;
     this.vx = 0; this.vz = 0;
+  }
+  /** Existing career/discovery saves do not serialize a vehicle position. This
+   * boundary also protects a resumed/imported session whose old pose is water
+   * after an approved geography migration, without touching its progress. */
+  reconcileGeography(p:Vehicle,district:District){
+    if(!blockedByRiver(district,p))return false;
+    const nodes=new Map(district.nodes.map(n=>[n.id,n]));
+    const candidates=district.roads.flatMap(r=>{
+      const a=nodes.get(r.a)!,b=nodes.get(r.b)!;
+      return [0,.25,.5,.75,1].map(t=>({x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,heading:Math.atan2(b.x-a.x,b.z-a.z)}));
+    });
+    candidates.sort((a,b)=>Math.hypot(a.x-p.x,a.z-p.z)-Math.hypot(b.x-p.x,b.z-p.z)||a.x-b.x||a.z-b.z);
+    const index=district.worldId==='bangkok'?physicsObstacleIndex(district):undefined;
+    const safe=candidates.find(q=>!blockedByRiver(district,q)&&(index?index.query(q).every(i=>obstacleDistance(q,district.obstacles[i]!)>=2):district.obstacles.every(o=>obstacleDistance(q,o)>=2)));if(!safe)throw Error('No dry connected road available for geography recovery');
+    Object.assign(p,safe,{speed:0,steer:0,lean:0,collision:0});this.reset();return true;
   }
   reset() { this.vx = 0; this.vz = 0; }
 }

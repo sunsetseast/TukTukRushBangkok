@@ -1,0 +1,1174 @@
+{
+  "label": "after",
+  "sourceState": "Working source; see final source-equivalence manifest",
+  "sourceDiff": "",
+  "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 138.0.7204.168 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "records": [
+    {
+      "id": "historic-overhead",
+      "light": "sunset",
+      "file": "historic-overhead-sunset.jpg",
+      "scene": {
+        "id": "historic-overhead",
+        "camera": [
+          -1050,
+          1250,
+          -800
+        ],
+        "look": [
+          -1050,
+          0,
+          -801
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 913,
+        "triangles": 1149497,
+        "geometries": 1221,
+        "textures": 18,
+        "frameMs": 49.5,
+        "camera": [
+          -1050,
+          1250,
+          -800
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "pho-driving",
+      "light": "sunset",
+      "file": "pho-driving-sunset.jpg",
+      "scene": {
+        "id": "pho-driving",
+        "camera": [
+          -831.2751816121412,
+          8,
+          -542.7690443578748
+        ],
+        "look": [
+          -800,
+          10,
+          -700
+        ],
+        "owner": "pho",
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 397,
+        "triangles": 649766,
+        "geometries": 1260,
+        "textures": 18,
+        "frameMs": 65,
+        "camera": [
+          -831.2751816121412,
+          8,
+          -542.7690443578748
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "pho-elevated",
+      "light": "sunset",
+      "file": "pho-elevated-sunset.jpg",
+      "scene": {
+        "id": "pho-elevated",
+        "camera": [
+          -740,
+          400,
+          -480
+        ],
+        "look": [
+          -800,
+          0,
+          -700
+        ],
+        "owner": "pho",
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 506,
+        "triangles": 820350,
+        "geometries": 1295,
+        "textures": 18,
+        "frameMs": 21,
+        "camera": [
+          -740,
+          400,
+          -480
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "chinatown-talatnoi-bend",
+      "light": "sunset",
+      "file": "chinatown-talatnoi-bend-sunset.jpg",
+      "scene": {
+        "id": "chinatown-talatnoi-bend",
+        "camera": [
+          -650,
+          1500,
+          650
+        ],
+        "look": [
+          -650,
+          0,
+          200
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 763,
+        "triangles": 687686,
+        "geometries": 1973,
+        "textures": 20,
+        "frameMs": 59,
+        "camera": [
+          -650,
+          1500,
+          650
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "river-city-hilton",
+      "light": "sunset",
+      "file": "river-city-hilton-sunset.jpg",
+      "scene": {
+        "id": "river-city-hilton",
+        "camera": [
+          -510,
+          140,
+          920
+        ],
+        "look": [
+          -510,
+          12,
+          780
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 204,
+        "triangles": 180319,
+        "geometries": 1985,
+        "textures": 20,
+        "frameMs": 928.7000000001863,
+        "camera": [
+          -510,
+          140,
+          920
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "river-city-hilton",
+      "light": "night",
+      "file": "river-city-hilton-night.jpg",
+      "scene": {
+        "id": "river-city-hilton",
+        "camera": [
+          -510,
+          140,
+          920
+        ],
+        "look": [
+          -510,
+          12,
+          780
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 204,
+        "triangles": 180319,
+        "geometries": 1985,
+        "textures": 20,
+        "frameMs": 36.700000000186265,
+        "camera": [
+          -510,
+          140,
+          920
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "icon-river",
+      "light": "sunset",
+      "file": "icon-river-sunset.jpg",
+      "scene": {
+        "id": "icon-river",
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "look": [
+          -650,
+          12,
+          933
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 318,
+        "triangles": 310177,
+        "geometries": 2062,
+        "textures": 20,
+        "frameMs": 122.29999999981374,
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "icon-river",
+      "light": "night",
+      "file": "icon-river-night.jpg",
+      "scene": {
+        "id": "icon-river",
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "look": [
+          -650,
+          12,
+          933
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 309,
+        "triangles": 306897,
+        "geometries": 2062,
+        "textures": 20,
+        "frameMs": 300.69999999925494,
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "icon-street",
+      "light": "sunset",
+      "file": "icon-street-sunset.jpg",
+      "scene": {
+        "id": "icon-street",
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "look": [
+          -646.9669914110091,
+          10,
+          933.0330085889909
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 349,
+        "triangles": 345563,
+        "geometries": 2181,
+        "textures": 20,
+        "frameMs": 163.6000000005588,
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "icon-street",
+      "light": "night",
+      "file": "icon-street-night.jpg",
+      "scene": {
+        "id": "icon-street",
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "look": [
+          -646.9669914110091,
+          10,
+          933.0330085889909
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 349,
+        "triangles": 345563,
+        "geometries": 2181,
+        "textures": 20,
+        "frameMs": 280.70000000018626,
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "oriental-peninsula",
+      "light": "sunset",
+      "file": "oriental-peninsula-sunset.jpg",
+      "scene": {
+        "id": "oriental-peninsula",
+        "camera": [
+          -370,
+          150,
+          1480
+        ],
+        "look": [
+          -380,
+          15,
+          1120
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 351,
+        "triangles": 366227,
+        "geometries": 2271,
+        "textures": 20,
+        "frameMs": 296.59999999962747,
+        "camera": [
+          -370,
+          150,
+          1480
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "oriental-peninsula",
+      "light": "night",
+      "file": "oriental-peninsula-night.jpg",
+      "scene": {
+        "id": "oriental-peninsula",
+        "camera": [
+          -370,
+          150,
+          1480
+        ],
+        "look": [
+          -380,
+          15,
+          1120
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 351,
+        "triangles": 366227,
+        "geometries": 2271,
+        "textures": 20,
+        "frameMs": 45.30000000074506,
+        "camera": [
+          -370,
+          150,
+          1480
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "taksin-elevated",
+      "light": "sunset",
+      "file": "taksin-elevated-sunset.jpg",
+      "scene": {
+        "id": "taksin-elevated",
+        "camera": [
+          -430,
+          700,
+          1570
+        ],
+        "look": [
+          -430,
+          0,
+          1420
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 790,
+        "triangles": 838699,
+        "geometries": 2757,
+        "textures": 20,
+        "frameMs": 294.90000000037253,
+        "camera": [
+          -430,
+          700,
+          1570
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "taksin-driving",
+      "light": "sunset",
+      "file": "taksin-driving-sunset.jpg",
+      "scene": {
+        "id": "taksin-driving",
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "look": [
+          -600,
+          5,
+          1460
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 334,
+        "triangles": 387893,
+        "geometries": 2779,
+        "textures": 20,
+        "frameMs": 801.5999999996275,
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "four-seasons-capella",
+      "light": "sunset",
+      "file": "four-seasons-capella-sunset.jpg",
+      "scene": {
+        "id": "four-seasons-capella",
+        "camera": [
+          -500,
+          230,
+          1930
+        ],
+        "look": [
+          -280,
+          10,
+          1760
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 374,
+        "triangles": 366775,
+        "geometries": 2893,
+        "textures": 20,
+        "frameMs": 421.29999999981374,
+        "camera": [
+          -500,
+          230,
+          1930
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "four-seasons-capella",
+      "light": "night",
+      "file": "four-seasons-capella-night.jpg",
+      "scene": {
+        "id": "four-seasons-capella",
+        "camera": [
+          -500,
+          230,
+          1930
+        ],
+        "look": [
+          -280,
+          10,
+          1760
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 374,
+        "triangles": 366775,
+        "geometries": 2893,
+        "textures": 20,
+        "frameMs": 25.09999999962747,
+        "camera": [
+          -500,
+          230,
+          1930
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "asiatique-anantara",
+      "light": "sunset",
+      "file": "asiatique-anantara-sunset.jpg",
+      "scene": {
+        "id": "asiatique-anantara",
+        "camera": [
+          -650,
+          900,
+          2390
+        ],
+        "look": [
+          -650,
+          0,
+          2160
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 384,
+        "triangles": 269555,
+        "geometries": 3124,
+        "textures": 20,
+        "frameMs": 341.29999999981374,
+        "camera": [
+          -650,
+          900,
+          2390
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "asiatique-anantara",
+      "light": "night",
+      "file": "asiatique-anantara-night.jpg",
+      "scene": {
+        "id": "asiatique-anantara",
+        "camera": [
+          -650,
+          900,
+          2390
+        ],
+        "look": [
+          -650,
+          0,
+          2160
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 384,
+        "triangles": 269555,
+        "geometries": 3124,
+        "textures": 20,
+        "frameMs": 22.09999999962747,
+        "camera": [
+          -650,
+          900,
+          2390
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "full-river-overview",
+      "light": "sunset",
+      "file": "full-river-overview-sunset.jpg",
+      "scene": {
+        "id": "full-river-overview",
+        "camera": [
+          -700,
+          5900,
+          100
+        ],
+        "look": [
+          -700,
+          0,
+          99
+        ],
+        "owner": null,
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 3755,
+        "triangles": 2029642,
+        "geometries": 5214,
+        "textures": 21,
+        "frameMs": 93.20000000018626,
+        "camera": [
+          -700,
+          5900,
+          100
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": true,
+      "extendedClipAndFog": true,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "hilton-river",
+      "light": "sunset",
+      "file": "hilton-river-sunset.jpg",
+      "scene": {
+        "id": "hilton-river",
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          55,
+          780
+        ],
+        "owner": "hilton",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 327,
+        "triangles": 333246,
+        "geometries": 5225,
+        "textures": 21,
+        "frameMs": 17.40000000037253,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "hilton-river",
+      "light": "night",
+      "file": "hilton-river-night.jpg",
+      "scene": {
+        "id": "hilton-river",
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "look": [
+          -756,
+          55,
+          780
+        ],
+        "owner": "hilton",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 326,
+        "triangles": 333214,
+        "geometries": 5225,
+        "textures": 21,
+        "frameMs": 372.70000000018626,
+        "camera": [
+          -636,
+          32,
+          780
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "peninsula-river",
+      "light": "sunset",
+      "file": "peninsula-river-sunset.jpg",
+      "scene": {
+        "id": "peninsula-river",
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          55,
+          1228
+        ],
+        "owner": "peninsula",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 360,
+        "triangles": 434375,
+        "geometries": 5250,
+        "textures": 21,
+        "frameMs": 39.39999999944121,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "peninsula-river",
+      "light": "night",
+      "file": "peninsula-river-night.jpg",
+      "scene": {
+        "id": "peninsula-river",
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "look": [
+          -620,
+          55,
+          1228
+        ],
+        "owner": "peninsula",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 351,
+        "triangles": 430751,
+        "geometries": 5250,
+        "textures": 21,
+        "frameMs": 457.09999999962747,
+        "camera": [
+          -500,
+          32,
+          1228
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "oriental-river",
+      "light": "sunset",
+      "file": "oriental-river-sunset.jpg",
+      "scene": {
+        "id": "oriental-river",
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          24,
+          1040
+        ],
+        "owner": "oriental",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 396,
+        "triangles": 529893,
+        "geometries": 5364,
+        "textures": 21,
+        "frameMs": 435.8999999994412,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "oriental-river",
+      "light": "night",
+      "file": "oriental-river-night.jpg",
+      "scene": {
+        "id": "oriental-river",
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          24,
+          1040
+        ],
+        "owner": "oriental",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 396,
+        "triangles": 529893,
+        "geometries": 5364,
+        "textures": 21,
+        "frameMs": 577.2999999998137,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "anantara-river",
+      "light": "sunset",
+      "file": "anantara-river-sunset.jpg",
+      "scene": {
+        "id": "anantara-river",
+        "camera": [
+          -850,
+          42,
+          2180
+        ],
+        "look": [
+          -1020,
+          14,
+          2180
+        ],
+        "owner": "anantara",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 138,
+        "triangles": 183963,
+        "geometries": 5390,
+        "textures": 21,
+        "frameMs": 541.2000000001863,
+        "camera": [
+          -850,
+          42,
+          2180
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    },
+    {
+      "id": "anantara-river",
+      "light": "night",
+      "file": "anantara-river-night.jpg",
+      "scene": {
+        "id": "anantara-river",
+        "camera": [
+          -850,
+          42,
+          2180
+        ],
+        "look": [
+          -1020,
+          14,
+          2180
+        ],
+        "owner": "anantara",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 137,
+        "triangles": 183931,
+        "geometries": 5390,
+        "textures": 21,
+        "frameMs": 160.19999999925494,
+        "camera": [
+          -850,
+          42,
+          2180
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "5a68832635ebb219967909ea0d404782944b4bc1"
+    }
+  ],
+  "errors": [],
+  "captureStages": [
+    "Matched river-facing hotel facade views"
+  ]
+}

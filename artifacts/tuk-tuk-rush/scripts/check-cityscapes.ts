@@ -1,3 +1,4 @@
+import {riverClearance} from '../src/game/bangkok/waterGeometry';
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
@@ -51,7 +52,7 @@ for (const site of sites) {
   const o = site.body,
     radius = Math.hypot(o.w, o.d) / 2;
   assert(d.obstacles.includes(o));
-  assert(riverDistance(d, o) > d.riverWidth! / 2 + radius + 2);
+  assert(riverClearance(d, o) > 0 + radius + 2);
   for (const r of d.roads)
     assert(
       distanceToSegment(o, nodes.get(r.a)!, nodes.get(r.b)!).distance >=
@@ -98,7 +99,7 @@ assert.equal(routes.length, 7);
 for (const r of routes) {
   for (let i = 0; i < 256; i++) {
     const p = boatPose(r, (i * r.period) / 256);
-    assert(riverDistance(d, p) < d.riverWidth! / 2 - 17);
+    assert(riverClearance(d, p) < 0 - 17);
     for (const b of bridges)
       assert(
         distanceToSegment(p, nodes.get(b.a)!, nodes.get(b.b)!).distance >
