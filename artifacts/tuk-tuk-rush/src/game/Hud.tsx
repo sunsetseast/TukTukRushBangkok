@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { CurrentStreetTracker } from "./currentStreet";
 import { BangkokMinimap } from "./bangkok/WorldMap";
 import { Map as MapIcon, Pause, Clock3 } from "lucide-react";
 import { Destination } from "./ui/Destination";
@@ -164,6 +165,12 @@ export function Hud({
   active?: boolean;
 }) {
   const s = f.snap;
+  const streetTracker = useMemo(() => new CurrentStreetTracker(d), [d]);
+  const street = streetTracker.update(
+    { x: f.px, z: f.pz },
+    f.ph,
+    performance.now(),
+  );
   const guidance = useMemo(
     () => guidanceFor(d, { x: f.px, z: f.pz }, f.ph, s.target),
     [d, s.target.id, f.px, f.pz, f.ph],
@@ -206,6 +213,21 @@ export function Hud({
           </span>
         </div>
       </div>
+      {street && (
+        <div
+          className="tt-current-street"
+          data-testid="text-current-street"
+          aria-label={`Current street: ${street.english}`}
+        >
+          <span className="tt-street-icon" aria-hidden="true">
+            ↗
+          </span>
+          <div>
+            {street.thai && <span lang="th">{street.thai}</span>}
+            <b title={street.english}>{street.english}</b>
+          </div>
+        </div>
+      )}
       <Destination f={f} guidance={guidance} active={active} />
       <button
         className="tt-icon-btn tt-pause"
@@ -223,7 +245,11 @@ export function Hud({
           data-testid="text-message"
         >
           {s.message}
-          {s.careerNotice && <small className="tt-career-toast">★ Achievement · {s.careerNotice}</small>}
+          {s.careerNotice && (
+            <small className="tt-career-toast">
+              ★ Achievement · {s.careerNotice}
+            </small>
+          )}
         </div>
       )}
       <div className="tt-speed">

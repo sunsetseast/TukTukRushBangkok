@@ -1,0 +1,9 @@
+{
+  "base": "4735f336cf53102e8079e3943a782239ed81e68c",
+  "reason": "PR38 approved local Chinatown geometry/derived surfaces and final curbside navigation endpoint; strict PR37 exterior geometry and unchanged original fare/collider tests remain active",
+  "files": {
+    "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json": "8e3bae4cce3c15e205bdaeafae8cbed69deb503b78df7a2eb4c7cfc748f2ef8d",
+    "artifacts/tuk-tuk-rush/src/game/bangkok/roadSurfaces.generated.json": "388851a4ab6d6082cb649767909828d0350286b090762a8d7e88bc41b32cc61e",
+    "artifacts/tuk-tuk-rush/src/game/navigation.ts": "2ae85c28be118ac524d2a2d7cdc3cd6ebd830ee77c2da045d2a09f8fb697fc9c"
+  }
+}

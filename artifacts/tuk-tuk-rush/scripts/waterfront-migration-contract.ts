@@ -1,3 +1,4 @@
+import { approvedChinatownParcel } from "./chinatown-migration-contract";
 /** Explicit PR37 approval for the eleven old / ten fitted waterfront kiosk
  * footprints. Historic snapshot guards still reject every unrelated change. */
 import assert from "node:assert/strict";
@@ -57,21 +58,29 @@ export function assertApprovedManeuverMigration(d: District) {
   const before = new Set(baseline.buildings.map(footprintKey)),
     after = new Set(d.buildings.map(footprintKey));
   const removed = baseline.buildings
-      .filter((o) => !after.has(footprintKey(o)))
+      .filter((o) => !after.has(footprintKey(o)) && !approvedChinatownParcel(o))
       .map(footprintKey)
       .sort(),
     added = d.buildings
-      .filter((o) => !before.has(footprintKey(o)))
+      .filter(
+        (o) => !before.has(footprintKey(o)) && !approvedChinatownParcel(o),
+      )
       .map(footprintKey)
       .sort();
   assert.deepEqual(
     removed,
-    approval.removed.map(footprintKey).sort(),
+    approval.removed
+      .filter((o) => !approvedChinatownParcel(o))
+      .map(footprintKey)
+      .sort(),
     "No additional old frontage may disappear",
   );
   assert.deepEqual(
     added,
-    approval.added.map(footprintKey).sort(),
+    approval.added
+      .filter((o) => !approvedChinatownParcel(o))
+      .map(footprintKey)
+      .sort(),
     "No unapproved new frontage reflow",
   );
 }

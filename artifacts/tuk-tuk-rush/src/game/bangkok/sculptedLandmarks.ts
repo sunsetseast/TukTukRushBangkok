@@ -1,19 +1,30 @@
-import {victoryMonument} from './victoryMonument';
-import { buildRealArchitecture } from './realArchitecture';
-import { realCommercial } from './realCommercial';
-import { reviewedLandmark } from './landmarkSites';
-import {heritageLandmark} from './heritageLandmarks';
-import { buddhaLandmark } from './buddhaLandmarks';
-import { skylineLandmark } from './skylineLandmarks';
+import { chinatownHeritageArt } from "./chinatownHeritage";
+import { victoryMonument } from "./victoryMonument";
+import { buildRealArchitecture } from "./realArchitecture";
+import { realCommercial } from "./realCommercial";
+import { reviewedLandmark } from "./landmarkSites";
+import { heritageLandmark } from "./heritageLandmarks";
+import { buddhaLandmark } from "./buddhaLandmarks";
+import { skylineLandmark } from "./skylineLandmarks";
 import * as T from "three";
 import type { Landmark } from "../types";
 import { LandmarkBuilder } from "./landmarkBuilder";
 
 /** Site-specific original arcade assets; proportions compress the real places. */
 export function sculptedLandmark(l: Landmark) {
-  const special=victoryMonument(l)??buildRealArchitecture(l)??realCommercial(l)??reviewedLandmark(l)??buddhaLandmark(l)??heritageLandmark(l)??skylineLandmark(l);if(special)return special;
-  if (l.id!=='paragon') return;
-  const b=new LandmarkBuilder(), S=l.size??65;
+  const special =
+    chinatownHeritageArt(l) ??
+    victoryMonument(l) ??
+    buildRealArchitecture(l) ??
+    realCommercial(l) ??
+    reviewedLandmark(l) ??
+    buddhaLandmark(l) ??
+    heritageLandmark(l) ??
+    skylineLandmark(l);
+  if (special) return special;
+  if (l.id !== "paragon") return;
+  const b = new LandmarkBuilder(),
+    S = l.size ?? 65;
   if (l.id === "paragon") {
     b.box(0, 0.6, 0, 64, 1.2, 64, "#c6c9bd");
     b.box(0, 15, 4, 58, 29, 52, "#bdc6bd");
@@ -49,6 +60,10 @@ export function sculptedLandmark(l: Landmark) {
         b.box(side * 29.4, y, 4, 0.4, 0.35, 52, "#d9dfcf", 0, true);
     }
   }
-  for(const side of [-1,1])for(let x=-25;x<=25;x+=5){b.box(x,2,side*30.8,3.8,.4,.8,'#a7b9ab');b.box(x,3.7,side*30.9,.1,3,.12,'#e0dcc5');}
+  for (const side of [-1, 1])
+    for (let x = -25; x <= 25; x += 5) {
+      b.box(x, 2, side * 30.8, 3.8, 0.4, 0.8, "#a7b9ab");
+      b.box(x, 3.7, side * 30.9, 0.1, 3, 0.12, "#e0dcc5");
+    }
   return b.finish(`refined-${l.id}-commercial-v3`);
 }

@@ -1,0 +1,32 @@
+after odeon-circle {
+  calls: 396,
+  triangles: 632318,
+  geometries: 543,
+  textures: 13,
+  frameMs: 420.5
+}
+after song-wat-river {
+  calls: 254,
+  triangles: 344932,
+  geometries: 713,
+  textures: 13,
+  frameMs: 735.8999999994412
+}
+after talat-noi-river-city {
+  calls: 263,
+  triangles: 249976,
+  geometries: 901,
+  textures: 15,
+  frameMs: 55.10000000055879
+}
+after wat-mangkon {
+  calls: 374,
+  triangles: 509968,
+  geometries: 1195,
+  textures: 15,
+  frameMs: 33.700000000186265
+}
+layout 375 812
+layout 430 932
+layout 844 390
+layout 1280 800

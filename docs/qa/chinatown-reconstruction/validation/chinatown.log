@@ -1,0 +1,11 @@
+{
+  pass: true,
+  blocks: 22,
+  parcels: 776,
+  frontagePieces: 38414,
+  majorSigns: 1036,
+  footprints: { removed: 942, added: 879, exteriorChanges: 0 },
+  riverUnchanged: true,
+  graphOutsideScopeUnchanged: true,
+  currentStreet: { hysteresis: true, spatialIndex: true, rateLimited: true }
+}

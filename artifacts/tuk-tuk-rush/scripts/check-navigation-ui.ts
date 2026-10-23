@@ -42,6 +42,12 @@ assert.equal(guidanceFor(d, { x: 40, z: 0 }, 0, d.nodes[4]!).distance, null);
 assert.deepEqual(navigationPath(d, { x: 0, z: 0 }, d.nodes[0]!), [
   { x: 0, z: 0 },
 ]);
+const curb = { ...d.nodes[2]!, x: 103 };
+assert.deepEqual(
+  navigationPath(d, { x: 40, z: 0 }, curb).at(-1),
+  { x: 103, z: 100 },
+  "Guidance reaches the real curbside passenger position",
+);
 let latch = false;
 for (const [distance, expected] of [
   [100, false],

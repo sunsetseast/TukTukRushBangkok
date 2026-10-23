@@ -51,7 +51,11 @@
     "test:river-geography": "node --import tsx scripts/check-chao-phraya.ts",
     "test:river-drives": "node --import tsx scripts/check-chao-drives.ts",
     "test:waterfront-clearance": "node --import tsx scripts/check-waterfront-clearance.ts",
-    "test:waterfront-drives": "node --import tsx scripts/check-waterfront-drives.ts && WATERFRONT_LANES=1 node --import tsx scripts/check-waterfront-drives.ts"
+    "test:waterfront-drives": "node --import tsx scripts/check-waterfront-drives.ts && WATERFRONT_LANES=1 node --import tsx scripts/check-waterfront-drives.ts",
+    "test:chinatown": "node --import tsx scripts/check-chinatown.ts",
+    "test:chinatown-drives": "node --import tsx scripts/check-chinatown-drives.ts && CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
+    "test:chinatown-traffic": "CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts",
+    "art:chinatown-blocks": "node --import tsx scripts/generate-chinatown-blocks.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,4 +1,11 @@
-import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
+import { proceduralStreetSeeds } from "./proceduralStreetSeeds";
+import {
+  CHINATOWN_PLAN,
+  chinatownParcel,
+  inChinatown,
+  inChinatownMigration,
+} from "./chinatownPlan";
+import { riverClearance, riverBank, nearestRiverShore } from "./waterGeometry";
 import type { District, Obstacle, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
@@ -76,8 +83,14 @@ export const BLOCK_DISTRICTS = [
     kind: "heritage",
   },
   {
-    id: "station-gateway-blocks", box:[515,455,625,610],cap:120,
-    h:[9,18],w:16,d:22,palette:["#e0cba9","#b2c5b3","#d0aa91"],kind:"heritage",
+    id: "station-gateway-blocks",
+    box: [515, 455, 625, 610],
+    cap: 120,
+    h: [9, 18],
+    w: 16,
+    d: 22,
+    palette: ["#e0cba9", "#b2c5b3", "#d0aa91"],
+    kind: "heritage",
   },
   {
     id: "yaowarat-blocks",
@@ -216,7 +229,8 @@ export function planUrbanBlocks(d: District): UrbanBlock[] {
   if (prior) return prior;
   const result: UrbanBlock[] = [],
     index = placementIndex(d),
-    nodes = new Map(d.nodes.map((n) => [n.id, n]));
+    seedGraph = proceduralStreetSeeds(d),
+    nodes = seedGraph.nodes;
   plans.set(d, result);
   const counts = new Map<string, number>(),
     used = new Set<string>();
@@ -232,13 +246,14 @@ export function planUrbanBlocks(d: District): UrbanBlock[] {
       o.x < b.maxX - r &&
       o.z > b.minZ + r &&
       o.z < b.maxZ - r &&
+      !chinatownParcel(o) &&
       !inDestinationGrounds(d, o) &&
       index.clear(o, true) &&
       rail.every((p) => obstacleDistance(p, o) > 9) &&
       stations.every((p) => obstacleDistance(p, o) > p.length / 2 + 12)
     );
   };
-  for (const road of d.roads) {
+  for (const road of seedGraph.roads) {
     if (road.bridge || road.shortcut || road.destinationId || road.roundabout)
       continue;
     const a = nodes.get(road.a)!,
@@ -289,6 +304,14 @@ export function planUrbanBlocks(d: District): UrbanBlock[] {
               artRole: "background",
               environmentId: id,
             };
+          const footprint = [o.x, o.z, o.w, o.d, o.yaw ?? 0]
+            .map((n) => n.toFixed(4))
+            .join(":");
+          if (
+            !inChinatownMigration(o, Math.hypot(o.w, o.d) / 2) &&
+            !CHINATOWN_PLAN.preservedExteriorBlockGeometry.includes(footprint)
+          )
+            continue;
           if (!clear({ ...o, w: o.w + 2, d: o.d + 2 })) continue;
           d.buildings.push(o);
           d.obstacles.push(o);
@@ -479,7 +502,8 @@ export function emitBlockCourts(d: District, emit: (p: ArtPiece) => void) {
  * not cadastral parcels. Genuine open uses are separately reported; ground
  * color and tree scatter never turn an empty cell into developed land. */
 export function auditUrbanLand(d: District, step = 36) {
-  const nodes = new Map(d.nodes.map((n) => [n.id, n]));
+  const seedGraph = proceduralStreetSeeds(d),
+    nodes = seedGraph.nodes;
   const roads = d.roads
     .filter((r) => !r.shortcut)
     .map((r) => ({ r, a: nodes.get(r.a)!, b: nodes.get(r.b)! }));

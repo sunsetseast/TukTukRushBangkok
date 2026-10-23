@@ -1,0 +1,42 @@
+name: Chinatown geography and driving certification
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/**'
+      - 'docs/qa/chinatown-reconstruction/**'
+      - '.github/workflows/chinatown-certification.yml'
+  workflow_dispatch:
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24661'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-drives
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-traffic
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:waterfront-clearance
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:waterfront-drives
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bangkok
+      - run: pnpm --filter @workspace/tuk-tuk-rush build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chinatown-certification
+          path: |
+            docs/qa/chinatown-reconstruction/validation/
+            docs/qa/chinatown-reconstruction/*routes.json
+            docs/qa/chinatown-reconstruction/parcel-migration.json
+          retention-days: 30

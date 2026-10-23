@@ -1,7 +1,8 @@
+import { CHINATOWN_PLAN } from "./chinatownPlan";
 import { insidePublicPolygon } from "./publicSpaces";
 import type { District, Point } from "../types";
 import { regionAt, SCALE, toMap } from "./world";
-import {riverPolygonPath} from './waterGeometry';
+import { riverPolygonPath } from "./waterGeometry";
 const cache = new WeakMap<District, ReturnType<typeof build>>();
 const points = (ps: Point[]) =>
   ps
@@ -40,7 +41,7 @@ function build(d: District) {
     };
   });
   const footprints = d.buildings
-    .filter((_, i) => i % 6 === 0)
+    .filter((b, i) => b.chinatown || i % 6 === 0)
     .map((b) => {
       const m = toMap(b),
         c = Math.cos(-(b.yaw ?? 0)),
@@ -59,7 +60,20 @@ function build(d: District) {
         .join("L")}Z`;
     })
     .join("");
+  const named = new Set<string>();
+  const streetLabels = CHINATOWN_PLAN.streets.flatMap((s) => {
+    if (named.has(s.name)) return [];
+    named.add(s.name);
+    const rows = d.roads.filter((r) => r.corridor === s.corridor);
+    const r = rows[Math.floor(rows.length / 2)];
+    if (!r) return [];
+    const a = nodes.get(r.a)!,
+      b = nodes.get(r.b)!,
+      m = toMap({ x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 });
+    return [{ ...m, id: s.corridor, english: s.name, thai: s.thai }];
+  });
   return {
+    streetLabels,
     roads,
     publicSpaces: d.publicSpaces?.map((s) => ({
       id: s.id,
@@ -83,7 +97,7 @@ function build(d: District) {
     })),
     footprints,
     river: points(d.river ?? []),
-    riverPolygon: riverPolygonPath(d,true),
+    riverPolygon: riverPolygonPath(d, true),
     canals: d.canals?.map((c) => points(c.points)),
     regions: d.regions?.map((r) => points(r.polygon)),
     transit: d.transit?.lines.map((l) => points(l.samples)),
@@ -106,7 +120,13 @@ export function roadPaths(
 ) {
   const groups = new Map<
     string,
-    { path: string; color: string; width: number; region?: string }
+    {
+      path: string;
+      color: string;
+      width: number;
+      region?: string;
+      end?: string;
+    }
   >();
   for (const r of cartography(d).roads) {
     if (r.shortcut && !shortcuts.includes(r.shortcut)) continue;
@@ -124,7 +144,13 @@ export function roadPaths(
       group = { path: "", color: r.color, width: r.width, region: r.region };
       groups.set(key, group);
     }
-    group.path += r.path;
+    // Adjacent segments of a styled corridor share a single SVG subpath.
+    // Keep every vertex; extra intersection splits must not multiply mounts.
+    const split = r.path.indexOf("L"),
+      start = r.path.slice(1, split),
+      end = r.path.slice(split + 1);
+    group.path += group.end === start ? r.path.slice(split) : r.path;
+    group.end = end;
   }
   return [...groups.values()];
 }

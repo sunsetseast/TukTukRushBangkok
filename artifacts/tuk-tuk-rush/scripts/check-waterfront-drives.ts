@@ -33,7 +33,7 @@ for (const corridor of ["pinklao", "memorial", "taksin"]) {
 }
 for (const [id, corridor] of [
   ["songwat", "songwat"],
-  ["talatnoi", "songwat"],
+  ["talatnoi", "wanit-2-south"],
 ]) {
   const pier = riverPiers(d).find(
       (p) => p.id === (id === "talatnoi" ? "river-city" : id),

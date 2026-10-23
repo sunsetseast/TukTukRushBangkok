@@ -1,0 +1,363 @@
+{
+  "protocol": "Actual gallery renderer telemetry,8 recorded samples per view; shared-host SwiftShader, not hardware FPS",
+  "physicalSafari": false,
+  "views": [
+    {
+      "id": "yaowarat-overview",
+      "cameraBefore": [
+        -96,
+        230,
+        0
+      ],
+      "cameraAfter": [
+        -96,
+        230,
+        0
+      ],
+      "callsBefore": 518,
+      "callsAfter": 478,
+      "trianglesBefore": 885917,
+      "trianglesAfter": 697234,
+      "medianMsBefore": 545.0500000000175,
+      "medianMsAfter": 17.649999999906868,
+      "p95MsBefore": 797.6299999999842,
+      "p95MsAfter": 735.2999999998136
+    },
+    {
+      "id": "yaowarat-sunset",
+      "cameraBefore": [
+        4,
+        4,
+        -120
+      ],
+      "cameraAfter": [
+        36,
+        3.4,
+        -144
+      ],
+      "callsBefore": 496,
+      "callsAfter": 477,
+      "trianglesBefore": 888211,
+      "trianglesAfter": 723982,
+      "medianMsBefore": 657.6499999999651,
+      "medianMsAfter": 599.2999999998137,
+      "p95MsBefore": 751.6400000000082,
+      "p95MsAfter": 715.7950000000652
+    },
+    {
+      "id": "yaowarat-night",
+      "cameraBefore": [
+        4,
+        4,
+        -120
+      ],
+      "cameraAfter": [
+        36,
+        3.4,
+        -144
+      ],
+      "callsBefore": 495,
+      "callsAfter": 476,
+      "trianglesBefore": 888179,
+      "trianglesAfter": 723950,
+      "medianMsBefore": 810.4999999999418,
+      "medianMsAfter": 610.4000000003725,
+      "p95MsBefore": 956.8600000000209,
+      "p95MsAfter": 688.3350000004284
+    },
+    {
+      "id": "odeon-circle",
+      "cameraBefore": [
+        216,
+        55,
+        80
+      ],
+      "cameraAfter": [
+        216,
+        55,
+        80
+      ],
+      "callsBefore": 423,
+      "callsAfter": 396,
+      "trianglesBefore": 729383,
+      "trianglesAfter": 632318,
+      "medianMsBefore": 25.75,
+      "medianMsAfter": 245.65000000037253,
+      "p95MsBefore": 1145.9249999998137,
+      "p95MsAfter": 727.4599999998694
+    },
+    {
+      "id": "wat-traimit",
+      "cameraBefore": [
+        260,
+        9,
+        40
+      ],
+      "cameraAfter": [
+        260,
+        9,
+        40
+      ],
+      "callsBefore": 408,
+      "callsAfter": 414,
+      "trianglesBefore": 716119,
+      "trianglesAfter": 574057,
+      "medianMsBefore": 637.1999999999534,
+      "medianMsAfter": 484.29999999981374,
+      "p95MsBefore": 786.8850000000442,
+      "p95MsAfter": 1088.8599999998692
+    },
+    {
+      "id": "hua-lamphong",
+      "cameraBefore": [
+        400,
+        8,
+        -140
+      ],
+      "cameraAfter": [
+        400,
+        8,
+        -140
+      ],
+      "callsBefore": 392,
+      "callsAfter": 360,
+      "trianglesBefore": 528566,
+      "trianglesAfter": 386187,
+      "medianMsBefore": 421.0000000000582,
+      "medianMsAfter": 420.14999999990687,
+      "p95MsBefore": 488.59500000003607,
+      "p95MsAfter": 469.3950000000652
+    },
+    {
+      "id": "ratchawong",
+      "cameraBefore": [
+        -324,
+        6,
+        -164
+      ],
+      "cameraAfter": [
+        -324,
+        5,
+        -164
+      ],
+      "callsBefore": 446,
+      "callsAfter": 395,
+      "trianglesBefore": 835191,
+      "trianglesAfter": 532548,
+      "medianMsBefore": 265.79999999998836,
+      "medianMsAfter": 326.95000000018626,
+      "p95MsBefore": 918.4750000000465,
+      "p95MsAfter": 407.01500000017694
+    },
+    {
+      "id": "mangkon",
+      "cameraBefore": [
+        -152,
+        5,
+        -48
+      ],
+      "cameraAfter": [
+        -204,
+        4,
+        -48
+      ],
+      "callsBefore": 425,
+      "callsAfter": 394,
+      "trianglesBefore": 756847,
+      "trianglesAfter": 577172,
+      "medianMsBefore": 785.2500000000582,
+      "medianMsAfter": 550.1000000000931,
+      "p95MsBefore": 981.7399999999616,
+      "p95MsAfter": 652.0650000002234
+    },
+    {
+      "id": "plaeng-nam",
+      "cameraBefore": [
+        -44,
+        5,
+        -148
+      ],
+      "cameraAfter": [
+        -36,
+        4,
+        -192
+      ],
+      "callsBefore": 385,
+      "callsAfter": 380,
+      "trianglesBefore": 605465,
+      "trianglesAfter": 489651,
+      "medianMsBefore": 613.3500000000349,
+      "medianMsAfter": 588.5499999998137,
+      "p95MsBefore": 771.7100000000383,
+      "p95MsAfter": 1057.794999999739
+    },
+    {
+      "id": "song-wat",
+      "cameraBefore": [
+        -176,
+        5,
+        176
+      ],
+      "cameraAfter": [
+        -200,
+        3.5,
+        148
+      ],
+      "callsBefore": 388,
+      "callsAfter": 397,
+      "trianglesBefore": 553083,
+      "trianglesAfter": 582687,
+      "medianMsBefore": 451.0999999999767,
+      "medianMsAfter": 468.59999999962747,
+      "p95MsBefore": 533.6899999999848,
+      "p95MsAfter": 559.1250000001397
+    },
+    {
+      "id": "song-wat-river",
+      "cameraBefore": [
+        -690,
+        240,
+        470
+      ],
+      "cameraAfter": [
+        -690,
+        240,
+        470
+      ],
+      "callsBefore": 251,
+      "callsAfter": 254,
+      "trianglesBefore": 324135,
+      "trianglesAfter": 344932,
+      "medianMsBefore": 328.4499999997206,
+      "medianMsAfter": 684.5500000002794,
+      "p95MsBefore": 890.2699999998787,
+      "p95MsAfter": 867.6799999997019
+    },
+    {
+      "id": "talat-noi",
+      "cameraBefore": [
+        -144,
+        4,
+        568
+      ],
+      "cameraAfter": [
+        -152,
+        3.4,
+        552
+      ],
+      "callsBefore": 360,
+      "callsAfter": 402,
+      "trianglesBefore": 496481,
+      "trianglesAfter": 597034,
+      "medianMsBefore": 290.75,
+      "medianMsAfter": 720.2499999995343,
+      "p95MsBefore": 836.1750000000463,
+      "p95MsAfter": 1092.075000000186
+    },
+    {
+      "id": "talat-noi-river-city",
+      "cameraBefore": [
+        -120,
+        70,
+        850
+      ],
+      "cameraAfter": [
+        -120,
+        70,
+        850
+      ],
+      "callsBefore": 292,
+      "callsAfter": 263,
+      "trianglesBefore": 334099,
+      "trianglesAfter": 249976,
+      "medianMsBefore": 181.39999999990687,
+      "medianMsAfter": 236.35000000009313,
+      "p95MsBefore": 326.830000000121,
+      "p95MsAfter": 319.22500000018624
+    },
+    {
+      "id": "district-blocks",
+      "cameraBefore": [
+        -80,
+        430,
+        600
+      ],
+      "cameraAfter": [
+        -80,
+        430,
+        600
+      ],
+      "callsBefore": 356,
+      "callsAfter": 353,
+      "trianglesBefore": 503019,
+      "trianglesAfter": 551340,
+      "medianMsBefore": 273.0,
+      "medianMsAfter": 276.29999999981374,
+      "p95MsBefore": 376.6950000000303,
+      "p95MsAfter": 895.5800000003537
+    },
+    {
+      "id": "river-relationship",
+      "cameraBefore": [
+        -424,
+        410,
+        1024
+      ],
+      "cameraAfter": [
+        -424,
+        410,
+        1024
+      ],
+      "callsBefore": 183,
+      "callsAfter": 187,
+      "trianglesBefore": 208759,
+      "trianglesAfter": 199140,
+      "medianMsBefore": 268.1500000000233,
+      "medianMsAfter": 324.14999999990687,
+      "p95MsBefore": 300.26500000001397,
+      "p95MsAfter": 1121.11500000013
+    },
+    {
+      "id": "wat-mangkon",
+      "cameraBefore": [
+        -52,
+        6,
+        -408
+      ],
+      "cameraAfter": [
+        -52,
+        6,
+        -408
+      ],
+      "callsBefore": 383,
+      "callsAfter": 374,
+      "trianglesBefore": 561728,
+      "trianglesAfter": 509968,
+      "medianMsBefore": 244.25,
+      "medianMsAfter": 252.24999999953434,
+      "p95MsBefore": 523.3049999997484,
+      "p95MsAfter": 348.7400000001769
+    },
+    {
+      "id": "holy-rosary",
+      "cameraBefore": [
+        -336,
+        10,
+        728
+      ],
+      "cameraAfter": [
+        -336,
+        10,
+        728
+      ],
+      "callsBefore": 345,
+      "callsAfter": 367,
+      "trianglesBefore": 433771,
+      "trianglesAfter": 430928,
+      "medianMsBefore": 543.3500000000931,
+      "medianMsAfter": 325.8000000002794,
+      "p95MsBefore": 1072.189999999758,
+      "p95MsAfter": 773.2949999998789
+    }
+  ]
+}

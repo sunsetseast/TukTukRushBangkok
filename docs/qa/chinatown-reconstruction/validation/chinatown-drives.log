@@ -1,0 +1,29 @@
+{"id":"yaowarat-east>yaowarat-west","complete":true,"metres":605,"frames":3814,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"gate>traimit","complete":true,"metres":1692,"frames":10604,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"hua>gate","complete":true,"metres":473,"frames":3031,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>ratchawong","complete":true,"metres":548,"frames":3501,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>song-wat","complete":true,"metres":742,"frames":4680,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"song-wat>talat-noi","complete":true,"metres":626,"frames":3973,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"talat-noi>river-city","complete":true,"metres":302,"frames":2026,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"river-city>bang-rak","complete":true,"metres":994,"frames":6214,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>memorial-east","complete":true,"metres":1095,"frames":6769,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>icon","complete":true,"metres":2756,"frames":16801,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>pho","complete":true,"metres":1320,"frames":8162,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"yaowarat-east>paragon","complete":true,"metres":2592,"frames":16045,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"plaeng-nam>mangkon","complete":true,"metres":1157,"frames":7267,"indicatorFrames":0,"physical":{"static":0,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+{"id":"wat-mangkon>holy-rosary","complete":false,"metres":16,"frames":100000,"indicatorFrames":99923,"physical":{"static":99923,"prop":0,"bridge":0,"traffic":0,"water":0,"boundary":0}}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: All Chinatown journeys must complete with zero static-world contacts; traffic contacts reported separately
+    at <anonymous> (/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-chinatown-drives.ts:53:1) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,3 +1,4 @@
+import { chinatownParcel, inChinatown } from "./chinatownPlan";
 import type { District, Obstacle, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
@@ -120,6 +121,7 @@ export function completeLandmarkContext(d: District): ContextPocket[] {
           p.x > bounds.maxX - r ||
           p.z < bounds.minZ + r ||
           p.z > bounds.maxZ - r ||
+          chinatownParcel(o) ||
           !index.clear(o)
         )
           continue;

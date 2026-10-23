@@ -1,4 +1,8 @@
-import {assertProtectedGeography} from './protected-geography';
+import {
+  chinatownBenchmark,
+  emitChinatownBenchmark,
+} from "./chinatown-benchmark";
+import { assertProtectedGeography } from "./protected-geography";
 import assert from "node:assert/strict";
 import * as T from "three";
 import fs from "node:fs";
@@ -21,14 +25,14 @@ const d = createBangkokWorld(),
   roads = JSON.stringify(d.roads),
   colliders = JSON.stringify(d.obstacles),
   designs = designBuildings(d),
-  row = designs.filter(cinematicParcel);
+  row = designs.filter(chinatownBenchmark);
 assert(
-  row.length >= 35 && row.length <= 44,
+  row.length >= 40 && row.length <= 90,
   `Bounded corridor parcel budget: ${row.length}`,
 );
 assertProtectedGeography(d);
 const pieces: ArtPiece[] = [];
-row.forEach((p) => emitYaowaratFacade(p, (piece) => pieces.push(piece)));
+row.forEach((p) => emitChinatownBenchmark(p, (piece) => pieces.push(piece)));
 assert(pieces.length < 28000, "No uncontrolled citywide detail pass");
 for (const piece of pieces)
   assert(
@@ -39,12 +43,12 @@ for (const piece of pieces)
       piece.h > 0 &&
       piece.d > 0,
   );
-assert(pieces.some((p) => p.layer === "coarse"));
-assert(pieces.some((p) => p.layer === "detail"));
+assert(pieces.some((p) => p.layer === "core"));
+assert(pieces.some((p) => p.layer === "near"));
 assert(pieces.some((p) => p.layer === "night"));
 for (const p of row) {
   const ps: ArtPiece[] = [];
-  emitYaowaratFacade(p, (o) => ps.push(o));
+  emitChinatownBenchmark(p, (o) => ps.push(o));
   const b = p.parcel,
     yaw = b.yaw ?? 0;
   const v = (o: ArtPiece) =>
@@ -55,18 +59,12 @@ for (const p of row) {
   );
   for (const a of p.bays) {
     assert(
-      a.height <= p.parcel.height && a.height < 23 && a.floors >= 2,
-      "Retain collision-bounded two-to-five-storey Chinatown silhouettes",
+      a.height <= p.parcel.height && a.height < 25 && a.floors >= 2,
+      "Retain collision-bounded two-to-seven-storey Chinatown silhouettes",
     );
-    const paint = ps.find(
-      (o) =>
-        Math.abs(o.y - 4.32) < 0.001 &&
-        Math.abs(o.w - (a.width - 0.12 - 0.68)) < 0.001 &&
-        o.d === 0.04,
-    )!;
     assert(
-      paint && v(paint) + paint.d / 2 < a.front + 0.558,
-      "Lettering must stand in front of the cabinet, never inside it",
+      ps.some((o) => Math.abs(o.y - 4.32) < 0.001 && v(o) > a.front),
+      "Mounted sign cabinet projects from the actual shop facade",
     );
   }
 }

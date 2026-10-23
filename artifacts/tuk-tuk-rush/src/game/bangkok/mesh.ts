@@ -1,21 +1,29 @@
-import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
-import { HISTORIC_PLAN } from './historicPlan';
-import { emitHuaGrounds } from './huaLamphong';
-import { emitLandmarkApproaches } from './landmarkParcels';
-import { emitLandmarkContextGrounds } from './landmarkContext';
-import {publicSpaceLandmark,buildPublicSpaceSigns} from './publicSpaceArt';
-import {victoryMonument} from './victoryMonument';
-import {historicDistrictLandmark} from './historicDistricts';
-import {emitConvenienceStores,buildConvenienceStoreSigns} from './convenienceStores';
-import {emitBlockCourts} from "./urbanBlocks";
-import {emitUrbanCompletenessGrounds} from './urbanCompleteness';
-import { emitAuthoredGrounds } from './authoredGrounds';
-import { realCommercial } from './realCommercial';
-import { buildRealArchitecture, buildRealPlaceSigns } from './realArchitecture';
+import {
+  buildChinatownGround,
+  emitChinatownGroundDetails,
+} from "./chinatownGrounds";
+import { chinatownHeritageArt } from "./chinatownHeritage";
+import { riverClearance, riverBank, nearestRiverShore } from "./waterGeometry";
+import { HISTORIC_PLAN } from "./historicPlan";
+import { emitHuaGrounds } from "./huaLamphong";
+import { emitLandmarkApproaches } from "./landmarkParcels";
+import { emitLandmarkContextGrounds } from "./landmarkContext";
+import { publicSpaceLandmark, buildPublicSpaceSigns } from "./publicSpaceArt";
+import { victoryMonument } from "./victoryMonument";
+import { historicDistrictLandmark } from "./historicDistricts";
+import {
+  emitConvenienceStores,
+  buildConvenienceStoreSigns,
+} from "./convenienceStores";
+import { emitBlockCourts } from "./urbanBlocks";
+import { emitUrbanCompletenessGrounds } from "./urbanCompleteness";
+import { emitAuthoredGrounds } from "./authoredGrounds";
+import { realCommercial } from "./realCommercial";
+import { buildRealArchitecture, buildRealPlaceSigns } from "./realArchitecture";
 import { installShopLight } from "./shopLighting";
 import { yaowaratRoad } from "./yaowaratRoad";
 import { emitYaowaratLanterns } from "./yaowarat";
-import { emitStreetFrontages, emitStreetGardens } from './streetFabric';
+import { emitStreetFrontages, emitStreetGardens } from "./streetFabric";
 import * as T from "three";
 import { landscapeMaterial } from "./streetSurfaces";
 import { emitLandscape } from "./landscape";
@@ -59,7 +67,7 @@ export function buildBangkokGraybox(
 } {
   const group = new T.Group();
   group.name = "CompactBangkokGraybox";
-  const ground = new T.Mesh(channelGeometry("land",d), landscapeMaterial());
+  const ground = new T.Mesh(channelGeometry("land", d), landscapeMaterial());
   ground.name = "DevelopedLand";
   group.add(ground);
   const batch = new StaticBatch(),
@@ -126,7 +134,7 @@ export function buildBangkokGraybox(
         );
   }
   const roadSurfaces = buildRoadSurfaces(d);
-  group.add(roadSurfaces);
+  group.add(roadSurfaces, buildChinatownGround());
   group.add(
     yaowaratRoad(
       d,
@@ -140,7 +148,7 @@ export function buildBangkokGraybox(
   );
   const waterStyle = riverWater();
   const waterSurface = new T.Mesh(
-    channelGeometry("water",d),
+    channelGeometry("water", d),
     waterStyle.material,
   );
   waterSurface.name = "BangkokChannels";
@@ -207,11 +215,12 @@ export function buildBangkokGraybox(
     ),
   );
   emitScala(scala, (piece) => architecture.add(piece));
-  emitStreetFrontages(d, ordinary, p=>architecture.add(p));
-  emitConvenienceStores(d,p=>architecture.add(p));
-  emitUrbanCompletenessGrounds(d,p=>architecture.add(p));
-  emitBlockCourts(d,p=>architecture.add(p));
-  emitStreetGardens(d, p=>architecture.add(p));
+  emitStreetFrontages(d, ordinary, (p) => architecture.add(p));
+  emitConvenienceStores(d, (p) => architecture.add(p));
+  emitUrbanCompletenessGrounds(d, (p) => architecture.add(p));
+  emitChinatownGroundDetails(d, (p) => architecture.add(p));
+  emitBlockCourts(d, (p) => architecture.add(p));
+  emitStreetGardens(d, (p) => architecture.add(p));
   emitUrbanLayers(d, ordinary, (piece) => architecture.add(piece));
   emitEnvironment(d, (piece) => architecture.add(piece));
   emitCables(d, (piece) => architecture.add(piece));
@@ -221,10 +230,10 @@ export function buildBangkokGraybox(
   emitLandscape(d, (piece) => architecture.add(piece));
   emitTropicalVegetation(d, (piece) => architecture.add(piece));
   emitMrtEntrances(d, (piece) => architecture.add(piece));
-  emitAuthoredGrounds(d,piece=>architecture.add(piece));
-  emitHuaGrounds(d,piece=>architecture.add(piece));
-  emitLandmarkApproaches(d,piece=>architecture.add(piece));
-  emitLandmarkContextGrounds(d,piece=>architecture.add(piece));
+  emitAuthoredGrounds(d, (piece) => architecture.add(piece));
+  emitHuaGrounds(d, (piece) => architecture.add(piece));
+  emitLandmarkApproaches(d, (piece) => architecture.add(piece));
+  emitLandmarkContextGrounds(d, (piece) => architecture.add(piece));
   emitBridges(d, (piece) => architecture.add(piece));
   emitDestinationGrounds(d, (piece) => architecture.add(piece));
   emitRailInfrastructure(d, (piece) => architecture.add(piece));
@@ -329,10 +338,10 @@ export function buildBangkokGraybox(
     const signs = buildBangkokSigns(d, ordinary);
     for (const child of [...signs.children]) group.add(child);
   }
-  const publicSigns=buildPublicSpaceSigns(d);
-  for(const child of [...publicSigns.children])group.add(child);
-  const storeSigns=buildConvenienceStoreSigns(d);
-  for(const child of [...storeSigns.children])group.add(child);
+  const publicSigns = buildPublicSpaceSigns(d);
+  for (const child of [...publicSigns.children]) group.add(child);
+  const storeSigns = buildConvenienceStoreSigns(d);
+  for (const child of [...storeSigns.children]) group.add(child);
   const realSigns = buildRealPlaceSigns(d);
   group.add(realSigns);
   const scalaSigns = buildScalaSigns(scala);
@@ -347,10 +356,16 @@ export function buildBangkokGraybox(
     horizontalGreen = true,
     animationTime = 0;
   const heroes = d.landmarks.map((l) => {
-    const root = publicSpaceLandmark(d,l) ?? victoryMonument(l) ?? historicDistrictLandmark(l) ?? blockout(l, finishes);
+    const root =
+      chinatownHeritageArt(l) ??
+      publicSpaceLandmark(d, l) ??
+      victoryMonument(l) ??
+      historicDistrictLandmark(l) ??
+      blockout(l, finishes);
     root.position.set(l.plot?.x ?? l.x, 0, l.plot?.z ?? l.z);
     root.rotation.y = l.yaw ?? 0;
-    if(l.id === "palace") root.scale.set(HISTORIC_PLAN.palaceScale,1,HISTORIC_PLAN.palaceScale);
+    if (l.id === "palace")
+      root.scale.set(HISTORIC_PLAN.palaceScale, 1, HISTORIC_PLAN.palaceScale);
     root.name = `BangkokLandmark:${l.id}`;
     group.add(root);
     return root;
@@ -358,7 +373,11 @@ export function buildBangkokGraybox(
   // River sections span several cells. A cell-center test can hide their near
   // bank while the player is still looking at it; cull the full geometry bounds.
   group.updateMatrixWorld(true);
-  const parkBounds = new Map(heroes.filter(h=>h.userData.publicSpace).map(h=>[h,new T.Box3().setFromObject(h)]));
+  const parkBounds = new Map(
+    heroes
+      .filter((h) => h.userData.publicSpace)
+      .map((h) => [h, new T.Box3().setFromObject(h)]),
+  );
   const chunks = group.children
     .filter(
       (c) =>
@@ -429,7 +448,8 @@ export function buildBangkokGraybox(
       }
       const scalaMat = scalaSigns.userData.nightMaterial as
         T.MeshStandardMaterial | undefined;
-      for(const m of realSigns.userData.materials??[])m.emissiveIntensity=.1+night*.45;
+      for (const m of realSigns.userData.materials ?? [])
+        m.emissiveIntensity = 0.1 + night * 0.45;
       if (scalaMat) scalaMat.emissiveIntensity = 0.12 + night * 0.85;
       for (const mat of new Set(signMaterials))
         mat.emissiveIntensity = 0.12 + Math.max(0, night) * 1.15;
@@ -492,9 +512,15 @@ export function buildBangkokGraybox(
           chunk.visible = quality === "medium" && distance < 150;
         else chunk.visible = distance < radius;
       }
-      for (const hero of heroes){
-        const bounds=parkBounds.get(hero);
-        hero.visible=bounds?Math.hypot(Math.max(bounds.min.x-camera.x,0,camera.x-bounds.max.x),Math.max(bounds.min.z-camera.z,0,camera.z-bounds.max.z))<radius:Math.hypot(hero.position.x-camera.x,hero.position.z-camera.z)<radius+180;
+      for (const hero of heroes) {
+        const bounds = parkBounds.get(hero);
+        hero.visible = bounds
+          ? Math.hypot(
+              Math.max(bounds.min.x - camera.x, 0, camera.x - bounds.max.x),
+              Math.max(bounds.min.z - camera.z, 0, camera.z - bounds.max.z),
+            ) < radius
+          : Math.hypot(hero.position.x - camera.x, hero.position.z - camera.z) <
+            radius + 180;
       }
     },
     setInspection(id?: string) {

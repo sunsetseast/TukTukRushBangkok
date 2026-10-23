@@ -1,0 +1,289 @@
+{
+  "pass": true,
+  "passed": 40,
+  "total": 40,
+  "browserQa": false,
+  "physicalIPhone": false,
+  "results": [
+    {
+      "name": "test:assets",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 167,
+      "log": "test-assets.log"
+    },
+    {
+      "name": "test:authored-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 39517,
+      "log": "test-authored-drives.log"
+    },
+    {
+      "name": "test:authored-sites",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 52355,
+      "log": "test-authored-sites.log"
+    },
+    {
+      "name": "test:bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 203873,
+      "log": "test-bangkok.log"
+    },
+    {
+      "name": "test:career",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 77236,
+      "log": "test-career.log"
+    },
+    {
+      "name": "test:cinematic",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 46175,
+      "log": "test-cinematic.log"
+    },
+    {
+      "name": "test:city-blueprint",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 34878,
+      "log": "test-city-blueprint.log"
+    },
+    {
+      "name": "test:city-completion",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 71171,
+      "log": "test-city-completion.log"
+    },
+    {
+      "name": "test:city-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 41177,
+      "log": "test-city-drives.log"
+    },
+    {
+      "name": "test:city-fabric",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 30076,
+      "log": "test-city-fabric.log"
+    },
+    {
+      "name": "test:cityscapes",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 69308,
+      "log": "test-cityscapes.log"
+    },
+    {
+      "name": "test:civic-roads",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 36031,
+      "log": "test-civic-roads.log"
+    },
+    {
+      "name": "test:commercial-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 23904,
+      "log": "test-commercial-districts.log"
+    },
+    {
+      "name": "test:convenience-urban",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 23967,
+      "log": "test-convenience-urban.log"
+    },
+    {
+      "name": "test:corrections",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 37365,
+      "log": "test-corrections.log"
+    },
+    {
+      "name": "test:definitive",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 81058,
+      "log": "test-definitive.log"
+    },
+    {
+      "name": "test:environment",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 85046,
+      "log": "test-environment.log"
+    },
+    {
+      "name": "test:gameplay",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 4366,
+      "log": "test-gameplay.log"
+    },
+    {
+      "name": "test:geographic-reference",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 219,
+      "log": "test-geographic-reference.log"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 575,
+      "log": "test-graphics-foundation.log"
+    },
+    {
+      "name": "test:historic-core",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 94127,
+      "log": "test-historic-core.log"
+    },
+    {
+      "name": "test:historic-districts",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1471,
+      "log": "test-historic-districts.log"
+    },
+    {
+      "name": "test:historic-fidelity",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 32379,
+      "log": "test-historic-fidelity.log"
+    },
+    {
+      "name": "test:interface",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 23892,
+      "log": "test-interface.log"
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 56356,
+      "log": "test-landmark-accuracy.log"
+    },
+    {
+      "name": "test:landmark-quality",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 64242,
+      "log": "test-landmark-quality.log"
+    },
+    {
+      "name": "test:master-plan",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 56956,
+      "log": "test-master-plan.log"
+    },
+    {
+      "name": "test:open-bangkok",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 34652,
+      "log": "test-open-bangkok.log"
+    },
+    {
+      "name": "test:premium-landmarks",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 72113,
+      "log": "test-premium-landmarks.log"
+    },
+    {
+      "name": "test:public-spaces",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 25584,
+      "log": "test-public-spaces.log"
+    },
+    {
+      "name": "test:real-architecture",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 25459,
+      "log": "test-real-architecture.log"
+    },
+    {
+      "name": "test:river-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 52168,
+      "log": "test-river-drives.log"
+    },
+    {
+      "name": "test:river-geography",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 27801,
+      "log": "test-river-geography.log"
+    },
+    {
+      "name": "test:roadside",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 1804,
+      "log": "test-roadside.log"
+    },
+    {
+      "name": "test:sign-layers",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 411,
+      "log": "test-sign-layers.log"
+    },
+    {
+      "name": "test:signature",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 303,
+      "log": "test-signature.log"
+    },
+    {
+      "name": "test:startup",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 6019,
+      "log": "test-startup.log"
+    },
+    {
+      "name": "test:street-life",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 3030,
+      "log": "test-street-life.log"
+    },
+    {
+      "name": "test:waterfront-clearance",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 27667,
+      "log": "test-waterfront-clearance.log"
+    },
+    {
+      "name": "test:waterfront-drives",
+      "pass": true,
+      "exitCode": 0,
+      "ms": 113450,
+      "log": "test-waterfront-drives.log"
+    }
+  ]
+}

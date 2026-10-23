@@ -1,0 +1,127 @@
+{
+  "version": "chinatown-exterior-preservation-v1",
+  "baselineCommit": "4735f336cf53102e8079e3943a782239ed81e68c",
+  "purpose": "Exact existing context slots outside the approved reconstruction boundary. Not new construction or permission to move outside buildings.",
+  "parcels": [
+    {
+      "x": 297.0564710148006,
+      "z": 854.0167241632303,
+      "w": 24,
+      "d": 20,
+      "yaw": -1.6052654277944047,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:611593122"
+    },
+    {
+      "x": 324.54013599702427,
+      "z": 854.9644367488241,
+      "w": 21,
+      "d": 24,
+      "yaw": -1.6052654277944047,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:4054301727"
+    },
+    {
+      "x": -61.68646975789917,
+      "z": 933.3772531597873,
+      "w": 24,
+      "d": 24,
+      "yaw": 3.0947266594690443,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:789598267"
+    },
+    {
+      "x": -131.82966122962023,
+      "z": 926.0831169900092,
+      "w": 21,
+      "d": 24,
+      "yaw": 3.0947266594690443,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:1359047187"
+    },
+    {
+      "x": -185.54331126662262,
+      "z": 923.5639287133579,
+      "w": 21,
+      "d": 20,
+      "yaw": 3.09472665946904,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "infill:rear:3362128578"
+    },
+    {
+      "x": -220.71608716888093,
+      "z": 925.9187105445286,
+      "w": 18,
+      "d": 24,
+      "yaw": 3.0947266594690443,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "infill:rear:2015369074"
+    },
+    {
+      "x": 389.53415502204257,
+      "z": 409.3928033751442,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794404,
+      "height": 15,
+      "color": "#bb9678",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:6:7:0"
+    },
+    {
+      "x": 508.2974123995904,
+      "z": 303.2662979331648,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": 2.050315618787489,
+      "height": 14,
+      "color": "#c4b195",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:9:5:1"
+    },
+    {
+      "x": 467.48543954279893,
+      "z": 324.4885238186962,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": 2.050315618787489,
+      "height": 8,
+      "color": "#a9b8a9",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:8:5:0"
+    },
+    {
+      "x": -380.3670122430898,
+      "z": -622.0539546001156,
+      "w": 19,
+      "d": 20,
+      "yaw": -1.5497468046578502,
+      "height": 16,
+      "color": "#d9b291",
+      "regionId": "oldtown",
+      "artRole": "background",
+      "environmentId": "urban-block:old-town-blocks:-7:-11:0"
+    }
+  ]
+}

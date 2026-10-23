@@ -1,7 +1,7 @@
-import {stableHash} from './stableHash';
-export {stableHash} from './stableHash';
+import { stableHash } from "./stableHash";
+export { stableHash } from "./stableHash";
 import { inSiamSquare } from "./urbanBlocks";
-import { isHistoricWaterfront } from './historicPlan';
+import { isHistoricWaterfront } from "./historicPlan";
 import { composeYaowarat } from "./yaowarat";
 import type { District, Obstacle } from "../types";
 import { distanceToSegment } from "../world";
@@ -74,7 +74,7 @@ export type ParcelDesign = {
   region: string;
   corridor: string;
   hero?: string;
-  premiumContext?: 'asok'|'sathorn'|'riverside';
+  premiumContext?: "asok" | "sathorn" | "riverside";
   bays: Bay[];
 };
 export const buildingIdentity = (b: Obstacle) =>
@@ -268,7 +268,16 @@ const TRADE: Record<Typology, Trade[]> = {
   residence: ["residence"],
 };
 export function designBuildings(d: District): ParcelDesign[] {
-  const heroContexts=d.landmarks.filter(l=>['terminal','icon','mahanakhon','hilton','peninsula','oriental'].includes(l.id!));
+  const heroContexts = d.landmarks.filter((l) =>
+    [
+      "terminal",
+      "icon",
+      "mahanakhon",
+      "hilton",
+      "peninsula",
+      "oriental",
+    ].includes(l.id!),
+  );
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   const roads = d.roads
     .filter((r) => !r.bridge && !r.shortcut)
@@ -313,33 +322,38 @@ export function designBuildings(d: District): ParcelDesign[] {
       const type = waterfront
         ? (["arcade", "shophouse", "guesthouse"] as const)[s % 3]!
         : inSiamSquare(b)
-        ? (["retail", "shophouse", "noodle"] as const)[s % 3]!
-        : hero
-          ? hero.sequence[
-              (Math.floor(
-                (b.x * Math.cos(b.yaw ?? 0) - b.z * Math.sin(b.yaw ?? 0)) / 26,
-              ) +
-                i +
-                10000) %
-                hero.sequence.length
-            ]!
-          : g.types[(s >>> 4) % g.types.length]!;
+          ? (["retail", "shophouse", "noodle"] as const)[s % 3]!
+          : hero
+            ? hero.sequence[
+                (Math.floor(
+                  (b.x * Math.cos(b.yaw ?? 0) - b.z * Math.sin(b.yaw ?? 0)) /
+                    26,
+                ) +
+                  i +
+                  10000) %
+                  hero.sequence.length
+              ]!
+            : g.types[(s >>> 4) % g.types.length]!;
       const tall = ["office", "apartment"].includes(type),
         modern = ["retail", "office", "apartment"].includes(type);
-      const floors = waterfront ? 2 : inSiamSquare(b)
-        ? 2 + (s % 2)
-        : b.environmentId?.startsWith("street-infill:")
-          ? modern
-            ? 3
-            : 2
-          : tall
-            ? 5 + (s % 8)
-            : type === "warehouse"
-              ? 1
-              : modern
-                ? 2 + (s % 3)
-                : 2 + (s % 3);
-      const height = waterfront ? Math.min(b.height, 8.4) : floors * (modern ? 3.9 : 3.35) + 1.5,
+      const floors = waterfront
+        ? 2
+        : inSiamSquare(b)
+          ? 2 + (s % 2)
+          : b.environmentId?.startsWith("street-infill:")
+            ? modern
+              ? 3
+              : 2
+            : tall
+              ? 5 + (s % 8)
+              : type === "warehouse"
+                ? 1
+                : modern
+                  ? 2 + (s % 3)
+                  : 2 + (s % 3);
+      const height = waterfront
+          ? Math.min(b.height, 8.4)
+          : floors * (modern ? 3.9 : 3.35) + 1.5,
         front =
           b.d / 2 -
           (type === "residence" ? 1.6 : modern ? 1.1 : ((s >>> 8) % 3) * 0.23);
@@ -378,9 +392,13 @@ export function designBuildings(d: District): ParcelDesign[] {
               : type === "apartment" || type === "office"
                 ? "terrace"
                 : "parapet",
-        wall: waterfront ? ['#e4cb94','#d7ba7d','#eee0be'][s % 3]! : g.walls[(s >>> 6) % g.walls.length]!,
-        trim: waterfront ? '#f3e8cd' : g.trims[(s >>> 10) % g.trims.length]!,
-        accent: waterfront ? '#456653' : g.accents[(s >>> 14) % g.accents.length]!,
+        wall: waterfront
+          ? ["#e4cb94", "#d7ba7d", "#eee0be"][s % 3]!
+          : g.walls[(s >>> 6) % g.walls.length]!,
+        trim: waterfront ? "#f3e8cd" : g.trims[(s >>> 10) % g.trims.length]!,
+        accent: waterfront
+          ? "#456653"
+          : g.accents[(s >>> 14) % g.accents.length]!,
         surface:
           type === "workshop"
             ? "brick"
@@ -398,14 +416,63 @@ export function designBuildings(d: District): ParcelDesign[] {
         occupied: trade !== "closed" && trade !== "residence",
       };
     });
-    return composeYaowarat({
+    const composed: ParcelDesign = {
       id,
       parcel: b,
       region,
-      corridor: road.r.corridor ?? "",
+      corridor: b.chinatown?.corridor ?? road.r.corridor ?? "",
       hero: hero?.id,
-      premiumContext:(()=>{if(b.artRole!=='background'||waterfront)return undefined;const near=heroContexts.filter(l=>Math.hypot((l.plot??l).x-b.x,(l.plot??l).z-b.z)<150).sort((a,c)=>Math.hypot((a.plot??a).x-b.x,(a.plot??a).z-b.z)-Math.hypot((c.plot??c).x-b.x,(c.plot??c).z-b.z))[0];return near?.id==='terminal'?'asok':near?.id==='mahanakhon'?'sathorn':near?'riverside':undefined;})(),
+      premiumContext: (() => {
+        if (b.artRole !== "background" || waterfront) return undefined;
+        const near = heroContexts
+          .filter(
+            (l) =>
+              Math.hypot((l.plot ?? l).x - b.x, (l.plot ?? l).z - b.z) < 150,
+          )
+          .sort(
+            (a, c) =>
+              Math.hypot((a.plot ?? a).x - b.x, (a.plot ?? a).z - b.z) -
+              Math.hypot((c.plot ?? c).x - b.x, (c.plot ?? c).z - b.z),
+          )[0];
+        return near?.id === "terminal"
+          ? "asok"
+          : near?.id === "mahanakhon"
+            ? "sathorn"
+            : near
+              ? "riverside"
+              : undefined;
+      })(),
       bays,
-    });
+    };
+    if (b.chinatown) {
+      const a = composed.bays[0]!;
+      composed.bays = [
+        {
+          ...a,
+          u: 0,
+          width: b.w,
+          depth: b.d,
+          front: b.d / 2,
+          height: b.height,
+          floors: Math.max(2, Math.floor(b.height / 3.5)),
+          trade:
+            b.chinatown.identity?.includes("heng") ||
+            b.chinatown.identity?.includes("kang")
+              ? "gold"
+              : b.chinatown.character === "songwat"
+                ? (["gallery", "coffee", "workshop"][a.seed % 3] as Trade)
+                : b.chinatown.character === "talatnoi"
+                  ? (["workshop", "residence", "coffee"][a.seed % 3] as Trade)
+                  : a.trade,
+          cabinet: b.chinatown.character === "yaowarat",
+          occupied: true,
+        },
+      ];
+      composed.bays[0]!.occupied = !["closed", "residence"].includes(
+        composed.bays[0]!.trade,
+      );
+      return composed;
+    }
+    return composeYaowarat(composed);
   });
 }

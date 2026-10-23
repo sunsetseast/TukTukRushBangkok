@@ -1,4 +1,4 @@
-import {canonicalFeaturePoint} from './cityModel';
+import { canonicalFeaturePoint } from "./cityModel";
 import {
   memo,
   useEffect,
@@ -8,7 +8,7 @@ import {
   useState,
   type PointerEvent,
 } from "react";
-import { planMrtEntrances } from './mrtSurface';
+import { planMrtEntrances } from "./mrtSurface";
 import {
   ArrowLeft,
   Building2,
@@ -78,6 +78,7 @@ const mapName = (l: Landmark) =>
 const categories: Record<Landmark["kind"], string> = {
   hotel: "Hotel",
   museum: "Museum",
+  church: "Church",
   gate: "Landmark",
   temple: "Temple",
   station: "Railway station",
@@ -92,6 +93,7 @@ const categories: Record<Landmark["kind"], string> = {
 const glyph: Record<Landmark["kind"], string> = {
   hotel: "M-7 8V-8H7V8ZM-3-4H-1M2-4H4M-3 0H-1M2 0H4M-2 8V4H2V8",
   museum: "M-8-3L0-8L8-3ZM-6-2V6M0-2V6M6-2V6M-8 8H8",
+  church: "M0-10V-4M-3-8H3M-6 8V-1L0-6L6-1V8ZM-2 8V3H2V8",
   temple: "M-7 0L0-7L7 0M-8 1H8M-5 2V7M0 2V7M5 2V7M-7 8H7",
   palace: "M-7 8V-2L-3 1L0-6L3 1L7-2V8ZM-2 8V4H2V8",
   mall: "M-6-4H6L8 8H-8ZM-3-4V-6Q0-10 3-6V-4",
@@ -214,23 +216,35 @@ const BaseMap = memo(function BaseMap({
             />
           );
         })}
-      {cart.riverPolygon ? <path data-testid="map-river-surface" d={cart.riverPolygon} fill="#40b8cd" fillRule="evenodd" stroke="#f6e6b6" strokeWidth={1.4}/> : <><polyline
-        points={cart.river}
-        stroke="#f6e6b6"
-        strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <polyline
-        points={cart.river}
-        stroke="#40b8cd"
-        strokeWidth={(d.riverWidth ?? 0) / SCALE}
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      </>}
+      {cart.riverPolygon ? (
+        <path
+          data-testid="map-river-surface"
+          d={cart.riverPolygon}
+          fill="#40b8cd"
+          fillRule="evenodd"
+          stroke="#f6e6b6"
+          strokeWidth={1.4}
+        />
+      ) : (
+        <>
+          <polyline
+            points={cart.river}
+            stroke="#f6e6b6"
+            strokeWidth={(d.riverWidth ?? 0) / SCALE + 7}
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <polyline
+            points={cart.river}
+            stroke="#40b8cd"
+            strokeWidth={(d.riverWidth ?? 0) / SCALE}
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </>
+      )}
       {d.canals?.map((c, i) => (
         <polyline
           key={i}
@@ -287,12 +301,17 @@ function MapLayers({
     p = toMap({ x: f.px, z: f.pz }),
     target = toMap(f.snap.target);
   const visibleLandmarks = useMemo(() => {
-    const known = d.landmarks.map(l=>({...l,...canonicalFeaturePoint(l.id!,l.plot??l,l.yaw??0)})).filter(
-      (l) =>
-        (!detail || l.kind !== "hotel") &&
-        (!detail || l.id !== "state" || !placeNames) &&
-        (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
-    );
+    const known = d.landmarks
+      .map((l) => ({
+        ...l,
+        ...canonicalFeaturePoint(l.id!, l.plot ?? l, l.yaw ?? 0),
+      }))
+      .filter(
+        (l) =>
+          (!detail || l.kind !== "hotel") &&
+          (!detail || l.id !== "state" || !placeNames) &&
+          (detail || (l.id && f.snap.discoveredLandmarks?.includes(l.id))),
+      );
     if (!detail) return known;
     const priority = (l: Landmark) =>
       l.accessNode === f.snap.target.id ||
@@ -485,6 +504,26 @@ function MapLayers({
               </text>
             );
           })}
+      {detail &&
+        placeNames &&
+        labelScale < 0.5 &&
+        cartography(d).streetLabels.map((s) => (
+          <text
+            key={s.id}
+            x={s.x}
+            y={s.y - 3 * labelScale}
+            textAnchor="middle"
+            className="tt-world-landmark"
+            style={{
+              fontSize: 8.5 * labelScale,
+              strokeWidth: 2.5 * labelScale,
+            }}
+            data-testid={`map-street-${s.id}`}
+          >
+            <title>{s.thai}</title>
+            {s.english}
+          </text>
+        ))}
       {transit &&
         d.transit?.lines.map((line) => (
           <g key={line.id} data-testid={`map-rail-${line.id}`}>
@@ -537,9 +576,25 @@ function MapLayers({
             })}
           </g>
         ))}
-      {transit && detail && planMrtEntrances(d).map(s=>{
-        const p=toMap(s);return <g key={s.id} data-testid={`map-${s.id}`}><rect x={p.x-2.4*labelScale} y={p.y-2.4*labelScale} width={4.8*labelScale} height={4.8*labelScale} fill="#547fc9" stroke="#e6f1ff" strokeWidth={labelScale}/><title>{`${s.code} MRT ${s.name} — underground line entrance`}</title></g>;
-      })}
+      {transit &&
+        detail &&
+        planMrtEntrances(d).map((s) => {
+          const p = toMap(s);
+          return (
+            <g key={s.id} data-testid={`map-${s.id}`}>
+              <rect
+                x={p.x - 2.4 * labelScale}
+                y={p.y - 2.4 * labelScale}
+                width={4.8 * labelScale}
+                height={4.8 * labelScale}
+                fill="#547fc9"
+                stroke="#e6f1ff"
+                strokeWidth={labelScale}
+              />
+              <title>{`${s.code} MRT ${s.name} — underground line entrance`}</title>
+            </g>
+          );
+        })}
       <polyline
         points={points(path)}
         stroke="#fff4cd"
@@ -786,10 +841,18 @@ export function WorldMap({
     setView(next);
   };
   const wholeCity = () => {
-    const bounds=d.bounds;
-    if(!bounds)return {cx:490,cy:600,span:1250};
-    const a=toMap({x:bounds.minX,z:bounds.minZ}),b=toMap({x:bounds.maxX,z:bounds.maxZ});
-    return {cx:(a.x+b.x)/2,cy:(a.y+b.y)/2,span:Math.max((b.x-a.x+80)/Math.max(aspect,1),(b.y-a.y+80)/Math.max(1/aspect,1))};
+    const bounds = d.bounds;
+    if (!bounds) return { cx: 490, cy: 600, span: 1250 };
+    const a = toMap({ x: bounds.minX, z: bounds.minZ }),
+      b = toMap({ x: bounds.maxX, z: bounds.maxZ });
+    return {
+      cx: (a.x + b.x) / 2,
+      cy: (a.y + b.y) / 2,
+      span: Math.max(
+        (b.x - a.x + 80) / Math.max(aspect, 1),
+        (b.y - a.y + 80) / Math.max(1 / aspect, 1),
+      ),
+    };
   };
   const nearbyStations = useMemo(
     () =>

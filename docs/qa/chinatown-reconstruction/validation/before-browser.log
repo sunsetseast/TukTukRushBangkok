@@ -1,0 +1,105 @@
+before yaowarat-overview {
+  calls: 518,
+  triangles: 885917,
+  geometries: 618,
+  textures: 14,
+  frameMs: 670.0999999999767
+}
+before yaowarat-sunset {
+  calls: 496,
+  triangles: 888211,
+  geometries: 714,
+  textures: 16,
+  frameMs: 680.2000000000698
+}
+before yaowarat-night {
+  calls: 495,
+  triangles: 888179,
+  geometries: 714,
+  textures: 16,
+  frameMs: 989.2000000000698
+}
+before odeon-circle {
+  calls: 412,
+  triangles: 695707,
+  geometries: 768,
+  textures: 16,
+  frameMs: 502.09999999997666
+}
+before wat-traimit {
+  calls: 408,
+  triangles: 716119,
+  geometries: 936,
+  textures: 18,
+  frameMs: 62.300000000046566
+}
+before hua-lamphong {
+  calls: 392,
+  triangles: 528566,
+  geometries: 1087,
+  textures: 18,
+  frameMs: 19.699999999953434
+}
+before ratchawong {
+  calls: 446,
+  triangles: 835191,
+  geometries: 1166,
+  textures: 18,
+  frameMs: 476
+}
+before mangkon {
+  calls: 425,
+  triangles: 756847,
+  geometries: 1169,
+  textures: 18,
+  frameMs: 605.3000000000466
+}
+before plaeng-nam {
+  calls: 385,
+  triangles: 605465,
+  geometries: 1178,
+  textures: 18,
+  frameMs: 668.3000000000466
+}
+before song-wat {
+  calls: 388,
+  triangles: 553083,
+  geometries: 1388,
+  textures: 18,
+  frameMs: 23.800000000046566
+}
+before song-wat-river {
+  calls: 443,
+  triangles: 702675,
+  geometries: 1440,
+  textures: 18,
+  frameMs: 576.9000000000233
+}
+before talat-noi {
+  calls: 360,
+  triangles: 496481,
+  geometries: 1464,
+  textures: 18,
+  frameMs: 89
+}
+before talat-noi-river-city {
+  calls: 251,
+  triangles: 259725,
+  geometries: 1627,
+  textures: 19,
+  frameMs: 450.20000000006985
+}
+before district-blocks {
+  calls: 356,
+  triangles: 503019,
+  geometries: 1635,
+  textures: 19,
+  frameMs: 376.5
+}
+before river-relationship {
+  calls: 183,
+  triangles: 208759,
+  geometries: 1730,
+  textures: 19,
+  frameMs: 24.199999999953434
+}

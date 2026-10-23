@@ -1,0 +1,11 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserType.launch: Failed to launch chromium because executable doesn't exist at /workspace/scratch/9c43172b1bcc/browser/chrome-headless-shell-linux64/chrome-headless-shell
+    at /workspace/scratch/b8d41d1d667e/TukTukRushBangkok-pr36-baseline/artifacts/tuk-tuk-rush/scripts/capture-chao-phraya.mjs:6:114 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v24.19.0

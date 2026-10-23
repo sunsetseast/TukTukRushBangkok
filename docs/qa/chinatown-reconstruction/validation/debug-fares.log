@@ -1,0 +1,48 @@
+begin pickup 1 {
+  x: -31.26580321253583,
+  z: -216.51532530112067,
+  id: 'civic:-293333:-2160000',
+  name: 'Plaeng Nam Road · passenger pickup'
+} {
+  x: 128.87701517843897,
+  z: -76.13259395464564,
+  heading: 2.814492209480872,
+  speed: 0,
+  steer: 0,
+  lean: 0,
+  wheelSpin: 0,
+  collision: 0
+}
+begin delivery 1 {
+  x: 118.71851678842786,
+  z: -15.810708977719484,
+  id: 'bkk:1271',
+  name: 'Chinatown Gate · roadside stop'
+} {
+  x: -31.07312302258401,
+  z: -209.49525177575944,
+  heading: 2.880245434842929,
+  speed: 0.11005614872532038,
+  steer: -1.3002598748250802e-13,
+  lean: 1.1344724953034762e-12,
+  wheelSpin: 617.6944078810337,
+  collision: 0
+}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Delivery 1 failed: {"x":127.33337860270171,"z":-11.234444543089413,"heading":-2.0078575708040183,"speed":0,"steer":2.5e-323,"lean":-1.6527471487758612e-277,"wheelSpin":2644.095897407437,"collision":0}
+
+0 !== 1
+
+    at <anonymous> (/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/.debug-fares.ts:22:35) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

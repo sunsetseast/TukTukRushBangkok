@@ -1,0 +1,769 @@
+{
+  "label": "after",
+  "sourceState": "Matched PR36 baseline and PR37 runtime; source hashes retained",
+  "sourceDiff": "",
+  "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40",
+  "viewport": [
+    768,
+    432
+  ],
+  "quality": "medium",
+  "renderer": "Chromium 156.0.8078.4 / SwiftShader",
+  "physicalIPhone": false,
+  "cityObjectsHidden": false,
+  "records": [
+    {
+      "id": "icon-river",
+      "light": "sunset",
+      "file": "icon-river-sunset.jpg",
+      "scene": {
+        "id": "icon-river",
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "look": [
+          -650,
+          12,
+          933
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 318,
+        "triangles": 309707,
+        "geometries": 636,
+        "textures": 15,
+        "frameMs": 14.599999999976717,
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "icon-river",
+      "light": "night",
+      "file": "icon-river-night.jpg",
+      "scene": {
+        "id": "icon-river",
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "look": [
+          -650,
+          12,
+          933
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 309,
+        "triangles": 306427,
+        "geometries": 636,
+        "textures": 15,
+        "frameMs": 298.70000000001164,
+        "camera": [
+          -420,
+          38,
+          1000
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "icon-street",
+      "light": "sunset",
+      "file": "icon-street-sunset.jpg",
+      "scene": {
+        "id": "icon-street",
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "look": [
+          -646.9669914110091,
+          10,
+          933.0330085889909
+        ],
+        "owner": "icon",
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 348,
+        "triangles": 343555,
+        "geometries": 858,
+        "textures": 16,
+        "frameMs": 23.599999999976717,
+        "camera": [
+          -760.9498914617022,
+          8,
+          910.3604000991086
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "taksin-driving",
+      "light": "sunset",
+      "file": "taksin-driving-sunset.jpg",
+      "scene": {
+        "id": "taksin-driving",
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "look": [
+          -600,
+          5,
+          1460
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 334,
+        "triangles": 387967,
+        "geometries": 1076,
+        "textures": 16,
+        "frameMs": 398.5999999999767,
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "taksin-driving",
+      "light": "night",
+      "file": "taksin-driving-night.jpg",
+      "scene": {
+        "id": "taksin-driving",
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "look": [
+          -600,
+          5,
+          1460
+        ],
+        "owner": null,
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 333,
+        "triangles": 387935,
+        "geometries": 1076,
+        "textures": 16,
+        "frameMs": 209.29999999998836,
+        "camera": [
+          -220,
+          5,
+          1460
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "oriental-river",
+      "light": "sunset",
+      "file": "oriental-river-sunset.jpg",
+      "scene": {
+        "id": "oriental-river",
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "look": [
+          -200,
+          24,
+          1040
+        ],
+        "owner": "oriental",
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 397,
+        "triangles": 526991,
+        "geometries": 1381,
+        "textures": 16,
+        "frameMs": 35.79999999998836,
+        "camera": [
+          -320,
+          32,
+          1040
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "collision-building",
+      "light": "sunset",
+      "file": "collision-building-sunset.jpg",
+      "scene": {
+        "id": "collision-building",
+        "camera": [
+          103,
+          8,
+          1115
+        ],
+        "look": [
+          77,
+          2.3,
+          1099
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 305,
+        "triangles": 379091,
+        "geometries": 1414,
+        "textures": 16,
+        "frameMs": 26.79999999998836,
+        "camera": [
+          103,
+          8,
+          1115
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "collision-tree",
+      "light": "sunset",
+      "file": "collision-tree-sunset.jpg",
+      "scene": {
+        "id": "collision-tree",
+        "camera": [
+          -132,
+          5.3,
+          1054
+        ],
+        "look": [
+          -148.4,
+          1.2,
+          1035.3
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 309,
+        "triangles": 299197,
+        "geometries": 1448,
+        "textures": 16,
+        "frameMs": 501.69999999995343,
+        "camera": [
+          -132,
+          5.3,
+          1054
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "oriental-approach",
+      "light": "sunset",
+      "file": "oriental-approach-sunset.jpg",
+      "scene": {
+        "id": "oriental-approach",
+        "camera": [
+          96,
+          7,
+          1101
+        ],
+        "look": [
+          43,
+          3,
+          1084
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 313,
+        "triangles": 347515,
+        "geometries": 1448,
+        "textures": 16,
+        "frameMs": 342.70000000006985,
+        "camera": [
+          96,
+          7,
+          1101
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "river-city-street",
+      "light": "sunset",
+      "file": "river-city-street-sunset.jpg",
+      "scene": {
+        "id": "river-city-street",
+        "camera": [
+          154,
+          7,
+          802
+        ],
+        "look": [
+          95,
+          3,
+          799.5
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 300,
+        "triangles": 349661,
+        "geometries": 1470,
+        "textures": 16,
+        "frameMs": 83.40000000002328,
+        "camera": [
+          154,
+          7,
+          802
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "asiatique-entry",
+      "light": "sunset",
+      "file": "asiatique-entry-sunset.jpg",
+      "scene": {
+        "id": "asiatique-entry",
+        "camera": [
+          -333,
+          7,
+          2000
+        ],
+        "look": [
+          -398,
+          3,
+          2007
+        ],
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 224,
+        "triangles": 214445,
+        "geometries": 1625,
+        "textures": 16,
+        "frameMs": 33,
+        "camera": [
+          -333,
+          7,
+          2000
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "asiatique-entry",
+      "light": "night",
+      "file": "asiatique-entry-night.jpg",
+      "scene": {
+        "id": "asiatique-entry",
+        "camera": [
+          -333,
+          7,
+          2000
+        ],
+        "look": [
+          -398,
+          3,
+          2007
+        ],
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 223,
+        "triangles": 214413,
+        "geometries": 1625,
+        "textures": 16,
+        "frameMs": 16.900000000023283,
+        "camera": [
+          -333,
+          7,
+          2000
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "asiatique-loop",
+      "light": "sunset",
+      "file": "asiatique-loop-sunset.jpg",
+      "scene": {
+        "id": "asiatique-loop",
+        "camera": [
+          -389,
+          7,
+          2002
+        ],
+        "look": [
+          -426,
+          3,
+          2030
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 176,
+        "triangles": 165767,
+        "geometries": 1654,
+        "textures": 16,
+        "frameMs": 226,
+        "camera": [
+          -389,
+          7,
+          2002
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "shoreline-local",
+      "light": "sunset",
+      "file": "shoreline-local-sunset.jpg",
+      "scene": {
+        "id": "shoreline-local",
+        "camera": [
+          -330,
+          145,
+          700
+        ],
+        "look": [
+          -470,
+          1,
+          500
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 209,
+        "triangles": 239693,
+        "geometries": 1752,
+        "textures": 16,
+        "frameMs": 265.20000000006985,
+        "camera": [
+          -330,
+          145,
+          700
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "river-city-gameplay",
+      "light": "sunset",
+      "file": "river-city-gameplay-sunset.jpg",
+      "scene": {
+        "id": "river-city-gameplay",
+        "player": {
+          "x": 130,
+          "z": 801.2,
+          "heading": -1.61766
+        },
+        "look": [
+          100,
+          3,
+          800
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 298,
+        "triangles": 346719,
+        "geometries": 1753,
+        "textures": 16,
+        "frameMs": 243,
+        "camera": [
+          137.79143637238298,
+          3.3,
+          801.5654028668572
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "chinatown-waterfront-gameplay",
+      "light": "sunset",
+      "file": "chinatown-waterfront-gameplay-sunset.jpg",
+      "scene": {
+        "id": "chinatown-waterfront-gameplay",
+        "player": {
+          "x": -165,
+          "z": 197.5,
+          "heading": 1.1071487177940904
+        },
+        "look": [
+          -120,
+          3,
+          220
+        ],
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 342,
+        "triangles": 491620,
+        "geometries": 1953,
+        "textures": 16,
+        "frameMs": 173.5,
+        "camera": [
+          -171.97653208979935,
+          3.3,
+          194.01173395510034
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "chinatown-waterfront-gameplay",
+      "light": "night",
+      "file": "chinatown-waterfront-gameplay-night.jpg",
+      "scene": {
+        "id": "chinatown-waterfront-gameplay",
+        "player": {
+          "x": -165,
+          "z": 197.5,
+          "heading": 1.1071487177940904
+        },
+        "look": [
+          -120,
+          3,
+          220
+        ],
+        "lights": [
+          "sunset",
+          "night"
+        ]
+      },
+      "stats": {
+        "calls": 342,
+        "triangles": 491620,
+        "geometries": 1953,
+        "textures": 16,
+        "frameMs": 576.3000000000466,
+        "camera": [
+          -171.97653208979935,
+          3.3,
+          194.01173395510034
+        ],
+        "fov": 58,
+        "elapsed": 720,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    },
+    {
+      "id": "asiatique-gameplay",
+      "light": "sunset",
+      "file": "asiatique-gameplay-sunset.jpg",
+      "scene": {
+        "id": "asiatique-gameplay",
+        "player": {
+          "x": -365,
+          "z": 2000.6,
+          "heading": -1.4477143267085322
+        },
+        "look": [
+          -390,
+          3,
+          2010
+        ],
+        "lights": [
+          "sunset"
+        ]
+      },
+      "stats": {
+        "calls": 232,
+        "triangles": 240869,
+        "geometries": 1963,
+        "textures": 16,
+        "frameMs": 23.199999999953434,
+        "camera": [
+          -357.2590072480352,
+          3.3,
+          1999.6423825325173
+        ],
+        "fov": 58,
+        "elapsed": 40,
+        "quality": "medium",
+        "glError": 0,
+        "changedLandmarkVisible": false
+      },
+      "geographicInspection": false,
+      "extendedClipAndFog": false,
+      "sourceCommit": "61ce535afa6784721fd4e2b4ef17fb496ba41d40"
+    }
+  ],
+  "errors": []
+}

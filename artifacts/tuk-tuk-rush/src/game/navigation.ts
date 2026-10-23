@@ -103,6 +103,16 @@ export function navigationPath(
     result.push(nodes.get(id)!);
     id = next.get(id);
   }
+  // Passenger stops can be a few metres beside their graph node. Preserve
+  // that final curbside position so guidance and controller arrivals agree.
+  // Only append after reaching the target's connected node; never bridge a
+  // missing route with a fabricated straight segment.
+  const end = result.at(-1) as RoadNode | undefined;
+  if (
+    end?.id === target.id &&
+    Math.hypot(end.x - target.x, end.z - target.z) <= 8
+  )
+    result.push({ x: target.x, z: target.z });
   return result.filter(
     (q, i) =>
       !i || Math.hypot(q.x - result[i - 1]!.x, q.z - result[i - 1]!.z) > 0.01,

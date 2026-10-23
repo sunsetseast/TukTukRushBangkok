@@ -1,4 +1,5 @@
-import {riverClearance,riverBank,nearestRiverShore} from './waterGeometry';
+import { proceduralStreetSeeds } from "./proceduralStreetSeeds";
+import { riverClearance, riverBank, nearestRiverShore } from "./waterGeometry";
 import type { District, Obstacle, Point } from "../types";
 import {
   distanceToSegment,
@@ -8,9 +9,9 @@ import {
 import { regionAt } from "./world";
 import { stableHash } from "./buildingGrammar";
 import { degreeMap } from "../roadGeometry";
-import { inDestinationGrounds } from './destinationAccess';
+import { inDestinationGrounds } from "./destinationAccess";
 import type { StreetPerson } from "../streetLife";
-import { roadManeuvers } from './roadManeuvers';
+import { roadManeuvers } from "./roadManeuvers";
 export type SiteKind =
   | "clothing"
   | "wok"
@@ -91,35 +92,76 @@ export function placementIndex(d: District) {
     return { os, rs };
   };
   const baseClear = (o: Obstacle, exactRoadFootprint = false) => {
-    if(inDestinationGrounds(d,o))return false;
+    if (inDestinationGrounds(d, o)) return false;
     const radius = Math.hypot(o.w, o.d) / 2,
       q = nearby(o, radius + 2);
     return (
       riverClearance(d, o) > radius + 2 &&
-      !(d.canals??[]).some(c=>c.points.slice(1).some((b,i)=>distanceToSegment(o,c.points[i]!,b).distance<c.width/2+radius+2)) &&
+      !(d.canals ?? []).some((c) =>
+        c.points
+          .slice(1)
+          .some(
+            (b, i) =>
+              distanceToSegment(o, c.points[i]!, b).distance <
+              c.width / 2 + radius + 2,
+          ),
+      ) &&
       [...q.os].every((b) => !orientedFootprintsOverlap(o, b, 0.6)) &&
       [...q.rs].every((i) => {
         const { r, a, b } = segments[i]!;
-        if(exactRoadFootprint)return !orientedFootprintsOverlap(o,{x:(a.x+b.x)/2,z:(a.z+b.z)/2,w:r.width+3.4,d:Math.hypot(b.x-a.x,b.z-a.z)+3.4,yaw:Math.atan2(b.x-a.x,b.z-a.z),height:0,color:'#fff'});
+        if (exactRoadFootprint)
+          return !orientedFootprintsOverlap(o, {
+            x: (a.x + b.x) / 2,
+            z: (a.z + b.z) / 2,
+            w: r.width + 3.4,
+            d: Math.hypot(b.x - a.x, b.z - a.z) + 3.4,
+            yaw: Math.atan2(b.x - a.x, b.z - a.z),
+            height: 0,
+            color: "#fff",
+          });
         return (
           distanceToSegment(o, a, b).distance >= r.width / 2 + radius + 1.7
         );
       })
     );
   };
-  const clear = (o:Obstacle,exactRoadFootprint=false)=>baseClear(o,exactRoadFootprint)&&maneuvers.clear(o);
+  const clear = (o: Obstacle, exactRoadFootprint = false) =>
+    baseClear(o, exactRoadFootprint) && maneuvers.clear(o);
   // Refit only a candidate that otherwise passed the existing placement rules.
   // Preserve its dimensions, identity and facade orientation, and search a
   // short outward translation; never remove existing rows or collision shells.
-  const fit = (o:Obstacle,exactRoadFootprint=false):Obstacle|undefined=>{
-    if(!baseClear(o,exactRoadFootprint))return undefined;
-    const conflicts=maneuvers.conflicts(o);if(!conflicts.length)return o;
-    for(const sweep of conflicts){const q=distanceToSegment(o,sweep.a,sweep.b).point,dx=o.x-q.x,dz=o.z-q.z,len=Math.hypot(dx,dz);if(len<1e-4)continue;
-      for(const step of [.5,1,1.5,2,3,4,5,6,8,10,12])for(const along of [0,2,-2]){
-        const p={...o,x:o.x+dx/len*step-dz/len*along,z:o.z+dz/len*step+dx/len*along},radius=Math.hypot(p.w,p.d)/2,b=d.bounds;
-        if(b&&(p.x-radius<b.minX||p.x+radius>b.maxX||p.z-radius<b.minZ||p.z+radius>b.maxZ))continue;
-        if(clear(p,exactRoadFootprint))return p;
-      }
+  const fit = (
+    o: Obstacle,
+    exactRoadFootprint = false,
+  ): Obstacle | undefined => {
+    if (!baseClear(o, exactRoadFootprint)) return undefined;
+    const conflicts = maneuvers.conflicts(o);
+    if (!conflicts.length) return o;
+    for (const sweep of conflicts) {
+      const q = distanceToSegment(o, sweep.a, sweep.b).point,
+        dx = o.x - q.x,
+        dz = o.z - q.z,
+        len = Math.hypot(dx, dz);
+      if (len < 1e-4) continue;
+      for (const step of [0.5, 1, 1.5, 2, 3, 4, 5, 6, 8, 10, 12])
+        for (const along of [0, 2, -2]) {
+          const p = {
+              ...o,
+              x: o.x + (dx / len) * step - (dz / len) * along,
+              z: o.z + (dz / len) * step + (dx / len) * along,
+            },
+            radius = Math.hypot(p.w, p.d) / 2,
+            b = d.bounds;
+          if (
+            b &&
+            (p.x - radius < b.minX ||
+              p.x + radius > b.maxX ||
+              p.z - radius < b.minZ ||
+              p.z + radius > b.maxZ)
+          )
+            continue;
+          if (clear(p, exactRoadFootprint)) return p;
+        }
     }
     return undefined;
   };
@@ -140,7 +182,8 @@ export function planEnvironment(d: District) {
   if (prior) return prior;
   const sites: EnvironmentSite[] = [],
     index = placementIndex(d),
-    nodes = new Map(d.nodes.map((n) => [n.id, n])),
+    seedGraph = proceduralStreetSeeds(d),
+    nodes = seedGraph.nodes,
     degrees = degreeMap(d);
   const add = (
     kind: SiteKind,
@@ -151,8 +194,9 @@ export function planEnvironment(d: District) {
     axis?: boolean,
   ) => {
     const sizes: Record<SiteKind, [number, number, number]> = {
-      clothing:[3.2,2.6,3],
-      wok:[3.2,2.6,2.8],dessert:[2.8,2.5,2.6],
+      clothing: [3.2, 2.6, 3],
+      wok: [3.2, 2.6, 2.8],
+      dessert: [2.8, 2.5, 2.6],
       noodle: [2.7, 2.3, 2.9],
       grill: [3.3, 2.7, 2.8],
       fruit: [3.5, 2.4, 2.6],
@@ -177,12 +221,14 @@ export function planEnvironment(d: District) {
         artRole: "furniture",
         environmentId: id,
       };
-    const fitted=index.fit(body);if(!fitted)return;Object.assign(body,fitted);
+    const fitted = index.fit(body);
+    if (!fitted) return;
+    Object.assign(body, fitted);
     d.obstacles.push(body);
     index.insert(body);
     sites.push({ id, kind, region, seed, body, axis });
   };
-  for (const r of d.roads) {
+  for (const r of seedGraph.roads) {
     if (r.bridge || r.shortcut || r.roundabout) continue;
     const a = nodes.get(r.a)!,
       b = nodes.get(r.b)!,
@@ -192,20 +238,45 @@ export function planEnvironment(d: District) {
       t = len * (0.35 + (seed % 35) / 100),
       x = a.x + Math.sin(yaw) * t,
       z = a.z + Math.cos(yaw) * t,
-      region = regionAt(d, { x, z })?.id ?? "residential";
+      region = ["wanit-2", "wanit-2-south", "yotha"].includes(r.corridor ?? "")
+        ? "talatnoi"
+        : r.corridor?.startsWith("songwat")
+          ? "songwat"
+          : (regionAt(d, { x, z })?.id ?? "residential");
     for (const side of [-1, 1]) {
-      if (!['chinatown','khaosan','talatnoi'].includes(region) && (seed + (side + 1) * 3) % 7 > 2) continue;
+      if (
+        !["chinatown", "khaosan", "talatnoi"].includes(region) &&
+        (seed + (side + 1) * 3) % 7 > 2
+      )
+        continue;
       const menu: SiteKind[] =
         region === "chinatown" || region === "khaosan"
-          ? ["noodle", "grill", "fruit", "tea", "wok", "dessert", "clothing", "scooter", "lamp"]
-          : region === "talatnoi"
-            ? ["workshop", "tea", "tree", "scooter", "bench"]
-            : ["siam", "icon"].includes(region)
-              ? ["palm", "tree", "bench", "lamp"]
-              : region === "oldtown"
-                ? ["tree", "bench", "lamp", "tea"]
-                : ["tree", "scooter", "tea", "lamp"];
-      const kind = (region!=="khaosan"&&menu[(seed+(side+1)*11)%menu.length]==='clothing'?'noodle':menu[(seed + (side + 1) * 11) % menu.length])!,
+          ? [
+              "noodle",
+              "grill",
+              "fruit",
+              "tea",
+              "wok",
+              "dessert",
+              "clothing",
+              "scooter",
+              "lamp",
+            ]
+          : region === "songwat"
+            ? ["tea", "scooter", "workshop", "lamp", "bench"]
+            : region === "talatnoi"
+              ? ["workshop", "tea", "tree", "scooter", "bench"]
+              : ["siam", "icon"].includes(region)
+                ? ["palm", "tree", "bench", "lamp"]
+                : region === "oldtown"
+                  ? ["tree", "bench", "lamp", "tea"]
+                  : ["tree", "scooter", "tea", "lamp"];
+      const kind = (
+          region !== "khaosan" &&
+          menu[(seed + (side + 1) * 11) % menu.length] === "clothing"
+            ? "noodle"
+            : menu[(seed + (side + 1) * 11) % menu.length]
+        )!,
         off =
           r.width / 2 +
           (["tree", "palm", "lamp", "signal"].includes(kind) ? 3.1 : 4.9);
@@ -236,8 +307,10 @@ export function planEnvironment(d: District) {
       );
     }
   }
-  for (const l of d.landmarks.filter((l) =>
-    !d.destinations?.some(a=>a.landmarkId===l.id)&&["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
+  for (const l of d.landmarks.filter(
+    (l) =>
+      !d.destinations?.some((a) => a.landmarkId === l.id) &&
+      ["arun", "pho", "icon", "paragon", "paknam"].includes(l.id ?? ""),
   )) {
     const a = nodes.get(l.accessNode!)!,
       p = l.plot!,
@@ -262,9 +335,19 @@ export function planEnvironment(d: District) {
 export function environmentPeople(d: District): StreetPerson[] {
   const index = placementIndex(d),
     people: StreetPerson[] = [];
-  for (const site of planEnvironment(d).filter((s) =>
-    ["noodle", "grill", "fruit", "tea", "wok", "dessert"].includes(s.kind),
-  ).sort((a,b)=>(['khaosan','chinatown','talatnoi'].includes(a.region)?['khaosan','chinatown','talatnoi'].indexOf(a.region):3)-(['khaosan','chinatown','talatnoi'].includes(b.region)?['khaosan','chinatown','talatnoi'].indexOf(b.region):3))) {
+  for (const site of planEnvironment(d)
+    .filter((s) =>
+      ["noodle", "grill", "fruit", "tea", "wok", "dessert"].includes(s.kind),
+    )
+    .sort(
+      (a, b) =>
+        (["khaosan", "chinatown", "talatnoi"].includes(a.region)
+          ? ["khaosan", "chinatown", "talatnoi"].indexOf(a.region)
+          : 3) -
+        (["khaosan", "chinatown", "talatnoi"].includes(b.region)
+          ? ["khaosan", "chinatown", "talatnoi"].indexOf(b.region)
+          : 3),
+    )) {
     if (people.length >= 140) break;
     const b = site.body,
       yaw = b.yaw ?? 0;

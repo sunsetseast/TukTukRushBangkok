@@ -1,8 +1,9 @@
-import { sampleTrack } from './transit/network';
+import { chinatownParcel, inChinatown } from "./chinatownPlan";
+import { sampleTrack } from "./transit/network";
 import type { District, Obstacle } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import { placementIndex } from "./environmentPlan";
-import { stationEnvelope } from './transit/stationGeometry';
+import { stationEnvelope } from "./transit/stationGeometry";
 import { regionAt } from "./world";
 import { obstacleDistance, orientedFootprintsOverlap } from "../world";
 import {
@@ -38,85 +39,103 @@ export function completeStreetFabric(d: District) {
     pockets: Obstacle[] = [],
     ends: Obstacle[] = [],
     rail =
-      d.transit?.lines.flatMap(line => line.samples.filter((_,i)=>i%2===0).flatMap(p=>[-1,1].map(direction=>sampleTrack(line,p.distance,direction,{...p})))) ?? [],
+      d.transit?.lines.flatMap((line) =>
+        line.samples
+          .filter((_, i) => i % 2 === 0)
+          .flatMap((p) =>
+            [-1, 1].map((direction) =>
+              sampleTrack(line, p.distance, direction, { ...p }),
+            ),
+          ),
+      ) ?? [],
     stations = d.transit?.lines.flatMap((l) => l.stations) ?? [];
   for (const sample of before) {
-    if (sample.kind !== "open" || sample.road.destinationId) continue;
+    if (
+      inChinatown(sample.point, 40) ||
+      sample.kind !== "open" ||
+      sample.road.destinationId
+    )
+      continue;
     const { point, outward, road } = sample,
       yaw = Math.atan2(-outward.x, -outward.z);
     let fitted = false;
-    for (const extraSetback of [0,12,25]) {
-    if(fitted)break;
-    for (const along of [0, 5, -5, 10, -10, 15, -15, 20, -20]) {
+    for (const extraSetback of [0, 12, 25]) {
       if (fitted) break;
-      for (const [w, depth] of [
-        [18, 12],
-        [13, 10],
-        [8, 8],
-        [5.5, 7],
-        [4.5, 4.5],
-        [3.5, 4.5],
-      ]) {
-        const off = (w! < 6 ? 5 : 8) + depth! / 2 + extraSetback,
-          p = {
-            x: point.x + outward.x * off - outward.z * along,
-            z: point.z + outward.z * off + outward.x * along,
-          },
-          region = regionAt(d, p)?.id ?? "connector",
-          seed = stableHash(
-            `${road.corridor}:${Math.round(p.x)}:${Math.round(p.z)}`,
-          ),
-          modern = ["siam", "silom", "sukhumvit", "icon"].includes(region),
-          parcel: Obstacle = {
-            ...p,
-            w: w!,
-            d: depth!,
-            yaw,
-            height: w! < 6 ? 5.5 : modern ? 15.5 : 11.5,
-            color: "#e3c99c",
-            regionId: region,
-            environmentId: `street-infill:${seed}`,
-          },
-          radius = Math.hypot(parcel.w, parcel.d) / 2,
-          bd = d.bounds!;
-        const fittedParcel=index.fit(parcel,true);
-        if (
-          p.x < bd.minX + radius ||
-          p.x > bd.maxX - radius ||
-          p.z < bd.minZ + radius ||
-          p.z > bd.maxZ - radius ||
-          !fittedParcel
-        )
-          continue;
-        Object.assign(parcel,fittedParcel);
-        // Low street-food kiosks fit beneath the elevated railway; tall
-        // buildings still respect its swept clearance envelope. Supports and
-        // station entrances remain physical obstacles in index.clear().
-        if (parcel.height > 7 && rail.some((p) => obstacleDistance(p, parcel) < 9)) continue;
-        if (
-          parcel.height > 7 && stations.some((s) =>
-            orientedFootprintsOverlap(
-              parcel,
-              stationEnvelope(s),
-              1,
+      for (const along of [0, 5, -5, 10, -10, 15, -15, 20, -20]) {
+        if (fitted) break;
+        for (const [w, depth] of [
+          [18, 12],
+          [13, 10],
+          [8, 8],
+          [5.5, 7],
+          [4.5, 4.5],
+          [3.5, 4.5],
+        ]) {
+          const off = (w! < 6 ? 5 : 8) + depth! / 2 + extraSetback,
+            p = {
+              x: point.x + outward.x * off - outward.z * along,
+              z: point.z + outward.z * off + outward.x * along,
+            },
+            region = regionAt(d, p)?.id ?? "connector",
+            seed = stableHash(
+              `${road.corridor}:${Math.round(p.x)}:${Math.round(p.z)}`,
             ),
+            modern = ["siam", "silom", "sukhumvit", "icon"].includes(region),
+            parcel: Obstacle = {
+              ...p,
+              w: w!,
+              d: depth!,
+              yaw,
+              height: w! < 6 ? 5.5 : modern ? 15.5 : 11.5,
+              color: "#e3c99c",
+              regionId: region,
+              environmentId: `street-infill:${seed}`,
+            },
+            radius = Math.hypot(parcel.w, parcel.d) / 2,
+            bd = d.bounds!;
+          const fittedParcel = index.fit(parcel, true);
+          if (
+            p.x < bd.minX + radius ||
+            p.x > bd.maxX - radius ||
+            p.z < bd.minZ + radius ||
+            p.z > bd.maxZ - radius ||
+            !fittedParcel
           )
-        )
-          continue;
-        d.buildings.push(parcel);
-        d.obstacles.push(parcel);
-        index.insert(parcel);
-        infill.push(parcel);
-        fitted = true;
-        break;
+            continue;
+          Object.assign(parcel, fittedParcel);
+          // Low street-food kiosks fit beneath the elevated railway; tall
+          // buildings still respect its swept clearance envelope. Supports and
+          // station entrances remain physical obstacles in index.clear().
+          if (
+            parcel.height > 7 &&
+            rail.some((p) => obstacleDistance(p, parcel) < 9)
+          )
+            continue;
+          if (
+            parcel.height > 7 &&
+            stations.some((s) =>
+              orientedFootprintsOverlap(parcel, stationEnvelope(s), 1),
+            )
+          )
+            continue;
+          d.buildings.push(parcel);
+          d.obstacles.push(parcel);
+          index.insert(parcel);
+          infill.push(parcel);
+          fitted = true;
+          break;
+        }
       }
     }
-  }
   }
   const after = auditStreetEdges(d),
     faces = streetFaces(d, after);
   for (const sample of after) {
-    if (sample.kind !== "open" && sample.kind !== "station") continue;
+    if (
+      inChinatown(sample.point, 30) ||
+      (sample.kind !== "open" && sample.kind !== "station")
+    )
+      continue;
     const { point, outward } = sample,
       p = { x: point.x + outward.x * 6.5, z: point.z + outward.z * 6.5 },
       seed = stableHash(`${Math.round(p.x)}:${Math.round(p.z)}`),
@@ -202,6 +221,7 @@ export function emitStreetFrontages(
 ) {
   const byParcel = new Map(designs.map((p) => [p.parcel, p]));
   for (const face of completeStreetFabric(d).faces) {
+    if (face.parcel.chinatown) continue;
     const design = byParcel.get(face.parcel);
     if (!design) continue;
     const b = face.parcel,

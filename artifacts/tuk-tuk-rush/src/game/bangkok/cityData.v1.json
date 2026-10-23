@@ -189,21 +189,22 @@
     }
   },
   "roadBaseline": {
-    "version": 2,
-    "key": "1314511305",
-    "roads": 2087,
-    "nodes": 2034,
+    "version": 3,
+    "key": "783800152",
+    "roads": 2210,
+    "nodes": 2148,
     "sourceStages": [
       "layout-v1",
       "master-plan-v3",
       "civic",
       "public-space",
       "historic-pr32",
-      "river-v2-asiatique-arrival"
+      "river-v2-asiatique-arrival",
+      "chinatown-v1"
     ],
-    "status": "approved-river-v2-local-arrival-network",
+    "status": "approved-chinatown-v1-local-migration",
     "geographicConfidence": "interpreted-compressed; not cadastral",
-    "fullGraphKey": 3918878619
+    "fullGraphKey": 3451122086
   },
   "geographicReferences": [
     {
@@ -2662,7 +2663,7 @@
       "centerline": [
         [
           255.7025,
-          125.0
+          125
         ],
         [
           252.0475,
@@ -2898,7 +2899,7 @@
         ],
         [
           510.11625,
-          1305.0
+          1305
         ]
       ],
       "design_width": 72
@@ -4202,7 +4203,7 @@
       "outward": 0,
       "width": 56,
       "depth": 24,
-      "road": "tri-mit",
+      "road": "mittraphap",
       "note": "Golden Buddha mondop and south Tri Mit approach, northeast of Odeon."
     },
     "democracy": {
@@ -4435,6 +4436,30 @@
       "width": 82,
       "depth": 17,
       "note": "East river garden, west Charoen Nakhon approach."
+    },
+    "wat-mangkon": {
+      "feature": [
+        0,
+        3,
+        25
+      ],
+      "outward": 0,
+      "width": 20,
+      "depth": 18,
+      "road": "charoen_n",
+      "note": "Compressed Chinese temple courtyard north of Charoen Krung; entrance reserved before all infill."
+    },
+    "holy-rosary": {
+      "feature": [
+        0,
+        3,
+        25
+      ],
+      "outward": 0,
+      "width": 13,
+      "depth": 16,
+      "road": "wanit-2-south",
+      "note": "West-facing river-side Gothic Revival facade; street access from the east remains a separate public approach, with no invented driveway through the church."
     }
   },
   "infrastructure": {
@@ -4550,8 +4575,8 @@
         "thai": "วัดมังกร",
         "code": "BL29",
         "design": [
-          448,
-          523
+          497,
+          499.2
         ],
         "introduced": 34,
         "district": "Samphanthawong",
@@ -4563,7 +4588,12 @@
           "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
           "https://www.openstreetmap.org/copyright"
         ],
-        "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit."
+        "compression": "Original entrance model retained, positioned beside the reconstructed Charoen Krung approach near Plaeng Nam. Nominal operator station center remains a reference, not a surveyed exit.",
+        "previousDesign": [
+          448,
+          523
+        ],
+        "migration": "chinatown-v1"
       }
     ],
     "piers": [
@@ -9303,7 +9333,7 @@
     "centerline": [
       [
         -977.19,
-        -1900.0
+        -1900
       ],
       [
         -991.81,
@@ -9539,7 +9569,7 @@
       ],
       [
         40.465,
-        2820.0
+        2820
       ]
     ],
     "compression": {
@@ -9745,6 +9775,12 @@
           "reason": "Verified east-bank riverfront destination; translate existing model and its generated arrival/grounds 110 game units west to reconnect the inherited inland plot to the approved riverbank."
         }
       ]
+    },
+    {
+      "version": "chinatown-v1",
+      "baselineCommit": "4735f336cf53102e8079e3943a782239ed81e68c",
+      "scope": "selected Chinatown roads, frontage blocks and heritage ensembles; river and global coordinates unchanged",
+      "approval": "chinatownPlan.v1.json; docs/qa/chinatown-reconstruction/road-migration.md"
     }
   ],
   "proceduralHistory": {

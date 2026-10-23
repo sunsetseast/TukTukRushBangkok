@@ -1,0 +1,18 @@
+{
+  version: 3,
+  key: '783800152',
+  roads: 2210,
+  nodes: 2148,
+  sourceStages: [
+    'layout-v1',
+    'master-plan-v3',
+    'civic',
+    'public-space',
+    'historic-pr32',
+    'river-v2-asiatique-arrival',
+    'chinatown-v1'
+  ],
+  status: 'approved-chinatown-v1-local-migration',
+  geographicConfidence: 'interpreted-compressed; not cadastral',
+  fullGraphKey: 3451122086
+}
