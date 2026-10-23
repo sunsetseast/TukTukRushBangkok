@@ -1,0 +1,4 @@
+{"pass":true,"identities":7274,"typologies":["apartment","arcade","concrete","gold","guesthouse","noodle","office","residence","retail","riverhouse","shophouse","timber","warehouse","workshop"],"heroDiversity":[{"hero":"yaowarat-gate","parcels":499,"structuralCompositions":421},{"hero":"songwat-workshops","parcels":195,"structuralCompositions":161},{"hero":"watpho-heritage","parcels":252,"structuralCompositions":238},{"hero":"siam-retail","parcels":252,"structuralCompositions":151},{"hero":"iconsiam-river","parcels":81,"structuralCompositions":72}],"pedestrians":360,"tradeSignEntries":66,"sharedResourcesReleasedExactlyOnce":true}
+PASS bundled Thai/Chinese/Latin glyph coverage for all 36 trade signs
+PASS pedestrian spatial index matches full collision scans
+PASS fresh scene construction after resource disposal

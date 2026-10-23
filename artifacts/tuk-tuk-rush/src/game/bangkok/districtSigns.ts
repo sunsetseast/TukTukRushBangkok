@@ -36,6 +36,7 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
   const signs: DistrictSign[] = [];
   for (const p of designs) {
     const b = p.parcel;
+    if (b.chinatown?.role) continue;
     if (b.artRole || !["chinatown", "khaosan"].includes(p.region)) continue;
     if (b.chinatown && ["songwat", "talatnoi"].includes(b.chinatown.character))
       continue;

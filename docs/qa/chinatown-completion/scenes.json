@@ -1,0 +1,92 @@
+[
+  {
+    "id": "yaowarat-sunset",
+    "camera": [
+      -60,
+      3.4,
+      -182
+    ],
+    "look": [
+      -188,
+      5,
+      -222
+    ],
+    "night": false,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  },
+  {
+    "id": "yaowarat-night",
+    "camera": [
+      -60,
+      3.4,
+      -182
+    ],
+    "look": [
+      -188,
+      5,
+      -222
+    ],
+    "night": true,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  },
+  {
+    "id": "song-wat-river",
+    "camera": [
+      -690,
+      240,
+      470
+    ],
+    "look": [
+      -180,
+      0,
+      140
+    ],
+    "night": false,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  },
+  {
+    "id": "district-blocks",
+    "camera": [
+      -80,
+      430,
+      600
+    ],
+    "look": [
+      -80,
+      0,
+      -20
+    ],
+    "night": false,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  },
+  {
+    "id": "talat-noi",
+    "camera": [
+      -152,
+      3.4,
+      552
+    ],
+    "look": [
+      -88,
+      5,
+      432
+    ],
+    "night": false,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  },
+  {
+    "id": "ratchawong",
+    "camera": [
+      -324,
+      5,
+      -164
+    ],
+    "look": [
+      -276,
+      7,
+      -268
+    ],
+    "night": false,
+    "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
+  }
+]

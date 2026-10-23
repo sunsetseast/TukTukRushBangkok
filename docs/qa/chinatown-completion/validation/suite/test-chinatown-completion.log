@@ -1,0 +1,53 @@
+{
+  pass: true,
+  blocks: [
+    {
+      id: 'ctblock:1',
+      courts: 28,
+      rear: 28,
+      area: 106070.63215949998,
+      addedFootprint: 10896
+    },
+    {
+      id: 'ctblock:2',
+      courts: 49,
+      rear: 49,
+      area: 202591.5331365,
+      addedFootprint: 46578.16594721764
+    },
+    {
+      id: 'ctblock:3',
+      courts: 18,
+      rear: 18,
+      area: 52234.184541499984,
+      addedFootprint: 6168
+    },
+    {
+      id: 'ctblock:6',
+      courts: 3,
+      rear: 3,
+      area: 26184.6606765,
+      addedFootprint: 1432
+    },
+    {
+      id: 'ctblock:10',
+      courts: 10,
+      rear: 10,
+      area: 48218.90129050001,
+      addedFootprint: 4012
+    },
+    {
+      id: 'ctblock:25',
+      courts: 3,
+      rear: 3,
+      area: 21285.8041605,
+      addedFootprint: 1432
+    }
+  ],
+  rear: 111,
+  renderedPieces: 3472,
+  exteriorChanges: 0,
+  originalFrontagesPreserved: true,
+  fullContainment: true,
+  trafficFixture: { minSeparation: 5.9492307392746575, transitions: 5 }
+}

@@ -57,6 +57,62 @@ export function emitChinatownArchitecture(
       shape,
       siteId: b.environmentId,
     });
+  if (ct.role === "rear") {
+    // Back-of-house warehouses and workshop wings use the same physical body.
+    put(0, H / 2, 0, W, H, b.d, wall, "concrete");
+    put(0, H + 0.65, 0, W, 2.1, b.d, "#726754", "tile", "core", "gable");
+    put(0, 0.22, 0, W, 0.44, b.d, "#8d8e7c", "concrete");
+    const doors = W > 24 ? 2 : 1;
+    for (let i = 0; i < doors; i++) {
+      const u = ((i - (doors - 1) / 2) * W) / doors;
+      put(u, 2.7, F + 0.06, (W / doors) * 0.72, 5.2, 0.14, wood, "metal");
+      put(u, 5.45, F + 0.18, (W / doors) * 0.82, 0.3, 0.45, trim);
+      for (let j = 0; j < 5; j++)
+        put(
+          u,
+          1 + j * 0.85,
+          F + 0.15,
+          (W / doors) * 0.69,
+          0.08,
+          0.08,
+          "#879482",
+          "metal",
+          "near",
+        );
+      put(
+        u,
+        H - 1.8,
+        F + 0.1,
+        (W / doors) * 0.6,
+        1.1,
+        0.12,
+        "#52665e",
+        "metal",
+      );
+      put(u, H - 1.8, F + 0.2, 0.14, 1.1, 0.14, trim);
+      if (seed % 3 === 0)
+        put(
+          u,
+          H - 1.8,
+          F + 0.12,
+          (W / doors) * 0.55,
+          0.85,
+          0.06,
+          "#e3b679",
+          "metal",
+          "night",
+        );
+    }
+    for (const side of [-1, 1]) {
+      put(side * (W / 2 - 0.15), H / 2, F + 0.1, 0.32, H, 0.32, trim);
+      for (let v = -F + 4; v < F - 2; v += 7) {
+        put(side * (W / 2 + 0.04), H - 2, v, 0.12, 1.2, 3.2, wood, "wood");
+        put(side * (W / 2 + 0.13), H - 1.3, v, 0.28, 0.18, 3.5, trim);
+      }
+    }
+    put(0, 5.9, F + 0.22, W * 0.75, 0.15, 0.3, "#c5baa1", "metal");
+    return true;
+  }
   put(0, (H + 4.6) / 2, 0, W, H - 4.6, b.d, wall, "concrete");
   put(0, 2.3, -b.d / 2 + 0.4, W, 4.6, 0.8, wall, "concrete");
   for (const side of [-1, 1])
@@ -130,6 +186,89 @@ export function emitChinatownArchitecture(
     put(0, 1, F + 0.28, W - 1, 0.18, 0.2, trim);
     if (yao || seed % 3 === 1)
       put(0, 3.8, F + 0.3, W - 1, 0.15, 0.13, "#e5b970", "metal", "night");
+  }
+  // Trade determines a visible business composition, including the depth of
+  // the threshold. These modules remain on their owning plot/sidewalk setback.
+  const trade = p.bays[0]!.trade,
+    variant = seed % 4;
+  if (
+    !gold &&
+    (trade === "noodle" || trade === "food" || (yao && variant === 1))
+  ) {
+    put(-W * 0.2, 1.15, F - 1.2, W * 0.48, 1.6, 1.5, "#b6b5a1", "metal");
+    put(-W * 0.2, 2.1, F - 1.2, W * 0.48, 0.16, 1.7, "#e0d4b5", "metal");
+    for (const u of [-W * 0.32, -W * 0.06]) {
+      put(
+        u,
+        2.35,
+        F - 1.2,
+        0.65,
+        0.5,
+        0.65,
+        "#8d9e92",
+        "metal",
+        "near",
+        "cylinder",
+      );
+      put(u, 1.1, F - 2.8, 0.8, 1, 0.8, "#b26345", "wood", "near");
+    }
+    put(
+      0,
+      3.55,
+      F + 0.75,
+      W - 0.8,
+      0.25,
+      2,
+      "#a85b43",
+      "plaster",
+      "core",
+      "canopy",
+    );
+  } else if (song && (trade === "coffee" || variant === 2)) {
+    put(-W * 0.28, 1.8, F - 0.2, W * 0.3, 3.5, 0.16, "#2f5049", "metal");
+    put(W * 0.18, 1.3, F - 1, W * 0.42, 1.2, 1.6, "#a77b50", "wood");
+    put(W * 0.2, 2.2, F - 1, 1.15, 0.9, 0.8, "#9cafa0", "metal", "near");
+    put(
+      0,
+      3.5,
+      F + 0.65,
+      W - 0.5,
+      0.3,
+      1.8,
+      "#647969",
+      "plaster",
+      "core",
+      "canopy",
+    );
+  } else if (talat && trade === "workshop") {
+    put(W * 0.2, 0.75, F - 0.65, W * 0.4, 1.3, 1.1, "#677468", "metal");
+    for (const u of [-W * 0.3, -W * 0.1]) {
+      put(
+        u,
+        0.6,
+        F - 0.4,
+        0.95,
+        1.1,
+        0.95,
+        "#3d4944",
+        "metal",
+        "near",
+        "cylinder",
+      );
+      put(
+        u,
+        1.25,
+        F - 0.4,
+        0.7,
+        0.3,
+        0.7,
+        "#889789",
+        "metal",
+        "near",
+        "cylinder",
+      );
+    }
+    put(0, 3.4, F - 0.1, W * 0.65, 0.15, 0.2, "#b9ab89", "wood");
   }
   // Deep merchant lintel and securely mounted horizontal sign cabinet.
   if (
@@ -216,7 +355,8 @@ export function emitChinatownArchitecture(
             "wood",
             "near",
           );
-      } else if ((seed + j + floor) % 4 === 0)
+      }
+      if ((seed + j + floor) % (yao ? 3 : 5) === 0)
         put(
           u,
           y,
@@ -237,8 +377,8 @@ export function emitChinatownArchitecture(
     }
     // Corner returns are authored elevations too. The old frontage-only mass
     // left blank walls directly in the driver's view at diagonal intersections.
-    if (p.bays[0]!.corner)
-      for (const side of [-1, 1])
+    if (ct.exposedSides?.length)
+      for (const side of ct.exposedSides)
         for (const v of [-b.d * 0.26, b.d * 0.08, b.d * 0.34]) {
           put(side * (W / 2 + 0.04), y, v, 0.12, 1.9, 2.7, wood, "wood");
           put(side * (W / 2 + 0.16), y + 1.05, v, 0.3, 0.18, 3.05, trim);
@@ -250,9 +390,38 @@ export function emitChinatownArchitecture(
         put(u, y - 1, -F - 0.18, W * 0.34, 0.16, 0.38, trim);
       }
   }
-  if (p.bays[0]!.corner)
-    for (const side of [-1, 1])
-      put(side * (W / 2 + 0.04), 2.1, F - 4, 0.12, 3.6, 3.2, wood, "wood");
+  for (const side of ct.exposedSides ?? []) {
+    // Wrapped entrance/shutter, continuous cornice, rain pipe and restrained
+    // masonry repair make exposed corners read as complete buildings.
+    put(side * (W / 2 + 0.05), 2.05, F - 3, 0.12, 3.8, 3.4, wood, "wood");
+    put(side * (W / 2 + 0.18), 4.2, F - 3, 0.38, 0.28, 4, trim);
+    put(side * (W / 2 + 0.08), 4.7, 0, 0.25, 0.35, b.d, trim);
+    put(side * (W / 2 + 0.08), H - 0.4, 0, 0.25, 0.65, b.d, trim);
+    put(
+      side * (W / 2 + 0.16),
+      H / 2,
+      -F + 0.7,
+      0.18,
+      H,
+      0.18,
+      "#677c70",
+      "metal",
+      "near",
+    );
+    if (song || talat)
+      for (let j = 0; j < 3; j++)
+        put(
+          side * (W / 2 + 0.02),
+          0.8 + j * 0.5,
+          -F + 3 + j,
+          0.04,
+          0.35,
+          2.4,
+          "#ac987d",
+          "brick",
+          "near",
+        );
+  }
   // Deliberate weathering, planted doorways and roof utilities stay in the plot.
   if (talat || song)
     for (let i = 0; i < 3; i++)

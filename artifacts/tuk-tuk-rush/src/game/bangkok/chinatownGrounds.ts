@@ -5,6 +5,7 @@ import { pavingMaterial } from "./streetSurfaces";
 import type { District, Obstacle } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import {
+  planChinatownBlocks,
   pedestrianPassages,
   clearsPedestrianPassages,
 } from "./chinatownBlocks";
@@ -60,6 +61,131 @@ export function emitChinatownGroundDetails(
   d: District,
   emit: (o: ArtPiece) => void,
 ) {
+  for (const block of planChinatownBlocks(d))
+    for (const yard of block.courts) {
+      const b = yard.body,
+        c = Math.cos(b.yaw ?? 0),
+        s = Math.sin(b.yaw ?? 0);
+      const put = (
+        u: number,
+        y: number,
+        v: number,
+        w: number,
+        h: number,
+        depth: number,
+        color: string,
+        surface: ArtPiece["surface"] = "concrete",
+        shape: ArtPiece["shape"] = "box",
+        layer: ArtPiece["layer"] = "core",
+      ) =>
+        emit({
+          x: b.x + c * u + s * v,
+          z: b.z - s * u + c * v,
+          y,
+          w,
+          h,
+          d: depth,
+          yaw: b.yaw ?? 0,
+          color,
+          surface,
+          shape,
+          layer,
+          siteId: yard.id,
+        });
+      put(0, 0.015, 0, b.w, 0.08, b.d, b.color);
+      put(
+        0,
+        0.065,
+        -b.d / 2 + 0.2,
+        b.w - 0.8,
+        0.05,
+        0.25,
+        "#69776d",
+        "metal",
+        "box",
+        "near",
+      );
+      put(0, 0.075, 1.8, 3.8, 0.05, 2.1, "#a49a81", "concrete", "box", "near");
+      for (const f of yard.fixtures)
+        emit({
+          x: f.x,
+          z: f.z,
+          y: f.height / 2,
+          w: f.w,
+          h: f.height,
+          d: f.d,
+          yaw: f.yaw ?? 0,
+          color: f.color,
+          surface: yard.use === "workshop-court" ? "metal" : "plaster",
+          layer: "core",
+          siteId: f.environmentId,
+        });
+      // Crates, potted frangipani/understory and work equipment sit against the
+      // court edge, keeping its central circulation visibly open.
+      if (yard.use === "workshop-court") {
+        put(
+          -b.w / 2 + 1.5,
+          1.7,
+          -1.4,
+          1.1,
+          0.65,
+          1.1,
+          "#97a294",
+          "metal",
+          "cylinder",
+          "near",
+        );
+        put(
+          b.w / 2 - 1.5,
+          1.6,
+          -1.4,
+          0.8,
+          0.8,
+          0.8,
+          "#4d6354",
+          "metal",
+          "orb",
+          "near",
+        );
+      } else {
+        put(
+          -b.w / 2 + 1.3,
+          0.45,
+          2,
+          1.4,
+          0.9,
+          1.4,
+          "#ad8255",
+          "wood",
+          "box",
+          "near",
+        );
+        put(
+          b.w / 2 - 1.3,
+          0.5,
+          2,
+          1,
+          1,
+          1,
+          "#9b7457",
+          "plaster",
+          "cylinder",
+          "near",
+        );
+        put(
+          b.w / 2 - 1.3,
+          1.55,
+          2,
+          1.8,
+          1.9,
+          1.8,
+          "#68866a",
+          "plaster",
+          "orb",
+          "near",
+        );
+      }
+    }
   for (const p of pedestrianPassages())
     emit({
       x: (p.a.x + p.b.x) / 2,

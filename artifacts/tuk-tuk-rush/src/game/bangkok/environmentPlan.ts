@@ -290,6 +290,25 @@ export function planEnvironment(d: District) {
         region,
         seed,
       );
+      if (r.corridor === "yaowarat" && len > 28) {
+        const t2 = len * 0.82;
+        add(
+          (["wok", "dessert", "noodle", "fruit"] as SiteKind[])[seed % 4]!,
+          {
+            x:
+              a.x +
+              Math.sin(yaw) * t2 +
+              Math.cos(yaw) * (r.width / 2 + 4.8) * side,
+            z:
+              a.z +
+              Math.cos(yaw) * t2 -
+              Math.sin(yaw) * (r.width / 2 + 4.8) * side,
+          },
+          yaw + (side > 0 ? Math.PI / 2 : -Math.PI / 2),
+          region,
+          seed + 31,
+        );
+      }
     }
     if (!r.oneWay && (degrees.get(r.a) ?? 0) >= 3 && seed % 3 === 0) {
       const t = r.width / 2 + 8,

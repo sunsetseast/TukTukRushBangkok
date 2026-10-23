@@ -55,7 +55,9 @@
     "test:chinatown": "node --import tsx scripts/check-chinatown.ts",
     "test:chinatown-drives": "node --import tsx scripts/check-chinatown-drives.ts && CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
     "test:chinatown-traffic": "CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts",
-    "art:chinatown-blocks": "node --import tsx scripts/generate-chinatown-blocks.ts"
+    "art:chinatown-blocks": "node --import tsx scripts/generate-chinatown-blocks.ts",
+    "test:chinatown-completion": "node --import tsx scripts/check-chinatown-completion.ts",
+    "test:chinatown-legal-traffic": "node scripts/check-chinatown-legal-traffic.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

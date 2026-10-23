@@ -10,7 +10,13 @@ Object.assign(globalThis, {
 const { GameEngine } = await import("../src/game/engine");
 const { routeFromPoint } = await import("../src/game/bangkok/world");
 let contacts: VehicleContact[] = [];
-const e = new GameEngine({ seed: 26, observeContact: (c) => contacts.push(c) }),
+const e = new GameEngine({
+    seed: 26,
+    trafficSeed: process.env.CHINATOWN_TRAFFIC_SEED
+      ? Number(process.env.CHINATOWN_TRAFFIC_SEED)
+      : undefined,
+    observeContact: (c) => contacts.push(c),
+  }),
   d = e.model.district,
   nodes = new Map(d.nodes.map((n) => [n.id, n]));
 const stops = new Map<string, RoadNode>();
@@ -57,7 +63,8 @@ const pairs = [
 ];
 const results: any[] = [],
   traffic = process.env.CHINATOWN_TRAFFIC === "1",
-  lanes = process.env.CHINATOWN_LANES === "1";
+  legal = process.env.CHINATOWN_LEGAL === "1",
+  lanes = process.env.CHINATOWN_LANES === "1" || legal;
 for (const [from, to] of pairs.filter(
   (p) =>
     !process.env.CHINATOWN_ROUTE || p.join(">") === process.env.CHINATOWN_ROUTE,
@@ -77,6 +84,25 @@ for (const [from, to] of pairs.filter(
       ),
       "Every planned edge obeys its real one-way rule",
     );
+  const signalPlan = full.slice(0, -1).map((a, i) => {
+    const b = full[i + 1]!,
+      r = d.roads.find(
+        (r) =>
+          (r.a === a.id && r.b === b.id) ||
+          (!r.oneWay && r.b === a.id && r.a === b.id),
+      )!,
+      incident = d.roads.filter(
+        (r) => !r.noTraffic && (r.a === b.id || r.b === b.id),
+      );
+    return {
+      signal:
+        !r.noTraffic &&
+        !r.roundabout &&
+        incident.length >= 3 &&
+        !incident.some((r) => r.roundabout),
+      horizontal: Math.abs(b.x - a.x) > Math.abs(b.z - a.z),
+    };
+  });
   let points = full;
   if (lanes)
     points = full.map((p, i) => {
@@ -108,6 +134,21 @@ for (const [from, to] of pairs.filter(
     speed: 0,
     collision: 0,
   });
+  if (legal && traffic) {
+    e["trafficSystem"].reset();
+    e.model.traffic = e["trafficSystem"].create(e.model.player);
+    assert.equal(
+      e.model.traffic.length,
+      38,
+      "Legal replay retains the full production traffic population",
+    );
+    assert(
+      e.model.traffic.every(
+        (car) => Math.hypot(car.x - start.x, car.z - start.z) > 8,
+      ),
+      "Initial traffic uses production spawn clearance at the selected stop",
+    );
+  }
   e.model.mission = {
     pickup: start,
     destination: end,
@@ -123,7 +164,9 @@ for (const [from, to] of pairs.filter(
   let index = 0,
     metres = 0,
     frames = 0,
-    indicatorFrames = 0;
+    indicatorFrames = 0,
+    encounterCount = 0;
+  const lastTrafficContact = new Map<number, number>();
   const physical = {
       static: 0,
       prop: 0,
@@ -151,10 +194,49 @@ for (const [from, to] of pairs.filter(
       last = index === path.length - 1,
       stop = last && distance < 7.3,
       speed = last && distance < 20 ? 4 : Math.abs(error) > 0.35 ? 5 : 10;
+    // The historical matrix follows graph centres without yielding, so on a
+    // two-way street it can sideswipe a parked left-lane taxi. Keep that matrix
+    // unchanged; the legal replay uses left lanes and normal hazard braking.
+    const fx = Math.sin(p.heading),
+      fz = Math.cos(p.heading);
+    const signalRed =
+      legal &&
+      signalPlan[index]!.signal &&
+      e.intersectionHorizontalGreen !== signalPlan[index]!.horizontal;
+    const stopLight = signalRed && distance < 16 && distance > 7;
+    const hazard =
+      stopLight ||
+      (legal &&
+        e.model.traffic.some((car) => {
+          const dx = car.x - p.x,
+            dz = car.z - p.z,
+            ahead = dx * fx + dz * fz,
+            side = Math.abs(dx * fz - dz * fx);
+          if (
+            ahead > 0 &&
+            ahead < 6 + Math.max(0, p.speed) * 0.8 &&
+            side < 3.35
+          )
+            return true;
+          if (car.speed < 0.1 && side > 3.35) return false;
+          const vx = Math.sin(car.heading) * car.speed - fx * p.speed,
+            vz = Math.cos(car.heading) * car.speed - fz * p.speed,
+            vv = vx * vx + vz * vz;
+          const t =
+            vv > 0.1
+              ? Math.max(0, Math.min(1.3, -(dx * vx + dz * vz) / vv))
+              : 0;
+          return (
+            ahead > 1 &&
+            Math.hypot(dx, dz) < 20 &&
+            dx * vx + dz * vz < 0 &&
+            Math.hypot(dx + vx * t, dz + vz * t) < 4.3
+          );
+        }));
     Object.assign(e.model.input, {
       steer: stop ? 0 : Math.max(-1, Math.min(1, -error * 2.3)),
-      gas: !stop && p.speed < speed,
-      brake: stop ? p.speed > 0.4 : p.speed > speed + 0.5,
+      gas: !hazard && !stop && p.speed < speed,
+      brake: stop || hazard ? p.speed > 0.4 : p.speed > speed + 0.5,
     });
     const x = p.x,
       z = p.z;
@@ -175,6 +257,11 @@ for (const [from, to] of pairs.filter(
                 ? "prop"
                 : "static";
       categories.add(kind);
+      if (kind === "traffic" && c.trafficId !== undefined) {
+        const last = lastTrafficContact.get(c.trafficId);
+        if (last === undefined || step - last > 60) encounterCount++;
+        lastTrafficContact.set(c.trafficId, step);
+      }
       if (events.length < 60)
         events.push({
           frame: step,
@@ -183,6 +270,11 @@ for (const [from, to] of pairs.filter(
           x: c.x,
           z: c.z,
           trafficId: c.trafficId,
+          player: { x: p.x, z: p.z, heading: p.heading, speed: p.speed },
+          npc:
+            c.trafficId === undefined
+              ? undefined
+              : { ...e.model.traffic.find((t) => t.id === c.trafficId) },
         });
     }
     categories.forEach((k) => physical[k]++);
@@ -191,10 +283,19 @@ for (const [from, to] of pairs.filter(
   const r = {
     id: from + ">" + to,
     complete: e.model.snapshot.deliveries === 1,
+    final: {
+      player: { ...e.model.player },
+      traffic: e.model.traffic.filter(
+        (c) => Math.hypot(c.x - e.model.player.x, c.z - e.model.player.z) < 30,
+      ),
+      index,
+      path: path.slice(Math.max(0, index - 1), index + 2),
+    },
     metres: Math.round(metres),
     frames,
     indicatorFrames,
     physical,
+    encounters: encounterCount,
     events,
     trace,
   };
@@ -206,6 +307,7 @@ const report = {
   pass: results.every(
     (r) =>
       r.complete &&
+      (!legal || r.physical.traffic === 0) &&
       r.physical.static +
         r.physical.prop +
         r.physical.bridge +
@@ -214,8 +316,14 @@ const report = {
         0,
   ),
   traffic,
+  trafficVehicles: traffic ? e.model.traffic.length : 0,
+  driverProtocol: legal
+    ? "left-lane/yield/two-phase-signals-v1"
+    : "historical graph guidance",
   lanes,
+  legal,
   seed: 26,
+  trafficSeed: Number(process.env.CHINATOWN_TRAFFIC_SEED ?? 982),
   noMidRouteTeleports: true,
   method:
     "Each independent journey begins at a real road stop; all travel, turns and arrivals use the unchanged production controller at 60Hz.",
@@ -223,7 +331,8 @@ const report = {
 };
 fs.writeFileSync(
   new URL(
-    `../../../docs/qa/chinatown-reconstruction/${lanes ? "left-lane" : traffic ? "traffic" : "static"}-routes.json`,
+    process.env.CHINATOWN_OUTPUT ??
+      `../../../docs/qa/chinatown-reconstruction/${lanes ? "left-lane" : traffic ? "traffic" : "static"}-routes.json`,
     import.meta.url,
   ),
   JSON.stringify(report, null, 2),

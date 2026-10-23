@@ -1,0 +1,825 @@
+{
+  "label": "after",
+  "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+  "checkoutCommit": "3cc88e126267f786cf15ded917491869ebfc7090",
+  "renderer": "138.0.7204.0 / SwiftShader",
+  "physicalSafari": false,
+  "errors": [],
+  "scenes": [
+    {
+      "id": "yaowarat-sunset",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -60,
+        3.4,
+        -182
+      ],
+      "look": [
+        -188,
+        5,
+        -222
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 14.799999999813735
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 483.70000000018626
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 556.7999999998137
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 576.2999999998137
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 523.2000000001863
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 1034.5
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 508.49999999999994
+        },
+        {
+          "calls": 520,
+          "triangles": 710756,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 574.1000000005588
+        }
+      ]
+    },
+    {
+      "id": "yaowarat-night",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -60,
+        3.4,
+        -182
+      ],
+      "look": [
+        -188,
+        5,
+        -222
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 850.2000000001863
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 37
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 847
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 1009.5000000000001
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 811.7000000001863
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 832.3999999994412
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 106.1000000005588
+        },
+        {
+          "calls": 519,
+          "triangles": 710724,
+          "geometries": 710,
+          "textures": 15,
+          "frameMs": 127.59999999962749
+        }
+      ]
+    },
+    {
+      "id": "song-wat-river",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -690,
+        240,
+        470
+      ],
+      "look": [
+        -180,
+        0,
+        140
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 890.2000000001863
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 17.90000000037253
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 855.5999999996275
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 29.5
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 698.1000000005588
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 20.699999999254942
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 792.8000000007451
+        },
+        {
+          "calls": 373,
+          "triangles": 392606,
+          "geometries": 929,
+          "textures": 15,
+          "frameMs": 909
+        }
+      ]
+    },
+    {
+      "id": "district-blocks",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -80,
+        430,
+        600
+      ],
+      "look": [
+        -80,
+        0,
+        -20
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 165
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 269.20000000018626
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 387.5
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 378.69999999925494
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 21.40000000037253
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 271
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 314.09999999962747
+        },
+        {
+          "calls": 437,
+          "triangles": 565610,
+          "geometries": 1127,
+          "textures": 15,
+          "frameMs": 35.60000000055879
+        }
+      ]
+    },
+    {
+      "id": "talat-noi",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -152,
+        3.4,
+        552
+      ],
+      "look": [
+        -88,
+        5,
+        432
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 455.20000000018626
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 19.09999999962747
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 71.40000000037253
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 561.5999999996275
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 705
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 338.90000000037253
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 26.199999999254942
+        },
+        {
+          "calls": 482,
+          "triangles": 632122,
+          "geometries": 1191,
+          "textures": 16,
+          "frameMs": 530
+        }
+      ]
+    },
+    {
+      "id": "ratchawong",
+      "runtimeSourceSha256": "7779644a8d6d671c0d28761135a06e657ef6788fa337e65f637f33edc8000f06",
+      "camera": [
+        -324,
+        5,
+        -164
+      ],
+      "look": [
+        -276,
+        7,
+        -268
+      ],
+      "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion",
+      "quality": "medium",
+      "viewport": [
+        844,
+        390
+      ],
+      "samples": [
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 704.5999999996275
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 31.600000000558794
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 603
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 685.7999999998137
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 338.5
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 258.5
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 679.2999999998137
+        },
+        {
+          "calls": 450,
+          "triangles": 594022,
+          "geometries": 1293,
+          "textures": 16,
+          "frameMs": 23.700000000186265
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "width": 375,
+      "height": 812,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 32.5,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 315,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 277,
+            "y": 710,
+            "w": 82,
+            "h": 90
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 365.40625,
+            "w": 135,
+            "h": 446.59375
+          }
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": false,
+          "box": {
+            "x": 20.5,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": false,
+          "box": {
+            "x": 370,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "control-steer",
+          "visible": false,
+          "box": null
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 195,
+            "h": 42.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 462,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 784,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 746,
+            "y": 288,
+            "w": 82,
+            "h": 90
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 175.5,
+            "w": 303.828125,
+            "h": 214.5
+          }
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 150,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 680,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 1220,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 120,
+            "h": 130
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 1164,
+            "y": 678,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 360,
+            "w": 460.796875,
+            "h": 440
+          }
+        }
+      ]
+    }
+  ],
+  "resets": [
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 16.199999999254942
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 1339
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 451,
+        "triangles": 537231,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 2102.7999999998137
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 1769.7000000001863
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 23.09999999962747
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 451,
+        "triangles": 537231,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 1254.9000000003725
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 32.59999999962747
+      },
+      "glError": 0,
+      "override": false
+    },
+    {
+      "stats": {
+        "calls": 448,
+        "triangles": 536815,
+        "geometries": 1439,
+        "textures": 18,
+        "frameMs": 44.40000000037253
+      },
+      "glError": 0,
+      "override": false
+    }
+  ],
+  "resetsRuntimeSourceSha256": "a67fec5f57e2e69c50738e438015c3e54895bba61b2179d1917e7a04b3257c4c"
+}

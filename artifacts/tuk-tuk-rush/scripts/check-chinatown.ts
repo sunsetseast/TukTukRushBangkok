@@ -75,7 +75,7 @@ for (const p of parcels) {
     z: p.z + Math.cos(p.yaw ?? 0) * (p.d / 2 + 6.8),
   };
   assert(
-    d.roads.some(
+    p.chinatown?.role === "rear" || d.roads.some(
       (r) =>
         r.corridor === p.chinatown!.corridor &&
         distanceToSegment(front, nodes.get(r.a)!, nodes.get(r.b)!).distance <

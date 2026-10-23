@@ -5,6 +5,7 @@ import { emitChinatownArchitecture } from "../src/game/bangkok/chinatownArchitec
  * displaced-row facade is no longer the rendered Chinatown benchmark. */
 export const chinatownBenchmark = (p: ParcelDesign) =>
   p.parcel.chinatown?.character === "yaowarat" &&
+  !p.parcel.chinatown.role &&
   p.parcel.chinatown.identity !== "scala-yaowarat";
 export function emitChinatownBenchmark(
   p: ParcelDesign,
