@@ -1,3 +1,4 @@
+import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import { stableHash } from "./stableHash";
 export { stableHash } from "./stableHash";
 import { inSiamSquare } from "./urbanBlocks";
@@ -456,15 +457,41 @@ export function designBuildings(d: District): ParcelDesign[] {
           height: b.height,
           floors: Math.max(2, Math.floor(b.height / 3.5)),
           trade:
-            b.chinatown.identity?.includes("heng") ||
+            CHINATOWN_COMPOSITIONS[b.environmentId ?? ""]?.trade ??
+            (b.chinatown.identity?.includes("heng") ||
             b.chinatown.identity?.includes("kang")
               ? "gold"
               : b.chinatown.character === "songwat"
                 ? (["gallery", "coffee", "workshop"][a.seed % 3] as Trade)
                 : b.chinatown.character === "talatnoi"
                   ? (["workshop", "residence", "coffee"][a.seed % 3] as Trade)
-                  : a.trade,
-          cabinet: !b.chinatown.role && b.chinatown.character === "yaowarat",
+                  : b.chinatown.character === "yaowarat"
+                    ? ([
+                        "food",
+                        "gold",
+                        "noodle",
+                        "tea",
+                        "medicine",
+                        "food",
+                        "gold",
+                        "clothes",
+                        "coffee",
+                      ][a.seed % 9] as Trade)
+                    : b.chinatown.character === "commercial"
+                      ? ([
+                          "clothes",
+                          "retail",
+                          "medicine",
+                          "food",
+                          "noodle",
+                          "retail",
+                          "tea",
+                          "clothes",
+                          "closed",
+                          "gold",
+                        ][a.seed % 10] as Trade)
+                      : a.trade),
+          cabinet: false, // The curated district cabinets own Chinatown sign geometry.
           occupied: true,
         },
       ];

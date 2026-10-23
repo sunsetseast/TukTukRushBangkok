@@ -2,7 +2,11 @@ import { regionAt } from "./world";
 import { environmentPeople, placementIndex } from "./environmentPlan";
 import type { District, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
-import { designBuildings, type ParcelDesign } from "./buildingGrammar";
+import {
+  designBuildings,
+  stableHash,
+  type ParcelDesign,
+} from "./buildingGrammar";
 import { distanceToSegment, obstacleDistance } from "../world";
 import type { StreetPerson } from "../streetLife";
 
@@ -133,15 +137,23 @@ export function bangkokPeople(
       p.bays.every((a) => !a.occupied)
     )
       continue;
-    const quota = ["chinatown", "khaosan"].includes(p.region)
-      ? 96
-      : p.region === "talatnoi"
-        ? 64
-        : 48;
+    const activityRegion = p.parcel.chinatown?.character ?? p.region;
+    const quota = ["yaowarat", "commercial", "songwat", "talatnoi"].includes(
+      activityRegion,
+    )
+      ? activityRegion === "yaowarat"
+        ? 100
+        : 52
+      : ["chinatown", "khaosan"].includes(p.region)
+        ? 96
+        : p.region === "talatnoi"
+          ? 64
+          : 48;
     if (
       people.filter(
         (person) =>
-          (person as StreetPerson & { region?: string }).region === p.region,
+          (person as StreetPerson & { activityRegion?: string })
+            .activityRegion === activityRegion,
       ).length >= quota
     )
       continue;
@@ -160,8 +172,7 @@ export function bangkokPeople(
         end = { x: start.x + c * 1.7, z: start.z - s * 1.7 };
       if (!clear(start) || !clear(end)) continue;
       const seed = people.length,
-        role: StreetPerson["role"] =
-          seed % 5 === 0 ? "vendor" : seed % 3 === 0 ? "customer" : "walker";
+        role: StreetPerson["role"] = seed % 3 === 0 ? "customer" : "walker";
       people.push(
         Object.assign(
           {
@@ -173,17 +184,28 @@ export function bangkokPeople(
             height: 0.95 + (seed % 5) * 0.025,
             role,
           },
-          { region: p.region },
+          { region: p.region, activityRegion },
         ),
       );
     }
   }
   const groups = new Map<string, StreetPerson[]>();
   for (const p of [...environmentPeople(d), ...people]) {
-    const id = regionAt(d, p.start)?.id ?? "connector";
+    const id =
+      (p as StreetPerson & { activityRegion?: string }).activityRegion ??
+      regionAt(d, p.start)?.id ??
+      "connector";
     if (!groups.has(id)) groups.set(id, []);
     groups.get(id)!.push(p);
   }
+  // Disperse the bounded citywide candidate set across whole corridors; the
+  // old prefix selection starved later blocks of every visible pedestrian.
+  for (const group of groups.values())
+    group.sort(
+      (a, b) =>
+        stableHash(`${a.start.x}:${a.start.z}`) -
+        stableHash(`${b.start.x}:${b.start.z}`),
+    );
   const balanced: StreetPerson[] = [];
   for (let i = 0; balanced.length < 360; i++) {
     let found = false;
