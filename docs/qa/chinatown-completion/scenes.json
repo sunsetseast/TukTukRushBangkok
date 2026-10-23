@@ -2,14 +2,14 @@
   {
     "id": "yaowarat-sunset",
     "camera": [
-      36,
+      -60,
       3.4,
-      -144
+      -182
     ],
     "look": [
-      -92,
+      -188,
       5,
-      -200
+      -222
     ],
     "night": false,
     "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"
@@ -17,14 +17,14 @@
   {
     "id": "yaowarat-night",
     "camera": [
-      36,
+      -60,
       3.4,
-      -144
+      -182
     ],
     "look": [
-      -92,
+      -188,
       5,
-      -200
+      -222
     ],
     "night": true,
     "matchMethod": "identical world camera, lighting, quality and viewport on PR38 and completion"

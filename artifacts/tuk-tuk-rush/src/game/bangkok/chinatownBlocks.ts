@@ -411,12 +411,33 @@ function planRearProperties(
         d.obstacles.push(o);
         index.insert(o);
         block.parcels.push(o);
+        const fixtures: Obstacle[] = [];
+        // Broken boundary walls frame individual working properties. A wide
+        // central opening and the protected pier holes retain bank access.
+        for (const side of [-1, 1]) {
+          const u = t + (side * (step + 8)) / 4;
+          const wall: Obstacle = {
+            x: a.x + ux * u - uz * 18,
+            z: a.z + uz * u + ux * 18,
+            w: (step - 8) / 2,
+            d: 0.5,
+            yaw: Math.atan2(-uz, ux),
+            height: 1.7,
+            color: "#b4aa90",
+            artRole: "furniture",
+            environmentId: o.environmentId + ":bank-wall:" + side,
+          };
+          if (!clear(wall)) continue;
+          fixtures.push(wall);
+          d.obstacles.push(wall);
+          index.insert(wall);
+        }
         block.courts.push({
           id: o.environmentId + ":court",
           body: court,
           owner: owner.environmentId!,
           use: "merchant-yard",
-          fixtures: [],
+          fixtures,
         });
       }
     }

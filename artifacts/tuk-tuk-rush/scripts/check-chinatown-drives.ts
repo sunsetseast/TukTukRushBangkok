@@ -140,7 +140,9 @@ for (const [from, to] of pairs.filter(
   let index = 0,
     metres = 0,
     frames = 0,
-    indicatorFrames = 0;
+    indicatorFrames = 0,
+    encounterCount = 0;
+  const lastTrafficContact = new Map<number, number>();
   const physical = {
       static: 0,
       prop: 0,
@@ -219,6 +221,11 @@ for (const [from, to] of pairs.filter(
                 ? "prop"
                 : "static";
       categories.add(kind);
+      if (kind === "traffic" && c.trafficId !== undefined) {
+        const last = lastTrafficContact.get(c.trafficId);
+        if (last === undefined || step - last > 60) encounterCount++;
+        lastTrafficContact.set(c.trafficId, step);
+      }
       if (events.length < 60)
         events.push({
           frame: step,
@@ -252,16 +259,7 @@ for (const [from, to] of pairs.filter(
     frames,
     indicatorFrames,
     physical,
-    encounters: events.filter(
-      (ev, i) =>
-        ev.kind === "traffic" &&
-        !events
-          .slice(0, i)
-          .some(
-            (prev) =>
-              prev.trafficId === ev.trafficId && ev.frame - prev.frame < 60,
-          ),
-    ).length,
+    encounters: encounterCount,
     events,
     trace,
   };
