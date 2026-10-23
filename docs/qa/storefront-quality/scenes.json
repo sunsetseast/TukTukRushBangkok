@@ -1,0 +1,202 @@
+[
+  {
+    "id": "yaowarat-sunset",
+    "mode": "drive",
+    "road": "yaowarat",
+    "near": [
+      -80,
+      -188
+    ],
+    "elapsed": 40
+  },
+  {
+    "id": "yaowarat-dusk",
+    "mode": "drive",
+    "road": "yaowarat",
+    "near": [
+      -80,
+      -188
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "yaowarat-night",
+    "mode": "drive",
+    "road": "yaowarat",
+    "near": [
+      -80,
+      -188
+    ],
+    "elapsed": 650
+  },
+  {
+    "id": "storefront-detail",
+    "mode": "inspect",
+    "camera": [
+      -95,
+      3.2,
+      -199
+    ],
+    "look": [
+      -112,
+      3.8,
+      -181
+    ],
+    "elapsed": 650
+  },
+  {
+    "id": "ratchawong",
+    "mode": "inspect",
+    "camera": [
+      -324,
+      4,
+      -164
+    ],
+    "look": [
+      -276,
+      5,
+      -268
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "song-wat-street",
+    "mode": "drive",
+    "road": "songwat",
+    "near": [
+      -245,
+      144
+    ],
+    "elapsed": 55
+  },
+  {
+    "id": "song-wat-waterfront",
+    "mode": "inspect",
+    "camera": [
+      -558,
+      7,
+      350
+    ],
+    "look": [
+      -475,
+      5,
+      365
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "talat-noi",
+    "mode": "drive",
+    "road": "wanit-2-south",
+    "near": [
+      -142,
+      530
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "yaowarat-fascia",
+    "mode": "inspect",
+    "camera": [
+      -103,
+      3.2,
+      -192
+    ],
+    "look": [
+      -112,
+      4.32,
+      -181
+    ],
+    "elapsed": 650
+  },
+  {
+    "id": "yaowarat-vertical",
+    "mode": "inspect",
+    "camera": [
+      -103,
+      4.2,
+      -198
+    ],
+    "look": [
+      -112,
+      8,
+      -181
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "ratchawong-sign",
+    "mode": "inspect",
+    "camera": [
+      -321,
+      3.2,
+      -171
+    ],
+    "look": [
+      -305,
+      4.32,
+      -192
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "song-wat-merchant",
+    "mode": "inspect",
+    "camera": [
+      -220.74262374503834,
+      3.2,
+      144.66197242107648
+    ],
+    "look": [
+      -218.39554460111094,
+      4.32,
+      157.79556368516495
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "khaosan-sign",
+    "mode": "inspect",
+    "camera": [
+      -750.6963120548317,
+      3.2,
+      -1472.8977897370655
+    ],
+    "look": [
+      -751.7151154789565,
+      4.32,
+      -1459.5950817577484
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "siam-sign",
+    "mode": "inspect",
+    "camera": [
+      753.0,
+      3.2,
+      -576.0
+    ],
+    "look": [
+      756.0,
+      4.32,
+      -563.0
+    ],
+    "elapsed": 145
+  },
+  {
+    "id": "talat-noi-sign",
+    "mode": "inspect",
+    "camera": [
+      -148,
+      3.2,
+      531
+    ],
+    "look": [
+      -131,
+      4.32,
+      545
+    ],
+    "elapsed": 145
+  }
+]

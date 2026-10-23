@@ -1,3 +1,4 @@
+import { mountIdentitySigns } from "./identitySignMounts";
 import { chinatownLightField } from "./chinatownLightField";
 import {
   buildChinatownGround,
@@ -350,7 +351,7 @@ export function buildBangkokGraybox(
   for (const child of [...publicSigns.children]) group.add(child);
   const storeSigns = buildConvenienceStoreSigns(d);
   for (const child of [...storeSigns.children]) group.add(child);
-  const realSigns = buildRealPlaceSigns(d);
+  const realSigns = mountIdentitySigns(buildRealPlaceSigns(d), d);
   group.add(realSigns);
   const scalaSigns = buildScalaSigns(scala);
   group.add(scalaSigns);

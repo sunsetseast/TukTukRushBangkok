@@ -1,0 +1,74 @@
+diff --git a/artifacts/tuk-tuk-rush/src/game/bangkok/convenienceStores.ts b/artifacts/tuk-tuk-rush/src/game/bangkok/convenienceStores.ts
+index 54d32ab..92c97e0 100644
+--- a/artifacts/tuk-tuk-rush/src/game/bangkok/convenienceStores.ts
++++ b/artifacts/tuk-tuk-rush/src/game/bangkok/convenienceStores.ts
+@@ -371,6 +371,7 @@ export function buildConvenienceStoreSigns(d: District) {
+   const root = new T.Group();
+   root.name = "7-ElevenStoreSigns";
+   if (typeof document === "undefined") return root;
++  const auditFaces:object[]=[];
+   const stores = planConvenienceStores(d);
+   if (!stores.length) return root;
+   const tex = createStoreBrandAtlas(),
+@@ -404,6 +405,7 @@ export function buildConvenienceStoreSigns(d: District) {
+       temp.rotation.set(0, s.yaw + rotation, 0);
+       temp.scale.set(w, h, 1);
+       temp.updateMatrix();
++      if(new URLSearchParams(window.location.search).has("qa"))auditFaces.push({owner:s.id,region:"convenience",key:"7-Eleven",position:temp.position.toArray(),yaw:s.yaw+rotation,width:w,height:h});
+       batch.add(tiles[tile]!, material, [temp.matrix.clone()]);
+     };
+     sign(0, 3.58, 0.775, 1.57, 1.57, 0);
+@@ -424,5 +426,6 @@ export function buildConvenienceStoreSigns(d: District) {
+     chunk.name = "BangkokSign";
+     root.add(chunk);
+   }
++  if(root.children[0])root.children[0].userData.signFaces=auditFaces;
+   return root;
+ }
+diff --git a/artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts b/artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts
+index 116da11..f5ff7c9 100644
+--- a/artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts
++++ b/artifacts/tuk-tuk-rush/src/game/bangkok/realArchitecture.ts
+@@ -136,6 +136,6 @@ export function buildRealPlaceSigns(d:District){
+  for(const[i,e]of labels.entries()){const x=i%cols*cw,y=Math.floor(i/cols)*rh;if(e.plain){ctx.fillStyle='#214a55';ctx.fillRect(x,y,cw,rh);}ctx.font=`600 ${Math.floor(rh*.55)}px "Rush Thai",sans-serif`;ctx.fillStyle=e.id==='terminal'?'#36515c':e.id==='icon'&&e.y<10?'#454c42':'#e7dbc1';const tw=Math.min(cw-24,ctx.measureText(e.text).width);ctx.fillText(e.text,x+cw/2,y+rh/2,cw-24);tiles.push({left:x+cw/2-tw/2-3,top:y+rh*.12,width:tw+6,height:rh*.76});}
+  const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.minFilter=T.LinearFilter;tex.generateMipmaps=false;
+  const mat=new T.MeshStandardMaterial({map:tex,alphaTest:.25,roughness:.75,emissive:'#ffffff',emissiveMap:tex,emissiveIntensity:.1}),root=new T.Group();
+- for(const[i,e]of labels.entries()){const l=d.landmarks.find(l=>l.id===e.id);if(!l?.plot)continue;const t=tiles[i]!,geo=new T.PlaneGeometry(e.w,e.plain?1.8:e.w*t.height/t.width),uv=geo.getAttribute('uv');for(let j=0;j<uv.count;j++)uv.setXY(j,(t.left+uv.getX(j)*t.width)/2048,1-(t.top+(1-uv.getY(j))*t.height)/1024);const yaw=(l.yaw??0)+(e.modelYaw??0),c=Math.cos(yaw),s=Math.sin(yaw),m=new T.Mesh(geo,mat);m.position.set(l.plot.x+c*e.x+s*e.z,e.y,l.plot.z-s*e.x+c*e.z);m.rotation.y=yaw+e.yaw;m.name='ArchitecturalIdentity:'+e.id;root.add(m);}
++ for(const[i,e]of labels.entries()){const l=d.landmarks.find(l=>l.id===e.id);if(!l?.plot)continue;const t=tiles[i]!,geo=new T.PlaneGeometry(e.w,e.plain?1.8:e.w*t.height/t.width),uv=geo.getAttribute('uv');for(let j=0;j<uv.count;j++)uv.setXY(j,(t.left+uv.getX(j)*t.width)/2048,1-(t.top+(1-uv.getY(j))*t.height)/1024);const yaw=(l.yaw??0)+(e.modelYaw??0),c=Math.cos(yaw),s=Math.sin(yaw),m=new T.Mesh(geo,mat);m.position.set(l.plot.x+c*e.x+s*e.z,e.y,l.plot.z-s*e.x+c*e.z);m.rotation.y=yaw+e.yaw;m.name='ArchitecturalIdentity:'+e.id;root.add(m);if(new URLSearchParams(window.location.search).has('qa')){const faces=root.userData.signFaces??=[];faces.push({owner:'landmark:'+e.id,region:REAL_PLACES.find(p=>p.id===e.id)?.region,key:e.text,position:m.position.toArray(),yaw:m.rotation.y,width:e.w,height:e.plain?1.8:e.w*t.height/t.width});}}
+  root.userData.materials=[mat];return root;
+ }
+diff --git a/artifacts/tuk-tuk-rush/src/game/bangkok/signage.ts b/artifacts/tuk-tuk-rush/src/game/bangkok/signage.ts
+index 84e4a2a..d680d07 100644
+--- a/artifacts/tuk-tuk-rush/src/game/bangkok/signage.ts
++++ b/artifacts/tuk-tuk-rush/src/game/bangkok/signage.ts
+@@ -55,6 +55,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
+   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
+     batch = new StaticBatch(),
+     root = new T.Group();
++  const auditFaces:object[]=[];
+   const matH = new T.MeshStandardMaterial({
+     map: atlas.h.tex,
+     emissiveMap: atlas.h.tex,
+@@ -106,6 +107,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
+     temp.rotation.set(0, yaw + rotation, 0);
+     temp.scale.set(w, height, 1);
+     temp.updateMatrix();
++    if(typeof window!=="undefined"&&new URLSearchParams(window.location.search).has("qa"))auditFaces.push({owner:p.id,region:p.parcel.chinatown?.character??p.region,key:SIGN_ENTRIES[i]!.key,position:temp.position.toArray(),yaw:yaw+rotation,width:w,height});
+     batch.add(vertical ? v[i]! : h[i]!, vertical ? matV : matH, [
+       temp.matrix.clone(),
+     ]);
+@@ -221,6 +223,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
+       temp.rotation.set(0, f.yaw, 0);
+       temp.scale.set(bw - 0.5, 0.67, 1);
+       temp.updateMatrix();
++      if(typeof window!=="undefined"&&new URLSearchParams(window.location.search).has("qa"))auditFaces.push({owner:p.id,region:p.region,key:SIGN_ENTRIES[index]!.key,position:temp.position.toArray(),yaw:f.yaw,width:bw-.5,height:.67});
+       batch.add(h[index]!, matH, [temp.matrix.clone()]);
+     }
+   }
+@@ -293,5 +296,6 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
+     chunk.name = "BangkokSign";
+     root.add(chunk);
+   });
++  if(root.children[0])root.children[0].userData.signFaces=auditFaces;
+   return root;
+ }
