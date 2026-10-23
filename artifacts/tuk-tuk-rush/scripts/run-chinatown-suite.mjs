@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import { createWriteStream } from "node:fs";
 import { spawn } from "node:child_process";
 const out = new URL(
-  "../../../docs/qa/chinatown-reconstruction/validation/suite/",
+  process.env.QA_SUITE_OUTPUT ?? "../../../docs/qa/chinatown-reconstruction/validation/suite/",
   import.meta.url,
 );
 await fs.mkdir(out, { recursive: true });

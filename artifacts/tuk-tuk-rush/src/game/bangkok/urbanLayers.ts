@@ -120,11 +120,16 @@ export function bangkokPeople(
   const people: StreetPerson[] = [];
   for (const p of [...designs].sort(
     (a, b) =>
-      Number(b.corridor === "khaosan") - Number(a.corridor === "khaosan"),
+      Number(b.corridor === "khaosan") - Number(a.corridor === "khaosan") ||
+      Number(b.parcel.chinatown?.character === "yaowarat") -
+        Number(a.parcel.chinatown?.character === "yaowarat") ||
+      Number(!!b.parcel.chinatown && !b.parcel.chinatown.role) -
+        Number(!!a.parcel.chinatown && !a.parcel.chinatown.role),
   )) {
     if (
       (!p.hero && p.region !== "khaosan") ||
       p.parcel.artRole ||
+      p.parcel.chinatown?.role ||
       p.bays.every((a) => !a.occupied)
     )
       continue;

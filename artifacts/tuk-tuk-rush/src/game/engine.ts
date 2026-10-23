@@ -54,7 +54,7 @@ export class GameEngine {
     this.fares=new FareDispatcher(district,options.seed===undefined?undefined:seededRandom(options.seed));
     const mission = this.fares.next(createVehicle(district));
     this.model = {
-      district, player: createVehicle(district), traffic: this.trafficSystem.create(),
+      district, player: createVehicle(district), traffic: this.trafficSystem.create(createVehicle(district)),
       input: { steer: 0, gas: false, brake: false }, mission, missionIndex: 0,
       snapshot: {
         elapsed: 0, districtName: regionAt(district, district.spawn ?? { x: 0, z: 0 })?.name, discoveredDistricts: [...this.discovery.regions], discoveredLandmarks: [...this.discovery.landmarks], discoveredShortcuts: [...this.discovery.shortcuts],
@@ -100,7 +100,7 @@ export class GameEngine {
     this.arrivalId=''; this.inspection.close(); this.resetCamera();
     this.railService?.update(0);
     Object.assign(this.model.player, createVehicle(this.model.district));
-    this.model.traffic = this.trafficSystem.create();
+    this.model.traffic = this.trafficSystem.create(this.model.player);
     this.fares=new FareDispatcher(this.model.district,this.missionSeed===undefined?undefined:seededRandom(this.missionSeed+this.sessions++));
     this.model.missionIndex = 0; this.model.mission = this.fares.next(this.model.player);
     Object.assign(this.model.snapshot, {

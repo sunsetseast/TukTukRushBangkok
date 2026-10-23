@@ -115,6 +115,16 @@ for (const [from, to] of pairs.filter(
     speed: 0,
     collision: 0,
   });
+  if (legal && traffic) {
+    e["trafficSystem"].reset();
+    e.model.traffic = e["trafficSystem"].create(e.model.player);
+    assert(
+      e.model.traffic.every(
+        (car) => Math.hypot(car.x - start.x, car.z - start.z) > 8,
+      ),
+      "Initial traffic uses production spawn clearance at the selected stop",
+    );
+  }
   e.model.mission = {
     pickup: start,
     destination: end,
@@ -170,8 +180,9 @@ for (const [from, to] of pairs.filter(
           dz = car.z - p.z,
           ahead = dx * fx + dz * fz,
           side = Math.abs(dx * fz - dz * fx);
-        if (ahead > 0 && ahead < 6 + Math.max(0, p.speed) * 0.8 && side < 3.8)
+        if (ahead > 0 && ahead < 6 + Math.max(0, p.speed) * 0.8 && side < 3.35)
           return true;
+        if (car.speed < 0.1 && side > 3.35) return false;
         const vx = Math.sin(car.heading) * car.speed - fx * p.speed,
           vz = Math.cos(car.heading) * car.speed - fz * p.speed,
           vv = vx * vx + vz * vz;
@@ -229,6 +240,14 @@ for (const [from, to] of pairs.filter(
   const r = {
     id: from + ">" + to,
     complete: e.model.snapshot.deliveries === 1,
+    final: {
+      player: { ...e.model.player },
+      traffic: e.model.traffic.filter(
+        (c) => Math.hypot(c.x - e.model.player.x, c.z - e.model.player.z) < 30,
+      ),
+      index,
+      path: path.slice(Math.max(0, index - 1), index + 2),
+    },
     metres: Math.round(metres),
     frames,
     indicatorFrames,

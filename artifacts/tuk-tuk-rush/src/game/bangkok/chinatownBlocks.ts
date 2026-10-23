@@ -1,3 +1,4 @@
+import { riverClearance } from "./waterGeometry";
 import { footprintInBlock } from "./blockContainment";
 import type { District, Obstacle, Point, Road } from "../types";
 import { CHINATOWN_PLAN, chinatownPoint, inChinatown } from "./chinatownPlan";
@@ -264,7 +265,7 @@ function planRearProperties(
         seed = stableHash(owner.environmentId!);
       const talat = owner.chinatown!.character === "talatnoi",
         waterfront = block.id === "ctblock:2";
-      for (const reach of waterfront ? [46, 82, 118] : [26, 48]) {
+      for (const reach of waterfront ? [46, 90, 134, 178, 222] : [26, 48]) {
         // Keep actual rear circulation separate from massing. The smallest
         // dimensions fit narrow remnants; broad bays occupy deep bank properties.
         for (const [w, depth] of waterfront
@@ -341,6 +342,82 @@ function planRearProperties(
           });
           break;
         }
+      }
+    }
+  }
+  // Working waterfront properties follow the block's actual bank edge.
+  // Pier/compound holes remain open; every accepted body joins this same plan.
+  for (const block of blocks.filter((b) => b.id === "ctblock:2")) {
+    const fronts = block.parcels.filter((p) => !p.chinatown!.role);
+    for (let edge = 0; edge < block.boundary.length; edge++) {
+      const a = block.boundary[edge]!,
+        b = block.boundary[(edge + 1) % block.boundary.length]!,
+        dx = b.x - a.x,
+        dz = b.z - a.z,
+        len = Math.hypot(dx, dz);
+      if (
+        len < 35 ||
+        riverClearance(d, { x: (a.x + b.x) / 2, z: (a.z + b.z) / 2 }) > 35
+      )
+        continue;
+      const ux = dx / len,
+        uz = dz / len,
+        count = Math.floor(len / 36),
+        step = len / count,
+        yaw = Math.atan2(uz, -ux);
+      for (let i = 0; i < count; i++) {
+        const t = (i + 0.5) * step,
+          depth = 26,
+          off = depth / 2 + 32;
+        const owner = [...fronts].sort(
+          (p, q) =>
+            Math.hypot(p.x - a.x - ux * t, p.z - a.z - uz * t) -
+            Math.hypot(q.x - a.x - ux * t, q.z - a.z - uz * t),
+        )[0]!;
+        const o: Obstacle = {
+          x: a.x + ux * t - uz * off,
+          z: a.z + uz * t + ux * off,
+          w: step - 1.1,
+          d: depth,
+          yaw,
+          height: 10.2 + (i % 3) * 1.2,
+          color: "#c8b99a",
+          regionId: "chinatown",
+          environmentId: `ctbank:${block.id}:${edge}:${i}`,
+          chinatown: {
+            block: block.id,
+            corridor: owner.chinatown!.corridor,
+            character: "songwat",
+            role: "rear",
+            owner: owner.environmentId,
+          },
+        };
+        const court: Obstacle = {
+          ...o,
+          x: o.x + uz * (depth / 2 + 6),
+          z: o.z - ux * (depth / 2 + 6),
+          d: 9,
+          height: 0,
+          color: "#ad9f87",
+        };
+        const clear = (q: Obstacle) =>
+          footprintInBlock(q, block) &&
+          clearsPedestrianPassages(q) &&
+          !parcelConflicts(d, q).length &&
+          index.clear(q, true) &&
+          block.courts.every((c) => !orientedFootprintsOverlap(q, c.body, 1));
+        if (!clear(o) || !clear(court)) continue;
+        d.buildings.push(o);
+        d.obstacles.push(o);
+        index.insert(o);
+        block.parcels.push(o);
+        block.courts.push({
+          id: o.environmentId + ":court",
+          body: court,
+          owner: owner.environmentId!,
+          use: "merchant-yard",
+          fixtures: [],
+        });
       }
     }
   }

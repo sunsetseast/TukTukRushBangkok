@@ -5,10 +5,8 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { chromium } from "playwright";
 import { startQaServer } from "./browser-vite.mjs";
-const out = new URL(
-  "../../../docs/qa/chinatown-completion/",
-  import.meta.url,
-).pathname;
+const out = new URL("../../../docs/qa/chinatown-completion/", import.meta.url)
+  .pathname;
 const label = process.env.COMPLETION_LABEL ?? "after";
 const perfOnly = process.env.COMPLETION_PERF_ONLY === "1";
 const port = Number(process.env.COMPLETION_PORT ?? 24679);
@@ -18,6 +16,10 @@ const browser = await chromium.launch({
   headless: true,
   args: [
     "--no-sandbox",
+    "--no-zygote",
+    "--single-process",
+    "--in-process-gpu",
+    "--ignore-gpu-blocklist",
     "--disable-dev-shm-usage",
     "--use-angle=swiftshader",
     "--enable-unsafe-swiftshader",
@@ -105,15 +107,16 @@ try {
         a.push({ ...window.__graphics.stats });
       }
       return a;
-    },perfOnly);
-    if(!perfOnly)await page.screenshot({
-      path: out + label + "/" + s.id + ".jpg",
-      type: "jpeg",
-      quality: 86,
-    });
+    }, perfOnly);
+    if (!perfOnly)
+      await page.screenshot({
+        path: out + label + "/" + s.id + ".jpg",
+        type: "jpeg",
+        quality: 86,
+      });
     report.scenes.push({
       id: s.id,
-      runtimeSourceSha256:report.runtimeSourceSha256,
+      runtimeSourceSha256: report.runtimeSourceSha256,
       camera: s.camera,
       look: s.look,
       matchMethod: s.matchMethod,
@@ -123,7 +126,11 @@ try {
     });
     console.log(label, s.id, samples.at(-1));
   }
-  if (label === "after" && process.env.COMPLETION_SKIP_UI !== "1" && !perfOnly) {
+  if (
+    label === "after" &&
+    process.env.COMPLETION_SKIP_UI !== "1" &&
+    !perfOnly
+  ) {
     await page.addStyleTag({
       content:
         ".tt-ui,[data-testid=button-city-inspector]{visibility:visible!important}",
@@ -291,7 +298,9 @@ try {
     } catch {}
   }
   await fs.writeFile(
-    perfOnly ? out+`validation/performance-${label}.json` : out + label + "/capture.json",
+    perfOnly
+      ? out + `validation/performance-${label}.json`
+      : out + label + "/capture.json",
     JSON.stringify(saved, null, 2) + "\n",
   );
   await browser.close();
