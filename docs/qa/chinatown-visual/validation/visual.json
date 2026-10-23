@@ -1,0 +1,81 @@
+{
+  "pass": true,
+  "foundation": {
+    "nodes": "234c4a6b5d1f3c5a8f413db70b3d68ce26fd7307b9fbe5be037921a4e2a60b05",
+    "roads": "a61b7c029ca08496479ea5f03e9bc7112acb53e0027bcbef7188d4e7dc5c957f",
+    "buildings": "60d83e0c475e4d7788d75794b4b0d530e911358b81efaa4e97d4ba0d7fcfafb5",
+    "obstacles": "cc8865b1a536ff8f93d9db8e42a247f9aefec1b06457d6489bda63288865575c",
+    "landmarks": "f73b6f055f46207d5525706fa3306693d7d45c472a4cf295fa880cb300927aba",
+    "riverPolygon": "8bbc937adcfb3b484af3e75ae611e28585617bab93f8ede6f3ed48d1f522fc37",
+    "bridges": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "destinations": "97b2ba6bc82a869cf5cd9e92cef0fd08426c5923a18cce4b6f7d492fae40d528",
+    "transit": "f25d4bf9c9dfdbc04f8a970e91deed1ac2e88e288226a079ee044f1bb11ab509"
+  },
+  "frontages": 798,
+  "rearBuildings": 111,
+  "details": 32483,
+  "signCount": 630,
+  "byCharacter": {
+    "commercial": {
+      "fronts": 630,
+      "pieces": 22236,
+      "lit": 5555,
+      "signs": 542,
+      "trades": {
+        "food": 60,
+        "noodle": 70,
+        "tea": 64,
+        "gold": 57,
+        "closed": 59,
+        "clothes": 133,
+        "medicine": 66,
+        "retail": 121
+      }
+    },
+    "talatnoi": {
+      "fronts": 179,
+      "pieces": 6348,
+      "lit": 1075,
+      "signs": 21,
+      "trades": {
+        "coffee": 57,
+        "residence": 54,
+        "workshop": 68
+      }
+    },
+    "songwat": {
+      "fronts": 52,
+      "pieces": 1770,
+      "lit": 352,
+      "signs": 3,
+      "trades": {
+        "coffee": 20,
+        "gallery": 15,
+        "workshop": 17
+      }
+    },
+    "yaowarat": {
+      "fronts": 48,
+      "pieces": 2129,
+      "lit": 683,
+      "signs": 64,
+      "trades": {
+        "medicine": 7,
+        "gold": 7,
+        "food": 14,
+        "clothes": 5,
+        "noodle": 8,
+        "coffee": 2,
+        "tea": 4,
+        "retail": 1
+      }
+    }
+  },
+  "people": 360,
+  "stagedPeople": 24,
+  "centralPeople": 28,
+  "newPointLights": 0,
+  "transparentLayers": 0,
+  "instancedGlowBytesPerInstance": 3,
+  "physicalSafari": false
+}

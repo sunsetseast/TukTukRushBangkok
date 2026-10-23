@@ -1,0 +1,432 @@
+{
+  "physicalSafari": false,
+  "renderer": "Chromium 138 / SwiftShader, fixed Medium / DPR1",
+  "inventoryMethod": "Identical Node scene inventory, all retained LOD/chunk buffers without browser canvas labels. Final before/after pair ran sequentially after browser and package certification completed; approximately 35.1s each. Not device startup/FPS/VRAM.",
+  "retainedInventory": {
+    "buildings": {
+      "before": 7274,
+      "after": 7274,
+      "percent": 0.0
+    },
+    "roads": {
+      "before": 2210,
+      "after": 2210,
+      "percent": 0.0
+    },
+    "geometryBuffersBytes": {
+      "before": 110134588,
+      "after": 115275463,
+      "percent": 4.668
+    },
+    "geometries": {
+      "before": 9998,
+      "after": 9951,
+      "percent": -0.47
+    },
+    "materials": {
+      "before": 410,
+      "after": 410,
+      "percent": 0.0
+    },
+    "textures": {
+      "before": 8,
+      "after": 9,
+      "percent": 12.5
+    },
+    "trianglesAllLevels": {
+      "before": 14166626,
+      "after": 14517546,
+      "percent": 2.477
+    },
+    "instances": {
+      "before": 936904,
+      "after": 961762,
+      "percent": 2.653
+    },
+    "constructionMs": {
+      "before": 35066,
+      "after": 35155,
+      "percent": 0.254
+    },
+    "constructionCpuMs": {
+      "before": 40632,
+      "after": 40291,
+      "percent": -0.839
+    }
+  },
+  "disposal": {
+    "before": {
+      "geometries": 9998,
+      "materials": 410,
+      "textures": 8
+    },
+    "after": {
+      "geometries": 9951,
+      "materials": 410,
+      "textures": 9
+    }
+  },
+  "renderedViews": [
+    {
+      "id": "yaowarat-sunset",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 40,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.8143172364693
+      },
+      "beforeCalls": 608,
+      "afterCalls": 593,
+      "beforeTriangles": 774014,
+      "afterTriangles": 862586
+    },
+    {
+      "id": "yaowarat-dusk",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 145,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.8143172364693
+      },
+      "beforeCalls": 607,
+      "afterCalls": 592,
+      "beforeTriangles": 773982,
+      "afterTriangles": 862554
+    },
+    {
+      "id": "yaowarat-night",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 650,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.8143172364693
+      },
+      "beforeCalls": 607,
+      "afterCalls": 592,
+      "beforeTriangles": 773982,
+      "afterTriangles": 862554
+    },
+    {
+      "id": "storefront-detail",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 650,
+      "camera": {
+        "position": [
+          -95,
+          3.2,
+          -199
+        ],
+        "quaternion": [
+          0.004475599977308859,
+          0.9291823572273069,
+          -0.011257144061172912,
+          0.36942305386904917
+        ],
+        "fov": 58
+      },
+      "beforeCalls": 484,
+      "afterCalls": 470,
+      "beforeTriangles": 636732,
+      "afterTriangles": 744984
+    },
+    {
+      "id": "ratchawong",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 145,
+      "camera": {
+        "position": [
+          -324,
+          4,
+          -164
+        ],
+        "quaternion": [
+          0.004263440820044664,
+          -0.21452139960513808,
+          0.0009364086857811777,
+          0.9767095347761278
+        ],
+        "fov": 58
+      },
+      "beforeCalls": 484,
+      "afterCalls": 472,
+      "beforeTriangles": 596350,
+      "afterTriangles": 662940
+    },
+    {
+      "id": "song-wat-street",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 55,
+      "camera": {
+        "position": [
+          -224.6783078562583,
+          4.304186600529293,
+          142.4126492529431
+        ],
+        "quaternion": [
+          -0.06135516446629125,
+          -0.7216707102967832,
+          -0.06449956877129015,
+          0.6864887000682299
+        ],
+        "fov": 68.81431723646931
+      },
+      "beforeCalls": 522,
+      "afterCalls": 509,
+      "beforeTriangles": 703817,
+      "afterTriangles": 772165
+    },
+    {
+      "id": "song-wat-waterfront",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 145,
+      "camera": {
+        "position": [
+          -558,
+          7,
+          350
+        ],
+        "quaternion": [
+          -0.007600010068256125,
+          -0.7673579676118334,
+          -0.009096619757813954,
+          0.6411093829438006
+        ],
+        "fov": 58
+      },
+      "beforeCalls": 429,
+      "afterCalls": 427,
+      "beforeTriangles": 434008,
+      "afterTriangles": 481044
+    },
+    {
+      "id": "talat-noi",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "elapsed": 145,
+      "camera": {
+        "position": [
+          -146.43730331264837,
+          4.3041866005293,
+          542.1515686896488
+        ],
+        "quaternion": [
+          -0.016834447317077672,
+          0.9780578170439276,
+          0.08741425491243729,
+          0.18835672523405955
+        ],
+        "fov": 68.81431723646938
+      },
+      "beforeCalls": 475,
+      "afterCalls": 480,
+      "beforeTriangles": 446480,
+      "afterTriangles": 472360
+    },
+    {
+      "id": "night-375x812",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        375,
+        812
+      ],
+      "elapsed": 650,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.81431723646938
+      },
+      "beforeCalls": 337,
+      "afterCalls": 330,
+      "beforeTriangles": 460786,
+      "afterTriangles": 514132
+    },
+    {
+      "id": "night-430x932",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        430,
+        932
+      ],
+      "elapsed": 650,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.81431723646938
+      },
+      "beforeCalls": 337,
+      "afterCalls": 330,
+      "beforeTriangles": 460786,
+      "afterTriangles": 514132
+    },
+    {
+      "id": "night-1280x800",
+      "identicalFixture": true,
+      "identicalReplay": true,
+      "trafficVehicles": 38,
+      "mode": "drive",
+      "viewport": [
+        1280,
+        800
+      ],
+      "elapsed": 650,
+      "camera": {
+        "position": [
+          -92.70690064331276,
+          4.304186600529292,
+          -193.05764141423168
+        ],
+        "quaternion": [
+          -0.07338063214103259,
+          0.5638887540469436,
+          0.05039775198310422,
+          0.8210388678260108
+        ],
+        "fov": 68.8143172364693
+      },
+      "beforeCalls": 534,
+      "afterCalls": 520,
+      "beforeTriangles": 713540,
+      "afterTriangles": 791268
+    }
+  ],
+  "bundles": {
+    "method": "Node gzipSync default level, exact production JS/CSS files, same Node runtime for both versions",
+    "node": "v24.19.0",
+    "versions": {
+      "before": [
+        {
+          "file": "index-Bafjd-h7.css",
+          "bytes": 136594,
+          "gzip": 24900
+        },
+        {
+          "file": "index-Bqcta7pZ.js",
+          "bytes": 2410252,
+          "gzip": 787417
+        }
+      ],
+      "after": [
+        {
+          "file": "index-BZRINxt6.js",
+          "bytes": 2426123,
+          "gzip": 793324
+        },
+        {
+          "file": "index-Bafjd-h7.css",
+          "bytes": 136594,
+          "gzip": 24900
+        }
+      ]
+    }
+  },
+  "initialHostObservations": "inventory-initial-observations.json retains earlier observations under concurrent certification load; those wall times are not used to claim a speedup."
+}
