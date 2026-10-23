@@ -39,7 +39,7 @@ export class GameEngine {
   private discoveryTime = 0;
   private arrivalId = '';
   private storage: Storage | undefined;
-  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number; observeContact?: (contact: VehicleContact) => void } = {}) {
+  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number; trafficSeed?:number; observeContact?: (contact: VehicleContact) => void } = {}) {
     this.controller = new VehicleController(options.observeContact);
     const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
     if(district.transit)this.railService=new RailService(district.transit);
@@ -49,7 +49,7 @@ export class GameEngine {
     this.career.syncDiscovery(this.discovery.regions, this.discovery.landmarks);
     this.discovery.regions = [...new Set([...this.discovery.regions,...this.career.profile.districts])];
     this.discovery.landmarks = [...new Set([...this.discovery.landmarks,...this.career.profile.landmarks])];
-    this.trafficSystem = new TrafficSystem(district);
+    this.trafficSystem = new TrafficSystem(district, options.trafficSeed);
     this.missionSeed=options.seed;
     this.fares=new FareDispatcher(district,options.seed===undefined?undefined:seededRandom(options.seed));
     const mission = this.fares.next(createVehicle(district));

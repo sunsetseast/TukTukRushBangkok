@@ -15,7 +15,8 @@ export class TrafficSystem {
   private edges=new Map<string,Edge>();
   private motions=new WeakMap<TrafficCar,Motion>();
   private seed=982;private elapsed=0;
-  constructor(private district:District){
+  constructor(private district:District, private initialSeed=982){
+    this.seed=initialSeed;
     this.nodes=new Map(district.nodes.map(n=>[n.id,n]));
     for(const n of district.nodes){this.neighbors.set(n.id,[]);this.incident.set(n.id,[]);}
     for(const r of district.roads.filter(r=>!r.noTraffic)){
@@ -40,7 +41,7 @@ export class TrafficSystem {
   }
   private random(){this.seed=(this.seed*1664525+1013904223)>>>0;return this.seed/4294967296;}
   get horizontalGreen(){return Math.floor(this.elapsed/9)%2===0;}
-  reset(){this.seed=982;this.elapsed=0;this.motions=new WeakMap();}
+  reset(){this.seed=this.initialSeed;this.elapsed=0;this.motions=new WeakMap();}
   private point(e:Edge,distance:number,lane=0){
     const p=lanePoint(e.a,e.b,e.r,distance/e.length);
     // Wide one-way circles have two circulating lanes. Lane choice is stable
@@ -91,9 +92,31 @@ export class TrafficSystem {
         if(ahead>0&&ahead<8&&Math.abs(dx*fz-dz*fx)<2.4)blocked=true;
         if(circleEntry&&!m.turn&&remaining<4&&this.edges.get(`${other.from}>${other.to}`)?.r.roundabout&&Math.hypot(other.x-e.b.x,other.z-e.b.z)<13)blocked=true;
       }
-      const dx=player.x-car.x,dz=player.z-car.z;if(dx*fx+dz*fz>0&&dx*fx+dz*fz<7&&Math.abs(dx*fz-dz*fx)<2.7)blocked=true;
+      const dx=player.x-car.x,dz=player.z-car.z;
+      const ahead=dx*fx+dz*fz,side=Math.abs(dx*fz-dz*fx);
+      if(ahead>0&&ahead<10&&side<3.7)blocked=true;
+      // Crossing/merging traffic was invisible to the old forward-only check.
+      // Predict relative approach over a bounded horizon. An approaching car
+      // yields to an occupant already turning, then stable IDs break ties.
+      const conflict=(other:Point & {heading:number;speed:number},radius:number)=>{
+        const rx=other.x-car.x,rz=other.z-car.z;
+        const vx=Math.sin(other.heading)*other.speed-fx*car.speed,
+          vz=Math.cos(other.heading)*other.speed-fz*car.speed, vv=vx*vx+vz*vz;
+        const t=vv>.01?Math.max(0,Math.min(1.5,-(rx*vx+rz*vz)/vv)):0;
+        return rx*vx+rz*vz<0 && Math.hypot(rx+vx*t,rz+vz*t)<radius;
+      };
+      if(Math.hypot(dx,dz)<24 && conflict(player,4.1))blocked=true;
+      if(junction||m.turn||circleEntry)for(const other of cars){
+        if(other===car||Math.hypot(other.x-car.x,other.z-car.z)>24)continue;
+        const om=this.motions.get(other),same=other.from===car.from&&other.to===car.to;
+        if(same)continue;
+        if(conflict(other,4.1)&&((!m.turn&&!!om?.turn)||!!m.turn===!!om?.turn&&other.id<car.id))blocked=true;
+      }
       const target=blocked?0:m.turn||e.r.roundabout?6.5:8+car.id%4;
       car.speed+=(target-car.speed)*Math.min(1,dt*5);
+      // Do not coast through the stop line or into a stopped vehicle while the
+      // smoothed speed asymptotically approaches zero.
+      if(blocked&&car.speed<.08)car.speed=0;
       let travel=car.speed*dt;const old={x:car.x,z:car.z};
       for(let guard=0;guard<5;guard++){
         if(m.turn){const turn=m.turn;const used=Math.min(travel,turn.length-turn.distance);turn.distance+=used;travel-=used;

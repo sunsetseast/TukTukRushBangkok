@@ -464,7 +464,7 @@ export function designBuildings(d: District): ParcelDesign[] {
                 : b.chinatown.character === "talatnoi"
                   ? (["workshop", "residence", "coffee"][a.seed % 3] as Trade)
                   : a.trade,
-          cabinet: b.chinatown.character === "yaowarat",
+          cabinet: !b.chinatown.role && b.chinatown.character === "yaowarat",
           occupied: true,
         },
       ];
