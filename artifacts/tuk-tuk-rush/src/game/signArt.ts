@@ -8,6 +8,9 @@ export type SignEntry = {
   style: SignStyle;
   variant: number;
   signatureId?: string;
+  secondary?: string;
+  layout?: "neon" | "painted";
+  palette?: [string, string, string];
 };
 const PAL: Record<SignStyle, [string, string, string][]> = {
   gold: [
@@ -256,7 +259,8 @@ export function buildSignAtlas(entries: SignEntry[], compact = false) {
     // Original, distinctly composed reference-inspired signage: verified
     // business names, no copied brand logos or photographic textures.
     const colors: [string, string, string] =
-      signature === "hua"
+      e.palette ??
+      (signature === "hua"
         ? ["#971c22", "#eac05d", "#fff0bf"]
         : signature === "thong"
           ? ["#b7272e", "#e5bd55", "#fff5cd"]
@@ -271,11 +275,28 @@ export function buildSignAtlas(entries: SignEntry[], compact = false) {
                     ["#174e49", "#73dfba", "#e0ffdf"],
                     ["#2c3855", "#87bced", "#d5f6ff"],
                   ][e.variant % 4] as [string, string, string])
-                : PAL[e.style][e.variant % 2]!;
+                : PAL[e.style][e.variant % 2]!);
     const [bg, line, ink] = colors;
     let x = (i % H.cols) * H.cw,
       y = Math.floor(i / H.cols) * H.ch;
-    if (!heroHorizontal(H.c, e, signature, x, y, H.cw, H.ch)) {
+    if (e.layout) {
+      const c = H.c;
+      frame(c, x, y, H.cw, H.ch, bg, line);
+      c.fillStyle = ink;
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      fit(c, e.text, H.cw - 55, 70);
+      c.fillText(e.text, x + H.cw / 2, y + 49);
+      if (e.secondary) {
+        c.fillStyle = line;
+        fit(c, e.secondary, H.cw - 60, 24);
+        c.fillText(e.secondary, x + H.cw / 2, y + 101);
+      }
+      if (e.layout === "neon") {
+        c.fillStyle = ink;
+        for (let k = 0; k < 10; k++) c.fillRect(x + 32 + k * 49, y + 9, 3, 3);
+      }
+    } else if (!heroHorizontal(H.c, e, signature, x, y, H.cw, H.ch)) {
       frame(H.c, x, y, H.cw, H.ch, bg, line);
       motif(H.c, e.style, x + 50, y + 64, 20, line);
       motif(H.c, e.style, x + H.cw - 50, y + 64, 20, line);
@@ -287,7 +308,45 @@ export function buildSignAtlas(entries: SignEntry[], compact = false) {
     }
     x = (i % V.cols) * V.cw;
     y = Math.floor(i / V.cols) * V.ch;
-    if (!heroVertical(V.c, e, signature, x, y, V.cw, V.ch)) {
+    if (e.layout) {
+      const c = V.c;
+      frame(c, x, y, V.cw, V.ch, bg, line);
+      c.textAlign = "center";
+      c.textBaseline = "middle";
+      const chinese = /[\u3400-\u9fff]/.test(e.text);
+      if (chinese) {
+        const chars = [...e.text],
+          cell = 350 / chars.length;
+        chars.forEach((ch, j) => {
+          const cy = y + 60 + (j + 0.5) * cell;
+          c.font = `800 ${Math.min(88, cell * 0.78)}px ${FONT}`;
+          if (e.layout === "neon") {
+            c.strokeStyle = line;
+            c.lineWidth = 3.5;
+            c.strokeText(ch, x + 64, cy);
+            c.fillStyle = ink;
+            c.fillText(ch, x + 64, cy);
+          } else {
+            c.fillStyle = ink;
+            c.fillText(ch, x + 64, cy);
+          }
+        });
+        c.fillStyle = line;
+        c.fillRect(x + 20, y + 429, 88, 2);
+        if (e.secondary) {
+          fit(c, e.secondary, 100, 21);
+          c.fillText(e.secondary, x + 64, y + 463);
+        }
+      } else {
+        c.save();
+        c.translate(x + 64, y + 256);
+        c.rotate(Math.PI / 2);
+        c.fillStyle = ink;
+        fit(c, e.text, 410, 54);
+        c.fillText(e.text, 0, 0);
+        c.restore();
+      }
+    } else if (!heroVertical(V.c, e, signature, x, y, V.cw, V.ch)) {
       frame(V.c, x, y, V.cw, V.ch, bg, line);
       motif(V.c, e.style, x + 64, y + 40, 16, line);
       // Fictional Chinese trade signs use real words and stacked characters.

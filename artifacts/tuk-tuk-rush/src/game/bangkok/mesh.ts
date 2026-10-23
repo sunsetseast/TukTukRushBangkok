@@ -1,3 +1,4 @@
+import { chinatownLightField } from "./chinatownLightField";
 import {
   buildChinatownGround,
   emitChinatownGroundDetails,
@@ -20,6 +21,7 @@ import { emitUrbanCompletenessGrounds } from "./urbanCompleteness";
 import { emitAuthoredGrounds } from "./authoredGrounds";
 import { realCommercial } from "./realCommercial";
 import { buildRealArchitecture, buildRealPlaceSigns } from "./realArchitecture";
+import { installChinatownLight } from "./chinatownLighting";
 import { installShopLight } from "./shopLighting";
 import { yaowaratRoad } from "./yaowaratRoad";
 import { emitYaowaratLanterns } from "./yaowarat";
@@ -166,6 +168,12 @@ export function buildBangkokGraybox(
     metalness: 1,
   });
   installFacadeFinish(facadeMaterial);
+  const chinatownNight = { value: 0 };
+  installChinatownLight(facadeMaterial, chinatownNight);
+  const localLight = chinatownLightField(d, designs, chinatownNight);
+  localLight.install(facadeMaterial);
+  for (const child of roadSurfaces.children)
+    localLight.install((child as T.Mesh).material as T.MeshStandardMaterial);
   const grounding = cityShadows(d);
   for (const chunk of [...grounding.root.children]) group.add(chunk);
   nightMaterial.vertexColors = true;
@@ -424,6 +432,7 @@ export function buildBangkokGraybox(
     },
     setNight(night: number) {
       waterStyle.night.value = night;
+      chinatownNight.value = night;
       lightLevel = night;
       shopNight.value = 0.12 + night * 0.88;
       grounding.setNight(night);

@@ -1,3 +1,4 @@
+import { CHINATOWN_SIGN_ENTRIES } from "./chinatownSigns";
 import { DISTRICT_SIGN_ENTRIES, districtSigns } from "./districtSigns";
 import { CURATED_SIGNS, curatedSignKey } from "./curatedSigns";
 import { completeStreetFabric } from "./streetFabric";
@@ -42,7 +43,7 @@ export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS)
       variant: i,
     })),
   )
-  .concat(DISTRICT_SIGN_ENTRIES, CURATED_SIGNS, [
+  .concat(DISTRICT_SIGN_ENTRIES, CURATED_SIGNS, CHINATOWN_SIGN_ENTRIES, [
     {
       key: "odeon-inscription",
       text: "聖壽無疆",
@@ -112,8 +113,33 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   for (const p of designs.filter((p) => !p.parcel.artRole))
     for (const a of p.bays) {
       if (a.trade === "residence" || a.trade === "closed") continue;
+      const ctKey = p.parcel.chinatown
+        ? p.parcel.chinatown.identity
+          ? curatedSignKey(p, a)
+          : CHINATOWN_SIGN_ENTRIES.find(
+              (e) =>
+                e.key ===
+                (a.trade === "gold"
+                  ? "ct-gold"
+                  : a.trade === "noodle"
+                    ? "ct-noodle"
+                    : a.trade === "food"
+                      ? "ct-food"
+                      : a.trade === "tea"
+                        ? "ct-tea"
+                        : a.trade === "medicine"
+                          ? "ct-herbs"
+                          : a.trade === "workshop"
+                            ? "ct-workshop"
+                            : a.trade === "clothes"
+                              ? "ct-clothes"
+                              : ["coffee", "gallery"].includes(a.trade)
+                                ? "ct-coffee"
+                                : "ct-merchant"),
+            )?.key
+        : undefined;
       const i = atlas.index.get(
-        curatedSignKey(p, a) ?? `${a.trade}:${a.sign}`,
+        ctKey ?? curatedSignKey(p, a) ?? `${a.trade}:${a.sign}`,
       )!;
       const W = a.width - 0.16,
         sw = Math.min(W - 0.55, a.type === "workshop" ? W * 0.65 : W - 0.55);

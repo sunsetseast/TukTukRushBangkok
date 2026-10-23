@@ -1,3 +1,4 @@
+import { chinatownSigns } from "./chinatownSigns";
 import { cinematicParcel } from "./yaowarat";
 import type { ParcelDesign } from "./buildingGrammar";
 import type { ArtPiece } from "./architecturalBatch";
@@ -36,10 +37,11 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
   const signs: DistrictSign[] = [];
   for (const p of designs) {
     const b = p.parcel;
-    if (b.chinatown?.role) continue;
-    if (b.artRole || !["chinatown", "khaosan"].includes(p.region)) continue;
-    if (b.chinatown && ["songwat", "talatnoi"].includes(b.chinatown.character))
+    if (b.chinatown) {
+      signs.push(...chinatownSigns(p));
       continue;
+    }
+    if (b.artRole || !["chinatown", "khaosan"].includes(p.region)) continue;
     const seed = p.bays[0]!.seed,
       F = b.d / 2,
       key: string | undefined = undefined,
@@ -64,8 +66,7 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
           "canyon-silk",
           "canyon-noodles",
         ];
-    const showcase =
-      cinematicParcel(p) || b.chinatown?.character === "yaowarat";
+    const showcase = cinematicParcel(p);
     const height = showcase
         ? Math.min(
             5.4 + (seed % 3) * 0.8,

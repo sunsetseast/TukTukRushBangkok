@@ -1,0 +1,422 @@
+{
+  "pass": true,
+  "groups": 46,
+  "workers": 3,
+  "results": [
+    {
+      "name": "test:assets",
+      "status": 0,
+      "signal": null,
+      "durationMs": 140,
+      "pass": true,
+      "logSha256": "5688991e02fc871d98118927589430e28e6923624cdd623e1a598dc89ce42d65",
+      "log": "test-assets.log"
+    },
+    {
+      "name": "test:roadside",
+      "status": 0,
+      "signal": null,
+      "durationMs": 990,
+      "pass": true,
+      "logSha256": "eb6078f79c54bd5b0ccda7cc4c286bbbd5fedc814a7c4404bbb85afedc6b6d98",
+      "log": "test-roadside.log"
+    },
+    {
+      "name": "test:signature",
+      "status": 0,
+      "signal": null,
+      "durationMs": 171,
+      "pass": true,
+      "logSha256": "4f869be89c914521b6cffa086e584fa3ec6594565733517ef29e67314b6a1dd0",
+      "log": "test-signature.log"
+    },
+    {
+      "name": "test:sign-layers",
+      "status": 0,
+      "signal": null,
+      "durationMs": 261,
+      "pass": true,
+      "logSha256": "eec0544e5e602d398d950e34c2b1dbe9f0578ab93e1df26677b872122e6f18c1",
+      "log": "test-sign-layers.log"
+    },
+    {
+      "name": "test:gameplay",
+      "status": 0,
+      "signal": null,
+      "durationMs": 3256,
+      "pass": true,
+      "logSha256": "362ca168bc9825b4e134ea68301c808088c725ed65d4bdec9e066f58c71ed0a1",
+      "log": "test-gameplay.log"
+    },
+    {
+      "name": "test:cityscapes",
+      "status": 0,
+      "signal": null,
+      "durationMs": 63792,
+      "pass": true,
+      "logSha256": "459fa8d5825e6c63097eb3e59b1cd7f0c538452ada5dfac13924d13c3756333a",
+      "log": "test-cityscapes.log"
+    },
+    {
+      "name": "test:open-bangkok",
+      "status": 0,
+      "signal": null,
+      "durationMs": 31928,
+      "pass": true,
+      "logSha256": "e104d3639f8b4b2105defd40d46137f9ffa06f2659ca8132d441f6826c1f0b26",
+      "log": "test-open-bangkok.log"
+    },
+    {
+      "name": "test:startup",
+      "status": 0,
+      "signal": null,
+      "durationMs": 6812,
+      "pass": true,
+      "logSha256": "e3047cb6a16c356818d5f3cec27388432f85f1b36f72feb274c84b26200c240b",
+      "log": "test-startup.log"
+    },
+    {
+      "name": "test:definitive",
+      "status": 0,
+      "signal": null,
+      "durationMs": 76474,
+      "pass": true,
+      "logSha256": "ae70cc01f016431e1340afe4085b097a205c4ba89604c14402d3b0a98b8e92a1",
+      "log": "test-definitive.log"
+    },
+    {
+      "name": "test:interface",
+      "status": 0,
+      "signal": null,
+      "durationMs": 22714,
+      "pass": true,
+      "logSha256": "b558d8a530ac41087dcfe6d5040390175a7f9937f45513a977aaa384264b9315",
+      "log": "test-interface.log"
+    },
+    {
+      "name": "test:graphics-foundation",
+      "status": 0,
+      "signal": null,
+      "durationMs": 426,
+      "pass": true,
+      "logSha256": "117cb748f8893902ed05f879af4364aaaeab5b75d514e1744f8122e3ccf57077",
+      "log": "test-graphics-foundation.log"
+    },
+    {
+      "name": "test:bangkok",
+      "status": 0,
+      "signal": null,
+      "durationMs": 197186,
+      "pass": true,
+      "logSha256": "8c08deb027ba2d29b8f7fd58dfa2c3ab1d9bdc37f1727d60fdea58f84351c693",
+      "log": "test-bangkok.log"
+    },
+    {
+      "name": "test:corrections",
+      "status": 0,
+      "signal": null,
+      "durationMs": 33877,
+      "pass": true,
+      "logSha256": "8003c038295264bad335a8d58f63621ef5fcce78bc38dd5ba734203be2cc35a0",
+      "log": "test-corrections.log"
+    },
+    {
+      "name": "test:city-fabric",
+      "status": 0,
+      "signal": null,
+      "durationMs": 34347,
+      "pass": true,
+      "logSha256": "6d4e8193a75f61ac9fc1e78ada393eb7f274101408496c5a75538e033a0dbf25",
+      "log": "test-city-fabric.log"
+    },
+    {
+      "name": "test:real-architecture",
+      "status": 0,
+      "signal": null,
+      "durationMs": 54774,
+      "pass": true,
+      "logSha256": "d46ff54c4c832e28aef5d3b4eb85e29b22b1d0fec391b0c466d4fafcc947745e",
+      "log": "test-real-architecture.log"
+    },
+    {
+      "name": "test:career",
+      "status": 0,
+      "signal": null,
+      "durationMs": 110623,
+      "pass": true,
+      "logSha256": "b5540345132e501930d78dff4657b93181fca08e1a5cc0ee792d613b1bfec9d1",
+      "log": "test-career.log"
+    },
+    {
+      "name": "test:authored-sites",
+      "status": 0,
+      "signal": null,
+      "durationMs": 76941,
+      "pass": true,
+      "logSha256": "f7c635953355e46814c98900cd6c6516f02218b7d389318bcc7ea30ef381d2e4",
+      "log": "test-authored-sites.log"
+    },
+    {
+      "name": "test:authored-drives",
+      "status": 0,
+      "signal": null,
+      "durationMs": 46520,
+      "pass": true,
+      "logSha256": "b4adbd44ad822d6d756c9872b687d080e42603e6ba351a86e890588687bc644f",
+      "log": "test-authored-drives.log"
+    },
+    {
+      "name": "test:commercial-districts",
+      "status": 0,
+      "signal": null,
+      "durationMs": 24925,
+      "pass": true,
+      "logSha256": "99af7e72bfbe4c0bf1298e9f6e82ce9b2ebb4ed02be334870e67277ac2fbd2de",
+      "log": "test-commercial-districts.log"
+    },
+    {
+      "name": "test:geographic-reference",
+      "status": 0,
+      "signal": null,
+      "durationMs": 330,
+      "pass": true,
+      "logSha256": "ecff133ac0cbde0ca93281a2606f9b094a8c807cd9720575b3060aaf8e49dbf4",
+      "log": "test-geographic-reference.log"
+    },
+    {
+      "name": "test:civic-roads",
+      "status": 0,
+      "signal": null,
+      "durationMs": 36934,
+      "pass": true,
+      "logSha256": "5548967ce922d0833e4914564e1a4ec1d8b2cf1ca20cca12500854ac5dc0056b",
+      "log": "test-civic-roads.log"
+    },
+    {
+      "name": "test:historic-districts",
+      "status": 0,
+      "signal": null,
+      "durationMs": 2016,
+      "pass": true,
+      "logSha256": "4abed352b8ed0740fdb85c0e7113eee214ce0c4228c592e3cb09ee19438b966b",
+      "log": "test-historic-districts.log"
+    },
+    {
+      "name": "test:convenience-urban",
+      "status": 0,
+      "signal": null,
+      "durationMs": 29253,
+      "pass": true,
+      "logSha256": "8b5b6228087fb938292100f89817c9da48395eb67b99bad582b2214d47da895e",
+      "log": "test-convenience-urban.log"
+    },
+    {
+      "name": "test:public-spaces",
+      "status": 0,
+      "signal": null,
+      "durationMs": 30150,
+      "pass": true,
+      "logSha256": "8b911fd872b5ec5002ee2d01fb6a3ee63a6f1d6e50bdda66e06d3b47693223da",
+      "log": "test-public-spaces.log"
+    },
+    {
+      "name": "test:city-drives",
+      "status": 0,
+      "signal": null,
+      "durationMs": 45444,
+      "pass": true,
+      "logSha256": "3da93a28e7b49424459a2dc7c5f1be3f3178829beda138c53d49b9db7273a794",
+      "log": "test-city-drives.log"
+    },
+    {
+      "name": "test:master-plan",
+      "status": 0,
+      "signal": null,
+      "durationMs": 77521,
+      "pass": true,
+      "logSha256": "7168eb58cab41358ec69f4856601eea7008d30846b9ca721dec8d12b9bc3219b",
+      "log": "test-master-plan.log"
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "status": 0,
+      "signal": null,
+      "durationMs": 64395,
+      "pass": true,
+      "logSha256": "ef3f28cc849a29e07b7fb87b318cedb0b3eca548802df7cbcf35d7100e9c4e67",
+      "log": "test-landmark-accuracy.log"
+    },
+    {
+      "name": "test:city-completion",
+      "status": 0,
+      "signal": null,
+      "durationMs": 95627,
+      "pass": true,
+      "logSha256": "3caa8ee6b798e8d0000b384010bd8b1e9f659250e63bd309bea1c1313d87ea32",
+      "log": "test-city-completion.log"
+    },
+    {
+      "name": "test:historic-fidelity",
+      "status": 0,
+      "signal": null,
+      "durationMs": 54713,
+      "pass": true,
+      "logSha256": "b621b5c6abab7d09becdd07f8218b16bf7dc9c95ac29b0f989ec9e1d588ee58a",
+      "log": "test-historic-fidelity.log"
+    },
+    {
+      "name": "test:river-geography",
+      "status": 0,
+      "signal": null,
+      "durationMs": 21001,
+      "pass": true,
+      "logSha256": "a5e9a5eb30f6749f84eff174bc3cb41e101542bccde14f2da1e1242797924358",
+      "log": "test-river-geography.log"
+    },
+    {
+      "name": "test:historic-core",
+      "status": 0,
+      "signal": null,
+      "durationMs": 98726,
+      "pass": true,
+      "logSha256": "d747de31a7d5269abdd3a6e4393a5ecc9f9583fef0887c2853cdaa30686ce238",
+      "log": "test-historic-core.log"
+    },
+    {
+      "name": "test:premium-landmarks",
+      "status": 0,
+      "signal": null,
+      "durationMs": 54440,
+      "pass": true,
+      "logSha256": "a2dce4cdc4011c677b267fc08b825208e39bd8492692de2e2bbe889dcb4d5df6",
+      "log": "test-premium-landmarks.log"
+    },
+    {
+      "name": "test:waterfront-clearance",
+      "status": 0,
+      "signal": null,
+      "durationMs": 20970,
+      "pass": true,
+      "logSha256": "246839cec35ef152508e9f2963b044d65386a49267789e959d203d397558a438",
+      "log": "test-waterfront-clearance.log"
+    },
+    {
+      "name": "test:river-drives",
+      "status": 0,
+      "signal": null,
+      "durationMs": 38802,
+      "pass": true,
+      "logSha256": "80f893d7c37eb99ddb470a75f063152735f3b05f36f02c86cd3886654974a1cb",
+      "log": "test-river-drives.log"
+    },
+    {
+      "name": "test:street-life",
+      "status": 0,
+      "signal": null,
+      "durationMs": 1663,
+      "pass": true,
+      "logSha256": "2a797587517053500294b5771c7df62f5c13b3937c665fd259dd76b84183fed6",
+      "log": "test-street-life.log"
+    },
+    {
+      "name": "test:cinematic",
+      "status": 0,
+      "signal": null,
+      "durationMs": 44881,
+      "pass": true,
+      "logSha256": "9d887fc0d00014aefaa1f82bdac9329672c460d427b6b2649b2f2d5a87462672",
+      "log": "test-cinematic.log"
+    },
+    {
+      "name": "test:landmark-quality",
+      "status": 0,
+      "signal": null,
+      "durationMs": 50361,
+      "pass": true,
+      "logSha256": "f7557b4ab6baa33bbbf5b98fb12d90f2db743f0bded85744b66c59f097a69261",
+      "log": "test-landmark-quality.log"
+    },
+    {
+      "name": "test:city-blueprint",
+      "status": 0,
+      "signal": null,
+      "durationMs": 28697,
+      "pass": true,
+      "logSha256": "9a021ae259948f98ed2aef50957d79ba83d1cb987a6dca25c63df3f0cd5a0e0f",
+      "log": "test-city-blueprint.log.gz",
+      "uncompressedLogSha256": "a7d54b9dcd47b903fda8134e7925ab3a718da3a05ff1c036417156f7a7930060"
+    },
+    {
+      "name": "test:environment",
+      "status": 0,
+      "signal": null,
+      "durationMs": 82184,
+      "pass": true,
+      "logSha256": "8902c3170fd2376677f6fc841574d738f452e9957a236504566530ddc58c8774",
+      "log": "test-environment.log"
+    },
+    {
+      "name": "test:chinatown",
+      "status": 0,
+      "signal": null,
+      "durationMs": 31815,
+      "pass": true,
+      "logSha256": "5945e27e2b02eae51edadc46518bf4168073f4761a995e55f4526c635aca69a3",
+      "log": "test-chinatown.log"
+    },
+    {
+      "name": "test:chinatown-traffic",
+      "status": 0,
+      "signal": null,
+      "durationMs": 42690,
+      "pass": true,
+      "logSha256": "5049736e215dad7415d2bb7b980c20bded03c1ae191f680fab225f41179270ef",
+      "log": "test-chinatown-traffic.log"
+    },
+    {
+      "name": "test:waterfront-drives",
+      "status": 0,
+      "signal": null,
+      "durationMs": 107043,
+      "pass": true,
+      "logSha256": "e805b3d1f97e43c58716c42a1e8ea643a7b6e3e39c43cf33fad9b35fbdf00740",
+      "log": "test-waterfront-drives.log"
+    },
+    {
+      "name": "test:chinatown-drives",
+      "status": 0,
+      "signal": null,
+      "durationMs": 79623,
+      "pass": true,
+      "logSha256": "2bbabd3391465a90edb2ca1e3b708dffea425bd48b0f15ee8bf8be50da8c5b78",
+      "log": "test-chinatown-drives.log"
+    },
+    {
+      "name": "test:chinatown-completion",
+      "status": 0,
+      "signal": null,
+      "durationMs": 24638,
+      "pass": true,
+      "logSha256": "0b3cc3cc70174ba6aec5eb2cf29096aba3b35d337abaf32ca55fd027b3e9d09b",
+      "log": "test-chinatown-completion.log"
+    },
+    {
+      "name": "test:chinatown-visual",
+      "status": 0,
+      "signal": null,
+      "durationMs": 31854,
+      "pass": true,
+      "logSha256": "008202a3f322f9291027d0654c94c75c5feec15ce6d79b2240814a94953cdc61",
+      "log": "test-chinatown-visual.log"
+    },
+    {
+      "name": "test:chinatown-legal-traffic",
+      "status": 0,
+      "signal": null,
+      "durationMs": 156088,
+      "pass": true,
+      "logSha256": "d665fe3d08c26ad456404b729dae95d7cbed9e020340736ce8f2462df78d3664",
+      "log": "test-chinatown-legal-traffic.log"
+    }
+  ]
+}

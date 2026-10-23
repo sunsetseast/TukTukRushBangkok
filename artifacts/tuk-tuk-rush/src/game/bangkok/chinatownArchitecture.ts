@@ -1,3 +1,5 @@
+import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
+import { emitChinatownDetail } from "./chinatownDetail";
 import type { ArtPiece } from "./architecturalBatch";
 import type { ParcelDesign } from "./buildingGrammar";
 /** Original modular Chinese-Thai facades. Street identity controls materials,
@@ -23,11 +25,15 @@ export function emitChinatownArchitecture(
       ct.identity === "hua-seng-heng" ||
       ct.identity === "tang-to-kang" ||
       p.bays[0]!.trade === "gold";
-  const wall = song
-    ? ["#ddcfaf", "#c9c3a6", "#cbb995"][seed % 3]!
-    : talat
-      ? ["#ccb69a", "#afbeaa", "#c6a68b"][seed % 3]!
-      : b.color;
+  const wall =
+    CHINATOWN_COMPOSITIONS[b.environmentId ?? ""]?.wall ??
+    (song
+      ? ["#ddcfaf", "#c9c3a6", "#cbb995"][seed % 3]!
+      : talat
+        ? ["#ccb69a", "#afbeaa", "#c6a68b"][seed % 3]!
+        : ["#c8c6ad", "#d1b392", "#a7c1b5", "#c9b6a5", "#b9c3be", "#d2ba9a"][
+            seed % 6
+          ]!);
   const trim = song ? "#eae0c3" : talat ? "#718471" : "#efe0bc",
     wood = song ? "#4e5c45" : talat ? "#405b51" : "#455452";
   const put = (
@@ -111,6 +117,7 @@ export function emitChinatownArchitecture(
       }
     }
     put(0, 5.9, F + 0.22, W * 0.75, 0.15, 0.3, "#c5baa1", "metal");
+    emitChinatownDetail(p, emit);
     return true;
   }
   put(0, (H + 4.6) / 2, 0, W, H - 4.6, b.d, wall, "concrete");
@@ -131,144 +138,6 @@ export function emitChinatownArchitecture(
   } else {
     put(0, H + 0.3, 0, W, 0.6, b.d, "#999b88", "concrete");
     put(0, H + 1, F - 0.22, W, 0.8, 0.45, wall);
-  }
-  // Ground floor. Gold cases and workshop shutters are visible at chase height.
-  put(
-    0,
-    2.2,
-    F - 4.1,
-    W - 1,
-    4.3,
-    0.15,
-    gold ? "#692b2a" : song ? "#465340" : talat ? "#3b514c" : "#344e4d",
-    "wood",
-  );
-  if (gold) {
-    put(0, 1.2, F - 0.9, W - 1.7, 0.8, 1.4, "#a86e2f", "metal");
-    for (let x = -W * 0.32; x < W * 0.4; x += 1.4) {
-      put(
-        x,
-        1.95,
-        F + 0.82,
-        0.55,
-        0.35,
-        0.16,
-        "#e3bc64",
-        "metal",
-        "night",
-        "cylinder",
-        Math.PI / 2,
-      );
-      put(x, 2.8, F + 0.16, 0.24, 0.7, 0.1, "#f6c770", "metal", "night");
-    }
-  } else if (talat && seed % 3 === 0) {
-    for (let x = -W * 0.4; x < W * 0.43; x += 0.65)
-      put(x, 2.2, F + 0.2, 0.08, 4.1, 0.08, "#788679", "metal", "near");
-    put(-W * 0.25, 1.1, F + 0.35, W * 0.3, 1.8, 0.7, "#687468", "metal");
-  } else {
-    put(-W * 0.16, 1.1, F - 1.1, W * 0.57, 0.9, 1.5, "#8b7859", "wood");
-    for (const u of [-W * 0.28, 0, W * 0.24]) {
-      put(
-        u,
-        1.8,
-        F - 1.15,
-        0.7,
-        0.55,
-        0.65,
-        ["#c9a85f", "#afc194", "#cd795a"][(seed + Math.round(u + W)) % 3]!,
-        "plaster",
-        "near",
-        "orb",
-      );
-    }
-    put(0, 2.1, F - 3.3, W - 1.5, 3.1, 0.15, "#526b5c", "wood");
-    put(0, 2, F + 0.28, 0.13, 4, 0.2, trim);
-    put(0, 1, F + 0.28, W - 1, 0.18, 0.2, trim);
-    if (yao || seed % 3 === 1)
-      put(0, 3.8, F + 0.3, W - 1, 0.15, 0.13, "#e5b970", "metal", "night");
-  }
-  // Trade determines a visible business composition, including the depth of
-  // the threshold. These modules remain on their owning plot/sidewalk setback.
-  const trade = p.bays[0]!.trade,
-    variant = seed % 4;
-  if (
-    !gold &&
-    (trade === "noodle" || trade === "food" || (yao && variant === 1))
-  ) {
-    put(-W * 0.2, 1.15, F - 1.2, W * 0.48, 1.6, 1.5, "#b6b5a1", "metal");
-    put(-W * 0.2, 2.1, F - 1.2, W * 0.48, 0.16, 1.7, "#e0d4b5", "metal");
-    for (const u of [-W * 0.32, -W * 0.06]) {
-      put(
-        u,
-        2.35,
-        F - 1.2,
-        0.65,
-        0.5,
-        0.65,
-        "#8d9e92",
-        "metal",
-        "near",
-        "cylinder",
-      );
-      put(u, 1.1, F - 2.8, 0.8, 1, 0.8, "#b26345", "wood", "near");
-    }
-    put(
-      0,
-      3.55,
-      F + 0.75,
-      W - 0.8,
-      0.25,
-      2,
-      "#a85b43",
-      "plaster",
-      "core",
-      "canopy",
-    );
-  } else if (song && (trade === "coffee" || variant === 2)) {
-    put(-W * 0.28, 1.8, F - 0.2, W * 0.3, 3.5, 0.16, "#2f5049", "metal");
-    put(W * 0.18, 1.3, F - 1, W * 0.42, 1.2, 1.6, "#a77b50", "wood");
-    put(W * 0.2, 2.2, F - 1, 1.15, 0.9, 0.8, "#9cafa0", "metal", "near");
-    put(
-      0,
-      3.5,
-      F + 0.65,
-      W - 0.5,
-      0.3,
-      1.8,
-      "#647969",
-      "plaster",
-      "core",
-      "canopy",
-    );
-  } else if (talat && trade === "workshop") {
-    put(W * 0.2, 0.75, F - 0.65, W * 0.4, 1.3, 1.1, "#677468", "metal");
-    for (const u of [-W * 0.3, -W * 0.1]) {
-      put(
-        u,
-        0.6,
-        F - 0.4,
-        0.95,
-        1.1,
-        0.95,
-        "#3d4944",
-        "metal",
-        "near",
-        "cylinder",
-      );
-      put(
-        u,
-        1.25,
-        F - 0.4,
-        0.7,
-        0.3,
-        0.7,
-        "#889789",
-        "metal",
-        "near",
-        "cylinder",
-      );
-    }
-    put(0, 3.4, F - 0.1, W * 0.65, 0.15, 0.2, "#b9ab89", "wood");
   }
   // Deep merchant lintel and securely mounted horizontal sign cabinet.
   if (
@@ -313,18 +182,11 @@ export function emitChinatownArchitecture(
     song ? "#736448" : gold ? "#a13136" : talat ? "#59726a" : "#9d614e",
     "wood",
   );
-  if (p.bays[0]!.cabinet) {
-    const y = Math.min(H - 2, 8.1),
-      u = (W - 0.12) * 0.31;
-    put(u, y, F + 1.25, 0.72, 4.7, 1.4, "#a54b3e", "metal");
-    for (const y1 of [y - 1.4, y + 1.4])
-      put(u, y1, F + 0.63, 0.18, 0.18, 1.4, "#40534e", "metal");
-  }
   const floors = Math.max(2, Math.floor((H - 2) / 3.5));
   for (let floor = 1; floor < floors; floor++) {
     const y = 6.5 + ((floor - 1) * (H - 6)) / (floors - 1);
     put(0, y - 1.3, F + 0.1, W, 0.18, 0.28, trim);
-    const columns = W > 14 ? 3 : 2;
+    const columns = W > 16 ? 3 : seed % 3 === 0 ? 1 : 2;
     for (let j = 0; j < columns; j++) {
       const u = ((j + 0.5) * W) / columns - W / 2;
       put(u, y, F + 0.08, (W / columns) * 0.64, 2.05, 0.16, wood, "wood");
@@ -488,5 +350,6 @@ export function emitChinatownArchitecture(
       "cylinder",
     );
   }
+  emitChinatownDetail(p, emit);
   return true;
 }

@@ -1,0 +1,30 @@
+{
+  "method": "Node gzipSync default level, exact production JS/CSS files, same Node runtime for both versions",
+  "node": "v24.19.0",
+  "versions": {
+    "before": [
+      {
+        "file": "index-Bafjd-h7.css",
+        "bytes": 136594,
+        "gzip": 24900
+      },
+      {
+        "file": "index-Bqcta7pZ.js",
+        "bytes": 2410252,
+        "gzip": 787417
+      }
+    ],
+    "after": [
+      {
+        "file": "index-BZRINxt6.js",
+        "bytes": 2426123,
+        "gzip": 793324
+      },
+      {
+        "file": "index-Bafjd-h7.css",
+        "bytes": 136594,
+        "gzip": 24900
+      }
+    ]
+  }
+}

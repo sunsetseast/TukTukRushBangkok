@@ -5,6 +5,7 @@ import { planEnvironment } from "./environmentPlan";
 import { stableHash } from "./buildingGrammar";
 export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
   let siteId: string | undefined;
+  let litStall = false;
   const put = (
     x: number,
     y: number,
@@ -30,6 +31,12 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       shape,
       layer,
       siteId,
+      glow:
+        litStall && layer !== "night" && y < 2.8
+          ? y > 1.35
+            ? "#6b5d36"
+            : "#272b22"
+          : undefined,
       surface: shape === "orb" ? "plaster" : surface,
     });
   const nodes = new Map(d.nodes.map((n) => [n.id, n])),
@@ -107,6 +114,9 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
   }
   for (const site of planEnvironment(d)) {
     siteId = site.id;
+    litStall =
+      site.region === "chinatown" &&
+      ["noodle", "grill", "fruit", "tea", "wok", "dessert"].includes(site.kind);
     const b = site.body,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
@@ -255,13 +265,70 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
       if (site.kind !== "fruit")
         for (const u of [-b.w * 0.43, b.w * 0.43])
           B(u, 2.2, 0, 0.07, 1.7, 0.07, "#778780", "cylinder");
-      const showcase =
-        site.region === "chinatown" &&
-        b.x > -145 &&
-        b.x < 100 &&
-        b.z > -200 &&
-        b.z < -30;
+      const showcase = site.region === "chinatown";
       if (showcase) {
+        // Existing collision-fitted carts gain stainless drawers, coolers,
+        // trays, condiments and a mounted menu; no new roadside footprints.
+        B(b.w * 0.27, 0.65, 0, b.w * 0.24, 0.7, b.d * 0.74, "#d3cbb3");
+        B(
+          b.w * 0.27,
+          0.68,
+          b.d * 0.38,
+          0.4,
+          0.07,
+          0.04,
+          "#677f78",
+          "box",
+          "near",
+        );
+        B(-b.w * 0.2, 1.65, 0, b.w * 0.4, 0.24, b.d * 0.56, "#bfc8b5");
+        for (let j = 0; j < 3; j++) {
+          B(
+            -b.w * 0.3 + j * b.w * 0.13,
+            1.84,
+            0,
+            0.18,
+            0.18,
+            0.18,
+            ["#be8053", "#9ba967", "#cca45e"][j]!,
+            "orb",
+            "near",
+          );
+          B(
+            b.w * 0.1 + j * 0.25,
+            1.73,
+            b.d * 0.3,
+            0.13,
+            0.4,
+            0.13,
+            ["#af3a32", "#d4a24c", "#5a927b"][j]!,
+            "cylinder",
+            "near",
+          );
+        }
+        B(
+          0,
+          2.38,
+          -b.d * 0.28,
+          b.w * 0.36,
+          0.52,
+          0.09,
+          "#344b48",
+          "box",
+          "core",
+        );
+        for (let j = 0; j < 3; j++)
+          B(
+            0,
+            2.23 + j * 0.13,
+            -b.d * 0.28 + 0.055,
+            b.w * 0.29,
+            0.025,
+            0.025,
+            "#e2cc9b",
+            "box",
+            "near",
+          );
         B(0, 0.36, 0, b.w - 0.15, 0.14, b.d - 0.15, "#384b52");
         for (const side of [-1, 1])
           B(

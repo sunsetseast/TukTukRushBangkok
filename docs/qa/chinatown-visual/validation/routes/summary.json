@@ -1,0 +1,140 @@
+[
+  {
+    "matrix": "static",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 0,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 982
+  },
+  {
+    "matrix": "left-lane",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 0,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 982
+  },
+  {
+    "matrix": "historical-no-yield",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 11,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 10,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 982
+  },
+  {
+    "matrix": "legal-982",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 982
+  },
+  {
+    "matrix": "legal-41",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 41
+  },
+  {
+    "matrix": "legal-67",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "completed": 14,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "noMidRouteTeleports": true,
+    "trafficSeed": 67
+  },
+  {
+    "matrix": "waterfront-static",
+    "pass": true,
+    "routes": 29,
+    "zeroContacts": true,
+    "completed": 29,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    }
+  },
+  {
+    "matrix": "waterfront-left-lane",
+    "pass": true,
+    "routes": 6,
+    "zeroContacts": true,
+    "completed": 6,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    }
+  }
+]

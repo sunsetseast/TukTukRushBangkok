@@ -1,8 +1,13 @@
+import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import { regionAt } from "./world";
 import { environmentPeople, placementIndex } from "./environmentPlan";
 import type { District, Point } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
-import { designBuildings, type ParcelDesign } from "./buildingGrammar";
+import {
+  designBuildings,
+  stableHash,
+  type ParcelDesign,
+} from "./buildingGrammar";
 import { distanceToSegment, obstacleDistance } from "../world";
 import type { StreetPerson } from "../streetLife";
 
@@ -133,15 +138,23 @@ export function bangkokPeople(
       p.bays.every((a) => !a.occupied)
     )
       continue;
-    const quota = ["chinatown", "khaosan"].includes(p.region)
-      ? 96
-      : p.region === "talatnoi"
-        ? 64
-        : 48;
+    const activityRegion = p.parcel.chinatown?.character ?? p.region;
+    const quota = ["yaowarat", "commercial", "songwat", "talatnoi"].includes(
+      activityRegion,
+    )
+      ? activityRegion === "yaowarat"
+        ? 100
+        : 52
+      : ["chinatown", "khaosan"].includes(p.region)
+        ? 96
+        : p.region === "talatnoi"
+          ? 64
+          : 48;
     if (
       people.filter(
         (person) =>
-          (person as StreetPerson & { region?: string }).region === p.region,
+          (person as StreetPerson & { activityRegion?: string })
+            .activityRegion === activityRegion,
       ).length >= quota
     )
       continue;
@@ -160,8 +173,7 @@ export function bangkokPeople(
         end = { x: start.x + c * 1.7, z: start.z - s * 1.7 };
       if (!clear(start) || !clear(end)) continue;
       const seed = people.length,
-        role: StreetPerson["role"] =
-          seed % 5 === 0 ? "vendor" : seed % 3 === 0 ? "customer" : "walker";
+        role: StreetPerson["role"] = seed % 3 === 0 ? "customer" : "walker";
       people.push(
         Object.assign(
           {
@@ -173,23 +185,66 @@ export function bangkokPeople(
             height: 0.95 + (seed % 5) * 0.025,
             role,
           },
-          { region: p.region },
+          { region: p.region, activityRegion },
         ),
       );
     }
   }
   const groups = new Map<string, StreetPerson[]>();
   for (const p of [...environmentPeople(d), ...people]) {
-    const id = regionAt(d, p.start)?.id ?? "connector";
+    const id =
+      (p as StreetPerson & { activityRegion?: string }).activityRegion ??
+      regionAt(d, p.start)?.id ??
+      "connector";
     if (!groups.has(id)) groups.set(id, []);
     groups.get(id)!.push(p);
   }
-  const balanced: StreetPerson[] = [];
+  // Disperse the bounded citywide candidate set across whole corridors; the
+  // old prefix selection starved later blocks of every visible pedestrian.
+  for (const group of groups.values())
+    group.sort(
+      (a, b) =>
+        stableHash(`${a.start.x}:${a.start.z}`) -
+        stableHash(`${b.start.x}:${b.start.z}`),
+    );
+  // Authored browsing/conversation groups anchor the central shop sequence,
+  // sharing the unchanged 360 citywide / 32 visible instanced-person budgets.
+  const staged: StreetPerson[] = [];
+  for (const p of designs.filter(
+    (p) => CHINATOWN_COMPOSITIONS[p.parcel.environmentId ?? ""],
+  )) {
+    const b = p.parcel,
+      yaw = b.yaw ?? 0,
+      c = Math.cos(yaw),
+      s = Math.sin(yaw);
+    for (const [i, off] of [-0.33, -0.19, 0.17, 0.31].entries()) {
+      const u = b.w * off,
+        v = b.d / 2 + (i % 2 ? 2.15 : 1.35),
+        q = { x: b.x + c * u + s * v, z: b.z - s * u + c * v };
+      if (!clear(q)) continue;
+      staged.push({
+        start: q,
+        end: q,
+        ...q,
+        heading: yaw + Math.PI + (i % 2 ? 0.6 : -0.4),
+        role: "customer",
+        seed: 1100 + staged.length,
+        height: 0.95 + (i % 3) * 0.035,
+        region: p.region,
+      });
+    }
+  }
+  const balanced: StreetPerson[] = [...staged];
   for (let i = 0; balanced.length < 360; i++) {
     let found = false;
     for (const group of groups.values())
       if (group[i] && balanced.length < 360) {
-        balanced.push(group[i]!);
+        const q = group[i]!;
+        if (staged.some((p) => Math.hypot(p.x - q.x, p.z - q.z) < 0.95)) {
+          found = true;
+          continue;
+        }
+        balanced.push(q);
         found = true;
       }
     if (!found) break;

@@ -1,0 +1,40 @@
+{
+  "before": {
+    "method": "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
+    "physicalIPhone": false,
+    "buildings": 7274,
+    "roads": 2210,
+    "geometryBuffersBytes": 110134588,
+    "geometries": 9998,
+    "materials": 410,
+    "textures": 8,
+    "trianglesAllLevels": 14166626,
+    "instances": 936904,
+    "constructionMs": 34317,
+    "constructionCpuMs": 39235,
+    "disposal": {
+      "geometries": 9998,
+      "materials": 410,
+      "textures": 8
+    }
+  },
+  "after": {
+    "method": "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
+    "physicalIPhone": false,
+    "buildings": 7274,
+    "roads": 2210,
+    "geometryBuffersBytes": 115275463,
+    "geometries": 9951,
+    "materials": 410,
+    "textures": 9,
+    "trianglesAllLevels": 14517546,
+    "instances": 961762,
+    "constructionMs": 42914,
+    "constructionCpuMs": 41958,
+    "disposal": {
+      "geometries": 9951,
+      "materials": 410,
+      "textures": 9
+    }
+  }
+}
