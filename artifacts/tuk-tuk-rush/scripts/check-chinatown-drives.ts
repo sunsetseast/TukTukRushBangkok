@@ -84,6 +84,25 @@ for (const [from, to] of pairs.filter(
       ),
       "Every planned edge obeys its real one-way rule",
     );
+  const signalPlan = full.slice(0, -1).map((a, i) => {
+    const b = full[i + 1]!,
+      r = d.roads.find(
+        (r) =>
+          (r.a === a.id && r.b === b.id) ||
+          (!r.oneWay && r.b === a.id && r.a === b.id),
+      )!,
+      incident = d.roads.filter(
+        (r) => !r.noTraffic && (r.a === b.id || r.b === b.id),
+      );
+    return {
+      signal:
+        !r.noTraffic &&
+        !r.roundabout &&
+        incident.length >= 3 &&
+        !incident.some((r) => r.roundabout),
+      horizontal: Math.abs(b.x - a.x) > Math.abs(b.z - a.z),
+    };
+  });
   let points = full;
   if (lanes)
     points = full.map((p, i) => {
@@ -118,6 +137,11 @@ for (const [from, to] of pairs.filter(
   if (legal && traffic) {
     e["trafficSystem"].reset();
     e.model.traffic = e["trafficSystem"].create(e.model.player);
+    assert.equal(
+      e.model.traffic.length,
+      38,
+      "Legal replay retains the full production traffic population",
+    );
     assert(
       e.model.traffic.every(
         (car) => Math.hypot(car.x - start.x, car.z - start.z) > 8,
@@ -175,28 +199,40 @@ for (const [from, to] of pairs.filter(
     // unchanged; the legal replay uses left lanes and normal hazard braking.
     const fx = Math.sin(p.heading),
       fz = Math.cos(p.heading);
-    const hazard =
+    const signalRed =
       legal &&
-      e.model.traffic.some((car) => {
-        const dx = car.x - p.x,
-          dz = car.z - p.z,
-          ahead = dx * fx + dz * fz,
-          side = Math.abs(dx * fz - dz * fx);
-        if (ahead > 0 && ahead < 6 + Math.max(0, p.speed) * 0.8 && side < 3.35)
-          return true;
-        if (car.speed < 0.1 && side > 3.35) return false;
-        const vx = Math.sin(car.heading) * car.speed - fx * p.speed,
-          vz = Math.cos(car.heading) * car.speed - fz * p.speed,
-          vv = vx * vx + vz * vz;
-        const t =
-          vv > 0.1 ? Math.max(0, Math.min(1.3, -(dx * vx + dz * vz) / vv)) : 0;
-        return (
-          ahead > 1 &&
-          Math.hypot(dx, dz) < 20 &&
-          dx * vx + dz * vz < 0 &&
-          Math.hypot(dx + vx * t, dz + vz * t) < 4.3
-        );
-      });
+      signalPlan[index]!.signal &&
+      e.intersectionHorizontalGreen !== signalPlan[index]!.horizontal;
+    const stopLight = signalRed && distance < 16 && distance > 7;
+    const hazard =
+      stopLight ||
+      (legal &&
+        e.model.traffic.some((car) => {
+          const dx = car.x - p.x,
+            dz = car.z - p.z,
+            ahead = dx * fx + dz * fz,
+            side = Math.abs(dx * fz - dz * fx);
+          if (
+            ahead > 0 &&
+            ahead < 6 + Math.max(0, p.speed) * 0.8 &&
+            side < 3.35
+          )
+            return true;
+          if (car.speed < 0.1 && side > 3.35) return false;
+          const vx = Math.sin(car.heading) * car.speed - fx * p.speed,
+            vz = Math.cos(car.heading) * car.speed - fz * p.speed,
+            vv = vx * vx + vz * vz;
+          const t =
+            vv > 0.1
+              ? Math.max(0, Math.min(1.3, -(dx * vx + dz * vz) / vv))
+              : 0;
+          return (
+            ahead > 1 &&
+            Math.hypot(dx, dz) < 20 &&
+            dx * vx + dz * vz < 0 &&
+            Math.hypot(dx + vx * t, dz + vz * t) < 4.3
+          );
+        }));
     Object.assign(e.model.input, {
       steer: stop ? 0 : Math.max(-1, Math.min(1, -error * 2.3)),
       gas: !hazard && !stop && p.speed < speed,
@@ -280,6 +316,10 @@ const report = {
         0,
   ),
   traffic,
+  trafficVehicles: traffic ? e.model.traffic.length : 0,
+  driverProtocol: legal
+    ? "left-lane/yield/two-phase-signals-v1"
+    : "historical graph guidance",
   lanes,
   legal,
   seed: 26,

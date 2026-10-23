@@ -286,6 +286,9 @@ try {
       );
       saved = {
         ...report,
+        resetsRuntimeSourceSha256: report.resets.length
+          ? report.runtimeSourceSha256
+          : (old.resetsRuntimeSourceSha256 ?? old.runtimeSourceSha256),
         scenes: [
           ...old.scenes.filter(
             (s) => !report.scenes.some((q) => q.id === s.id),
