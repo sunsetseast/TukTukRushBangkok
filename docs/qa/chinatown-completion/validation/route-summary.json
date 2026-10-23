@@ -1,0 +1,1131 @@
+[
+  {
+    "matrix": "static",
+    "pass": true,
+    "routes": 14,
+    "metres": 16315,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "results": [
+      {
+        "id": "yaowarat-east>yaowarat-west",
+        "complete": true,
+        "metres": 605,
+        "frames": 3814,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "gate>traimit",
+        "complete": true,
+        "metres": 1692,
+        "frames": 10604,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "hua>gate",
+        "complete": true,
+        "metres": 473,
+        "frames": 3031,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>ratchawong",
+        "complete": true,
+        "metres": 548,
+        "frames": 3501,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>song-wat",
+        "complete": true,
+        "metres": 742,
+        "frames": 4680,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "song-wat>talat-noi",
+        "complete": true,
+        "metres": 626,
+        "frames": 3973,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "talat-noi>river-city",
+        "complete": true,
+        "metres": 302,
+        "frames": 2026,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "river-city>bang-rak",
+        "complete": true,
+        "metres": 994,
+        "frames": 6214,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>memorial-east",
+        "complete": true,
+        "metres": 1095,
+        "frames": 6769,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>icon",
+        "complete": true,
+        "metres": 2756,
+        "frames": 16801,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>pho",
+        "complete": true,
+        "metres": 1320,
+        "frames": 8162,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>paragon",
+        "complete": true,
+        "metres": 2592,
+        "frames": 16045,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "plaeng-nam>mangkon",
+        "complete": true,
+        "metres": 1157,
+        "frames": 7267,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "wat-mangkon>holy-rosary",
+        "complete": true,
+        "metres": 1413,
+        "frames": 8675,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      }
+    ]
+  },
+  {
+    "matrix": "left-lane",
+    "pass": true,
+    "routes": 14,
+    "metres": 16300,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0,
+    "results": [
+      {
+        "id": "yaowarat-east>yaowarat-west",
+        "complete": true,
+        "metres": 604,
+        "frames": 3801,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "gate>traimit",
+        "complete": true,
+        "metres": 1691,
+        "frames": 10584,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "hua>gate",
+        "complete": true,
+        "metres": 478,
+        "frames": 3055,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>ratchawong",
+        "complete": true,
+        "metres": 545,
+        "frames": 3483,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>song-wat",
+        "complete": true,
+        "metres": 734,
+        "frames": 4638,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "song-wat>talat-noi",
+        "complete": true,
+        "metres": 627,
+        "frames": 3979,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "talat-noi>river-city",
+        "complete": true,
+        "metres": 304,
+        "frames": 2034,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "river-city>bang-rak",
+        "complete": true,
+        "metres": 998,
+        "frames": 6235,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>memorial-east",
+        "complete": true,
+        "metres": 1089,
+        "frames": 6731,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>icon",
+        "complete": true,
+        "metres": 2745,
+        "frames": 16728,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>pho",
+        "complete": true,
+        "metres": 1321,
+        "frames": 8154,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>paragon",
+        "complete": true,
+        "metres": 2591,
+        "frames": 16022,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "plaeng-nam>mangkon",
+        "complete": true,
+        "metres": 1156,
+        "frames": 7254,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "wat-mangkon>holy-rosary",
+        "complete": true,
+        "metres": 1417,
+        "frames": 8694,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      }
+    ]
+  },
+  {
+    "matrix": "historical-traffic",
+    "pass": true,
+    "routes": 14,
+    "metres": 16315,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 11,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 10,
+    "results": [
+      {
+        "id": "yaowarat-east>yaowarat-west",
+        "complete": true,
+        "metres": 605,
+        "frames": 3813,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "gate>traimit",
+        "complete": true,
+        "metres": 1692,
+        "frames": 10608,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 2022,
+            "kind": "traffic",
+            "id": "",
+            "x": 84.00479867039172,
+            "z": -250.39714471044704,
+            "trafficId": 1,
+            "player": {
+              "x": 84.00479867039172,
+              "z": -250.39714471044704,
+              "heading": -3.6486910652825646,
+              "speed": 6.5412663737846355
+            },
+            "npc": {
+              "x": 82.70266439572359,
+              "z": -253.21261098279598,
+              "id": 1,
+              "from": "civic:826667:-2480000",
+              "to": "civic:960000:-2720000",
+              "heading": 2.634494149197447,
+              "speed": 8.984685529545262,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "hua>gate",
+        "complete": true,
+        "metres": 473,
+        "frames": 3031,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>ratchawong",
+        "complete": true,
+        "metres": 548,
+        "frames": 3503,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "yaowarat-east>song-wat",
+        "complete": true,
+        "metres": 742,
+        "frames": 4681,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "song-wat>talat-noi",
+        "complete": true,
+        "metres": 626,
+        "frames": 3973,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "talat-noi>river-city",
+        "complete": true,
+        "metres": 302,
+        "frames": 2026,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "river-city>bang-rak",
+        "complete": true,
+        "metres": 994,
+        "frames": 6214,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "yaowarat-east>memorial-east",
+        "complete": true,
+        "metres": 1095,
+        "frames": 6767,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "yaowarat-east>icon",
+        "complete": true,
+        "metres": 2756,
+        "frames": 16800,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "yaowarat-east>pho",
+        "complete": true,
+        "metres": 1320,
+        "frames": 8163,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 1,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 1,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "yaowarat-east>paragon",
+        "complete": true,
+        "metres": 2592,
+        "frames": 16048,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 4,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 3,
+        "events": [
+          {
+            "frame": 755,
+            "kind": "traffic",
+            "id": "",
+            "x": 33.5513003217284,
+            "z": -144.03671192411738,
+            "trafficId": 1,
+            "player": {
+              "x": 33.5513003217284,
+              "z": -144.03671192411738,
+              "heading": -1.9655804653757314,
+              "speed": 9.380826286564735
+            },
+            "npc": {
+              "x": 31.7188346177657,
+              "z": -141.53381890926428,
+              "id": 1,
+              "from": "civic:480000:-1380000",
+              "to": "civic:240000:-1480000",
+              "heading": -1.9655874464906575,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#4da995",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          },
+          {
+            "frame": 1636,
+            "kind": "traffic",
+            "id": "",
+            "x": 90.9791033296604,
+            "z": -262.9406805261807,
+            "trafficId": 2,
+            "player": {
+              "x": 90.9791033296604,
+              "z": -262.9406805261807,
+              "heading": -3.6486911560258237,
+              "speed": 6.467393222213662
+            },
+            "npc": {
+              "x": 89.68186767252213,
+              "z": -265.7584072073634,
+              "id": 2,
+              "from": "civic:826667:-2480000",
+              "to": "civic:960000:-2720000",
+              "heading": 2.6033145728542233,
+              "speed": 7.162758492183288,
+              "kind": "taxi",
+              "color": "#e6bc54",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          },
+          {
+            "frame": 1653,
+            "kind": "traffic",
+            "id": "",
+            "x": 92.6443877707222,
+            "z": -264.71703347057,
+            "trafficId": 2,
+            "player": {
+              "x": 92.6443877707222,
+              "z": -264.71703347057,
+              "heading": -3.626633187724648,
+              "speed": 9.889623550598493
+            },
+            "npc": {
+              "x": 90.20170508704099,
+              "z": -266.62902335204006,
+              "id": 2,
+              "from": "civic:826667:-2480000",
+              "to": "civic:960000:-2720000",
+              "heading": 2.60331457285365,
+              "speed": 1.6318294741844934,
+              "kind": "taxi",
+              "color": "#e6bc54",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          },
+          {
+            "frame": 11719,
+            "kind": "traffic",
+            "id": "",
+            "x": 550.7727280430606,
+            "z": -322.1137714361715,
+            "trafficId": 34,
+            "player": {
+              "x": 550.7727280430606,
+              "z": -322.1137714361715,
+              "heading": -3.1772917662690907,
+              "speed": 9.534587005979407
+            },
+            "npc": {
+              "x": 553.813578998882,
+              "z": -322.7266576119659,
+              "id": 34,
+              "from": "bkk:764",
+              "to": "bkk:765",
+              "heading": -0.03569911273910392,
+              "speed": 0,
+              "kind": "taxi",
+              "color": "#b9c9cf",
+              "wait": 0.35,
+              "nearMissCooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "plaeng-nam>mangkon",
+        "complete": true,
+        "metres": 1157,
+        "frames": 7267,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      },
+      {
+        "id": "wat-mangkon>holy-rosary",
+        "complete": true,
+        "metres": 1413,
+        "frames": 8675,
+        "physical": {
+          "static": 0,
+          "prop": 0,
+          "bridge": 0,
+          "traffic": 0,
+          "water": 0,
+          "boundary": 0
+        },
+        "encounters": 0,
+        "events": []
+      }
+    ]
+  },
+  {
+    "matrix": "waterfront-static",
+    "pass": true,
+    "routes": 29,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "lifecycle": {
+      "pauseResume": true,
+      "iconRestarts": 3,
+      "revisions": [
+        31,
+        32,
+        33
+      ],
+      "submergedRecoveryPreservesProgress": true,
+      "completedShift": true,
+      "returnedToFreeRoam": true
+    }
+  },
+  {
+    "matrix": "waterfront-left-lane",
+    "pass": true,
+    "routes": 6,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "lifecycle": {
+      "pauseResume": true,
+      "iconRestarts": 3,
+      "revisions": [
+        8,
+        9,
+        10
+      ],
+      "submergedRecoveryPreservesProgress": true,
+      "completedShift": true,
+      "returnedToFreeRoam": true
+    }
+  },
+  {
+    "matrix": "legal-982",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "driverProtocol": "left-lane/yield/two-phase-signals-v1",
+    "metres": 16293,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0
+  },
+  {
+    "matrix": "legal-41",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "driverProtocol": "left-lane/yield/two-phase-signals-v1",
+    "metres": 16298,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0
+  },
+  {
+    "matrix": "legal-67",
+    "pass": true,
+    "routes": 14,
+    "trafficVehicles": 38,
+    "driverProtocol": "left-lane/yield/two-phase-signals-v1",
+    "metres": 16294,
+    "contactFrames": {
+      "static": 0,
+      "prop": 0,
+      "bridge": 0,
+      "traffic": 0,
+      "water": 0,
+      "boundary": 0
+    },
+    "encounters": 0
+  }
+]

@@ -1,0 +1,19 @@
+browser-install.log
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: End of central directory record signature not found. Either not a zip file, or file is truncated.
+Error: Failed to download Chrome for Testing 156.0.8078.4 (playwright chromium v1248), caused by
+Error: Download failure, code=1
+apt-fallback.log
+  Could not open file /var/cache/apt/archives/partial/apparmor_4.0.1really4.0.1-0ubuntu0.24.04.7_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/liblzo2-2_2.10-2build4_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/squashfs-tools_1%3a4.6.1-1build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/snapd_2.76.3+ubuntu24.04_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/chromium-browser_2%3a1snap1-0ubuntu2_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/libapparmor1_4.0.1really4.0.1-0ubuntu0.24.04.7_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/systemd-hwe-hwdb_255.1.7_all.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+  Could not open file /var/cache/apt/archives/partial/udev_255.4-1ubuntu8.17_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 44103]
+Initial WebGL startup wait exceeded 120000 ms before SwiftShader libraries/startup flags were corrected. Final captures report no page errors.
+Executor temporarily reported no usable environment, then resumed with the working tree intact.

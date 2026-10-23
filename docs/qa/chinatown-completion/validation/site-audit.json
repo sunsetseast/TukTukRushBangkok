@@ -1,0 +1,42 @@
+{
+  "baselineCommit": "e765f65d5f5ce4490c463614266448780af469c4",
+  "classification": [
+    {
+      "block": "ctblock:2",
+      "category": "missing urban fabric / working waterfront",
+      "action": "49 rear warehouse properties, court thresholds, bank-edge walls, protected pier/compound holes",
+      "view": "song-wat-river"
+    },
+    {
+      "block": "ctblock:1",
+      "category": "missing rear urban fabric",
+      "action": "28 workshop/service wings and courts; preserve River City approach",
+      "view": "district-blocks"
+    },
+    {
+      "block": "ctblock:3",
+      "category": "missing secondary wings",
+      "action": "18 workshop/merchant wings; retain Wanit 2/Yotha access",
+      "view": "talat-noi"
+    },
+    {
+      "block": "ctblock:6",
+      "category": "merchant service space",
+      "action": "3 fitted wings and bounded service courts",
+      "view": "district-blocks"
+    },
+    {
+      "block": "ctblock:10",
+      "category": "missing interior fabric",
+      "action": "10 fitted rear wings and exposed-side treatment",
+      "view": "district-blocks"
+    },
+    {
+      "block": "ctblock:25",
+      "category": "merchant service space",
+      "action": "3 rear wings; preserve outward commercial frontage",
+      "view": "ratchawong"
+    }
+  ],
+  "retainedOpenSpace": "All protected temple/church/station/gateway forecourts, existing piers, public pedestrian passages, road-plus-sidewalk ribbons, river and maneuver envelopes. No perimeter-wide generic promenade."
+}
