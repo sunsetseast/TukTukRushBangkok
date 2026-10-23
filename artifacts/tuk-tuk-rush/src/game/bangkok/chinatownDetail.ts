@@ -1,3 +1,5 @@
+import { STOREFRONT } from "./storefrontMounts";
+import { emitHistoricTradeDetail } from "./historicTradeDetail";
 import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import type { ArtPiece } from "./architecturalBatch";
 import type { ParcelDesign } from "./buildingGrammar";
@@ -10,6 +12,7 @@ export function emitChinatownDetail(
   const b = p.parcel,
     ct = b.chinatown;
   if (!ct) return;
+  emitHistoricTradeDetail(p, emit);
   const a = p.bays[0]!,
     seed = a.seed,
     W = b.w,
@@ -367,16 +370,18 @@ export function emitChinatownDetail(
   // Curated canopy variants, inset behind the curb. This is a rigid shop
   // awning with a shallow slope rather than the old half-sphere placeholder.
   if (!work && a.trade !== "residence" && v !== 5) {
-    put(0, 3.72, F + 0.55, W - 0.35, 0.17, 1.7, accent, {
+    put(0, STOREFRONT.awningY, F + 0.55, W - 0.35, 0.17, 1.7, accent, {
       surface: "cloth",
       pitch: 0.12,
     });
-    put(0, 3.5, F + 1.34, W - 0.35, 0.28, 0.12, accent, { surface: "cloth" });
+    put(0, STOREFRONT.awningLipY, F + 1.34, W - 0.35, 0.28, 0.12, accent, {
+      surface: "cloth",
+    });
     if (v % 2 === 0)
       for (let i = 0; i < 6; i++)
         put(
           ((i - 2.5) * (W - 0.4)) / 6,
-          3.73,
+          STOREFRONT.awningY + 0.025,
           F + 0.55,
           (W - 0.4) / 12,
           0.025,

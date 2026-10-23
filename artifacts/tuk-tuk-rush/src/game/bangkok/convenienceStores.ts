@@ -1,3 +1,4 @@
+import { STOREFRONT } from "./storefrontMounts";
 import * as T from "three";
 import type { District, Obstacle, Point, Road } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
@@ -371,6 +372,7 @@ export function buildConvenienceStoreSigns(d: District) {
   const root = new T.Group();
   root.name = "7-ElevenStoreSigns";
   if (typeof document === "undefined") return root;
+  const auditFaces: object[] = [];
   const stores = planConvenienceStores(d);
   if (!stores.length) return root;
   const tex = createStoreBrandAtlas(),
@@ -404,14 +406,31 @@ export function buildConvenienceStoreSigns(d: District) {
       temp.rotation.set(0, s.yaw + rotation, 0);
       temp.scale.set(w, h, 1);
       temp.updateMatrix();
+      if (new URLSearchParams(window.location.search).has("qa"))
+        auditFaces.push({
+          owner: s.id,
+          region: "convenience",
+          key: "7-Eleven",
+          position: temp.position.toArray(),
+          yaw: s.yaw + rotation,
+          width: w,
+          height: h,
+        });
       batch.add(tiles[tile]!, material, [temp.matrix.clone()]);
     };
-    sign(0, 3.58, 0.775, 1.57, 1.57, 0);
-    sign(s.width * 0.31, 2.03, 0.555, Math.min(1.2, s.width * 0.18), 1.04, 1);
+    sign(0, 3.58, 0.76 + STOREFRONT.faceRelief, 1.57, 1.57, 0);
+    sign(
+      s.width * 0.31,
+      2.03,
+      0.53 + STOREFRONT.faceRelief,
+      Math.min(1.2, s.width * 0.18),
+      1.04,
+      1,
+    );
     if (s.variant === "corner")
       for (const side of [-1, 1])
         sign(
-          -s.width / 2 + 0.4 + side * 0.067,
+          -s.width / 2 + 0.4 + side * (0.06 + STOREFRONT.bladeRelief),
           4.05,
           0.85,
           1.5,
@@ -424,5 +443,6 @@ export function buildConvenienceStoreSigns(d: District) {
     chunk.name = "BangkokSign";
     root.add(chunk);
   }
+  if (root.children[0]) root.children[0].userData.signFaces = auditFaces;
   return root;
 }

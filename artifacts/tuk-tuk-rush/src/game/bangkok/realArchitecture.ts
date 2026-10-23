@@ -1,3 +1,4 @@
+import { STOREFRONT } from "./storefrontMounts";
 import {curtain,glazing,entrance,planter,palm} from './heroCraft';
 import { siteMasses } from './authoredSites';
 import { buildEmDistrict } from './phromPhong';
@@ -136,6 +137,6 @@ export function buildRealPlaceSigns(d:District){
  for(const[i,e]of labels.entries()){const x=i%cols*cw,y=Math.floor(i/cols)*rh;if(e.plain){ctx.fillStyle='#214a55';ctx.fillRect(x,y,cw,rh);}ctx.font=`600 ${Math.floor(rh*.55)}px "Rush Thai",sans-serif`;ctx.fillStyle=e.id==='terminal'?'#36515c':e.id==='icon'&&e.y<10?'#454c42':'#e7dbc1';const tw=Math.min(cw-24,ctx.measureText(e.text).width);ctx.fillText(e.text,x+cw/2,y+rh/2,cw-24);tiles.push({left:x+cw/2-tw/2-3,top:y+rh*.12,width:tw+6,height:rh*.76});}
  const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.minFilter=T.LinearFilter;tex.generateMipmaps=false;
  const mat=new T.MeshStandardMaterial({map:tex,alphaTest:.25,roughness:.75,emissive:'#ffffff',emissiveMap:tex,emissiveIntensity:.1}),root=new T.Group();
- for(const[i,e]of labels.entries()){const l=d.landmarks.find(l=>l.id===e.id);if(!l?.plot)continue;const t=tiles[i]!,geo=new T.PlaneGeometry(e.w,e.plain?1.8:e.w*t.height/t.width),uv=geo.getAttribute('uv');for(let j=0;j<uv.count;j++)uv.setXY(j,(t.left+uv.getX(j)*t.width)/2048,1-(t.top+(1-uv.getY(j))*t.height)/1024);const yaw=(l.yaw??0)+(e.modelYaw??0),c=Math.cos(yaw),s=Math.sin(yaw),m=new T.Mesh(geo,mat);m.position.set(l.plot.x+c*e.x+s*e.z,e.y,l.plot.z-s*e.x+c*e.z);m.rotation.y=yaw+e.yaw;m.name='ArchitecturalIdentity:'+e.id;root.add(m);}
+ for(const[i,e]of labels.entries()){const l=d.landmarks.find(l=>l.id===e.id);if(!l?.plot)continue;const t=tiles[i]!,geo=new T.PlaneGeometry(e.w,e.plain?1.8:e.w*t.height/t.width),uv=geo.getAttribute('uv');for(let j=0;j<uv.count;j++)uv.setXY(j,(t.left+uv.getX(j)*t.width)/2048,1-(t.top+(1-uv.getY(j))*t.height)/1024);const yaw=(l.yaw??0)+(e.modelYaw??0),c=Math.cos(yaw),s=Math.sin(yaw),m=new T.Mesh(geo,mat);m.position.set(l.plot.x+c*e.x+s*e.z,e.y,l.plot.z-s*e.x+c*e.z);m.rotation.y=yaw+e.yaw;m.position.x+=Math.sin(m.rotation.y)*STOREFRONT.faceRelief;m.position.z+=Math.cos(m.rotation.y)*STOREFRONT.faceRelief;m.name='ArchitecturalIdentity:'+e.id;root.add(m);if(new URLSearchParams(window.location.search).has('qa')){const faces=root.userData.signFaces??=[];faces.push({owner:'landmark:'+e.id,region:REAL_PLACES.find(p=>p.id===e.id)?.region,key:e.text,position:m.position.toArray(),yaw:m.rotation.y,width:e.w,height:e.plain?1.8:e.w*t.height/t.width});}}
  root.userData.materials=[mat];return root;
 }

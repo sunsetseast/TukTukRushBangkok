@@ -67,7 +67,8 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
           "canyon-noodles",
         ];
     const showcase = cinematicParcel(p);
-    const height = showcase
+    if (b.height < 7) continue; // No overhead blade; retain primary fascia.
+    const desiredHeight = showcase
         ? Math.min(
             5.4 + (seed % 3) * 0.8,
             Math.min(...p.bays.map((a) => a.height)) - 5.8,
@@ -75,22 +76,26 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
         : khao
           ? 2 + (seed % 3) * 0.65
           : 5.5 + (seed % 4) * 1.2,
+      height = Math.max(0.8, Math.min(desiredHeight, b.height - 6.1)),
       desiredY = showcase
         ? 5.2 + height / 2
         : khao
           ? 7.4 + (seed % 4) * 0.7
           : Math.max(9, Math.min(15, b.height - 2));
-    const y = Math.min(desiredY, b.height - height / 2 - 0.8);
+    const y = Math.max(
+      5.3 + height / 2,
+      Math.min(desiredY, b.height - height / 2 - 0.8),
+    );
     signs.push({
       p,
       key: key ?? menu[seed % menu.length]!,
       u: b.w * 0.28,
       y,
-      v: F + (showcase ? 2.3 : khao ? 2.6 : 3.2),
+      v: F + (showcase ? 2.3 : khao ? 3.15 : 3.2),
       width: showcase
         ? 1.9 + (seed % 3) * 0.2
         : khao
-          ? 3.4 + (seed % 3) * 0.55
+          ? Math.min(3.4, height < 1.4 ? 2.4 : 3.4 + (seed % 3) * 0.55)
           : 2.7 + (seed % 3) * 0.65,
       height,
       blade: true,
@@ -102,10 +107,10 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
         p,
         key: key ?? menu[(seed + 1) % menu.length]!,
         u: -b.w * 0.22,
-        y: khao ? 5.8 : 5.9,
+        y: 6.4,
         v: F + 1.4,
-        width: Math.min(b.w * 0.75, khao ? 6.8 : 10),
-        height: khao ? 1.8 : 1.9,
+        width: Math.min(b.w * 0.38, 5.6),
+        height: 1.6,
         blade: false,
         hero: !!key,
       });
@@ -148,10 +153,19 @@ export function emitDistrictSigns(
         shape,
         pitch,
         surface: "metal",
+        siteId: b.environmentId ?? p.id,
       });
     // Cabinet's back reaches its facade; two steel arms make the mounting legible.
     for (const h of [y - height * 0.32, y + height * 0.32])
-      B(u, h, (F + v) / 2, 0.18, 0.16, v - F + width * 0.45, "#435457");
+      B(
+        u,
+        h,
+        (F + v - (blade ? 0 : 0.225)) / 2,
+        0.18,
+        0.16,
+        v - F - (blade ? 0 : 0.225),
+        "#435457",
+      );
     B(u, y, F + 0.1, 0.32, height + 0.5, 0.22, "#5c5550");
     B(
       u,

@@ -16,6 +16,7 @@ export type StreetPerson = {
   seed: number;
   height: number;
   region?: string;
+  pose?: "browse" | "talk" | "work";
   // Visual-only evasive offset: actual sidewalk route remains deterministic.
   dodgeX?: number;
   dodgeZ?: number;
@@ -497,7 +498,14 @@ export function buildStreetLife(d: District, population?: StreetPerson[]) {
             temp.position.set(side * 0.27, 1.07, 0.03);
             temp.scale.set(0.065, 0.17, 0.065);
             temp.rotation.x =
-              side * swing + (p.role === "vendor" ? -0.7 + serve : 0);
+              side * swing +
+              (p.role === "vendor" || p.pose === "work"
+                ? -0.7 + serve
+                : p.pose === "browse"
+                  ? -0.4
+                  : p.pose === "talk" && side > 0
+                    ? -0.55
+                    : 0);
             break;
           }
           case "leftLeg":

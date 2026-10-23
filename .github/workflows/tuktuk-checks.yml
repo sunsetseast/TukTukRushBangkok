@@ -12,7 +12,8 @@ on:
 jobs:
   game:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # PR40 exhausted the 20m job limit during waterfront checks.
+    timeout-minutes: 60
     env:
       PORT: '24177'
       BASE_PATH: '/'

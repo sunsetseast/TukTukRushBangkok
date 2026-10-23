@@ -1,3 +1,8 @@
+import {
+  storefrontMount,
+  districtFaceOffset,
+  STOREFRONT,
+} from "./storefrontMounts";
 import { CHINATOWN_SIGN_ENTRIES } from "./chinatownSigns";
 import { DISTRICT_SIGN_ENTRIES, districtSigns } from "./districtSigns";
 import { CURATED_SIGNS, curatedSignKey } from "./curatedSigns";
@@ -55,6 +60,8 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
     batch = new StaticBatch(),
     root = new T.Group();
+  const auditFaces: object[] = [];
+  root.userData.signFaces = auditFaces;
   const matH = new T.MeshStandardMaterial({
     map: atlas.h.tex,
     emissiveMap: atlas.h.tex,
@@ -106,11 +113,26 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     temp.rotation.set(0, yaw + rotation, 0);
     temp.scale.set(w, height, 1);
     temp.updateMatrix();
+    if (
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).has("qa")
+    )
+      auditFaces.push({
+        owner: p.id,
+        region: p.parcel.chinatown?.character ?? p.region,
+        key: SIGN_ENTRIES[i]!.key,
+        position: temp.position.toArray(),
+        yaw: yaw + rotation,
+        width: w,
+        height,
+      });
     batch.add(vertical ? v[i]! : h[i]!, vertical ? matV : matH, [
       temp.matrix.clone(),
     ]);
   };
-  for (const p of designs.filter((p) => !p.parcel.artRole))
+  for (const p of designs.filter(
+    (p) => !p.parcel.artRole && !p.parcel.chinatown?.role,
+  ))
     for (const a of p.bays) {
       if (a.trade === "residence" || a.trade === "closed") continue;
       const ctKey = p.parcel.chinatown
@@ -143,12 +165,21 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       )!;
       const W = a.width - 0.16,
         sw = Math.min(W - 0.55, a.type === "workshop" ? W * 0.65 : W - 0.55);
-      place(p, a.u, 4.32, a.front + 0.558, sw - 0.1, 0.95, i);
-      if (a.cabinet)
+      const mount = storefrontMount(p, a);
+      place(
+        p,
+        mount.u,
+        mount.y,
+        mount.face,
+        mount.letteringWidth,
+        mount.letteringHeight,
+        i,
+      );
+      if (a.cabinet && !["chinatown", "khaosan"].includes(p.region))
         for (const side of [-1, 1])
           place(
             p,
-            a.u + W * 0.31 + side * 0.407,
+            a.u + W * 0.31 + side * 0.475,
             Math.min(a.height - 2, 8.1),
             a.front + 1.25,
             1.2,
@@ -164,7 +195,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       for (const side of [-1, 1])
         place(
           sign.p,
-          sign.u + side * 0.286,
+          sign.u + side * districtFaceOffset(sign.round),
           sign.y,
           sign.v,
           sign.width,
@@ -174,7 +205,15 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
           (side * Math.PI) / 2,
         );
     else
-      place(sign.p, sign.u, sign.y, sign.v + 0.235, sign.width, sign.height, i);
+      place(
+        sign.p,
+        sign.u,
+        sign.y,
+        sign.v + districtFaceOffset(),
+        sign.width,
+        sign.height,
+        i,
+      );
   }
   const byParcel = new Map(designs.map((p) => [p.parcel, p]));
   for (const node of cityPlaces(d, designs).filter((p) => p.parcel)) {
@@ -212,7 +251,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       s = Math.sin(f.yaw);
     for (let i = 0; i < count; i++) {
       const u = (i + 0.5) * bw - (f.width - 0.4) / 2,
-        v = f.depth / 2 + 0.32;
+        v = f.depth / 2 + 0.285 + STOREFRONT.faceRelief;
       temp.position.set(
         f.parcel.x + c * u + s * v,
         3.95,
@@ -221,6 +260,19 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       temp.rotation.set(0, f.yaw, 0);
       temp.scale.set(bw - 0.5, 0.67, 1);
       temp.updateMatrix();
+      if (
+        typeof window !== "undefined" &&
+        new URLSearchParams(window.location.search).has("qa")
+      )
+        auditFaces.push({
+          owner: p.id,
+          region: p.region,
+          key: SIGN_ENTRIES[index]!.key,
+          position: temp.position.toArray(),
+          yaw: f.yaw,
+          width: bw - 0.5,
+          height: 0.67,
+        });
       batch.add(h[index]!, matH, [temp.matrix.clone()]);
     }
   }
@@ -293,5 +345,6 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
     chunk.name = "BangkokSign";
     root.add(chunk);
   });
+  if (root.children[0]) root.children[0].userData.signFaces = auditFaces;
   return root;
 }

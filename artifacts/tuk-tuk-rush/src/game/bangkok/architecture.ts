@@ -1,3 +1,4 @@
+import { STOREFRONT, storefrontMount } from "./storefrontMounts";
 import { emitChinatownArchitecture } from "./chinatownArchitecture";
 import { emitBlockArchitecture } from "./urbanBlocks";
 import { isHistoricWaterfront } from "./historicPlan";
@@ -189,9 +190,14 @@ function emitHeroContextBlock(
  * shop boundary; projecting canopies are overhead, never new driving barriers. */
 export function emitDistrictArchitecture(
   designs: ParcelDesign[],
-  emit: (piece: ArtPiece) => void,
+  emitOwned: (piece: ArtPiece) => void,
 ) {
   for (const p of designs) {
+    const emit = (piece: ArtPiece) =>
+      emitOwned({
+        ...piece,
+        siteId: piece.siteId ?? p.parcel.environmentId ?? p.id,
+      });
     if (isHistoricWaterfront(p.parcel)) {
       const b = p.parcel,
         c = Math.cos(b.yaw ?? 0),
@@ -571,7 +577,7 @@ export function emitDistrictArchitecture(
         span = (W - 0.5) / a.windows;
       structuralLayer = "near";
       for (let f = 1; f <= levels; f++) {
-        const y = shop + 0.9 + (f - 1) * floor,
+        const y = shop + 3.15 + (f - 1) * floor,
           wh = Math.min(2.15, floor - 0.8),
           ww = Math.min(span * 0.64, modern ? 2.5 : 1.9);
         B(0, y - wh / 2 - 0.33, F - 0.66, W, 0.65, 1.7, a.wall);
@@ -882,7 +888,7 @@ export function emitDistrictArchitecture(
             "panel",
           );
       if (a.type === "retail") {
-        B(0, 4.7, F + 0.5, W, 0.4, 2.1, a.accent, "panel");
+        B(0, 3.3, F + 0.5, W, 0.4, 2.1, a.accent, "panel");
         B(0, H * 0.7, F + 0.18, W * 0.88, 2.5, 0.25, "#3b7688", "panel");
         for (let n = 0; n < 4; n++)
           B(
@@ -945,8 +951,8 @@ export function emitDistrictArchitecture(
         B(0, 3.6, F + 0.1, W, 0.16, 0.8, "#68786d", "metal", "near");
       }
       if (p.region === "siam" && modern) {
-        B(0, 4.88, F + 0.12, W, 0.16, 1.9, "#ddc89d", "metal", "near");
-        B(0, 4.74, F + 0.12, W * 0.85, 0.045, 1.4, "#c4e3e2", "panel", "night");
+        B(0, 5.2, F + 0.12, W, 0.16, 1.9, "#ddc89d", "metal", "near");
+        B(0, 5.1, F + 0.12, W * 0.85, 0.045, 1.4, "#c4e3e2", "panel", "night");
       }
       if (p.region === "silom" && a.type === "office")
         for (const u of [-W * 0.2, W * 0.2])
@@ -992,9 +998,39 @@ export function emitDistrictArchitecture(
           W - 0.55,
           a.type === "workshop" ? W * 0.65 : W - 0.55,
         );
-        B(0, 4.32, F + 0.2, signW + 0.12, 1.2, 0.5, a.trim, "metal");
-        B(0, 4.32, F + 0.48, signW, 1.04, 0.13, a.accent, "metal");
-        if (a.cabinet) {
+        const mount = storefrontMount(p, a);
+        for (const side of [-1, 1])
+          B(
+            side * mount.width * 0.36,
+            mount.y,
+            (a.front + mount.v) / 2,
+            0.16,
+            0.2,
+            mount.v - a.front + 0.15,
+            a.trim,
+            "metal",
+          );
+        B(
+          0,
+          mount.y,
+          mount.v,
+          mount.width + 0.12,
+          mount.height,
+          mount.depth,
+          a.trim,
+          "metal",
+        );
+        B(
+          0,
+          mount.y,
+          mount.face - 0.13,
+          mount.width,
+          1.04,
+          0.08,
+          a.accent,
+          "metal",
+        );
+        if (a.cabinet && !["chinatown", "khaosan"].includes(p.region)) {
           const u = W * 0.31,
             y = Math.min(H - 2, 8.1);
           B(u, y, F + 0.75, 0.55, 5, 1.6, a.trim, "metal");
@@ -1011,8 +1047,17 @@ export function emitDistrictArchitecture(
         )
       ) {
         const can = a.trade === "coffee" ? "#52877c" : a.accent;
-        B(0, 3.22, F + 0.52, W - 0.12, 0.15, 1.65, can, "cloth");
-        B(0, 3.04, F + 1.29, W - 0.12, 0.3, 0.16, can, "cloth");
+        B(0, STOREFRONT.awningY, F + 0.52, W - 0.12, 0.15, 1.65, can, "cloth");
+        B(
+          0,
+          STOREFRONT.awningLipY,
+          F + 1.29,
+          W - 0.12,
+          0.3,
+          0.16,
+          can,
+          "cloth",
+        );
         for (const side of [-1, 1])
           B(
             side * W * 0.43,

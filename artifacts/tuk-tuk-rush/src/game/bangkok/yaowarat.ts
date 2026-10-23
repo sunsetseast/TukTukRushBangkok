@@ -1,3 +1,4 @@
+import { storefrontMount } from "./storefrontMounts";
 import type { District } from "../types";
 import type { ArtPiece } from "./architecturalBatch";
 import type { ParcelDesign, Surface } from "./buildingGrammar";
@@ -176,15 +177,48 @@ export function emitYaowaratFacade(
     put(0, 3.93, F - 0.5, W, 0.78, 1.8, a.wall, "plaster", "core");
     put(0, 4.58, F - 0.18, W, 0.38, 1.2, a.trim, "plaster", "core");
     // The lettering in signage.ts sits on this recessed, physically supported lightbox.
-    put(0, 4.32, F + 0.28, W - 0.5, 1.25, 0.5, a.accent, "metal", "core");
-    put(0, 4.32, F + 0.5, W - 0.68, 1.04, 0.04, cream, "panel", "core");
+    const mount = storefrontMount(p, a);
+    for (const side of [-1, 1])
+      put(
+        side * mount.width * 0.36,
+        mount.y,
+        (a.front + mount.v) / 2,
+        0.16,
+        0.2,
+        mount.v - a.front + 0.15,
+        a.trim,
+        "metal",
+        "core",
+      );
+    put(
+      0,
+      mount.y,
+      mount.v,
+      mount.width + 0.12,
+      mount.height,
+      mount.depth,
+      a.accent,
+      "metal",
+      "core",
+    );
+    put(
+      0,
+      mount.y,
+      mount.face - 0.13,
+      mount.width,
+      1.04,
+      0.08,
+      cream,
+      "panel",
+      "core",
+    );
     put(0, 4.99, F + 0.25, W + 0.1, 0.18, 0.9, cream, "plaster", "core");
     const floor = Math.min(3.2, (H - 4.5) / Math.max(1, a.floors - 1)),
       span = (W - 0.6) / a.windows,
       ww = Math.min(1.9, span * 0.66),
       wh = 2.05;
     for (let f = 1; f < a.floors; f++) {
-      const y = 6.0 + (f - 1) * floor;
+      const y = 6.5 + (f - 1) * floor;
       put(0, y - 1.4, F - 0.65, W, 0.78, 1.7, a.wall);
       put(0, y + 1.36, F - 0.65, W, 0.67, 1.7, a.wall);
       for (let n = 0; n <= a.windows; n++) {
@@ -399,7 +433,7 @@ export function emitYaowaratFacade(
       );
     // Projecting, two-sided trade blade: real brackets and cabinet support the
     // shared atlas lettering. Its lower edge stays well above the walkway.
-    if (a.cabinet) {
+    if (a.cabinet && !["chinatown", "khaosan"].includes(p.region)) {
       const u = W * 0.31,
         y = Math.min(H - 2, 8.1);
       put(u, y, F + 0.75, 0.55, 5, 1.6, iron, "metal", "core");

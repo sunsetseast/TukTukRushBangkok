@@ -129,7 +129,7 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
             key,
             u: -W * 0.3,
             y: 5.45,
-            v: F + 1.1,
+            v: F + 1.05 + 1.35 / 2,
             width: 1.35,
             height: 1.7,
             blade: true,
@@ -137,7 +137,7 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
         ];
   const height = Math.min(H - 6.3, 8.7, (yao ? 7.2 : 4.8) + (seed % 4) * 0.72),
     width = yao
-      ? Math.min(2.4, 2.1 + (seed % 4) * 0.22)
+      ? Math.min(2.25, 2.1 + (seed % 4) * 0.22)
       : 1.8 + (seed % 3) * 0.25;
   const signs: DistrictSign[] = [
     {
@@ -145,7 +145,7 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
       key,
       u: W * (seed % 2 ? -0.3 : 0.3),
       y: 5.65 + height / 2,
-      v: F + width / 2 + 0.6,
+      v: F + width / 2 + 1.65,
       width,
       height,
       blade: true,
@@ -157,10 +157,10 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
     signs.push({
       p,
       key: a.trade === "gold" ? "ct-gold" : "ct-food",
-      u: -W * 0.2,
+      u: -signs[0]!.u,
       y: H - 1.5,
       v: F + 0.38,
-      width: Math.min(W * 0.58, 8.4),
+      width: Math.min(W * 0.32, 5.2),
       height: 1.35,
       blade: false,
     });
@@ -170,7 +170,7 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
       key,
       u: -signs[0]!.u,
       y: 6.9,
-      v: F + 1.45,
+      v: F + 1.65 + 1.35 / 2,
       width: 1.35,
       height: 2.6,
       blade: true,
