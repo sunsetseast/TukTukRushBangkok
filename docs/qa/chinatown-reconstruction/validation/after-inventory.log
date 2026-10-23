@@ -1,0 +1,10 @@
+/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/yaowarat.ts:579
+      yaw = Math.atan2(next.x - p.x, next.z - p.z),
+                            ^
+
+TypeError: Cannot read properties of undefined (reading 'x')
+    at emitYaowaratLanterns (/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/yaowarat.ts:579:29)
+    at buildBangkokGraybox (/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/mesh.ts:222:3)
+    at <anonymous> (/workspace/scratch/4a28de1c1b42/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/profile-city-inventory.ts:16:10)
+
+Node.js v24.19.0

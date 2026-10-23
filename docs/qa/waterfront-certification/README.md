@@ -13,3 +13,8 @@ The first 29-route static sweep completes with no contacts, including both bridg
 - [PR36 world snapshot used by the preservation tests](before-world.json.gz)
 
 Final root-cause diagrams, the full route matrix, actual WebGL gallery, raw CI results and measured performance will be added to this same draft. Physical iPhone Safari remains unverified.
+
+
+## Final-evidence reconciliation in PR38
+
+The missing completed PR37 WebGL, traffic, full-suite and performance package is now retained with runtime-source equivalence proof in [the Chinatown reconciliation report](../chinatown-reconstruction/pr37-reconciliation.md). PR38 also reruns the waterfront regressions against its explicitly scoped local street migration. Historical PR37 reports and new PR38 measurements are identified separately.

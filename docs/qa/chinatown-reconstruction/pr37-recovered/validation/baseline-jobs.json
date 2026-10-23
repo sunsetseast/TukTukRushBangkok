@@ -1,0 +1,313 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 119917049883,
+      "run_id": 39805361590,
+      "workflow_name": "Tuk Tuk Rush graphics checks",
+      "head_branch": "codex/chao-phraya-reconstruction-20261022",
+      "run_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/39805361590",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVDMrZs8AAAAb65z4Gw",
+      "head_sha": "4879a960d334feb59b2523d7e5795bd9eb3b6f54",
+      "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/jobs/119917049883",
+      "html_url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/39805361590/job/119917049883",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-22T15:29:48Z",
+      "started_at": "2026-10-22T15:29:51Z",
+      "completed_at": "2026-10-22T15:43:44Z",
+      "name": "game",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-22T15:29:52Z",
+          "completed_at": "2026-10-22T15:29:54Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-22T15:29:54Z",
+          "completed_at": "2026-10-22T15:30:01Z"
+        },
+        {
+          "name": "Run pnpm/action-setup@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-22T15:30:01Z",
+          "completed_at": "2026-10-22T15:30:03Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-22T15:30:03Z",
+          "completed_at": "2026-10-22T15:30:07Z"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-22T15:30:07Z",
+          "completed_at": "2026-10-22T15:30:12Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-22T15:30:12Z",
+          "completed_at": "2026-10-22T15:30:22Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:real-architecture",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-22T15:30:22Z",
+          "completed_at": "2026-10-22T15:30:48Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:city-fabric",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-22T15:30:48Z",
+          "completed_at": "2026-10-22T15:31:14Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:cinematic",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-22T15:31:14Z",
+          "completed_at": "2026-10-22T15:31:57Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:startup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-22T15:31:57Z",
+          "completed_at": "2026-10-22T15:32:02Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-22T15:32:02Z",
+          "completed_at": "2026-10-22T15:32:07Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:landmark-quality",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-22T15:32:07Z",
+          "completed_at": "2026-10-22T15:32:59Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:landmark-accuracy",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-22T15:32:59Z",
+          "completed_at": "2026-10-22T15:33:47Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:historic-core",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-22T15:33:47Z",
+          "completed_at": "2026-10-22T15:35:00Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:historic-fidelity",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-22T15:35:00Z",
+          "completed_at": "2026-10-22T15:35:26Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:master-plan",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-22T15:35:26Z",
+          "completed_at": "2026-10-22T15:36:13Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:open-bangkok",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-22T15:36:13Z",
+          "completed_at": "2026-10-22T15:36:41Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:definitive",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18,
+          "started_at": "2026-10-22T15:36:41Z",
+          "completed_at": "2026-10-22T15:37:50Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:cityscapes",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-22T15:37:50Z",
+          "completed_at": "2026-10-22T15:38:47Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:environment",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-22T15:38:47Z",
+          "completed_at": "2026-10-22T15:39:56Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:career",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-22T15:39:56Z",
+          "completed_at": "2026-10-22T15:41:06Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:corrections",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22,
+          "started_at": "2026-10-22T15:41:06Z",
+          "completed_at": "2026-10-22T15:41:36Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:graphics-foundation",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-10-22T15:41:36Z",
+          "completed_at": "2026-10-22T15:41:37Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:interface",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-22T15:41:37Z",
+          "completed_at": "2026-10-22T15:41:58Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:bangkok",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 25,
+          "started_at": "2026-10-22T15:41:58Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:gameplay",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 26,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:street-life",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 27,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:roadside",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 28,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:signature",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 29,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:sign-layers",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 30,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Run pnpm --filter @workspace/tuk-tuk-rush run test:assets",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 31,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 60,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Post Run pnpm/action-setup@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 61,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:40Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 62,
+          "started_at": "2026-10-22T15:43:40Z",
+          "completed_at": "2026-10-22T15:43:41Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 63,
+          "started_at": "2026-10-22T15:43:41Z",
+          "completed_at": "2026-10-22T15:43:41Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/check-runs/119917049883",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000001802,
+      "runner_name": "GitHub Actions 1000001802",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

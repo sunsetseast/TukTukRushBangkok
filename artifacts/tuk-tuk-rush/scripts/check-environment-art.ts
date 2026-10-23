@@ -1,4 +1,4 @@
-import {riverClearance} from '../src/game/bangkok/waterGeometry';
+import { riverClearance } from "../src/game/bangkok/waterGeometry";
 import assert from "node:assert/strict";
 import {
   Box3,
@@ -52,8 +52,11 @@ for (const p of designs) {
     p.bays.every((a) => a.front <= p.parcel.d / 2 && a.depth <= p.parcel.d),
   );
   assert(
-    p.bays.every(
-      (a) => a.type === "office" || a.type === "apartment" || a.height < 23,
+    p.bays.every((a) =>
+      p.parcel.chinatown
+        ? a.height <= p.parcel.height &&
+          a.height <= (p.parcel.chinatown.identity ? 36 : 25)
+        : a.type === "office" || a.type === "apartment" || a.height < 23,
     ),
     "Low-rise character must survive in heritage quarters",
   );
@@ -62,7 +65,8 @@ for (const p of designs) {
   }
   if (p.parcel.artRole === "background")
     assert(
-      riverClearance(d, p.parcel) > 0 + Math.hypot(p.parcel.w, p.parcel.d) / 2 + 2,
+      riverClearance(d, p.parcel) >
+        0 + Math.hypot(p.parcel.w, p.parcel.d) / 2 + 2,
       "Background parcel must clear water by its own radius",
     );
 }

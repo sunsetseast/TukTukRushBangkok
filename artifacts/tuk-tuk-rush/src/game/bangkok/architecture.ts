@@ -1,5 +1,6 @@
+import { emitChinatownArchitecture } from "./chinatownArchitecture";
 import { emitBlockArchitecture } from "./urbanBlocks";
-import { isHistoricWaterfront } from './historicPlan';
+import { isHistoricWaterfront } from "./historicPlan";
 import { cinematicParcel, emitYaowaratFacade } from "./yaowarat";
 import type { District } from "../types";
 import {
@@ -37,24 +38,149 @@ export function familyForRegion(id: string | undefined) {
 }
 
 /** Bounded Tier-B replacement, with recessed mass behind visible window planes. */
-function emitHeroContextBlock(p:ParcelDesign,emit:(piece:ArtPiece)=>void){
- const b=p.parcel,yaw=b.yaw??0,c=Math.cos(yaw),s=Math.sin(yaw),a=p.bays[0]!,H=Math.min(b.height,p.premiumContext==='riverside'?48:80),w=b.w,d=b.d,variant=a.seed%4,floors=Math.max(2,Math.floor(H/3.7)),fh=H/floors;
- const put=(u:number,y:number,v:number,W:number,h:number,D:number,color:string,surface:Surface='concrete',layer:Layer='core')=>emit({x:b.x+c*u+s*v,z:b.z-s*u+c*v,y,w:W,h,d:D,color,surface,layer,yaw});
- const warm=p.premiumContext==='riverside',wall=warm?'#c8bca6':variant%2?'#b2b9b6':'#c5c9c1',glass=warm?'#496263':p.premiumContext==='asok'?'#496873':'#4c6270';
- put(0,H/2,0,w-.8,H,d-.8,wall);put(0,H-.2,0,w,.35,d,'#858e85');put(-w*.16,H-.7,-d*.1,w*.35,1.2,d*.46,'#717e79','metal');
- for(const side of [-1,1]){
-  for(let f=0;f<floors;f++){
-   const y=fh*(f+.5),v=side*(d/2-.12),width=w-(variant===2?3:1.2);
-   put(0,y,v,width,fh*(f===0?.8:.68),.18,glass,'panel');put(0,fh*(f+1)-.2,v,w-.15,.28,.22,wall);
-   if(variant===1&&f>0){put(0,y-fh*.4,side*(d/2-.32),w-.5,.2,.6,'#d0c9b8');put(0,y,side*(d/2-.05),w-.7,.12,.13,'#949e99','metal');}
-   if((f+a.seed)%6===0)put(-w*.2,y,side*(d/2-.03),w*.23,fh*.5,.05,'#d7bc8c','panel','night');
-   put(side*(w/2-.12),y,0,.18,fh*.68,d-1.2,glass,'panel');
+function emitHeroContextBlock(
+  p: ParcelDesign,
+  emit: (piece: ArtPiece) => void,
+) {
+  const b = p.parcel,
+    yaw = b.yaw ?? 0,
+    c = Math.cos(yaw),
+    s = Math.sin(yaw),
+    a = p.bays[0]!,
+    H = Math.min(b.height, p.premiumContext === "riverside" ? 48 : 80),
+    w = b.w,
+    d = b.d,
+    variant = a.seed % 4,
+    floors = Math.max(2, Math.floor(H / 3.7)),
+    fh = H / floors;
+  const put = (
+    u: number,
+    y: number,
+    v: number,
+    W: number,
+    h: number,
+    D: number,
+    color: string,
+    surface: Surface = "concrete",
+    layer: Layer = "core",
+  ) =>
+    emit({
+      x: b.x + c * u + s * v,
+      z: b.z - s * u + c * v,
+      y,
+      w: W,
+      h,
+      d: D,
+      color,
+      surface,
+      layer,
+      yaw,
+    });
+  const warm = p.premiumContext === "riverside",
+    wall = warm ? "#c8bca6" : variant % 2 ? "#b2b9b6" : "#c5c9c1",
+    glass = warm
+      ? "#496263"
+      : p.premiumContext === "asok"
+        ? "#496873"
+        : "#4c6270";
+  put(0, H / 2, 0, w - 0.8, H, d - 0.8, wall);
+  put(0, H - 0.2, 0, w, 0.35, d, "#858e85");
+  put(
+    -w * 0.16,
+    H - 0.7,
+    -d * 0.1,
+    w * 0.35,
+    1.2,
+    d * 0.46,
+    "#717e79",
+    "metal",
+  );
+  for (const side of [-1, 1]) {
+    for (let f = 0; f < floors; f++) {
+      const y = fh * (f + 0.5),
+        v = side * (d / 2 - 0.12),
+        width = w - (variant === 2 ? 3 : 1.2);
+      put(0, y, v, width, fh * (f === 0 ? 0.8 : 0.68), 0.18, glass, "panel");
+      put(0, fh * (f + 1) - 0.2, v, w - 0.15, 0.28, 0.22, wall);
+      if (variant === 1 && f > 0) {
+        put(
+          0,
+          y - fh * 0.4,
+          side * (d / 2 - 0.32),
+          w - 0.5,
+          0.2,
+          0.6,
+          "#d0c9b8",
+        );
+        put(
+          0,
+          y,
+          side * (d / 2 - 0.05),
+          w - 0.7,
+          0.12,
+          0.13,
+          "#949e99",
+          "metal",
+        );
+      }
+      if ((f + a.seed) % 6 === 0)
+        put(
+          -w * 0.2,
+          y,
+          side * (d / 2 - 0.03),
+          w * 0.23,
+          fh * 0.5,
+          0.05,
+          "#d7bc8c",
+          "panel",
+          "night",
+        );
+      put(
+        side * (w / 2 - 0.12),
+        y,
+        0,
+        0.18,
+        fh * 0.68,
+        d - 1.2,
+        glass,
+        "panel",
+      );
+    }
+    const count = variant === 0 ? 3 : variant === 2 ? 5 : 2;
+    for (let i = 0; i <= count; i++)
+      put(
+        -w / 2 + 0.4 + ((w - 0.8) * i) / count,
+        H * 0.5,
+        side * (d / 2 - 0.1),
+        variant === 0 ? 0.3 : 0.16,
+        H - 0.3,
+        0.17,
+        wall,
+        "metal",
+      );
+    for (let i = 0; i < 3; i++)
+      put(
+        side * (w / 2 - 0.1),
+        H * 0.5,
+        -d / 2 + 1 + ((d - 2) * i) / 2,
+        0.18,
+        H - 0.5,
+        0.25,
+        wall,
+      );
   }
-  const count=variant===0?3:variant===2?5:2;
-  for(let i=0;i<=count;i++)put(-w/2+.4+(w-.8)*i/count,H*.5,side*(d/2-.1),variant===0?.3:.16,H-.3,.17,wall,'metal');
-  for(let i=0;i<3;i++)put(side*(w/2-.1),H*.5,-d/2+1+(d-2)*i/2,.18,H-.5,.25,wall);
- }
- put(0,2.1,d/2-.06,Math.min(w*.46,7),3.8,.15,'#293f46','panel');put(0,4.2,d/2-.04,w-.6,.25,.16,'#b4a98c','metal');put(0,4.02,d/2-.015,w*.6,.08,.06,'#d4b98c','panel','night');
+  put(
+    0,
+    2.1,
+    d / 2 - 0.06,
+    Math.min(w * 0.46, 7),
+    3.8,
+    0.15,
+    "#293f46",
+    "panel",
+  );
+  put(0, 4.2, d / 2 - 0.04, w - 0.6, 0.25, 0.16, "#b4a98c", "metal");
+  put(0, 4.02, d / 2 - 0.015, w * 0.6, 0.08, 0.06, "#d4b98c", "panel", "night");
 }
 
 /** A shell is segmented around real openings. The dark room sits 2.2m behind
@@ -67,32 +193,96 @@ export function emitDistrictArchitecture(
 ) {
   for (const p of designs) {
     if (isHistoricWaterfront(p.parcel)) {
-      const b=p.parcel,c=Math.cos(b.yaw??0),s=Math.sin(b.yaw??0),H=b.height;
-      const put=(u:number,y:number,v:number,w:number,h:number,d:number,color:string,surface:Surface='plaster')=>emit({x:b.x+c*u+s*v,z:b.z-s*u+c*v,y,w,h,d,yaw:b.yaw??0,color,surface,layer:'core'});
+      const b = p.parcel,
+        c = Math.cos(b.yaw ?? 0),
+        s = Math.sin(b.yaw ?? 0),
+        H = b.height;
+      const put = (
+        u: number,
+        y: number,
+        v: number,
+        w: number,
+        h: number,
+        d: number,
+        color: string,
+        surface: Surface = "plaster",
+      ) =>
+        emit({
+          x: b.x + c * u + s * v,
+          z: b.z - s * u + c * v,
+          y,
+          w,
+          h,
+          d,
+          yaw: b.yaw ?? 0,
+          color,
+          surface,
+          layer: "core",
+        });
       // River observers see the SERVICE elevation, not the street shop signs.
       // Give it shutters, masonry piers and eaves too; the previous full facade
       // grammar only articulated +Z, leaving these exposed backs as blank boxes.
-      const back=-b.d/2-.14;
-      put(0,.06,0,b.w+1,.1,b.d+1,'#bcb093','concrete');
-      put(0,H-.25,back,b.w+.4,.35,.6,'#eee1bd');
-      put(0,H*.5,back,b.w,.22,.4,'#e3d2aa');
+      const back = -b.d / 2 - 0.14;
+      put(0, 0.06, 0, b.w + 1, 0.1, b.d + 1, "#bcb093", "concrete");
+      put(0, H - 0.25, back, b.w + 0.4, 0.35, 0.6, "#eee1bd");
+      put(0, H * 0.5, back, b.w, 0.22, 0.4, "#e3d2aa");
       // A continuous tiled pitched roof belongs to the low-rise trading block,
       // rather than an unrelated Thai temple roof on every commercial bay.
-      if(b.w>12&&b.d>12)emit({x:b.x,z:b.z,y:H+.05,w:b.w+.2,h:1.65,d:b.d+.4,yaw:b.yaw??0,color:'#806148',surface:'tile',shape:'gable',layer:'core'});
-      for(let u=-b.w/2+2.8;u<b.w/2-1.5;u+=5.2) {
-        put(u,H*.73,back-.1,2.4,H*.27,.17,'#365346','wood');
-        for(const side of [-1,1])put(u+side*1.3,H*.73,back-.22,.16,H*.3,.22,'#efdfb9');
-        put(u,H*.57,back-.25,2.9,.18,.5,'#e6d6b1');
-        put(u,1.65,back-.05,2.8,3.1,.2,'#536550','wood');
-        put(u,H*.73,back-.25,.12,H*.25,.15,'#c6b787');
+      if (b.w > 12 && b.d > 12)
+        emit({
+          x: b.x,
+          z: b.z,
+          y: H + 0.05,
+          w: b.w + 0.2,
+          h: 1.65,
+          d: b.d + 0.4,
+          yaw: b.yaw ?? 0,
+          color: "#806148",
+          surface: "tile",
+          shape: "gable",
+          layer: "core",
+        });
+      for (let u = -b.w / 2 + 2.8; u < b.w / 2 - 1.5; u += 5.2) {
+        put(u, H * 0.73, back - 0.1, 2.4, H * 0.27, 0.17, "#365346", "wood");
+        for (const side of [-1, 1])
+          put(
+            u + side * 1.3,
+            H * 0.73,
+            back - 0.22,
+            0.16,
+            H * 0.3,
+            0.22,
+            "#efdfb9",
+          );
+        put(u, H * 0.57, back - 0.25, 2.9, 0.18, 0.5, "#e6d6b1");
+        put(u, 1.65, back - 0.05, 2.8, 3.1, 0.2, "#536550", "wood");
+        put(u, H * 0.73, back - 0.25, 0.12, H * 0.25, 0.15, "#c6b787");
       }
-      for(const side of [-1,1])for(const z of [-b.d*.26,b.d*.26]) {
-        put(side*(b.w/2+.08),H*.73,z,.14,H*.27,1.8,'#496555','wood');
-        put(side*(b.w/2+.18),H*.55,z,.3,.18,2.2,'#e9dab7');
-      }
+      for (const side of [-1, 1])
+        for (const z of [-b.d * 0.26, b.d * 0.26]) {
+          put(
+            side * (b.w / 2 + 0.08),
+            H * 0.73,
+            z,
+            0.14,
+            H * 0.27,
+            1.8,
+            "#496555",
+            "wood",
+          );
+          put(side * (b.w / 2 + 0.18), H * 0.55, z, 0.3, 0.18, 2.2, "#e9dab7");
+        }
     }
-    if(p.premiumContext){emitHeroContextBlock(p,emit);continue;}
-    if (!isHistoricWaterfront(p.parcel) && emitBlockArchitecture(p.parcel, emit)) continue;
+    if (emitChinatownArchitecture(p, emit)) continue;
+    if (p.premiumContext) {
+      emitHeroContextBlock(p, emit);
+      continue;
+    }
+    if (
+      !isHistoricWaterfront(p.parcel) &&
+      emitBlockArchitecture(p.parcel, emit)
+    )
+      continue;
     if (cinematicParcel(p) || isHistoricWaterfront(p.parcel)) {
       emitYaowaratFacade(p, emit);
       continue;

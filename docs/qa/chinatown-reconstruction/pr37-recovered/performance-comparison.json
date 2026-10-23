@@ -1,0 +1,107 @@
+{
+  "protocol": "Single sequential Chromium/SwiftShader browser, fresh scene/context, medium 640x360, elapsed40, no traffic, eight warmup frames then24 samples. Shared host; no physical-device FPS claim.",
+  "beforeInventory": {
+    "method": "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
+    "physicalIPhone": false,
+    "buildings": 7205,
+    "roads": 2087,
+    "geometryBuffersBytes": 115253648,
+    "geometries": 9890,
+    "materials": 394,
+    "textures": 8,
+    "trianglesAllLevels": 14893663,
+    "instances": 996818,
+    "constructionMs": 46244,
+    "constructionCpuMs": 52399,
+    "disposal": {
+      "geometries": 9890,
+      "materials": 394,
+      "textures": 8
+    }
+  },
+  "afterInventory": {
+    "method": "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
+    "physicalIPhone": false,
+    "buildings": 7204,
+    "roads": 2087,
+    "geometryBuffersBytes": 115239060,
+    "geometries": 9896,
+    "materials": 394,
+    "textures": 8,
+    "trianglesAllLevels": 14889797,
+    "instances": 996661,
+    "constructionMs": 42134,
+    "constructionCpuMs": 48203,
+    "disposal": {
+      "geometries": 9896,
+      "materials": 394,
+      "textures": 8
+    }
+  },
+  "views": [
+    {
+      "id": "icon-street",
+      "beforeCalls": 349.0,
+      "afterCalls": 348.0,
+      "beforeTriangles": 345563.0,
+      "afterTriangles": 343555.0,
+      "beforeFrameMs": 154.54999999998836,
+      "afterFrameMs": 470.80000000004657,
+      "beforeHeap": {
+        "usedSize": 86017280,
+        "totalSize": 87138304,
+        "embedderHeapUsedSize": 3711208,
+        "backingStorageSize": 131471194
+      },
+      "afterHeap": {
+        "usedSize": 87377000,
+        "totalSize": 89235456,
+        "embedderHeapUsedSize": 3641264,
+        "backingStorageSize": 131441604
+      }
+    },
+    {
+      "id": "taksin-driving",
+      "beforeCalls": 334.0,
+      "afterCalls": 334.0,
+      "beforeTriangles": 387893.0,
+      "afterTriangles": 387967.0,
+      "beforeFrameMs": 298.29999999998836,
+      "afterFrameMs": 310.0999999998603,
+      "beforeHeap": {
+        "usedSize": 83847348,
+        "totalSize": 91594752,
+        "embedderHeapUsedSize": 3924024,
+        "backingStorageSize": 131477898
+      },
+      "afterHeap": {
+        "usedSize": 85183636,
+        "totalSize": 91594752,
+        "embedderHeapUsedSize": 3854536,
+        "backingStorageSize": 131448246
+      }
+    },
+    {
+      "id": "oriental-river",
+      "beforeCalls": 396.0,
+      "afterCalls": 397.0,
+      "beforeTriangles": 529961.0,
+      "afterTriangles": 526991.0,
+      "beforeFrameMs": 428.75,
+      "afterFrameMs": 429.54999999993015,
+      "beforeHeap": {
+        "usedSize": 84478564,
+        "totalSize": 91332608,
+        "embedderHeapUsedSize": 4216464,
+        "backingStorageSize": 131484520
+      },
+      "afterHeap": {
+        "usedSize": 85792964,
+        "totalSize": 92119040,
+        "embedderHeapUsedSize": 4146336,
+        "backingStorageSize": 131455002
+      }
+    }
+  ],
+  "physicalIPhone": false
+}

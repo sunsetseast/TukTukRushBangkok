@@ -11,7 +11,9 @@ on:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # Recovered PR37 run exhausted 25m after browser installation consumed 13m.
+    # Retain every art/camera check and allow the installation/capture to finish.
+    timeout-minutes: 60
     env:
       PORT: '24177'
       BASE_PATH: '/'

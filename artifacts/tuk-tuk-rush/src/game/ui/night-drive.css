@@ -2061,3 +2061,26 @@ body,
     white-space: nowrap;
   }
 }
+
+.tt-current-street {
+  position: absolute;
+  z-index: 4;
+  top: calc(var(--edge-top) + 118px);
+  left: var(--edge-left);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: min(216px, calc(100vw - 32px));
+  padding: 7px 11px 8px 8px;
+  border: 1px solid #edbc778a;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #183d42f2, #153237ed);
+  box-shadow: 0 3px 0 #0b202a, 0 8px 18px #132f3d30;
+  color: #fff0cc;
+}
+.tt-street-icon { color: #ffc67c; font-size: 23px; line-height: 1; }
+.tt-current-street > div { min-width: 0; }
+.tt-current-street span[lang] { display: block; font-size: 10px; line-height: 1.4; color: #b9dacd; }
+.tt-current-street b { display: block; font-size: 12px; line-height: 1.35; white-space: normal; }
+@media (min-width: 1100px) { .tt-current-street { top: calc(var(--edge-top) + 138px); } }
+@media (max-height: 420px) { .tt-current-street { padding-block: 5px; width: 195px; } }

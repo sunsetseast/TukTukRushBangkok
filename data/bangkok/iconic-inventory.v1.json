@@ -3744,8 +3744,8 @@
       },
       "coordinateAccuracy": "inherited approximate center",
       "gameCoordinate": {
-        "x": -208,
-        "z": -308
+        "x": -12,
+        "z": -403.2
       },
       "modelOwner": "wat-mangkon-mrt",
       "modelOrigin": null,
@@ -3753,8 +3753,8 @@
       "bank": "not-verified",
       "requiredNeighbors": [],
       "entrance": {
-        "x": -208,
-        "z": -308
+        "x": -12,
+        "z": -403.2
       },
       "entranceDirection": "Authored approach; exact real bearing unverified",
       "architectureReferences": [
@@ -3770,7 +3770,7 @@
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "recommendedCorrection": "PR38 locally moved beside corrected Charoen Krung/Plaeng Nam; retain all unrelated transit geometry",
       "priority": "P2"
     },
     {
@@ -3866,17 +3866,23 @@
       "id": "scala-yaowarat",
       "name": "Scala Yaowarat",
       "category": "historic-commercial-building",
-      "geographicSource": [],
-      "coordinate": null,
-      "coordinateAccuracy": "not researched",
+      "geographicSource": [
+        "https://www.openstreetmap.org/node/3096836172",
+        "https://www.jtb.co.jp/kaigai_guide/asia/kingdom_of_thailand/BKK/124787/"
+      ],
+      "coordinate": {
+        "lat": 13.7396439,
+        "lon": 100.5112985
+      },
+      "coordinateAccuracy": "OSM restaurant point, approximate site location; not Siam cinema",
       "gameCoordinate": {
-        "x": 63.110452835451014,
-        "z": -45.661920212009605
+        "x": 65.732,
+        "z": -162.8955
       },
       "modelOwner": "scala-yaowarat",
       "modelOrigin": {
-        "x": 140,
-        "z": -40
+        "x": 65.732,
+        "z": -162.8955
       },
       "district": "Samphanthawong",
       "bank": "not-verified",
@@ -3884,18 +3890,21 @@
         "gate"
       ],
       "entrance": null,
-      "entranceDirection": "Requires research",
-      "architectureReferences": [],
-      "implementation": "rendered historic-commercial-building",
-      "status": "requires further research",
-      "recognizabilityGrade": "unreviewed",
-      "gradeBasis": "No photographic recognizability certification this pass",
-      "geographicConfidence": "research needed",
-      "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+      "entranceDirection": "Public corridor arrival on yaowarat",
+      "architectureReferences": [
+        "https://www.openstreetmap.org/node/3096836172",
+        "https://www.jtb.co.jp/kaigai_guide/asia/kingdom_of_thailand/BKK/124787/"
       ],
-      "recommendedCorrection": "Retain approved placement; verify massing, facade bearing and neighborhood against source photography",
+      "implementation": "authored identity on approved street-front parcel",
+      "status": "implemented stylized approximation",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR38 actual WebGL review; identity/massing recognizable at arcade scale, exact facade and detail incomplete",
+      "geographicConfidence": "OSM source topology with curated compressed placement",
+      "missingFeatures": [
+        "Surveyed footprint/entrance precision",
+        "Full facade ornament and detail likeness"
+      ],
+      "recommendedCorrection": "Refine facade proportions/ornament against licensed reference photos; retain approved plot and access",
       "priority": "P2"
     },
     {
@@ -4625,27 +4634,37 @@
         "lon": 100.50943550833334
       },
       "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
-      "gameCoordinate": null,
-      "modelOwner": null,
-      "modelOrigin": null,
+      "gameCoordinate": {
+        "x": -52,
+        "z": -480
+      },
+      "modelOwner": "wat-mangkon",
+      "modelOrigin": {
+        "x": -52,
+        "z": -480
+      },
       "district": "Samphanthawong",
       "bank": "east",
       "requiredNeighbors": [],
-      "entrance": null,
-      "entranceDirection": "Requires research",
+      "entrance": {
+        "x": -56.8,
+        "z": -412.8
+      },
+      "entranceDirection": "Public corridor arrival on Charoen Krung",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/301157259"
+        "https://www.openstreetmap.org/way/301157259",
+        "https://www.thailandtravel.or.jp/wat-mangkon-kamalawat/"
       ],
-      "implementation": "not authored",
-      "status": "missing",
-      "recognizabilityGrade": "F",
-      "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "implementation": "protected hero compound and original mesh",
+      "status": "implemented stylized approximation",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "PR38 actual WebGL review; identity/massing recognizable at arcade scale, exact facade and detail incomplete",
+      "geographicConfidence": "OSM source topology with curated compressed placement",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Surveyed footprint/entrance precision",
+        "Full facade ornament and detail likeness"
       ],
-      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "recommendedCorrection": "Refine facade proportions/ornament against licensed reference photos; retain approved plot and access",
       "priority": "P1"
     },
     {
@@ -4660,34 +4679,47 @@
         "lon": 100.51345491290323
       },
       "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
-      "gameCoordinate": null,
-      "modelOwner": null,
-      "modelOrigin": null,
+      "gameCoordinate": {
+        "x": -256,
+        "z": 696
+      },
+      "modelOwner": "holy-rosary",
+      "modelOrigin": {
+        "x": -256,
+        "z": 696
+      },
       "district": "Samphanthawong",
       "bank": "east",
       "requiredNeighbors": [],
-      "entrance": null,
-      "entranceDirection": "Requires research",
+      "entrance": {
+        "x": -194,
+        "z": 712
+      },
+      "entranceDirection": "Public corridor arrival on Wanit2",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/245676490"
+        "https://www.openstreetmap.org/way/245676490",
+        "https://www.bangkokdesignweek.com/en/bkkdw2023/program?venue=57320"
       ],
-      "implementation": "not authored",
-      "status": "missing",
-      "recognizabilityGrade": "F",
-      "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "implementation": "protected hero compound and original mesh",
+      "status": "implemented stylized approximation",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "PR38 actual WebGL review; identity/massing recognizable at arcade scale, exact facade and detail incomplete",
+      "geographicConfidence": "OSM source topology with curated compressed placement",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Surveyed footprint/entrance precision",
+        "Full facade ornament and detail likeness"
       ],
-      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "recommendedCorrection": "Refine facade proportions/ornament against licensed reference photos; retain approved plot and access",
       "priority": "P1"
     },
     {
       "id": "grand-postal",
       "name": "Grand Postal Building",
       "category": "cultural-building",
-      "geographicSource": [],
+      "geographicSource": [
+        "https://www.docomomothailand.org/pages/no6.html",
+        "https://library.tcdc.or.th/visit/bkk_location"
+      ],
       "coordinate": null,
       "coordinateAccuracy": "not researched",
       "gameCoordinate": null,
@@ -4698,9 +4730,12 @@
       "requiredNeighbors": [],
       "entrance": null,
       "entranceDirection": "Requires research",
-      "architectureReferences": [],
+      "architectureReferences": [
+        "https://www.docomomothailand.org/pages/no6.html",
+        "https://library.tcdc.or.th/visit/bkk_location"
+      ],
       "implementation": "not authored",
-      "status": "missing",
+      "status": "missing; outside selected PR38 boundary",
       "recognizabilityGrade": "F",
       "gradeBasis": "No site-specific rendered asset",
       "geographicConfidence": "research needed",
@@ -4708,7 +4743,7 @@
         "Exact site boundary and entrance survey",
         "Full architectural likeness review"
       ],
-      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "recommendedCorrection": "Reviewed for PR38; preserve southern district boundary, author in future Bang Rak work",
       "priority": "P1"
     },
     {
@@ -4779,28 +4814,34 @@
         "lon": 100.5097206
       },
       "coordinateAccuracy": "OSM point",
-      "gameCoordinate": null,
-      "modelOwner": null,
-      "modelOrigin": null,
+      "gameCoordinate": {
+        "x": -64.38775131959216,
+        "z": -206.59474853450197
+      },
+      "modelOwner": "hua-seng-heng",
+      "modelOrigin": {
+        "x": -64.38775131959216,
+        "z": -206.59474853450197
+      },
       "district": "Samphanthawong",
       "bank": "east",
       "requiredNeighbors": [],
       "entrance": null,
-      "entranceDirection": "Requires research",
+      "entranceDirection": "Public corridor arrival on yaowarat",
       "architectureReferences": [
         "https://www.openstreetmap.org/node/3096836177",
         "https://www.huasengheng.com/en/contact/"
       ],
-      "implementation": "not authored",
-      "status": "missing",
-      "recognizabilityGrade": "F",
-      "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "implementation": "authored identity on approved street-front parcel",
+      "status": "implemented stylized approximation",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR38 actual WebGL review; identity/massing recognizable at arcade scale, exact facade and detail incomplete",
+      "geographicConfidence": "OSM source topology with curated compressed placement",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Surveyed footprint/entrance precision",
+        "Full facade ornament and detail likeness"
       ],
-      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "recommendedCorrection": "Refine facade proportions/ornament against licensed reference photos; retain approved plot and access",
       "priority": "P1"
     },
     {
@@ -4815,27 +4856,34 @@
         "lon": 100.5072872625
       },
       "coordinateAccuracy": "unweighted way-vertex centroid; approximate",
-      "gameCoordinate": null,
-      "modelOwner": null,
-      "modelOrigin": null,
+      "gameCoordinate": {
+        "x": -184.39252461793617,
+        "z": -32.720606191244116
+      },
+      "modelOwner": "tang-to-kang",
+      "modelOrigin": {
+        "x": -184.39252461793617,
+        "z": -32.720606191244116
+      },
       "district": "Samphanthawong",
       "bank": "east",
       "requiredNeighbors": [],
       "entrance": null,
-      "entranceDirection": "Requires research",
+      "entranceDirection": "Public corridor arrival on mangkon",
       "architectureReferences": [
-        "https://www.openstreetmap.org/way/305102098"
+        "https://www.openstreetmap.org/way/305102098",
+        "https://www.museumthailand.com/th/museum/Tang-Toh-Kang-Gold-Shop-Museum"
       ],
-      "implementation": "not authored",
-      "status": "missing",
-      "recognizabilityGrade": "F",
-      "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "OSM snapshot cross-check; approximate",
+      "implementation": "authored identity on approved street-front parcel",
+      "status": "implemented stylized approximation",
+      "recognizabilityGrade": "C",
+      "gradeBasis": "PR38 actual WebGL review; identity/massing recognizable at arcade scale, exact facade and detail incomplete",
+      "geographicConfidence": "OSM source topology with curated compressed placement",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Surveyed footprint/entrance precision",
+        "Full facade ornament and detail likeness"
       ],
-      "recommendedCorrection": "Research entrance, footprint and adjacent streets before adding a protected site and named model",
+      "recommendedCorrection": "Refine facade proportions/ornament against licensed reference photos; retain approved plot and access",
       "priority": "P2"
     },
     {

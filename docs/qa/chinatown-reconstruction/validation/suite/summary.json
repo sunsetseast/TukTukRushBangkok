@@ -1,0 +1,307 @@
+{
+  "complete": true,
+  "pass": true,
+  "results": [
+    {
+      "key": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "wallMs": 163,
+      "log": "test-assets.log"
+    },
+    {
+      "key": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "wallMs": 1085,
+      "log": "test-roadside.log"
+    },
+    {
+      "key": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "wallMs": 186,
+      "log": "test-signature.log"
+    },
+    {
+      "key": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "wallMs": 354,
+      "log": "test-sign-layers.log"
+    },
+    {
+      "key": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "wallMs": 2355,
+      "log": "test-street-life.log"
+    },
+    {
+      "key": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "wallMs": 3495,
+      "log": "test-gameplay.log"
+    },
+    {
+      "key": "test:cityscapes",
+      "command": "node --import tsx scripts/check-cityscapes.ts",
+      "exitCode": 0,
+      "wallMs": 65682,
+      "log": "test-cityscapes.log"
+    },
+    {
+      "key": "test:environment",
+      "command": "node --import tsx scripts/check-environment-art.ts",
+      "exitCode": 0,
+      "wallMs": 97983,
+      "log": "test-environment.log"
+    },
+    {
+      "key": "test:startup",
+      "command": "node scripts/check-startup.mjs",
+      "exitCode": 0,
+      "wallMs": 7086,
+      "log": "test-startup.log"
+    },
+    {
+      "key": "test:open-bangkok",
+      "command": "node --import tsx scripts/check-open-bangkok.ts",
+      "exitCode": 0,
+      "wallMs": 38321,
+      "log": "test-open-bangkok.log"
+    },
+    {
+      "key": "test:definitive",
+      "command": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
+      "exitCode": 0,
+      "wallMs": 89633,
+      "log": "test-definitive.log"
+    },
+    {
+      "key": "test:graphics-foundation",
+      "command": "node --import tsx scripts/check-graphics-foundation.ts",
+      "exitCode": 0,
+      "wallMs": 663,
+      "log": "test-graphics-foundation.log"
+    },
+    {
+      "key": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 0,
+      "wallMs": 73208,
+      "log": "test-landmark-quality.log"
+    },
+    {
+      "key": "test:corrections",
+      "command": "node --import tsx scripts/check-corrections.ts",
+      "exitCode": 0,
+      "wallMs": 40409,
+      "log": "test-corrections.log"
+    },
+    {
+      "key": "test:city-fabric",
+      "command": "node --import tsx scripts/check-city-fabric.ts",
+      "exitCode": 0,
+      "wallMs": 42957,
+      "log": "test-city-fabric.log"
+    },
+    {
+      "key": "test:career",
+      "command": "node --import tsx scripts/check-career.ts",
+      "exitCode": 0,
+      "wallMs": 97583,
+      "log": "test-career.log"
+    },
+    {
+      "key": "test:real-architecture",
+      "command": "node --import tsx scripts/check-real-architecture.ts",
+      "exitCode": 0,
+      "wallMs": 31763,
+      "log": "test-real-architecture.log"
+    },
+    {
+      "key": "test:authored-drives",
+      "command": "node --import tsx scripts/check-authored-drives.ts",
+      "exitCode": 0,
+      "wallMs": 50778,
+      "log": "test-authored-drives.log"
+    },
+    {
+      "key": "test:civic-roads",
+      "command": "node --import tsx scripts/check-civic-roads.ts",
+      "exitCode": 0,
+      "wallMs": 42597,
+      "log": "test-civic-roads.log"
+    },
+    {
+      "key": "test:authored-sites",
+      "command": "node --import tsx scripts/check-authored-sites.ts",
+      "exitCode": 0,
+      "wallMs": 64612,
+      "log": "test-authored-sites.log"
+    },
+    {
+      "key": "test:geographic-reference",
+      "command": "node --import tsx scripts/check-geographic-reference.ts",
+      "exitCode": 0,
+      "wallMs": 147,
+      "log": "test-geographic-reference.log"
+    },
+    {
+      "key": "test:historic-districts",
+      "command": "node --import tsx scripts/check-historic-districts.ts",
+      "exitCode": 0,
+      "wallMs": 1706,
+      "log": "test-historic-districts.log"
+    },
+    {
+      "key": "test:commercial-districts",
+      "command": "node --import tsx scripts/check-commercial-districts.ts",
+      "exitCode": 0,
+      "wallMs": 27379,
+      "log": "test-commercial-districts.log"
+    },
+    {
+      "key": "test:convenience-urban",
+      "command": "node --import tsx scripts/check-convenience-urban.ts",
+      "exitCode": 0,
+      "wallMs": 27159,
+      "log": "test-convenience-urban.log"
+    },
+    {
+      "key": "test:public-spaces",
+      "command": "node --import tsx scripts/check-public-spaces.ts",
+      "exitCode": 0,
+      "wallMs": 32175,
+      "log": "test-public-spaces.log"
+    },
+    {
+      "key": "test:city-drives",
+      "command": "node --import tsx scripts/check-city-reconstruction-drives.ts",
+      "exitCode": 0,
+      "wallMs": 48215,
+      "log": "test-city-drives.log"
+    },
+    {
+      "key": "test:master-plan",
+      "command": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts",
+      "exitCode": 0,
+      "wallMs": 65071,
+      "log": "test-master-plan.log"
+    },
+    {
+      "key": "test:city-completion",
+      "command": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
+      "exitCode": 0,
+      "wallMs": 84409,
+      "log": "test-city-completion.log"
+    },
+    {
+      "key": "test:landmark-accuracy",
+      "command": "node --import tsx scripts/check-landmark-accuracy.ts && node --import tsx scripts/check-landmark-accuracy-drives.ts",
+      "exitCode": 0,
+      "wallMs": 69182,
+      "log": "test-landmark-accuracy.log"
+    },
+    {
+      "key": "test:historic-fidelity",
+      "command": "node --import tsx scripts/check-historic-fidelity.ts",
+      "exitCode": 0,
+      "wallMs": 43000,
+      "log": "test-historic-fidelity.log"
+    },
+    {
+      "key": "test:river-geography",
+      "command": "node --import tsx scripts/check-chao-phraya.ts",
+      "exitCode": 0,
+      "wallMs": 28826,
+      "log": "test-river-geography.log"
+    },
+    {
+      "key": "test:historic-core",
+      "command": "node --import tsx scripts/check-historic-reconstruction.ts && node --import tsx scripts/check-historic-drives.ts && HISTORIC_INTERSECTIONS=1 node --import tsx scripts/check-historic-drives.ts",
+      "exitCode": 0,
+      "wallMs": 106876,
+      "log": "test-historic-core.log"
+    },
+    {
+      "key": "test:premium-landmarks",
+      "command": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
+      "exitCode": 0,
+      "wallMs": 75813,
+      "log": "test-premium-landmarks.log"
+    },
+    {
+      "key": "test:river-drives",
+      "command": "node --import tsx scripts/check-chao-drives.ts",
+      "exitCode": 0,
+      "wallMs": 51804,
+      "log": "test-river-drives.log"
+    },
+    {
+      "key": "test:chinatown-traffic",
+      "command": "CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts",
+      "exitCode": 0,
+      "wallMs": 42729,
+      "log": "test-chinatown-traffic.log"
+    },
+    {
+      "key": "test:chinatown-drives",
+      "command": "node --import tsx scripts/check-chinatown-drives.ts && CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
+      "exitCode": 0,
+      "wallMs": 81665,
+      "log": "test-chinatown-drives.log"
+    },
+    {
+      "key": "test:waterfront-drives",
+      "command": "node --import tsx scripts/check-waterfront-drives.ts && WATERFRONT_LANES=1 node --import tsx scripts/check-waterfront-drives.ts",
+      "exitCode": 0,
+      "wallMs": 117838,
+      "log": "test-waterfront-drives.log"
+    },
+    {
+      "key": "test:interface",
+      "command": "node --import tsx scripts/check-navigation-ui.ts",
+      "exitCode": 0,
+      "wallMs": 25371,
+      "log": "test-interface.log"
+    },
+    {
+      "key": "test:cinematic",
+      "command": "node --import tsx scripts/check-cinematic.ts",
+      "exitCode": 0,
+      "wallMs": 62098,
+      "log": "test-cinematic.log"
+    },
+    {
+      "key": "test:city-blueprint",
+      "command": "node --import tsx scripts/check-city-blueprint.ts",
+      "exitCode": 0,
+      "wallMs": 39454,
+      "log": "test-city-blueprint.log"
+    },
+    {
+      "key": "test:chinatown",
+      "command": "node --import tsx scripts/check-chinatown.ts",
+      "exitCode": 0,
+      "wallMs": 36553,
+      "log": "test-chinatown.log"
+    },
+    {
+      "key": "test:waterfront-clearance",
+      "command": "node --import tsx scripts/check-waterfront-clearance.ts",
+      "exitCode": 0,
+      "wallMs": 21979,
+      "log": "test-waterfront-clearance.log"
+    },
+    {
+      "key": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "exitCode": 0,
+      "wallMs": 197027,
+      "log": "test-bangkok.log"
+    }
+  ]
+}

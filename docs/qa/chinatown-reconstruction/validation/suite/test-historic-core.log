@@ -1,0 +1,153 @@
+{
+  "pass": true,
+  "baseline": "76b2e6c6994c4c2b9576c9d290b8669eee14166f",
+  "roadGraphKey": "783800152",
+  "roads": 2210,
+  "nodes": 2148,
+  "buildings": 7163,
+  "registry": 98,
+  "parcels": 266,
+  "conflicts": 0,
+  "ringArms": 4,
+  "publicApproachRays": 24,
+  "clearVolumeRays": 17,
+  "blockedVolumeRays": [
+    {
+      "id": "historic:palace:1",
+      "blockers": [
+        {
+          "objectId": "building:2212",
+          "kind": "procedural-building",
+          "t": 0.2
+        },
+        {
+          "objectId": "building:2211",
+          "kind": "procedural-building",
+          "t": 0.33689839572192515
+        }
+      ]
+    },
+    {
+      "id": "historic:swing:2",
+      "blockers": [
+        {
+          "objectId": "building:3907",
+          "kind": "procedural-building",
+          "t": 0.15286624203821655
+        }
+      ]
+    },
+    {
+      "id": "historic:golden:2",
+      "blockers": [
+        {
+          "objectId": "building:3840",
+          "kind": "procedural-building",
+          "t": 0.12239928247222748
+        }
+      ]
+    },
+    {
+      "id": "historic:hua:2",
+      "blockers": [
+        {
+          "objectId": "gate:1780",
+          "landmarkId": "gate",
+          "kind": "authored-or-furniture",
+          "t": 0.04878581337323697
+        },
+        {
+          "objectId": "ctparcel:ctblock:12:11:1",
+          "kind": "procedural-building",
+          "t": 0.2957276702365494
+        },
+        {
+          "objectId": "compound:traimit:0",
+          "landmarkId": "traimit",
+          "kind": "authored-or-furniture",
+          "t": 0.37797727474329684
+        },
+        {
+          "objectId": "compound:traimit:1",
+          "landmarkId": "traimit",
+          "kind": "authored-or-furniture",
+          "t": 0.41516341592712147
+        }
+      ]
+    },
+    {
+      "id": "historic:traimit:0",
+      "blockers": [
+        {
+          "objectId": "gate:1780",
+          "landmarkId": "gate",
+          "kind": "authored-or-furniture",
+          "t": 0.1322587207976704
+        }
+      ]
+    },
+    {
+      "id": "historic:traimit:1",
+      "blockers": [
+        {
+          "objectId": "gate:1780",
+          "landmarkId": "gate",
+          "kind": "authored-or-furniture",
+          "t": 0.1322587207976704
+        }
+      ]
+    },
+    {
+      "id": "historic:gate:2",
+      "blockers": [
+        {
+          "objectId": "ctparcel:ctblock:5:1:1",
+          "kind": "procedural-building",
+          "t": 0.3178158188045173
+        },
+        {
+          "objectId": "ctparcel:ctblock:5:1:2",
+          "kind": "procedural-building",
+          "t": 0.32605000561402636
+        },
+        {
+          "objectId": "ctparcel:ctblock:5:2:1",
+          "kind": "procedural-building",
+          "t": 0.5286265831810405
+        }
+      ]
+    }
+  ],
+  "local": [
+    {
+      "label": "before",
+      "buildings": 867,
+      "samples": 1014,
+      "uses": {
+        "water": 6,
+        "developed": 699,
+        "road": 121,
+        "authored-reservation": 53,
+        "public-space": 32,
+        "vacant": 103
+      }
+    },
+    {
+      "label": "after",
+      "buildings": 939,
+      "samples": 1014,
+      "uses": {
+        "developed": 638,
+        "road": 149,
+        "authored-reservation": 101,
+        "public-space": 75,
+        "vacant": 51
+      }
+    }
+  ],
+  "constructionAndAuditMs": 31706,
+  "physicalIPhone": false,
+  "geographicCertification": "Relative placement and graph validated; approximate footprints and arcaded distances are not surveyed geometry."
+}
+{"benchmarkMode":false,"pass":true,"trafficDisabledForDeterminism":true,"trafficEnabled":false,"metres":5249,"routes":[{"from":"palace","to":"swing","metres":487,"simulatedSeconds":52,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"swing","to":"golden","metres":525,"simulatedSeconds":56,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy","to":"sanam","metres":919,"simulatedSeconds":97,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"pho","to":"hua","metres":2431,"simulatedSeconds":249,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"hua","to":"traimit","metres":237,"simulatedSeconds":28,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"traimit","to":"gate","metres":403,"simulatedSeconds":45,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"gate","to":"yaowarat-entry","metres":248,"simulatedSeconds":28,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0}]}
+{"benchmarkMode":false,"pass":true,"trafficDisabledForDeterminism":true,"trafficEnabled":false,"metres":1957,"routes":[{"from":"democracy-arm:0","to":"democracy-arm:1","metres":171,"simulatedSeconds":21,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:0","to":"democracy-arm:2","metres":59,"simulatedSeconds":10,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:0","to":"democracy-arm:3","metres":223,"simulatedSeconds":26,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:1","to":"democracy-arm:0","metres":156,"simulatedSeconds":20,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:1","to":"democracy-arm:2","metres":170,"simulatedSeconds":21,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:1","to":"democracy-arm:3","metres":96,"simulatedSeconds":14,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:2","to":"democracy-arm:0","metres":267,"simulatedSeconds":31,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:2","to":"democracy-arm:1","metres":155,"simulatedSeconds":19,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:2","to":"democracy-arm:3","metres":207,"simulatedSeconds":25,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:3","to":"democracy-arm:0","metres":104,"simulatedSeconds":14,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:3","to":"democracy-arm:1","metres":230,"simulatedSeconds":27,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0},{"from":"democracy-arm:3","to":"democracy-arm:2","metres":118,"simulatedSeconds":16,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true,"trafficVehicles":0}],"intersectionArms":[{"id":"democracy-arm:0","corridor":"north_old","name":"Ratchadamnoen / Lan Luang connector","node":"civic:-3209348:-13426230","x":-320.93478766679397,"z":-1342.6229720726583},{"id":"democracy-arm:1","corridor":"north_old","name":"Ratchadamnoen / Lan Luang connector","node":"civic:-2056028:-12848643","x":-205.60276982189868,"z":-1284.8643184699881},{"id":"democracy-arm:2","corridor":"khaosan","name":"Khao San / Chakrabongse approach","node":"civic:-3063416:-13648031","x":-306.34159170931275,"z":-1364.803130170851},{"id":"democracy-arm:3","corridor":"dinso","name":"Dinso Road","node":"civic:-2861183:-12607438","x":-286.1183086915612,"z":-1260.7438148038093}]}

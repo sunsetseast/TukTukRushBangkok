@@ -6,6 +6,10 @@ import type { ArtPiece } from "./architecturalBatch";
 /** A single authored override of a real Yaowarat parcel. The source photograph
  * informs proportions only; no photograph, watermark or copied logo is used. */
 export function scalaParcel(d: District): Obstacle {
+  const authored = d.buildings.find(
+    (b) => b.chinatown?.identity === "scala-yaowarat",
+  );
+  if (authored) return authored;
   return d.buildings
     .filter((b) => b.regionId === "chinatown" && !b.artRole)
     .reduce((best, b) =>

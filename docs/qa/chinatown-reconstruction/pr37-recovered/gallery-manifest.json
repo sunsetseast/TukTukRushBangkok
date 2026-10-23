@@ -1,0 +1,290 @@
+[
+  {
+    "scene": "icon-river",
+    "light": "sunset",
+    "before": "before/icon-river-sunset.jpg",
+    "after": "after/icon-river-sunset.jpg",
+    "beforeSha256": "b1493bad9e11bc9beed22d8edd27f2072284d9aaf07f237f7fe8b484acddc4aa",
+    "afterSha256": "b1493bad9e11bc9beed22d8edd27f2072284d9aaf07f237f7fe8b484acddc4aa",
+    "normalFollowCamera": false,
+    "camera": [
+      -420,
+      38,
+      1000
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "icon-river",
+    "light": "night",
+    "before": "before/icon-river-night.jpg",
+    "after": "after/icon-river-night.jpg",
+    "beforeSha256": "833d87cc6bff7f4e0d4fbfc68a3f00bfbd884f733a34e8bf0310ed797bc7991a",
+    "afterSha256": "833d87cc6bff7f4e0d4fbfc68a3f00bfbd884f733a34e8bf0310ed797bc7991a",
+    "normalFollowCamera": false,
+    "camera": [
+      -420,
+      38,
+      1000
+    ],
+    "quality": "medium",
+    "elapsed": 720
+  },
+  {
+    "scene": "icon-street",
+    "light": "sunset",
+    "before": "before/icon-street-sunset.jpg",
+    "after": "after/icon-street-sunset.jpg",
+    "beforeSha256": "9f97e4958f03230434eb319a75cb4346f4334f306a3317d5b03db4af1533103a",
+    "afterSha256": "9f97e4958f03230434eb319a75cb4346f4334f306a3317d5b03db4af1533103a",
+    "normalFollowCamera": false,
+    "camera": [
+      -760.9498914617022,
+      8,
+      910.3604000991086
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "taksin-driving",
+    "light": "sunset",
+    "before": "before/taksin-driving-sunset.jpg",
+    "after": "after/taksin-driving-sunset.jpg",
+    "beforeSha256": "b938bbf5f72bc12ed6d8467f918f660761ac5aa0a76549f7d9352cf9ee26cc65",
+    "afterSha256": "b938bbf5f72bc12ed6d8467f918f660761ac5aa0a76549f7d9352cf9ee26cc65",
+    "normalFollowCamera": false,
+    "camera": [
+      -220,
+      5,
+      1460
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "taksin-driving",
+    "light": "night",
+    "before": "before/taksin-driving-night.jpg",
+    "after": "after/taksin-driving-night.jpg",
+    "beforeSha256": "de6fb9df2371c4ca8006a71e57ad0ce09bcabcd09f0d16a16b5a66ca50823d56",
+    "afterSha256": "de6fb9df2371c4ca8006a71e57ad0ce09bcabcd09f0d16a16b5a66ca50823d56",
+    "normalFollowCamera": false,
+    "camera": [
+      -220,
+      5,
+      1460
+    ],
+    "quality": "medium",
+    "elapsed": 720
+  },
+  {
+    "scene": "oriental-river",
+    "light": "sunset",
+    "before": "before/oriental-river-sunset.jpg",
+    "after": "after/oriental-river-sunset.jpg",
+    "beforeSha256": "dcff463a6fe9b41385c3d5063ca9c4a0683fc579749318aaf7ce97bfe55154d1",
+    "afterSha256": "dcff463a6fe9b41385c3d5063ca9c4a0683fc579749318aaf7ce97bfe55154d1",
+    "normalFollowCamera": false,
+    "camera": [
+      -320,
+      32,
+      1040
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "collision-building",
+    "light": "sunset",
+    "before": "before/collision-building-sunset.jpg",
+    "after": "after/collision-building-sunset.jpg",
+    "beforeSha256": "81a6223f10aa8aec5f2c155b391cf4555340e14f718e849e4293a14e48eb5f0a",
+    "afterSha256": "c05b460bb09f9ad5e2e820a0a0c9752eee28b8bb48e45bbe47dccbf1d236382e",
+    "normalFollowCamera": false,
+    "camera": [
+      103,
+      8,
+      1115
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "collision-tree",
+    "light": "sunset",
+    "before": "before/collision-tree-sunset.jpg",
+    "after": "after/collision-tree-sunset.jpg",
+    "beforeSha256": "53f808f4441650874b8999fb44caf0c28baa806f13b3af756f7fc3ec67509f53",
+    "afterSha256": "d4719dbe1fd703ac2f89d079f9c67940cc3b5b41441aa0b8241c39ad1853175f",
+    "normalFollowCamera": false,
+    "camera": [
+      -132,
+      5.3,
+      1054
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "oriental-approach",
+    "light": "sunset",
+    "before": "before/oriental-approach-sunset.jpg",
+    "after": "after/oriental-approach-sunset.jpg",
+    "beforeSha256": "34caaf28ae2e53ce9391e5e1e666c91bb77c3f1823a622ff629cbb9e6b579877",
+    "afterSha256": "db983cb2b39921de9ee53300c17871f60f9abae32f51248374d7ef98658e8ef6",
+    "normalFollowCamera": false,
+    "camera": [
+      96,
+      7,
+      1101
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "river-city-street",
+    "light": "sunset",
+    "before": "before/river-city-street-sunset.jpg",
+    "after": "after/river-city-street-sunset.jpg",
+    "beforeSha256": "495b4360fac5529f9708e8c65494ea44a688220d99d18e928faf6c3df668419d",
+    "afterSha256": "784b602d1720887c88e7449f885e84f6ede35a251e487471ef04a1cab24de2ec",
+    "normalFollowCamera": false,
+    "camera": [
+      154,
+      7,
+      802
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "asiatique-entry",
+    "light": "sunset",
+    "before": "before/asiatique-entry-sunset.jpg",
+    "after": "after/asiatique-entry-sunset.jpg",
+    "beforeSha256": "c4a8554729c62dd75783ba27059bfb424cb46c824bc65c2334a2863389f0e9ad",
+    "afterSha256": "c4a8554729c62dd75783ba27059bfb424cb46c824bc65c2334a2863389f0e9ad",
+    "normalFollowCamera": false,
+    "camera": [
+      -333,
+      7,
+      2000
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "asiatique-entry",
+    "light": "night",
+    "before": "before/asiatique-entry-night.jpg",
+    "after": "after/asiatique-entry-night.jpg",
+    "beforeSha256": "4d9a68760556d32cb26445c3d2bb9866332c4758c026bf8e0e5689e0f97d598e",
+    "afterSha256": "4d9a68760556d32cb26445c3d2bb9866332c4758c026bf8e0e5689e0f97d598e",
+    "normalFollowCamera": false,
+    "camera": [
+      -333,
+      7,
+      2000
+    ],
+    "quality": "medium",
+    "elapsed": 720
+  },
+  {
+    "scene": "asiatique-loop",
+    "light": "sunset",
+    "before": "before/asiatique-loop-sunset.jpg",
+    "after": "after/asiatique-loop-sunset.jpg",
+    "beforeSha256": "19e5288c1b10549381bba94a51bdbd103f80000a35654f6b9f3351b9dcfd1ab4",
+    "afterSha256": "19e5288c1b10549381bba94a51bdbd103f80000a35654f6b9f3351b9dcfd1ab4",
+    "normalFollowCamera": false,
+    "camera": [
+      -389,
+      7,
+      2002
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "shoreline-local",
+    "light": "sunset",
+    "before": "before/shoreline-local-sunset.jpg",
+    "after": "after/shoreline-local-sunset.jpg",
+    "beforeSha256": "8a2d6e7c3507098b88948812a589c91f84d802c7e045e84c5f641ee3e85c2bb7",
+    "afterSha256": "8a2d6e7c3507098b88948812a589c91f84d802c7e045e84c5f641ee3e85c2bb7",
+    "normalFollowCamera": false,
+    "camera": [
+      -330,
+      145,
+      700
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "river-city-gameplay",
+    "light": "sunset",
+    "before": "before/river-city-gameplay-sunset.jpg",
+    "after": "after/river-city-gameplay-sunset.jpg",
+    "beforeSha256": "56df3ba3e14708b32529b0ad9c27658dfda4076a1f1bb33c8f245b86839e6ceb",
+    "afterSha256": "7194ff6dad3b4b4d7ded6ecc860d683bb1c76d4558bc083e2ca6b79a18518581",
+    "normalFollowCamera": true,
+    "camera": [
+      137.79143637238298,
+      3.3,
+      801.5654028668572
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "chinatown-waterfront-gameplay",
+    "light": "sunset",
+    "before": "before/chinatown-waterfront-gameplay-sunset.jpg",
+    "after": "after/chinatown-waterfront-gameplay-sunset.jpg",
+    "beforeSha256": "ad5448b63866c6f8e129fb3de618154d84b1e916283a029e48a8b4ce937a2a1e",
+    "afterSha256": "ad5448b63866c6f8e129fb3de618154d84b1e916283a029e48a8b4ce937a2a1e",
+    "normalFollowCamera": true,
+    "camera": [
+      -171.97653208979935,
+      3.3,
+      194.01173395510034
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  },
+  {
+    "scene": "chinatown-waterfront-gameplay",
+    "light": "night",
+    "before": "before/chinatown-waterfront-gameplay-night.jpg",
+    "after": "after/chinatown-waterfront-gameplay-night.jpg",
+    "beforeSha256": "196d6bd4d6dbfbcb7229fb9b30a6608b25dc82601afc105fbb7418f78fe5fcbe",
+    "afterSha256": "196d6bd4d6dbfbcb7229fb9b30a6608b25dc82601afc105fbb7418f78fe5fcbe",
+    "normalFollowCamera": true,
+    "camera": [
+      -171.97653208979935,
+      3.3,
+      194.01173395510034
+    ],
+    "quality": "medium",
+    "elapsed": 720
+  },
+  {
+    "scene": "asiatique-gameplay",
+    "light": "sunset",
+    "before": "before/asiatique-gameplay-sunset.jpg",
+    "after": "after/asiatique-gameplay-sunset.jpg",
+    "beforeSha256": "500f5a5543126f07fa5581a0dce9d6ab426be4be40207fbed7b6f252a6dd3ee3",
+    "afterSha256": "500f5a5543126f07fa5581a0dce9d6ab426be4be40207fbed7b6f252a6dd3ee3",
+    "normalFollowCamera": true,
+    "camera": [
+      -357.2590072480352,
+      3.3,
+      1999.6423825325173
+    ],
+    "quality": "medium",
+    "elapsed": 40
+  }
+]

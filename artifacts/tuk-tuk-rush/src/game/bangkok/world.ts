@@ -1,8 +1,23 @@
-import {riverClearance,riverBank} from './waterGeometry';
-import {CITY_MODEL,approvedOrigin,assertApprovedCityGeometry} from './cityModel';
-import { GOLDEN_SITE_MASSES, HISTORIC_PLAN, reconstructHistoricRoads, democracyIsland, isHistoricWaterfront } from './historicPlan';
-import { placeHuaLamphong } from './huaLamphong';
-import { completeLandmarkContext } from './landmarkContext';
+import { preserveChinatownExterior } from "./chinatownExterior";
+import { planChinatownPassagePosts } from "./chinatownGrounds";
+import { registerChinatownHeritage } from "./chinatownHeritage";
+import { reconstructChinatownRoads, chinatownParcel } from "./chinatownPlan";
+import { planChinatownBlocks } from "./chinatownBlocks";
+import { riverClearance, riverBank } from "./waterGeometry";
+import {
+  CITY_MODEL,
+  approvedOrigin,
+  assertApprovedCityGeometry,
+} from "./cityModel";
+import {
+  GOLDEN_SITE_MASSES,
+  HISTORIC_PLAN,
+  reconstructHistoricRoads,
+  democracyIsland,
+  isHistoricWaterfront,
+} from "./historicPlan";
+import { placeHuaLamphong } from "./huaLamphong";
+import { completeLandmarkContext } from "./landmarkContext";
 import {
   HISTORIC_SITE_PLANS,
   historicBoundaryColliders,
@@ -35,7 +50,11 @@ import layout from "./cityLayout";
 import { MASTER_PLAN, reconstructMasterPlanRoads } from "./masterPlan";
 import { planTropicalPlants } from "./tropicalPlan";
 import { planMrtEntrances } from "./mrtSurface";
-import { prepareLandmarkParcels, parcelConflicts,localPoint } from './landmarkParcels';
+import {
+  prepareLandmarkParcels,
+  parcelConflicts,
+  localPoint,
+} from "./landmarkParcels";
 import { planLandscape } from "./landscape";
 import { planUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
@@ -163,7 +182,9 @@ const kinds: Record<string, Landmark["kind"]> = {
   asiatique: "wheel",
 };
 
-export function createBangkokWorld(options: {authoring?:boolean} = {}): District {
+export function createBangkokWorld(
+  options: { authoring?: boolean } = {},
+): District {
   const canals = layout.canals.map((c) => ({
     points: c.centerline.map(toWorld),
     width: c.design_width * SCALE,
@@ -210,6 +231,8 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   reconstructCivicRoads(segments, controls);
   reconstructPublicRoads(segments, controls);
   reconstructHistoricRoads(segments, controls);
+  const frontageSegments = segments.map((s) => ({ ...s }));
+  reconstructChinatownRoads(segments);
   // The gateway occupies a protected island. Route approaching streets around it.
   const gateCenter = controls.odeon!,
     circleRadius = 32,
@@ -347,15 +370,24 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
     roads,
     river,
     riverWidth,
-    riverPolygon: CITY_MODEL.waterApproval.polygon.map(r=>r.map(([x,z])=>({x:x!,z:z!}))),
+    riverPolygon: CITY_MODEL.waterApproval.polygon.map((r) =>
+      r.map(([x, z]) => ({ x: x!, z: z! })),
+    ),
     waterVersion: CITY_MODEL.waterApproval.version,
-    riverStructures: CITY_MODEL.waterApproval.structureExclusions.map(s=>s.ring.map(([x,z])=>({x:x!,z:z!}))),
+    riverStructures: CITY_MODEL.waterApproval.structureExclusions.map((s) =>
+      s.ring.map(([x, z]) => ({ x: x!, z: z! })),
+    ),
     canals,
     regions,
     landmarks,
     buildings: [],
     obstacles: [],
-    bounds: { minX: -1980, maxX: (MASTER_PLAN.bounds.east-500)*4, minZ: -2380, maxZ: CITY_MODEL.waterApproval.southernBoundary.maxZ },
+    bounds: {
+      minX: -1980,
+      maxX: (MASTER_PLAN.bounds.east - 500) * 4,
+      minZ: -2380,
+      maxZ: CITY_MODEL.waterApproval.southernBoundary.maxZ,
+    },
   };
   const byId = new Map(nodes.map((n) => [n.id, n]));
   planPublicSpaces(world);
@@ -365,7 +397,7 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
     ...victorySkywalkColumns(),
     ...victoryShelterCollisions(),
   );
-  const bank = (p: Point) => riverBank(world,p);
+  const bank = (p: Point) => riverBank(world, p);
   for (const l of landmarks) {
     if (l.kind === "park") continue;
     l.accessNode = nodes.reduce((best, n) =>
@@ -382,27 +414,31 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
       continue;
     }
     const size =
-      l.id === "palace" ? 135 * HISTORIC_PLAN.palaceScale :
-      l.id === "golden" ? 134 :
-      l.id === "democracy" ? 52 :
-      l.id === "traimit" ? 66 :
-      l.id === "paknam"
-        ? 90
-        : l.kind === "palace"
-          ? 135
-          : l.kind === "tower"
-            ? 40
-            : l.kind === "mall"
-              ? 65
-              : l.kind === "station"
-                ? 70
-                : l.kind === "temple"
-                  ? 50
-                  : l.kind === "gate"
-                    ? 28
-                    : l.kind === "wheel"
-                      ? 45
-                      : 30;
+      l.id === "palace"
+        ? 135 * HISTORIC_PLAN.palaceScale
+        : l.id === "golden"
+          ? 134
+          : l.id === "democracy"
+            ? 52
+            : l.id === "traimit"
+              ? 66
+              : l.id === "paknam"
+                ? 90
+                : l.kind === "palace"
+                  ? 135
+                  : l.kind === "tower"
+                    ? 40
+                    : l.kind === "mall"
+                      ? 65
+                      : l.kind === "station"
+                        ? 70
+                        : l.kind === "temple"
+                          ? 50
+                          : l.kind === "gate"
+                            ? 28
+                            : l.kind === "wheel"
+                              ? 45
+                              : 30;
     const radius = (size * Math.SQRT2) / 2;
     let plot: Point | undefined;
     // Site pins/roadside approaches are not building centers. Fit a meaningful
@@ -424,10 +460,19 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
             artRole: "furniture" as const,
           })),
         );
-      } else if(l.id === "democracy") {
-        world.obstacles.push({...plot,w:28,d:28,height:26,color:"#e4d8bd",landmarkId:l.id});
-      } else if(l.id === "golden") {
-        world.obstacles.push(...GOLDEN_SITE_MASSES.map(m=>siteObstacle(plot!,0,m,l.id)));
+      } else if (l.id === "democracy") {
+        world.obstacles.push({
+          ...plot,
+          w: 28,
+          d: 28,
+          height: 26,
+          color: "#e4d8bd",
+          landmarkId: l.id,
+        });
+      } else if (l.id === "golden") {
+        world.obstacles.push(
+          ...GOLDEN_SITE_MASSES.map((m) => siteObstacle(plot!, 0, m, l.id)),
+        );
       } else {
         if (l.id === "central") l.yaw = Math.PI / 2;
         if (l.id === "mbk") l.yaw = Math.PI;
@@ -442,8 +487,14 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
         });
       }
     } else {
-      for (const distance of approvedOrigin(l.id!) ? [0] : [0, 30, 50, 75, 100, 140, 180]) {
-        for (let direction = 0; direction < (approvedOrigin(l.id!) ? 1 : 16); direction++) {
+      for (const distance of approvedOrigin(l.id!)
+        ? [0]
+        : [0, 30, 50, 75, 100, 140, 180]) {
+        for (
+          let direction = 0;
+          direction < (approvedOrigin(l.id!) ? 1 : 16);
+          direction++
+        ) {
           const angle = (direction * Math.PI * 2) / 16;
           const candidate = approvedOrigin(l.id!) ?? {
             x: l.x + Math.cos(angle) * distance,
@@ -541,17 +592,19 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   world.obstacles.find((o) => o.landmarkId === "paknam")!.yaw =
     paknamLandmark.yaw;
   placeRealArchitecture(world);
+  registerChinatownHeritage(world);
   registerExistingSites(world);
   world.transit = createRailNetwork(world);
-  planMrtEntrances(world,true);
+  planMrtEntrances(world, true);
   prepareLandmarkParcels(world, false);
+  preserveChinatownExterior(world);
   // Access roads were appended after public graph sampling.
   for (const n of nodes) byId.set(n.id, n);
   // Streets are assembled as nearly attached commercial rows, not isolated
   // blocks every 54 metres. All facade masses remain in the real collision map.
   // Each +Z facade faces its road; the old tangent yaw placed windows sideways.
   let index = 0;
-  for (const s of segments.filter(
+  for (const s of frontageSegments.filter(
     (s) => !s.road.shortcut && !s.road.bridge && !s.road.roundabout,
   )) {
     const dx = s.b.x - s.a.x,
@@ -588,6 +641,7 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
           regionId: region?.id,
         };
         index++;
+        if (chinatownParcel(building)) continue;
         if (inDestinationGrounds(world, building)) continue;
         if (
           riverClearance(world, p) < 18 ||
@@ -626,9 +680,10 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   // solid parcels, screened by the same road, river, park and landmark rules.
   // No fake roads, no skyline props floating outside the physical city.
   const frontages = [...world.buildings];
-  const rearParents=new Set(CITY_MODEL.proceduralHistory.rearRowParents);
+  const rearParents = new Set(CITY_MODEL.proceduralHistory.rearRowParents);
   for (const [i, b] of frontages.entries()) {
-    if (!rearParents.has(`${Math.round(b.x*1000)}:${Math.round(b.z*1000)}`)) continue;
+    if (!rearParents.has(`${Math.round(b.x * 1000)}:${Math.round(b.z * 1000)}`))
+      continue;
     const yaw = b.yaw ?? 0;
     const p = { x: b.x - Math.sin(yaw) * 29, z: b.z - Math.cos(yaw) * 29 };
     const infill: Obstacle = {
@@ -639,7 +694,8 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
       height: b.height * 0.75,
       artRole: "background",
     };
-    if (inDestinationGrounds(world, infill)) continue;
+    if (chinatownParcel(infill) || inDestinationGrounds(world, infill))
+      continue;
     if (
       p.x < world.bounds!.minX + 20 ||
       p.x > world.bounds!.maxX - 20 ||
@@ -677,9 +733,11 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   // row must not reshuffle unrelated Bangkok blocks after a local exclusion.
   planMrtEntrances(world);
   prepareLandmarkParcels(world);
-  const invalidHistoric = new Set(world.buildings.filter(b=>parcelConflicts(world,b).length));
-  world.buildings = world.buildings.filter(b=>!invalidHistoric.has(b));
-  world.obstacles = world.obstacles.filter(b=>!invalidHistoric.has(b));
+  const invalidHistoric = new Set(
+    world.buildings.filter((b) => parcelConflicts(world, b).length),
+  );
+  world.buildings = world.buildings.filter((b) => !invalidHistoric.has(b));
+  world.obstacles = world.obstacles.filter((b) => !invalidHistoric.has(b));
   // Mall approach planters are solid furniture, validated independently of
   // the original mall plot. The broad road/river contract remains unchanged.
   for (const l of landmarks.filter((l) => l.kind === "mall"))
@@ -749,6 +807,7 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   );
   world.buildings = world.buildings.filter((b) => !hidden.has(b));
   world.obstacles = world.obstacles.filter((b) => !hidden.has(b));
+  planChinatownBlocks(world, !!options.authoring);
   scalaParcel(world).height = 36;
   (world as District & { completeness?: unknown }).completeness =
     completeUrbanFabric(world);
@@ -756,7 +815,19 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   detailDestinationCollisions(world);
   registerExistingSites(world);
   // A low matching pedestrian collider prevents an invented vehicle shortcut.
-  for(const a of CITY_MODEL.architecturalAprons){const l=world.landmarks.find(l=>l.id===a.landmarkId)!;world.obstacles.push({...localPoint(l.plot!,l.yaw??0,a.center[0]!,a.center[1]!),w:a.width,d:a.depth,height:.24,yaw:l.yaw??0,color:'#b5b7ab',artRole:'furniture',environmentId:a.id});}
+  for (const a of CITY_MODEL.architecturalAprons) {
+    const l = world.landmarks.find((l) => l.id === a.landmarkId)!;
+    world.obstacles.push({
+      ...localPoint(l.plot!, l.yaw ?? 0, a.center[0]!, a.center[1]!),
+      w: a.width,
+      d: a.depth,
+      height: 0.24,
+      yaw: l.yaw ?? 0,
+      color: "#b5b7ab",
+      artRole: "furniture",
+      environmentId: a.id,
+    });
+  }
 
   for (const b of world.buildings) {
     const x = b.x / 4 + 500,
@@ -776,16 +847,18 @@ export function createBangkokWorld(options: {authoring?:boolean} = {}): District
   completeStreetFabric(world);
   // Refine only the researched western Maha Rat commercial band. Keep every
   // trading footprint and its collision; remove no buildings for a camera ray.
-  for (const b of world.buildings) if (isHistoricWaterfront(b)) {
-    b.height = Math.min(b.height, 8.4);
-    b.color = '#e1c58e';
-  }
+  for (const b of world.buildings)
+    if (isHistoricWaterfront(b)) {
+      b.height = Math.min(b.height, 8.4);
+      b.color = "#e1c58e";
+    }
   planConvenienceStores(world);
   world.obstacles.push(...bridgeBarriers(world));
+  planChinatownPassagePosts(world);
   planEnvironment(world);
   planLandscape(world);
   planTropicalPlants(world);
-  if(!options.authoring)assertApprovedCityGeometry(world);
+  if (!options.authoring) assertApprovedCityGeometry(world);
   return world;
 }
 

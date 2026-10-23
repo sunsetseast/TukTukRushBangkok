@@ -1,7 +1,7 @@
-import { DISTRICT_SIGN_ENTRIES, districtSigns } from './districtSigns';
-import {CURATED_SIGNS,curatedSignKey} from './curatedSigns';
-import {completeStreetFabric} from './streetFabric';
-import {cityPlaces} from './cityPlaces';
+import { DISTRICT_SIGN_ENTRIES, districtSigns } from "./districtSigns";
+import { CURATED_SIGNS, curatedSignKey } from "./curatedSigns";
+import { completeStreetFabric } from "./streetFabric";
+import { cityPlaces } from "./cityPlaces";
 import * as T from "three";
 import type { District } from "../types";
 import { StaticBatch } from "../staticBatch";
@@ -33,15 +33,23 @@ export const TRADE_SIGNS: Record<
   gallery: { style: "heritage", text: ["หอศิลป์", "GALLERY", "งานศิลปะ"] },
   retail: { style: "hotel", text: ["MARKET", "BOUTIQUE", "ร้านค้า"] },
 };
-export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS).flatMap(
-  ([trade, v]) =>
+export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS)
+  .flatMap(([trade, v]) =>
     v.text.map((text, i) => ({
       key: `${trade}:${i}`,
       text,
       style: v.style,
       variant: i,
     })),
-).concat(DISTRICT_SIGN_ENTRIES,CURATED_SIGNS, [{key:'odeon-inscription',text:'聖壽無疆',style:'heritage',variant:0}]);
+  )
+  .concat(DISTRICT_SIGN_ENTRIES, CURATED_SIGNS, [
+    {
+      key: "odeon-inscription",
+      text: "聖壽無疆",
+      style: "heritage",
+      variant: 0,
+    },
+  ]);
 export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
   const atlas = buildSignAtlas(SIGN_ENTRIES, true),
     batch = new StaticBatch(),
@@ -101,10 +109,12 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       temp.matrix.clone(),
     ]);
   };
-  for (const p of designs.filter(p=>!p.parcel.artRole))
+  for (const p of designs.filter((p) => !p.parcel.artRole))
     for (const a of p.bays) {
       if (a.trade === "residence" || a.trade === "closed") continue;
-      const i = atlas.index.get(curatedSignKey(p,a)??`${a.trade}:${a.sign}`)!;
+      const i = atlas.index.get(
+        curatedSignKey(p, a) ?? `${a.trade}:${a.sign}`,
+      )!;
       const W = a.width - 0.16,
         sw = Math.min(W - 0.55, a.type === "workshop" ? W * 0.65 : W - 0.55);
       place(p, a.u, 4.32, a.front + 0.558, sw - 0.1, 0.95, i);
@@ -122,31 +132,135 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
             (side * Math.PI) / 2,
           );
     }
-  for(const sign of districtSigns(designs)){
-    const i=atlas.index.get(sign.key)!;
-    if(sign.blade)for(const side of [-1,1])place(sign.p,sign.u+side*.286,sign.y,sign.v,sign.width,sign.height,i,!sign.round,side*Math.PI/2);
-    else place(sign.p,sign.u,sign.y,sign.v+.235,sign.width,sign.height,i);
+  for (const sign of districtSigns(designs)) {
+    const i = atlas.index.get(sign.key)!;
+    if (sign.blade)
+      for (const side of [-1, 1])
+        place(
+          sign.p,
+          sign.u + side * 0.286,
+          sign.y,
+          sign.v,
+          sign.width,
+          sign.height,
+          i,
+          !sign.round,
+          (side * Math.PI) / 2,
+        );
+    else
+      place(sign.p, sign.u, sign.y, sign.v + 0.235, sign.width, sign.height, i);
   }
-  const byParcel=new Map(designs.map(p=>[p.parcel,p]));
-  for(const node of cityPlaces(d,designs).filter(p=>p.parcel)){
-    const b=node.parcel!,p=byParcel.get(b);if(p)place(p,0,3.95,b.d/2+.26,Math.min(b.w-1.2,6.8),.66,atlas.index.get('hotel:0')!);
+  const byParcel = new Map(designs.map((p) => [p.parcel, p]));
+  for (const node of cityPlaces(d, designs).filter((p) => p.parcel)) {
+    const b = node.parcel!,
+      p = byParcel.get(b);
+    if (p)
+      place(
+        p,
+        0,
+        3.95,
+        b.d / 2 + 0.26,
+        Math.min(b.w - 1.2, 6.8),
+        0.66,
+        atlas.index.get("hotel:0")!,
+      );
   }
-  for(const f of completeStreetFabric(d).faces){
-    const p=byParcel.get(f.parcel);if(!p)continue;const a=p.bays[0]!;if(a.trade==='residence'||a.trade==='closed')continue;
-    const count=Math.max(1,Math.floor((f.width-.4)/(['siam','silom','sukhumvit','icon'].includes(p.region)?6.5:5))),bw=(f.width-.4)/count,index=atlas.index.get(`${a.trade}:${a.sign}`)!,c=Math.cos(f.yaw),s=Math.sin(f.yaw);
-    for(let i=0;i<count;i++){const u=(i+.5)*bw-(f.width-.4)/2,v=f.depth/2+.32;temp.position.set(f.parcel.x+c*u+s*v,3.95,f.parcel.z-s*u+c*v);temp.rotation.set(0,f.yaw,0);temp.scale.set(bw-.5,.67,1);temp.updateMatrix();batch.add(h[index]!,matH,[temp.matrix.clone()]);}
+  for (const f of completeStreetFabric(d).faces) {
+    if (f.parcel.chinatown) continue;
+    const p = byParcel.get(f.parcel);
+    if (!p) continue;
+    const a = p.bays[0]!;
+    if (a.trade === "residence" || a.trade === "closed") continue;
+    const count = Math.max(
+        1,
+        Math.floor(
+          (f.width - 0.4) /
+            (["siam", "silom", "sukhumvit", "icon"].includes(p.region)
+              ? 6.5
+              : 5),
+        ),
+      ),
+      bw = (f.width - 0.4) / count,
+      index = atlas.index.get(`${a.trade}:${a.sign}`)!,
+      c = Math.cos(f.yaw),
+      s = Math.sin(f.yaw);
+    for (let i = 0; i < count; i++) {
+      const u = (i + 0.5) * bw - (f.width - 0.4) / 2,
+        v = f.depth / 2 + 0.32;
+      temp.position.set(
+        f.parcel.x + c * u + s * v,
+        3.95,
+        f.parcel.z - s * u + c * v,
+      );
+      temp.rotation.set(0, f.yaw, 0);
+      temp.scale.set(bw - 0.5, 0.67, 1);
+      temp.updateMatrix();
+      batch.add(h[index]!, matH, [temp.matrix.clone()]);
+    }
   }
   // Lettering shares the existing atlas/material; no per-landmark canvases.
-  for(const l of d.landmarks.filter(l=>l.id==='gate'||l.id==='khaosan')){
-    const site=l.plot??l,yaw=l.yaw??0,c=Math.cos(yaw),s=Math.sin(yaw);
-    const board=(key:string,x:number,y:number,z:number,w:number,height:number,rotation=0)=>{
-      temp.position.set(site.x+c*x+s*z,y,site.z-s*x+c*z);temp.rotation.set(0,yaw+rotation,0);temp.scale.set(w,height,1);temp.updateMatrix();
-      batch.add(h[atlas.index.get(key)!]!,matH,[temp.matrix.clone()]);
+  for (const l of d.landmarks.filter(
+    (l) => l.id === "gate" || l.id === "khaosan",
+  )) {
+    const site = l.plot ?? l,
+      yaw = l.yaw ?? 0,
+      c = Math.cos(yaw),
+      s = Math.sin(yaw);
+    const board = (
+      key: string,
+      x: number,
+      y: number,
+      z: number,
+      w: number,
+      height: number,
+      rotation = 0,
+    ) => {
+      temp.position.set(site.x + c * x + s * z, y, site.z - s * x + c * z);
+      temp.rotation.set(0, yaw + rotation, 0);
+      temp.scale.set(w, height, 1);
+      temp.updateMatrix();
+      batch.add(h[atlas.index.get(key)!]!, matH, [temp.matrix.clone()]);
     };
-    if(l.id==='gate')for(const side of [-1,1])board('odeon-inscription',0,12.8,side*4.4,13,2.1,side<0?Math.PI:0);
+    if (l.id === "gate")
+      for (const side of [-1, 1])
+        board(
+          "odeon-inscription",
+          0,
+          12.8,
+          side * 4.4,
+          13,
+          2.1,
+          side < 0 ? Math.PI : 0,
+        );
     else {
-      for(const side of [-1,1])for(let i=0;i<5;i++)board(['khao-hostel','khao-travel','khao-cafe','khao-tailor','khao-live'][i]!,side*6.35,4.4,-14+i*6.5,4.6,1,side<0?Math.PI/2:-Math.PI/2);
-      for(const side of [-1,1])for(const end of [-1,1])board(side<0?'khao-hostel':'khao-cafe',side*11,3.6,end<0?-17.4:15.5,6.8,.7,end<0?Math.PI:0);
+      for (const side of [-1, 1])
+        for (let i = 0; i < 5; i++)
+          board(
+            [
+              "khao-hostel",
+              "khao-travel",
+              "khao-cafe",
+              "khao-tailor",
+              "khao-live",
+            ][i]!,
+            side * 6.35,
+            4.4,
+            -14 + i * 6.5,
+            4.6,
+            1,
+            side < 0 ? Math.PI / 2 : -Math.PI / 2,
+          );
+      for (const side of [-1, 1])
+        for (const end of [-1, 1])
+          board(
+            side < 0 ? "khao-hostel" : "khao-cafe",
+            side * 11,
+            3.6,
+            end < 0 ? -17.4 : 15.5,
+            6.8,
+            0.7,
+            end < 0 ? Math.PI : 0,
+          );
     }
   }
   batch.finish().forEach((chunk) => {

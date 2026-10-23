@@ -4,8 +4,16 @@ import { YAOWARAT_BENCHMARK } from "./bangkok/yaowarat";
 export function titleDrivePose(d: District) {
   if (d.worldId !== "bangkok")
     return d.spawn ?? { x: -280, z: 40, heading: Math.PI / 2 };
-  const a = d.nodes.find((n) => n.id === "bkk:505"),
-    b = d.nodes.find((n) => n.id === "bkk:506");
+  const nodes = new Map(d.nodes.map((n) => [n.id, n]));
+  const road = d.roads
+    .filter((r) => r.corridor === "yaowarat")
+    .sort((a, b) => {
+      const p = nodes.get(a.a)!,
+        q = nodes.get(b.a)!;
+      return Math.hypot(p.x + 60, p.z + 188) - Math.hypot(q.x + 60, q.z + 188);
+    })[0];
+  const a = road && nodes.get(road.a),
+    b = road && nodes.get(road.b);
   if (!a || !b) return d.spawn ?? YAOWARAT_BENCHMARK.titlePlayer;
   const heading = Math.atan2(b.x - a.x, b.z - a.z);
   return {

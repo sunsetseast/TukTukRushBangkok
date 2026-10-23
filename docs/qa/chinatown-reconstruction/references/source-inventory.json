@@ -1,0 +1,118 @@
+{
+  "accessed": "2026-10-22/23",
+  "method": "OSM source retrieval plus official/operator/heritage page and photographic inspection; no commercial map/street imagery redistributed",
+  "sources": [
+    {
+      "name": "OSM roads/buildings",
+      "url": "https://www.openstreetmap.org/api/0.6/map?bbox=100.499,13.726,100.519,13.748",
+      "usedFor": "Selected road topology, ordered ways, names and one-way/access tags; building/water context. Source way IDs retained on every curated street.",
+      "license": "ODbL1.0 / © OpenStreetMap contributors",
+      "retained": "references/osm-selected-roads.json; references/osm-buildings-water.geojson"
+    },
+    {
+      "name": "OSM riverbanks",
+      "url": "https://www.openstreetmap.org/relation/14038959",
+      "usedFor": "Retained PR36 reference-bank polygons; game river geometry unchanged.",
+      "license": "ODbL1.0 / © OpenStreetMap contributors",
+      "retained": "../chao-phraya/reference/riverbanks-osm.geojson"
+    },
+    {
+      "name": "TAT Talat Noi",
+      "url": "https://www.tourismthailand.org/Attraction/talat-noi",
+      "usedFor": "Neighborhood heritage and riverfront character.",
+      "license": "Copyright reference only; no images redistributed",
+      "retained": ""
+    },
+    {
+      "name": "TAT Talat Noi walk",
+      "url": "https://www.tourismthailand.org/Articles/1-day-in-talat-noi",
+      "usedFor": "Workshop/adaptive-use context and Song Wat/Talat Noi relationship.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "Thai government walk",
+      "url": "https://www.am2026thailand.go.th/explore-bangkok/talat-noi-song-wat-street-art",
+      "usedFor": "Connected historic riverfront walking context.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "TAT Wat Mangkon",
+      "url": "https://www.thailandtravel.or.jp/wat-mangkon-kamalawat/",
+      "usedFor": "Chinese temple roof/courtyard visual reference and tall Sino-Thai entrance block.",
+      "license": "Copyright reference only; original mesh interpretation",
+      "retained": ""
+    },
+    {
+      "name": "TAT MRT context",
+      "url": "https://www.tatnews.org/2024/06/exploring-bangkoks-old-city-and-yaowarat-is-super-easy-with-mrt-blue-line/",
+      "usedFor": "Wat Mangkon/Charoen Krung identity and approach context.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "Museum Thailand Tang To Kang",
+      "url": "https://www.museumthailand.com/th/museum/Tang-Toh-Kang-Gold-Shop-Museum",
+      "usedFor": "Seven-story historic gold-shop building and Wanit1 address.",
+      "license": "Copyright reference only; no photos/text copied",
+      "retained": ""
+    },
+    {
+      "name": "Hua Seng Heng operator",
+      "url": "https://www.huasengheng.com/contact/",
+      "usedFor": "Verified business identity and Yaowarat/Plaeng Nam branch relevance.",
+      "license": "Copyright reference only; no logo image extracted",
+      "retained": ""
+    },
+    {
+      "name": "Scala Chinatown OSM",
+      "url": "https://www.openstreetmap.org/node/3096836172",
+      "usedFor": "Chinatown restaurant identity, distinct from Siam cinema.",
+      "license": "ODbL1.0",
+      "retained": "references/osm-selected-roads.json (nearby street context)"
+    },
+    {
+      "name": "Scala JTB listing",
+      "url": "https://www.jtb.co.jp/kaigai_guide/asia/kingdom_of_thailand/BKK/124787/",
+      "usedFor": "Search-indexed listing places restaurant at483–485Yaowarat/Chaloem Buri. Full page returns403; corroborates OSM identity, not a surveyed plot.",
+      "license": "Copyright reference only; access limitation disclosed",
+      "retained": ""
+    },
+    {
+      "name": "Holy Rosary parish",
+      "url": "https://www.catholic.or.th/eng/chinese.html",
+      "usedFor": "Parish identity and church reference.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "Bangkok Design Week heritage",
+      "url": "https://www.bangkokdesignweek.com/en/bkkdw2023/program?venue=57320",
+      "usedFor": "Official venue/heritage context for Holy Rosary precinct.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "River City operator",
+      "url": "https://rivercitybangkok.com/plan-your-visit/",
+      "usedFor": "Operator address23CharoenKrung24 and arrival context.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "Grand Postal architectural record",
+      "url": "https://www.docomomothailand.org/pages/no6.html",
+      "usedFor": "Reinforced concrete/masonry, T-shaped symmetrical mass and river/Charoen Krung trade setting; reviewed for scope, not modeled.",
+      "license": "Copyright reference only",
+      "retained": ""
+    },
+    {
+      "name": "TCDC operator",
+      "url": "https://library.tcdc.or.th/visit/bkk_location",
+      "usedFor": "Grand Postal address1160CharoenKrung, BangRak; confirms adjacent southern scope.",
+      "license": "Copyright reference only",
+      "retained": ""
+    }
+  ]
+}

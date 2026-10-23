@@ -1,0 +1,28 @@
+before odeon-circle {
+  calls: 423,
+  triangles: 729383,
+  geometries: 513,
+  textures: 14,
+  frameMs: 1001.2999999998137
+}
+before song-wat-river {
+  calls: 251,
+  triangles: 324135,
+  geometries: 672,
+  textures: 14,
+  frameMs: 86
+}
+before talat-noi-river-city {
+  calls: 292,
+  triangles: 334099,
+  geometries: 861,
+  textures: 16,
+  frameMs: 53.5
+}
+before wat-mangkon {
+  calls: 383,
+  triangles: 561728,
+  geometries: 1156,
+  textures: 16,
+  frameMs: 647.7999999998137
+}

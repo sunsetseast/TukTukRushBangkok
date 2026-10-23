@@ -1,0 +1,327 @@
+[
+  {
+    "id": "yaowarat-overview",
+    "camera": [
+      -96,
+      230,
+      0
+    ],
+    "look": [
+      -112,
+      0,
+      -216
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "yaowarat-sunset",
+    "camera": [
+      4,
+      4,
+      -120
+    ],
+    "look": [
+      -92,
+      7,
+      -192
+    ],
+    "night": false,
+    "afterCamera": [
+      36,
+      3.4,
+      -144
+    ],
+    "afterLook": [
+      -92,
+      5,
+      -200
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "yaowarat-night",
+    "camera": [
+      4,
+      4,
+      -120
+    ],
+    "look": [
+      -92,
+      7,
+      -192
+    ],
+    "night": true,
+    "afterCamera": [
+      36,
+      3.4,
+      -144
+    ],
+    "afterLook": [
+      -92,
+      5,
+      -200
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "odeon-circle",
+    "camera": [
+      216,
+      55,
+      80
+    ],
+    "look": [
+      140,
+      5,
+      -40
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "wat-traimit",
+    "camera": [
+      260,
+      9,
+      40
+    ],
+    "look": [
+      256,
+      16,
+      -104
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "hua-lamphong",
+    "camera": [
+      400,
+      8,
+      -140
+    ],
+    "look": [
+      400,
+      16,
+      -288
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "ratchawong",
+    "camera": [
+      -324,
+      6,
+      -164
+    ],
+    "look": [
+      -276,
+      7,
+      -268
+    ],
+    "night": false,
+    "afterCamera": [
+      -324,
+      5,
+      -164
+    ],
+    "afterLook": [
+      -276,
+      7,
+      -268
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "mangkon",
+    "camera": [
+      -152,
+      5,
+      -48
+    ],
+    "look": [
+      -136,
+      6,
+      -196
+    ],
+    "night": false,
+    "afterCamera": [
+      -204,
+      4,
+      -48
+    ],
+    "afterLook": [
+      -160,
+      6,
+      -180
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "plaeng-nam",
+    "camera": [
+      -44,
+      5,
+      -148
+    ],
+    "look": [
+      8,
+      6,
+      -324
+    ],
+    "night": false,
+    "afterCamera": [
+      -36,
+      4,
+      -192
+    ],
+    "afterLook": [
+      4,
+      6,
+      -352
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "song-wat",
+    "camera": [
+      -176,
+      5,
+      176
+    ],
+    "look": [
+      -80,
+      7,
+      180
+    ],
+    "night": false,
+    "afterCamera": [
+      -200,
+      3.5,
+      148
+    ],
+    "afterLook": [
+      -80,
+      6,
+      164
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "song-wat-river",
+    "camera": [
+      -690,
+      240,
+      470
+    ],
+    "look": [
+      -180,
+      0,
+      140
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "talat-noi",
+    "camera": [
+      -144,
+      4,
+      568
+    ],
+    "look": [
+      -100,
+      6,
+      444
+    ],
+    "night": false,
+    "afterCamera": [
+      -152,
+      3.4,
+      552
+    ],
+    "afterLook": [
+      -88,
+      5,
+      432
+    ],
+    "matchMethod": "same benchmark and optical settings, relative street-level position updated to follow migrated centerline"
+  },
+  {
+    "id": "talat-noi-river-city",
+    "camera": [
+      -120,
+      70,
+      850
+    ],
+    "look": [
+      -276,
+      10,
+      740
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings, elevated connection view"
+  },
+  {
+    "id": "district-blocks",
+    "camera": [
+      -80,
+      430,
+      600
+    ],
+    "look": [
+      -80,
+      0,
+      -20
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "river-relationship",
+    "camera": [
+      -424,
+      410,
+      1024
+    ],
+    "look": [
+      -160,
+      0,
+      184
+    ],
+    "night": false,
+    "matchMethod": "identical world camera and optical settings"
+  },
+  {
+    "id": "wat-mangkon",
+    "camera": [
+      -52,
+      6,
+      -408
+    ],
+    "look": [
+      -52,
+      18,
+      -480
+    ],
+    "night": false,
+    "matchMethod": "identical world camera; site newly authored"
+  },
+  {
+    "id": "holy-rosary",
+    "camera": [
+      -336,
+      10,
+      728
+    ],
+    "look": [
+      -256,
+      16,
+      696
+    ],
+    "night": false,
+    "matchMethod": "identical world camera; site newly authored"
+  }
+]

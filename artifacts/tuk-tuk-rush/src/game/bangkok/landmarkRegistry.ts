@@ -1,4 +1,5 @@
-import {CITY_MODEL,canonicalFeaturePoint} from './cityModel';
+import { CHINATOWN_HERITAGE } from "./chinatownHeritage";
+import { CITY_MODEL, canonicalFeaturePoint } from "./cityModel";
 import type { District, Obstacle, Point } from "../types";
 import { GEOGRAPHIC_REFERENCES } from "./geography";
 import { REAL_PLACES } from "./realPlaces";
@@ -57,7 +58,25 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     parcels = landmarkParcels(d),
     nodes = new Map(d.nodes.map((n) => [n.id, n]));
   const entries: LandmarkRegistryEntry[] = d.landmarks.map((l) => {
-    const geo = GEOGRAPHIC_REFERENCES.find((g) => g.id === l.id),
+    const heritage = CHINATOWN_HERITAGE.find((h) => h.id === l.id);
+    const geo =
+        GEOGRAPHIC_REFERENCES.find((g) => g.id === l.id) ??
+        (heritage
+          ? {
+              coordinate:
+                l.id === "wat-mangkon"
+                  ? { lat: 13.7434472167, lon: 100.5094355083 }
+                  : { lat: 13.7312630903, lon: 100.5134549129 },
+              district: "Samphanthawong / Talat Noi",
+              corridors:
+                l.id === "wat-mangkon" ? ["charoen_n"] : ["wanit-2-south"],
+              sources: [heritage.source],
+              neighbors: l.id === "holy-rosary" ? ["river-city"] : ["gate"],
+              compromise:
+                heritage.character +
+                ". Original compressed model; protected grounds and street approach are approved game geometry.",
+            }
+          : undefined),
       real = REAL_PLACES.find((p) => p.id === l.id),
       site = d.authoredSites?.find((s) => s.id === l.id),
       arrival = d.destinations?.find((a) => a.landmarkId === l.id);
@@ -89,9 +108,12 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         : geo?.coordinate,
       coordinateAccuracy:
         hua || geo ? "approximate-site-center" : "not-verified",
-      world: canonicalFeaturePoint(l.id!,position,l.yaw??0),
-      modelOrigin:{...position},
-      map: { x: canonicalFeaturePoint(l.id!,position,l.yaw??0).x / 4 + 500, y: canonicalFeaturePoint(l.id!,position,l.yaw??0).z / 4 + 600 },
+      world: canonicalFeaturePoint(l.id!, position, l.yaw ?? 0),
+      modelOrigin: { ...position },
+      map: {
+        x: canonicalFeaturePoint(l.id!, position, l.yaw ?? 0).x / 4 + 500,
+        y: canonicalFeaturePoint(l.id!, position, l.yaw ?? 0).z / 4 + 600,
+      },
       rotation: l.yaw ?? 0,
       footprints: solids.map((o) => ({
         x: o.x,
@@ -182,15 +204,19 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     }
   for (const s of MRT_ENTRANCES) {
     const o = d.obstacles.find((o) => o.environmentId === s.id);
-    const fact=CITY_MODEL.infrastructure.mrt.find(m=>m.id===s.id);
+    const fact = CITY_MODEL.infrastructure.mrt.find((m) => m.id === s.id);
     if (!o) continue;
     entries.push({
       id: s.id,
       name: `MRT ${s.name} (${s.code})`,
       category: "underground-mrt-entrance",
       district: s.district,
-      geographicReference: fact&&'coordinate' in fact?fact.coordinate:undefined,
-      coordinateAccuracy: fact&&'coordinate' in fact?'approximate-site-center':'not-verified',
+      geographicReference:
+        fact && "coordinate" in fact ? fact.coordinate : undefined,
+      coordinateAccuracy:
+        fact && "coordinate" in fact
+          ? "approximate-site-center"
+          : "not-verified",
       world: { x: o.x, z: o.z },
       map: { x: o.x / 4 + 500, y: o.z / 4 + 600 },
       rotation: o.yaw ?? 0,
@@ -230,7 +256,12 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     },
   ]) {
     const owner = entries.find((e) => e.id === sub.owner)!;
-    const world = localPoint(owner.modelOrigin??owner.world, owner.rotation, sub.x, sub.z);
+    const world = localPoint(
+      owner.modelOrigin ?? owner.world,
+      owner.rotation,
+      sub.x,
+      sub.z,
+    );
     entries.push({
       ...owner,
       id: sub.id,
@@ -262,8 +293,8 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     rotation: scala.yaw ?? 0,
     footprints: [scala],
     height: scala.height,
-    geographicReference: undefined,
-    coordinateAccuracy: "not-verified",
+    geographicReference: { lat: 13.7396439, lon: 100.5112985 },
+    coordinateAccuracy: "approximate-site-center",
     facade: undefined,
     mainEntrance: undefined,
     vehicleAccess: undefined,
@@ -271,24 +302,41 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     protectedParcels: [],
     visibilityCorridors: [],
     neighbors: ["gate"],
-    references: [],
-    confidence: "unverified-this-pass",
+    references: [
+      "https://www.openstreetmap.org/node/3096836172",
+      "https://www.jtb.co.jp/kaigai_guide/asia/kingdom_of_thailand/BKK/124787/",
+    ],
+    confidence: "photo-and-operator-checked",
     compression:
-      "Existing named Yaowarat facade override. Exact real property position and historical identity require review.",
+      "Chinatown Scala restaurant at the Chaloem Buri corner on Yaowarat, not the former Siam cinema. Authored facade/sign interpretation fitted to an approved street-facing parcel; no claim of surveyed property dimensions.",
   });
   for (const pier of riverPiers(d)) {
-    const fact=CITY_MODEL.infrastructure.piers.find(p=>p.id===pier.id);
-    if(!fact)throw Error('Pier has no canonical metadata: '+pier.id);
+    const fact = CITY_MODEL.infrastructure.piers.find((p) => p.id === pier.id);
+    if (!fact) throw Error("Pier has no canonical metadata: " + pier.id);
     entries.push({
-      id:`pier:${pier.id}`,name:pier.name,category:'river-pier',district:fact.district,
-      world:{x:pier.x,z:pier.z},map:{x:pier.x/4+500,y:pier.z/4+600},rotation:pier.yaw,
-      geographicReference:fact.coordinate??undefined,
-      coordinateAccuracy:fact.coordinate?'approximate-site-center':'not-verified',
-      footprints:[],protectedParcels:[],visibilityCorridors:[],neighbors:[fact.owner],
-      roadRelationships:[...fact.streets,`${fact.bank} bank of Chao Phraya`],references:fact.sources,
-      confidence:fact.coordinate?'inherited-reference':'unverified-this-pass',
-      compression:'Named landing context is pier-specific. Emitted position is fitted to the compressed river edge, not surveyed dock geometry.',
-      visualQa:'pending-render-review',
+      id: `pier:${pier.id}`,
+      name: pier.name,
+      category: "river-pier",
+      district: fact.district,
+      world: { x: pier.x, z: pier.z },
+      map: { x: pier.x / 4 + 500, y: pier.z / 4 + 600 },
+      rotation: pier.yaw,
+      geographicReference: fact.coordinate ?? undefined,
+      coordinateAccuracy: fact.coordinate
+        ? "approximate-site-center"
+        : "not-verified",
+      footprints: [],
+      protectedParcels: [],
+      visibilityCorridors: [],
+      neighbors: [fact.owner],
+      roadRelationships: [...fact.streets, `${fact.bank} bank of Chao Phraya`],
+      references: fact.sources,
+      confidence: fact.coordinate
+        ? "inherited-reference"
+        : "unverified-this-pass",
+      compression:
+        "Named landing context is pier-specific. Emitted position is fitted to the compressed river edge, not surveyed dock geometry.",
+      visualQa: "pending-render-review",
     });
   }
   return entries;

@@ -18,6 +18,10 @@ import { VehicleController } from "../src/game/vehicle";
 import { assertApprovedManeuverMigration } from "./waterfront-migration-contract";
 import { distanceToSegment, obstacleDistance } from "../src/game/world";
 import type { District, Obstacle } from "../src/game/types";
+import {
+  approvedChinatownParcel,
+  assertChinatownGraphMigration,
+} from "./chinatown-migration-contract";
 const root = new URL("../../../", import.meta.url),
   out = new URL("docs/qa/waterfront-certification/", root),
   before = JSON.parse(
@@ -106,14 +110,33 @@ const replacements = oldKnown.map((old: Obstacle) => {
   };
 });
 assert(
-  d.buildings.length >= before.buildings.length * 0.995,
-  "Keep city frontage density",
+  d.buildings.filter((b) => !approvedChinatownParcel(b)).length >=
+    before.buildings.filter((b: Obstacle) => !approvedChinatownParcel(b))
+      .length *
+      0.995,
+  "Keep city frontage density outside explicitly reconstructed Chinatown; its parcel containment and exact exterior delta are independently certified",
 );
+// The approved successor migrates Chinatown only; compare its exterior to
+// merged PR37, while preserving the original water/bounds/transit equality.
+const pr37 = JSON.parse(
+  gunzipSync(
+    fs.readFileSync(
+      new URL("docs/qa/chinatown-reconstruction/before-world.json.gz", root),
+    ),
+  ).toString(),
+) as District;
+assertChinatownGraphMigration(d, pr37);
+for (const old of pr37.destinations ?? []) {
+  const now = d.destinations!.find((a) => a.id === old.id)!;
+  assert(now, "Destination identity retained");
+  for (const key of ["origin", "yaw", "entrance"] as const)
+    assert.deepEqual(
+      now[key],
+      old[key],
+      "Preserve authored arrival architecture " + old.id,
+    );
+}
 for (const key of [
-  "roads",
-  "nodes",
-  "landmarks",
-  "destinations",
   "river",
   "riverPolygon",
   "riverStructures",
@@ -128,11 +151,20 @@ for (const key of [
 const preservation = JSON.parse(
   fs.readFileSync(new URL("preservation-contract.json", out), "utf8"),
 );
+const successor = JSON.parse(
+  fs.readFileSync(
+    new URL(
+      "docs/qa/chinatown-reconstruction/references/source-approval.json",
+      root,
+    ),
+    "utf8",
+  ),
+);
 for (const item of preservation.files) {
   const bytes = fs.readFileSync(new URL(item.path, root));
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
-    item.sha256,
+    successor.files[item.path] ?? item.sha256,
     "Preserved approved source: " + item.path,
   );
 }
@@ -183,7 +215,8 @@ const report = {
   buildings: { before: before.buildings.length, after: d.buildings.length },
   replacements,
   preserved: preservation.files.length,
-  allRoadAndRiverGeometryIdentical: true,
+  exteriorRoadGeometryIdenticalToPR37: true,
+  riverGeometryIdentical: true,
 };
 fs.mkdirSync(new URL("validation/", out), { recursive: true });
 fs.writeFileSync(

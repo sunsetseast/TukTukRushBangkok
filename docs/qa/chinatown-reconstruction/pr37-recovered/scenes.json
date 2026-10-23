@@ -1,0 +1,234 @@
+[
+  {
+    "id": "icon-river",
+    "camera": [
+      -420,
+      38,
+      1000
+    ],
+    "look": [
+      -650,
+      12,
+      933
+    ],
+    "owner": "icon",
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "icon-street",
+    "camera": [
+      -760.9498914617022,
+      8,
+      910.3604000991086
+    ],
+    "look": [
+      -646.9669914110091,
+      10,
+      933.0330085889909
+    ],
+    "owner": "icon",
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "taksin-driving",
+    "camera": [
+      -220,
+      5,
+      1460
+    ],
+    "look": [
+      -600,
+      5,
+      1460
+    ],
+    "owner": null,
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "oriental-river",
+    "camera": [
+      -320,
+      32,
+      1040
+    ],
+    "look": [
+      -200,
+      24,
+      1040
+    ],
+    "owner": "oriental",
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "collision-building",
+    "camera": [
+      103,
+      8,
+      1115
+    ],
+    "look": [
+      77,
+      2.3,
+      1099
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "collision-tree",
+    "camera": [
+      -132,
+      5.3,
+      1054
+    ],
+    "look": [
+      -148.4,
+      1.2,
+      1035.3
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "oriental-approach",
+    "camera": [
+      96,
+      7,
+      1101
+    ],
+    "look": [
+      43,
+      3,
+      1084
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "river-city-street",
+    "camera": [
+      154,
+      7,
+      802
+    ],
+    "look": [
+      95,
+      3,
+      799.5
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "asiatique-entry",
+    "camera": [
+      -333,
+      7,
+      2000
+    ],
+    "look": [
+      -398,
+      3,
+      2007
+    ],
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "asiatique-loop",
+    "camera": [
+      -389,
+      7,
+      2002
+    ],
+    "look": [
+      -426,
+      3,
+      2030
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "shoreline-local",
+    "camera": [
+      -330,
+      145,
+      700
+    ],
+    "look": [
+      -470,
+      1,
+      500
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "river-city-gameplay",
+    "player": {
+      "x": 130,
+      "z": 801.2,
+      "heading": -1.61766
+    },
+    "look": [
+      100,
+      3,
+      800
+    ],
+    "lights": [
+      "sunset"
+    ]
+  },
+  {
+    "id": "chinatown-waterfront-gameplay",
+    "player": {
+      "x": -165,
+      "z": 197.5,
+      "heading": 1.1071487177940904
+    },
+    "look": [
+      -120,
+      3,
+      220
+    ],
+    "lights": [
+      "sunset",
+      "night"
+    ]
+  },
+  {
+    "id": "asiatique-gameplay",
+    "player": {
+      "x": -365,
+      "z": 2000.6,
+      "heading": -1.4477143267085322
+    },
+    "look": [
+      -390,
+      3,
+      2010
+    ],
+    "lights": [
+      "sunset"
+    ]
+  }
+]

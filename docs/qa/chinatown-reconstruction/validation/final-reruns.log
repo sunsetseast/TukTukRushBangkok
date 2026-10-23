@@ -1,0 +1,7 @@
+test:interface PASS 25s
+test:cinematic PASS 62s
+test:city-blueprint PASS 39s
+test:waterfront-clearance FAIL 29s
+test:chinatown PASS 37s
+test:bangkok FAIL 160s
+{"passed":4,"failed":["test:waterfront-clearance","test:bangkok"]}

@@ -175,7 +175,7 @@ export class GameEngine {
     if (this.disposed) return;
     const dt = Math.max(0, Math.min(delta, 0.05));
     const { snapshot: s, player, input } = this.model;
-    if(![player.x,player.z,player.heading,player.speed].every(Number.isFinite)){ Object.assign(player,createVehicle(this.model.district));this.controller.reset();this.clearInput();this.resetCamera(); }
+    if(![player.x,player.z,player.heading,player.speed].every(Number.isFinite)){ Object.assign(player,createVehicle(this.model.district));this.controller.reset();this.clearInput();this.resetCamera();this.updateTarget();this.publish();return; }
     this.frames++; this.frameTime += delta;
     if (this.frameTime >= 2) {
       s.fps = Math.round(this.frames / this.frameTime);

@@ -37,9 +37,11 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
   for (const p of designs) {
     const b = p.parcel;
     if (b.artRole || !["chinatown", "khaosan"].includes(p.region)) continue;
+    if (b.chinatown && ["songwat", "talatnoi"].includes(b.chinatown.character))
+      continue;
     const seed = p.bays[0]!.seed,
       F = b.d / 2,
-      key: string|undefined = undefined,
+      key: string | undefined = undefined,
       khao = p.region === "khaosan";
     const menu = khao
       ? [
@@ -61,17 +63,22 @@ export function districtSigns(designs: ParcelDesign[]): DistrictSign[] {
           "canyon-silk",
           "canyon-noodles",
         ];
-    const showcase = cinematicParcel(p);
+    const showcase =
+      cinematicParcel(p) || b.chinatown?.character === "yaowarat";
     const height = showcase
-        ? Math.min(5.4 + (seed % 3) * 0.8,Math.min(...p.bays.map(a=>a.height))-5.8)
+        ? Math.min(
+            5.4 + (seed % 3) * 0.8,
+            Math.min(...p.bays.map((a) => a.height)) - 5.8,
+          )
         : khao
           ? 2 + (seed % 3) * 0.65
           : 5.5 + (seed % 4) * 1.2,
-      y = showcase
-        ? 5.2+height/2
+      desiredY = showcase
+        ? 5.2 + height / 2
         : khao
           ? 7.4 + (seed % 4) * 0.7
           : Math.max(9, Math.min(15, b.height - 2));
+    const y = Math.min(desiredY, b.height - height / 2 - 0.8);
     signs.push({
       p,
       key: key ?? menu[seed % menu.length]!,
