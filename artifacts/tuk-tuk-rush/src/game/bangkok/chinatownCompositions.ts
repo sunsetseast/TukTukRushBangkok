@@ -1,5 +1,5 @@
 import type { Trade } from "./buildingGrammar";
-/** Six deliberately selected, existing plots form a continuous central driving
+/** Seven deliberately selected, existing plots form a continuous central driving
  * sequence. Internal art labels describe fictional shops, never real brands. */
 export const CHINATOWN_COMPOSITIONS: Record<
   string,
@@ -7,7 +7,8 @@ export const CHINATOWN_COMPOSITIONS: Record<
     trade: Trade;
     wall: string;
     accent: string;
-    treatment: "kitchen" | "tea-balcony" | "gold-gallery" | "apothecary";
+    treatment:
+      "kitchen" | "tea-balcony" | "gold-gallery" | "apothecary" | "merchant";
   }
 > = {
   "ctparcel:ctblock:9:0:0": {
@@ -45,5 +46,11 @@ export const CHINATOWN_COMPOSITIONS: Record<
     wall: "#ceb79a",
     accent: "#a44c37",
     treatment: "kitchen",
+  },
+  "ctparcel:ctblock:25:4:2": {
+    trade: "retail",
+    wall: "#c4b49b",
+    accent: "#315d68",
+    treatment: "merchant",
   },
 };

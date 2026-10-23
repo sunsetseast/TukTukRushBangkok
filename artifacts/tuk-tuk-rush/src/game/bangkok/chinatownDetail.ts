@@ -87,6 +87,26 @@ export function emitChinatownDetail(
         ["#a49c80", "#b7a88a"][i % 2]!,
         { surface: "brick", ...near },
       );
+    // River-facing elevations retain industrial boundary walls. Buttresses,
+    // high ventilation panels and patched brick articulate the previously blank
+    // warehouse backs without inventing waterside shops or a public promenade.
+    put(0, 0.42, -F - 0.06, W, 0.7, 0.18, "#8c8871", { surface: "brick" });
+    for (const u of [-W * 0.32, 0, W * 0.32]) {
+      put(u, H * 0.48, -F - 0.12, 0.3, H * 0.91, 0.28, "#b1a88b");
+      put(u, H - 1.55, -F - 0.08, W * 0.21, 0.7, 0.12, "#526a61", metal);
+      put(u, H - 1.15, -F - 0.16, W * 0.23, 0.13, 0.3, "#c8bb9b");
+    }
+    for (let i = 0; i < 4; i++)
+      put(
+        (i - 1.5) * W * 0.2,
+        1.2 + (i % 2) * 0.7,
+        -F - 0.02,
+        W * 0.12,
+        0.28,
+        0.04,
+        "#a18d70",
+        { surface: "brick", ...near },
+      );
     put(0, H - 0.45, F + 0.16, W * 0.7, 0.2, 0.25, "#baac8e");
     return;
   }

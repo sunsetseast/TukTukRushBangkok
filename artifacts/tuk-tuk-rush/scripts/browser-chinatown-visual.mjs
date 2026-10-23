@@ -62,7 +62,9 @@ const page = await browser.newPage({
   hasTouch: true,
 });
 page.setDefaultTimeout(180000);
-page.on("console", m=>{if(m.type()==="error")report.consoleErrors.push(m.text());});
+page.on("console", (m) => {
+  if (m.type() === "error") report.consoleErrors.push(m.text());
+});
 page.on("pageerror", (e) => {
   report.errors.push(e.stack ?? e.message);
   console.error(e.message);
@@ -188,13 +190,22 @@ try {
       quality: "medium",
       dpr: 1,
       replay,
-      cameraPose: await page.evaluate(()=>({position:window.__graphics.camera.position.toArray(),quaternion:window.__graphics.camera.quaternion.toArray(),fov:window.__graphics.camera.fov})),
+      cameraPose: await page.evaluate(() => ({
+        position: window.__graphics.camera.position.toArray(),
+        quaternion: window.__graphics.camera.quaternion.toArray(),
+        fov: window.__graphics.camera.fov,
+      })),
       samples,
     });
     console.log(label, s.id, JSON.stringify(samples.at(-1)));
   }
   assert.equal(report.errors.length, 0);
-  assert(!report.consoleErrors.some(m=>/WebGLProgram|GL_INVALID|VALIDATE_STATUS|ERROR: 0:/.test(m)),report.consoleErrors.join("\n"));
+  assert(
+    !report.consoleErrors.some((m) =>
+      /WebGLProgram|GL_INVALID|VALIDATE_STATUS|ERROR: 0:/.test(m),
+    ),
+    report.consoleErrors.join("\n"),
+  );
   report.pass = true;
 } finally {
   await fs.writeFile(

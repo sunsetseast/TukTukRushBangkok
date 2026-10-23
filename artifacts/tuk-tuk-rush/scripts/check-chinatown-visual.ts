@@ -215,6 +215,9 @@ const report = {
   signCount,
   byCharacter,
   people: people.length,
+  stagedPeople: people.filter((p) => p.seed >= 1100).length,
+  centralPeople: people.filter((p) => Math.hypot(p.x + 110, p.z + 200) < 100)
+    .length,
   newPointLights: 0,
   transparentLayers: 0,
   instancedGlowBytesPerInstance: 3,

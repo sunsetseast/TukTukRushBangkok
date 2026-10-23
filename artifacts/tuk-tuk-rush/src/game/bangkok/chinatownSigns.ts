@@ -135,8 +135,10 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
             blade: true,
           },
         ];
-  const height = Math.min(H - 6.3, (yao ? 7.2 : 4.8) + (seed % 4) * 0.72),
-    width = yao ? 2.1 + (seed % 4) * 0.22 : 1.8 + (seed % 3) * 0.25;
+  const height = Math.min(H - 6.3, 8.7, (yao ? 7.2 : 4.8) + (seed % 4) * 0.72),
+    width = yao
+      ? Math.min(2.4, 2.1 + (seed % 4) * 0.22)
+      : 1.8 + (seed % 3) * 0.25;
   const signs: DistrictSign[] = [
     {
       p,
@@ -151,12 +153,12 @@ export function chinatownSigns(p: ParcelDesign): DistrictSign[] {
   ];
   // Smaller secondary cabinets at a different height/palette break long rows.
   // Keep the existing shop fascia unobscured; every bracket returns to its owner.
-  if (yao && seed % 3 === 0)
+  if (yao && seed % 3 === 0 && H > 16.8)
     signs.push({
       p,
       key: a.trade === "gold" ? "ct-gold" : "ct-food",
       u: -W * 0.2,
-      y: 6.05,
+      y: H - 1.5,
       v: F + 0.38,
       width: Math.min(W * 0.58, 8.4),
       height: 1.35,

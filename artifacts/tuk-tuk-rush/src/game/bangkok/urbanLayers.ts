@@ -1,3 +1,4 @@
+import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import { regionAt } from "./world";
 import { environmentPeople, placementIndex } from "./environmentPlan";
 import type { District, Point } from "../types";
@@ -206,12 +207,44 @@ export function bangkokPeople(
         stableHash(`${a.start.x}:${a.start.z}`) -
         stableHash(`${b.start.x}:${b.start.z}`),
     );
-  const balanced: StreetPerson[] = [];
+  // Authored browsing/conversation groups anchor the central shop sequence,
+  // sharing the unchanged 360 citywide / 32 visible instanced-person budgets.
+  const staged: StreetPerson[] = [];
+  for (const p of designs.filter(
+    (p) => CHINATOWN_COMPOSITIONS[p.parcel.environmentId ?? ""],
+  )) {
+    const b = p.parcel,
+      yaw = b.yaw ?? 0,
+      c = Math.cos(yaw),
+      s = Math.sin(yaw);
+    for (const [i, off] of [-0.33, -0.19, 0.17, 0.31].entries()) {
+      const u = b.w * off,
+        v = b.d / 2 + (i % 2 ? 2.15 : 1.35),
+        q = { x: b.x + c * u + s * v, z: b.z - s * u + c * v };
+      if (!clear(q)) continue;
+      staged.push({
+        start: q,
+        end: q,
+        ...q,
+        heading: yaw + Math.PI + (i % 2 ? 0.6 : -0.4),
+        role: "customer",
+        seed: 1100 + staged.length,
+        height: 0.95 + (i % 3) * 0.035,
+        region: p.region,
+      });
+    }
+  }
+  const balanced: StreetPerson[] = [...staged];
   for (let i = 0; balanced.length < 360; i++) {
     let found = false;
     for (const group of groups.values())
       if (group[i] && balanced.length < 360) {
-        balanced.push(group[i]!);
+        const q = group[i]!;
+        if (staged.some((p) => Math.hypot(p.x - q.x, p.z - q.z) < 0.95)) {
+          found = true;
+          continue;
+        }
+        balanced.push(q);
         found = true;
       }
     if (!found) break;
