@@ -1,0 +1,2154 @@
+{
+  "substantialBefore": 2830,
+  "substantialAfter": 0,
+  "beforeByClass": {
+    "fascia": 2633,
+    "cabinet": 63,
+    "blade": 121,
+    "secondary": 13
+  },
+  "retiredFaces": {
+    "duplicateCabinetFaces": 116,
+    "rearServiceFasciaFaces": 89,
+    "lowBuildingBladeFaces": 6
+  },
+  "minorOwnSignPerspectiveOverlaps": [
+    {
+      "id": "bkk:-60977:0:-3488:fascia:3",
+      "region": "chinatown",
+      "kind": "fascia",
+      "center": [
+        -606.2862653943859,
+        4.32,
+        13.865980682555115
+      ],
+      "width": 5.161428571428572,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "bkk:-60977:0:-3488:9.55:0.55x8.75x3.60": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-9680:55020:30648:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -95.58985646164305,
+        4.32,
+        534.4085327987585
+      ],
+      "width": 7.477963126763444,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:0:1:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:0:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-2081:55322:31059:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -20.24503006110253,
+        4.32,
+        537.3869094770155
+      ],
+      "width": 10.777245352081332,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:2:5:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:2:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:2:5:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:2:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:2:5:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:2:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:2:5:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:2:5:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:5373:55766:30494:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        55.191263083265014,
+        4.32,
+        541.8901450028411
+      ],
+      "width": 7.520891353935706,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:3:2:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:3:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:10394:56230:30494:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        105.39492844497406,
+        4.32,
+        546.5318935878047
+      ],
+      "width": 11.074448236824162,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:3:6:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:3:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:3:6:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:3:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:3:6:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:3:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:3:6:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:3:6:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-17321:77926:-16539:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -188.9990133960113,
+        4.32,
+        777.9432753242418
+      ],
+      "width": 11.369600888646204,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:13:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:13:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:13:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:13:0:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-17107:75355:-16539:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -186.85647642113173,
+        4.32,
+        752.2331927172814
+      ],
+      "width": 11.369600888646204,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:2:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:13:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:2:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:13:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:2:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:13:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:13:2:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:13:2:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-14084:59292:-19513:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -155.5473348221757,
+        4.32,
+        587.0333672785902
+      ],
+      "width": 11.609839994748285,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:14:4:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:14:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:14:4:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:1:14:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:14:4:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:14:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:1:14:4:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:1:14:4:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-675:22905:28501:fascia:0",
+      "region": "songwat",
+      "kind": "fascia",
+      "center": [
+        -1.0535799361587923,
+        4.32,
+        210.04895866293847
+      ],
+      "width": 18.8506130178211,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:20:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:20:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:20:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:20:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:20:0:5.45:0.55x1.95x1.60": 3
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:20:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:20:0:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-5517:34513:9209:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -42.558175236787136,
+        4.32,
+        354.71102809391425
+      ],
+      "width": 10.930254774486064,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:4:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:4:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:4:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:4:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:4:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-6271:35505:9209:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -50.09766691003378,
+        4.32,
+        364.63141187450196
+      ],
+      "width": 10.930254774486064,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:5:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:5:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:5:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:5:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:5:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:5:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-9287:39473:9209:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -80.25563360302037,
+        4.32,
+        404.3129469968527
+      ],
+      "width": 10.930254774486064,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:9:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:9:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:9:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:26:9:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:9:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:9:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:26:9:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:26:9:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-16070:52247:11903:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -153.41834214558395,
+        4.32,
+        525.3810483553146
+      ],
+      "width": 10.97150848311423,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:32:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:32:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:32:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:32:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:32:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:32:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:32:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:32:0:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-18670:56593:11903:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -171.9901853277626,
+        4.32,
+        571.810457897873
+      ],
+      "width": 7.45398051402425,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:32:4:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:32:4:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-21678:66870:14877:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -200.9973866969205,
+        4.32,
+        670.0138523525549
+      ],
+      "width": 10.665986736195311,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:2:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:35:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:2:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:35:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:2:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:35:2:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:2:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:35:2:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-21381:68118:14877:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -202.01020079987194,
+        4.32,
+        682.1677118244393
+      ],
+      "width": 10.665986736195311,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:3:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:35:3:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:3:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:35:3:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:3:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:35:3:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:3:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:2:35:3:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-22185:72947:14877:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -206.0614572116778,
+        4.32,
+        730.783149711977
+      ],
+      "width": 7.255391378526953,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:2:35:7:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:2:35:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:599:50054:-357:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        5.429312935743317,
+        4.32,
+        516.3696163567976
+      ],
+      "width": 10.786140474630148,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:1:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:8:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:1:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:8:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:1:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:8:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:1:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:8:1:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-6786:49790:-357:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -68.42044517654475,
+        4.32,
+        513.7320778023551
+      ],
+      "width": 10.786140474630148,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:7:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:8:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:7:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:8:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:7:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:8:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:8:7:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:8:7:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:181:35708:-22207:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        -10.800099647447702,
+        4.32,
+        347.4973211751306
+      ],
+      "width": 10.864673302251642,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:11:7:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:11:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:11:7:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:11:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:11:7:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:11:7:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:11:7:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:11:7:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:2472:32721:-22455:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        12.346602973401142,
+        4.32,
+        317.3102819843894
+      ],
+      "width": 10.567670559578168,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:0:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:0:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:0:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:0:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:7006:27053:-22455:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        57.690587144619,
+        4.32,
+        260.63000422985306
+      ],
+      "width": 10.567670559578168,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:6:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:6:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:6:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:6:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:6:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:6:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:8517:25163:-22455:fascia:0",
+      "region": "talatnoi",
+      "kind": "fascia",
+      "center": [
+        72.80524853502493,
+        4.32,
+        241.7365783116743
+      ],
+      "width": 10.567670559578168,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:8:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:8:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:8:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:3:12:8:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:8:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:8:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:3:12:8:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:3:12:8:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:17049:18518:4636:fascia:0",
+      "region": "songwat",
+      "kind": "fascia",
+      "center": [
+        173.99893806066999,
+        4.32,
+        192.18785912696498
+      ],
+      "width": 17.92914276716313,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:4:11:1:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:4:11:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:4:11:1:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:4:11:1:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:4:11:1:5.45:0.55x1.95x1.60": 3
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:4:11:1:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:4:11:1:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-6906:14147:-3367:fascia:0",
+      "region": "songwat",
+      "kind": "fascia",
+      "center": [
+        -75.61771056138578,
+        4.32,
+        160.19228111604355
+      ],
+      "width": 15.685780332553142,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:6:7:3:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:6:7:3:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:6:7:3:5.45:0.55x1.95x1.60": 2,
+            "ctparcel:ctblock:6:7:3:4.60:0.60x0.10x1.70": 1
+          }
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:6:7:3:5.45:0.55x1.95x1.60": 3
+          }
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 3,
+          "ownBlocked": 3,
+          "samples": 45,
+          "blockers": {
+            "ctparcel:ctblock:6:7:3:5.45:0.55x1.95x1.60": 3,
+            "ctparcel:ctblock:6:7:3:4.60:0.60x0.10x1.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-100500:-145500:31416:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -1007.9090909090909,
+        4.32,
+        -1462.38
+      ],
+      "width": 5.371818181818182,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:803763864:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-92100:-145500:31416:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -923.918918918919,
+        4.32,
+        -1462.61
+      ],
+      "width": 5.352162162162163,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:120885676:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-89300:-150500:0:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -889.9333333333333,
+        4.32,
+        -1497.39
+      ],
+      "width": 5.0566666666666675,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:4199144616:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-50700:-27788:-28753:fascia:0",
+      "region": "chinatown",
+      "kind": "fascia",
+      "center": [
+        -508.0830075997782,
+        4.32,
+        -281.8599167547421
+      ],
+      "width": 4.99,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:2003665268:5.75:0.55x1.15x3.60": 1,
+            "infill:frontage:2003665268:5.30:0.60x0.10x3.70": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-48720:9033:27928:fascia:0",
+      "region": "chinatown",
+      "kind": "fascia",
+      "center": [
+        -485.36042287218214,
+        4.32,
+        85.27057466320663
+      ],
+      "width": 7.19,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:4219553840:5.75:0.55x1.15x2.95": 1,
+            "infill:frontage:4219553840:5.30:0.60x0.10x3.05": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-47421:5461:-3488:fascia:0",
+      "region": "chinatown",
+      "kind": "fascia",
+      "center": [
+        -476.0513418337003,
+        4.32,
+        59.6706018073816
+      ],
+      "width": 7.19,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 2,
+          "ownBlocked": 2,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:363455449:7.50:0.55x4.65x4.25": 2,
+            "infill:frontage:363455449:5.30:0.60x0.10x4.35": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-90621:-155863:25213:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -904.4144367147167,
+        4.32,
+        -1566.4155019194948
+      ],
+      "width": 5.05046511627907,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:3005250092:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-58255:-137419:-15575:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -590.1177291490833,
+        4.32,
+        -1371.1689488808615
+      ],
+      "width": 5.352162162162163,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:2569567736:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-26371:-125891:-20178:fascia:1",
+      "region": "khaosan",
+      "kind": "fascia",
+      "center": [
+        -271.8285994471929,
+        4.32,
+        -1259.5770478700742
+      ],
+      "width": 5.371818181818182,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:3605391084:5.75:0.55x1.15x2.65": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    },
+    {
+      "id": "bkk:-43756:-49964:-13623:fascia:1",
+      "region": "chinatown",
+      "kind": "fascia",
+      "center": [
+        -444.5929528654723,
+        4.32,
+        -495.01331040171146
+      ],
+      "width": 5.05046511627907,
+      "height": 0.95,
+      "views": [
+        {
+          "distance": 9,
+          "angle": 0,
+          "height": 1.7,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": -0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 12,
+          "angle": 0.55,
+          "height": 3.2,
+          "blocked": 0,
+          "ownBlocked": 0,
+          "samples": 45,
+          "blockers": {}
+        },
+        {
+          "distance": 14,
+          "angle": 0,
+          "height": 6.5,
+          "blocked": 1,
+          "ownBlocked": 1,
+          "samples": 45,
+          "blockers": {
+            "infill:frontage:3963204329:7.50:0.55x4.65x3.60": 1
+          }
+        }
+      ],
+      "fail": false,
+      "externalOcclusionAllViews": false,
+      "perspectiveOverlap": false
+    }
+  ],
+  "explanation": "35 faces retain 1\u20133 of 45 conservative samples overlapping a projecting sign or its support at oblique/elevated views; not hidden by own awning/cornice. These are retained and disclosed rather than removed from the population. Foreign buildings and raw rendered obstruction remain in the separate reports.",
+  "retiredStableByClass": {
+    "cabinet": 116,
+    "fascia": 89
+  },
+  "resolvedStableFaceCount": 2633,
+  "retiredStableFaceCount": 205,
+  "fullInventory": "conflict-inventory.json.gz"
+}

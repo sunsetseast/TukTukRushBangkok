@@ -26,6 +26,7 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-drives
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:sign-visibility
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-visual
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-legal-traffic

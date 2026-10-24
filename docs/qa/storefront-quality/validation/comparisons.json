@@ -1,0 +1,2899 @@
+{
+  "pass": true,
+  "matchedPairs": 18,
+  "unobscuredWebglPairs": 16,
+  "portraitGuardChecks": 2,
+  "runtimeSourceSha256": "1735777441d549d8dec31c1b43aaf837789abbc11686886ebde33d4256c0c3f3",
+  "visibilityTargets": [
+    {
+      "id": "storefront-detail",
+      "owner": "bkk:-10899:-16880:29617",
+      "key": "ct-noodle",
+      "before": 0.3333333333333333,
+      "after": 0.1111111111111111,
+      "samples": [
+        45,
+        45
+      ],
+      "minimumGain": 0.15,
+      "maximumAfter": 0.16
+    },
+    {
+      "id": "yaowarat-fascia",
+      "owner": "bkk:-10899:-16880:29617",
+      "key": "ct-noodle",
+      "before": 0.3142857142857143,
+      "after": 0.14285714285714285,
+      "samples": [
+        35,
+        35
+      ],
+      "minimumGain": 0.15,
+      "maximumAfter": 0.16
+    },
+    {
+      "id": "ratchawong-sign",
+      "owner": "bkk:-29192:-17634:-18925",
+      "key": "ct-merchant",
+      "before": 0.2,
+      "after": 0,
+      "samples": [
+        45,
+        45
+      ],
+      "minimumGain": 0.15,
+      "maximumAfter": 0
+    },
+    {
+      "id": "song-wat-merchant",
+      "owner": "bkk:-21934:17677:30916",
+      "key": "ct-workshop",
+      "before": 0.2,
+      "after": 0,
+      "samples": [
+        45,
+        45
+      ],
+      "minimumGain": 0.15,
+      "maximumAfter": 0
+    },
+    {
+      "id": "siam-sign",
+      "owner": "bkk:75600:-55200:31416",
+      "key": "retail:2",
+      "before": 0.35555555555555557,
+      "after": 0,
+      "samples": [
+        45,
+        45
+      ],
+      "minimumGain": 0.25,
+      "maximumAfter": 0
+    }
+  ],
+  "geometry": {
+    "before": {
+      "faces": 6934,
+      "substantialSelfClashes": 2830
+    },
+    "after": {
+      "faces": 6723,
+      "substantialSelfClashes": 0
+    },
+    "externallyScreened": [
+      {
+        "id": "bkk:30491:-108284:-357:fascia:0",
+        "region": "connector",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 25,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2811748070:1.90:0.46x3.80x2.10": 13,
+              "street-infill:2811748070:3.75:3.34x0.80x2.10": 13,
+              "street-infill:2811748070:4.10:2.39x8.20x0.99": 15,
+              "street-infill:2811748070:1.55:2.99x3.10x0.18": 1,
+              "street-infill:2811748070:1.80:0.46x3.60x0.99": 15,
+              "street-infill:2811748070:3.85:0.46x0.50x0.99": 6,
+              "street-infill:2811748070:3.28:0.10x6.56x0.10": 5,
+              "street-infill:2811748070:4.02:0.20x0.17x0.46": 1,
+              "street-infill:2811748070:5.10:0.18x2.00x0.28": 6,
+              "street-infill:2811748070:5.10:0.08x2.00x0.16": 2,
+              "street-infill:2811748070:5.10:0.46x2.00x0.24": 3
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 39,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2811748070:3.75:3.34x0.80x2.10": 25,
+              "street-infill:2811748070:1.90:0.46x3.80x2.10": 5,
+              "street-infill:2811748070:5.10:0.18x2.00x0.28": 12,
+              "street-infill:2811748070:4.10:2.39x8.20x0.99": 25,
+              "street-infill:2811748070:3.85:0.46x0.50x0.99": 12,
+              "street-infill:2811748070:4.02:0.20x0.17x0.46": 7,
+              "street-infill:2811748070:5.10:0.46x2.00x0.25": 6,
+              "street-infill:2811748070:5.10:0.08x2.00x0.16": 3,
+              "street-infill:2811748070:5.10:0.46x2.00x0.24": 5,
+              "street-infill:2811748070:4.40:1.84x0.25x0.12": 3,
+              "street-infill:2811748070:5.10:0.46x2.00x0.19": 2
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 20,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2811748070:4.10:2.39x8.20x0.99": 20,
+              "street-infill:2811748070:3.75:3.34x0.80x2.10": 5,
+              "street-infill:2811748070:3.85:0.46x0.50x0.99": 7,
+              "street-infill:2811748070:5.10:0.46x2.00x0.24": 5,
+              "street-infill:2811748070:5.10:0.08x2.00x0.16": 5,
+              "street-infill:2811748070:4.40:1.84x0.25x0.12": 3,
+              "street-infill:2811748070:4.02:0.20x0.17x0.46": 2,
+              "street-infill:2811748070:5.10:0.46x2.00x0.19": 3,
+              "street-infill:2811748070:5.10:0.18x2.00x0.28": 6
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 21,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2811748070:3.75:3.34x0.80x2.10": 3,
+              "street-infill:2811748070:5.09:3.34x0.65x1.70": 8,
+              "street-infill:2811748070:4.10:2.39x8.20x0.99": 10,
+              "street-infill:2811748070:3.85:0.46x0.50x0.99": 2,
+              "street-infill:2811748070:5.10:0.08x2.00x0.16": 10,
+              "street-infill:2811748070:4.02:0.20x0.17x0.46": 1,
+              "street-infill:2811748070:3.28:0.10x6.56x0.10": 5,
+              "street-infill:2811748070:5.10:0.46x2.00x0.25": 5,
+              "street-infill:2811748070:5.10:0.18x2.00x0.28": 18,
+              "street-infill:2811748070:5.10:0.46x2.00x0.24": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-42100:-80500:-15708:fascia:1",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 5,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1547954411:4.10:3.39x8.20x2.05": 5,
+              "street-infill:1547954411:3.85:0.46x0.50x2.05": 3,
+              "street-infill:1547954411:4.02:0.20x0.17x0.63": 1,
+              "street-infill:1547954411:5.10:0.46x2.00x0.49": 3,
+              "street-infill:1547954411:4.40:2.39x0.25x0.12": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 5,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1547954411:3.85:0.46x0.50x2.05": 2,
+              "street-infill:1547954411:5.10:0.46x2.00x0.49": 4
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1547954411:4.10:3.39x8.20x2.05": 10,
+              "street-infill:1547954411:3.85:0.46x0.50x2.05": 10,
+              "street-infill:1547954411:3.28:0.10x6.56x0.10": 5,
+              "street-infill:1547954411:4.02:0.20x0.17x0.63": 3,
+              "street-infill:1547954411:4.40:2.39x0.25x0.12": 2,
+              "street-infill:1547954411:5.10:0.08x2.00x0.33": 4,
+              "street-infill:1547954411:5.10:0.46x2.00x0.51": 1
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 5,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1547954411:4.10:3.39x8.20x2.05": 5,
+              "street-infill:1547954411:3.85:0.46x0.50x2.05": 1,
+              "street-infill:1547954411:4.02:0.20x0.17x0.63": 1,
+              "street-infill:1547954411:4.40:2.39x0.25x0.12": 2,
+              "street-infill:1547954411:5.10:0.46x2.00x0.49": 4
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:57960:-55500:31416:fascia:0",
+        "region": "siam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 25,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2025857287:1.90:0.46x3.80x2.10": 7,
+              "street-infill:2025857287:3.75:4.34x0.80x2.10": 10,
+              "street-infill:2025857287:3.30:4.34x0.40x2.10": 25,
+              "street-infill:2025857287:4.32:3.91x1.20x0.70": 4
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2025857287:6.60:3.39x13.20x0.65": 15,
+              "street-infill:2025857287:1.90:0.46x3.80x2.10": 5,
+              "street-infill:2025857287:3.75:4.34x0.80x2.10": 42,
+              "street-infill:2025857287:1.80:0.46x3.60x0.65": 3,
+              "street-infill:2025857287:3.85:0.46x0.50x0.65": 12,
+              "street-infill:2025857287:4.02:0.20x0.17x0.40": 4,
+              "street-infill:2025857287:1.90:0.46x3.80x0.42": 6,
+              "street-infill:2025857287:5.28:0.10x10.56x0.10": 5,
+              "street-infill:2025857287:4.32:3.91x1.20x0.70": 24,
+              "street-infill:2025857287:4.32:0.16x0.20x0.55": 4,
+              "street-infill:2025857287:4.32:3.79x1.04x0.08": 12
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 5,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2025857287:4.32:3.91x1.20x0.70": 5
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 17,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2025857287:5.09:4.34x0.65x1.70": 8,
+              "street-infill:2025857287:4.32:3.91x1.20x0.70": 9,
+              "street-infill:2025857287:5.20:4.34x0.16x1.90": 14,
+              "street-infill:2025857287:5.10:3.69x0.04x1.40": 11,
+              "street-infill:2025857287:6.50:0.69x2.15x1.60": 1,
+              "street-infill:2025857287:5.37:1.58x0.19x0.42": 1,
+              "street-infill:2025857287:4.32:0.16x0.20x0.55": 1,
+              "street-infill:2025857287:4.32:3.79x1.04x0.08": 2
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-25520:-95200:31416:fascia:1",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:806410121:4.10:4.39x8.20x2.35": 25,
+              "street-infill:806410121:1.80:0.46x3.60x2.35": 25,
+              "street-infill:806410121:3.85:0.46x0.50x2.35": 8,
+              "street-infill:806410121:5.10:0.46x2.00x0.56": 4,
+              "street-infill:806410121:5.10:0.08x2.00x0.38": 6,
+              "street-infill:806410121:5.10:0.46x2.00x0.59": 4,
+              "street-infill:806410121:5.10:0.46x2.00x0.45": 4,
+              "street-infill:806410121:3.75:5.34x0.80x2.10": 20,
+              "street-infill:806410121:1.90:0.46x3.80x2.10": 15,
+              "street-infill:806410121:1.90:4.44x3.00x0.18": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 40,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:806410121:3.85:0.46x0.50x2.35": 23,
+              "street-infill:806410121:5.10:0.46x2.00x0.56": 4,
+              "street-infill:806410121:4.10:4.39x8.20x2.35": 35,
+              "street-infill:806410121:5.10:0.08x2.00x0.38": 7,
+              "street-infill:806410121:4.40:2.94x0.25x0.12": 3,
+              "street-infill:806410121:5.10:0.46x2.00x0.59": 4,
+              "street-infill:806410121:5.10:0.46x2.00x0.45": 4,
+              "street-infill:806410121:3.75:5.34x0.80x2.10": 10,
+              "street-infill:806410121:4.02:0.20x0.17x0.68": 4,
+              "street-infill:806410121:3.28:0.10x6.56x0.10": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 34,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:806410121:4.10:4.39x8.20x2.35": 20,
+              "street-infill:806410121:1.90:0.46x3.80x2.10": 8,
+              "street-infill:806410121:3.75:5.34x0.80x2.10": 34,
+              "street-infill:806410121:3.85:0.46x0.50x2.35": 7,
+              "street-infill:806410121:5.10:0.46x2.00x0.56": 4,
+              "street-infill:806410121:5.10:0.46x2.00x0.59": 4,
+              "street-infill:806410121:5.10:0.08x2.00x0.38": 3,
+              "street-infill:806410121:5.10:0.46x2.00x0.45": 4
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 42,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:806410121:4.10:4.39x8.20x2.35": 25,
+              "street-infill:806410121:5.10:0.46x2.00x0.56": 9,
+              "street-infill:806410121:4.40:2.94x0.25x0.12": 2,
+              "street-infill:806410121:5.10:0.08x2.00x0.38": 18,
+              "street-infill:806410121:3.85:0.46x0.50x2.35": 4,
+              "street-infill:806410121:5.10:0.46x2.00x0.59": 9,
+              "street-infill:806410121:4.02:0.20x0.17x0.68": 2,
+              "street-infill:806410121:5.10:0.46x2.00x0.45": 9,
+              "street-infill:806410121:3.75:5.34x0.80x2.10": 7,
+              "street-infill:806410121:5.09:5.34x0.65x1.70": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-42440:-102000:31416:fascia:1",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:729000727:4.10:2.39x8.20x2.35": 10,
+              "street-infill:729000727:3.85:0.46x0.50x2.35": 5,
+              "street-infill:729000727:5.10:0.46x2.00x0.56": 3,
+              "street-infill:729000727:1.80:0.46x3.60x2.35": 5,
+              "street-infill:729000727:3.28:0.10x6.56x0.10": 5,
+              "street-infill:729000727:4.02:0.20x0.17x0.68": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:729000727:3.85:0.46x0.50x2.35": 4,
+              "street-infill:729000727:5.10:0.46x2.00x0.56": 8,
+              "street-infill:729000727:4.10:2.39x8.20x2.35": 5,
+              "street-infill:729000727:4.02:0.20x0.17x0.68": 1,
+              "street-infill:729000727:4.40:1.84x0.25x0.12": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 40,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:729000727:3.85:0.46x0.50x2.35": 30,
+              "street-infill:729000727:5.10:0.46x2.00x0.56": 14,
+              "street-infill:729000727:4.10:2.39x8.20x2.35": 35,
+              "street-infill:729000727:4.02:0.20x0.17x0.68": 12,
+              "street-infill:729000727:4.40:1.84x0.25x0.12": 5,
+              "street-infill:729000727:3.28:0.10x6.56x0.10": 5,
+              "street-infill:729000727:5.10:0.46x2.00x0.59": 9,
+              "street-infill:729000727:5.10:0.08x2.00x0.38": 7,
+              "street-infill:729000727:5.10:0.46x2.00x0.45": 4
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:729000727:4.10:2.39x8.20x2.35": 10,
+              "street-infill:729000727:3.85:0.46x0.50x2.35": 2,
+              "street-infill:729000727:4.40:1.84x0.25x0.12": 1,
+              "street-infill:729000727:5.10:0.46x2.00x0.56": 9,
+              "street-infill:729000727:4.02:0.20x0.17x0.68": 1,
+              "street-infill:729000727:3.28:0.10x6.56x0.10": 5,
+              "street-infill:729000727:5.10:0.08x2.00x0.38": 4
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-28850:-102000:31416:fascia:0",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:387994245:3.26:2.50x0.08x1.15": 3,
+              "street-infill:387994245:1.90:0.46x3.80x2.10": 7,
+              "street-infill:387994245:3.75:3.34x0.80x2.10": 10,
+              "street-infill:387994245:1.55:2.99x3.10x0.18": 1,
+              "street-infill:387994245:4.10:2.39x8.20x2.35": 30,
+              "street-infill:387994245:1.80:0.46x3.60x2.35": 35,
+              "street-infill:387994245:3.85:0.46x0.50x2.35": 12,
+              "street-infill:387994245:4.02:0.20x0.17x0.68": 3,
+              "street-infill:387994245:5.10:0.46x2.00x0.45": 3,
+              "street-infill:387994245:5.10:0.18x2.00x0.28": 9,
+              "street-infill:387994245:5.10:0.46x2.00x0.59": 3,
+              "street-infill:387994245:5.10:0.08x2.00x0.38": 2,
+              "street-infill:387994245:3.28:0.10x6.56x0.10": 5,
+              "street-infill:387994245:5.10:0.46x2.00x0.56": 3,
+              "street-infill:387994245:4.40:1.84x0.25x0.12": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 44,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:387994245:3.75:3.34x0.80x2.10": 27,
+              "street-infill:387994245:4.32:2.91x1.20x0.70": 9,
+              "street-infill:387994245:4.32:0.16x0.20x0.55": 2,
+              "street-infill:387994245:1.90:0.46x3.80x2.10": 6,
+              "street-infill:387994245:3.85:0.46x0.50x2.35": 18,
+              "street-infill:387994245:5.10:0.46x2.00x0.45": 10,
+              "street-infill:387994245:5.10:0.18x2.00x0.28": 10,
+              "street-infill:387994245:4.10:2.39x8.20x2.35": 25,
+              "street-infill:387994245:4.02:0.20x0.17x0.68": 5,
+              "street-infill:387994245:5.10:0.46x2.00x0.59": 3,
+              "street-infill:387994245:5.10:0.08x2.00x0.38": 5,
+              "street-infill:387994245:5.10:0.46x2.00x0.56": 3
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 35,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:387994245:4.10:2.39x8.20x2.35": 30,
+              "street-infill:387994245:3.75:3.34x0.80x2.10": 4,
+              "street-infill:387994245:3.85:0.46x0.50x2.35": 22,
+              "street-infill:387994245:4.02:0.20x0.17x0.68": 7,
+              "street-infill:387994245:5.10:0.46x2.00x0.59": 8,
+              "street-infill:387994245:5.10:0.46x2.00x0.56": 10,
+              "street-infill:387994245:5.10:0.08x2.00x0.38": 8,
+              "street-infill:387994245:5.10:0.18x2.00x0.28": 10,
+              "street-infill:387994245:5.10:0.46x2.00x0.45": 3,
+              "street-infill:387994245:4.40:1.84x0.25x0.12": 3
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 37,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:387994245:3.75:3.34x0.80x2.10": 2,
+              "street-infill:387994245:5.09:3.34x0.65x1.70": 5,
+              "street-infill:387994245:4.10:2.39x8.20x2.35": 30,
+              "street-infill:387994245:5.10:0.46x2.00x0.45": 10,
+              "street-infill:387994245:3.85:0.46x0.50x2.35": 4,
+              "street-infill:387994245:4.02:0.20x0.17x0.68": 3,
+              "street-infill:387994245:5.10:0.08x2.00x0.38": 10,
+              "street-infill:387994245:5.10:0.18x2.00x0.28": 22,
+              "street-infill:387994245:5.10:0.46x2.00x0.59": 15,
+              "street-infill:387994245:5.10:0.46x2.00x0.56": 15,
+              "street-infill:387994245:4.40:1.84x0.25x0.12": 2
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-48501:-80100:0:fascia:1",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1866676970:4.10:3.39x8.20x1.89": 30,
+              "street-infill:1866676970:1.80:0.46x3.60x1.89": 30,
+              "street-infill:1866676970:3.85:0.46x0.50x1.89": 12,
+              "street-infill:1866676970:5.10:0.46x2.00x0.45": 3,
+              "street-infill:1866676970:3.28:0.10x6.56x0.10": 5,
+              "street-infill:1866676970:4.02:0.20x0.17x0.60": 4,
+              "street-infill:1866676970:5.10:0.46x2.00x0.47": 4,
+              "street-infill:1866676970:5.10:0.08x2.00x0.30": 1,
+              "street-infill:1866676970:5.10:0.46x2.00x0.36": 2,
+              "street-infill:1866676970:1.55:3.99x3.10x0.18": 5,
+              "street-infill:1866676970:1.90:0.46x3.80x0.42": 10,
+              "street-infill:1866676970:1.90:0.46x3.80x2.10": 6,
+              "street-infill:1866676970:3.26:3.25x0.08x1.15": 10,
+              "street-infill:1866676970:3.75:4.34x0.80x2.10": 10,
+              "street-infill:1866676970:2.92:3.12x0.22x0.42": 6,
+              "street-infill:1866676970:1.82:0.12x2.80x1.25": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 30,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1866676970:4.10:3.39x8.20x1.89": 30,
+              "street-infill:1866676970:3.85:0.46x0.50x1.89": 13,
+              "street-infill:1866676970:4.02:0.20x0.17x0.60": 3,
+              "street-infill:1866676970:5.10:0.46x2.00x0.45": 4,
+              "street-infill:1866676970:5.10:0.46x2.00x0.47": 6,
+              "street-infill:1866676970:5.10:0.08x2.00x0.30": 6,
+              "street-infill:1866676970:4.40:2.39x0.25x0.12": 2,
+              "street-infill:1866676970:5.10:0.46x2.00x0.36": 3,
+              "street-infill:1866676970:3.75:4.34x0.80x2.10": 4
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1866676970:4.10:3.39x8.20x1.89": 20,
+              "street-infill:1866676970:3.75:4.34x0.80x2.10": 40,
+              "street-infill:1866676970:3.85:0.46x0.50x1.89": 8,
+              "street-infill:1866676970:5.10:0.46x2.00x0.45": 3,
+              "street-infill:1866676970:5.10:0.08x2.00x0.30": 6,
+              "street-infill:1866676970:1.90:0.46x3.80x0.42": 4,
+              "street-infill:1866676970:4.02:0.20x0.17x0.60": 3,
+              "street-infill:1866676970:5.10:0.46x2.00x0.47": 6,
+              "street-infill:1866676970:4.32:3.91x1.20x0.70": 22,
+              "street-infill:1866676970:5.10:0.46x2.00x0.36": 3,
+              "street-infill:1866676970:4.32:3.79x1.04x0.08": 11,
+              "street-infill:1866676970:4.32:0.16x0.20x0.55": 1
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 41,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1866676970:4.10:3.39x8.20x1.89": 30,
+              "street-infill:1866676970:5.10:0.46x2.00x0.45": 15,
+              "street-infill:1866676970:4.40:2.39x0.25x0.12": 2,
+              "street-infill:1866676970:5.10:0.46x2.00x0.47": 15,
+              "street-infill:1866676970:5.10:0.08x2.00x0.30": 20,
+              "street-infill:1866676970:3.85:0.46x0.50x1.89": 4,
+              "street-infill:1866676970:4.02:0.20x0.17x0.60": 2,
+              "street-infill:1866676970:3.28:0.10x6.56x0.10": 5,
+              "street-infill:1866676970:5.10:0.46x2.00x0.36": 15,
+              "street-infill:1866676970:3.75:4.34x0.80x2.10": 3,
+              "street-infill:1866676970:5.09:4.34x0.65x1.70": 10,
+              "street-infill:1866676970:6.50:1.94x2.15x1.60": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-185273:50616:59690:fascia:1",
+        "region": "paknam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3636716859:5.78:5.56x11.55x7.32": 45,
+              "infill:frontage:3636716859:1.90:0.46x3.80x2.10": 9,
+              "infill:frontage:3636716859:3.75:6.51x0.80x2.10": 44,
+              "infill:frontage:3636716859:1.55:6.16x3.10x0.18": 26,
+              "infill:frontage:3636716859:3.26:4.88x0.08x1.15": 25,
+              "infill:frontage:3636716859:4.32:6.08x1.20x0.70": 24,
+              "infill:frontage:3636716859:4.32:5.96x1.04x0.08": 17,
+              "infill:frontage:3636716859:2.92:4.68x0.22x0.42": 12,
+              "infill:frontage:3636716859:4.32:0.16x0.20x0.55": 1,
+              "infill:frontage:3636716859:3.25:6.39x0.15x1.65": 4
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3636716859:5.78:5.56x11.55x7.32": 45,
+              "infill:frontage:3636716859:3.85:0.46x0.50x7.32": 11,
+              "infill:frontage:3636716859:4.02:0.20x0.17x1.47": 2,
+              "infill:frontage:3636716859:5.10:0.46x2.00x1.83": 1,
+              "infill:frontage:3636716859:5.10:0.46x2.00x1.39": 5,
+              "infill:frontage:3636716859:5.10:0.08x2.00x1.17": 1,
+              "infill:frontage:3636716859:3.75:6.51x0.80x2.10": 23,
+              "infill:frontage:3636716859:4.32:6.08x1.20x0.70": 25,
+              "infill:frontage:3636716859:4.32:5.96x1.04x0.08": 25
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3636716859:1.90:0.46x3.80x2.10": 79,
+              "infill:frontage:3636716859:3.75:6.17x0.80x2.10": 45,
+              "infill:frontage:3636716859:3.75:6.51x0.80x2.10": 45,
+              "infill:frontage:3636716859:4.32:6.08x1.20x0.70": 34,
+              "infill:frontage:3636716859:4.32:0.16x0.20x0.55": 3,
+              "infill:frontage:3636716859:4.32:5.96x1.04x0.08": 22
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3636716859:4.10:5.22x8.20x5.95": 45,
+              "infill:frontage:3636716859:5.78:5.56x11.55x7.32": 45,
+              "infill:frontage:3636716859:5.09:6.51x0.65x1.70": 27,
+              "infill:frontage:3636716859:3.75:6.51x0.80x2.10": 3,
+              "infill:frontage:3636716859:4.32:6.08x1.20x0.70": 28,
+              "infill:frontage:3636716859:4.32:5.96x1.04x0.08": 22,
+              "infill:frontage:3636716859:4.32:0.16x0.20x0.55": 1,
+              "infill:frontage:3636716859:6.50:3.77x2.15x1.60": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-187899:72699:31416:fascia:0",
+        "region": "paknam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:screened:3861417012:4.10:14.00x8.20x12.00": 45,
+              "infill:screened:3861417012:4.10:0.34x8.20x0.38": 10,
+              "infill:screened:3861417012:3.20:12.04x1.80x0.04": 20
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:screened:3861417012:4.10:14.00x8.20x12.00": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:screened:3861417012:4.10:14.00x8.20x12.00": 45,
+              "infill:screened:3861417012:3.20:12.04x1.80x0.04": 45,
+              "infill:screened:3861417012:3.20:0.12x1.80x0.24": 5
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:screened:3861417012:4.10:14.00x8.20x12.00": 45,
+              "infill:screened:3861417012:4.78:13.16x0.24x0.42": 9,
+              "infill:screened:3861417012:4.10:0.34x8.20x0.38": 5,
+              "infill:screened:3861417012:5.80:12.04x1.80x0.04": 16
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:24958:-110083:-357:fascia:0",
+        "region": "connector",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:25294:-108470:-357:7.45:7.27x14.90x18.72": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:25294:-108470:-357:4.10:4.48x8.20x18.49": 45,
+              "bkk:25294:-108470:-357:1.80:0.46x3.60x18.49": 45,
+              "bkk:25294:-108470:-357:7.45:7.27x14.90x18.72": 20
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:25294:-108470:-357:7.45:7.27x14.90x18.72": 45,
+              "bkk:25294:-108470:-357:4.40:4.52x0.25x0.12": 14
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:25294:-108470:-357:7.45:7.27x14.90x18.72": 45,
+              "bkk:25294:-108470:-357:4.40:4.52x0.25x0.12": 6
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:121780:-66063:14142:fascia:0",
+        "region": "siam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1127161929:8.55:6.89x17.10x6.75": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:122150:-64236:14142:1.90:0.46x3.80x2.10": 45,
+              "infill:frontage:1127161929:8.55:6.89x17.10x6.75": 45,
+              "infill:frontage:1127161929:3.85:0.46x0.50x6.75": 26,
+              "infill:frontage:1127161929:5.10:0.46x2.00x1.62": 2,
+              "infill:frontage:1127161929:4.02:0.20x0.17x1.38": 2,
+              "infill:frontage:1127161929:1.80:0.46x3.60x6.75": 28,
+              "infill:frontage:1127161929:5.10:0.08x2.00x1.08": 1,
+              "infill:frontage:1127161929:4.40:4.31x0.25x0.12": 7
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 40,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1127161929:8.55:6.89x17.10x6.75": 35,
+              "infill:frontage:1127161929:1.80:0.46x3.60x6.75": 9,
+              "infill:frontage:1127161929:3.85:0.46x0.50x6.75": 31,
+              "infill:frontage:1127161929:4.40:4.31x0.25x0.12": 5,
+              "infill:frontage:1127161929:4.02:0.20x0.17x1.38": 3,
+              "infill:frontage:1127161929:5.10:0.46x2.00x1.62": 5
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1127161929:8.55:6.89x17.10x6.75": 45,
+              "infill:frontage:1127161929:6.50:2.50x2.15x0.10": 40,
+              "infill:frontage:1127161929:6.50:1.95x1.76x0.06": 30,
+              "infill:frontage:1127161929:4.40:4.31x0.25x0.12": 7,
+              "infill:frontage:1127161929:6.50:4.84x2.15x1.60": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:61567:-54550:31416:fascia:0",
+        "region": "siam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:388980550:6.60:6.89x13.20x4.15": 45,
+              "street-infill:388980550:1.55:7.49x3.10x0.18": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:388980550:3.85:0.46x0.50x4.15": 24,
+              "street-infill:388980550:6.60:6.89x13.20x4.15": 40,
+              "street-infill:388980550:1.80:0.46x3.60x4.15": 29,
+              "street-infill:388980550:4.02:0.20x0.17x0.96": 1,
+              "street-infill:388980550:1.90:0.46x3.80x2.10": 10,
+              "street-infill:388980550:3.75:7.84x0.80x2.10": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:60000:-55200:31416:12.45:20.89x24.90x18.45": 45,
+              "bkk:60000:-55200:31416:1.80:0.46x3.60x18.45": 39,
+              "street-infill:388980550:6.60:6.89x13.20x4.15": 25,
+              "street-infill:388980550:1.80:0.46x3.60x4.15": 9,
+              "street-infill:388980550:3.85:0.46x0.50x4.15": 24,
+              "bkk:60000:-55200:31416:3.85:0.46x0.50x18.45": 14,
+              "street-infill:388980550:4.02:0.20x0.17x0.96": 1,
+              "bkk:60000:-55200:31416:4.02:0.20x0.17x2.60": 2
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:388980550:6.60:6.89x13.20x4.15": 45,
+              "street-infill:388980550:6.50:1.32x2.15x1.60": 20,
+              "street-infill:388980550:6.50:2.35x2.15x0.10": 25,
+              "street-infill:388980550:6.50:1.83x1.76x0.06": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:93625:-61550:0:fascia:1",
+        "region": "siam",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1197359538:16.35:6.89x32.70x5.85": 45,
+              "infill:frontage:1197359538:1.80:0.46x3.60x5.85": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 20,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1197359538:3.85:0.46x0.50x5.85": 18,
+              "infill:frontage:1197359538:5.10:0.46x2.00x1.40": 4,
+              "infill:frontage:1197359538:16.35:6.89x32.70x5.85": 15,
+              "infill:frontage:1197359538:4.02:0.20x0.17x1.24": 3,
+              "infill:frontage:1197359538:1.80:0.46x3.60x5.85": 1
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1197359538:16.35:6.89x32.70x5.85": 45,
+              "infill:frontage:1197359538:1.90:0.46x3.80x2.10": 45,
+              "infill:frontage:1197359538:3.75:7.84x0.80x2.10": 36,
+              "infill:frontage:1197359538:1.80:0.46x3.60x5.85": 5
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1197359538:16.35:6.89x32.70x5.85": 45,
+              "infill:frontage:1197359538:6.50:2.35x2.15x0.10": 45,
+              "infill:frontage:1197359538:5.10:0.46x2.00x1.40": 10,
+              "infill:frontage:1197359538:5.10:0.46x2.00x1.46": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-2658:147906:14237:fascia:1",
+        "region": "silom",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:4228004585:4.10:3.39x8.20x2.35": 15,
+              "street-infill:4228004585:1.80:0.46x3.60x2.35": 23,
+              "street-infill:4228004585:3.85:0.46x0.50x2.35": 11,
+              "street-infill:4228004585:5.10:0.46x2.00x0.59": 1,
+              "street-infill:4228004585:4.02:0.20x0.17x0.68": 2,
+              "street-infill:4228004585:5.10:0.46x2.00x0.45": 1,
+              "street-infill:4228004585:1.55:3.99x3.10x0.18": 5,
+              "street-infill:4228004585:1.90:0.46x3.80x0.42": 10,
+              "street-infill:4228004585:1.90:0.46x3.80x2.10": 8,
+              "street-infill:4228004585:3.75:4.34x0.80x2.10": 28,
+              "street-infill:4228004585:3.26:3.25x0.08x1.15": 15,
+              "street-infill:4228004585:2.92:3.12x0.22x0.42": 8,
+              "street-infill:4228004585:1.82:0.12x2.80x1.25": 20,
+              "street-infill:4228004585:2.97:0.08x0.16x0.90": 6,
+              "street-infill:4228004585:3.25:4.22x0.15x1.65": 6,
+              "street-infill:4228004585:4.32:3.91x1.20x0.70": 8,
+              "street-infill:4228004585:4.32:3.79x1.04x0.08": 3
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:4228004585:3.85:0.46x0.50x2.35": 24,
+              "street-infill:4228004585:5.10:0.46x2.00x0.56": 6,
+              "street-infill:4228004585:4.10:3.39x8.20x2.35": 40,
+              "street-infill:4228004585:3.28:0.10x6.56x0.10": 5,
+              "street-infill:4228004585:4.02:0.20x0.17x0.68": 3,
+              "street-infill:4228004585:4.40:2.39x0.25x0.12": 1,
+              "street-infill:4228004585:5.10:0.46x2.00x0.59": 3,
+              "street-infill:4228004585:5.10:0.08x2.00x0.38": 6,
+              "street-infill:4228004585:5.10:0.46x2.00x0.45": 3,
+              "street-infill:4228004585:3.75:4.34x0.80x2.10": 13,
+              "street-infill:4228004585:1.80:0.46x3.60x2.35": 3,
+              "street-infill:4228004585:4.32:3.91x1.20x0.70": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 35,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:4228004585:4.10:3.39x8.20x2.35": 5,
+              "street-infill:4228004585:3.75:4.34x0.80x2.10": 26,
+              "street-infill:4228004585:3.85:0.46x0.50x2.35": 4,
+              "street-infill:4228004585:4.02:0.20x0.17x0.68": 1,
+              "street-infill:4228004585:5.10:0.46x2.00x0.45": 6,
+              "street-infill:4228004585:1.90:0.46x3.80x0.42": 4,
+              "street-infill:4228004585:4.32:3.91x1.20x0.70": 23,
+              "street-infill:4228004585:4.32:3.79x1.04x0.08": 12,
+              "street-infill:4228004585:4.32:0.16x0.20x0.55": 1
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 43,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:4228004585:4.10:3.39x8.20x2.35": 20,
+              "street-infill:4228004585:5.10:0.46x2.00x0.59": 20,
+              "street-infill:4228004585:5.10:0.08x2.00x0.38": 5,
+              "street-infill:4228004585:5.10:0.46x2.00x0.45": 10,
+              "street-infill:4228004585:3.75:4.34x0.80x2.10": 3,
+              "street-infill:4228004585:5.09:4.34x0.65x1.70": 22,
+              "street-infill:4228004585:6.50:1.94x2.15x1.60": 3,
+              "street-infill:4228004585:4.32:0.16x0.20x0.55": 2,
+              "street-infill:4228004585:4.32:3.91x1.20x0.70": 9,
+              "street-infill:4228004585:5.30:4.09x0.20x1.55": 3,
+              "street-infill:4228004585:4.32:3.79x1.04x0.08": 4,
+              "street-infill:4228004585:5.17:0.40x0.19x0.04": 2
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:130267:81819:26557:fascia:1",
+        "region": "silom",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3727883328:5.78:4.69x11.55x4.52": 45,
+              "infill:frontage:3727883328:1.80:0.46x3.60x4.52": 15
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3727883328:5.78:4.69x11.55x4.52": 45,
+              "infill:frontage:3727883328:1.80:0.46x3.60x4.52": 32,
+              "infill:frontage:3727883328:3.85:0.46x0.50x4.52": 25
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1586172898:1.90:0.46x3.80x2.10": 20,
+              "infill:frontage:1586172898:3.75:5.69x0.80x2.10": 45,
+              "infill:frontage:1586172898:1.80:0.46x3.60x9.85": 21,
+              "infill:frontage:1586172898:3.85:0.46x0.50x9.85": 19,
+              "infill:frontage:1586172898:24.15:4.74x48.30x9.85": 20,
+              "infill:frontage:1586172898:4.02:0.20x0.17x1.88": 3
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3727883328:5.78:4.69x11.55x4.52": 35,
+              "infill:frontage:3727883328:6.50:1.64x2.15x0.10": 30,
+              "infill:frontage:3727883328:6.50:0.09x2.15x0.10": 5,
+              "infill:frontage:3727883328:6.50:1.28x1.76x0.06": 25,
+              "infill:frontage:3727883328:6.20:0.82x0.60x0.60": 45,
+              "infill:frontage:3727883328:6.20:0.62x0.38x0.04": 35,
+              "infill:frontage:3727883328:6.50:0.30x2.15x0.10": 15,
+              "infill:frontage:3727883328:6.50:0.93x2.15x1.60": 15,
+              "infill:frontage:3727883328:5.10:0.46x2.00x1.08": 5,
+              "infill:frontage:3727883328:5.10:0.46x2.00x1.13": 10,
+              "infill:frontage:3727883328:5.10:0.08x2.00x0.72": 5,
+              "infill:frontage:3727883328:5.10:0.46x2.00x0.86": 10,
+              "infill:frontage:3727883328:4.62:0.10x9.24x0.10": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:14067:139955:1651:fascia:0",
+        "region": "silom",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:3767620503:4.10:6.89x8.20x4.95": 45,
+              "street-infill:3767620503:1.55:7.49x3.10x0.18": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:1819345276:4.10:6.89x8.20x5.25": 45,
+              "street-infill:1819345276:3.26:5.88x0.08x1.15": 9,
+              "street-infill:1819345276:3.75:7.84x0.80x2.10": 45,
+              "street-infill:1819345276:3.85:0.46x0.50x5.25": 35,
+              "street-infill:1819345276:5.10:0.46x2.00x1.26": 5,
+              "street-infill:1819345276:1.80:0.46x3.60x5.25": 13,
+              "street-infill:1819345276:3.28:0.10x6.56x0.10": 5,
+              "street-infill:1819345276:4.02:0.20x0.17x1.14": 3,
+              "street-infill:3767620503:3.85:0.46x0.50x4.95": 19,
+              "street-infill:3767620503:5.10:0.46x2.00x1.19": 2,
+              "street-infill:3767620503:4.10:6.89x8.20x4.95": 15,
+              "street-infill:3767620503:4.02:0.20x0.17x1.09": 4,
+              "street-infill:3767620503:1.80:0.46x3.60x4.95": 2
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:3767620503:4.10:6.89x8.20x4.95": 45,
+              "street-infill:3767620503:1.90:0.46x3.80x2.10": 45,
+              "street-infill:3767620503:3.75:7.84x0.80x2.10": 45,
+              "street-infill:3767620503:1.80:0.46x3.60x4.95": 10,
+              "street-infill:3767620503:3.85:0.46x0.50x4.95": 3
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:3767620503:4.10:6.89x8.20x4.95": 45,
+              "street-infill:3767620503:6.50:1.90x2.15x0.10": 45,
+              "street-infill:3767620503:6.50:1.48x1.76x0.06": 45,
+              "street-infill:3767620503:5.10:0.46x2.00x1.19": 5,
+              "street-infill:3767620503:6.27:7.46x0.12x0.10": 27,
+              "street-infill:3767620503:6.50:0.09x2.15x0.10": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-80318:128308:18717:fascia:0",
+        "region": "icon",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 20,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2672863394:1.80:0.46x3.60x5.32": 20,
+              "street-infill:2672863394:3.85:0.46x0.50x5.32": 8,
+              "street-infill:2672863394:5.10:0.46x2.00x1.28": 2,
+              "street-infill:2672863394:4.10:6.89x8.20x5.32": 15,
+              "street-infill:2672863394:1.90:0.46x3.80x0.42": 15,
+              "street-infill:2672863394:1.55:7.49x3.10x0.18": 10,
+              "street-infill:2672863394:1.82:0.12x2.80x1.25": 5,
+              "street-infill:2672863394:1.82:0.08x2.80x0.09": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 25,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-79547:129779:18717:1.90:0.46x3.80x2.10": 5,
+              "bkk:-79547:129779:18717:3.75:7.60x0.80x2.10": 10,
+              "street-infill:2672863394:3.85:0.46x0.50x5.32": 7,
+              "street-infill:2672863394:5.10:0.46x2.00x1.28": 9,
+              "street-infill:2672863394:4.10:6.89x8.20x5.32": 10,
+              "street-infill:2672863394:4.02:0.20x0.17x1.15": 2
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2672863394:4.10:6.89x8.20x5.32": 45,
+              "street-infill:2672863394:3.75:7.84x0.80x2.10": 45,
+              "street-infill:2672863394:3.85:0.46x0.50x5.32": 14,
+              "street-infill:2672863394:4.02:0.20x0.17x1.15": 3,
+              "street-infill:2672863394:5.10:0.46x2.00x1.33": 4,
+              "street-infill:2672863394:5.10:0.46x2.00x1.28": 9,
+              "street-infill:2672863394:5.10:0.08x2.00x0.85": 5,
+              "street-infill:2672863394:4.40:4.31x0.25x0.12": 1
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2672863394:6.50:5.44x2.15x1.60": 45,
+              "street-infill:2672863394:3.85:0.46x0.50x5.32": 1,
+              "street-infill:2672863394:5.10:0.46x2.00x1.33": 10,
+              "street-infill:2672863394:5.10:0.46x2.00x1.01": 10,
+              "street-infill:2672863394:5.10:0.46x2.00x1.28": 5,
+              "street-infill:2672863394:4.10:6.89x8.20x5.32": 15,
+              "street-infill:2672863394:5.09:7.84x0.65x1.70": 9,
+              "street-infill:2672863394:5.10:0.08x2.00x0.85": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:185992:-10406:25536:fascia:0",
+        "region": "sukhumvit",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 15,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3082138739:1.80:0.46x3.60x6.75": 15,
+              "infill:frontage:3082138739:3.85:0.46x0.50x6.75": 2,
+              "infill:frontage:3082138739:4.65:6.89x9.30x6.75": 10
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 5,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3082138739:3.85:0.46x0.50x6.75": 3,
+              "infill:frontage:3082138739:5.10:0.46x2.00x1.62": 2
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3082138739:4.65:6.89x9.30x6.75": 45,
+              "infill:frontage:3082138739:3.26:5.88x0.08x1.15": 27,
+              "infill:frontage:3082138739:3.30:7.84x0.40x2.10": 45,
+              "infill:frontage:3082138739:1.80:0.46x3.60x6.75": 1,
+              "infill:frontage:3082138739:3.85:0.46x0.50x6.75": 17,
+              "infill:frontage:3082138739:3.75:7.84x0.80x2.10": 36,
+              "infill:frontage:3082138739:4.02:0.20x0.17x1.38": 3,
+              "infill:frontage:3082138739:5.10:0.46x2.00x1.62": 5,
+              "infill:frontage:3082138739:3.72:0.10x7.44x0.10": 5,
+              "infill:frontage:3082138739:5.10:0.08x2.00x1.08": 1,
+              "infill:frontage:3082138739:4.40:4.31x0.25x0.12": 3
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3082138739:6.50:4.84x2.15x1.60": 45,
+              "infill:frontage:3082138739:5.10:0.46x2.00x1.62": 5,
+              "infill:frontage:3082138739:5.10:0.46x2.00x1.69": 10,
+              "infill:frontage:3082138739:4.65:6.89x9.30x6.75": 10,
+              "infill:frontage:3082138739:5.10:0.46x2.00x1.28": 10,
+              "infill:frontage:3082138739:5.10:0.08x2.00x1.08": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:188822:-8519:25536:fascia:0",
+        "region": "sukhumvit",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1010056385:5.78:6.89x11.55x6.79": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:190536:-8157:25536:5.78:6.80x11.55x18.79": 45,
+              "bkk:190536:-8157:25536:3.26:5.81x0.08x1.15": 45,
+              "bkk:190536:-8157:25536:1.80:0.46x3.60x18.79": 45,
+              "infill:frontage:1010056385:3.85:0.46x0.50x6.79": 28,
+              "bkk:190536:-8157:25536:3.85:0.46x0.50x18.79": 4,
+              "infill:frontage:1010056385:5.10:0.46x2.00x1.63": 3,
+              "infill:frontage:1010056385:5.78:6.89x11.55x6.79": 40,
+              "infill:frontage:1010056385:1.80:0.46x3.60x6.79": 24,
+              "infill:frontage:1010056385:4.02:0.20x0.17x1.39": 1,
+              "infill:frontage:1010056385:4.40:4.31x0.25x0.12": 6
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:780727352:4.10:4.39x8.20x4.39": 45,
+              "infill:frontage:1010056385:5.78:6.89x11.55x6.79": 35,
+              "infill:frontage:1010056385:1.80:0.46x3.60x6.79": 12,
+              "street-infill:780727352:1.80:0.46x3.60x4.39": 45,
+              "infill:frontage:1010056385:3.85:0.46x0.50x6.79": 30,
+              "infill:frontage:1010056385:4.40:4.31x0.25x0.12": 4,
+              "infill:frontage:1010056385:5.10:0.46x2.00x1.63": 5,
+              "infill:frontage:1010056385:4.02:0.20x0.17x1.39": 3,
+              "street-infill:780727352:3.28:0.10x6.56x0.10": 5,
+              "street-infill:780727352:3.85:0.46x0.50x4.39": 3
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:1010056385:5.78:6.89x11.55x6.79": 45,
+              "infill:frontage:1010056385:6.50:1.77x2.15x1.60": 45,
+              "infill:frontage:1010056385:6.50:1.90x2.15x0.10": 10,
+              "infill:frontage:1010056385:6.50:0.30x2.15x0.10": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:217355:3184:-5880:fascia:0",
+        "region": "sukhumvit",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3648480163:18.30:4.69x36.60x3.35": 45,
+              "infill:frontage:3648480163:1.80:0.46x3.60x3.35": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3648480163:18.30:4.69x36.60x3.35": 10,
+              "infill:frontage:3648480163:1.80:0.46x3.60x3.35": 3,
+              "infill:frontage:3648480163:14.64:0.10x29.28x0.10": 5,
+              "infill:frontage:3648480163:3.85:0.46x0.50x3.35": 7
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 25,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3648480163:18.30:4.69x36.60x3.35": 20,
+              "infill:frontage:3648480163:1.80:0.46x3.60x3.35": 15,
+              "infill:frontage:3648480163:3.85:0.46x0.50x3.35": 13
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:3648480163:6.50:0.93x2.15x1.60": 20,
+              "infill:frontage:3648480163:6.27:5.26x0.12x0.10": 45,
+              "infill:frontage:3648480163:5.10:0.46x2.00x0.64": 5,
+              "infill:frontage:3648480163:18.30:4.69x36.60x3.35": 40,
+              "infill:frontage:3648480163:6.50:1.64x2.15x0.10": 30,
+              "infill:frontage:3648480163:6.50:1.28x1.76x0.06": 20,
+              "infill:frontage:3648480163:5.10:0.46x2.00x0.80": 5,
+              "infill:frontage:3648480163:5.10:0.46x2.00x0.84": 5,
+              "infill:frontage:3648480163:5.10:0.08x2.00x0.54": 5,
+              "infill:frontage:3648480163:14.64:0.10x29.28x0.10": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:219135:2687:-5880:fascia:0",
+        "region": "sukhumvit",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2739948512:6.60:11.89x13.20x6.45": 20,
+              "street-infill:2739948512:1.55:12.49x3.10x0.18": 45,
+              "street-infill:2739948512:1.80:0.46x3.60x6.45": 45,
+              "street-infill:2739948512:3.85:0.46x0.50x6.45": 3,
+              "street-infill:2739948512:5.28:0.10x10.56x0.10": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2739948512:6.60:11.89x13.20x6.45": 45,
+              "street-infill:2739948512:3.75:12.84x0.80x2.10": 45,
+              "street-infill:2739948512:3.30:12.84x0.40x2.10": 45,
+              "street-infill:2739948512:4.40:7.06x0.25x0.12": 2,
+              "street-infill:2739948512:3.85:0.46x0.50x6.45": 6,
+              "street-infill:2739948512:5.10:0.46x2.00x1.55": 4
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2739948512:6.60:11.89x13.20x6.45": 5,
+              "street-infill:2739948512:3.85:0.46x0.50x6.45": 6,
+              "street-infill:2739948512:5.10:0.46x2.00x1.55": 4
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "street-infill:2739948512:6.60:11.89x13.20x6.45": 20,
+              "street-infill:2739948512:6.50:1.61x2.15x1.60": 45,
+              "street-infill:2739948512:5.10:0.08x2.00x1.03": 5,
+              "street-infill:2739948512:5.10:0.46x2.00x1.55": 5,
+              "street-infill:2739948512:5.10:0.46x2.00x1.61": 10,
+              "street-infill:2739948512:5.10:0.46x2.00x1.23": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:219135:2687:-5880:fascia:2",
+        "region": "sukhumvit",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:219100:5248:-5880:16.35:20.89x32.70x18.75": 45
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 40,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:219100:5248:-5880:3.85:0.46x0.50x18.75": 34,
+              "bkk:219100:5248:-5880:5.10:0.46x2.00x4.85": 5,
+              "bkk:219100:5248:-5880:16.35:20.89x32.70x18.75": 35,
+              "bkk:219100:5248:-5880:1.80:0.46x3.60x18.75": 7
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:219100:5248:-5880:16.35:20.89x32.70x18.75": 45
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:219100:5248:-5880:16.35:20.89x32.70x18.75": 45
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-14318:-100722:-1578:fascia:0",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 20,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-15641:-99439:-1578:4.10:4.73x8.20x17.95": 15,
+              "bkk:-15641:-99439:-1578:1.80:0.46x3.60x17.95": 20,
+              "bkk:-15641:-99439:-1578:3.85:0.46x0.50x17.95": 8,
+              "bkk:-15641:-99439:-1578:5.10:0.46x2.00x4.59": 2
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-15641:-99439:-1578:5.78:6.80x11.55x19.32": 45,
+              "bkk:-15641:-99439:-1578:4.10:4.73x8.20x17.95": 45,
+              "bkk:-15641:-99439:-1578:4.40:3.13x0.25x0.12": 2,
+              "bkk:-15641:-99439:-1578:3.85:0.46x0.50x17.95": 10,
+              "bkk:-15641:-99439:-1578:5.10:0.46x2.00x4.59": 11,
+              "bkk:-15641:-99439:-1578:3.28:0.10x6.56x0.10": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-15641:-99439:-1578:4.10:4.73x8.20x17.95": 5,
+              "bkk:-15641:-99439:-1578:3.85:0.46x0.50x17.95": 4,
+              "infill:frontage:1741425741:5.78:5.03x11.55x9.65": 45,
+              "infill:frontage:1741425741:1.80:0.46x3.60x9.65": 45,
+              "bkk:-15641:-99439:-1578:5.10:0.46x2.00x4.59": 6
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 20,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-15641:-99439:-1578:4.10:4.73x8.20x17.95": 15,
+              "bkk:-15641:-99439:-1578:6.35:0.46x0.50x17.95": 15,
+              "bkk:-15641:-99439:-1578:5.10:0.46x2.00x5.06": 20,
+              "bkk:-15641:-99439:-1578:5.10:0.08x2.00x2.30": 10,
+              "bkk:-15641:-99439:-1578:4.40:3.13x0.25x0.12": 2,
+              "bkk:-15641:-99439:-1578:5.10:0.46x2.00x4.59": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": "bkk:-23425:-92083:-15708:fascia:0",
+        "region": "oldtown",
+        "views": [
+          {
+            "distance": 9,
+            "angle": 0,
+            "height": 1.7,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-24900:-90900:-15708:1.80:0.46x3.60x19.85": 7,
+              "bkk:-24900:-90900:-15708:3.85:0.46x0.50x19.85": 10,
+              "bkk:-24900:-90900:-15708:5.10:0.46x2.00x5.20": 4,
+              "bkk:-24900:-90900:-15708:5.78:6.11x11.55x19.85": 5
+            }
+          },
+          {
+            "distance": 12,
+            "angle": -0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "infill:frontage:2889088482:5.78:5.03x11.55x11.85": 45,
+              "infill:frontage:2889088482:1.80:0.46x3.60x11.85": 45,
+              "bkk:-24900:-90900:-15708:3.85:0.46x0.50x19.85": 2,
+              "bkk:-24900:-90900:-15708:5.10:0.46x2.00x5.20": 3
+            }
+          },
+          {
+            "distance": 12,
+            "angle": 0.55,
+            "height": 3.2,
+            "blocked": 45,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-24900:-90900:-15708:5.78:6.11x11.55x19.85": 45,
+              "bkk:-24900:-90900:-15708:3.85:0.46x0.50x19.85": 21,
+              "bkk:-24900:-90900:-15708:5.10:0.46x2.00x5.20": 18,
+              "bkk:-24900:-90900:-15708:4.62:0.10x9.24x0.10": 5
+            }
+          },
+          {
+            "distance": 14,
+            "angle": 0,
+            "height": 6.5,
+            "blocked": 10,
+            "ownBlocked": 0,
+            "samples": 45,
+            "blockers": {
+              "bkk:-24900:-90900:-15708:3.85:0.46x0.50x19.85": 1,
+              "bkk:-24900:-90900:-15708:5.10:0.46x2.00x5.20": 10,
+              "bkk:-24900:-90900:-15708:5.78:6.11x11.55x19.85": 5
+            }
+          }
+        ]
+      }
+    ],
+    "residualPerspectiveOverlap": 185
+  },
+  "note": "Raw rendered-depth obstruction includes poles, traffic and foreign buildings; it is not silently relabeled as zero. Geometry audit distinguishes own architecture. Retired duplicate/rear/undersized-building sign classes are inventoried in README.",
+  "pairs": [
+    {
+      "id": "yaowarat-sunset",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 563,
+        "after": 561
+      },
+      "triangles": {
+        "before": 799460,
+        "after": 830074
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 3
+        },
+        "after": {
+          "eligible": 6,
+          "obscured": 1
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-7775:-21173:-3672",
+          "key": "ct-herbs",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            25,
+            25
+          ]
+        },
+        {
+          "owner": "bkk:-9514:-22686:-1798",
+          "key": "ct-tea",
+          "before": 0.24444444444444444,
+          "after": 0.022222222222222223,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yaowarat-dusk",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 562,
+        "after": 560
+      },
+      "triangles": {
+        "before": 799428,
+        "after": 830042
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 3
+        },
+        "after": {
+          "eligible": 6,
+          "obscured": 1
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-7775:-21173:-3672",
+          "key": "ct-herbs",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            25,
+            25
+          ]
+        },
+        {
+          "owner": "bkk:-9514:-22686:-1798",
+          "key": "ct-tea",
+          "before": 0.24444444444444444,
+          "after": 0.022222222222222223,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yaowarat-night",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 562,
+        "after": 560
+      },
+      "triangles": {
+        "before": 799428,
+        "after": 830042
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 3
+        },
+        "after": {
+          "eligible": 6,
+          "obscured": 1
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-7775:-21173:-3672",
+          "key": "ct-herbs",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            25,
+            25
+          ]
+        },
+        {
+          "owner": "bkk:-9514:-22686:-1798",
+          "key": "ct-tea",
+          "before": 0.24444444444444444,
+          "after": 0.022222222222222223,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storefront-detail",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -95,
+          3.2,
+          -199
+        ],
+        "quaternion": [
+          0.004475599977308859,
+          0.9291823572273069,
+          -0.011257144061172912,
+          0.36942305386904917
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 468,
+        "after": 451
+      },
+      "triangles": {
+        "before": 744408,
+        "after": 788034
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 5
+        },
+        "after": {
+          "eligible": 5,
+          "obscured": 4
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-10899:-16880:29617",
+          "key": "ct-noodle",
+          "before": 0.3333333333333333,
+          "after": 0.1111111111111111,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ratchawong",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -324,
+          4,
+          -164
+        ],
+        "quaternion": [
+          0.004263440820044664,
+          -0.21452139960513808,
+          0.0009364086857811777,
+          0.9767095347761278
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 471,
+        "after": 482
+      },
+      "triangles": {
+        "before": 662872,
+        "after": 687186
+      },
+      "depth": {
+        "before": {
+          "eligible": 13,
+          "obscured": 6
+        },
+        "after": {
+          "eligible": 13,
+          "obscured": 4
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-29586:-16452:-18925",
+          "key": "ct-merchant",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            30,
+            30
+          ]
+        },
+        {
+          "owner": "bkk:-29192:-17634:-18925",
+          "key": "ct-merchant",
+          "before": 0.26666666666666666,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-33886:-20924:11659",
+          "key": "ct-clothes",
+          "before": 0.37777777777777777,
+          "after": 0.1111111111111111,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-34451:-19439:12490",
+          "key": "ct-herbs",
+          "before": 0.28888888888888886,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-wat-street",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -246.5737633331169,
+          3.581925372594184,
+          141.3178764791002
+        ],
+        "quaternion": [
+          -0.05159533363731138,
+          -0.7225142761420907,
+          -0.054239554227676706,
+          0.687291141420365
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 502,
+        "after": 496
+      },
+      "triangles": {
+        "before": 774783,
+        "after": 817799
+      },
+      "depth": {
+        "before": {
+          "eligible": 1,
+          "obscured": 1
+        },
+        "after": {
+          "eligible": 1,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-21934:17677:30916",
+          "key": "ct-workshop",
+          "before": 0.3111111111111111,
+          "after": 0.044444444444444446,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-wat-waterfront",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -558,
+          7,
+          350
+        ],
+        "quaternion": [
+          -0.007600010068256125,
+          -0.7673579676118334,
+          -0.009096619757813954,
+          0.6411093829438006
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 431,
+        "after": 404
+      },
+      "triangles": {
+        "before": 481468,
+        "after": 514092
+      },
+      "depth": {
+        "before": {
+          "eligible": 0,
+          "obscured": 0
+        },
+        "after": {
+          "eligible": 0,
+          "obscured": 0
+        }
+      },
+      "primary": []
+    },
+    {
+      "id": "talat-noi",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -138.2953769290085,
+          3.581925372594185,
+          521.7967527305482
+        ],
+        "quaternion": [
+          -0.014156573997965017,
+          0.9792010755376175,
+          0.07350917703663062,
+          0.18857689670267325
+        ],
+        "fov": 61.03611939716814
+      },
+      "calls": {
+        "before": 439,
+        "after": 432
+      },
+      "triangles": {
+        "before": 437824,
+        "after": 467830
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 6
+        },
+        "after": {
+          "eligible": 6,
+          "obscured": 2
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-12991:55483:-19513",
+          "key": "ct-coffee",
+          "before": 0.4,
+          "after": 0.2,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-17277:53111:11903",
+          "key": "ct-workshop",
+          "before": 0.24444444444444444,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-17741:54271:11903",
+          "key": "ct-coffee",
+          "before": 0.35555555555555557,
+          "after": 0.17777777777777778,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yaowarat-fascia",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -103,
+          3.2,
+          -192
+        ],
+        "quaternion": [
+          0.01321551549747797,
+          0.9410674882955674,
+          -0.03702204849454935,
+          0.3359266297102321
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 450,
+        "after": 431
+      },
+      "triangles": {
+        "before": 676928,
+        "after": 717070
+      },
+      "depth": {
+        "before": {
+          "eligible": 5,
+          "obscured": 5
+        },
+        "after": {
+          "eligible": 5,
+          "obscured": 5
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-10899:-16880:29617",
+          "key": "ct-noodle",
+          "before": 0.3142857142857143,
+          "after": 0.14285714285714285,
+          "samples": [
+            35,
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yaowarat-vertical",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -103,
+          4.2,
+          -198
+        ],
+        "quaternion": [
+          0.02347028549375824,
+          0.9659009561861644,
+          -0.09449497876704482,
+          0.23990662251240708
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 448,
+        "after": 431
+      },
+      "triangles": {
+        "before": 692212,
+        "after": 734260
+      },
+      "depth": {
+        "before": {
+          "eligible": 8,
+          "obscured": 7
+        },
+        "after": {
+          "eligible": 7,
+          "obscured": 5
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-10899:-16880:29617",
+          "key": "ct-noodle",
+          "before": 0.3333333333333333,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ratchawong-sign",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -321,
+          3.2,
+          -171
+        ],
+        "quaternion": [
+          0.02008390814299493,
+          -0.3197470585994565,
+          0.006779269927237438,
+          0.9472658004224335
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 469,
+        "after": 467
+      },
+      "triangles": {
+        "before": 648371,
+        "after": 671537
+      },
+      "depth": {
+        "before": {
+          "eligible": 11,
+          "obscured": 5
+        },
+        "after": {
+          "eligible": 10,
+          "obscured": 2
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-29192:-17634:-18925",
+          "key": "ct-merchant",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-33386:-22089:11659",
+          "key": "ct-food",
+          "before": 0.3333333333333333,
+          "after": 0.15555555555555556,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-33886:-20924:11659",
+          "key": "ct-clothes",
+          "before": 0.26666666666666666,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "song-wat-merchant",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -220.74262374503834,
+          3.2,
+          144.66197242107648
+        ],
+        "quaternion": [
+          -0.003696763479813364,
+          0.9952202107519444,
+          -0.041699811133043725,
+          -0.08822806697473418
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 432,
+        "after": 406
+      },
+      "triangles": {
+        "before": 460376,
+        "after": 510460
+      },
+      "depth": {
+        "before": {
+          "eligible": 2,
+          "obscured": 2
+        },
+        "after": {
+          "eligible": 2,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-21934:17677:30916",
+          "key": "ct-workshop",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-20009:17773:30916",
+          "key": "ct-workshop",
+          "before": 0.2,
+          "after": 0,
+          "samples": [
+            25,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khaosan-sign",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -750.6963120548317,
+          3.2,
+          -1472.8977897370655
+        ],
+        "quaternion": [
+          0.0015995641452370244,
+          0.9983937486255198,
+          -0.0418327826387692,
+          0.03817567807813309
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 416,
+        "after": 415
+      },
+      "triangles": {
+        "before": 686060,
+        "after": 695444
+      },
+      "depth": {
+        "before": {
+          "eligible": 5,
+          "obscured": 0
+        },
+        "after": {
+          "eligible": 5,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-75500:-144910:28384",
+          "key": "food:1",
+          "before": 0,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-75500:-144910:28384",
+          "key": "gallery:0",
+          "before": 0.08888888888888889,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-75500:-144910:28384",
+          "key": "hotel:2",
+          "before": 0,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-75500:-144910:28384",
+          "key": "noodle:1",
+          "before": 0,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siam-sign",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          753,
+          3.2,
+          -576
+        ],
+        "quaternion": [
+          -0.004737112084606693,
+          0.9927061487517114,
+          -0.041594471722274234,
+          -0.11305733908857016
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 412,
+        "after": 412
+      },
+      "triangles": {
+        "before": 514040,
+        "after": 529006
+      },
+      "depth": {
+        "before": {
+          "eligible": 1,
+          "obscured": 1
+        },
+        "after": {
+          "eligible": 1,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:75600:-55200:31416",
+          "key": "retail:2",
+          "before": 0.35555555555555557,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "talat-noi-sign",
+      "pass": true,
+      "viewport": [
+        844,
+        390
+      ],
+      "mode": "inspect",
+      "camera": {
+        "position": [
+          -148,
+          3.2,
+          531
+        ],
+        "quaternion": [
+          -0.010841932519502905,
+          0.9040607432925032,
+          -0.022973873594944103,
+          -0.42664836348999713
+        ],
+        "fov": 58
+      },
+      "calls": {
+        "before": 427,
+        "after": 419
+      },
+      "triangles": {
+        "before": 467459,
+        "after": 504247
+      },
+      "depth": {
+        "before": {
+          "eligible": 2,
+          "obscured": 2
+        },
+        "after": {
+          "eligible": 2,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-12991:55483:-19513",
+          "key": "ct-coffee",
+          "before": 0.26666666666666666,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night-375x812",
+      "pass": true,
+      "viewport": [
+        375,
+        812
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 297,
+        "after": 296
+      },
+      "triangles": {
+        "before": 470872,
+        "after": 487356
+      },
+      "depth": {
+        "before": {
+          "eligible": 1,
+          "obscured": 1
+        },
+        "after": {
+          "eligible": 2,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-11108:-22976:-1798",
+          "key": "ct-food",
+          "before": 0.36,
+          "after": 0,
+          "samples": [
+            25,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night-430x932",
+      "pass": true,
+      "viewport": [
+        430,
+        932
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 297,
+        "after": 296
+      },
+      "triangles": {
+        "before": 470872,
+        "after": 487356
+      },
+      "depth": {
+        "before": {
+          "eligible": 1,
+          "obscured": 1
+        },
+        "after": {
+          "eligible": 2,
+          "obscured": 0
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-11108:-22976:-1798",
+          "key": "ct-food",
+          "before": 0.24,
+          "after": 0,
+          "samples": [
+            25,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night-1280x800",
+      "pass": true,
+      "viewport": [
+        1280,
+        800
+      ],
+      "mode": "drive",
+      "camera": {
+        "position": [
+          -72.24534438993612,
+          3.581925372594184,
+          -185.18781208600993
+        ],
+        "quaternion": [
+          -0.06170789746498828,
+          0.5645478874809048,
+          0.04238092833354467,
+          0.8219985857925093
+        ],
+        "fov": 61.036119397168136
+      },
+      "calls": {
+        "before": 486,
+        "after": 485
+      },
+      "triangles": {
+        "before": 724664,
+        "after": 752284
+      },
+      "depth": {
+        "before": {
+          "eligible": 6,
+          "obscured": 3
+        },
+        "after": {
+          "eligible": 6,
+          "obscured": 1
+        }
+      },
+      "primary": [
+        {
+          "owner": "bkk:-9514:-22686:-1798",
+          "key": "ct-tea",
+          "before": 0.24444444444444444,
+          "after": 0,
+          "samples": [
+            45,
+            45
+          ]
+        },
+        {
+          "owner": "bkk:-11108:-22976:-1798",
+          "key": "ct-food",
+          "before": 0.26666666666666666,
+          "after": 0.044444444444444446,
+          "samples": [
+            45,
+            45
+          ]
+        }
+      ]
+    }
+  ]
+}

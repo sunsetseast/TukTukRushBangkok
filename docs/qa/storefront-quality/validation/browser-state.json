@@ -1,0 +1,440 @@
+{
+  "physicalSafari": false,
+  "errors": [],
+  "layouts": [
+    {
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": false,
+          "box": {
+            "x": -7,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": false,
+          "box": {
+            "x": 315,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "control-steer",
+          "visible": false,
+          "box": null
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": false,
+          "box": {
+            "x": 48,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": false,
+          "box": {
+            "x": 370,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "control-steer",
+          "visible": false,
+          "box": null
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 195,
+            "h": 42.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 462,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 784,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 746,
+            "y": 288,
+            "w": 82,
+            "h": 90
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 175.5,
+            "w": 303.828125,
+            "h": 214.5
+          }
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 150,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 898,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 1220,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 120,
+            "h": 130
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 1164,
+            "y": 678,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 360,
+            "w": 460.796875,
+            "h": 440
+          }
+        }
+      ]
+    }
+  ],
+  "resets": [
+    {
+      "stats": {
+        "calls": 229,
+        "triangles": 383583,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 48.10000000009313
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 228,
+        "triangles": 383575,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 68.69999999995343
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 225,
+        "triangles": 383159,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 42.699999999953434
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 225,
+        "triangles": 383159,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 303.0999999998603
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 228,
+        "triangles": 383575,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 1610.8999999999069
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 228,
+        "triangles": 383575,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 1289.3000000000466
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 225,
+        "triangles": 383159,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 1353.8999999999069
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    },
+    {
+      "stats": {
+        "calls": 228,
+        "triangles": 383575,
+        "geometries": 538,
+        "textures": 12,
+        "frameMs": 64.10000000009313
+      },
+      "glError": 0,
+      "override": false,
+      "inspecting": null,
+      "camera": [
+        126.37088635267571,
+        3.3,
+        -68.74616597431046
+      ],
+      "player": [
+        128.87701517843897,
+        -76.13259395464564
+      ],
+      "distance": 7.800000000000002
+    }
+  ],
+  "source": "Production renderer and controls in Vite development; QA hook places fixtures, no runtime source changes.",
+  "longName": true,
+  "mapReturn": true,
+  "icon": {
+    "opened": true,
+    "target": "icon"
+  },
+  "pass": true
+}

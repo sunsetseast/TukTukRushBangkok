@@ -1,0 +1,170 @@
+{
+  "method": "Exact production ArtPiece transforms; conservative OBB envelopes, 45 lettering samples x four roadward approaches. Decorative art is included. Self-clashes and foreign/perspective obstruction are recorded separately; WebGL depth/visual review is also required.",
+  "geometryCount": 733831,
+  "faces": 6723,
+  "failures": 0,
+  "byRegion": {
+    "khaosan": {
+      "faces": 661,
+      "failures": 0
+    },
+    "oldtown": {
+      "faces": 549,
+      "failures": 0
+    },
+    "connector": {
+      "faces": 678,
+      "failures": 0
+    },
+    "north": {
+      "faces": 279,
+      "failures": 0
+    },
+    "siam": {
+      "faces": 286,
+      "failures": 0
+    },
+    "silom": {
+      "faces": 815,
+      "failures": 0
+    },
+    "chinatown": {
+      "faces": 133,
+      "failures": 0
+    },
+    "sukhumvit": {
+      "faces": 714,
+      "failures": 0
+    },
+    "talatnoi": {
+      "faces": 155,
+      "failures": 0
+    },
+    "south": {
+      "faces": 53,
+      "failures": 0
+    },
+    "westbank": {
+      "faces": 386,
+      "failures": 0
+    },
+    "icon": {
+      "faces": 87,
+      "failures": 0
+    },
+    "paknam": {
+      "faces": 99,
+      "failures": 0
+    },
+    "commercial": {
+      "faces": 1626,
+      "failures": 0
+    },
+    "songwat": {
+      "faces": 35,
+      "failures": 0
+    },
+    "yaowarat": {
+      "faces": 167,
+      "failures": 0
+    }
+  },
+  "externallyScreenedAllViews": [
+    {
+      "id": "bkk:30491:-108284:-357:fascia:0",
+      "region": "connector"
+    },
+    {
+      "id": "bkk:-42100:-80500:-15708:fascia:1",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:57960:-55500:31416:fascia:0",
+      "region": "siam"
+    },
+    {
+      "id": "bkk:-25520:-95200:31416:fascia:1",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:-42440:-102000:31416:fascia:1",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:-28850:-102000:31416:fascia:0",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:-48501:-80100:0:fascia:1",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:-185273:50616:59690:fascia:1",
+      "region": "paknam"
+    },
+    {
+      "id": "bkk:-187899:72699:31416:fascia:0",
+      "region": "paknam"
+    },
+    {
+      "id": "bkk:24958:-110083:-357:fascia:0",
+      "region": "connector"
+    },
+    {
+      "id": "bkk:121780:-66063:14142:fascia:0",
+      "region": "siam"
+    },
+    {
+      "id": "bkk:61567:-54550:31416:fascia:0",
+      "region": "siam"
+    },
+    {
+      "id": "bkk:93625:-61550:0:fascia:1",
+      "region": "siam"
+    },
+    {
+      "id": "bkk:-2658:147906:14237:fascia:1",
+      "region": "silom"
+    },
+    {
+      "id": "bkk:130267:81819:26557:fascia:1",
+      "region": "silom"
+    },
+    {
+      "id": "bkk:14067:139955:1651:fascia:0",
+      "region": "silom"
+    },
+    {
+      "id": "bkk:-80318:128308:18717:fascia:0",
+      "region": "icon"
+    },
+    {
+      "id": "bkk:185992:-10406:25536:fascia:0",
+      "region": "sukhumvit"
+    },
+    {
+      "id": "bkk:188822:-8519:25536:fascia:0",
+      "region": "sukhumvit"
+    },
+    {
+      "id": "bkk:217355:3184:-5880:fascia:0",
+      "region": "sukhumvit"
+    },
+    {
+      "id": "bkk:219135:2687:-5880:fascia:0",
+      "region": "sukhumvit"
+    },
+    {
+      "id": "bkk:219135:2687:-5880:fascia:2",
+      "region": "sukhumvit"
+    },
+    {
+      "id": "bkk:-14318:-100722:-1578:fascia:0",
+      "region": "oldtown"
+    },
+    {
+      "id": "bkk:-23425:-92083:-15708:fascia:0",
+      "region": "oldtown"
+    }
+  ]
+}

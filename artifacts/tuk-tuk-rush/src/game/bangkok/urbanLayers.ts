@@ -234,6 +234,39 @@ export function bangkokPeople(
       });
     }
   }
+  for (const p of designs.filter(
+    (p) =>
+      p.parcel.chinatown &&
+      !p.parcel.chinatown.role &&
+      p.parcel.chinatown.character !== "yaowarat" &&
+      p.bays[0]!.seed % 17 === 0,
+  )) {
+    if (staged.length >= 64) break;
+    const b = p.parcel,
+      a = p.bays[0]!,
+      yaw = b.yaw ?? 0,
+      c = Math.cos(yaw),
+      s = Math.sin(yaw);
+    if (["closed", "residence"].includes(a.trade)) continue;
+    for (let i = 0; i < (a.trade === "workshop" ? 1 : 2); i++) {
+      const u = b.w * (i ? 0.19 : -0.16),
+        v = b.d / 2 + (i ? 1.95 : 1.35),
+        q = { x: b.x + c * u + s * v, z: b.z - s * u + c * v };
+      if (!clear(q) || staged.some((p) => Math.hypot(p.x - q.x, p.z - q.z) < 1))
+        continue;
+      staged.push({
+        start: q,
+        end: q,
+        ...q,
+        heading: yaw + Math.PI + (i ? -0.55 : 0.25),
+        role: a.trade === "workshop" ? "vendor" : "customer",
+        pose: a.trade === "workshop" ? "work" : i ? "talk" : "browse",
+        seed: 1500 + staged.length,
+        height: 0.96,
+        region: p.region,
+      });
+    }
+  }
   const balanced: StreetPerson[] = [...staged];
   for (let i = 0; balanced.length < 360; i++) {
     let found = false;

@@ -1,3 +1,4 @@
+import { STOREFRONT, storefrontMount } from "./storefrontMounts";
 import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import { emitChinatownDetail } from "./chinatownDetail";
 import type { ArtPiece } from "./architecturalBatch";
@@ -130,7 +131,7 @@ export function emitChinatownArchitecture(
   // Party walls and continuously aligned cornices articulate the coherent row.
   for (const side of [-1, 1])
     put(side * (W / 2 - 0.2), H / 2, F + 0.07, 0.35, H, 0.24, trim);
-  put(0, 4.7, F + 0.26, W, 0.35, 0.8, trim);
+  put(0, STOREFRONT.corniceY, F + 0.26, W, 0.35, 0.8, trim);
   put(0, H - 0.4, F + 0.14, W, 0.65, 0.45, trim);
   if (song) {
     put(0, H + 0.5, 0, W, 2.3, b.d, "#7d6953", "tile", "core", "gable");
@@ -172,13 +173,14 @@ export function emitChinatownArchitecture(
       "cylinder",
     );
   }
+  const mount = storefrontMount(p, p.bays[0]!);
   put(
-    0,
-    4.32,
-    F + 0.26,
-    W - 0.7,
-    1.25,
-    0.55,
+    mount.u,
+    mount.y,
+    mount.v,
+    mount.width + 0.12,
+    mount.height,
+    mount.depth,
     song ? "#736448" : gold ? "#a13136" : talat ? "#59726a" : "#9d614e",
     "wood",
   );
