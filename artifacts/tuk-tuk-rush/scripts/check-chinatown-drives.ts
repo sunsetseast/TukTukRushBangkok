@@ -45,7 +45,9 @@ way("song-wat", "songwat", 458, 637);
 way("talat-noi", "wanit-2-south", 465, 730);
 way("bang-rak", "charoen_s", 535, 835);
 way("memorial-east", "memorial", 330, 600);
-const pairs = [
+const pairs = process.env.BANG_RAK_ROUTES === "1" ? [
+ ["river-city","grand-postal"],["grand-postal","river-city"],["grand-postal","warehouse-30"],["warehouse-30","grand-postal"],["warehouse-30","oriental"],["oriental","warehouse-30"],["grand-postal","oriental"],["oriental","grand-postal"],
+] : [
   ["yaowarat-east", "yaowarat-west"],
   ["gate", "traimit"],
   ["hua", "gate"],

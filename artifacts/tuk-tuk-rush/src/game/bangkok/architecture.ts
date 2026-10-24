@@ -1,3 +1,4 @@
+import { emitBangRakParcel } from "./bangRakArt";
 import { STOREFRONT, storefrontMount } from "./storefrontMounts";
 import { emitChinatownArchitecture } from "./chinatownArchitecture";
 import { emitBlockArchitecture } from "./urbanBlocks";
@@ -279,6 +280,7 @@ export function emitDistrictArchitecture(
           put(side * (b.w / 2 + 0.18), H * 0.55, z, 0.3, 0.18, 2.2, "#e9dab7");
         }
     }
+    if (emitBangRakParcel(p, emit)) continue;
     if (emitChinatownArchitecture(p, emit)) continue;
     if (p.premiumContext) {
       emitHeroContextBlock(p, emit);

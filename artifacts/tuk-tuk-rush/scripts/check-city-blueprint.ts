@@ -1,3 +1,4 @@
+import { assertBangRakMigration, approvedBangRakParcel } from "./bang-rak-migration-contract";
 import {
   chinatownBenchmark,
   emitChinatownBenchmark,
@@ -48,6 +49,7 @@ const out = new URL("../../../docs/qa/world-blueprint/", import.meta.url),
   ) as District,
   d = createBangkokWorld();
 assertRiverMigration(d, before);
+assertBangRakMigration(d);
 const sourceRoot = new URL("../src/", import.meta.url);
 for (const file of fs
   .readdirSync(sourceRoot, { recursive: true })
@@ -82,7 +84,7 @@ const registry = buildLandmarkRegistry(d),
     fs.readFileSync(new URL("before-registry.json", out), "utf8"),
   );
 assert(old.every((p: { id: string }) => registry.some((q) => q.id === p.id)));
-assert.equal(registry.length, 98);
+assert.equal(registry.length, 100); // The two explicitly inventoried PR42 destinations.
 assert(
   landmarkParcels(d).length >= 208 + CITY_MODEL.architecturalAprons.length,
   "Preserve sites; bank-shaped terrace reservations vary",
@@ -155,7 +157,7 @@ const localApronContext = (o: Obstacle) =>
   );
 for (const o of [...removed, ...added])
   assert(
-    approvedRiverParcel(o) ||
+    approvedBangRakParcel(o, d) || approvedRiverParcel(o) ||
       approvedWaterfrontParcel(o) ||
       approvedChinatownParcel(o) ||
       newMrt.some((s) => Math.hypot(s.x - o.x, s.z - o.z) < 140) ||
@@ -171,7 +173,7 @@ assert(
     .filter((o) => !b.has(key(o)))
     .every(
       (o) =>
-        approvedRiverParcel(o) ||
+        approvedBangRakParcel(o, d) || approvedRiverParcel(o) ||
         approvedWaterfrontParcel(o) ||
         approvedChinatownParcel(o) ||
         aprons.some((a) =>
@@ -185,7 +187,7 @@ assert(
     .filter((o) => !pr34Keys.has(key(o)))
     .every(
       (o) =>
-        approvedRiverParcel(o) ||
+        approvedBangRakParcel(o, d) || approvedRiverParcel(o) ||
         approvedWaterfrontParcel(o) ||
         approvedChinatownParcel(o) ||
         localApronContext(o),

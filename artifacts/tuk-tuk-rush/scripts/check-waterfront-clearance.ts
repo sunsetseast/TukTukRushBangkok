@@ -1,3 +1,7 @@
+import clipping from "polygon-clipping";
+import {roadEnvelopes} from "./road-surface-authoring";
+import {bangRakState} from "../src/game/bangkok/bangRakPlan";
+import { assertBangRakMigration } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
@@ -162,6 +166,28 @@ const successor = JSON.parse(
 );
 for (const item of preservation.files) {
   const bytes = fs.readFileSync(new URL(item.path, root));
+  if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/roadSurfaces.generated.json") {
+    const oldBytes=gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak/validation/pr41-road-surfaces.json.gz",root)));
+    assert.equal(createHash("sha256").update(oldBytes).digest("hex"),successor.files[item.path]??item.sha256,"Original approved surface fixture");
+    const prior=JSON.parse(oldBytes.toString()),current=JSON.parse(bytes.toString());
+    for(const key of ["water","land","waterKey"])assert.deepEqual(current[key],prior[key],"Preserve water/terrain source "+key);
+    const area=(polygons:any[])=>polygons.reduce((sum,p)=>sum+p.reduce((a:number,r:number[][],i:number)=>a+(i?-1:1)*Math.abs(r.slice(1).reduce((v:number,q:number[],j:number)=>v+r[j]![0]!*q[1]!-q[0]!*r[j]![1]!,0)/2),0),0);
+    const collar=roadEnvelopes({...d,roads:bangRakState(d)!.roads},12,true);
+    for(const key of ["road","curb","sidewalk"])assert(area(clipping.difference(clipping.xor(prior[key],current[key]),collar))<0.01,"No surface change outside the exact new-lane collars: "+key);
+    assert(area(clipping.difference(prior.road,current.road))<0.01,"No approved asphalt removed");
+    continue;
+  }
+  if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json") {
+    const priorBytes=gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak/validation/pr41-city-data.json.gz",root)));
+    assert.equal(createHash("sha256").update(priorBytes).digest("hex"),successor.files[item.path]??item.sha256,"Original approved city data fixture");
+    const prior=JSON.parse(priorBytes.toString()),current=JSON.parse(bytes.toString());
+    const {roadBaseline:oldRoads,...oldData}=prior,{roadBaseline:newRoads,...newData}=current;
+    assert.deepEqual(newData,oldData,"Only the explicitly approved additive road ledger changes");
+    assert.equal(newRoads.version,4);assert.equal(newRoads.roads,oldRoads.roads+26);assert.equal(newRoads.nodes,oldRoads.nodes+26);
+    assert.deepEqual(newRoads.sourceStages,[...oldRoads.sourceStages,"bang-rak-v1"]);
+    assertBangRakMigration(d);
+    continue;
+  }
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
     successor.files[item.path] ?? item.sha256,

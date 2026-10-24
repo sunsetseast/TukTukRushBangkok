@@ -305,7 +305,7 @@ export function designBuildings(d: District): ParcelDesign[] {
             l.id === h.landmark && Math.hypot(l.x - b.x, l.z - b.z) < h.radius,
         ),
     );
-    const count = Math.min(
+    const count = b.bangRak ? Math.max(1, Math.floor(b.w / 16)) : Math.min(
       g.bayCount[seed % g.bayCount.length]!,
       Math.max(1, Math.floor(b.w / 5.5)),
     );
@@ -417,11 +417,15 @@ export function designBuildings(d: District): ParcelDesign[] {
         occupied: trade !== "closed" && trade !== "residence",
       };
     });
+    if (b.bangRak) for (const a of bays) {
+      a.type = b.bangRak.family === "warehouse" ? "warehouse" : b.bangRak.family === "timber" ? "timber" : b.bangRak.family === "workshop" ? "workshop" : "shophouse";
+      a.trade = b.bangRak.trade; a.front=b.d/2; a.height=b.height; a.floors=b.bangRak.family === "warehouse" ? 1 : Math.max(2,Math.floor(b.height/3.5)); a.balcony=false; a.occupied=a.trade!=="residence";
+    }
     const composed: ParcelDesign = {
       id,
       parcel: b,
       region,
-      corridor: b.chinatown?.corridor ?? road.r.corridor ?? "",
+      corridor: b.bangRak?.road ?? b.chinatown?.corridor ?? road.r.corridor ?? "",
       hero: hero?.id,
       premiumContext: (() => {
         if (b.artRole !== "background" || waterfront) return undefined;

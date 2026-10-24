@@ -25,6 +25,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak-drives
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-drives
       - run: pnpm --filter @workspace/tuk-tuk-rush test:sign-visibility
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-visual

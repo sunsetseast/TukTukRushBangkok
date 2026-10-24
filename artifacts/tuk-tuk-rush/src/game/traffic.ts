@@ -134,7 +134,9 @@ export class TrafficSystem {
   }
   create(player?: Vehicle): TrafficCar[] {
     const roads = this.district.roads.filter(
-        (r) => !r.shortcut && !r.noTraffic,
+        // Short local additions remain routable, while the existing 38-car
+        // initial distribution stays stable across a bounded district expansion.
+        (r) => !r.shortcut && !r.noTraffic && r.spawnTraffic !== false,
       ),
       main = roads.filter(
         (r) => r.corridor === "yaowarat" || r.name === "Yaowarat Road",

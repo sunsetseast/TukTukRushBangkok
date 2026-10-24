@@ -1,3 +1,4 @@
+import { beforeBangRak } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
@@ -47,7 +48,7 @@ const foundation = Object.fromEntries(
     "bridges",
     "destinations",
     "transit",
-  ].map((k) => [k, hash((d as any)[k] ?? null)]),
+  ].map((k) => [k, hash((beforeBangRak(d) as any)[k] ?? null)]),
 );
 if (process.env.VISUAL_BASE_CHECKOUT) {
   fs.writeFileSync(

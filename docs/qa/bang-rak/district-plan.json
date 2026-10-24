@@ -1,0 +1,1617 @@
+{
+  "plan": {
+    "version": 1,
+    "boundary": [
+      {
+        "x": -210,
+        "z": 876
+      },
+      {
+        "x": 219,
+        "z": 876
+      },
+      {
+        "x": 219,
+        "z": 1050
+      },
+      {
+        "x": 90,
+        "z": 1050
+      },
+      {
+        "x": 90,
+        "z": 1040
+      },
+      {
+        "x": -16,
+        "z": 981
+      },
+      {
+        "x": -210,
+        "z": 981
+      }
+    ],
+    "sources": [
+      "https://library.tcdc.or.th/visit/bkk_contact",
+      "https://www.docomomothailand.org/pages/no6.html",
+      "https://departmentofarchitecture.co.th/portfolio/thailand-creative-and-design-center-tcdc/",
+      "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
+      "https://www.warehouse30.com/explore-neighborhood/captain-bush-lane/"
+    ],
+    "compromises": [
+      "Existing Charoen Krung and all Chinatown parcels are frozen. Soi 30 and 32 are compressed public approach stubs; no private inter-compound through road.",
+      "Postal facade is 92m wide versus the documented 103.8m; its T stem is shortened to preserve the approved Mandarin Oriental grounds.",
+      "Eight Warehouse 30 shed interpretations fit two compact rows; courtyard/door geometry is original, not a cadastral replica or current tenant directory.",
+      "The missing direct Si Phraya cross-connection requires a separately approved migration of existing Chinatown properties. Existing connected northern graph is retained."
+    ],
+    "postal": {
+      "id": "grand-postal",
+      "name": "Grand Postal Building / TCDC",
+      "origin": {
+        "x": 58,
+        "z": 990
+      },
+      "yaw": 1.5707963267948966,
+      "masses": [
+        {
+          "name": "civic frontage north wing",
+          "x": -29,
+          "z": 0,
+          "w": 34,
+          "d": 27,
+          "h": 19.6
+        },
+        {
+          "name": "monumental central entrance",
+          "x": 0,
+          "z": 2,
+          "w": 24,
+          "d": 31,
+          "h": 23.2
+        },
+        {
+          "name": "civic frontage south wing",
+          "x": 29,
+          "z": 0,
+          "w": 34,
+          "d": 27,
+          "h": 19.6
+        },
+        {
+          "name": "T plan rear library wing",
+          "x": 0,
+          "z": -35,
+          "w": 18,
+          "d": 68,
+          "h": 17.2
+        }
+      ],
+      "court": {
+        "x": 0,
+        "z": 31,
+        "w": 92,
+        "d": 30,
+        "h": 0,
+        "name": "pedestrian postal forecourt"
+      }
+    },
+    "lanes": [
+      {
+        "id": "charoen-krung-30",
+        "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+        "thai": "ซอยเจริญกรุง 30",
+        "near": {
+          "x": 141.83908045973334,
+          "z": 886.6666666677334
+        },
+        "end": {
+          "x": -158,
+          "z": 883
+        },
+        "width": 9
+      },
+      {
+        "id": "charoen-krung-32",
+        "name": "Charoen Krung Soi 32",
+        "thai": "ซอยเจริญกรุง 32",
+        "near": {
+          "x": 140.91954022986667,
+          "z": 913.3333333338667
+        },
+        "end": {
+          "x": -158,
+          "z": 928
+        },
+        "width": 8
+      }
+    ]
+  },
+  "approvedBoundary": [
+    {
+      "x": -205,
+      "z": 870
+    },
+    {
+      "x": 185,
+      "z": 870
+    },
+    {
+      "x": 185,
+      "z": 1065
+    },
+    {
+      "x": -205,
+      "z": 1065
+    }
+  ],
+  "geometryNote": "approvedBoundary is the fitted work collar enclosing complete new/retired footprints and public-road aprons. It does not transfer ownership of protected property within it. plan.boundary is the initial fitting seed; protectedParcels records actual final civic/warehouse ownership and the narrowed forecourt.",
+  "protectedParcels": [
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 1036
+        },
+        {
+          "x": 44.5,
+          "z": 1002
+        },
+        {
+          "x": 71.5,
+          "z": 1002
+        },
+        {
+          "x": 71.5,
+          "z": 1036
+        }
+      ],
+      "id": "parcel:grand-postal:structure:266"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 1002
+        },
+        {
+          "x": 44.5,
+          "z": 978
+        },
+        {
+          "x": 75.5,
+          "z": 978
+        },
+        {
+          "x": 75.5,
+          "z": 1002
+        }
+      ],
+      "id": "parcel:grand-postal:structure:267"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 978
+        },
+        {
+          "x": 44.5,
+          "z": 944
+        },
+        {
+          "x": 71.5,
+          "z": 944
+        },
+        {
+          "x": 71.5,
+          "z": 978
+        }
+      ],
+      "id": "parcel:grand-postal:structure:268"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -11,
+          "z": 999
+        },
+        {
+          "x": -11,
+          "z": 981
+        },
+        {
+          "x": 57,
+          "z": 981
+        },
+        {
+          "x": 57,
+          "z": 999
+        }
+      ],
+      "id": "parcel:grand-postal:structure:269"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -112,
+          "z": 902.5
+        },
+        {
+          "x": -152,
+          "z": 902.5
+        },
+        {
+          "x": -152,
+          "z": 893.5
+        },
+        {
+          "x": -112,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:270"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -69,
+          "z": 902.5
+        },
+        {
+          "x": -109,
+          "z": 902.5
+        },
+        {
+          "x": -109,
+          "z": 893.5
+        },
+        {
+          "x": -69,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:271"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -26,
+          "z": 902.5
+        },
+        {
+          "x": -66,
+          "z": 902.5
+        },
+        {
+          "x": -66,
+          "z": 893.5
+        },
+        {
+          "x": -26,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:272"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 17,
+          "z": 902.5
+        },
+        {
+          "x": -23,
+          "z": 902.5
+        },
+        {
+          "x": -23,
+          "z": 893.5
+        },
+        {
+          "x": 17,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:273"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -152,
+          "z": 904
+        },
+        {
+          "x": -112,
+          "z": 904
+        },
+        {
+          "x": -112,
+          "z": 911
+        },
+        {
+          "x": -152,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:274"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -109,
+          "z": 904
+        },
+        {
+          "x": -69,
+          "z": 904
+        },
+        {
+          "x": -69,
+          "z": 911
+        },
+        {
+          "x": -109,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:275"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -66,
+          "z": 904
+        },
+        {
+          "x": -26,
+          "z": 904
+        },
+        {
+          "x": -26,
+          "z": 911
+        },
+        {
+          "x": -66,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:276"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -23,
+          "z": 904
+        },
+        {
+          "x": 17,
+          "z": 904
+        },
+        {
+          "x": 17,
+          "z": 911
+        },
+        {
+          "x": -23,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:277"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "forecourt",
+      "boundary": [
+        {
+          "x": 78,
+          "z": 1036
+        },
+        {
+          "x": 78,
+          "z": 944
+        },
+        {
+          "x": 98,
+          "z": 944
+        },
+        {
+          "x": 98,
+          "z": 1036
+        }
+      ],
+      "id": "parcel:grand-postal:forecourt:278"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "compound",
+      "boundary": [
+        {
+          "x": -155,
+          "z": 885
+        },
+        {
+          "x": 25,
+          "z": 885
+        },
+        {
+          "x": 25,
+          "z": 919
+        },
+        {
+          "x": -155,
+          "z": 919
+        }
+      ],
+      "id": "parcel:warehouse-30:compound:279"
+    }
+  ],
+  "parcels": [
+    {
+      "id": "br:warehouse-1",
+      "family": "warehouse",
+      "body": {
+        "x": -132,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "height": 7.1,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-1",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-30"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-30"
+    },
+    {
+      "id": "br:warehouse-2",
+      "family": "warehouse",
+      "body": {
+        "x": -89,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "height": 7.1,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-2",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-30"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-30"
+    },
+    {
+      "id": "br:warehouse-3",
+      "family": "warehouse",
+      "body": {
+        "x": -46,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "height": 7.1,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-3",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-30"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-30"
+    },
+    {
+      "id": "br:warehouse-4",
+      "family": "warehouse",
+      "body": {
+        "x": -3,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "height": 7.1,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-4",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "coffee",
+          "road": "charoen-krung-30"
+        },
+        "protected": true
+      },
+      "trade": "coffee",
+      "road": "charoen-krung-30"
+    },
+    {
+      "id": "br:warehouse-5",
+      "family": "warehouse",
+      "body": {
+        "x": -132,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "height": 7.1,
+        "yaw": 0,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-5",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:warehouse-6",
+      "family": "warehouse",
+      "body": {
+        "x": -89,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "height": 7.1,
+        "yaw": 0,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-6",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:warehouse-7",
+      "family": "warehouse",
+      "body": {
+        "x": -46,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "height": 7.1,
+        "yaw": 0,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-7",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "gallery",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:warehouse-8",
+      "family": "warehouse",
+      "body": {
+        "x": -3,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "height": 7.1,
+        "yaw": 0,
+        "color": "#cebea4",
+        "environmentId": "br:warehouse-8",
+        "regionId": "bang-rak",
+        "landmarkId": "warehouse-30",
+        "bangRak": {
+          "family": "warehouse",
+          "trade": "coffee",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "coffee",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:merchant-rear-0",
+      "family": "merchant",
+      "body": {
+        "x": -143,
+        "z": 955,
+        "w": 25,
+        "d": 25,
+        "height": 11,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:merchant-rear-0",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "merchant",
+          "trade": "retail",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "retail",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:merchant-rear-1",
+      "family": "timber",
+      "body": {
+        "x": -116,
+        "z": 955,
+        "w": 25,
+        "d": 25,
+        "height": 13,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:merchant-rear-1",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "timber",
+          "trade": "residence",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "residence",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:merchant-rear-2",
+      "family": "merchant",
+      "body": {
+        "x": -89,
+        "z": 955,
+        "w": 25,
+        "d": 25,
+        "height": 15,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:merchant-rear-2",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "merchant",
+          "trade": "retail",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "retail",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:merchant-rear-3",
+      "family": "workshop",
+      "body": {
+        "x": -62,
+        "z": 955,
+        "w": 25,
+        "d": 25,
+        "height": 11,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:merchant-rear-3",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "workshop",
+          "trade": "workshop",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "workshop",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:merchant-rear-4",
+      "family": "merchant",
+      "body": {
+        "x": -35,
+        "z": 955,
+        "w": 25,
+        "d": 25,
+        "height": 13,
+        "yaw": 3.141592653589793,
+        "color": "#cebea4",
+        "environmentId": "br:merchant-rear-4",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "merchant",
+          "trade": "retail",
+          "road": "charoen-krung-32"
+        },
+        "protected": true
+      },
+      "trade": "retail",
+      "road": "charoen-krung-32"
+    },
+    {
+      "id": "br:charoen-east-0",
+      "family": "merchant",
+      "body": {
+        "x": 167.8159099024332,
+        "z": 887.786755513877,
+        "w": 22,
+        "d": 23,
+        "height": 13.5,
+        "yaw": -1.6052654277944047,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-0",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "merchant",
+          "trade": "retail",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "trade": "retail",
+      "road": "charoen_s"
+    },
+    {
+      "id": "br:charoen-east-1",
+      "family": "gallery",
+      "body": {
+        "x": 166.95486477179185,
+        "z": 912.7570643024756,
+        "w": 22,
+        "d": 23,
+        "height": 17,
+        "yaw": -1.6052654277944047,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-1",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "gallery",
+          "trade": "gallery",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "trade": "gallery",
+      "road": "charoen_s"
+    },
+    {
+      "id": "br:charoen-east-3",
+      "family": "cafe",
+      "body": {
+        "x": 157.91290627326157,
+        "z": 973.476551688955,
+        "w": 22,
+        "d": 23,
+        "height": 17,
+        "yaw": -1.8337910584758161,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-3",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "cafe",
+          "trade": "coffee",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "trade": "coffee",
+      "road": "charoen_s"
+    },
+    {
+      "id": "br:charoen-east-4",
+      "family": "timber",
+      "body": {
+        "x": 151.10600972153742,
+        "z": 998.7593103096447,
+        "w": 22,
+        "d": 23,
+        "height": 13.5,
+        "yaw": -1.8337910584758161,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-4",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "timber",
+          "trade": "residence",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "trade": "residence",
+      "road": "charoen_s"
+    },
+    {
+      "id": "br:charoen-east-5",
+      "family": "merchant",
+      "body": {
+        "x": 143.8549752387788,
+        "z": 1025.6917241027481,
+        "w": 22,
+        "d": 23,
+        "height": 17,
+        "yaw": -1.8337910584758161,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-5",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "merchant",
+          "trade": "food",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "trade": "food",
+      "road": "charoen_s"
+    }
+  ],
+  "removed": [
+    {
+      "x": -61.68646975789917,
+      "z": 933.3772531597873,
+      "w": 24,
+      "d": 24,
+      "yaw": 3.0947266594690443,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:789598267"
+    },
+    {
+      "x": -131.82966122962023,
+      "z": 926.0831169900092,
+      "w": 21,
+      "d": 24,
+      "yaw": 3.0947266594690443,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:1359047187"
+    },
+    {
+      "x": 113.61377671965764,
+      "z": 892.717859931302,
+      "w": 22,
+      "d": 22,
+      "height": 11,
+      "yaw": 1.5363272257953886,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 112.7177575478234,
+      "z": 918.7024159144952,
+      "w": 22,
+      "d": 22,
+      "height": 18.2,
+      "yaw": 1.5363272257953886,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 109.32313013315101,
+      "z": 946.2393633627489,
+      "w": 22,
+      "d": 22,
+      "height": 11,
+      "yaw": 1.3078015951139772,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 102.56381982350632,
+      "z": 971.3453730842864,
+      "w": 22,
+      "d": 22,
+      "height": 18.2,
+      "yaw": 1.3078015951139772,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 95.80450951386166,
+      "z": 996.4513828058238,
+      "w": 22,
+      "d": 22,
+      "height": 11,
+      "yaw": 1.3078015951139772,
+      "color": "#b5ad9c"
+    },
+    {
+      "x": 89.04519920421697,
+      "z": 1021.5573925273611,
+      "w": 22,
+      "d": 22,
+      "height": 62,
+      "yaw": 1.3078015951139772,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 82.28588889457228,
+      "z": 1046.6634022488986,
+      "w": 22,
+      "d": 22,
+      "height": 32,
+      "yaw": 1.3078015951139772,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 84.6310027384036,
+      "z": 891.7184539319484,
+      "w": 21,
+      "d": 19,
+      "height": 8.25,
+      "yaw": 1.5363272257953886,
+      "color": "#9a704f",
+      "regionId": "talatnoi",
+      "artRole": "background"
+    },
+    {
+      "x": 61.04234220711755,
+      "z": 1014.0181617973728,
+      "w": 21,
+      "d": 19,
+      "height": 46.5,
+      "yaw": 1.3078015951139772,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 119.20413820534367,
+      "z": 875.6835581318755,
+      "w": 8,
+      "d": 10,
+      "yaw": 1.5363272257953884,
+      "height": 10.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "environmentId": "infill:frontage:1010941329"
+    },
+    {
+      "x": 32.38619256529881,
+      "z": 897.9216635831085,
+      "w": 21,
+      "d": 20,
+      "yaw": 1.5363272257953886,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:669817515"
+    },
+    {
+      "x": 65.67675102652522,
+      "z": 919.0815009487328,
+      "w": 21,
+      "d": 20,
+      "yaw": 1.5363272257953886,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:3025020994"
+    },
+    {
+      "x": 31.628200639872507,
+      "z": 923.2502804964299,
+      "w": 18,
+      "d": 20,
+      "yaw": 1.3078015951139772,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2507316466"
+    },
+    {
+      "x": 56.39995875269123,
+      "z": 962.0234671077984,
+      "w": 27,
+      "d": 24,
+      "yaw": 1.3078015951139772,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:3467742263"
+    },
+    {
+      "x": 18.369553494031027,
+      "z": 972.4966841809841,
+      "w": 24,
+      "d": 24,
+      "yaw": 1.3078015951139772,
+      "height": 7,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2028050960"
+    },
+    {
+      "x": 9.270481923355485,
+      "z": 1006.2932357292074,
+      "w": 44,
+      "d": 28,
+      "yaw": 1.3078015951139772,
+      "height": 10.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:4187966829"
+    },
+    {
+      "x": 5.005914410594493,
+      "z": 893.975732999454,
+      "w": 18,
+      "d": 20,
+      "yaw": 1.5363272257953886,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2518388447"
+    },
+    {
+      "x": -13.644322807692717,
+      "z": 985.6253445901016,
+      "w": 27,
+      "d": 24,
+      "yaw": 1.3078015951139772,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:3065854822"
+    },
+    {
+      "x": -11.669086264633071,
+      "z": 927.9712350262123,
+      "w": 27,
+      "d": 24,
+      "yaw": -0.21333785018236678,
+      "height": 7,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2078633556"
+    },
+    {
+      "x": -42.08029455276774,
+      "z": 974.0777248810618,
+      "w": 24,
+      "d": 24,
+      "yaw": -0.21333785018235646,
+      "height": 7,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:3036440920"
+    },
+    {
+      "x": -88.09561686569836,
+      "z": 964.1092217881254,
+      "w": 21,
+      "d": 20,
+      "yaw": -0.21333785018236678,
+      "height": 17.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2547905663"
+    },
+    {
+      "x": 36.36617812474223,
+      "z": 1016.1402387753724,
+      "w": 14,
+      "d": 12,
+      "yaw": -3.35493050377216,
+      "height": 7,
+      "color": "#b7baa2",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "infill:screened:3148129448"
+    },
+    {
+      "x": 57.957201238414754,
+      "z": 939.8277910042797,
+      "w": 12,
+      "d": 16,
+      "yaw": 1.5363272257953886,
+      "height": 7.5,
+      "color": "#d8c2a5",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:1:9:-1"
+    },
+    {
+      "x": 59.54246592704459,
+      "z": 893.8551150340146,
+      "w": 12,
+      "d": 16,
+      "yaw": 1.5363272257953886,
+      "height": 7.5,
+      "color": "#d8c2a5",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:1:9:1"
+    },
+    {
+      "x": -37.08532817596635,
+      "z": 892.4157768609274,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": 1.536327225795389,
+      "height": 11,
+      "color": "#d8c3a0",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-1:15:0"
+    },
+    {
+      "x": -63.91214218068384,
+      "z": 904.9186905355991,
+      "w": 22,
+      "d": 26,
+      "yaw": 1.536327225795389,
+      "height": 11,
+      "color": "#adbaae",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-2:15:0"
+    },
+    {
+      "x": -86.05622214429216,
+      "z": 890.7271253447782,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": 1.536327225795389,
+      "height": 10,
+      "color": "#c99c7f",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-2:15:1"
+    },
+    {
+      "x": -100.10876216046317,
+      "z": 917.3865405085623,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": -0.21333785018235646,
+      "height": 17,
+      "color": "#d8c3a0",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-2:16:0"
+    },
+    {
+      "x": -130.54280546157733,
+      "z": 953.7677195562708,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": -0.21333785018236678,
+      "height": 13,
+      "color": "#adbaae",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-3:16:0"
+    },
+    {
+      "x": -129.8161032026879,
+      "z": 887.0285803362679,
+      "w": 22,
+      "d": 26,
+      "yaw": -0.21333785018236678,
+      "height": 19,
+      "color": "#d8c3a0",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-3:15:0"
+    },
+    {
+      "x": -169.097810044734,
+      "z": 897.3055494095232,
+      "w": 22,
+      "d": 26,
+      "yaw": 3.09472665946904,
+      "height": 18,
+      "color": "#adbaae",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-4:15:0"
+    },
+    {
+      "x": -185.71784213876396,
+      "z": 965.2214925539234,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": 3.09472665946904,
+      "height": 15,
+      "color": "#c99c7f",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-4:16:0"
+    },
+    {
+      "x": 169.58051268345852,
+      "z": 894.6477473783295,
+      "w": 22,
+      "d": 22,
+      "height": 14.6,
+      "yaw": -1.6052654277944047,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 165.17681417560868,
+      "z": 877.2688228205054,
+      "w": 8,
+      "d": 10,
+      "yaw": -1.605265427794405,
+      "height": 10.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "environmentId": "infill:frontage:1502697017"
+    },
+    {
+      "x": 168.68449351162428,
+      "z": 920.6323033615228,
+      "w": 22,
+      "d": 22,
+      "height": 21.8,
+      "yaw": -1.6052654277944047,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 156.63830230066384,
+      "z": 985.9038875973672,
+      "w": 22,
+      "d": 22,
+      "height": 44,
+      "yaw": -1.8337910584758161,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 156.10214274782456,
+      "z": 963.8544230474913,
+      "w": 5.8,
+      "d": 7.5,
+      "yaw": -1.8337910584758161,
+      "height": 7,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "environmentId": "infill:frontage:3287473488"
+    },
+    {
+      "x": 164.79912085197174,
+      "z": 971.6539164394701,
+      "w": 5.8,
+      "d": 7.5,
+      "yaw": 2.8068558162729778,
+      "height": 10.5,
+      "color": "#b7baa2",
+      "regionId": "connector",
+      "environmentId": "infill:frontage:13370237"
+    },
+    {
+      "x": 149.87899199101915,
+      "z": 1011.0098973189046,
+      "w": 22,
+      "d": 22,
+      "height": 56,
+      "yaw": -1.8337910584758161,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 143.11968168137446,
+      "z": 1036.115907040442,
+      "w": 22,
+      "d": 22,
+      "height": 26,
+      "yaw": -1.8337910584758161,
+      "color": "#507e9c",
+      "regionId": "silom"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "br:charoen-east-2",
+      "reason": "street setback"
+    }
+  ],
+  "roads": [
+    {
+      "spawnTraffic": false,
+      "a": "civic:1418391:8866667",
+      "b": "br:charoen-krung-30:1",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:1",
+      "b": "br:charoen-krung-30:2",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:2",
+      "b": "br:charoen-krung-30:3",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:3",
+      "b": "br:charoen-krung-30:4",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:4",
+      "b": "br:charoen-krung-30:5",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:5",
+      "b": "br:charoen-krung-30:6",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:6",
+      "b": "br:charoen-krung-30:7",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:7",
+      "b": "br:charoen-krung-30:8",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:8",
+      "b": "br:charoen-krung-30:9",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:9",
+      "b": "br:charoen-krung-30:10",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:10",
+      "b": "br:charoen-krung-30:11",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:11",
+      "b": "br:charoen-krung-30:12",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-30:12",
+      "b": "br:charoen-krung-30:13",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "civic:1409195:9133333",
+      "b": "br:charoen-krung-32:1",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:1",
+      "b": "br:charoen-krung-32:2",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:2",
+      "b": "br:charoen-krung-32:3",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:3",
+      "b": "br:charoen-krung-32:4",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:4",
+      "b": "br:charoen-krung-32:5",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:5",
+      "b": "br:charoen-krung-32:6",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:6",
+      "b": "br:charoen-krung-32:7",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:7",
+      "b": "br:charoen-krung-32:8",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:8",
+      "b": "br:charoen-krung-32:9",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:9",
+      "b": "br:charoen-krung-32:10",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:10",
+      "b": "br:charoen-krung-32:11",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:11",
+      "b": "br:charoen-krung-32:12",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    },
+    {
+      "spawnTraffic": false,
+      "a": "br:charoen-krung-32:12",
+      "b": "br:charoen-krung-32:13",
+      "width": 8,
+      "name": "Charoen Krung Soi 32",
+      "corridor": "charoen-krung-32"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "grand-postal",
+      "name": "Grand Postal Building / TCDC",
+      "kind": "museum",
+      "x": 58,
+      "z": 990,
+      "plot": {
+        "x": 58,
+        "z": 990
+      },
+      "size": 114,
+      "yaw": 1.5707963267948966,
+      "accessNode": "bkk:644"
+    },
+    {
+      "id": "warehouse-30",
+      "name": "Warehouse 30",
+      "kind": "museum",
+      "x": -65,
+      "z": 904,
+      "plot": {
+        "x": -65,
+        "z": 904
+      },
+      "size": 170,
+      "yaw": 0,
+      "accessNode": "br:charoen-krung-32:6"
+    }
+  ]
+}

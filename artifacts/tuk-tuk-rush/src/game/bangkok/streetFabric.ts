@@ -212,6 +212,20 @@ export function completeStreetFabric(d: District) {
   cache.set(d, value);
   return value;
 }
+/** A bounded authored district may append roads after the legacy infill pass.
+ * Refresh its survey/face ownership without rerunning the city generator or
+ * resurrecting removed lots and furniture. Identity of the cached plan survives. */
+export function refreshStreetFabric(d: District) {
+  const plan=cache.get(d);
+  if(!plan) return completeStreetFabric(d);
+  const after=auditStreetEdges(d), oldRoads=new Set(plan.before.map(s=>s.roadIndex));
+  plan.before.push(...after.filter(s=>!oldRoads.has(s.roadIndex)));
+  plan.after=after; plan.faces=streetFaces(d,after);
+  plan.infill=plan.infill.filter(b=>d.buildings.includes(b));
+  plan.pockets=plan.pockets.filter(b=>d.obstacles.includes(b));
+  plan.ends=plan.ends.filter(b=>d.obstacles.includes(b));
+  return plan;
+}
 /** Thin, articulated frontage on the EXISTING mass. No duplicate shell, hidden
  * party-wall detail, relocated hero building or change to vehicle clearance. */
 export function emitStreetFrontages(
@@ -221,7 +235,7 @@ export function emitStreetFrontages(
 ) {
   const byParcel = new Map(designs.map((p) => [p.parcel, p]));
   for (const face of completeStreetFabric(d).faces) {
-    if (face.parcel.chinatown) continue;
+    if (face.parcel.chinatown || face.parcel.bangRak) continue;
     const design = byParcel.get(face.parcel);
     if (!design) continue;
     const b = face.parcel,

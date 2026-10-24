@@ -64,6 +64,8 @@ export function assertChinatownGraphMigration(
         .filter((r) => approvedChinatownRoad(r, x))
         .flatMap((r) => [r.a, r.b]),
     );
+  // PR42 adds exactly scoped side-lane nodes/edges; the PR42 contract tests them.
+  d = {...d,nodes:d.nodes.filter(n=>!n.id.startsWith("br:")),roads:d.roads.filter(r=>!r.a.startsWith("br:")&&!r.b.startsWith("br:"))};
   const a = migrated(d),
     b = migrated(before);
   assert.deepEqual(

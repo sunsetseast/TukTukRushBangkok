@@ -1,0 +1,351 @@
+{
+  "passAll": true,
+  "completed": 49,
+  "total": 49,
+  "method": "Full package suite plus targeted reruns after the final five merchant facade rotations. Checkout commits are retained per result. Rotations preserve physical square footprints; all affected art, geometry, ownership, sign, landmark and clearance groups were rerun.",
+  "results": [
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 0.14
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 0.27
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 0.62
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 1.49
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 3.09
+    },
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 5.13
+    },
+    {
+      "name": "test:cityscapes",
+      "command": "node --import tsx scripts/check-cityscapes.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 98.65
+    },
+    {
+      "name": "test:definitive",
+      "command": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 116.4
+    },
+    {
+      "name": "test:startup",
+      "command": "node scripts/check-startup.mjs",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 14.98
+    },
+    {
+      "name": "test:environment",
+      "command": "node --import tsx scripts/check-environment-art.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 153.69
+    },
+    {
+      "name": "test:open-bangkok",
+      "command": "node --import tsx scripts/check-open-bangkok.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 56.7
+    },
+    {
+      "name": "test:graphics-foundation",
+      "command": "node --import tsx scripts/check-graphics-foundation.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 0.39
+    },
+    {
+      "name": "test:interface",
+      "command": "node --import tsx scripts/check-navigation-ui.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 28.69
+    },
+    {
+      "name": "test:corrections",
+      "command": "node --import tsx scripts/check-corrections.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 49.05
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 70.48
+    },
+    {
+      "name": "test:city-fabric",
+      "command": "node --import tsx scripts/check-city-fabric.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 34.73
+    },
+    {
+      "name": "test:cinematic",
+      "command": "node --import tsx scripts/check-cinematic.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 59.2
+    },
+    {
+      "name": "test:career",
+      "command": "node --import tsx scripts/check-career.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 89.95
+    },
+    {
+      "name": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 274.46
+    },
+    {
+      "name": "test:real-architecture",
+      "command": "node --import tsx scripts/check-real-architecture.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 33.24
+    },
+    {
+      "name": "test:civic-roads",
+      "command": "node --import tsx scripts/check-civic-roads.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 38.19
+    },
+    {
+      "name": "test:commercial-districts",
+      "command": "node --import tsx scripts/check-commercial-districts.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 23.42
+    },
+    {
+      "name": "test:geographic-reference",
+      "command": "node --import tsx scripts/check-geographic-reference.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 0.11
+    },
+    {
+      "name": "test:historic-districts",
+      "command": "node --import tsx scripts/check-historic-districts.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 1.23
+    },
+    {
+      "name": "test:authored-drives",
+      "command": "node --import tsx scripts/check-authored-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 45.69
+    },
+    {
+      "name": "test:authored-sites",
+      "command": "node --import tsx scripts/check-authored-sites.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 61.71
+    },
+    {
+      "name": "test:convenience-urban",
+      "command": "node --import tsx scripts/check-convenience-urban.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 24.4
+    },
+    {
+      "name": "test:public-spaces",
+      "command": "node --import tsx scripts/check-public-spaces.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 27.45
+    },
+    {
+      "name": "test:city-drives",
+      "command": "node --import tsx scripts/check-city-reconstruction-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 40.07
+    },
+    {
+      "name": "test:master-plan",
+      "command": "node --import tsx scripts/check-master-plan.ts && node --import tsx scripts/check-master-plan-drives.ts && node --import tsx scripts/check-tropical-batch.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 55.11
+    },
+    {
+      "name": "test:city-completion",
+      "command": "node --import tsx scripts/check-city-completion.ts && node --import tsx scripts/check-city-completion-drives.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 74.87
+    },
+    {
+      "name": "test:landmark-accuracy",
+      "command": "node --import tsx scripts/check-landmark-accuracy.ts && node --import tsx scripts/check-landmark-accuracy-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 56.6
+    },
+    {
+      "name": "test:historic-fidelity",
+      "command": "node --import tsx scripts/check-historic-fidelity.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 36.15
+    },
+    {
+      "name": "test:city-blueprint",
+      "command": "node --import tsx scripts/check-city-blueprint.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 34.37
+    },
+    {
+      "name": "test:historic-core",
+      "command": "node --import tsx scripts/check-historic-reconstruction.ts && node --import tsx scripts/check-historic-drives.ts && HISTORIC_INTERSECTIONS=1 node --import tsx scripts/check-historic-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 90.97
+    },
+    {
+      "name": "test:river-geography",
+      "command": "node --import tsx scripts/check-chao-phraya.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 26.1
+    },
+    {
+      "name": "test:premium-landmarks",
+      "command": "node --import tsx scripts/check-premium-landmarks.ts && node --import tsx scripts/check-premium-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 70.98
+    },
+    {
+      "name": "test:waterfront-clearance",
+      "command": "node --import tsx scripts/check-waterfront-clearance.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 28.84
+    },
+    {
+      "name": "test:river-drives",
+      "command": "node --import tsx scripts/check-chao-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 51.95
+    },
+    {
+      "name": "test:chinatown",
+      "command": "node --import tsx scripts/check-chinatown.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 35.9
+    },
+    {
+      "name": "test:chinatown-traffic",
+      "command": "CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 49.58
+    },
+    {
+      "name": "test:chinatown-completion",
+      "command": "node --import tsx scripts/check-chinatown-completion.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 29.56
+    },
+    {
+      "name": "test:chinatown-drives",
+      "command": "node --import tsx scripts/check-chinatown-drives.ts && CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 89.02
+    },
+    {
+      "name": "test:chinatown-visual",
+      "command": "node --import tsx scripts/check-chinatown-visual.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 38.66
+    },
+    {
+      "name": "test:waterfront-drives",
+      "command": "node --import tsx scripts/check-waterfront-drives.ts && WATERFRONT_LANES=1 node --import tsx scripts/check-waterfront-drives.ts",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 123.98
+    },
+    {
+      "name": "test:bang-rak-drives",
+      "command": "BANG_RAK_ROUTES=1 CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 29.06
+    },
+    {
+      "name": "test:bang-rak",
+      "command": "node --import tsx scripts/check-bang-rak.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 41.95
+    },
+    {
+      "name": "test:sign-visibility",
+      "command": "node --import tsx scripts/check-sign-visibility.ts",
+      "checkoutCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+      "exitCode": 0,
+      "seconds": 61.78
+    },
+    {
+      "name": "test:chinatown-legal-traffic",
+      "command": "node scripts/check-chinatown-legal-traffic.mjs",
+      "checkoutCommit": "2947869e7fc44191915c02bfce14269b3b842827",
+      "exitCode": 0,
+      "seconds": 174.96
+    }
+  ]
+}

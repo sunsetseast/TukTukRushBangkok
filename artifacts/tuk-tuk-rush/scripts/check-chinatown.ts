@@ -1,3 +1,4 @@
+import { assertBangRakMigration, approvedBangRakParcel } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -115,6 +116,7 @@ assert(
   !d.roads.some((r) => r.corridor === "shortcut_1"),
   "Invented workshop shortcut replaced by real street hierarchy",
 );
+assertBangRakMigration(d);
 const oldKeys = new Set(before.buildings.map(chinatownFootprintKey)),
   newKeys = new Set(d.buildings.map(chinatownFootprintKey));
 const removed = before.buildings.filter(
@@ -122,7 +124,7 @@ const removed = before.buildings.filter(
   ),
   added = d.buildings.filter((p) => !oldKeys.has(chinatownFootprintKey(p)));
 const outside = [...removed, ...added].filter(
-  (p) => !approvedChinatownParcel(p),
+  (p) => !approvedChinatownParcel(p) && !approvedBangRakParcel(p,d),
 );
 fs.writeFileSync(
   new URL("parcel-migration.json", out),

@@ -1,3 +1,4 @@
+import {batchedBangRakLandmark} from "./bang-rak-landmark-audit";
 import assert from 'node:assert/strict';
 import * as T from 'three';
 import {HUA_PLAN} from '../src/game/bangkok/huaLamphong';
@@ -10,8 +11,8 @@ import {arrivalSign,municipalSigns,STREET_NAMES} from '../src/game/bangkok/signP
 const d=createBangkokWorld(),pose={position:[0,0,0] as [number,number,number],target:[0,0,0] as [number,number,number]},camera=new InspectionCamera(),inventory=[];
 for(const l of d.landmarks){
  if(l.kind==='park'){inventory.push({id:l.id,tier:'landscaped open space',preserved:true});continue;}
- const g=sculptedLandmark(l);assert(g,`Placeholder remains: ${l.id}`);let triangles=0,bytes=0,disposed=0;
- g.traverse(o=>{if(!(o instanceof T.Mesh))return;const p=o.geometry.attributes.position!;for(const v of p.array)assert(Number.isFinite(v),`Invalid mesh ${l.id}`);triangles+=(o.geometry.index?.count??p.count)/3;for(const a of Object.values(o.geometry.attributes))bytes+=a.array.byteLength;o.geometry.addEventListener('dispose',()=>disposed++);});
+ const g=sculptedLandmark(l)??batchedBangRakLandmark(l,d);assert(g,`Placeholder remains: ${l.id}`);let triangles=0,bytes=0,disposed=0;
+ g.traverse(o=>{if(!(o instanceof T.Mesh))return;const p=o.geometry.attributes.position!;for(const v of p.array)assert(Number.isFinite(v),`Invalid mesh ${l.id}`);triangles+=(o.geometry.index?.count??p.count)/3*(o instanceof T.InstancedMesh?o.count:1);for(const a of Object.values(o.geometry.attributes))bytes+=a.array.byteLength;o.geometry.addEventListener('dispose',()=>disposed++);});
  assert(triangles>50);assert(triangles<300000,`Unbounded hero geometry ${l.id}`);
  const bbox=new T.Box3().setFromObject(g),s=bbox.getSize(new T.Vector3());if(l.id==='hua'){
   const y=HUA_PLAN.yard;assert(bbox.min.x>=-y.width/2&&bbox.max.x<=y.width/2&&bbox.min.z>=y.centerZ-y.depth/2&&bbox.max.z<=y.centerZ+y.depth/2,'Station mesh must fit its explicitly protected asymmetric mainline yard');

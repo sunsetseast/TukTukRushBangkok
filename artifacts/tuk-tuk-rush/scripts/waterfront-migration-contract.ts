@@ -1,3 +1,4 @@
+import { assertBangRakMigration, approvedBangRakParcel } from "./bang-rak-migration-contract";
 import { approvedChinatownParcel } from "./chinatown-migration-contract";
 /** Explicit PR37 approval for the eleven old / ten fitted waterfront kiosk
  * footprints. Historic snapshot guards still reject every unrelated change. */
@@ -58,19 +59,19 @@ export function assertApprovedManeuverMigration(d: District) {
   const before = new Set(baseline.buildings.map(footprintKey)),
     after = new Set(d.buildings.map(footprintKey));
   const removed = baseline.buildings
-      .filter((o) => !after.has(footprintKey(o)) && !approvedChinatownParcel(o))
+      .filter((o) => !after.has(footprintKey(o)) && !approvedChinatownParcel(o) && !approvedBangRakParcel(o,d))
       .map(footprintKey)
       .sort(),
     added = d.buildings
       .filter(
-        (o) => !before.has(footprintKey(o)) && !approvedChinatownParcel(o),
+        (o) => !before.has(footprintKey(o)) && !approvedChinatownParcel(o) && !approvedBangRakParcel(o,d),
       )
       .map(footprintKey)
       .sort();
   assert.deepEqual(
     removed,
     approval.removed
-      .filter((o) => !approvedChinatownParcel(o))
+      .filter((o) => !approvedChinatownParcel(o) && !approvedBangRakParcel(o,d))
       .map(footprintKey)
       .sort(),
     "No additional old frontage may disappear",
@@ -78,7 +79,7 @@ export function assertApprovedManeuverMigration(d: District) {
   assert.deepEqual(
     added,
     approval.added
-      .filter((o) => !approvedChinatownParcel(o))
+      .filter((o) => !approvedChinatownParcel(o) && !approvedBangRakParcel(o,d))
       .map(footprintKey)
       .sort(),
     "No unapproved new frontage reflow",

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "north-corridor",
+    "mode": "drive",
+    "elapsed": 50,
+    "road": "charoen_s",
+    "near": [
+      146,
+      800
+    ]
+  },
+  {
+    "id": "river-city-connection",
+    "camera": [
+      -135,
+      18,
+      741
+    ],
+    "look": [
+      -225,
+      8,
+      787
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "historic-frontage",
+    "camera": [
+      126,
+      7,
+      985
+    ],
+    "look": [
+      157,
+      6,
+      997
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "postal-approach",
+    "camera": [
+      126,
+      12,
+      938
+    ],
+    "look": [
+      58,
+      11,
+      990
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "postal-forecourt",
+    "camera": [
+      126,
+      13,
+      990
+    ],
+    "look": [
+      58,
+      11,
+      990
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "postal-dusk",
+    "camera": [
+      122,
+      17,
+      1034
+    ],
+    "look": [
+      58,
+      11,
+      990
+    ],
+    "elapsed": 140,
+    "mode": "inspect"
+  },
+  {
+    "id": "postal-night",
+    "camera": [
+      126,
+      13,
+      990
+    ],
+    "look": [
+      58,
+      11,
+      990
+    ],
+    "elapsed": 350,
+    "mode": "inspect"
+  },
+  {
+    "id": "warehouse-exterior",
+    "camera": [
+      -140,
+      12,
+      872
+    ],
+    "look": [
+      -65,
+      4,
+      903
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "warehouse-lane",
+    "camera": [
+      -75,
+      7,
+      929
+    ],
+    "look": [
+      -75,
+      4,
+      907
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "creative-storefront",
+    "camera": [
+      -133,
+      6,
+      882
+    ],
+    "look": [
+      -132,
+      3,
+      898
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "side-street-rear",
+    "camera": [
+      -25,
+      15,
+      936
+    ],
+    "look": [
+      -88,
+      6,
+      955
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "riverfront-merchant",
+    "camera": [
+      -160,
+      21,
+      937
+    ],
+    "look": [
+      -65,
+      7,
+      930
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "oriental-handoff",
+    "camera": [
+      49,
+      16,
+      1016
+    ],
+    "look": [
+      -146,
+      12,
+      1054
+    ],
+    "mode": "inspect",
+    "elapsed": 50
+  },
+  {
+    "id": "sunset-drive",
+    "mode": "drive",
+    "road": "charoen_s",
+    "near": [
+      142,
+      880
+    ],
+    "elapsed": 15
+  },
+  {
+    "id": "night-drive",
+    "mode": "drive",
+    "road": "charoen_s",
+    "near": [
+      142,
+      880
+    ],
+    "elapsed": 350
+  }
+]

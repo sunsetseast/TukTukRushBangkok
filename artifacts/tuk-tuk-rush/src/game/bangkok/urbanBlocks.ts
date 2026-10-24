@@ -473,6 +473,19 @@ export function emitBlockArchitecture(
   }
   return true;
 }
+/** Retire cached ownership when a bounded authored site replaces mutable lots.
+ * Keep every unaffected block object and court; never rerun the block generator. */
+export function refreshUrbanBlocks(d: District) {
+  const blocks=plans.get(d);if(!blocks)return;
+  const live=new Set(d.buildings);
+  for(const block of blocks) {
+    const kept=block.buildings.filter(b=>live.has(b));
+    if(kept.length!==block.buildings.length) {block.buildings=kept;block.court=undefined;}
+  }
+  for(let i=blocks.length-1;i>=0;i--)if(!blocks[i]!.buildings.length)blocks.splice(i,1);
+  courtCells.delete(d);
+  for(const block of blocks)if(block.court)reserveCourt(d,block.court);
+}
 export function emitBlockCourts(d: District, emit: (p: ArtPiece) => void) {
   for (const block of planUrbanBlocks(d))
     if (block.court) {
@@ -502,8 +515,7 @@ export function emitBlockCourts(d: District, emit: (p: ArtPiece) => void) {
  * not cadastral parcels. Genuine open uses are separately reported; ground
  * color and tree scatter never turn an empty cell into developed land. */
 export function auditUrbanLand(d: District, step = 36) {
-  const seedGraph = proceduralStreetSeeds(d),
-    nodes = seedGraph.nodes;
+  const nodes = new Map(d.nodes.map(n=>[n.id,n]));
   const roads = d.roads
     .filter((r) => !r.shortcut)
     .map((r) => ({ r, a: nodes.get(r.a)!, b: nodes.get(r.b)! }));

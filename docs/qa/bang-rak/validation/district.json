@@ -1,0 +1,342 @@
+{
+  "pass": true,
+  "buildings": 18,
+  "warehouseSheds": 8,
+  "distinctFamilies": 6,
+  "artPieces": 1857,
+  "newRoadEdges": 26,
+  "retainedOldRoadEdges": 2210,
+  "retainedChinatownBuildings": 909,
+  "people": 32,
+  "conflicts": [],
+  "protectedParcels": [
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 1036
+        },
+        {
+          "x": 44.5,
+          "z": 1002
+        },
+        {
+          "x": 71.5,
+          "z": 1002
+        },
+        {
+          "x": 71.5,
+          "z": 1036
+        }
+      ],
+      "id": "parcel:grand-postal:structure:266"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 1002
+        },
+        {
+          "x": 44.5,
+          "z": 978
+        },
+        {
+          "x": 75.5,
+          "z": 978
+        },
+        {
+          "x": 75.5,
+          "z": 1002
+        }
+      ],
+      "id": "parcel:grand-postal:structure:267"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 44.5,
+          "z": 978
+        },
+        {
+          "x": 44.5,
+          "z": 944
+        },
+        {
+          "x": 71.5,
+          "z": 944
+        },
+        {
+          "x": 71.5,
+          "z": 978
+        }
+      ],
+      "id": "parcel:grand-postal:structure:268"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -11,
+          "z": 999
+        },
+        {
+          "x": -11,
+          "z": 981
+        },
+        {
+          "x": 57,
+          "z": 981
+        },
+        {
+          "x": 57,
+          "z": 999
+        }
+      ],
+      "id": "parcel:grand-postal:structure:269"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -112,
+          "z": 902.5
+        },
+        {
+          "x": -152,
+          "z": 902.5
+        },
+        {
+          "x": -152,
+          "z": 893.5
+        },
+        {
+          "x": -112,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:270"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -69,
+          "z": 902.5
+        },
+        {
+          "x": -109,
+          "z": 902.5
+        },
+        {
+          "x": -109,
+          "z": 893.5
+        },
+        {
+          "x": -69,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:271"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -26,
+          "z": 902.5
+        },
+        {
+          "x": -66,
+          "z": 902.5
+        },
+        {
+          "x": -66,
+          "z": 893.5
+        },
+        {
+          "x": -26,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:272"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": 17,
+          "z": 902.5
+        },
+        {
+          "x": -23,
+          "z": 902.5
+        },
+        {
+          "x": -23,
+          "z": 893.5
+        },
+        {
+          "x": 17,
+          "z": 893.5
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:273"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -152,
+          "z": 904
+        },
+        {
+          "x": -112,
+          "z": 904
+        },
+        {
+          "x": -112,
+          "z": 911
+        },
+        {
+          "x": -152,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:274"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -109,
+          "z": 904
+        },
+        {
+          "x": -69,
+          "z": 904
+        },
+        {
+          "x": -69,
+          "z": 911
+        },
+        {
+          "x": -109,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:275"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -66,
+          "z": 904
+        },
+        {
+          "x": -26,
+          "z": 904
+        },
+        {
+          "x": -26,
+          "z": 911
+        },
+        {
+          "x": -66,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:276"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "structure",
+      "boundary": [
+        {
+          "x": -23,
+          "z": 904
+        },
+        {
+          "x": 17,
+          "z": 904
+        },
+        {
+          "x": 17,
+          "z": 911
+        },
+        {
+          "x": -23,
+          "z": 911
+        }
+      ],
+      "id": "parcel:warehouse-30:structure:277"
+    },
+    {
+      "landmarkId": "grand-postal",
+      "use": "forecourt",
+      "boundary": [
+        {
+          "x": 78,
+          "z": 1036
+        },
+        {
+          "x": 78,
+          "z": 944
+        },
+        {
+          "x": 98,
+          "z": 944
+        },
+        {
+          "x": 98,
+          "z": 1036
+        }
+      ],
+      "id": "parcel:grand-postal:forecourt:278"
+    },
+    {
+      "landmarkId": "warehouse-30",
+      "use": "compound",
+      "boundary": [
+        {
+          "x": -155,
+          "z": 885
+        },
+        {
+          "x": 25,
+          "z": 885
+        },
+        {
+          "x": 25,
+          "z": 919
+        },
+        {
+          "x": -155,
+          "z": 919
+        }
+      ],
+      "id": "parcel:warehouse-30:compound:279"
+    }
+  ],
+  "remaining": [
+    {
+      "id": "br:charoen-east-2",
+      "reason": "street setback"
+    }
+  ]
+}

@@ -275,6 +275,19 @@ export function prepareLandmarkParcels(
   plans.set(d, { parcels, cells });
   return parcels;
 }
+/** Extend protected ownership after a bounded district addition, preserving
+ * every existing reservation's geometry, numbering and physical use. */
+export function appendProtectedParcels(d: District, additions: Omit<ProtectedParcel,"id">[]) {
+  const plan=plans.get(d); if(!plan) throw Error("Prepare existing landmark parcels first");
+  for(const q of additions) {
+    const p={...q,id:`parcel:${q.landmarkId}:${q.use}:${plan.parcels.length}`};
+    plan.parcels.push(p);
+    for(const key of cellKeys(p.boundary)) {
+      if(!plan.cells.has(key))plan.cells.set(key,[]);
+      plan.cells.get(key)!.push(p);
+    }
+  }
+}
 export const landmarkParcels = (d: District) => plans.get(d)?.parcels ?? [];
 export function parcelConflicts(
   d: District,
@@ -288,7 +301,9 @@ export function parcelConflicts(
   for (const key of cellKeys(boundary, padding))
     plan.cells.get(key)?.forEach((p) => candidates.add(p));
   return [...candidates].filter((p) =>
-    polygonsOverlap(boundary, p.boundary, padding),
+    // A registered structure belongs in its own reservation. Unowned/foreign
+    // props still collide with every protected parcel.
+    p.landmarkId !== o.landmarkId && polygonsOverlap(boundary, p.boundary, padding),
   );
 }
 export const inLandmarkParcel = (d: District, o: Obstacle) =>
