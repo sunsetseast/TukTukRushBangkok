@@ -1,0 +1,41 @@
+{
+  "sourceCommit": "dbd15109924bb89898b94a838e3c39d69c25f55a",
+  "results": [
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "ms": 6533
+    },
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "ms": 208
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "ms": 3048
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "ms": 2851
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "ms": 912
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "ms": 1528
+    }
+  ]
+}

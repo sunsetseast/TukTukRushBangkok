@@ -1,0 +1,623 @@
+[
+  {
+    "id": "grand-postal",
+    "name": "Grand Postal Building / TCDC",
+    "address": "1160 Charoen Krung",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": 58,
+      "z": 990
+    },
+    "rotation": 1.5707963267948966,
+    "referenceCoordinate": {
+      "lon": 100.51546408965517,
+      "lat": 13.727086444827586
+    },
+    "coordinateConfidence": "OSM unweighted footprint-vertex centroid; approximate, not cadastral",
+    "sourceUrls": [
+      "https://library.tcdc.or.th/visit/bkk_contact",
+      "https://www.openstreetmap.org/way/231293478"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary",
+    "referenceFootprint": [
+      [
+        100.5154051,
+        13.7266378
+      ],
+      [
+        100.5157115,
+        13.7266666
+      ],
+      [
+        100.5157073,
+        13.7267085
+      ],
+      [
+        100.5157031,
+        13.7267503
+      ],
+      [
+        100.515658,
+        13.726746
+      ],
+      [
+        100.5156317,
+        13.7270096
+      ],
+      [
+        100.5156692,
+        13.7270132
+      ],
+      [
+        100.5156603,
+        13.7271024
+      ],
+      [
+        100.5156514,
+        13.7271917
+      ],
+      [
+        100.5156139,
+        13.7271882
+      ],
+      [
+        100.5155871,
+        13.7274564
+      ],
+      [
+        100.5156323,
+        13.7274607
+      ],
+      [
+        100.5156269,
+        13.7275141
+      ],
+      [
+        100.5156216,
+        13.7275675
+      ],
+      [
+        100.5153152,
+        13.7275387
+      ],
+      [
+        100.5153259,
+        13.7274318
+      ],
+      [
+        100.5153702,
+        13.727436
+      ],
+      [
+        100.5153917,
+        13.7272206
+      ],
+      [
+        100.515355,
+        13.7272172
+      ],
+      [
+        100.5152999,
+        13.727212
+      ],
+      [
+        100.5153033,
+        13.7271771
+      ],
+      [
+        100.5149512,
+        13.727144
+      ],
+      [
+        100.514971,
+        13.726926
+      ],
+      [
+        100.515325,
+        13.7269593
+      ],
+      [
+        100.5153286,
+        13.7269235
+      ],
+      [
+        100.5153838,
+        13.7269286
+      ],
+      [
+        100.5154206,
+        13.7269321
+      ],
+      [
+        100.5154411,
+        13.7267256
+      ],
+      [
+        100.5153967,
+        13.7267214
+      ],
+      [
+        100.5154051,
+        13.7266378
+      ]
+    ]
+  },
+  {
+    "id": "warehouse-30",
+    "name": "Warehouse 30",
+    "address": "52–60 Captain Bush Lane",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": -65,
+      "z": 904
+    },
+    "rotation": 0,
+    "referenceCoordinate": {
+      "lon": 100.51473125714286,
+      "lat": 13.728024157142857
+    },
+    "coordinateConfidence": "OSM unweighted footprint-vertex centroid; approximate, not cadastral",
+    "sourceUrls": [
+      "https://www.thailandtourismdirectory.go.th/en/attraction/103358",
+      "https://www.openstreetmap.org/node/6163747496",
+      "https://www.openstreetmap.org/way/491885323"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary",
+    "referenceFootprint": [
+      [
+        100.5145411,
+        13.7283905
+      ],
+      [
+        100.5148271,
+        13.7284694
+      ],
+      [
+        100.5149269,
+        13.7281282
+      ],
+      [
+        100.515048,
+        13.7277143
+      ],
+      [
+        100.5147999,
+        13.7276458
+      ],
+      [
+        100.5147813,
+        13.7276994
+      ],
+      [
+        100.5147626,
+        13.727753
+      ],
+      [
+        100.51473,
+        13.7278468
+      ],
+      [
+        100.5147021,
+        13.7279272
+      ],
+      [
+        100.5146881,
+        13.7279674
+      ],
+      [
+        100.5146575,
+        13.7280555
+      ],
+      [
+        100.5146243,
+        13.7281512
+      ],
+      [
+        100.514591,
+        13.7282469
+      ],
+      [
+        100.5145577,
+        13.7283426
+      ],
+      [
+        100.5145411,
+        13.7283905
+      ]
+    ]
+  },
+  {
+    "id": "river-city",
+    "name": "River City",
+    "address": "23 Charoen Krung Soi 24; Talat Noi / Samphanthawong",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": -276,
+      "z": 784
+    },
+    "rotation": -1.5707963267948966,
+    "referenceCoordinate": {
+      "lat": 13.73027929375,
+      "lon": 100.51333286875
+    },
+    "coordinateConfidence": "OSM approximate site centroid",
+    "sourceUrls": [
+      "https://rivercitybangkok.com/plan-your-visit/",
+      "https://www.openstreetmap.org/way/342182317"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Talat Noi / Samphanthawong interface, not administratively Bang Rak"
+  },
+  {
+    "id": "oriental",
+    "name": "Mandarin Oriental Bangkok",
+    "address": "48 Oriental Avenue",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": -200,
+      "z": 1040
+    },
+    "rotation": -1.5707963267948966,
+    "referenceCoordinate": {
+      "lat": 13.72393,
+      "lon": 100.5144
+    },
+    "coordinateConfidence": "Inherited approved operator/map site coordinate; footprint and current access not newly surveyed",
+    "sourceUrls": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "assumption",
+    "name": "Assumption Cathedral",
+    "address": "23 Charoen Krung 40",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": {
+      "lat": 13.723106889473684,
+      "lon": 100.51521524210527
+    },
+    "coordinateConfidence": "OSM approximate site centroid",
+    "sourceUrls": [
+      "https://www.assumption-cathedral.com/",
+      "https://www.openstreetmap.org/way/32005418"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "customs",
+    "name": "Historic Customs House",
+    "address": "Charoen Krung 36; access/redevelopment unverified",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://www.rabbitholdings.co.th/en/newsroom/news-releases/83/the-treasury-department-joins-hands-with-u-city-to-revitalize-more-than-130-year-old-custom-house-in-the-historic-charoen-krung-neighborhood-on-the-chao-phraya-river"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "east-asiatic",
+    "name": "East Asiatic Company historic building",
+    "address": "Oriental riverfront context; verify parcel",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "french-embassy",
+    "name": "French Embassy",
+    "address": "Charoen Krung 36 context; private compound",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://th.ambafrance.org/"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "state",
+    "name": "State Tower / lebua",
+    "address": "1055 Silom Road",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": 200,
+      "z": 1180
+    },
+    "rotation": 0,
+    "referenceCoordinate": {
+      "lat": 13.7215136,
+      "lon": 100.516885
+    },
+    "coordinateConfidence": "OSM approximate site centroid",
+    "sourceUrls": [
+      "https://lebua.com/",
+      "https://www.openstreetmap.org/node/257066461"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "mahanakhon",
+    "name": "King Power Mahanakhon / The Standard",
+    "address": "114 Naradhiwas Rajanagarindra",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": 654.1939766255646,
+      "z": 1119.1341716182542
+    },
+    "rotation": 0,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://kingpowermahanakhon.co.th/"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "wat-khaek",
+    "name": "Sri Maha Mariamman Temple",
+    "address": "Silom / Pan Road; verify compound",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://www.tourismthailand.org/"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "bangkokian",
+    "name": "Bangkokian Museum",
+    "address": "Charoen Krung 43; verify footprint",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://www.museumthailand.com/"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "neilson",
+    "name": "Neilson Hays Library",
+    "address": "195 Surawong Road",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://neilsonhayslibrary.org/"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "bcc",
+    "name": "Bangkok Christian College",
+    "address": "35 Pramuan Road",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": null,
+    "coordinateConfidence": "unverified; do not invent coordinates",
+    "sourceUrls": [
+      "https://www.bcc.ac.th/"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "shangri",
+    "name": "Shangri-La Bangkok",
+    "address": "89 Soi Wat Suan Plu",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": -160,
+      "z": 1324
+    },
+    "rotation": -1.5707963267948966,
+    "referenceCoordinate": {
+      "lat": 13.720781,
+      "lon": 100.513781
+    },
+    "coordinateConfidence": "Inherited approved operator/map site coordinate; footprint and current access not newly surveyed",
+    "sourceUrls": [
+      "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary"
+  },
+  {
+    "id": "peninsula",
+    "name": "The Peninsula Bangkok",
+    "address": "333 Charoen Nakhon; WEST bank, Khlong San",
+    "status": "inherited landmark retained exactly",
+    "world": {
+      "x": -620,
+      "z": 1228
+    },
+    "rotation": 1.5707963267948966,
+    "referenceCoordinate": {
+      "lat": 13.723302,
+      "lon": 100.510368
+    },
+    "coordinateConfidence": "Inherited approved operator/map site coordinate; footprint and current access not newly surveyed",
+    "sourceUrls": [
+      "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+    ],
+    "geometryDecision": "Retain existing compound / roadside access; new connection only",
+    "geographicNote": "Opposite bank, not Bang Rak"
+  },
+  {
+    "id": "sheraton",
+    "name": "Royal Orchid Sheraton",
+    "address": "2 Captain Bush Lane",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": {
+      "lon": 100.51360385,
+      "lat": 13.729176485714286
+    },
+    "coordinateConfidence": "OSM unweighted footprint-vertex centroid; approximate, not cadastral",
+    "sourceUrls": [
+      "https://www.marriott.com/en-us/hotels/bkksi-royal-orchid-sheraton-riverside-hotel-bangkok/overview/",
+      "https://www.openstreetmap.org/way/1537453215",
+      "https://www.openstreetmap.org/way/1537453215"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary",
+    "referenceFootprint": [
+      [
+        100.5132694,
+        13.7287181
+      ],
+      [
+        100.5134503,
+        13.7287525
+      ],
+      [
+        100.5134939,
+        13.7286364
+      ],
+      [
+        100.5139541,
+        13.7287632
+      ],
+      [
+        100.5139001,
+        13.7290022
+      ],
+      [
+        100.5137378,
+        13.7291099
+      ],
+      [
+        100.5137177,
+        13.7291989
+      ],
+      [
+        100.5137089,
+        13.7292474
+      ],
+      [
+        100.5138212,
+        13.7294192
+      ],
+      [
+        100.5137784,
+        13.7296713
+      ],
+      [
+        100.5136742,
+        13.7296517
+      ],
+      [
+        100.5135446,
+        13.7296285
+      ],
+      [
+        100.513265,
+        13.7293494
+      ],
+      [
+        100.5131383,
+        13.7293221
+      ],
+      [
+        100.5132694,
+        13.7287181
+      ]
+    ]
+  },
+  {
+    "id": "house-1",
+    "name": "House No.1",
+    "address": "1 Captain Bush Lane",
+    "status": "deferred; no production model",
+    "world": null,
+    "rotation": null,
+    "referenceCoordinate": {
+      "lon": 100.51430614444445,
+      "lat": 13.7291545
+    },
+    "coordinateConfidence": "OSM unweighted footprint-vertex centroid; approximate, not cadastral",
+    "sourceUrls": [
+      "https://commons.wikimedia.org/wiki/File:House_No.1.jpg",
+      "https://www.openstreetmap.org/way/700656800"
+    ],
+    "geometryDecision": "Research address, footprint, orientation and access before any placement",
+    "geographicNote": "Historic / commercial Bang Rak context; see selected boundary",
+    "referenceFootprint": [
+      [
+        100.5142159,
+        13.7290404
+      ],
+      [
+        100.5141999,
+        13.7291269
+      ],
+      [
+        100.5141801,
+        13.7292346
+      ],
+      [
+        100.5143478,
+        13.7292638
+      ],
+      [
+        100.514362,
+        13.7291868
+      ],
+      [
+        100.5143329,
+        13.7291817
+      ],
+      [
+        100.5143408,
+        13.7291389
+      ],
+      [
+        100.5143811,
+        13.7291459
+      ],
+      [
+        100.5143948,
+        13.7290715
+      ],
+      [
+        100.5142159,
+        13.7290404
+      ]
+    ]
+  }
+]

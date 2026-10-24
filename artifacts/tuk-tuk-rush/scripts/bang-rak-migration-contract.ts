@@ -1,3 +1,5 @@
+import { beforeBangRakSeam } from "./bang-rak-seam-migration-contract";
+import { bangRakSeamState, retiredBangRakIds } from "../src/game/bangkok/bangRakSeam";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
 import assert from "node:assert/strict";
@@ -18,6 +20,8 @@ const key = (o: Obstacle) =>
   [o.x, o.z, o.w, o.d, o.yaw ?? 0].map((n) => n.toFixed(4)).join(":");
 export function approvedBangRakParcel(o: Obstacle, d: District) {
   const s = bangRakState(d);
+  const seam = bangRakSeamState(d);
+  if(seam && [...seam.retired,...seam.parcels].some(p=>key(p)===key(o))) return true;
   return (
     !!s &&
     [...s.removed, ...s.parcels.map((p) => p.body)].some(
@@ -30,6 +34,7 @@ export function assertBangRakMigration(d: District) {
   const old = fixture(),
     s = bangRakState(d)!;
   assert(s);
+  d = beforeBangRakSeam(d);
   d = JSON.parse(JSON.stringify(d)) as District;
   assert.deepEqual(
     d.nodes.filter((n) => !n.id.startsWith("br:")),

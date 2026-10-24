@@ -1,0 +1,11 @@
+import assert from "node:assert/strict";
+import {navigationPath} from "../src/game/navigation";
+import type {District} from "../src/game/types";
+const nodes=[{id:'a',x:0,z:0},{id:'s',x:50,z:0},{id:'b',x:100,z:0},{id:'c',x:50,z:35}];
+const d:District={nodes,roads:[{a:'a',b:'s',width:6,shortcut:true},{a:'s',b:'b',width:6,shortcut:true},{a:'a',b:'c',width:12},{a:'c',b:'b',width:12}],landmarks:[],buildings:[],obstacles:[]};
+assert(navigationPath(d,nodes[0]!,nodes[2]!).some(p=>(p as any).id==='c'),'Through guidance prefers a slightly longer normal street over a single-file service shortcut');
+assert(navigationPath(d,nodes[0]!,nodes[1]!).some(p=>(p as any).id==='s'),'Local destination inside the shortcut remains accessible');
+assert.equal(d.roads.length,4,'Routing does not remove drivable roads');
+d.roads[0]!.oneWay=true;
+assert(navigationPath(d,nodes[1]!,nodes[0]!).some(p=>(p as any).id==='c'),'One-way directions remain authoritative');
+console.log('Service-route preference: normal-street through route, connected local access, directed edges preserved');

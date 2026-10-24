@@ -1,0 +1,11 @@
+{
+  "version": "bang-rak-seam-v1",
+  "baseline": "dbd15109924bb89898b94a838e3c39d69c25f55a",
+  "files": {
+    "artifacts/tuk-tuk-rush/src/game/navigation.ts": {
+      "beforeSha256": "2ae85c28be118ac524d2a2d7cdc3cd6ebd830ee77c2da045d2a09f8fb697fc9c",
+      "afterSha256": "ba2da63643071c3e8c59c134a1bec505206b8d6f67a4f5054d74ec125d9062c7",
+      "change": "Only route cost: narrow two-way service shortcuts receive a 2x length preference penalty. All roads stay connected. No collision, hazard, lane or access restrictions are weakened."
+    }
+  }
+}

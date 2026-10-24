@@ -45,7 +45,16 @@ way("song-wat", "songwat", 458, 637);
 way("talat-noi", "wanit-2-south", 465, 730);
 way("bang-rak", "charoen_s", 535, 835);
 way("memorial-east", "memorial", 330, 600);
-const pairs = process.env.BANG_RAK_ROUTES === "1" ? [
+if(process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1"){
+ way("si-phraya-east","si-phraya",536.38,795);
+ way("si-phraya-west","si-phraya",458.75,805.5);
+ way("captain-bush-bend","charoen-krung-30",460.5,812.5);
+}
+const pairs = process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1" ? [
+ ["river-city","si-phraya-east"],["si-phraya-east","river-city"],
+ ["captain-bush-bend","grand-postal"],["grand-postal","captain-bush-bend"],
+ ["captain-bush-bend","river-city"],["river-city","captain-bush-bend"],
+] : process.env.BANG_RAK_ROUTES === "1" ? [
  ["river-city","grand-postal"],["grand-postal","river-city"],["grand-postal","warehouse-30"],["warehouse-30","grand-postal"],["warehouse-30","oriental"],["oriental","warehouse-30"],["grand-postal","oriental"],["oriental","grand-postal"],
 ] : [
   ["yaowarat-east", "yaowarat-west"],
