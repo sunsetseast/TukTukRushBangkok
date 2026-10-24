@@ -128,7 +128,7 @@ export function planBangRak(d:District){
   appendProtectedParcels(d,[
     ...d.obstacles.filter(o=>["grand-postal","warehouse-30"].includes(o.landmarkId??"")&&!o.artRole).map(o=>({landmarkId:o.landmarkId!,use:"structure" as const,boundary:rectangleBoundary(o)})),
     {landmarkId:"grand-postal",use:"forecourt",boundary:rectangleBoundary(court)},
-    {landmarkId:"warehouse-30",use:"compound",boundary:rectangleBoundary({x:-65,z:902,w:180,d:34,height:0,color:"#aaa"})}
+    {landmarkId:"warehouse-30",use:"compound",boundary:rectangleBoundary({x:-65,z:902,w:180,d:34})}
   ]);
   return state;
 }
