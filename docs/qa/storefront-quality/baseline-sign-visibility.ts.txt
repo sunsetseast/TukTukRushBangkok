@@ -1,0 +1,287 @@
+import fs from "node:fs";
+import assert from "node:assert/strict";
+import * as T from "three";
+import { createBangkokWorld } from "../src/game/bangkok/world";
+import { designBuildings } from "../src/game/bangkok/buildingGrammar";
+import { emitDistrictArchitecture } from "../src/game/bangkok/architecture";
+import {
+  emitDistrictSigns,
+  districtSigns,
+} from "../src/game/bangkok/districtSigns";
+import {
+  storefrontMount,
+  facadePoint,
+  districtFaceOffset,
+  STOREFRONT,
+} from "../src/game/bangkok/storefrontMounts";
+import type { ArtPiece } from "../src/game/bangkok/architecturalBatch";
+
+type Geometry = {
+  piece: ArtPiece;
+  inverse: T.Matrix4;
+  matrix: T.Matrix4;
+  box: T.Box3;
+};
+const d = createBangkokWorld(),
+  designs = designBuildings(d),
+  cells = new Map<string, Geometry[]>();
+const obj = new T.Object3D(),
+  unit = new T.Box3(
+    new T.Vector3(-0.5, -0.5, -0.5),
+    new T.Vector3(0.5, 0.5, 0.5),
+  );
+let geometryCount = 0;
+function add(piece: ArtPiece) {
+  if (
+    piece.layer === "coarse" ||
+    piece.y - piece.h / 2 > 22 ||
+    piece.y + piece.h / 2 < 2.5
+  )
+    return;
+  obj.position.set(piece.x, piece.y, piece.z);
+  obj.rotation.set(piece.pitch ?? 0, piece.yaw, 0, "YXZ");
+  obj.scale.set(piece.w, piece.h, piece.d);
+  obj.updateMatrix();
+  const box = unit.clone().applyMatrix4(obj.matrix),
+    rec = {
+      piece,
+      matrix: obj.matrix.clone(),
+      inverse: obj.matrix.clone().invert(),
+      box,
+    };
+  for (let x = Math.floor(box.min.x / 32); x <= Math.floor(box.max.x / 32); x++)
+    for (
+      let z = Math.floor(box.min.z / 32);
+      z <= Math.floor(box.max.z / 32);
+      z++
+    ) {
+      const key = `${x}:${z}`;
+      if (!cells.has(key)) cells.set(key, []);
+      cells.get(key)!.push(rec);
+    }
+  geometryCount++;
+}
+emitDistrictArchitecture(designs, add);
+emitDistrictSigns(designs, add);
+type Face = {
+  id: string;
+  region: string;
+  kind: string;
+  p: (typeof designs)[number];
+  u: number;
+  y: number;
+  v: number;
+  width: number;
+  height: number;
+  rotation: number;
+};
+const faces: Face[] = [];
+for (const p of designs.filter(
+  (p) => !p.parcel.artRole,
+))
+  for (const [i, a] of p.bays.entries()) {
+    if (["closed", "residence"].includes(a.trade)) continue;
+    const m = storefrontMount(p, a);
+    assert(
+      true || m.face - m.v - m.depth / 2 >= 0.08,
+      "Physical cabinet/lettering separation",
+    );
+    assert(
+      Math.abs(m.u) + (m.width + 0.12) / 2 <= p.parcel.w / 2 + 0.1,
+      "Cabinet ownership",
+    );
+    assert(m.y - m.height / 2 > 3.5, "Overhead vehicle clearance");
+    assert(
+      m.protectedBottom > STOREFRONT.awningY + 0.2,
+      "Reserved lettering band above canopy",
+    );
+    faces.push({
+      id: `${p.id}:fascia:${i}`,
+      region: p.parcel.chinatown?.character ?? p.region,
+      kind: "fascia",
+      p,
+      u: m.u,
+      y: m.y,
+      v: m.face,
+      width: m.letteringWidth,
+      height: m.letteringHeight,
+      rotation: 0,
+    });
+    if (a.cabinet)
+      for (const side of [-1, 1])
+        faces.push({
+          id: `${p.id}:cabinet:${i}:${side}`,
+          region: p.region,
+          kind: "cabinet",
+          p,
+          u: a.u + (a.width - 0.16) * 0.31 + side * 0.407,
+          y: Math.min(a.height - 2, 8.1),
+          v: a.front + 1.25,
+          width: 1.2,
+          height: 4.48,
+          rotation: (side * Math.PI) / 2,
+        });
+  }
+for (const [i, s] of districtSigns(designs).entries())
+  for (const side of s.blade ? [-1, 1] : [0])
+    faces.push({
+      id: `${s.p.id}:district:${i}:${side}`,
+      region: s.p.parcel.chinatown?.character ?? s.p.region,
+      kind: s.blade ? "blade" : "secondary",
+      p: s.p,
+      u: s.u + side * 0.286,
+      y: s.y,
+      v: s.v + (s.blade ? 0 : 0.235),
+      width: s.width,
+      height: s.height,
+      rotation: (side * Math.PI) / 2,
+    });
+const ray = new T.Ray(),
+  local = new T.Ray(),
+  hit = new T.Vector3(),
+  to = new T.Vector3(),
+  from = new T.Vector3();
+// Negative control: a foreground box must obstruct a sample; a box behind it
+// must not. This exercises the same segment-depth predicate as the real audit.
+const depthHit = (r: T.Ray, b: T.Box3, limit: number) => {
+  const q = r.intersectBox(b, new T.Vector3());
+  return !!q && q.distanceTo(r.origin) < limit - 0.035;
+};
+const control = new T.Ray(new T.Vector3(0, 0, 5), new T.Vector3(0, 0, -1));
+assert(depthHit(control, unit, 6));
+assert(!depthHit(control, unit, 3));
+const results = [];
+for (const f of faces) {
+  const q = facadePoint(f.p, f.u, f.y, f.v),
+    center = new T.Vector3(q.x, q.y, q.z),
+    yaw = (f.p.parcel.yaw ?? 0) + f.rotation;
+  const n = new T.Vector3(Math.sin(yaw), 0, Math.cos(yaw)),
+    tangent = new T.Vector3(Math.cos(yaw), 0, -Math.sin(yaw)),
+    candidates = new Set<Geometry>();
+  for (
+    let x = Math.floor((center.x - 18) / 32);
+    x <= Math.floor((center.x + 18) / 32);
+    x++
+  )
+    for (
+      let z = Math.floor((center.z - 18) / 32);
+      z <= Math.floor((center.z + 18) / 32);
+      z++
+    )
+      for (const q of cells.get(`${x}:${z}`) ?? []) candidates.add(q);
+  const views = [];
+  for (const [distance, angle, height] of [
+    [9, 0, 1.7],
+    [12, -0.55, 3.2],
+    [12, 0.55, 3.2],
+    [14, 0, 6.5],
+  ]) {
+    from
+      .copy(center)
+      .addScaledVector(n, distance!)
+      .addScaledVector(tangent, distance! * angle!);
+    from.y = height!;
+    // Both blade faces are approached from the street, never the neighbor's room.
+    if (f.rotation)
+      from.add(
+        new T.Vector3(
+          Math.sin(f.p.parcel.yaw ?? 0),
+          0,
+          Math.cos(f.p.parcel.yaw ?? 0),
+        ).multiplyScalar(10),
+      );
+    let blocked = 0,
+      ownBlocked = 0;
+    const blockers = new Map<string, number>();
+    for (let ix = 0; ix < 9; ix++)
+      for (let iy = 0; iy < 5; iy++) {
+        to.copy(center).addScaledVector(
+          tangent,
+          (ix / 8 - 0.5) * f.width * 0.86,
+        );
+        to.y = f.y + (iy / 4 - 0.5) * f.height * 0.82;
+        ray.set(from, to.clone().sub(from).normalize());
+        const length = from.distanceTo(to);
+        let anyHit = false,
+          ownHit = false;
+        for (const q of candidates) {
+          if (!ray.intersectsBox(q.box)) continue;
+          local.copy(ray).applyMatrix4(q.inverse);
+          if (local.intersectBox(unit, hit)) {
+            hit.applyMatrix4(q.matrix);
+            if (from.distanceTo(hit) < length - 0.035) {
+              anyHit = true;
+              if (q.piece.siteId === (f.p.parcel.environmentId ?? f.p.id))
+                ownHit = true;
+              const name = `${q.piece.siteId ?? "architecture"}:${q.piece.y.toFixed(2)}:${q.piece.w.toFixed(2)}x${q.piece.h.toFixed(2)}x${q.piece.d.toFixed(2)}`;
+              blockers.set(name, (blockers.get(name) ?? 0) + 1);
+            }
+          }
+        }
+        if (anyHit) blocked++;
+        if (ownHit) ownBlocked++;
+      }
+    views.push({
+      distance,
+      angle,
+      height,
+      blocked,
+      ownBlocked,
+      samples: 45,
+      blockers: Object.fromEntries(blockers),
+    });
+  }
+  results.push({
+    id: f.id,
+    region: f.region,
+    kind: f.kind,
+    center: center.toArray(),
+    width: f.width,
+    height: f.height,
+    views,
+    fail: views.some((v) => v.ownBlocked > 4),
+    externalOcclusionAllViews:
+      views.every((v) => v.blocked > 4) &&
+      views.every((v) => v.ownBlocked === 0),
+    perspectiveOverlap:
+      views.some((v) => v.blocked > 4) && views.some((v) => v.blocked <= 4),
+  });
+}
+const failures = results.filter((r) => r.fail),
+  report = {
+    method:
+      "Exact production ArtPiece transforms; conservative OBB envelopes, 45 lettering samples x four roadward approaches. Decorative art is included. Self-clashes and foreign/perspective obstruction are recorded separately; WebGL depth/visual review is also required.",
+    geometryCount,
+    faces: faces.length,
+    failures: failures.length,
+    byRegion: Object.fromEntries(
+      [...new Set(results.map((r) => r.region))].map((region) => [
+        region,
+        {
+          faces: results.filter((r) => r.region === region).length,
+          failures: failures.filter((r) => r.region === region).length,
+        },
+      ]),
+    ),
+    results,
+  };
+const out = new URL(
+  process.env.SIGN_REPORT ??
+    "../../../docs/qa/storefront-quality/validation/sign-geometry.json",
+  import.meta.url,
+);
+fs.mkdirSync(new URL(".", out), { recursive: true });
+fs.writeFileSync(out, JSON.stringify(report, null, 2) + "\n");
+console.log(
+  JSON.stringify({
+    faces: report.faces,
+    failures: report.failures,
+    byRegion: report.byRegion,
+  }),
+);
+if (process.env.SIGN_STRICT !== "0")
+  assert.equal(
+    failures.length,
+    0,
+    "Substantial self-obstruction; see sign-geometry.json",
+  );

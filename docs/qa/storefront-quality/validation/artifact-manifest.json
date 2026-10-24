@@ -1,0 +1,314 @@
+{
+  "artifacts/tuk-tuk-rush/scripts/browser-storefront-quality.mjs": {
+    "bytes": 7935,
+    "sha256": "3a6fea2b0e0373098144eac634487bae4bf2d5f00faaa19c377e4ef3d0cca604"
+  },
+  "artifacts/tuk-tuk-rush/scripts/webgl-sign-depth.mjs": {
+    "bytes": 4353,
+    "sha256": "327fcc68d9f664f90beab53c318833c630c21944236eead48c086b9b63ba40b7"
+  },
+  "artifacts/tuk-tuk-rush/scripts/certify-storefront-evidence.mjs": {
+    "bytes": 5252,
+    "sha256": "a55bbefd880370fc89ccd3b4074f1de1cf9d0cd37c3b48c1c0978d2671520ad7"
+  },
+  "docs/qa/storefront-quality/README.md": {
+    "bytes": 20821,
+    "sha256": "2ff9cb03620d85d9bf960428728ed75a96749e76bfdf374549c571c53081d0db"
+  },
+  "docs/qa/storefront-quality/STREETFRONT-STANDARD.md": {
+    "bytes": 3670,
+    "sha256": "78098010a7978408fe716b9bc09e502241b4cc9f3601531fd3d0920b8a9a8728"
+  },
+  "docs/qa/storefront-quality/DEVICE-ROUTE.md": {
+    "bytes": 2689,
+    "sha256": "2875d4740f254b9e9f029bdd3cdbc5eec9585ae29875d576e7a6e87de0997809"
+  },
+  "docs/qa/storefront-quality/PR42-BLUEPRINT.md": {
+    "bytes": 2969,
+    "sha256": "4379961a1ce605c306b6b7bd8056aae62a2d3aaffa92a133ebc7043408f6e0c6"
+  },
+  "docs/qa/storefront-quality/scenes.json": {
+    "bytes": 2749,
+    "sha256": "025fce6be9102e01192df9f3d3ec76171235431a3d5b9de06a3ecec47feda77a"
+  },
+  "docs/qa/storefront-quality/baseline-instrumentation.patch": {
+    "bytes": 9261,
+    "sha256": "e9a116e7d8e6c8994c4c5c4c5cd7769c49bfd37c5136513283011f25401a173f"
+  },
+  "docs/qa/storefront-quality/baseline-sign-visibility.ts.txt": {
+    "bytes": 8749,
+    "sha256": "d37e8c3b6399cee031a8e9dc2ce1248ab98431fd2516dd9c69539353d9085ba4"
+  },
+  "docs/qa/storefront-quality/before-certified/capture.json": {
+    "bytes": 327704,
+    "sha256": "127e10443fdcba59bc3e44def1c2478f071a313a10ccf54ebcd5d154aae559ba"
+  },
+  "docs/qa/storefront-quality/before-certified/khaosan-sign.jpg": {
+    "bytes": 89776,
+    "sha256": "b1be41d13a0a30b74a176c7262852ce144bd59a596df56686ad1125fb519ba3e"
+  },
+  "docs/qa/storefront-quality/before-certified/night-1280x800.jpg": {
+    "bytes": 193243,
+    "sha256": "a355f6f4b43318ce49a8d233e9fcdbaf0cb5ff0c8bf131d7b4c62428392c8a21"
+  },
+  "docs/qa/storefront-quality/before-certified/night-375x812.jpg": {
+    "bytes": 16622,
+    "sha256": "cf4c9723a56b540db77e807f6b9afdf9ad5a864540db6894369a051e7f35cc6a"
+  },
+  "docs/qa/storefront-quality/before-certified/night-430x932.jpg": {
+    "bytes": 19136,
+    "sha256": "14c1782fd997ab1c6fcd7bd555ea8954123b740630f1b5605b9ccbc923e330d6"
+  },
+  "docs/qa/storefront-quality/before-certified/ratchawong-sign.jpg": {
+    "bytes": 87261,
+    "sha256": "fc969122ae3b4b0ad8901587d1b326cf7fe3ff2ea945931af76d7a06d2365174"
+  },
+  "docs/qa/storefront-quality/before-certified/ratchawong.jpg": {
+    "bytes": 86377,
+    "sha256": "49b46241c19108d3bb7dad9722f07635e9bb33369674a3b47cede9bb3e9ccfc6"
+  },
+  "docs/qa/storefront-quality/before-certified/siam-sign.jpg": {
+    "bytes": 69201,
+    "sha256": "082439dbb278660a811261649347e6c6824e4fe13ae20c885434c4acc598ce62"
+  },
+  "docs/qa/storefront-quality/before-certified/song-wat-merchant.jpg": {
+    "bytes": 78737,
+    "sha256": "8c32fb070147f204d50476b6b82dc2624bbba6b896cf73ab2de387527160bbe5"
+  },
+  "docs/qa/storefront-quality/before-certified/song-wat-street.jpg": {
+    "bytes": 68727,
+    "sha256": "15a239d00164c14317b61111062938d654fb9fe4f0e8a61bd748ee2e9912ca5a"
+  },
+  "docs/qa/storefront-quality/before-certified/song-wat-waterfront.jpg": {
+    "bytes": 28928,
+    "sha256": "c8b24f8e2113bfa67f416be427e5d7fc72bca9fa374fca3dbdc4e7d4c15acf69"
+  },
+  "docs/qa/storefront-quality/before-certified/storefront-detail.jpg": {
+    "bytes": 63787,
+    "sha256": "3445ed54417a3d958da870302e2c749581ef35719db856d8b1509b673f8a1754"
+  },
+  "docs/qa/storefront-quality/before-certified/talat-noi-sign.jpg": {
+    "bytes": 75271,
+    "sha256": "4f87969c4a798a3e6cbfaee11f77eddd34dfaa516c5d391b26024a24840b30bc"
+  },
+  "docs/qa/storefront-quality/before-certified/talat-noi.jpg": {
+    "bytes": 82572,
+    "sha256": "a6b6c6ab5cc5c7b72353910f0c4b2c521a4faf838dfd8fa9af821282ef1967ab"
+  },
+  "docs/qa/storefront-quality/before-certified/yaowarat-dusk.jpg": {
+    "bytes": 78481,
+    "sha256": "68a1f43538f0fed1f331f6cbcfb872836d40878b0f70168b12082120b0484872"
+  },
+  "docs/qa/storefront-quality/before-certified/yaowarat-fascia.jpg": {
+    "bytes": 71648,
+    "sha256": "e721107e0edd334e6a2a68f4cdbafebad6f64e5e85c70b315ab856bdd2cccd5b"
+  },
+  "docs/qa/storefront-quality/before-certified/yaowarat-night.jpg": {
+    "bytes": 75647,
+    "sha256": "2adb3eb0740aa8a9c7c66210583645b1567840bfc0541a4cdaf287088d6e400f"
+  },
+  "docs/qa/storefront-quality/before-certified/yaowarat-sunset.jpg": {
+    "bytes": 80713,
+    "sha256": "a148e121b2ad986a6f44be589af4fab5fcd416b27022e43eb0f7149c6348c883"
+  },
+  "docs/qa/storefront-quality/before-certified/yaowarat-vertical.jpg": {
+    "bytes": 77608,
+    "sha256": "423b5b596ca82abf325be2b8fdc7ec812bdd3bacbbf939ac165cf2342320c8cd"
+  },
+  "docs/qa/storefront-quality/after-certified/capture.json": {
+    "bytes": 325221,
+    "sha256": "3dfe59477c8718e56d5afbc0da432d93b85c5d1bb323d6899cc738685c580212"
+  },
+  "docs/qa/storefront-quality/after-certified/khaosan-sign.jpg": {
+    "bytes": 91356,
+    "sha256": "ab784ddb1cd990ef2adc8265f51c9efa3514e9a4ca2233b0ffdcfb7579126db1"
+  },
+  "docs/qa/storefront-quality/after-certified/night-1280x800.jpg": {
+    "bytes": 194359,
+    "sha256": "ad88fff135e028852e65e9b65644808bb7773d8c38ad73a3c5d4bf5cb9a18ac4"
+  },
+  "docs/qa/storefront-quality/after-certified/night-375x812.jpg": {
+    "bytes": 16643,
+    "sha256": "bb0f015852369297c26bf4afd7538596dfc730b0c923aee5178e4567b3a79557"
+  },
+  "docs/qa/storefront-quality/after-certified/night-430x932.jpg": {
+    "bytes": 19203,
+    "sha256": "e23a01eac8fb070104d32f3f2001905587ee2587397bb3dc663f46f3bfe05a62"
+  },
+  "docs/qa/storefront-quality/after-certified/ratchawong-sign.jpg": {
+    "bytes": 88378,
+    "sha256": "45eb209c47615e4ab38019dfd7014336521e25bb6e70eb5c6bb82424bb6632cd"
+  },
+  "docs/qa/storefront-quality/after-certified/ratchawong.jpg": {
+    "bytes": 88004,
+    "sha256": "e3c17c0624b8c9fd269b194c383aca1244aa6f64897da54306c47e3a7a9a801b"
+  },
+  "docs/qa/storefront-quality/after-certified/siam-sign.jpg": {
+    "bytes": 69247,
+    "sha256": "ae73f1174832e28ff34f08e0d385b66c53fefd095949977a8e59bac80146d077"
+  },
+  "docs/qa/storefront-quality/after-certified/song-wat-merchant.jpg": {
+    "bytes": 81454,
+    "sha256": "f4e7f16aa04f463e1051b2240589708c8fe41d9eb198fd5fbde4d779af6abe28"
+  },
+  "docs/qa/storefront-quality/after-certified/song-wat-street.jpg": {
+    "bytes": 68911,
+    "sha256": "defeb34fc5883859c3977b2ad961c3e3ea63fe768080392d10ddccfb10c71d65"
+  },
+  "docs/qa/storefront-quality/after-certified/song-wat-waterfront.jpg": {
+    "bytes": 29667,
+    "sha256": "f7be1b34c06369601150b2291e35bd0c5d944ccfd05c71aabbf045447893c25b"
+  },
+  "docs/qa/storefront-quality/after-certified/storefront-detail.jpg": {
+    "bytes": 64626,
+    "sha256": "f38083762e94fac758aae5445eb46f31f47c8890cd69b358a0de0af88b77cd91"
+  },
+  "docs/qa/storefront-quality/after-certified/talat-noi-sign.jpg": {
+    "bytes": 74844,
+    "sha256": "cdeb7edaacd31fbc7722bdd04e686c8c1401616fcd3644b01ee9732461e327b8"
+  },
+  "docs/qa/storefront-quality/after-certified/talat-noi.jpg": {
+    "bytes": 82168,
+    "sha256": "f9d058c1ce78720aa5e67aff179b436f3f9341f8f8ca8de5a38099918439fcf7"
+  },
+  "docs/qa/storefront-quality/after-certified/yaowarat-dusk.jpg": {
+    "bytes": 78875,
+    "sha256": "c18fc6a334d9c405d17009d963140f3fce21b15f1608900498433dbd8bfdb3e4"
+  },
+  "docs/qa/storefront-quality/after-certified/yaowarat-fascia.jpg": {
+    "bytes": 73078,
+    "sha256": "6e09693c635d662b92b7b24db5f1252141ac307699de7883a46ae091f947e291"
+  },
+  "docs/qa/storefront-quality/after-certified/yaowarat-night.jpg": {
+    "bytes": 76218,
+    "sha256": "ae3adb5c78078312f9ed3fffeacb13596457fafca2311b526774b4b7cd0c59b7"
+  },
+  "docs/qa/storefront-quality/after-certified/yaowarat-sunset.jpg": {
+    "bytes": 81118,
+    "sha256": "fa488b9fc4f3db3bb3e12ba57001c0eb554be97697a599d461b682d13d08217e"
+  },
+  "docs/qa/storefront-quality/after-certified/yaowarat-vertical.jpg": {
+    "bytes": 78798,
+    "sha256": "5569bfc32d5c48bf202ea2377f9594b222a90c0a9231c484a9c3a83934250602"
+  },
+  "docs/qa/storefront-quality/ui/hud-1280x800.jpg": {
+    "bytes": 161002,
+    "sha256": "1aab9cfedeaffd0f95dda168ae4bfff40f36fcb18c5e4ea64b37a6ea7a94df22"
+  },
+  "docs/qa/storefront-quality/ui/hud-375x812.jpg": {
+    "bytes": 34992,
+    "sha256": "9d929a524e84777090d23e329e90f59968de1e6ae4a57cdd2a5e3b8b6b641ca0"
+  },
+  "docs/qa/storefront-quality/ui/hud-430x932.jpg": {
+    "bytes": 37349,
+    "sha256": "af0dc2b05dd1837585ef40aeeac9fd8e7db78858826e2de71087a7b59d599cf3"
+  },
+  "docs/qa/storefront-quality/ui/hud-844x390.jpg": {
+    "bytes": 66222,
+    "sha256": "43b858b5640dbebf58d29bd88a4c7b454cf3eb981487b1b6066ac5dfdd4f1543"
+  },
+  "docs/qa/storefront-quality/ui/hud-long-name.jpg": {
+    "bytes": 87885,
+    "sha256": "574b7294b0a19fa8beb750605bf6b250746102dc919ed40df12f32120b59d5aa"
+  },
+  "docs/qa/storefront-quality/ui/world-map.jpg": {
+    "bytes": 99647,
+    "sha256": "6aba035de8bc0d0fa5dac181d3ef2e70266b8e6545b987286c9a0f1766defdf2"
+  },
+  "docs/qa/storefront-quality/validation/browser-state.json": {
+    "bytes": 8872,
+    "sha256": "3476de24f550e16936dd94ddebbda5928e34a2bbcc413983a8b97f39c721c592"
+  },
+  "docs/qa/storefront-quality/validation/production-ui.json": {
+    "bytes": 5230,
+    "sha256": "50ff897c083212282de346c6bfdd23de7623e7c7f52a8575257e871dcbd357ea"
+  },
+  "docs/qa/storefront-quality/validation/build-before.log": {
+    "bytes": 711,
+    "sha256": "c29ef358c11f0968b2850b5fd30e09b018eae703e3ae1e06b5bca16067dd5c5b"
+  },
+  "docs/qa/storefront-quality/validation/build-final.log": {
+    "bytes": 711,
+    "sha256": "4711ad7274a217dbc3dca44b031d76708f747c2f6bfc869b07afe6f37a02cfb3"
+  },
+  "docs/qa/storefront-quality/validation/typecheck-final.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/qa/storefront-quality/validation/waterfront-rechecked.log": {
+    "bytes": 1182,
+    "sha256": "246839cec35ef152508e9f2963b044d65386a49267789e959d203d397558a438"
+  },
+  "docs/qa/storefront-quality/validation/bundles.json": {
+    "bytes": 501,
+    "sha256": "7f6e8adde233c775690a0085e6538e80e5ee58844d3837dd5cd71c9ddbdc7f21"
+  },
+  "docs/qa/storefront-quality/validation/inventory-before.json": {
+    "bytes": 491,
+    "sha256": "ece4864926c94fc79a3de1c757336d7c7ec0da379ae827ad5d9e53739498934d"
+  },
+  "docs/qa/storefront-quality/validation/inventory-after.json": {
+    "bytes": 491,
+    "sha256": "82653ef1a40780d007b3b4bf85d2e2abd7562de3d3aee9d397dea90396bcbfae"
+  },
+  "docs/qa/storefront-quality/validation/sign-geometry-before-summary.json": {
+    "bytes": 3359,
+    "sha256": "585a5766ae94550e1a222a2c3f46aadc6a9e6574865292558fdb9d166241a92b"
+  },
+  "docs/qa/storefront-quality/validation/sign-geometry-summary.json": {
+    "bytes": 3478,
+    "sha256": "6650b60b736c4a4ed79d5e0adba3f260890215d7d5348b078879ed129ec47497"
+  },
+  "docs/qa/storefront-quality/validation/sign-geometry-before.json.gz": {
+    "bytes": 378186,
+    "sha256": "adf762d43f5a3b2079899a35d83945d307c9207a1912089c1387d19597dd80be"
+  },
+  "docs/qa/storefront-quality/validation/sign-geometry.json.gz": {
+    "bytes": 266705,
+    "sha256": "2ec1ff040490fcb491ae0dd1ccd3b9288115ef843ffe824815845ec2703e52af"
+  },
+  "docs/qa/storefront-quality/validation/conflict-inventory.json": {
+    "bytes": 53809,
+    "sha256": "5ae43fc719876f9870e1a098dca13d2ee79780fce9929adf99650c9763277e6a"
+  },
+  "docs/qa/storefront-quality/validation/comparisons.json": {
+    "bytes": 89006,
+    "sha256": "cfdd7b12c69c132579ff0f93633278b2514501abf04286311426753a89abe7e3"
+  },
+  "docs/qa/storefront-quality/validation/suite-summary.json": {
+    "bytes": 10424,
+    "sha256": "deb52515a1aba6c892f4b8609bb472c0aced1def87d014df16d5a9959a348755"
+  },
+  "docs/qa/storefront-quality/validation/suite-logs.tar.gz": {
+    "bytes": 115455,
+    "sha256": "1e32e8f0df24729f6084c1c3bfb5e23df3e6f8cd910d215ffeeee17e2baffb1a"
+  },
+  "docs/qa/storefront-quality/validation/suite-log-sha256.json": {
+    "bytes": 4534,
+    "sha256": "3db870c741d066c94058c4048e37ee32b6a73cb8fd372626e174d2ed4c326832"
+  },
+  "docs/qa/storefront-quality/validation/source-ci.json": {
+    "bytes": 2694,
+    "sha256": "6d44900576afcf0b738a676bf399f1f8977cf91cfbd85a83abef728d778a36ea"
+  },
+  "docs/qa/storefront-quality/validation/legal-982.json.gz": {
+    "bytes": 77587,
+    "sha256": "6829451139fd3a4f25ceba7f9c596dc9ffe891fbb315c8b171da075784403a1a"
+  },
+  "docs/qa/storefront-quality/validation/legal-41.json.gz": {
+    "bytes": 77842,
+    "sha256": "d6c4137267f2467a7ed887e23ca5fbc6023673ab78f3b308fe950d0ca06b8376"
+  },
+  "docs/qa/storefront-quality/validation/legal-67.json.gz": {
+    "bytes": 78684,
+    "sha256": "1a3be45272b90d50f35be825271a9226ebb724f1a36f041c0c9a4bf2f419be77"
+  },
+  "docs/qa/storefront-quality/validation/historical-nonyielding.json.gz": {
+    "bytes": 72586,
+    "sha256": "b561afedcb1ebd87e961962b93d9a72f2156e6990249f4f2f4b9f775d69875d3"
+  },
+  "docs/qa/storefront-quality/validation/conflict-inventory.json.gz": {
+    "bytes": 30287,
+    "sha256": "23a71680931c536636eafa78e2468acb68023b86c1313ea0bcd513b065c48245"
+  }
+}

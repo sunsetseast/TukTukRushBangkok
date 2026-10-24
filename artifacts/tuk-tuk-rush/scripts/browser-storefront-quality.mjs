@@ -107,8 +107,29 @@ try {
       if (!window.__captureUpdate) {
         window.__captureUpdate = e.update.bind(e);
         e.update = () => {};
+        // Initialize one real production session. Restore its deterministic
+        // fixture state below; repeated fare generation is unrelated to art QA.
+        e.missionSeed = 982;
+        e.sessions = 0;
+        e.start("free");
+        window.__captureReset = {
+          snapshot: structuredClone(e.model.snapshot),
+          player: structuredClone(e.model.player),
+        };
+      } else {
+        Object.assign(
+          e.model.snapshot,
+          structuredClone(window.__captureReset.snapshot),
+        );
+        Object.assign(
+          e.model.player,
+          structuredClone(window.__captureReset.player),
+        );
+        e.controller.reset();
+        e.boost.reset();
+        e.clearInput();
+        e.inspection.close();
       }
-      e.start("free");
       e.setQuality("medium");
       e.frameTime = -1e8;
       delete window.__artCamera;
@@ -216,6 +237,16 @@ try {
     out + label + "/capture.json",
     JSON.stringify(report, null, 2) + "\n",
   );
+  await page
+    .evaluate(() => {
+      const c = window.__signDepthCache;
+      if (c) {
+        c.target?.dispose();
+        c.material.dispose();
+        delete window.__signDepthCache;
+      }
+    })
+    .catch(() => {});
   await browser.close();
   server.kill();
 }
