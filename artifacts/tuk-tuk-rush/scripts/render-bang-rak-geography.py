@@ -13,8 +13,9 @@ def world(ax,d,title,proposal=False):
  for poly in d.get('riverStructures',[]):ax.add_patch(Polygon([(p['x'],p['z']) for p in poly],facecolor='#a08f70',zorder=1))
  for site in d.get('authoredSites',[]):
   if site['id'] in ['river-city','oriental']:ax.add_patch(Polygon([(p['x'],p['z']) for p in site['boundary']],fill=False,edgecolor='#9f7266',lw=.8,ls='--',zorder=4))
- for b in d['buildings']:
-  if -430<b['x']<225 and 670<b['z']<1080:ax.add_patch(Polygon(ring(b),facecolor='#c18a57' if b.get('environmentId','').startswith('brg:') else '#c1c2b5',edgecolor='#898e85',lw=.3,zorder=2))
+ bodies={tuple(b.get(k,0) for k in ['x','z','w','d','yaw']):b for b in d['buildings']+[o for o in d['obstacles'] if o.get('landmarkId') and not o.get('artRole')]}
+ for b in bodies.values():
+  if -430<b['x']<225 and 670<b['z']<1080:ax.add_patch(Polygon(ring(b),facecolor='#c18a57' if b.get('environmentId','').startswith('brg:') else '#cfb979' if b.get('landmarkId') else '#c1c2b5',edgecolor='#898e85',lw=.3,zorder=2))
  for r in d['roads']:
   a,b=ns[r['a']],ns[r['b']]
   if not(-440<a['x']<230 and 650<a['z']<1090):continue
@@ -29,6 +30,12 @@ def world(ax,d,title,proposal=False):
   ax.text(-50,810,'Si Phraya →',rotation=8,ha='center',fontsize=8,color='#005e61',zorder=7);ax.text(-174,852,'Captain Bush ↑',rotation=90,fontsize=7,color='#005e61',zorder=7)
  ax.set(xlim=(-680,210),ylim=(1080,670),xlabel='Game X (m)',ylabel='Game Z (north is up)');ax.set_aspect('equal');ax.grid(alpha=.12);ax.set_title(title,fontsize=11,loc='left')
 fig,axes=plt.subplots(2,2,figsize=(15,12),facecolor='#faf8f0');ref=json.loads((root/'data/bangkok/bang-rak-reference.v1.json').read_text());ax=axes[0,0]
+for f in json.loads((root/'data/bangkok/osm-reference.v1.geojson').read_text())['features']:
+ if f['properties'].get('waterway')=='river' and 'Chao Phraya' in f['properties'].get('name:en',''):
+  ps=f['geometry']['coordinates'];ax.plot([p[0] for p in ps],[p[1] for p in ps],color='#7caebd',lw=3,alpha=.8)
+for f in json.loads((out/'heritage-reference-footprints.json').read_text())['features']:
+ ax.add_patch(Polygon(f['footprint'],facecolor='#dbc48d',edgecolor='#ad8e4c',lw=.6))
+ if f['id']=='grand-postal':ax.text(f['coordinate']['lon'],f['coordinate']['lat'],'Grand Postal / TCDC',fontsize=6,clip_on=True)
 seen=set()
 for f in ref['features']:
  if f['tags'].get('highway') not in ['primary','secondary','tertiary','residential']:continue

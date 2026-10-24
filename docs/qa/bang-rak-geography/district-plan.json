@@ -70,6 +70,13 @@
       "River City is in Talat Noi, Samphanthawong beside Bang Rak. No BTS/MRT station lies inside this finished seam; existing distant transit is inherited, not newly certified."
     ]
   },
+  "fittedBoundary": {
+    "minX": -220,
+    "maxX": 160,
+    "minZ": 760,
+    "maxZ": 895
+  },
+  "boundaryNote": "fittedBoundary encloses actual migrated/new physical bodies and 6m road aprons; plan.boundary is the initial selection seed.",
   "nodes": [
     {
       "x": -188.33333333333334,
@@ -812,7 +819,7 @@
       "w": 21,
       "d": 16,
       "height": 10.5,
-      "yaw": -1.5707963267948966,
+      "yaw": 0,
       "color": "#d5c3a4",
       "protected": true,
       "regionId": "bang-rak",
