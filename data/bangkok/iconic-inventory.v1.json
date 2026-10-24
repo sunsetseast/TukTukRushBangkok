@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "version": "bangkok-icons-2026.1",
-  "date": "2026-10-20",
+  "date": "2026-10-24",
   "approval": "Coverage audit, not blanket geographic or art certification",
   "attribution": "OSM-derived facts © OpenStreetMap contributors, ODbL 1.0. No OSM geometry imported into the playable graph.",
   "places": [
@@ -4714,36 +4714,49 @@
     },
     {
       "id": "grand-postal",
-      "name": "Grand Postal Building",
+      "name": "Grand Postal Building / TCDC",
       "category": "cultural-building",
       "geographicSource": [
         "https://www.docomomothailand.org/pages/no6.html",
-        "https://library.tcdc.or.th/visit/bkk_location"
+        "https://library.tcdc.or.th/visit/bkk_contact"
       ],
       "coordinate": null,
-      "coordinateAccuracy": "not researched",
-      "gameCoordinate": null,
-      "modelOwner": null,
-      "modelOrigin": null,
+      "coordinateAccuracy": "not georeferenced; operator address and relative street relationships checked",
+      "gameCoordinate": {
+        "x": 58,
+        "z": 990
+      },
+      "modelOwner": "grand-postal",
+      "modelOrigin": {
+        "x": 58,
+        "z": 990
+      },
       "district": "Bang Rak",
       "bank": "east",
-      "requiredNeighbors": [],
-      "entrance": null,
-      "entranceDirection": "Requires research",
+      "requiredNeighbors": [
+        "river-city",
+        "oriental"
+      ],
+      "entrance": {
+        "x": 75.5,
+        "z": 990
+      },
+      "entranceDirection": "East to Charoen Krung",
       "architectureReferences": [
         "https://www.docomomothailand.org/pages/no6.html",
-        "https://library.tcdc.or.th/visit/bkk_location"
+        "https://library.tcdc.or.th/visit/bkk_contact"
       ],
-      "implementation": "not authored",
-      "status": "missing; outside selected PR38 boundary",
-      "recognizabilityGrade": "F",
-      "gradeBasis": "No site-specific rendered asset",
-      "geographicConfidence": "research needed",
+      "implementation": "Original batched civic T-plan, deep window bays, central clock, Garuda interpretations, stairs and protected forecourt",
+      "status": "Implemented PR42 bounded interpretation; wider corridor remains partial",
+      "recognizabilityGrade": "B-",
+      "gradeBasis": "Actual matched WebGL views and original source-backed art; not a surveyed replica",
+      "geographicConfidence": "Operator/photo checked relative relationships; compressed footprint",
       "missingFeatures": [
-        "Exact site boundary and entrance survey",
-        "Full architectural likeness review"
+        "Exact cadastral survey",
+        "Direct Si Phraya handoff",
+        "Finer architectural/industrial surface detail"
       ],
-      "recommendedCorrection": "Reviewed for PR38; preserve southern district boundary, author in future Bang Rak work",
+      "recommendedCorrection": "PR43: survey and resolve the northern Si Phraya / River City seam; retain protected compounds",
       "priority": "P1"
     },
     {
@@ -5851,6 +5864,53 @@
       ],
       "recommendedCorrection": "Retain existing station sequence. Recheck operator service status before any future implementation.",
       "priority": "P2"
+    },
+    {
+      "id": "warehouse-30",
+      "name": "Warehouse 30",
+      "category": "cultural-building",
+      "coordinate": null,
+      "coordinateAccuracy": "not georeferenced; operator address and relative street relationships checked",
+      "district": "Bang Rak",
+      "bank": "east",
+      "priority": "P1",
+      "geographicSource": [
+        "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
+        "https://www.warehouse30.com/explore-neighborhood/captain-bush-lane/"
+      ],
+      "gameCoordinate": {
+        "x": -65,
+        "z": 904
+      },
+      "modelOwner": "warehouse-30",
+      "modelOrigin": {
+        "x": -65,
+        "z": 904
+      },
+      "entrance": {
+        "x": -65,
+        "z": 917
+      },
+      "entranceDirection": "North to Soi 30; south to Soi 32",
+      "implementation": "Eight original pitched industrial sheds, shared gallery/cafe thresholds, mounted bilingual signs and two public approach lanes",
+      "status": "Implemented PR42 bounded interpretation; wider corridor remains partial",
+      "recognizabilityGrade": "B",
+      "gradeBasis": "Actual matched WebGL views and original source-backed art; not a surveyed replica",
+      "geographicConfidence": "Operator/photo checked relative relationships; compressed footprint",
+      "requiredNeighbors": [
+        "river-city",
+        "oriental"
+      ],
+      "missingFeatures": [
+        "Exact cadastral survey",
+        "Direct Si Phraya handoff",
+        "Finer architectural/industrial surface detail"
+      ],
+      "recommendedCorrection": "PR43: survey and resolve the northern Si Phraya / River City seam; retain protected compounds",
+      "architectureReferences": [
+        "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
+        "https://www.warehouse30.com/explore-neighborhood/captain-bush-lane/"
+      ]
     }
   ]
 }

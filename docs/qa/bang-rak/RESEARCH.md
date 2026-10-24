@@ -34,9 +34,10 @@ claim a geographically complete Si Phraya reconstruction.** River City remains
 connected through the existing northern graph. A direct Si Phraya junction would
 need a researched, explicit migration of those Chinatown interface lots.
 
-The western collar reaches X −210; the eastern collar includes the immediately
-adjacent east-side Charoen Krung frontages. The southern polygon excludes the
-hotel's protected grounds. The post-office front is east-facing; its rear stem
+The fitted `approvedBoundary` encloses complete retired/new footprints and road
+aprons; `plan.boundary` retains the initial fitting seed. The work collar includes
+separately protected hotel property, which retains its original ownership and
+geometry. The eastern collar includes immediately adjacent Charoen Krung frontages. The post-office front is east-facing; its rear stem
 is compressed east of the Mandarin Oriental reservation. Removed mutable lots
 are explicitly listed with their full prior geometry. No protected building,
 Chinatown frontage/rear parcel, road, river, bridge or transit structure is removed.

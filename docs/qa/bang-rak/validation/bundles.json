@@ -1,0 +1,13 @@
+{
+  "before": {
+    "jsBytes": 2432986,
+    "jsGzipBytes": 792512
+  },
+  "after": {
+    "jsBytes": 2455477,
+    "jsGzipBytes": 800965,
+    "cssBytes": 136632,
+    "cssGzipBytes": 24709
+  },
+  "method": "All emitted JS assets summed; gzip.compress level9 on both snapshots. CSS after included; baseline CLI log separately."
+}

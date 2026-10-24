@@ -1,0 +1,568 @@
+{
+  "passAll": true,
+  "runtimeSourceSha256": "8fb845e2d29a11f3800a5b52f46545e4e615032b4421024c95e0f2fe3ac20c28",
+  "baselineCommit": "14919cdc70e4cd832cb3cfbc124603c2385ad932",
+  "localEvidenceCommit": "76cc354ff103746e281271909fb13f0bc8454189",
+  "method": "Original game-rendered JPEGs; no crop/compositing. Before uses 30 fixed controller ticks. After restores the complete baseline 38-car/player fixture after the same advancement to hold rendered traffic and pose constant. Independent production-controller route matrices certify physical gameplay. Medium/DPR1; inspection cameras explicit; four production chase fixtures. Two portrait images retain the rotate guard and do not certify portrait driving.",
+  "physicalIPhone": false,
+  "comparisons": [
+    {
+      "id": "north-corridor",
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "b0f3908e65e0219a3e939daff84e6fdde16ebfc3ee8fa88622558be38642e418",
+        "after": "66febd572035b4f7bedf023e41c60e5e48c54076726df12d77664d1c523222ad"
+      },
+      "before": {
+        "calls": 464,
+        "triangles": 551922,
+        "geometries": 871,
+        "textures": 15,
+        "frameMs": 31.799999999813735
+      },
+      "after": {
+        "calls": 472,
+        "triangles": 520044,
+        "geometries": 875,
+        "textures": 15,
+        "frameMs": 29.200000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 2,
+      "obscuredAfter": 2
+    },
+    {
+      "id": "river-city-connection",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "a665fb6dcf9e4fe793f1a8c6a6e65dde6c28afa7776b2cc4569aad419006b391",
+        "after": "b3b5d48c9019390c44698d725da48ca53ad922d0327bd2475bd788194cbe1acc"
+      },
+      "before": {
+        "calls": 348,
+        "triangles": 339520,
+        "geometries": 1224,
+        "textures": 19,
+        "frameMs": 44.699999999953434
+      },
+      "after": {
+        "calls": 347,
+        "triangles": 339134,
+        "geometries": 1323,
+        "textures": 18,
+        "frameMs": 20.5
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 1,
+      "obscuredAfter": 1
+    },
+    {
+      "id": "historic-frontage",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "e7ecfce6737eddaa44e412418bcb812bcb3591864e452817a606aa3c5324a089",
+        "after": "eae2ff73cdc02cc245765a5b5c8e2cc5f39379aaf14149efd94268943383c7cc"
+      },
+      "before": {
+        "calls": 366,
+        "triangles": 512150,
+        "geometries": 1518,
+        "textures": 19,
+        "frameMs": 27.300000000046566
+      },
+      "after": {
+        "calls": 368,
+        "triangles": 472650,
+        "geometries": 1468,
+        "textures": 18,
+        "frameMs": 24.300000000745058
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 1,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "postal-approach",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "58f4c8bb1dd65ad648b80f02e92a2bc4188ea817a4661ca9a7f2a45cbcf2c899",
+        "after": "d317d8efd0f13e34164dcc3634e39659ab08d7190c2d5f1cc525630020ec3c40"
+      },
+      "before": {
+        "calls": 440,
+        "triangles": 537554,
+        "geometries": 1624,
+        "textures": 19,
+        "frameMs": 39.39999999990687
+      },
+      "after": {
+        "calls": 452,
+        "triangles": 509992,
+        "geometries": 1577,
+        "textures": 18,
+        "frameMs": 19.700000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "postal-forecourt",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "df6e17e8ab0552128bb55bb0da1fe8743a1a1058003b977fb545cc99b3bb97de",
+        "after": "318bad8efa8e156007e95bb52ee0d06d8da67cff8cc6f375a191520b1dc9ef03"
+      },
+      "before": {
+        "calls": 384,
+        "triangles": 462382,
+        "geometries": 1636,
+        "textures": 19,
+        "frameMs": 25.5
+      },
+      "after": {
+        "calls": 399,
+        "triangles": 413678,
+        "geometries": 1635,
+        "textures": 19,
+        "frameMs": 20.200000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "postal-dusk",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "25379a77a1785a317612e1a30a6d1ce88db716e914d32126d82ec91399631f41",
+        "after": "5346e7d0ead0c0ce418bbfc8507181ca25e177c0db285603428428e94f59649e"
+      },
+      "before": {
+        "calls": 403,
+        "triangles": 515490,
+        "geometries": 1710,
+        "textures": 19,
+        "frameMs": 21.300000000046566
+      },
+      "after": {
+        "calls": 421,
+        "triangles": 483760,
+        "geometries": 1721,
+        "textures": 19,
+        "frameMs": 26.700000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "postal-night",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "b123009abdfb18508839d17afd13a6d7ed5d005e1b0eb169f6ba627404c2c2a5",
+        "after": "4270fb8fcb3a4aa406fb2b7ae2897ede1b5bdf5d1efa62c83097f11740bb9e0f"
+      },
+      "before": {
+        "calls": 385,
+        "triangles": 463258,
+        "geometries": 1710,
+        "textures": 19,
+        "frameMs": 18.0999999998603
+      },
+      "after": {
+        "calls": 400,
+        "triangles": 414554,
+        "geometries": 1721,
+        "textures": 19,
+        "frameMs": 22
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "warehouse-exterior",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "fdc1caf3ff7344f2a346dabd210622e26e63b7b6b66f4b93e7df9c1a089c9403",
+        "after": "ee9b546deebe3237b1d5297c8e5582dc27ad5afd8e1362c8e764f66018da9aa9"
+      },
+      "before": {
+        "calls": 392,
+        "triangles": 480840,
+        "geometries": 1775,
+        "textures": 19,
+        "frameMs": 32.89999999990687
+      },
+      "after": {
+        "calls": 418,
+        "triangles": 480482,
+        "geometries": 1762,
+        "textures": 19,
+        "frameMs": 22.299999999813735
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "warehouse-lane",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "183f33aa8940b46a449c67952bf0c4ddba36bc9ee103394096c9cd16088cb9da",
+        "after": "0a5e8cf20cf896b806ba4dd53e8548b063124664ae303391bd700153af960fec"
+      },
+      "before": {
+        "calls": 373,
+        "triangles": 410540,
+        "geometries": 1876,
+        "textures": 19,
+        "frameMs": 23
+      },
+      "after": {
+        "calls": 389,
+        "triangles": 426862,
+        "geometries": 1871,
+        "textures": 19,
+        "frameMs": 31.399999999441206
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "creative-storefront",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "2cd4e9751e752255024741d8a0a8d7e33621ce25188f8b81b9079ab779d3bff9",
+        "after": "89a2412e20a9a5dfbd8be6e539f6f37318f1ad7bd01a37e639ba9daaf01ff8e2"
+      },
+      "before": {
+        "calls": 413,
+        "triangles": 510448,
+        "geometries": 1915,
+        "textures": 19,
+        "frameMs": 24.399999999906868
+      },
+      "after": {
+        "calls": 430,
+        "triangles": 516970,
+        "geometries": 1910,
+        "textures": 19,
+        "frameMs": 29.200000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "side-street-rear",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "ad89efb0a59e65771c603eaadc3fee5ede3165ef26f5cbc2d7d0be416da7d0ba",
+        "after": "193ed994f26c30a31b024e8f678558856ad809e8783396f6c2f0eea078fd2a21"
+      },
+      "before": {
+        "calls": 362,
+        "triangles": 364028,
+        "geometries": 1919,
+        "textures": 19,
+        "frameMs": 23.600000000093132
+      },
+      "after": {
+        "calls": 383,
+        "triangles": 397060,
+        "geometries": 1914,
+        "textures": 19,
+        "frameMs": 21.899999999441206
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "riverfront-merchant",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "b60c2979dc98c6c1a76c8b98404207f54a940728b2cd6e223cb09284d5d550b4",
+        "after": "e7333b080956457de84723cd9388c77dca22a4c0e57a9ac4cf272e35b30746e3"
+      },
+      "before": {
+        "calls": 394,
+        "triangles": 491460,
+        "geometries": 1919,
+        "textures": 19,
+        "frameMs": 24
+      },
+      "after": {
+        "calls": 418,
+        "triangles": 488518,
+        "geometries": 1914,
+        "textures": 19,
+        "frameMs": 28.90000000037253
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "oriental-handoff",
+      "mode": "inspect",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "b07f929c579773f926e5f7034b4dc4ea658137168faccb9ec696718d5849093c",
+        "after": "7c83801e20e1ac4a34ab56780afdde9ec35e901c2dec6d3c69f69291f7718e5d"
+      },
+      "before": {
+        "calls": 377,
+        "triangles": 428996,
+        "geometries": 1930,
+        "textures": 19,
+        "frameMs": 25
+      },
+      "after": {
+        "calls": 393,
+        "triangles": 427698,
+        "geometries": 1925,
+        "textures": 19,
+        "frameMs": 28.5
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "sunset-drive",
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "658fe73e5dd4186b82dcd550b4ac972add0f05f7365ef14cb33a809df7b101ef",
+        "after": "d4cb1ef0bef7904ae88b7364019e2da8a453b782c89e9a352640d3d44efe3a74"
+      },
+      "before": {
+        "calls": 462,
+        "triangles": 630847,
+        "geometries": 1931,
+        "textures": 19,
+        "frameMs": 24.899999999906868
+      },
+      "after": {
+        "calls": 466,
+        "triangles": 593257,
+        "geometries": 1926,
+        "textures": 19,
+        "frameMs": 23.299999999813735
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 1
+    },
+    {
+      "id": "night-drive",
+      "mode": "drive",
+      "viewport": [
+        844,
+        390
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "5f579c2a9f87f36e42401026224b6cb7fbd3ddadb127c7ece217b9f8cd5f6b7b",
+        "after": "262996f0ce3df18eb6ced5160dfe12a5319ad7e8ee82f2f223ae0aed354042b7"
+      },
+      "before": {
+        "calls": 460,
+        "triangles": 630721,
+        "geometries": 1931,
+        "textures": 19,
+        "frameMs": 19.699999999953434
+      },
+      "after": {
+        "calls": 464,
+        "triangles": 593131,
+        "geometries": 1926,
+        "textures": 19,
+        "frameMs": 21.200000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 1
+    },
+    {
+      "id": "night-375x812",
+      "mode": "drive",
+      "viewport": [
+        375,
+        812
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "43ad112c1269ff9fa921f601b14f387fc44c7ba0fce7f064c9fff472f3529b40",
+        "after": "80d2571e22a9c6a6c88d3f18918d35d71a4e45a5937b837e14d071dbcb0be8f2"
+      },
+      "before": {
+        "calls": 256,
+        "triangles": 400358,
+        "geometries": 1931,
+        "textures": 19,
+        "frameMs": 20.100000000093132
+      },
+      "after": {
+        "calls": 255,
+        "triangles": 361180,
+        "geometries": 1926,
+        "textures": 19,
+        "frameMs": 20.700000000186265
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "night-430x932",
+      "mode": "drive",
+      "viewport": [
+        430,
+        932
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "2dc7d45678ed3eb887b3b1e4eb5e82889c4425394b0d84fce28527bd0c837d29",
+        "after": "d47669292dedc6db30f36ff9ac107af4247027f893381963cb7da6c7280928c8"
+      },
+      "before": {
+        "calls": 256,
+        "triangles": 400358,
+        "geometries": 1931,
+        "textures": 19,
+        "frameMs": 19.5
+      },
+      "after": {
+        "calls": 255,
+        "triangles": 361180,
+        "geometries": 1926,
+        "textures": 19,
+        "frameMs": 20.799999999813735
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 0,
+      "obscuredAfter": 0
+    },
+    {
+      "id": "night-1280x800",
+      "mode": "drive",
+      "viewport": [
+        1280,
+        800
+      ],
+      "matchedCameraClockReplay": true,
+      "imageSha256": {
+        "before": "3b024ecd0a9592d51ba86bd2a45f81be126aa10dfb10db9fce537c9e5048078b",
+        "after": "8b36f30d2918b4678ba3df96275038cb81401bf60b4cd267ff5ba44ca69b32ad"
+      },
+      "before": {
+        "calls": 412,
+        "triangles": 574919,
+        "geometries": 1931,
+        "textures": 19,
+        "frameMs": 36.5
+      },
+      "after": {
+        "calls": 414,
+        "triangles": 535139,
+        "geometries": 1926,
+        "textures": 19,
+        "frameMs": 35.799999999813735
+      },
+      "signPopulationBefore": 7686,
+      "signPopulationAfter": 7679,
+      "obscuredBefore": 1,
+      "obscuredAfter": 0
+    }
+  ]
+}
