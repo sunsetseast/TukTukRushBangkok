@@ -1,3 +1,4 @@
+import { BANG_RAK_PLAN } from "./bangRakPlan";
 import {
   storefrontMount,
   districtFaceOffset,
@@ -48,7 +49,15 @@ export const SIGN_ENTRIES: SignEntry[] = Object.entries(TRADE_SIGNS)
       variant: i,
     })),
   )
-  .concat(DISTRICT_SIGN_ENTRIES, CURATED_SIGNS, CHINATOWN_SIGN_ENTRIES, [
+  .concat([
+    {key:"br-postal",text:"GRAND POSTAL BUILDING",secondary:"TCDC · BANG RAK",style:"heritage",variant:0,layout:"painted",palette:["#c7b697","#35483e","#35483e"]},
+    {key:"br-warehouse",text:"WAREHOUSE 30",secondary:"GALLERY · DESIGN",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+    {key:"br-gallery",text:"GALLERY",secondary:"หอศิลป์",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+    {key:"br-coffee",text:"COFFEE",secondary:"กาแฟ",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+    {key:"br-workshop",text:"WORKSHOP",secondary:"อะไหล่",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+    {key:"br-retail",text:"DESIGN SHOP",secondary:"ร้านค้า",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+    {key:"br-food",text:"THAI KITCHEN",secondary:"ร้านอาหาร",style:"heritage",variant:0,layout:"painted",palette:["#40564d","#e2d8b7","#e2d8b7"]},
+  ] as SignEntry[], DISTRICT_SIGN_ENTRIES, CURATED_SIGNS, CHINATOWN_SIGN_ENTRIES, [
     {
       key: "odeon-inscription",
       text: "聖壽無疆",
@@ -161,7 +170,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
             )?.key
         : undefined;
       const i = atlas.index.get(
-        ctKey ?? curatedSignKey(p, a) ?? `${a.trade}:${a.sign}`,
+        (p.parcel.bangRak ? (p.parcel.environmentId === "br:warehouse-1" ? "br-warehouse" : `br-${a.trade}`) : undefined) ?? ctKey ?? curatedSignKey(p, a) ?? `${a.trade}:${a.sign}`,
       )!;
       const W = a.width - 0.16,
         sw = Math.min(W - 0.55, a.type === "workshop" ? W * 0.65 : W - 0.55);
@@ -189,6 +198,11 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
             (side * Math.PI) / 2,
           );
     }
+  if (d.landmarks.some(l=>l.id==="grand-postal")) {
+    const hero=BANG_RAK_PLAN.postal;
+    const p:ParcelDesign={id:hero.id,region:"bang-rak",corridor:"charoen_s",bays:[],parcel:{...hero.origin,w:92,d:31,height:23.2,color:"#c7b697",yaw:hero.yaw}};
+    place(p,0,15.35,18.19,10.8,0.85,atlas.index.get("br-postal")!);
+  }
   for (const sign of districtSigns(designs)) {
     const i = atlas.index.get(sign.key)!;
     if (sign.blade)
@@ -231,7 +245,7 @@ export function buildBangkokSigns(d: District, designs = designBuildings(d)) {
       );
   }
   for (const f of completeStreetFabric(d).faces) {
-    if (f.parcel.chinatown) continue;
+    if (f.parcel.chinatown || f.parcel.bangRak) continue;
     const p = byParcel.get(f.parcel);
     if (!p) continue;
     const a = p.bays[0]!;

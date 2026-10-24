@@ -1,3 +1,4 @@
+import { assertBangRakMigration, approvedBangRakParcel } from "./bang-rak-migration-contract";
 import { approvedChinatownParcel } from "./chinatown-migration-contract";
 import { approvedWaterfrontParcel } from "./waterfront-migration-contract";
 import {
@@ -43,6 +44,7 @@ const before = JSON.parse(
 ) as District;
 const d = createBangkokWorld();
 assertRiverMigration(d, before);
+assertBangRakMigration(d);
 const registry = buildLandmarkRegistry(d),
   oldRegistry = JSON.parse(
     fs.readFileSync(new URL("baseline-registry.json", out), "utf8"),
@@ -58,12 +60,14 @@ assert.deepEqual(
   [
     "wat-mangkon",
     "holy-rosary",
+    "grand-postal",
+    "warehouse-30",
     "sanam-chai-mrt",
     "sam-yot-mrt",
     "wat-mangkon-mrt",
     "pier:tha-chang",
   ],
-  "PR33 landing and PR34 MRT surface entrances add registered places",
+  "PR33/34 places plus the two explicitly inventoried PR42 landmarks",
 );
 const key = (o: Obstacle) =>
   [o.x, o.z, o.w, o.d, o.yaw ?? 0].map((n) => n.toFixed(4)).join(":");
@@ -87,7 +91,7 @@ const newMrt = d.obstacles.filter((o) =>
 );
 for (const o of [...removed, ...added])
   assert(
-    approvedRiverParcel(o) ||
+    approvedBangRakParcel(o,d) || approvedRiverParcel(o) ||
       approvedWaterfrontParcel(o) ||
       approvedChinatownParcel(o) ||
       (o.x > -1120 && o.x < -820 && o.z > -1120 && o.z < -520) ||

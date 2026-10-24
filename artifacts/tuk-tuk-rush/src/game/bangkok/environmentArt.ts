@@ -507,7 +507,9 @@ export function emitEnvironment(d: District, emit: (p: ArtPiece) => void) {
     }
   }
   siteId = undefined;
-  for (const o of d.obstacles.filter((o) => o.protected)) {
+  // Protected authored structures are not park reservations. Keep the legacy
+  // park population unchanged; the bounded district owns its own grounds.
+  for (const o of d.obstacles.filter((o) => o.protected && !o.environmentId?.startsWith("br:"))) {
     put(o.x, -0.06, o.z, o.w, 0.25, o.d, "#4a7952");
     put(o.x, 0.1, o.z, o.w * 0.84, 0.05, 2.8, "#aeb19a");
     put(o.x, 0.1, o.z, 2.8, 0.05, o.d * 0.84, "#aeb19a");

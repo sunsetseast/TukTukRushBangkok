@@ -1,3 +1,4 @@
+import { bangRakPeople } from "./bangRakActivity";
 import { CHINATOWN_COMPOSITIONS } from "./chinatownCompositions";
 import { regionAt } from "./world";
 import { environmentPeople, placementIndex } from "./environmentPlan";
@@ -45,7 +46,7 @@ export function emitUrbanLayers(
     });
   const nodes = new Map(d.nodes.map((n) => [n.id, n]));
   for (const [i, p] of designs.entries()) {
-    if (p.parcel.artRole) continue;
+    if (p.parcel.artRole || p.parcel.bangRak) continue;
     const b = p.parcel,
       yaw = b.yaw ?? 0,
       c = Math.cos(yaw),
@@ -267,6 +268,7 @@ export function bangkokPeople(
       });
     }
   }
+  staged.push(...bangRakPeople(d, clear));
   const balanced: StreetPerson[] = [...staged];
   for (let i = 0; balanced.length < 360; i++) {
     let found = false;

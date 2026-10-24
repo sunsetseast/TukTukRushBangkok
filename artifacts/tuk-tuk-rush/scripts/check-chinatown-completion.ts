@@ -1,3 +1,4 @@
+import { beforeBangRak, assertBangRakMigration } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -29,14 +30,15 @@ const before = JSON.parse(
 const d = createBangkokWorld(),
   blocks = planChinatownBlocks(d),
   rear = d.buildings.filter((b) => b.chinatown?.role === "rear");
-assert.deepEqual(d.nodes, before.nodes);
-assert.deepEqual(d.roads, before.roads);
-assert.deepEqual(d.landmarks, before.landmarks);
+const inherited=beforeBangRak(d);
+assert.deepEqual(inherited.nodes, before.nodes);
+assert.deepEqual(inherited.roads, before.roads);
+assert.deepEqual(inherited.landmarks, before.landmarks);
 assert.deepEqual(d.riverPolygon, before.riverPolygon);
 const key = (b: Obstacle) =>
   JSON.stringify([b.environmentId, b.x, b.z, b.w, b.d, b.yaw ?? 0, b.height]);
 assert.deepEqual(
-  d.buildings
+  inherited.buildings
     .filter((b) => !b.chinatown)
     .map(key)
     .sort(),

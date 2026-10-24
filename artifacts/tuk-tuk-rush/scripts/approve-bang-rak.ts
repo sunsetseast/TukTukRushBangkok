@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {createBangkokWorld} from '../src/game/bangkok/world';
+import {roadGraphKey,cityGraphApprovalKey} from '../src/game/bangkok/roadIdentity';
+import {bangRakState,BANG_RAK_PLAN} from '../src/game/bangkok/bangRakPlan';
+const d=createBangkokWorld({authoring:true}),s=bangRakState(d)!;
+const f=new URL('../src/game/bangkok/cityData.v1.json',import.meta.url),data=JSON.parse(fs.readFileSync(f,'utf8'));
+console.log({roads:d.roads.length,nodes:d.nodes.length,parcels:s.parcels.map(p=>p.id),rejected:s.rejected});
+data.roadBaseline={...data.roadBaseline,version:4,key:roadGraphKey(d),fullGraphKey:cityGraphApprovalKey(d),roads:d.roads.length,nodes:d.nodes.length,sourceStages:[...data.roadBaseline.sourceStages.filter((s:string)=>s!=='bang-rak-v1'),'bang-rak-v1'],status:'approved-bang-rak-v1-additive-lanes'};
+fs.writeFileSync(f,JSON.stringify(data,null,2)+'\n');
+fs.writeFileSync(new URL('../../../docs/qa/bang-rak/district-plan.json',import.meta.url),JSON.stringify({plan:BANG_RAK_PLAN,parcels:s.parcels,removed:s.removed,rejected:s.rejected,roads:s.roads,landmarks:d.landmarks.filter(l=>['grand-postal','warehouse-30'].includes(l.id!))},null,2)+'\n');

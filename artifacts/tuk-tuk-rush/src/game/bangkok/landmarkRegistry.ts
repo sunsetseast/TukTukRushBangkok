@@ -1,3 +1,4 @@
+import { BANG_RAK_PLAN } from "./bangRakPlan";
 import { CHINATOWN_HERITAGE } from "./chinatownHeritage";
 import { CITY_MODEL, canonicalFeaturePoint } from "./cityModel";
 import type { District, Obstacle, Point } from "../types";
@@ -83,7 +84,8 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     const position = l.plot ?? l,
       solids = d.obstacles.filter((o) => o.landmarkId === l.id && !o.artRole),
       stop = nodes.get(l.accessNode!);
-    const hua = l.id === "hua";
+    const hua = l.id === "hua", bangRak = ["grand-postal", "warehouse-30"].includes(l.id!);
+
     const face = facadeFeature(l);
     const entrance = hua
       ? { x: position.x, z: position.z + 33 }
@@ -97,7 +99,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
       id: l.id!,
       name: l.name,
       category: l.kind,
-      district: hua
+      district: bangRak ? "Bang Rak / Charoen Krung Creative District" : hua
         ? "Pathum Wan"
         : (geo?.district ??
           real?.neighborhood ??
@@ -127,7 +129,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         ? Math.max(...solids.map((o) => o.height))
         : undefined,
       facade: facadeFeature(l),
-      mainEntrance: entrance,
+      mainEntrance: bangRak ? (l.id === "grand-postal" ? {x:75.5,z:990} : {x:-65,z:917}) : entrance,
       vehicleAccess: stop
         ? { x: stop.x, z: stop.z, nodeId: stop.id }
         : undefined,
@@ -150,7 +152,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         ...new Set(
           hua
             ? HUA_SOURCES
-            : [...(geo?.sources ?? []), ...(real?.references ?? [])],
+            : bangRak ? [...BANG_RAK_PLAN.sources] : [...(geo?.sources ?? []), ...(real?.references ?? [])],
         ),
       ],
       confidence: hua
@@ -158,7 +160,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         : geo || real
           ? "inherited-reference"
           : "unverified-this-pass",
-      compression: hua
+      compression: bangRak ? BANG_RAK_PLAN.compromises.join(" ") : hua
         ? "South-facing model; 84m-wide south facade retained from PR31; train shed extends north into a protected 90×300m mainline reservation. Tracks and yard are compressed, not surveyed geometry."
         : (geo?.compromise ??
           FACADE_APPROACHES[l.id!]?.note ??

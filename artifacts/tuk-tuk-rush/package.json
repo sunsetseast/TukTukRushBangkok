@@ -59,7 +59,9 @@
     "test:chinatown-completion": "node --import tsx scripts/check-chinatown-completion.ts",
     "test:chinatown-legal-traffic": "node scripts/check-chinatown-legal-traffic.mjs",
     "test:chinatown-visual": "node --import tsx scripts/check-chinatown-visual.ts",
-    "test:sign-visibility": "node --import tsx scripts/check-sign-visibility.ts"
+    "test:sign-visibility": "node --import tsx scripts/check-sign-visibility.ts",
+    "test:bang-rak": "node --import tsx scripts/check-bang-rak.ts",
+    "test:bang-rak-drives": "BANG_RAK_ROUTES=1 CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
