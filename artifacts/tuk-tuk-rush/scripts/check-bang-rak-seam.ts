@@ -44,6 +44,17 @@ for(const b of planChinatownBlocks(d)){
  assert(b.courts.every(c=>!retiredBangRakIds.has(c.owner)),'No orphan migrated courts');
 }
 for(const seed of [982,41,67])assert.deepEqual(new TrafficSystem(d,seed).create(createVehicle(d)),new TrafficSystem(old,seed).create(createVehicle(old)),'Retain seeded 38-car population');
+const npcRoad=s.roads.find(r=>r.corridor==="charoen-krung-30")!,na=ns.get(npcRoad.a)!,nb=ns.get(npcRoad.b)!;
+const npc={...lanePoint(na,nb,npcRoad,.2),id:9001,heading:Math.atan2(nb.x-na.x,nb.z-na.z),speed:5,kind:"car" as const,color:"#ded4be",from:na.id,to:nb.id,wait:0,nearMissCooldown:0};
+const traffic=new TrafficSystem(d,41),near=d.obstacles.filter(o=>o.x>-250&&o.x<210&&o.z>720&&o.z<940);
+let npcMetres=0,npcReachedSiPhraya=false;
+for(let tick=0;tick<2400;tick++){
+ const prev={x:npc.x,z:npc.z};traffic.update([npc],createVehicle(d),1/60);
+ npcMetres+=Math.hypot(npc.x-prev.x,npc.z-prev.z);
+ assert(near.every(o=>obstacleDistance(npc,o)>1.1),"NPC physically clears the northern return / junction");
+ npcReachedSiPhraya ||= npc.from.startsWith("brg:si-phraya") || npc.to.startsWith("brg:si-phraya");
+}
+assert(npcReachedSiPhraya&&npcMetres>60,"NPC traverses Captain Bush into the legal Si Phraya direction");
 const people=bangRakPeople(d,placementIndex(d).person);assert(people.length>=12&&people.length<=32);assert(people.some(p=>p.z<880),'Purposeful seam footpaths');
-const report={pass:true,newRoadEdges:s.roads.length,retiredPhysicalBodies:s.retired.length,newProperties:s.parcels.length,retainedPriorProperties:d.buildings.length-s.parcels.length,people:people.length,artPieces:pieces.length,conflicts,source:BANG_RAK_SEAM.sources,geographyLimit:BANG_RAK_SEAM.compromises};
+const report={pass:true,npc:{metres:Math.round(npcMetres),reachedSiPhraya:npcReachedSiPhraya},newRoadEdges:s.roads.length,retiredPhysicalBodies:s.retired.length,newProperties:s.parcels.length,retainedPriorProperties:d.buildings.length-s.parcels.length,people:people.length,artPieces:pieces.length,conflicts,source:BANG_RAK_SEAM.sources,geographyLimit:BANG_RAK_SEAM.compromises};
 fs.writeFileSync(new URL('../../../docs/qa/bang-rak-geography/validation/seam.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

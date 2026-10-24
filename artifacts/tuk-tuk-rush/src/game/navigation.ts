@@ -23,7 +23,12 @@ function fieldFor(d: District, target: RoadNode): Field {
           [b, a],
         ]) {
       const list = incoming.get(to!.id) ?? [];
-      list.push({ from: from!.id, length: Math.hypot(a.x - b.x, a.z - b.z) });
+      list.push({ from: from!.id, length: Math.hypot(a.x - b.x, a.z - b.z) *
+        // A narrow two-way service shortcut cannot comfortably pass opposing
+        // vehicles. Prefer normal streets for through guidance; keep the lane
+        // connected for local destinations and voluntary exploration. This is
+        // route-time preference, never a changed access rule or smaller collider.
+        (r.shortcut && !r.oneWay && r.width < 7 ? 2 : 1) });
       incoming.set(to!.id, list);
     }
   }
