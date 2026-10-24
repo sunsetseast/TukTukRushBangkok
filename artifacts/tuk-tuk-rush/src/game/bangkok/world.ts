@@ -57,7 +57,7 @@ import {
   localPoint,
 } from "./landmarkParcels";
 import { planLandscape } from "./landscape";
-import { planUrbanBlocks } from "./urbanBlocks";
+import { planUrbanBlocks, refreshUrbanBlocks } from "./urbanBlocks";
 import { completeUrbanFabric } from "./urbanCompleteness";
 import { completeStreetFabric, refreshStreetFabric } from "./streetFabric";
 import { scalaParcel } from "./scala";
@@ -854,6 +854,7 @@ export function createBangkokWorld(
       b.color = "#e1c58e";
     }
   planBangRak(world);
+  refreshUrbanBlocks(world);
   refreshStreetFabric(world);
   planConvenienceStores(world);
   world.obstacles.push(...bridgeBarriers(world));

@@ -1,3 +1,4 @@
+import { assertBangRakMigration } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
@@ -162,6 +163,17 @@ const successor = JSON.parse(
 );
 for (const item of preservation.files) {
   const bytes = fs.readFileSync(new URL(item.path, root));
+  if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json") {
+    const priorBytes=gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak/validation/pr41-city-data.json.gz",root)));
+    assert.equal(createHash("sha256").update(priorBytes).digest("hex"),successor.files[item.path]??item.sha256,"Original approved city data fixture");
+    const prior=JSON.parse(priorBytes.toString()),current=JSON.parse(bytes.toString());
+    const {roadBaseline:oldRoads,...oldData}=prior,{roadBaseline:newRoads,...newData}=current;
+    assert.deepEqual(newData,oldData,"Only the explicitly approved additive road ledger changes");
+    assert.equal(newRoads.version,4);assert.equal(newRoads.roads,oldRoads.roads+26);assert.equal(newRoads.nodes,oldRoads.nodes+26);
+    assert.deepEqual(newRoads.sourceStages,[...oldRoads.sourceStages,"bang-rak-v1"]);
+    assertBangRakMigration(d);
+    continue;
+  }
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
     successor.files[item.path] ?? item.sha256,
