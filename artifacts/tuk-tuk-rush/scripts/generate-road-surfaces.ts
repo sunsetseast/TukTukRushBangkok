@@ -1,28 +1,27 @@
-/** Regenerate after intentional road graph edits. No reference photography. */
+/** PR43 additive authoring. A future non-additive migration must explicitly
+ * advance the baseline; never silently re-snap the approved city asphalt. */
 import fs from 'node:fs';
+import {gunzipSync} from 'node:zlib';
 import clipping from 'polygon-clipping';
 import {createBangkokWorld} from '../src/game/bangkok/world';
+import {bangRakSeamState} from '../src/game/bangkok/bangRakSeam';
 import {roadEnvelopes} from './road-surface-authoring';
 import {roadGraphKey} from '../src/game/bangkok/roadSurfaceGraph';
-import {integerBoolean} from './integer-road-clipping';
 import {waterTerrainKey} from '../src/game/bangkok/waterGeometry';
-const d=createBangkokWorld(),road=roadEnvelopes(d,0,true),curb=roadEnvelopes(d,.32,true),outer=roadEnvelopes(d,6,true);
-const waterways=d.canals??[];
-const waterNodes=waterways.flatMap((c,i)=>c.points.map((p,j)=>({...p,id:`water:${i}:${j}`})));
-const waterRoads=waterways.flatMap((c,i)=>c.points.slice(1).map((_,j)=>({a:`water:${i}:${j}`,b:`water:${i}:${j+1}`,width:c.width,name:'water'})));
-const waterDistrict={nodes:waterNodes,roads:waterRoads,buildings:[],obstacles:[],landmarks:[]};
-const river=[d.riverPolygon!.map(r=>r.map(p=>[p.x,p.z] as [number,number]))];
-const water=clipping.union(river,roadEnvelopes(waterDistrict,0,true));
-// Cut actual channels out of terrain. Water can now sit below the banks instead
-// of needing to float just above one unbroken ground plane.
-const land=integerBoolean([[[[-7000,-7000],[7000,-7000],[7000,7000],[-7000,7000],[-7000,-7000]]]],water,true);
-// Riverbanks are authoritative. Ordinary pavement is clipped to shore; bridge
-// decks alone retain their surface over water. No parallel visual water stroke.
-const bridges={...d,roads:d.roads.filter(r=>r.bridge)};
-const bridgeDeck=roadEnvelopes(bridges,0,true);
-const dryRoad=clipping.union(clipping.difference(road,water),bridgeDeck);
-const dryCurb=clipping.difference(integerBoolean(curb,road,true),water);
-const drySidewalk=clipping.difference(integerBoolean(outer,curb,true),water);
-const result={key:roadGraphKey(d),waterKey:waterTerrainKey(d),road:dryRoad,curb:dryCurb,sidewalk:drySidewalk,water,land};
+const d=createBangkokWorld(),seam=bangRakSeamState(d)!;
+const read=(name:string)=>JSON.parse(gunzipSync(fs.readFileSync(new URL('../../../docs/qa/bang-rak-geography/validation/'+name,import.meta.url))).toString());
+const old=read('pr42-world.json.gz'),approved=read('pr42-road-surfaces.json.gz');
+const oldNodes=new Map<string,any>(old.nodes.map((n:any)=>[n.id,n])),liveNodes=new Map(d.nodes.map(n=>[n.id,n]));
+for(const prior of old.roads){
+ const road=d.roads.find(r=>r.a===prior.a&&r.b===prior.b&&r.width===prior.width);
+ if(!road)throw Error('Non-additive road migration needs a new surface baseline: '+prior.a+'>'+prior.b);
+ for(const id of [road.a,road.b]){const a=oldNodes.get(id)!,b=liveNodes.get(id)!;if(Math.hypot(a.x-b.x,a.z-b.z)>1e-6)throw Error('Moved node requires an explicit surface migration');}
+}
+if(approved.waterKey!==waterTerrainKey(d))throw Error('Changed shoreline requires a new surface baseline');
+const addition={...d,roads:seam.roads},
+ road=clipping.union(approved.road,clipping.difference(roadEnvelopes(addition,0,true),approved.water)),
+ curb=clipping.difference(clipping.union(approved.curb,roadEnvelopes(addition,.32,true)),road,approved.water),
+ sidewalk=clipping.difference(clipping.union(approved.sidewalk,roadEnvelopes(addition,6,true)),road,curb,approved.water);
+const result={key:roadGraphKey(d),waterKey:approved.waterKey,road,curb,sidewalk,water:approved.water,land:approved.land};
 fs.writeFileSync(new URL('../src/game/bangkok/roadSurfaces.generated.json',import.meta.url),JSON.stringify(result)+'\n');
-console.log({key:result.key,bytes:JSON.stringify(result).length});
+console.log({key:result.key,bytes:JSON.stringify(result).length,method:'Exact PR42 surface + explicit PR43 lane envelopes; unchanged water/land'});

@@ -189,6 +189,14 @@ for (const item of preservation.files) {
     assertBangRakMigration(d);
     continue;
   }
+  if(item.path === "artifacts/tuk-tuk-rush/src/game/navigation.ts") {
+    const ledger=JSON.parse(fs.readFileSync(new URL("docs/qa/bang-rak-geography/source-approval.json",root),"utf8")).files[item.path];
+    const prior=gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak-geography/validation/pr42-navigation.ts.gz",root)));
+    assert.equal(createHash("sha256").update(prior).digest("hex"),successor.files[item.path]??item.sha256,"Exact original navigation fixture");
+    assert.equal(createHash("sha256").update(prior).digest("hex"),ledger.beforeSha256);
+    assert.equal(createHash("sha256").update(bytes).digest("hex"),ledger.afterSha256,"Explicit GPS route-cost-only approval");
+    continue;
+  }
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
     successor.files[item.path] ?? item.sha256,
