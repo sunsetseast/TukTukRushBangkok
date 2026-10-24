@@ -21,6 +21,12 @@ for matrix in ['chinatown','retained-bang-rak','new-seam']:
   file=f'validation/{matrix}-legal-{seed}.json';d=read(file);assert d['pass'];assert all(r['complete'] and not any(r['physical'].values()) for r in d['results']);legal.append(dict(matrix=matrix,seed=seed,journeys=len(d['results']),vehicles=d['trafficVehicles'],pass_=True,file=file))
 perfBefore=read('validation/performance-baseline-sequential.json');perfAfter=read('validation/performance-after.json');tests=read('validation/tests.json');ci=read('validation/ci.json') if (out/'validation/ci.json').exists() else None
 runtimeFiles={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((root/'artifacts/tuk-tuk-rush/src/game').rglob('*')) if p.is_file()}
+runtimeRoot=root/'artifacts/tuk-tuk-rush/src/game'
+runtimePairs=sorted([[str(p.relative_to(runtimeRoot)),hashlib.sha256(p.read_bytes()).hexdigest()] for p in runtimeRoot.rglob('*') if p.is_file()])
+finalRuntimeHash=hashlib.sha256(json.dumps(runtimePairs,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+assert after['runtimeSourceSha256']==finalRuntimeHash,'After captures must match the final runtime source bytes'
+assert len(rows)==len(before['scenes'])==len(after['scenes'])==24
+
 manifest={str(p.relative_to(out)):hashlib.sha256(p.read_bytes()).hexdigest() for p in out.rglob('*') if p.is_file() and (p.suffix in ['.jpg','.png','.svg','.gz'])}
 proof=dict(baselineCommit='dbd15109924bb89898b94a838e3c39d69c25f55a',physicalIPhone=False,localCheckout=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),captureSourceEpochs=dict(before=before['runtimeSourceSha256'],after=after['runtimeSourceSha256']),runtimeFiles=runtimeFiles,artifactSha256=manifest,cameraFixtureMatches=rows,legalDriving=legal,uiState=ui.get('pass'),restartCount=len(ui.get('resets',[])),performance=dict(before=perfBefore,after=perfAfter),localTests=tests,ci=ci)
 (out/'validation/certification.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')

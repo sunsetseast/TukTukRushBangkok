@@ -19,15 +19,16 @@ def world(ax,d,title,proposal=False):
  for r in d['roads']:
   a,b=ns[r['a']],ns[r['b']]
   if not(-440<a['x']<230 and 650<a['z']<1090):continue
-  seam=r['a'].startswith('brg:')or r['b'].startswith('brg:');ax.plot([a['x'],b['x']],[a['z'],b['z']],lw=r['width']*.5,color='#117e80' if seam else '#65747e',solid_capstyle='round',zorder=3)
+  seam=r['a'].startswith('brg:')or r['b'].startswith('brg:');ax.plot([a['x'],b['x']],[a['z'],b['z']],lw=r['width']*.5,color='#397bab' if seam and r.get('corridor')=='river-city-interface' else '#117e80' if seam else '#65747e',solid_capstyle='round',zorder=3)
  if proposal:
   for street in plan['plan']['streets']:
    ps=street['points'];ax.plot([p['x'] for p in ps],[p['z'] for p in ps],ls='--',lw=3,color='#d46c31',zorder=6)
+  ps=plan['plan']['streets'][0]['points'][:2];ax.plot([p['x'] for p in ps],[p['z'] for p in ps],ls='--',lw=3,color='#397bab',zorder=6)
   for b in plan['retired']:ax.add_patch(Polygon(ring(b),facecolor='#cc6856',alpha=.8,zorder=5))
  for l in d['landmarks']:
   if l['id'] in ['river-city','holy-rosary','warehouse-30','grand-postal','oriental']:ax.text(l['x'],l['z'],l['id'].replace('-',' '),fontsize=7,color='#492c22',ha='center',zorder=7)
  if d is new:
-  ax.text(-50,810,'Si Phraya →',rotation=8,ha='center',fontsize=8,color='#005e61',zorder=7);ax.text(-174,852,'Captain Bush ↑',rotation=90,fontsize=7,color='#005e61',zorder=7)
+  ax.text(-222,828,'Local arrival ↔',fontsize=6,color='#285c84',zorder=7);ax.text(-50,810,'Si Phraya →',rotation=8,ha='center',fontsize=8,color='#005e61',zorder=7);ax.text(-174,852,'Captain Bush ↑',rotation=90,fontsize=7,color='#005e61',zorder=7)
  ax.set(xlim=(-680,210),ylim=(1080,670),xlabel='Game X (m)',ylabel='Game Z (north is up)');ax.set_aspect('equal');ax.grid(alpha=.12);ax.set_title(title,fontsize=11,loc='left')
 fig,axes=plt.subplots(2,2,figsize=(15,12),facecolor='#faf8f0');ref=json.loads((root/'data/bangkok/bang-rak-reference.v1.json').read_text());ax=axes[0,0]
 for f in json.loads((root/'data/bangkok/osm-reference.v1.geojson').read_text())['features']:
@@ -48,5 +49,7 @@ ax.set(xlim=(100.5124,100.5195),ylim=(13.7257,13.7328),xlabel='WGS84 longitude',
 world(axes[0,1],old,'B · Immutable PR42 game world')
 world(axes[1,0],old,'C · Selected proposal: new roads / retired lots',True)
 world(axes[1,1],new,'D · Final production world: connected northern seam')
-fig.suptitle('Bang Rak / Talat Noi interface · geographic comparison',fontsize=17,y=.99);fig.text(.05,.015,'© OpenStreetMap contributors · ODbL 1.0. A uses reference coordinates. B–D use compressed game metres. Different extents/scales; no surveyed equivalence claimed.\nC is the implemented proposal preserved for review; it is not a separate simulation. Amber: new street-facing properties. Wider Silom/Sathon and eastern Si Phraya remain deferred.',fontsize=9)
+fig.suptitle('Bang Rak / Talat Noi interface · geographic comparison',fontsize=17,y=.99);fig.text(.05,.015,'© OpenStreetMap contributors · ODbL 1.0. A uses reference coordinates. B–D use compressed game metres. Different extents/scales; no surveyed equivalence claimed.\nC is the implemented proposal preserved for review; it is not a separate simulation. Amber: new street-facing properties. Blue: two-way local arrival spur. Wider Silom/Sathon and eastern Si Phraya remain deferred.',fontsize=9)
 fig.tight_layout(rect=(0,.055,1,.97));fig.savefig(out/'geographic-comparison.svg',metadata={'Date':None});fig.savefig(out/'geographic-comparison.png',dpi=140);plt.close(fig)
+
+svg=out/'geographic-comparison.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')

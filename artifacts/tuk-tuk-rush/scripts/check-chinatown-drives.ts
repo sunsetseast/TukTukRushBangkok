@@ -53,6 +53,7 @@ if(process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1"){
 const pairs = process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1" ? [
  ["river-city","si-phraya-east"],["si-phraya-east","river-city"],
  ["captain-bush-bend","grand-postal"],["grand-postal","captain-bush-bend"],
+ ["captain-bush-bend","river-city"],["river-city","captain-bush-bend"],
 ] : process.env.BANG_RAK_ROUTES === "1" ? [
  ["river-city","grand-postal"],["grand-postal","river-city"],["grand-postal","warehouse-30"],["warehouse-30","grand-postal"],["warehouse-30","oriental"],["oriental","warehouse-30"],["grand-postal","oriental"],["oriental","grand-postal"],
 ] : [
