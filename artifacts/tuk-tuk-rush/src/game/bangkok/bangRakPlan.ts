@@ -312,7 +312,7 @@ export function planBangRak(d: District) {
       25,
       25,
       11 + (i % 3) * 2,
-      0,
+      Math.PI,
       "charoen-krung-32",
       i === 1 ? "residence" : i === 3 ? "workshop" : "retail",
     );

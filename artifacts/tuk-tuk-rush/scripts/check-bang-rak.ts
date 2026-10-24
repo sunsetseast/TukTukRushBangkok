@@ -18,7 +18,7 @@ import {
   pieceVolume,
   obstacleVolume,
 } from "../src/game/bangkok/spatialValidation";
-import { obstacleDistance } from "../src/game/world";
+import { obstacleDistance, distanceToSegment } from "../src/game/world";
 import { navigationPath } from "../src/game/navigation";
 import {
   parcelConflicts,
@@ -51,6 +51,11 @@ for (const seed of [982, 41, 67]) {
 }
 const designs = designBuildings(d).filter((p) => p.parcel.bangRak);
 for (const p of designs) {
+  const nodes=new Map(d.nodes.map(n=>[n.id,n]));
+  const edge=d.roads.filter(r=>r.corridor===p.parcel.bangRak!.road).map(r=>distanceToSegment(p.parcel,nodes.get(r.a)!,nodes.get(r.b)!)).sort((a,b)=>a.distance-b.distance)[0]!;
+  const dx=edge.point.x-p.parcel.x,dz=edge.point.z-p.parcel.z;
+  const dot=(dx*Math.sin(p.parcel.yaw??0)+dz*Math.cos(p.parcel.yaw??0))/Math.hypot(dx,dz);
+  assert(dot>.7,`Actual frontage normal faces its named road: ${p.parcel.environmentId}`);
   emitBangRakParcel(p, (q) => pieces.push(q));
   assert.equal(p.corridor, p.parcel.bangRak!.road, "Frontage street ownership");
 }
