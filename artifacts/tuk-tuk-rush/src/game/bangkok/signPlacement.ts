@@ -2,6 +2,7 @@ import type {District,DestinationAccess} from '../types';
 import {distanceToSegment,obstacleDistance} from '../world';
 import {blockedByRiver} from './world';
 export const STREET_NAMES=[
+ ["si-phraya","ถนนสี่พระยา","Si Phraya Road"],
  ["charoen-krung-30","ซอยเจริญกรุง 30","Charoen Krung Soi 30 / Captain Bush Lane"],["charoen-krung-32","ซอยเจริญกรุง 32","Charoen Krung Soi 32"],
  ['yaowarat','ถนนเยาวราช','Yaowarat Road'],['khaosan','ถนนข้าวสาร','Thanon Khao San'],['charoen_n','ถนนเจริญกรุง','Charoen Krung Road'],['sukhumvit','ถนนสุขุมวิท','Sukhumvit Road'],['silom','ถนนสีลม','Silom Road'],['rama1','ถนนพระรามที่ ๑','Rama I Road'],['charoen_nakhon','ถนนเจริญนคร','Charoen Nakhon Road'],
 ] as const;

@@ -1,0 +1,838 @@
+{
+  "plan": {
+    "version": 1,
+    "baseline": "dbd15109924bb89898b94a838e3c39d69c25f55a",
+    "boundary": {
+      "minX": -225,
+      "maxX": 155,
+      "minZ": 750,
+      "maxZ": 888
+    },
+    "sources": [
+      "https://rivercitybangkok.com/plan-your-visit/",
+      "https://rivercitybangkok.com/wp-content/uploads/2021/09/RCB-Map.pdf",
+      "https://www.openstreetmap.org/way/157800038",
+      "https://www.openstreetmap.org/way/55932811",
+      "https://www.openstreetmap.org/way/1235099299",
+      "https://www.thailandtourismdirectory.go.th/en/attraction/103358"
+    ],
+    "streets": [
+      {
+        "id": "si-phraya",
+        "name": "Si Phraya Road",
+        "thai": "ถนนสี่พระยา",
+        "width": 12,
+        "oneWay": true,
+        "points": [
+          {
+            "x": -200,
+            "z": 784
+          },
+          {
+            "x": -165,
+            "z": 822
+          },
+          {
+            "x": -140,
+            "z": 822
+          },
+          {
+            "x": 145.5172413796,
+            "z": 780
+          }
+        ]
+      },
+      {
+        "id": "captain-bush-return",
+        "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+        "thai": "ซอยเจริญกรุง 30",
+        "width": 9,
+        "oneWay": true,
+        "points": [
+          {
+            "x": -158,
+            "z": 883
+          },
+          {
+            "x": -158,
+            "z": 850
+          },
+          {
+            "x": -165,
+            "z": 822
+          }
+        ]
+      }
+    ],
+    "compromises": [
+      "Western Si Phraya is compressed into the existing River City / Wanit interface; its full eastern extension and Maha Set are deferred, not substituted by a fictional connector.",
+      "All PR42 lane centerlines remain. Captain Bush's added northern bend and one-way rule correct its topology; widths and the bend are arcade fits, not surveyed dimensions.",
+      "River City is in Talat Noi, Samphanthawong beside Bang Rak. No BTS/MRT station lies inside this finished seam; existing distant transit is inherited, not newly certified."
+    ]
+  },
+  "nodes": [
+    {
+      "x": -188.33333333333334,
+      "z": 796.6666666666666,
+      "id": "brg:si-phraya:1"
+    },
+    {
+      "x": -176.66666666666666,
+      "z": 809.3333333333334,
+      "id": "brg:si-phraya:2"
+    },
+    {
+      "x": -165,
+      "z": 822,
+      "id": "brg:si-phraya:3"
+    },
+    {
+      "x": -152.5,
+      "z": 822,
+      "id": "brg:si-phraya:5"
+    },
+    {
+      "x": -140,
+      "z": 822,
+      "id": "brg:si-phraya:6"
+    },
+    {
+      "x": -120.96551724136,
+      "z": 819.2,
+      "id": "brg:si-phraya:8"
+    },
+    {
+      "x": -101.93103448272,
+      "z": 816.4,
+      "id": "brg:si-phraya:9"
+    },
+    {
+      "x": -82.89655172408,
+      "z": 813.6,
+      "id": "brg:si-phraya:10"
+    },
+    {
+      "x": -63.86206896543999,
+      "z": 810.8,
+      "id": "brg:si-phraya:11"
+    },
+    {
+      "x": -44.82758620680001,
+      "z": 808,
+      "id": "brg:si-phraya:12"
+    },
+    {
+      "x": -25.793103448159997,
+      "z": 805.2,
+      "id": "brg:si-phraya:13"
+    },
+    {
+      "x": -6.758620689519972,
+      "z": 802.4,
+      "id": "brg:si-phraya:14"
+    },
+    {
+      "x": 12.275862069120024,
+      "z": 799.6,
+      "id": "brg:si-phraya:15"
+    },
+    {
+      "x": 31.31034482776002,
+      "z": 796.8,
+      "id": "brg:si-phraya:16"
+    },
+    {
+      "x": 50.34482758639999,
+      "z": 794,
+      "id": "brg:si-phraya:17"
+    },
+    {
+      "x": 69.37931034504001,
+      "z": 791.2,
+      "id": "brg:si-phraya:18"
+    },
+    {
+      "x": 88.41379310368,
+      "z": 788.4,
+      "id": "brg:si-phraya:19"
+    },
+    {
+      "x": 107.44827586232,
+      "z": 785.6,
+      "id": "brg:si-phraya:20"
+    },
+    {
+      "x": 126.48275862096006,
+      "z": 782.8,
+      "id": "brg:si-phraya:21"
+    },
+    {
+      "x": -158,
+      "z": 866.5,
+      "id": "brg:captain-bush-return:1"
+    },
+    {
+      "x": -158,
+      "z": 850,
+      "id": "brg:captain-bush-return:2"
+    },
+    {
+      "x": -161.5,
+      "z": 836,
+      "id": "brg:captain-bush-return:4"
+    }
+  ],
+  "roads": [
+    {
+      "a": "civic:-2000000:7840000",
+      "b": "brg:si-phraya:1",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:1",
+      "b": "brg:si-phraya:2",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:2",
+      "b": "brg:si-phraya:3",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:3",
+      "b": "brg:si-phraya:5",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:5",
+      "b": "brg:si-phraya:6",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:6",
+      "b": "brg:si-phraya:8",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:8",
+      "b": "brg:si-phraya:9",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:9",
+      "b": "brg:si-phraya:10",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:10",
+      "b": "brg:si-phraya:11",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:11",
+      "b": "brg:si-phraya:12",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:12",
+      "b": "brg:si-phraya:13",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:13",
+      "b": "brg:si-phraya:14",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:14",
+      "b": "brg:si-phraya:15",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:15",
+      "b": "brg:si-phraya:16",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:16",
+      "b": "brg:si-phraya:17",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:17",
+      "b": "brg:si-phraya:18",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:18",
+      "b": "brg:si-phraya:19",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:19",
+      "b": "brg:si-phraya:20",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:20",
+      "b": "brg:si-phraya:21",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:si-phraya:21",
+      "b": "civic:1455172:7800000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "br:charoen-krung-30:13",
+      "b": "brg:captain-bush-return:1",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:captain-bush-return:1",
+      "b": "brg:captain-bush-return:2",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:captain-bush-return:2",
+      "b": "brg:captain-bush-return:4",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brg:captain-bush-return:4",
+      "b": "brg:si-phraya:3",
+      "width": 9,
+      "name": "Charoen Krung Soi 30 / Captain Bush Lane",
+      "corridor": "charoen-krung-30",
+      "oneWay": true,
+      "spawnTraffic": false
+    }
+  ],
+  "retired": [
+    {
+      "x": 114.00461168503364,
+      "z": 771.108072143681,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 20.3,
+      "color": "#d7a18a",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:1",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 113.58232937182143,
+      "z": 783.3553603541184,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 17.2,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:2",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 113.16004705860922,
+      "z": 795.6026485645557,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 14.1,
+      "color": "#dfc395",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:3",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": -209.37650000000002,
+      "z": 809.8000000000001,
+      "w": 12.028999999999995,
+      "d": 30,
+      "yaw": 3.141592653589793,
+      "height": 11,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:7:1",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "real-arrival:river-city",
+        "character": "commercial",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": -173.21373011439067,
+      "z": 779.2587340727354,
+      "w": 12.179600888646204,
+      "d": 30,
+      "yaw": -1.6539387210070788,
+      "height": 10.2,
+      "color": "#a0b4a0",
+      "regionId": "talatnoi",
+      "environmentId": "ctparcel:ctblock:1:13:0",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "wanit-2-south",
+        "character": "talatnoi",
+        "exposedSides": [
+          1
+        ]
+      }
+    },
+    {
+      "x": 64.61143017467106,
+      "z": 781.666860480699,
+      "w": 18,
+      "d": 16,
+      "height": 9.4,
+      "yaw": 1.5363303223841862,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "role": "rear",
+        "owner": "ctparcel:ctblock:1:6:2",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": 77.30391467802221,
+      "z": 790.809662957631,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26:yard:-1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 77.90350442899154,
+      "z": 773.4199967121122,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26:yard:1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 60.768647230053794,
+      "z": 806.058059358303,
+      "w": 26,
+      "d": 22,
+      "height": 12.600000000000001,
+      "yaw": 1.5363303223841862,
+      "color": "#d7a18a",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "role": "rear",
+        "owner": "ctparcel:ctblock:1:6:4",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": 76.32151332723706,
+      "z": 819.3018638027626,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26:yard:-1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 77.19677652692792,
+      "z": 793.9169487087296,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26:yard:1",
+      "artRole": "furniture"
+    }
+  ],
+  "parcels": [
+    {
+      "x": -85.96483348602278,
+      "z": 790.8038338924996,
+      "w": 22,
+      "d": 18,
+      "height": 13.3,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:1",
+      "bangRak": {
+        "family": "merchant",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -62.22035994921403,
+      "z": 787.3109874229581,
+      "w": 22,
+      "d": 18,
+      "height": 16.1,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:2",
+      "bangRak": {
+        "family": "cafe",
+        "road": "si-phraya",
+        "trade": "coffee"
+      }
+    },
+    {
+      "x": -38.47588641240527,
+      "z": 783.8181409534166,
+      "w": 22,
+      "d": 18,
+      "height": 10.5,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:3",
+      "bangRak": {
+        "family": "timber",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -14.731412875596519,
+      "z": 780.325294483875,
+      "w": 22,
+      "d": 18,
+      "height": 13.3,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:4",
+      "bangRak": {
+        "family": "workshop",
+        "road": "si-phraya",
+        "trade": "workshop"
+      }
+    },
+    {
+      "x": 9.013060661212236,
+      "z": 776.8324480143335,
+      "w": 22,
+      "d": 18,
+      "height": 16.1,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:5",
+      "bangRak": {
+        "family": "gallery",
+        "road": "si-phraya",
+        "trade": "gallery"
+      }
+    },
+    {
+      "x": 32.75753419802102,
+      "z": 773.3396015447921,
+      "w": 22,
+      "d": 18,
+      "height": 10.5,
+      "yaw": 0.14605398087789348,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:-1:6",
+      "bangRak": {
+        "family": "merchant",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -103.01468462287697,
+      "z": 839.8069213075912,
+      "w": 22,
+      "d": 18,
+      "height": 10.5,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:0",
+      "bangRak": {
+        "family": "gallery",
+        "road": "si-phraya",
+        "trade": "gallery"
+      }
+    },
+    {
+      "x": -79.27021108606822,
+      "z": 836.3140748380497,
+      "w": 22,
+      "d": 18,
+      "height": 13.3,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:1",
+      "bangRak": {
+        "family": "merchant",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -55.52573754925946,
+      "z": 832.8212283685082,
+      "w": 22,
+      "d": 18,
+      "height": 16.1,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:2",
+      "bangRak": {
+        "family": "cafe",
+        "road": "si-phraya",
+        "trade": "coffee"
+      }
+    },
+    {
+      "x": -31.781264012450706,
+      "z": 829.3283818989667,
+      "w": 22,
+      "d": 18,
+      "height": 10.5,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:3",
+      "bangRak": {
+        "family": "timber",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -8.03679047564195,
+      "z": 825.8355354294251,
+      "w": 22,
+      "d": 18,
+      "height": 13.3,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:4",
+      "bangRak": {
+        "family": "workshop",
+        "road": "si-phraya",
+        "trade": "workshop"
+      }
+    },
+    {
+      "x": 15.707683061166804,
+      "z": 822.3426889598836,
+      "w": 22,
+      "d": 18,
+      "height": 16.1,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:5",
+      "bangRak": {
+        "family": "gallery",
+        "road": "si-phraya",
+        "trade": "gallery"
+      }
+    },
+    {
+      "x": 39.45215659797559,
+      "z": 818.8498424903422,
+      "w": 22,
+      "d": 18,
+      "height": 10.5,
+      "yaw": -2.9955386727118998,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:si-phraya:1:6",
+      "bangRak": {
+        "family": "merchant",
+        "road": "si-phraya",
+        "trade": "retail"
+      }
+    },
+    {
+      "x": -130,
+      "z": 863,
+      "w": 21,
+      "d": 16,
+      "height": 10.5,
+      "yaw": -1.5707963267948966,
+      "color": "#d5c3a4",
+      "protected": true,
+      "regionId": "bang-rak",
+      "environmentId": "brg:captain-east:1",
+      "bangRak": {
+        "family": "workshop",
+        "road": "charoen-krung-30",
+        "trade": "workshop"
+      }
+    }
+  ],
+  "rejected": [
+    "si-phraya:-1:0",
+    "si-phraya:-1:7",
+    "si-phraya:-1:8",
+    "si-phraya:-1:9",
+    "si-phraya:1:7",
+    "si-phraya:1:8",
+    "si-phraya:1:9",
+    "captain-east:0"
+  ],
+  "note": "Final production plan, game metres. Inherits existing landmark compounds/river/transit unchanged. Not a surveyed real-world map."
+}

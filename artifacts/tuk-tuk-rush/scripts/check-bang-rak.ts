@@ -75,9 +75,9 @@ assert(
 const propertyConflicts = s.parcels.flatMap((p) => parcelConflicts(d, p.body));
 assert.equal(propertyConflicts.length, 0, JSON.stringify(propertyConflicts));
 for (const lane of BANG_RAK_PLAN.lanes) {
-  const roads = d.roads.filter((r) => r.corridor === lane.id);
+  const roads = d.roads.filter((r) => r.corridor === lane.id && !r.a.startsWith("brg:") && !r.b.startsWith("brg:"));
   assert.equal(roads.length, 13);
-  assert(roads.every((r) => !r.oneWay && !r.noTraffic));
+  assert(roads.every((r) => !!r.oneWay === (lane.id === "charoen-krung-30") && !r.noTraffic));
   const ns = new Map(d.nodes.map((n) => [n.id, n]));
   for (const r of roads) {
     const a = ns.get(r.a)!,

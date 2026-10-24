@@ -1,0 +1,13 @@
+import fs from "node:fs";
+import { gzipSync } from "node:zlib";
+import {createBangkokWorld} from "../src/game/bangkok/world";
+import {BANG_RAK_SEAM,bangRakSeamState} from "../src/game/bangkok/bangRakSeam";
+import {roadGraphKey,cityGraphApprovalKey} from "../src/game/bangkok/roadIdentity";
+const d=createBangkokWorld({authoring:true}),s=bangRakSeamState(d)!;
+const f=new URL('../src/game/bangkok/cityData.v1.json',import.meta.url),data=JSON.parse(fs.readFileSync(f,'utf8'));
+data.roadBaseline={...data.roadBaseline,version:5,key:roadGraphKey(d),fullGraphKey:cityGraphApprovalKey(d),roads:d.roads.length,nodes:d.nodes.length,sourceStages:[...data.roadBaseline.sourceStages.filter((s:string)=>s!=='bang-rak-seam-v1'),'bang-rak-seam-v1'],status:'approved-bang-rak-seam-v1-explicit-parcel-migration'};
+fs.writeFileSync(f,JSON.stringify(data,null,2)+'\n');
+const out=new URL('../../../docs/qa/bang-rak-geography/',import.meta.url);
+fs.writeFileSync(new URL('district-plan.json',out),JSON.stringify({plan:BANG_RAK_SEAM,nodes:d.nodes.filter(n=>n.id.startsWith('brg:')),roads:s.roads,retired:s.retired,parcels:s.parcels,rejected:s.rejected,note:'Final production plan, game metres. Inherits existing landmark compounds/river/transit unchanged. Not a surveyed real-world map.'},null,2)+'\n');
+fs.writeFileSync(new URL('validation/pr43-world.json.gz',out),gzipSync(JSON.stringify(d)));
+console.log({roads:d.roads.length,newEdges:s.roads.length,parcels:s.parcels.length,retired:s.retired.length,rejected:s.rejected});

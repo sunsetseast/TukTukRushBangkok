@@ -13,7 +13,9 @@ const { buildBangkokGraybox } = await import(
 const startCpu=process.cpuUsage();
 const begin = performance.now(),
   d = createBangkokWorld(),
+  worldConstructionMs = Math.round(performance.now()-begin),
   city = buildBangkokGraybox(d),
+  meshConstructionMs = Math.round(performance.now()-begin)-worldConstructionMs,
   geometries = new Set<T.BufferGeometry>(),
   materials = new Set<T.Material>(),
   textures = new Set<T.Texture>(),
@@ -49,6 +51,8 @@ const report = {
   method:
     "Node scene inventory without browser canvas labels, all retained LODs/chunks; not rendered calls or hardware FPS",
   physicalIPhone: false,
+  worldConstructionMs,
+  meshConstructionMs,
   buildings: d.buildings.length,
   roads: d.roads.length,
   geometryBuffersBytes: [...arrays].reduce((n, a) => n + a.byteLength, 0),

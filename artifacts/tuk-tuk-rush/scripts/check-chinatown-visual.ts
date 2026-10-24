@@ -1,3 +1,4 @@
+import migration from "../src/game/bangkok/bangRakSeamMigration.v1.json";
 import { beforeBangRak } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -132,11 +133,11 @@ for (const p of designs) {
 }
 assert.equal(
   d.buildings.filter((b) => b.chinatown && !b.chinatown.role).length,
-  798,
+  798 - migration.retired.filter(b=>"chinatown" in b && !(b.chinatown as any).role).length,
 );
 assert.equal(
   d.buildings.filter((b) => b.chinatown?.role === "rear").length,
-  111,
+  111 - migration.retired.filter(b=>"chinatown" in b && (b.chinatown as any).role === "rear").length,
 );
 assert(byCharacter.yaowarat!.lit > 500);
 assert(
@@ -210,8 +211,8 @@ assert(shiftLighting(650).ambient < shiftLighting(40).ambient);
 const report = {
   pass: true,
   foundation,
-  frontages: 798,
-  rearBuildings: 111,
+  frontages: d.buildings.filter(b=>b.chinatown&&!b.chinatown.role).length,
+  rearBuildings: d.buildings.filter(b=>b.chinatown?.role==="rear").length,
   details: pieces.length,
   signCount,
   byCharacter,

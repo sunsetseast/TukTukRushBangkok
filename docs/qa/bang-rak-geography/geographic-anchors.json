@@ -1,0 +1,66 @@
+{
+  "coordinateSystem": "WGS84 reference plus compressed game metres; no single affine projection claimed",
+  "anchors": [
+    {
+      "id": "river-city",
+      "reference": {
+        "lat": 13.7301721,
+        "lon": 100.5132093
+      },
+      "world": {
+        "x": -276,
+        "z": 784
+      },
+      "confidence": "operator map / approximate site pin"
+    },
+    {
+      "id": "si-phraya-charoen",
+      "reference": {
+        "lat": 13.7301949,
+        "lon": 100.515638
+      },
+      "world": {
+        "x": 145.5172413796,
+        "z": 780
+      },
+      "confidence": "OSM way156790285 western node"
+    },
+    {
+      "id": "soi30-entry",
+      "reference": {
+        "lat": 13.7291636,
+        "lon": 100.5157633
+      },
+      "world": {
+        "x": 141.8390804597,
+        "z": 886.6666666677
+      },
+      "confidence": "OSM way1235099299 entry"
+    },
+    {
+      "id": "soi32-entry",
+      "reference": {
+        "lat": 13.7278824,
+        "lon": 100.5159261
+      },
+      "world": {
+        "x": 140.9195402299,
+        "z": 913.3333333339
+      },
+      "confidence": "OSM way245676486 entry"
+    },
+    {
+      "id": "warehouse30",
+      "reference": {
+        "lat": 13.7279609,
+        "lon": 100.5145101
+      },
+      "world": {
+        "x": -65,
+        "z": 904
+      },
+      "confidence": "OSM approximate gallery point; not footprint"
+    }
+  ],
+  "compression": "Selected topology and north/south ordering retained; street lengths, river offsets and ratios are locally compressed, especially inherited Soi30\u201332 spacing. Reference imagery is not a cadastral survey."
+}

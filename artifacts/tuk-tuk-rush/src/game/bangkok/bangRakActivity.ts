@@ -1,3 +1,4 @@
+import { bangRakSeamState } from "./bangRakSeam";
 import type { District, Point } from "../types";
 import type { StreetPerson } from "../streetLife";
 import { bangRakState, bangRakLocal } from "./bangRakPlan";
@@ -54,5 +55,13 @@ export function bangRakPeople(d: District, clear: (p: Point) => boolean) {
       );
     }
   }
-  return people.slice(0, 32);
+  const original=people.splice(0,16);
+  people.length=0;
+  for(const b of bangRakSeamState(d)?.parcels??[]) {
+    const F=b.d/2;
+    const start=bangRakLocal(b,-b.w*.2,F+1.5),end=bangRakLocal(b,b.w*.2,F+1.5);
+    add(start,end,(b.yaw??0)+Math.PI,undefined,"walker");
+    if(people.length>=16)break;
+  }
+  return [...original,...people].slice(0,32);
 }
