@@ -23,12 +23,12 @@ export const BANG_RAK_SEAM = {
   ],
   streets: [
     { id: "si-phraya", name: "Si Phraya Road", thai: "ถนนสี่พระยา", width: 12,
-      oneWay: true, points: [{x:-200,z:784},{x:-165,z:822},{x:-140,z:822},{x:145.5172413796,z:780}] },
+      oneWay: true, arrivalSpurFirstSegment: true, points: [{x:-200,z:784},{x:-165,z:822},{x:-140,z:822},{x:145.5172413796,z:780}] },
     { id: "captain-bush-return", name: "Charoen Krung Soi 30 / Captain Bush Lane", thai: "ซอยเจริญกรุง 30", width: 9,
       oneWay: true, points: [{x:-158,z:883},{x:-158,z:850},{x:-165,z:822}] },
   ],
   compromises: [
-    "Western Si Phraya is compressed into the existing River City / Wanit interface; its full eastern extension and Maha Set are deferred, not substituted by a fictional connector.",
+    "A separate two-way River City arrival spur joins the retained Wanit interface to eastbound Si Phraya and Captain Bush. This local curve is compressed; eastern Si Phraya and Maha Set remain deferred.",
     "All PR42 lane centerlines remain. Captain Bush's added northern bend and one-way rule correct its topology; widths and the bend are arcade fits, not surveyed dimensions.",
     "River City is in Talat Noi, Samphanthawong beside Bang Rak. No BTS/MRT station lies inside this finished seam; existing distant transit is inherited, not newly certified.",
   ],
@@ -77,8 +77,14 @@ export function planBangRakSeam(d: District) {
       let prev=node(a,`brg:${street.id}:${count++}`);
       for(let j=1;j<=steps;j++) {
         const n=node({x:a.x+(b.x-a.x)*j/steps,z:a.z+(b.z-a.z)*j/steps},`brg:${street.id}:${count++}`);
-        const r: Road={a:prev.id,b:n.id,width:street.width,name:street.name,
-          corridor:street.id==="captain-bush-return"?"charoen-krung-30":street.id,oneWay:true,spawnTraffic:false};
+        // River City's public car arrival is a local two-way spur northwest of
+        // the real Si Phraya / Captain Bush junction, not an invented one-way
+        // extension of Si Phraya. Keep the source street itself eastbound.
+        const arrivalSpur=street.id==="si-phraya" && i===1;
+        const r: Road={a:prev.id,b:n.id,width:street.width,
+          name:arrivalSpur?"River City public arrival approach":street.name,
+          corridor:arrivalSpur?"river-city-interface":street.id==="captain-bush-return"?"charoen-krung-30":street.id,
+          oneWay:!arrivalSpur,spawnTraffic:false};
         state.roads.push(r);d.roads.push(r);prev=n;
       }
     }
