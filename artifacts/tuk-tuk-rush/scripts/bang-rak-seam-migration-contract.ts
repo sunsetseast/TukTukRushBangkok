@@ -1,3 +1,4 @@
+import { beforeBangRakCompletion } from "./bang-rak-completion-migration-contract";
 import migration from "../src/game/bangkok/bangRakSeamMigration.v1.json";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -6,6 +7,7 @@ import type { District } from "../src/game/types";
 import { bangRakSeamState, retiredBangRakIds } from "../src/game/bangkok/bangRakSeam";
 export function beforeBangRakSeam(d: District): District {
   const state=bangRakSeamState(d);
+  d=beforeBangRakCompletion(d);
   if(!state)return d;
   const old=JSON.parse(gunzipSync(fs.readFileSync(new URL('../../../docs/qa/bang-rak-geography/validation/pr42-world.json.gz',import.meta.url))).toString()) as District;
   const live=JSON.parse(JSON.stringify(d)) as District;

@@ -1,0 +1,13 @@
+import fs from 'node:fs';import {gzipSync} from 'node:zlib';
+import {createBangkokWorld} from '../src/game/bangkok/world';import {buildLandmarkRegistry} from '../src/game/bangkok/landmarkRegistry';
+import {completeStreetFabric} from '../src/game/bangkok/streetFabric';import {BANG_RAK_COMPLETION,bangRakCompletionState} from '../src/game/bangkok/bangRakCompletion';
+import {bangRakPeople} from '../src/game/bangkok/bangRakActivity';import {placementIndex} from '../src/game/bangkok/environmentPlan';
+import {riverPiers} from '../src/game/bangkok/riverfront';
+const d=createBangkokWorld(),s=bangRakCompletionState(d)!,out=new URL('../../../docs/qa/bang-rak-completion/',import.meta.url),ns=new Map(d.nodes.map(n=>[n.id,n]));
+fs.writeFileSync(new URL('validation/final-world.json.gz',out),gzipSync(JSON.stringify(d)));
+fs.writeFileSync(new URL('landmark-register.json',out),JSON.stringify(buildLandmarkRegistry(d).filter(l=>['state','oriental','shangri','eastin','river-city','grand-postal','warehouse-30','royal-orchid','house-no-1','customs-house','assumption'].includes(l.id)),null,2)+'\n');
+const ids=new Set([...BANG_RAK_COMPLETION.streets.map(s=>s.id),'sathorn','narathiwas','charoen_s','charoen-krung-30','charoen-krung-32']);
+const survey=completeStreetFabric(d).after;
+const streets=[...ids].map(id=>{const roads=d.roads.filter(r=>r.corridor===id),points=roads.flatMap(r=>[ns.get(r.a)!,ns.get(r.b)!]);return {id,edges:roads.length,oneWayEdges:roads.filter(r=>r.oneWay).length,length:roads.reduce((sum,r)=>sum+Math.hypot(ns.get(r.a)!.x-ns.get(r.b)!.x,ns.get(r.a)!.z-ns.get(r.b)!.z),0),bounds:points.length?{minX:Math.min(...points.map(p=>p.x)),maxX:Math.max(...points.map(p=>p.x)),minZ:Math.min(...points.map(p=>p.z)),maxZ:Math.max(...points.map(p=>p.z))}:null,edgeSamples:Object.fromEntries([...new Set(survey.filter(s=>s.road.corridor===id).map(s=>s.kind))].map(kind=>[kind,survey.filter(s=>s.road.corridor===id&&s.kind===kind).length]))};});
+const result={source:'Production graph and current road-edge ray survey; counts distinguish legitimate compounds/water/junctions from open edges. Not a claim every open sample is a missing building.',streets,retiredBodies:s.retired.length,frontages:s.parcels.length,unfittedCandidates:s.rejected,people:bangRakPeople(d,placementIndex(d).person),transit:d.transit!.lines.filter(l=>l.id==='silom').map(l=>({id:l.id,stations:l.stations.map(s=>({id:s.id,code:s.code,x:s.x,z:s.z,yaw:s.yaw,entrances:s.entrances}))})),piers:riverPiers(d)};
+fs.writeFileSync(new URL('urban-transit-survey.json',out),JSON.stringify(result,null,2)+'\n');console.log({roads:d.roads.length,buildings:d.buildings.length,frontages:s.parcels.length,retired:s.retired.length,people:result.people.length});

@@ -6,6 +6,7 @@ import { isHistoricWaterfront } from "./historicPlan";
 import { composeYaowarat } from "./yaowarat";
 import type { District, Obstacle } from "../types";
 import { distanceToSegment } from "../world";
+import { nearestRoadIndex } from "./nearestRoadIndex";
 
 export type Typology =
   | "shophouse"
@@ -283,6 +284,7 @@ export function designBuildings(d: District): ParcelDesign[] {
   const roads = d.roads
     .filter((r) => !r.bridge && !r.shortcut)
     .map((r) => ({ r, a: nodes.get(r.a)!, b: nodes.get(r.b)! }));
+  const nearestRoad = nearestRoadIndex(roads);
   return d.buildings.map((b) => {
     const waterfront = isHistoricWaterfront(b);
     const id = buildingIdentity(b),
@@ -291,12 +293,7 @@ export function designBuildings(d: District): ParcelDesign[] {
       g =
         GRAMMARS[region] ??
         (region === "paknam" ? GRAMMARS.westbank! : GRAMMARS.connector!);
-    const road = roads.reduce((best, r) =>
-      distanceToSegment(b, r.a, r.b).distance <
-      distanceToSegment(b, best.a, best.b).distance
-        ? r
-        : best,
-    );
+    const road = nearestRoad(b);
     const hero = HERO_STREETS.find(
       (h) =>
         h.region === region &&
@@ -425,7 +422,7 @@ export function designBuildings(d: District): ParcelDesign[] {
       id,
       parcel: b,
       region,
-      corridor: b.bangRak?.road ?? b.chinatown?.corridor ?? road.r.corridor ?? "",
+      corridor: b.frontageRoad ?? b.bangRak?.road ?? b.chinatown?.corridor ?? road.r.corridor ?? "",
       hero: hero?.id,
       premiumContext: (() => {
         if (b.artRole !== "background" || waterfront) return undefined;

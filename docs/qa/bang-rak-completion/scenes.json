@@ -1,0 +1,833 @@
+[
+  {
+    "id": "si-phraya-east-vehicle",
+    "mode": "inspect",
+    "camera": [
+      170,
+      4,
+      775
+    ],
+    "look": [
+      320,
+      4,
+      725
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "si-phraya-east-elevated",
+    "mode": "inspect",
+    "camera": [
+      110,
+      90,
+      840
+    ],
+    "look": [
+      320,
+      4,
+      725
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "si-phraya-west-vehicle",
+    "mode": "inspect",
+    "camera": [
+      320,
+      4,
+      725
+    ],
+    "look": [
+      145,
+      4,
+      780
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "si-phraya-west-elevated",
+    "mode": "inspect",
+    "camera": [
+      260,
+      90,
+      790
+    ],
+    "look": [
+      145,
+      4,
+      780
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "captain-bush-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -150,
+      3,
+      870
+    ],
+    "look": [
+      -157,
+      3,
+      828
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "captain-bush-elevated",
+    "mode": "inspect",
+    "camera": [
+      -210,
+      90,
+      935
+    ],
+    "look": [
+      -157,
+      3,
+      828
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "maha-set-vehicle",
+    "mode": "inspect",
+    "camera": [
+      345,
+      4,
+      755
+    ],
+    "look": [
+      390,
+      4,
+      850
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "maha-set-elevated",
+    "mode": "inspect",
+    "camera": [
+      285,
+      90,
+      820
+    ],
+    "look": [
+      390,
+      4,
+      850
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "surawong-vehicle",
+    "mode": "inspect",
+    "camera": [
+      200,
+      4,
+      966
+    ],
+    "look": [
+      395,
+      4,
+      920
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "surawong-elevated",
+    "mode": "inspect",
+    "camera": [
+      140,
+      90,
+      1031
+    ],
+    "look": [
+      395,
+      4,
+      920
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "silom-vehicle",
+    "mode": "inspect",
+    "camera": [
+      320,
+      4,
+      1120
+    ],
+    "look": [
+      500,
+      4,
+      1050
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "silom-elevated",
+    "mode": "inspect",
+    "camera": [
+      260,
+      90,
+      1185
+    ],
+    "look": [
+      500,
+      4,
+      1050
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "state-tower-vehicle",
+    "mode": "inspect",
+    "camera": [
+      145,
+      4,
+      1128
+    ],
+    "look": [
+      200,
+      60,
+      1180
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "state-tower-elevated",
+    "mode": "inspect",
+    "camera": [
+      85,
+      95,
+      1090
+    ],
+    "look": [
+      200,
+      60,
+      1180
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "saphan-taksin-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -70,
+      4,
+      1430
+    ],
+    "look": [
+      20,
+      10,
+      1450
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "saphan-taksin-elevated",
+    "mode": "inspect",
+    "camera": [
+      -130,
+      90,
+      1495
+    ],
+    "look": [
+      20,
+      10,
+      1450
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "grand-postal-vehicle",
+    "mode": "inspect",
+    "camera": [
+      130,
+      4,
+      975
+    ],
+    "look": [
+      58,
+      12,
+      990
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "grand-postal-elevated",
+    "mode": "inspect",
+    "camera": [
+      70,
+      90,
+      1040
+    ],
+    "look": [
+      58,
+      12,
+      990
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "warehouse-30-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -160,
+      3,
+      887
+    ],
+    "look": [
+      -60,
+      7,
+      904
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "warehouse-30-elevated",
+    "mode": "inspect",
+    "camera": [
+      -220,
+      90,
+      952
+    ],
+    "look": [
+      -60,
+      7,
+      904
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "assumption-vehicle",
+    "mode": "inspect",
+    "camera": [
+      28,
+      3,
+      1153
+    ],
+    "look": [
+      -75,
+      15,
+      1165
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "assumption-elevated",
+    "mode": "inspect",
+    "camera": [
+      50,
+      70,
+      1200
+    ],
+    "look": [
+      -75,
+      15,
+      1165
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "oriental-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -100,
+      3,
+      1060
+    ],
+    "look": [
+      -200,
+      17,
+      1040
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "oriental-elevated",
+    "mode": "inspect",
+    "camera": [
+      -160,
+      90,
+      1125
+    ],
+    "look": [
+      -200,
+      17,
+      1040
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "historic-block-vehicle",
+    "mode": "inspect",
+    "camera": [
+      230,
+      3,
+      765
+    ],
+    "look": [
+      330,
+      7,
+      725
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "historic-block-elevated",
+    "mode": "inspect",
+    "camera": [
+      170,
+      90,
+      830
+    ],
+    "look": [
+      330,
+      7,
+      725
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "commercial-block-vehicle",
+    "mode": "inspect",
+    "camera": [
+      450,
+      3,
+      1065
+    ],
+    "look": [
+      630,
+      15,
+      1015
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "commercial-block-elevated",
+    "mode": "inspect",
+    "camera": [
+      390,
+      90,
+      1130
+    ],
+    "look": [
+      630,
+      15,
+      1015
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "waterfront-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -205,
+      4,
+      905
+    ],
+    "look": [
+      -252,
+      35,
+      882
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "waterfront-elevated",
+    "mode": "inspect",
+    "camera": [
+      -170,
+      90,
+      950
+    ],
+    "look": [
+      -252,
+      35,
+      882
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "completed-junction-vehicle",
+    "mode": "inspect",
+    "camera": [
+      380,
+      4,
+      930
+    ],
+    "look": [
+      390,
+      4,
+      870
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "completed-junction-elevated",
+    "mode": "inspect",
+    "camera": [
+      320,
+      90,
+      995
+    ],
+    "look": [
+      390,
+      4,
+      870
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "state-tower-night",
+    "mode": "inspect",
+    "camera": [
+      145,
+      4,
+      1128
+    ],
+    "look": [
+      200,
+      60,
+      1180
+    ],
+    "elapsed": 1000,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "silom-night",
+    "mode": "inspect",
+    "camera": [
+      320,
+      4,
+      1120
+    ],
+    "look": [
+      500,
+      4,
+      1050
+    ],
+    "elapsed": 1000,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "warehouse-30-night",
+    "mode": "inspect",
+    "camera": [
+      -160,
+      3,
+      887
+    ],
+    "look": [
+      -60,
+      7,
+      904
+    ],
+    "elapsed": 1000,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "waterfront-night",
+    "mode": "inspect",
+    "camera": [
+      -205,
+      4,
+      905
+    ],
+    "look": [
+      -252,
+      35,
+      882
+    ],
+    "elapsed": 1000,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "regression-wat-mangkon",
+    "mode": "inspect",
+    "camera": [
+      -170,
+      5,
+      -360
+    ],
+    "look": [
+      -240,
+      14,
+      -390
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "regression-sanam",
+    "mode": "inspect",
+    "camera": [
+      -600,
+      30,
+      -1220
+    ],
+    "look": [
+      -764,
+      5,
+      -1260
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "regression-flowers",
+    "mode": "inspect",
+    "camera": [
+      -620,
+      5,
+      -240
+    ],
+    "look": [
+      -728,
+      10,
+      -260
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "house-no-1-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -170,
+      3,
+      846
+    ],
+    "look": [
+      -205,
+      6,
+      846
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "house-no-1-elevated",
+    "mode": "inspect",
+    "camera": [
+      -150,
+      55,
+      920
+    ],
+    "look": [
+      -205,
+      8,
+      846
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "customs-house-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -300,
+      5,
+      962
+    ],
+    "look": [
+      -245,
+      9,
+      960
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "customs-house-elevated",
+    "mode": "inspect",
+    "camera": [
+      -330,
+      60,
+      1030
+    ],
+    "look": [
+      -245,
+      9,
+      960
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "night-drive",
+    "mode": "drive",
+    "near": [
+      300,
+      1130
+    ],
+    "corridor": "silom",
+    "elapsed": 1000,
+    "viewport": [
+      844,
+      390
+    ]
+  }
+]

@@ -1,3 +1,4 @@
+import { BANG_RAK_DESTINATIONS } from "./bangRakDestinations";
 import { BANG_RAK_PLAN } from "./bangRakPlan";
 import { CHINATOWN_HERITAGE } from "./chinatownHeritage";
 import { CITY_MODEL, canonicalFeaturePoint } from "./cityModel";
@@ -60,9 +61,10 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
     nodes = new Map(d.nodes.map((n) => [n.id, n]));
   const entries: LandmarkRegistryEntry[] = d.landmarks.map((l) => {
     const heritage = CHINATOWN_HERITAGE.find((h) => h.id === l.id);
+    const completion = BANG_RAK_DESTINATIONS.find(s=>s.id===l.id);
     const geo =
         GEOGRAPHIC_REFERENCES.find((g) => g.id === l.id) ??
-        (heritage
+        (completion ? {coordinate:completion.coordinate??undefined,district:"Bang Rak",corridors:[completion.road],sources:[completion.reference],neighbors:[],compromise:completion.note} : heritage
           ? {
               coordinate:
                 l.id === "wat-mangkon"
@@ -129,7 +131,7 @@ export function buildLandmarkRegistry(d: District): LandmarkRegistryEntry[] {
         ? Math.max(...solids.map((o) => o.height))
         : undefined,
       facade: facadeFeature(l),
-      mainEntrance: bangRak ? (l.id === "grand-postal" ? {x:75.5,z:990} : {x:-65,z:917}) : entrance,
+      mainEntrance: completion ? localPoint(completion.origin,completion.yaw,0,completion.d/2) : bangRak ? (l.id === "grand-postal" ? {x:75.5,z:990} : {x:-65,z:917}) : entrance,
       vehicleAccess: stop
         ? { x: stop.x, z: stop.z, nodeId: stop.id }
         : undefined,

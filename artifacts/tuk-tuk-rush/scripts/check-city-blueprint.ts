@@ -72,7 +72,7 @@ assert.notEqual(
   CITY_MODEL.roadBaseline.fullGraphKey,
   "Direction changes invalidate approval",
 );
-assert.equal(new Set(CITY_MODEL.features.map((p) => p.id)).size, 49);
+assert.equal(new Set(CITY_MODEL.features.map((p) => p.id)).size, 53);
 for (const p of CITY_MODEL.geographicReferences)
   assert(
     Number.isFinite(p.coordinate.lat) &&
@@ -84,7 +84,7 @@ const registry = buildLandmarkRegistry(d),
     fs.readFileSync(new URL("before-registry.json", out), "utf8"),
   );
 assert(old.every((p: { id: string }) => registry.some((q) => q.id === p.id)));
-assert.equal(registry.length, 100); // The two explicitly inventoried PR42 destinations.
+assert.equal(registry.length, 104); // Four explicitly inventoried PR44 destinations; prior 100 entries preserved.
 assert(
   landmarkParcels(d).length >= 208 + CITY_MODEL.architecturalAprons.length,
   "Preserve sites; bank-shaped terrace reservations vary",

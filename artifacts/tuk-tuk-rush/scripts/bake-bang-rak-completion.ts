@@ -1,0 +1,17 @@
+import fs from 'node:fs';import {gunzipSync} from 'node:zlib';import clipping from 'polygon-clipping';
+import {createBangkokWorld} from '../src/game/bangkok/world';import migration from '../src/game/bangkok/bangRakCompletionMigration.v1.json';
+import {roadEnvelopes} from './road-surface-authoring';import {roadGraphKey} from '../src/game/bangkok/roadSurfaceGraph';
+import {orientedFootprintsOverlap} from '../src/game/world';import type {Road} from '../src/game/types';
+const read=(name:string)=>JSON.parse(gunzipSync(fs.readFileSync(new URL('../../../docs/qa/bang-rak-completion/validation/'+name,import.meta.url))).toString());
+const d=createBangkokWorld(),old=read('pr43-world.json.gz'),bake=read('pr43-road-surfaces.json.gz'),ns=new Map([...old.nodes,...d.nodes].map(n=>[n.id,n]));
+const retired={...old,roads:migration.retiredRoads},mask=roadEnvelopes(retired,6.5,true);
+const volume=(r:Road,extra:number)=>{const a=ns.get(r.a)!,b=ns.get(r.b)!;return {x:(a.x+b.x)/2,z:(a.z+b.z)/2,w:r.width+extra*2,d:Math.hypot(b.x-a.x,b.z-a.z)+extra*2,yaw:Math.atan2(b.x-a.x,b.z-a.z),height:0,color:'#fff'};};
+const changed=new Set(migration.roads.map(r=>r.a+'>'+r.b));
+const affected={...d,roads:d.roads.filter(r=>changed.has(r.a+'>'+r.b)||migration.retiredRoads.some(old=>orientedFootprintsOverlap(volume(r,6.5),volume(old,6.5))))};
+const road=clipping.union(clipping.difference(bake.road,mask),clipping.difference(roadEnvelopes(affected,0,true),bake.water));
+const curb=clipping.difference(clipping.union(clipping.difference(bake.curb,mask),roadEnvelopes(affected,.32,true)),road,bake.water);
+const sidewalk=clipping.difference(clipping.union(clipping.difference(bake.sidewalk,mask),roadEnvelopes(affected,6,true)),road,curb,bake.water);
+const result={...bake,key:roadGraphKey(d),road,curb,sidewalk};
+fs.writeFileSync(new URL('../src/game/bangkok/roadSurfaces.generated.json',import.meta.url),JSON.stringify(result)+'\n');
+fs.writeFileSync(new URL('../../../docs/qa/bang-rak-completion/validation/surface-migration.json',import.meta.url),JSON.stringify({method:'Exact PR43 water/land and unaffected asphalt; retire western Silom envelope, restore crossing roads and union researched new corridors',retiredRoads:migration.retiredRoads.length,affectedRoads:affected.roads.length,key:result.key,mask},null,2)+'\n');
+console.log({key:result.key,affected:affected.roads.length,bytes:JSON.stringify(result).length});

@@ -1,0 +1,152 @@
+[
+  {
+    "function": "",
+    "file": "buildingGrammar.ts",
+    "selfSeconds": 6.062
+  },
+  {
+    "function": "orientedFootprintsOverlap",
+    "file": "world.ts",
+    "selfSeconds": 3.935
+  },
+  {
+    "function": "distanceToSegment",
+    "file": "world.ts",
+    "selfSeconds": 2.898
+  },
+  {
+    "function": "mergeVertices",
+    "file": "BufferGeometryUtils.js",
+    "selfSeconds": 2.817
+  },
+  {
+    "function": "",
+    "file": "destinationAccess.ts",
+    "selfSeconds": 2.463
+  },
+  {
+    "function": "(garbage collector)",
+    "file": "",
+    "selfSeconds": 1.551
+  },
+  {
+    "function": "obstacleLocal",
+    "file": "world.ts",
+    "selfSeconds": 1.496
+  },
+  {
+    "function": "nearestRiverShore",
+    "file": "waterGeometry.ts",
+    "selfSeconds": 1.422
+  },
+  {
+    "function": "obstacleDistance",
+    "file": "world.ts",
+    "selfSeconds": 1.298
+  },
+  {
+    "function": "",
+    "file": "world.ts",
+    "selfSeconds": 1.094
+  },
+  {
+    "function": "",
+    "file": "network.ts",
+    "selfSeconds": 1.003
+  },
+  {
+    "function": "finish",
+    "file": "staticBatch.ts",
+    "selfSeconds": 0.966
+  },
+  {
+    "function": "",
+    "file": "authoredSites.ts",
+    "selfSeconds": 0.96
+  },
+  {
+    "function": "",
+    "file": "publicSpaces.ts",
+    "selfSeconds": 0.851
+  },
+  {
+    "function": "buildBangkokGraybox",
+    "file": "mesh.ts",
+    "selfSeconds": 0.749
+  },
+  {
+    "function": "",
+    "file": "streetEdges.ts",
+    "selfSeconds": 0.749
+  },
+  {
+    "function": "riverClearance",
+    "file": "waterGeometry.ts",
+    "selfSeconds": 0.688
+  },
+  {
+    "function": "",
+    "file": "environmentCables.ts",
+    "selfSeconds": 0.599
+  },
+  {
+    "function": "add",
+    "file": "architecturalBatch.ts",
+    "selfSeconds": 0.567
+  },
+  {
+    "function": "emitCables",
+    "file": "environmentCables.ts",
+    "selfSeconds": 0.563
+  },
+  {
+    "function": "auditStreetEdges",
+    "file": "streetEdges.ts",
+    "selfSeconds": 0.552
+  },
+  {
+    "function": "reserveRailCorridors",
+    "file": "network.ts",
+    "selfSeconds": 0.527
+  },
+  {
+    "function": "",
+    "file": "landmarkContext.ts",
+    "selfSeconds": 0.397
+  },
+  {
+    "function": "",
+    "file": "riverfront.ts",
+    "selfSeconds": 0.338
+  },
+  {
+    "function": "connectDestinations",
+    "file": "destinationAccess.ts",
+    "selfSeconds": 0.319
+  },
+  {
+    "function": "setStyle",
+    "file": "three.core.js",
+    "selfSeconds": 0.282
+  },
+  {
+    "function": "createBangkokWorld",
+    "file": "world.ts",
+    "selfSeconds": 0.265
+  },
+  {
+    "function": "inPublicGround",
+    "file": "publicSpaces.ts",
+    "selfSeconds": 0.255
+  },
+  {
+    "function": "inDestinationGrounds",
+    "file": "destinationAccess.ts",
+    "selfSeconds": 0.253
+  },
+  {
+    "function": "",
+    "file": "environmentPlan.ts",
+    "selfSeconds": 0.237
+  }
+]

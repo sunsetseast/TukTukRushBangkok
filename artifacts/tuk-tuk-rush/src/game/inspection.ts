@@ -1,4 +1,5 @@
 import { realPlace } from './bangkok/realPlaces';
+import { BANG_RAK_DESTINATIONS } from './bangkok/bangRakDestinations';
 import type {District,Landmark,Obstacle} from './types';
 import {distanceToSegment} from './world';
 import {designBuildings} from './bangkok/buildingGrammar';
@@ -13,6 +14,8 @@ export function inspectionSubject(l:Landmark,d?:District):InspectionSubject{
  if(realPlace(l.id)?.bank)views.push(view('riverfront','River elevation',[0,h,0],Math.max(size*1.5,h*2.4),0,.22));
  if(l.id==='grand-postal')views=[{...view('front','Postal facade and forecourt',[0,11,16],50,0,.2),minDistance:38,maxDistance:85,pan:4,azimuthRange:[-.9,.9]},view('overview','Historic T plan',[0,10,-15],120,.2,.6)];
  if(l.id==='warehouse-30')views=[{...view('threshold','Warehouse 30 gallery threshold',[-67,3,-6],24,Math.PI,.16),minDistance:16,maxDistance:60,pan:3},view('overview','Industrial shed quarter',[0,4,0],110,.7,.6)];
+ const completed=BANG_RAK_DESTINATIONS.find(s=>s.id===l.id);
+ if(completed)views=[view('facade','Principal elevation',[0,completed.height*.48,0],Math.max(size*1.8,completed.height*2.1,45),0,.23),view('overview','Site overview',[0,completed.height*.35,0],Math.max(size*2,completed.height*2.2,55),-.65,.65)];
  if(l.id==='pho'){
   const room={min:[-23.5,2.8,8.1] as Vec3,max:[23.5,11.3,10.05] as Vec3};
   const inside=(id:string,label:string,target:Vec3,azimuth:number,distance:number,pitch:number):InspectionView=>({id,label,target,azimuth,distance,pitch,minDistance:4,maxDistance:16,minPitch:-.2,maxPitch:.42,pan:2,azimuthRange:[-1.1,1.1],room});

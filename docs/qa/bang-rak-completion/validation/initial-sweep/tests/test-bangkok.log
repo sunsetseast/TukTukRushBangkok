@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Every road node must be connected
+
+2333 !== 2350
+
+    at <anonymous> (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-bangkok.ts:31:8)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 2333,
+  expected: 2350,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

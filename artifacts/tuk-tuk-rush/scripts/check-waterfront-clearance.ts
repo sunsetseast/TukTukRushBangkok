@@ -1,3 +1,7 @@
+import { integerBoolean } from "./integer-road-clipping";
+import completionMigration from "../src/game/bangkok/bangRakCompletionMigration.v1.json";
+import { BANG_RAK_DESTINATIONS } from "../src/game/bangkok/bangRakDestinations";
+import { bangRakCompletionState } from "../src/game/bangkok/bangRakCompletion";
 import { bangRakSeamState } from "../src/game/bangkok/bangRakSeam";
 import clipping from "polygon-clipping";
 import {roadEnvelopes} from "./road-surface-authoring";
@@ -172,10 +176,15 @@ for (const item of preservation.files) {
     assert.equal(createHash("sha256").update(oldBytes).digest("hex"),successor.files[item.path]??item.sha256,"Original approved surface fixture");
     const prior=JSON.parse(oldBytes.toString()),current=JSON.parse(bytes.toString());
     for(const key of ["water","land","waterKey"])assert.deepEqual(current[key],prior[key],"Preserve water/terrain source "+key);
+    const difference=(a:any,b:any)=>integerBoolean(a,b,true);
+    const xor=(a:any,b:any)=>integerBoolean([...difference(a,b),...difference(b,a)]);
     const area=(polygons:any[])=>polygons.reduce((sum,p)=>sum+p.reduce((a:number,r:number[][],i:number)=>a+(i?-1:1)*Math.abs(r.slice(1).reduce((v:number,q:number[],j:number)=>v+r[j]![0]!*q[1]!-q[0]!*r[j]![1]!,0)/2),0),0);
-    const collar=roadEnvelopes({...d,roads:[...bangRakState(d)!.roads,...bangRakSeamState(d)!.roads]},12,true);
-    for(const key of ["road","curb","sidewalk"])assert(area(clipping.difference(clipping.xor(prior[key],current[key]),collar))<0.01,"No surface change outside the exact new-lane collars: "+key);
-    assert(area(clipping.difference(prior.road,current.road))<0.01,"No approved asphalt removed");
+    const pr43=JSON.parse(gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak-completion/validation/pr43-world.json.gz",root))).toString());
+    const merged={...d,nodes:[...pr43.nodes,...d.nodes]};
+    const collar=roadEnvelopes({...merged,roads:[...bangRakState(d)!.roads,...bangRakSeamState(d)!.roads,...bangRakCompletionState(d)!.roads,...completionMigration.retiredRoads]},12,true);
+    for(const key of ["road","curb","sidewalk"])assert(area(difference(xor(prior[key],current[key]),collar))<0.01,"No surface change outside the exact new-lane collars: "+key);
+    const retiredCollar=roadEnvelopes({...merged,roads:completionMigration.retiredRoads},12,true);
+    assert(area(difference(difference(prior.road,current.road),retiredCollar))<0.01,"Asphalt retirement is confined to the exact western Silom migration");
     continue;
   }
   if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/cityData.v1.json") {
@@ -183,9 +192,13 @@ for (const item of preservation.files) {
     assert.equal(createHash("sha256").update(priorBytes).digest("hex"),successor.files[item.path]??item.sha256,"Original approved city data fixture");
     const prior=JSON.parse(priorBytes.toString()),current=JSON.parse(bytes.toString());
     const {roadBaseline:oldRoads,...oldData}=prior,{roadBaseline:newRoads,...newData}=current;
-    assert.deepEqual(newData,oldData,"Only the explicitly approved additive road ledger changes");
-    assert.equal(newRoads.version,5);assert.equal(newRoads.roads,oldRoads.roads+26+24);assert.equal(newRoads.nodes,oldRoads.nodes+26+22);
-    assert.deepEqual(newRoads.sourceStages,[...oldRoads.sourceStages,"bang-rak-v1","bang-rak-seam-v1"]);
+    const added=new Set(BANG_RAK_DESTINATIONS.map(s=>s.id));
+    assert.deepEqual({...newData,features:newData.features.filter((f:any)=>!added.has(f.id))},oldData,"Only approved PR44 destinations and the explicit road ledger change canonical data");
+    assert.equal(newData.features.length,oldData.features.length+4);
+    assert.equal(newRoads.version,6);
+    assert.equal(newRoads.roads,oldRoads.roads+26+24+completionMigration.roads.length-completionMigration.retiredRoads.length-completionMigration.splitRoads.length);
+    assert.equal(newRoads.nodes,oldRoads.nodes+26+22+completionMigration.nodes.length-completionMigration.retiredNodes.length);
+    assert.deepEqual(newRoads.sourceStages,[...oldRoads.sourceStages,"bang-rak-v1","bang-rak-seam-v1","bang-rak-completion-v1"]);
     assertBangRakMigration(d);
     continue;
   }

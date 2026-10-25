@@ -1,0 +1,916 @@
+[
+  {
+    "id": "state",
+    "name": "State Tower / Lebua",
+    "category": "tower",
+    "district": "Bang Rak",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 200,
+      "z": 1180
+    },
+    "modelOrigin": {
+      "x": 200,
+      "z": 1180
+    },
+    "map": {
+      "x": 550,
+      "y": 895
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 200,
+        "z": 1180,
+        "w": 40,
+        "d": 40,
+        "yaw": 0,
+        "height": 156
+      }
+    ],
+    "height": 156,
+    "mainEntrance": {
+      "x": 84,
+      "z": 1148,
+      "id": "bkk:650"
+    },
+    "vehicleAccess": {
+      "x": 192,
+      "z": 1136.5,
+      "nodeId": "brc:1920000:11365000"
+    },
+    "pedestrianAccess": {
+      "x": 84,
+      "z": 1148,
+      "id": "bkk:650"
+    },
+    "protectedParcels": [
+      "parcel:state:structure:84",
+      "parcel:state:entrance:285"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "shangri",
+      "oriental"
+    ],
+    "roadRelationships": [
+      "1055 Silom Road"
+    ],
+    "references": [
+      "https://lebua.com/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "oriental",
+    "name": "Mandarin Oriental Bangkok",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.72393,
+      "lon": 100.5144
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -200,
+      "z": 1040
+    },
+    "modelOrigin": {
+      "x": -200,
+      "z": 1040
+    },
+    "map": {
+      "x": 450,
+      "y": 860
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -188,
+        "z": 1022,
+        "w": 68,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 49
+      },
+      {
+        "x": -188,
+        "z": 1075,
+        "w": 23,
+        "d": 27,
+        "yaw": -1.5707963267948966,
+        "height": 35
+      },
+      {
+        "x": -223,
+        "z": 1070,
+        "w": 40,
+        "d": 25,
+        "yaw": -1.5707963267948966,
+        "height": 12
+      },
+      {
+        "x": -229,
+        "z": 1015,
+        "w": 44,
+        "d": 15,
+        "yaw": -1.5707963267948966,
+        "height": 6
+      }
+    ],
+    "height": 49,
+    "facade": {
+      "x": -236,
+      "z": 1040,
+      "y": 19,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -160.5,
+      "z": 1040
+    },
+    "vehicleAccess": {
+      "x": -160.5,
+      "z": 1040,
+      "nodeId": "real-arrival:oriental:12"
+    },
+    "pedestrianAccess": {
+      "x": -160.5,
+      "z": 1040
+    },
+    "protectedParcels": [
+      "parcel:oriental:structure:128",
+      "parcel:oriental:structure:129",
+      "parcel:oriental:structure:130",
+      "parcel:oriental:structure:131",
+      "parcel:oriental:structure:132",
+      "parcel:oriental:structure:133",
+      "parcel:oriental:structure:134",
+      "parcel:oriental:structure:135",
+      "parcel:oriental:structure:136",
+      "parcel:oriental:structure:137",
+      "parcel:oriental:structure:138",
+      "parcel:oriental:structure:139",
+      "parcel:oriental:structure:140",
+      "parcel:oriental:structure:141",
+      "parcel:oriental:structure:142",
+      "parcel:oriental:structure:143",
+      "parcel:oriental:structure:144",
+      "parcel:oriental:forecourt:145"
+    ],
+    "visibilityCorridors": [
+      "view:oriental:0",
+      "view:oriental:1",
+      "view:oriental:2"
+    ],
+    "neighbors": [
+      "river-city",
+      "shangri",
+      "peninsula"
+    ],
+    "roadRelationships": [
+      "Oriental Avenue",
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river",
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river/gallery"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West-facing river terrace, distinct from Oriental Avenue arrival.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "shangri",
+    "name": "Shangri-La Bangkok",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.720781,
+      "lon": 100.513781
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -160,
+      "z": 1324
+    },
+    "modelOrigin": {
+      "x": -160,
+      "z": 1324
+    },
+    "map": {
+      "x": 460,
+      "y": 931
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -150,
+        "z": 1300,
+        "w": 69,
+        "d": 26,
+        "yaw": -1.5707963267948966,
+        "height": 77
+      },
+      {
+        "x": -157,
+        "z": 1367,
+        "w": 24,
+        "d": 34,
+        "yaw": -1.5707963267948966,
+        "height": 47
+      },
+      {
+        "x": -188,
+        "z": 1289,
+        "w": 26,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 8
+      },
+      {
+        "x": -188,
+        "z": 1333,
+        "w": 22,
+        "d": 16,
+        "yaw": -1.5707963267948966,
+        "height": 7
+      },
+      {
+        "x": -150,
+        "z": 1344,
+        "w": 22,
+        "d": 20,
+        "yaw": -1.5707963267948966,
+        "height": 9
+      }
+    ],
+    "height": 77,
+    "facade": {
+      "x": -198,
+      "z": 1324,
+      "y": 22,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -123,
+      "z": 1324
+    },
+    "vehicleAccess": {
+      "x": -123,
+      "z": 1324,
+      "nodeId": "real-arrival:shangri:7"
+    },
+    "pedestrianAccess": {
+      "x": -123,
+      "z": 1324
+    },
+    "protectedParcels": [
+      "parcel:shangri:structure:166",
+      "parcel:shangri:structure:167",
+      "parcel:shangri:structure:168",
+      "parcel:shangri:structure:169",
+      "parcel:shangri:structure:170",
+      "parcel:shangri:structure:171",
+      "parcel:shangri:structure:172",
+      "parcel:shangri:structure:173",
+      "parcel:shangri:structure:174",
+      "parcel:shangri:structure:175",
+      "parcel:shangri:structure:176",
+      "parcel:shangri:structure:177",
+      "parcel:shangri:structure:178",
+      "parcel:shangri:structure:179",
+      "parcel:shangri:structure:180",
+      "parcel:shangri:structure:181",
+      "parcel:shangri:structure:182",
+      "parcel:shangri:structure:183",
+      "parcel:shangri:structure:184",
+      "parcel:shangri:structure:185",
+      "parcel:shangri:structure:186",
+      "parcel:shangri:forecourt:187"
+    ],
+    "visibilityCorridors": [
+      "view:shangri:0",
+      "view:shangri:1",
+      "view:shangri:2"
+    ],
+    "neighbors": [
+      "oriental",
+      "state",
+      "saphan-taksin"
+    ],
+    "roadRelationships": [
+      "Soi Wat Suan Phlu",
+      "Charoen Krung"
+    ],
+    "references": [
+      "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/",
+      "https://www.shangri-la.com/bangkok/shangrila/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "River-facing west elevation; separate street driveway.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "eastin",
+    "name": "Eastin Grand Hotel Sathorn",
+    "category": "hotel",
+    "district": "Sathorn / Surasak",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 232,
+      "z": 1332
+    },
+    "modelOrigin": {
+      "x": 232,
+      "z": 1332
+    },
+    "map": {
+      "x": 558,
+      "y": 933
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": 232,
+        "z": 1332,
+        "w": 42,
+        "d": 40,
+        "yaw": 0,
+        "height": 111
+      }
+    ],
+    "height": 111,
+    "mainEntrance": {
+      "x": 232,
+      "z": 1298
+    },
+    "vehicleAccess": {
+      "x": 240,
+      "z": 1420,
+      "nodeId": "bkk:842"
+    },
+    "pedestrianAccess": {
+      "x": 232,
+      "z": 1298
+    },
+    "protectedParcels": [
+      "parcel:eastin:structure:228",
+      "parcel:eastin:structure:229"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [
+      "surasak",
+      "state"
+    ],
+    "roadRelationships": [
+      "33/1 South Sathorn Road"
+    ],
+    "references": [
+      "https://www.eastinhotelsresidences.com/eastingrandsathornbangkok/gallery"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Authored arcade dimensions. Exact footprint, bearing and neighboring parcels remain unverified.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "river-city",
+    "name": "River City Bangkok",
+    "category": "mall",
+    "district": "Samphanthawong",
+    "geographicReference": {
+      "lat": 13.730349,
+      "lon": 100.513262
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -276,
+      "z": 784
+    },
+    "modelOrigin": {
+      "x": -276,
+      "z": 784
+    },
+    "map": {
+      "x": 431,
+      "y": 796
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -269,
+        "z": 784,
+        "w": 90,
+        "d": 36,
+        "yaw": -1.5707963267948966,
+        "height": 23
+      },
+      {
+        "x": -294,
+        "z": 752,
+        "w": 23,
+        "d": 9,
+        "yaw": -1.5707963267948966,
+        "height": 5
+      },
+      {
+        "x": -294,
+        "z": 816,
+        "w": 23,
+        "d": 9,
+        "yaw": -1.5707963267948966,
+        "height": 5
+      }
+    ],
+    "height": 23,
+    "facade": {
+      "x": -300,
+      "z": 784,
+      "y": 11,
+      "yaw": -1.5707963267948966
+    },
+    "mainEntrance": {
+      "x": -237,
+      "z": 784
+    },
+    "vehicleAccess": {
+      "x": -237,
+      "z": 784,
+      "nodeId": "real-arrival:river-city:2"
+    },
+    "pedestrianAccess": {
+      "x": -237,
+      "z": 784
+    },
+    "protectedParcels": [
+      "parcel:river-city:structure:230",
+      "parcel:river-city:structure:231",
+      "parcel:river-city:structure:232",
+      "parcel:river-city:structure:233",
+      "parcel:river-city:structure:234",
+      "parcel:river-city:structure:235",
+      "parcel:river-city:structure:236",
+      "parcel:river-city:structure:237",
+      "parcel:river-city:structure:238",
+      "parcel:river-city:structure:239",
+      "parcel:river-city:forecourt:240"
+    ],
+    "visibilityCorridors": [
+      "view:river-city:0",
+      "view:river-city:1",
+      "view:river-city:2"
+    ],
+    "neighbors": [
+      "hilton",
+      "icon",
+      "oriental"
+    ],
+    "roadRelationships": [
+      "Charoen Krung 24",
+      "Si Phraya"
+    ],
+    "references": [
+      "https://rivercitybangkok.com/plan-your-visit/",
+      "https://www.openstreetmap.org/way/342182317",
+      "https://rivercitybangkok.com/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "West river elevation; east street entrance separately recorded.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "grand-postal",
+    "name": "Grand Postal Building / TCDC",
+    "category": "museum",
+    "district": "Bang Rak / Charoen Krung Creative District",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": 58,
+      "z": 990
+    },
+    "modelOrigin": {
+      "x": 58,
+      "z": 990
+    },
+    "map": {
+      "x": 514.5,
+      "y": 847.5
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": 58,
+        "z": 1019,
+        "w": 34,
+        "d": 27,
+        "yaw": 1.5707963267948966,
+        "height": 19.6
+      },
+      {
+        "x": 60,
+        "z": 990,
+        "w": 24,
+        "d": 31,
+        "yaw": 1.5707963267948966,
+        "height": 23.2
+      },
+      {
+        "x": 58,
+        "z": 961,
+        "w": 34,
+        "d": 27,
+        "yaw": 1.5707963267948966,
+        "height": 19.6
+      },
+      {
+        "x": 23,
+        "z": 990,
+        "w": 18,
+        "d": 68,
+        "yaw": 1.5707963267948966,
+        "height": 17.2
+      }
+    ],
+    "height": 23.2,
+    "mainEntrance": {
+      "x": 75.5,
+      "z": 990
+    },
+    "vehicleAccess": {
+      "x": 126,
+      "z": 992,
+      "nodeId": "bkk:644"
+    },
+    "protectedParcels": [
+      "parcel:grand-postal:structure:266",
+      "parcel:grand-postal:structure:267",
+      "parcel:grand-postal:structure:268",
+      "parcel:grand-postal:structure:269",
+      "parcel:grand-postal:forecourt:278"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [
+      "https://library.tcdc.or.th/visit/bkk_contact",
+      "https://www.docomomothailand.org/pages/no6.html",
+      "https://departmentofarchitecture.co.th/portfolio/thailand-creative-and-design-center-tcdc/",
+      "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
+      "https://www.thailandtourismdirectory.go.th/en/attraction/103358"
+    ],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing Charoen Krung and all Chinatown parcels are frozen. Soi 30 and 32 are compressed public approach stubs; no private inter-compound through road. Postal facade is 92m wide versus the documented 103.8m; its T stem is shortened to preserve the approved Mandarin Oriental grounds. Eight Warehouse 30 shed interpretations fit two compact rows; courtyard/door geometry is original, not a cadastral replica or current tenant directory. PR43 adds the direct Si Phraya / Captain Bush loop through an explicit versioned frontage migration. The full eastern district remains deferred.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "warehouse-30",
+    "name": "Warehouse 30",
+    "category": "museum",
+    "district": "Bang Rak / Charoen Krung Creative District",
+    "coordinateAccuracy": "not-verified",
+    "world": {
+      "x": -65,
+      "z": 904
+    },
+    "modelOrigin": {
+      "x": -65,
+      "z": 904
+    },
+    "map": {
+      "x": 483.75,
+      "y": 826
+    },
+    "rotation": 0,
+    "footprints": [
+      {
+        "x": -132,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "yaw": 3.141592653589793,
+        "height": 7.1
+      },
+      {
+        "x": -89,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "yaw": 3.141592653589793,
+        "height": 7.1
+      },
+      {
+        "x": -46,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "yaw": 3.141592653589793,
+        "height": 7.1
+      },
+      {
+        "x": -3,
+        "z": 898,
+        "w": 40,
+        "d": 9,
+        "yaw": 3.141592653589793,
+        "height": 7.1
+      },
+      {
+        "x": -132,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "yaw": 0,
+        "height": 7.1
+      },
+      {
+        "x": -89,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "yaw": 0,
+        "height": 7.1
+      },
+      {
+        "x": -46,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "yaw": 0,
+        "height": 7.1
+      },
+      {
+        "x": -3,
+        "z": 907.5,
+        "w": 40,
+        "d": 7,
+        "yaw": 0,
+        "height": 7.1
+      }
+    ],
+    "height": 7.1,
+    "mainEntrance": {
+      "x": -65,
+      "z": 917
+    },
+    "vehicleAccess": {
+      "x": 2.9566755083897363,
+      "z": 920.1025641028513,
+      "nodeId": "br:charoen-krung-32:6"
+    },
+    "protectedParcels": [
+      "parcel:warehouse-30:structure:270",
+      "parcel:warehouse-30:structure:271",
+      "parcel:warehouse-30:structure:272",
+      "parcel:warehouse-30:structure:273",
+      "parcel:warehouse-30:structure:274",
+      "parcel:warehouse-30:structure:275",
+      "parcel:warehouse-30:structure:276",
+      "parcel:warehouse-30:structure:277",
+      "parcel:warehouse-30:compound:279"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [],
+    "references": [
+      "https://library.tcdc.or.th/visit/bkk_contact",
+      "https://www.docomomothailand.org/pages/no6.html",
+      "https://departmentofarchitecture.co.th/portfolio/thailand-creative-and-design-center-tcdc/",
+      "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
+      "https://www.thailandtourismdirectory.go.th/en/attraction/103358"
+    ],
+    "confidence": "unverified-this-pass",
+    "compression": "Existing Charoen Krung and all Chinatown parcels are frozen. Soi 30 and 32 are compressed public approach stubs; no private inter-compound through road. Postal facade is 92m wide versus the documented 103.8m; its T stem is shortened to preserve the approved Mandarin Oriental grounds. Eight Warehouse 30 shed interpretations fit two compact rows; courtyard/door geometry is original, not a cadastral replica or current tenant directory. PR43 adds the direct Si Phraya / Captain Bush loop through an explicit versioned frontage migration. The full eastern district remains deferred.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "royal-orchid",
+    "name": "Royal Orchid Sheraton",
+    "category": "hotel",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.7287181,
+      "lon": 100.5132694
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -252,
+      "z": 882
+    },
+    "modelOrigin": {
+      "x": -252,
+      "z": 882
+    },
+    "map": {
+      "x": 437,
+      "y": 820.5
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -252,
+        "z": 882,
+        "w": 76,
+        "d": 42,
+        "yaw": -1.5707963267948966,
+        "height": 72
+      }
+    ],
+    "height": 72,
+    "mainEntrance": {
+      "x": -273,
+      "z": 882
+    },
+    "vehicleAccess": {
+      "x": -158,
+      "z": 883,
+      "nodeId": "br:charoen-krung-30:13"
+    },
+    "protectedParcels": [
+      "parcel:royal-orchid:structure:280"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "charoen-krung-30"
+    ],
+    "references": [
+      "https://www.marriott.com/en-us/hotels/bkksi-royal-orchid-sheraton-riverside-hotel-bangkok/overview/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Original miniature interpretation of the curved river-facing hotel; footprint compressed beside River City.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "house-no-1",
+    "name": "House No. 1",
+    "category": "museum",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.7290404,
+      "lon": 100.5142159
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -205,
+      "z": 846
+    },
+    "modelOrigin": {
+      "x": -205,
+      "z": 846
+    },
+    "map": {
+      "x": 448.75,
+      "y": 811.5
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": -205,
+        "z": 846,
+        "w": 28,
+        "d": 20,
+        "yaw": 1.5707963267948966,
+        "height": 12
+      }
+    ],
+    "height": 12,
+    "mainEntrance": {
+      "x": -195,
+      "z": 846
+    },
+    "vehicleAccess": {
+      "x": -158,
+      "z": 850,
+      "nodeId": "brg:captain-bush-return:2"
+    },
+    "protectedParcels": [
+      "parcel:house-no-1:structure:281"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "charoen-krung-30"
+    ],
+    "references": [
+      "https://www.bangkokdesignweek.com/en/bkkdw2024/content/94952"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Colonial event house exterior; private grounds are not a public vehicle shortcut.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "assumption",
+    "name": "Assumption Cathedral",
+    "category": "church",
+    "district": "Bang Rak",
+    "geographicReference": {
+      "lat": 13.7231068895,
+      "lon": 100.5152152421
+    },
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -75,
+      "z": 1165
+    },
+    "modelOrigin": {
+      "x": -75,
+      "z": 1165
+    },
+    "map": {
+      "x": 481.25,
+      "y": 891.25
+    },
+    "rotation": 1.5707963267948966,
+    "footprints": [
+      {
+        "x": -75,
+        "z": 1165,
+        "w": 38,
+        "d": 56,
+        "yaw": 1.5707963267948966,
+        "height": 34
+      }
+    ],
+    "height": 34,
+    "mainEntrance": {
+      "x": -47,
+      "z": 1165
+    },
+    "vehicleAccess": {
+      "x": 84,
+      "z": 1148,
+      "nodeId": "bkk:650"
+    },
+    "protectedParcels": [
+      "parcel:assumption:structure:282",
+      "parcel:assumption:entrance:284"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "charoen_s"
+    ],
+    "references": [
+      "https://assumptioncathedralbkk.org/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Red brick nave, cream trim, twin bell towers and rose window. Campus compressed; school buildings and interiors deferred.",
+    "visualQa": "pending-render-review"
+  },
+  {
+    "id": "customs-house",
+    "name": "Historic Customs House",
+    "category": "museum",
+    "district": "Bang Rak",
+    "coordinateAccuracy": "approximate-site-center",
+    "world": {
+      "x": -245,
+      "z": 960
+    },
+    "modelOrigin": {
+      "x": -245,
+      "z": 960
+    },
+    "map": {
+      "x": 438.75,
+      "y": 840
+    },
+    "rotation": -1.5707963267948966,
+    "footprints": [
+      {
+        "x": -245,
+        "z": 960,
+        "w": 60,
+        "d": 22,
+        "yaw": -1.5707963267948966,
+        "height": 17
+      }
+    ],
+    "height": 17,
+    "mainEntrance": {
+      "x": -256,
+      "z": 960
+    },
+    "vehicleAccess": {
+      "x": -158.00000000000003,
+      "z": 928,
+      "nodeId": "br:charoen-krung-32:13"
+    },
+    "protectedParcels": [
+      "parcel:customs-house:structure:283"
+    ],
+    "visibilityCorridors": [],
+    "neighbors": [],
+    "roadRelationships": [
+      "charoen-krung-32"
+    ],
+    "references": [
+      "https://www.langhamhotels.com/en/the-langham/bangkok/"
+    ],
+    "confidence": "inherited-reference",
+    "compression": "Historic river facade interpretation; contemporary redevelopment/private access not certified. No invented through drive. Historic shell only; the Langham redevelopment/new wing and contemporary operations are deferred.",
+    "visualQa": "pending-render-review"
+  }
+]

@@ -1,0 +1,11 @@
+/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/bangRakCompletion.ts:22
+  if (migration.blocked.length) throw Error("Unresolved protected Bang Rak migration conflicts");
+                                      ^
+
+Error: Unresolved protected Bang Rak migration conflicts
+    at completeBangRak (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/bangRakCompletion.ts:22:39)
+    at createBangkokWorld (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/world.ts:860:3)
+    at new GameEngine (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/engine.ts:44:73)
+    at <anonymous> (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-city-reconstruction-drives.ts:26:11)
+
+Node.js v24.22.1

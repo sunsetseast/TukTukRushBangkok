@@ -1,4 +1,5 @@
 import { emitBangRakGrounds } from "./bangRakArt";
+import { BANG_RAK_DESTINATIONS, emitBangRakDestinations } from "./bangRakDestinations";
 import { mountIdentitySigns } from "./identitySignMounts";
 import { chinatownLightField } from "./chinatownLightField";
 import {
@@ -225,6 +226,7 @@ export function buildBangkokGraybox(
     ),
   );
   emitBangRakGrounds(d, (piece) => architecture.add(piece));
+  emitBangRakDestinations(d, (piece) => architecture.add(piece));
   emitScala(scala, (piece) => architecture.add(piece));
   emitStreetFrontages(d, ordinary, (p) => architecture.add(p));
   emitConvenienceStores(d, (p) => architecture.add(p));
@@ -553,7 +555,7 @@ export function buildBangkokGraybox(
   };
 }
 function blockout(l: Landmark, finishes?: ReturnType<typeof facadeFinishes>) {
-  if (["grand-postal", "warehouse-30"].includes(l.id ?? "")) return new T.Group();
+  if (["grand-postal", "warehouse-30", ...BANG_RAK_DESTINATIONS.map(s=>s.id)].includes(l.id ?? "")) return new T.Group();
   const real = buildRealArchitecture(l) ?? realCommercial(l);
   if (real) return real;
   const authored = sculptedLandmark(l);

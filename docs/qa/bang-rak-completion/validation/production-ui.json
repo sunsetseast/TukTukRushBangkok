@@ -1,0 +1,260 @@
+{
+  "quality": "low",
+  "renderer": "153.0.8010.0",
+  "physicalSafari": false,
+  "source": "Final production bundle, unmodified built stylesheet, visible controls only.",
+  "errors": [],
+  "layouts": [
+    {
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": false,
+          "box": {
+            "x": -7,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": false,
+          "box": {
+            "x": 315,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "control-steer",
+          "visible": false,
+          "box": null
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": false,
+          "box": {
+            "x": 48,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": false,
+          "box": {
+            "x": 370,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": false,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "control-steer",
+          "visible": false,
+          "box": null
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 130,
+            "w": 195,
+            "h": 42.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 462,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 784,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 746,
+            "y": 288,
+            "w": 82,
+            "h": 90
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 175.5,
+            "w": 303.828125,
+            "h": 214.5
+          }
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "overflow": false,
+      "boxes": [
+        {
+          "id": "text-current-street",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 150,
+            "w": 216,
+            "h": 47.1875
+          }
+        },
+        {
+          "id": "destination-banner",
+          "visible": true,
+          "box": {
+            "x": 898,
+            "y": 12,
+            "w": 310,
+            "h": 106
+          }
+        },
+        {
+          "id": "button-pause",
+          "visible": true,
+          "box": {
+            "x": 1220,
+            "y": 12,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "id": "button-open-map",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 12,
+            "w": 120,
+            "h": 130
+          }
+        },
+        {
+          "id": "button-gas",
+          "visible": true,
+          "box": {
+            "x": 1164,
+            "y": 678,
+            "w": 100,
+            "h": 110
+          }
+        },
+        {
+          "id": "control-steer",
+          "visible": true,
+          "box": {
+            "x": 0,
+            "y": 360,
+            "w": 460.796875,
+            "h": 440
+          }
+        }
+      ]
+    }
+  ],
+  "mapReturn": true,
+  "longName": "Covered by the separate district development-renderer state replay and ui/hud-long-name.jpg; this built-bundle replay uses visible controls only.",
+  "pass": true
+}

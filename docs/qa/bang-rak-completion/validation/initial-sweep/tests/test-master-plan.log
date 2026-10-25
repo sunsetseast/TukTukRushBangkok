@@ -1,0 +1,198 @@
+{
+  "pass": true,
+  "roads": 2405,
+  "nodes": 2333,
+  "connectedDirectedNodes": 2333,
+  "buildings": 7350,
+  "landmarks": 57,
+  "publicSpaces": 5,
+  "stations": [
+    {
+      "line": "sukhumvit",
+      "count": 13
+    },
+    {
+      "line": "silom",
+      "count": 10
+    },
+    {
+      "line": "gold",
+      "count": 3
+    }
+  ],
+  "plantsBySpecies": {
+    "understory": 342,
+    "royal-palm": 101,
+    "frangipani": 51,
+    "shade-tree": 261,
+    "rain-tree": 379,
+    "coconut": 214,
+    "banana": 12,
+    "bougainvillea": 27,
+    "ratchaphruek": 82,
+    "tamarind": 38
+  },
+  "mrtEntrances": [
+    {
+      "id": "sukhumvit-mrt",
+      "name": "Sukhumvit",
+      "thai": "สุขุมวิท",
+      "code": "BL22",
+      "design": [
+        953,
+        540
+      ],
+      "interchange": "asok",
+      "introduced": 29,
+      "district": "Watthana",
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=22"
+      ],
+      "x": 1812,
+      "z": -240,
+      "yaw": -3.1082716577115477
+    },
+    {
+      "id": "silom-mrt",
+      "name": "Si Lom",
+      "thai": "สีลม",
+      "code": "BL26",
+      "design": [
+        771,
+        781
+      ],
+      "interchange": "sala-daeng",
+      "introduced": 29,
+      "district": "Bang Rak",
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=26"
+      ],
+      "x": 1084,
+      "z": 724,
+      "yaw": 1.084930152467369
+    },
+    {
+      "id": "hua-lamphong-mrt",
+      "name": "Hua Lamphong",
+      "thai": "หัวลำโพง",
+      "code": "BL28",
+      "design": [
+        605,
+        561
+      ],
+      "introduced": 29,
+      "district": "Pathum Wan",
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=28"
+      ],
+      "x": 404.03009757777727,
+      "z": -147.69565074044422,
+      "yaw": 0.47951929199259485
+    },
+    {
+      "id": "chatuchak-mrt",
+      "name": "Chatuchak Park",
+      "thai": "สวนจตุจักร",
+      "code": "BL13",
+      "design": [
+        779,
+        67
+      ],
+      "interchange": "mo-chit",
+      "introduced": 29,
+      "district": "Chatuchak",
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=13"
+      ],
+      "x": 1116,
+      "z": -2132,
+      "yaw": -0.5010133868035884
+    },
+    {
+      "id": "sanam-chai-mrt",
+      "name": "Sanam Chai",
+      "thai": "สนามไชย",
+      "code": "BL31",
+      "design": [
+        321,
+        465
+      ],
+      "introduced": 34,
+      "district": "Phra Nakhon",
+      "coordinate": {
+        "lat": 13.7443259,
+        "lon": 100.4946239
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=31",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit.",
+      "x": -716,
+      "z": -540,
+      "yaw": 0.1973955598498775
+    },
+    {
+      "id": "sam-yot-mrt",
+      "name": "Sam Yot",
+      "thai": "สามยอด",
+      "code": "BL30",
+      "design": [
+        443,
+        430
+      ],
+      "introduced": 34,
+      "district": "Phra Nakhon",
+      "coordinate": {
+        "lat": 13.7470004,
+        "lon": 100.5023022
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=30",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Station center reference; one compressed, collision-safe surface entrance beside the existing arcade road. Not a surveyed exit.",
+      "x": -228,
+      "z": -680,
+      "yaw": 0.5404195002705843
+    },
+    {
+      "id": "wat-mangkon-mrt",
+      "name": "Wat Mangkon",
+      "thai": "วัดมังกร",
+      "code": "BL29",
+      "design": [
+        497,
+        499.2
+      ],
+      "introduced": 34,
+      "district": "Samphanthawong",
+      "coordinate": {
+        "lat": 13.7422095,
+        "lon": 100.5099097
+      },
+      "sources": [
+        "https://metro.bemplc.co.th/Line-Maps?Line=2&Station=29",
+        "https://www.openstreetmap.org/copyright"
+      ],
+      "compression": "Original entrance model retained, positioned beside the reconstructed Charoen Krung approach near Plaeng Nam. Nominal operator station center remains a reference, not a surveyed exit.",
+      "previousDesign": [
+        448,
+        523
+      ],
+      "migration": "chinatown-v1",
+      "x": -12,
+      "z": -403.20000000000005,
+      "yaw": 1.0088747645380827
+    }
+  ],
+  "colliderVolumes": 12361,
+  "decorationVolumes": 32877,
+  "plantVolumes": 38715,
+  "severeLaneConflicts": 0,
+  "railBuildingConflicts": 0,
+  "plantConflicts": 0,
+  "ms": 25640
+}
+{"pass":true,"trafficDisabledForDeterminism":true,"metres":4263,"routes":[{"from":"terminal","to":"emporium","metres":940,"simulatedSeconds":98,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emporium","to":"emquartier","metres":175,"simulatedSeconds":21,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emquartier","to":"emsphere","metres":954,"simulatedSeconds":99,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"emsphere","to":"benchasiri","metres":620,"simulatedSeconds":66,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"benchasiri","to":"terminal","metres":787,"simulatedSeconds":84,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true},{"from":"victory","to":"chatuchak-park","metres":787,"simulatedSeconds":83,"collisionFrames":0,"controllerDriven":true,"setupOnlyAtStart":true}]}
+{"pass":true,"sharedLeaves":true,"pitchedVisibleGeometryInsideClearance":true,"sharedDisposalOnce":true}

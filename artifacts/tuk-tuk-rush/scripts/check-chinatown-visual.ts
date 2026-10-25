@@ -1,3 +1,4 @@
+import completionMigration from "../src/game/bangkok/bangRakCompletionMigration.v1.json";
 import migration from "../src/game/bangkok/bangRakSeamMigration.v1.json";
 import { beforeBangRak } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
@@ -133,11 +134,11 @@ for (const p of designs) {
 }
 assert.equal(
   d.buildings.filter((b) => b.chinatown && !b.chinatown.role).length,
-  798 - migration.retired.filter(b=>"chinatown" in b && !(b.chinatown as any).role).length,
+  798 - [...migration.retired,...completionMigration.retired.map(r=>r.body)].filter(b=>"chinatown" in b && !(b.chinatown as any).role).length,
 );
 assert.equal(
   d.buildings.filter((b) => b.chinatown?.role === "rear").length,
-  111 - migration.retired.filter(b=>"chinatown" in b && (b.chinatown as any).role === "rear").length,
+  111 - [...migration.retired,...completionMigration.retired.map(r=>r.body)].filter(b=>"chinatown" in b && (b.chinatown as any).role === "rear").length,
 );
 assert(byCharacter.yaowarat!.lit > 500);
 assert(

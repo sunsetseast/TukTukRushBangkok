@@ -1,0 +1,5925 @@
+{
+  "roads": [
+    {
+      "a": "bkk:845",
+      "b": "brc:3300000:14050000",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "brc:3300000:14050000",
+      "b": "bkk:846",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:853",
+      "b": "brc:5500000:13683333",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "brc:5500000:13683333",
+      "b": "bkk:854",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "civic:1455172:7800000",
+      "b": "brc:1668339:7727273",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1668339:7727273",
+      "b": "brc:1881505:7654545",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1881505:7654545",
+      "b": "brc:2094671:7581818",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2094671:7581818",
+      "b": "brc:2307837:7509091",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2307837:7509091",
+      "b": "brc:2521003:7436364",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2521003:7436364",
+      "b": "brc:2734169:7363636",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2734169:7363636",
+      "b": "brc:2947335:7290909",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2947335:7290909",
+      "b": "brc:3160502:7218182",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3160502:7218182",
+      "b": "brc:3373668:7145455",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3373668:7145455",
+      "b": "brc:3586834:7072727",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3586834:7072727",
+      "b": "brc:3800000:7000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:7000000",
+      "b": "brc:3950000:6815385",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3950000:6815385",
+      "b": "brc:4100000:6630769",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4100000:6630769",
+      "b": "brc:4250000:6446154",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4250000:6446154",
+      "b": "brc:4400000:6261538",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:6261538",
+      "b": "brc:4540000:6089231",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4540000:6089231",
+      "b": "brc:4680000:5916923",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4680000:5916923",
+      "b": "brc:4820000:5744615",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4820000:5744615",
+      "b": "brc:4960000:5572308",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4960000:5572308",
+      "b": "brc:5100000:5400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5100000:5400000",
+      "b": "brc:5225000:5200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5225000:5200000",
+      "b": "brc:5350000:5000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5350000:5000000",
+      "b": "brc:5475000:4800000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5475000:4800000",
+      "b": "brc:5600000:4600000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5600000:4600000",
+      "b": "brc:5725000:4400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5725000:4400000",
+      "b": "brc:5850000:4200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5850000:4200000",
+      "b": "brc:5975000:4000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5975000:4000000",
+      "b": "brc:6100000:3800000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6100000:3800000",
+      "b": "brc:6225000:3600000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6225000:3600000",
+      "b": "brc:6350000:3400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6350000:3400000",
+      "b": "brc:6475000:3200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6475000:3200000",
+      "b": "bkk:703",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "civic:9630000:5640000",
+      "b": "brc:9434375:5762500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9434375:5762500",
+      "b": "brc:9238750:5885000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9238750:5885000",
+      "b": "brc:9043125:6007500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9043125:6007500",
+      "b": "brc:8847500:6130000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8847500:6130000",
+      "b": "brc:8651875:6252500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8651875:6252500",
+      "b": "brc:8456250:6375000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8456250:6375000",
+      "b": "brc:8260625:6497500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8260625:6497500",
+      "b": "brc:8065000:6620000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8065000:6620000",
+      "b": "brc:7869375:6742500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7869375:6742500",
+      "b": "brc:7673750:6865000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7673750:6865000",
+      "b": "brc:7478125:6987500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7478125:6987500",
+      "b": "brc:7282500:7110000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7282500:7110000",
+      "b": "brc:7086875:7232500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7086875:7232500",
+      "b": "brc:6891250:7355000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6891250:7355000",
+      "b": "brc:6695625:7477500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6695625:7477500",
+      "b": "brc:6500000:7600000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6500000:7600000",
+      "b": "brc:6316667:7683333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6316667:7683333",
+      "b": "brc:6133333:7766667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6133333:7766667",
+      "b": "brc:5950000:7850000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5950000:7850000",
+      "b": "brc:5766667:7933333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5766667:7933333",
+      "b": "brc:5583333:8016667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5583333:8016667",
+      "b": "brc:5400000:8100000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5400000:8100000",
+      "b": "brc:5216667:8183333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5216667:8183333",
+      "b": "brc:5033333:8266667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5033333:8266667",
+      "b": "brc:4850000:8350000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4850000:8350000",
+      "b": "brc:4666667:8433333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4666667:8433333",
+      "b": "brc:4483333:8516667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4483333:8516667",
+      "b": "brc:4300000:8600000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4300000:8600000",
+      "b": "brc:4082857:8694286",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4082857:8694286",
+      "b": "brc:3865714:8788571",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3865714:8788571",
+      "b": "brc:3648571:8882857",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3648571:8882857",
+      "b": "brc:3431429:8977143",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3431429:8977143",
+      "b": "brc:3214286:9071429",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3214286:9071429",
+      "b": "brc:2997143:9165714",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2997143:9165714",
+      "b": "brc:2780000:9260000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2780000:9260000",
+      "b": "brc:2562857:9354286",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2562857:9354286",
+      "b": "brc:2345714:9448571",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2345714:9448571",
+      "b": "brc:2128571:9542857",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2128571:9542857",
+      "b": "brc:1911429:9637143",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1911429:9637143",
+      "b": "brc:1694286:9731429",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1694286:9731429",
+      "b": "brc:1477143:9825714",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1477143:9825714",
+      "b": "bkk:644",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "bkk:650",
+      "b": "brc:1056000:11457000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1056000:11457000",
+      "b": "brc:1272000:11434000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1272000:11434000",
+      "b": "brc:1488000:11411000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1488000:11411000",
+      "b": "brc:1704000:11388000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1704000:11388000",
+      "b": "brc:1920000:11365000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1920000:11365000",
+      "b": "brc:2136000:11342000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2136000:11342000",
+      "b": "brc:2352000:11319000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2352000:11319000",
+      "b": "brc:2568000:11296000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2568000:11296000",
+      "b": "brc:2784000:11273000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2784000:11273000",
+      "b": "brc:3000000:11250000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3000000:11250000",
+      "b": "brc:3200000:11233333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3200000:11233333",
+      "b": "brc:3400000:11216667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3400000:11216667",
+      "b": "brc:3600000:11200000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3600000:11200000",
+      "b": "brc:3800000:11183333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:11183333",
+      "b": "brc:4000000:11166667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4000000:11166667",
+      "b": "brc:4200000:11150000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4200000:11150000",
+      "b": "brc:4400000:11133333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:11133333",
+      "b": "brc:4600000:11116667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4600000:11116667",
+      "b": "brc:4800000:11100000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4800000:11100000",
+      "b": "brc:5000000:11083333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5000000:11083333",
+      "b": "brc:5200000:11066667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5200000:11066667",
+      "b": "brc:5400000:11050000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5400000:11050000",
+      "b": "brc:5600000:11033333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5600000:11033333",
+      "b": "brc:5800000:11016667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5800000:11016667",
+      "b": "bkk:806",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:7000000",
+      "b": "brc:3871429:7228571",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3871429:7228571",
+      "b": "brc:3942857:7457143",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3942857:7457143",
+      "b": "brc:4014286:7685714",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4014286:7685714",
+      "b": "brc:4085714:7914286",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4085714:7914286",
+      "b": "brc:4157143:8142857",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4157143:8142857",
+      "b": "brc:4228571:8371429",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4228571:8371429",
+      "b": "brc:4300000:8600000",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4300000:8600000",
+      "b": "brc:4272727:8833333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4272727:8833333",
+      "b": "brc:4245455:9066667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4245455:9066667",
+      "b": "brc:4218182:9300000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4218182:9300000",
+      "b": "brc:4190909:9533333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4190909:9533333",
+      "b": "brc:4163636:9766667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4163636:9766667",
+      "b": "brc:4136364:10000000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4136364:10000000",
+      "b": "brc:4109091:10233333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4109091:10233333",
+      "b": "brc:4081818:10466667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4081818:10466667",
+      "b": "brc:4054545:10700000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4054545:10700000",
+      "b": "brc:4027273:10933333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4027273:10933333",
+      "b": "brc:4000000:11166667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4000000:11166667",
+      "b": "brc:3946154:11388462",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3946154:11388462",
+      "b": "brc:3892308:11610256",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3892308:11610256",
+      "b": "brc:3838462:11832051",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3838462:11832051",
+      "b": "brc:3784615:12053846",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3784615:12053846",
+      "b": "brc:3730769:12275641",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3730769:12275641",
+      "b": "brc:3676923:12497436",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3676923:12497436",
+      "b": "brc:3623077:12719231",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3623077:12719231",
+      "b": "brc:3569231:12941026",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3569231:12941026",
+      "b": "brc:3515385:13162821",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3515385:13162821",
+      "b": "brc:3461538:13384615",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3461538:13384615",
+      "b": "brc:3407692:13606410",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3407692:13606410",
+      "b": "brc:3353846:13828205",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3353846:13828205",
+      "b": "brc:3300000:14050000",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5000000:11083333",
+      "b": "brc:5041667:11300000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5041667:11300000",
+      "b": "brc:5083333:11516667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5083333:11516667",
+      "b": "brc:5125000:11733333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5125000:11733333",
+      "b": "brc:5166667:11950000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5166667:11950000",
+      "b": "brc:5208333:12166667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5208333:12166667",
+      "b": "brc:5250000:12383333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5250000:12383333",
+      "b": "brc:5291667:12600000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5291667:12600000",
+      "b": "brc:5333333:12816667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5333333:12816667",
+      "b": "brc:5375000:13033333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5375000:13033333",
+      "b": "brc:5416667:13250000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5416667:13250000",
+      "b": "brc:5458333:13466667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5458333:13466667",
+      "b": "brc:5500000:13683333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6500000:7600000",
+      "b": "brc:6604667:7790667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6604667:7790667",
+      "b": "brc:6709333:7981333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6709333:7981333",
+      "b": "brc:6814000:8172000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6814000:8172000",
+      "b": "brc:6918667:8362667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6918667:8362667",
+      "b": "brc:7023333:8553333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7023333:8553333",
+      "b": "brc:7128000:8744000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7128000:8744000",
+      "b": "brc:7232667:8934667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7232667:8934667",
+      "b": "brc:7337333:9125333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7337333:9125333",
+      "b": "brc:7442000:9316000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7442000:9316000",
+      "b": "civic:7546667:9506667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:6261538",
+      "b": "brc:4511111:6465812",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4511111:6465812",
+      "b": "brc:4622222:6670085",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4622222:6670085",
+      "b": "brc:4733333:6874359",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4733333:6874359",
+      "b": "brc:4844444:7078632",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4844444:7078632",
+      "b": "brc:4955556:7282906",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4955556:7282906",
+      "b": "brc:5066667:7487179",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5066667:7487179",
+      "b": "brc:5177778:7691453",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5177778:7691453",
+      "b": "brc:5288889:7895726",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5288889:7895726",
+      "b": "brc:5400000:8100000",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    }
+  ],
+  "retired": [
+    {
+      "x": 116.08244044279573,
+      "z": 1136.5399459265916,
+      "w": 22,
+      "d": 22,
+      "height": 32,
+      "yaw": -1.8337910584758161,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 55.24864765599353,
+      "z": 1147.0874411350483,
+      "w": 22,
+      "d": 22,
+      "height": 38,
+      "yaw": 1.3078015951139772,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 109.32313013315104,
+      "z": 1161.645955648129,
+      "w": 22,
+      "d": 22,
+      "height": 44,
+      "yaw": -1.8337910584758161,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 48.48933734634884,
+      "z": 1172.1934508565857,
+      "w": 22,
+      "d": 22,
+      "height": 50,
+      "yaw": 1.3078015951139772,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 652.1617778555224,
+      "z": 330.3077922919803,
+      "w": 22,
+      "d": 22,
+      "height": 11,
+      "yaw": 2.4248693924243847,
+      "color": "#b5ad9c"
+    },
+    {
+      "x": 926.6040625408335,
+      "z": 569.4258225128455,
+      "w": 22,
+      "d": 22,
+      "height": 56,
+      "yaw": 2.4248693924243847,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 946.2070828754986,
+      "z": 586.5056818143358,
+      "w": 22,
+      "d": 22,
+      "height": 26,
+      "yaw": 2.4248693924243847,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 193.13821108425086,
+      "z": 988.1282715538964,
+      "w": 22,
+      "d": 22,
+      "height": 26,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 211.53536608096212,
+      "z": 935.2364509383515,
+      "w": 22,
+      "d": 22,
+      "height": 21.8,
+      "yaw": -0.3347368373168147,
+      "color": "#9a704f",
+      "regionId": "talatnoi"
+    },
+    {
+      "x": 236.09228279532226,
+      "z": 943.7779871868246,
+      "w": 22,
+      "d": 22,
+      "height": 14.6,
+      "yaw": -0.3347368373168147,
+      "color": "#b5ad9c"
+    },
+    {
+      "x": 260.64919950968243,
+      "z": 952.3195234352977,
+      "w": 22,
+      "d": 22,
+      "height": 56,
+      "yaw": -0.3347368373168147,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 389.59354479913196,
+      "z": 1056.4605615416813,
+      "w": 22,
+      "d": 22,
+      "height": 38,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 407.9906997958432,
+      "z": 1003.5687409261363,
+      "w": 22,
+      "d": 22,
+      "height": 44,
+      "yaw": -0.3347368373168147,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 414.1504615134921,
+      "z": 1065.0020977901543,
+      "w": 22,
+      "d": 22,
+      "height": 50,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 432.54761651020334,
+      "z": 1012.1102771746093,
+      "w": 22,
+      "d": 22,
+      "height": 56,
+      "yaw": -0.3347368373168147,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 487.8212116565725,
+      "z": 1090.6267065355735,
+      "w": 22,
+      "d": 22,
+      "height": 44,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 512.3781283709326,
+      "z": 1099.1682427840467,
+      "w": 22,
+      "d": 22,
+      "height": 56,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 536.9350450852927,
+      "z": 1107.7097790325197,
+      "w": 22,
+      "d": 22,
+      "height": 26,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 561.4919617996528,
+      "z": 1116.251315280993,
+      "w": 22,
+      "d": 22,
+      "height": 38,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 740.258477873477,
+      "z": 925.6567770614087,
+      "w": 22,
+      "d": 22,
+      "height": 26,
+      "yaw": 0.7678561033400458,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 316.9612475247289,
+      "z": 1378.7869002711534,
+      "w": 22,
+      "d": 22,
+      "height": 62,
+      "yaw": 0.16514867741462685,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 342.6074895443646,
+      "z": 1374.5125266012142,
+      "w": 22,
+      "d": 22,
+      "height": 32,
+      "yaw": 0.16514867741462685,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 547.7774257014505,
+      "z": 1340.3175372417,
+      "w": 22,
+      "d": 22,
+      "height": 44,
+      "yaw": 0.16514867741462685,
+      "color": "#507e9c",
+      "regionId": "silom"
+    },
+    {
+      "x": 907.5534502430173,
+      "z": 591.2907298092026,
+      "w": 21,
+      "d": 19,
+      "height": 42,
+      "yaw": 2.4248693924243847,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 294.73321434733947,
+      "z": 933.4706525792922,
+      "w": 21,
+      "d": 19,
+      "height": 19.5,
+      "yaw": -0.3347368373168147,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 453.73719681891544,
+      "z": 1109.475577391579,
+      "w": 21,
+      "d": 19,
+      "height": 24,
+      "yaw": 2.8068558162729786,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 720.1152369761895,
+      "z": 904.7941347035038,
+      "w": 21,
+      "d": 19,
+      "height": 19.5,
+      "yaw": 0.7678561033400458,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 337.8399189125093,
+      "z": 1345.907102810082,
+      "w": 21,
+      "d": 19,
+      "height": 24,
+      "yaw": 0.16514867741462685,
+      "color": "#507e9c",
+      "regionId": "silom",
+      "artRole": "background"
+    },
+    {
+      "x": 177.20491598879136,
+      "z": 783.8069463378997,
+      "w": 11.630574010738997,
+      "d": 30,
+      "yaw": -1.6052699604385074,
+      "height": 11,
+      "color": "#d7a18a",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:0:1:6",
+      "chinatown": {
+        "block": "ctblock:0",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 177.63060082462854,
+      "z": 771.4637105054577,
+      "w": 11.630574010738997,
+      "d": 30,
+      "yaw": -1.6052699604385074,
+      "height": 20.3,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:0:1:7",
+      "chinatown": {
+        "block": "ctblock:0",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 178.0562856604657,
+      "z": 759.1204746730157,
+      "w": 11.630574010738997,
+      "d": 30,
+      "yaw": -1.6052699604385074,
+      "height": 17.2,
+      "color": "#dfc395",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:0:1:8",
+      "chinatown": {
+        "block": "ctblock:0",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 175.88847007079517,
+      "z": 976.8345374353529,
+      "w": 8,
+      "d": 10,
+      "yaw": 2.8068558162729778,
+      "height": 24,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "environmentId": "infill:frontage:3883125330"
+    },
+    {
+      "x": 584.1203177098015,
+      "z": 1120.9457532509873,
+      "w": 12,
+      "d": 14,
+      "yaw": 2.8068558162729778,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "environmentId": "infill:frontage:550317157"
+    },
+    {
+      "x": 167.18579750912042,
+      "z": 1127.5151524911869,
+      "w": 36,
+      "d": 28,
+      "yaw": -1.8337910584758161,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2419201015"
+    },
+    {
+      "x": 624.3024968620074,
+      "z": 368.371692020258,
+      "w": 18,
+      "d": 20,
+      "yaw": 2.4248693924243847,
+      "height": 14,
+      "color": "#b7baa2",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "infill:rear:772364954"
+    },
+    {
+      "x": 869.6239200372163,
+      "z": 627.2121821513232,
+      "w": 36,
+      "d": 28,
+      "yaw": 2.4248693924243847,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:3685699451"
+    },
+    {
+      "x": 229.19334967155558,
+      "z": 1134.0735591840569,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2496696215"
+    },
+    {
+      "x": 336.37320355864574,
+      "z": 892.898355399045,
+      "w": 36,
+      "d": 28,
+      "yaw": -0.3347368373168147,
+      "height": 10.5,
+      "color": "#b7baa2",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:rear:2662252661"
+    },
+    {
+      "x": 344.09343824476565,
+      "z": 931.5816589858799,
+      "w": 36,
+      "d": 28,
+      "yaw": -0.3347368373168147,
+      "height": 24,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:3908898054"
+    },
+    {
+      "x": 306.3135663765193,
+      "z": 1113.253564578404,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 56,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2442789988"
+    },
+    {
+      "x": 408.1549601083139,
+      "z": 917.8659228945817,
+      "w": 36,
+      "d": 28,
+      "yaw": -0.3347368373168147,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:1704604727"
+    },
+    {
+      "x": 368.6503549591258,
+      "z": 1134.9359258245279,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2816250809"
+    },
+    {
+      "x": 449.3842985384436,
+      "z": 884.5621445411603,
+      "w": 44,
+      "d": 28,
+      "yaw": -0.3347368373168147,
+      "height": 48,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:560959389"
+    },
+    {
+      "x": 370.8678691774794,
+      "z": 1183.351652925248,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:3477863515"
+    },
+    {
+      "x": 412.0972076076091,
+      "z": 1150.0478745718262,
+      "w": 36,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 48,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:400559253"
+    },
+    {
+      "x": 477.1032262678635,
+      "z": 1136.6606591054692,
+      "w": 36,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:782701637"
+    },
+    {
+      "x": 517.8808488386989,
+      "z": 1186.8421845652488,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 40,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:991093442"
+    },
+    {
+      "x": 511.597891886697,
+      "z": 1232.3012260414976,
+      "w": 36,
+      "d": 28,
+      "yaw": 2.8068558162729786,
+      "height": 48,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:396487317"
+    },
+    {
+      "x": 698.3843514761601,
+      "z": 853.4933684774071,
+      "w": 44,
+      "d": 28,
+      "yaw": 0.7678561033400458,
+      "height": 56,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2354271658"
+    },
+    {
+      "x": 690.1484450994367,
+      "z": 798.8932783112376,
+      "w": 44,
+      "d": 28,
+      "yaw": 0.7678561033400458,
+      "height": 48,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:3257530221"
+    },
+    {
+      "x": 781.5124305978477,
+      "z": 710.6797750713926,
+      "w": 44,
+      "d": 28,
+      "yaw": 0.7678561033400458,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:946781557"
+    },
+    {
+      "x": 377.29567586579503,
+      "z": 1321.082855726973,
+      "w": 44,
+      "d": 28,
+      "yaw": 0.16514867741462685,
+      "height": 64,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:196706867"
+    },
+    {
+      "x": -29.168453079294256,
+      "z": 1174.068973772174,
+      "w": 36,
+      "d": 28,
+      "yaw": 1.3078015951139772,
+      "height": 24,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:2283947076"
+    },
+    {
+      "x": 804.8557676475367,
+      "z": 649.9151585961392,
+      "w": 36,
+      "d": 28,
+      "yaw": 0.7678561033400458,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:3620480917"
+    },
+    {
+      "x": -66.25572748803677,
+      "z": 1151.992614638145,
+      "w": 44,
+      "d": 28,
+      "yaw": 2.9282548034074263,
+      "height": 32,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:rear:1826728471"
+    },
+    {
+      "x": 10.734975696156468,
+      "z": 1170.1017242258883,
+      "w": 14,
+      "d": 12,
+      "yaw": -1.833791058475816,
+      "height": 56,
+      "color": "#b7baa2",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:screened:2752101358"
+    },
+    {
+      "x": 285.0007908334543,
+      "z": 903.6163407877541,
+      "w": 14,
+      "d": 16,
+      "yaw": -0.3347368373168147,
+      "height": 10.2,
+      "color": "#d8c2a5",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:3:10:-1"
+    },
+    {
+      "x": 320.8916691082883,
+      "z": 916.1001245355224,
+      "w": 14,
+      "d": 16,
+      "yaw": -0.3347368373168147,
+      "height": 14.2,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:3:10:1"
+    },
+    {
+      "x": 420.02276768431733,
+      "z": 1124.2179404358187,
+      "w": 14,
+      "d": 16,
+      "yaw": 2.8068558162729786,
+      "height": 14.2,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:4:11:-1"
+    },
+    {
+      "x": 372.79792784900934,
+      "z": 1107.791909188755,
+      "w": 14,
+      "d": 16,
+      "yaw": 2.8068558162729786,
+      "height": 14.2,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:4:11:1"
+    },
+    {
+      "x": 334.7163381537075,
+      "z": 1321.082855726973,
+      "w": 12,
+      "d": 16,
+      "yaw": 0.16514867741462685,
+      "height": 11,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:3:14:-1"
+    },
+    {
+      "x": 406.8408776085488,
+      "z": 945.9955014051783,
+      "w": 16,
+      "d": 12,
+      "yaw": -0.3347368373168147,
+      "height": 17.4,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:4:10:-1"
+    },
+    {
+      "x": 28.599870144273297,
+      "z": 1144.9153053442726,
+      "w": 16,
+      "d": 16,
+      "yaw": 2.9282548034074365,
+      "height": 17.4,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:0:11:1"
+    },
+    {
+      "x": 543.831850006122,
+      "z": 1286.2302704182373,
+      "w": 12,
+      "d": 12,
+      "yaw": 0.16514867741462685,
+      "height": 11,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "infill:blockcourt:6:14:-1"
+    },
+    {
+      "x": 380.962726450614,
+      "z": 657.9642319465729,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794405,
+      "height": 9,
+      "color": "#bb9678",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:6:11:0"
+    },
+    {
+      "x": 280.63646172951087,
+      "z": 709.8084822599667,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": -1.605265427794405,
+      "height": 18,
+      "color": "#d8c3a0",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:4:12:0"
+    },
+    {
+      "x": 330.08707057752633,
+      "z": 711.5136756685189,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794405,
+      "height": 12,
+      "color": "#a9b8a9",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:5:12:0"
+    },
+    {
+      "x": 379.05796454585214,
+      "z": 713.2023271846681,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794405,
+      "height": 16,
+      "color": "#c4b195",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:6:12:0"
+    },
+    {
+      "x": 302.6023398079302,
+      "z": 751.2210016766593,
+      "w": 24,
+      "d": 30,
+      "yaw": -1.605265427794404,
+      "height": 13,
+      "color": "#bb9678",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:5:13:0"
+    },
+    {
+      "x": 377.1532026410903,
+      "z": 768.4404224227632,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794404,
+      "height": 13,
+      "color": "#bb9678",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:6:13:0"
+    },
+    {
+      "x": 373.3436788315664,
+      "z": 878.9166128989539,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -1.605265427794405,
+      "height": 15,
+      "color": "#c4b195",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:5:15:0"
+    },
+    {
+      "x": 253.71598279851273,
+      "z": 1109.9944783903197,
+      "w": 22,
+      "d": 22,
+      "yaw": -1.8337910584758161,
+      "height": 10,
+      "color": "#c99c7f",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:4:18:0"
+    },
+    {
+      "x": 293.23823587200945,
+      "z": 1151.6783066527537,
+      "w": 27,
+      "d": 27,
+      "yaw": -1.8337910584758161,
+      "height": 20,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:5:19:0"
+    },
+    {
+      "x": 266.97828678696203,
+      "z": 1155.436461827259,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": -1.8337910584758161,
+      "height": 11,
+      "color": "#d8c3a0",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:4:19:0"
+    },
+    {
+      "x": 610.2568162210767,
+      "z": 402.55528921187334,
+      "w": 27,
+      "d": 31,
+      "yaw": 2.424869392424385,
+      "height": 21,
+      "color": "#a3b5b8",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:10:6:0"
+    },
+    {
+      "x": 586.735132712581,
+      "z": 379.4084966710879,
+      "w": 27,
+      "d": 27,
+      "yaw": 2.424869392424385,
+      "height": 26,
+      "color": "#c6c9bd",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:10:6:1"
+    },
+    {
+      "x": 580.1219873644179,
+      "z": 412.07021904765685,
+      "w": 41.85,
+      "d": 17.98,
+      "yaw": 2.424869392424385,
+      "height": 32,
+      "color": "#c6c9bd",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:10:6:2"
+    },
+    {
+      "x": 549.9037747540888,
+      "z": 446.7524857936028,
+      "w": 41.85,
+      "d": 17.98,
+      "yaw": 2.424869392424385,
+      "height": 23,
+      "color": "#c6c9bd",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:9:7:0"
+    },
+    {
+      "x": 518.2863275163684,
+      "z": 483.04069228235005,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": 2.424869392424385,
+      "height": 8,
+      "color": "#bb9678",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:9:7:0"
+    },
+    {
+      "x": 566.6698869574602,
+      "z": 490.5795503376984,
+      "w": 24,
+      "d": 30,
+      "yaw": 2.4248693924243843,
+      "height": 11,
+      "color": "#c4b195",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:9:8:0"
+    },
+    {
+      "x": 558.1148091474339,
+      "z": 518.8966395012409,
+      "w": 41.85,
+      "d": 17.98,
+      "yaw": 2.424869392424385,
+      "height": 30,
+      "color": "#a3b5b8",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:9:8:1"
+    },
+    {
+      "x": 842.7219873644176,
+      "z": 640.8702190476565,
+      "w": 41.85,
+      "d": 17.98,
+      "yaw": 2.4248693924243825,
+      "height": 19,
+      "color": "#d3c3ad",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:14:10:0"
+    },
+    {
+      "x": 417.0458280240282,
+      "z": 843.562688875364,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -0.3347368373168157,
+      "height": 8,
+      "color": "#bb9678",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:7:14:0"
+    },
+    {
+      "x": 401.54979307907723,
+      "z": 1102.9698502021351,
+      "w": 27,
+      "d": 31,
+      "yaw": 2.806855816272978,
+      "height": 28,
+      "color": "#d3c3ad",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:6:18:0"
+    },
+    {
+      "x": 348.22391458782863,
+      "z": 1206.1479122266592,
+      "w": 41.85,
+      "d": 17.98,
+      "yaw": 2.806855816272978,
+      "height": 22,
+      "color": "#d3c3ad",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:6:20:0"
+    },
+    {
+      "x": 468.15693913513917,
+      "z": 861.3404666531419,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -0.3347368373168151,
+      "height": 12,
+      "color": "#c4b195",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:7:15:0"
+    },
+    {
+      "x": 484.25444975726157,
+      "z": 815.0601236145402,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -0.3347368373168151,
+      "height": 12,
+      "color": "#c4b195",
+      "regionId": "talatnoi",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:8:14:0"
+    },
+    {
+      "x": 382.0980230176781,
+      "z": 1241.2548002397675,
+      "w": 27,
+      "d": 31,
+      "yaw": 2.806855816272977,
+      "height": 17,
+      "color": "#c6c9bd",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:6:21:0"
+    },
+    {
+      "x": 512.9637394536272,
+      "z": 852.6797258372086,
+      "w": 24,
+      "d": 30,
+      "yaw": -0.3347368373168151,
+      "height": 15,
+      "color": "#c4b195",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:9:14:0"
+    },
+    {
+      "x": 535.3655608683727,
+      "z": 832.837901392318,
+      "w": 37.2,
+      "d": 17.4,
+      "yaw": -0.3347368373168151,
+      "height": 17,
+      "color": "#a9b8a9",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:talat-noi-blocks:9:14:2"
+    },
+    {
+      "x": 509.8758007954561,
+      "z": 1285.6992446842119,
+      "w": 27,
+      "d": 31,
+      "yaw": 2.8068558162729778,
+      "height": 33,
+      "color": "#a3b5b8",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:sathorn-blocks:8:22:0"
+    },
+    {
+      "x": 3.4428408286075722,
+      "z": 1141.243081944553,
+      "w": 22,
+      "d": 26,
+      "yaw": -0.208830893644044,
+      "height": 11,
+      "color": "#c99c7f",
+      "regionId": "silom",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:0:19:0"
+    },
+    {
+      "x": -245.68992650887142,
+      "z": 937.7617188852213,
+      "w": 22,
+      "d": 22,
+      "yaw": 3.0947266594690443,
+      "height": 19,
+      "color": "#d8c3a0",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-5:16:0"
+    },
+    {
+      "x": -233.43808023400126,
+      "z": 962.9833973158284,
+      "w": 34.1,
+      "d": 15.079999999999998,
+      "yaw": 3.0947266594690443,
+      "height": 18,
+      "color": "#adbaae",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "urban-block:bang-rak:-5:16:1"
+    },
+    {
+      "x": -261.22934917841434,
+      "z": 892.1792747981941,
+      "w": 12,
+      "d": 15,
+      "height": 11.1,
+      "yaw": 2.921254949409331,
+      "color": "#d3c4ae",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "context:oriental:160:9"
+    },
+    {
+      "x": -230.07798811618923,
+      "z": 894.8655439013544,
+      "w": 12,
+      "d": 15,
+      "height": 14.2,
+      "yaw": 3.141592653589793,
+      "color": "#b1c4b5",
+      "regionId": "connector",
+      "artRole": "background",
+      "environmentId": "context:river-city:120:1"
+    },
+    {
+      "x": 157.91290627326157,
+      "z": 973.476551688955,
+      "w": 22,
+      "d": 23,
+      "height": 17,
+      "yaw": -1.8337910584758161,
+      "color": "#cebea4",
+      "environmentId": "br:charoen-east-3",
+      "regionId": "bang-rak",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "coffee",
+        "road": "charoen_s"
+      },
+      "protected": true
+    },
+    {
+      "x": 151.10600972153742,
+      "z": 998.7593103096447,
+      "w": 22,
+      "d": 23,
+      "height": 13.5,
+      "yaw": -1.8337910584758161,
+      "color": "#cebea4",
+      "environmentId": "br:charoen-east-4",
+      "regionId": "bang-rak",
+      "bangRak": {
+        "family": "timber",
+        "trade": "residence",
+        "road": "charoen_s"
+      },
+      "protected": true
+    }
+  ],
+  "parcels": [
+    {
+      "x": 202.0081494438728,
+      "z": 741.1795504175925,
+      "w": 9,
+      "d": 12,
+      "yaw": 0.32879269151703444,
+      "height": 14,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:66",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 222.48450303234398,
+      "z": 729.9671044881843,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.32879269151703444,
+      "height": 15,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 244.25245913107207,
+      "z": 722.540390054207,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.32879269151703444,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:112",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 266.02041522980016,
+      "z": 715.1136756202297,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.32879269151703444,
+      "height": 14,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 331.3242835259844,
+      "z": 692.833532318298,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.32879269151703444,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:204",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 353.09223962471253,
+      "z": 685.4068178843207,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.32879269151703444,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:-1:227",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 215.2470751740062,
+      "z": 779.98329824576,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.812799962072759,
+      "height": 10,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:66",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 236.36923001760584,
+      "z": 770.6637180640672,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.812799962072759,
+      "height": 10,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:89",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 258.1371861163339,
+      "z": 763.2370036300899,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.812799962072759,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 279.905142215062,
+      "z": 755.8102891961126,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.812799962072759,
+      "height": 17,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:135",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 302.3188995689186,
+      "z": 750.276440509851,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.812799962072759,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:158",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 322.7952531573897,
+      "z": 739.0639945804428,
+      "w": 9,
+      "d": 12,
+      "yaw": -2.812799962072759,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:181",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 345.8548117663748,
+      "z": 735.4230116418964,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.812799962072759,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:204",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 367.6227678651029,
+      "z": 727.9962972079192,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.812799962072759,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:1:1:227",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 376.70151549950583,
+      "z": 671.5505711832382,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.8884797719201486,
+      "height": 18,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:20",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 389.65291787644605,
+      "z": 652.4387639303751,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:43",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 404.1565482536188,
+      "z": 634.588141927701,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 13,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:66",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 418.66017863079145,
+      "z": 616.737519925027,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:89",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 433.1638090079642,
+      "z": 598.8868979223528,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 447.6674393851369,
+      "z": 581.0362759196787,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 15,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 462.17106976230957,
+      "z": 563.1856539170046,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 12,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:158",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 476.6747001394823,
+      "z": 545.3350319143306,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.8884797719201486,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:-1:181",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 410.0744175045053,
+      "z": 698.6660540623002,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:20",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 424.578047881678,
+      "z": 680.815432059626,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:43",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 437.5294502586182,
+      "z": 661.7036248067631,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.2531128816696446,
+      "height": 17,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:66",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 468.0889390131961,
+      "z": 627.2635660516037,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 10,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:112",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 482.59256939036885,
+      "z": 609.4129440489296,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:135",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 497.0961997675415,
+      "z": 591.5623220462555,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 13,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:158",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 511.59983014471425,
+      "z": 573.7117000435815,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.2531128816696446,
+      "height": 15,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:2:1:181",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 501.5200169599491,
+      "z": 511.11505776982676,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 13,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:20",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 513.7099925800222,
+      "z": 491.6110967777097,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:43",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 525.8999682000954,
+      "z": 472.1071357855927,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:66",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 538.0899438201685,
+      "z": 452.60317479347566,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 550.2799194402417,
+      "z": 433.0992138013586,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 15,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 562.4698950603148,
+      "z": 413.5952528092416,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:135",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 574.6598706803879,
+      "z": 394.09129181712456,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:158",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 586.8498463004611,
+      "z": 374.58733082500754,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 14,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:181",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 611.2297975406074,
+      "z": 335.57940884077345,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.0121970114513341,
+      "height": 14,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:227",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 626.8117663767009,
+      "z": 318.19544360866917,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.0121970114513341,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:-1:250",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 539.6799406401781,
+      "z": 534.9650100699698,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.1293956421384594,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:20",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 551.8699162602512,
+      "z": 515.4610490778527,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.1293956421384594,
+      "height": 18,
+      "color": "#d7c29c",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:43",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 564.0598918803244,
+      "z": 495.95708808573573,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.1293956421384594,
+      "height": 13,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:66",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 576.2498675003975,
+      "z": 476.4531270936187,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.1293956421384594,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:89",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 611.1237977526067,
+      "z": 416.8812462372613,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.1293956421384594,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:158",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 625.0097699806901,
+      "z": 398.4372831251506,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.1293956421384594,
+      "height": 18,
+      "color": "#d4cebc",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:181",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 645.9977280048159,
+      "z": 357.30936538090384,
+      "w": 9,
+      "d": 12,
+      "yaw": -2.1293956421384594,
+      "height": 11,
+      "color": "#cba68e",
+      "frontageRoad": "si-phraya",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:si-phraya:3:1:227",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "si-phraya"
+      }
+    },
+    {
+      "x": 939.0278404135447,
+      "z": 606.7385723294722,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.5821322592397604,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:43",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 918.472925308972,
+      "z": 617.2502546422045,
+      "w": 9,
+      "d": 12,
+      "yaw": -2.5821322592397604,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:66",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 901.1023838261854,
+      "z": 632.8471866672787,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 881.6089265955413,
+      "z": 645.0539522174583,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:112",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 862.1154693648973,
+      "z": 657.260717767638,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 842.6220121342533,
+      "z": 669.4674833178177,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 10,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:158",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 823.1285549036093,
+      "z": 681.6742488679973,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:181",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 803.6350976729652,
+      "z": 693.881014418177,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 17,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:204",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 784.1416404423213,
+      "z": 706.0877799683566,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:227",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 764.6481832116773,
+      "z": 718.2945455185362,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:250",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 745.1547259810333,
+      "z": 730.5013110687158,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:273",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 725.6612687503892,
+      "z": 742.7080766188955,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:296",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 706.1678115197452,
+      "z": 754.9148421690751,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 13,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:319",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 686.6743542891012,
+      "z": 767.1216077192547,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.5821322592397604,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:-1:342",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 815.5548363490723,
+      "z": 626.2428607629114,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.5594603943500329,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:158",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 796.0613791184282,
+      "z": 638.449626313091,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.5594603943500329,
+      "height": 15,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:181",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 778.6908376356416,
+      "z": 654.0465583381653,
+      "w": 9,
+      "d": 12,
+      "yaw": 0.5594603943500329,
+      "height": 11,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:204",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 719.149008069781,
+      "z": 688.9717717512568,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.5594603943500329,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:273",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 698.5940929652082,
+      "z": 699.4834540639891,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.5594603943500329,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:296",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 679.1006357345642,
+      "z": 711.6902196141688,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.5594603943500329,
+      "height": 18,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:319",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 659.6071785039202,
+      "z": 723.8969851643484,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.5594603943500329,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:1:1:342",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 642.3446455304281,
+      "z": 791.4904040613201,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 16,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:20",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 621.4062165487883,
+      "z": 801.0078717802473,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 13,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:43",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 600.4677875671483,
+      "z": 810.5253394991746,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:66",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 579.5293585855084,
+      "z": 820.0428072181019,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 14,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:89",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 558.5909296038685,
+      "z": 829.560274937029,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 11,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:112",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 535.9972888450238,
+      "z": 835.4362767461058,
+      "w": 9,
+      "d": 12,
+      "yaw": -2.714965160462917,
+      "height": 15,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:135",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 515.8864657519863,
+      "z": 846.7744774199583,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.714965160462917,
+      "height": 10,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:158",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 495.7756426589487,
+      "z": 858.1126780938108,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 14,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:181",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 474.8372136773088,
+      "z": 867.630145812738,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.714965160462917,
+      "height": 11,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:-1:204",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 621.2406953710677,
+      "z": 745.0617137107272,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 13,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:20",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 600.3022663894278,
+      "z": 754.5791814296545,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 12,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:43",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 579.3638374077879,
+      "z": 764.0966491485817,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:66",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 558.4254084261479,
+      "z": 773.614116867509,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:89",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 518.2037622400728,
+      "z": 796.2905182152139,
+      "w": 9,
+      "d": 12,
+      "yaw": 0.42662749312687615,
+      "height": 18,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:135",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 495.6101214812283,
+      "z": 802.1665200242907,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 15,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:158",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 474.67169249958835,
+      "z": 811.6839877432179,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 17,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:181",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 453.73326351794844,
+      "z": 821.2014554621451,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.42662749312687615,
+      "height": 11,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:2:1:204",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 400.71400223712317,
+      "z": 900.5164205604688,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:43",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 379.6169801520176,
+      "z": 909.6769696237383,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:66",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 358.51995806691207,
+      "z": 918.8375186870078,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 13,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:89",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 337.4229359818065,
+      "z": 927.9980677502773,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:112",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 316.32591389670097,
+      "z": 937.1586168135468,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 15,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:135",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 293.6357528440703,
+      "z": 942.6501185576676,
+      "w": 9,
+      "d": 12,
+      "yaw": -2.7319465449649556,
+      "height": 15,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:158",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 253.03484764138423,
+      "z": 964.6402640033554,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 17,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:204",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 231.14125607251611,
+      "z": 971.9662894070506,
+      "w": 15,
+      "d": 16,
+      "yaw": -2.7319465449649556,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:227",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 189.74378138606755,
+      "z": 992.1219111931639,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:273",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 168.64675930096197,
+      "z": 1001.2824602564334,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -2.7319465449649556,
+      "height": 14,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:-1:296",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 401.4985024862833,
+      "z": 844.5755181780521,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.4096461086248378,
+      "height": 13,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:20",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 381.1980498849403,
+      "z": 855.570590900896,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.4096461086248378,
+      "height": 14,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:43",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 359.3044583160722,
+      "z": 862.8966163045912,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.4096461086248378,
+      "height": 13,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:66",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 339.8005751984917,
+      "z": 875.7262126870095,
+      "w": 9,
+      "d": 12,
+      "yaw": 0.4096461086248378,
+      "height": 15,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 317.110414145861,
+      "z": 881.2177144311303,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.4096461086248378,
+      "height": 11,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:112",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 296.01339206075545,
+      "z": 890.3782634943998,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.4096461086248378,
+      "height": 12,
+      "color": "#cba68e",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:135",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 275.7129394594125,
+      "z": 901.3733362172436,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.4096461086248378,
+      "height": 14,
+      "color": "#d4cebc",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:158",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 212.4218732040958,
+      "z": 928.8549834070521,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.4096461086248378,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:227",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 169.4312595501221,
+      "z": 945.3415578740169,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.4096461086248378,
+      "height": 11,
+      "color": "#bbc5b7",
+      "frontageRoad": "surawong",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surawong:3:1:273",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surawong"
+      }
+    },
+    {
+      "x": 147.03485670565541,
+      "z": 1116.6494523158287,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.10608175742437517,
+      "height": 26,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:-1:66"
+    },
+    {
+      "x": 169.69379880572745,
+      "z": 1112.225388244685,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.10608175742437517,
+      "height": 33,
+      "color": "#d4cebc",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:-1:89"
+    },
+    {
+      "x": 192.77627253383815,
+      "z": 1111.7788385933834,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.10608175742437517,
+      "height": 22,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:-1:112"
+    },
+    {
+      "x": 238.5176883620209,
+      "z": 1106.908224870938,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.10608175742437517,
+      "height": 30,
+      "color": "#cba68e",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:-1:158"
+    },
+    {
+      "x": 106.26993750692775,
+      "z": 1168.2558604714175,
+      "w": 9,
+      "d": 12,
+      "yaw": -3.0355108961654182,
+      "height": 23,
+      "color": "#bbc5b7",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:1:20"
+    },
+    {
+      "x": 243.9177166195147,
+      "z": 1157.6215337239234,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.0355108961654182,
+      "height": 23,
+      "color": "#d4cebc",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:1:158"
+    },
+    {
+      "x": 266.7884245336061,
+      "z": 1155.1862268627008,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.0355108961654182,
+      "height": 23,
+      "color": "#bbc5b7",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:1:1:181"
+    },
+    {
+      "x": 317.7302099487735,
+      "z": 1096.930627809436,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.08314123188844122,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:-1:20"
+    },
+    {
+      "x": 501.09462946583136,
+      "z": 1081.6502595163477,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.08314123188844122,
+      "height": 19,
+      "color": "#bbc5b7",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:-1:204"
+    },
+    {
+      "x": 524.0151819054636,
+      "z": 1079.7402134797117,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 0.08314123188844122,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:-1:227"
+    },
+    {
+      "x": 547.1018253048034,
+      "z": 1079.8232589595655,
+      "w": 15,
+      "d": 16,
+      "yaw": 0.08314123188844122,
+      "height": 20,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:-1:250"
+    },
+    {
+      "x": 345.05217282065394,
+      "z": 1147.8375069597785,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.058451421701352,
+      "height": 33,
+      "color": "#bbc5b7",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:43"
+    },
+    {
+      "x": 367.97272526028615,
+      "z": 1145.9274609231425,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.058451421701352,
+      "height": 20,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:66"
+    },
+    {
+      "x": 413.64773917984314,
+      "z": 1140.1142773333806,
+      "w": 15,
+      "d": 16,
+      "yaw": -3.058451421701352,
+      "height": 32,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:112"
+    },
+    {
+      "x": 436.73438257918286,
+      "z": 1140.1973228132345,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.058451421701352,
+      "height": 27,
+      "color": "#d4cebc",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:135"
+    },
+    {
+      "x": 459.4888440591076,
+      "z": 1136.2941852601086,
+      "w": 15,
+      "d": 16,
+      "yaw": -3.058451421701352,
+      "height": 22,
+      "color": "#cba68e",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:158"
+    },
+    {
+      "x": 482.57548745844736,
+      "z": 1136.3772307399624,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.058451421701352,
+      "height": 20,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:181"
+    },
+    {
+      "x": 551.1710538176366,
+      "z": 1128.6540011135644,
+      "w": 15,
+      "d": 16,
+      "yaw": -3.058451421701352,
+      "height": 27,
+      "color": "#d4cebc",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:250"
+    },
+    {
+      "x": 574.2576972169763,
+      "z": 1128.7370465934182,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -3.058451421701352,
+      "height": 32,
+      "color": "#d7c29c",
+      "frontageRoad": "silom",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:silom:2:1:273"
+    },
+    {
+      "x": 414.3016242106339,
+      "z": 734.3314517099475,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.2679114584199251,
+      "height": 18,
+      "color": "#d4cebc",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:-1:43",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 421.1619490527607,
+      "z": 756.2844912047532,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.2679114584199251,
+      "height": 12,
+      "color": "#cba68e",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:-1:66",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 428.02227389488746,
+      "z": 778.2375306995589,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.2679114584199251,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:-1:89",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 434.88259873701423,
+      "z": 800.1905701943646,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.2679114584199251,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:-1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 373.2589851551276,
+      "z": 747.1572764147932,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.8736811951698682,
+      "height": 13,
+      "color": "#d7c29c",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:1:43",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 378.2103500411843,
+      "z": 769.7068658958707,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.8736811951698682,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:1:66",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 386.97963483938116,
+      "z": 791.0633554044045,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.8736811951698682,
+      "height": 17,
+      "color": "#cba68e",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:1:89",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 395.748919637578,
+      "z": 812.4198449129383,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.8736811951698682,
+      "height": 11,
+      "color": "#d4cebc",
+      "frontageRoad": "maha-set",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:maha-set:1:1:112",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "maha-set"
+      }
+    },
+    {
+      "x": 450.0260074247893,
+      "z": 882.4768553543925,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.6871514920017565,
+      "height": 13,
+      "color": "#d7c29c",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:-1:20",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 445.3693963585425,
+      "z": 905.089152304895,
+      "w": 15,
+      "d": 16,
+      "yaw": -1.6871514920017565,
+      "height": 14,
+      "color": "#d4cebc",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:-1:43",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 432.01872474201815,
+      "z": 1019.311565024062,
+      "w": 15,
+      "d": 16,
+      "yaw": -1.6871514920017565,
+      "height": 10,
+      "color": "#d7c29c",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:-1:158",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 431.33506716165533,
+      "z": 1042.3882331612265,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.6871514920017565,
+      "height": 15,
+      "color": "#cba68e",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:-1:181",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 422.02184502916157,
+      "z": 1087.6128270622314,
+      "w": 9,
+      "d": 12,
+      "yaw": -1.6871514920017565,
+      "height": 10,
+      "color": "#d4cebc",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:-1:227",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 401.97648880492585,
+      "z": 923.1738301854459,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.4544411615880368,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:66",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 397.31987773867894,
+      "z": 945.7861271359485,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.4544411615880368,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 394.6497434153741,
+      "z": 968.6306096797819,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.4544411615880368,
+      "height": 16,
+      "color": "#d4cebc",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 393.28242825464844,
+      "z": 1014.7839459541103,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.4544411615880368,
+      "height": 15,
+      "color": "#bbc5b7",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:158",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 388.6258171884015,
+      "z": 1037.396242904613,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.4544411615880368,
+      "height": 15,
+      "color": "#d4cebc",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:181",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 385.9556828650967,
+      "z": 1060.2407254484465,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.4544411615880368,
+      "height": 11,
+      "color": "#bbc5b7",
+      "frontageRoad": "mahesak",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:mahesak:1:1:204",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "mahesak"
+      }
+    },
+    {
+      "x": 411.72024563310896,
+      "z": 1163.7611020311842,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.8089631061840572,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:43",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 395.441658599916,
+      "z": 1230.8133771917092,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.8089631061840572,
+      "height": 10,
+      "color": "#d4cebc",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 390.01546292218507,
+      "z": 1253.164135578551,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.8089631061840572,
+      "height": 17,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 375.2759831516202,
+      "z": 1296.9219661474115,
+      "w": 9,
+      "d": 12,
+      "yaw": -1.8089631061840572,
+      "height": 11,
+      "color": "#d4cebc",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:181",
+      "bangRak": {
+        "family": "workshop",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 373.73687588899213,
+      "z": 1320.216410739076,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.8089631061840572,
+      "height": 16,
+      "color": "#bbc5b7",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:204",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 368.3106802112611,
+      "z": 1342.5671691259176,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.8089631061840572,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:-1:227",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 362.56430528547037,
+      "z": 1175.4953906137696,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.3326295474057361,
+      "height": 11,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:66",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 357.13810960773935,
+      "z": 1197.8461490006114,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.3326295474057361,
+      "height": 18,
+      "color": "#d4cebc",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:89",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 351.7119139300084,
+      "z": 1220.196907387453,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.3326295474057361,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:112",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 348.2292624598289,
+      "z": 1243.0195088767061,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.3326295474057361,
+      "height": 10,
+      "color": "#d4cebc",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 344.7466109896493,
+      "z": 1265.8421103659591,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.3326295474057361,
+      "height": 11,
+      "color": "#cba68e",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:158",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 339.32041531191834,
+      "z": 1288.192868752801,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.3326295474057361,
+      "height": 18,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:181",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 326.5244797489049,
+      "z": 1332.4225424240728,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.3326295474057361,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:227",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 321.09828407117396,
+      "z": 1354.7733008109144,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.3326295474057361,
+      "height": 16,
+      "color": "#d4cebc",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:250",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 315.672088393443,
+      "z": 1377.1240591977562,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.3326295474057361,
+      "height": 12,
+      "color": "#d7c29c",
+      "frontageRoad": "surasak-road",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:surasak-road:1:1:273",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "surasak-road"
+      }
+    },
+    {
+      "x": 533.0860633675019,
+      "z": 1169.1799635673701,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.380808038876181,
+      "height": 31,
+      "color": "#d4cebc",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:-1:66"
+    },
+    {
+      "x": 537.4295534214547,
+      "z": 1191.766111847925,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.380808038876181,
+      "height": 28,
+      "color": "#d7c29c",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:-1:89"
+    },
+    {
+      "x": 541.7730434754076,
+      "z": 1214.35226012848,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.380808038876181,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:-1:112"
+    },
+    {
+      "x": 546.1165335293605,
+      "z": 1236.938408409035,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.380808038876181,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:-1:135"
+    },
+    {
+      "x": 491.42632832828434,
+      "z": 1153.7700162455199,
+      "w": 9,
+      "d": 12,
+      "yaw": 1.7607846147136124,
+      "height": 27,
+      "color": "#d4cebc",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:43"
+    },
+    {
+      "x": 491.84179259431465,
+      "z": 1177.1115541006752,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.7607846147136124,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:66"
+    },
+    {
+      "x": 498.14929554222874,
+      "z": 1199.3200075939299,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.7607846147136124,
+      "height": 33,
+      "color": "#bbc5b7",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:89"
+    },
+    {
+      "x": 500.52877270222035,
+      "z": 1222.2838506617852,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.7607846147136124,
+      "height": 18,
+      "color": "#cba68e",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:112"
+    },
+    {
+      "x": 504.87226275617326,
+      "z": 1244.86999894234,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.7607846147136124,
+      "height": 31,
+      "color": "#bbc5b7",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:135"
+    },
+    {
+      "x": 511.17976570408734,
+      "z": 1267.0784524355947,
+      "w": 15,
+      "d": 16,
+      "yaw": 1.7607846147136124,
+      "height": 28,
+      "color": "#d7c29c",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:158"
+    },
+    {
+      "x": 513.5592428640789,
+      "z": 1290.0422955034499,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.7607846147136124,
+      "height": 26,
+      "color": "#cba68e",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:181"
+    },
+    {
+      "x": 517.9027329180318,
+      "z": 1312.6284437840047,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 1.7607846147136124,
+      "height": 26,
+      "color": "#d7c29c",
+      "frontageRoad": "pan",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:pan:1:1:204"
+    },
+    {
+      "x": 688.224221238569,
+      "z": 788.0697151874565,
+      "w": 15,
+      "d": 16,
+      "yaw": -1.0687588092605182,
+      "height": 22,
+      "color": "#d7c29c",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:43"
+    },
+    {
+      "x": 701.0453195820012,
+      "z": 807.2691796921775,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.0687588092605182,
+      "height": 23,
+      "color": "#bbc5b7",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:66"
+    },
+    {
+      "x": 712.1132101194464,
+      "z": 827.4310694610243,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.0687588092605182,
+      "height": 28,
+      "color": "#cba68e",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:89"
+    },
+    {
+      "x": 723.1811006568919,
+      "z": 847.5929592298711,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.0687588092605182,
+      "height": 29,
+      "color": "#d4cebc",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:112"
+    },
+    {
+      "x": 734.2489911943373,
+      "z": 867.7548489987178,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.0687588092605182,
+      "height": 24,
+      "color": "#d7c29c",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:135"
+    },
+    {
+      "x": 743.5636739257961,
+      "z": 888.87916403169,
+      "w": 15,
+      "d": 16,
+      "yaw": -1.0687588092605182,
+      "height": 17,
+      "color": "#bbc5b7",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:-1:158"
+    },
+    {
+      "x": 653.1600651188355,
+      "z": 807.3182204699704,
+      "w": 15,
+      "d": 16,
+      "yaw": 2.072833844329275,
+      "height": 31,
+      "color": "#bbc5b7",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:43"
+    },
+    {
+      "x": 662.4747478502943,
+      "z": 828.4425355029426,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.072833844329275,
+      "height": 26,
+      "color": "#d7c29c",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:66"
+    },
+    {
+      "x": 673.5426383877398,
+      "z": 848.6044252717894,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.072833844329275,
+      "height": 25,
+      "color": "#d4cebc",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:89"
+    },
+    {
+      "x": 684.6105289251852,
+      "z": 868.7663150406362,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.072833844329275,
+      "height": 24,
+      "color": "#d7c29c",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:112"
+    },
+    {
+      "x": 695.6784194626307,
+      "z": 888.9282048094828,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.072833844329275,
+      "height": 25,
+      "color": "#d4cebc",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:135"
+    },
+    {
+      "x": 706.7463100000759,
+      "z": 909.0900945783295,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.072833844329275,
+      "height": 16,
+      "color": "#cba68e",
+      "frontageRoad": "decho",
+      "protected": false,
+      "regionId": "silom",
+      "environmentId": "brc:frontage:decho:1:1:158"
+    },
+    {
+      "x": 479.4331555175282,
+      "z": 653.654323348395,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:43",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 490.4230548508362,
+      "z": 673.8588305842509,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 18,
+      "color": "#d7c29c",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:66",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 501.4129541841442,
+      "z": 694.0633378201069,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 13,
+      "color": "#d4cebc",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:89",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 512.4028535174522,
+      "z": 714.2678450559629,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 16,
+      "color": "#d7c29c",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:112",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 523.3927528507602,
+      "z": 734.4723522918188,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 11,
+      "color": "#d4cebc",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:135",
+      "bangRak": {
+        "family": "merchant",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 534.3826521840682,
+      "z": 754.6768595276748,
+      "w": 22.2,
+      "d": 20,
+      "yaw": -1.072622969199439,
+      "height": 17,
+      "color": "#cba68e",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:-1:158",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 452.6494108881489,
+      "z": 694.4051641204355,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.0689696843903542,
+      "height": 17,
+      "color": "#d4cebc",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:1:66",
+      "bangRak": {
+        "family": "gallery",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 463.6393102214569,
+      "z": 714.6096713562915,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.0689696843903542,
+      "height": 18,
+      "color": "#d7c29c",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:1:89",
+      "bangRak": {
+        "family": "timber",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 474.62920955476494,
+      "z": 734.8141785921475,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.0689696843903542,
+      "height": 10,
+      "color": "#bbc5b7",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:1:112",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 485.61910888807296,
+      "z": 755.0186858280034,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.0689696843903542,
+      "height": 10,
+      "color": "#cba68e",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:1:135",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "naret"
+      }
+    },
+    {
+      "x": 496.609008221381,
+      "z": 775.2231930638594,
+      "w": 22.2,
+      "d": 20,
+      "yaw": 2.0689696843903542,
+      "height": 18,
+      "color": "#d4cebc",
+      "frontageRoad": "naret",
+      "protected": false,
+      "regionId": "talatnoi",
+      "environmentId": "brc:frontage:naret:1:1:158",
+      "bangRak": {
+        "family": "cafe",
+        "trade": "retail",
+        "road": "naret"
+      }
+    }
+  ],
+  "rejectedFrontageCandidates": 89,
+  "landmarks": [
+    {
+      "id": "royal-orchid",
+      "x": -158,
+      "z": 883,
+      "name": "Royal Orchid Sheraton",
+      "kind": "hotel",
+      "plot": {
+        "x": -252,
+        "z": 882
+      },
+      "yaw": -1.5707963267948966,
+      "size": 76,
+      "accessNode": "br:charoen-krung-30:13"
+    },
+    {
+      "x": -158,
+      "z": 850,
+      "id": "house-no-1",
+      "name": "House No. 1",
+      "kind": "museum",
+      "plot": {
+        "x": -205,
+        "z": 846
+      },
+      "yaw": 1.5707963267948966,
+      "size": 28,
+      "accessNode": "brg:captain-bush-return:2"
+    },
+    {
+      "x": 84,
+      "z": 1148,
+      "id": "assumption",
+      "name": "Assumption Cathedral",
+      "kind": "church",
+      "plot": {
+        "x": -75,
+        "z": 1165
+      },
+      "yaw": 1.5707963267948966,
+      "size": 56,
+      "accessNode": "bkk:650"
+    },
+    {
+      "id": "customs-house",
+      "x": -158.00000000000003,
+      "z": 928,
+      "name": "Historic Customs House",
+      "kind": "museum",
+      "plot": {
+        "x": -245,
+        "z": 960
+      },
+      "yaw": -1.5707963267948966,
+      "size": 60,
+      "accessNode": "br:charoen-krung-32:13"
+    }
+  ]
+}

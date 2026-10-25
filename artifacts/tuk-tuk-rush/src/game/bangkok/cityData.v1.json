@@ -189,10 +189,10 @@
     }
   },
   "roadBaseline": {
-    "version": 5,
-    "key": "2602047866",
-    "roads": 2260,
-    "nodes": 2196,
+    "version": 6,
+    "key": "2246436682",
+    "roads": 2405,
+    "nodes": 2333,
     "sourceStages": [
       "layout-v1",
       "master-plan-v3",
@@ -202,11 +202,12 @@
       "river-v2-asiatique-arrival",
       "chinatown-v1",
       "bang-rak-v1",
-      "bang-rak-seam-v1"
+      "bang-rak-seam-v1",
+      "bang-rak-completion-v1"
     ],
-    "status": "approved-bang-rak-seam-v1-explicit-parcel-migration",
+    "status": "approved-bang-rak-completion-v1-explicit-migration",
     "geographicConfidence": "interpreted-compressed; not cadastral",
-    "fullGraphKey": 3420838604
+    "fullGraphKey": 992338145
   },
   "geographicReferences": [
     {
@@ -2644,6 +2645,106 @@
       },
       "requestPin": null,
       "compressionReason": "PR33 approved miniature location; exact footprint and bearing require reference review."
+    },
+    {
+      "id": "royal-orchid",
+      "name": "Royal Orchid Sheraton",
+      "category": "hotel",
+      "model": {
+        "origin": {
+          "x": -252,
+          "z": 882
+        },
+        "rotation": -1.5707963267948966,
+        "size": 76,
+        "placement": "approved-pr44-compressed",
+        "builder": "bang-rak-completion",
+        "design": [
+          437,
+          820.5
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Original miniature interpretation of the curved river-facing hotel; footprint compressed beside River City."
+    },
+    {
+      "id": "house-no-1",
+      "name": "House No. 1",
+      "category": "museum",
+      "model": {
+        "origin": {
+          "x": -205,
+          "z": 846
+        },
+        "rotation": 1.5707963267948966,
+        "size": 28,
+        "placement": "approved-pr44-compressed",
+        "builder": "bang-rak-completion",
+        "design": [
+          448.75,
+          811.5
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Colonial event house exterior; private grounds are not a public vehicle shortcut."
+    },
+    {
+      "id": "assumption",
+      "name": "Assumption Cathedral",
+      "category": "church",
+      "model": {
+        "origin": {
+          "x": -75,
+          "z": 1165
+        },
+        "rotation": 1.5707963267948966,
+        "size": 56,
+        "placement": "approved-pr44-compressed",
+        "builder": "bang-rak-completion",
+        "design": [
+          481.25,
+          891.25
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Red brick nave, cream trim, twin bell towers and rose window. Campus compressed; school buildings and interiors deferred."
+    },
+    {
+      "id": "customs-house",
+      "name": "Historic Customs House",
+      "category": "museum",
+      "model": {
+        "origin": {
+          "x": -245,
+          "z": 960
+        },
+        "rotation": -1.5707963267948966,
+        "size": 60,
+        "placement": "approved-pr44-compressed",
+        "builder": "bang-rak-completion",
+        "design": [
+          438.75,
+          840
+        ]
+      },
+      "featureOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "requestPin": null,
+      "compressionReason": "Historic river facade interpretation; contemporary redevelopment/private access not certified. No invented through drive. Historic shell only; the Langham redevelopment/new wing and contemporary operations are deferred."
     }
   ],
   "baseLayout": {
