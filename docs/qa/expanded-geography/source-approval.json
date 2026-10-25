@@ -1,0 +1,11 @@
+{
+  "version": "pr45-water-union-source-approval",
+  "baselineCommit": "340d5382e4616ad3f14852c0259ce10a866274ad",
+  "files": {
+    "artifacts/tuk-tuk-rush/src/game/bangkok/waterGeometry.ts": {
+      "beforeSha256": "232549ef070c50bfa912698a3455cfac943809f352768b22b3e116e074f50efc",
+      "afterSha256": "7e89557fcfb05aafbe4f75b693250e8d25e15201762f7efdfcbca4a88edad4c5",
+      "reason": "PR45 added optional waterPolygons union semantics: holes apply to their own polygon; legacy riverPolygon parity path remains. Existing waterfront behavior, water/terrain geometry and collision assertions stay active."
+    }
+  }
+}

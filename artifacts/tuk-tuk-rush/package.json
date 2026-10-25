@@ -68,7 +68,9 @@
     "test:bang-rak-entrances": "node --import tsx scripts/check-bang-rak-entrances.ts",
     "test:bang-rak-landmark-mounts": "node --import tsx scripts/check-bang-rak-landmark-mounts.ts",
     "test:real-geography": "node --import tsx scripts/check-real-geography.ts",
-    "qa:real-geography": "node scripts/browser-real-geography.mjs"
+    "qa:real-geography": "node scripts/browser-real-geography.mjs",
+    "test:geographic-streaming": "node --import tsx scripts/check-geographic-streaming.ts",
+    "qa:geographic-streaming": "node scripts/browser-geographic-streaming.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -1,3 +1,6 @@
+import { GeographicSurface } from "./surface";
+import { riverClearance } from "../waterGeometry";
+import type { GeographicDataset } from "./dataset";
 import type { District, GameSnapshot, Input } from "../../types";
 import type { DrivingControlHost } from "../../Controls";
 import { VehicleController, createVehicle } from "../../vehicle";
@@ -12,7 +15,13 @@ export class GeographicSession implements DrivingControlHost {
   private publishTime = 0;
   private listeners = new Set<(s: GameSnapshot) => void>();
   private keys = new Set<string>();
-  constructor(readonly district: District) {
+  height = 0;
+  readonly surfaces?: GeographicSurface;
+  constructor(
+    readonly district: District,
+    data?: GeographicDataset,
+  ) {
+    if (data) this.surfaces = new GeographicSurface(data);
     this.player = createVehicle(district);
     this.model = {
       input: { gas: false, brake: false, steer: 0 },
@@ -87,6 +96,7 @@ export class GeographicSession implements DrivingControlHost {
     if (this.model.snapshot.phase !== "playing") return;
     const input = this.model.input;
     this.boost.advance(dt);
+    const before = { x: this.player.x, z: this.player.z };
     this.controller.update(
       this.player,
       {
@@ -106,6 +116,17 @@ export class GeographicSession implements DrivingControlHost {
       [],
       dt,
     );
+    if (this.surfaces) {
+      const surface = this.surfaces.sample(this.player, this.height);
+      if (surface) this.height = surface.height;
+      else if (
+        this.height > 0.65 ||
+        riverClearance(this.district, this.player) < 1.5
+      ) {
+        Object.assign(this.player, before, { speed: 0, collision: 1 });
+        this.controller.reset();
+      } else this.height = 0;
+    }
     Object.assign(this.model.snapshot, {
       speed: Math.abs(this.player.speed) * 3.6,
       boostState: this.boost.state,
@@ -120,6 +141,7 @@ export class GeographicSession implements DrivingControlHost {
     }
   }
   reset() {
+    this.height = 0;
     Object.assign(this.player, createVehicle(this.district));
     this.controller.reset();
     this.clearInput();

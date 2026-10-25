@@ -62,7 +62,7 @@
   z-index: 12;
   font-size: 12px;
 }
-.geo-map svg {
+.geo-map canvas {
   width: 100%;
   height: 46vh;
   margin: 8px 0;

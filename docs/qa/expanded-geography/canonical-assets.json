@@ -1,0 +1,5 @@
+{
+  "pass": true,
+  "assets": 473,
+  "check": "Every committed source/runtime/chunk asset round-trips to byte-identical canonical JSON and fixed-header gzip. Full geometric rebuild is independently enforced by GitHub Actions."
+}

@@ -123,6 +123,52 @@ for (const name of [
     name + " connected",
   );
 }
+// Distant public approaches connect through real source nodes, without invented links.
+const approachIds = new Set(
+  data.roads
+    .filter(
+      (r) =>
+        !r.tunnel &&
+        r.width >= 6 &&
+        [
+          "primary",
+          "secondary",
+          "tertiary",
+          "residential",
+          "unclassified",
+        ].includes(r.tags.highway!),
+    )
+    .flatMap((r) => r.nodes),
+);
+const approaches = Object.entries(data.nodes).filter(
+  ([id]) => approachIds.has(id) && player.has(id),
+);
+for (const [name, lon, lat] of [
+  ["Chatuchak", 100.5509, 13.7993],
+  ["Khao San", 100.4976, 13.7589],
+  ["Victory Monument", 100.53829, 13.76493],
+  ["Phrom Phong", 100.5697, 13.7304],
+  ["Wat Paknam", 100.47, 13.7215],
+  ["Asiatique", 100.5037, 13.7048],
+  ["Siam", 100.5349, 13.7468],
+  ["Krung Thep Aphiwat", 100.5417, 13.804],
+] as const) {
+  const p = geographicToMeters({ lon, lat });
+  let nearest = "",
+    distance = Infinity;
+  for (const [id, [x, z]] of approaches) {
+    const d = Math.hypot(x - p.x, z - p.z);
+    if (d < distance) {
+      nearest = id;
+      distance = d;
+    }
+  }
+  assert(distance < 650, name + " source public approach within 650 m");
+  assert(
+    visited.has(nearest),
+    name + " public approach connects to Yaowarat through source topology",
+  );
+}
 // Actual production controller: input moves vehicle; water blocks; source bridge crosses.
 const p = createVehicle(d),
   controller = new VehicleController();
@@ -203,11 +249,14 @@ const report = {
   bridge: bridge.corridor,
   waterCollision: true,
 };
-fs.mkdirSync(new URL("../../../docs/qa/real-scale/", import.meta.url), {
+fs.mkdirSync(new URL("../../../docs/qa/expanded-geography/", import.meta.url), {
   recursive: true,
 });
 fs.writeFileSync(
-  new URL("../../../docs/qa/real-scale/targeted-tests.json", import.meta.url),
+  new URL(
+    "../../../docs/qa/expanded-geography/targeted-tests.json",
+    import.meta.url,
+  ),
   JSON.stringify(report, null, 2) + "\n",
 );
 console.log(report);

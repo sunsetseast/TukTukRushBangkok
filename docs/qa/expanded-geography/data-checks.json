@@ -1,0 +1,50 @@
+{
+  "mainRiverBounds": [
+    100.46,
+    13.63,
+    100.65,
+    13.825
+  ],
+  "sourceHoles": 16,
+  "coverageAnchors": 93,
+  "sourceVsRenderedRailLengthErrorM": 0.002272660261951387,
+  "maxProjectionRoundingM": 0.0007068372339255953,
+  "narrowWays": 17602,
+  "sourceWaysRetained": 104949,
+  "roadWaterOverlapM2": 0.9999462480737749,
+  "landWaterOverlapM2": 0.07612879627416419,
+  "deckWaterAreaM2": 322351.09033765056,
+  "seamChecks": 2694,
+  "railRenderedMeters": 480968.82083694247,
+  "railLevels": {
+    "elevated": 803,
+    "at-grade": 1161,
+    "underground": 30
+  },
+  "railStatuses": {
+    "operational": 1835,
+    "proposed": 44,
+    "construction": 87,
+    "disused": 28
+  },
+  "counts": {
+    "administrativeAreas": 191,
+    "chunks": 471,
+    "coverage": {
+      "A": 6904,
+      "B": 8449,
+      "C": 89708
+    },
+    "nodes": 412233,
+    "playableRailTracks": 1153,
+    "playableStations": 479,
+    "railTracks": 1994,
+    "routes": 43,
+    "runtimeWays": 104949,
+    "sourceWays": 105061,
+    "stations": 716,
+    "waterAreas": 168
+  },
+  "runtimeGzipBytes": 9422410,
+  "chunkGzipBytes": 10764560
+}

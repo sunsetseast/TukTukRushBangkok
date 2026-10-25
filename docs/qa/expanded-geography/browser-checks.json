@@ -1,0 +1,175 @@
+{
+  "physicalIPhone": false,
+  "environment": "Headless Chromium / ANGLE SwiftShader, Linux container; no physical Safari benchmark",
+  "errors": [],
+  "checks": {
+    "keyboardDriving": true,
+    "northernActivationAndSouthernDisposal": true,
+    "mobileDebugMap": true,
+    "default": {
+      "worldId": "bangkok",
+      "roads": 2405,
+      "traffic": 38
+    },
+    "defaultGeographicRequests": 0
+  },
+  "firstResidentFrameMs": 4941.347521,
+  "initial": {
+    "position": {
+      "x": 3386.4035,
+      "z": 555.717,
+      "heading": -2.144420687887749
+    },
+    "coordinate": {
+      "lon": 100.51112385377994,
+      "lat": 13.739643348184762
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 2794.5999999999767,
+    "drawCalls": 45,
+    "triangles": 57174,
+    "geometries": 45,
+    "renderer": "WebKit WebGL",
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "2048:0",
+        "3072:1024",
+        "3072:-1024",
+        "4096:0",
+        "2048:1024",
+        "2048:-1024",
+        "4096:1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    }
+  },
+  "frames": {
+    "medianMs": 99.89999999999964,
+    "p95Ms": 116.60000000000036,
+    "samples": 60
+  },
+  "overview": {
+    "position": {
+      "x": 3359.2287577971183,
+      "z": 538.1595654567101,
+      "heading": -2.144420687887749
+    },
+    "coordinate": {
+      "lon": 100.51087359966321,
+      "lat": 13.739803589215603
+    },
+    "height": 0,
+    "speed": 0.3595629851349902,
+    "loadMs": 2794.5999999999767,
+    "drawCalls": 46,
+    "triangles": 43817,
+    "geometries": 60,
+    "renderer": "WebKit WebGL",
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "2048:0",
+        "3072:1024",
+        "3072:-1024",
+        "4096:0",
+        "2048:1024",
+        "2048:-1024",
+        "4096:1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    }
+  },
+  "north": {
+    "position": {
+      "x": 7955.736583800637,
+      "z": -6438.35212116898,
+      "heading": -2.144420687887749
+    },
+    "coordinate": {
+      "lon": 100.55379130000321,
+      "lat": 13.802599099704167
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 2794.5999999999767,
+    "drawCalls": 60,
+    "triangles": 64951,
+    "geometries": 60,
+    "renderer": "WebKit WebGL",
+    "stream": {
+      "loaded": 18,
+      "disposed": 9,
+      "requests": 18,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "7168:-7168",
+        "8192:-7168",
+        "8192:-6144",
+        "7168:-6144",
+        "7168:-8192",
+        "6144:-7168",
+        "8192:-8192",
+        "6144:-6144",
+        "6144:-8192"
+      ],
+      "settled": true,
+      "total": 471
+    }
+  },
+  "elevatedClearance": {
+    "position": {
+      "x": 4518.6214529707795,
+      "z": 2802.7274115907494,
+      "heading": 1.5707963267948966
+    },
+    "coordinate": {
+      "lon": 100.52146190000241,
+      "lat": 13.719268299705924
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 2794.5999999999767,
+    "drawCalls": 52,
+    "triangles": 54165,
+    "geometries": 52,
+    "renderer": "WebKit WebGL",
+    "stream": {
+      "loaded": 27,
+      "disposed": 18,
+      "requests": 27,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "4096:3072",
+        "4096:2048",
+        "3072:2048",
+        "5120:2048",
+        "4096:1024",
+        "3072:3072",
+        "5120:3072",
+        "3072:1024",
+        "5120:1024"
+      ],
+      "settled": true,
+      "total": 471
+    }
+  },
+  "pass": true
+}

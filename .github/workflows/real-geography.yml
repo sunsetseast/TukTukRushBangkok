@@ -31,19 +31,21 @@ jobs:
       - name: Reproduce runtime offline and validate source geometry
         run: |
           python scripts/geography/import_bangkok.py
-          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json artifacts/tuk-tuk-rush/public/assets/geography/runtime.v1.json.gz
+          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json artifacts/tuk-tuk-rush/public/assets/geography/
           python scripts/geography/check_data.py
+          python scripts/geography/check_stations.py
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:real-geography
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion
       - run: pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity
       - run: pnpm --filter @workspace/tuk-tuk-rush build
       - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
-      - run: node scripts/browser-real-geography.mjs
+      - run: node scripts/browser-geographic-streaming.mjs
         working-directory: artifacts/tuk-tuk-rush
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: geographic-proof
-          path: docs/qa/real-scale/
+          path: docs/qa/expanded-geography/
           retention-days: 30

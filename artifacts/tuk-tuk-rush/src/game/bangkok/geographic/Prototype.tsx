@@ -5,11 +5,19 @@ import { Controls } from "../../Controls";
 import { ChaseCamera } from "../../chaseCamera";
 import { loadArt, disposeObject, type ArtBundle } from "../../assets";
 import { buildTuk } from "../../tukMesh";
-import { channelGeometry, surfaceGeometry } from "../roadSurfaceGraph";
+import { GeographicStream } from "./streaming";
+import {
+  buildGeographicChunk,
+  geographicMaterials,
+  disposeGeographicChunk,
+  buildGeographicOverview,
+} from "./rendering";
+import { drawGeographicMap } from "./debugMap";
 import { riverWater } from "../riverfront";
-import { distanceToSegment } from "../../world";
 import {
   createGeographicDistrict,
+  loadGeographicChunk,
+  type GeographicChunkData,
   loadGeographicDataset,
   type GeographicDataset,
 } from "./dataset";
@@ -29,44 +37,76 @@ function Scene({ loaded, overhead }: { loaded: Loaded; overhead: boolean }) {
     chase = useRef(new ChaseCamera());
   const content = useMemo(() => {
     const group = new T.Group(),
-      water = riverWater();
-    const materials = {
-      land: new T.MeshStandardMaterial({ color: "#a8b6a1", roughness: 1 }),
-      roads: new T.MeshStandardMaterial({ color: "#414c56", roughness: 1 }),
-      bridges: new T.MeshStandardMaterial({ color: "#c39655", roughness: 1 }),
+      water = riverWater(),
+      materials = geographicMaterials(data);
+    const resident = new Map<string, GeographicChunkData>();
+    let revision = 0;
+    const stream = new GeographicStream<{
+      chunk: GeographicChunkData;
+      root?: T.Group;
+    }>(
+      data.chunks,
+      async (ref, signal) => ({
+        chunk: await loadGeographicChunk(ref, signal),
+      }),
+      (v, ref) => {
+        v.root = buildGeographicChunk(v.chunk, materials, water.material);
+        group.add(v.root);
+        resident.set(ref.id, v.chunk);
+        revision++;
+      },
+      (v) => {
+        if (v.root) disposeGeographicChunk(v.root);
+        if (v.root && resident.get(v.chunk.origin.join(":")) === v.chunk) {
+          resident.delete(v.chunk.origin.join(":"));
+          revision++;
+        }
+      },
+    );
+    return {
+      group,
+      water,
+      materials,
+      stream,
+      resident,
+      get revision() {
+        return revision;
+      },
+      lastRevision: -1,
+      look: new T.Vector3(),
     };
-    for (const chunk of data.chunks) {
-      const root = new T.Group();
-      root.position.set(chunk.origin[0], 0, chunk.origin[1]);
-      root.name = `GeographicChunk:${chunk.origin.join(":")}`;
-      for (const kind of ["land", "water", "roads", "bridges"] as const) {
-        if (!chunk[kind].length) continue;
-        const geometry =
-          kind === "land" || kind === "water"
-            ? channelGeometry(kind, session.district, chunk[kind])
-            : surfaceGeometry(chunk[kind], kind === "bridges" ? 0.18 : 0.1);
-        const mesh = new T.Mesh(
-          geometry,
-          kind === "water" ? water.material : materials[kind],
-        );
-        root.add(mesh);
-      }
-      group.add(root);
-    }
-    return { group, water };
-  }, [data, session]);
+  }, [data]);
+  const overview = useMemo(
+    () => (overhead ? buildGeographicOverview(data) : undefined),
+    [overhead, data],
+  );
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
-      disposeObject(content.group);
+      content.stream.close();
+      for (const m of [
+        content.materials.land,
+        content.materials.roads,
+        content.materials.deck,
+        content.materials.support,
+        ...content.materials.lines.values(),
+        content.water.material,
+      ])
+        m.dispose();
     },
     [content],
   );
+  useEffect(
+    () => () => {
+      if (overview) disposeObject(overview);
+    },
+    [overview],
+  );
   useFrame((state, delta) => {
-    // Production controller uses its existing 90Hz collision substeps; cap stalled browser frames.
     session.update(Math.min(delta, 0.05));
     const p = session.player;
-    tuk.root.position.set(p.x, 0.18, p.z);
+    tuk.root.position.set(p.x, session.height + 0.18, p.z);
+    tuk.root.scale.setScalar(overhead ? 18 : 1);
     tuk.root.rotation.y = p.heading;
     tuk.lean.rotation.z = p.lean;
     tuk.steerPivot.rotation.y = p.steer * 0.45;
@@ -75,10 +115,16 @@ function Scene({ loaded, overhead }: { loaded: Loaded; overhead: boolean }) {
     content.water.time.value = state.clock.elapsedTime;
     const perspective = camera as T.PerspectiveCamera;
     if (overhead) {
-      const b = data.bounds;
-      camera.position.set((b.minX + b.maxX) / 2, 27000, (b.minZ + b.maxZ) / 2);
+      const b = data.bounds,
+        x = (b.minX + b.maxX) / 2,
+        z = (b.minZ + b.maxZ) / 2;
+      const fit = Math.max(
+        b.maxZ - b.minZ,
+        (b.maxX - b.minX) / perspective.aspect,
+      );
+      camera.position.set(x, fit * 1.14, z);
       camera.up.set(0, 0, -1);
-      camera.lookAt((b.minX + b.maxX) / 2, 0, (b.minZ + b.maxZ) / 2);
+      camera.lookAt(x, 0, z);
       perspective.fov = 52;
     } else {
       camera.up.set(0, 1, 0);
@@ -91,142 +137,163 @@ function Scene({ loaded, overhead }: { loaded: Loaded; overhead: boolean }) {
         session.boost.state === "active",
       );
       camera.position.copy(chase.current.pos);
-      camera.lookAt(chase.current.look);
+      camera.position.y += session.height;
+      content.look.copy(chase.current.look);
+      content.look.y += session.height;
+      camera.lookAt(content.look);
       perspective.fov = chase.current.fov;
     }
     perspective.updateProjectionMatrix();
-    const stats = window as typeof window & { __geography?: unknown };
-    stats.__geography = {
+    content.stream.update(
+      p,
+      overhead ? undefined : { x: camera.position.x, z: camera.position.z },
+    );
+    // Supports are installed/disposed with their physical chunk; no solid guideway boxes at ground level.
+    if (content.lastRevision !== content.revision) {
+      content.lastRevision = content.revision;
+      session.district.obstacles = [...content.resident.values()].flatMap((c) =>
+        (c.supports ?? []).map((s) => ({
+          x: s.point[0],
+          z: s.point[1],
+          w: 1.4,
+          d: 1.4,
+          height: s.height - 1,
+          color: "#aaa",
+        })),
+      );
+    }
+    (window as typeof window & { __geography?: unknown }).__geography = {
       position: { x: p.x, z: p.z, heading: p.heading },
       coordinate: metersToGeographic(p),
+      height: session.height,
       speed: p.speed,
       loadMs: loaded.loadMs,
       drawCalls: gl.info.render.calls,
       triangles: gl.info.render.triangles,
+      geometries: gl.info.memory.geometries,
       renderer: gl.getContext().getParameter(gl.getContext().RENDERER),
+      stream: {
+        ...content.stream.stats,
+        active: content.stream.active.size,
+        ids: [...content.stream.active.keys()],
+        settled: content.stream.settled,
+        total: data.chunks.length,
+      },
     };
+    // Explicit development query only, used to inspect source-backed coordinates in browser QA.
+    if (
+      location.search.includes("geographyQA") &&
+      !(window as any).__geographyQA
+    )
+      (window as any).__geographyQA = {
+        closeup: () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 1280;
+          canvas.height = 900;
+          const a = geographicToMeters({ lon: 100.501, lat: 13.75 }),
+            b = geographicToMeters({ lon: 100.529, lat: 13.714 });
+          const dataView = {
+            ...data,
+            bounds: { minX: a.x, minZ: a.z, maxX: b.x, maxZ: b.z },
+          };
+          drawGeographicMap(canvas.getContext("2d")!, dataView, 1280, 900);
+          const ctx = canvas.getContext("2d")!;
+          ctx.fillStyle = "#172a37";
+          ctx.fillRect(14, 14, 870, 70);
+          ctx.fillStyle = "white";
+          ctx.font = "22px sans-serif";
+          ctx.fillText(
+            "Yaowarat · Talat Noi · Bang Rak — source network",
+            28,
+            43,
+          );
+          ctx.font = "16px sans-serif";
+          ctx.fillText(
+            "Gray streets · ochre passages · line-colored rail · dashed underground · white stations",
+            28,
+            68,
+          );
+          return canvas.toDataURL("image/png");
+        },
+        move: (lon: number, lat: number, heading?: number) => {
+          const q = geographicToMeters({ lon, lat });
+          Object.assign(p, q, {
+            speed: 0,
+            ...(heading === undefined ? {} : { heading }),
+          });
+          session.height = 0;
+          session.controller.reset();
+          session.clearInput();
+        },
+      };
   });
   return (
     <>
       <color attach="background" args={["#b9d8e2"]} />
       <hemisphereLight args={["#ffffff", "#63705f", 2.3]} />
       <directionalLight position={[40, 100, 60]} intensity={2.2} />
-      <primitive object={content.group} />
+      <primitive object={content.group} visible={!overhead} />
+      {overview && <primitive object={overview} />}
       <primitive object={tuk.root} />
     </>
   );
 }
 function DebugMap({ loaded }: { loaded: Loaded }) {
-  const { data, session } = loaded;
-  const [position, setPosition] = useState({ ...session.player });
+  const { data, session } = loaded,
+    canvas = useRef<HTMLCanvasElement>(null),
+    label = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const timer = setInterval(() => setPosition({ ...session.player }), 150);
+    const target = canvas.current!,
+      ctx = target.getContext("2d")!,
+      background = document.createElement("canvas");
+    background.width = 900;
+    background.height = 900;
+    const { screen } = drawGeographicMap(
+      background.getContext("2d")!,
+      data,
+      900,
+      900,
+    );
+    const draw = () => {
+      ctx.drawImage(background, 0, 0);
+      const p = screen([session.player.x, session.player.z]);
+      ctx.beginPath();
+      ctx.arc(p[0]!, p[1]!, 6, 0, Math.PI * 2);
+      ctx.fillStyle = "#ff3158";
+      ctx.fill();
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      const c = metersToGeographic(session.player);
+      label.current!.textContent = `${c.lat.toFixed(6)}, ${c.lon.toFixed(6)} · ${Math.abs(session.player.speed * 3.6).toFixed(0)} km/h`;
+    };
+    draw();
+    const timer = setInterval(draw, 200);
     return () => clearInterval(timer);
-  }, [session]);
-  const b = data.bounds,
-    w = b.maxX - b.minX,
-    h = b.maxZ - b.minZ;
-  const path = (rings: number[][][]) =>
-    rings.map((r) => "M" + r.map((p) => p.join(",")).join("L") + "Z").join("");
-  const roads = useMemo(
-    () =>
-      data.roads.map((r) => ({
-        r,
-        points: r.nodes.map((n) => data.nodes[n]!.join(",")).join(" "),
-      })),
-    [data],
-  );
-  const boundaries = useMemo(
-    () =>
-      data.boundaries.flatMap((boundary) =>
-        boundary.geometry.coordinates.map((p, i) => ({
-          id: boundary.id + ":" + i,
-          path: path(
-            p.map((r) =>
-              r.map(([lon, lat]) => {
-                const p = geographicToMeters({ lon: lon!, lat: lat! });
-                return [p.x, p.z];
-              }),
-            ),
-          ),
-        })),
-      ),
-    [data],
-  );
-  const coord = metersToGeographic(position);
-  let closest = "Open land",
-    distance = Infinity;
-  for (const r of data.roads)
-    for (let i = 1; i < r.nodes.length; i++) {
-      const a = data.nodes[r.nodes[i - 1]!]!,
-        c = data.nodes[r.nodes[i]!]!,
-        d = distanceToSegment(
-          position,
-          { x: a[0], z: a[1] },
-          { x: c[0], z: c[1] },
-        ).distance;
-      if (d < distance) {
-        distance = d;
-        closest =
-          r.tags["name:en"] ?? r.tags.name ?? "Unnamed " + r.tags.highway;
-      }
-    }
+  }, [data, session]);
   return (
     <aside className="geo-map" data-testid="geographic-map">
-      <b>{closest}</b>
-      <div>
-        {coord.lat.toFixed(6)}, {coord.lon.toFixed(6)} ·{" "}
-        {Math.abs(position.speed * 3.6).toFixed(0)} km/h
-      </div>
-      <svg
-        viewBox={`${b.minX} ${b.minZ} ${w} ${h}`}
-        role="img"
-        aria-label="Geographic source boundaries, river and streets"
-      >
-        <rect x={b.minX} y={b.minZ} width={w} height={h} fill="#a8b6a1" />
-        {data.waterUnion.map((p, i) => (
-          <path key={i} d={path(p)} fill="#176d7a" fillRule="evenodd" />
-        ))}
-        {boundaries.map((p) => (
-          <path
-            key={p.id}
-            d={p.path}
-            fill="none"
-            stroke="#6e5aa0"
-            strokeWidth="12"
-            strokeDasharray="45 30"
-          />
-        ))}
-        {roads.map(({ r, points }) => (
-          <polyline
-            key={r.id}
-            points={points}
-            fill="none"
-            stroke={r.coverage === "A" ? "#f5df9d" : "#45505e"}
-            strokeWidth={Math.max(r.width, 8)}
-          >
-            <title>{r.tags["name:en"] ?? r.tags.name ?? r.id}</title>
-          </polyline>
-        ))}
-        <circle
-          cx={position.x}
-          cy={position.z}
-          r="90"
-          fill="#fb4561"
-          stroke="white"
-          strokeWidth="22"
-        />
-      </svg>
+      <b>Source streets, waterways and rail</b>
+      <div ref={label} />
+      <canvas
+        ref={canvas}
+        width={900}
+        height={900}
+        aria-label="Bangkok roads, passages, rail lines, stations, interchanges and administrative boundaries"
+      />
       <small>
-        A: gold · B: dark · administrative boundaries: purple
+        Streets: gray · passages: ochre · boundaries: purple
+        <br />
+        Dashed rail: underground · dotted rail: inactive · white circles:
+        stations
+        <br />
+        {data.rail.catalog.lines.map((l) => (
+          <span key={l.id} style={{ color: l.color, marginRight: 8 }}>
+            {l.name}{" "}
+          </span>
+        ))}
         <br />© OpenStreetMap contributors ·{" "}
-        <a
-          href="https://www.openstreetmap.org/copyright"
-          target="_blank"
-          rel="noreferrer"
-        >
-          ODbL
-        </a>
+        <a href="https://www.openstreetmap.org/copyright">ODbL</a>
       </small>
     </aside>
   );
@@ -246,7 +313,10 @@ export default function GeographicPrototype() {
           art.dispose();
           return;
         }
-        const session = new GeographicSession(createGeographicDistrict(data));
+        const session = new GeographicSession(
+          createGeographicDistrict(data),
+          data,
+        );
         dispose = () => {
           session.clearInput();
           art.dispose();
