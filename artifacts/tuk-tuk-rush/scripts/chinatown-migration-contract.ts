@@ -1,3 +1,4 @@
+import { beforeBangRakSeam } from "./bang-rak-seam-migration-contract";
 import assert from "node:assert/strict";
 import {
   CHINATOWN_PLAN,
@@ -64,6 +65,7 @@ export function assertChinatownGraphMigration(
         .filter((r) => approvedChinatownRoad(r, x))
         .flatMap((r) => [r.a, r.b]),
     );
+  d = beforeBangRakSeam(d); // Verify the entire explicit PR43 ledger first.
   // PR42 adds exactly scoped side-lane nodes/edges; the PR42 contract tests them.
   d = {...d,nodes:d.nodes.filter(n=>!n.id.startsWith("br:")),roads:d.roads.filter(r=>!r.a.startsWith("br:")&&!r.b.startsWith("br:"))};
   const a = migrated(d),

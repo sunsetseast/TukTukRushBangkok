@@ -189,10 +189,10 @@
     }
   },
   "roadBaseline": {
-    "version": 4,
-    "key": "2454066102",
-    "roads": 2236,
-    "nodes": 2174,
+    "version": 5,
+    "key": "2602047866",
+    "roads": 2260,
+    "nodes": 2196,
     "sourceStages": [
       "layout-v1",
       "master-plan-v3",
@@ -201,11 +201,12 @@
       "historic-pr32",
       "river-v2-asiatique-arrival",
       "chinatown-v1",
-      "bang-rak-v1"
+      "bang-rak-v1",
+      "bang-rak-seam-v1"
     ],
-    "status": "approved-bang-rak-v1-additive-lanes",
+    "status": "approved-bang-rak-seam-v1-explicit-parcel-migration",
     "geographicConfidence": "interpreted-compressed; not cadastral",
-    "fullGraphKey": 955612765
+    "fullGraphKey": 3420838604
   },
   "geographicReferences": [
     {

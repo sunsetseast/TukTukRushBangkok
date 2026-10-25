@@ -61,7 +61,8 @@
     "test:chinatown-visual": "node --import tsx scripts/check-chinatown-visual.ts",
     "test:sign-visibility": "node --import tsx scripts/check-sign-visibility.ts",
     "test:bang-rak": "node --import tsx scripts/check-bang-rak.ts",
-    "test:bang-rak-drives": "BANG_RAK_ROUTES=1 CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts"
+    "test:bang-rak-drives": "BANG_RAK_ROUTES=1 CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
+    "test:bang-rak-geography": "node --import tsx scripts/check-service-route-preference.ts && node --import tsx scripts/check-bang-rak-seam.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

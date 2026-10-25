@@ -23,13 +23,13 @@ export const BANG_RAK_PLAN = {
     "https://www.docomomothailand.org/pages/no6.html",
     "https://departmentofarchitecture.co.th/portfolio/thailand-creative-and-design-center-tcdc/",
     "https://www.warehouse30.com/timeline/siamese-revolution-of-1932/",
-    "https://www.warehouse30.com/explore-neighborhood/captain-bush-lane/",
+    "https://www.thailandtourismdirectory.go.th/en/attraction/103358",
   ],
   compromises: [
     "Existing Charoen Krung and all Chinatown parcels are frozen. Soi 30 and 32 are compressed public approach stubs; no private inter-compound through road.",
     "Postal facade is 92m wide versus the documented 103.8m; its T stem is shortened to preserve the approved Mandarin Oriental grounds.",
     "Eight Warehouse 30 shed interpretations fit two compact rows; courtyard/door geometry is original, not a cadastral replica or current tenant directory.",
-    "The missing direct Si Phraya cross-connection requires a separately approved migration of existing Chinatown properties. Existing connected northern graph is retained.",
+    "PR43 adds the direct Si Phraya / Captain Bush loop through an explicit versioned frontage migration. The full eastern district remains deferred.",
   ],
   postal: {
     id: "grand-postal",

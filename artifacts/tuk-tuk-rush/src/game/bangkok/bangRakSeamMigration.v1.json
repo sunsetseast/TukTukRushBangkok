@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "baseline": "dbd15109924bb89898b94a838e3c39d69c25f55a",
+  "reason": "Open the source-backed Si Phraya / Captain Bush one-way loop. Retire only these surveyed-in-game conflicting frontage/rear bodies; retain all other prior properties exactly.",
+  "retired": [
+    {
+      "x": 114.00461168503364,
+      "z": 771.108072143681,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 20.3,
+      "color": "#d7a18a",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:1",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 113.58232937182143,
+      "z": 783.3553603541184,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 17.2,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:2",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": 113.16004705860922,
+      "z": 795.6026485645557,
+      "w": 11.534566122942435,
+      "d": 30,
+      "yaw": 1.5363303223841862,
+      "height": 14.1,
+      "color": "#dfc395",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:6:3",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "exposedSides": []
+      }
+    },
+    {
+      "x": -209.37650000000002,
+      "z": 809.8000000000001,
+      "w": 12.028999999999995,
+      "d": 30,
+      "yaw": 3.141592653589793,
+      "height": 11,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctparcel:ctblock:1:7:1",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "real-arrival:river-city",
+        "character": "commercial",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": -173.21373011439067,
+      "z": 779.2587340727354,
+      "w": 12.179600888646204,
+      "d": 30,
+      "yaw": -1.6539387210070788,
+      "height": 10.2,
+      "color": "#a0b4a0",
+      "regionId": "talatnoi",
+      "environmentId": "ctparcel:ctblock:1:13:0",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "wanit-2-south",
+        "character": "talatnoi",
+        "exposedSides": [
+          1
+        ]
+      }
+    },
+    {
+      "x": 64.61143017467106,
+      "z": 781.666860480699,
+      "w": 18,
+      "d": 16,
+      "height": 9.4,
+      "yaw": 1.5363303223841862,
+      "color": "#b7c6b3",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "role": "rear",
+        "owner": "ctparcel:ctblock:1:6:2",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": 77.30391467802221,
+      "z": 790.809662957631,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26:yard:-1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 77.90350442899154,
+      "z": 773.4199967121122,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:2:26:yard:1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 60.768647230053794,
+      "z": 806.058059358303,
+      "w": 26,
+      "d": 22,
+      "height": 12.600000000000001,
+      "yaw": 1.5363303223841862,
+      "color": "#d7a18a",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26",
+      "chinatown": {
+        "block": "ctblock:1",
+        "corridor": "charoen_s",
+        "character": "commercial",
+        "role": "rear",
+        "owner": "ctparcel:ctblock:1:6:4",
+        "exposedSides": [
+          -1,
+          1
+        ]
+      }
+    },
+    {
+      "x": 76.32151332723706,
+      "z": 819.3018638027626,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26:yard:-1",
+      "artRole": "furniture"
+    },
+    {
+      "x": 77.19677652692792,
+      "z": 793.9169487087296,
+      "w": 0.45,
+      "d": 7,
+      "height": 1.65,
+      "yaw": 1.5363303223841862,
+      "color": "#b8b298",
+      "regionId": "chinatown",
+      "environmentId": "ctrear:ctparcel:ctblock:1:6:4:26:yard:1",
+      "artRole": "furniture"
+    }
+  ],
+  "ownerTransfers": [
+    {
+      "id": "ctrear:ctparcel:ctblock:1:13:0:26",
+      "fromOwner": "ctparcel:ctblock:1:13:0",
+      "toOwner": "ctparcel:ctblock:1:13:1",
+      "reason": "Retain the nonconflicting rear wing and absorb it into the adjacent surviving street property in the same block; geometry remains exact."
+    }
+  ]
+}

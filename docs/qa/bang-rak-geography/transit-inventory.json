@@ -1,0 +1,206 @@
+[
+  {
+    "id": "sala-daeng",
+    "name": "Sala Daeng",
+    "code": "S2",
+    "system": "BTS",
+    "line": "silom",
+    "world": {
+      "x": 1001.6504694159917,
+      "z": 712.1995467707667,
+      "id": "sala-daeng",
+      "code": "S2",
+      "name": "Sala Daeng",
+      "thai": "ศาลาแดง",
+      "line": "silom",
+      "distance": 2057.9276374542237,
+      "yaw": -0.8029402234546921,
+      "family": "silom",
+      "length": 72,
+      "mrt": "MRT Si Lom",
+      "entrances": [
+        {
+          "x": 1024.398439739645,
+          "z": 665.2151893083709,
+          "yaw": -0.8029402234546921
+        },
+        {
+          "x": 978.9024990923383,
+          "z": 759.1839042331625,
+          "yaw": -0.8029402234546921
+        }
+      ]
+    },
+    "scope": "outside finished northern seam; inherited geometry preserved exactly",
+    "source": "https://www.bts.co.th/eng/info/info-history.html",
+    "verification": "Line/order checked; station geometry is inherited, not a measured new reconstruction"
+  },
+  {
+    "id": "chong-nonsi",
+    "name": "Chong Nonsi",
+    "code": "S3",
+    "system": "BTS",
+    "line": "silom",
+    "world": {
+      "x": 656.8406761097019,
+      "z": 1213.6813522194036,
+      "id": "chong-nonsi",
+      "code": "S3",
+      "name": "Chong Nonsi",
+      "thai": "ช่องนนทรี",
+      "line": "silom",
+      "distance": 2737.2285961231414,
+      "yaw": 0.46364760900091023,
+      "family": "business",
+      "length": 72,
+      "landmark": "mahanakhon",
+      "entrances": [
+        {
+          "x": 618.8275204922018,
+          "z": 1177.904264579411,
+          "yaw": 0.46364760900091023
+        },
+        {
+          "x": 651.0268993681971,
+          "z": 1161.804575141409,
+          "yaw": 0.46364760900091023
+        }
+      ]
+    },
+    "scope": "outside finished northern seam; inherited geometry preserved exactly",
+    "source": "https://www.bts.co.th/eng/info/info-history.html",
+    "verification": "Line/order checked; station geometry is inherited, not a measured new reconstruction"
+  },
+  {
+    "id": "saint-louis",
+    "name": "Saint Louis",
+    "code": "S4",
+    "system": "BTS",
+    "line": "silom",
+    "world": {
+      "x": 438.2071482812051,
+      "z": 1386.9654752864658,
+      "id": "saint-louis",
+      "code": "S4",
+      "name": "Saint Louis",
+      "thai": "เซนต์หลุยส์",
+      "line": "silom",
+      "distance": 3151.7129993876333,
+      "yaw": -1.4056476493801837,
+      "family": "side",
+      "length": 72,
+      "entrances": [
+        {
+          "x": 483.58126877748145,
+          "z": 1361.1548342795209,
+          "yaw": -1.4056476493801837
+        },
+        {
+          "x": 392.83302778492873,
+          "z": 1412.7761162934107,
+          "yaw": -1.4056476493801837
+        }
+      ]
+    },
+    "scope": "outside finished northern seam; inherited geometry preserved exactly",
+    "source": "https://www.bts.co.th/eng/info/info-history.html",
+    "verification": "Line/order checked; station geometry is inherited, not a measured new reconstruction"
+  },
+  {
+    "id": "surasak",
+    "name": "Surasak",
+    "code": "S5",
+    "system": "BTS",
+    "line": "silom",
+    "world": {
+      "x": 211.50901686265178,
+      "z": 1424.4337256892281,
+      "id": "surasak",
+      "code": "S5",
+      "name": "Surasak",
+      "thai": "สุรศักดิ์",
+      "line": "silom",
+      "distance": 3381.488991287555,
+      "yaw": -1.4309387803150204,
+      "family": "side",
+      "length": 72,
+      "entrances": [
+        {
+          "x": 160.47822253602254,
+          "z": 1413.4401807471604,
+          "yaw": -1.4309387803150204
+        },
+        {
+          "x": 262.539811189281,
+          "z": 1435.4272706312959,
+          "yaw": -1.4309387803150204
+        }
+      ]
+    },
+    "scope": "outside finished northern seam; inherited geometry preserved exactly",
+    "source": "https://www.bts.co.th/eng/info/info-history.html",
+    "verification": "Line/order checked; station geometry is inherited, not a measured new reconstruction"
+  },
+  {
+    "id": "saphan-taksin",
+    "name": "Saphan Taksin",
+    "code": "S6",
+    "system": "BTS",
+    "line": "silom",
+    "world": {
+      "x": -91.183442630853,
+      "z": 1459.2566711992104,
+      "id": "saphan-taksin",
+      "code": "S6",
+      "name": "Saphan Taksin",
+      "thai": "สะพานตากสิน",
+      "line": "silom",
+      "distance": 3686.191822860854,
+      "yaw": -1.5108582091680256,
+      "family": "river",
+      "length": 72,
+      "landmark": "state",
+      "entrances": [
+        {
+          "x": -43.94869703234334,
+          "z": 1428.3717427025458,
+          "yaw": -1.5108582091680256
+        },
+        {
+          "x": -40.59417185294492,
+          "z": 1484.2711806319276,
+          "yaw": -1.5108582091680256
+        }
+      ]
+    },
+    "scope": "outside finished northern seam; inherited geometry preserved exactly",
+    "source": "https://www.bts.co.th/eng/info/info-history.html",
+    "verification": "Line/order checked; station geometry is inherited, not a measured new reconstruction"
+  },
+  {
+    "id": "si-lom",
+    "name": "Si Lom",
+    "system": "MRT",
+    "line": "Blue Line",
+    "scope": "outside finished northern seam",
+    "source": "https://metro.bemplc.co.th/",
+    "verification": "Separate MRT system; no new entrance/line connection added"
+  },
+  {
+    "id": "sam-yan",
+    "name": "Sam Yan",
+    "system": "MRT",
+    "line": "Blue Line",
+    "scope": "outside finished northern seam",
+    "source": "https://metro.bemplc.co.th/",
+    "verification": "Separate MRT system; no new entrance/line connection added"
+  },
+  {
+    "id": "si-phraya-piers",
+    "name": "Si Phraya / River City piers",
+    "system": "river",
+    "scope": "River City pier retained; dedicated Si Phraya piers still deferred",
+    "source": "https://rivercitybangkok.com/plan-your-visit/",
+    "verification": "Venue distinguishes its Pier 3 from Si Phraya boat stop. No relabeling of an existing pier."
+  }
+]

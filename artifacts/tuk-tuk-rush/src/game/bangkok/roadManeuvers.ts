@@ -51,7 +51,7 @@ export function segmentFootprintDistance(a: Point, b: Point, o: Obstacle) {
       );
   return result;
 }
-const cache = new WeakMap<District, ReturnType<typeof build>>();
+const cache = new WeakMap<District, { roads: number; nodes: number; value: ReturnType<typeof build> }>();
 /** Scope this approval to existing riverfront forecourts. Other neighborhoods
  * retain their current frontage pending their own reviewed street pass. */
 const waterfront = new Set([
@@ -188,9 +188,9 @@ function build(d: District) {
 /** Startup-only spatial index. No per-frame path construction or city scans. */
 export function roadManeuvers(d: District) {
   let result = cache.get(d);
-  if (!result) {
-    result = build(d);
+  if (!result || result.roads !== d.roads.length || result.nodes !== d.nodes.length) {
+    result = { roads: d.roads.length, nodes: d.nodes.length, value: build(d) };
     cache.set(d, result);
   }
-  return result;
+  return result.value;
 }
