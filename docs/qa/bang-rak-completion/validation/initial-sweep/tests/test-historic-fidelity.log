@@ -1,0 +1,57 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: PR33/34 places plus the two explicitly inventoried PR42 landmarks
++ actual - expected
+
+  [
+    'wat-mangkon',
+    'holy-rosary',
+    'grand-postal',
+    'warehouse-30',
++   'royal-orchid',
++   'house-no-1',
++   'assumption',
++   'customs-house',
+    'sanam-chai-mrt',
+    'sam-yot-mrt',
+    'wat-mangkon-mrt',
+    'pier:tha-chang'
+  ]
+
+    at <anonymous> (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-historic-fidelity.ts:56:8)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'wat-mangkon',
+    'holy-rosary',
+    'grand-postal',
+    'warehouse-30',
+    'royal-orchid',
+    'house-no-1',
+    'assumption',
+    'customs-house',
+    'sanam-chai-mrt',
+    'sam-yot-mrt',
+    'wat-mangkon-mrt',
+    'pier:tha-chang'
+  ],
+  expected: [
+    'wat-mangkon',
+    'holy-rosary',
+    'grand-postal',
+    'warehouse-30',
+    'sanam-chai-mrt',
+    'sam-yot-mrt',
+    'wat-mangkon-mrt',
+    'pier:tha-chang'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

@@ -1,0 +1,64 @@
+name: Bang Rak completion and visual evidence
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/**'
+      - 'docs/qa/bang-rak-completion/**'
+      - '.github/workflows/bang-rak-completion.yml'
+  workflow_dispatch:
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24783'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak-completion
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak-entrances
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak-landmark-mounts
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:bang-rak-completion-drives
+      - run: pnpm --filter @workspace/tuk-tuk-rush build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bang-rak-completion-certification
+          path: docs/qa/bang-rak-completion/
+          retention-days: 30
+  webgl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24783'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - run: node scripts/browser-bang-rak-completion.mjs
+        working-directory: artifacts/tuk-tuk-rush
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bang-rak-completion-webgl
+          path: |
+            docs/qa/bang-rak-completion/after/
+            docs/qa/bang-rak-completion/scenes.json
+          retention-days: 30

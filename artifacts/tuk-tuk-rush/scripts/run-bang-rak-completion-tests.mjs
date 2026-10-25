@@ -1,14 +1,12 @@
-import fs from 'node:fs';
-import {spawnSync} from 'node:child_process';
-import {execFileSync} from 'node:child_process';
-const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
-const out=new URL('../../../docs/qa/bang-rak-completion/validation/tests/',import.meta.url);fs.mkdirSync(out,{recursive:true});
-const results=[];
-for(const [name,cmd] of Object.entries(pkg.scripts).filter(([name])=>name.startsWith('test:'))){
- const began=Date.now();const r=spawnSync(cmd,{shell:true,encoding:'utf8',maxBuffer:32*1024*1024,env:process.env});
- fs.writeFileSync(new URL(name.replaceAll(':','-')+'.log',out),(r.stdout??'')+(r.stderr??''));
- results.push({name,command:cmd,exitCode:r.status,ms:Date.now()-began});
- fs.writeFileSync(new URL('../tests.json',out),JSON.stringify({sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),results},null,2)+'\n');
- console.log(name,r.status,Date.now()-began);
-}
-process.exitCode=results.some(r=>r.exitCode!==0)?1:0;
+import fs from 'node:fs';import path from 'node:path';import {spawn,execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';
+const pkg=JSON.parse(fs.readFileSync('package.json','utf8')),out=new URL('../../../docs/qa/bang-rak-completion/validation/tests/',import.meta.url);
+fs.mkdirSync(out,{recursive:true});
+const hash=()=>{const files=[];const walk=d=>{for(const n of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,n.name);if(n.isDirectory())walk(p);else files.push([p,createHash('sha256').update(fs.readFileSync(p)).digest('hex')]);}};walk('src/game');return createHash('sha256').update(JSON.stringify(files.sort())).digest('hex');};
+const runtimeSourceSha256=hash(),sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),startedAt=new Date().toISOString(),results=[];
+const priority=['test:bang-rak-landmark-mounts','test:bang-rak-entrances','test:bang-rak-completion','test:bang-rak','test:bang-rak-geography','test:bangkok','test:city-fabric','test:convenience-urban','test:landmark-quality','test:city-blueprint','test:sign-visibility'];
+const jobs=Object.entries(pkg.scripts).filter(([name])=>name.startsWith('test:')).sort((a,b)=>{const a1=priority.indexOf(a[0]),b1=priority.indexOf(b[0]);return (a1<0?999:a1)-(b1<0?999:b1);});
+let next=0;
+const save=()=>fs.writeFileSync(new URL('../tests.json',out),JSON.stringify({sourceCommit,runtimeSourceSha256,startedAt,concurrency:2,results},null,2)+'\n');
+async function worker(){while(next<jobs.length){const [name,command]=jobs[next++],began=Date.now(),log=fs.createWriteStream(new URL(name.replaceAll(':','-')+'.log',out));const child=spawn(command,{shell:true,env:{...process.env,CHINATOWN_OUTPUT:`../../../docs/qa/bang-rak-completion/validation/tests/${name.replaceAll(':','-')}-routes.json`},stdio:['ignore','pipe','pipe']});child.stdout.pipe(log,{end:false});child.stderr.pipe(log,{end:false});const exitCode=await new Promise((r,reject)=>{child.on('error',reject);child.on('close',r)});log.end();results.push({name,command,exitCode,ms:Date.now()-began,finishedAt:new Date().toISOString(),runtimeSourceSha256});save();console.log(name,exitCode,Date.now()-began);}}
+await Promise.all([worker(),worker()]);
+const stable=hash()===runtimeSourceSha256;fs.writeFileSync(new URL('../tests.json',out),JSON.stringify({sourceCommit,runtimeSourceSha256,startedAt,finishedAt:new Date().toISOString(),concurrency:2,sourceStable:stable,pass:stable&&results.every(r=>r.exitCode===0),results},null,2)+'\n');process.exitCode=stable&&results.every(r=>r.exitCode===0)?0:1;

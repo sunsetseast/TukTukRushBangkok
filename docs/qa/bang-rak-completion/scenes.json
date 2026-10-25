@@ -231,13 +231,13 @@
     "id": "state-tower-vehicle",
     "mode": "inspect",
     "camera": [
-      90,
-      3,
-      1150
+      145,
+      4,
+      1128
     ],
     "look": [
       200,
-      45,
+      60,
       1180
     ],
     "elapsed": 100,
@@ -250,13 +250,13 @@
     "id": "state-tower-elevated",
     "mode": "inspect",
     "camera": [
-      30,
-      90,
-      1215
+      85,
+      95,
+      1090
     ],
     "look": [
       200,
-      45,
+      60,
       1180
     ],
     "elapsed": 100,
@@ -383,14 +383,14 @@
     "id": "assumption-vehicle",
     "mode": "inspect",
     "camera": [
-      -45,
+      28,
       3,
-      1110
+      1153
     ],
     "look": [
-      -80,
-      13,
-      1140
+      -75,
+      15,
+      1165
     ],
     "elapsed": 100,
     "viewport": [
@@ -402,14 +402,14 @@
     "id": "assumption-elevated",
     "mode": "inspect",
     "camera": [
-      -105,
-      90,
-      1175
+      50,
+      70,
+      1200
     ],
     "look": [
-      -80,
-      13,
-      1140
+      -75,
+      15,
+      1165
     ],
     "elapsed": 100,
     "viewport": [
@@ -611,13 +611,13 @@
     "id": "state-tower-night",
     "mode": "inspect",
     "camera": [
-      90,
-      3,
-      1150
+      145,
+      4,
+      1128
     ],
     "look": [
       200,
-      45,
+      60,
       1180
     ],
     "elapsed": 1000,
@@ -733,6 +733,82 @@
       -728,
       10,
       -260
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "house-no-1-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -170,
+      3,
+      846
+    ],
+    "look": [
+      -205,
+      6,
+      846
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "house-no-1-elevated",
+    "mode": "inspect",
+    "camera": [
+      -150,
+      55,
+      920
+    ],
+    "look": [
+      -205,
+      8,
+      846
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "customs-house-vehicle",
+    "mode": "inspect",
+    "camera": [
+      -300,
+      5,
+      962
+    ],
+    "look": [
+      -245,
+      9,
+      960
+    ],
+    "elapsed": 100,
+    "viewport": [
+      844,
+      390
+    ]
+  },
+  {
+    "id": "customs-house-elevated",
+    "mode": "inspect",
+    "camera": [
+      -330,
+      60,
+      1030
+    ],
+    "look": [
+      -245,
+      9,
+      960
     ],
     "elapsed": 100,
     "viewport": [

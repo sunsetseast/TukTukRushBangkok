@@ -51,7 +51,7 @@ export function fitCorridorFrontages(d: District, streets: readonly {
           x: a[0]! + tx * along - tz * side * off, z: a[1]! + tz * along + tx * side * off,
           w: w!, d: depth!, yaw: Math.atan2(tz * side, -tx * side),
           height: modern ? 16 + seed % 18 : 10 + seed % 9, color: ["#d7c29c", "#bbc5b7", "#cba68e", "#d4cebc"][seed % 4]!,
-          frontageRoad: street.id, protected: true, regionId: modern ? "silom" : "talatnoi", environmentId: `brc:frontage:${street.id}:${segment}:${side}:${along}`,
+          frontageRoad: street.id, protected: false, regionId: modern ? "silom" : "talatnoi", environmentId: `brc:frontage:${street.id}:${segment}:${side}:${along}`,
           ...(!modern ? {bangRak: {family: (["merchant", "timber", "cafe", "gallery", "workshop"] as const)[seed % 5]!, trade: "retail" as const, road: street.id}} : {}),
         };
         if (parcelConflicts(d, body).length || stations.some(s => orientedFootprintsOverlap(body, stationEnvelope(s), 2)) || rail.some(p => obstacleDistance(p, body) < 10)) continue;
@@ -254,8 +254,12 @@ export function completeStreetFabric(d: District) {
 export function refreshStreetFabric(d: District) {
   const plan=cache.get(d);
   if(!plan) return completeStreetFabric(d);
-  const after=auditStreetEdges(d), oldRoads=new Set(plan.before.map(s=>s.roadIndex));
-  plan.before.push(...after.filter(s=>!oldRoads.has(s.roadIndex)));
+  const after=auditStreetEdges(d), indexes=new Map(d.roads.map((r,i)=>[r,i]));
+  // Road-array indexes shift during a non-additive migration. Match physical
+  // road identity, retire obsolete samples, and then index the current graph.
+  plan.before=plan.before.filter(s=>indexes.has(s.road)).map(s=>({...s,roadIndex:indexes.get(s.road)!}));
+  const oldRoads=new Set(plan.before.map(s=>s.road));
+  plan.before.push(...after.filter(s=>!oldRoads.has(s.road)));
   plan.after=after; plan.faces=streetFaces(d,after);
   plan.infill=plan.infill.filter(b=>d.buildings.includes(b));
   plan.pockets=plan.pockets.filter(b=>d.obstacles.includes(b));

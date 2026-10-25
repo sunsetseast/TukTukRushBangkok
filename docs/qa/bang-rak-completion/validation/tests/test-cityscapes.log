@@ -1,13 +1,1 @@
-/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/cityModel.ts:37
- if(roadGraphKey(d)!==data.roadBaseline.key)throw Error('City road baseline changed without an explicit versioned approval');
-                                                  ^
-
-Error: City road baseline changed without an explicit versioned approval
-    at assertApprovedCityGeometry (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/cityModel.ts:37:51)
-    at createBangkokWorld (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/src/game/bangkok/world.ts:869:27)
-    at <anonymous> (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-cityscapes.ts:21:11)
-    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
-    at async node:internal/modules/esm/loader:647:26
-    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
-
-Node.js v24.22.1
+{"pass":true,"mapContract":"5ed882d40914d62c46672f0e13a52419fc4194030e1a91b6fb03bc7f5a324497","sites":1838,"solids":12365,"boats":7,"boatSamples":1792,"pedestrians":360,"cablePieces":9162,"flagships":5,"scalaEaves":193,"matchedCollisionSteps":800,"medianPhysicsCandidates":16}

@@ -315,5 +315,45 @@
       "reference": "https://www.langhamhotels.com/en/the-langham/bangkok/",
       "note": "Historic river facade interpretation; contemporary redevelopment/private access not certified. No invented through drive. Historic shell only; the Langham redevelopment/new wing and contemporary operations are deferred."
     }
+  ],
+  "courts": [
+    {
+      "id": "assumption-public-walk",
+      "site": "assumption",
+      "a": {
+        "x": -45,
+        "z": 1165
+      },
+      "b": {
+        "x": 66,
+        "z": 1153
+      },
+      "width": 10
+    },
+    {
+      "id": "state-silom-entrance",
+      "site": "state",
+      "a": {
+        "x": 200,
+        "z": 1148
+      },
+      "b": {
+        "x": 200,
+        "z": 1159
+      },
+      "width": 14
+    }
+  ],
+  "approachMigrations": [
+    {
+      "landmark": "state",
+      "previousNode": "bkk:650",
+      "corridor": "silom",
+      "target": {
+        "x": 200,
+        "z": 1148
+      },
+      "reason": "Curbside stop on corrected Silom frontage; State Tower origin and specialized architecture retained"
+    }
   ]
 }

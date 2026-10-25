@@ -19,6 +19,11 @@ export function beforeBangRakCompletion(d:District):District {
  const keys=new Set(live.buildings.map(completionBodyKey));
  for(const body of old.buildings)assert(keys.has(completionBodyKey(body))||retired.has(completionBodyKey(body)),'Every prior building retained or explicitly ledgered '+body.environmentId);
  const ids=new Set(BANG_RAK_DESTINATIONS.map(s=>s.id));
+ for(const change of migration.approaches) {
+  const l=live.landmarks.find(l=>l.id===change.landmark)!;
+  assert.equal(l.accessNode,change.nextNode,'Explicit corrected curbside destination');
+  l.accessNode=change.previousNode;
+ }
  assert.deepEqual(live.landmarks.filter(l=>!ids.has(l.id!)),old.landmarks,'No inherited named landmark moved');
  for(const k of ['river','riverPolygon','riverStructures','canals','transit','spawn','authoredSites'] as const)assert.deepEqual(live[k],old[k],`Preserve ${k}`);
  checked.set(d,old);return old;

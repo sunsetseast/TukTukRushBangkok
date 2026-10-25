@@ -1,4 +1,17 @@
 {
+  "approaches": [
+    {
+      "landmark": "state",
+      "previousNode": "bkk:650",
+      "corridor": "silom",
+      "target": {
+        "x": 200,
+        "z": 1148
+      },
+      "reason": "Curbside stop on corrected Silom frontage; State Tower origin and specialized architecture retained",
+      "nextNode": "brc:1920000:11365000"
+    }
+  ],
   "retiredNodes": [
     {
       "x": 165.55555555555554,
@@ -2572,12 +2585,38 @@
     },
     {
       "body": {
+        "x": 55.24864765599353,
+        "z": 1147.0874411350483,
+        "w": 22,
+        "d": 22,
+        "height": 38,
+        "yaw": 1.3078015951139772,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
         "x": 109.32313013315104,
         "z": 1161.645955648129,
         "w": 22,
         "d": 22,
         "height": 44,
         "yaw": -1.8337910584758161,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 48.48933734634884,
+        "z": 1172.1934508565857,
+        "w": 22,
+        "d": 22,
+        "height": 50,
+        "yaw": 1.3078015951139772,
         "color": "#507e9c",
         "regionId": "silom"
       },
@@ -3273,6 +3312,21 @@
     },
     {
       "body": {
+        "x": -29.168453079294256,
+        "z": 1174.068973772174,
+        "w": 36,
+        "d": 28,
+        "yaw": 1.3078015951139772,
+        "height": 24,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2283947076"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
         "x": 804.8557676475367,
         "z": 649.9151585961392,
         "w": 36,
@@ -3298,6 +3352,21 @@
         "regionId": "silom",
         "artRole": "background",
         "environmentId": "infill:rear:1826728471"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 10.734975696156468,
+        "z": 1170.1017242258883,
+        "w": 14,
+        "d": 12,
+        "yaw": -1.833791058475816,
+        "height": 56,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:screened:2752101358"
       },
       "reason": "Intersects researched road/sidewalk envelope"
     },
@@ -3388,6 +3457,21 @@
         "regionId": "silom",
         "artRole": "background",
         "environmentId": "infill:blockcourt:4:10:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 28.599870144273297,
+        "z": 1144.9153053442726,
+        "w": 16,
+        "d": 16,
+        "yaw": 2.9282548034074365,
+        "height": 17.4,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:0:11:1"
       },
       "reason": "Intersects researched road/sidewalk envelope"
     },
@@ -3808,6 +3892,21 @@
         "regionId": "silom",
         "artRole": "background",
         "environmentId": "urban-block:sathorn-blocks:8:22:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 3.4428408286075722,
+        "z": 1141.243081944553,
+        "w": 22,
+        "d": 26,
+        "yaw": -0.208830893644044,
+        "height": 11,
+        "color": "#c99c7f",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:0:19:0"
       },
       "reason": "Intersects researched road/sidewalk envelope"
     },

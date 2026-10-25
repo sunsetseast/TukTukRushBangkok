@@ -1,11 +1,13 @@
 {
   "label": "after",
-  "checkoutCommit": "acefd1375d58cc74f64ba4c6eebff61f7176fabc",
-  "runtimeSourceSha256": "97e1eac079164157554f382678d4418dd0d423d8058e77a22fc919b1934310b1",
+  "checkoutCommit": "b65f8aa3a3b10ce14bb89b4b32e34074ccf52ddf",
+  "runtimeSourceSha256": "f1e5eb1ee42998ab20f11ed70a79bfc1bb5745e5a2ed2cffbbbc810142e471c8",
   "physicalSafari": false,
-  "protocol": "Production world, actual engine/controller/38 production vehicles, seed982; fixed 30 ticks at 60Hz, then freeze simulation for pixel matching; normal chase camera on drive views. No traffic removed. Medium/DPR1. Road migration changes legal spawn placement: before/after use their actual seeded populations, not cars restored onto retired asphalt. Static views use QA art camera only. After captures explicitly restore the baseline full player/38-car snapshot after the same advancement for exact visual comparison; independent controller route tests certify contact behavior.",
+  "protocol": "Production world, actual engine/controller/38 production vehicles, seed982; fixed 30 ticks at 60Hz, then freeze simulation for pixel matching; normal chase camera on drive views. No traffic removed. Medium/DPR1. Road migration changes legal spawn placement: before/after use their actual seeded populations, not cars restored onto retired asphalt. Static views use QA art camera only. independent controller route tests certify contact behavior.",
+  "startedAt": "2026-10-25T10:49:52.597Z",
   "scenes": [
     {
+      "capturedAt": "2026-10-25T10:51:21.175Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -553,29 +555,30 @@
       },
       "samples": [
         {
-          "calls": 355,
-          "triangles": 467138,
-          "geometries": 954,
-          "textures": 16,
-          "frameMs": 869.8999999999069
+          "calls": 352,
+          "triangles": 447354,
+          "geometries": 758,
+          "textures": 15,
+          "frameMs": 139.89999999990687
         },
         {
-          "calls": 355,
-          "triangles": 467138,
-          "geometries": 954,
-          "textures": 16,
-          "frameMs": 622.9000000001397
+          "calls": 352,
+          "triangles": 447354,
+          "geometries": 758,
+          "textures": 15,
+          "frameMs": 1091.6000000000931
         },
         {
-          "calls": 355,
-          "triangles": 467138,
-          "geometries": 954,
-          "textures": 16,
-          "frameMs": 663
+          "calls": 352,
+          "triangles": 447354,
+          "geometries": 758,
+          "textures": 15,
+          "frameMs": 1006.5
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:51:49.501Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -1123,29 +1126,30 @@
       },
       "samples": [
         {
-          "calls": 413,
-          "triangles": 551708,
-          "geometries": 1059,
-          "textures": 16,
-          "frameMs": 467.79999999981374
+          "calls": 414,
+          "triangles": 533936,
+          "geometries": 866,
+          "textures": 15,
+          "frameMs": 686.6000000000931
         },
         {
-          "calls": 413,
-          "triangles": 551708,
-          "geometries": 1059,
-          "textures": 16,
-          "frameMs": 50.60000000009313
+          "calls": 414,
+          "triangles": 533936,
+          "geometries": 866,
+          "textures": 15,
+          "frameMs": 701
         },
         {
-          "calls": 413,
-          "triangles": 551708,
-          "geometries": 1059,
-          "textures": 16,
-          "frameMs": 423.5
+          "calls": 414,
+          "triangles": 533936,
+          "geometries": 866,
+          "textures": 15,
+          "frameMs": 28.100000000093132
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:52:23.126Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -1693,29 +1697,30 @@
       },
       "samples": [
         {
-          "calls": 495,
-          "triangles": 589520,
-          "geometries": 1397,
-          "textures": 17,
-          "frameMs": 28.199999999953434
+          "calls": 492,
+          "triangles": 578260,
+          "geometries": 1203,
+          "textures": 16,
+          "frameMs": 1298.8999999999069
         },
         {
-          "calls": 495,
-          "triangles": 589520,
-          "geometries": 1397,
-          "textures": 17,
-          "frameMs": 442.4000000001397
+          "calls": 492,
+          "triangles": 578260,
+          "geometries": 1203,
+          "textures": 16,
+          "frameMs": 1328.6000000000931
         },
         {
-          "calls": 495,
-          "triangles": 589520,
-          "geometries": 1397,
-          "textures": 17,
-          "frameMs": 489.29999999981374
+          "calls": 492,
+          "triangles": 578260,
+          "geometries": 1203,
+          "textures": 16,
+          "frameMs": 96.20000000018626
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:52:51.464Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -2263,29 +2268,30 @@
       },
       "samples": [
         {
-          "calls": 462,
-          "triangles": 522432,
-          "geometries": 1464,
-          "textures": 17,
-          "frameMs": 513
+          "calls": 464,
+          "triangles": 516202,
+          "geometries": 1274,
+          "textures": 16,
+          "frameMs": 32.10000000009313
         },
         {
-          "calls": 462,
-          "triangles": 522432,
-          "geometries": 1464,
-          "textures": 17,
-          "frameMs": 519.1999999999534
+          "calls": 464,
+          "triangles": 516202,
+          "geometries": 1274,
+          "textures": 16,
+          "frameMs": 1032
         },
         {
-          "calls": 462,
-          "triangles": 522432,
-          "geometries": 1464,
-          "textures": 17,
-          "frameMs": 87.69999999995343
+          "calls": 464,
+          "triangles": 516202,
+          "geometries": 1274,
+          "textures": 16,
+          "frameMs": 835.5
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:53:24.482Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -2834,28 +2840,29 @@
       "samples": [
         {
           "calls": 370,
-          "triangles": 450466,
-          "geometries": 1573,
-          "textures": 17,
-          "frameMs": 566.3999999999069
+          "triangles": 450766,
+          "geometries": 1381,
+          "textures": 16,
+          "frameMs": 20.200000000186265
         },
         {
           "calls": 370,
-          "triangles": 450466,
-          "geometries": 1573,
-          "textures": 17,
-          "frameMs": 507.89999999990687
+          "triangles": 450766,
+          "geometries": 1381,
+          "textures": 16,
+          "frameMs": 1165
         },
         {
           "calls": 370,
-          "triangles": 450466,
-          "geometries": 1573,
-          "textures": 17,
-          "frameMs": 508.7000000001862
+          "triangles": 450766,
+          "geometries": 1381,
+          "textures": 16,
+          "frameMs": 1259
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:53:51.790Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -3403,29 +3410,30 @@
       },
       "samples": [
         {
-          "calls": 434,
-          "triangles": 498836,
-          "geometries": 1593,
-          "textures": 18,
-          "frameMs": 20.199999999953434
+          "calls": 439,
+          "triangles": 493408,
+          "geometries": 1401,
+          "textures": 17,
+          "frameMs": 25.899999999906868
         },
         {
-          "calls": 434,
-          "triangles": 498836,
-          "geometries": 1593,
-          "textures": 18,
-          "frameMs": 407
+          "calls": 439,
+          "triangles": 493408,
+          "geometries": 1401,
+          "textures": 17,
+          "frameMs": 857.6000000000931
         },
         {
-          "calls": 434,
-          "triangles": 498836,
-          "geometries": 1593,
-          "textures": 18,
-          "frameMs": 484.10000000009313
+          "calls": 439,
+          "triangles": 493408,
+          "geometries": 1401,
+          "textures": 17,
+          "frameMs": 738.1000000000931
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:54:14.059Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -3973,29 +3981,30 @@
       },
       "samples": [
         {
-          "calls": 445,
-          "triangles": 624448,
-          "geometries": 1795,
-          "textures": 18,
-          "frameMs": 615.1000000000931
+          "calls": 443,
+          "triangles": 604730,
+          "geometries": 1607,
+          "textures": 17,
+          "frameMs": 585.2000000001863
         },
         {
-          "calls": 445,
-          "triangles": 624448,
-          "geometries": 1795,
-          "textures": 18,
-          "frameMs": 37.199999999953434
+          "calls": 443,
+          "triangles": 604730,
+          "geometries": 1607,
+          "textures": 17,
+          "frameMs": 42.5
         },
         {
-          "calls": 445,
-          "triangles": 624448,
-          "geometries": 1795,
-          "textures": 18,
-          "frameMs": 1166.8000000000466
+          "calls": 443,
+          "triangles": 604730,
+          "geometries": 1607,
+          "textures": 17,
+          "frameMs": 467.70000000018626
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:54:39.198Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -4543,29 +4552,30 @@
       },
       "samples": [
         {
-          "calls": 427,
-          "triangles": 602034,
-          "geometries": 1839,
-          "textures": 18,
-          "frameMs": 620.6999999999534
+          "calls": 424,
+          "triangles": 583734,
+          "geometries": 1649,
+          "textures": 17,
+          "frameMs": 842.1000000000931
         },
         {
-          "calls": 427,
-          "triangles": 602034,
-          "geometries": 1839,
-          "textures": 18,
-          "frameMs": 60.699999999953434
+          "calls": 424,
+          "triangles": 583734,
+          "geometries": 1649,
+          "textures": 17,
+          "frameMs": 737.2000000001863
         },
         {
-          "calls": 427,
-          "triangles": 602034,
-          "geometries": 1839,
-          "textures": 18,
-          "frameMs": 634.6999999999534
+          "calls": 424,
+          "triangles": 583734,
+          "geometries": 1649,
+          "textures": 17,
+          "frameMs": 674.1000000000931
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:55:12.123Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -5113,29 +5123,30 @@
       },
       "samples": [
         {
-          "calls": 400,
-          "triangles": 561746,
-          "geometries": 1853,
-          "textures": 18,
-          "frameMs": 700.8999999999069
+          "calls": 399,
+          "triangles": 542570,
+          "geometries": 1663,
+          "textures": 17,
+          "frameMs": 940.7999999998137
         },
         {
-          "calls": 400,
-          "triangles": 561746,
-          "geometries": 1853,
-          "textures": 18,
-          "frameMs": 91.60000000009313
+          "calls": 399,
+          "triangles": 542570,
+          "geometries": 1663,
+          "textures": 17,
+          "frameMs": 30.700000000186265
         },
         {
-          "calls": 400,
-          "triangles": 561746,
-          "geometries": 1853,
-          "textures": 18,
-          "frameMs": 18.399999999906868
+          "calls": 399,
+          "triangles": 542570,
+          "geometries": 1663,
+          "textures": 17,
+          "frameMs": 27.5
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:55:50.128Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -5683,29 +5694,30 @@
       },
       "samples": [
         {
-          "calls": 413,
-          "triangles": 590906,
-          "geometries": 1858,
-          "textures": 18,
-          "frameMs": 22.600000000093132
+          "calls": 416,
+          "triangles": 571458,
+          "geometries": 1668,
+          "textures": 17,
+          "frameMs": 1440.0999999996275
         },
         {
-          "calls": 413,
-          "triangles": 590906,
-          "geometries": 1858,
-          "textures": 18,
-          "frameMs": 668.7999999998137
+          "calls": 416,
+          "triangles": 571458,
+          "geometries": 1668,
+          "textures": 17,
+          "frameMs": 1441.8000000002794
         },
         {
-          "calls": 413,
-          "triangles": 590906,
-          "geometries": 1858,
-          "textures": 18,
-          "frameMs": 679.3000000000466
+          "calls": 416,
+          "triangles": 571458,
+          "geometries": 1668,
+          "textures": 17,
+          "frameMs": 37.60000000009313
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:56:14.507Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -6253,29 +6265,30 @@
       },
       "samples": [
         {
-          "calls": 416,
-          "triangles": 612822,
-          "geometries": 1920,
-          "textures": 18,
-          "frameMs": 23.100000000093132
+          "calls": 414,
+          "triangles": 595646,
+          "geometries": 1729,
+          "textures": 17,
+          "frameMs": 423.1999999997206
         },
         {
-          "calls": 416,
-          "triangles": 612822,
-          "geometries": 1920,
-          "textures": 18,
-          "frameMs": 521.6999999999534
+          "calls": 414,
+          "triangles": 595646,
+          "geometries": 1729,
+          "textures": 17,
+          "frameMs": 635.7000000001863
         },
         {
-          "calls": 416,
-          "triangles": 612822,
-          "geometries": 1920,
-          "textures": 18,
-          "frameMs": 1092.6999999999534
+          "calls": 414,
+          "triangles": 595646,
+          "geometries": 1729,
+          "textures": 17,
+          "frameMs": 671
         }
       ]
     },
     {
+      "capturedAt": "2026-10-25T10:56:41.734Z",
       "signDepth": {
         "method": "See independent sign-mounting geometry suite"
       },
@@ -6823,25 +6836,3451 @@
       },
       "samples": [
         {
-          "calls": 426,
-          "triangles": 584244,
-          "geometries": 1929,
-          "textures": 18,
-          "frameMs": 79.19999999995343
+          "calls": 420,
+          "triangles": 563152,
+          "geometries": 1738,
+          "textures": 17,
+          "frameMs": 706.3999999999069
         },
         {
-          "calls": 426,
-          "triangles": 584244,
-          "geometries": 1929,
-          "textures": 18,
-          "frameMs": 1529.8000000000466
+          "calls": 420,
+          "triangles": 563152,
+          "geometries": 1738,
+          "textures": 17,
+          "frameMs": 138.89999999990687
         },
         {
-          "calls": 426,
-          "triangles": 584244,
-          "geometries": 1929,
-          "textures": 18,
-          "frameMs": 18.5
+          "calls": 420,
+          "triangles": 563152,
+          "geometries": 1738,
+          "textures": 17,
+          "frameMs": 873.8999999999069
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:57:02.875Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "state-tower-vehicle",
+      "mode": "inspect",
+      "camera": [
+        145,
+        4,
+        1128
+      ],
+      "look": [
+        200,
+        60,
+        1180
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 221.502,
+          "z": 1180,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0.01666666666666527
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 30
+      },
+      "cameraPose": {
+        "position": [
+          145,
+          4,
+          1128
+        ],
+        "quaternion": [
+          -0.12387314013071957,
+          0.8722375860782393,
+          -0.28758874219027863,
+          -0.3756990204298845
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 235,
+          "triangles": 527172,
+          "geometries": 1794,
+          "textures": 17,
+          "frameMs": 785
+        },
+        {
+          "calls": 235,
+          "triangles": 527172,
+          "geometries": 1794,
+          "textures": 17,
+          "frameMs": 864.4000000003725
+        },
+        {
+          "calls": 235,
+          "triangles": 527172,
+          "geometries": 1794,
+          "textures": 17,
+          "frameMs": 963
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:57:19.790Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "state-tower-elevated",
+      "mode": "inspect",
+      "camera": [
+        85,
+        95,
+        1090
+      ],
+      "look": [
+        200,
+        60,
+        1180
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 221.502,
+          "z": 1180,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0.01666666666666527
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 30
+      },
+      "cameraPose": {
+        "position": [
+          85,
+          95,
+          1090
+        ],
+        "quaternion": [
+          0.051398686467747944,
+          0.8927627883289055,
+          0.10549281778516055,
+          -0.43497591220702647
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 417,
+          "triangles": 611806,
+          "geometries": 1817,
+          "textures": 17,
+          "frameMs": 615
+        },
+        {
+          "calls": 417,
+          "triangles": 611806,
+          "geometries": 1817,
+          "textures": 17,
+          "frameMs": 28.399999999906868
+        },
+        {
+          "calls": 417,
+          "triangles": 611806,
+          "geometries": 1817,
+          "textures": 17,
+          "frameMs": 367.29999999981374
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:57:45.076Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "saphan-taksin-vehicle",
+      "mode": "inspect",
+      "camera": [
+        -70,
+        4,
+        1430
+      ],
+      "look": [
+        20,
+        10,
+        1450
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 20,
+          "z": 1450,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 0
+      },
+      "cameraPose": {
+        "position": [
+          -70,
+          4,
+          1430
+        ],
+        "quaternion": [
+          0.020328649767173818,
+          -0.7796300474432398,
+          0.025342021091060377,
+          0.6253970875286481
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 330,
+          "triangles": 560410,
+          "geometries": 1876,
+          "textures": 17,
+          "frameMs": 28.600000000093132
+        },
+        {
+          "calls": 330,
+          "triangles": 560410,
+          "geometries": 1876,
+          "textures": 17,
+          "frameMs": 787.6000000000931
+        },
+        {
+          "calls": 330,
+          "triangles": 560410,
+          "geometries": 1876,
+          "textures": 17,
+          "frameMs": 949.1000000000931
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:58:12.846Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "saphan-taksin-elevated",
+      "mode": "inspect",
+      "camera": [
+        -130,
+        90,
+        1495
+      ],
+      "look": [
+        20,
+        10,
+        1450
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 20,
+          "z": 1450,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 0
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 0
+      },
+      "cameraPose": {
+        "position": [
+          -130,
+          90,
+          1495
+        ],
+        "quaternion": [
+          -0.1876986087451365,
+          -0.5803644993596686,
+          -0.13965351803598938,
+          0.7800276758284369
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 407,
+          "triangles": 608068,
+          "geometries": 1910,
+          "textures": 17,
+          "frameMs": 769.8999999999069
+        },
+        {
+          "calls": 407,
+          "triangles": 608068,
+          "geometries": 1910,
+          "textures": 17,
+          "frameMs": 783.5
+        },
+        {
+          "calls": 407,
+          "triangles": 608068,
+          "geometries": 1910,
+          "textures": 17,
+          "frameMs": 772.7999999998137
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:58:33.112Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "grand-postal-vehicle",
+      "mode": "inspect",
+      "camera": [
+        130,
+        4,
+        975
+      ],
+      "look": [
+        58,
+        12,
+        990
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 58,
+          "z": 1003.502,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 1
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 30
+      },
+      "cameraPose": {
+        "position": [
+          130,
+          4,
+          975
+        ],
+        "quaternion": [
+          0.03416165494919242,
+          0.7747335713118312,
+          -0.04201214751017214,
+          0.6299649627361285
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 445,
+          "triangles": 493584,
+          "geometries": 2033,
+          "textures": 17,
+          "frameMs": 112
+        },
+        {
+          "calls": 445,
+          "triangles": 493584,
+          "geometries": 2033,
+          "textures": 17,
+          "frameMs": 1599.8999999999069
+        },
+        {
+          "calls": 445,
+          "triangles": 493584,
+          "geometries": 2033,
+          "textures": 17,
+          "frameMs": 101
+        }
+      ]
+    },
+    {
+      "capturedAt": "2026-10-25T10:58:44.976Z",
+      "signDepth": {
+        "method": "See independent sign-mounting geometry suite"
+      },
+      "id": "grand-postal-elevated",
+      "mode": "inspect",
+      "camera": [
+        70,
+        90,
+        1040
+      ],
+      "look": [
+        58,
+        12,
+        990
+      ],
+      "elapsed": 100,
+      "viewport": [
+        844,
+        390
+      ],
+      "quality": "medium",
+      "dpr": 1,
+      "replay": {
+        "player": {
+          "x": 58,
+          "z": 1003.502,
+          "heading": -1.89,
+          "speed": 0,
+          "steer": 0,
+          "lean": 0,
+          "wheelSpin": 0,
+          "collision": 1
+        },
+        "traffic": [
+          {
+            "x": 127.56823317526107,
+            "z": -77.29448641177889,
+            "id": 0,
+            "from": "bkk:1277",
+            "to": "civic:1320000:-760000",
+            "heading": -2.054122638913878,
+            "speed": 6.689711250933822,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 111.56110399711048,
+            "z": -98.25186133718601,
+            "id": 1,
+            "from": "civic:1200000:-920000",
+            "to": "civic:1080000:-1080000",
+            "heading": -2.4980915447964707,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 59.61986765634285,
+            "z": -129.9083884765238,
+            "id": 2,
+            "from": "civic:720000:-1280000",
+            "to": "civic:480000:-1380000",
+            "heading": -1.9655874464946317,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -6.86778314252107,
+            "z": -158.23010840049554,
+            "id": 3,
+            "from": "civic:26667:-1573333",
+            "to": "civic:-186667:-1666667",
+            "heading": -1.983206768392304,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -69.71708733440822,
+            "z": -184.21540552619143,
+            "id": 4,
+            "from": "civic:-504000:-1800000",
+            "to": "civic:-712000:-1880000",
+            "heading": -1.9379701606130926,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -129.53864375910916,
+            "z": -199.77549165290566,
+            "id": 5,
+            "from": "civic:-1140000:-2000000",
+            "to": "civic:-1360000:-2040000",
+            "heading": -1.7471269571313468,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -193.13786438250239,
+            "z": -221.82081396129357,
+            "id": 6,
+            "from": "civic:-1760000:-2160000",
+            "to": "civic:-1933333:-2253333",
+            "heading": -2.064737695714408,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -240.11703655179082,
+            "z": -247.93409844976193,
+            "id": 7,
+            "from": "civic:-2280000:-2440000",
+            "to": "civic:-2453333:-2546667",
+            "heading": -2.1224513093234436,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -295.5179060839814,
+            "z": -279.2157942016589,
+            "id": 8,
+            "from": "civic:-2800000:-2760000",
+            "to": "civic:-3040000:-2860000",
+            "heading": -1.9655874464945589,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -379.62991990627415,
+            "z": -304.83575134818796,
+            "id": 9,
+            "from": "civic:-3540000:-3020000",
+            "to": "civic:-3800000:-3080000",
+            "heading": -1.7975951748488397,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1445.2111074067898,
+            "z": -1477,
+            "id": 10,
+            "from": "bkk:1",
+            "to": "bkk:0",
+            "heading": -1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 431.04702574047275,
+            "z": -1053.321661736295,
+            "id": 11,
+            "from": "civic:4175000:-10508036",
+            "to": "civic:4450000:-10498214",
+            "heading": 1.5350972141157064,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1156.0951891422085,
+            "z": -317.5104675937292,
+            "id": 12,
+            "from": "bkk:191",
+            "to": "bkk:190",
+            "heading": 2.84309372200412,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 802.904534154573,
+            "z": -583,
+            "id": 13,
+            "from": "bkk:414",
+            "to": "bkk:415",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -673.0494311174185,
+            "z": -64.90811739372816,
+            "id": 14,
+            "from": "bkk:485",
+            "to": "bkk:484",
+            "heading": 2.9889433251942537,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -26.9861934791557,
+            "z": 1662.627822080235,
+            "id": 15,
+            "from": "bkk:669",
+            "to": "bkk:670",
+            "heading": -0.1470783553884897,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1461.5423709692545,
+            "z": 849.9651097600249,
+            "id": 16,
+            "from": "bkk:743",
+            "to": "bkk:742",
+            "heading": -1.7359450042089575,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 610.9481541081427,
+            "z": 1115.188104283786,
+            "id": 17,
+            "from": "bkk:806",
+            "to": "bkk:824",
+            "heading": 0.4636476090008061,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 911.1540754624835,
+            "id": 18,
+            "from": "bkk:896",
+            "to": "bkk:895",
+            "heading": 0,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1423,
+            "z": 502.82116200135175,
+            "id": 19,
+            "from": "civic:14200000:4851765",
+            "to": "civic:14200000:5124706",
+            "heading": 0,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1338.919226744107,
+            "z": 116.69240990042516,
+            "id": 20,
+            "from": "bkk:1033",
+            "to": "bkk:1032",
+            "heading": -2.8966139904636337,
+            "speed": 7.92649055000658,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -596.4335563921571,
+            "z": 1457,
+            "id": 21,
+            "from": "bkk:1102",
+            "to": "bkk:1103",
+            "heading": 1.5707963267948966,
+            "speed": 8.926490550006582,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -1443.9200316980434,
+            "z": 257,
+            "id": 22,
+            "from": "bkk:1192",
+            "to": "bkk:1191",
+            "heading": 1.5707963267948966,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1059.2688622639905,
+            "z": -2095.897233754863,
+            "id": 23,
+            "from": "civic:10668571:-21160000",
+            "to": "civic:10537143:-20920000",
+            "heading": -0.5010133868034852,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1504.2188299589056,
+            "z": -455.858802294821,
+            "id": 24,
+            "from": "civic:15032000:-4660000",
+            "to": "bkk:440",
+            "heading": -0.12246105741744655,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1898.2810808811414,
+            "z": 650.6179151264657,
+            "id": 25,
+            "from": "civic:19072727:6443636",
+            "to": "civic:18818182:6530909",
+            "heading": -1.2404989719658908,
+            "speed": 8.926490550006582,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 2365.217245494611,
+            "z": 220.68298213391043,
+            "id": 26,
+            "from": "civic:23600000:2000000",
+            "to": "civic:23628571:2268571",
+            "heading": 0.10598435798973438,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1219.16662401911,
+            "z": -1483,
+            "id": 27,
+            "from": "civic:11948571:-14800000",
+            "to": "civic:12211429:-14800000",
+            "heading": 1.5707963267948966,
+            "speed": 10.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -605.8230525923572,
+            "z": -1319.7089453155977,
+            "id": 28,
+            "from": "civic:-6025455:-12989091",
+            "to": "civic:-6029091:-13261818",
+            "heading": -3.128260110295636,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 1617.7625573552498,
+            "z": -846.2975985733342,
+            "id": 29,
+            "from": "civic:16322222:-8444444",
+            "to": "civic:16066667:-8533333",
+            "heading": -1.9055331641118367,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -696.638321227897,
+            "z": -487.8945475987066,
+            "id": 30,
+            "from": "civic:-6906667:-4733333",
+            "to": "civic:-6960000:-5000000",
+            "heading": -2.944197093739845,
+            "speed": 9.926490550006582,
+            "kind": "motorcycle",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -351.3956669603855,
+            "z": -1074.7885981458323,
+            "id": 31,
+            "from": "civic:-3520000:-10900000",
+            "to": "civic:-3560000:-10650000",
+            "heading": -0.1586552621863151,
+            "speed": 10.926490550006582,
+            "kind": "taxi",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -541.6554481707576,
+            "z": -847.857475236748,
+            "id": 32,
+            "from": "civic:-5388632:-8340000",
+            "to": "civic:-5394316:-8610000",
+            "heading": -3.120543131452973,
+            "speed": 7.92649055000658,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -222.6720662910928,
+            "z": -1326.8379989667126,
+            "id": 33,
+            "from": "civic:-2248926:-13345420",
+            "to": "civic:-2227302:-13274134",
+            "heading": 0.10834534858899297,
+            "speed": 6.61026417499013,
+            "kind": "motorcycle",
+            "color": "#db8f78",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -44.891216512406444,
+            "z": -408.84700064859896,
+            "id": 34,
+            "from": "civic:-568000:-4128000",
+            "to": "civic:-352000:-3992000",
+            "heading": 1.008874764538033,
+            "speed": 9.926490550006582,
+            "kind": "taxi",
+            "color": "#b9c9cf",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": -131.74586418709404,
+            "z": -213.03745330838663,
+            "id": 35,
+            "from": "civic:-1313333:-2286667",
+            "to": "civic:-1360000:-2040000",
+            "heading": -0.18697926991873337,
+            "speed": 4.0769286361828065,
+            "kind": "car",
+            "color": "#e872a8",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 56.9573905378214,
+            "z": 100.87506764652838,
+            "id": 36,
+            "from": "civic:520000:1200000",
+            "to": "civic:600000:1000000",
+            "heading": 2.761086276477468,
+            "speed": 7.92649055000658,
+            "kind": "motorcycle",
+            "color": "#4da995",
+            "wait": 0,
+            "nearMissCooldown": 0
+          },
+          {
+            "x": 289.44582043840904,
+            "z": 149.6693234575593,
+            "id": 37,
+            "from": "civic:2784000:1576000",
+            "to": "civic:2992000:1488000",
+            "heading": 1.971036983828898,
+            "speed": 8.926490550006582,
+            "kind": "taxi",
+            "color": "#e6bc54",
+            "wait": 0,
+            "nearMissCooldown": 0
+          }
+        ],
+        "contactFrames": 30
+      },
+      "cameraPose": {
+        "position": [
+          70,
+          90,
+          1040
+        ],
+        "quaternion": [
+          -0.4708497639525975,
+          0.10345355193956342,
+          0.05571096481689504,
+          0.8743535616534321
+        ],
+        "fov": 58
+      },
+      "samples": [
+        {
+          "calls": 210,
+          "triangles": 332036,
+          "geometries": 2037,
+          "textures": 17,
+          "frameMs": 54.39999999990687
+        },
+        {
+          "calls": 210,
+          "triangles": 332036,
+          "geometries": 2037,
+          "textures": 17,
+          "frameMs": 434
+        },
+        {
+          "calls": 210,
+          "triangles": 332036,
+          "geometries": 2037,
+          "textures": 17,
+          "frameMs": 29.100000000093132
         }
       ]
     }

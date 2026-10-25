@@ -1,0 +1,128 @@
+{
+  "sourceCommit": "b65f8aa3a3b10ce14bb89b4b32e34074ccf52ddf",
+  "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a",
+  "startedAt": "2026-10-25T10:41:45.896Z",
+  "concurrency": 2,
+  "results": [
+    {
+      "name": "test:bang-rak-completion",
+      "command": "node --import tsx scripts/check-bang-rak-completion.ts",
+      "exitCode": 0,
+      "ms": 28706,
+      "finishedAt": "2026-10-25T10:42:14.603Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:bang-rak",
+      "command": "node --import tsx scripts/check-bang-rak.ts",
+      "exitCode": 0,
+      "ms": 32125,
+      "finishedAt": "2026-10-25T10:42:18.024Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:bang-rak-geography",
+      "command": "node --import tsx scripts/check-service-route-preference.ts && node --import tsx scripts/check-bang-rak-seam.ts",
+      "exitCode": 0,
+      "ms": 32669,
+      "finishedAt": "2026-10-25T10:42:47.273Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:city-fabric",
+      "command": "node --import tsx scripts/check-city-fabric.ts",
+      "exitCode": 0,
+      "ms": 31676,
+      "finishedAt": "2026-10-25T10:43:18.950Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:convenience-urban",
+      "command": "node --import tsx scripts/check-convenience-urban.ts",
+      "exitCode": 0,
+      "ms": 24783,
+      "finishedAt": "2026-10-25T10:43:43.734Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 0,
+      "ms": 71330,
+      "finishedAt": "2026-10-25T10:44:55.064Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:city-blueprint",
+      "command": "node --import tsx scripts/check-city-blueprint.ts",
+      "exitCode": 0,
+      "ms": 45082,
+      "finishedAt": "2026-10-25T10:45:40.146Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "exitCode": 0,
+      "ms": 241261,
+      "finishedAt": "2026-10-25T10:46:19.285Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "ms": 7808,
+      "finishedAt": "2026-10-25T10:46:27.094Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "ms": 313,
+      "finishedAt": "2026-10-25T10:46:27.408Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "ms": 3670,
+      "finishedAt": "2026-10-25T10:46:31.078Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "ms": 1796,
+      "finishedAt": "2026-10-25T10:46:32.874Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "ms": 445,
+      "finishedAt": "2026-10-25T10:46:33.319Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "ms": 611,
+      "finishedAt": "2026-10-25T10:46:33.930Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    },
+    {
+      "name": "test:sign-visibility",
+      "command": "node --import tsx scripts/check-sign-visibility.ts",
+      "exitCode": 0,
+      "ms": 77612,
+      "finishedAt": "2026-10-25T10:46:57.759Z",
+      "runtimeSourceSha256": "972a8482437bccfd4e3c44b406d44956d9a0e79a658ed6996f35095eecc45a0a"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+capture starting before 24782
+capture browser ready
+page loaded
+production WebGL ready
+before state-tower-vehicle {"calls":200,"triangles":460306,"geometries":845,"textures":16,"frameMs":553.8000000002794}
+before state-tower-elevated {"calls":380,"triangles":543481,"geometries":995,"textures":16,"frameMs":451.10000000009313}
+before assumption-vehicle {"calls":381,"triangles":505577,"geometries":1317,"textures":16,"frameMs":664.2999999998137}
+before assumption-elevated {"calls":410,"triangles":498167,"geometries":1405,"textures":17,"frameMs":43.299999999813735}
+before state-tower-night {"calls":200,"triangles":460306,"geometries":1405,"textures":17,"frameMs":61.89999999990687}
+before house-no-1-vehicle {"calls":337,"triangles":331675,"geometries":1561,"textures":18,"frameMs":53.799999999813735}
+before house-no-1-elevated {"calls":373,"triangles":391371,"geometries":1685,"textures":19,"frameMs":281.70000000018626}
+before customs-house-vehicle {"calls":431,"triangles":547779,"geometries":1863,"textures":19,"frameMs":438.79999999981374}
+before customs-house-elevated {"calls":429,"triangles":473282,"geometries":1863,"textures":19,"frameMs":703.2999999998137}

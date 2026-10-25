@@ -38,7 +38,8 @@ const report = {
     .digest("hex"),
   physicalSafari: false,
   protocol:
-    "Production world, actual engine/controller/38 production vehicles, seed982; fixed 30 ticks at 60Hz, then freeze simulation for pixel matching; normal chase camera on drive views. No traffic removed. Medium/DPR1. Road migration changes legal spawn placement: before/after use their actual seeded populations, not cars restored onto retired asphalt. Static views use QA art camera only. After captures explicitly restore the baseline full player/38-car snapshot after the same advancement for exact visual comparison; independent controller route tests certify contact behavior.",
+    "Production world, actual engine/controller/38 production vehicles, seed982; fixed 30 ticks at 60Hz, then freeze simulation for pixel matching; normal chase camera on drive views. No traffic removed. Medium/DPR1. Road migration changes legal spawn placement: before/after use their actual seeded populations, not cars restored onto retired asphalt. Static views use QA art camera only. independent controller route tests certify contact behavior.",
+  startedAt: new Date().toISOString(),
   scenes: [],
   errors: [],
   consoleErrors: [],
@@ -214,6 +215,7 @@ try {
     });
     const signDepth = {method: "See independent sign-mounting geometry suite"};
     report.scenes.push({
+      capturedAt: new Date().toISOString(),
       signDepth,
       ...s,
       viewport: [width, height],

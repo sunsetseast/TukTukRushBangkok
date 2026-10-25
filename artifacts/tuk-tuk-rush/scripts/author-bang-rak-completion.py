@@ -66,13 +66,19 @@ for s in segments:
    if a!=b:roads.append(dict(s['road'],a=a,b=b))
 newvol=[volume(ns[r['a']],ns[r['b']],r['width'],3.3) for r in roads if not r.get('corridor') in ['sathorn','charoen_s','ramaiv','silom'] or r.get('spawnTraffic')==False]
 sitevol=[dict(site['origin'],w=site['w'],d=site['d'],yaw=site['yaw']) for site in plan.get('sites',[])]
+courtvol=[volume(c['a'],c['b'],c['width'],1) for c in plan.get('courts',[])]
 retired=[];blocked=[]
 for b in d['obstacles']:
- if any(overlap(b,v) for v in newvol+sitevol):
+ if any(overlap(b,v) for v in newvol+sitevol+courtvol):
   if b.get('landmarkId') or ((b.get('protected') or b.get('chinatown')) and b.get('environmentId') not in {'ctparcel:ctblock:0:1:6','ctparcel:ctblock:0:1:7','ctparcel:ctblock:0:1:8','br:charoen-east-3','br:charoen-east-4'}):blocked.append(b)
   else:retired.append(dict(body=b,reason='Intersects researched road/sidewalk envelope'))
 used={r[k] for r in d['roads'] if r not in removed+split for k in ['a','b']}|{r[k] for r in roads for k in ['a','b']}
 retiredNodes=[n for n in d['nodes'] if n['id'] not in used]
-output=dict(retiredNodes=retiredNodes,version=1,baseline=plan['baseline'],baselineStageSha256=hashlib.sha256(BASE.read_bytes()).hexdigest(),nodes=newnodes,retiredRoads=removed,splitRoads=split,roads=roads,retired=retired,parcels=[],sites=[],blocked=blocked)
+approaches=[]
+for change in plan.get('approachMigrations',[]):
+ candidates={r[k] for r in roads+d['roads'] if r.get('corridor')==change['corridor'] and r not in removed+split for k in ['a','b']}
+ best=min(candidates,key=lambda id:math.hypot(ns[id]['x']-change['target']['x'],ns[id]['z']-change['target']['z']))
+ approaches.append(dict(change,nextNode=best))
+output=dict(approaches=approaches,retiredNodes=retiredNodes,version=1,baseline=plan['baseline'],baselineStageSha256=hashlib.sha256(BASE.read_bytes()).hexdigest(),nodes=newnodes,retiredRoads=removed,splitRoads=split,roads=roads,retired=retired,parcels=[],sites=[],blocked=blocked)
 (SRC/'bangRakCompletionMigration.v1.json').write_text(json.dumps(output,indent=2)+'\n')
 print(json.dumps(dict(nodes=len(newnodes),roads=len(roads),retiredRoads=len(removed),splitRoads=len(split),retired=len(retired),blocked=[dict(id=b.get('environmentId'),landmark=b.get('landmarkId'),x=b['x'],z=b['z'],w=b['w'],d=b['d']) for b in blocked]),indent=2))

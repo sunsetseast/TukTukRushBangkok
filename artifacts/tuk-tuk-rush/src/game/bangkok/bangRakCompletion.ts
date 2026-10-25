@@ -36,6 +36,11 @@ export function completeBangRak(d: District) {
   d.nodes.push(...migration.nodes as RoadNode[]);
   const roads = migration.roads as Road[];
   d.roads.push(...roads);
+  for(const change of migration.approaches) {
+    const landmark=d.landmarks.find(l=>l.id===change.landmark);
+    if(!landmark || landmark.accessNode!==change.previousNode)throw Error("Bang Rak arrival baseline changed: "+change.landmark);
+    landmark.accessNode=change.nextNode;
+  }
   d.buildings = d.buildings.filter(o => !removed.has(o));
   d.obstacles = d.obstacles.filter(o => !removed.has(o));
   // Keep all cached ownership lists in agreement with the physical world.

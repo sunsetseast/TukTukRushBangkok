@@ -1,21 +1,4 @@
-node:internal/modules/run_main:107
-    triggerUncaughtException(
-    ^
-
-AssertionError [ERR_ASSERTION]: Every road node must be connected
-
-2333 !== 2350
-
-    at <anonymous> (/workspace/scratch/57e86a8a254a/TukTukRushBangkok/artifacts/tuk-tuk-rush/scripts/check-bangkok.ts:31:8)
-    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
-    at async node:internal/modules/esm/loader:647:26
-    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
-  generatedMessage: false,
-  code: 'ERR_ASSERTION',
-  actual: 2333,
-  expected: 2350,
-  operator: 'strictEqual',
-  diff: 'simple'
-}
-
-Node.js v24.22.1
+{"pass":true,"nodes":2333,"roads":2405,"roadSamples":21645,"bridgeSamples":702,"protectedGate":true,"reachableFares":11,"trafficTransitions":512,"discoveryPersistence":true,"meshConstructionAndDisposal":true,"bridgeViewChecks":156}
+{"pass":true,"drivenFares":11,"noTeleports":true,"metres":10217,"simulatedSeconds":1073,"collisions":0,"pauseRecoveryRestart":true,"trafficDisabledForDeterminism":true}
+{"pass":true,"mapMarkup":true,"modalAndLocation":true,"discoveryNotMutatedByMap":true,"culledMinimapRoads":20}
+{"pass":true,"buildings":7350,"aligned":6585,"families":["bang-rak","chinatown","connector","icon","khaosan","north","oldtown","paknam","siam","silom","south","sukhumvit","talatnoi","westbank"],"alwaysVisiblePieces":748656,"details":64586,"windows":40431}

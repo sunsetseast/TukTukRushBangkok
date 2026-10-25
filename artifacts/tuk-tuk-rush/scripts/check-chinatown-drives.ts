@@ -55,11 +55,18 @@ if(process.env.BANG_RAK_COMPLETION_ROUTES==="1") {
  near("charoen-core","charoen_s",140,940);near("si-east","si-phraya",380,700);near("maha-set","maha-set",420,830);
  near("surawong","surawong",550,805);near("silom","silom",400,1116);near("taksin","sathorn",0,1460);
  near("central-bang-rak","mahesak",415,990);near("river-city-network","si-phraya",145,780);
+ for(const [id,corridor,a,b] of [
+  ["pan","pan",[500,1108],[550,1368]],["decho","decho",[650,760],[754,951]],
+  ["naret","naret",[440,626],[540,810]],["maha","maha-set",[380,700],[430,860]],
+  ["mahesak-axis","mahesak",[430,860],[400,1117]],["surasak-axis","surasak-road",[400,1117],[330,1405]],
+ ] as [string,string,number[],number[]][]) {near(id+"-n",corridor,a[0]!,a[1]!);near(id+"-s",corridor,b[0]!,b[1]!);}
+
 }
 const completionPairs = [
  ["charoen-core","si-east"],["si-east","maha-set"],["si-east","surawong"],["surawong","silom"],
  ["silom","state"],["state","taksin"],["charoen-core","oriental"],["warehouse-30","central-bang-rak"],
- ["river-city","si-east"],["silom","shangri"],["si-east","assumption"],["river-city","royal-orchid"]
+ ["river-city","si-east"],["silom","shangri"],["si-east","assumption"],["river-city","royal-orchid"],
+ ["pan-n","pan-s"],["decho-n","decho-s"],["naret-n","naret-s"],["maha-n","maha-s"],["mahesak-axis-n","mahesak-axis-s"],["surasak-axis-n","surasak-axis-s"]
 ].flatMap(([a,b])=>[[a!,b!],[b!,a!]]);
 const pairs = process.env.BANG_RAK_COMPLETION_ROUTES === "1" ? completionPairs : process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1" ? [
  ["river-city","si-phraya-east"],["si-phraya-east","river-city"],

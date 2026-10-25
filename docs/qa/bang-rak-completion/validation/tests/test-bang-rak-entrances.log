@@ -1,0 +1,49 @@
+{
+  pass: true,
+  walkingSamples: 162,
+  failures: [],
+  look: [
+    {
+      id: 'grand-postal',
+      stop: 'bkk:644',
+      opened: true,
+      target: 'grand-postal'
+    },
+    {
+      id: 'warehouse-30',
+      stop: 'br:charoen-krung-32:6',
+      opened: true,
+      target: 'warehouse-30'
+    },
+    {
+      id: 'state',
+      stop: 'brc:1920000:11365000',
+      opened: true,
+      target: 'state'
+    },
+    {
+      id: 'assumption',
+      stop: 'bkk:650',
+      opened: true,
+      target: 'assumption'
+    },
+    {
+      id: 'royal-orchid',
+      stop: 'br:charoen-krung-30:13',
+      opened: true,
+      target: 'royal-orchid'
+    },
+    {
+      id: 'house-no-1',
+      stop: 'brg:captain-bush-return:2',
+      opened: true,
+      target: 'house-no-1'
+    },
+    {
+      id: 'customs-house',
+      stop: 'br:charoen-krung-32:13',
+      opened: true,
+      target: 'customs-house'
+    }
+  ]
+}
