@@ -1,0 +1,40 @@
+[
+  {
+    "check": "geographic projection/topology/production controller",
+    "pass": true
+  },
+  {
+    "check": "legacy river geography",
+    "pass": true,
+    "seconds": 23.65
+  },
+  {
+    "check": "legacy river controller drives",
+    "pass": true,
+    "seconds": 46.31
+  },
+  {
+    "check": "PR44 exact Chinatown frontage migration",
+    "pass": true
+  },
+  {
+    "check": "historic landmark identity/visibility preservation",
+    "pass": true
+  },
+  {
+    "check": "Bang Rak completion + entrances + landmark mounting",
+    "pass": true
+  },
+  {
+    "check": "production startup without runtime polygon boolean dependencies",
+    "pass": true
+  },
+  {
+    "check": "default WebGL world and traffic startup",
+    "pass": true
+  },
+  {
+    "check": "legacy exhaustive waterfront clearance",
+    "status": "local sweep stopped after more than 10 minutes; unchanged assertion suite retained in existing GitHub Actions"
+  }
+]

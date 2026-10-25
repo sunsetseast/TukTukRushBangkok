@@ -1,3 +1,4 @@
+import { approvedCompletionRetirement } from "./bang-rak-completion-migration-contract";
 import { retiredBangRakIds } from "../src/game/bangkok/bangRakSeam";
 import { beforeBangRak, assertBangRakMigration } from "./bang-rak-migration-contract";
 import assert from "node:assert/strict";
@@ -51,7 +52,7 @@ assert.deepEqual(
 );
 const newKeys = new Set(d.buildings.map(key));
 for (const b of before.buildings.filter((b) => b.chinatown))
-  assert(newKeys.has(key(b)) || retiredBangRakIds.has(b.environmentId??""), "Every original frontage is retained or explicitly migrated by PR43");
+  assert(newKeys.has(key(b)) || retiredBangRakIds.has(b.environmentId??"") || approvedCompletionRetirement(b,d), "Every original frontage is retained or explicitly migrated by the exact PR43/44 ledgers");
 assert(rear.length >= 60, "A substantial completion of deep blocks");
 const maneuvers = roadManeuvers(d);
 for (const p of rear) {

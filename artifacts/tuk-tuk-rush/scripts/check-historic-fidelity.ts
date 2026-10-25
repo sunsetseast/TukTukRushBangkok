@@ -62,12 +62,17 @@ assert.deepEqual(
     "holy-rosary",
     "grand-postal",
     "warehouse-30",
+    // PR44: explicit additional protected landmark identities; all older IDs remain above.
+    "royal-orchid",
+    "house-no-1",
+    "assumption",
+    "customs-house",
     "sanam-chai-mrt",
     "sam-yot-mrt",
     "wat-mangkon-mrt",
     "pier:tha-chang",
   ],
-  "PR33/34 places plus the two explicitly inventoried PR42 landmarks",
+  "PR33/34 places plus explicitly inventoried PR42 and PR44 landmarks",
 );
 const key = (o: Obstacle) =>
   [o.x, o.z, o.w, o.d, o.yaw ?? 0].map((n) => n.toFixed(4)).join(":");
