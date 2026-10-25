@@ -1,0 +1,156 @@
+{
+  "sourceCommit": "66fcb4df912843893fb4e3bfb179e593ce70424c",
+  "runtimeImplementation": "6d893a50e098c357fa9acc406c0b167c677f6017",
+  "checks": [
+    {
+      "name": "approve",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661775/job/120972446409"
+    },
+    {
+      "name": "survey",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661204/job/120972444702"
+    },
+    {
+      "name": "drive",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661195/job/120972444278"
+    },
+    {
+      "name": "certify",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661202/job/120972443448"
+    },
+    {
+      "name": "game",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661214/job/120972443277"
+    },
+    {
+      "name": "capture",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/40127661201/job/120972443216"
+    }
+  ],
+  "evidenceRecovery": "Final local 161-file evidence commit was lost before publication during workspace maintenance. The runtime and QA source and independent Actions artifacts survive. Local summary claims are archived observations; missing raw evidence is not counted as attached certification.",
+  "artifacts": [
+    {
+      "artifacts": [
+        {
+          "id": 12574321518,
+          "name": "compact-bangkok-webgl-qa",
+          "size_in_bytes": 3206386,
+          "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574321518",
+          "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574321518/zip",
+          "expired": false,
+          "created_at": "2026-10-24T20:15:12Z",
+          "expires_at": "2027-01-22T19:58:00Z",
+          "updated_at": "2026-10-24T20:15:12Z",
+          "digest": "sha256:efbc616c81aada1527400f16c10758bd0a4a76b21e20cf967ea277c2d0e5e173",
+          "workflow_run": {
+            "id": 40127661201,
+            "repository_id": 1412639590,
+            "head_repository_id": 1412639590,
+            "head_branch": "codex/bang-rak-geography-20261024",
+            "head_sha": "66fcb4df912843893fb4e3bfb179e593ce70424c"
+          }
+        },
+        {
+          "id": 12574196518,
+          "name": "yaowarat-webgl-screenshots",
+          "size_in_bytes": 1354987,
+          "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574196518",
+          "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574196518/zip",
+          "expired": false,
+          "created_at": "2026-10-24T20:15:10Z",
+          "expires_at": "2027-01-22T19:58:00Z",
+          "updated_at": "2026-10-24T20:15:10Z",
+          "digest": "sha256:36cd648dd006689036d1892b49fb10c26b1b1e0848bb4b4926b7a6351911caa2",
+          "workflow_run": {
+            "id": 40127661201,
+            "repository_id": 1412639590,
+            "head_repository_id": 1412639590,
+            "head_branch": "codex/bang-rak-geography-20261024",
+            "head_sha": "66fcb4df912843893fb4e3bfb179e593ce70424c"
+          }
+        }
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "id": 12574840129,
+          "name": "chinatown-certification",
+          "size_in_bytes": 2187709,
+          "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574840129",
+          "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574840129/zip",
+          "expired": false,
+          "created_at": "2026-10-24T20:07:51Z",
+          "expires_at": "2026-11-23T20:07:50Z",
+          "updated_at": "2026-10-24T20:07:51Z",
+          "digest": "sha256:cbc91aca0276eddc923e2d3418131cdee3adc4f861552944f6a3e33945268d3e",
+          "workflow_run": {
+            "id": 40127661202,
+            "repository_id": 1412639590,
+            "head_repository_id": 1412639590,
+            "head_branch": "codex/bang-rak-geography-20261024",
+            "head_sha": "66fcb4df912843893fb4e3bfb179e593ce70424c"
+          }
+        }
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "id": 12574297102,
+          "name": "waterfront-controller-certification",
+          "size_in_bytes": 114115,
+          "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574297102",
+          "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12574297102/zip",
+          "expired": false,
+          "created_at": "2026-10-24T20:20:16Z",
+          "expires_at": "2026-11-23T20:20:15Z",
+          "updated_at": "2026-10-24T20:20:16Z",
+          "digest": "sha256:b2c198e28a4856f185b7838b407d3198233cb4c387bfcb37e8a61c5faebefbc4",
+          "workflow_run": {
+            "id": 40127661214,
+            "repository_id": 1412639590,
+            "head_repository_id": 1412639590,
+            "head_branch": "codex/bang-rak-geography-20261024",
+            "head_sha": "66fcb4df912843893fb4e3bfb179e593ce70424c"
+          }
+        }
+      ]
+    },
+    {
+      "artifacts": [
+        {
+          "id": 12573214961,
+          "name": "city-blueprint-certification",
+          "size_in_bytes": 95309,
+          "url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12573214961",
+          "archive_download_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/artifacts/12573214961/zip",
+          "expired": false,
+          "created_at": "2026-10-24T20:02:23Z",
+          "expires_at": "2026-11-23T20:02:23Z",
+          "updated_at": "2026-10-24T20:02:23Z",
+          "digest": "sha256:4f112f7d39b405a93a9c5cc03f904829af27bdfbd4c17a1428ffe221a9c92c1a",
+          "workflow_run": {
+            "id": 40127661775,
+            "repository_id": 1412639590,
+            "head_repository_id": 1412639590,
+            "head_branch": "codex/bang-rak-geography-20261024",
+            "head_sha": "66fcb4df912843893fb4e3bfb179e593ce70424c"
+          }
+        }
+      ]
+    }
+  ]
+}
