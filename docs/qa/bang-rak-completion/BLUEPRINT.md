@@ -13,11 +13,11 @@ Sources: the committed OSM reference (© OpenStreetMap contributors, ODbL), the 
 - Baseline: 2,260 directed/undirected road records, 2,196 nodes, 7,257 building bodies.
 - PR42: Grand Postal articulated civic model, eight Warehouse30 sheds, Soi30/32. Preserve these.
 - PR43: eastbound western Si Phraya, Captain Bush return, River City arrival spur, fourteen street-oriented properties. Preserve them.
-- No named Surawong, Maha Set, Mahesak, Pan, Decho or Sathon corridors in the generated baseline.
+- No named Surawong, Maha Set, Mahesak, Pan or Decho corridors in the generated baseline.
 - Inherited Silom begins at (140,940), bends southeast to (600,1100), then northeast to Sala Daeng. Its western start is beside the Postal block rather than State Tower (200,1180). This is the principal correction.
 - Oriental, Shangri-La, Eastin, State Tower, River City and Mahanakhon already have specialized architecture. Keep their origins and physical arrival approaches.
 - Cathedral, Customs House, House No.1 and Royal Orchid are missing. Placement must respect existing complete compounds and water; do not force a landmark into an occupied site.
-- BTS already has Sala Daeng → Chong Nonsi → Saint Louis → Surasak → Saphan Taksin in that order. Audit its clearances before changing it. Existing station canopies/trains are production systems, not missing features.
+- Sathorn and Narathiwas already exist under legacy spellings; retain their alignment and improve naming/context. BTS already has Sala Daeng → Chong Nonsi → Saint Louis → Surasak → Saphan Taksin in that order. Audit its clearances before changing it. Existing station canopies/trains are production systems, not missing features.
 - Procedural blocks exist but the arterial skeleton leaves long missing cross-connections and incoherent frontages. Reuse building grammar, batching and road-derived placement.
 - Current Node retained inventory: 117,021,550 buffer bytes, 985,039 instances, 14,801,521 triangles across all LODs; 410 materials/9 Node textures. Fresh construction sample 39.20s, divided 19.49s world/19.63s mesh. This is host timing, not Safari performance.
 

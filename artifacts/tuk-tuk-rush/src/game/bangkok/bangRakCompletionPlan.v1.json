@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "baseline": "e20d68dca51f2928b4cc6fae355965be2cac7bfc",
+  "coordinateContract": "north-up compressed game metres; controls fit verified named anchors; not surveyed lengths",
+  "streets": [
+    {
+      "id": "si-phraya",
+      "name": "Si Phraya Road",
+      "thai": "ถนนสี่พระยา",
+      "width": 12,
+      "oneWay": true,
+      "points": [
+        [
+          145.5172413792,
+          780.0000000032
+        ],
+        [
+          380,
+          700
+        ],
+        [
+          510,
+          540
+        ],
+        [
+          660,
+          300
+        ]
+      ],
+      "sources": [
+        "https://www.openstreetmap.org/way/1466230604",
+        "https://www.openstreetmap.org/way/1466230602",
+        "https://www.openstreetmap.org/way/1466230603"
+      ],
+      "sourceStatus": "OSM snapshot direction retained"
+    },
+    {
+      "id": "surawong",
+      "name": "Surawong Road",
+      "thai": "ถนนสุรวงศ์",
+      "width": 18,
+      "oneWay": true,
+      "points": [
+        [
+          963,
+          564
+        ],
+        [
+          650,
+          760
+        ],
+        [
+          430,
+          860
+        ],
+        [
+          126,
+          992
+        ]
+      ],
+      "sources": [
+        "https://www.openstreetmap.org/way/1208104030",
+        "https://www.openstreetmap.org/way/185301806",
+        "https://www.openstreetmap.org/way/1055365749"
+      ],
+      "sourceStatus": "OSM snapshot direction retained"
+    },
+    {
+      "id": "silom",
+      "name": "Silom Road",
+      "thai": "ถนนสีลม",
+      "width": 20,
+      "oneWay": false,
+      "points": [
+        [
+          84,
+          1148
+        ],
+        [
+          300,
+          1125
+        ],
+        [
+          600,
+          1100
+        ]
+      ],
+      "sources": [
+        "https://www.openstreetmap.org/way/39943967",
+        "https://www.openstreetmap.org/way/747482515",
+        "https://www.openstreetmap.org/way/1214129133"
+      ],
+      "sourceStatus": "OSM snapshot direction retained"
+    },
+    {
+      "id": "maha-set",
+      "name": "Maha Set Road",
+      "thai": "ถนนมหาเศรษฐ์",
+      "width": 12,
+      "oneWay": false,
+      "points": [
+        [
+          380,
+          700
+        ],
+        [
+          430,
+          860
+        ]
+      ],
+      "sources": [
+        "https://www.openstreetmap.org/way/185301801",
+        "https://www.openstreetmap.org/way/1013632953",
+        "https://www.openstreetmap.org/way/1013632952"
+      ],
+      "sourceStatus": "OSM snapshot: opposing carriageways represented as one bidirectional road"
+    },
+    {
+      "id": "mahesak",
+      "name": "Mahesak Road",
+      "thai": "ถนนมเหสักข์",
+      "width": 12,
+      "oneWay": false,
+      "points": [
+        [
+          430,
+          860
+        ],
+        [
+          400,
+          1116.6666666667
+        ]
+      ],
+      "sources": [
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2023/05/15110125/PBHG-MICE-Presentation-2023-3.pdf"
+      ],
+      "sourceStatus": "Operator-map topology; direction/access interpreted, not field-certified"
+    },
+    {
+      "id": "surasak-road",
+      "name": "Surasak Road",
+      "thai": "ถนนสุรศักดิ์",
+      "width": 12,
+      "oneWay": false,
+      "points": [
+        [
+          400,
+          1116.6666666667
+        ],
+        [
+          330,
+          1405
+        ]
+      ],
+      "sources": [
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2023/05/15110125/PBHG-MICE-Presentation-2023-3.pdf"
+      ],
+      "sourceStatus": "Operator-map topology; direction/access interpreted, not field-certified"
+    },
+    {
+      "id": "pan",
+      "name": "Pan Road",
+      "thai": "ถนนปั้น",
+      "width": 9,
+      "oneWay": false,
+      "points": [
+        [
+          500,
+          1108.3333333333
+        ],
+        [
+          550,
+          1368.3333333333
+        ]
+      ],
+      "sources": [
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2023/05/15110125/PBHG-MICE-Presentation-2023-3.pdf"
+      ],
+      "sourceStatus": "Operator-map topology; direction/access interpreted, not field-certified"
+    },
+    {
+      "id": "decho",
+      "name": "Decho Road",
+      "thai": "ถนนเดโช",
+      "width": 11,
+      "oneWay": false,
+      "points": [
+        [
+          650,
+          760
+        ],
+        [
+          754.6666666667,
+          950.6666666667
+        ]
+      ],
+      "sources": [
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2023/05/15110125/PBHG-MICE-Presentation-2023-3.pdf"
+      ],
+      "sourceStatus": "Operator-map topology; direction/access interpreted, not field-certified"
+    },
+    {
+      "id": "naret",
+      "name": "Naret Road",
+      "thai": "ถนนนเรศ",
+      "width": 10,
+      "oneWay": false,
+      "points": [
+        [
+          440,
+          626.1538461538
+        ],
+        [
+          540,
+          810
+        ]
+      ],
+      "sources": [
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2023/05/15110125/PBHG-MICE-Presentation-2023-3.pdf"
+      ],
+      "sourceStatus": "Operator-map topology; direction/access interpreted, not field-certified"
+    }
+  ],
+  "sites": [
+    {
+      "id": "royal-orchid",
+      "name": "Royal Orchid Sheraton",
+      "kind": "hotel",
+      "origin": {
+        "x": -252,
+        "z": 882
+      },
+      "w": 76,
+      "d": 42,
+      "height": 72,
+      "yaw": -1.5707963267948966,
+      "access": {
+        "x": -158,
+        "z": 883
+      },
+      "road": "charoen-krung-30",
+      "coordinate": {
+        "lat": 13.7287181,
+        "lon": 100.5132694
+      },
+      "reference": "https://www.marriott.com/en-us/hotels/bkksi-royal-orchid-sheraton-riverside-hotel-bangkok/overview/",
+      "note": "Original miniature interpretation of the curved river-facing hotel; footprint compressed beside River City."
+    },
+    {
+      "id": "house-no-1",
+      "name": "House No. 1",
+      "kind": "museum",
+      "origin": {
+        "x": -205,
+        "z": 846
+      },
+      "w": 28,
+      "d": 20,
+      "height": 12,
+      "yaw": 1.5707963267948966,
+      "access": {
+        "x": -158,
+        "z": 850
+      },
+      "road": "charoen-krung-30",
+      "coordinate": {
+        "lat": 13.7290404,
+        "lon": 100.5142159
+      },
+      "reference": "https://www.bangkokdesignweek.com/en/bkkdw2024/content/94952",
+      "note": "Colonial event house exterior; private grounds are not a public vehicle shortcut."
+    },
+    {
+      "id": "assumption",
+      "name": "Assumption Cathedral",
+      "kind": "church",
+      "origin": {
+        "x": -75,
+        "z": 1165
+      },
+      "w": 38,
+      "d": 56,
+      "height": 34,
+      "yaw": 1.5707963267948966,
+      "access": {
+        "x": 84,
+        "z": 1148
+      },
+      "road": "charoen_s",
+      "coordinate": {
+        "lat": 13.7231068895,
+        "lon": 100.5152152421
+      },
+      "reference": "https://assumptioncathedralbkk.org/",
+      "note": "Red brick nave, cream trim, twin bell towers and rose window. Campus compressed; school buildings and interiors deferred."
+    },
+    {
+      "id": "customs-house",
+      "name": "Historic Customs House",
+      "kind": "museum",
+      "origin": {
+        "x": -245,
+        "z": 960
+      },
+      "w": 60,
+      "d": 22,
+      "height": 17,
+      "yaw": -1.5707963267948966,
+      "access": {
+        "x": -158,
+        "z": 928
+      },
+      "road": "charoen-krung-32",
+      "coordinate": null,
+      "reference": "https://www.langhamhotels.com/en/the-langham/bangkok/",
+      "note": "Historic river facade interpretation; contemporary redevelopment/private access not certified. No invented through drive. Historic shell only; the Langham redevelopment/new wing and contemporary operations are deferred."
+    }
+  ]
+}

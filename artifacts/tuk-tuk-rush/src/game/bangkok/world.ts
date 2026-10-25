@@ -1,4 +1,5 @@
 import { planBangRakSeam } from "./bangRakSeam";
+import { completeBangRak } from "./bangRakCompletion";
 import { planBangRak } from "./bangRakPlan";
 import { preserveChinatownExterior } from "./chinatownExterior";
 import { planChinatownPassagePosts } from "./chinatownGrounds";
@@ -856,6 +857,7 @@ export function createBangkokWorld(
     }
   planBangRak(world);
   planBangRakSeam(world);
+  completeBangRak(world);
   refreshUrbanBlocks(world);
   refreshStreetFabric(world);
   planConvenienceStores(world);

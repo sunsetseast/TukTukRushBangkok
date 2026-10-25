@@ -50,7 +50,18 @@ if(process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1"){
  way("si-phraya-west","si-phraya",458.75,805.5);
  way("captain-bush-bend","charoen-krung-30",460.5,812.5);
 }
-const pairs = process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1" ? [
+if(process.env.BANG_RAK_COMPLETION_ROUTES==="1") {
+ const near=(id:string,corridor:string,x:number,z:number)=>way(id,corridor,x/4+500,z/4+600);
+ near("charoen-core","charoen_s",140,940);near("si-east","si-phraya",380,700);near("maha-set","maha-set",420,830);
+ near("surawong","surawong",550,805);near("silom","silom",400,1116);near("taksin","sathorn",0,1460);
+ near("central-bang-rak","mahesak",415,990);near("river-city-network","si-phraya",145,780);
+}
+const completionPairs = [
+ ["charoen-core","si-east"],["si-east","maha-set"],["si-east","surawong"],["surawong","silom"],
+ ["silom","state"],["state","taksin"],["charoen-core","oriental"],["warehouse-30","central-bang-rak"],
+ ["river-city","si-east"],["silom","shangri"],["si-east","assumption"],["river-city","royal-orchid"]
+].flatMap(([a,b])=>[[a!,b!],[b!,a!]]);
+const pairs = process.env.BANG_RAK_COMPLETION_ROUTES === "1" ? completionPairs : process.env.BANG_RAK_GEOGRAPHY_ROUTES==="1" ? [
  ["river-city","si-phraya-east"],["si-phraya-east","river-city"],
  ["captain-bush-bend","grand-postal"],["grand-postal","captain-bush-bend"],
  ["captain-bush-bend","river-city"],["river-city","captain-bush-bend"],

@@ -1,3 +1,4 @@
+import { bangRakCompletionState } from "../src/game/bangkok/bangRakCompletion";
 import { planUrbanBlocks } from "../src/game/bangkok/urbanBlocks";
 import { TrafficSystem, lanePoint } from "../src/game/traffic";
 import { createVehicle } from "../src/game/vehicle";
@@ -38,16 +39,13 @@ assert(
   "Every cached block references live physical parcels",
 );
 assert.equal(s.parcels.filter((p) => p.family === "warehouse").length, 8);
-assert.equal(new Set(s.parcels.map((p) => p.family)).size, 6);
+assert.equal(new Set([...s.parcels.map((p) => p.family),...(bangRakCompletionState(d)?.parcels.flatMap(p=>p.bangRak?[p.bangRak.family]:[])??[])]).size, 6);
 for (const seed of [982, 41, 67]) {
   const now = new TrafficSystem(d, seed).create(createVehicle(d));
   const prior = new TrafficSystem(old, seed).create(createVehicle(old));
   assert.equal(now.length, 38);
-  assert.deepEqual(
-    now,
-    prior,
-    `Preserve seeded 38-car initial population ${seed}`,
-  );
+  if(bangRakCompletionState(d))assert(now.every(car=>d.roads.some(r=>r.a===car.from&&r.b===car.to||!r.oneWay&&r.a===car.to&&r.b===car.from)),"All 38 deterministic spawns use current legal edges after the explicit road replacement");
+  else assert.deepEqual(now,prior,`Preserve seeded traffic ${seed}`);
 }
 const designs = designBuildings(d).filter((p) => p.parcel.bangRak);
 for (const p of designs) {

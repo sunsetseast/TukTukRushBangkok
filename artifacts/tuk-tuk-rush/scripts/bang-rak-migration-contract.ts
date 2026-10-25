@@ -1,3 +1,4 @@
+import { bangRakCompletionState } from "../src/game/bangkok/bangRakCompletion";
 import { beforeBangRakSeam } from "./bang-rak-seam-migration-contract";
 import { bangRakSeamState, retiredBangRakIds } from "../src/game/bangkok/bangRakSeam";
 import fs from "node:fs";
@@ -19,6 +20,8 @@ const fixture = () =>
 const key = (o: Obstacle) =>
   [o.x, o.z, o.w, o.d, o.yaw ?? 0].map((n) => n.toFixed(4)).join(":");
 export function approvedBangRakParcel(o: Obstacle, d: District) {
+  const completion=bangRakCompletionState(d);
+  if(completion && [...completion.retired,...completion.parcels].some(p=>key(p)===key(o)))return true;
   const s = bangRakState(d);
   const seam = bangRakSeamState(d);
   if(seam && [...seam.retired,...seam.parcels].some(p=>key(p)===key(o))) return true;

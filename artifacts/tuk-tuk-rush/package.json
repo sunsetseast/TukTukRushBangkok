@@ -62,7 +62,9 @@
     "test:sign-visibility": "node --import tsx scripts/check-sign-visibility.ts",
     "test:bang-rak": "node --import tsx scripts/check-bang-rak.ts",
     "test:bang-rak-drives": "BANG_RAK_ROUTES=1 CHINATOWN_LANES=1 node --import tsx scripts/check-chinatown-drives.ts",
-    "test:bang-rak-geography": "node --import tsx scripts/check-service-route-preference.ts && node --import tsx scripts/check-bang-rak-seam.ts"
+    "test:bang-rak-geography": "node --import tsx scripts/check-service-route-preference.ts && node --import tsx scripts/check-bang-rak-seam.ts",
+    "test:bang-rak-completion": "node --import tsx scripts/check-bang-rak-completion.ts",
+    "test:bang-rak-completion-drives": "BANG_RAK_COMPLETION_ROUTES=1 CHINATOWN_LEGAL=1 CHINATOWN_LANES=1 CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

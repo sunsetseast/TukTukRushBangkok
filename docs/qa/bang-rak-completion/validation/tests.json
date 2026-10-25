@@ -1,0 +1,107 @@
+{
+  "sourceCommit": "acefd1375d58cc74f64ba4c6eebff61f7176fabc",
+  "results": [
+    {
+      "name": "test:gameplay",
+      "command": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
+      "exitCode": 0,
+      "ms": 3977
+    },
+    {
+      "name": "test:assets",
+      "command": "node scripts/check-assets.mjs",
+      "exitCode": 0,
+      "ms": 144
+    },
+    {
+      "name": "test:street-life",
+      "command": "node --import tsx scripts/check-street-life.ts",
+      "exitCode": 0,
+      "ms": 2447
+    },
+    {
+      "name": "test:roadside",
+      "command": "node --import tsx scripts/check-roadside.ts",
+      "exitCode": 0,
+      "ms": 1203
+    },
+    {
+      "name": "test:signature",
+      "command": "node --import tsx scripts/check-signature.ts",
+      "exitCode": 0,
+      "ms": 368
+    },
+    {
+      "name": "test:sign-layers",
+      "command": "node --import tsx scripts/check-sign-layers.ts",
+      "exitCode": 0,
+      "ms": 488
+    },
+    {
+      "name": "test:bangkok",
+      "command": "node --import tsx scripts/check-bangkok.ts && node --import tsx scripts/check-bangkok-driven.ts && node --import tsx scripts/check-bangkok-map.tsx && node --import tsx scripts/check-bangkok-architecture.ts",
+      "exitCode": 1,
+      "ms": 28726
+    },
+    {
+      "name": "test:environment",
+      "command": "node --import tsx scripts/check-environment-art.ts",
+      "exitCode": 0,
+      "ms": 72227
+    },
+    {
+      "name": "test:cityscapes",
+      "command": "node --import tsx scripts/check-cityscapes.ts",
+      "exitCode": 1,
+      "ms": 25807
+    },
+    {
+      "name": "test:definitive",
+      "command": "node --import tsx scripts/check-definitive-world.ts && node --import tsx scripts/check-road-render-surface.ts",
+      "exitCode": 0,
+      "ms": 85915
+    },
+    {
+      "name": "test:open-bangkok",
+      "command": "node --import tsx scripts/check-open-bangkok.ts",
+      "exitCode": 0,
+      "ms": 36756
+    },
+    {
+      "name": "test:startup",
+      "command": "node scripts/check-startup.mjs",
+      "exitCode": 0,
+      "ms": 5687
+    },
+    {
+      "name": "test:landmark-quality",
+      "command": "node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts",
+      "exitCode": 1,
+      "ms": 41589
+    },
+    {
+      "name": "test:interface",
+      "command": "node --import tsx scripts/check-navigation-ui.ts",
+      "exitCode": 0,
+      "ms": 25559
+    },
+    {
+      "name": "test:graphics-foundation",
+      "command": "node --import tsx scripts/check-graphics-foundation.ts",
+      "exitCode": 0,
+      "ms": 524
+    },
+    {
+      "name": "test:corrections",
+      "command": "node --import tsx scripts/check-corrections.ts",
+      "exitCode": 0,
+      "ms": 41263
+    },
+    {
+      "name": "test:career",
+      "command": "node --import tsx scripts/check-career.ts",
+      "exitCode": 0,
+      "ms": 95620
+    }
+  ]
+}

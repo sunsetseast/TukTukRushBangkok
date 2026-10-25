@@ -1,3 +1,4 @@
+import { BANG_RAK_DESTINATIONS, emitBangRakDestinations } from "../src/game/bangkok/bangRakDestinations";
 import * as T from "three";
 import type { District, Landmark } from "../src/game/types";
 import {
@@ -13,7 +14,7 @@ import { designBuildings } from "../src/game/bangkok/buildingGrammar";
  * the actual production emitters/templates, without creating duplicate hero
  * meshes or materials in the running game. */
 export function batchedBangRakLandmark(l: Landmark, d: District) {
-  if (!["grand-postal", "warehouse-30"].includes(l.id!)) return;
+  if (!["grand-postal", "warehouse-30",...BANG_RAK_DESTINATIONS.map(s=>s.id)].includes(l.id!)) return;
   const material = new T.MeshStandardMaterial({ vertexColors: true }),
     batch = new ArchitecturalBatch(material, material),
     origin = l.plot!,
@@ -30,7 +31,8 @@ export function batchedBangRakLandmark(l: Landmark, d: District) {
       yaw: p.yaw - yaw,
     });
   };
-  if (l.id === "grand-postal") emitBangRakGrounds(d, add);
+  if(BANG_RAK_DESTINATIONS.some(s=>s.id===l.id))emitBangRakDestinations(d,p=>{if(p.siteId===l.id)add(p);});
+  else if (l.id === "grand-postal") emitBangRakGrounds(d, add);
   else
     for (const p of designBuildings(d).filter(
       (p) => p.parcel.landmarkId === l.id,

@@ -1,3 +1,4 @@
+import { bangRakCompletionState } from "./bangRakCompletion";
 import { bangRakSeamState } from "./bangRakSeam";
 import type { District, Point } from "../types";
 import type { StreetPerson } from "../streetLife";
@@ -55,13 +56,23 @@ export function bangRakPeople(d: District, clear: (p: Point) => boolean) {
       );
     }
   }
-  const original=people.splice(0,16);
+  const completion=bangRakCompletionState(d);
+  const original=people.splice(0,completion?8:16);
   people.length=0;
   for(const b of bangRakSeamState(d)?.parcels??[]) {
     const F=b.d/2;
     const start=bangRakLocal(b,-b.w*.2,F+1.5),end=bangRakLocal(b,b.w*.2,F+1.5);
     add(start,end,(b.yaw??0)+Math.PI,undefined,"walker");
-    if(people.length>=16)break;
+    if(people.length>=(completion?8:16))break;
+  }
+  if(completion) {
+    const candidates=completion.parcels;
+    for(let i=0;i<16;i++) {
+      const b=candidates[Math.floor(i*candidates.length/16)];if(!b)continue;
+      const start=bangRakLocal(b,-b.w*.25,b.d/2+1.4),end=bangRakLocal(b,b.w*.25,b.d/2+1.4);
+      const vendor=i%4===0;
+      add(start,vendor?start:end,(b.yaw??0)+Math.PI,vendor?"work":undefined,vendor?"vendor":"walker");
+    }
   }
   return [...original,...people].slice(0,32);
 }

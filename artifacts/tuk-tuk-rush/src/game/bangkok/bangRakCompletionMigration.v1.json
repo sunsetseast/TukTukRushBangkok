@@ -1,0 +1,3918 @@
+{
+  "retiredNodes": [
+    {
+      "x": 165.55555555555554,
+      "z": 948.8888888888889,
+      "id": "bkk:789"
+    },
+    {
+      "x": 191.11111111111111,
+      "z": 957.7777777777778,
+      "id": "bkk:790"
+    },
+    {
+      "x": 216.66666666666666,
+      "z": 966.6666666666666,
+      "id": "bkk:791"
+    },
+    {
+      "x": 242.22222222222223,
+      "z": 975.5555555555555,
+      "id": "bkk:792"
+    },
+    {
+      "x": 267.77777777777777,
+      "z": 984.4444444444445,
+      "id": "bkk:793"
+    },
+    {
+      "x": 293.3333333333333,
+      "z": 993.3333333333334,
+      "id": "bkk:794"
+    },
+    {
+      "x": 318.8888888888889,
+      "z": 1002.2222222222222,
+      "id": "bkk:795"
+    },
+    {
+      "x": 344.44444444444446,
+      "z": 1011.1111111111111,
+      "id": "bkk:796"
+    },
+    {
+      "x": 370,
+      "z": 1020,
+      "id": "bkk:797"
+    },
+    {
+      "x": 395.55555555555554,
+      "z": 1028.888888888889,
+      "id": "bkk:798"
+    },
+    {
+      "x": 421.11111111111114,
+      "z": 1037.7777777777778,
+      "id": "bkk:799"
+    },
+    {
+      "x": 446.66666666666663,
+      "z": 1046.6666666666667,
+      "id": "bkk:800"
+    },
+    {
+      "x": 472.22222222222223,
+      "z": 1055.5555555555557,
+      "id": "bkk:801"
+    },
+    {
+      "x": 497.77777777777777,
+      "z": 1064.4444444444443,
+      "id": "bkk:802"
+    },
+    {
+      "x": 523.3333333333334,
+      "z": 1073.3333333333333,
+      "id": "bkk:803"
+    },
+    {
+      "x": 548.8888888888889,
+      "z": 1082.2222222222222,
+      "id": "bkk:804"
+    },
+    {
+      "x": 574.4444444444445,
+      "z": 1091.111111111111,
+      "id": "bkk:805"
+    }
+  ],
+  "version": 1,
+  "baseline": "e20d68dca51f2928b4cc6fae355965be2cac7bfc",
+  "baselineStageSha256": "683be7197a241b9704ba1a94a54b63e73bf33cb747659c2b48a3c0c53eb2542c",
+  "nodes": [
+    {
+      "x": 330.0,
+      "z": 1405.0,
+      "id": "brc:3300000:14050000"
+    },
+    {
+      "x": 550.0,
+      "z": 1368.3333333333335,
+      "id": "brc:5500000:13683333"
+    },
+    {
+      "x": 166.83385579927273,
+      "z": 772.7272727301818,
+      "id": "brc:1668339:7727273"
+    },
+    {
+      "x": 188.15047021934544,
+      "z": 765.4545454571636,
+      "id": "brc:1881505:7654545"
+    },
+    {
+      "x": 209.46708463941818,
+      "z": 758.1818181841454,
+      "id": "brc:2094671:7581818"
+    },
+    {
+      "x": 230.7836990594909,
+      "z": 750.9090909111272,
+      "id": "brc:2307837:7509091"
+    },
+    {
+      "x": 252.10031347956362,
+      "z": 743.6363636381091,
+      "id": "brc:2521003:7436364"
+    },
+    {
+      "x": 273.41692789963633,
+      "z": 736.3636363650909,
+      "id": "brc:2734169:7363636"
+    },
+    {
+      "x": 294.73354231970904,
+      "z": 729.0909090920727,
+      "id": "brc:2947335:7290909"
+    },
+    {
+      "x": 316.0501567397818,
+      "z": 721.8181818190545,
+      "id": "brc:3160502:7218182"
+    },
+    {
+      "x": 337.3667711598546,
+      "z": 714.5454545460364,
+      "id": "brc:3373668:7145455"
+    },
+    {
+      "x": 358.6833855799273,
+      "z": 707.2727272730182,
+      "id": "brc:3586834:7072727"
+    },
+    {
+      "x": 380.0,
+      "z": 700.0,
+      "id": "brc:3800000:7000000"
+    },
+    {
+      "x": 395.000000015,
+      "z": 681.53846152,
+      "id": "brc:3950000:6815385"
+    },
+    {
+      "x": 410.00000003,
+      "z": 663.07692304,
+      "id": "brc:4100000:6630769"
+    },
+    {
+      "x": 425.000000045,
+      "z": 644.61538456,
+      "id": "brc:4250000:6446154"
+    },
+    {
+      "x": 440.00000006,
+      "z": 626.15384608,
+      "id": "brc:4400000:6261538"
+    },
+    {
+      "x": 454.000000048,
+      "z": 608.923076864,
+      "id": "brc:4540000:6089231"
+    },
+    {
+      "x": 468.000000036,
+      "z": 591.692307648,
+      "id": "brc:4680000:5916923"
+    },
+    {
+      "x": 482.000000024,
+      "z": 574.461538432,
+      "id": "brc:4820000:5744615"
+    },
+    {
+      "x": 496.000000012,
+      "z": 557.230769216,
+      "id": "brc:4960000:5572308"
+    },
+    {
+      "x": 510.0,
+      "z": 540.0,
+      "id": "brc:5100000:5400000"
+    },
+    {
+      "x": 522.5,
+      "z": 520.0,
+      "id": "brc:5225000:5200000"
+    },
+    {
+      "x": 535.0,
+      "z": 500.0,
+      "id": "brc:5350000:5000000"
+    },
+    {
+      "x": 547.5,
+      "z": 480.0,
+      "id": "brc:5475000:4800000"
+    },
+    {
+      "x": 560.0,
+      "z": 460.0,
+      "id": "brc:5600000:4600000"
+    },
+    {
+      "x": 572.5,
+      "z": 440.0,
+      "id": "brc:5725000:4400000"
+    },
+    {
+      "x": 585.0,
+      "z": 420.0,
+      "id": "brc:5850000:4200000"
+    },
+    {
+      "x": 597.5,
+      "z": 400.0,
+      "id": "brc:5975000:4000000"
+    },
+    {
+      "x": 610.0,
+      "z": 380.0,
+      "id": "brc:6100000:3800000"
+    },
+    {
+      "x": 622.5,
+      "z": 360.0,
+      "id": "brc:6225000:3600000"
+    },
+    {
+      "x": 635.0,
+      "z": 340.0,
+      "id": "brc:6350000:3400000"
+    },
+    {
+      "x": 647.5,
+      "z": 320.0,
+      "id": "brc:6475000:3200000"
+    },
+    {
+      "x": 943.4375,
+      "z": 576.25,
+      "id": "brc:9434375:5762500"
+    },
+    {
+      "x": 923.875,
+      "z": 588.5,
+      "id": "brc:9238750:5885000"
+    },
+    {
+      "x": 904.3125,
+      "z": 600.75,
+      "id": "brc:9043125:6007500"
+    },
+    {
+      "x": 884.75,
+      "z": 613.0,
+      "id": "brc:8847500:6130000"
+    },
+    {
+      "x": 865.1875,
+      "z": 625.25,
+      "id": "brc:8651875:6252500"
+    },
+    {
+      "x": 845.625,
+      "z": 637.5,
+      "id": "brc:8456250:6375000"
+    },
+    {
+      "x": 826.0625,
+      "z": 649.75,
+      "id": "brc:8260625:6497500"
+    },
+    {
+      "x": 806.5,
+      "z": 662.0,
+      "id": "brc:8065000:6620000"
+    },
+    {
+      "x": 786.9375,
+      "z": 674.25,
+      "id": "brc:7869375:6742500"
+    },
+    {
+      "x": 767.375,
+      "z": 686.5,
+      "id": "brc:7673750:6865000"
+    },
+    {
+      "x": 747.8125,
+      "z": 698.75,
+      "id": "brc:7478125:6987500"
+    },
+    {
+      "x": 728.25,
+      "z": 711.0,
+      "id": "brc:7282500:7110000"
+    },
+    {
+      "x": 708.6875,
+      "z": 723.25,
+      "id": "brc:7086875:7232500"
+    },
+    {
+      "x": 689.125,
+      "z": 735.5,
+      "id": "brc:6891250:7355000"
+    },
+    {
+      "x": 669.5625,
+      "z": 747.75,
+      "id": "brc:6695625:7477500"
+    },
+    {
+      "x": 650.0,
+      "z": 760.0,
+      "id": "brc:6500000:7600000"
+    },
+    {
+      "x": 631.6666666666666,
+      "z": 768.3333333333334,
+      "id": "brc:6316667:7683333"
+    },
+    {
+      "x": 613.3333333333334,
+      "z": 776.6666666666666,
+      "id": "brc:6133333:7766667"
+    },
+    {
+      "x": 595.0,
+      "z": 785.0,
+      "id": "brc:5950000:7850000"
+    },
+    {
+      "x": 576.6666666666666,
+      "z": 793.3333333333334,
+      "id": "brc:5766667:7933333"
+    },
+    {
+      "x": 558.3333333333334,
+      "z": 801.6666666666666,
+      "id": "brc:5583333:8016667"
+    },
+    {
+      "x": 540.0,
+      "z": 810.0,
+      "id": "brc:5400000:8100000"
+    },
+    {
+      "x": 521.6666666666666,
+      "z": 818.3333333333334,
+      "id": "brc:5216667:8183333"
+    },
+    {
+      "x": 503.33333333333337,
+      "z": 826.6666666666666,
+      "id": "brc:5033333:8266667"
+    },
+    {
+      "x": 485.0,
+      "z": 835.0,
+      "id": "brc:4850000:8350000"
+    },
+    {
+      "x": 466.6666666666667,
+      "z": 843.3333333333334,
+      "id": "brc:4666667:8433333"
+    },
+    {
+      "x": 448.3333333333333,
+      "z": 851.6666666666666,
+      "id": "brc:4483333:8516667"
+    },
+    {
+      "x": 430.0,
+      "z": 860.0,
+      "id": "brc:4300000:8600000"
+    },
+    {
+      "x": 408.2857142857143,
+      "z": 869.4285714285714,
+      "id": "brc:4082857:8694286"
+    },
+    {
+      "x": 386.57142857142856,
+      "z": 878.8571428571429,
+      "id": "brc:3865714:8788571"
+    },
+    {
+      "x": 364.8571428571429,
+      "z": 888.2857142857143,
+      "id": "brc:3648571:8882857"
+    },
+    {
+      "x": 343.14285714285717,
+      "z": 897.7142857142857,
+      "id": "brc:3431429:8977143"
+    },
+    {
+      "x": 321.42857142857144,
+      "z": 907.1428571428571,
+      "id": "brc:3214286:9071429"
+    },
+    {
+      "x": 299.7142857142857,
+      "z": 916.5714285714286,
+      "id": "brc:2997143:9165714"
+    },
+    {
+      "x": 278.0,
+      "z": 926.0,
+      "id": "brc:2780000:9260000"
+    },
+    {
+      "x": 256.28571428571433,
+      "z": 935.4285714285714,
+      "id": "brc:2562857:9354286"
+    },
+    {
+      "x": 234.57142857142856,
+      "z": 944.8571428571429,
+      "id": "brc:2345714:9448571"
+    },
+    {
+      "x": 212.85714285714286,
+      "z": 954.2857142857143,
+      "id": "brc:2128571:9542857"
+    },
+    {
+      "x": 191.14285714285714,
+      "z": 963.7142857142857,
+      "id": "brc:1911429:9637143"
+    },
+    {
+      "x": 169.42857142857144,
+      "z": 973.1428571428571,
+      "id": "brc:1694286:9731429"
+    },
+    {
+      "x": 147.71428571428572,
+      "z": 982.5714285714286,
+      "id": "brc:1477143:9825714"
+    },
+    {
+      "x": 105.6,
+      "z": 1145.7,
+      "id": "brc:1056000:11457000"
+    },
+    {
+      "x": 127.2,
+      "z": 1143.4,
+      "id": "brc:1272000:11434000"
+    },
+    {
+      "x": 148.8,
+      "z": 1141.1,
+      "id": "brc:1488000:11411000"
+    },
+    {
+      "x": 170.4,
+      "z": 1138.8,
+      "id": "brc:1704000:11388000"
+    },
+    {
+      "x": 192.0,
+      "z": 1136.5,
+      "id": "brc:1920000:11365000"
+    },
+    {
+      "x": 213.6,
+      "z": 1134.2,
+      "id": "brc:2136000:11342000"
+    },
+    {
+      "x": 235.2,
+      "z": 1131.9,
+      "id": "brc:2352000:11319000"
+    },
+    {
+      "x": 256.8,
+      "z": 1129.6,
+      "id": "brc:2568000:11296000"
+    },
+    {
+      "x": 278.4,
+      "z": 1127.3,
+      "id": "brc:2784000:11273000"
+    },
+    {
+      "x": 300.0,
+      "z": 1125.0,
+      "id": "brc:3000000:11250000"
+    },
+    {
+      "x": 319.99999998,
+      "z": 1123.333333335,
+      "id": "brc:3200000:11233333"
+    },
+    {
+      "x": 339.99999996,
+      "z": 1121.66666667,
+      "id": "brc:3400000:11216667"
+    },
+    {
+      "x": 359.99999994,
+      "z": 1120.000000005,
+      "id": "brc:3600000:11200000"
+    },
+    {
+      "x": 379.99999992,
+      "z": 1118.33333334,
+      "id": "brc:3800000:11183333"
+    },
+    {
+      "x": 399.99999990000003,
+      "z": 1116.666666675,
+      "id": "brc:4000000:11166667"
+    },
+    {
+      "x": 419.99999994,
+      "z": 1115.000000005,
+      "id": "brc:4200000:11150000"
+    },
+    {
+      "x": 439.99999998,
+      "z": 1113.333333335,
+      "id": "brc:4400000:11133333"
+    },
+    {
+      "x": 460.00000002,
+      "z": 1111.666666665,
+      "id": "brc:4600000:11116667"
+    },
+    {
+      "x": 480.00000006,
+      "z": 1109.999999995,
+      "id": "brc:4800000:11100000"
+    },
+    {
+      "x": 500.00000009999997,
+      "z": 1108.333333325,
+      "id": "brc:5000000:11083333"
+    },
+    {
+      "x": 520.00000008,
+      "z": 1106.66666666,
+      "id": "brc:5200000:11066667"
+    },
+    {
+      "x": 540.00000006,
+      "z": 1104.999999995,
+      "id": "brc:5400000:11050000"
+    },
+    {
+      "x": 560.00000004,
+      "z": 1103.33333333,
+      "id": "brc:5600000:11033333"
+    },
+    {
+      "x": 580.00000002,
+      "z": 1101.666666665,
+      "id": "brc:5800000:11016667"
+    },
+    {
+      "x": 387.14285714285717,
+      "z": 722.8571428571429,
+      "id": "brc:3871429:7228571"
+    },
+    {
+      "x": 394.2857142857143,
+      "z": 745.7142857142857,
+      "id": "brc:3942857:7457143"
+    },
+    {
+      "x": 401.42857142857144,
+      "z": 768.5714285714286,
+      "id": "brc:4014286:7685714"
+    },
+    {
+      "x": 408.57142857142856,
+      "z": 791.4285714285714,
+      "id": "brc:4085714:7914286"
+    },
+    {
+      "x": 415.7142857142857,
+      "z": 814.2857142857143,
+      "id": "brc:4157143:8142857"
+    },
+    {
+      "x": 422.85714285714283,
+      "z": 837.1428571428571,
+      "id": "brc:4228571:8371429"
+    },
+    {
+      "x": 427.27272727272725,
+      "z": 883.3333333333363,
+      "id": "brc:4272727:8833333"
+    },
+    {
+      "x": 424.54545454545456,
+      "z": 906.6666666666728,
+      "id": "brc:4245455:9066667"
+    },
+    {
+      "x": 421.8181818181818,
+      "z": 930.0000000000091,
+      "id": "brc:4218182:9300000"
+    },
+    {
+      "x": 419.09090909090907,
+      "z": 953.3333333333454,
+      "id": "brc:4190909:9533333"
+    },
+    {
+      "x": 416.3636363636364,
+      "z": 976.6666666666817,
+      "id": "brc:4163636:9766667"
+    },
+    {
+      "x": 413.6363636363636,
+      "z": 1000.0000000000182,
+      "id": "brc:4136364:10000000"
+    },
+    {
+      "x": 410.90909090909093,
+      "z": 1023.3333333333545,
+      "id": "brc:4109091:10233333"
+    },
+    {
+      "x": 408.1818181818182,
+      "z": 1046.6666666666908,
+      "id": "brc:4081818:10466667"
+    },
+    {
+      "x": 405.45454545454544,
+      "z": 1070.0000000000273,
+      "id": "brc:4054545:10700000"
+    },
+    {
+      "x": 402.72727272727275,
+      "z": 1093.3333333333635,
+      "id": "brc:4027273:10933333"
+    },
+    {
+      "x": 394.61538461538464,
+      "z": 1138.8461538461845,
+      "id": "brc:3946154:11388462"
+    },
+    {
+      "x": 389.2307692307692,
+      "z": 1161.025641025669,
+      "id": "brc:3892308:11610256"
+    },
+    {
+      "x": 383.84615384615387,
+      "z": 1183.2051282051539,
+      "id": "brc:3838462:11832051"
+    },
+    {
+      "x": 378.46153846153845,
+      "z": 1205.3846153846384,
+      "id": "brc:3784615:12053846"
+    },
+    {
+      "x": 373.0769230769231,
+      "z": 1227.564102564123,
+      "id": "brc:3730769:12275641"
+    },
+    {
+      "x": 367.6923076923077,
+      "z": 1249.7435897436076,
+      "id": "brc:3676923:12497436"
+    },
+    {
+      "x": 362.3076923076923,
+      "z": 1271.9230769230924,
+      "id": "brc:3623077:12719231"
+    },
+    {
+      "x": 356.9230769230769,
+      "z": 1294.102564102577,
+      "id": "brc:3569231:12941026"
+    },
+    {
+      "x": 351.53846153846155,
+      "z": 1316.2820512820615,
+      "id": "brc:3515385:13162821"
+    },
+    {
+      "x": 346.15384615384613,
+      "z": 1338.461538461546,
+      "id": "brc:3461538:13384615"
+    },
+    {
+      "x": 340.7692307692308,
+      "z": 1360.6410256410309,
+      "id": "brc:3407692:13606410"
+    },
+    {
+      "x": 335.38461538461536,
+      "z": 1382.8205128205154,
+      "id": "brc:3353846:13828205"
+    },
+    {
+      "x": 504.1666666666667,
+      "z": 1129.9999999999668,
+      "id": "brc:5041667:11300000"
+    },
+    {
+      "x": 508.3333333333333,
+      "z": 1151.6666666666333,
+      "id": "brc:5083333:11516667"
+    },
+    {
+      "x": 512.5,
+      "z": 1173.3333333333,
+      "id": "brc:5125000:11733333"
+    },
+    {
+      "x": 516.6666666666666,
+      "z": 1194.9999999999668,
+      "id": "brc:5166667:11950000"
+    },
+    {
+      "x": 520.8333333333334,
+      "z": 1216.6666666666333,
+      "id": "brc:5208333:12166667"
+    },
+    {
+      "x": 525.0,
+      "z": 1238.3333333333,
+      "id": "brc:5250000:12383333"
+    },
+    {
+      "x": 529.1666666666666,
+      "z": 1259.9999999999668,
+      "id": "brc:5291667:12600000"
+    },
+    {
+      "x": 533.3333333333334,
+      "z": 1281.6666666666333,
+      "id": "brc:5333333:12816667"
+    },
+    {
+      "x": 537.5,
+      "z": 1303.3333333333,
+      "id": "brc:5375000:13033333"
+    },
+    {
+      "x": 541.6666666666666,
+      "z": 1324.9999999999668,
+      "id": "brc:5416667:13250000"
+    },
+    {
+      "x": 545.8333333333334,
+      "z": 1346.6666666666333,
+      "id": "brc:5458333:13466667"
+    },
+    {
+      "x": 660.46666666667,
+      "z": 779.06666666667,
+      "id": "brc:6604667:7790667"
+    },
+    {
+      "x": 670.93333333334,
+      "z": 798.13333333334,
+      "id": "brc:6709333:7981333"
+    },
+    {
+      "x": 681.40000000001,
+      "z": 817.20000000001,
+      "id": "brc:6814000:8172000"
+    },
+    {
+      "x": 691.86666666668,
+      "z": 836.2666666666801,
+      "id": "brc:6918667:8362667"
+    },
+    {
+      "x": 702.3333333333501,
+      "z": 855.3333333333501,
+      "id": "brc:7023333:8553333"
+    },
+    {
+      "x": 712.8000000000201,
+      "z": 874.40000000002,
+      "id": "brc:7128000:8744000"
+    },
+    {
+      "x": 723.2666666666901,
+      "z": 893.46666666669,
+      "id": "brc:7232667:8934667"
+    },
+    {
+      "x": 733.7333333333601,
+      "z": 912.53333333336,
+      "id": "brc:7337333:9125333"
+    },
+    {
+      "x": 744.2000000000301,
+      "z": 931.60000000003,
+      "id": "brc:7442000:9316000"
+    },
+    {
+      "x": 451.1111111111111,
+      "z": 646.5811965811556,
+      "id": "brc:4511111:6465812"
+    },
+    {
+      "x": 462.22222222222223,
+      "z": 667.0085470085112,
+      "id": "brc:4622222:6670085"
+    },
+    {
+      "x": 473.3333333333333,
+      "z": 687.4358974358667,
+      "id": "brc:4733333:6874359"
+    },
+    {
+      "x": 484.44444444444446,
+      "z": 707.8632478632222,
+      "id": "brc:4844444:7078632"
+    },
+    {
+      "x": 495.55555555555554,
+      "z": 728.2905982905778,
+      "id": "brc:4955556:7282906"
+    },
+    {
+      "x": 506.66666666666663,
+      "z": 748.7179487179334,
+      "id": "brc:5066667:7487179"
+    },
+    {
+      "x": 517.7777777777778,
+      "z": 769.1452991452888,
+      "id": "brc:5177778:7691453"
+    },
+    {
+      "x": 528.8888888888889,
+      "z": 789.5726495726444,
+      "id": "brc:5288889:7895726"
+    }
+  ],
+  "retiredRoads": [
+    {
+      "a": "bkk:642",
+      "b": "bkk:789",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:789",
+      "b": "bkk:790",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:790",
+      "b": "bkk:791",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:791",
+      "b": "bkk:792",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:792",
+      "b": "bkk:793",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:793",
+      "b": "bkk:794",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:794",
+      "b": "bkk:795",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:795",
+      "b": "bkk:796",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:796",
+      "b": "bkk:797",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:797",
+      "b": "bkk:798",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:798",
+      "b": "bkk:799",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:799",
+      "b": "bkk:800",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:800",
+      "b": "bkk:801",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:801",
+      "b": "bkk:802",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:802",
+      "b": "bkk:803",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:803",
+      "b": "bkk:804",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:804",
+      "b": "bkk:805",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:805",
+      "b": "bkk:806",
+      "name": "Silom corridor",
+      "corridor": "silom",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    }
+  ],
+  "splitRoads": [
+    {
+      "a": "bkk:845",
+      "b": "bkk:846",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:853",
+      "b": "bkk:854",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    }
+  ],
+  "roads": [
+    {
+      "a": "bkk:845",
+      "b": "brc:3300000:14050000",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "brc:3300000:14050000",
+      "b": "bkk:846",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "bkk:853",
+      "b": "brc:5500000:13683333",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "brc:5500000:13683333",
+      "b": "bkk:854",
+      "name": "Sathorn corridor",
+      "corridor": "sathorn",
+      "width": 20,
+      "shortcut": false,
+      "bridge": false,
+      "oneWay": false
+    },
+    {
+      "a": "civic:1455172:7800000",
+      "b": "brc:1668339:7727273",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1668339:7727273",
+      "b": "brc:1881505:7654545",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1881505:7654545",
+      "b": "brc:2094671:7581818",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2094671:7581818",
+      "b": "brc:2307837:7509091",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2307837:7509091",
+      "b": "brc:2521003:7436364",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2521003:7436364",
+      "b": "brc:2734169:7363636",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2734169:7363636",
+      "b": "brc:2947335:7290909",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2947335:7290909",
+      "b": "brc:3160502:7218182",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3160502:7218182",
+      "b": "brc:3373668:7145455",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3373668:7145455",
+      "b": "brc:3586834:7072727",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3586834:7072727",
+      "b": "brc:3800000:7000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:7000000",
+      "b": "brc:3950000:6815385",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3950000:6815385",
+      "b": "brc:4100000:6630769",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4100000:6630769",
+      "b": "brc:4250000:6446154",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4250000:6446154",
+      "b": "brc:4400000:6261538",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:6261538",
+      "b": "brc:4540000:6089231",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4540000:6089231",
+      "b": "brc:4680000:5916923",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4680000:5916923",
+      "b": "brc:4820000:5744615",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4820000:5744615",
+      "b": "brc:4960000:5572308",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4960000:5572308",
+      "b": "brc:5100000:5400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5100000:5400000",
+      "b": "brc:5225000:5200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5225000:5200000",
+      "b": "brc:5350000:5000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5350000:5000000",
+      "b": "brc:5475000:4800000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5475000:4800000",
+      "b": "brc:5600000:4600000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5600000:4600000",
+      "b": "brc:5725000:4400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5725000:4400000",
+      "b": "brc:5850000:4200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5850000:4200000",
+      "b": "brc:5975000:4000000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5975000:4000000",
+      "b": "brc:6100000:3800000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6100000:3800000",
+      "b": "brc:6225000:3600000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6225000:3600000",
+      "b": "brc:6350000:3400000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6350000:3400000",
+      "b": "brc:6475000:3200000",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6475000:3200000",
+      "b": "bkk:703",
+      "width": 12,
+      "name": "Si Phraya Road",
+      "corridor": "si-phraya",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "civic:9630000:5640000",
+      "b": "brc:9434375:5762500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9434375:5762500",
+      "b": "brc:9238750:5885000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9238750:5885000",
+      "b": "brc:9043125:6007500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:9043125:6007500",
+      "b": "brc:8847500:6130000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8847500:6130000",
+      "b": "brc:8651875:6252500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8651875:6252500",
+      "b": "brc:8456250:6375000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8456250:6375000",
+      "b": "brc:8260625:6497500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8260625:6497500",
+      "b": "brc:8065000:6620000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:8065000:6620000",
+      "b": "brc:7869375:6742500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7869375:6742500",
+      "b": "brc:7673750:6865000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7673750:6865000",
+      "b": "brc:7478125:6987500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7478125:6987500",
+      "b": "brc:7282500:7110000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7282500:7110000",
+      "b": "brc:7086875:7232500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7086875:7232500",
+      "b": "brc:6891250:7355000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6891250:7355000",
+      "b": "brc:6695625:7477500",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6695625:7477500",
+      "b": "brc:6500000:7600000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6500000:7600000",
+      "b": "brc:6316667:7683333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6316667:7683333",
+      "b": "brc:6133333:7766667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6133333:7766667",
+      "b": "brc:5950000:7850000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5950000:7850000",
+      "b": "brc:5766667:7933333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5766667:7933333",
+      "b": "brc:5583333:8016667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5583333:8016667",
+      "b": "brc:5400000:8100000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5400000:8100000",
+      "b": "brc:5216667:8183333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5216667:8183333",
+      "b": "brc:5033333:8266667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5033333:8266667",
+      "b": "brc:4850000:8350000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4850000:8350000",
+      "b": "brc:4666667:8433333",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4666667:8433333",
+      "b": "brc:4483333:8516667",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4483333:8516667",
+      "b": "brc:4300000:8600000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4300000:8600000",
+      "b": "brc:4082857:8694286",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4082857:8694286",
+      "b": "brc:3865714:8788571",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3865714:8788571",
+      "b": "brc:3648571:8882857",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3648571:8882857",
+      "b": "brc:3431429:8977143",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3431429:8977143",
+      "b": "brc:3214286:9071429",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3214286:9071429",
+      "b": "brc:2997143:9165714",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2997143:9165714",
+      "b": "brc:2780000:9260000",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2780000:9260000",
+      "b": "brc:2562857:9354286",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2562857:9354286",
+      "b": "brc:2345714:9448571",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2345714:9448571",
+      "b": "brc:2128571:9542857",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2128571:9542857",
+      "b": "brc:1911429:9637143",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1911429:9637143",
+      "b": "brc:1694286:9731429",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1694286:9731429",
+      "b": "brc:1477143:9825714",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1477143:9825714",
+      "b": "bkk:644",
+      "width": 18,
+      "name": "Surawong Road",
+      "corridor": "surawong",
+      "oneWay": true,
+      "spawnTraffic": false
+    },
+    {
+      "a": "bkk:650",
+      "b": "brc:1056000:11457000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1056000:11457000",
+      "b": "brc:1272000:11434000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1272000:11434000",
+      "b": "brc:1488000:11411000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1488000:11411000",
+      "b": "brc:1704000:11388000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1704000:11388000",
+      "b": "brc:1920000:11365000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:1920000:11365000",
+      "b": "brc:2136000:11342000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2136000:11342000",
+      "b": "brc:2352000:11319000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2352000:11319000",
+      "b": "brc:2568000:11296000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2568000:11296000",
+      "b": "brc:2784000:11273000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:2784000:11273000",
+      "b": "brc:3000000:11250000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3000000:11250000",
+      "b": "brc:3200000:11233333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3200000:11233333",
+      "b": "brc:3400000:11216667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3400000:11216667",
+      "b": "brc:3600000:11200000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3600000:11200000",
+      "b": "brc:3800000:11183333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:11183333",
+      "b": "brc:4000000:11166667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4000000:11166667",
+      "b": "brc:4200000:11150000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4200000:11150000",
+      "b": "brc:4400000:11133333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:11133333",
+      "b": "brc:4600000:11116667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4600000:11116667",
+      "b": "brc:4800000:11100000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4800000:11100000",
+      "b": "brc:5000000:11083333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5000000:11083333",
+      "b": "brc:5200000:11066667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5200000:11066667",
+      "b": "brc:5400000:11050000",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5400000:11050000",
+      "b": "brc:5600000:11033333",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5600000:11033333",
+      "b": "brc:5800000:11016667",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5800000:11016667",
+      "b": "bkk:806",
+      "width": 20,
+      "name": "Silom Road",
+      "corridor": "silom",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3800000:7000000",
+      "b": "brc:3871429:7228571",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3871429:7228571",
+      "b": "brc:3942857:7457143",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3942857:7457143",
+      "b": "brc:4014286:7685714",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4014286:7685714",
+      "b": "brc:4085714:7914286",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4085714:7914286",
+      "b": "brc:4157143:8142857",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4157143:8142857",
+      "b": "brc:4228571:8371429",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4228571:8371429",
+      "b": "brc:4300000:8600000",
+      "width": 12,
+      "name": "Maha Set Road",
+      "corridor": "maha-set",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4300000:8600000",
+      "b": "brc:4272727:8833333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4272727:8833333",
+      "b": "brc:4245455:9066667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4245455:9066667",
+      "b": "brc:4218182:9300000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4218182:9300000",
+      "b": "brc:4190909:9533333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4190909:9533333",
+      "b": "brc:4163636:9766667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4163636:9766667",
+      "b": "brc:4136364:10000000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4136364:10000000",
+      "b": "brc:4109091:10233333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4109091:10233333",
+      "b": "brc:4081818:10466667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4081818:10466667",
+      "b": "brc:4054545:10700000",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4054545:10700000",
+      "b": "brc:4027273:10933333",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4027273:10933333",
+      "b": "brc:4000000:11166667",
+      "width": 12,
+      "name": "Mahesak Road",
+      "corridor": "mahesak",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4000000:11166667",
+      "b": "brc:3946154:11388462",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3946154:11388462",
+      "b": "brc:3892308:11610256",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3892308:11610256",
+      "b": "brc:3838462:11832051",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3838462:11832051",
+      "b": "brc:3784615:12053846",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3784615:12053846",
+      "b": "brc:3730769:12275641",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3730769:12275641",
+      "b": "brc:3676923:12497436",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3676923:12497436",
+      "b": "brc:3623077:12719231",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3623077:12719231",
+      "b": "brc:3569231:12941026",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3569231:12941026",
+      "b": "brc:3515385:13162821",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3515385:13162821",
+      "b": "brc:3461538:13384615",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3461538:13384615",
+      "b": "brc:3407692:13606410",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3407692:13606410",
+      "b": "brc:3353846:13828205",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:3353846:13828205",
+      "b": "brc:3300000:14050000",
+      "width": 12,
+      "name": "Surasak Road",
+      "corridor": "surasak-road",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5000000:11083333",
+      "b": "brc:5041667:11300000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5041667:11300000",
+      "b": "brc:5083333:11516667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5083333:11516667",
+      "b": "brc:5125000:11733333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5125000:11733333",
+      "b": "brc:5166667:11950000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5166667:11950000",
+      "b": "brc:5208333:12166667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5208333:12166667",
+      "b": "brc:5250000:12383333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5250000:12383333",
+      "b": "brc:5291667:12600000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5291667:12600000",
+      "b": "brc:5333333:12816667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5333333:12816667",
+      "b": "brc:5375000:13033333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5375000:13033333",
+      "b": "brc:5416667:13250000",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5416667:13250000",
+      "b": "brc:5458333:13466667",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5458333:13466667",
+      "b": "brc:5500000:13683333",
+      "width": 9,
+      "name": "Pan Road",
+      "corridor": "pan",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6500000:7600000",
+      "b": "brc:6604667:7790667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6604667:7790667",
+      "b": "brc:6709333:7981333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6709333:7981333",
+      "b": "brc:6814000:8172000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6814000:8172000",
+      "b": "brc:6918667:8362667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:6918667:8362667",
+      "b": "brc:7023333:8553333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7023333:8553333",
+      "b": "brc:7128000:8744000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7128000:8744000",
+      "b": "brc:7232667:8934667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7232667:8934667",
+      "b": "brc:7337333:9125333",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7337333:9125333",
+      "b": "brc:7442000:9316000",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:7442000:9316000",
+      "b": "civic:7546667:9506667",
+      "width": 11,
+      "name": "Decho Road",
+      "corridor": "decho",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4400000:6261538",
+      "b": "brc:4511111:6465812",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4511111:6465812",
+      "b": "brc:4622222:6670085",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4622222:6670085",
+      "b": "brc:4733333:6874359",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4733333:6874359",
+      "b": "brc:4844444:7078632",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4844444:7078632",
+      "b": "brc:4955556:7282906",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:4955556:7282906",
+      "b": "brc:5066667:7487179",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5066667:7487179",
+      "b": "brc:5177778:7691453",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5177778:7691453",
+      "b": "brc:5288889:7895726",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    },
+    {
+      "a": "brc:5288889:7895726",
+      "b": "brc:5400000:8100000",
+      "width": 10,
+      "name": "Naret Road",
+      "corridor": "naret",
+      "oneWay": false,
+      "spawnTraffic": false
+    }
+  ],
+  "retired": [
+    {
+      "body": {
+        "x": 116.08244044279573,
+        "z": 1136.5399459265916,
+        "w": 22,
+        "d": 22,
+        "height": 32,
+        "yaw": -1.8337910584758161,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 109.32313013315104,
+        "z": 1161.645955648129,
+        "w": 22,
+        "d": 22,
+        "height": 44,
+        "yaw": -1.8337910584758161,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 652.1617778555224,
+        "z": 330.3077922919803,
+        "w": 22,
+        "d": 22,
+        "height": 11,
+        "yaw": 2.4248693924243847,
+        "color": "#b5ad9c"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 926.6040625408335,
+        "z": 569.4258225128455,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": 2.4248693924243847,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 946.2070828754986,
+        "z": 586.5056818143358,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": 2.4248693924243847,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 193.13821108425086,
+        "z": 988.1282715538964,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 211.53536608096212,
+        "z": 935.2364509383515,
+        "w": 22,
+        "d": 22,
+        "height": 21.8,
+        "yaw": -0.3347368373168147,
+        "color": "#9a704f",
+        "regionId": "talatnoi"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 236.09228279532226,
+        "z": 943.7779871868246,
+        "w": 22,
+        "d": 22,
+        "height": 14.6,
+        "yaw": -0.3347368373168147,
+        "color": "#b5ad9c"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 260.64919950968243,
+        "z": 952.3195234352977,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": -0.3347368373168147,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 389.59354479913196,
+        "z": 1056.4605615416813,
+        "w": 22,
+        "d": 22,
+        "height": 38,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 407.9906997958432,
+        "z": 1003.5687409261363,
+        "w": 22,
+        "d": 22,
+        "height": 44,
+        "yaw": -0.3347368373168147,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 414.1504615134921,
+        "z": 1065.0020977901543,
+        "w": 22,
+        "d": 22,
+        "height": 50,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 432.54761651020334,
+        "z": 1012.1102771746093,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": -0.3347368373168147,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 487.8212116565725,
+        "z": 1090.6267065355735,
+        "w": 22,
+        "d": 22,
+        "height": 44,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 512.3781283709326,
+        "z": 1099.1682427840467,
+        "w": 22,
+        "d": 22,
+        "height": 56,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 536.9350450852927,
+        "z": 1107.7097790325197,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 561.4919617996528,
+        "z": 1116.251315280993,
+        "w": 22,
+        "d": 22,
+        "height": 38,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 740.258477873477,
+        "z": 925.6567770614087,
+        "w": 22,
+        "d": 22,
+        "height": 26,
+        "yaw": 0.7678561033400458,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 316.9612475247289,
+        "z": 1378.7869002711534,
+        "w": 22,
+        "d": 22,
+        "height": 62,
+        "yaw": 0.16514867741462685,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 342.6074895443646,
+        "z": 1374.5125266012142,
+        "w": 22,
+        "d": 22,
+        "height": 32,
+        "yaw": 0.16514867741462685,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 547.7774257014505,
+        "z": 1340.3175372417,
+        "w": 22,
+        "d": 22,
+        "height": 44,
+        "yaw": 0.16514867741462685,
+        "color": "#507e9c",
+        "regionId": "silom"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 907.5534502430173,
+        "z": 591.2907298092026,
+        "w": 21,
+        "d": 19,
+        "height": 42,
+        "yaw": 2.4248693924243847,
+        "color": "#507e9c",
+        "regionId": "silom",
+        "artRole": "background"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 294.73321434733947,
+        "z": 933.4706525792922,
+        "w": 21,
+        "d": 19,
+        "height": 19.5,
+        "yaw": -0.3347368373168147,
+        "color": "#507e9c",
+        "regionId": "silom",
+        "artRole": "background"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 453.73719681891544,
+        "z": 1109.475577391579,
+        "w": 21,
+        "d": 19,
+        "height": 24,
+        "yaw": 2.8068558162729786,
+        "color": "#507e9c",
+        "regionId": "silom",
+        "artRole": "background"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 720.1152369761895,
+        "z": 904.7941347035038,
+        "w": 21,
+        "d": 19,
+        "height": 19.5,
+        "yaw": 0.7678561033400458,
+        "color": "#507e9c",
+        "regionId": "silom",
+        "artRole": "background"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 337.8399189125093,
+        "z": 1345.907102810082,
+        "w": 21,
+        "d": 19,
+        "height": 24,
+        "yaw": 0.16514867741462685,
+        "color": "#507e9c",
+        "regionId": "silom",
+        "artRole": "background"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 177.20491598879136,
+        "z": 783.8069463378997,
+        "w": 11.630574010738997,
+        "d": 30,
+        "yaw": -1.6052699604385074,
+        "height": 11,
+        "color": "#d7a18a",
+        "regionId": "chinatown",
+        "environmentId": "ctparcel:ctblock:0:1:6",
+        "chinatown": {
+          "block": "ctblock:0",
+          "corridor": "charoen_s",
+          "character": "commercial",
+          "exposedSides": []
+        }
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 177.63060082462854,
+        "z": 771.4637105054577,
+        "w": 11.630574010738997,
+        "d": 30,
+        "yaw": -1.6052699604385074,
+        "height": 20.3,
+        "color": "#b7c6b3",
+        "regionId": "chinatown",
+        "environmentId": "ctparcel:ctblock:0:1:7",
+        "chinatown": {
+          "block": "ctblock:0",
+          "corridor": "charoen_s",
+          "character": "commercial",
+          "exposedSides": []
+        }
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 178.0562856604657,
+        "z": 759.1204746730157,
+        "w": 11.630574010738997,
+        "d": 30,
+        "yaw": -1.6052699604385074,
+        "height": 17.2,
+        "color": "#dfc395",
+        "regionId": "chinatown",
+        "environmentId": "ctparcel:ctblock:0:1:8",
+        "chinatown": {
+          "block": "ctblock:0",
+          "corridor": "charoen_s",
+          "character": "commercial",
+          "exposedSides": []
+        }
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 175.88847007079517,
+        "z": 976.8345374353529,
+        "w": 8,
+        "d": 10,
+        "yaw": 2.8068558162729778,
+        "height": 24,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "environmentId": "infill:frontage:3883125330"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 584.1203177098015,
+        "z": 1120.9457532509873,
+        "w": 12,
+        "d": 14,
+        "yaw": 2.8068558162729778,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "environmentId": "infill:frontage:550317157"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 167.18579750912042,
+        "z": 1127.5151524911869,
+        "w": 36,
+        "d": 28,
+        "yaw": -1.8337910584758161,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2419201015"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 624.3024968620074,
+        "z": 368.371692020258,
+        "w": 18,
+        "d": 20,
+        "yaw": 2.4248693924243847,
+        "height": 14,
+        "color": "#b7baa2",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "infill:rear:772364954"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 869.6239200372163,
+        "z": 627.2121821513232,
+        "w": 36,
+        "d": 28,
+        "yaw": 2.4248693924243847,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:3685699451"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 229.19334967155558,
+        "z": 1134.0735591840569,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2496696215"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 336.37320355864574,
+        "z": 892.898355399045,
+        "w": 36,
+        "d": 28,
+        "yaw": -0.3347368373168147,
+        "height": 10.5,
+        "color": "#b7baa2",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "infill:rear:2662252661"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 344.09343824476565,
+        "z": 931.5816589858799,
+        "w": 36,
+        "d": 28,
+        "yaw": -0.3347368373168147,
+        "height": 24,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:3908898054"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 306.3135663765193,
+        "z": 1113.253564578404,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 56,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2442789988"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 408.1549601083139,
+        "z": 917.8659228945817,
+        "w": 36,
+        "d": 28,
+        "yaw": -0.3347368373168147,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:1704604727"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 368.6503549591258,
+        "z": 1134.9359258245279,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2816250809"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 449.3842985384436,
+        "z": 884.5621445411603,
+        "w": 44,
+        "d": 28,
+        "yaw": -0.3347368373168147,
+        "height": 48,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:560959389"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 370.8678691774794,
+        "z": 1183.351652925248,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:3477863515"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 412.0972076076091,
+        "z": 1150.0478745718262,
+        "w": 36,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 48,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:400559253"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 477.1032262678635,
+        "z": 1136.6606591054692,
+        "w": 36,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:782701637"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 517.8808488386989,
+        "z": 1186.8421845652488,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 40,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:991093442"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 511.597891886697,
+        "z": 1232.3012260414976,
+        "w": 36,
+        "d": 28,
+        "yaw": 2.8068558162729786,
+        "height": 48,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:396487317"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 698.3843514761601,
+        "z": 853.4933684774071,
+        "w": 44,
+        "d": 28,
+        "yaw": 0.7678561033400458,
+        "height": 56,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:2354271658"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 690.1484450994367,
+        "z": 798.8932783112376,
+        "w": 44,
+        "d": 28,
+        "yaw": 0.7678561033400458,
+        "height": 48,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:3257530221"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 781.5124305978477,
+        "z": 710.6797750713926,
+        "w": 44,
+        "d": 28,
+        "yaw": 0.7678561033400458,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:946781557"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 377.29567586579503,
+        "z": 1321.082855726973,
+        "w": 44,
+        "d": 28,
+        "yaw": 0.16514867741462685,
+        "height": 64,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:196706867"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 804.8557676475367,
+        "z": 649.9151585961392,
+        "w": 36,
+        "d": 28,
+        "yaw": 0.7678561033400458,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:3620480917"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": -66.25572748803677,
+        "z": 1151.992614638145,
+        "w": 44,
+        "d": 28,
+        "yaw": 2.9282548034074263,
+        "height": 32,
+        "color": "#b7baa2",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:rear:1826728471"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 285.0007908334543,
+        "z": 903.6163407877541,
+        "w": 14,
+        "d": 16,
+        "yaw": -0.3347368373168147,
+        "height": 10.2,
+        "color": "#d8c2a5",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:3:10:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 320.8916691082883,
+        "z": 916.1001245355224,
+        "w": 14,
+        "d": 16,
+        "yaw": -0.3347368373168147,
+        "height": 14.2,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:3:10:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 420.02276768431733,
+        "z": 1124.2179404358187,
+        "w": 14,
+        "d": 16,
+        "yaw": 2.8068558162729786,
+        "height": 14.2,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:4:11:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 372.79792784900934,
+        "z": 1107.791909188755,
+        "w": 14,
+        "d": 16,
+        "yaw": 2.8068558162729786,
+        "height": 14.2,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:4:11:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 334.7163381537075,
+        "z": 1321.082855726973,
+        "w": 12,
+        "d": 16,
+        "yaw": 0.16514867741462685,
+        "height": 11,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:3:14:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 406.8408776085488,
+        "z": 945.9955014051783,
+        "w": 16,
+        "d": 12,
+        "yaw": -0.3347368373168147,
+        "height": 17.4,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:4:10:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 543.831850006122,
+        "z": 1286.2302704182373,
+        "w": 12,
+        "d": 12,
+        "yaw": 0.16514867741462685,
+        "height": 11,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "infill:blockcourt:6:14:-1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 380.962726450614,
+        "z": 657.9642319465729,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -1.605265427794405,
+        "height": 9,
+        "color": "#bb9678",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:6:11:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 280.63646172951087,
+        "z": 709.8084822599667,
+        "w": 34.1,
+        "d": 15.079999999999998,
+        "yaw": -1.605265427794405,
+        "height": 18,
+        "color": "#d8c3a0",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:4:12:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 330.08707057752633,
+        "z": 711.5136756685189,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -1.605265427794405,
+        "height": 12,
+        "color": "#a9b8a9",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:5:12:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 379.05796454585214,
+        "z": 713.2023271846681,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -1.605265427794405,
+        "height": 16,
+        "color": "#c4b195",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:6:12:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 302.6023398079302,
+        "z": 751.2210016766593,
+        "w": 24,
+        "d": 30,
+        "yaw": -1.605265427794404,
+        "height": 13,
+        "color": "#bb9678",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:5:13:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 377.1532026410903,
+        "z": 768.4404224227632,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -1.605265427794404,
+        "height": 13,
+        "color": "#bb9678",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:6:13:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 373.3436788315664,
+        "z": 878.9166128989539,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -1.605265427794405,
+        "height": 15,
+        "color": "#c4b195",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:5:15:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 253.71598279851273,
+        "z": 1109.9944783903197,
+        "w": 22,
+        "d": 22,
+        "yaw": -1.8337910584758161,
+        "height": 10,
+        "color": "#c99c7f",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:4:18:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 293.23823587200945,
+        "z": 1151.6783066527537,
+        "w": 27,
+        "d": 27,
+        "yaw": -1.8337910584758161,
+        "height": 20,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:5:19:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 266.97828678696203,
+        "z": 1155.436461827259,
+        "w": 34.1,
+        "d": 15.079999999999998,
+        "yaw": -1.8337910584758161,
+        "height": 11,
+        "color": "#d8c3a0",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:4:19:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 610.2568162210767,
+        "z": 402.55528921187334,
+        "w": 27,
+        "d": 31,
+        "yaw": 2.424869392424385,
+        "height": 21,
+        "color": "#a3b5b8",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:10:6:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 586.735132712581,
+        "z": 379.4084966710879,
+        "w": 27,
+        "d": 27,
+        "yaw": 2.424869392424385,
+        "height": 26,
+        "color": "#c6c9bd",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:10:6:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 580.1219873644179,
+        "z": 412.07021904765685,
+        "w": 41.85,
+        "d": 17.98,
+        "yaw": 2.424869392424385,
+        "height": 32,
+        "color": "#c6c9bd",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:10:6:2"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 549.9037747540888,
+        "z": 446.7524857936028,
+        "w": 41.85,
+        "d": 17.98,
+        "yaw": 2.424869392424385,
+        "height": 23,
+        "color": "#c6c9bd",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:9:7:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 518.2863275163684,
+        "z": 483.04069228235005,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": 2.424869392424385,
+        "height": 8,
+        "color": "#bb9678",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:9:7:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 566.6698869574602,
+        "z": 490.5795503376984,
+        "w": 24,
+        "d": 30,
+        "yaw": 2.4248693924243843,
+        "height": 11,
+        "color": "#c4b195",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:9:8:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 558.1148091474339,
+        "z": 518.8966395012409,
+        "w": 41.85,
+        "d": 17.98,
+        "yaw": 2.424869392424385,
+        "height": 30,
+        "color": "#a3b5b8",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:9:8:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 842.7219873644176,
+        "z": 640.8702190476565,
+        "w": 41.85,
+        "d": 17.98,
+        "yaw": 2.4248693924243825,
+        "height": 19,
+        "color": "#d3c3ad",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:14:10:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 417.0458280240282,
+        "z": 843.562688875364,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -0.3347368373168157,
+        "height": 8,
+        "color": "#bb9678",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:7:14:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 401.54979307907723,
+        "z": 1102.9698502021351,
+        "w": 27,
+        "d": 31,
+        "yaw": 2.806855816272978,
+        "height": 28,
+        "color": "#d3c3ad",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:6:18:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 348.22391458782863,
+        "z": 1206.1479122266592,
+        "w": 41.85,
+        "d": 17.98,
+        "yaw": 2.806855816272978,
+        "height": 22,
+        "color": "#d3c3ad",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:6:20:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 468.15693913513917,
+        "z": 861.3404666531419,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -0.3347368373168151,
+        "height": 12,
+        "color": "#c4b195",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:7:15:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 484.25444975726157,
+        "z": 815.0601236145402,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -0.3347368373168151,
+        "height": 12,
+        "color": "#c4b195",
+        "regionId": "talatnoi",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:8:14:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 382.0980230176781,
+        "z": 1241.2548002397675,
+        "w": 27,
+        "d": 31,
+        "yaw": 2.806855816272977,
+        "height": 17,
+        "color": "#c6c9bd",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:6:21:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 512.9637394536272,
+        "z": 852.6797258372086,
+        "w": 24,
+        "d": 30,
+        "yaw": -0.3347368373168151,
+        "height": 15,
+        "color": "#c4b195",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:9:14:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 535.3655608683727,
+        "z": 832.837901392318,
+        "w": 37.2,
+        "d": 17.4,
+        "yaw": -0.3347368373168151,
+        "height": 17,
+        "color": "#a9b8a9",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:talat-noi-blocks:9:14:2"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 509.8758007954561,
+        "z": 1285.6992446842119,
+        "w": 27,
+        "d": 31,
+        "yaw": 2.8068558162729778,
+        "height": 33,
+        "color": "#a3b5b8",
+        "regionId": "silom",
+        "artRole": "background",
+        "environmentId": "urban-block:sathorn-blocks:8:22:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": -245.68992650887142,
+        "z": 937.7617188852213,
+        "w": 22,
+        "d": 22,
+        "yaw": 3.0947266594690443,
+        "height": 19,
+        "color": "#d8c3a0",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:-5:16:0"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": -233.43808023400126,
+        "z": 962.9833973158284,
+        "w": 34.1,
+        "d": 15.079999999999998,
+        "yaw": 3.0947266594690443,
+        "height": 18,
+        "color": "#adbaae",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "urban-block:bang-rak:-5:16:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": -261.22934917841434,
+        "z": 892.1792747981941,
+        "w": 12,
+        "d": 15,
+        "height": 11.1,
+        "yaw": 2.921254949409331,
+        "color": "#d3c4ae",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "context:oriental:160:9"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": -230.07798811618923,
+        "z": 894.8655439013544,
+        "w": 12,
+        "d": 15,
+        "height": 14.2,
+        "yaw": 3.141592653589793,
+        "color": "#b1c4b5",
+        "regionId": "connector",
+        "artRole": "background",
+        "environmentId": "context:river-city:120:1"
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 157.91290627326157,
+        "z": 973.476551688955,
+        "w": 22,
+        "d": 23,
+        "height": 17,
+        "yaw": -1.8337910584758161,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-3",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "cafe",
+          "trade": "coffee",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    },
+    {
+      "body": {
+        "x": 151.10600972153742,
+        "z": 998.7593103096447,
+        "w": 22,
+        "d": 23,
+        "height": 13.5,
+        "yaw": -1.8337910584758161,
+        "color": "#cebea4",
+        "environmentId": "br:charoen-east-4",
+        "regionId": "bang-rak",
+        "bangRak": {
+          "family": "timber",
+          "trade": "residence",
+          "road": "charoen_s"
+        },
+        "protected": true
+      },
+      "reason": "Intersects researched road/sidewalk envelope"
+    }
+  ],
+  "parcels": [],
+  "sites": [],
+  "blocked": []
+}

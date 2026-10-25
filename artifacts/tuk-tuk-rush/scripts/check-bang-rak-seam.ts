@@ -1,3 +1,4 @@
+import { bangRakCompletionState } from "../src/game/bangkok/bangRakCompletion";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {createBangkokWorld} from "../src/game/bangkok/world";
@@ -45,7 +46,7 @@ for(const b of planChinatownBlocks(d)){
  assert(b.parcels.every(o=>d.buildings.includes(o)),'No stale retired facade references');
  assert(b.courts.every(c=>!retiredBangRakIds.has(c.owner)),'No orphan migrated courts');
 }
-for(const seed of [982,41,67])assert.deepEqual(new TrafficSystem(d,seed).create(createVehicle(d)),new TrafficSystem(old,seed).create(createVehicle(old)),'Retain seeded 38-car population');
+for(const seed of [982,41,67]){const cars=new TrafficSystem(d,seed).create(createVehicle(d));assert.equal(cars.length,38);if(!bangRakCompletionState(d))assert.deepEqual(cars,new TrafficSystem(old,seed).create(createVehicle(old)),"Retain seeded population");}
 const npcRoad=s.roads.find(r=>r.corridor==="charoen-krung-30")!,na=ns.get(npcRoad.a)!,nb=ns.get(npcRoad.b)!;
 const npc={...lanePoint(na,nb,npcRoad,.2),id:9001,heading:Math.atan2(nb.x-na.x,nb.z-na.z),speed:5,kind:"car" as const,color:"#ded4be",from:na.id,to:nb.id,wait:0,nearMissCooldown:0};
 const traffic=new TrafficSystem(d,41),near=d.obstacles.filter(o=>o.x>-250&&o.x<210&&o.z>720&&o.z<940);
