@@ -66,7 +66,9 @@
     "test:bang-rak-completion": "node --import tsx scripts/check-bang-rak-completion.ts",
     "test:bang-rak-completion-drives": "BANG_RAK_COMPLETION_ROUTES=1 CHINATOWN_LEGAL=1 CHINATOWN_LANES=1 CHINATOWN_TRAFFIC=1 node --import tsx scripts/check-chinatown-drives.ts",
     "test:bang-rak-entrances": "node --import tsx scripts/check-bang-rak-entrances.ts",
-    "test:bang-rak-landmark-mounts": "node --import tsx scripts/check-bang-rak-landmark-mounts.ts"
+    "test:bang-rak-landmark-mounts": "node --import tsx scripts/check-bang-rak-landmark-mounts.ts",
+    "test:real-geography": "node --import tsx scripts/check-real-geography.ts",
+    "qa:real-geography": "node scripts/browser-real-geography.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

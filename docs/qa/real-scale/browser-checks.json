@@ -1,0 +1,57 @@
+{
+  "physicalIPhone": false,
+  "environment": "Chromium headless WebGL2 / ANGLE SwiftShader; Linux container",
+  "errors": [],
+  "checks": {
+    "keyboardDistanceM": 14.665022252899,
+    "touchPedal": true,
+    "debugMap": true,
+    "defaultStartup": true,
+    "defaultGeographicRequests": 0,
+    "defaultWorld": {
+      "worldId": "bangkok",
+      "roads": 2405,
+      "traffic": 38
+    }
+  },
+  "startedAt": "2026-10-25T15:41:34.742Z",
+  "firstFrameMs": 2524.542237,
+  "initial": {
+    "position": {
+      "x": 3386.4035,
+      "z": 555.717,
+      "heading": -2.144420687887749
+    },
+    "coordinate": {
+      "lon": 100.51112385377994,
+      "lat": 13.739643348184762
+    },
+    "speed": 0,
+    "loadMs": 417.10000000009313,
+    "drawCalls": 191,
+    "triangles": 118630,
+    "renderer": "WebKit WebGL"
+  },
+  "frames": {
+    "medianMs": 99.89999999999964,
+    "p95Ms": 150.10000000000036,
+    "samples": 90
+  },
+  "render": {
+    "position": {
+      "x": 3369.087189572409,
+      "z": 544.5290378624427,
+      "heading": -2.144420687887749
+    },
+    "coordinate": {
+      "lon": 100.51096438669758,
+      "lat": 13.739745457124982
+    },
+    "speed": 0,
+    "loadMs": 417.10000000009313,
+    "drawCalls": 1312,
+    "triangles": 456856,
+    "renderer": "WebKit WebGL"
+  },
+  "pass": true
+}

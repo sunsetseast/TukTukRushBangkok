@@ -28,3 +28,9 @@ export function beforeBangRakCompletion(d:District):District {
  for(const k of ['river','riverPolygon','riverStructures','canals','transit','spawn','authoredSites'] as const)assert.deepEqual(live[k],old[k],`Preserve ${k}`);
  checked.set(d,old);return old;
 }
+
+/** Exact PR44 frontage retirement, validated against its preserved PR43 world. */
+export function approvedCompletionRetirement(o:District["buildings"][number],d:District) {
+ beforeBangRakCompletion(d);
+ return migration.retired.some(r=>completionBodyKey(r.body as any)===completionBodyKey(o));
+}

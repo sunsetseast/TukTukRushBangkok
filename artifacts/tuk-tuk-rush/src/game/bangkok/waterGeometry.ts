@@ -22,9 +22,15 @@ function index(rings:Point[][]):WaterIndex {
 /** Polygon parity includes islands. Open-water geometry is never inferred from
  * the nominal width or a map stroke. Rings are closed, in game X/Z. */
 export function inRiverWater(d:District,p:Point):boolean {
+  // Independent OSM polygons are a union; holes belong only to their outer ring.
+  // Flattening overlapping multipolygons into one parity test cancels real water.
+  if(d.waterPolygons)return d.waterPolygons.some(rings=>inWaterRings(rings,p));
   if(!d.riverPolygon)return (d.river??[]).slice(1).some((b,i)=>distanceToSegment(p,d.river![i]!,b).distance<(d.riverWidth??0)/2);
+  return inWaterRings(d.riverPolygon,p);
+}
+function inWaterRings(rings:Point[][],p:Point):boolean {
   let inside=false;
-  for(const {a,b} of index(d.riverPolygon).rows.get(Math.floor(p.z/80))??[])
+  for(const {a,b} of index(rings).rows.get(Math.floor(p.z/80))??[])
     if((a.z>p.z)!==(b.z>p.z)&&p.x<(b.x-a.x)*(p.z-a.z)/(b.z-a.z)+a.x)inside=!inside;
   return inside;
 }

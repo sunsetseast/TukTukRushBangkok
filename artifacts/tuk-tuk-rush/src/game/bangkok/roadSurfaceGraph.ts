@@ -80,7 +80,10 @@ export function assertWaterTerrainFresh(d:District){
   if(('waterKey' in baked ? baked.waterKey : undefined)!==waterTerrainKey(d))
     throw Error('Bangkok water/terrain geometry is stale. Run art:roads and commit the generated surface.');
 }
-export function channelGeometry(kind:'land'|'water',d:District) {
+export function channelGeometry(kind:'land'|'water',d:District,geographicPolygons?:RoadPolygons) {
+  // Geographic chunks use the same triangulator, levels and renderer, with their
+  // own offline-baked land/water. The compressed world's freshness gate is unchanged.
+  if(geographicPolygons)return surfaceGeometry(geographicPolygons,kind==='land'?-.25:WATER_LEVEL);
   assertWaterTerrainFresh(d);
   return surfaceGeometry(baked[kind] as RoadPolygons,kind==='land'?-.25:WATER_LEVEL);
 }

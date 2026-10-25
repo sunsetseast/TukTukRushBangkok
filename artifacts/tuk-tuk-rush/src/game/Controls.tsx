@@ -9,9 +9,14 @@ import { Megaphone, Zap, ChevronsUp, Eye, ArrowDown } from "lucide-react";
 import { learn } from "./ui/Onboarding";
 import type { GameEngine } from "./engine";
 
+/** Shared input surface for production and the isolated geographic proof. */
+export type DrivingControlHost = Pick<GameEngine, 'subscribe' | 'inspectableLandmark' | 'viewLandmark' | 'triggerBoost'> & {
+  model: Pick<GameEngine['model'], 'input' | 'snapshot'>;
+};
+
 const R = 56;
 
-function Stick({ engine }: { engine: GameEngine }) {
+function Stick({ engine }: { engine: DrivingControlHost }) {
   const zone = useRef<HTMLDivElement>(null);
   const base = useRef<HTMLDivElement>(null);
   const knob = useRef<HTMLDivElement>(null);
@@ -168,7 +173,7 @@ export function Controls({
   engine,
   onHorn,
 }: {
-  engine: GameEngine;
+  engine: DrivingControlHost;
   onHorn: () => void;
 }) {
   const [snap, setSnap] = useState(engine.model.snapshot);

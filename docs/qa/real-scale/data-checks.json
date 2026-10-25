@@ -1,0 +1,28 @@
+{
+  "mainRiverBounds": [
+    100.46,
+    13.63,
+    100.65,
+    13.8
+  ],
+  "sourceHoles": 15,
+  "nonBridgeRoadWaterOverlapM2": 0.3233906111576521,
+  "landWaterOverlapM2": 0.011487113570892275,
+  "bridgeWaterAreaM2": 219750.96206635033,
+  "maxProjectionRoundingM": 0.000706220438568096,
+  "narrowWays": 2958,
+  "counts": {
+    "administrativeAreas": 181,
+    "chunks": 420,
+    "coverage": {
+      "A": 6904,
+      "B": 7500,
+      "C": 78162
+    },
+    "nodes": 69158,
+    "runtimeWays": 14335,
+    "sourceWays": 92566,
+    "waterAreas": 158
+  },
+  "runtimeGzipBytes": 5023999
+}
