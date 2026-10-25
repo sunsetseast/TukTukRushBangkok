@@ -1,0 +1,351 @@
+{
+  "pass": true,
+  "positionBasis": "Pinned source WGS84, independent PROJ projection checks; operator maps verify station identities/codes and operating scope, not survey accuracy",
+  "requiredStations": [
+    {
+      "id": "osm:node/5388599065",
+      "name": "Mo Chit",
+      "code": "N8",
+      "coordinate": [
+        100.5537913,
+        13.8025991
+      ],
+      "lines": [
+        "sukhumvit"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "หมอชิต"
+    },
+    {
+      "id": "osm:node/5391611863",
+      "name": "Victory Monument",
+      "code": "N3",
+      "coordinate": [
+        100.5370529,
+        13.7627589
+      ],
+      "lines": [
+        "sukhumvit"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "อนุสาวรีย์ชัยสมรภูมิ"
+    },
+    {
+      "id": "osm:node/5388610344",
+      "name": "Phaya Thai",
+      "code": "N2",
+      "coordinate": [
+        100.5338214,
+        13.7569644
+      ],
+      "lines": [
+        "sukhumvit"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "พญาไท"
+    },
+    {
+      "id": "osm:node/1692209237",
+      "name": "Siam",
+      "code": "CEN",
+      "coordinate": [
+        100.5342199,
+        13.7456236
+      ],
+      "lines": [
+        "sukhumvit",
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "สยาม"
+    },
+    {
+      "id": "osm:node/5391625873",
+      "name": "Asok",
+      "code": "E4",
+      "coordinate": [
+        100.5603571,
+        13.7370432
+      ],
+      "lines": [
+        "sukhumvit"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "อโศก"
+    },
+    {
+      "id": "osm:node/5391626093",
+      "name": "Phrom Phong",
+      "code": "E5",
+      "coordinate": [
+        100.5697129,
+        13.7304345
+      ],
+      "lines": [
+        "sukhumvit"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "พร้อมพงษ์"
+    },
+    {
+      "id": "osm:node/451697335",
+      "name": "Sala Daeng",
+      "code": "S2",
+      "coordinate": [
+        100.5343416,
+        13.7285677
+      ],
+      "lines": [
+        "silom",
+        "blue"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "ศาลาแดง"
+    },
+    {
+      "id": "osm:node/257066790",
+      "name": "Chong Nonsi",
+      "code": "S3",
+      "coordinate": [
+        100.529325,
+        13.7237969
+      ],
+      "lines": [
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "ช่องนนทรี"
+    },
+    {
+      "id": "osm:node/7781158247",
+      "name": "Saint Louis",
+      "code": "S4",
+      "coordinate": [
+        100.5266863,
+        13.720816
+      ],
+      "lines": [
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "เซนต์หลุยส์"
+    },
+    {
+      "id": "osm:node/257066779",
+      "name": "Surasak",
+      "code": "S5",
+      "coordinate": [
+        100.5214619,
+        13.7192683
+      ],
+      "lines": [
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "สุรศักดิ์"
+    },
+    {
+      "id": "osm:node/257067085",
+      "name": "Saphan Taksin",
+      "code": "S6",
+      "coordinate": [
+        100.514223,
+        13.7188128
+      ],
+      "lines": [
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "สะพานตากสิน"
+    },
+    {
+      "id": "osm:node/443815144",
+      "name": "Krung Thon Buri",
+      "code": "S7",
+      "coordinate": [
+        100.5027176,
+        13.7209307
+      ],
+      "lines": [
+        "silom"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "กรุงธนบุรี"
+    },
+    {
+      "id": "osm:node/5812248586",
+      "name": "Charoen Nakhon",
+      "code": "G2",
+      "coordinate": [
+        100.5090694,
+        13.7264621
+      ],
+      "lines": [
+        "gold"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "เจริญนคร"
+    },
+    {
+      "id": "osm:node/5812248587",
+      "name": "Khlong San",
+      "code": "G3",
+      "coordinate": [
+        100.5077213,
+        13.7303066
+      ],
+      "lines": [
+        "gold"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "คลองสาน"
+    },
+    {
+      "id": "osm:node/280179404",
+      "name": "Hua Lamphong",
+      "code": "BL28",
+      "coordinate": [
+        100.517135,
+        13.7375708
+      ],
+      "lines": [
+        "blue"
+      ],
+      "physicalLevel": "underground",
+      "thaiName": "หัวลำโพง"
+    },
+    {
+      "id": "osm:node/12803915074",
+      "name": "Wat Mangkon",
+      "code": "BL29",
+      "coordinate": [
+        100.5099097,
+        13.7422095
+      ],
+      "lines": [
+        "blue"
+      ],
+      "physicalLevel": "underground",
+      "thaiName": "วัดมังกร"
+    },
+    {
+      "id": "osm:node/12803589960",
+      "name": "Si Lom",
+      "code": "BL26",
+      "coordinate": [
+        100.5370702,
+        13.7291982
+      ],
+      "lines": [
+        "blue"
+      ],
+      "physicalLevel": "underground",
+      "thaiName": "สีลม"
+    },
+    {
+      "id": "osm:node/5391691787",
+      "name": "Sukhumvit",
+      "code": "BL22",
+      "coordinate": [
+        100.561498,
+        13.7374671
+      ],
+      "lines": [
+        "blue"
+      ],
+      "physicalLevel": "underground",
+      "thaiName": "สุขุมวิท"
+    },
+    {
+      "id": "osm:node/6711028526",
+      "name": "Phaya Thai",
+      "code": "A8",
+      "coordinate": [
+        100.5349074,
+        13.75671
+      ],
+      "lines": [
+        "airport"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "พญาไท"
+    },
+    {
+      "id": "osm:node/6711023184",
+      "name": "Makkasan",
+      "code": "A6",
+      "coordinate": [
+        100.5611427,
+        13.7509089
+      ],
+      "lines": [
+        "airport"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "มักกะสัน"
+    },
+    {
+      "id": "osm:node/8986366369",
+      "name": "Krung Thep Aphiwat",
+      "code": "กภ.",
+      "coordinate": [
+        100.5417111,
+        13.8040313
+      ],
+      "lines": [
+        "dark-red",
+        "light-red",
+        "conventional"
+      ],
+      "physicalLevel": "elevated",
+      "thaiName": "กรุงเทพอภิวัฒน์"
+    }
+  ],
+  "railCoverage": {
+    "sukhumvit": {
+      "playableTracks": 21,
+      "outsideStations": 65
+    },
+    "silom": {
+      "playableTracks": 24,
+      "outsideStations": 5
+    },
+    "gold": {
+      "playableTracks": 19,
+      "outsideStations": 0
+    },
+    "blue": {
+      "playableTracks": 29,
+      "outsideStations": 26
+    },
+    "purple": {
+      "playableTracks": 14,
+      "outsideStations": 18
+    },
+    "yellow": {
+      "playableTracks": 13,
+      "outsideStations": 1
+    },
+    "pink": {
+      "playableTracks": 0,
+      "outsideStations": 50
+    },
+    "airport": {
+      "playableTracks": 17,
+      "outsideStations": 8
+    },
+    "dark-red": {
+      "playableTracks": 14,
+      "outsideStations": 15
+    },
+    "light-red": {
+      "playableTracks": 24,
+      "outsideStations": 1
+    },
+    "conventional": {
+      "playableTracks": 1002,
+      "outsideStations": 51
+    }
+  },
+  "saphanTaksinSeparateElevatedRiverCrossing": true
+}

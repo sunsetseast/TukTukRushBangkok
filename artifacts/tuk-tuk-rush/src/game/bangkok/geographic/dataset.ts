@@ -1,3 +1,4 @@
+import type { ChunkReference } from "./streaming";
 import type { District, Road } from "../../types";
 import type { RoadPolygons } from "../roadSurfaceGraph";
 import { geographicToMeters } from "./projection";
@@ -6,7 +7,9 @@ export type GeographicWay = {
   id: string;
   nodes: string[];
   tags: Record<string, string>;
-  coverage: "A" | "B";
+  coverage: "A" | "B" | "C";
+  heights: number[];
+  heightBasis: string;
   width: number;
   widthBasis: "tagged" | "osm-estimate" | "class-estimate";
   vehicleClearance: boolean;
@@ -31,12 +34,83 @@ export type GeographicDataset = {
     geometry: { type: string; coordinates: number[][][][] };
   }[];
   featuredBoundary: { type: string; coordinates: number[][][] };
-  chunks: ({ origin: [number, number] } & Record<
-    "land" | "water" | "roads" | "bridges",
-    RoadPolygons
-  >)[];
+  chunks: ChunkReference[];
+  rail: GeographicRail;
+  coverageAnchors: { id: string; lon: number; lat: number }[];
   bounds: NonNullable<District["bounds"]>;
 };
+export type RailTrack = {
+  id: string;
+  tags: Record<string, string>;
+  points: [number, number][];
+  lines: string[];
+  status: string;
+  level: string;
+  height: number;
+  playable: boolean;
+};
+export type GeographicStation = {
+  id: string;
+  tags: Record<string, string>;
+  point: [number, number];
+  coordinate: [number, number];
+  lines: string[];
+  level: string;
+  height: number;
+  yaw: number;
+  status: string;
+  playable: boolean;
+};
+export type GeographicRail = {
+  catalog: { lines: { id: string; name: string; color: string }[] };
+  tracks: RailTrack[];
+  stations: GeographicStation[];
+  routes: {
+    id: string;
+    lines: string[];
+    status: string;
+    members: { id: string; role: string }[];
+  }[];
+  interchanges: { id: string; members: { id: string; role: string }[] }[];
+};
+export type GeographicChunkData = {
+  origin: [number, number];
+  land: RoadPolygons;
+  water: RoadPolygons;
+  roads: RoadPolygons;
+  bridges: RoadPolygons;
+  decks: { id: string; points: [number, number, number][]; width: number }[];
+  rail: {
+    id: string;
+    points: [number, number][];
+    height: number;
+    level: string;
+    line: string;
+  }[];
+  stations: GeographicStation[];
+  supports?: { point: [number, number]; height: number; line: string }[];
+};
+export async function loadGeographicChunk(
+  ref: ChunkReference,
+  signal?: AbortSignal,
+) {
+  return (await loadGzip(
+    `${import.meta.env.BASE_URL}assets/geography/${ref.file}`,
+    signal,
+  )) as GeographicChunkData;
+}
+async function loadGzip(url: string, signal?: AbortSignal) {
+  const response = await fetch(url, { signal });
+  if (!response.ok || !response.body)
+    throw Error(`Geographic asset unavailable (${response.status}): ${url}`);
+  const decoded =
+    response.headers.get("content-encoding") === "gzip"
+      ? response
+      : new Response(
+          response.body.pipeThrough(new DecompressionStream("gzip")),
+        );
+  return decoded.json();
+}
 export function validateDataset(data: GeographicDataset) {
   if (
     data.schema !== 1 ||
@@ -51,22 +125,13 @@ export function validateDataset(data: GeographicDataset) {
   return data;
 }
 export async function loadGeographicDataset() {
-  const response = await fetch(
-    `${import.meta.env.BASE_URL}assets/geography/runtime.v1.json.gz`,
+  return validateDataset(
+    (await loadGzip(
+      `${import.meta.env.BASE_URL}assets/geography/runtime.v1.json.gz`,
+    )) as GeographicDataset,
   );
-  if (!response.ok)
-    throw Error(`Geographic dataset unavailable (${response.status})`);
-  if (!response.body) throw Error("Empty geographic dataset");
-  // Vite/servers may advertise gzip and browsers decode that automatically. Static
-  // hosts serving raw .gz bytes need the explicit stream decoder.
-  const decoded =
-    response.headers.get("content-encoding") === "gzip"
-      ? response
-      : new Response(
-          response.body.pipeThrough(new DecompressionStream("gzip")),
-        );
-  return validateDataset((await decoded.json()) as GeographicDataset);
 }
+
 /** OSM node topology, never geometric welding of grade-separated crossings.
  * Access and one-way tags only constrain AI. Player and walking graphs use clearance.
  */
@@ -81,7 +146,6 @@ export function geographicGraph(
   };
   for (const r of data.roads) {
     if (
-      r.tunnel ||
       (mode !== "pedestrian" && r.tags.highway === "steps") ||
       (mode === "pedestrian" ? !r.pedestrianClearance : !r.vehicleClearance)
     )
@@ -95,8 +159,12 @@ export function geographicGraph(
     )
       continue;
     for (let i = 1; i < r.nodes.length; i++) {
-      const a = r.nodes[i - 1]!,
-        b = r.nodes[i]!,
+      const identity = (n: number) =>
+        Math.abs(r.heights[n] ?? 0) > 1
+          ? `${r.nodes[n]}@${Math.round(r.heights[n]!)}`
+          : r.nodes[n]!;
+      const a = identity(i - 1),
+        b = identity(i),
         oneway =
           r.tags.oneway ?? (r.tags.junction === "roundabout" ? "yes" : "no");
       if (mode !== "traffic" || oneway !== "-1") add(a, b);
@@ -114,24 +182,28 @@ export function createGeographicDistrict(data: GeographicDataset): District {
     z,
   }));
   const roads: Road[] = data.roads
-    .filter((r) => !r.tunnel && r.tags.highway !== "steps")
+    .filter(
+      (r) =>
+        !r.tunnel &&
+        r.tags.highway !== "steps" &&
+        r.tags.area !== "yes" &&
+        r.vehicleClearance,
+    )
     .flatMap((r) =>
-      r.nodes
-        .slice(1)
-        .map((b, i) => ({
-          a: r.tags.oneway === "-1" ? b : r.nodes[i]!,
-          b: r.tags.oneway === "-1" ? r.nodes[i]! : b,
-          width: r.width,
-          name:
-            r.tags["name:en"] ??
-            r.tags.name ??
-            r.tags.highway ??
-            "Unnamed passage",
-          bridge: r.bridge,
-          oneWay: ["yes", "1", "true", "-1"].includes(r.tags.oneway ?? ""),
-          noTraffic: true,
-          corridor: r.id,
-        })),
+      r.nodes.slice(1).map((b, i) => ({
+        a: r.tags.oneway === "-1" ? b : r.nodes[i]!,
+        b: r.tags.oneway === "-1" ? r.nodes[i]! : b,
+        width: r.width,
+        name:
+          r.tags["name:en"] ??
+          r.tags.name ??
+          r.tags.highway ??
+          "Unnamed passage",
+        bridge: r.bridge,
+        oneWay: ["yes", "1", "true", "-1"].includes(r.tags.oneway ?? ""),
+        noTraffic: true,
+        corridor: r.id,
+      })),
     );
   const waterPolygons = data.waterUnion.map((p) =>
     p.map((r) => r.map(([x, z]) => ({ x, z }))),

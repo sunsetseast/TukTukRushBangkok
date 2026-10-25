@@ -1,0 +1,564 @@
+[
+  {
+    "id": "chatuchak",
+    "name": "Chatuchak Market",
+    "lon": 100.5509,
+    "lat": 13.7993,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "victory",
+    "name": "Victory Monument",
+    "lon": 100.53829,
+    "lat": 13.76493,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://revolutionaryobjects.org/en/object/victory-monument",
+      "https://www.openstreetmap.org/way/158185227"
+    ]
+  },
+  {
+    "id": "khaosan",
+    "name": "Khao San Road",
+    "lon": 100.4976,
+    "lat": 13.7589,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "democracy",
+    "name": "Democracy Monument",
+    "lon": 100.50182,
+    "lat": 13.75673,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/democracy-monument"
+    ]
+  },
+  {
+    "id": "sanam",
+    "name": "Sanam Luang",
+    "lon": 100.49307,
+    "lat": 13.75516,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tatnews.org/2025/04/tat-announces-kawsholiday-thailand-at-sanam-luang/",
+      "https://www.openstreetmap.org/way/23630232"
+    ]
+  },
+  {
+    "id": "palace",
+    "name": "Grand Palace / Wat Phra Kaew",
+    "lon": 100.4913,
+    "lat": 13.75,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.royalgrandpalace.th/en/home"
+    ]
+  },
+  {
+    "id": "pho",
+    "name": "Wat Pho",
+    "lon": 100.4927,
+    "lat": 13.7466,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.watpho.com/en/"
+    ]
+  },
+  {
+    "id": "arun",
+    "name": "Wat Arun",
+    "lon": 100.4889,
+    "lat": 13.7437,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "golden",
+    "name": "Golden Mount",
+    "lon": 100.50661,
+    "lat": 13.75392,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/wat-saket-and-the-golden-mount"
+    ]
+  },
+  {
+    "id": "swing",
+    "name": "Giant Swing",
+    "lon": 100.50128,
+    "lat": 13.75181,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/wat-suthatthepwararam-ratchaworamahawihan",
+      "https://www.openstreetmap.org/way/178353988"
+    ]
+  },
+  {
+    "id": "flowers",
+    "name": "Pak Khlong Talat",
+    "lon": 100.4966,
+    "lat": 13.7414,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/pak-khlong-talat-night-market",
+      "https://webportal.bangkok.go.th/upload/user/00000086/Innovation/PAK%20KLONG%20MARKET.pdf"
+    ]
+  },
+  {
+    "id": "mbk",
+    "name": "MBK",
+    "lon": 100.529857,
+    "lat": 13.744512,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://mbk-center.co.th/en/"
+    ]
+  },
+  {
+    "id": "paragon",
+    "name": "Siam Paragon",
+    "lon": 100.534938,
+    "lat": 13.746801,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.siamparagon.co.th/about"
+    ]
+  },
+  {
+    "id": "central",
+    "name": "CentralWorld / Erawan",
+    "lon": 100.5397,
+    "lat": 13.7469,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.centralworld.co.th/en"
+    ]
+  },
+  {
+    "id": "gate",
+    "name": "Chinatown Gate",
+    "lon": 100.51286,
+    "lat": 13.73701,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/yaowarat-road"
+    ]
+  },
+  {
+    "id": "traimit",
+    "name": "Wat Traimit",
+    "lon": 100.51357,
+    "lat": 13.73768,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"
+    ]
+  },
+  {
+    "id": "hua",
+    "name": "Hua Lamphong",
+    "lon": 100.5167605,
+    "lat": 13.73922,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "food",
+    "name": "Banthat Thong",
+    "lon": 100.5233,
+    "lat": 13.7389,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "icon",
+    "name": "ICONSIAM",
+    "lon": 100.510325,
+    "lat": 13.726826,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.iconsiam.com/en/"
+    ]
+  },
+  {
+    "id": "park",
+    "name": "Lumphini Park",
+    "lon": 100.54165,
+    "lat": 13.73048,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://greener.bangkok.go.th/park/suan-lumpini/",
+      "https://webportal.bangkok.go.th/environmentbma/page/sub/6671/-/0/info/538966",
+      "https://www.openstreetmap.org/way/23483299"
+    ]
+  },
+  {
+    "id": "terminal",
+    "name": "Terminal 21 / Asok",
+    "lon": 100.560421,
+    "lat": 13.737924,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.terminal21.co.th/asok/contactus/th",
+      "https://www.openstreetmap.org/way/157656710"
+    ]
+  },
+  {
+    "id": "benjakitti",
+    "name": "Benjakitti Park",
+    "lon": 100.5589,
+    "lat": 13.7291,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "mahanakhon",
+    "name": "Mahanakhon",
+    "lon": 100.5312,
+    "lat": 13.7236,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "asiatique",
+    "name": "Asiatique",
+    "lon": 100.5037,
+    "lat": 13.7048,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "paknam",
+    "name": "Wat Paknam / Big Buddha",
+    "lon": 100.47,
+    "lat": 13.7215,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "baiyoke",
+    "name": "Baiyoke Tower II",
+    "lon": 100.5403,
+    "lat": 13.7541,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "state",
+    "name": "State Tower / Lebua",
+    "lon": 100.5174,
+    "lat": 13.7217,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "benchasiri",
+    "name": "Benchasiri Park",
+    "lon": 100.56793,
+    "lat": 13.7313966,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://greener.bangkok.go.th/park/utthayan-benjasiri/",
+      "https://maps.app.goo.gl/DgVVFNV4s8gZ5tUE9"
+    ]
+  },
+  {
+    "id": "chatuchak-park",
+    "name": "Chatuchak Park",
+    "lon": 100.5554198,
+    "lat": 13.807484,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://greener.bangkok.go.th/park/suan-chatuchak/",
+      "https://maps.app.goo.gl/XFLR9AXGsosj3Bgb6"
+    ]
+  },
+  {
+    "id": "emporium",
+    "name": "Emporium",
+    "lon": 100.5689016,
+    "lat": 13.7304938,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/29qga3VN6E2sfehZ8"
+    ]
+  },
+  {
+    "id": "emquartier",
+    "name": "EmQuartier",
+    "lon": 100.5694763,
+    "lat": 13.7312253,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/k4KwPVYhrrynJGhb9"
+    ]
+  },
+  {
+    "id": "emsphere",
+    "name": "EmSphere",
+    "lon": 100.5663462,
+    "lat": 13.7323522,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://emdistrict.com/contact-us/",
+      "https://maps.app.goo.gl/hy1cPD1Ffhzxs8oZA"
+    ]
+  },
+  {
+    "id": "dusit",
+    "name": "Dusit Thani Bangkok / Dusit Central Park",
+    "lon": 100.5372,
+    "lat": 13.7281,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.dusit.com/dusitthani-bangkok/"
+    ]
+  },
+  {
+    "id": "okura",
+    "name": "The Okura Prestige Bangkok / Park Ventures",
+    "lon": 100.5477,
+    "lat": 13.74269,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.okurabangkok.com/contact-location",
+      "https://www.openstreetmap.org/way/176332744"
+    ]
+  },
+  {
+    "id": "anantara",
+    "name": "Anantara Riverside Bangkok Resort",
+    "lon": 100.4919,
+    "lat": 13.7045,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.anantara.com/en/riverside-bangkok"
+    ]
+  },
+  {
+    "id": "one-bangkok",
+    "name": "One Bangkok / The Ritz-Carlton",
+    "lon": 100.548,
+    "lat": 13.7269,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.onebangkok.com/en/location/"
+    ]
+  },
+  {
+    "id": "oriental",
+    "name": "Mandarin Oriental Bangkok",
+    "lon": 100.5144,
+    "lat": 13.72393,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.mandarinoriental.com/en/bangkok/chao-phraya-river"
+    ]
+  },
+  {
+    "id": "peninsula",
+    "name": "The Peninsula Bangkok",
+    "lon": 100.510368,
+    "lat": 13.723302,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.peninsula.com/en/bangkok/5-star-luxury-hotel-riverside"
+    ]
+  },
+  {
+    "id": "hilton",
+    "name": "Millennium Hilton Bangkok",
+    "lon": 100.51096,
+    "lat": 13.728694,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.hilton.com/en/hotels/bkkhitw-millennium-hilton-bangkok/"
+    ]
+  },
+  {
+    "id": "shangri",
+    "name": "Shangri-La Bangkok",
+    "lon": 100.513781,
+    "lat": 13.720781,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.shangri-la.com/bangkok/shangrila/about/map-directions/"
+    ]
+  },
+  {
+    "id": "four-seasons",
+    "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+    "lon": 100.5101,
+    "lat": 13.7119,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.fourseasons.com/bangkok/getting-here/"
+    ]
+  },
+  {
+    "id": "capella",
+    "name": "Capella Bangkok",
+    "lon": 100.510896,
+    "lat": 13.71312,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://capellahotels.com/en/capella-bangkok/contact"
+    ]
+  },
+  {
+    "id": "rosewood",
+    "name": "Rosewood Bangkok",
+    "lon": 100.5486,
+    "lat": 13.7433,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "embassy",
+    "name": "Park Hyatt Bangkok / Central Embassy",
+    "lon": 100.5462,
+    "lat": 13.7441,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "erawan-hotel",
+    "name": "Grand Hyatt Erawan Bangkok",
+    "lon": 100.5408,
+    "lat": 13.7438,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "eastin",
+    "name": "Eastin Grand Hotel Sathorn",
+    "lon": 100.5215,
+    "lat": 13.7199,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "river-city",
+    "name": "River City Bangkok",
+    "lon": 100.513262,
+    "lat": 13.730349,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://rivercitybangkok.com/plan-your-visit/",
+      "https://www.openstreetmap.org/way/342182317"
+    ]
+  },
+  {
+    "id": "siam-center",
+    "name": "Siam Center / Siam Discovery",
+    "lon": 100.532798,
+    "lat": 13.746277,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://www.siamcenter.co.th/",
+      "https://www.openstreetmap.org/way/25701334"
+    ]
+  },
+  {
+    "id": "jim-thompson",
+    "name": "Jim Thompson House",
+    "lon": 100.52848,
+    "lat": 13.74931,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "existing geographicReferences",
+    "sources": [
+      "https://jimthompsonhouse.org/visitor-information/",
+      "https://artsandculture.google.com/story/the-jim-thompson-house-museum-the-james-h-w-thompson-foundation/pwWxmFjSajOYKg",
+      "https://www.openstreetmap.org/way/897909009"
+    ]
+  },
+  {
+    "id": "royal-orchid",
+    "name": "Royal Orchid Sheraton",
+    "lon": 100.514,
+    "lat": 13.7287,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "house-no-1",
+    "name": "House No. 1",
+    "lon": 100.5131,
+    "lat": 13.7262,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "assumption",
+    "name": "Assumption Cathedral",
+    "lon": 100.5141,
+    "lat": 13.7232,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  },
+  {
+    "id": "customs-house",
+    "name": "Historic Customs House",
+    "lon": 100.5136,
+    "lat": 13.7239,
+    "accuracy": "approximate-site-center; boundary audit only",
+    "basis": "site-location review; not surveyed building footprint",
+    "sources": []
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "pass": true,
+  "streamRequests": 18,
+  "evicted": 18,
+  "roadChunkCrossings": [
+    {
+      "way": "osm:way/1009325184",
+      "axis": 1,
+      "from": {
+        "x": 12036.719523363345,
+        "z": 12280.606298061073
+      },
+      "to": {
+        "x": 12030.522877215657,
+        "z": 12295.603284874453
+      },
+      "speed": 19.568651978194488
+    },
+    {
+      "way": "osm:way/1009341616",
+      "axis": 1,
+      "from": {
+        "x": 12013.943551095635,
+        "z": 12295.340942097713
+      },
+      "to": {
+        "x": 12020.393107896094,
+        "z": 12280.450970504791
+      },
+      "speed": 19.568651978194513
+    },
+    {
+      "way": "osm:way/1009341621",
+      "axis": 1,
+      "from": {
+        "x": 13652.826673431891,
+        "z": 8184.620267180148
+      },
+      "to": {
+        "x": 13646.561892816128,
+        "z": 8199.588919784732
+      },
+      "speed": 19.56865197819437
+    }
+  ],
+  "components": 667,
+  "largestComponents": [
+    340884,
+    249,
+    159,
+    140,
+    123,
+    112,
+    100,
+    96,
+    82,
+    79,
+    79,
+    75
+  ],
+  "note": "Disconnected source compounds, grade-separated identities and narrow routes remain separate. No fabricated graph links."
+}

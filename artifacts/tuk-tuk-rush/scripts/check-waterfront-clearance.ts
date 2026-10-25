@@ -210,6 +210,12 @@ for (const item of preservation.files) {
     assert.equal(createHash("sha256").update(bytes).digest("hex"),ledger.afterSha256,"Explicit GPS route-cost-only approval");
     continue;
   }
+  if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/waterGeometry.ts") {
+    const approval=JSON.parse(fs.readFileSync(new URL("docs/qa/expanded-geography/source-approval.json",root),"utf8")).files[item.path];
+    assert.equal(approval.beforeSha256,successor.files[item.path]??item.sha256,"Explicit PR45 source predecessor");
+    assert.equal(createHash("sha256").update(bytes).digest("hex"),approval.afterSha256,"PR45 polygon-union-only source version; behavior guards remain below");
+    continue;
+  }
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
     successor.files[item.path] ?? item.sha256,
