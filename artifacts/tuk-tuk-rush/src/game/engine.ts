@@ -1,7 +1,7 @@
 import { CareerStore, ACHIEVEMENTS } from './career';
 import {InspectionCamera,inspectionSubject} from './inspection';
 import { TurboBoost } from './boost';
-import type { GameModel, GameSnapshot, Mission } from './types';
+import type { GameModel, GameSnapshot, Mission, District } from './types';
 import { createBangkokWorld, regionAt, SHIFT_SECONDS } from './bangkok/world';
 import { readDiscovery, discover, type Discovery } from './bangkok/discovery';
 import { destinationAt } from './bangkok/destinationAccess';
@@ -39,9 +39,9 @@ export class GameEngine {
   private discoveryTime = 0;
   private arrivalId = '';
   private storage: Storage | undefined;
-  constructor(options: { world?: 'bangkok' | 'chinatown'; seed?:number; trafficSeed?:number; observeContact?: (contact: VehicleContact) => void } = {}) {
+  constructor(options: { district?: District; world?: 'bangkok' | 'chinatown'; seed?:number; trafficSeed?:number; observeContact?: (contact: VehicleContact) => void } = {}) {
     this.controller = new VehicleController(options.observeContact);
-    const district = options.world === 'chinatown' ? createDistrict() : createBangkokWorld();
+    const district = options.district ?? (options.world === 'chinatown' ? createDistrict() : createBangkokWorld());
     if(district.transit)this.railService=new RailService(district.transit);
     try { this.storage = window.localStorage; } catch { /* Browser storage is optional. */ }
     this.discovery = readDiscovery(this.storage);
@@ -100,12 +100,13 @@ export class GameEngine {
     this.arrivalId=''; this.inspection.close(); this.resetCamera();
     this.railService?.update(0);
     Object.assign(this.model.player, createVehicle(this.model.district));
+    this.model.district.driving?.reset(this.model.player);
     this.model.traffic = this.trafficSystem.create(this.model.player);
     this.fares=new FareDispatcher(this.model.district,this.missionSeed===undefined?undefined:seededRandom(this.missionSeed+this.sessions++));
     this.model.missionIndex = 0; this.model.mission = this.fares.next(this.model.player);
     Object.assign(this.model.snapshot, {
       careerNotice: undefined, careerXP: 0, careerAchievements: [], careerRecords: [], wallet: this.career.profile.wallet, newDistricts: 0,
-      session: (this.model.snapshot.session ?? 0) + 1, viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: this.model.district.worldId === 'bangkok' ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
+      session: (this.model.snapshot.session ?? 0) + 1, viewingLandmark: undefined, boostState:'ready',boostActive:0,boostRecharge:0, elapsed: 0, phase: 'playing', mode, stage: 'pickup', shiftTime: (this.model.district.worldId === 'bangkok' || this.model.district.navigation) ? SHIFT_SECONDS : 180, tripTime: this.model.mission.limit,
       score: 0, earnings: 0, deliveries: 0, boarding: 0, target: this.model.mission.pickup,
       passenger: this.model.mission.passenger, speed: 0,
     });

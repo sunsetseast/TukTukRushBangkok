@@ -1,0 +1,94 @@
+{
+  "pass": true,
+  "bridgeDistance": 421.23564298632874,
+  "deckHeight": 7.000000000000001,
+  "seams": [
+    {
+      "edge": 158,
+      "axis": "z",
+      "speed": 19.568651978194474
+    },
+    {
+      "edge": 168,
+      "axis": "z",
+      "speed": 19.56865197819424
+    },
+    {
+      "edge": 179,
+      "axis": "z",
+      "speed": 19.568651978194428
+    }
+  ],
+  "supports": 1382,
+  "initMs": 188.154628,
+  "allocatedTypedBytes": 27354316,
+  "query1000Ms": 87.12250999999992,
+  "queries": 2455,
+  "examinedSegments": 793298,
+  "metres": 345,
+  "simulatedSeconds": 50.733333333333334,
+  "collisionFrames": 0,
+  "visitedChunks": [
+    "3:0"
+  ],
+  "actualDrivenDelivery": true,
+  "teleports": false,
+  "productionRewards": true,
+  "legacyProgressPreserved": true,
+  "distantRouteNodes": 404,
+  "places": [
+    {
+      "id": "gate",
+      "coordinate": {
+        "lon": 100.5129798,
+        "lat": 13.7371754
+      },
+      "accessWay": "osm:way/24680968",
+      "accessNode": "geo:176789",
+      "radius": 8.177315676754393,
+      "sources": [
+        "https://www.openstreetmap.org/way/342812020"
+      ]
+    },
+    {
+      "id": "traimit",
+      "coordinate": {
+        "lat": 13.73768,
+        "lon": 100.51357
+      },
+      "accessWay": "osm:way/342810684",
+      "accessNode": "geo:203561",
+      "radius": 9.122361021837602,
+      "sources": [
+        "https://www.tourismthailand.org/Attraction/wat-traimit-withayaram"
+      ]
+    },
+    {
+      "id": "river-city",
+      "coordinate": {
+        "lat": 13.730349,
+        "lon": 100.513262
+      },
+      "accessWay": "osm:way/1153316932",
+      "accessNode": "geo:19333",
+      "radius": 25.850676723959353,
+      "sources": [
+        "https://rivercitybangkok.com/plan-your-visit/",
+        "https://www.openstreetmap.org/way/342182317"
+      ]
+    },
+    {
+      "id": "icon",
+      "coordinate": {
+        "lat": 13.726826,
+        "lon": 100.510325
+      },
+      "accessWay": "osm:way/1372243779",
+      "accessNode": "geo:71171",
+      "radius": 10.191225172903623,
+      "sources": [
+        "https://www.iconsiam.com/en/"
+      ]
+    }
+  ]
+}

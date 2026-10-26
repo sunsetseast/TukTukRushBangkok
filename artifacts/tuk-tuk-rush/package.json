@@ -70,7 +70,10 @@
     "test:real-geography": "node --import tsx scripts/check-real-geography.ts",
     "qa:real-geography": "node scripts/browser-real-geography.mjs",
     "test:geographic-streaming": "node --import tsx scripts/check-geographic-streaming.ts",
-    "qa:geographic-streaming": "node scripts/browser-geographic-streaming.mjs"
+    "qa:geographic-streaming": "node scripts/browser-geographic-streaming.mjs",
+    "geography:pack": "node --import tsx scripts/pack-geographic-runtime.ts",
+    "test:geographic-gameplay": "node --import tsx scripts/check-geographic-gameplay.ts",
+    "qa:geographic-gameplay": "node scripts/browser-geographic-gameplay.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

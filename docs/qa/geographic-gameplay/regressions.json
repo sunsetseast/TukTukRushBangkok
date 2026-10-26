@@ -1,0 +1,127 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "geographic source topology",
+      "pass": true,
+      "seconds": 5.257835827
+    },
+    {
+      "name": "geographic streaming",
+      "pass": true,
+      "seconds": 3.574949844999999
+    },
+    {
+      "name": "production gameplay",
+      "pass": true,
+      "seconds": 2.482473065
+    },
+    {
+      "name": "driven mission",
+      "pass": true,
+      "seconds": 0.4485617309999998
+    },
+    {
+      "name": "career and legacy saves",
+      "pass": true,
+      "seconds": 73.214448655
+    },
+    {
+      "name": "Chinatown geography",
+      "pass": true,
+      "seconds": 27.650270082999995
+    },
+    {
+      "name": "Bang Rak",
+      "pass": true,
+      "seconds": 35.933557176
+    },
+    {
+      "name": "service route preference",
+      "pass": true,
+      "seconds": 0.24415937400000984
+    },
+    {
+      "name": "Bang Rak seam",
+      "pass": true,
+      "seconds": 27.70610002100002
+    },
+    {
+      "name": "Bang Rak driven routes",
+      "pass": true,
+      "seconds": 28.99767470599999
+    },
+    {
+      "name": "Chinatown driven lanes",
+      "pass": true,
+      "seconds": 41.14366615800001
+    },
+    {
+      "name": "sign visibility",
+      "pass": true,
+      "seconds": 51.03666848600001
+    },
+    {
+      "name": "Chinatown visual assertions",
+      "pass": true,
+      "seconds": 36.67020899899997
+    },
+    {
+      "name": "Chinatown completion",
+      "pass": true,
+      "seconds": 28.716477086999976
+    },
+    {
+      "name": "Chinatown legal traffic",
+      "pass": true,
+      "seconds": 151.96559194000002
+    },
+    {
+      "name": "Chinatown traffic",
+      "pass": true,
+      "seconds": 45.98076186699996
+    },
+    {
+      "name": "waterfront clearance",
+      "pass": true,
+      "initialAttemptSeconds": 705.410159262,
+      "rerunEvidence": "waterfront-final.json",
+      "note": "Initial legacy source hash rejected the authorized adapter changes; full rerun passed after adding exact predecessor reconstruction, with original geometry/collision assertions intact."
+    },
+    {
+      "name": "waterfront drives",
+      "pass": true,
+      "seconds": 70.32097294600005
+    },
+    {
+      "name": "waterfront lanes",
+      "pass": true,
+      "seconds": 39.66136247400008
+    },
+    {
+      "name": "Bangkok gameplay",
+      "pass": true,
+      "seconds": 80.72994144700002
+    },
+    {
+      "name": "Bangkok driven routes",
+      "pass": true,
+      "seconds": 36.33009397300007
+    },
+    {
+      "name": "Bangkok map",
+      "pass": true,
+      "seconds": 25.068827132000123
+    },
+    {
+      "name": "Bangkok architecture",
+      "pass": true,
+      "seconds": 47.521597070000134
+    },
+    {
+      "name": "historic fidelity",
+      "pass": true,
+      "seconds": 33.478174536000004
+    }
+  ]
+}

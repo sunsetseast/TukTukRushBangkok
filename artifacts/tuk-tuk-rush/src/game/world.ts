@@ -213,6 +213,7 @@ export function createDistrict(): District {
 }
 
 export function nearestRoad(district: District, p: Point) {
+  if(district.navigation) return district.navigation.nearest(p);
   let result = { point: { x: 0, z: 0 }, heading: 0, distance: Infinity };
   const nodes = new Map(district.nodes.map(n => [n.id, n]));
   for (const road of district.roads) {

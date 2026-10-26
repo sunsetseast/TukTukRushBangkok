@@ -96,8 +96,7 @@
         13.7285677
       ],
       "lines": [
-        "silom",
-        "blue"
+        "silom"
       ],
       "physicalLevel": "elevated",
       "thaiName": "ศาลาแดง"
@@ -293,9 +292,7 @@
         13.8040313
       ],
       "lines": [
-        "dark-red",
-        "light-red",
-        "conventional"
+        "dark-red"
       ],
       "physicalLevel": "elevated",
       "thaiName": "กรุงเทพอภิวัฒน์"
@@ -344,8 +341,37 @@
     },
     "conventional": {
       "playableTracks": 1002,
-      "outsideStations": 51
+      "outsideStations": 48
     }
   },
-  "saphanTaksinSeparateElevatedRiverCrossing": true
+  "saphanTaksinSeparateElevatedRiverCrossing": true,
+  "stationLineIdentityAssertions": 20,
+  "sourcePedestrianTransfers": [
+    {
+      "from": "osm:node/443815144",
+      "kind": "pedestrian",
+      "sharedMembers": [
+        "osm:node/1700612706",
+        "osm:node/1700612708",
+        "osm:node/5570775822"
+      ],
+      "sourceAreas": [
+        "osm:relation/12546251",
+        "osm:relation/2110151"
+      ],
+      "to": "osm:node/7947551369"
+    },
+    {
+      "from": "osm:node/12803589960",
+      "kind": "pedestrian",
+      "sharedMembers": [
+        "osm:node/1699182422"
+      ],
+      "sourceAreas": [
+        "osm:relation/2110105",
+        "osm:relation/2110229"
+      ],
+      "to": "osm:node/451697335"
+    }
+  ]
 }
