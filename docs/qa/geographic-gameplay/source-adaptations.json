@@ -1,0 +1,53 @@
+{
+  "version": "geographic-production-adapter-v1",
+  "baseCommit": "2d294b32f73a53afffcdb9160ee2e2a4b801c1c5",
+  "authorization": "PR47 user directive to unify production driving/fare/navigation with geographic world adapters. Exact legacy fallback bytes must remain reconstructable.",
+  "files": {
+    "artifacts/tuk-tuk-rush/src/game/missions.ts": {
+      "beforeSha256": "88a94336fa020f6b539ec7bfb18a51e19d8acfa6a61ac243868088dde348a2d6",
+      "afterSha256": "5ef9451b6504ae03182bab5e401eb62650716434e95e797f81453483d0e81b7b",
+      "adaptations": [
+        {
+          "before": "    a[0] = (Math.random() * 4294967296) >>> 0;\n} return seededRandom(a[0]!); }\nexport function passengerStops(d: District): RoadNode[] {\n    if (d.worldId !== 'bangkok')\n        return createMissions(d).flatMap(m => [m.pickup, m.destination]).filter((n, i, all) => all.findIndex(q => q.id === n.id) === i);\n    const stops: RoadNode[] = [];\n",
+          "after": "    a[0] = (Math.random() * 4294967296) >>> 0;\n} return seededRandom(a[0]!); }\nexport function passengerStops(d: District): RoadNode[] {\n    if (d.navigation) return d.navigation.stops;\n    if (d.worldId !== 'bangkok')\n        return createMissions(d).flatMap(m => [m.pickup, m.destination]).filter((n, i, all) => all.findIndex(q => q.id === n.id) === i);\n    const stops: RoadNode[] = [];\n"
+        },
+        {
+          "before": "        this.nodes = new Map(d.nodes.map(n => [n.id, n]));\n        this.stops = passengerStops(d);\n        this.pickups = [...this.stops];\n        if (d.worldId === 'bangkok') {\n            const degree = new Map<string, number>();\n            for (const r of d.roads)\n",
+          "after": "        this.nodes = new Map(d.nodes.map(n => [n.id, n]));\n        this.stops = passengerStops(d);\n        this.pickups = [...this.stops];\n        if (d.navigation) { if(this.stops.length<2) throw Error('Not enough geographic stops'); return; }\n        if (d.worldId === 'bangkok') {\n            const degree = new Map<string, number>();\n            for (const r of d.roads)\n"
+        },
+        {
+          "before": "        return this.distances(starts);\n    }\n    next(position: Point): Mission {\n        const from = this.fromPosition(position), near = this.pickups.filter(s => Number.isFinite(from.get(s.id))).sort((a, b) => from.get(a.id)! - from.get(b.id)!);\n        if (!near.length)\n            throw Error('No reachable passenger pickup');\n        const closest = from.get(near[0]!.id)!, choices = near.filter(s => from.get(s.id)! <= closest + (this.jobs < 3 ? 220 : 450)).slice(0, 4);\n        // Random local shortlist; every pickup has a known legal route from the vehicle.\n        const pickup = choices[Math.floor(this.random() * choices.length)]!, costs = this.distances([[pickup.id, 0]]);\n        const candidates = this.stops.filter(s => s.id !== pickup.id && Number.isFinite(costs.get(s.id)) && !this.recent.includes([pickup.id, s.id].sort().join(\">\")));\n        if (!candidates.length)\n            throw Error('No fresh connected fare');\n        const roll = this.random(), range = this.jobs < 3 ? [150, 1400] : roll < .65 ? [180, 1000] : roll < .92 ? [800, 1900] : [1600, 3600];\n        const fitting = candidates.filter(s => costs.get(s.id)! >= range[0]! && costs.get(s.id)! <= range[1]!);\n        const pool = fitting.length ? fitting : candidates.sort((a, b) => costs.get(a.id)! - costs.get(b.id)!).slice(0, 3);\n",
+          "after": "        return this.distances(starts);\n    }\n    next(position: Point): Mission {\n        const from = this.d.navigation ? this.d.navigation.distances(position,this.pickups) : this.fromPosition(position), near = this.pickups.filter(s => Number.isFinite(from.get(s.id))).sort((a, b) => from.get(a.id)! - from.get(b.id)!);\n        if (!near.length)\n            throw Error('No reachable passenger pickup');\n        const closest = from.get(near[0]!.id)!, choices = near.filter(s => from.get(s.id)! <= closest + (this.jobs < 3 ? 220 : 450)).slice(0, 4);\n        // Random local shortlist; every pickup has a known legal route from the vehicle.\n        const pickup = choices[Math.floor(this.random() * choices.length)]!, costs = this.d.navigation ? this.d.navigation.distances(pickup,this.stops) : this.distances([[pickup.id, 0]]);\n        const candidates = this.stops.filter(s => s.id !== pickup.id && Number.isFinite(costs.get(s.id)) && !this.recent.includes([pickup.id, s.id].sort().join(\">\")));\n        if (!candidates.length && this.d.navigation) {\n            this.recent = [];\n            candidates.push(...this.stops.filter(s => s.id !== pickup.id && Number.isFinite(costs.get(s.id))));\n            if(!candidates.length) throw Error('No connected fare');\n        }\n        if(!candidates.length) throw Error('No fresh connected fare');\n        const roll = this.random(), range = this.jobs < 3 ? [150, 1400] : roll < .65 ? [180, 1000] : roll < .92 ? [800, 1900] : [1600, 3600];\n        const fitting = candidates.filter(s => costs.get(s.id)! >= range[0]! && costs.get(s.id)! <= range[1]!);\n        const pool = fitting.length ? fitting : candidates.sort((a, b) => costs.get(a.id)! - costs.get(b.id)!).slice(0, 3);\n"
+        }
+      ]
+    },
+    "artifacts/tuk-tuk-rush/src/game/vehicle.ts": {
+      "beforeSha256": "169c17c422ce6ed802e4c72efde4fe1925bb6f1eaadc8d0dd11686d4b30da994",
+      "afterSha256": "8e596f1ceaf071343151841ccc5f7cbe64f20aadcd936f010deac73c1cc2730f",
+      "adaptations": [
+        {
+          "before": "        this.observeContact?.({kind:'traffic',x:p.x,z:p.z,heading:p.heading,speed,trafficId:car.id,normal:{x:nx,z:nz},penetration:safe-distance});\n      }\n    }\n    if (blockedByRiver(district, p)) { this.observeContact?.({kind:'water',x:p.x,z:p.z,heading:p.heading,speed});p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }\n    const bounds = district.bounds ?? { minX: -342, maxX: 342, minZ: -342, maxZ: 342 };\n    if (p.x < bounds.minX || p.x > bounds.maxX || p.z < bounds.minZ || p.z > bounds.maxZ) {\n      this.observeContact?.({kind:'boundary',x:p.x,z:p.z,heading:p.heading,speed});\n",
+          "after": "        this.observeContact?.({kind:'traffic',x:p.x,z:p.z,heading:p.heading,speed,trafficId:car.id,normal:{x:nx,z:nz},penetration:safe-distance});\n      }\n    }\n    if (district.driving ? district.driving.blocked(p,{x:oldX,z:oldZ}) : blockedByRiver(district, p)) { this.observeContact?.({kind:'water',x:p.x,z:p.z,heading:p.heading,speed});p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }\n    const bounds = district.bounds ?? { minX: -342, maxX: 342, minZ: -342, maxZ: 342 };\n    if (p.x < bounds.minX || p.x > bounds.maxX || p.z < bounds.minZ || p.z > bounds.maxZ) {\n      this.observeContact?.({kind:'boundary',x:p.x,z:p.z,heading:p.heading,speed});\n"
+        },
+        {
+          "before": "    if (traffic.some(t => Math.hypot(t.x - p.x, t.z - p.z) < 5)) {\n      p.x += Math.cos(p.heading) * 3; p.z -= Math.sin(p.heading) * 3;\n    }\n    p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;\n    this.vx = 0; this.vz = 0;\n  }\n",
+          "after": "    if (traffic.some(t => Math.hypot(t.x - p.x, t.z - p.z) < 5)) {\n      p.x += Math.cos(p.heading) * 3; p.z -= Math.sin(p.heading) * 3;\n    }\n    district.driving?.reset(p);\n    p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;\n    this.vx = 0; this.vz = 0;\n  }\n"
+        },
+        {
+          "before": "   * boundary also protects a resumed/imported session whose old pose is water\n   * after an approved geography migration, without touching its progress. */\n  reconcileGeography(p:Vehicle,district:District){\n    if(!blockedByRiver(district,p))return false;\n    const nodes=new Map(district.nodes.map(n=>[n.id,n]));\n    const candidates=district.roads.flatMap(r=>{\n",
+          "after": "   * boundary also protects a resumed/imported session whose old pose is water\n   * after an approved geography migration, without touching its progress. */\n  reconcileGeography(p:Vehicle,district:District){\n    if(district.driving){ if(!district.driving.blocked(p,p))return false; this.recover(p,district);district.driving.reset(p);return true; }\n    if(!blockedByRiver(district,p))return false;\n    const nodes=new Map(district.nodes.map(n=>[n.id,n]));\n    const candidates=district.roads.flatMap(r=>{\n"
+        }
+      ]
+    },
+    "artifacts/tuk-tuk-rush/src/game/navigation.ts": {
+      "beforeSha256": "ba2da63643071c3e8c59c134a1bec505206b8d6f67a4f5054d74ec125d9062c7",
+      "afterSha256": "fccb69c6610adfc2a0ce66a03bd7ed87db35c753b8562608a37ac3bfe4527700",
+      "adaptations": [
+        {
+          "before": "  p: Point,\n  target: RoadNode,\n): Point[] {\n  if (!d.roads.length) return [];\n  const { nodes, costs, next } = fieldFor(d, target);\n  let road = d.roads[0]!,\n",
+          "after": "  p: Point,\n  target: RoadNode,\n): Point[] {\n  if (d.navigation) return d.navigation.path(p,target);\n  if (!d.roads.length) return [];\n  const { nodes, costs, next } = fieldFor(d, target);\n  let road = d.roads[0]!,\n"
+        }
+      ]
+    }
+  }
+}

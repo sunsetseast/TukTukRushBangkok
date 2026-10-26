@@ -64,6 +64,7 @@ export function navigationPath(
   p: Point,
   target: RoadNode,
 ): Point[] {
+  if (d.navigation) return d.navigation.path(p,target);
   if (!d.roads.length) return [];
   const { nodes, costs, next } = fieldFor(d, target);
   let road = d.roads[0]!,

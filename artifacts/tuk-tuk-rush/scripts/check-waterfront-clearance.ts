@@ -1,3 +1,4 @@
+import {assertGeographicGameplaySource} from "./geographic-source-contract";
 import { integerBoolean } from "./integer-road-clipping";
 import completionMigration from "../src/game/bangkok/bangRakCompletionMigration.v1.json";
 import { BANG_RAK_DESTINATIONS } from "../src/game/bangkok/bangRakDestinations";
@@ -207,7 +208,7 @@ for (const item of preservation.files) {
     const prior=gunzipSync(fs.readFileSync(new URL("docs/qa/bang-rak-geography/validation/pr42-navigation.ts.gz",root)));
     assert.equal(createHash("sha256").update(prior).digest("hex"),successor.files[item.path]??item.sha256,"Exact original navigation fixture");
     assert.equal(createHash("sha256").update(prior).digest("hex"),ledger.beforeSha256);
-    assert.equal(createHash("sha256").update(bytes).digest("hex"),ledger.afterSha256,"Explicit GPS route-cost-only approval");
+    assert(assertGeographicGameplaySource(item.path,bytes,ledger.afterSha256),"Explicit geographic navigation successor");
     continue;
   }
   if(item.path === "artifacts/tuk-tuk-rush/src/game/bangkok/waterGeometry.ts") {
@@ -216,6 +217,7 @@ for (const item of preservation.files) {
     assert.equal(createHash("sha256").update(bytes).digest("hex"),approval.afterSha256,"PR45 polygon-union-only source version; behavior guards remain below");
     continue;
   }
+  if(assertGeographicGameplaySource(item.path,bytes,successor.files[item.path]??item.sha256))continue;
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
     successor.files[item.path] ?? item.sha256,

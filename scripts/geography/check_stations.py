@@ -13,6 +13,12 @@ for ident,name,code,level in required:
  if code:assert s['tags']['ref']==code
  assert s['coordinate']==src[s['id']]['coordinate'];assert s['tags']==src[s['id']]['tags'];assert s['lines']
  checks.append({'id':s['id'],'name':name,'code':s['tags'].get('ref'),'coordinate':s['coordinate'],'lines':s['lines'],'physicalLevel':level,'thaiName':s['tags'].get('name:th',s['tags'].get('name'))})
+expected_lines={'N8':['sukhumvit'],'N3':['sukhumvit'],'N2':['sukhumvit'],'CEN':['sukhumvit','silom'],'E4':['sukhumvit'],'E5':['sukhumvit'],'S2':['silom'],'S3':['silom'],'S4':['silom'],'S5':['silom'],'S6':['silom'],'S7':['silom'],'G2':['gold'],'G3':['gold'],'BL28':['blue'],'BL29':['blue'],'BL26':['blue'],'BL22':['blue'],'A8':['airport'],'A6':['airport']}
+for check in checks:
+ if check['code'] in expected_lines:assert check['lines']==expected_lines[check['code']],check
+sala=by_id['osm:node/451697335'];silom=by_id['osm:node/12803589960']
+assert sala['id']!=silom['id'] and sala['point']!=silom['point'] and silom['height']<0
+assert any({t['from'],t['to']}=={sala['id'],silom['id']} and t['kind']=='pedestrian' and t['sharedMembers'] for t in r['rail']['transfers'])
 # A full source route crossing the river at Saphan Taksin remains elevated, distinct from road decks.
 p=by_id['osm:node/257067085']['point']
 from shapely.geometry import LineString,Point,Polygon
@@ -24,5 +30,5 @@ assert any(LineString(w['points']).intersects(q) for w in near for q in water)
 counts={l['id']:{'playableTracks':sum(w['playable'] and l['id'] in w['lines'] for w in r['rail']['tracks']),'outsideStations':sum(not s['playable'] and l['id'] in s['lines'] for s in r['rail']['stations'])} for l in r['rail']['catalog']['lines']}
 assert counts['pink']['playableTracks']==0 and counts['pink']['outsideStations']>=30
 assert any('pink' in route['lines'] and route['tags'].get('ref')=='IMPACT Link' for route in r['rail']['routes'])
-report={'pass':True,'positionBasis':'Pinned source WGS84, independent PROJ projection checks; operator maps verify station identities/codes and operating scope, not survey accuracy','requiredStations':checks,'railCoverage':counts,'saphanTaksinSeparateElevatedRiverCrossing':True}
+report={'pass':True,'positionBasis':'Pinned source WGS84, independent PROJ projection checks; operator maps verify station identities/codes and operating scope, not survey accuracy','requiredStations':checks,'railCoverage':counts,'saphanTaksinSeparateElevatedRiverCrossing':True,'stationLineIdentityAssertions':len(expected_lines),'sourcePedestrianTransfers':r['rail']['transfers']}
 (ROOT/'docs/qa/expanded-geography/station-checks.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print('PASS',len(checks),'required stations; source-backed rail river crossing and outside Pink branch')

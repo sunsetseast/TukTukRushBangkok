@@ -47,6 +47,7 @@ catch {
     a[0] = (Math.random() * 4294967296) >>> 0;
 } return seededRandom(a[0]!); }
 export function passengerStops(d: District): RoadNode[] {
+    if (d.navigation) return d.navigation.stops;
     if (d.worldId !== 'bangkok')
         return createMissions(d).flatMap(m => [m.pickup, m.destination]).filter((n, i, all) => all.findIndex(q => q.id === n.id) === i);
     const stops: RoadNode[] = [];
@@ -87,6 +88,7 @@ export class FareDispatcher {
         this.nodes = new Map(d.nodes.map(n => [n.id, n]));
         this.stops = passengerStops(d);
         this.pickups = [...this.stops];
+        if (d.navigation) { if(this.stops.length<2) throw Error('Not enough geographic stops'); return; }
         if (d.worldId === 'bangkok') {
             const degree = new Map<string, number>();
             for (const r of d.roads)
@@ -151,15 +153,19 @@ export class FareDispatcher {
         return this.distances(starts);
     }
     next(position: Point): Mission {
-        const from = this.fromPosition(position), near = this.pickups.filter(s => Number.isFinite(from.get(s.id))).sort((a, b) => from.get(a.id)! - from.get(b.id)!);
+        const from = this.d.navigation ? this.d.navigation.distances(position,this.pickups) : this.fromPosition(position), near = this.pickups.filter(s => Number.isFinite(from.get(s.id))).sort((a, b) => from.get(a.id)! - from.get(b.id)!);
         if (!near.length)
             throw Error('No reachable passenger pickup');
         const closest = from.get(near[0]!.id)!, choices = near.filter(s => from.get(s.id)! <= closest + (this.jobs < 3 ? 220 : 450)).slice(0, 4);
         // Random local shortlist; every pickup has a known legal route from the vehicle.
-        const pickup = choices[Math.floor(this.random() * choices.length)]!, costs = this.distances([[pickup.id, 0]]);
+        const pickup = choices[Math.floor(this.random() * choices.length)]!, costs = this.d.navigation ? this.d.navigation.distances(pickup,this.stops) : this.distances([[pickup.id, 0]]);
         const candidates = this.stops.filter(s => s.id !== pickup.id && Number.isFinite(costs.get(s.id)) && !this.recent.includes([pickup.id, s.id].sort().join(">")));
-        if (!candidates.length)
-            throw Error('No fresh connected fare');
+        if (!candidates.length && this.d.navigation) {
+            this.recent = [];
+            candidates.push(...this.stops.filter(s => s.id !== pickup.id && Number.isFinite(costs.get(s.id))));
+            if(!candidates.length) throw Error('No connected fare');
+        }
+        if(!candidates.length) throw Error('No fresh connected fare');
         const roll = this.random(), range = this.jobs < 3 ? [150, 1400] : roll < .65 ? [180, 1000] : roll < .92 ? [800, 1900] : [1600, 3600];
         const fitting = candidates.filter(s => costs.get(s.id)! >= range[0]! && costs.get(s.id)! <= range[1]!);
         const pool = fitting.length ? fitting : candidates.sort((a, b) => costs.get(a.id)! - costs.get(b.id)!).slice(0, 3);

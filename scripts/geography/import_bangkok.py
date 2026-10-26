@@ -163,8 +163,11 @@ def build_rail(snap):
         for m in members:
             target=way_lines if m['id'].startswith('osm:way/') and m['id'] in track_ids else station_lines
             target.setdefault(m['id'],set()).update(lines or ['conventional'])
+    # Read area membership from direct route relations, never previously enriched
+    # areas. Shared entrances must not propagate lines recursively between stations.
+    direct_station_lines={k:set(v) for k,v in station_lines.items()}
     for area in interchanges:
-        members=area['members'];lines=set().union(*(station_lines.get(m['id'],set())|way_lines.get(m['id'],set()) for m in members))
+        members=area['members'];lines=set().union(*(direct_station_lines.get(m['id'],set())|way_lines.get(m['id'],set()) for m in members))
         for member in members:station_lines.setdefault(member['id'],set()).update(lines)
     priority={l['id']:i for i,l in enumerate(catalog['lines'])}
     result=[]
@@ -191,6 +194,9 @@ def build_rail(snap):
         if primary in line_trees:
             index,selected=line_trees[primary];i=selected[int(index.nearest(projected))];nearby=[(projected.distance(track_geometries[i]),result[i])]
         nearest=nearby[0][1] if nearby else None
+        # A stop-area transfer does not confer the other operator's route on a station.
+        # Explicit source station code wins over inherited area membership.
+        if primary and ref:lines=[primary] if ref!='CEN' else lines
         if not lines and nearby and nearby[0][0]<220:lines=nearby[0][1]['lines']
         # OSM station=subway denotes mode, not burial: BTS also uses it.
         level='underground' if t.get('location')=='underground' or t.get('railway')=='subway_entrance' else nearest['level'] if nearest else 'at-grade'
@@ -198,9 +204,21 @@ def build_rail(snap):
         if nearest:
             pts=nearest['points'];q=xy(*p);i=min(range(1,len(pts)),key=lambda i:g.LineString([pts[i-1],pts[i]]).distance(g.Point(q)))
             yaw=math.atan2(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1])
-        stations.append({**s,'point':xy(*p),'lines':lines,'level':level,'height':nearest['height'] if nearest and level!='underground' else 0,'yaw':yaw,'status':status(t),'playable':EXTENT.covers(point)})
-    # Keep source stop areas; no proximity-based assertion that a paid interchange exists.
-    return {'catalog':catalog,'tracks':result,'stations':stations,'routes':routes,'interchanges':interchanges,'platforms':snap.get('platforms',[])}
+        stations.append({**s,'point':xy(*p),'lines':lines,'level':level,'height':-8 if level=='underground' else nearest['height'] if nearest else 0,'yaw':yaw,'status':status(t),'playable':EXTENT.covers(point)})
+    # Link separate station identities only where source stop areas share a member
+    # (entrance/foot connection). This states pedestrian connectivity, not paid fare integration.
+    transfers=[]
+    station_ids={s['id'] for s in stations if s['tags'].get('railway') in {'station','halt'}}
+    for i,a in enumerate(interchanges):
+        am={m['id'] for m in a['members']}
+        for b in interchanges[i+1:]:
+            bm={m['id'] for m in b['members']};shared=sorted(am & bm)
+            if not shared:continue
+            for sa in sorted(am & station_ids):
+                for sb in sorted(bm & station_ids):
+                    if sa!=sb:transfers.append({'from':sa,'to':sb,'kind':'pedestrian','sourceAreas':[a['id'],b['id']],'sharedMembers':shared})
+    # Keep source stop areas, original route geometry and ordered membership.
+    return {'catalog':catalog,'tracks':result,'stations':stations,'routes':routes,'interchanges':interchanges,'transfers':transfers,'platforms':snap.get('platforms',[])}
 
 def build():
     snap=readzip(DATA/'source.v1.json.gz')
@@ -249,6 +267,18 @@ def build():
         t=r['tags'];line=g.LineString([nodes[n] for n in r['nodes']]);raised=r['bridge'] or layer(t)>0
         r['heights']=[round(min(7*max(1,layer(t)),dist.get(n,math.inf)*.06),3) if raised else -6 if r['tunnel'] else 0 for n in r['nodes']]
         r['heightBasis']='source-topology-ramp-estimate' if raised else 'datum-estimate'
+        # A two-node bridge has ground endpoints but still needs an interior deck.
+        # Densify its existing source segment only; no new topological connections.
+        if raised:
+            r['profiles']=[]
+            for i,(a,b) in enumerate(zip(r['nodes'],r['nodes'][1:])):
+                length=math.dist(nodes[a],nodes[b]);steps=max(1,math.ceil(length/8));profile=[]
+                for k in range(steps+1):
+                    f=k/steps;h=r['heights'][i]*(1-f)+r['heights'][i+1]*f
+                    if r['heights'][i]==0 and r['heights'][i+1]==0:
+                        h=min(7*max(1,layer(t)),min(f,1-f)*length*.06)
+                    profile.append([round(nodes[a][0]*(1-f)+nodes[b][0]*f,3),round(nodes[a][1]*(1-f)+nodes[b][1]*f,3),round(h,3)])
+                r['profiles'].append(profile)
         if r['tunnel']:continue
         if raised:elevated.append((r,line));continue
         if t.get('area')=='yes' and line.is_closed and len(r['nodes'])>=4:
@@ -280,13 +310,14 @@ def build():
         chunk['decks']=[]
         for r,line in elevated:
             if not line.intersects(box):continue
-            for i,(a,b) in enumerate(zip(r['nodes'],r['nodes'][1:])):
-                seg=g.LineString([nodes[a],nodes[b]]);part=seg.intersection(box).intersection(extent)
+            for profile in r['profiles']:
+              for a,b in zip(profile,profile[1:]):
+                seg=g.LineString([a[:2],b[:2]]);part=seg.intersection(box).intersection(extent)
                 if part.geom_type!='LineString' or part.length<.001:continue
                 points=[]
                 for p in part.coords:
                     f=seg.project(g.Point(p))/max(seg.length,.001)
-                    points.append([round(p[0]-x,3),round(r['heights'][i]*(1-f)+r['heights'][i+1]*f,3),round(p[1]-z,3)])
+                    points.append([round(p[0]-x,3),round(a[2]*(1-f)+b[2]*f,3),round(p[1]-z,3)])
                 chunk['decks'].append({'id':r['id'],'points':points,'width':r['width']})
         chunk['rail']=[]
         for i in sorted(rail_tree.query(box)):

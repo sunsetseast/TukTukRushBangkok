@@ -123,6 +123,7 @@ export function ArcadeTitle({
             </button>
           </div>
           <nav className="tt-arcade-secondary" aria-label="Game options">
+            <a href="?world=geographic" data-testid="button-geographic-preview">Real-scale Bangkok · gameplay preview <ArrowRight size={14} /></a>
             <button
               data-testid="button-title-settings"
               onClick={() => setShowSettings(true)}

@@ -141,6 +141,7 @@ export class TrafficSystem {
       main = roads.filter(
         (r) => r.corridor === "yaowarat" || r.name === "Yaowarat Road",
       );
+    if(!roads.length) return [];
     const colors = ["#e872a8", "#4da995", "#e6bc54", "#db8f78", "#b9c9cf"];
     const spawned: TrafficCar[] = [];
     return Array.from(

@@ -120,7 +120,7 @@ export class VehicleController {
         this.observeContact?.({kind:'traffic',x:p.x,z:p.z,heading:p.heading,speed,trafficId:car.id,normal:{x:nx,z:nz},penetration:safe-distance});
       }
     }
-    if (blockedByRiver(district, p)) { this.observeContact?.({kind:'water',x:p.x,z:p.z,heading:p.heading,speed});p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }
+    if (district.driving ? district.driving.blocked(p,{x:oldX,z:oldZ}) : blockedByRiver(district, p)) { this.observeContact?.({kind:'water',x:p.x,z:p.z,heading:p.heading,speed});p.x = oldX; p.z = oldZ; this.vx = 0; this.vz = 0; collided = true; }
     const bounds = district.bounds ?? { minX: -342, maxX: 342, minZ: -342, maxZ: 342 };
     if (p.x < bounds.minX || p.x > bounds.maxX || p.z < bounds.minZ || p.z > bounds.maxZ) {
       this.observeContact?.({kind:'boundary',x:p.x,z:p.z,heading:p.heading,speed});
@@ -139,6 +139,7 @@ export class VehicleController {
     if (traffic.some(t => Math.hypot(t.x - p.x, t.z - p.z) < 5)) {
       p.x += Math.cos(p.heading) * 3; p.z -= Math.sin(p.heading) * 3;
     }
+    district.driving?.reset(p);
     p.speed = 0; p.steer = 0; p.lean = 0; p.collision = 0;
     this.vx = 0; this.vz = 0;
   }
@@ -146,6 +147,7 @@ export class VehicleController {
    * boundary also protects a resumed/imported session whose old pose is water
    * after an approved geography migration, without touching its progress. */
   reconcileGeography(p:Vehicle,district:District){
+    if(district.driving){ if(!district.driving.blocked(p,p))return false; this.recover(p,district);district.driving.reset(p);return true; }
     if(!blockedByRiver(district,p))return false;
     const nodes=new Map(district.nodes.map(n=>[n.id,n]));
     const candidates=district.roads.flatMap(r=>{

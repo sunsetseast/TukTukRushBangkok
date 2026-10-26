@@ -9,6 +9,7 @@ export type GeographicWay = {
   tags: Record<string, string>;
   coverage: "A" | "B" | "C";
   heights: number[];
+  profiles?: [number,number,number][][];
   heightBasis: string;
   width: number;
   widthBasis: "tagged" | "osm-estimate" | "class-estimate";
@@ -146,7 +147,7 @@ export function geographicGraph(
   };
   for (const r of data.roads) {
     if (
-      (mode !== "pedestrian" && r.tags.highway === "steps") ||
+      (mode !== "pedestrian" && (r.tunnel || r.tags.area === 'yes' || r.tags.highway === "steps")) ||
       (mode === "pedestrian" ? !r.pedestrianClearance : !r.vehicleClearance)
     )
       continue;

@@ -1,0 +1,280 @@
+{
+  "physicalIPhone": false,
+  "environment": "Headless Chromium / ANGLE SwiftShader, Linux; browser emulation is not physical iPhone/Safari certification",
+  "errors": [],
+  "checks": {
+    "productionLandmarkLook": true,
+    "productionKeyboardDriving": true,
+    "streamingPreservesWalletAndMission": true,
+    "repeatedEvictionBounded": true,
+    "landscapeMap": true,
+    "mobileBoost": true,
+    "mobileControls": true,
+    "defaultLegacyStartup": true
+  },
+  "browserVersion": "141.0.7390.37",
+  "firstResidentFrameMs": 2413.820497,
+  "initial": {
+    "position": {
+      "x": 3580.762939453125,
+      "z": 841.8140258789062,
+      "heading": -1.9022141986823093
+    },
+    "coordinate": {
+      "lon": 100.51290440367129,
+      "lat": 13.737046297609789
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 395.8000000002794,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 54,
+    "triangles": 70302,
+    "geometries": 54,
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 0,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "title",
+      "mode": "shift",
+      "stage": "pickup",
+      "shiftTime": 180,
+      "tripTime": 173,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 0,
+      "target": {
+        "id": "geo:176789",
+        "x": 3580.762939453125,
+        "z": 841.8140258789062,
+        "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+      },
+      "passenger": "Dao · city visitor",
+      "distance": 61,
+      "bearing": 0,
+      "message": "Your Chinatown shift starts here",
+      "boarding": 0,
+      "quality": "medium",
+      "fps": 60
+    },
+    "landmarks": [
+      "3072:0",
+      "3072:1024",
+      "2048:0",
+      "4096:0",
+      "2048:1024",
+      "4096:1024",
+      "3072:-1024",
+      "2048:-1024",
+      "4096:-1024"
+    ]
+  },
+  "driving": {
+    "position": {
+      "x": 3569.1242931780616,
+      "z": 837.8090529429285,
+      "heading": -1.9022141986823093
+    },
+    "coordinate": {
+      "lon": 100.51279702049338,
+      "lat": 13.73708315842702
+    },
+    "height": 0,
+    "speed": 17.213304707899567,
+    "loadMs": 395.8000000002794,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 54,
+    "triangles": 70302,
+    "geometries": 77,
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 3.6069000000008336,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "playing",
+      "mode": "free",
+      "stage": "delivery",
+      "shiftTime": 1440,
+      "tripTime": 170.53439999999895,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 61.967896948438444,
+      "target": {
+        "id": "geo:19333",
+        "x": 3663.923095703125,
+        "z": 1606.053955078125,
+        "name": "River City Bangkok · Unnamed passage"
+      },
+      "passenger": "June · photographer",
+      "distance": 774.071729632922,
+      "bearing": 2.024990142460985,
+      "message": "Low quality enabled for smoother driving",
+      "boarding": 0,
+      "quality": "low",
+      "fps": 3,
+      "careerXP": 0,
+      "careerAchievements": [],
+      "careerRecords": [],
+      "wallet": 0,
+      "newDistricts": 0,
+      "session": 1,
+      "boostState": "ready",
+      "boostActive": 0,
+      "boostRecharge": 0
+    },
+    "landmarks": [
+      "3072:0",
+      "3072:1024",
+      "2048:0",
+      "4096:0",
+      "2048:1024",
+      "4096:1024",
+      "3072:-1024",
+      "2048:-1024",
+      "4096:-1024"
+    ]
+  },
+  "frames": {
+    "medianMs": 66.70000000000073,
+    "p95Ms": 150,
+    "samples": 60
+  },
+  "clearance": {
+    "position": {
+      "x": 4521.82755660033,
+      "z": 2813.4719195107327,
+      "heading": -1.2808129847728957
+    },
+    "coordinate": {
+      "lon": 100.52149091673975,
+      "lat": 13.719170997574514
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 395.8000000002794,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 54,
+    "triangles": 54062,
+    "geometries": 55,
+    "stream": {
+      "loaded": 45,
+      "disposed": 36,
+      "requests": 45,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "4096:2048",
+        "4096:3072",
+        "3072:2048",
+        "5120:2048",
+        "3072:3072",
+        "4096:1024",
+        "5120:3072",
+        "3072:1024",
+        "5120:1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 8.54590000000036,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "playing",
+      "mode": "free",
+      "stage": "delivery",
+      "shiftTime": 1440,
+      "tripTime": 165.59539999999848,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 0,
+      "target": {
+        "id": "geo:19333",
+        "x": 3663.923095703125,
+        "z": 1606.053955078125,
+        "name": "River City Bangkok · Unnamed passage"
+      },
+      "passenger": "June · photographer",
+      "distance": 1481.1678516839024,
+      "bearing": -1.2430227197870893,
+      "message": "Back on the road",
+      "boarding": 0,
+      "quality": "low",
+      "fps": 13,
+      "careerXP": 0,
+      "careerAchievements": [],
+      "careerRecords": [],
+      "wallet": 0,
+      "newDistricts": 0,
+      "session": 1,
+      "boostState": "ready",
+      "boostActive": 0,
+      "boostRecharge": 0
+    },
+    "landmarks": [
+      "4096:2048",
+      "4096:3072",
+      "3072:2048",
+      "5120:2048",
+      "3072:3072",
+      "4096:1024",
+      "5120:3072",
+      "3072:1024",
+      "5120:1024"
+    ]
+  },
+  "legacy": {
+    "graphics": {
+      "calls": 212,
+      "triangles": 347896,
+      "geometries": 198,
+      "textures": 11,
+      "frameMs": 24.800000000279397
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "environment": "Node 24.22.1, Linux container; single sample per variant, forced GC, desktop estimate only",
+  "baselineCommit": "2d294b32f73a53afffcdb9160ee2e2a4b801c1c5",
+  "baseline": {
+    "variant": "baseline",
+    "initMs": 2416.6554349999997,
+    "retainedBytes": 351214994,
+    "heapBytes": 341792576,
+    "arrayBufferBytes": 9422418,
+    "query10000Ms": 42.35963300000003,
+    "nodeVersion": "v24.22.1"
+  },
+  "revised": {
+    "variant": "packed",
+    "initMs": 379.480056,
+    "retainedBytes": 68991268,
+    "heapBytes": 30395232,
+    "arrayBufferBytes": 38596036,
+    "query10000Ms": 28.659272999999985,
+    "nodeVersion": "v24.22.1"
+  },
+  "initReductionPercent": 84.29730401347017,
+  "retainedReductionPercent": 80.35640015984056,
+  "packedRoadBufferBytes": 11723224,
+  "packedGameplayGzipBytes": 6239852,
+  "note": "Process memory sums heapUsed + arrayBuffers after GC; allocator retention varies. Browser-owned graph/index typed bytes are reported separately in gameplay-tests.json. Old references remain offline; full-city raw JSON is never fetched by the gameplay preview."
+}

@@ -22,16 +22,14 @@ export class GeographicSurface {
         r.tags.area === "yes"
       )
         continue;
-      for (let i = 1; i < r.nodes.length; i++) {
-        const a = data.nodes[r.nodes[i - 1]!]!,
-          b = data.nodes[r.nodes[i]!]!,
-          segment = {
-            a: { x: a[0], z: a[1] },
-            b: { x: b[0], z: b[1] },
-            ya: r.heights[i - 1] ?? 0,
-            yb: r.heights[i] ?? 0,
-            way: r,
-          };
+      const profiles=r.profiles??r.nodes.slice(1).map((id,i)=>[
+        [...data.nodes[r.nodes[i]!]!,r.heights[i]??0],
+        [...data.nodes[id]!,r.heights[i+1]??0],
+      ]);
+      for(const profile of profiles)for(let i=1;i<profile.length;i++){
+        const a=profile[i-1]!,b=profile[i]!,segment={
+          a:{x:a[0]!,z:a[1]!},b:{x:b[0]!,z:b[1]!},ya:a[2]!,yb:b[2]!,way:r,
+        };
         const margin = r.width / 2 + 3;
         for (
           let x = Math.floor((Math.min(a[0], b[0]) - margin) / 128);

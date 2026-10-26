@@ -11,7 +11,19 @@ export type DestinationAccess = {
   origin: Point; yaw: number; roadNodes: string[]; restricted: Obstacle[];
   arrivalRadius: number; adaptation: string; curbside?: boolean;
 };
-export type District = { waterPolygons?: Point[][][]; publicSpaces?: import('./bangkok/publicSpaces').PublicSpace[]; authoredSites?: import('./bangkok/authoredSites').AuthoredSite[]; destinations?: DestinationAccess[]; transit?: import('./bangkok/transit/network').RailNetwork; worldId?: 'bangkok'; spawn?: Point & { heading: number }; bounds?: { minX: number; maxX: number; minZ: number; maxZ: number }; river?: Point[]; riverPolygon?: Point[][]; riverStructures?: Point[][]; waterVersion?: string; riverWidth?: number; canals?: { points: Point[]; width: number }[]; regions?: Region[]; nodes: RoadNode[]; roads: Road[]; buildings: Obstacle[]; obstacles: Obstacle[]; landmarks: Landmark[]; roundabout?: Point & { radius: number; laneWidth: number } };
+/** World adapters expose topology/physics without duplicating the career or fare state machine. */
+export type WorldNavigation = {
+  stops: RoadNode[];
+  path(p: Point, target: RoadNode): Point[];
+  distances(p: Point, targets: RoadNode[]): Map<string, number>;
+  nearest(p: Point): { point: Point; heading: number; distance: number; name: string; thai?: string };
+};
+export type DrivingSurface = {
+  height: number;
+  blocked(p: Point, before: Point): boolean;
+  reset(p: Point): void;
+};
+export type District = { navigation?: WorldNavigation; driving?: DrivingSurface; waterPolygons?: Point[][][]; publicSpaces?: import('./bangkok/publicSpaces').PublicSpace[]; authoredSites?: import('./bangkok/authoredSites').AuthoredSite[]; destinations?: DestinationAccess[]; transit?: import('./bangkok/transit/network').RailNetwork; worldId?: 'bangkok'; spawn?: Point & { heading: number }; bounds?: { minX: number; maxX: number; minZ: number; maxZ: number }; river?: Point[]; riverPolygon?: Point[][]; riverStructures?: Point[][]; waterVersion?: string; riverWidth?: number; canals?: { points: Point[]; width: number }[]; regions?: Region[]; nodes: RoadNode[]; roads: Road[]; buildings: Obstacle[]; obstacles: Obstacle[]; landmarks: Landmark[]; roundabout?: Point & { radius: number; laneWidth: number } };
 export type Vehicle = Point & { heading: number; speed: number; steer: number; lean: number; wheelSpin: number; collision: number };
 export type TrafficCar = Point & { id: number; heading: number; speed: number; kind: 'taxi' | 'car' | 'motorcycle'; color: string; from: string; to: string; wait: number; nearMissCooldown: number };
 export type Input = { steer: number; gas: boolean; brake: boolean; boost?: boolean };

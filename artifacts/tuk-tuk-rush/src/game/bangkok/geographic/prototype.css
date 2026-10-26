@@ -4,7 +4,10 @@
   background: #adc1ba;
   touch-action: none;
   color: #fff;
-  font: 14px system-ui;
+  font:
+    14px "Rush Thai",
+    system-ui,
+    sans-serif;
 }
 .geo-root canvas {
   display: block;
@@ -95,5 +98,153 @@
   }
   .geo-map {
     top: 104px;
+  }
+}
+.geo-status {
+  position: absolute;
+  top: 65px;
+  left: 12px;
+  width: min(390px, calc(100vw - 24px));
+  background: #152b38ec;
+  padding: 12px 16px;
+  border: 1px solid #f7c66c70;
+  border-radius: 12px;
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  z-index: 3;
+  box-shadow: 0 8px 28px #0004;
+}
+.geo-street {
+  border-bottom: 1px solid #ffffff30;
+  padding-bottom: 7px;
+  display: grid;
+  gap: 3px;
+}
+.geo-street b {
+  font-size: 17px;
+}
+.geo-street small {
+  color: #9ed9dc;
+}
+.geo-message {
+  color: #ffe19a;
+  min-height: 30px;
+}
+.geo-status select {
+  color: white;
+  background: #203c4b;
+  border: 1px solid #ffffff50;
+  border-radius: 6px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+.geo-status small {
+  font-size: 10px;
+}
+.geo-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: calc(100% - 32px);
+  padding: 28px;
+  background: #112c3af5;
+  border: 1px solid #f7c66caa;
+  border-radius: 20px;
+  z-index: 15;
+  box-shadow: 0 20px 80px #0006;
+  display: grid;
+  gap: 14px;
+}
+.geo-menu h1,
+.geo-menu h2,
+.geo-menu p {
+  margin: 0;
+}
+.geo-menu p {
+  color: #c1d6d9;
+  line-height: 1.6;
+}
+.geo-menu button {
+  padding: 14px;
+  background: #f6c66b;
+  color: #152b38;
+  border: 0;
+  border-radius: 9px;
+  font-weight: 750;
+  font-size: 16px;
+}
+.geo-menu a {
+  color: #b8dfdf;
+  text-align: center;
+}
+.geo-credit {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: #132b38a0;
+  white-space: nowrap;
+  font-size: 9px;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 600px) {
+  .geo-status {
+    top: 108px;
+    width: min(310px, calc(100vw - 24px));
+    font-size: 11px;
+    padding: 9px;
+    gap: 4px;
+  }
+  .geo-map {
+    top: 108px;
+    z-index: 13;
+  }
+  .geo-menu {
+    padding: 20px;
+  }
+  .geo-menu h1 {
+    font-size: 24px;
+  }
+}
+@media (max-height: 500px) {
+  .geo-status {
+    top: 55px;
+    width: 285px;
+    font-size: 10px;
+    padding: 8px;
+    gap: 3px;
+  }
+  .geo-status .geo-message {
+    min-height: 0;
+  }
+  .geo-street b {
+    font-size: 13px;
+  }
+  .geo-status label,
+  .geo-status > small {
+    display: none;
+  }
+  .geo-menu {
+    padding: 18px;
+    max-width: 480px;
+    gap: 8px;
+  }
+  .geo-menu h1 {
+    font-size: 22px;
+  }
+  .geo-menu p {
+    font-size: 12px;
+  }
+  .geo-menu button {
+    padding: 10px;
+  }
+  .geo-credit {
+    font-size: 8px;
   }
 }

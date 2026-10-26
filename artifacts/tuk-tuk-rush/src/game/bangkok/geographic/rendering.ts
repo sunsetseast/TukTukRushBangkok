@@ -3,7 +3,7 @@ import { geographicToMeters } from "./projection";
 import type { GeographicChunkData, GeographicDataset } from "./dataset";
 import { surfaceGeometry } from "../roadSurfaceGraph";
 export type GeographicMaterials = ReturnType<typeof geographicMaterials>;
-export function geographicMaterials(data: GeographicDataset) {
+export function geographicMaterials(data: {rail: Pick<GeographicDataset['rail'],'catalog'>}) {
   return {
     land: new T.MeshStandardMaterial({ color: "#a8b6a1", roughness: 1 }),
     roads: new T.MeshStandardMaterial({ color: "#414c56", roughness: 1 }),

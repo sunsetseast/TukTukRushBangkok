@@ -31,12 +31,14 @@ jobs:
       - name: Reproduce runtime offline and validate source geometry
         run: |
           python scripts/geography/import_bangkok.py
+          pnpm --filter @workspace/tuk-tuk-rush geography:pack
           git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json artifacts/tuk-tuk-rush/public/assets/geography/
           python scripts/geography/check_data.py
           python scripts/geography/check_stations.py
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:real-geography
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion
       - run: pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity
       - run: pnpm --filter @workspace/tuk-tuk-rush build
@@ -47,5 +49,7 @@ jobs:
         if: always()
         with:
           name: geographic-proof
-          path: docs/qa/expanded-geography/
+          path: |
+            docs/qa/expanded-geography/
+            docs/qa/geographic-gameplay/
           retention-days: 30
