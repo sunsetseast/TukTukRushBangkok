@@ -1,6 +1,6 @@
 # Bangkok's permanent geographic foundation
 
-Open `/?world=geographic`. This expands the PR45 prototype in its existing coordinate frame; the default production game remains at `/`. No backend, online map API, buildings, passenger gameplay or on-foot controller is added.
+Open `/?world=geographic`. This expands the PR45 prototype in its existing coordinate frame; the default production game remains at `/`. Production driving/passenger gameplay and streamed source-footprint building massing now use this unified geographic world. The default legacy game remains available; on-foot gameplay is future work.
 
 ## Geographic source and coordinates
 
@@ -57,12 +57,24 @@ PORT=24801 BASE_PATH=/ pnpm build
 pnpm qa:geographic-streaming
 ```
 
-Browser QA can use `CHROMIUM_PATH` for an available WebGL-capable Chromium. The opt-in `&geographyQA` coordinate inspection hook is restricted to the explicit geographic route; the normal game does not expose it. Reports and at most three visual evidence files live in `docs/qa/expanded-geography/`.
+Browser QA can use `CHROMIUM_PATH` for an available WebGL-capable Chromium. The opt-in `&geographyQA` coordinate inspection hook is restricted to the explicit geographic route; the normal game does not expose it. Prior geography reports live in `docs/qa/expanded-geography/`; the building phase has a separate matched WebGL gallery in `docs/qa/geographic-buildings/`.
 
 ## Known limits
 
-Mapping completeness is limited by this source. Disconnected compounds/components are reported without fabricated streets. Detailed buildings, train travel, station interiors, animated trains and pedestrian gameplay are excluded. Full persistent navigation references still consume CPU memory even though meshes stream; physical iPhone/Safari memory, thermal stability and FPS need device testing. Software WebGL results are identified separately in the certification report.
+Mapping completeness is limited by this source. Disconnected compounds/components are reported without fabricated streets. Source-footprint massing is implemented; advanced façades, train travel, station interiors, animated trains and pedestrian gameplay remain future work. Full persistent navigation references still consume CPU memory even though meshes stream; physical iPhone/Safari memory, thermal stability and FPS need device testing. Software WebGL results are identified separately in the certification report.
 
 The waterfront source-hash successor explicitly approves PR45's polygon-union helper version. Existing legacy river, terrain, frontage and collision behavior assertions remain active.
 
 © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), derived geographic database under [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/).
+
+## Source-footprint architecture extension
+
+`buildings-source.v1.json.gz` is a bounded companion from the **same checksum-pinned PBF**, with complete assembled WGS84 multipolygons, courtyard holes, source versions/IDs, relation-member roles and original tags. It preserves the original road/water/rail snapshot and projection. Re-extraction uses `--buildings-pbf /tmp/thailand-261024.osm.pbf`; ordinary offline imports rebuild from the committed companion automatically, followed by `geography:pack` to refresh gameplay chunk references.
+
+`buildings-report.v1.json` gives source counts, height provenance, coverage samples, excluded/invalid features, source overlaps and road/water exceptions by OSM ID. Mapped coverage is incomplete. **No inferred infill is enabled or presented as source geometry.** Without reviewed parcel/land-use evidence, unfilled ground remains unresolved rather than receiving random boxes.
+
+Whole buildings and parts retain separate identities. Parent volumes subtract contained parts; untagged parts can inherit usable parent heights with an explicit provenance label. One owner chunk contains each complete footprint, including geometry across seams. Chunk-local rings and wall sections feed batched 3D walls, courtyard-preserving roofs, shared materials and distance/quality-dependent street courses. Geographic placement, source traces and collision envelopes are independent of the future façade pass.
+
+The replacement registry `building-replacements.v1.json` protects the four migrated models using reviewed geographic anchors and source IDs, and supports WGS84 compound polygons for future migrations. New handcrafted sites must register their local-model factory, reviewed real anchor/orientation, source-road access and replacement envelope; compressed coordinates are not portable placements. Grand Postal Building and Warehouse 30 retain ordinary source massing until their authored models have that contract.
+
+See [audit](../../../docs/qa/geographic-buildings/audit.md), [reproduction](../../../docs/qa/geographic-buildings/reproduce.md), and [certification](../../../docs/qa/geographic-buildings/certification.md). Roofs and ground height are massing approximations, not surveyed engineering models. Non-flat hipped/pyramidal roofs currently use a labeled ridge approximation. Physical iPhone/Safari performance remains unverified.

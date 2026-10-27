@@ -1,0 +1,143 @@
+{
+  "complete": true,
+  "pass": true,
+  "note": "First 16 successful checks were observed before the cloud environment restart. Durations are the 0.1-second console observations; the interrupted invocation did not write its final report. Remaining checks resume below. Default reproduction runs the entire suite.",
+  "checks": [
+    {
+      "name": "geographic source topology",
+      "pass": true,
+      "seconds": 27.5,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "geographic streaming",
+      "pass": true,
+      "seconds": 16.6,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "production gameplay",
+      "pass": true,
+      "seconds": 8.2,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "driven mission",
+      "pass": true,
+      "seconds": 1.6,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "career and legacy saves",
+      "pass": true,
+      "seconds": 207.3,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown geography",
+      "pass": true,
+      "seconds": 107.4,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Bang Rak",
+      "pass": true,
+      "seconds": 89.9,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "service route preference",
+      "pass": true,
+      "seconds": 0.4,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Bang Rak seam",
+      "pass": true,
+      "seconds": 141.7,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Bang Rak driven routes",
+      "pass": true,
+      "seconds": 120.3,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown driven lanes",
+      "pass": true,
+      "seconds": 143,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "sign visibility",
+      "pass": true,
+      "seconds": 137.1,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown visual assertions",
+      "pass": true,
+      "seconds": 128.4,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown completion",
+      "pass": true,
+      "seconds": 69.6,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown legal traffic",
+      "pass": true,
+      "seconds": 518.3,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "Chinatown traffic",
+      "pass": true,
+      "seconds": 174.6,
+      "phase": "before environment restart"
+    },
+    {
+      "name": "waterfront clearance",
+      "pass": true,
+      "seconds": 927.8794215409999
+    },
+    {
+      "name": "waterfront drives",
+      "pass": true,
+      "seconds": 86.88501824300003
+    },
+    {
+      "name": "waterfront lanes",
+      "pass": true,
+      "seconds": 52.399413653000025
+    },
+    {
+      "name": "Bangkok gameplay",
+      "pass": true,
+      "seconds": 111.77149414400012
+    },
+    {
+      "name": "Bangkok driven routes",
+      "pass": true,
+      "seconds": 47.69500414500013
+    },
+    {
+      "name": "Bangkok map",
+      "pass": true,
+      "seconds": 27.316103533999993
+    },
+    {
+      "name": "Bangkok architecture",
+      "pass": true,
+      "seconds": 69.97656492999988
+    },
+    {
+      "name": "historic fidelity",
+      "pass": true,
+      "seconds": 37.733218184000116
+    }
+  ]
+}

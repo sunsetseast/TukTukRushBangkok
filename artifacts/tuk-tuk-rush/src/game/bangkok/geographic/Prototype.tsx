@@ -19,8 +19,14 @@ import { riverWater } from "../riverfront";
 import { loadGeographicChunk, type GeographicChunkData } from "./dataset";
 import { loadGameplayGeography, type GeographicNetwork } from "./network";
 import { createGameplayDistrict, type GeographicPlace } from "./places";
-import { buildMigratedArt } from "./migratedArt";
+import { buildMigratedArt, disposeMigratedArt } from "./migratedArt";
 import { geographicToMeters, metersToGeographic } from "./projection";
+import {
+  buildingObstacles,
+  updateBuildingLOD,
+  buildingFogFar,
+} from "./buildings";
+import { readPreferences } from "../../ui/preferences";
 import { GeographicSession } from "./session";
 import "./prototype.css";
 
@@ -40,14 +46,19 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
       position: [0, 0, 0] as Vec3,
       target: [0, 0, 0] as Vec3,
     });
+  const qaView = useRef<{ position: number[]; target: number[] } | undefined>(
+    undefined,
+  );
   targetRef.current = target;
   const content = useMemo(() => {
     const group = new T.Group(),
       water = riverWater(),
       materials = geographicMaterials(network.metadata),
       resident = new Map<string, GeographicChunkData>(),
+      colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
     let revision = 0;
+    const activationMs: number[] = [];
     const stream = new GeographicStream<{
       chunk: GeographicChunkData;
       root?: T.Group;
@@ -58,10 +69,15 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
         chunk: await loadGeographicChunk(ref, signal),
       }),
       (v, ref) => {
+        const started = performance.now();
         v.id = ref.id;
         v.root = buildGeographicChunk(v.chunk, materials, water.material);
         group.add(v.root);
         resident.set(ref.id, v.chunk);
+        colliders.set(
+          ref.id,
+          buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin),
+        );
         const local = places
           .filter(
             (p) =>
@@ -71,13 +87,16 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
           .map((p) => buildMigratedArt(p));
         assets.set(ref.id, local);
         for (const a of local) group.add(a.root);
+        activationMs.push(performance.now() - started);
+        if (activationMs.length > 25) activationMs.shift();
         revision++;
       },
       (v) => {
         if (v.root) disposeGeographicChunk(v.root);
         if (v.id) {
           resident.delete(v.id);
-          for (const a of assets.get(v.id) ?? []) disposeObject(a.root);
+          colliders.delete(v.id);
+          for (const a of assets.get(v.id) ?? []) disposeMigratedArt(a.root);
           assets.delete(v.id);
           revision++;
         }
@@ -97,9 +116,11 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
     group.add(route);
     return {
       group,
+      activationMs,
       water,
       materials,
       resident,
+      colliders,
       assets,
       stream,
       ring,
@@ -109,7 +130,10 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
       },
       lastRevision: -1,
       routeTime: 0,
+      lodTime: 0,
+      metrics: {} as Record<string, unknown>,
       look: new T.Vector3(),
+      forward: new T.Vector3(),
     };
   }, [network, places]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
@@ -121,6 +145,7 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
       content.route.geometry.dispose();
       (content.route.material as T.Material).dispose();
       for (const m of [
+        content.materials.buildings,
         content.materials.land,
         content.materials.roads,
         content.materials.deck,
@@ -168,7 +193,27 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
       content.look.fromArray(inspectionPose.current.target);
       camera.lookAt(content.look);
     }
+    if (import.meta.env.DEV && qaView.current) {
+      camera.position.fromArray(qaView.current.position);
+      camera.lookAt(new T.Vector3().fromArray(qaView.current.target));
+    }
     content.stream.update(p, { x: camera.position.x, z: camera.position.z });
+    const fog = state.scene.fog as T.Fog;
+    fog.far = buildingFogFar(s.quality);
+    fog.near = s.quality === "low" ? 260 : 320;
+    content.lodTime += delta;
+    if (content.lodTime > 0.2) {
+      content.lodTime = 0;
+      camera.getWorldDirection(content.forward);
+      for (const v of content.stream.active.values())
+        if (v.root)
+          updateBuildingLOD(
+            v.root,
+            camera.position,
+            s.quality,
+            content.forward,
+          );
+    }
     if (content.lastRevision !== content.revision) {
       content.lastRevision = content.revision;
       session.district.obstacles = [...content.resident.values()]
@@ -182,10 +227,41 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
             color: "#aaa",
           })),
         )
+        .concat([...content.colliders.values()].flat())
         .concat(
           [...content.assets.values()].flatMap((a) => a.map((v) => v.obstacle)),
         );
       session.district.buildings = session.district.obstacles;
+      content.metrics = {
+        buildings: [...content.resident.values()].reduce(
+          (n, c) => n + (c.buildings?.length ?? 0),
+          0,
+        ),
+        buildingGPUBytes: (() => {
+          let bytes = 0;
+          content.group.traverse((o) => {
+            if (o.name === "SourceBuildings") bytes += o.userData.gpuBytes ?? 0;
+          });
+          return bytes;
+        })(),
+        activeMeshes: (() => {
+          let n = 0;
+          content.group.traverse((o) => {
+            if (o instanceof T.Mesh) n++;
+          });
+          return n;
+        })(),
+        chunkTiming: [...content.resident].map(([id, c]) => ({
+          id,
+          ...c.timing,
+        })),
+        activeAssetBytes: network.metadata.chunks
+          .filter((c) => content.resident.has(c.id))
+          .reduce((n, c) => n + c.bytes, 0),
+        buildingBuildMs: [...content.stream.active.values()].map(
+          (v) => v.root?.userData.buildingBuildMs ?? 0,
+        ),
+      };
     }
     const dest = targetRef.current ?? s.target;
     content.ring.visible = s.phase === "playing";
@@ -229,6 +305,9 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
       drawCalls: gl.info.render.calls,
       triangles: gl.info.render.triangles,
       geometries: gl.info.memory.geometries,
+      ...content.metrics,
+      activationMs: content.activationMs.slice(-25),
+      quality: s.quality,
       stream: {
         ...content.stream.stats,
         active: content.stream.active.size,
@@ -241,6 +320,17 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
     };
     if (import.meta.env.DEV && location.search.includes("geographyQA"))
       (window as any).__geographyQA = {
+        project: geographicToMeters,
+        inspectBuilding: (id: string) => {
+          for (const c of content.resident.values()) {
+            const building = c.buildings?.find((b) => b.id === id);
+            if (building) return { origin: c.origin, ...building };
+          }
+          return undefined;
+        },
+        view: (position: number[], target: number[]) => {
+          qaView.current = { position, target };
+        },
         session,
         network,
         places,
@@ -499,6 +589,7 @@ export default function GeographicPrototype() {
         }
         const { district, places } = createGameplayDistrict(network),
           session = new GeographicSession(district);
+        session.setQuality(readPreferences().quality);
         cleanup = () => {
           session.dispose();
           art.dispose();

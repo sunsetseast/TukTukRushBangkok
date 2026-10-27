@@ -73,7 +73,9 @@
     "qa:geographic-streaming": "node scripts/browser-geographic-streaming.mjs",
     "geography:pack": "node --import tsx scripts/pack-geographic-runtime.ts",
     "test:geographic-gameplay": "node --import tsx scripts/check-geographic-gameplay.ts",
-    "qa:geographic-gameplay": "node scripts/browser-geographic-gameplay.mjs"
+    "qa:geographic-gameplay": "node scripts/browser-geographic-gameplay.mjs",
+    "test:geographic-buildings": "node --import tsx scripts/check-geographic-buildings.ts",
+    "qa:geographic-buildings": "node scripts/browser-geographic-buildings.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -56,7 +56,7 @@ export class VehicleController {
     p.x += this.vx * dt; p.z += this.vz * dt;
     const radius = VEHICLE_COLLISION_RADIUS;
     let collided = false;
-    const index=district.worldId==='bangkok'?physicsObstacleIndex(district):undefined;
+    const index=(district.worldId==='bangkok'||district.driving)?physicsObstacleIndex(district):undefined;
     let candidates=index?.query(p),cursor=0,last=-1;
     while(cursor<(candidates?.length??district.obstacles.length)){
       const item=candidates?candidates[cursor++]!:cursor++;if(item<=last)continue;last=item;const b=district.obstacles[item]!;
@@ -155,7 +155,7 @@ export class VehicleController {
       return [0,.25,.5,.75,1].map(t=>({x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,heading:Math.atan2(b.x-a.x,b.z-a.z)}));
     });
     candidates.sort((a,b)=>Math.hypot(a.x-p.x,a.z-p.z)-Math.hypot(b.x-p.x,b.z-p.z)||a.x-b.x||a.z-b.z);
-    const index=district.worldId==='bangkok'?physicsObstacleIndex(district):undefined;
+    const index=(district.worldId==='bangkok'||district.driving)?physicsObstacleIndex(district):undefined;
     const safe=candidates.find(q=>!blockedByRiver(district,q)&&(index?index.query(q).every(i=>obstacleDistance(q,district.obstacles[i]!)>=2):district.obstacles.every(o=>obstacleDistance(q,o)>=2)));if(!safe)throw Error('No dry connected road available for geography recovery');
     Object.assign(p,safe,{speed:0,steer:0,lean:0,collision:0});this.reset();return true;
   }

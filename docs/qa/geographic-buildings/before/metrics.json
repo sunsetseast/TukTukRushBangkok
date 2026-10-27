@@ -1,0 +1,2276 @@
+{
+  "stage": "before-corrected",
+  "environment": "Linux headless Chromium / ANGLE SwiftShader software WebGL; no physical iPhone or Safari",
+  "errors": [],
+  "views": [
+    {
+      "name": "yaowarat-drive",
+      "lon": 100.5095,
+      "lat": 13.7401,
+      "tlon": 100.5109,
+      "tlat": 13.7393,
+      "height": 0,
+      "position": {
+        "x": 3239.56201171875,
+        "z": 469.96250915527344,
+        "heading": 0.9212830227259249
+      },
+      "coordinate": {
+        "lon": 100.50977104806549,
+        "lat": 13.740426798314994
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 37,
+      "triangles": 83398,
+      "geometries": 77,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 84,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:-1024",
+          "fetchHeadersMs": 14.5,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:-1024",
+          "fetchHeadersMs": 17.600000000093132,
+          "decodeAndBodyMs": 7.899999999906868,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "4096:-1024",
+          "fetchHeadersMs": 11.5,
+          "decodeAndBodyMs": 2.7999999998137355,
+          "jsonParseMs": 1.3000000000465661
+        }
+      ],
+      "activeAssetBytes": 462156,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 9,
+        "disposed": 0,
+        "requests": 9,
+        "errors": 0,
+        "active": 9,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:-1024",
+          "2048:-1024",
+          "4096:-1024"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 0.7902999999998139,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 504.6698163913356,
+        "bearing": -0.17884345555725567,
+        "message": "Low quality enabled for smoother driving",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 5,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "heap": 119773431,
+      "sampleQualities": [
+        "medium",
+        "low"
+      ],
+      "frameMs": {
+        "p50": 183.3000000000011,
+        "p95": 366.6999999999989,
+        "samples": 13
+      }
+    },
+    {
+      "name": "yaowarat-overview",
+      "lon": 100.5104,
+      "lat": 13.7396,
+      "tlon": 100.5098,
+      "tlat": 13.7398,
+      "height": 0,
+      "position": {
+        "x": 3297.8176737985045,
+        "z": 585.277166072693,
+        "heading": 1.1682892182348419
+      },
+      "coordinate": {
+        "lon": 100.51030303357555,
+        "lat": 13.739381168668402
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 48,
+      "triangles": 69524,
+      "geometries": 77,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 84,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:-1024",
+          "fetchHeadersMs": 14.5,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:-1024",
+          "fetchHeadersMs": 17.600000000093132,
+          "decodeAndBodyMs": 7.899999999906868,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "4096:-1024",
+          "fetchHeadersMs": 11.5,
+          "decodeAndBodyMs": 2.7999999998137355,
+          "jsonParseMs": 1.3000000000465661
+        }
+      ],
+      "activeAssetBytes": 462156,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 9,
+        "disposed": 0,
+        "requests": 9,
+        "errors": 0,
+        "active": 9,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:-1024",
+          "2048:-1024",
+          "4096:-1024"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 1.9164999999995354,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 381.92824430198465,
+        "bearing": -0.3339786974944259,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 6,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "heap": 127863854,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 166.60000000000036,
+        "p95": 300,
+        "samples": 15
+      }
+    },
+    {
+      "name": "chinatown-soi",
+      "lon": 100.51,
+      "lat": 13.741,
+      "tlon": 100.5098,
+      "tlat": 13.7404,
+      "height": 0,
+      "position": {
+        "x": 3337.4735107421875,
+        "z": 489.6610107421875,
+        "heading": 2.5563948983057005
+      },
+      "coordinate": {
+        "lon": 100.51067524870304,
+        "lat": 13.740243200812074
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 29,
+      "triangles": 34097,
+      "geometries": 88,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 84,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:-1024",
+          "fetchHeadersMs": 14.5,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:-1024",
+          "fetchHeadersMs": 17.600000000093132,
+          "decodeAndBodyMs": 7.899999999906868,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "4096:-1024",
+          "fetchHeadersMs": 11.5,
+          "decodeAndBodyMs": 2.7999999998137355,
+          "jsonParseMs": 1.3000000000465661
+        }
+      ],
+      "activeAssetBytes": 462156,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 9,
+        "disposed": 0,
+        "requests": 9,
+        "errors": 0,
+        "active": 9,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:-1024",
+          "2048:-1024",
+          "4096:-1024"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 3.3133999999994384,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 428.02043431637287,
+        "bearing": -1.951827622059973,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 8,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "heap": 136167037,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 100,
+        "p95": 200.10000000000218,
+        "samples": 23
+      }
+    },
+    {
+      "name": "song-wat-talat-noi",
+      "lon": 100.5097,
+      "lat": 13.7359,
+      "tlon": 100.5111,
+      "tlat": 13.735,
+      "height": 0,
+      "position": {
+        "x": 3276.56103515625,
+        "z": 926.9920043945312,
+        "heading": 2.6935108016467164
+      },
+      "coordinate": {
+        "lon": 100.51008670327306,
+        "lat": 13.736293600641616
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 21,
+      "triangles": 38282,
+      "geometries": 89,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 84,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:-1024",
+          "fetchHeadersMs": 14.5,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:-1024",
+          "fetchHeadersMs": 17.600000000093132,
+          "decodeAndBodyMs": 7.899999999906868,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "4096:-1024",
+          "fetchHeadersMs": 11.5,
+          "decodeAndBodyMs": 2.7999999998137355,
+          "jsonParseMs": 1.3000000000465661
+        }
+      ],
+      "activeAssetBytes": 462156,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 9,
+        "disposed": 0,
+        "requests": 9,
+        "errors": 0,
+        "active": 9,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:-1024",
+          "2048:-1024",
+          "4096:-1024"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 4.464699999999248,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 315.90202057260313,
+        "bearing": -0.849701366019517,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 6,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "heap": 88396247,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 166.70000000000073,
+        "p95": 416.7000000000007,
+        "samples": 16
+      }
+    },
+    {
+      "name": "charoen-krung-drive",
+      "lon": 100.5168,
+      "lat": 13.7286,
+      "tlon": 100.5163,
+      "tlat": 13.7295,
+      "height": 0,
+      "position": {
+        "x": 3905.8409423828125,
+        "z": 1792.072509765625,
+        "heading": 1.8655945288236835
+      },
+      "coordinate": {
+        "lon": 100.51585500057966,
+        "lat": 13.728438453554938
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 48,
+      "triangles": 103590,
+      "geometries": 95,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 109,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:-1024",
+          "fetchHeadersMs": 14.5,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:-1024",
+          "fetchHeadersMs": 17.600000000093132,
+          "decodeAndBodyMs": 7.899999999906868,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "4096:-1024",
+          "fetchHeadersMs": 11.5,
+          "decodeAndBodyMs": 2.7999999998137355,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:2048",
+          "fetchHeadersMs": 21.600000000093132,
+          "decodeAndBodyMs": 1.7999999998137355,
+          "jsonParseMs": 2
+        }
+      ],
+      "activeAssetBytes": 590099,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 12,
+        "disposed": 0,
+        "requests": 12,
+        "errors": 0,
+        "active": 12,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:-1024",
+          "2048:-1024",
+          "4096:-1024",
+          "3072:2048",
+          "4096:2048",
+          "2048:2048"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 5.634799999999337,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 1004.3240981811794,
+        "bearing": 1.6056127101716344,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 6,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024",
+        "3072:2048",
+        "4096:2048",
+        "2048:2048"
+      ],
+      "heap": 92129369,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 183.29999999999927,
+        "p95": 433.3000000000029,
+        "samples": 15
+      }
+    },
+    {
+      "name": "bang-rak-overview",
+      "lon": 100.5161,
+      "lat": 13.7253,
+      "tlon": 100.5156,
+      "tlat": 13.7275,
+      "height": 0,
+      "position": {
+        "x": 3948.539691492106,
+        "z": 2135.4117881777543,
+        "heading": -2.8840875916783144
+      },
+      "coordinate": {
+        "lon": 100.51622985533905,
+        "lat": 13.725332580959792
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 39,
+      "triangles": 62584,
+      "geometries": 89,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 105,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:2048",
+          "fetchHeadersMs": 21.600000000093132,
+          "decodeAndBodyMs": 1.7999999998137355,
+          "jsonParseMs": 2
+        },
+        {
+          "id": "3072:3072",
+          "fetchHeadersMs": 60.800000000046566,
+          "decodeAndBodyMs": 7.399999999906868,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "4096:3072",
+          "fetchHeadersMs": 63,
+          "decodeAndBodyMs": 6.5,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "2048:3072",
+          "fetchHeadersMs": 18.399999999906868,
+          "decodeAndBodyMs": 4.800000000046566,
+          "jsonParseMs": 1.9000000001396984
+        }
+      ],
+      "activeAssetBytes": 535098,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566,
+        72.89999999990687,
+        58.199999999953434,
+        15
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 15,
+        "disposed": 3,
+        "requests": 15,
+        "errors": 0,
+        "active": 12,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:2048",
+          "4096:2048",
+          "2048:2048",
+          "3072:3072",
+          "4096:3072",
+          "2048:3072"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 6.72209999999938,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 1344.8624130240719,
+        "bearing": 0.019491502953875806,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 5,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:2048",
+        "4096:2048",
+        "2048:2048",
+        "3072:3072",
+        "4096:3072",
+        "2048:3072"
+      ],
+      "heap": 120719678,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 200,
+        "p95": 383.2999999999993,
+        "samples": 13
+      }
+    },
+    {
+      "name": "si-phraya-frontage",
+      "lon": 100.5167,
+      "lat": 13.7307,
+      "tlon": 100.5177,
+      "tlat": 13.7309,
+      "height": 0,
+      "position": {
+        "x": 4007.3590087890625,
+        "z": 1575.9080200195312,
+        "heading": 0.12184772060303188
+      },
+      "coordinate": {
+        "lon": 100.51680620079382,
+        "lat": 13.730386601775745
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 17,
+      "triangles": 38745,
+      "geometries": 89,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 105,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 441.80000000004657,
+          "decodeAndBodyMs": 9.300000000046566,
+          "jsonParseMs": 1.8999999999068677
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 12.5,
+          "decodeAndBodyMs": 2.699999999953434,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "2048:2048",
+          "fetchHeadersMs": 21.600000000093132,
+          "decodeAndBodyMs": 1.7999999998137355,
+          "jsonParseMs": 2
+        },
+        {
+          "id": "3072:3072",
+          "fetchHeadersMs": 60.800000000046566,
+          "decodeAndBodyMs": 7.399999999906868,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "4096:3072",
+          "fetchHeadersMs": 63,
+          "decodeAndBodyMs": 6.5,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "2048:3072",
+          "fetchHeadersMs": 18.399999999906868,
+          "decodeAndBodyMs": 4.800000000046566,
+          "jsonParseMs": 1.9000000001396984
+        }
+      ],
+      "activeAssetBytes": 535098,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566,
+        72.89999999990687,
+        58.199999999953434,
+        15
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 15,
+        "disposed": 3,
+        "requests": 15,
+        "errors": 0,
+        "active": 12,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "2048:0",
+          "4096:0",
+          "2048:1024",
+          "4096:1024",
+          "3072:2048",
+          "4096:2048",
+          "2048:2048",
+          "3072:3072",
+          "4096:3072",
+          "2048:3072"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 8.060699999999702,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 849.0454632151379,
+        "bearing": -2.7370195597128544,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 7,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:2048",
+        "4096:2048",
+        "2048:2048",
+        "3072:3072",
+        "4096:3072",
+        "2048:3072"
+      ],
+      "heap": 101651067,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 116.70000000000437,
+        "p95": 266.59999999999854,
+        "samples": 19
+      }
+    },
+    {
+      "name": "silom-skyline",
+      "lon": 100.5273,
+      "lat": 13.7259,
+      "tlon": 100.5314,
+      "tlat": 13.7284,
+      "height": 0,
+      "position": {
+        "x": 5142.6121700440945,
+        "z": 2057.475963308844,
+        "heading": -1.2199876642335314
+      },
+      "coordinate": {
+        "lon": 100.52727467369132,
+        "lat": 13.725969008447956
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 25,
+      "triangles": 52303,
+      "geometries": 98,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 111,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "3072:3072",
+          "fetchHeadersMs": 60.800000000046566,
+          "decodeAndBodyMs": 7.399999999906868,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "4096:3072",
+          "fetchHeadersMs": 63,
+          "decodeAndBodyMs": 6.5,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "5120:2048",
+          "fetchHeadersMs": 19.9000000001397,
+          "decodeAndBodyMs": 13.099999999860302,
+          "jsonParseMs": 32.700000000186265
+        },
+        {
+          "id": "5120:1024",
+          "fetchHeadersMs": 20.5,
+          "decodeAndBodyMs": 44.60000000009313,
+          "jsonParseMs": 7.399999999906868
+        },
+        {
+          "id": "6144:2048",
+          "fetchHeadersMs": 86.79999999981374,
+          "decodeAndBodyMs": 15.100000000093132,
+          "jsonParseMs": 5.5
+        },
+        {
+          "id": "6144:1024",
+          "fetchHeadersMs": 87,
+          "decodeAndBodyMs": 124.39999999990687,
+          "jsonParseMs": 2.199999999953434
+        },
+        {
+          "id": "5120:3072",
+          "fetchHeadersMs": 5.300000000046566,
+          "decodeAndBodyMs": 44,
+          "jsonParseMs": 1.6999999999534339
+        },
+        {
+          "id": "6144:3072",
+          "fetchHeadersMs": 10.899999999906868,
+          "decodeAndBodyMs": 3,
+          "jsonParseMs": 1.1000000000931323
+        }
+      ],
+      "activeAssetBytes": 743165,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566,
+        72.89999999990687,
+        58.199999999953434,
+        15,
+        41.800000000046566,
+        81.89999999990687,
+        102.19999999995343,
+        108.19999999995343,
+        57.0999999998603,
+        71.70000000018626
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 21,
+        "disposed": 7,
+        "requests": 21,
+        "errors": 0,
+        "active": 14,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "4096:0",
+          "4096:1024",
+          "3072:2048",
+          "4096:2048",
+          "3072:3072",
+          "4096:3072",
+          "5120:2048",
+          "5120:1024",
+          "6144:2048",
+          "6144:1024",
+          "5120:3072",
+          "6144:3072"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 9.372199999999719,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 1979.193513836763,
+        "bearing": -1.0122069109196143,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 6,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "4096:0",
+        "4096:1024",
+        "3072:2048",
+        "4096:2048",
+        "3072:3072",
+        "4096:3072",
+        "5120:2048",
+        "5120:1024",
+        "6144:2048",
+        "6144:1024",
+        "5120:3072",
+        "6144:3072"
+      ],
+      "heap": 128883191,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 183.1999999999971,
+        "p95": 333.3000000000029,
+        "samples": 15
+      }
+    },
+    {
+      "name": "riverfront-block",
+      "lon": 100.511,
+      "lat": 13.7301,
+      "tlon": 100.5144,
+      "tlat": 13.7303,
+      "height": 0,
+      "position": {
+        "x": 3373.0413816104196,
+        "z": 1591.0842168804259,
+        "heading": 1.8818323382431
+      },
+      "coordinate": {
+        "lon": 100.51094034452198,
+        "lat": 13.730285389785937
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 43,
+      "triangles": 74335,
+      "geometries": 96,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 118,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "3072:3072",
+          "fetchHeadersMs": 60.800000000046566,
+          "decodeAndBodyMs": 7.399999999906868,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "4096:3072",
+          "fetchHeadersMs": 63,
+          "decodeAndBodyMs": 6.5,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "5120:2048",
+          "fetchHeadersMs": 19.9000000001397,
+          "decodeAndBodyMs": 13.099999999860302,
+          "jsonParseMs": 32.700000000186265
+        },
+        {
+          "id": "5120:1024",
+          "fetchHeadersMs": 20.5,
+          "decodeAndBodyMs": 44.60000000009313,
+          "jsonParseMs": 7.399999999906868
+        },
+        {
+          "id": "5120:3072",
+          "fetchHeadersMs": 5.300000000046566,
+          "decodeAndBodyMs": 44,
+          "jsonParseMs": 1.6999999999534339
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 57,
+          "decodeAndBodyMs": 34.799999999813735,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "2048:2048",
+          "fetchHeadersMs": 60.0999999998603,
+          "decodeAndBodyMs": 35.60000000009313,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 21.699999999953434,
+          "decodeAndBodyMs": 3.8999999999068677,
+          "jsonParseMs": 1.6000000000931323
+        }
+      ],
+      "activeAssetBytes": 666716,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566,
+        72.89999999990687,
+        58.199999999953434,
+        15,
+        41.800000000046566,
+        81.89999999990687,
+        102.19999999995343,
+        108.19999999995343,
+        57.0999999998603,
+        71.70000000018626,
+        28.9000000001397,
+        18.5999999998603,
+        15.900000000139698
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 24,
+        "disposed": 10,
+        "requests": 24,
+        "errors": 0,
+        "active": 14,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "4096:0",
+          "4096:1024",
+          "3072:2048",
+          "4096:2048",
+          "3072:3072",
+          "4096:3072",
+          "5120:2048",
+          "5120:1024",
+          "5120:3072",
+          "2048:1024",
+          "2048:2048",
+          "2048:0"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 10.448499999999779,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 777.5307484055238,
+        "bearing": 0.9893203616929376,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 5,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "4096:0",
+        "4096:1024",
+        "3072:2048",
+        "4096:2048",
+        "3072:3072",
+        "4096:3072",
+        "5120:2048",
+        "5120:1024",
+        "5120:3072",
+        "2048:1024",
+        "2048:2048",
+        "2048:0"
+      ],
+      "heap": 118073387,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 216.6999999999971,
+        "p95": 361.90000000000146,
+        "samples": 13
+      }
+    },
+    {
+      "name": "heritage-modern-transition",
+      "lon": 100.5195,
+      "lat": 13.7243,
+      "tlon": 100.5176,
+      "tlat": 13.725,
+      "height": 0,
+      "position": {
+        "x": 4303.794818370042,
+        "z": 2244.8186116317324,
+        "heading": 1.2499572106997219
+      },
+      "coordinate": {
+        "lon": 100.51950814404042,
+        "lat": 13.72432346350584
+      },
+      "speed": 0,
+      "loadMs": 632.0999999998603,
+      "decodedNavigationBytes": 27354316,
+      "drawCalls": 54,
+      "triangles": 62734,
+      "geometries": 118,
+      "buildings": 0,
+      "buildingGPUBytes": 0,
+      "activeMeshes": 118,
+      "chunkTiming": [
+        {
+          "id": "3072:0",
+          "fetchHeadersMs": 107,
+          "decodeAndBodyMs": 5.7999999998137355,
+          "jsonParseMs": 1.6000000000931323
+        },
+        {
+          "id": "3072:1024",
+          "fetchHeadersMs": 106.5,
+          "decodeAndBodyMs": 7.199999999953434,
+          "jsonParseMs": 0.9000000001396984
+        },
+        {
+          "id": "4096:0",
+          "fetchHeadersMs": 441.69999999995343,
+          "decodeAndBodyMs": 11,
+          "jsonParseMs": 1.8000000000465661
+        },
+        {
+          "id": "4096:1024",
+          "fetchHeadersMs": 14.300000000046566,
+          "decodeAndBodyMs": 4,
+          "jsonParseMs": 2.3999999999068677
+        },
+        {
+          "id": "3072:2048",
+          "fetchHeadersMs": 23,
+          "decodeAndBodyMs": 2.5,
+          "jsonParseMs": 2.800000000046566
+        },
+        {
+          "id": "4096:2048",
+          "fetchHeadersMs": 27.899999999906868,
+          "decodeAndBodyMs": 6.300000000046566,
+          "jsonParseMs": 1.3000000000465661
+        },
+        {
+          "id": "3072:3072",
+          "fetchHeadersMs": 60.800000000046566,
+          "decodeAndBodyMs": 7.399999999906868,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "4096:3072",
+          "fetchHeadersMs": 63,
+          "decodeAndBodyMs": 6.5,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "5120:2048",
+          "fetchHeadersMs": 19.9000000001397,
+          "decodeAndBodyMs": 13.099999999860302,
+          "jsonParseMs": 32.700000000186265
+        },
+        {
+          "id": "5120:1024",
+          "fetchHeadersMs": 20.5,
+          "decodeAndBodyMs": 44.60000000009313,
+          "jsonParseMs": 7.399999999906868
+        },
+        {
+          "id": "5120:3072",
+          "fetchHeadersMs": 5.300000000046566,
+          "decodeAndBodyMs": 44,
+          "jsonParseMs": 1.6999999999534339
+        },
+        {
+          "id": "2048:1024",
+          "fetchHeadersMs": 57,
+          "decodeAndBodyMs": 34.799999999813735,
+          "jsonParseMs": 1
+        },
+        {
+          "id": "2048:2048",
+          "fetchHeadersMs": 60.0999999998603,
+          "decodeAndBodyMs": 35.60000000009313,
+          "jsonParseMs": 1.1000000000931323
+        },
+        {
+          "id": "2048:0",
+          "fetchHeadersMs": 21.699999999953434,
+          "decodeAndBodyMs": 3.8999999999068677,
+          "jsonParseMs": 1.6000000000931323
+        }
+      ],
+      "activeAssetBytes": 666716,
+      "buildingBuildMs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "activationMs": [
+        653.7000000001863,
+        396.69999999995343,
+        10.400000000139698,
+        76.9000000001397,
+        18.5,
+        94.5999999998603,
+        67.30000000004657,
+        45.60000000009313,
+        41.4000000001397,
+        52.199999999953434,
+        47,
+        26.800000000046566,
+        72.89999999990687,
+        58.199999999953434,
+        15,
+        41.800000000046566,
+        81.89999999990687,
+        102.19999999995343,
+        108.19999999995343,
+        57.0999999998603,
+        71.70000000018626,
+        28.9000000001397,
+        18.5999999998603,
+        15.900000000139698
+      ],
+      "quality": "low",
+      "stream": {
+        "loaded": 24,
+        "disposed": 10,
+        "requests": 24,
+        "errors": 0,
+        "active": 14,
+        "ids": [
+          "3072:0",
+          "3072:1024",
+          "4096:0",
+          "4096:1024",
+          "3072:2048",
+          "4096:2048",
+          "3072:3072",
+          "4096:3072",
+          "5120:2048",
+          "5120:1024",
+          "5120:3072",
+          "2048:1024",
+          "2048:2048",
+          "2048:0"
+        ],
+        "settled": true,
+        "total": 471
+      },
+      "snapshot": {
+        "elapsed": 11.434099999999885,
+        "discoveredDistricts": [],
+        "discoveredLandmarks": [],
+        "discoveredShortcuts": [],
+        "phase": "playing",
+        "mode": "free",
+        "stage": "pickup",
+        "shiftTime": 1440,
+        "tripTime": 173,
+        "score": 0,
+        "earnings": 0,
+        "deliveries": 0,
+        "speed": 0,
+        "target": {
+          "id": "geo:176789",
+          "x": 3580.762939453125,
+          "z": 841.8140258789062,
+          "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+        },
+        "passenger": "June · photographer",
+        "distance": 1578.3526112924155,
+        "bearing": 2.3674838267937934,
+        "message": "Back on the road",
+        "boarding": 0,
+        "quality": "low",
+        "fps": 5,
+        "careerXP": 0,
+        "careerAchievements": [],
+        "careerRecords": [],
+        "wallet": 0,
+        "newDistricts": 0,
+        "session": 1,
+        "boostState": "ready",
+        "boostActive": 0,
+        "boostRecharge": 0
+      },
+      "landmarks": [
+        "3072:0",
+        "3072:1024",
+        "4096:0",
+        "4096:1024",
+        "3072:2048",
+        "4096:2048",
+        "3072:3072",
+        "4096:3072",
+        "5120:2048",
+        "5120:1024",
+        "5120:3072",
+        "2048:1024",
+        "2048:2048",
+        "2048:0"
+      ],
+      "heap": 127096271,
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 216.70000000000437,
+        "p95": 399.90000000000146,
+        "samples": 12
+      }
+    }
+  ],
+  "travel": [],
+  "browser": "154.0.8037.57",
+  "travelCameraMode": "follow active district",
+  "assetOverride": "/workspace/scratch/tuktuk-base-geography",
+  "firstResidentMs": 6110.882003,
+  "initial": {
+    "position": {
+      "x": 3580.762939453125,
+      "z": 841.8140258789062,
+      "heading": -1.9022141986823093
+    },
+    "coordinate": {
+      "lon": 100.51290440367129,
+      "lat": 13.737046297609789
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 632.0999999998603,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 54,
+    "triangles": 70302,
+    "geometries": 53,
+    "buildings": 0,
+    "buildingGPUBytes": 0,
+    "activeMeshes": 84,
+    "chunkTiming": [
+      {
+        "id": "3072:0",
+        "fetchHeadersMs": 107,
+        "decodeAndBodyMs": 5.7999999998137355,
+        "jsonParseMs": 1.6000000000931323
+      },
+      {
+        "id": "3072:1024",
+        "fetchHeadersMs": 106.5,
+        "decodeAndBodyMs": 7.199999999953434,
+        "jsonParseMs": 0.9000000001396984
+      },
+      {
+        "id": "2048:0",
+        "fetchHeadersMs": 441.80000000004657,
+        "decodeAndBodyMs": 9.300000000046566,
+        "jsonParseMs": 1.8999999999068677
+      },
+      {
+        "id": "4096:0",
+        "fetchHeadersMs": 441.69999999995343,
+        "decodeAndBodyMs": 11,
+        "jsonParseMs": 1.8000000000465661
+      },
+      {
+        "id": "2048:1024",
+        "fetchHeadersMs": 12.5,
+        "decodeAndBodyMs": 2.699999999953434,
+        "jsonParseMs": 1.3000000000465661
+      },
+      {
+        "id": "4096:1024",
+        "fetchHeadersMs": 14.300000000046566,
+        "decodeAndBodyMs": 4,
+        "jsonParseMs": 2.3999999999068677
+      },
+      {
+        "id": "3072:-1024",
+        "fetchHeadersMs": 14.5,
+        "decodeAndBodyMs": 4,
+        "jsonParseMs": 1.3000000000465661
+      },
+      {
+        "id": "2048:-1024",
+        "fetchHeadersMs": 17.600000000093132,
+        "decodeAndBodyMs": 7.899999999906868,
+        "jsonParseMs": 1.6000000000931323
+      },
+      {
+        "id": "4096:-1024",
+        "fetchHeadersMs": 11.5,
+        "decodeAndBodyMs": 2.7999999998137355,
+        "jsonParseMs": 1.3000000000465661
+      }
+    ],
+    "activeAssetBytes": 462156,
+    "buildingBuildMs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "activationMs": [
+      653.7000000001863,
+      396.69999999995343,
+      10.400000000139698,
+      76.9000000001397,
+      18.5,
+      94.5999999998603,
+      67.30000000004657,
+      45.60000000009313,
+      41.4000000001397
+    ],
+    "quality": "medium",
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 0,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "title",
+      "mode": "shift",
+      "stage": "pickup",
+      "shiftTime": 180,
+      "tripTime": 104,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 0,
+      "target": {
+        "id": "geo:176789",
+        "x": 3580.762939453125,
+        "z": 841.8140258789062,
+        "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+      },
+      "passenger": "Arun · food explorer",
+      "distance": 61,
+      "bearing": 0,
+      "message": "Your Chinatown shift starts here",
+      "boarding": 0,
+      "quality": "medium",
+      "fps": 4
+    },
+    "landmarks": [
+      "3072:0",
+      "3072:1024",
+      "2048:0",
+      "4096:0",
+      "2048:1024",
+      "4096:1024",
+      "3072:-1024",
+      "2048:-1024",
+      "4096:-1024"
+    ]
+  }
+}

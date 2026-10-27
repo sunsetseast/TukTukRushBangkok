@@ -1,0 +1,15 @@
+# Audit of verified main
+
+Base and merged PR47: `d7ed15f4c7e5b4df4d4e8eb8dcc6cb28f070a940`, verified through GitHub and clean local main before edits. Implementation branch: `codex/geographic-building-architecture`.
+
+- Projection: `projection.ts` uses immutable EPSG:32647 origin **660000 E / 1520000 N**, X east, Z south, meters. Python uses pyproj; millimeter runtime quantization. No coordinate or scale change in this PR.
+- Bounds: WGS84 **100.46–100.65 E, 13.63–13.825 N**. These are extraction bounds, not a claim to cover administrative Bangkok.
+- Source: checksum-pinned Geofabrik `thailand-261024.osm.pbf`; original bounded snapshot contains roads/water/rail, **no building dataset**. A separate building companion preserves original reference/source hashes and permits offline reconstruction. No snapshot date change.
+- Roads: source-node topology, tagged or estimated widths, polygon buffers clipped against dry land. Elevated decks follow densified source segments and estimated ramps. No source street is shifted for buildings.
+- Water: relation-complete polygons assembled before clipping; holes and river/canal union feed rendering and physical surface queries.
+- Rail: actual source alignment, level-aware tracks, regional reference extent, road/water-safe supports. Stations and support collision envelopes remain unchanged.
+- Streaming: 1024m origins/IDs; 3×3 requested neighborhood, 5×5 retention collar, two fetches, one synchronous install/tick, request cancellation/stale-result disposal. Shared materials survive exclusive chunk geometry. Existing overview is independent of detailed chunks.
+- Landmarks: `places.ts` derives four geographic anchors and source-road approaches. `migratedArt.ts` fits existing local meshes to road-free radii; artwork collision envelopes stream with owner chunks. New replacement register excludes entire ordinary source footprints overlapping these envelopes, supports reviewed source IDs and future WGS84 compound polygons.
+- Driving: production GameEngine/VehicleController, persistent packed navigation and height/water queries. Before this PR, streamed colliders were rail supports and migrated models only. Existing physics broad phase cached colliders forever and was used only by the legacy Bangkok world; this PR adds reference-based invalidation and enables it for geographic driving.
+- Reuse: `buildingGrammar.ts` contains useful Bangkok typologies/palettes/stable variation concepts. `architecture.ts` emits detail for rectangular compressed-world parcels; reusing placement would distort source footprints. `architecturalBatch.ts` supplies the cell-batching/shared-material pattern. `facadeFinish.ts` is a future finish integration point, not a reason to introduce a new renderer or shader overhaul now. Source footprints get independent arbitrary-polygon massing and a future facade contract.
+- Costs: recorded by `browser-geographic-buildings.mjs before` before any building runtime assets were installed. Browser camera instrumentation is opt-in DEV-only. See raw metrics and baseline asset sizes; software WebGL performance is not physical-device certification.

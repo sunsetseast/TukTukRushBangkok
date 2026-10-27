@@ -1,10 +1,18 @@
 import * as T from "three";
+import { buildGeographicBuildings } from "./buildings";
 import { geographicToMeters } from "./projection";
 import type { GeographicChunkData, GeographicDataset } from "./dataset";
 import { surfaceGeometry } from "../roadSurfaceGraph";
 export type GeographicMaterials = ReturnType<typeof geographicMaterials>;
-export function geographicMaterials(data: {rail: Pick<GeographicDataset['rail'],'catalog'>}) {
+export function geographicMaterials(data: {
+  rail: Pick<GeographicDataset["rail"], "catalog">;
+}) {
   return {
+    buildings: new T.MeshStandardMaterial({
+      vertexColors: true,
+      roughness: 0.92,
+      side: T.FrontSide,
+    }),
     land: new T.MeshStandardMaterial({ color: "#a8b6a1", roughness: 1 }),
     roads: new T.MeshStandardMaterial({ color: "#414c56", roughness: 1 }),
     deck: new T.MeshStandardMaterial({
@@ -156,6 +164,11 @@ export function buildGeographicChunk(
     })),
     m.support,
   );
+  if (c.buildings?.length) {
+    const start = performance.now();
+    root.add(buildGeographicBuildings(c.buildings, m.buildings));
+    root.userData.buildingBuildMs = performance.now() - start;
+  }
   return root;
 }
 /** Shared materials survive chunk eviction. Each chunk exclusively owns its GPU geometry. */

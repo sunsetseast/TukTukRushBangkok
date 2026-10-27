@@ -1,4 +1,5 @@
 import * as T from "three";
+import { disposeObject } from "../../assets";
 import { buildRealArchitecture } from "../realArchitecture";
 import { realCommercial } from "../realCommercial";
 import { reviewedLandmark } from "../landmarkSites";
@@ -46,4 +47,12 @@ export function buildMigratedArt(place: GeographicPlace) {
   root.userData.assetScale = scale;
   root.userData.localSize = size.toArray();
   return { root, obstacle };
+}
+
+/** Disposal must also detach the root: a disposed mesh still attached to the
+ * live scene is rendered and uploaded again on a later frame. */
+export function disposeMigratedArt(root: T.Group) {
+  root.removeFromParent();
+  disposeObject(root);
+  root.clear();
 }

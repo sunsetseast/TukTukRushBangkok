@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "policy": "Replace full source footprints intersecting fitted authored envelopes. Expand with reviewed compound polygons/source IDs before future migrations; never transplant legacy coordinates.",
+  "sites": [
+    {
+      "id": "gate",
+      "coordinate": [100.5129798, 13.7371754],
+      "radius": 14,
+      "sourceIds": ["osm:way/342812020"]
+    },
+    { "id": "traimit", "coordinate": [100.51357, 13.73768], "radius": 45 },
+    { "id": "river-city", "coordinate": [100.513262, 13.730349], "radius": 50 },
+    { "id": "icon", "coordinate": [100.510325, 13.726826], "radius": 75 }
+  ]
+}

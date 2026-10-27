@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "cycles": 6,
+  "method": "Two Chrome full GC calls per stop, then Runtime.getHeapUsage; camera follows active district",
+  "perDistrictBackingStableWithinBytes": 1048576,
+  "sceneMeshCountsStable": true,
+  "resourceFix": "Evicted migrated-landmark roots detach from the scene before disposing owned resources",
+  "physicalIPhone": false
+}

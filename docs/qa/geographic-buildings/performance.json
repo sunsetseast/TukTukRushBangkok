@@ -1,0 +1,486 @@
+{
+  "environment": "Linux headless Chromium / ANGLE SwiftShader software WebGL; no physical iPhone or Safari",
+  "browser": "154.0.8037.57",
+  "physicalIPhone": false,
+  "measurement": "Matched local Vite runs using final renderer: base geography overridden for before; implemented chunks for after. Short frame samples; no network throttling; software GPU; timings are observations, not mobile certification.",
+  "baselineBeforeImplementation": "original-before-metrics.json",
+  "before": "before/metrics.json",
+  "after": "measured-after-metrics.json",
+  "finalGallery": "after/metrics.json",
+  "assets": {
+    "chunkBytesBefore": 11816737,
+    "chunkBytesAfter": 36738182,
+    "chunkBytesAdded": 24921445,
+    "offlineSourceCompanionBytes": 9358664,
+    "gameplayMetadataBytes": 747261,
+    "navigationBytes": 5492682,
+    "newOfflineCompanions": {
+      "buildings-source.v1.json.gz": 9358664,
+      "buildings-report.v1.json": 211616,
+      "building-exceptions.v1.json.gz": 463688,
+      "building-replacements.v1.json": 607
+    },
+    "geographicBytesAddedIncludingOfflineCompanions": 34956314
+  },
+  "initial": {
+    "firstResidentMs": {
+      "before": 6110.882003,
+      "after": 9811.191587000001
+    },
+    "loadMs": {
+      "before": 632.0999999998603,
+      "after": 664.6000000000931
+    },
+    "activeAssetBytes": {
+      "before": 462156,
+      "after": 2264068
+    },
+    "decodedNavigationBytes": {
+      "before": 27354316,
+      "after": 27354316
+    },
+    "buildingGPUBytes": {
+      "before": 0,
+      "after": 45330516
+    },
+    "activeMeshes": {
+      "before": 84,
+      "after": 823
+    },
+    "geometries": {
+      "before": 53,
+      "after": 108
+    },
+    "buildings": {
+      "before": 0,
+      "after": 14877
+    },
+    "activationMs": {
+      "before": {
+        "median": 67.30000000004657,
+        "max": 653.7000000001863,
+        "sum": 1405.1000000005588
+      },
+      "after": {
+        "median": 395.80000000004657,
+        "max": 945.5999999998603,
+        "sum": 3917.999999999767
+      }
+    },
+    "buildingBuildMs": {
+      "before": {
+        "median": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "after": {
+        "median": 299.0999999998603,
+        "max": 393.89999999990687,
+        "sum": 2424.1999999999534
+      }
+    },
+    "decodeAndBodyMs": {
+      "before": {
+        "median": 5.7999999998137355,
+        "max": 11
+      },
+      "after": {
+        "median": 611.8000000000466,
+        "max": 1070.4000000001397
+      }
+    },
+    "jsonParseMs": {
+      "before": {
+        "median": 1.6000000000931323,
+        "max": 2.3999999999068677
+      },
+      "after": {
+        "median": 26.800000000046566,
+        "max": 66.4000000001397
+      }
+    },
+    "yaowaratJSHeapBeforeForcedGC": {
+      "before": 119773431,
+      "after": 258464106
+    }
+  },
+  "views": [
+    {
+      "name": "yaowarat-drive",
+      "before": {
+        "frameMs": {
+          "p50": 183.3000000000011,
+          "p95": 366.6999999999989,
+          "samples": 13
+        },
+        "drawCalls": 37,
+        "triangles": 83398,
+        "quality": "low",
+        "sampleQualities": [
+          "medium",
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 583.3999999999996,
+          "p95": 616.6000000000004,
+          "samples": 5
+        },
+        "drawCalls": 73,
+        "triangles": 137984,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "yaowarat-overview",
+      "before": {
+        "frameMs": {
+          "p50": 166.60000000000036,
+          "p95": 300,
+          "samples": 15
+        },
+        "drawCalls": 48,
+        "triangles": 69524,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 283.2999999999993,
+          "p95": 533.2999999999993,
+          "samples": 11
+        },
+        "drawCalls": 61,
+        "triangles": 85673,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "chinatown-soi",
+      "before": {
+        "frameMs": {
+          "p50": 100,
+          "p95": 200.10000000000218,
+          "samples": 23
+        },
+        "drawCalls": 29,
+        "triangles": 34097,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 466.59999999999854,
+          "p95": 483.40000000000146,
+          "samples": 6
+        },
+        "drawCalls": 63,
+        "triangles": 70147,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "song-wat-talat-noi",
+      "before": {
+        "frameMs": {
+          "p50": 166.70000000000073,
+          "p95": 416.7000000000007,
+          "samples": 16
+        },
+        "drawCalls": 21,
+        "triangles": 38282,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 416.6999999999971,
+          "p95": 450,
+          "samples": 7
+        },
+        "drawCalls": 53,
+        "triangles": 83127,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "charoen-krung-drive",
+      "before": {
+        "frameMs": {
+          "p50": 183.29999999999927,
+          "p95": 433.3000000000029,
+          "samples": 15
+        },
+        "drawCalls": 48,
+        "triangles": 103590,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 450,
+          "p95": 466.59999999999854,
+          "samples": 7
+        },
+        "drawCalls": 81,
+        "triangles": 152224,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "bang-rak-overview",
+      "before": {
+        "frameMs": {
+          "p50": 200,
+          "p95": 383.2999999999993,
+          "samples": 13
+        },
+        "drawCalls": 39,
+        "triangles": 62584,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 400,
+          "p95": 400,
+          "samples": 8
+        },
+        "drawCalls": 80,
+        "triangles": 119142,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "si-phraya-frontage",
+      "before": {
+        "frameMs": {
+          "p50": 116.70000000000437,
+          "p95": 266.59999999999854,
+          "samples": 19
+        },
+        "drawCalls": 17,
+        "triangles": 38745,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 366.59999999999854,
+          "p95": 399.90000000000146,
+          "samples": 8
+        },
+        "drawCalls": 46,
+        "triangles": 86998,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "silom-skyline",
+      "before": {
+        "frameMs": {
+          "p50": 183.1999999999971,
+          "p95": 333.3000000000029,
+          "samples": 15
+        },
+        "drawCalls": 25,
+        "triangles": 52303,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 416.5,
+          "p95": 450,
+          "samples": 7
+        },
+        "drawCalls": 56,
+        "triangles": 93311,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "riverfront-block",
+      "before": {
+        "frameMs": {
+          "p50": 216.6999999999971,
+          "p95": 361.90000000000146,
+          "samples": 13
+        },
+        "drawCalls": 43,
+        "triangles": 74335,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 433.1999999999971,
+          "p95": 483.40000000000146,
+          "samples": 7
+        },
+        "drawCalls": 76,
+        "triangles": 125572,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    },
+    {
+      "name": "heritage-modern-transition",
+      "before": {
+        "frameMs": {
+          "p50": 216.70000000000437,
+          "p95": 399.90000000000146,
+          "samples": 12
+        },
+        "drawCalls": 54,
+        "triangles": 62734,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      },
+      "after": {
+        "frameMs": {
+          "p50": 466.6000000000058,
+          "p95": 483.29999999998836,
+          "samples": 6
+        },
+        "drawCalls": 85,
+        "triangles": 104119,
+        "quality": "low",
+        "sampleQualities": [
+          "low"
+        ]
+      }
+    }
+  ],
+  "travel": {
+    "north": {
+      "activeMeshes": [
+        563
+      ],
+      "activeChunks": [
+        9
+      ],
+      "heapUsedMiB": [
+        51.55159378051758,
+        52.27335739135742
+      ],
+      "backingStoreMiB": [
+        53.451364517211914,
+        53.45140266418457
+      ],
+      "buildingAttributeMiB": [
+        15.053089141845703,
+        15.053089141845703
+      ]
+    },
+    "Chinatown": {
+      "activeMeshes": [
+        823
+      ],
+      "activeChunks": [
+        9
+      ],
+      "heapUsedMiB": [
+        75.04246520996094,
+        75.67460250854492
+      ],
+      "backingStoreMiB": [
+        86.18914031982422,
+        86.18918037414551
+      ],
+      "buildingAttributeMiB": [
+        43.23054885864258,
+        43.23054885864258
+      ]
+    },
+    "Silom": {
+      "activeMeshes": [
+        1242
+      ],
+      "activeChunks": [
+        14
+      ],
+      "heapUsedMiB": [
+        91.07015228271484,
+        95.79631805419922
+      ],
+      "backingStoreMiB": [
+        114.53738975524902,
+        114.53789806365967
+      ],
+      "buildingAttributeMiB": [
+        68.0826530456543,
+        68.0826530456543
+      ]
+    }
+  },
+  "qualitySamples": {
+    "low": {
+      "quality": "low",
+      "sampleQualities": [
+        "low"
+      ],
+      "frameMs": {
+        "p50": 500.1000000000058,
+        "p95": 533.3999999999942,
+        "samples": 6
+      }
+    },
+    "medium": {
+      "quality": "medium",
+      "sampleQualities": [
+        "medium"
+      ],
+      "frameMs": {
+        "p50": 566.7000000000116,
+        "p95": 700,
+        "samples": 5
+      }
+    }
+  }
+}

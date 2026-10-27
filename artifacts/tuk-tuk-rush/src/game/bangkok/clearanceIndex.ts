@@ -27,6 +27,7 @@ function createPhysicsIndex(d: District) {
       }
   });
   return {
+    obstacles: d.obstacles,
     query: (p: Point) =>
       cells.get(`${Math.floor(p.x / 80)}:${Math.floor(p.z / 80)}`) ?? [],
   };
@@ -34,7 +35,7 @@ function createPhysicsIndex(d: District) {
 /** Preserve original collider order and contact solver; construction is static. */
 export function physicsObstacleIndex(d: District) {
   let index = physicsCache.get(d);
-  if (!index) {
+  if (!index || index.obstacles !== d.obstacles) {
     index = createPhysicsIndex(d);
     physicsCache.set(d, index);
   }

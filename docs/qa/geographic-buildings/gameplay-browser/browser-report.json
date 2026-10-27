@@ -1,0 +1,545 @@
+{
+  "physicalIPhone": false,
+  "environment": "Headless Chromium / ANGLE SwiftShader, Linux; browser emulation is not physical iPhone/Safari certification",
+  "errors": [],
+  "checks": {
+    "productionLandmarkLook": true,
+    "productionKeyboardDriving": true,
+    "streamingPreservesWalletAndMission": true,
+    "repeatedEvictionBounded": true,
+    "landscapeMap": true,
+    "mobileBoost": true,
+    "mobileControls": true,
+    "defaultLegacyStartup": true
+  },
+  "browserVersion": "154.0.8037.57",
+  "firstResidentFrameMs": 10476.792048,
+  "initial": {
+    "position": {
+      "x": 3580.762939453125,
+      "z": 841.8140258789062,
+      "heading": -1.9022141986823093
+    },
+    "coordinate": {
+      "lon": 100.51290440367129,
+      "lat": 13.737046297609789
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 522.0999999998603,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 109,
+    "triangles": 129089,
+    "geometries": 108,
+    "buildings": 14877,
+    "buildingGPUBytes": 45330516,
+    "activeMeshes": 823,
+    "chunkTiming": [
+      {
+        "id": "3072:0",
+        "fetchHeadersMs": 94.70000000018626,
+        "decodeAndBodyMs": 86.69999999995343,
+        "jsonParseMs": 13.199999999953434
+      },
+      {
+        "id": "3072:1024",
+        "fetchHeadersMs": 95,
+        "decodeAndBodyMs": 100.5,
+        "jsonParseMs": 11.199999999953434
+      },
+      {
+        "id": "2048:0",
+        "fetchHeadersMs": 64.30000000004657,
+        "decodeAndBodyMs": 817.5,
+        "jsonParseMs": 7.699999999953434
+      },
+      {
+        "id": "4096:0",
+        "fetchHeadersMs": 64.10000000009313,
+        "decodeAndBodyMs": 836.5999999998603,
+        "jsonParseMs": 9.300000000046566
+      },
+      {
+        "id": "2048:1024",
+        "fetchHeadersMs": 12.800000000046566,
+        "decodeAndBodyMs": 82.5,
+        "jsonParseMs": 9.199999999953434
+      },
+      {
+        "id": "4096:1024",
+        "fetchHeadersMs": 12.5,
+        "decodeAndBodyMs": 92.5,
+        "jsonParseMs": 24.4000000001397
+      },
+      {
+        "id": "3072:-1024",
+        "fetchHeadersMs": 49.5,
+        "decodeAndBodyMs": 141.29999999981374,
+        "jsonParseMs": 66.9000000001397
+      },
+      {
+        "id": "2048:-1024",
+        "fetchHeadersMs": 9.799999999813735,
+        "decodeAndBodyMs": 209.30000000004657,
+        "jsonParseMs": 24.600000000093132
+      },
+      {
+        "id": "4096:-1024",
+        "fetchHeadersMs": 7.2999999998137355,
+        "decodeAndBodyMs": 26.600000000093132,
+        "jsonParseMs": 8.5
+      }
+    ],
+    "activeAssetBytes": 2264068,
+    "buildingBuildMs": [
+      294.39999999990687,
+      161.69999999995343,
+      139.4000000001397,
+      109.80000000004657,
+      88.79999999981374,
+      194.39999999990687,
+      180.30000000004657,
+      195.89999999990687,
+      289.19999999995343
+    ],
+    "activationMs": [
+      904.4000000001397,
+      755.5,
+      150.60000000009313,
+      158.70000000018626,
+      108.80000000004657,
+      246.60000000009313,
+      217.5999999998603,
+      228.20000000018626,
+      306.4000000001397
+    ],
+    "quality": "low",
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 0,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "title",
+      "mode": "shift",
+      "stage": "pickup",
+      "shiftTime": 180,
+      "tripTime": 104,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 0,
+      "target": {
+        "id": "geo:176789",
+        "x": 3580.762939453125,
+        "z": 841.8140258789062,
+        "name": "Chinatown Gate / Odeon Circle · Yaowarat Road"
+      },
+      "passenger": "Som · market trader",
+      "distance": 61,
+      "bearing": 0,
+      "message": "Low quality enabled for smoother driving",
+      "boarding": 0,
+      "quality": "low",
+      "fps": 2
+    },
+    "landmarks": [
+      "3072:0",
+      "3072:1024",
+      "2048:0",
+      "4096:0",
+      "2048:1024",
+      "4096:1024",
+      "3072:-1024",
+      "2048:-1024",
+      "4096:-1024"
+    ]
+  },
+  "driving": {
+    "position": {
+      "x": 3568.9654519547908,
+      "z": 837.7543941118864,
+      "heading": -1.9022141986823093
+    },
+    "coordinate": {
+      "lon": 100.51279555495539,
+      "lat": 13.737083661493585
+    },
+    "height": 0,
+    "speed": 17.32077336886103,
+    "loadMs": 522.0999999998603,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 91,
+    "triangles": 113214,
+    "geometries": 175,
+    "buildings": 14877,
+    "buildingGPUBytes": 45330516,
+    "activeMeshes": 823,
+    "chunkTiming": [
+      {
+        "id": "3072:0",
+        "fetchHeadersMs": 94.70000000018626,
+        "decodeAndBodyMs": 86.69999999995343,
+        "jsonParseMs": 13.199999999953434
+      },
+      {
+        "id": "3072:1024",
+        "fetchHeadersMs": 95,
+        "decodeAndBodyMs": 100.5,
+        "jsonParseMs": 11.199999999953434
+      },
+      {
+        "id": "2048:0",
+        "fetchHeadersMs": 64.30000000004657,
+        "decodeAndBodyMs": 817.5,
+        "jsonParseMs": 7.699999999953434
+      },
+      {
+        "id": "4096:0",
+        "fetchHeadersMs": 64.10000000009313,
+        "decodeAndBodyMs": 836.5999999998603,
+        "jsonParseMs": 9.300000000046566
+      },
+      {
+        "id": "2048:1024",
+        "fetchHeadersMs": 12.800000000046566,
+        "decodeAndBodyMs": 82.5,
+        "jsonParseMs": 9.199999999953434
+      },
+      {
+        "id": "4096:1024",
+        "fetchHeadersMs": 12.5,
+        "decodeAndBodyMs": 92.5,
+        "jsonParseMs": 24.4000000001397
+      },
+      {
+        "id": "3072:-1024",
+        "fetchHeadersMs": 49.5,
+        "decodeAndBodyMs": 141.29999999981374,
+        "jsonParseMs": 66.9000000001397
+      },
+      {
+        "id": "2048:-1024",
+        "fetchHeadersMs": 9.799999999813735,
+        "decodeAndBodyMs": 209.30000000004657,
+        "jsonParseMs": 24.600000000093132
+      },
+      {
+        "id": "4096:-1024",
+        "fetchHeadersMs": 7.2999999998137355,
+        "decodeAndBodyMs": 26.600000000093132,
+        "jsonParseMs": 8.5
+      }
+    ],
+    "activeAssetBytes": 2264068,
+    "buildingBuildMs": [
+      294.39999999990687,
+      161.69999999995343,
+      139.4000000001397,
+      109.80000000004657,
+      88.79999999981374,
+      194.39999999990687,
+      180.30000000004657,
+      195.89999999990687,
+      289.19999999995343
+    ],
+    "activationMs": [
+      904.4000000001397,
+      755.5,
+      150.60000000009313,
+      158.70000000018626,
+      108.80000000004657,
+      246.60000000009313,
+      217.5999999998603,
+      228.20000000018626,
+      306.4000000001397
+    ],
+    "quality": "low",
+    "stream": {
+      "loaded": 9,
+      "disposed": 0,
+      "requests": 9,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "3072:0",
+        "3072:1024",
+        "2048:0",
+        "4096:0",
+        "2048:1024",
+        "4096:1024",
+        "3072:-1024",
+        "2048:-1024",
+        "4096:-1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 2.841500000000231,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "playing",
+      "mode": "free",
+      "stage": "delivery",
+      "shiftTime": 1440,
+      "tripTime": 102.27009999999996,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 62.354784127899705,
+      "target": {
+        "id": "geo:203561",
+        "x": 3666.527099609375,
+        "z": 783.3380126953125,
+        "name": "Wat Traimit · Unnamed passage"
+      },
+      "passenger": "Som · market trader",
+      "distance": 111.71131392813932,
+      "bearing": -2.301390223314877,
+      "message": "Som is aboard. Go to Wat Traimit · Unnamed passage!",
+      "boarding": 0,
+      "quality": "low",
+      "fps": 2,
+      "careerXP": 0,
+      "careerAchievements": [],
+      "careerRecords": [],
+      "wallet": 0,
+      "newDistricts": 0,
+      "session": 1,
+      "boostState": "ready",
+      "boostActive": 0,
+      "boostRecharge": 0
+    },
+    "landmarks": [
+      "3072:0",
+      "3072:1024",
+      "2048:0",
+      "4096:0",
+      "2048:1024",
+      "4096:1024",
+      "3072:-1024",
+      "2048:-1024",
+      "4096:-1024"
+    ]
+  },
+  "frames": {
+    "medianMs": 450,
+    "p95Ms": 916.6000000000058,
+    "samples": 60
+  },
+  "clearance": {
+    "position": {
+      "x": 4521.82755660033,
+      "z": 2813.4719195107327,
+      "heading": -1.2808129847728957
+    },
+    "coordinate": {
+      "lon": 100.52149091673975,
+      "lat": 13.719170997574514
+    },
+    "height": 0,
+    "speed": 0,
+    "loadMs": 522.0999999998603,
+    "decodedNavigationBytes": 27354316,
+    "drawCalls": 82,
+    "triangles": 68944,
+    "geometries": 82,
+    "buildings": 12860,
+    "buildingGPUBytes": 47279700,
+    "activeMeshes": 786,
+    "chunkTiming": [
+      {
+        "id": "4096:2048",
+        "fetchHeadersMs": 8.600000000093132,
+        "decodeAndBodyMs": 69.60000000009313,
+        "jsonParseMs": 12.899999999906868
+      },
+      {
+        "id": "4096:3072",
+        "fetchHeadersMs": 54.39999999990687,
+        "decodeAndBodyMs": 51,
+        "jsonParseMs": 9.800000000046566
+      },
+      {
+        "id": "3072:2048",
+        "fetchHeadersMs": 5.300000000046566,
+        "decodeAndBodyMs": 75.19999999995343,
+        "jsonParseMs": 5.100000000093132
+      },
+      {
+        "id": "5120:2048",
+        "fetchHeadersMs": 4.600000000093132,
+        "decodeAndBodyMs": 80.69999999995343,
+        "jsonParseMs": 9.300000000046566
+      },
+      {
+        "id": "3072:3072",
+        "fetchHeadersMs": 11.800000000046566,
+        "decodeAndBodyMs": 45.800000000046566,
+        "jsonParseMs": 41.799999999813735
+      },
+      {
+        "id": "4096:1024",
+        "fetchHeadersMs": 7.899999999906868,
+        "decodeAndBodyMs": 88.19999999995343,
+        "jsonParseMs": 25.9000000001397
+      },
+      {
+        "id": "5120:3072",
+        "fetchHeadersMs": 43.799999999813735,
+        "decodeAndBodyMs": 124.20000000018626,
+        "jsonParseMs": 29
+      },
+      {
+        "id": "3072:1024",
+        "fetchHeadersMs": 42.89999999990687,
+        "decodeAndBodyMs": 152.9000000001397,
+        "jsonParseMs": 53.89999999990687
+      },
+      {
+        "id": "5120:1024",
+        "fetchHeadersMs": 7,
+        "decodeAndBodyMs": 22.0999999998603,
+        "jsonParseMs": 40
+      }
+    ],
+    "activeAssetBytes": 2072366,
+    "buildingBuildMs": [
+      109.5,
+      158.80000000004657,
+      32.199999999953434,
+      113,
+      29,
+      217.60000000009313,
+      408.30000000004657,
+      265.0999999998603,
+      265.80000000004657
+    ],
+    "activationMs": [
+      164.60000000009313,
+      308.19999999995343,
+      129.5,
+      413.19999999995343,
+      561.6999999999534,
+      288.30000000004657,
+      317.89999999990687,
+      22.5,
+      31.5999999998603,
+      224.80000000004657,
+      300,
+      41.89999999990687,
+      12.199999999953434,
+      69.0999999998603,
+      38.300000000046566,
+      41.10000000009313,
+      130.0999999998603,
+      169.5,
+      40.699999999953434,
+      128.10000000009313,
+      41.199999999953434,
+      278.29999999981374,
+      421.80000000004657,
+      610.2000000001863,
+      351.80000000004657
+    ],
+    "quality": "low",
+    "stream": {
+      "loaded": 45,
+      "disposed": 36,
+      "requests": 45,
+      "errors": 0,
+      "active": 9,
+      "ids": [
+        "4096:2048",
+        "4096:3072",
+        "3072:2048",
+        "5120:2048",
+        "3072:3072",
+        "4096:1024",
+        "5120:3072",
+        "3072:1024",
+        "5120:1024"
+      ],
+      "settled": true,
+      "total": 471
+    },
+    "snapshot": {
+      "elapsed": 8.085900000000354,
+      "discoveredDistricts": [],
+      "discoveredLandmarks": [],
+      "discoveredShortcuts": [],
+      "phase": "playing",
+      "mode": "free",
+      "stage": "delivery",
+      "shiftTime": 1440,
+      "tripTime": 97.02570000000013,
+      "score": 0,
+      "earnings": 0,
+      "deliveries": 0,
+      "speed": 0,
+      "target": {
+        "id": "geo:203561",
+        "x": 3666.527099609375,
+        "z": 783.3380126953125,
+        "name": "Wat Traimit · Unnamed passage"
+      },
+      "passenger": "Som · market trader",
+      "distance": 2202.9486038785785,
+      "bearing": -1.4620450148664461,
+      "message": "Back on the road",
+      "boarding": 0,
+      "quality": "low",
+      "fps": 2,
+      "careerXP": 0,
+      "careerAchievements": [],
+      "careerRecords": [],
+      "wallet": 0,
+      "newDistricts": 0,
+      "session": 1,
+      "boostState": "ready",
+      "boostActive": 0,
+      "boostRecharge": 0
+    },
+    "landmarks": [
+      "4096:2048",
+      "4096:3072",
+      "3072:2048",
+      "5120:2048",
+      "3072:3072",
+      "4096:1024",
+      "5120:3072",
+      "3072:1024",
+      "5120:1024"
+    ]
+  },
+  "legacy": {
+    "graphics": {
+      "calls": 212,
+      "triangles": 347896,
+      "geometries": 198,
+      "textures": 11,
+      "frameMs": 52.800000000046566
+    }
+  }
+}
