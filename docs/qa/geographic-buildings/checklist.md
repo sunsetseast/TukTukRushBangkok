@@ -10,4 +10,4 @@
 - [x] Inspect priority districts in actual renderer; capture ten matched views.
 - [x] Run source, geometry, gameplay, streaming, legacy, TypeScript and build checks.
 - [x] Record performance, coverage gaps and certification limitations.
-- [ ] Commit, push and create one draft PR; no merge/deploy/publish.
+- [x] Commit, push and create one draft PR: [#48](https://github.com/sunsetseast/TukTukRushBangkok/pull/48); no merge/deploy/publish.

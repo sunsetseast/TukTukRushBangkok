@@ -2,7 +2,7 @@
 
 **Review status: draft implementation; desktop software-WebGL verification completed, physical iPhone/Safari certification outstanding.** Prepared by Codex, 27 October 2026. This is a reproducible engineering report, not an independent third-party or surveyed GIS certification.
 
-Base: `d7ed15f4c7e5b4df4d4e8eb8dcc6cb28f070a940` (merged PR47; latest main rechecked before delivery). Branch: `codex/geographic-building-architecture`. No merge, deployment or publishing is part of this work. [Implementation checklist](checklist.md), [base architecture audit](audit.md), [reproduction commands](reproduce.md).
+Base: `d7ed15f4c7e5b4df4d4e8eb8dcc6cb28f070a940` (merged PR47; latest main rechecked before delivery). Branch: `codex/geographic-building-architecture`. Delivery: [draft PR48](https://github.com/sunsetseast/TukTukRushBangkok/pull/48). No merge, deployment or publishing is part of this work. [Implementation checklist](checklist.md), [base architecture audit](audit.md), [reproduction commands](reproduce.md).
 
 ## A. Geographic building coverage
 
