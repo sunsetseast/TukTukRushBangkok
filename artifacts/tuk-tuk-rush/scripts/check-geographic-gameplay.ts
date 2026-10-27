@@ -1,3 +1,4 @@
+import * as T from "three";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
@@ -8,7 +9,11 @@ import { guidanceFor } from "../src/game/navigation";
 import { CareerStore, CAREER_KEY } from "../src/game/career";
 import { VehicleController, createVehicle } from "../src/game/vehicle";
 import { obstacleDistance } from "../src/game/world";
-import { buildMigratedArt } from "../src/game/bangkok/geographic/migratedArt";
+import {
+  buildMigratedArt,
+  disposeMigratedArt,
+} from "../src/game/bangkok/geographic/migratedArt";
+import { buildingObstacles } from "../src/game/bangkok/geographic/buildings";
 import { geographicToMeters } from "../src/game/bangkok/geographic/projection";
 const dir = new URL("../public/assets/geography/", import.meta.url),
   raw = gunzipSync(fs.readFileSync(new URL("navigation.v2.bin.gz", dir))),
@@ -56,7 +61,15 @@ assert.equal(
 assert.equal(district.nodes.length, 4, "No duplicate full-city District graph");
 assert.deepEqual(engine.career.profile.landmarks, previous.landmarks);
 assert.deepEqual(engine.career.profile.districts, previous.districts);
-district.obstacles = art.map((a) => a.obstacle);
+const sourceBuildingColliders = metadata.chunks.flatMap(
+  (ref: { file: string }) => {
+    const c = JSON.parse(
+      gunzipSync(fs.readFileSync(new URL(ref.file, dir))).toString(),
+    );
+    return buildingObstacles(c.buildings ?? [], c.origin);
+  },
+);
+district.obstacles = art.map((a) => a.obstacle).concat(sourceBuildingColliders);
 district.buildings = district.obstacles;
 // Every pair must use actual connected edges; the opposite bank must use a real bridge.
 for (const a of network.stops)
@@ -381,9 +394,34 @@ assert.deepEqual(
   "Crossing X/Z never welds independent layers",
 );
 engine.dispose();
+const detachedStage = new T.Group(),
+  owned = new Set<T.BufferGeometry>(),
+  released = new Set<T.BufferGeometry>();
+for (const a of art) {
+  detachedStage.add(a.root);
+  a.root.traverse((o) => {
+    if (o instanceof T.Mesh) {
+      owned.add(o.geometry);
+      o.geometry.addEventListener("dispose", () => released.add(o.geometry));
+    }
+  });
+}
+for (const a of art) disposeMigratedArt(a.root);
+assert.equal(
+  detachedStage.children.length,
+  0,
+  "Evicted landmark roots cannot remain in the live scene",
+);
+assert.equal(
+  released.size,
+  owned.size,
+  "All evicted landmark geometry released",
+);
 
 const report = {
   pass: true,
+  landmarkRootsDetached: true,
+  sourceBuildingColliderCount: sourceBuildingColliders.length,
   bridgeDistance,
   deckHeight,
   seams,
@@ -411,7 +449,7 @@ const report = {
     sources: p.sources,
   })),
 };
-const out = new URL("../../../docs/qa/geographic-gameplay/", import.meta.url);
+const out = new URL("../../../docs/qa/geographic-buildings/", import.meta.url);
 fs.mkdirSync(out, { recursive: true });
 fs.writeFileSync(
   new URL("gameplay-tests.json", out),

@@ -1,0 +1,247 @@
+Classified 222218 buildings in 40.6s
+Building runtime 0/222218 at 66.7s
+Building runtime 10000/222218 at 70.5s
+Building runtime 20000/222218 at 74.0s
+Building runtime 30000/222218 at 77.1s
+Building runtime 40000/222218 at 84.4s
+Building runtime 50000/222218 at 91.4s
+Building runtime 60000/222218 at 98.1s
+Building runtime 70000/222218 at 104.2s
+Building runtime 80000/222218 at 112.4s
+Building runtime 90000/222218 at 118.0s
+Building runtime 100000/222218 at 124.0s
+Building runtime 110000/222218 at 130.0s
+Building runtime 120000/222218 at 136.2s
+Building runtime 130000/222218 at 145.5s
+Building runtime 140000/222218 at 150.8s
+Building runtime 150000/222218 at 156.4s
+Building runtime 160000/222218 at 162.1s
+Building runtime 170000/222218 at 168.0s
+Building runtime 180000/222218 at 174.3s
+Building runtime 190000/222218 at 180.5s
+Building runtime 200000/222218 at 194.1s
+Building runtime 210000/222218 at 200.6s
+Building runtime 220000/222218 at 203.6s
+Buildings 222132 families {'residential': 194570, 'high-rise': 1324, 'hotel': 599, 'commercial': 6526, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76629
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+/workspace/TukTukRushBangkok/scripts/geography/import_bangkok.py:60: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  return ops.transform(lambda lon,lat,z=None:(project.transform(lon,lat)[0]-ORIGIN[0], ORIGIN[1]-project.transform(lon,lat)[1]),geom)
+/workspace/TukTukRushBangkok/scripts/geography/import_bangkok.py:308: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  chunk[name]=[rings(ops.transform(lambda a,b,c=None:(a-x,b-z),p)) for p in polygons(part)]
+{"sourceWays": 105061, "runtimeWays": 104949, "nodes": 412233, "waterAreas": 168, "administrativeAreas": 191, "chunks": 471, "railTracks": 1994, "playableRailTracks": 1153, "stations": 716, "playableStations": 479, "routes": 43, "coverage": {"A": 6904, "B": 8449, "C": 89708}} runtime 10612211
+Classified 222218 buildings in 66.5s
+Building runtime 0/222218 at 113.7s
+Building runtime 10000/222218 at 121.4s
+Building runtime 20000/222218 at 128.4s
+Building runtime 30000/222218 at 134.7s
+Building runtime 40000/222218 at 143.2s
+Building runtime 50000/222218 at 151.0s
+Building runtime 60000/222218 at 158.2s
+Building runtime 70000/222218 at 166.8s
+Building runtime 80000/222218 at 172.5s
+Building runtime 90000/222218 at 178.0s
+Building runtime 100000/222218 at 183.9s
+Building runtime 110000/222218 at 190.1s
+Building runtime 120000/222218 at 196.3s
+Building runtime 130000/222218 at 204.8s
+Building runtime 140000/222218 at 210.2s
+Building runtime 150000/222218 at 215.5s
+Building runtime 160000/222218 at 220.9s
+Building runtime 170000/222218 at 226.4s
+Building runtime 180000/222218 at 232.3s
+Building runtime 190000/222218 at 238.0s
+Building runtime 200000/222218 at 247.8s
+Building runtime 210000/222218 at 254.4s
+Building runtime 220000/222218 at 260.4s
+Buildings 222132 families {'residential': 194570, 'high-rise': 1324, 'hotel': 599, 'commercial': 6526, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76629
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+{"pass": true, "byteIdenticalFiles": 480, "changed": [], "method": "Final building compiler followed by complete offline geography import and gameplay packing, using committed bounded snapshots. Pinned country extraction was executed once before the environment restart."}
+{
+  "mainRiverBounds": [
+    100.46,
+    13.63,
+    100.65,
+    13.825
+  ],
+  "sourceHoles": 16,
+  "coverageAnchors": 93,
+  "sourceVsRenderedRailLengthErrorM": 0.002272660261951387,
+  "maxProjectionRoundingM": 0.0007068372339255953,
+  "narrowWays": 17602,
+  "sourceWaysRetained": 104949,
+  "roadWaterOverlapM2": 0.9999462480737749,
+  "landWaterOverlapM2": 0.07612879627416419,
+  "deckWaterAreaM2": 669083.0867963433,
+  "seamChecks": 2694,
+  "railRenderedMeters": 480968.82083694247,
+  "railLevels": {
+    "elevated": 803,
+    "at-grade": 1161,
+    "underground": 30
+  },
+  "railStatuses": {
+    "operational": 1835,
+    "proposed": 44,
+    "construction": 87,
+    "disused": 28
+  },
+  "counts": {
+    "administrativeAreas": 191,
+    "chunks": 471,
+    "coverage": {
+      "A": 6904,
+      "B": 8449,
+      "C": 89708
+    },
+    "nodes": 412233,
+    "playableRailTracks": 1153,
+    "playableStations": 479,
+    "railTracks": 1994,
+    "routes": 43,
+    "runtimeWays": 104949,
+    "sourceWays": 105061,
+    "stations": 716,
+    "waterAreas": 168
+  },
+  "runtimeGzipBytes": 10612419,
+  "chunkGzipBytes": 36739751
+}
+PASS 21 required stations; source-backed rail river crossing and outside Pink branch
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+OK
+{
+  "pass": true,
+  "uniqueRendered": 222132,
+  "courtyards": 447,
+  "crossChunk": 7287,
+  "safeCollisionEdges": 792719
+}
+{
+  pass: true,
+  streamRequests: 18,
+  evicted: 18,
+  roadChunkCrossings: [
+    {
+      way: 'osm:way/1009325184',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.568651978194488
+    },
+    {
+      way: 'osm:way/1009341616',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.568651978194513
+    },
+    {
+      way: 'osm:way/1009341621',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.56865197819437
+    }
+  ],
+  components: 478,
+  largestComponents: [
+    340822, 249, 159,
+       140, 123, 112,
+       100,  96,  82,
+        79,  79,  75
+  ],
+  note: 'Disconnected source compounds, grade-separated identities and narrow routes remain separate. No fabricated graph links.'
+}
+{"pass":true,"buildings":222132,"vertices":18463203,"roofArea":300,"resourceDisposal":true,"lod":true,"productionCollision":true,"partRelationships":588}
+{
+  pass: true,
+  landmarkRootsDetached: true,
+  sourceBuildingColliderCount: 792719,
+  bridgeDistance: 421.23564298632874,
+  deckHeight: 7.000000000000001,
+  seams: [
+    { edge: 158, axis: 'z', speed: 19.568651978194474 },
+    { edge: 168, axis: 'z', speed: 19.56865197819424 },
+    { edge: 179, axis: 'z', speed: 19.568651978194428 }
+  ],
+  supports: 1382,
+  initMs: 446.434256,
+  allocatedTypedBytes: 27354316,
+  query1000Ms: 168.4328979999991,
+  queries: 2455,
+  examinedSegments: 793298,
+  metres: 345,
+  simulatedSeconds: 50.733333333333334,
+  collisionFrames: 0,
+  visitedChunks: [ '3:0' ],
+  actualDrivenDelivery: true,
+  teleports: false,
+  productionRewards: true,
+  legacyProgressPreserved: true,
+  distantRouteNodes: 404,
+  places: [
+    {
+      id: 'gate',
+      coordinate: [Object],
+      accessWay: 'osm:way/24680968',
+      accessNode: 'geo:176789',
+      radius: 8.177315676754393,
+      sources: [Array]
+    },
+    {
+      id: 'traimit',
+      coordinate: [Object],
+      accessWay: 'osm:way/342810684',
+      accessNode: 'geo:203561',
+      radius: 9.122361021837602,
+      sources: [Array]
+    },
+    {
+      id: 'river-city',
+      coordinate: [Object],
+      accessWay: 'osm:way/1153316932',
+      accessNode: 'geo:19333',
+      radius: 25.850676723959353,
+      sources: [Array]
+    },
+    {
+      id: 'icon',
+      coordinate: [Object],
+      accessWay: 'osm:way/1372243779',
+      accessNode: 'geo:71171',
+      radius: 10.191225172903623,
+      sources: [Array]
+    }
+  ]
+}
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1893 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/public/index.html                         1.46 kB │ gzip:   0.55 kB
+dist/public/assets/Prototype-CE-7hvJk.css      3.13 kB │ gzip:   1.10 kB
+dist/public/assets/index-BwnV-VGw.css        136.95 kB │ gzip:  24.98 kB
+dist/public/assets/Prototype-BctSykHF.js      57.49 kB │ gzip:  20.84 kB
+dist/public/assets/index-Ca1_1GPu.js         189.08 kB │ gzip:  60.07 kB
+dist/public/assets/App-CO1jSnfG.js           270.31 kB │ gzip: 104.24 kB
+dist/public/assets/engine-CoeH6Lng.js      2,146.59 kB │ gzip: 682.89 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 8.39s

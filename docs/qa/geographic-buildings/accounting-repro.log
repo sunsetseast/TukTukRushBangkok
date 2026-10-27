@@ -1,0 +1,64 @@
+Classified 222209 buildings in 61.7s
+Building runtime 0/222209 at 93.0s
+Building runtime 10000/222209 at 97.3s
+Building runtime 20000/222209 at 101.9s
+Building runtime 30000/222209 at 105.7s
+Building runtime 40000/222209 at 111.3s
+Building runtime 50000/222209 at 115.4s
+Building runtime 60000/222209 at 119.4s
+Building runtime 70000/222209 at 123.0s
+Building runtime 80000/222209 at 128.2s
+Building runtime 90000/222209 at 131.1s
+Building runtime 100000/222209 at 135.7s
+Building runtime 110000/222209 at 139.2s
+Building runtime 120000/222209 at 142.7s
+Building runtime 130000/222209 at 148.5s
+Building runtime 140000/222209 at 151.1s
+Building runtime 150000/222209 at 153.8s
+Building runtime 160000/222209 at 156.4s
+Building runtime 170000/222209 at 159.0s
+Building runtime 180000/222209 at 161.8s
+Building runtime 190000/222209 at 164.6s
+Building runtime 200000/222209 at 170.5s
+Building runtime 210000/222209 at 173.8s
+Building runtime 220000/222209 at 176.6s
+Buildings 222123 families {'residential': 194563, 'high-rise': 1324, 'hotel': 599, 'commercial': 6524, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76625
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+Classified 222209 buildings in 42.5s
+Building runtime 0/222209 at 69.4s
+Building runtime 10000/222209 at 73.5s
+Building runtime 20000/222209 at 77.2s
+Building runtime 30000/222209 at 80.4s
+Building runtime 40000/222209 at 85.7s
+Building runtime 50000/222209 at 89.2s
+Building runtime 60000/222209 at 92.8s
+Building runtime 70000/222209 at 95.8s
+Building runtime 80000/222209 at 100.4s
+Building runtime 90000/222209 at 103.1s
+Building runtime 100000/222209 at 106.0s
+Building runtime 110000/222209 at 109.0s
+Building runtime 120000/222209 at 112.1s
+Building runtime 130000/222209 at 116.8s
+Building runtime 140000/222209 at 119.6s
+Building runtime 150000/222209 at 122.5s
+Building runtime 160000/222209 at 125.1s
+Building runtime 170000/222209 at 127.8s
+Building runtime 180000/222209 at 130.5s
+Building runtime 190000/222209 at 133.3s
+Building runtime 200000/222209 at 138.9s
+Building runtime 210000/222209 at 142.0s
+Building runtime 220000/222209 at 144.9s
+Buildings 222123 families {'residential': 194563, 'high-rise': 1324, 'hotel': 599, 'commercial': 6524, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76625
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+{"pass": true, "byteIdenticalFiles": 480, "changed": [], "method": "Final building compiler followed by complete offline geography import and gameplay packing, using committed bounded snapshots. Pinned country extraction was executed once before the environment restart."}
+{'pass': True, 'source': 222286, 'rendered': 222123, 'documentedExclusions': 119, 'documentedClippedGeometryRejections': 44, 'unaccounted': 0}

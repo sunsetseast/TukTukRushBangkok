@@ -1,0 +1,7 @@
+./workspace/TukTukRushBangkok/scripts/geography/import_bangkok.py:60: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  return ops.transform(lambda lon,lat,z=None:(project.transform(lon,lat)[0]-ORIGIN[0], ORIGIN[1]-project.transform(lon,lat)[1]),geom)
+....
+----------------------------------------------------------------------
+Ran 5 tests in 0.009s
+
+OK

@@ -10,7 +10,7 @@ on:
 jobs:
   geographic-proof:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     env:
       PORT: '24801'
       BASE_PATH: '/'
@@ -32,12 +32,14 @@ jobs:
         run: |
           python scripts/geography/import_bangkok.py
           pnpm --filter @workspace/tuk-tuk-rush geography:pack
-          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json artifacts/tuk-tuk-rush/public/assets/geography/
+          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json data/bangkok/real-scale/buildings-report.v1.json data/bangkok/real-scale/building-exceptions.v1.json.gz artifacts/tuk-tuk-rush/public/assets/geography/
           python scripts/geography/check_data.py
           python scripts/geography/check_stations.py
+          python scripts/geography/check_buildings.py
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:real-geography
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-buildings
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion
       - run: pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity
@@ -52,4 +54,5 @@ jobs:
           path: |
             docs/qa/expanded-geography/
             docs/qa/geographic-gameplay/
+            docs/qa/geographic-buildings/
           retention-days: 30

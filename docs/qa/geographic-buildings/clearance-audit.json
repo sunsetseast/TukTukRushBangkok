@@ -1,0 +1,302 @@
+{
+  "counts": {
+    "estimatedRoadWidthInvolved": 75931,
+    "taggedCoveredPassageInvolved": 992,
+    "taggedRoadWidthInvolved": 694,
+    "mappedWaterIntersection": 142
+  },
+  "countsOverlap": true,
+  "sampleCases": [
+    {
+      "district": "Yaowarat",
+      "buildingId": "osm:way/1191586230",
+      "buildingTags": {
+        "addr:district": "สัมพันธวงศ์",
+        "addr:postcode": "10100",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "สัมพันธวงศ์",
+        "building": "terrace",
+        "building:levels": "5"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/242163291",
+          "name": "Soi Yaowarat 5",
+          "width": 6,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Yaowarat",
+      "buildingId": "osm:way/1191586231",
+      "buildingTags": {
+        "addr:district": "สัมพันธวงศ์",
+        "addr:postcode": "10100",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "สัมพันธวงศ์",
+        "building": "terrace",
+        "building:levels": "5"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/242163291",
+          "name": "Soi Yaowarat 5",
+          "width": 6,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Song Wat",
+      "buildingId": "osm:way/1302722071",
+      "buildingTags": {
+        "addr:district": "สัมพันธวงศ์",
+        "addr:housenumber": "800",
+        "addr:postcode": "10100",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:street": "ถนนเจริญกรุง",
+        "addr:subdistrict": "สัมพันธวงศ์",
+        "building": "commercial",
+        "building:levels": "3",
+        "name": "บริษัท คงสวัสดิ์ชัย จำกัด",
+        "name:en": "Kongsawadchai Company Limited",
+        "name:th": "บริษัท คงสวัสดิ์ชัย จำกัด",
+        "office": "company"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/1302716068",
+          "name": "Song Wat Road",
+          "width": 2,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Song Wat",
+      "buildingId": "osm:way/1302722072",
+      "buildingTags": {
+        "addr:district": "สัมพันธวงศ์",
+        "addr:housenumber": "1299;1301",
+        "addr:postcode": "10100",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:street": "ถนนทรงวาด",
+        "addr:subdistrict": "สัมพันธวงศ์",
+        "building": "commercial",
+        "building:levels": "4",
+        "name": "บริษัท ฮงฮวด จำกัด"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/1302716068",
+          "name": "Song Wat Road",
+          "width": 2,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Charoen Krung",
+      "buildingId": "osm:relation/16894217",
+      "buildingTags": {
+        "addr:district": "บางรัก",
+        "addr:postcode": "10500",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:street": "ซอยเจริญกรุง 30",
+        "addr:subdistrict": "บางรัก",
+        "building": "yes",
+        "building:levels": "1"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/55932811",
+          "name": "Soi Charoen Krung 30",
+          "width": 10,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Charoen Krung",
+      "buildingId": "osm:way/1154659746",
+      "buildingTags": {
+        "addr:district": "บางรัก",
+        "addr:postcode": "10500",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "บางรัก",
+        "building": "yes",
+        "building:levels": "4"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/157800026",
+          "name": "Charoen Krung Road",
+          "width": 14,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        },
+        {
+          "roadId": "osm:way/630081348",
+          "name": "Charoen Krung Road",
+          "width": 14,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        },
+        {
+          "roadId": "osm:way/669041760",
+          "name": "Soi Charoen Krung 26",
+          "width": 6,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Si Phraya",
+      "buildingId": "osm:way/342182318",
+      "buildingTags": {
+        "building:levels": "28",
+        "building:part": "yes",
+        "height": "101 m"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/342186873",
+          "name": "Soi Tha Ruea Si Phraya",
+          "width": 4,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Si Phraya",
+      "buildingId": "osm:way/1103551347",
+      "buildingTags": {
+        "addr:district": "บางรัก",
+        "addr:postcode": "10500",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "สี่พระยา",
+        "building": "residential",
+        "building:levels": "1"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/1466230604",
+          "name": "Si Phraya Road",
+          "width": 14,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Silom",
+      "buildingId": "osm:way/200890496",
+      "buildingTags": {
+        "addr:district": "บางรัก",
+        "addr:postcode": "10500",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "สุริยวงศ์",
+        "building:part": "yes",
+        "height": "40",
+        "note": "approx. height"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/157656716",
+          "name": "Silom Sky Walk",
+          "width": 2,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": null,
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "estimated-width ribbon near source wall; centerline clear"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    },
+    {
+      "district": "Silom",
+      "buildingId": "osm:way/1236765181",
+      "buildingTags": {
+        "addr:district": "บางรัก",
+        "addr:district:en": "Bang Rak",
+        "addr:district:th": "บางรัก",
+        "addr:postcode": "10500",
+        "addr:province": "กรุงเทพมหานคร",
+        "addr:subdistrict": "สีลม",
+        "amenity": "cafe",
+        "brand": "คาเฟ่ อเมซอน",
+        "brand:en": "Café Amazon",
+        "brand:th": "คาเฟ่ อเมซอน",
+        "brand:wikidata": "Q43247503",
+        "building": "retail",
+        "building:levels": "6",
+        "cuisine": "coffee_shop",
+        "name": "คาเฟ่ อเมซอน",
+        "name:en": "Café Amazon",
+        "name:th": "คาเฟ่ อเมซอน",
+        "takeaway": "yes"
+      },
+      "roads": [
+        {
+          "roadId": "osm:way/1236765180",
+          "name": "Food Channel Silom",
+          "width": 4,
+          "widthBasis": "class-estimate",
+          "tunnel": null,
+          "covered": "yes",
+          "centerlineInsideFootprintM": 0.0,
+          "diagnosis": "mapped covered passage; portal opening/vertical clearance unverified"
+        }
+      ],
+      "action": "source footprint preserved; road-conflicting wall colliders withheld"
+    }
+  ],
+  "scope": "Automated geometric diagnosis of pinned source records, not surveyed real-world clearance. No road or building was moved."
+}

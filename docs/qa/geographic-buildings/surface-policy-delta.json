@@ -1,0 +1,29 @@
+{
+  "unchangedBuildingRecordCount": 222123,
+  "remainingRecordsSha256": "5308c1619f82a96a85c9499a57c1be15f9f2ce317723aad6a908711d35264ab5",
+  "terrainRoadWaterRailChunksSha256": "af68595cc3437ab2e034efe3c4dc7d8978cb69c7c0b8423d3f4a98f7f4218c00",
+  "referenceOnlySourceIds": [
+    "osm:way/1156193284",
+    "osm:way/1203989895",
+    "osm:way/1217973300",
+    "osm:way/1217973301",
+    "osm:way/1219969994",
+    "osm:way/1219969995",
+    "osm:way/1220342236",
+    "osm:way/1371680505",
+    "osm:way/550760344"
+  ],
+  "stillRendered": [],
+  "pass": true,
+  "excludedExistingVolumes": [
+    "osm:way/550760344",
+    "osm:way/1371680505",
+    "osm:way/1156193284",
+    "osm:way/1203989895",
+    "osm:way/1220342236",
+    "osm:way/1217973300",
+    "osm:way/1217973301",
+    "osm:way/1219969994",
+    "osm:way/1219969995"
+  ]
+}

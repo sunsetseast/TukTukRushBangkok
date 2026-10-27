@@ -353,6 +353,9 @@ def build():
     print(json.dumps(manifest['counts']), 'runtime',OUT.stat().st_size,flush=True)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--pbf',type=pathlib.Path);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--pbf',type=pathlib.Path);p.add_argument('--buildings-pbf',type=pathlib.Path);a=p.parse_args()
     if a.pbf:extract(a.pbf)
     build()
+    import buildings
+    if a.buildings_pbf:buildings.extract(a.buildings_pbf)
+    buildings.build()

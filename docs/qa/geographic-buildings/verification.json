@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "baseSha": "d7ed15f4c7e5b4df4d4e8eb8dcc6cb28f070a940",
+  "sourceValidation": "source-validation.json",
+  "reproducibility": "reproducibility.json",
+  "geometry": "geometry-tests.json",
+  "productionGameplay": "gameplay-tests.json",
+  "browserGameplay": "gameplay-browser/browser-report.json",
+  "browserGallery": "after/metrics.json",
+  "memoryCycles": "memory-stability.json",
+  "legacyRegressionChecks": 24,
+  "legacyRegressions": "legacy-regressions.json",
+  "typeScript": {
+    "exitCode": 0,
+    "command": "cd artifacts/tuk-tuk-rush && ../../node_modules/.bin/tsc --noEmit"
+  },
+  "productionBuild": {
+    "exitCode": 0,
+    "command": "cd artifacts/tuk-tuk-rush && PORT=24818 BASE_PATH=/ node node_modules/vite/bin/vite.js build",
+    "log": "production-build.log"
+  },
+  "physicalIPhoneSafari": false,
+  "limitations": "certification.md#h-remaining-limitations-and-next-phase"
+}

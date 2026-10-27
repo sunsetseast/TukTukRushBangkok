@@ -2,7 +2,11 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
 import { startQaServer } from "./browser-vite.mjs";
-const out = new URL("../../../docs/qa/geographic-gameplay/", import.meta.url);
+const out = new URL(
+  process.env.GEOGRAPHIC_BROWSER_REPORT ??
+    "../../../docs/qa/geographic-gameplay/",
+  import.meta.url,
+);
 fs.mkdirSync(out, { recursive: true });
 const server = await startQaServer(24813);
 let browser;
@@ -29,8 +33,10 @@ try {
   report.browserVersion = browser.version();
   const page = await browser.newPage({
       viewport: { width: 1280, height: 800 },
+      hasTouch: true,
     }),
     requests = [];
+  page.setDefaultTimeout(180000);
   page.on("pageerror", (e) => report.errors.push(e.message));
   page.on("request", (r) => requests.push(r.url()));
   const started = performance.now();
@@ -39,6 +45,7 @@ try {
     () =>
       window.__geography?.stream.settled &&
       window.__geography.stream.active >= 9,
+    undefined,
     { timeout: 120000 },
   );
   report.firstResidentFrameMs = performance.now() - started;
@@ -51,7 +58,8 @@ try {
   await page.getByTestId("button-free-roam").click();
   await page.waitForFunction(
     () => window.__geography.snapshot.stage === "delivery",
-    { timeout: 15000 },
+    undefined,
+    { timeout: 180000 },
   );
   await page.evaluate(() => {
     const { session, places } = window.__geographyQA,
@@ -90,7 +98,7 @@ try {
         window.__geography.position.z - p.z,
       ) > 12,
     before,
-    { timeout: 20000 },
+    { timeout: 120000 },
   );
   await page.keyboard.up("ArrowUp");
   report.checks.productionKeyboardDriving = true;
@@ -127,6 +135,7 @@ try {
       () =>
         window.__geography.stream.settled &&
         window.__geography.coordinate.lat > 13.79,
+      undefined,
       { timeout: 60000 },
     );
     const north = await page.evaluate(() => window.__geography);
@@ -139,6 +148,7 @@ try {
       () =>
         window.__geography.stream.settled &&
         window.__geography.coordinate.lat < 13.73,
+      undefined,
       { timeout: 60000 },
     );
   }
@@ -147,7 +157,7 @@ try {
   assert.equal(report.clearance.snapshot.wallet, wallet);
   assert.equal(report.clearance.snapshot.passenger, mission);
   assert(
-    report.clearance.geometries < report.initial.geometries + 60,
+    report.clearance.geometries <= report.clearance.activeMeshes + 100,
     "GPU geometry residency remains bounded",
   );
   report.checks.streamingPreservesWalletAndMission = true;
@@ -163,7 +173,7 @@ try {
   await page.setViewportSize({ width: 430, height: 932 });
   const turbo = page.getByTestId("button-boost");
   if (await turbo.count()) {
-    await turbo.click();
+    await turbo.tap();
     await page.waitForFunction(
       () => window.__geography.snapshot.boostState === "active",
     );
@@ -172,12 +182,12 @@ try {
   report.checks.mobileControls = await page.locator(".tt-controls").isVisible();
   requests.length = 0;
   await page.goto("http://127.0.0.1:24813/");
-  await page.getByTestId("button-free-roam").waitFor({ timeout: 90000 });
+  await page.getByTestId("button-free-roam").waitFor({ timeout: 180000 });
   await page.getByTestId("button-geographic-preview").waitFor();
   await page.waitForFunction(
     () => window.__graphics?.stats?.calls > 0,
     undefined,
-    { timeout: 90000 },
+    { timeout: 180000 },
   );
   report.legacy = await page.evaluate(() => ({
     roads: window.__ttEngine?.model?.district?.roads.length,

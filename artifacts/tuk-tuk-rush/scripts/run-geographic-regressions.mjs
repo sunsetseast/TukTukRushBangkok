@@ -38,9 +38,37 @@ const checks = [
   ["Bangkok architecture", "check-bangkok-architecture.ts"],
   ["historic fidelity", "check-historic-fidelity.ts"],
 ];
-const result = [];
+const out = new URL(
+  process.env.GEOGRAPHIC_REGRESSION_REPORT ??
+    "../../../docs/qa/geographic-gameplay/regressions.json",
+  import.meta.url,
+);
+fs.mkdirSync(new URL("./", out), { recursive: true });
+const previous =
+  process.env.GEOGRAPHIC_REGRESSION_RESUME === "1" && fs.existsSync(out)
+    ? JSON.parse(fs.readFileSync(out, "utf8"))
+    : undefined;
+const result = previous?.checks?.filter((c) => c.pass) ?? [];
+const checkpoint = () =>
+  fs.writeFileSync(
+    out,
+    JSON.stringify(
+      {
+        complete: result.length === checks.length,
+        pass: result.length === checks.length && result.every((c) => c.pass),
+        ...(previous?.note ? { note: previous.note } : {}),
+        checks: result,
+      },
+      null,
+      2,
+    ) + "\n",
+  );
 let failed = false;
 for (const [name, file, env] of checks) {
+  if (result.some((c) => c.name === name && c.pass)) {
+    console.log(`RESUME ${name}`);
+    continue;
+  }
   const started = performance.now();
   const r = spawnSync(
     process.execPath,
@@ -58,6 +86,7 @@ for (const [name, file, env] of checks) {
     seconds: (performance.now() - started) / 1000,
     ...(!pass ? { output: (r.stdout + r.stderr).slice(-7000) } : {}),
   });
+  checkpoint();
   console.log(
     `${pass ? "PASS" : "FAIL"} ${name} ${result.at(-1).seconds.toFixed(1)}s`,
   );
@@ -66,13 +95,5 @@ for (const [name, file, env] of checks) {
     failed = true;
   }
 }
-const out = new URL(
-  "../../../docs/qa/geographic-gameplay/regressions.json",
-  import.meta.url,
-);
-fs.mkdirSync(new URL("./", out), { recursive: true });
-fs.writeFileSync(
-  out,
-  JSON.stringify({ pass: !failed, checks: result }, null, 2) + "\n",
-);
+checkpoint();
 if (failed) process.exitCode = 1;

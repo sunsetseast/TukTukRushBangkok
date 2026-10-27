@@ -1,0 +1,149 @@
+Classified 222209 buildings in 39.5s
+Building runtime 0/222209 at 67.3s
+Building runtime 10000/222209 at 71.2s
+Building runtime 20000/222209 at 75.1s
+Building runtime 30000/222209 at 78.2s
+Building runtime 40000/222209 at 82.9s
+Building runtime 50000/222209 at 86.8s
+Building runtime 60000/222209 at 90.2s
+Building runtime 70000/222209 at 93.3s
+Building runtime 80000/222209 at 99.6s
+Building runtime 90000/222209 at 102.4s
+Building runtime 100000/222209 at 105.5s
+Building runtime 110000/222209 at 108.8s
+Building runtime 120000/222209 at 112.2s
+Building runtime 130000/222209 at 118.7s
+Building runtime 140000/222209 at 121.8s
+Building runtime 150000/222209 at 124.8s
+Building runtime 160000/222209 at 127.7s
+Building runtime 170000/222209 at 130.6s
+Building runtime 180000/222209 at 134.0s
+Building runtime 190000/222209 at 137.0s
+Building runtime 200000/222209 at 144.1s
+Building runtime 210000/222209 at 147.9s
+Building runtime 220000/222209 at 151.0s
+Buildings 222123 families {'residential': 194563, 'high-rise': 1324, 'hotel': 599, 'commercial': 6524, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76625
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+{"unchangedBuildingRecordCount": 222123, "remainingRecordsSha256": "5308c1619f82a96a85c9499a57c1be15f9f2ce317723aad6a908711d35264ab5", "terrainRoadWaterRailChunksSha256": "af68595cc3437ab2e034efe3c4dc7d8978cb69c7c0b8423d3f4a98f7f4218c00", "referenceOnlySourceIds": ["osm:way/1156193284", "osm:way/1203989895", "osm:way/1217973300", "osm:way/1217973301", "osm:way/1219969994", "osm:way/1219969995", "osm:way/1220342236", "osm:way/1371680505", "osm:way/550760344"], "stillRendered": [], "pass": true, "excludedExistingVolumes": ["osm:way/550760344", "osm:way/1371680505", "osm:way/1156193284", "osm:way/1203989895", "osm:way/1220342236", "osm:way/1217973300", "osm:way/1217973301", "osm:way/1219969994", "osm:way/1219969995"]}
+/workspace/TukTukRushBangkok/scripts/geography/import_bangkok.py:60: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  return ops.transform(lambda lon,lat,z=None:(project.transform(lon,lat)[0]-ORIGIN[0], ORIGIN[1]-project.transform(lon,lat)[1]),geom)
+/workspace/TukTukRushBangkok/scripts/geography/import_bangkok.py:308: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  chunk[name]=[rings(ops.transform(lambda a,b,c=None:(a-x,b-z),p)) for p in polygons(part)]
+{"sourceWays": 105061, "runtimeWays": 104949, "nodes": 412233, "waterAreas": 168, "administrativeAreas": 191, "chunks": 471, "railTracks": 1994, "playableRailTracks": 1153, "stations": 716, "playableStations": 479, "routes": 43, "coverage": {"A": 6904, "B": 8449, "C": 89708}} runtime 10612211
+Classified 222209 buildings in 47.2s
+Building runtime 0/222209 at 78.3s
+Building runtime 10000/222209 at 84.3s
+Building runtime 20000/222209 at 88.6s
+Building runtime 30000/222209 at 92.6s
+Building runtime 40000/222209 at 97.9s
+Building runtime 50000/222209 at 102.6s
+Building runtime 60000/222209 at 106.8s
+Building runtime 70000/222209 at 112.7s
+Building runtime 80000/222209 at 116.5s
+Building runtime 90000/222209 at 119.5s
+Building runtime 100000/222209 at 123.0s
+Building runtime 110000/222209 at 127.2s
+Building runtime 120000/222209 at 131.0s
+Building runtime 130000/222209 at 136.9s
+Building runtime 140000/222209 at 140.6s
+Building runtime 150000/222209 at 143.6s
+Building runtime 160000/222209 at 146.6s
+Building runtime 170000/222209 at 150.6s
+Building runtime 180000/222209 at 155.7s
+Building runtime 190000/222209 at 160.4s
+Building runtime 200000/222209 at 168.2s
+Building runtime 210000/222209 at 171.8s
+Building runtime 220000/222209 at 175.0s
+Buildings 222123 families {'residential': 194563, 'high-rise': 1324, 'hotel': 599, 'commercial': 6524, 'mixed-use': 5949, 'apartment': 1964, 'office': 148, 'shophouse': 8900, 'warehouse': 229, 'industrial': 204, 'religious': 1719} conflicts 76625
+{
+  nodes: 406442,
+  edges: 427869,
+  decodedBytes: 11723224,
+  metadataBytes: 5992502
+}
+{"pass": true, "byteIdenticalFiles": 480, "changed": [], "method": "Final building compiler followed by complete offline geography import and gameplay packing, using committed bounded snapshots. Pinned country extraction was executed once before the environment restart."}
+{"pass":true,"buildings":222123,"vertices":18462054,"roofArea":300,"resourceDisposal":true,"lod":true,"productionCollision":true,"partRelationships":588}
+{
+  pass: true,
+  landmarkRootsDetached: true,
+  sourceBuildingColliderCount: 792673,
+  bridgeDistance: 421.23564298632874,
+  deckHeight: 7.000000000000001,
+  seams: [
+    { edge: 158, axis: 'z', speed: 19.568651978194474 },
+    { edge: 168, axis: 'z', speed: 19.56865197819424 },
+    { edge: 179, axis: 'z', speed: 19.568651978194428 }
+  ],
+  supports: 1382,
+  initMs: 226.33547799999997,
+  allocatedTypedBytes: 27354316,
+  query1000Ms: 111.33384300000034,
+  queries: 2455,
+  examinedSegments: 793298,
+  metres: 345,
+  simulatedSeconds: 50.733333333333334,
+  collisionFrames: 0,
+  visitedChunks: [ '3:0' ],
+  actualDrivenDelivery: true,
+  teleports: false,
+  productionRewards: true,
+  legacyProgressPreserved: true,
+  distantRouteNodes: 404,
+  places: [
+    {
+      id: 'gate',
+      coordinate: [Object],
+      accessWay: 'osm:way/24680968',
+      accessNode: 'geo:176789',
+      radius: 8.177315676754393,
+      sources: [Array]
+    },
+    {
+      id: 'traimit',
+      coordinate: [Object],
+      accessWay: 'osm:way/342810684',
+      accessNode: 'geo:203561',
+      radius: 9.122361021837602,
+      sources: [Array]
+    },
+    {
+      id: 'river-city',
+      coordinate: [Object],
+      accessWay: 'osm:way/1153316932',
+      accessNode: 'geo:19333',
+      radius: 25.850676723959353,
+      sources: [Array]
+    },
+    {
+      id: 'icon',
+      coordinate: [Object],
+      accessWay: 'osm:way/1372243779',
+      accessNode: 'geo:71171',
+      radius: 10.191225172903623,
+      sources: [Array]
+    }
+  ]
+}
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1893 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/public/index.html                         1.46 kB │ gzip:   0.55 kB
+dist/public/assets/Prototype-CE-7hvJk.css      3.13 kB │ gzip:   1.10 kB
+dist/public/assets/index-BwnV-VGw.css        136.95 kB │ gzip:  24.98 kB
+dist/public/assets/Prototype-BctSykHF.js      57.49 kB │ gzip:  20.84 kB
+dist/public/assets/index-Ca1_1GPu.js         189.08 kB │ gzip:  60.07 kB
+dist/public/assets/App-CO1jSnfG.js           270.31 kB │ gzip: 104.24 kB
+dist/public/assets/engine-CoeH6Lng.js      2,146.59 kB │ gzip: 682.89 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.63s

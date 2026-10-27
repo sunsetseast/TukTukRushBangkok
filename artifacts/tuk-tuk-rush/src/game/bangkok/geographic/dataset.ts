@@ -9,7 +9,7 @@ export type GeographicWay = {
   tags: Record<string, string>;
   coverage: "A" | "B" | "C";
   heights: number[];
-  profiles?: [number,number,number][][];
+  profiles?: [number, number, number][][];
   heightBasis: string;
   width: number;
   widthBasis: "tagged" | "osm-estimate" | "class-estimate";
@@ -75,6 +75,12 @@ export type GeographicRail = {
   interchanges: { id: string; members: { id: string; role: string }[] }[];
 };
 export type GeographicChunkData = {
+  timing?: {
+    fetchHeadersMs: number;
+    decodeAndBodyMs: number;
+    jsonParseMs: number;
+  };
+  buildings?: import("./buildings").GeographicBuilding[];
   origin: [number, number];
   land: RoadPolygons;
   water: RoadPolygons;
@@ -95,22 +101,44 @@ export async function loadGeographicChunk(
   ref: ChunkReference,
   signal?: AbortSignal,
 ) {
-  return (await loadGzip(
+  const timing = { fetchHeadersMs: 0, decodeAndBodyMs: 0, jsonParseMs: 0 };
+  const chunk = (await loadGzip(
     `${import.meta.env.BASE_URL}assets/geography/${ref.file}`,
     signal,
+    timing,
   )) as GeographicChunkData;
+  chunk.timing = timing;
+  return chunk;
 }
-async function loadGzip(url: string, signal?: AbortSignal) {
+async function loadGzip(
+  url: string,
+  signal?: AbortSignal,
+  timing?: {
+    fetchHeadersMs: number;
+    decodeAndBodyMs: number;
+    jsonParseMs: number;
+  },
+) {
+  const started = performance.now();
   const response = await fetch(url, { signal });
   if (!response.ok || !response.body)
     throw Error(`Geographic asset unavailable (${response.status}): ${url}`);
+  const headersAt = performance.now();
   const decoded =
     response.headers.get("content-encoding") === "gzip"
       ? response
       : new Response(
           response.body.pipeThrough(new DecompressionStream("gzip")),
         );
-  return decoded.json();
+  const body = await decoded.text();
+  const parseStart = performance.now();
+  const result = JSON.parse(body);
+  if (timing) {
+    timing.fetchHeadersMs = headersAt - started;
+    timing.decodeAndBodyMs = parseStart - headersAt;
+    timing.jsonParseMs = performance.now() - parseStart;
+  }
+  return result;
 }
 export function validateDataset(data: GeographicDataset) {
   if (
@@ -147,7 +175,8 @@ export function geographicGraph(
   };
   for (const r of data.roads) {
     if (
-      (mode !== "pedestrian" && (r.tunnel || r.tags.area === 'yes' || r.tags.highway === "steps")) ||
+      (mode !== "pedestrian" &&
+        (r.tunnel || r.tags.area === "yes" || r.tags.highway === "steps")) ||
       (mode === "pedestrian" ? !r.pedestrianClearance : !r.vehicleClearance)
     )
       continue;
