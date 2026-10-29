@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:geographic-buildings /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-geographic-buildings.ts
+
+{"pass":true,"buildings":222123,"vertices":18462054,"roofArea":300,"resourceDisposal":true,"lod":true,"productionCollision":true,"partRelationships":588}
+

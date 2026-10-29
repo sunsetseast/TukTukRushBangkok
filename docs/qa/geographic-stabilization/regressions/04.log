@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:cinematic /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-cinematic.ts
+
+{"pass":true,"parcels":45,"facadePieces":5378,"lanternPieces":111,"dynamicShadowPasses":0,"resourcesDisposed":10518,"priorRoadGraphPreserved":true,"titleCameraIsolated":true}
+

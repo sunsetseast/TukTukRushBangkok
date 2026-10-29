@@ -1,0 +1,296 @@
+[
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush typecheck",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 5787,
+    "log": "01.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:real-architecture",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 24441,
+    "log": "02.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:city-fabric",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 24266,
+    "log": "03.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:cinematic",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 41798,
+    "log": "04.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:startup",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 8370,
+    "log": "05.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush build",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 27584,
+    "log": "06-retry.log",
+    "previousAttempts": [
+      {
+        "exitCode": 1,
+        "log": "06.log",
+        "elapsedMs": 2413
+      }
+    ]
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:landmark-quality",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 49865,
+    "log": "07.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:landmark-accuracy",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 43913,
+    "log": "08.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:historic-core",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 70501,
+    "log": "09.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 27722,
+    "log": "10.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:master-plan",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 47527,
+    "log": "11.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:open-bangkok",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 28396,
+    "log": "12.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:definitive",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 64934,
+    "log": "13.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:cityscapes",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 54163,
+    "log": "14.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:environment",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 67176,
+    "log": "15.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:career",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 67880,
+    "log": "16.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:corrections",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 29273,
+    "log": "17.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:graphics-foundation",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 992,
+    "log": "18.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:interface",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 20104,
+    "log": "19.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:bangkok",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 166185,
+    "log": "20.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:waterfront-clearance",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 608915,
+    "log": "21.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:waterfront-drives",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 113338,
+    "log": "22.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:gameplay",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 3036,
+    "log": "23.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:street-life",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 2262,
+    "log": "24.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:roadside",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 1270,
+    "log": "25.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:signature",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 541,
+    "log": "26.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:sign-layers",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 606,
+    "log": "27.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:assets",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 510,
+    "log": "28.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:real-geography",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 9401,
+    "log": "29.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 5949,
+    "log": "30.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:geographic-buildings",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 26880,
+    "log": "31.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-compiled.ts",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 36803,
+    "log": "32.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 27562,
+    "log": "33-retry.log",
+    "previousAttempts": [
+      {
+        "exitCode": 0,
+        "log": "33.log",
+        "elapsedMs": 16838
+      }
+    ]
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 26009,
+    "log": "34.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium",
+    "exitCode": 1,
+    "signal": null,
+    "elapsedMs": 2595,
+    "log": "35-retry.log",
+    "previousAttempts": [
+      {
+        "exitCode": 1,
+        "log": "35.log",
+        "elapsedMs": 1067
+      }
+    ]
+  },
+  {
+    "command": "python scripts/geography/check_data.py",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 24867,
+    "log": "36.log"
+  },
+  {
+    "command": "python scripts/geography/check_stations.py",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 5166,
+    "log": "37.log"
+  },
+  {
+    "command": "python scripts/geography/check_buildings.py",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 172967,
+    "log": "38.log"
+  },
+  {
+    "command": "pnpm --filter @workspace/tuk-tuk-rush exec node scripts/browser-geographic-streaming.mjs",
+    "exitCode": 124,
+    "elapsedMs": 300000,
+    "log": "36-timeout.log",
+    "note": "Verification command exceeded the 300 second ShellExec deadline; no passing result observed."
+  }
+]

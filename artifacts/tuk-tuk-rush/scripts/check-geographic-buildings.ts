@@ -4,11 +4,11 @@ import { gunzipSync } from "node:zlib";
 import * as T from "three";
 import clipping from "polygon-clipping";
 import {
-  buildGeographicBuildings,
   buildingObstacles,
   updateBuildingLOD,
   type GeographicBuilding,
 } from "../src/game/bangkok/geographic/buildings";
+import { buildGeographicBuildings } from "./geographic-building-authoring";
 import { disposeGeographicChunk } from "../src/game/bangkok/geographic/rendering";
 import { physicsObstacleIndex } from "../src/game/bangkok/clearanceIndex";
 import { VehicleController, createVehicle } from "../src/game/vehicle";

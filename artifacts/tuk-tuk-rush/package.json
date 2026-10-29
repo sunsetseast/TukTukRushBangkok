@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "vite build --config vite.config.ts",
+    "prepare": "node --import tsx scripts/compile-geographic-buildings.ts",
+    "dev": "node --import tsx scripts/compile-geographic-buildings.ts && vite --config vite.config.ts --host 0.0.0.0",
+    "build": "node --import tsx scripts/compile-geographic-buildings.ts && vite build --config vite.config.ts",
+    "geography:compile": "node --import tsx scripts/compile-geographic-buildings.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:gameplay": "node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts",
@@ -71,10 +73,10 @@
     "qa:real-geography": "node scripts/browser-real-geography.mjs",
     "test:geographic-streaming": "node --import tsx scripts/check-geographic-streaming.ts",
     "qa:geographic-streaming": "node scripts/browser-geographic-streaming.mjs",
-    "geography:pack": "node --import tsx scripts/pack-geographic-runtime.ts",
+    "geography:pack": "node --import tsx scripts/pack-geographic-runtime.ts && python ../../scripts/geography/classify_building_conflicts.py && node --import tsx scripts/compile-geographic-buildings.ts",
     "test:geographic-gameplay": "node --import tsx scripts/check-geographic-gameplay.ts",
     "qa:geographic-gameplay": "node scripts/browser-geographic-gameplay.mjs",
-    "test:geographic-buildings": "node --import tsx scripts/check-geographic-buildings.ts",
+    "test:geographic-buildings": "node --import tsx scripts/check-geographic-buildings.ts && node --import tsx scripts/check-geographic-compiled.ts",
     "qa:geographic-buildings": "node scripts/browser-geographic-buildings.mjs"
   },
   "devDependencies": {

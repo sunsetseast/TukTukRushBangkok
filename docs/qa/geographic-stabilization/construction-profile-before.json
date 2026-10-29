@@ -1,0 +1,23 @@
+{
+  "environment": "Node CPU instrumentation; not Safari",
+  "records": [
+    {
+      "id": "5120:4096", "buildings": 3507, "bytesGzip": 387778,
+      "totalMs": 558.0909250000004, "clippingMs": 252.37701500005824,
+      "triangulationMs": 14.069958000074621, "normalsMs": 18.65879899999163,
+      "clips": 6874, "vertices": 261054, "gpuBytes": 9397944
+    },
+    {
+      "id": "2048:1024", "buildings": 1095, "bytesGzip": 153826,
+      "totalMs": 64.98947699999917, "clippingMs": 18.805355999989843,
+      "triangulationMs": 0.9715100000066741, "normalsMs": 1.1948610000108602,
+      "clips": 790, "vertices": 80898, "gpuBytes": 2912328
+    },
+    {
+      "id": "17408:-4096", "buildings": 402, "bytesGzip": 58080,
+      "totalMs": 36.063568999999916, "clippingMs": 21.03885900001478,
+      "triangulationMs": 1.0522530000052939, "normalsMs": 0.818291000001409,
+      "clips": 786, "vertices": 29151, "gpuBytes": 1049436
+    }
+  ]
+}

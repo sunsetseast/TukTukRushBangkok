@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:graphics-foundation /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-graphics-foundation.ts
+
+{"pass":true,"compactAttributeBytes":{"before":768,"after":480},"unchangedPositions":true,"linearPbrAndNormals":true,"nightAt240":true,"trafficLodReduction":true}
+

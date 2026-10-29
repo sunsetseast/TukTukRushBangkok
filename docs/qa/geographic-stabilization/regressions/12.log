@@ -1,0 +1,102 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:open-bangkok /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-open-bangkok.ts
+
+{
+  "pass": true,
+  "journeys": [
+    {
+      "id": "pho",
+      "metres": 284,
+      "frames": 2683,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "arun",
+      "metres": 215,
+      "frames": 2050,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "paknam",
+      "metres": 734,
+      "frames": 6511,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "palace",
+      "metres": 58,
+      "frames": 626,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "icon",
+      "metres": 246,
+      "frames": 2300,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "paragon",
+      "metres": 244,
+      "frames": 2297,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "central",
+      "metres": 286,
+      "frames": 2630,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "terminal",
+      "metres": 242,
+      "frames": 2271,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "asiatique",
+      "metres": 229,
+      "frames": 2125,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    },
+    {
+      "id": "traimit",
+      "metres": 231,
+      "frames": 2255,
+      "collisionFrames": 0,
+      "boost": true,
+      "publicRoadEntryExit": true
+    }
+  ],
+  "stationsServed": 26,
+  "trainFrames": 36000,
+  "crossLineChecks": 2936,
+  "carBodyChecks": 1349,
+  "maxStep": 0.7517482517388911,
+  "minTrainCentreSeparation": 3.7998867741503948,
+  "supports": 177,
+  "clearedParcels": 141,
+  "nodes": 2333,
+  "roads": 2405,
+  "buildings": 7350,
+  "pauseRestart": true
+}
+

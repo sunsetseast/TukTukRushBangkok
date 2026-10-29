@@ -1,0 +1,317 @@
+{
+  "candidateCount": 76625,
+  "counts": {
+    "source-centreline-overlap-review": 2458,
+    "vertical-part-or-grade-review": 1024,
+    "estimated-width-narrow-clearance-review": 69690,
+    "estimated-width-safe-display-trim": 1663,
+    "covered-passage-portal-review": 988,
+    "explicit-width-review": 660,
+    "water-overlap-review": 142
+  },
+  "safeBuildingCandidates": 1663,
+  "examples": [
+    {
+      "district": "Silom",
+      "building": "osm:way/200890496",
+      "category": "vertical-part-or-grade-review",
+      "roads": [
+        "osm:way/1226661238",
+        "osm:way/1226661246",
+        "osm:way/157656716"
+      ],
+      "names": [
+        "Si Lom Road",
+        "",
+        "Silom Sky Walk"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.000328
+    },
+    {
+      "district": "Surawong",
+      "building": "osm:way/332853830",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1228630153",
+        "osm:way/1228630155",
+        "osm:way/747482514"
+      ],
+      "names": [
+        "",
+        "",
+        "Sathon Nuea - Surawong Shortcut Way"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.000154
+    },
+    {
+      "district": "Si Phraya",
+      "building": "osm:way/342182318",
+      "category": "covered-passage-portal-review",
+      "roads": [
+        "osm:way/1235098212",
+        "osm:way/342186873"
+      ],
+      "names": [
+        "",
+        "Soi Tha Ruea Si Phraya"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 6e-05
+    },
+    {
+      "district": "Charoen Krung",
+      "building": "osm:relation/16894217",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/55932811"
+      ],
+      "names": [
+        "Soi Charoen Krung 30"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 4.176514
+    },
+    {
+      "district": "Captain Bush",
+      "building": "osm:relation/16894217",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/55932811"
+      ],
+      "names": [
+        "Soi Charoen Krung 30"
+      ],
+      "labelBasis": "Requested area grouping; source street names are retained verbatim",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 4.176514
+    },
+    {
+      "district": "Si Phraya",
+      "building": "osm:way/1103551347",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1224677975",
+        "osm:way/1466230604"
+      ],
+      "names": [
+        "",
+        "Si Phraya Road"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 1.227341
+    },
+    {
+      "district": "Charoen Krung",
+      "building": "osm:way/1154659746",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1197033854",
+        "osm:way/157800026",
+        "osm:way/630081348",
+        "osm:way/669041760",
+        "osm:way/835280928"
+      ],
+      "names": [
+        "",
+        "Charoen Krung Road",
+        "Charoen Krung Road",
+        "Soi Charoen Krung 26",
+        "Maha Phruettharam Road"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.717699
+    },
+    {
+      "district": "Surawong",
+      "building": "osm:way/1185521396",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/669157596",
+        "osm:way/825786361"
+      ],
+      "names": [
+        "Surawong Center Road",
+        "Surawong Road"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 1.04825
+    },
+    {
+      "district": "Yaowarat",
+      "building": "osm:way/1191586230",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1191586235",
+        "osm:way/1504094418",
+        "osm:way/1504094419",
+        "osm:way/1504094430",
+        "osm:way/242163291"
+      ],
+      "names": [
+        "",
+        "",
+        "",
+        "",
+        "Soi Yaowarat 5"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 1.225887
+    },
+    {
+      "district": "Yaowarat",
+      "building": "osm:way/1191586231",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1504094418",
+        "osm:way/1504094420",
+        "osm:way/242163291"
+      ],
+      "names": [
+        "",
+        "",
+        "Soi Yaowarat 5"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.576717
+    },
+    {
+      "district": "Captain Bush",
+      "building": "osm:way/1235098225",
+      "category": "estimated-width-safe-display-trim",
+      "roads": [
+        "osm:way/1235099299"
+      ],
+      "names": [
+        "Soi Charoen Krung 30"
+      ],
+      "labelBasis": "Requested area grouping; source street names are retained verbatim",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 5.106264
+    },
+    {
+      "district": "Silom",
+      "building": "osm:way/1236765181",
+      "category": "covered-passage-portal-review",
+      "roads": [
+        "osm:way/1208722740",
+        "osm:way/1236765177",
+        "osm:way/1236765180",
+        "osm:way/826085050"
+      ],
+      "names": [
+        "Si Lom Road",
+        "Trok Siangthai",
+        "Food Channel Silom",
+        "Si Lom Road"
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.891181
+    },
+    {
+      "district": "Song Wat / Talat Noi",
+      "building": "osm:way/1302722071",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1302716068",
+        "osm:way/175257878",
+        "osm:way/175257884",
+        "osm:way/175257885"
+      ],
+      "names": [
+        "Song Wat Road",
+        "Charoen Krung Road",
+        "",
+        ""
+      ],
+      "labelBasis": "Requested area grouping; source street names are retained verbatim",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.814553
+    },
+    {
+      "district": "Song Wat / Talat Noi",
+      "building": "osm:way/1302722072",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/1302716068"
+      ],
+      "names": [
+        "Song Wat Road"
+      ],
+      "labelBasis": "Requested area grouping; source street names are retained verbatim",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 1.322905
+    },
+    {
+      "district": "Phadung Dao",
+      "building": "osm:way/449023995",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/242165042",
+        "osm:way/550732355"
+      ],
+      "names": [
+        "Phadung Dao Road",
+        ""
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.626626
+    },
+    {
+      "district": "Phadung Dao",
+      "building": "osm:way/449023996",
+      "category": "estimated-width-narrow-clearance-review",
+      "roads": [
+        "osm:way/242165042",
+        "osm:way/550732355"
+      ],
+      "names": [
+        "Phadung Dao Road",
+        ""
+      ],
+      "labelBasis": "Mapped street-name match",
+      "centrelineInsideM": 0.0,
+      "minimumCentrelineDistanceM": 0.681803
+    }
+  ],
+  "notes": [
+    "Candidates are not counts of incorrect buildings.",
+    "No footprint, road centreline, projection or source width was moved.",
+    "Safe policy trims only derived asphalt and restores ground walls; uncertain portals, narrow paths, tagged widths and grade-separated cases remain explicit review exceptions.",
+    "4.6m protects the existing lane offset and tuk-tuk radius, not a surveyed legal road width."
+  ],
+  "correctedRoadChunks": 186,
+  "appliedBuildingCandidates": 1657,
+  "fixedViewBuilding": "osm:way/1021446895",
+  "reviewViews": [
+    [
+      "fixed-conflict",
+      100.50832922881888,
+      13.741138061555212,
+      100.5083692,
+      13.741189099999998,
+      4
+    ],
+    [
+      "cross-chunk-seam",
+      100.50846505927854,
+      13.744366084252853,
+      100.50769473252598,
+      13.743349023808571,
+      28
+    ]
+  ],
+  "crossChunkWay": "osm:way/85944710"
+}

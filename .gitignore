@@ -48,6 +48,7 @@ Thumbs.db
 .cache/
 .local/
 /generated-artifacts/
+/artifacts/tuk-tuk-rush/public/assets/geography/compiled/
 
 # Raw OSM API responses contain contributor metadata; retain stripped derivatives.
 docs/qa/world-blueprint/sources/*.osm

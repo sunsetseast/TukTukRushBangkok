@@ -3,6 +3,7 @@ import type { District, Road } from "../../types";
 import type { RoadPolygons } from "../roadSurfaceGraph";
 import { geographicToMeters } from "./projection";
 import { inRiverWater } from "../waterGeometry";
+import { compiledChunkFile, decodeCompiledChunk, type CompiledBuildings } from "./compiledBuildings";
 export type GeographicWay = {
   id: string;
   nodes: string[];
@@ -79,8 +80,13 @@ export type GeographicChunkData = {
     fetchHeadersMs: number;
     decodeAndBodyMs: number;
     jsonParseMs: number;
+    geometryDecodeMs?: number;
+    compressedBytes?: number;
+    decodedBytes?: number;
   };
-  buildings?: import("./buildings").GeographicBuilding[];
+  buildings?: import("./buildings").RuntimeBuilding[];
+  buildingGeometry?: CompiledBuildings;
+  sourceChunk?: string;
   origin: [number, number];
   land: RoadPolygons;
   water: RoadPolygons;
@@ -101,13 +107,18 @@ export async function loadGeographicChunk(
   ref: ChunkReference,
   signal?: AbortSignal,
 ) {
+  const started = performance.now();
   const timing = { fetchHeadersMs: 0, decodeAndBodyMs: 0, jsonParseMs: 0 };
-  const chunk = (await loadGzip(
-    `${import.meta.env.BASE_URL}assets/geography/${ref.file}`,
-    signal,
-    timing,
-  )) as GeographicChunkData;
-  chunk.timing = timing;
+  const response = await fetch(`${import.meta.env.BASE_URL}assets/geography/${compiledChunkFile(ref)}`, { signal });
+  if (!response.ok || !response.body) throw Error(`Compiled geographic asset unavailable (${response.status}); run geography:compile`);
+  const headersAt = performance.now();
+  const decoded = response.headers.get("content-encoding") === "gzip" ? response :
+    new Response(response.body.pipeThrough(new DecompressionStream("gzip")));
+  const raw = await decoded.arrayBuffer(), decodeAt = performance.now();
+  const chunk = decodeCompiledChunk(raw, ref);
+  chunk.timing = { ...timing, ...chunk.timing, fetchHeadersMs: headersAt - started,
+    decodeAndBodyMs: decodeAt - headersAt,
+    compressedBytes: Number(response.headers.get("content-length") ?? 0), decodedBytes: raw.byteLength };
   return chunk;
 }
 async function loadGzip(

@@ -1,0 +1,17 @@
+Installing dependencies...
+Switching to root user to install dependencies...
+Failed to install browsers
+Error: Installation process exited with code: 1
+undefined
+/home/runner/workspace/artifacts/tuk-tuk-rush:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright install --with-deps chromium
+
+[0;93mTools like apt, brew, and yum which modify system
+dependencies are not directly callable inside Replit. We offer the
+[1;93mSystem Dependencies[0;93m pane for easy dependency management.
+
+For more information, please check
+https://docs.replit.com/replit-workspace/dependency-management , and don't
+forget to indicate whether you found the documentation helpful at the bottom
+of the page!
+[0m

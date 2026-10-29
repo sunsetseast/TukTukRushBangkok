@@ -2,6 +2,7 @@ import * as T from "three";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
+import { compiledChunkFile, decodeCompiledChunk } from "../src/game/bangkok/geographic/compiledBuildings";
 import { GeographicNetwork } from "../src/game/bangkok/geographic/network";
 import { createGameplayDistrict } from "../src/game/bangkok/geographic/places";
 import { GameEngine } from "../src/game/engine";
@@ -62,10 +63,9 @@ assert.equal(district.nodes.length, 4, "No duplicate full-city District graph");
 assert.deepEqual(engine.career.profile.landmarks, previous.landmarks);
 assert.deepEqual(engine.career.profile.districts, previous.districts);
 const sourceBuildingColliders = metadata.chunks.flatMap(
-  (ref: { file: string }) => {
-    const c = JSON.parse(
-      gunzipSync(fs.readFileSync(new URL(ref.file, dir))).toString(),
-    );
+   (ref: import("../src/game/bangkok/geographic/streaming").ChunkReference) => {
+     const raw = gunzipSync(fs.readFileSync(new URL(compiledChunkFile(ref), dir)));
+     const c = decodeCompiledChunk(raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength) as ArrayBuffer, ref);
     return buildingObstacles(c.buildings ?? [], c.origin);
   },
 );
@@ -214,6 +214,44 @@ assert(
 const source = JSON.parse(
   gunzipSync(fs.readFileSync(new URL("runtime.v1.json.gz", dir))).toString(),
 );
+// Reference collision certification, not camera relocation. Only the initial
+// pose is placed; every subsequent point comes from the production controller.
+const segmentDrives: any[] = [];
+for (const label of ["Yaowarat", "Phadung Dao", "Song Wat", "Charoen Krung", "Captain Bush", "Si Phraya", "Surawong", "Silom"]) {
+  const options: any[] = [];
+  const sourceLabel = label === "Captain Bush" ? "Charoen Krung 30" : label;
+  const canonical = (s: string) => s.toLowerCase().replace(/^soi /, "").replace(/ road$/, "").replace(/\s+/g, "");
+  for (const r of source.roads) {
+    const name = r.tags["name:en"] ?? r.tags.name ?? "";
+    if (!canonical(name).includes(canonical(sourceLabel)) || r.bridge || r.tunnel || r.width < 5) continue;
+    for (let j = 1; j < r.nodes.length; j++) {
+      const a = source.nodes[r.nodes[j - 1]], b = source.nodes[r.nodes[j]], length = Math.hypot(b[0]-a[0], b[1]-a[1]);
+      if (length >= 35) options.push({ a, b, length, way: r.id, name, exact: canonical(name) === canonical(sourceLabel),
+        distance: Math.hypot((a[0]+b[0])/2-network.stops[0]!.x, (a[1]+b[1])/2-network.stops[0]!.z) });
+    }
+  }
+  options.sort((a,b) => Number(b.exact)-Number(a.exact) || a.distance-b.distance);
+  const route = options[0];
+  if (!route) { segmentDrives.push({ label, status: "skipped", reason: "No named non-bridge ground segment >=35m and width >=5m in pinned source" }); continue; }
+  const { a, b, length } = route, dx=(b[0]-a[0])/length, dz=(b[1]-a[1])/length,
+    p = { ...createVehicle(district), x:a[0]+dx*6, z:a[1]+dz*6, heading:Math.atan2(dx,dz) },
+    c = new VehicleController(), trace: number[][] = [];
+  network.reset(p);
+  let driven=0, contacts=0;
+  const goal=Math.min(80,length-12);
+  for (let frame=0; frame<3600 && driven<goal; frame++) {
+    const x=p.x,z=p.z;
+    c.update(p,{gas:p.speed<6,brake:p.speed>7,steer:0},district,[],1/60);
+    driven+=Math.hypot(p.x-x,p.z-z);
+    if(p.collision)contacts++;
+    if(frame%12===0)trace.push([p.x,p.z,p.speed]);
+  }
+  segmentDrives.push({label,way:route.way,name:route.name,goal,driven,contacts,trace,status:driven>=goal&&contacts===0?"passed":"failed"});
+}
+fs.mkdirSync(new URL("../../../docs/qa/geographic-stabilization/",import.meta.url),{recursive:true});
+fs.writeFileSync(new URL("../../../docs/qa/geographic-stabilization/driven-segments.json",import.meta.url),JSON.stringify(segmentDrives,null,2)+"\n");
+assert(segmentDrives.filter(r=>r.status==="passed").length>=2);
+assert(!segmentDrives.some(r=>r.status==="failed"),"Named source road drive hit an obstruction; see driven-segments.json");
 const bridge = source.roads.find((r: any) => r.id === "osm:way/28152385");
 assert(
   bridge.profiles?.flat().some((p: number[]) => p[2]! > 6),
@@ -420,6 +458,7 @@ assert.equal(
 
 const report = {
   pass: true,
+  segmentDrives: segmentDrives.map(({trace,...rest})=>rest),
   landmarkRootsDetached: true,
   sourceBuildingColliderCount: sourceBuildingColliders.length,
   bridgeDistance,

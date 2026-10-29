@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:real-architecture /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-real-architecture.ts
+
+{"pass":true,"realHotels":14,"authoredNewSites":20,"upgradedMalls":5,"hotelApproachEdges":59,"passengerStops":56,"openEdges":230,"sampledEdges":12676}
+

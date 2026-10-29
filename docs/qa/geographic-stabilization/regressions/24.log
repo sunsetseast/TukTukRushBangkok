@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:street-life /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-street-life.ts
+
+PASS 155 people; deterministic clear paths, movement, pause, quality and bounded batches
+

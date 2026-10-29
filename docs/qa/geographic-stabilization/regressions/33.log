@@ -1,0 +1,136 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:geographic-gameplay /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-geographic-gameplay.ts
+
+{
+  pass: true,
+  segmentDrives: [
+    {
+      label: 'Yaowarat',
+      way: 'osm:way/168827268',
+      name: 'Soi Yaowarat 3',
+      goal: 30.944048831008118,
+      driven: 31.011124247050756,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Phadung Dao',
+      way: 'osm:way/30134885',
+      name: 'Phadung Dao Road',
+      goal: 65.70852433291984,
+      driven: 65.7379043136586,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Song Wat',
+      way: 'osm:way/25745335',
+      name: 'Song Wat Road',
+      goal: 28.578416294872532,
+      driven: 28.58973104444126,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Charoen Krung',
+      way: 'osm:way/175257878',
+      name: 'Charoen Krung Road',
+      goal: 54.397459115541324,
+      driven: 54.43191092222734,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Captain Bush',
+      way: 'osm:way/55932811',
+      name: 'Soi Charoen Krung 30',
+      goal: 30.77521041444443,
+      driven: 30.810464168779113,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Si Phraya',
+      way: 'osm:way/1059339512',
+      name: 'Si Phraya Road',
+      goal: 49.72336659645196,
+      driven: 49.78961720512119,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Surawong',
+      way: 'osm:way/1055365749',
+      name: 'Surawong Road',
+      goal: 59.06964095871034,
+      driven: 59.07634691259199,
+      contacts: 0,
+      status: 'passed'
+    },
+    {
+      label: 'Silom',
+      status: 'skipped',
+      reason: 'No named non-bridge ground segment >=35m and width >=5m in pinned source'
+    }
+  ],
+  landmarkRootsDetached: true,
+  sourceBuildingColliderCount: 797198,
+  bridgeDistance: 421.23564298632874,
+  deckHeight: 7.000000000000001,
+  seams: [
+    { edge: 158, axis: 'z', speed: 19.568651978194474 },
+    { edge: 168, axis: 'z', speed: 19.56865197819424 },
+    { edge: 179, axis: 'z', speed: 19.568651978194428 }
+  ],
+  supports: 1382,
+  initMs: 217.22778200000005,
+  allocatedTypedBytes: 27354316,
+  query1000Ms: 92.00650199999836,
+  queries: 2455,
+  examinedSegments: 793298,
+  metres: 345,
+  simulatedSeconds: 50.733333333333334,
+  collisionFrames: 0,
+  visitedChunks: [ '3:0' ],
+  actualDrivenDelivery: true,
+  teleports: false,
+  productionRewards: true,
+  legacyProgressPreserved: true,
+  distantRouteNodes: 404,
+  places: [
+    {
+      id: 'gate',
+      coordinate: [Object],
+      accessWay: 'osm:way/24680968',
+      accessNode: 'geo:176789',
+      radius: 8.177315676754393,
+      sources: [Array]
+    },
+    {
+      id: 'traimit',
+      coordinate: [Object],
+      accessWay: 'osm:way/342810684',
+      accessNode: 'geo:203561',
+      radius: 9.122361021837602,
+      sources: [Array]
+    },
+    {
+      id: 'river-city',
+      coordinate: [Object],
+      accessWay: 'osm:way/1153316932',
+      accessNode: 'geo:19333',
+      radius: 25.850676723959353,
+      sources: [Array]
+    },
+    {
+      id: 'icon',
+      coordinate: [Object],
+      accessWay: 'osm:way/1372243779',
+      accessNode: 'geo:71171',
+      radius: 10.191225172903623,
+      sources: [Array]
+    }
+  ]
+}
+

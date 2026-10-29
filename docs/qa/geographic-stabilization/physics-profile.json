@@ -1,0 +1,74 @@
+{
+  "environment": "Shared Linux Node CPU, default old 80m grid vs immutable streamed 32m grids; not Safari/device latency",
+  "results": [
+    {
+      "name": "yaowarat-drive",
+      "chunks": 9,
+      "colliders": 45084,
+      "beforeBuildMs": 89.6073390000006,
+      "afterBuildMs": 41.5423609999998,
+      "before": {
+        "contacts": 1368,
+        "samples": 1000,
+        "candidateP50": 62,
+        "candidateP95": 148,
+        "narrowPhaseMeanMs": 0.008834664000004523,
+        "narrowPhaseP95Ms": 0.014768999999887455
+      },
+      "after": {
+        "contacts": 1368,
+        "samples": 1000,
+        "candidateP50": 18,
+        "candidateP95": 51,
+        "narrowPhaseMeanMs": 0.0085058070000091,
+        "narrowPhaseP95Ms": 0.018876000000091153
+      }
+    },
+    {
+      "name": "silom-skyline",
+      "chunks": 9,
+      "colliders": 43893,
+      "beforeBuildMs": 44.62629899999956,
+      "afterBuildMs": 17.911595999999918,
+      "before": {
+        "contacts": 1377,
+        "samples": 1000,
+        "candidateP50": 68,
+        "candidateP95": 160,
+        "narrowPhaseMeanMs": 0.006598257999998168,
+        "narrowPhaseP95Ms": 0.012801000000763452
+      },
+      "after": {
+        "contacts": 1377,
+        "samples": 1000,
+        "candidateP50": 19,
+        "candidateP95": 54,
+        "narrowPhaseMeanMs": 0.006087282000002233,
+        "narrowPhaseP95Ms": 0.009205000000292785
+      }
+    },
+    {
+      "name": "sparse-source-14336:-9216",
+      "chunks": 6,
+      "colliders": 720,
+      "beforeBuildMs": 0.46570599999813567,
+      "afterBuildMs": 0.18632500000057917,
+      "before": {
+        "contacts": 751,
+        "samples": 720,
+        "candidateP50": 17,
+        "candidateP95": 81,
+        "narrowPhaseMeanMs": 0.0015635625000262128,
+        "narrowPhaseP95Ms": 0.0038709999998900457
+      },
+      "after": {
+        "contacts": 751,
+        "samples": 720,
+        "candidateP50": 8,
+        "candidateP95": 24,
+        "narrowPhaseMeanMs": 0.0010305625000000874,
+        "narrowPhaseP95Ms": 0.0019079999992754892
+      }
+    }
+  ]
+}

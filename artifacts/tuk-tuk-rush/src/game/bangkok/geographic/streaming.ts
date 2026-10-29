@@ -84,7 +84,18 @@ export class GeographicStream<T> {
             Math.hypot(b.origin[0] + 512 - p.x, b.origin[1] + 512 - p.z),
         );
     }
-    const next = this.ready.entries().next().value;
+    // Finished decode order is not player priority. A fast distant response must
+    // not delay the tile around/ahead of the vehicle.
+    const priority = (c: ChunkReference) => {
+      const dx = c.origin[0] + 512 - p.x, dz = c.origin[1] + 512 - p.z;
+      const fx = p.x - (camera?.x ?? p.x), fz = p.z - (camera?.z ?? p.z), length = Math.hypot(fx, fz);
+      return Math.hypot(dx, dz) - (length > 1 ? (dx * fx + dz * fz) / length * .35 : 0);
+    };
+    this.queue.sort((a, b) => priority(a) - priority(b));
+    const next = [...this.ready].sort((a, b) => {
+      const ar = this.chunks.find(c => c.id === a[0])!, br = this.chunks.find(c => c.id === b[0])!;
+      return priority(ar) - priority(br);
+    })[0];
     if (next) {
       const [id, v] = next;
       this.ready.delete(id);

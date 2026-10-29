@@ -1,0 +1,7 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:gameplay /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-gameplay.ts && node --import tsx scripts/check-driven-mission.ts
+
+{"pass":true,"nodes":81,"roads":87,"buildings":99,"curvedRoad":true,"clockwiseCircle":true,"leftTraffic":true,"fiveMinuteTrafficEdges":1176,"circleFrames":18845}
+{"pass":true,"actualDrivenDelivery":true,"noTeleports":true,"trafficDisabledForDeterminism":true,"metres":399,"simulatedSeconds":37.38333333333333,"collisionFrames":0,"pauseResumeRestartFreeRide":true}
+

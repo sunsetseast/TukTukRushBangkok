@@ -1,0 +1,21 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 build /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/compile-geographic-buildings.ts && vite build --config vite.config.ts
+
+{"compiledChunks":471,"buildings":222123,"sourceBytes":36738182,"compiledBytes":89528626,"elapsedMs":46.17767299999991}
+/home/runner/workspace/artifacts/tuk-tuk-rush:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/tuk-tuk-rush@0.0.0 build: `node --import tsx scripts/compile-geographic-buildings.ts && vite build --config vite.config.ts`
+Exit status 1
+
+failed to load config from /home/runner/workspace/artifacts/tuk-tuk-rush/vite.config.ts
+error during build:
+Error: PORT environment variable is required but was not provided.
+    at file:///home/runner/workspace/artifacts/tuk-tuk-rush/node_modules/.vite-temp/vite.config.ts.timestamp-1793301078362-b9f6562ee611a.mjs:10:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async loadConfigFromBundledFile (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35996:12)
+    at async bundleAndLoadConfigFile (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35884:17)
+    at async loadConfigFromFile (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35851:42)
+    at async resolveConfig (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35500:22)
+    at async createBuilder (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:33955:19)
+    at async CAC.<anonymous> (file:///home/runner/workspace/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.6_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.13_yaml@2.9.0/node_modules/vite/dist/node/cli.js:629:10)

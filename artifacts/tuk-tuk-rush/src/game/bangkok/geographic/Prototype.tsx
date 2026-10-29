@@ -28,6 +28,7 @@ import {
 } from "./buildings";
 import { readPreferences } from "../../ui/preferences";
 import { GeographicSession } from "./session";
+import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
 
 type Loaded = {
@@ -216,8 +217,8 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
     }
     if (content.lastRevision !== content.revision) {
       content.lastRevision = content.revision;
-      session.district.obstacles = [...content.resident.values()]
-        .flatMap((c) =>
+      setStreamedPhysicsObstacles(session.district, [...content.resident.values()]
+        .map<import("../../types").Obstacle[]>((c) =>
           (c.supports ?? []).map((v) => ({
             x: v.point[0],
             z: v.point[1],
@@ -227,10 +228,10 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
             color: "#aaa",
           })),
         )
-        .concat([...content.colliders.values()].flat())
+        .concat([...content.colliders.values()])
         .concat(
-          [...content.assets.values()].flatMap((a) => a.map((v) => v.obstacle)),
-        );
+          [...content.assets.values()].map((a) => a.map((v) => v.obstacle)),
+        ));
       session.district.buildings = session.district.obstacles;
       content.metrics = {
         buildings: [...content.resident.values()].reduce(
@@ -255,9 +256,8 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
           id,
           ...c.timing,
         })),
-        activeAssetBytes: network.metadata.chunks
-          .filter((c) => content.resident.has(c.id))
-          .reduce((n, c) => n + c.bytes, 0),
+        activeAssetBytes: [...content.resident.values()].reduce((n, c) => n + (c.timing?.compressedBytes ?? 0), 0),
+        sourceAssetBytes: network.metadata.chunks.filter(c => content.resident.has(c.id)).reduce((n, c) => n + c.bytes, 0),
         buildingBuildMs: [...content.stream.active.values()].map(
           (v) => v.root?.userData.buildingBuildMs ?? 0,
         ),
