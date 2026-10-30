@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { chromium } from "playwright";
 import { startQaServer } from "./browser-vite.mjs";
 const stage = process.argv[2] ?? "after",
-  out = new URL(
+  out = process.env.GEOGRAPHY_QA_OUTPUT ? new URL(`file://${process.env.GEOGRAPHY_QA_OUTPUT.replace(/\/$/, "")}/`) : new URL(
     `../../../docs/qa/geographic-buildings/${stage}/`,
     import.meta.url,
   );
@@ -73,6 +73,9 @@ try {
     ? "fixed gallery camera"
     : "follow active district";
   report.assetOverride = process.env.GEOGRAPHY_ASSET_ROOT ?? null;
+  report.sourceBaselineRef = process.env.GEOGRAPHY_QA_BASELINE_REF ?? null;
+  const extraViews = JSON.parse(fs.readFileSync(new URL("../../../docs/qa/geographic-stabilization/conflict-classification.json", import.meta.url), "utf8")).reviewViews;
+  views.push(...extraViews);
   report.firstResidentMs = performance.now() - started;
   report.initial = await page.evaluate(() => window.__geography);
   await page.getByTestId("button-free-roam").click();
@@ -90,7 +93,7 @@ try {
         const p = qa.session.player,
           n = qa.network;
         let alignedTarget;
-        if (height === 4) {
+        if (height === 4 && name !== "fixed-conflict") {
           const pattern =
             name === "yaowarat-drive"
               ? "Yaowarat Road"

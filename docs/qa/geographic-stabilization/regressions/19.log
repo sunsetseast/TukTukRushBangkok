@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:interface /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-navigation-ui.ts
+
+{"pass":true,"oneWayDetour":true,"disconnectedRoute":true,"hysteresis":true,"missionRoutes":11}
+

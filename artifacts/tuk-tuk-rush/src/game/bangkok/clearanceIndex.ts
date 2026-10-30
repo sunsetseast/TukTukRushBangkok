@@ -4,21 +4,21 @@ const physicsCache = new WeakMap<
   District,
   ReturnType<typeof createPhysicsIndex>
 >();
-function createPhysicsIndex(d: District) {
+function createPhysicsIndex(obstacles: District["obstacles"], size = 80) {
   const cells = new Map<string, number[]>();
-  d.obstacles.forEach((o, i) => {
+  obstacles.forEach((o, i) => {
     const c = Math.abs(Math.cos(o.yaw ?? 0)),
       s = Math.abs(Math.sin(o.yaw ?? 0)),
       rx = (c * o.w + s * o.d) / 2 + 1.55,
       rz = (s * o.w + c * o.d) / 2 + 1.55;
     for (
-      let x = Math.floor((o.x - rx) / 80);
-      x <= Math.floor((o.x + rx) / 80);
+      let x = Math.floor((o.x - rx) / size);
+      x <= Math.floor((o.x + rx) / size);
       x++
     )
       for (
-        let z = Math.floor((o.z - rz) / 80);
-        z <= Math.floor((o.z + rz) / 80);
+        let z = Math.floor((o.z - rz) / size);
+        z <= Math.floor((o.z + rz) / size);
         z++
       ) {
         const k = `${x}:${z}`;
@@ -27,19 +27,44 @@ function createPhysicsIndex(d: District) {
       }
   });
   return {
-    obstacles: d.obstacles,
+    obstacles,
     query: (p: Point) =>
-      cells.get(`${Math.floor(p.x / 80)}:${Math.floor(p.z / 80)}`) ?? [],
+      cells.get(`${Math.floor(p.x / size)}:${Math.floor(p.z / size)}`) ?? [],
   };
 }
 /** Preserve original collider order and contact solver; construction is static. */
 export function physicsObstacleIndex(d: District) {
   let index = physicsCache.get(d);
   if (!index || index.obstacles !== d.obstacles) {
-    index = createPhysicsIndex(d);
+    index = createPhysicsIndex(d.obstacles);
     physicsCache.set(d, index);
   }
   return index;
+}
+const streamedIndexes = new WeakMap<District["obstacles"], ReturnType<typeof createPhysicsIndex>>();
+/** Reuse immutable chunk grids; never rebuild all resident building edges when
+ * one tile arrives. Prefix offsets preserve the contact solver's original order.
+ * A replacement creates a fresh query cache, so evicted geometry cannot collide. */
+export function setStreamedPhysicsObstacles(d: District, groups: District["obstacles"][]) {
+  const obstacles = groups.flat(), parts: { index: ReturnType<typeof createPhysicsIndex>; base: number }[] = [];
+  let base = 0;
+  for (const group of groups) {
+    let index = streamedIndexes.get(group);
+    if (!index) { index = createPhysicsIndex(group, 32); streamedIndexes.set(group, index); }
+    parts.push({ index, base }); base += group.length;
+  }
+  const queries = new Map<string, number[]>();
+  d.obstacles = obstacles;
+  physicsCache.set(d, { obstacles, query(p: Point) {
+    const key = `${Math.floor(p.x / 32)}:${Math.floor(p.z / 32)}`;
+    let found = queries.get(key);
+    if (!found) {
+      found = [];
+      for (const part of parts) for (const i of part.index.query(p)) found.push(part.base + i);
+      queries.set(key, found);
+    }
+    return found;
+  } });
 }
 /** Conservative broad phase for citywide presentation agents. Includes rotated
  * collider bounds and complete road segment extents; exact tests remain shared. */

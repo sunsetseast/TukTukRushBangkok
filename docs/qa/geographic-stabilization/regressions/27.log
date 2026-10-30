@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:sign-layers /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-sign-layers.ts
+
+PASS sign trade labels, exterior face mounts, high clearances, traffic density
+

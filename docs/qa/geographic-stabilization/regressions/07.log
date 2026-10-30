@@ -1,0 +1,373 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:landmark-quality /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-landmark-quality.ts && node --import tsx scripts/check-sign-fonts.ts && node --import tsx scripts/check-batch-materials.ts
+
+{
+  "pass": true,
+  "inventory": [
+    {
+      "id": "chatuchak",
+      "tier": "site-specific",
+      "residentTriangles": 1296,
+      "geometryBytes": 44360
+    },
+    {
+      "id": "victory",
+      "tier": "site-specific",
+      "residentTriangles": 14732,
+      "geometryBytes": 414780
+    },
+    {
+      "id": "khaosan",
+      "tier": "site-specific",
+      "residentTriangles": 6296,
+      "geometryBytes": 189520
+    },
+    {
+      "id": "democracy",
+      "tier": "site-specific",
+      "residentTriangles": 4040,
+      "geometryBytes": 103520
+    },
+    {
+      "id": "sanam",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "palace",
+      "tier": "hero",
+      "residentTriangles": 115936,
+      "geometryBytes": 2271960
+    },
+    {
+      "id": "pho",
+      "tier": "hero",
+      "residentTriangles": 153224,
+      "geometryBytes": 2706720
+    },
+    {
+      "id": "arun",
+      "tier": "hero",
+      "residentTriangles": 39168,
+      "geometryBytes": 955640
+    },
+    {
+      "id": "golden",
+      "tier": "site-specific",
+      "residentTriangles": 94076,
+      "geometryBytes": 1585060
+    },
+    {
+      "id": "swing",
+      "tier": "site-specific",
+      "residentTriangles": 25424,
+      "geometryBytes": 663420
+    },
+    {
+      "id": "flowers",
+      "tier": "site-specific",
+      "residentTriangles": 20556,
+      "geometryBytes": 733040
+    },
+    {
+      "id": "mbk",
+      "tier": "site-specific",
+      "residentTriangles": 6676,
+      "geometryBytes": 245040
+    },
+    {
+      "id": "paragon",
+      "tier": "site-specific",
+      "residentTriangles": 8830,
+      "geometryBytes": 227600
+    },
+    {
+      "id": "central",
+      "tier": "site-specific",
+      "residentTriangles": 10644,
+      "geometryBytes": 377120
+    },
+    {
+      "id": "gate",
+      "tier": "site-specific",
+      "residentTriangles": 8128,
+      "geometryBytes": 120240
+    },
+    {
+      "id": "traimit",
+      "tier": "site-specific",
+      "residentTriangles": 53720,
+      "geometryBytes": 1146600
+    },
+    {
+      "id": "hua",
+      "tier": "site-specific",
+      "residentTriangles": 15382,
+      "geometryBytes": 532000
+    },
+    {
+      "id": "food",
+      "tier": "site-specific",
+      "residentTriangles": 1296,
+      "geometryBytes": 44360
+    },
+    {
+      "id": "icon",
+      "tier": "site-specific",
+      "residentTriangles": 9168,
+      "geometryBytes": 284480
+    },
+    {
+      "id": "park",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "terminal",
+      "tier": "site-specific",
+      "residentTriangles": 11564,
+      "geometryBytes": 430040
+    },
+    {
+      "id": "benjakitti",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "mahanakhon",
+      "tier": "skyline",
+      "residentTriangles": 13844,
+      "geometryBytes": 364280
+    },
+    {
+      "id": "asiatique",
+      "tier": "site-specific",
+      "residentTriangles": 6392,
+      "geometryBytes": 186880
+    },
+    {
+      "id": "paknam",
+      "tier": "hero",
+      "residentTriangles": 92504,
+      "geometryBytes": 1197320
+    },
+    {
+      "id": "baiyoke",
+      "tier": "skyline",
+      "residentTriangles": 2496,
+      "geometryBytes": 91480
+    },
+    {
+      "id": "state",
+      "tier": "skyline",
+      "residentTriangles": 3952,
+      "geometryBytes": 136120
+    },
+    {
+      "id": "benchasiri",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "chatuchak-park",
+      "tier": "landscaped open space",
+      "preserved": true
+    },
+    {
+      "id": "emporium",
+      "tier": "site-specific",
+      "residentTriangles": 2280,
+      "geometryBytes": 86560
+    },
+    {
+      "id": "emquartier",
+      "tier": "site-specific",
+      "residentTriangles": 2248,
+      "geometryBytes": 74800
+    },
+    {
+      "id": "emsphere",
+      "tier": "site-specific",
+      "residentTriangles": 564,
+      "geometryBytes": 19760
+    },
+    {
+      "id": "dusit",
+      "tier": "site-specific",
+      "residentTriangles": 20536,
+      "geometryBytes": 821560
+    },
+    {
+      "id": "okura",
+      "tier": "site-specific",
+      "residentTriangles": 4964,
+      "geometryBytes": 147480
+    },
+    {
+      "id": "anantara",
+      "tier": "site-specific",
+      "residentTriangles": 36928,
+      "geometryBytes": 885520
+    },
+    {
+      "id": "one-bangkok",
+      "tier": "site-specific",
+      "residentTriangles": 31448,
+      "geometryBytes": 1116400
+    },
+    {
+      "id": "oriental",
+      "tier": "site-specific",
+      "residentTriangles": 18500,
+      "geometryBytes": 642160
+    },
+    {
+      "id": "peninsula",
+      "tier": "site-specific",
+      "residentTriangles": 24888,
+      "geometryBytes": 954880
+    },
+    {
+      "id": "hilton",
+      "tier": "site-specific",
+      "residentTriangles": 10356,
+      "geometryBytes": 322480
+    },
+    {
+      "id": "shangri",
+      "tier": "site-specific",
+      "residentTriangles": 19984,
+      "geometryBytes": 601600
+    },
+    {
+      "id": "four-seasons",
+      "tier": "site-specific",
+      "residentTriangles": 28792,
+      "geometryBytes": 1147040
+    },
+    {
+      "id": "capella",
+      "tier": "site-specific",
+      "residentTriangles": 8976,
+      "geometryBytes": 354720
+    },
+    {
+      "id": "rosewood",
+      "tier": "site-specific",
+      "residentTriangles": 3608,
+      "geometryBytes": 123120
+    },
+    {
+      "id": "embassy",
+      "tier": "site-specific",
+      "residentTriangles": 15144,
+      "geometryBytes": 454080
+    },
+    {
+      "id": "erawan-hotel",
+      "tier": "site-specific",
+      "residentTriangles": 13008,
+      "geometryBytes": 446600
+    },
+    {
+      "id": "eastin",
+      "tier": "site-specific",
+      "residentTriangles": 11272,
+      "geometryBytes": 445280
+    },
+    {
+      "id": "river-city",
+      "tier": "site-specific",
+      "residentTriangles": 16464,
+      "geometryBytes": 650480
+    },
+    {
+      "id": "siam-center",
+      "tier": "site-specific",
+      "residentTriangles": 12768,
+      "geometryBytes": 510720
+    },
+    {
+      "id": "jim-thompson",
+      "tier": "site-specific",
+      "residentTriangles": 10960,
+      "geometryBytes": 438720
+    },
+    {
+      "id": "wat-mangkon",
+      "tier": "site-specific",
+      "residentTriangles": 5976,
+      "geometryBytes": 158240
+    },
+    {
+      "id": "holy-rosary",
+      "tier": "site-specific",
+      "residentTriangles": 1832,
+      "geometryBytes": 63640
+    },
+    {
+      "id": "grand-postal",
+      "tier": "site-specific",
+      "residentTriangles": 2944,
+      "geometryBytes": 13532
+    },
+    {
+      "id": "warehouse-30",
+      "tier": "site-specific",
+      "residentTriangles": 10784,
+      "geometryBytes": 19488
+    },
+    {
+      "id": "royal-orchid",
+      "tier": "site-specific",
+      "residentTriangles": 3664,
+      "geometryBytes": 6172
+    },
+    {
+      "id": "house-no-1",
+      "tier": "site-specific",
+      "residentTriangles": 1220,
+      "geometryBytes": 22044
+    },
+    {
+      "id": "assumption",
+      "tier": "site-specific",
+      "residentTriangles": 1648,
+      "geometryBytes": 27848
+    },
+    {
+      "id": "customs-house",
+      "tier": "site-specific",
+      "residentTriangles": 2692,
+      "geometryBytes": 47572
+    }
+  ],
+  "arrivalSigns": 10,
+  "municipalSigns": [
+    "street:surawong",
+    "street:maha-set",
+    "street:mahesak",
+    "street:surasak-road",
+    "street:pan",
+    "street:decho",
+    "street:naret",
+    "street:sathorn",
+    "street:narathiwas",
+    "street:charoen_s",
+    "street:si-phraya",
+    "street:charoen-krung-30",
+    "street:charoen-krung-32",
+    "street:yaowarat",
+    "street:khaosan",
+    "street:charoen_n",
+    "street:sukhumvit",
+    "street:silom",
+    "street:rama1",
+    "street:charoen_nakhon"
+  ],
+  "inspection": "all presets, extreme inputs, reset, indoor bounds, disposal"
+}
+{"pass":true,"strings":251,"thaiGlyphs":987,"chineseGlyphs":53,"actualShippedCmap":true}
+{"pass":true,"spatialCells":3,"materials":2,"identityAndRenderStatePreserved":true,"sharedDisposalExactlyOnce":true}
+

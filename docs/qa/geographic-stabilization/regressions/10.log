@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:historic-fidelity /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-historic-fidelity.ts
+
+{"pass":true,"roads":2405,"nodes":2333,"buildings":7350,"removed":1331,"added":1590,"waterfront":50,"clearVolumeRays":27,"totalVolumeRays":37,"cases":[{"id":"historic:palace:1","clear":false},{"id":"historic:pho:0","clear":true},{"id":"historic:swing:2","clear":false},{"id":"historic:golden:2","clear":false},{"id":"historic:hua:1","clear":true},{"id":"historic:traimit:2","clear":true}]}
+

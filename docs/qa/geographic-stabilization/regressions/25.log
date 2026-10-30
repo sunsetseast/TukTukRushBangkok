@@ -1,0 +1,6 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:roadside /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-roadside.ts
+
+PASS roadside: 91 furniture placements, wall slide/reverse, traffic escape
+

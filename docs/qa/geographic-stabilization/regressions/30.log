@@ -1,0 +1,41 @@
+
+> @workspace/tuk-tuk-rush@0.0.0 test:geographic-streaming /home/runner/workspace/artifacts/tuk-tuk-rush
+> node --import tsx scripts/check-geographic-streaming.ts
+
+{
+  pass: true,
+  streamRequests: 18,
+  evicted: 18,
+  roadChunkCrossings: [
+    {
+      way: 'osm:way/1009325184',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.568651978194488
+    },
+    {
+      way: 'osm:way/1009341616',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.568651978194513
+    },
+    {
+      way: 'osm:way/1009341621',
+      axis: 1,
+      from: [Object],
+      to: [Object],
+      speed: 19.56865197819437
+    }
+  ],
+  components: 478,
+  largestComponents: [
+    340822, 249, 159,
+       140, 123, 112,
+       100,  96,  82,
+        79,  79,  75
+  ],
+  note: 'Disconnected source compounds, grade-separated identities and narrow routes remain separate. No fabricated graph links.'
+}
+

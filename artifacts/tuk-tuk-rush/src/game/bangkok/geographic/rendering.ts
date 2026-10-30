@@ -1,5 +1,5 @@
 import * as T from "three";
-import { buildGeographicBuildings } from "./buildings";
+import { buildCompiledBuildings } from "./compiledBuildings";
 import { geographicToMeters } from "./projection";
 import type { GeographicChunkData, GeographicDataset } from "./dataset";
 import { surfaceGeometry } from "../roadSurfaceGraph";
@@ -166,7 +166,8 @@ export function buildGeographicChunk(
   );
   if (c.buildings?.length) {
     const start = performance.now();
-    root.add(buildGeographicBuildings(c.buildings, m.buildings));
+    if (!c.buildingGeometry) throw Error("Missing compiled building geometry; run geography:compile");
+    root.add(buildCompiledBuildings(c.buildingGeometry, m.buildings));
     root.userData.buildingBuildMs = performance.now() - start;
   }
   return root;
