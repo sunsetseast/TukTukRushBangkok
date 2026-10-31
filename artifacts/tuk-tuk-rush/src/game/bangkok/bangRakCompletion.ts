@@ -11,7 +11,62 @@ export const completionBodyKey = (o: Obstacle) => JSON.stringify([
   o.environmentId ?? "", o.landmarkId ?? "", ...[o.x, o.z, o.w, o.d, o.height, o.yaw ?? 0].map(v=>Math.round(v*1e4)),
 ]);
 export const completionRoadKey = (r: Road) => JSON.stringify([r.a, r.b, r.width, r.corridor, !!r.oneWay]);
-export type CompletionState = { roads: Road[]; retired: Obstacle[]; parcels: Obstacle[]; rejected: number };
+export type CompletionState = {
+  roads: Road[];
+  retired: Obstacle[];
+  parcels: Obstacle[];
+  rejected: number;
+  alreadyAbsentProcedural: string[];
+};
+
+/**
+ * An infill:rear parcel is generated opportunistically, after road, river and
+ * protected-site clearance checks. A later approved exclusion can mean it was
+ * never built, so there is nothing left for the retirement manifest to remove.
+ *
+ * Keep exact identity checks for every parcel that DOES exist. In particular,
+ * never accept a same-ID geometry change, or a missing protected/authored lot.
+ */
+export function resolveCompletionRetirements(
+  obstacles: readonly Obstacle[],
+  entries: readonly { body: Obstacle }[],
+) {
+  const byKey = new Map(obstacles.map(o => [completionBodyKey(o), o]));
+  const byId = new Map<string, Obstacle[]>();
+  for (const o of obstacles) {
+    if (!o.environmentId) continue;
+    const list = byId.get(o.environmentId) ?? [];
+    list.push(o);
+    byId.set(o.environmentId, list);
+  }
+
+  const retired: Obstacle[] = [];
+  const alreadyAbsentProcedural: string[] = [];
+  for (const { body } of entries) {
+    const exact = byKey.get(completionBodyKey(body));
+    if (exact) {
+      retired.push(exact);
+      continue;
+    }
+    const id = body.environmentId;
+    const changed = id ? byId.get(id) : undefined;
+    if (changed?.length)
+      throw Error(
+        "Bang Rak parcel geometry changed: " + id +
+        " (expected " + completionBodyKey(body) +
+        "; found " + changed.map(completionBodyKey).join(", ") + ")",
+      );
+
+    // Only optional rear-row procedural infill may already be absent.
+    // The ledger is not permission to ignore missing authored properties.
+    if (id?.startsWith("infill:rear:") && !body.protected && !body.landmarkId) {
+      alreadyAbsentProcedural.push(id);
+      continue;
+    }
+    throw Error("Bang Rak parcel baseline changed: " + (id ?? completionBodyKey(body)));
+  }
+  return { retired, alreadyAbsentProcedural };
+}
 const states = new WeakMap<District, CompletionState>();
 export const bangRakCompletionState = (d: District) => states.get(d);
 
@@ -23,12 +78,15 @@ export function completeBangRak(d: District) {
   const removedRoads = new Set([...migration.retiredRoads, ...migration.splitRoads].map(completionRoadKey));
   for (const key of removedRoads)
     if (!d.roads.some(r => completionRoadKey(r) === key)) throw Error("Bang Rak road baseline changed: " + key);
-  const old = new Map(d.obstacles.map(o => [completionBodyKey(o), o]));
-  const retired = migration.retired.map(({body}) => {
-    const o = old.get(completionBodyKey(body as Obstacle));
-    if (!o) throw Error("Bang Rak parcel baseline changed: " + body.environmentId);
-    return o;
-  });
+  const { retired, alreadyAbsentProcedural } = resolveCompletionRetirements(
+    d.obstacles,
+    migration.retired.map(({ body }) => ({ body: body as Obstacle })),
+  );
+  if (alreadyAbsentProcedural.length)
+    console.warn(
+      "Bang Rak migration: procedural rear parcels already absent",
+      alreadyAbsentProcedural,
+    );
   const removed = new Set(retired);
   d.roads = d.roads.filter(r => !removedRoads.has(completionRoadKey(r)));
   const retiredNodes = new Set(migration.retiredNodes.map(n=>n.id));
@@ -52,7 +110,10 @@ export function completeBangRak(d: District) {
   if (core) core.parcels = core.parcels.filter(p => !removed.has(p.body));
   addBangRakDestinations(d);
   const frontage = fitCorridorFrontages(d, plan.streets);
-  const state = { roads, retired, parcels: frontage.parcels, rejected: frontage.rejected };
+  const state: CompletionState = {
+    roads, retired, parcels: frontage.parcels, rejected: frontage.rejected,
+    alreadyAbsentProcedural,
+  };
   states.set(d, state);
   return state;
 }
