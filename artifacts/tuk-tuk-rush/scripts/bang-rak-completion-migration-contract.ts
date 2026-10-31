@@ -2,8 +2,27 @@ import assert from 'node:assert/strict';import fs from 'node:fs';import {gunzipS
 import type {District} from '../src/game/types';
 import migration from '../src/game/bangkok/bangRakCompletionMigration.v1.json';
 import {BANG_RAK_DESTINATIONS} from '../src/game/bangkok/bangRakDestinations';
-import {bangRakCompletionState,completionBodyKey,completionRoadKey} from '../src/game/bangkok/bangRakCompletion';
+import {bangRakCompletionState,completionBodyKey,completionRoadKey,completionRoadEnvelopes} from '../src/game/bangkok/bangRakCompletion';
+import {orientedFootprintsOverlap} from '../src/game/world';
 const checked=new WeakMap<District,District>();
+/** The historical retirement list is authoritative for all authored lots.
+ * Supplemental retirement is permitted ONLY for dynamically fitted background
+ * parcels whose actual geometry obstructs approved replacement roads/sidewalks.
+ * This is checked again here, independently of the production resolver. */
+function safeProceduralRetirementKeys(d:District):Set<string> {
+ const state=bangRakCompletionState(d);
+ if (!state) return new Set();
+ const physicalRoads=completionRoadEnvelopes(d,state.roads);
+ const safe=new Set<string>();
+ for(const b of state.retired) {
+  const id=b.environmentId??'';
+  if ((!id.startsWith('infill:')&&!id.startsWith('urban-block:')) ||
+      b.protected || b.landmarkId || b.chinatown) continue;
+  if (physicalRoads.some(r=>orientedFootprintsOverlap(b,r)))
+   safe.add(completionBodyKey(b));
+ }
+ return safe;
+}
 export function beforeBangRakCompletion(d:District):District {
  if(!bangRakCompletionState(d))return d;
  const cached=checked.get(d);if(cached)return cached;
@@ -16,8 +35,13 @@ export function beforeBangRakCompletion(d:District):District {
  assert.deepEqual(live.roads.filter(r=>!additions.has(completionRoadKey(r))),old.roads.filter(r=>!replaced.has(completionRoadKey(r))),'Every road outside the precise migration remains identical');
  assert.equal(live.roads.length,old.roads.length-replaced.size+migration.roads.length);
  const retired=new Set(migration.retired.map(r=>completionBodyKey(r.body as any)));
+ const safeExtra=safeProceduralRetirementKeys(d);
  const keys=new Set(live.buildings.map(completionBodyKey));
- for(const body of old.buildings)assert(keys.has(completionBodyKey(body))||retired.has(completionBodyKey(body)),'Every prior building retained or explicitly ledgered '+body.environmentId);
+ for(const body of old.buildings) {
+  const key=completionBodyKey(body);
+  assert(keys.has(key)||retired.has(key)||safeExtra.has(key),
+    'Every prior building retained, ledgered, or proven to obstruct the approved replacement road/sidewalk '+body.environmentId);
+ }
  const ids=new Set(BANG_RAK_DESTINATIONS.map(s=>s.id));
  for(const change of migration.approaches) {
   const l=live.landmarks.find(l=>l.id===change.landmark)!;
@@ -32,5 +56,6 @@ export function beforeBangRakCompletion(d:District):District {
 /** Exact PR44 frontage retirement, validated against its preserved PR43 world. */
 export function approvedCompletionRetirement(o:District["buildings"][number],d:District) {
  beforeBangRakCompletion(d);
- return migration.retired.some(r=>completionBodyKey(r.body as any)===completionBodyKey(o));
+ return migration.retired.some(r=>completionBodyKey(r.body as any)===completionBodyKey(o)) ||
+  safeProceduralRetirementKeys(d).has(completionBodyKey(o));
 }
