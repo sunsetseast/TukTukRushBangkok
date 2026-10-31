@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';import fs from 'node:fs';
 import {createBangkokWorld,blockedByRiver} from '../src/game/bangkok/world';
-import {BANG_RAK_COMPLETION,bangRakCompletionState} from '../src/game/bangkok/bangRakCompletion';
+import {BANG_RAK_COMPLETION,bangRakCompletionState,resolveCompletionRetirements} from '../src/game/bangkok/bangRakCompletion';
+import migration from '../src/game/bangkok/bangRakCompletionMigration.v1.json';
+import type {Obstacle} from '../src/game/types';
 import {beforeBangRakCompletion} from './bang-rak-completion-migration-contract';
 import {orientedFootprintsOverlap,obstacleDistance,distanceToSegment} from '../src/game/world';
 import {lanePoint,TrafficSystem} from '../src/game/traffic';
@@ -9,6 +11,25 @@ import {createVehicle} from '../src/game/vehicle';
 import {nearestRoadIndex} from '../src/game/bangkok/nearestRoadIndex';
 import {emitBangRakDestinations,BANG_RAK_DESTINATIONS} from '../src/game/bangkok/bangRakDestinations';
 import {planChinatownBlocks} from '../src/game/bangkok/chinatownBlocks';
+// Regression: optional procedural lots that never survived clearance must not
+// crash the world, but a changed same-ID lot or an authored lot still must.
+const legacyRear = migration.retired.find(
+  r => r.body.environmentId === 'infill:rear:2354271658',
+)?.body as Obstacle | undefined;
+assert(legacyRear, 'Screenshot regression fixture remains in approved retirement ledger');
+const absent = resolveCompletionRetirements([], [{body:legacyRear}]);
+assert.deepEqual(absent.alreadyAbsentProcedural, ['infill:rear:2354271658']);
+assert.equal(absent.retired.length, 0);
+const present = {...legacyRear};
+assert.equal(resolveCompletionRetirements([present], [{body:legacyRear}]).retired[0], present);
+assert.throws(
+  () => resolveCompletionRetirements([{...legacyRear, x:legacyRear.x+1}], [{body:legacyRear}]),
+  /Bang Rak parcel geometry changed/,
+);
+assert.throws(
+  () => resolveCompletionRetirements([], [{body:{...legacyRear, environmentId:'br:authored', protected:true}}]),
+  /Bang Rak parcel baseline changed/,
+);
 const start=performance.now(),d=createBangkokWorld(),s=bangRakCompletionState(d)!,old=beforeBangRakCompletion(d),ns=new Map(d.nodes.map(n=>[n.id,n]));
 assert(s.parcels.length>=150,'Substantial continuous corridor fabric');
 const failures:any[]=[];
@@ -40,6 +61,6 @@ for(const site of BANG_RAK_DESTINATIONS){const l=d.landmarks.find(l=>l.id===site
 const stations=d.transit!.lines.find(l=>l.id==='silom')!.stations.map(s=>s.id);
 assert.deepEqual(stations.slice(stations.indexOf('sala-daeng'),stations.indexOf('saphan-taksin')+1),['sala-daeng','chong-nonsi','saint-louis','surasak','saphan-taksin']);
 for(const seed of [982,41,67])assert.equal(new TrafficSystem(d,seed).create(createVehicle(d)).length,38);
-const report={pass:failures.length===0,roads:d.roads.length,addedEdges:s.roads.length,retiredBodies:s.retired.length,frontages:s.parcels.length,unfittedCandidates:s.rejected,landmarks:BANG_RAK_DESTINATIONS.map(s=>s.id),landmarkArtPieces:pieces.length,legalPaths:paths,laneFailures:failures,physicalSafari:false,ms:performance.now()-start};
+const report={pass:failures.length===0,roads:d.roads.length,addedEdges:s.roads.length,retiredBodies:s.retired.length,alreadyAbsentProcedural:s.alreadyAbsentProcedural,frontages:s.parcels.length,unfittedCandidates:s.rejected,landmarks:BANG_RAK_DESTINATIONS.map(s=>s.id),landmarkArtPieces:pieces.length,legalPaths:paths,laneFailures:failures,physicalSafari:false,ms:performance.now()-start};
 fs.writeFileSync(new URL('../../../docs/qa/bang-rak-completion/validation/completion.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
 assert.equal(failures.length,0,JSON.stringify(failures.slice(0,8)));console.log(JSON.stringify(report));
