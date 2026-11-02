@@ -650,8 +650,14 @@ export default function GeographicPrototype() {
     let cancelled = false,
       cleanup: (() => void) | undefined;
     const start = performance.now();
-    Promise.all([loadGameplayGeography(), loadArt()])
-      .then(([network, art]) => {
+    Promise.all([
+      loadGameplayGeography().catch((error) => {
+        throw Error(`Bangkok road/map data failed to load: ${String(error)}`, { cause: error });
+      }),
+      loadArt().catch((error) => {
+        throw Error(`Bangkok 3D artwork failed to load: ${String(error)}`, { cause: error });
+      }),
+    ]).then(([network, art]) => {
         if (cancelled) {
           art.dispose();
           return;
@@ -679,8 +685,9 @@ export default function GeographicPrototype() {
   }, []);
   if (error)
     return (
-      <div className="geo-error">
-        {error}
+      <div className="geo-error" role="alert">
+        <p>{error}</p>
+        <button type="button" onClick={() => location.reload()}>Retry Bangkok map</button>
         <p>
           <a href={location.pathname}>Return to game</a>
         </p>
