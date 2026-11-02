@@ -30,6 +30,7 @@ import { readPreferences } from "../../ui/preferences";
 import { GeographicSession } from "./session";
 import { GeographicFrameProfiler, type GeographicPerfSample } from "./performance";
 import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
+import { TrafficActors } from "./TrafficActors";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
 
@@ -41,11 +42,12 @@ type Loaded = {
   loadMs: number;
 };
 function Scene({
-  loaded, target, perfEnabled, onPerfSample,
+  loaded, target, perfEnabled, onPerfSample, trafficEnabled,
 }: {
   loaded: Loaded;
   target?: RoadNode;
   perfEnabled: boolean;
+  trafficEnabled: boolean;
   onPerfSample: (sample: GeographicPerfSample) => void;
 }) {
   const { network, session, art, places } = loaded,
@@ -405,6 +407,7 @@ function Scene({
       <directionalLight position={[40, 100, 60]} intensity={2.2} />
       <primitive object={content.group} />
       <primitive object={tuk.root} />
+      <TrafficActors network={network} session={session} enabled={trafficEnabled} />
     </>
   );
 }
@@ -413,11 +416,15 @@ function PreviewHud({
   onTarget,
   perfEnabled,
   onPerfToggle,
+  trafficEnabled,
+  onTrafficToggle,
 }: {
   loaded: Loaded;
   onTarget: (n?: RoadNode) => void;
   perfEnabled: boolean;
   onPerfToggle: () => void;
+  trafficEnabled: boolean;
+  onTrafficToggle: () => void;
 }) {
   const { session, network } = loaded,
     [snapshot, setSnapshot] = useState(session.model.snapshot),
@@ -525,6 +532,10 @@ function PreviewHud({
           {snapshot.phase === "playing" ? "Pause" : "Resume"}
         </button>
         <button onClick={() => setMap(!map)}>Route map</button>
+        <button type="button" data-testid="geographic-traffic-toggle"
+          aria-pressed={trafficEnabled} onClick={onTrafficToggle}>
+          Local traffic {trafficEnabled ? "ON" : "OFF"}
+        </button>
         <button
           type="button"
           data-testid="geographic-performance-toggle"
@@ -604,8 +615,9 @@ function PreviewHud({
           <h1>Bangkok, at real scale</h1>
           <p>
             Production driving, passengers and career earnings on Bangkok’s
-            mapped streets. Four destinations; neighborhood artwork migration is
-            in progress.
+            mapped streets. A small local traffic simulation is now available;
+            verified signal locations and neighborhood artwork are still
+            being developed.
           </p>
           <button
             data-testid="button-start-shift"
@@ -643,6 +655,7 @@ export default function GeographicPrototype() {
   const [loaded, setLoaded] = useState<Loaded>(),
     [error, setError] = useState(""),
     [target, setTarget] = useState<RoadNode>(),
+    [trafficEnabled, setTrafficEnabled] = useState(() => new URLSearchParams(location.search).get("geoTraffic") !== "0"),
     [perfEnabled, setPerfEnabled] = useState(() => new URLSearchParams(location.search).has("geoPerf")),
     [perfSample, setPerfSample] = useState<GeographicPerfSample>();
   const onPerfSample = useCallback((sample: GeographicPerfSample) => setPerfSample(sample), []);
@@ -702,13 +715,16 @@ export default function GeographicPrototype() {
         camera={{ near: 0.1, far: 1800 }}
         gl={{ antialias: true, preserveDrawingBuffer: import.meta.env.DEV }}
       >
-        <Scene loaded={loaded} target={target} perfEnabled={perfEnabled} onPerfSample={onPerfSample} />
+        <Scene loaded={loaded} target={target} perfEnabled={perfEnabled}
+          onPerfSample={onPerfSample} trafficEnabled={trafficEnabled} />
       </Canvas>
       <PreviewHud
         loaded={loaded}
         onTarget={setTarget}
         perfEnabled={perfEnabled}
         onPerfToggle={() => { setPerfSample(undefined); setPerfEnabled((value) => !value); }}
+        trafficEnabled={trafficEnabled}
+        onTrafficToggle={() => setTrafficEnabled((value) => !value)}
       />
       {perfEnabled && (
         <GeographicPerformanceOverlay
