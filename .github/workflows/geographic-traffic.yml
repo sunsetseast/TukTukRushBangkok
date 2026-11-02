@@ -28,7 +28,10 @@ jobs:
       - run: pnpm install --frozen-lockfile --ignore-scripts
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-control-import
       - name: Regenerate pinned OSM road and access rules (no PBF re-import)
         run: node --import tsx scripts/pack-geographic-road-rules.ts
+        working-directory: artifacts/tuk-tuk-rush
+      - run: node --import tsx scripts/pack-geographic-traffic-controls.ts
         working-directory: artifacts/tuk-tuk-rush
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-road-rules
