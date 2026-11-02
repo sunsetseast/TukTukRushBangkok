@@ -301,12 +301,23 @@ function Scene({
           q.z,
         );
       }
-      content.route.geometry.dispose();
-      content.route.geometry = new T.BufferGeometry();
-      content.route.geometry.setAttribute(
-        "position",
-        new T.Float32BufferAttribute(positions, 3),
-      );
+      // Avoid disposing/recreating a WebGL geometry every 200ms while driving.
+      // A reusable growing buffer removes this steady stream of GPU/GC churn.
+      const geometry = content.route.geometry;
+      let attribute = geometry.getAttribute("position") as T.BufferAttribute | undefined;
+      if (!attribute || attribute.array.length < positions.length) {
+        const capacity = Math.max(96, positions.length, (attribute?.array.length ?? 0) * 2);
+        attribute = new T.BufferAttribute(new Float32Array(capacity), 3);
+        attribute.setUsage(T.DynamicDrawUsage);
+        geometry.setAttribute("position", attribute);
+      }
+      (attribute.array as Float32Array).set(positions);
+      attribute.needsUpdate = true;
+      geometry.setDrawRange(0, positions.length / 3);
+      // Three's bounding sphere reads the complete allocated buffer; disable
+      // frustum culling for this single short near-player guide line instead
+      // of letting unused capacity create a misleading bound.
+      content.route.frustumCulled = false;
     }
     // Debug snapshots used to traverse the entire scene and allocate dozens of
     // arrays *every frame*. Throttle them instead of charging every player frame.
