@@ -13,7 +13,7 @@ let browser;
 try {
   browser = await webkit.launch({ headless: true });
   const page = await browser.newPage();
-  await page.goto("http://127.0.0.1:24817/");
+  await page.goto("http://127.0.0.1:24817/assets/geography/transport-check.html");
   const report = await page.evaluate(async () => {
     const names = [
       "gameplay.v2.json.pack", "navigation.v2.bin.pack",
