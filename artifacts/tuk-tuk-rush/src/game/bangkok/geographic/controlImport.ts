@@ -145,16 +145,21 @@ export function compileControlPack(
     }
     const direction=(n.tags["traffic_signals:direction"] ?? n.tags.direction ?? "").toLowerCase();
     const hasExplicitDirection=direction==="forward" || direction==="backward";
-    const taggedAllWay=n.tags.stop==="all";
-    // If no source-bearing is given, only junction-mapped signals can control
-    // all inbound approaches. A mid-block signal/roadside stop sign is shown
-    // but never secretly applied in both directions.
-    let selected = (n.kind!=="sign" && hasExplicitDirection
-      ? incoming.filter(edge => direction==="forward"
-          ? network.b[edge]===matched
-          : network.a[edge]===matched)
-      : n.kind==="signal" && incoming.length>=3 || (n.kind==="stop" && taggedAllWay)
-        ? incoming : []);
+    const taggedAllWay=n.kind==="stop" && n.tags.stop==="all";
+    // A signal or stop-line node on a source one-way approach can safely
+    // control its single legal incoming movement without guessing a bearing.
+    // A two-way mid-block node without a direction is ambiguous: show its
+    // source marker, but DO NOT apply a legal stop to both directions.
+    const unambiguousSingleApproach=incoming.length===1 &&
+      (n.kind==="signal" || n.kind==="stop" || n.kind==="yield");
+    const signedIntersection=n.kind==="signal" && incoming.length>=3;
+    const allDirections=direction==="both" && n.kind==="signal";
+    let selected = n.kind==="sign" ? [] :
+      hasExplicitDirection
+        ? incoming.filter(edge => direction==="forward"
+          ? network.b[edge]===matched : network.a[edge]===matched)
+        : (unambiguousSingleApproach || signedIntersection || taggedAllWay || allDirections)
+          ? incoming : [];
     // Only suppress duplicate mappings within a tagged source node.
     selected=[...new Set(selected)];
     const approaches:RuntimeApproach[]=selected.map(edge => {
