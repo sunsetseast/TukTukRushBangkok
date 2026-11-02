@@ -26,12 +26,15 @@ def controls(tags):
         return "stop"
     if highway == "give_way":
         return "yield"
-    traffic_sign = tags.get("traffic_sign", "").lower()
-    if any(code in traffic_sign for code in ("stop", "th:stop")):
+    # Exact OSM sign tokens: matching substrings such as 'bus_stop' must
+    # never fabricate a STOP command for motor traffic.
+    traffic_sign = tags.get("traffic_sign", "").lower().strip()
+    tokens = {x.strip() for x in traffic_sign.replace(",", ";").split(";")}
+    if tokens & {"stop", "th:stop"}:
         return "stop"
-    if any(code in traffic_sign for code in ("give_way", "yield", "th:give_way")):
+    if tokens & {"give_way", "yield", "th:give_way"}:
         return "yield"
-    if traffic_sign: return "sign"  # Preserve actual tagged signs without assigning unverified legal effect.
+    if traffic_sign: return "sign"  # Other actual mapped signs stay informational.
     return None
 
 class Extract(osmium.SimpleHandler):
