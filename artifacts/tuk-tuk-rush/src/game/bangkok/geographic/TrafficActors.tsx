@@ -1,9 +1,12 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as T from "three";
 import { GeographicTrafficSimulation } from "./traffic";
 import type { GeographicNetwork } from "./network";
 import type { GeographicSession } from "./session";
+import type { RuntimeControlPack } from "./controlImport";
+import { loadVerifiedTrafficControls, sourceApproachControls } from "./trafficControlRuntime";
+import { TrafficSignActors } from "./TrafficSignActors";
 
 type FleetMesh = T.InstancedMesh<T.BoxGeometry, T.MeshStandardMaterial>;
 type Fleet = {
@@ -28,8 +31,10 @@ const CAPACITY = 16;
 /** Small batched placeholders for living traffic, not individualized photo-real
  * Bangkok models. Fixed draw call budget, fixed pool, zero per-car mesh allocation.
  */
-function makeFleet(network: GeographicNetwork): Fleet {
-  const simulation = new GeographicTrafficSimulation(network);
+function makeFleet(network: GeographicNetwork, pack: RuntimeControlPack | null): Fleet {
+  const simulation = new GeographicTrafficSimulation(
+    network,20261102,sourceApproachControls(pack),pack?.restrictions ?? [],
+  );
   const root = new T.Group();
   root.name = "GeographicMotorTraffic";
   const make = (w: number, h: number, l: number): FleetMesh => {
@@ -68,7 +73,15 @@ export function TrafficActors({
   session: GeographicSession;
   enabled: boolean;
 }) {
-  const fleet = useMemo(() => makeFleet(network), [network]);
+  const [pack,setPack]=useState<RuntimeControlPack|null>(null);
+  useEffect(()=>{
+    let cancelled=false;
+    void loadVerifiedTrafficControls(network).then(result=>{
+      if(!cancelled)setPack(result);
+    });
+    return ()=>{cancelled=true;};
+  },[network]);
+  const fleet = useMemo(() => makeFleet(network,pack), [network,pack]);
   useEffect(() => () => fleet.dispose(), [fleet]);
   const dummy = useMemo(() => new T.Object3D(), []);
   useFrame((_, delta) => {
@@ -124,5 +137,7 @@ export function TrafficActors({
         })),
       };
   });
-  return <primitive object={fleet.root} />;
+  return <><primitive object={fleet.root} />
+    <TrafficSignActors pack={pack} session={session} enabled={enabled} simulation={fleet.simulation}/>
+  </>;
 }
