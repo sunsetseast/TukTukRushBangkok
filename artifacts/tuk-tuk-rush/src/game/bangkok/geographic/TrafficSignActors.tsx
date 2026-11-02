@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import * as T from "three";
 import type { GeographicSession } from "./session";
 import type { RuntimeControlPack } from "./controlImport";
+import type { GeographicTrafficSimulation } from "./traffic";
 import { localVisibleTrafficSigns, simulatedSignalIsGreen } from "./trafficControlRuntime";
 
 type Instance = T.InstancedMesh<T.BufferGeometry, T.MeshStandardMaterial>;
@@ -34,11 +35,12 @@ function createSignArt() {
   }};
 }
 export function TrafficSignActors({
-  pack,session,enabled,
+  pack,session,enabled,simulation,
 }:{
   pack:RuntimeControlPack|null;
   session:GeographicSession;
   enabled:boolean;
+  simulation: GeographicTrafficSimulation;
 }) {
   const art=useMemo(()=>createSignArt(),[]);
   const elapsed=useRef(0);
@@ -76,7 +78,7 @@ export function TrafficSignActors({
         instance(art.housing,index,x,y+2.7,z);
         const approach=sign.approaches[0];
         const color=approach
-          ? simulatedSignalIsGreen(approach.phase,session.model.snapshot.shiftTime ?? 0)
+          ? simulatedSignalIsGreen(approach.phase,simulation.simulationClockSeconds)
             ? green : red
           : inactive;
         instance(art.bulbs,count.bulbs++,x,y+2.78,z-.16,0,color);
