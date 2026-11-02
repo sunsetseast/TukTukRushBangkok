@@ -17,10 +17,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check osmium
-      - name: Download exactly the pinned Thailand 2026-10-24 PBF (source checksum verified by importer)
+      - name: Download newer real OSM signs as an explicitly versioned source, independent of immutable road geometry
         run: |
           curl -fL --retry 3 --connect-timeout 20 \
-            'https://download.geofabrik.de/asia/thailand-261024.osm.pbf' -o /tmp/thailand-261024.osm.pbf
+            'https://download.geofabrik.de/asia/thailand-latest.osm.pbf' -o /tmp/thailand-controls-current.osm.pbf
       - name: Extract actual signals, signs, turn restrictions by source node/relation ID
         run: python scripts/geography/import_traffic_controls.py --pbf /tmp/thailand-261024.osm.pbf
       - uses: actions/upload-artifact@v4
