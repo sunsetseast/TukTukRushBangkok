@@ -68,7 +68,11 @@ const stream = new GeographicStream(
 );
 async function settle(p: { x: number; z: number }) {
   for (let i = 0; i < 100; i++) {
+    const alreadyInstalled = stream.stats.loaded;
     stream.update(p);
+    assert(stream.pendingCount <= 2, "At most two in-flight geographic fetches");
+    assert(stream.stats.loaded - alreadyInstalled <= 1, "At most one chunk installed per tick");
+    assert(stream.queuedCount <= 18, "Nearby wanted cells only, not city-wide queue");
     await new Promise((r) => setImmediate(r));
     if (stream.settled) return;
   }
@@ -108,6 +112,15 @@ late.close();
 resolve!({ id: "late" });
 await new Promise((r) => setImmediate(r));
 assert(lateDisposed);
+assert.throws(
+  () => new GeographicStream(
+    [data.chunks[0]!, data.chunks[0]!],
+    async () => ({ id: "duplicate" }),
+    () => {}, () => {},
+  ),
+  /Duplicate geographic chunk/,
+  "Grid index rejects duplicate IDs or locations",
+);
 // An actual production-controller step crosses three independent real chunk seams.
 const d = createGeographicDistrict(data),
   surface = new GeographicSurface(data),

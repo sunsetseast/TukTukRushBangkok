@@ -248,3 +248,65 @@
     font-size: 8px;
   }
 }
+
+/* Local device profiling stays compact and scrollable on iPhone landscape. */
+.geo-perf {
+  position: absolute;
+  z-index: 14;
+  top: max(66px, calc(env(safe-area-inset-top) + 50px));
+  right: max(10px, env(safe-area-inset-right));
+  width: min(294px, calc(100vw - 20px));
+  max-height: min(66vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  background: #091924ee;
+  border: 1px solid #7ad9c493;
+  border-radius: 11px;
+  padding: 11px 12px;
+  box-shadow: 0 12px 34px #0008;
+  color: #f0fff9;
+  font: 12px system-ui, sans-serif;
+}
+.geo-perf header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  letter-spacing: .08em;
+  font-size: 11px;
+}
+.geo-perf button {
+  background: #24404c;
+  border: 1px solid #ffffff55;
+  border-radius: 6px;
+  min-width: 34px;
+  min-height: 34px;
+  color: white;
+  cursor: pointer;
+  font-size: 21px;
+}
+.geo-perf-lead { padding: 8px 0; display: grid; gap: 2px; }
+.geo-perf-lead b { font-size: 24px; font-variant-numeric: tabular-nums; }
+.geo-perf-lead span { font-size: 11px; color: #b7d7d1; }
+.geo-perf dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px 12px;
+  margin: 0 0 10px;
+  font-variant-numeric: tabular-nums;
+}
+.geo-perf dt { color: #b6ccd2; }
+.geo-perf dd { margin: 0; text-align: right; }
+.geo-perf small { display: block; color: #a8bdc3; line-height: 1.45; }
+@media (max-width: 600px) {
+  .geo-perf {
+    top: max(110px, calc(env(safe-area-inset-top) + 104px));
+    width: min(245px, calc(100vw - 20px));
+    max-height: 49vh;
+  }
+}
+@media (max-height: 500px) {
+  .geo-perf { top: max(56px, env(safe-area-inset-top)); max-height: 75vh; width: 238px; }
+  .geo-perf small { font-size: 10px; }
+}
