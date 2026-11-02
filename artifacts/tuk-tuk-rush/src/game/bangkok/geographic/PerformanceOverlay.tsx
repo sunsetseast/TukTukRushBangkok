@@ -11,7 +11,7 @@ export function GeographicPerformanceOverlay({
     value === undefined ? "—" : value.toFixed(digits);
   const underBudget = !!sample && sample.samples >= 30 && sample.p95Ms <= 33.33;
   return (
-    <aside className="geo-perf" data-testid="geographic-performance" aria-label="Real-scale Bangkok device performance">
+    <aside className="geo-perf" data-testid="geographic-performance" data-samples={sample?.samples ?? 0} aria-label="Real-scale Bangkok device performance">
       <header>
         <strong>DEVICE PERFORMANCE</strong>
         <button type="button" onClick={onClose} aria-label="Close performance monitor">×</button>
@@ -27,7 +27,7 @@ export function GeographicPerformanceOverlay({
         <dt>Draw calls / triangles</dt><dd>{sample ? `${sample.drawCalls} / ${sample.triangles.toLocaleString()}` : "—"}</dd>
         <dt>GPU geometries</dt><dd>{sample?.geometries ?? "—"}</dd>
         <dt>Chunks active / waiting</dt><dd>{sample ? `${sample.activeChunks} / ${sample.pendingChunks + sample.readyChunks + sample.queuedChunks}` : "—"}</dd>
-        <dt>Resident buildings</dt><dd>{sample?.visibleBuildings.toLocaleString() ?? "—"}</dd>
+        <dt>Resident buildings</dt><dd>{sample?.residentBuildings.toLocaleString() ?? "—"}</dd>
         <dt>Worst chunk install</dt><dd>{n(sample?.maxChunkActivationMs, 1)} ms</dd>
         <dt>Stream errors</dt><dd>{sample?.streamErrors ?? "—"}</dd>
         <dt>Graphics quality</dt><dd>{sample?.quality ?? "—"}</dd>
