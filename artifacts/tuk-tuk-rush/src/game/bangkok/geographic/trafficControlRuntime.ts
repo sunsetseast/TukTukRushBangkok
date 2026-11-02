@@ -36,7 +36,11 @@ export function sourceApproachControls(
   if(!pack || pack.status!=="ready") return [];
   const controls:VerifiedApproachControl[]=[];
   const seen=new Set<string>();
-  for(const sign of pack.signs) {
+  // When two tagged devices overlap at one original OSM node, a verified
+  // signal has priority over a stop/yield marker, regardless of OSM ID order.
+  // Never let a standalone generic sign override a graph-controlled signal.
+  const priority={signal:0,stop:1,yield:2,sign:3};
+  for(const sign of [...pack.signs].sort((a,b)=>priority[a.kind]-priority[b.kind])) {
     if(sign.node===undefined || sign.kind==="sign")continue;
     for(const approach of sign.approaches) {
       const key=`${sign.node}:${approach.edge}`;
