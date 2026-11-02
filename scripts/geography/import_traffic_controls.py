@@ -31,6 +31,7 @@ def controls(tags):
         return "stop"
     if any(code in traffic_sign for code in ("give_way", "yield", "th:give_way")):
         return "yield"
+    if traffic_sign: return "sign"  # Preserve actual tagged signs without assigning unverified legal effect.
     return None
 
 class Extract(osmium.SimpleHandler):
@@ -38,7 +39,7 @@ class Extract(osmium.SimpleHandler):
         super().__init__()
         self.bbox, self.way_ids = bbox, way_ids
         self.nodes, self.relations = [], []
-        self.counts = {"signals": 0, "stops": 0, "yields": 0, "restrictions": 0}
+        self.counts = {"signals": 0, "stops": 0, "yields": 0, "otherSigns": 0, "restrictions": 0}
     def node(self, node):
         if not node.location.valid():
             return
@@ -55,7 +56,7 @@ class Extract(osmium.SimpleHandler):
             "coordinate": [lon, lat],
             "tags": {k: v for k, v in tags.items() if k in CONTROL_TAGS},
         })
-        self.counts[{"signal":"signals", "stop":"stops", "yield":"yields"}[kind]] += 1
+        self.counts[{"signal":"signals", "stop":"stops", "yield":"yields", "sign":"otherSigns"}[kind]] += 1
     def relation(self, rel):
         tags = dict(rel.tags)
         if tags.get("type") not in {"restriction", "restriction:motorcar", "restriction:motor_vehicle"}:
