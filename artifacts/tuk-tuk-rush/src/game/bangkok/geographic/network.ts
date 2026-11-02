@@ -10,6 +10,7 @@ import { distanceToSegment } from "../../world";
 import { VEHICLE_COLLISION_RADIUS } from "../../vehicleEnvelope";
 import { inRiverWater } from "../waterGeometry";
 import { readRoadRuleDirections, type GeographicRoadRules } from "./roadRules";
+import { fetchGeographicBytes, fetchGeographicJson } from "./packedAsset";
 
 export type GameplayMetadata = Pick<
   GeographicDataset,
@@ -31,19 +32,14 @@ export type GameplayMetadata = Pick<
   edgeCount: number;
   sourceSha256: string;
 };
-async function decoded(url: string) {
-  const r = await fetch(url);
-  if (!r.ok || !r.body) throw Error(`Geography unavailable: ${r.status}`);
-  return r.headers.get("content-encoding") === "gzip"
-    ? r
-    : new Response(r.body.pipeThrough(new DecompressionStream("gzip")));
-}
+/** Base assets use .pack aliases so static hosts cannot mistake them
+ * for HTTP-level gzip purely because the physical filename ends in .gz. */
 export async function loadGameplayGeography() {
   const base = `${import.meta.env.BASE_URL}assets/geography/`;
   const [metadata, buffer, rules] = await Promise.all([
-    decoded(base + "gameplay.v2.json.gz").then((r) => r.json()),
-    decoded(base + "navigation.v2.bin.gz").then((r) => r.arrayBuffer()),
-    decoded(base + "road-rules.v1.json.gz").then((r) => r.json()),
+    fetchGeographicJson<GameplayMetadata>(base + "gameplay.v2.json.pack"),
+    fetchGeographicBytes(base + "navigation.v2.bin.pack"),
+    fetchGeographicJson<GeographicRoadRules>(base + "road-rules.v1.json.pack"),
   ]);
   return new GeographicNetwork(metadata, buffer, rules);
 }
