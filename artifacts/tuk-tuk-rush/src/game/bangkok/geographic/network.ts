@@ -9,7 +9,7 @@ import type { GeographicDataset, GeographicRail } from "./dataset";
 import { distanceToSegment } from "../../world";
 import { VEHICLE_COLLISION_RADIUS } from "../../vehicleEnvelope";
 import { inRiverWater } from "../waterGeometry";
-import { readRoadRuleDirections, type GeographicRoadRules } from "./roadRules";
+import { readRoadRuleDirections, readMotorTrafficAccess, type GeographicRoadRules } from "./roadRules";
 import { fetchGeographicBytes, fetchGeographicJson } from "./packedAsset";
 
 export type GameplayMetadata = Pick<
@@ -98,6 +98,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   readonly way: Uint32Array;
   /** Directions indexed by OSM way; free-driving physics remains unrestricted. */
   readonly directions: Int8Array;
+  readonly motorAllowed: Uint8Array;
   readonly components: Uint32Array;
   readonly offsets: Uint32Array;
   readonly incident: Uint32Array;
@@ -157,6 +158,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
     this.width = f(e);
     this.way = u(e);
     this.directions = readRoadRuleDirections(rules, metadata.sourceSha256, metadata.ways.length);
+    this.motorAllowed = readMotorTrafficAccess(rules, metadata.sourceSha256, metadata.ways.length);
     this.components = Uint32Array.from({ length: n }, (_, i) => i);
     const root = (i: number): number => {
       while (this.components[i] !== i) {
@@ -246,6 +248,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
       this.buffer.byteLength +
       this.components.byteLength +
       this.directions.byteLength +
+      this.motorAllowed.byteLength +
       this.offsets.byteLength +
       this.incident.byteLength +
       this.costs.byteLength +
@@ -255,6 +258,24 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   }
   node(i: number): RoadNode {
     return { id: `geo:${i}`, x: this.x[i]!, z: this.z[i]! };
+  }
+  /** Bounded local source-road candidates for moving vehicles. Dedupe cells:
+   * long streets can appear in several cells but remain a single edge.
+   */
+  trafficEdgesNear(p: Point, radius = 200): number[] {
+    const cellRadius = Math.ceil(radius / 128);
+    const x = Math.floor(p.x / 128), z = Math.floor(p.z / 128);
+    const candidates = new Set<number>();
+    for (let dx = -cellRadius; dx <= cellRadius; dx++)
+      for (let dz = -cellRadius; dz <= cellRadius; dz++)
+        for (const e of this.cells.get(`${x + dx}:${z + dz}`) ?? []) {
+          if (this.width[e]! < 4.2 || !this.motorAllowed[this.way[e]!]) continue;
+          const a = this.a[e]!, b = this.b[e]!;
+          if (Math.abs(this.y[a]! - this.y[b]!) > 15) continue;
+          const proximity = distanceToSegment(p, this.node(a), this.node(b));
+          if (proximity.distance <= radius) candidates.add(e);
+        }
+    return [...candidates].sort((a, b) => a - b);
   }
   private snapEdge(i: number, p: Point): Snap {
     const a = this.a[i]!,
