@@ -1,0 +1,36 @@
+name: Geographic map loading (Replit 200 HTML recovery)
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/game/bangkok/geographic/**'
+      - 'artifacts/tuk-tuk-rush/scripts/check-geographic-spa-fallback.ts'
+      - 'artifacts/tuk-tuk-rush/scripts/browser-geographic-spa-fallback.mjs'
+      - 'artifacts/tuk-tuk-rush/package.json'
+      - '.github/workflows/geographic-map-loading.yml'
+  workflow_dispatch:
+jobs:
+  replit-html-fallback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24819'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      # Keep this independent from the 471-chunk expensive geometry compiler.
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-spa-fallback
+      - run: node --import tsx scripts/pack-geographic-road-rules.ts
+        working-directory: artifacts/tuk-tuk-rush
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps webkit
+      - name: Simulate actual HTTP 200 HTML response in WebKit and recover original road rules
+        run: node scripts/browser-geographic-spa-fallback.mjs
+        working-directory: artifacts/tuk-tuk-rush
