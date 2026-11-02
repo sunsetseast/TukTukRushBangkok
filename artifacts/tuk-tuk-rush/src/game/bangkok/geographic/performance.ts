@@ -57,7 +57,7 @@ export type GeographicPerfSample = ReturnType<GeographicFrameProfiler["snapshot"
   pendingChunks: number;
   queuedChunks: number;
   readyChunks: number;
-  visibleBuildings: number;
+  residentBuildings: number;
   maxChunkActivationMs: number;
   quality: "low" | "medium";
   streamErrors: number;
