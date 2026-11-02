@@ -37,7 +37,7 @@ export function sourceApproachControls(
   const controls:VerifiedApproachControl[]=[];
   const seen=new Set<string>();
   for(const sign of pack.signs) {
-    if(sign.node===undefined)continue;
+    if(sign.node===undefined || sign.kind==="sign")continue;
     for(const approach of sign.approaches) {
       const key=`${sign.node}:${approach.edge}`;
       if(seen.has(key))continue;
