@@ -4,6 +4,7 @@ import type { RoadPolygons } from "../roadSurfaceGraph";
 import { geographicToMeters } from "./projection";
 import { inRiverWater } from "../waterGeometry";
 import { compiledChunkFile, decodeCompiledChunk, type CompiledBuildings } from "./compiledBuildings";
+import { unpackGeographicBytes, fetchGeographicJson } from "./packedAsset";
 export type GeographicWay = {
   id: string;
   nodes: string[];
@@ -108,48 +109,28 @@ export async function loadGeographicChunk(
   signal?: AbortSignal,
 ) {
   const started = performance.now();
-  const timing = { fetchHeadersMs: 0, decodeAndBodyMs: 0, jsonParseMs: 0 };
-  const response = await fetch(`${import.meta.env.BASE_URL}assets/geography/${compiledChunkFile(ref)}`, { signal });
-  if (!response.ok || !response.body) throw Error(`Compiled geographic asset unavailable (${response.status}); run geography:compile`);
-  const headersAt = performance.now();
-  const decoded = response.headers.get("content-encoding") === "gzip" ? response :
-    new Response(response.body.pipeThrough(new DecompressionStream("gzip")));
-  const raw = await decoded.arrayBuffer(), decodeAt = performance.now();
-  const chunk = decodeCompiledChunk(raw, ref);
-  chunk.timing = { ...timing, ...chunk.timing, fetchHeadersMs: headersAt - started,
-    decodeAndBodyMs: decodeAt - headersAt,
-    compressedBytes: Number(response.headers.get("content-length") ?? 0), decodedBytes: raw.byteLength };
-  return chunk;
-}
-async function loadGzip(
-  url: string,
-  signal?: AbortSignal,
-  timing?: {
-    fetchHeadersMs: number;
-    decodeAndBodyMs: number;
-    jsonParseMs: number;
-  },
-) {
-  const started = performance.now();
-  const response = await fetch(url, { signal });
-  if (!response.ok || !response.body)
-    throw Error(`Geographic asset unavailable (${response.status}): ${url}`);
-  const headersAt = performance.now();
-  const decoded =
-    response.headers.get("content-encoding") === "gzip"
-      ? response
-      : new Response(
-          response.body.pipeThrough(new DecompressionStream("gzip")),
-        );
-  const body = await decoded.text();
-  const parseStart = performance.now();
-  const result = JSON.parse(body);
-  if (timing) {
-    timing.fetchHeadersMs = headersAt - started;
-    timing.decodeAndBodyMs = parseStart - headersAt;
-    timing.jsonParseMs = performance.now() - parseStart;
+  const url = `${import.meta.env.BASE_URL}assets/geography/${compiledChunkFile(ref)}`;
+  try {
+    const response = await fetch(url, { signal });
+    if (!response.ok) throw Error(`HTTP ${response.status}`);
+    const headersAt = performance.now();
+    // Inspect the actual bytes: Safari and proxies can transparently decode
+    // HTTP gzip. The .pack suffix also prevents accidental HTTP gzip headers.
+    const raw = await unpackGeographicBytes(await response.arrayBuffer(), url);
+    const decodeAt = performance.now();
+    const chunk = decodeCompiledChunk(raw, ref);
+    chunk.timing = {
+      ...chunk.timing,
+      fetchHeadersMs: headersAt - started,
+      decodeAndBodyMs: decodeAt - headersAt,
+      compressedBytes: Number(response.headers.get("content-length") ?? 0),
+      decodedBytes: raw.byteLength,
+    };
+    return chunk;
+  } catch (error) {
+    if (signal?.aborted) throw error;
+    throw Error(`Bangkok map chunk failed to load (${ref.id}). ${String(error)}`, { cause: error });
   }
-  return result;
 }
 export function validateDataset(data: GeographicDataset) {
   if (
@@ -166,9 +147,9 @@ export function validateDataset(data: GeographicDataset) {
 }
 export async function loadGeographicDataset() {
   return validateDataset(
-    (await loadGzip(
-      `${import.meta.env.BASE_URL}assets/geography/runtime.v1.json.gz`,
-    )) as GeographicDataset,
+    await fetchGeographicJson<GeographicDataset>(
+      `${import.meta.env.BASE_URL}assets/geography/runtime.v1.json.pack`,
+    ),
   );
 }
 
