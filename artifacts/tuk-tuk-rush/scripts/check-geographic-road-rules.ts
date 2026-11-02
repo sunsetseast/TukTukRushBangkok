@@ -100,12 +100,12 @@ assert.deepEqual(
   ["geo:1","geo:2","geo:3"],
   "Cached intersection start must never allow a reverse drive from mid-block",
 );
-const reverse = new GeographicNetwork(fake,buffer,pack(-1));
+const reverseGps = new GeographicNetwork(fake,buffer,pack(-1));
 assert.deepEqual(
-  onlyNodes(reverse.path({x:5,z:0},reverse.node(1))),
+  onlyNodes(reverseGps.path({x:5,z:0},reverseGps.node(1))),
   ["geo:0","geo:3","geo:2","geo:1"],
 );
-assert.deepEqual(onlyNodes(reverse.path({x:15,z:0},reverse.node(0))),["geo:0"]);
+assert.deepEqual(onlyNodes(reverseGps.path({x:15,z:0},reverseGps.node(0))),["geo:0"]);
 const deadEnd = fixtureBuffer([[0,0,0],[20,0,0]],[[0,1,8,0]]);
 const disconnected = new GeographicNetwork(
   {...fake,nodeCount:2,edgeCount:1,ways:[fake.ways[0]!] },
