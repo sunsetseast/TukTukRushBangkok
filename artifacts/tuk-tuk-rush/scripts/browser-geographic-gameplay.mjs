@@ -51,6 +51,18 @@ try {
   report.firstResidentFrameMs = performance.now() - started;
   report.initial = await page.evaluate(() => window.__geography);
   assert(report.initial.stream.active <= 25);
+  // The same opt-in overlay is touch-accessible on a physical iPhone; software
+  // Chromium only tests instrumentation/UI, NOT an iPhone FPS certification.
+  await page.getByTestId("geographic-performance-toggle").click();
+  await page.waitForFunction(() =>
+    Number(document.querySelector('[data-testid="geographic-performance"]')?.getAttribute("data-samples") ?? 0) >= 2,
+    undefined,
+    { timeout: 30000 },
+  );
+  assert(await page.getByTestId("geographic-performance").isVisible());
+  await page.getByLabel("Close performance monitor").click();
+  assert.equal(await page.getByTestId("geographic-performance").count(), 0);
+  report.checks.optInMobilePerformanceOverlay = true;
   assert(
     !requests.some((u) => u.includes("runtime.v1")),
     "Production preview never decodes full reference dataset",
