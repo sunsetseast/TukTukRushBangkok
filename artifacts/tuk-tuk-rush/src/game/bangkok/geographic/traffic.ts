@@ -160,7 +160,7 @@ export class GeographicTrafficSimulation {
     return time < control.greenSeconds!;
   }
   update(delta: number, player: Vector, playing: boolean, quality: "low"|"medium" = "medium") {
-    if (!playing) { this.vehicles.length = 0; this.elapsed = 0; return; }
+    if (!playing) { this.vehicles.length = 0; this.elapsed = 0; this.spawnAt = 0; return; }
     const dt = clamp(delta, 0, .08);
     this.clock += dt;
     this.elapsed += dt;
