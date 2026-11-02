@@ -52,3 +52,6 @@ Thumbs.db
 
 # Raw OSM API responses contain contributor metadata; retain stripped derivatives.
 docs/qa/world-blueprint/sources/*.osm
+
+# Build-generated, source-hash-checked traffic rules from the pinned OSM snapshot.
+/artifacts/tuk-tuk-rush/public/assets/geography/road-rules.v1.json.gz

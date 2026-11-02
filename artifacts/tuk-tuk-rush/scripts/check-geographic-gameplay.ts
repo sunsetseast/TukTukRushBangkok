@@ -20,11 +20,15 @@ const dir = new URL("../public/assets/geography/", import.meta.url),
   raw = gunzipSync(fs.readFileSync(new URL("navigation.v2.bin.gz", dir))),
   metadata = JSON.parse(
     gunzipSync(fs.readFileSync(new URL("gameplay.v2.json.gz", dir))).toString(),
+  ),
+  rules = JSON.parse(
+    gunzipSync(fs.readFileSync(new URL("road-rules.v1.json.gz", dir))).toString(),
   );
 const start = performance.now(),
   network = new GeographicNetwork(
     metadata,
     raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength),
+    rules,
   ),
   { district, places } = createGameplayDistrict(network),
   initMs = performance.now() - start;

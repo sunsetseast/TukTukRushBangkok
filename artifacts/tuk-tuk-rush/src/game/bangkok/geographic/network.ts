@@ -9,6 +9,7 @@ import type { GeographicDataset, GeographicRail } from "./dataset";
 import { distanceToSegment } from "../../world";
 import { VEHICLE_COLLISION_RADIUS } from "../../vehicleEnvelope";
 import { inRiverWater } from "../waterGeometry";
+import { readRoadRuleDirections, type GeographicRoadRules } from "./roadRules";
 
 export type GameplayMetadata = Pick<
   GeographicDataset,
@@ -39,11 +40,12 @@ async function decoded(url: string) {
 }
 export async function loadGameplayGeography() {
   const base = `${import.meta.env.BASE_URL}assets/geography/`;
-  const [metadata, buffer] = await Promise.all([
+  const [metadata, buffer, rules] = await Promise.all([
     decoded(base + "gameplay.v2.json.gz").then((r) => r.json()),
     decoded(base + "navigation.v2.bin.gz").then((r) => r.arrayBuffer()),
+    decoded(base + "road-rules.v1.json.gz").then((r) => r.json()),
   ]);
-  return new GeographicNetwork(metadata, buffer);
+  return new GeographicNetwork(metadata, buffer, rules);
 }
 class Heap {
   private values: { id: number; cost: number }[] = [];
@@ -98,6 +100,8 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   readonly b: Uint32Array;
   readonly width: Float32Array;
   readonly way: Uint32Array;
+  /** Directions indexed by OSM way; free-driving physics remains unrestricted. */
+  readonly directions: Int8Array;
   readonly components: Uint32Array;
   readonly offsets: Uint32Array;
   readonly incident: Uint32Array;
@@ -121,6 +125,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   constructor(
     readonly metadata: GameplayMetadata,
     readonly buffer: ArrayBuffer,
+    rules?: GeographicRoadRules,
   ) {
     const h = new Uint32Array(buffer, 0, 4),
       n = h[1]!,
@@ -155,6 +160,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
     this.b = u(e);
     this.width = f(e);
     this.way = u(e);
+    this.directions = readRoadRuleDirections(rules, metadata.sourceSha256, metadata.ways.length);
     this.components = Uint32Array.from({ length: n }, (_, i) => i);
     const root = (i: number): number => {
       while (this.components[i] !== i) {
@@ -243,6 +249,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
     return (this.memoryBytes ??=
       this.buffer.byteLength +
       this.components.byteLength +
+      this.directions.byteLength +
       this.offsets.byteLength +
       this.incident.byteLength +
       this.costs.byteLength +
@@ -400,7 +407,17 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
       return;
     const snap = this.nearest(p),
       e = snap.edge;
-    if (this.cached?.edge === e && this.cached.target === goal) {
+    // Start at the legal exit of this OSM edge. At its actual endpoints,
+    // a player may take an outgoing intersection road without reversing.
+    const a = this.a[e]!, b = this.b[e]!;
+    const da = Math.hypot(snap.point.x - this.x[a]!, snap.point.z - this.z[a]!);
+    const db = Math.hypot(snap.point.x - this.x[b]!, snap.point.z - this.z[b]!);
+    const direction = this.directions[this.way[e]!]!;
+    const seeds: Array<{ id: number; cost: number }> = [];
+    if (direction !== 1 || da < 0.5) seeds.push({ id: a, cost: da });
+    if (direction !== -1 || db < 0.5) seeds.push({ id: b, cost: db });
+    if (this.cached?.edge === e && this.cached.target === goal &&
+        seeds.some(s => s.id === this.cached!.start)) {
       const c = this.cached;
       return {
         snap,
@@ -413,11 +430,7 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
       stamp = ++this.stamp;
     const heuristic = (i: number) =>
       Math.hypot(this.x[i]! - this.x[goal]!, this.z[i]! - this.z[goal]!);
-    for (const i of [this.a[e]!, this.b[e]!]) {
-      const cost = Math.hypot(
-        this.x[i]! - snap.point.x,
-        this.z[i]! - snap.point.z,
-      );
+    for (const { id: i, cost } of seeds) {
       this.seen[i] = stamp;
       this.costs[i] = cost;
       this.parent[i] = -1;
@@ -432,8 +445,11 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
         break;
       }
       for (let k = this.offsets[at]!; k < this.offsets[at + 1]!; k++) {
-        const edge = this.incident[k]!,
-          to = this.a[edge] === at ? this.b[edge]! : this.a[edge]!;
+        const edge = this.incident[k]!;
+        const direction = this.directions[this.way[edge]!]!;
+        if (direction === 1 && this.a[edge] !== at) continue;
+        if (direction === -1 && this.b[edge] !== at) continue;
+        const to = this.a[edge] === at ? this.b[edge]! : this.a[edge]!;
         const cost =
           this.costs[at]! +
           Math.hypot(this.x[to]! - this.x[at]!, this.z[to]! - this.z[at]!);
