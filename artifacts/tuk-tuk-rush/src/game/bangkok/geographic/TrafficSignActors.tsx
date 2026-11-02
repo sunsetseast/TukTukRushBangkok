@@ -14,9 +14,9 @@ const CAPACITY=48;
 function createSignArt() {
   const group=new T.Group();
   group.name="MappedBangkokSigns";
-  const make=(geometry:T.BufferGeometry,color:string):Instance=>{
+  const make=(geometry:T.BufferGeometry,color:string,capacity=CAPACITY):Instance=>{
     const instance=new T.InstancedMesh(
-      geometry,new T.MeshStandardMaterial({color,roughness:.68}),CAPACITY,
+      geometry,new T.MeshStandardMaterial({color,roughness:.68}),capacity,
     );
     instance.count=0;
     instance.frustumCulled=false;
@@ -25,8 +25,10 @@ function createSignArt() {
     return instance;
   };
   const poles=make(new T.CylinderGeometry(.045,.055,2.5,6),"#747d7c");
-  const housing=make(new T.BoxGeometry(.32,.96,.24),"#252b2d");
-  const bulbs=make(new T.SphereGeometry(.13,6,5),"#ffffff");
+  // A four-way signal can have different red/green aspects for perpendicular
+  // approaches. Reserve two batched proxies per tagged location.
+  const housing=make(new T.BoxGeometry(.32,.96,.24),"#252b2d",CAPACITY*2);
+  const bulbs=make(new T.SphereGeometry(.13,6,5),"#ffffff",CAPACITY*2);
   const stops=make(new T.CylinderGeometry(.47,.47,.09,8),"#df3343");
   const yields=make(new T.ConeGeometry(.48,.88,3),"#f4f0e9");
   const otherSigns=make(new T.BoxGeometry(.85,.82,.08),"#1d5599");
@@ -75,14 +77,20 @@ export function TrafficSignActors({
       const {x,z,y}=sign;
       instance(art.poles,count.poles++,x,y+1.25,z);
       if(sign.kind==="signal"){
-        const index=count.housing++;
-        instance(art.housing,index,x,y+2.7,z);
-        const approach=sign.approaches[0];
-        const color=approach
-          ? simulatedSignalIsGreen(approach.phase,simulation.simulationClockSeconds)
-            ? green : red
-          : inactive;
-        instance(art.bulbs,count.bulbs++,x,y+2.78,z-.16,0,color);
+        // Do not draw a single green lamp for an intersection whose crossing
+        // approaches are simultaneously red. Each verified movement group
+        // has a separate stylized lamp, synchronized with the simulation.
+        const phases=sign.approaches.length
+          ? [...new Set(sign.approaches.map(a=>a.phase))]
+          : [null];
+        for(const phase of phases) {
+          const offset=phases.length===1 ? 0 : phase===0 ? -.62 : .62;
+          instance(art.housing,count.housing++,x+offset,y+2.7,z);
+          const color=phase===null ? inactive :
+            simulatedSignalIsGreen(phase,simulation.simulationClockSeconds)
+              ? green : red;
+          instance(art.bulbs,count.bulbs++,x+offset,y+2.78,z-.16,0,color);
+        }
       }else if(sign.kind==="stop"){
         instance(art.stops,count.stops++,x,y+2.65,z,Math.PI/2);
       }else if(sign.kind==="yield"){
