@@ -15,14 +15,27 @@ import {
 
 const assets=new URL("../public/assets/geography/",import.meta.url);
 const sourcePath=new URL("../../../data/bangkok/real-scale/traffic-controls.v1.json",import.meta.url);
+const sourceArchive=new URL("../../../data/bangkok/real-scale/traffic-controls.v1.json.gz.b64",import.meta.url);
+const readVerifiedSource = (): SourceControlSnapshot | null => {
+  if (fs.existsSync(sourcePath))
+    return JSON.parse(fs.readFileSync(sourcePath,"utf8")) as SourceControlSnapshot;
+  if (fs.existsSync(sourceArchive)) {
+    // Source-controlled gzip+base64 archive is the byte-for-byte output of the
+    // independently hashed OSM import job. No runtime HTTP request or country
+    // PBF is needed in the game build.
+    const archived=Buffer.from(fs.readFileSync(sourceArchive,"utf8").trim(),"base64");
+    return JSON.parse(gunzipSync(archived).toString()) as SourceControlSnapshot;
+  }
+  return null;
+};
 const rawRuntime=fs.readFileSync(new URL("runtime.v1.json.gz",assets));
 const metadata=JSON.parse(gunzipSync(fs.readFileSync(
   new URL("gameplay.v2.json.gz",assets))).toString()) as GameplayMetadata;
 const hash=createHash("sha256").update(rawRuntime).digest("hex");
 if(metadata.sourceSha256!==hash)throw Error("Road source changed; traffic controls require new map audit");
 let compiled=emptyControlPack(hash);
-if(fs.existsSync(sourcePath)) {
-  const source=JSON.parse(fs.readFileSync(sourcePath,"utf8")) as SourceControlSnapshot;
+const source=readVerifiedSource();
+if(source) {
   const runtime=JSON.parse(gunzipSync(rawRuntime).toString()) as GeographicDataset;
   const nav=gunzipSync(fs.readFileSync(new URL("navigation.v2.bin.gz",assets)));
   const rules=JSON.parse(gunzipSync(fs.readFileSync(
