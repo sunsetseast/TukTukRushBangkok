@@ -1,0 +1,34 @@
+name: Geographic Bangkok local traffic foundation
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/game/bangkok/geographic/**'
+      - 'artifacts/tuk-tuk-rush/scripts/check-geographic-traffic.ts'
+      - 'artifacts/tuk-tuk-rush/scripts/check-geographic-road-rules.ts'
+      - 'artifacts/tuk-tuk-rush/scripts/pack-geographic-road-rules.ts'
+      - 'artifacts/tuk-tuk-rush/package.json'
+      - '.github/workflows/geographic-traffic.yml'
+  workflow_dispatch:
+jobs:
+  directed-traffic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: '24821'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
+      - name: Regenerate pinned OSM road and access rules (no PBF re-import)
+        run: node --import tsx scripts/pack-geographic-road-rules.ts
+        working-directory: artifacts/tuk-tuk-rush
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-road-rules
