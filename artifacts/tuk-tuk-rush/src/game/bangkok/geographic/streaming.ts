@@ -17,6 +17,9 @@ export class GeographicStream<T> {
   private wanted = new Set<string>();
   private retained = new Set<string>();
   private queue: ChunkReference[] = [];
+  // Build once: avoid a full-city scan on each player/camera chunk transition.
+  private byCell = new Map<string, ChunkReference>();
+  private byId = new Map<string, ChunkReference>();
   private cell = "";
   private stopped = false;
   readonly stats = { loaded: 0, disposed: 0, requests: 0, errors: 0 };
@@ -26,8 +29,20 @@ export class GeographicStream<T> {
     private install: (value: T, c: ChunkReference) => void,
     private dispose: (value: T) => void,
     private failed: (error: unknown) => void = console.error,
-  ) {}
+  ) {
+    for (const c of chunks) {
+      const key = `${c.origin[0] / 1024}:${c.origin[1] / 1024}`;
+      if (this.byCell.has(key) || this.byId.has(c.id))
+        throw Error("Duplicate geographic chunk location or ID: " + c.id);
+      this.byCell.set(key, c);
+      this.byId.set(c.id, c);
+    }
+  }
+  get pendingCount() { return this.pending.size; }
+  get readyCount() { return this.ready.size; }
+  get queuedCount() { return this.queue.length; }
   update(p: World, camera?: World) {
+    if (this.stopped) return;
     const x = Math.floor(p.x / 1024),
       z = Math.floor(p.z / 1024);
     // Chase camera needs are bounded to its adjacent tile; overhead uses a separate coarse overview.
@@ -42,18 +57,15 @@ export class GeographicStream<T> {
         [x, z],
         ...(Math.abs(cx - x) <= 1 && Math.abs(cz - z) <= 1 ? [[cx, cz]] : []),
       ];
-      for (const c of this.chunks) {
-        const a = c.origin[0] / 1024,
-          b = c.origin[1] / 1024;
-        if (
-          centers.some(
-            ([x, z]) => Math.max(Math.abs(a - x!), Math.abs(b - z!)) <= 1,
-          )
-        )
-          this.wanted.add(c.id);
-        if (Math.max(Math.abs(a - x), Math.abs(b - z)) <= 2)
-          this.retained.add(c.id);
-      }
+      const addSquare = (centerX: number, centerZ: number, radius: number, ids: Set<string>) => {
+        for (let dz = -radius; dz <= radius; dz++)
+          for (let dx = -radius; dx <= radius; dx++) {
+            const ref = this.byCell.get(`${centerX + dx}:${centerZ + dz}`);
+            if (ref) ids.add(ref.id);
+          }
+      };
+      for (const [a, b] of centers) addSquare(a!, b!, 1, this.wanted);
+      addSquare(x, z, 2, this.retained);
       for (const [id, v] of this.active)
         if (!this.retained.has(id)) {
           this.dispose(v);
@@ -70,13 +82,12 @@ export class GeographicStream<T> {
           abort.abort();
           this.pending.delete(id);
         }
-      this.queue = this.chunks
-        .filter(
-          (c) =>
-            this.wanted.has(c.id) &&
-            !this.active.has(c.id) &&
-            !this.pending.has(c.id) &&
-            !this.ready.has(c.id),
+      this.queue = [...this.wanted]
+        .map((id) => this.byId.get(id)!)
+        .filter((c) =>
+          !this.active.has(c.id) &&
+          !this.pending.has(c.id) &&
+          !this.ready.has(c.id),
         )
         .sort(
           (a, b) =>
@@ -93,13 +104,13 @@ export class GeographicStream<T> {
     };
     this.queue.sort((a, b) => priority(a) - priority(b));
     const next = [...this.ready].sort((a, b) => {
-      const ar = this.chunks.find(c => c.id === a[0])!, br = this.chunks.find(c => c.id === b[0])!;
+      const ar = this.byId.get(a[0])!, br = this.byId.get(b[0])!;
       return priority(ar) - priority(br);
     })[0];
     if (next) {
       const [id, v] = next;
       this.ready.delete(id);
-      const ref = this.chunks.find((c) => c.id === id)!;
+      const ref = this.byId.get(id)!;
       this.install(v, ref);
       this.active.set(id, v);
       this.stats.loaded++;
