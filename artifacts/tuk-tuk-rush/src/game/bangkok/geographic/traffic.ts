@@ -1,4 +1,5 @@
 import type { GeographicNetwork } from "./network";
+import type { RuntimeTurnRestriction } from "./controlImport";
 
 /** One lightweight, client-side simulated vehicle. World metres; no replay/save
  * state is changed. Traffic only uses the verified OSM source graph.
@@ -71,14 +72,27 @@ export class GeographicTrafficSimulation {
   private spawnAt = 0;
   private clock = 0;
   private controls: Map<string, VerifiedApproachControl>;
+  private restrictions: Map<string, RuntimeTurnRestriction[]>;
 
   constructor(
     readonly network: TrafficNetwork,
     seed = 20261102,
     verifiedControls: VerifiedApproachControl[] = [],
+    verifiedRestrictions: RuntimeTurnRestriction[] = [],
   ) {
     this.seed = seed >>> 0;
     this.controls = new Map();
+    this.restrictions = new Map();
+    for(const r of verifiedRestrictions) {
+      if(!r.id || r.via<0 || r.via>=network.x.length ||
+        r.fromWay<0 || r.toWay<0 ||
+        r.fromWay>=network.motorAllowed.length ||
+        r.toWay>=network.motorAllowed.length)
+        throw Error("Invalid source-backed Bangkok turn restriction");
+      const key=`${r.via}:${r.fromWay}`;
+      const list=this.restrictions.get(key) ?? [];
+      list.push(r);this.restrictions.set(key,list);
+    }
     for (const c of verifiedControls) {
       if (!c.sourceId || c.at < 0 || c.at >= network.x.length ||
           c.incomingEdge < 0 || c.incomingEdge >= network.a.length ||
@@ -104,6 +118,15 @@ export class GeographicTrafficSimulation {
     return Math.hypot(this.network.x[v.from]! - this.network.x[v.to]!,
       this.network.z[v.from]! - this.network.z[v.to]!);
   }
+  /** OSM turn restriction relations, not proximity-inferred junction rules. */
+  private legalTurn(v: TrafficVehicle, nextEdge: number) {
+    const fromWay=this.network.way[v.edge]!;
+    const toWay=this.network.way[nextEdge]!;
+    const restrictions=this.restrictions.get(`${v.to}:${fromWay}`) ?? [];
+    if(restrictions.some(r => r.type==="no" && r.toWay===toWay))return false;
+    const only=restrictions.filter(r=>r.type==="only");
+    return !only.length || only.some(r=>r.toWay===toWay);
+  }
   private pickNext(v: TrafficVehicle) {
     const net = this.network, at = v.to;
     const oldDx = net.x[v.to]! - net.x[v.from]!,
@@ -112,7 +135,7 @@ export class GeographicTrafficSimulation {
     const choices: {edge: number; to: number; rank: number}[] = [];
     for (let i = net.offsets[at]!; i < net.offsets[at + 1]!; i++) {
       const e = net.incident[i]!;
-      if (!legalTrafficTraversal(net, e, at)) continue;
+      if (!legalTrafficTraversal(net, e, at) || !this.legalTurn(v,e)) continue;
       const to = net.a[e] === at ? net.b[e]! : net.a[e]!;
       // An ordinary AI car does not turn around in the middle of the street.
       if (to === v.from || to === at) continue;
@@ -154,6 +177,7 @@ export class GeographicTrafficSimulation {
       return;
     }
   }
+  get simulationClockSeconds() { return this.clock; }
   private signalAllows(control: VerifiedApproachControl) {
     if (control.kind !== "signal") return true;
     const time = (this.clock + (control.offsetSeconds ?? 0)) % control.cycleSeconds!;
@@ -185,6 +209,12 @@ export class GeographicTrafficSimulation {
       if (control && remainder < 12) {
         if (control.kind === "signal" && !this.signalAllows(control)) stopForControl = true;
         if (control.kind === "stop" && v.stoppedSeconds < 1.2) stopForControl = true;
+        if (control.kind === "yield") {
+          const conflicting = this.vehicles.some(other =>
+            other.id!==v.id && other.edge!==v.edge &&
+            other.to===v.to && this.length(other)-other.progress < 20);
+          if (conflicting) stopForControl = true;
+        }
       }
       if (stopForControl) {
         const room = Math.max(0, remainder - 3.5);
