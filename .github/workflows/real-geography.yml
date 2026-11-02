@@ -47,6 +47,9 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
       - run: node scripts/browser-geographic-streaming.mjs
         working-directory: artifacts/tuk-tuk-rush
+      - name: Verify opt-in mobile performance overlay (software WebGL only)
+        run: node scripts/browser-geographic-performance.mjs
+        working-directory: artifacts/tuk-tuk-rush
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -55,4 +58,5 @@ jobs:
             docs/qa/expanded-geography/
             docs/qa/geographic-gameplay/
             docs/qa/geographic-buildings/
+            docs/qa/geographic-mobile-performance/
           retention-days: 30
