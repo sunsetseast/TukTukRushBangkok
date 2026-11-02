@@ -73,8 +73,12 @@ export function readMotorTrafficAccess(
   const allowed = new Uint8Array(wayCount).fill(1);
   if (!rules) return allowed;
   if (rules.schema !== 1 || rules.sourceSha256 !== sourceSha256 ||
-    rules.wayCount !== wayCount || !Array.isArray(rules.blockedMotor))
-    throw Error("Geographic motor access rules missing or stale; regenerate source-derived road-rules pack");
+    rules.wayCount !== wayCount)
+    throw Error("Geographic motor access rules stale; regenerate source-derived road-rules pack");
+  // Older Replit sessions may still have a v1 pack without traffic metadata.
+  // Fail closed for the NPC fleet, but never prevent the player's map boot.
+  if (rules.blockedMotor === undefined) return allowed.fill(0);
+  if (!Array.isArray(rules.blockedMotor)) throw Error("Invalid motor access rules");
   for (const index of rules.blockedMotor) {
     if (!Number.isInteger(index) || index < 0 || index >= wayCount || allowed[index] === 0)
       throw Error("Invalid or duplicate geographic motor restriction");
