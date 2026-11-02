@@ -5,7 +5,7 @@ No inferred signals, sign locations or traffic schedules. Re-run only against
 the checksum-pinned 2026-10-24 Geofabrik Thailand extraction; never mix a
 later OSM snapshot with the game's 2026-10-24 road graph.
 """
-import argparse, gzip, hashlib, json, pathlib, osmium
+import argparse, datetime, gzip, hashlib, json, pathlib, osmium
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 GEOGRAPHY = ROOT / "artifacts/tuk-tuk-rush/public/assets/geography"
@@ -82,10 +82,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--pbf", required=True, type=pathlib.Path)
     parser.add_argument("--output", type=pathlib.Path, default=OUTPUT)
+    parser.add_argument("--allow-newer-controls", action="store_true",
+                        help="Explicitly import newer OSM signs; runtime will match only pre-existing graph node IDs and close coordinates")
+    parser.add_argument("--source-url", default="https://download.geofabrik.de/asia/thailand-261024.osm.pbf")
     args = parser.parse_args()
     sha = hashlib.file_digest(args.pbf.open("rb"), "sha256").hexdigest()
-    if sha != PBF_SHA:
-        raise SystemExit(f"Wrong Thailand source checksum: {sha}; expected {PBF_SHA}")
+    if sha != PBF_SHA and not args.allow_newer_controls:
+        raise SystemExit(f"Wrong Thailand source checksum: {sha}; expected {PBF_SHA}; --allow-newer-controls required")
     with gzip.open(GEOGRAPHY / "runtime.v1.json.gz", "rt") as f:
         runtime = json.load(f)
     bbox = runtime["bbox"]
@@ -93,8 +96,11 @@ def main():
     handler = Extract(bbox, way_ids)
     handler.apply_file(str(args.pbf), locations=False)
     result = {
-        "schema": 1, "source": "Geofabrik Thailand 2026-10-24",
+        "schema": 1, "source": args.source_url,
         "pbfSha256": sha,
+        "baselinePbfSha256": PBF_SHA,
+        "matchesBaselineSnapshot": sha == PBF_SHA,
+        "extractedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "geographicSourceSha256": hashlib.sha256(
             (GEOGRAPHY / "runtime.v1.json.gz").read_bytes()).hexdigest(),
         "bbox": bbox,
@@ -103,6 +109,10 @@ def main():
     }
     if not result["nodes"]:
         raise SystemExit("Import returned no traffic controls: source or filter is wrong")
+    # Different vintages are safe only if mapped to unchanged original OSM
+    # vertex IDs with close coordinates during the runtime compile step.
+    if sha != PBF_SHA:
+        print("Different controls snapshot: spatial/source-ID match REQUIRED before runtime use.", flush=True)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, separators=(",",":"), sort_keys=True,
                                       ensure_ascii=False) + "\n")
