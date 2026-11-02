@@ -121,6 +121,7 @@ export async function loadGeographicChunk(
     const chunk = decodeCompiledChunk(raw, ref);
     chunk.timing = {
       ...chunk.timing,
+      jsonParseMs: chunk.timing?.jsonParseMs ?? 0,
       fetchHeadersMs: headersAt - started,
       decodeAndBodyMs: decodeAt - headersAt,
       compressedBytes: Number(response.headers.get("content-length") ?? 0),
