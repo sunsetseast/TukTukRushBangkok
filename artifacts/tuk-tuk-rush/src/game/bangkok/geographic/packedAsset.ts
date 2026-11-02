@@ -11,7 +11,7 @@ export async function unpackGeographicBytes(raw: ArrayBuffer, url: string): Prom
   if (bytes[0] !== 0x1f || bytes[1] !== 0x8b) return raw;
   try {
     return await new Response(
-      new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip")),
+      new Blob([raw]).stream().pipeThrough(new DecompressionStream("gzip")),
     ).arrayBuffer();
   } catch (error) {
     throw Error(`Invalid gzip-compressed Bangkok map asset: ${url}`, { cause: error });
