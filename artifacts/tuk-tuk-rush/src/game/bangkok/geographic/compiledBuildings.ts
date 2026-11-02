@@ -17,7 +17,7 @@ export type CompiledBuildings = {
   gpuBytes: number;
 };
 export const compiledChunkFile = (ref: ChunkReference) =>
-  `compiled/${ref.id.replace(":", "_")}.bin.gz`;
+  `compiled/${ref.id.replace(":", "_")}.bin.pack`;
 /** Millimetre positions, signed-16 normals and RGB8 are byte-shuffled before gzip. This
  * reversible linear pass replaces thousands of polygon booleans/triangulations.
  * All views share a single chunk-owned buffer; no per-vertex JS objects. */
