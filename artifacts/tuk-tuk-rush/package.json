@@ -80,7 +80,8 @@
     "qa:geographic-buildings": "node scripts/browser-geographic-buildings.mjs",
     "test:geographic-road-rules": "node --import tsx scripts/check-geographic-road-rules.ts",
     "test:geographic-performance": "node --import tsx scripts/check-geographic-performance.ts",
-    "test:geographic-asset-delivery": "node --import tsx scripts/check-geographic-asset-delivery.ts"
+    "test:geographic-asset-delivery": "node --import tsx scripts/check-geographic-asset-delivery.ts && node --import tsx scripts/check-geographic-spa-fallback.ts",
+    "test:geographic-spa-fallback": "node --import tsx scripts/check-geographic-spa-fallback.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

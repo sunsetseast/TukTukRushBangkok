@@ -4,7 +4,7 @@ import type { RoadPolygons } from "../roadSurfaceGraph";
 import { geographicToMeters } from "./projection";
 import { inRiverWater } from "../waterGeometry";
 import { compiledChunkFile, decodeCompiledChunk, type CompiledBuildings } from "./compiledBuildings";
-import { unpackGeographicBytes, fetchGeographicJson } from "./packedAsset";
+import { fetchGeographicPayload, fetchGeographicJson } from "./packedAsset";
 export type GeographicWay = {
   id: string;
   nodes: string[];
@@ -108,24 +108,23 @@ export async function loadGeographicChunk(
   ref: ChunkReference,
   signal?: AbortSignal,
 ) {
-  const started = performance.now();
   const url = `${import.meta.env.BASE_URL}assets/geography/${compiledChunkFile(ref)}`;
   try {
-    const response = await fetch(url, { signal });
-    if (!response.ok) throw Error(`HTTP ${response.status}`);
-    const headersAt = performance.now();
-    // Inspect the actual bytes: Safari and proxies can transparently decode
-    // HTTP gzip. The .pack suffix also prevents accidental HTTP gzip headers.
-    const raw = await unpackGeographicBytes(await response.arrayBuffer(), url);
-    const decodeAt = performance.now();
-    const chunk = decodeCompiledChunk(raw, ref);
+    // Also recover when an old Replit workflow generated .bin.gz but not the
+    // newer .bin.pack chunks. The source binary codec/geometry remains unchanged.
+    const payload = await fetchGeographicPayload(
+      url,
+      (bytes) => decodeCompiledChunk(bytes, ref),
+      signal,
+    );
+    const chunk = payload.value;
     chunk.timing = {
       ...chunk.timing,
       jsonParseMs: chunk.timing?.jsonParseMs ?? 0,
-      fetchHeadersMs: headersAt - started,
-      decodeAndBodyMs: decodeAt - headersAt,
-      compressedBytes: Number(response.headers.get("content-length") ?? 0),
-      decodedBytes: raw.byteLength,
+      fetchHeadersMs: payload.fetchHeadersMs,
+      decodeAndBodyMs: payload.decodeAndBodyMs,
+      compressedBytes: payload.compressedBytes,
+      decodedBytes: payload.decodedBytes,
     };
     return chunk;
   } catch (error) {
