@@ -91,8 +91,8 @@ export function TrafficActors({
       if (v.kind === "car" || v.kind === "taxi") {
         const i = car.count++;
         place(fleet.carBody, i, v.x, v.y + .54, v.z, v.heading, colors[v.kind]);
-        place(fleet.carRoof, i, v.x, v.y + 1.13, v.z - Math.cos(v.heading) * .1,
-          v.heading, colors[v.kind]);
+        place(fleet.carRoof, i, v.x - Math.sin(v.heading) * .1,
+          v.y + 1.13, v.z - Math.cos(v.heading) * .1, v.heading, colors[v.kind]);
       } else if (v.kind === "motorcycle") {
         place(fleet.motorbike, motor.count++, v.x, v.y + .54, v.z,
           v.heading, colors.motorcycle);
