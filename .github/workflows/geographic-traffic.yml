@@ -34,4 +34,6 @@ jobs:
         working-directory: artifacts/tuk-tuk-rush
       - run: node --import tsx scripts/pack-geographic-traffic-controls.ts
         working-directory: artifacts/tuk-tuk-rush
+      - name: Reject placeholder traffic controls (real OSM inventory required)
+        run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-controls-ready
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-road-rules
