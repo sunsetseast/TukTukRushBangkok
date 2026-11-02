@@ -149,7 +149,7 @@ export function compileControlPack(
     // If no source-bearing is given, only junction-mapped signals can control
     // all inbound approaches. A mid-block signal/roadside stop sign is shown
     // but never secretly applied in both directions.
-    let selected = (hasExplicitDirection
+    let selected = (n.kind!=="sign" && hasExplicitDirection
       ? incoming.filter(edge => direction==="forward"
           ? network.b[edge]===matched
           : network.a[edge]===matched)
