@@ -29,8 +29,9 @@ function createSignArt() {
   const bulbs=make(new T.SphereGeometry(.13,6,5),"#ffffff");
   const stops=make(new T.CylinderGeometry(.47,.47,.09,8),"#df3343");
   const yields=make(new T.ConeGeometry(.48,.88,3),"#f4f0e9");
-  const list=[poles,housing,bulbs,stops,yields];
-  return {group,poles,housing,bulbs,stops,yields,dispose:()=>{
+  const otherSigns=make(new T.BoxGeometry(.85,.82,.08),"#1d5599");
+  const list=[poles,housing,bulbs,stops,yields,otherSigns];
+  return {group,poles,housing,bulbs,stops,yields,otherSigns,dispose:()=>{
     for(const mesh of list){mesh.geometry.dispose();mesh.material.dispose();}
   }};
 }
@@ -54,13 +55,13 @@ export function TrafficSignActors({
     if(elapsed.current<.2)return; // low-cost source sign streaming
     elapsed.current=0;
     if(!pack || !enabled || session.model.snapshot.phase!=="playing") {
-      for(const mesh of [art.poles,art.housing,art.bulbs,art.stops,art.yields])mesh.count=0;
+      for(const mesh of [art.poles,art.housing,art.bulbs,art.stops,art.yields,art.otherSigns])mesh.count=0;
       return;
     }
     const near=localVisibleTrafficSigns(
       pack.signs,session.player.x,session.player.z,175,CAPACITY,
     );
-    const count={poles:0,housing:0,bulbs:0,stops:0,yields:0};
+    const count={poles:0,housing:0,bulbs:0,stops:0,yields:0,otherSigns:0};
     const instance=(mesh:Instance,index:number,x:number,y:number,z:number,
       rotationX=0,color?:T.Color)=>{
       cursor.position.set(x,y,z);
@@ -86,10 +87,13 @@ export function TrafficSignActors({
         instance(art.stops,count.stops++,x,y+2.65,z,Math.PI/2);
       }else if(sign.kind==="yield"){
         instance(art.yields,count.yields++,x,y+2.62,z,Math.PI/2);
+      }else{
+        instance(art.otherSigns,count.otherSigns++,x,y+2.6,z);
       }
     }
     for(const [mesh,num] of [[art.poles,count.poles],[art.housing,count.housing],
-      [art.bulbs,count.bulbs],[art.stops,count.stops],[art.yields,count.yields]] as const) {
+      [art.bulbs,count.bulbs],[art.stops,count.stops],[art.yields,count.yields],
+      [art.otherSigns,count.otherSigns]] as const) {
       mesh.count=num;
       if(num){mesh.instanceMatrix.needsUpdate=true;
         if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;}
