@@ -12,7 +12,7 @@ import { legalTrafficTraversal } from "./traffic";
 
 export type SourceControlNode = {
   id: string;
-  kind: "signal" | "stop" | "yield";
+  kind: "signal" | "stop" | "yield" | "sign";
   coordinate: [number, number];
   tags: Record<string, string>;
 };
@@ -116,7 +116,7 @@ export function compileControlPack(
     return candidate[0];
   };
   for (const n of source.nodes) {
-    if (!/^osm:node\/\d+$/.test(n.id) || !["signal","stop","yield"].includes(n.kind)) continue;
+    if (!/^osm:node\/\d+$/.test(n.id) || !["signal","stop","yield","sign"].includes(n.kind)) continue;
     const matched=verifiedVertex(n.id,n.coordinate);
     const coords=geographicToMeters({lon:n.coordinate[0],lat:n.coordinate[1]});
     if (matched === undefined) {
@@ -153,7 +153,7 @@ export function compileControlPack(
       ? incoming.filter(edge => direction==="forward"
           ? network.b[edge]===matched
           : network.a[edge]===matched)
-      : n.kind==="signal" && incoming.length>=3 || taggedAllWay
+      : n.kind==="signal" && incoming.length>=3 || (n.kind==="stop" && taggedAllWay)
         ? incoming : []);
     // Only suppress duplicate mappings within a tagged source node.
     selected=[...new Set(selected)];
@@ -166,7 +166,7 @@ export function compileControlPack(
     if (approaches.length) {
       if(n.kind==="signal")pack.stats.mappedSignals++;
       else if(n.kind==="stop")pack.stats.mappedStops++;
-      else pack.stats.mappedYields++;
+      else if(n.kind==="yield")pack.stats.mappedYields++;
     }
     pack.signs.push({
       id:n.id,kind:n.kind,
