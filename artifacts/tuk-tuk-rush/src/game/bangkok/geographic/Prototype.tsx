@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as T from "three";
 import { Inspection } from "../../Inspection";
@@ -28,6 +28,8 @@ import {
 } from "./buildings";
 import { readPreferences } from "../../ui/preferences";
 import { GeographicSession } from "./session";
+import { GeographicFrameProfiler, type GeographicPerfSample } from "./performance";
+import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
 
@@ -38,7 +40,14 @@ type Loaded = {
   places: GeographicPlace[];
   loadMs: number;
 };
-function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
+function Scene({
+  loaded, target, perfEnabled, onPerfSample,
+}: {
+  loaded: Loaded;
+  target?: RoadNode;
+  perfEnabled: boolean;
+  onPerfSample: (sample: GeographicPerfSample) => void;
+}) {
   const { network, session, art, places } = loaded,
     { camera, gl } = useThree(),
     chase = useRef(new ChaseCamera()),
@@ -51,6 +60,9 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
     undefined,
   );
   targetRef.current = target;
+  const profiler = useMemo(() => new GeographicFrameProfiler(), []);
+  const perfAt = useRef(0);
+  const qaSnapshotAt = useRef(0);
   const content = useMemo(() => {
     const group = new T.Group(),
       water = riverWater(),
@@ -160,6 +172,7 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
     [content, tuk],
   );
   useFrame((state, delta) => {
+    const now = performance.now();
     session.update(delta);
     const p = session.player,
       s = session.model.snapshot;
@@ -295,7 +308,12 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
         new T.Float32BufferAttribute(positions, 3),
       );
     }
-    (window as any).__geography = {
+    // Debug snapshots used to traverse the entire scene and allocate dozens of
+    // arrays *every frame*. Throttle them instead of charging every player frame.
+    // Production is monitored by the opt-in local overlay below, not a QA global.
+    if (import.meta.env.DEV && (qaSnapshotAt.current === 0 || now - qaSnapshotAt.current >= 250)) {
+      qaSnapshotAt.current = now;
+      (window as any).__geography = {
       position: { x: p.x, z: p.z, heading: p.heading },
       coordinate: metersToGeographic(p),
       height: session.height,
@@ -342,6 +360,31 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
           session.clearInput();
         },
       };
+    }
+    if (perfEnabled) {
+      profiler.record(now, !document.hidden);
+      if (now - perfAt.current >= 750) {
+        perfAt.current = now;
+        const stats = profiler.snapshot();
+        onPerfSample({
+          ...stats,
+          drawCalls: gl.info.render.calls,
+          triangles: gl.info.render.triangles,
+          geometries: gl.info.memory.geometries,
+          activeChunks: content.stream.active.size,
+          pendingChunks: content.stream.pendingCount,
+          queuedChunks: content.stream.queuedCount,
+          readyChunks: content.stream.readyCount,
+          residentBuildings: Number(content.metrics.buildings ?? 0),
+          maxChunkActivationMs: Math.max(0, ...content.activationMs),
+          quality: s.quality,
+          streamErrors: content.stream.stats.errors,
+        });
+      }
+    } else if (perfAt.current !== 0) {
+      profiler.reset();
+      perfAt.current = 0;
+    }
   });
   return (
     <>
@@ -357,9 +400,13 @@ function Scene({ loaded, target }: { loaded: Loaded; target?: RoadNode }) {
 function PreviewHud({
   loaded,
   onTarget,
+  perfEnabled,
+  onPerfToggle,
 }: {
   loaded: Loaded;
   onTarget: (n?: RoadNode) => void;
+  perfEnabled: boolean;
+  onPerfToggle: () => void;
 }) {
   const { session, network } = loaded,
     [snapshot, setSnapshot] = useState(session.model.snapshot),
@@ -467,6 +514,14 @@ function PreviewHud({
           {snapshot.phase === "playing" ? "Pause" : "Resume"}
         </button>
         <button onClick={() => setMap(!map)}>Route map</button>
+        <button
+          type="button"
+          data-testid="geographic-performance-toggle"
+          aria-pressed={perfEnabled}
+          onClick={onPerfToggle}
+        >
+          Performance {perfEnabled ? "ON" : "OFF"}
+        </button>
         <button onClick={() => session.recover()}>Recover</button>
         <a href={location.pathname}>Full legacy game</a>
       </nav>
@@ -576,7 +631,10 @@ function PreviewHud({
 export default function GeographicPrototype() {
   const [loaded, setLoaded] = useState<Loaded>(),
     [error, setError] = useState(""),
-    [target, setTarget] = useState<RoadNode>();
+    [target, setTarget] = useState<RoadNode>(),
+    [perfEnabled, setPerfEnabled] = useState(() => new URLSearchParams(location.search).has("geoPerf")),
+    [perfSample, setPerfSample] = useState<GeographicPerfSample>();
+  const onPerfSample = useCallback((sample: GeographicPerfSample) => setPerfSample(sample), []);
   useEffect(() => {
     let cancelled = false,
       cleanup: (() => void) | undefined;
@@ -626,9 +684,20 @@ export default function GeographicPrototype() {
         camera={{ near: 0.1, far: 1800 }}
         gl={{ antialias: true, preserveDrawingBuffer: import.meta.env.DEV }}
       >
-        <Scene loaded={loaded} target={target} />
+        <Scene loaded={loaded} target={target} perfEnabled={perfEnabled} onPerfSample={onPerfSample} />
       </Canvas>
-      <PreviewHud loaded={loaded} onTarget={setTarget} />
+      <PreviewHud
+        loaded={loaded}
+        onTarget={setTarget}
+        perfEnabled={perfEnabled}
+        onPerfToggle={() => { setPerfSample(undefined); setPerfEnabled((value) => !value); }}
+      />
+      {perfEnabled && (
+        <GeographicPerformanceOverlay
+          sample={perfSample}
+          onClose={() => { setPerfEnabled(false); setPerfSample(undefined); }}
+        />
+      )}
     </main>
   );
 }
