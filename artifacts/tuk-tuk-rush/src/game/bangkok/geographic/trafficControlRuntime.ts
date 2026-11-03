@@ -25,10 +25,19 @@ export async function loadVerifiedTrafficControls(
     return null;
   }
 }
+/** Per-axis aspect for a GAMEPLAY schedule, not verified Bangkok timings.
+ * Opposing cross traffic cannot receive simultaneous green. An amber lamp
+ * warns of a closing movement; motor AI already treats amber as non-green.
+ */
+export function simulatedSignalAspect(phase:0|1,seconds:number):
+  "green"|"amber"|"red"{
+  const t=((seconds+phase*18)%36+36)%36;
+  if(t<14)return "green";
+  if(t<16)return "amber";
+  return "red"; // 2s all-red clearance before the cross-axis green.
+}
 export function simulatedSignalIsGreen(phase: 0 | 1, seconds: number) {
-  const point=(seconds + phase*18) % 36;
-  // 14 s green + 4 s amber/all-red buffer per intersecting axis.
-  return point>=0 && point<14;
+  return simulatedSignalAspect(phase,seconds)==="green";
 }
 export function sourceApproachControls(
   pack: RuntimeControlPack | null,
