@@ -42,7 +42,7 @@ export function ThaiStreetNameActors({
       const texture=new T.CanvasTexture(canvas);
       texture.colorSpace=T.SRGBColorSpace;
       texture.anisotropy=4;
-      const material=new T.MeshBasicMaterial({map:texture,side:T.DoubleSide,
+      const material=new T.MeshBasicMaterial({map:texture,side:T.FrontSide,
         transparent:true,depthWrite:true});
       const group=new T.Group();
       group.name="NamedOSMWayPlaque:"+i;
@@ -52,7 +52,12 @@ export function ThaiStreetNameActors({
       const back=new T.Mesh(backGeom,backMat);
       back.position.set(0,2.92,-.04);group.add(back);
       const plate=new T.Mesh(faceGeom,material);
-      plate.position.set(0,2.92,0);group.add(plate);
+      plate.position.set(0,2.92,.035);group.add(plate);
+      // Real BMA nameboards can be read from either sidewalk: use two
+      // independently forward-facing textured faces, never mirrored text.
+      const reverse=new T.Mesh(faceGeom,material);
+      reverse.position.set(0,2.92,-.075);
+      reverse.rotation.y=Math.PI;group.add(reverse);
       const crown=new T.Mesh(trimGeom,trimMat);
       crown.position.y=3.38;group.add(crown);
       root.add(group);
