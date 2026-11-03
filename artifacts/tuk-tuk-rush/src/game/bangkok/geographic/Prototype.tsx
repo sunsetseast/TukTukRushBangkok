@@ -614,10 +614,10 @@ function PreviewHud({
         <section className="geo-menu">
           <h1>Bangkok, at real scale</h1>
           <p>
-            Production driving, passengers and career earnings on Bangkok’s
-            mapped streets. A small local traffic simulation is now available;
-            verified signal locations and neighborhood artwork are still
-            being developed.
+            Drive on mapped Bangkok streets with source-backed traffic
+            controls, Thai-language road signs and named blue street plaques.
+            Signal timing is a gameplay simulation; street-name signpost
+            mounting is scenic rather than surveyed.
           </p>
           <button
             data-testid="button-start-shift"
