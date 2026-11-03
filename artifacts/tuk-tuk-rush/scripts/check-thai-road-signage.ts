@@ -63,6 +63,9 @@ assert.equal(labels[0]!.english,"Yaowarat Road");
 assert.equal(labels[0]!.edge,0);
 assert(labels[0]!.z<0,"Bangkok's left roadside places eastbound plaque north of lane");
 assert.equal(localThaiWayNames(network,{x:999,z:999}).length,0);
+assert.equal(localThaiWayNames(network,{x:20,z:0},6,95,()=>false).length,0,
+  "A road name plaque must not intersect a streamed building collider");
+assert.equal(localThaiWayNames(network,{x:20,z:0},6,95,()=>true).length,1);
 assert.deepEqual(localThaiWayNames(network,{x:20,z:0},0),[],
   "All extra road signs can be disabled without changing OSM routing");
 const overpass={
