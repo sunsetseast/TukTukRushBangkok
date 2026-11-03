@@ -86,7 +86,8 @@
     "test:geographic-control-import": "node --import tsx scripts/check-geographic-control-import.ts",
     "test:geographic-controls-ready": "node --import tsx scripts/check-geographic-controls-ready.ts",
     "test:geographic-traffic-art": "node --import tsx scripts/check-geographic-traffic-art.ts",
-    "test:geographic-traffic-contact": "node --import tsx scripts/check-geographic-traffic-contact.ts"
+    "test:geographic-traffic-contact": "node --import tsx scripts/check-geographic-traffic-contact.ts",
+    "test:thai-road-signage": "node --import tsx scripts/check-thai-road-signage.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
