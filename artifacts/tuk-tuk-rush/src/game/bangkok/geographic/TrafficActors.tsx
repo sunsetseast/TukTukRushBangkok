@@ -8,6 +8,7 @@ import { loadVerifiedTrafficControls, sourceApproachControls } from "./trafficCo
 import { TrafficSignActors } from "./TrafficSignActors";
 import { createBangkokFleetVisual } from "./trafficArt";
 import { resolvePlayerTrafficContact } from "./trafficContact";
+import { ThaiStreetNameActors } from "./ThaiStreetNameActors";
 
 /** All moving vehicles share one bounded simulation and instanced renderer.
  * Real OSM controls are optional until their independently-versioned compact
@@ -77,7 +78,9 @@ export function TrafficActors({
   });
   return <>
     <primitive object={fleet.visual.root}/>
+    {/* Regulatory and name signs are part of Bangkok, not optional AI cars. */}
     <TrafficSignActors pack={pack} session={session}
-      enabled={enabled} simulation={fleet.simulation}/>
+      enabled={true} simulation={fleet.simulation}/>
+    <ThaiStreetNameActors network={network} session={session}/>
   </>;
 }
