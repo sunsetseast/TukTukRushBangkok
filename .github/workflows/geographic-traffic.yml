@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'artifacts/tuk-tuk-rush/src/game/bangkok/geographic/**'
+      - 'data/bangkok/real-scale/traffic-controls*'
+      - 'artifacts/tuk-tuk-rush/scripts/pack-geographic-traffic-controls.ts'
+      - 'artifacts/tuk-tuk-rush/scripts/check-geographic-controls-ready.ts'
       - 'artifacts/tuk-tuk-rush/scripts/check-geographic-traffic.ts'
       - 'artifacts/tuk-tuk-rush/scripts/check-geographic-road-rules.ts'
       - 'artifacts/tuk-tuk-rush/scripts/pack-geographic-road-rules.ts'
