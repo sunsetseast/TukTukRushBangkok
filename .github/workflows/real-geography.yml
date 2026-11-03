@@ -32,7 +32,15 @@ jobs:
         run: |
           python scripts/geography/import_bangkok.py
           pnpm --filter @workspace/tuk-tuk-rush geography:pack
-          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json data/bangkok/real-scale/buildings-report.v1.json data/bangkok/real-scale/building-exceptions.v1.json.gz artifacts/tuk-tuk-rush/public/assets/geography/
+          # Source + gameplay assets must round-trip unchanged. The old
+          # tracked compiled/*.bin.gz artifacts were retired by PR54 in favor
+          # of generated, gitignored compiled/*.bin.pack; rebuilding correctly
+          # removes the obsolete files. Do not misclassify that deletion as
+          # a change in canonical geography.
+          git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json data/bangkok/real-scale/buildings-report.v1.json data/bangkok/real-scale/building-exceptions.v1.json.gz artifacts/tuk-tuk-rush/public/assets/geography/ ':(exclude)artifacts/tuk-tuk-rush/public/assets/geography/compiled/**'
+          # The replacement compiled geometry must still be present and tested.
+          node --import tsx scripts/check-geographic-compiled-delivery.ts
+
           python scripts/geography/check_data.py
           python scripts/geography/check_stations.py
           python scripts/geography/check_buildings.py
