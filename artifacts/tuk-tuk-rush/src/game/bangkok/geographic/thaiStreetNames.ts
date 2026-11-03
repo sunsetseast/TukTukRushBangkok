@@ -48,10 +48,19 @@ export function localThaiWayNames(
       Math.abs(elevation)>1.0)continue; // no decorative plaques on bridges
     const ux=dx/len,uz=dz/len,shoulder=Math.max(2.4,
       Math.min(7.5,network.width[edge]!/2+.8));
-    const x=(x1+x2)/2+uz*shoulder,
-      z=(z1+z2)/2-ux*shoulder;
+    // Stable fallback locations along this SAME named source segment if
+    // the midpoint would be embedded in a shophouse/building facade.
+    // Clearance decisions are source-geometry dependent, never dependent on
+    // which direction the player's camera happens to be facing.
+    let anchor:{x:number;z:number}|undefined;
+    for(const t of [.50,.28,.72]){
+      const p={x:x1+dx*t+uz*shoulder,z:z1+dz*t-ux*shoulder};
+      if(!clearance || clearance(p)){anchor=p;break;}
+    }
+    if(!anchor)continue;
+    const {x,z}=anchor;
     const dist=Math.hypot(x-player.x,z-player.z);
-    if(dist>radius || (clearance&&!clearance({x,z})))continue;
+    if(dist>radius)continue;
     const old=chosen.get(sourceIndex);
     if(old && old.distance<=dist)continue;
     chosen.set(sourceIndex,{
