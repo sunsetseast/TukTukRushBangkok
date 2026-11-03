@@ -155,6 +155,6 @@ export function createThaiSignMaterial(face:ThaiSignFace){
   const texture=makeThaiSignTexture(face);
   return new T.MeshStandardMaterial({
     map:texture,color:"#ffffff",roughness:.65,metalness:.05,
-    alphaTest:.35,transparent:true,side:T.DoubleSide,
+    alphaTest:.35,transparent:true,side:T.FrontSide,
   });
 }
