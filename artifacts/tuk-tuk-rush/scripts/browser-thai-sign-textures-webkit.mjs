@@ -23,7 +23,7 @@ try{
       {type:"no-parking"},
     ];
     const root=document.createElement("div");
-    root.style="display:flex;gap:16px;background:#20242a;padding:30px;";
+    root.style="display:flex;flex-wrap:wrap;gap:16px;background:#20242a;padding:30px;";
     document.body.replaceChildren(root);
     const reports=[];
     for(const face of faces){
@@ -43,20 +43,36 @@ try{
         size:canvas.width,font:canvas.getContext("2d").font});
       texture.dispose();
     }
-    return reports;
+    const names=await import("/src/game/bangkok/geographic/thaiStreetNames.ts");
+    const plaque=document.createElement("canvas");
+    plaque.width=768;plaque.height=256;
+    names.paintBangkokRoadPlaque(plaque.getContext("2d"),{
+      thai:"ถนนเยาวราช",english:"Yaowarat Road",
+    });
+    plaque.style.width="566px";plaque.style.height="190px";
+    root.appendChild(plaque);
+    const image=plaque.getContext("2d").getImageData(0,0,768,256).data;
+    let blue=0,white=0;
+    for(let i=0;i<image.length;i+=4*16){
+      const r=image[i],g=image[i+1],b=image[i+2];
+      if(b>r*1.3 && b>g*1.05 && b>100)blue++;
+      if(r>220 && g>220 && b>220)white++;
+    }
+    return {signs:reports,plaque:{blue,white}};
+
   });
-  assert.equal(result.length,5);
-  assert(result.every(x=>x.size===512&&x.alpha>1000),
+  assert.equal(result.signs.length,5);
+  assert(result.signs.every(x=>x.size===512&&x.alpha>1000),
     "All Thai source signs must render real Canvas2D pixels");
-  assert(result.find(x=>x.type==="stop").red>600,
+  assert(result.signs.find(x=>x.type==="stop").red>600,
     "Thai หยุด must appear on a red octagonal face");
-  assert(result.find(x=>x.type==="stop").white>100,
+  assert(result.signs.find(x=>x.type==="stop").white>100,
     "Thai หยุด must have a white border/text");
-  assert(result.find(x=>x.type==="yield").white>600,
+  assert(result.signs.find(x=>x.type==="yield").white>600,
     "Thai ให้ทาง sign must use white triangle field");
-  assert(result.find(x=>x.type==="yield").red>100,
+  assert(result.signs.find(x=>x.type==="yield").red>100,
     "Thai ให้ทาง sign needs proper red border");
-  await page.screenshot({path:new URL("webkit-thai-sign-face-atlas.png",out).pathname});
+  assert(result.plaque.blue>1000 && result.plaque.white>100,\n    "Bangkok bilingual street plaques must have blue/white readable canvas faces");\n  await page.screenshot({path:new URL("webkit-thai-sign-face-atlas.png",out).pathname});
   fs.writeFileSync(new URL("webkit-thai-sign-textures.json",out),
     JSON.stringify({browser:browser.version(),checks:result},null,2)+"\n");
   console.log(JSON.stringify({pass:true,support:"WebKit Canvas2D",checks:result},null,2));
