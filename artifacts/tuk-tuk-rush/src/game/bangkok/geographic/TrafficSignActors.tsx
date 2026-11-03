@@ -4,7 +4,7 @@ import * as T from "three";
 import type { GeographicSession } from "./session";
 import type { RuntimeControlPack } from "./controlImport";
 import type { GeographicTrafficSimulation } from "./traffic";
-import { localVisibleTrafficSigns, simulatedSignalIsGreen } from "./trafficControlRuntime";
+import { localVisibleTrafficSigns, simulatedSignalAspect } from "./trafficControlRuntime";
 import { trafficSignPlacement } from "./trafficSignPlacement";
 
 type Instance = T.InstancedMesh<T.BufferGeometry, T.MeshStandardMaterial>;
@@ -51,6 +51,7 @@ export function TrafficSignActors({
   const cursor=useMemo(()=>new T.Object3D(),[]);
   const red=useMemo(()=>new T.Color("#ea252c"),[]);
   const green=useMemo(()=>new T.Color("#54ee8a"),[]);
+  const amber=useMemo(()=>new T.Color("#ffbf42"),[]);
   const inactive=useMemo(()=>new T.Color("#66727c"),[]);
   useEffect(()=>()=>art.dispose(),[art]);
   useFrame((_,delta)=>{
@@ -89,9 +90,10 @@ export function TrafficSignActors({
           const {x,z,yaw}=placement;
           instance(art.poles,count.poles++,x,y+1.25,z);
           instance(art.housing,count.housing++,x,y+2.7,z,0,undefined,yaw);
-          const color=phase===null ? inactive :
-            simulatedSignalIsGreen(phase,simulation.simulationClockSeconds)
-              ? green : red;
+          const aspect=phase===null ? "inactive" :
+            simulatedSignalAspect(phase,simulation.simulationClockSeconds);
+          const color=aspect==="green"?green:
+            aspect==="amber"?amber:aspect==="red"?red:inactive;
           // Local forward offset, not a fixed world-north indicator.
           instance(art.bulbs,count.bulbs++,x-Math.sin(yaw)*.16,y+2.78,
             z-Math.cos(yaw)*.16,0,color,yaw);
