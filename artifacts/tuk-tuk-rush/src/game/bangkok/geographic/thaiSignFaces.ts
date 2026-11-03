@@ -19,8 +19,7 @@ export type ThaiSignFace =
   | {type:"no-entry"}
   | {type:"no-parking"}
   | {type:"no-stopping"}
-  | {type:"no-uturn"}
-  | {type:"oneway"};
+  | {type:"no-uturn"};
 export function classifyThaiSign(sign:Pick<RuntimeTrafficSign,"kind"|"tags">):
   ThaiSignFace|undefined{
   if(sign.kind==="stop")return {type:"stop"};
@@ -37,7 +36,6 @@ export function classifyThaiSign(sign:Pick<RuntimeTrafficSign,"kind"|"tags">):
   if(values.some(v=>["no_parking","th:no_parking"].includes(v)))return {type:"no-parking"};
   if(values.some(v=>["no_stopping","th:no_stopping"].includes(v)))return {type:"no-stopping"};
   if(values.some(v=>["no_u_turn","no_uturn","th:no_u_turn"].includes(v)))return {type:"no-uturn"};
-  if(values.some(v=>["oneway","one_way","th:oneway"].includes(v)))return {type:"oneway"};
   if(values.some(v=>v==="maxspeed"||v==="speed_limit"||v.startsWith("maxspeed:"))){
     // Explicit, plausible, posted km/h value only. No invented default '50'.
     const raw=tags.maxspeed??values.find(v=>v.startsWith("maxspeed:"))?.slice(9);
@@ -87,15 +85,6 @@ export function drawThaiSignFace(ctx:CanvasRenderingContext2D,face:ThaiSignFace)
     invertedTriangle(ctx);ctx.fillStyle="#ffffff";ctx.fill();
     ctx.lineWidth=29;ctx.strokeStyle="#d52b32";ctx.stroke();
     centered(ctx,"ให้ทาง",214,112,"#171717");
-    return;
-  }
-  if(face.type==="oneway"){
-    ctx.fillStyle="#1d65b3";ctx.fillRect(45,120,422,280);
-    ctx.fillStyle="#ffffff";
-    ctx.beginPath();ctx.moveTo(128,230);ctx.lineTo(315,230);
-    ctx.lineTo(315,185);ctx.lineTo(405,260);
-    ctx.lineTo(315,335);ctx.lineTo(315,290);
-    ctx.lineTo(128,290);ctx.closePath();ctx.fill();
     return;
   }
   // Thailand's regulatory speed/prohibition signs: white circular field,
