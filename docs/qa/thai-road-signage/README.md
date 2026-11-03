@@ -25,7 +25,7 @@
 
 ### This PR does not invent signs
 - No invented traffic-light poles at intersections without real OSM evidence.
-- No fabricated Thai speed limits from missing values or a 50 km/h assumption.
+- No fabricated Thai speed limits from missing values or a 50 km/h assumption. A generic `traffic_sign=oneway` without the original arrow orientation is similarly withheld rather than drawn as an arbitrary right-pointing arrow.
 - No automatic stop or yield duty on unspecified direction edges.
 - No unsourced English transliterations, no decorative "BMA" city seal, no fictional junction-name plates.
 - No claim that every installed physical roadside sign in Bangkok has been surveyed. The upstream source contains 495 tagged control nodes in the geographic area; it is not a complete municipality-wide sign inventory.
