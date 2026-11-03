@@ -82,10 +82,11 @@
     "test:geographic-performance": "node --import tsx scripts/check-geographic-performance.ts",
     "test:geographic-asset-delivery": "node --import tsx scripts/check-geographic-asset-delivery.ts && node --import tsx scripts/check-geographic-spa-fallback.ts",
     "test:geographic-spa-fallback": "node --import tsx scripts/check-geographic-spa-fallback.ts",
-    "test:geographic-traffic": "node --import tsx scripts/check-geographic-traffic.ts && node --import tsx scripts/check-geographic-traffic-art.ts",
+    "test:geographic-traffic": "node --import tsx scripts/check-geographic-traffic.ts && node --import tsx scripts/check-geographic-traffic-art.ts && node --import tsx scripts/check-geographic-traffic-contact.ts",
     "test:geographic-control-import": "node --import tsx scripts/check-geographic-control-import.ts",
     "test:geographic-controls-ready": "node --import tsx scripts/check-geographic-controls-ready.ts",
-    "test:geographic-traffic-art": "node --import tsx scripts/check-geographic-traffic-art.ts"
+    "test:geographic-traffic-art": "node --import tsx scripts/check-geographic-traffic-art.ts",
+    "test:geographic-traffic-contact": "node --import tsx scripts/check-geographic-traffic-contact.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
