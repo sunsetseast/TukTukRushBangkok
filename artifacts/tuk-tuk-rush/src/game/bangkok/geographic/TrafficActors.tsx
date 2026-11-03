@@ -7,6 +7,7 @@ import type { RuntimeControlPack } from "./controlImport";
 import { loadVerifiedTrafficControls, sourceApproachControls } from "./trafficControlRuntime";
 import { TrafficSignActors } from "./TrafficSignActors";
 import { createBangkokFleetVisual } from "./trafficArt";
+import { resolvePlayerTrafficContact } from "./trafficContact";
 
 /** All moving vehicles share one bounded simulation and instanced renderer.
  * Real OSM controls are optional until their independently-versioned compact
@@ -37,9 +38,23 @@ export function TrafficActors({
   const inspect=useMemo(()=>import.meta.env.DEV &&
     new URLSearchParams(location.search).has("geographyQA"),[]);
   const lastDebug=useRef(0);
+  const lastSafe=useRef<{x:number;z:number;y:number}|undefined>(undefined);
+  const contacts=useRef(0);
   useFrame((state,delta)=>{
     const active=enabled && session.model.snapshot.phase==="playing";
     fleet.simulation.update(delta,session.player,active,session.model.snapshot.quality);
+    if(active){
+      const player=session.player;
+      const pose={x:player.x,z:player.z,y:session.height,
+        heading:player.heading,speed:player.speed};
+      if(resolvePlayerTrafficContact(pose,fleet.simulation.vehicles,lastSafe.current)){
+        player.x=pose.x;player.z=pose.z;player.speed=pose.speed;
+        player.collision=Math.max(player.collision,.5);
+        contacts.current++;
+      }else{
+        lastSafe.current={x:player.x,z:player.z,y:pose.y};
+      }
+    }else lastSafe.current=undefined;
     fleet.visual.render(fleet.simulation.vehicles);
     // Keep expensive debug map snapshot optional and capped at 4 Hz.
     if(inspect && state.clock.elapsedTime-lastDebug.current>.25){
@@ -48,7 +63,8 @@ export function TrafficActors({
         active:fleet.simulation.vehicles.length,
         spawned:fleet.simulation.stats.spawned,
         removed:fleet.simulation.stats.removed,
-        waitingAtSignals:fleet.simulation.stats.stoppedForControl,
+        controlledBrakingFrames:fleet.simulation.stats.stoppedForControl,
+        playerTrafficContactFrames:contacts.current,
         sourceMatchedControls:pack?.stats.mappedSignals??0,
         sourceTurnRestrictions:pack?.stats.restrictions??0,
         drawBatches:fleet.visual.drawBatches,
