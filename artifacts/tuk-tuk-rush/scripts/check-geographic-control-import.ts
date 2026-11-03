@@ -6,7 +6,7 @@ import {
   type SourceControlSnapshot,
 } from "../src/game/bangkok/geographic/controlImport";
 import { geographicToMeters } from "../src/game/bangkok/geographic/projection";
-import { simulatedSignalIsGreen, sourceApproachControls } from "../src/game/bangkok/geographic/trafficControlRuntime";
+import { simulatedSignalIsGreen, simulatedSignalAspect, sourceApproachControls } from "../src/game/bangkok/geographic/trafficControlRuntime";
 import { GeographicTrafficSimulation } from "../src/game/bangkok/geographic/traffic";
 import { trafficSignPlacement } from "../src/game/bangkok/geographic/trafficSignPlacement";
 
@@ -104,6 +104,15 @@ const controls=sourceApproachControls(pack);
 assert(controls.length>=4);
 assert(controls.every(c=>c.sourceId==="osm:node/1"),
   "Ambiguous signs cannot preempt properly source-bound signals");
+assert.equal(simulatedSignalAspect(0,5),"green");
+assert.equal(simulatedSignalAspect(0,14.2),"amber");
+assert.equal(simulatedSignalAspect(0,16.2),"red");
+assert.equal(simulatedSignalAspect(1,18.2),"green");
+assert.equal(simulatedSignalAspect(1,32.2),"amber");
+for(let t=0;t<72;t+=.25){
+  assert(!(simulatedSignalIsGreen(0,t)&&simulatedSignalIsGreen(1,t)),
+    "Perpendicular Bangkok approaches must never show simultaneous green");
+}
 assert.equal(simulatedSignalIsGreen(0,5),true);
 assert.equal(simulatedSignalIsGreen(1,5),false);
 assert.equal(simulatedSignalIsGreen(0,22),false);
