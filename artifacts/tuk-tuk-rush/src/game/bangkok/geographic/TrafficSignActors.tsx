@@ -118,11 +118,12 @@ export function TrafficSignActors({
     }
     const near=localVisibleTrafficSigns(pack.signs,
       session.player.x,session.player.z,175,SIGNS_NEAR);
-    const stats={visible:near.length,signals:0,stops:0,yields:0,
+    // visible counts ACTUALLY rendered, not merely nearby OSM tags.
+    const stats={visible:0,sourceNearby:near.length,signals:0,stops:0,yields:0,
       unknownSkipped:0,heads:0,osmIds:[] as string[], drawBatches:0};
     for(const sign of near){
       if(sign.kind==="signal"){
-        stats.signals++;stats.osmIds.push(sign.id);
+        stats.visible++;stats.signals++;stats.osmIds.push(sign.id);
         // Cross-axis heads face separate verified approaches and never display
         // a mixed green on the same panel. Unmatched signals are visibly OFF.
         const phases=sign.approaches.length?
@@ -163,7 +164,7 @@ export function TrafficSignActors({
       art.render(art.face(style),x,sign.y+2.77,z,yaw);
       if(style.type==="stop")stats.stops++;
       if(style.type==="yield")stats.yields++;
-      stats.osmIds.push(sign.id);
+      stats.visible++;stats.osmIds.push(sign.id);
     }
     art.flush();
     if(debug)(window as any).__geographicThaiSigns={
