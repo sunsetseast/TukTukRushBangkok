@@ -8,6 +8,7 @@ import {
 import { geographicToMeters } from "../src/game/bangkok/geographic/projection";
 import { simulatedSignalIsGreen, sourceApproachControls } from "../src/game/bangkok/geographic/trafficControlRuntime";
 import { GeographicTrafficSimulation } from "../src/game/bangkok/geographic/traffic";
+import { trafficSignPlacement } from "../src/game/bangkok/geographic/trafficSignPlacement";
 
 const coordinate={lon:100.5,lat:13.75};
 const c=geographicToMeters(coordinate);
@@ -89,6 +90,16 @@ assert.equal(pack.stats.unresolvedRestrictions,1,
 assert.equal(pack.restrictions.length,2);
 assert.equal(pack.restrictions.find(r=>r.id==="osm:relation/99")?.type,"no");
 assert.equal(pack.restrictions.find(r=>r.id==="osm:relation/100")?.type,"only");
+// Source-backed pole placement on the LEFT shoulder of an EASTBOUND lane
+// must not float in the center of the actual Bangkok junction.
+const pole=trafficSignPlacement(signal,fake,0);
+assert(!pole.sourceOnly);
+assert(pole.x < signal.x,"Signal faces vehicles BEFORE the mapped junction");
+assert(pole.z < signal.z,"Eastbound Bangkok traffic has a northern LEFT shoulder");
+const absent=trafficSignPlacement({...signal,node:undefined,approaches:[]},fake);
+assert.equal(absent.x,signal.x);
+assert.equal(absent.z,signal.z);
+assert(absent.sourceOnly,"Never infer an approach for an unmatched OSM sign");
 const controls=sourceApproachControls(pack);
 assert(controls.length>=4);
 assert(controls.every(c=>c.sourceId==="osm:node/1"),
