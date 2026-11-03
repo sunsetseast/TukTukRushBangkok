@@ -28,7 +28,7 @@ roof.getMatrixAt(0,mtx);
 const position=new T.Vector3(),quaternion=new T.Quaternion(),scale=new T.Vector3();
 mtx.decompose(position,quaternion,scale);
 assert(Number.isFinite(position.x)&&Number.isFinite(position.z));
-assert.equal(position.y,1.94);
+assert(Math.abs(position.y-1.94)<1e-4,"Instanced world transform uses float32 precision");
 const fleet16=Array.from({length:16},(_,i)=>make(i));
 fleet.render(fleet16);
 assert(instances.every(m=>m.count<=m.instanceMatrix.count),
