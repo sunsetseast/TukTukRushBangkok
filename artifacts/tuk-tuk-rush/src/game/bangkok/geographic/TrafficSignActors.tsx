@@ -5,6 +5,7 @@ import type { GeographicSession } from "./session";
 import type { RuntimeControlPack } from "./controlImport";
 import type { GeographicTrafficSimulation } from "./traffic";
 import { localVisibleTrafficSigns, simulatedSignalIsGreen } from "./trafficControlRuntime";
+import { trafficSignPlacement } from "./trafficSignPlacement";
 
 type Instance = T.InstancedMesh<T.BufferGeometry, T.MeshStandardMaterial>;
 const CAPACITY=48;
@@ -24,7 +25,7 @@ function createSignArt() {
     group.add(instance);
     return instance;
   };
-  const poles=make(new T.CylinderGeometry(.045,.055,2.5,6),"#747d7c");
+  const poles=make(new T.CylinderGeometry(.045,.055,2.5,6),"#747d7c",CAPACITY*2);
   // A four-way signal can have different red/green aspects for perpendicular
   // approaches. Reserve two batched proxies per tagged location.
   const housing=make(new T.BoxGeometry(.32,.96,.24),"#252b2d",CAPACITY*2);
@@ -65,38 +66,45 @@ export function TrafficSignActors({
     );
     const count={poles:0,housing:0,bulbs:0,stops:0,yields:0,otherSigns:0};
     const instance=(mesh:Instance,index:number,x:number,y:number,z:number,
-      rotationX=0,color?:T.Color)=>{
+      rotationX=0,color?:T.Color,yaw=0)=>{
       cursor.position.set(x,y,z);
-      cursor.rotation.set(rotationX,0,0);
+      // Explicit YXZ: face the approaching driver even for flat signs.
+      cursor.rotation.set(rotationX,yaw,0,"YXZ");
       cursor.scale.set(1,1,1);
       cursor.updateMatrix();
       mesh.setMatrixAt(index,cursor.matrix);
       if(color)mesh.setColorAt(index,color);
     };
     for(const sign of near) {
-      const {x,z,y}=sign;
-      instance(art.poles,count.poles++,x,y+1.25,z);
+      const {y}=sign;
       if(sign.kind==="signal"){
-        // Do not draw a single green lamp for an intersection whose crossing
-        // approaches are simultaneously red. Each verified movement group
-        // has a separate stylized lamp, synchronized with the simulation.
+        // Distinct crossing signal groups must not appear to share one green
+        // lamp. Anchor each stylized pole to its *verified incoming approach*.
         const phases=sign.approaches.length
           ? [...new Set(sign.approaches.map(a=>a.phase))]
           : [null];
         for(const phase of phases) {
-          const offset=phases.length===1 ? 0 : phase===0 ? -.62 : .62;
-          instance(art.housing,count.housing++,x+offset,y+2.7,z);
+          const edge=sign.approaches.find(a=>a.phase===phase)?.edge;
+          const placement=trafficSignPlacement(sign,simulation.network,edge);
+          const {x,z,yaw}=placement;
+          instance(art.poles,count.poles++,x,y+1.25,z);
+          instance(art.housing,count.housing++,x,y+2.7,z,0,undefined,yaw);
           const color=phase===null ? inactive :
             simulatedSignalIsGreen(phase,simulation.simulationClockSeconds)
               ? green : red;
-          instance(art.bulbs,count.bulbs++,x+offset,y+2.78,z-.16,0,color);
+          // Local forward offset, not a fixed world-north indicator.
+          instance(art.bulbs,count.bulbs++,x-Math.sin(yaw)*.16,y+2.78,
+            z-Math.cos(yaw)*.16,0,color,yaw);
         }
-      }else if(sign.kind==="stop"){
-        instance(art.stops,count.stops++,x,y+2.65,z,Math.PI/2);
-      }else if(sign.kind==="yield"){
-        instance(art.yields,count.yields++,x,y+2.62,z,Math.PI/2);
       }else{
-        instance(art.otherSigns,count.otherSigns++,x,y+2.6,z);
+        const {x,z,yaw}=trafficSignPlacement(sign,simulation.network);
+        instance(art.poles,count.poles++,x,y+1.25,z);
+        if(sign.kind==="stop")
+          instance(art.stops,count.stops++,x,y+2.65,z,Math.PI/2,undefined,yaw);
+        else if(sign.kind==="yield")
+          instance(art.yields,count.yields++,x,y+2.62,z,Math.PI/2,undefined,yaw);
+        else
+          instance(art.otherSigns,count.otherSigns++,x,y+2.6,z,0,undefined,yaw);
       }
     }
     for(const [mesh,num] of [[art.poles,count.poles],[art.housing,count.housing],
