@@ -184,9 +184,11 @@ export class GeographicTrafficSimulation {
     return time < control.greenSeconds!;
   }
   update(delta: number, player: Vector, playing: boolean, quality: "low"|"medium" = "medium") {
-    if (!playing) { this.vehicles.length = 0; this.elapsed = 0; this.spawnAt = 0; return; }
     const dt = clamp(delta, 0, .08);
+    // Signal clocks still run when AI traffic is disabled; Bangkok signs
+    // do not disappear or freeze solely because cars are switched OFF.
     this.clock += dt;
+    if (!playing) { this.vehicles.length = 0; this.elapsed = 0; this.spawnAt = 0; return; }
     this.elapsed += dt;
     const max = quality === "low" ? 9 : 16;
     if (this.elapsed - this.spawnAt >= .75 && this.vehicles.length < max) {
