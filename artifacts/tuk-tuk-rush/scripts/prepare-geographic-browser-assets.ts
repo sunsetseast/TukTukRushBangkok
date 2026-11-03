@@ -14,6 +14,7 @@ const aliases = [
   ["gameplay.v2.json.gz", "gameplay.v2.json.pack"],
   ["navigation.v2.bin.gz", "navigation.v2.bin.pack"],
   ["road-rules.v1.json.gz", "road-rules.v1.json.pack"],
+  ["traffic-controls.v1.json.gz", "traffic-controls.v1.json.pack"],
   ["runtime.v1.json.gz", "runtime.v1.json.pack"],
 ] as const;
 

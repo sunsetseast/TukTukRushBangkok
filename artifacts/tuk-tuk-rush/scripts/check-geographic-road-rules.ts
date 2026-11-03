@@ -5,7 +5,7 @@ import { gunzipSync } from "node:zlib";
 import { GeographicNetwork, type GameplayMetadata } from "../src/game/bangkok/geographic/network";
 import type { GeographicDataset } from "../src/game/bangkok/geographic/dataset";
 import {
-  readRoadRuleDirections, roadDirectionFromTags, type GeographicRoadRules,
+  readRoadRuleDirections, readMotorTrafficAccess, motorTrafficAllowed, roadDirectionFromTags, type GeographicRoadRules,
 } from "../src/game/bangkok/geographic/roadRules";
 
 const dir = new URL("../public/assets/geography/", import.meta.url);
@@ -20,6 +20,8 @@ const rules = JSON.parse(
 const hash = createHash("sha256").update(sourceBytes).digest("hex");
 assert.equal(hash, metadata.sourceSha256);
 const directions = readRoadRuleDirections(rules, hash, metadata.ways.length);
+const motor = readMotorTrafficAccess(rules, hash, metadata.ways.length);
+let nonMotor = 0;
 const byId = new Map(source.roads.map(w => [w.id, w]));
 let forward = 0, reverse = 0;
 for (let i = 0; i < metadata.ways.length; i++) {
@@ -27,11 +29,21 @@ for (let i = 0; i < metadata.ways.length; i++) {
   assert(original, "Rule source retained for " + id);
   const expected = roadDirectionFromTags(original.tags);
   assert.equal(directions[i], expected, "Source-aligned one-way direction: " + id);
+  const allowed = motorTrafficAllowed(original.tags) && original.vehicleClearance;
+  assert.equal(motor[i], allowed ? 1 : 0, "Source-aligned vehicle access: " + id);
+  if (!allowed) nonMotor++;
   if (expected === 1) forward++;
   if (expected === -1) reverse++;
 }
 assert(forward > 0, "Actual pinned Bangkok one-way roads must be represented");
 assert.equal(forward + reverse, rules.directed.length);
+assert.equal(nonMotor, rules.blockedMotor?.length);
+assert(nonMotor > 1000, "Footways and other restricted OSM roads must be excluded from AI traffic");
+assert.equal(motorTrafficAllowed({highway:"footway"}),false);
+assert.equal(motorTrafficAllowed({highway:"residential",access:"private"}),false);
+assert.equal(motorTrafficAllowed({highway:"primary",motorcar:"no"}),false);
+assert.equal(motorTrafficAllowed({highway:"residential"}),true);
+assert.throws(() => readMotorTrafficAccess({...rules,blockedMotor:[0,0]},hash,metadata.ways.length),/duplicate/);
 assert.equal(roadDirectionFromTags({oneway:"yes"}),1);
 assert.equal(roadDirectionFromTags({oneway:"true"}),1);
 assert.equal(roadDirectionFromTags({oneway:"-1"}),-1);
@@ -81,7 +93,7 @@ const fake = {
   ],
 };
 const pack = (direction:-1|1):GeographicRoadRules => ({
-  schema:1,sourceSha256:hash,wayCount:4,directed:[[0,direction]],
+  schema:1,sourceSha256:hash,wayCount:4,directed:[[0,direction]],blockedMotor:[],
 });
 const gps = new GeographicNetwork(fake,buffer,pack(1));
 const direct = new GeographicNetwork(fake,buffer);
@@ -117,6 +129,6 @@ assert.equal(gps.directions[0],1);
 assert.equal(direct.directions[0],0);
 console.log({
   roadRules: "pass", sourceHash:hash, verifiedWays:metadata.ways.length,
-  forward,reverse, directed:rules.directed.length, geometryChanged:false,
+  forward,reverse, directed:rules.directed.length, excludedFromTraffic:nonMotor, geometryChanged:false,
   gpsDirectionRegression:"pass", freeRoamPhysicsUnchanged:true,
 });

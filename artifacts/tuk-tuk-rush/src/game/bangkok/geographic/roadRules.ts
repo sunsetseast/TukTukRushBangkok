@@ -23,6 +23,8 @@ export type GeographicRoadRules = {
   wayCount: number;
   /** Sparse [index in gameplay metadata.ways, OSM source direction]. */
   directed: Array<[number, -1 | 1]>;
+  /** Sparse list of OSM source ways that must NOT carry ordinary motor traffic. */
+  blockedMotor?: number[];
 };
 
 export function readRoadRuleDirections(
@@ -45,4 +47,42 @@ export function readRoadRuleDirections(
     directions[entry[0]] = entry[1];
   }
   return directions;
+}
+
+/** Source-backed vehicle access. Never let NPCs drive on tagged footpaths,
+ * cycle lanes, private roads, bus-only roads, or other non-motor links.
+ * Missing optional data defaults to permissive for synthetic legacy fixtures
+ * only; the production pack compiler emits a complete blockedMotor list.
+ */
+export function motorTrafficAllowed(tags: RoadRuleTags): boolean {
+  const highway = tags.highway?.toLowerCase() ?? "";
+  if (["footway","pedestrian","path","steps","cycleway","bridleway",
+       "corridor","busway","bus_guideway","raceway","escape","proposed",
+       "construction","abandoned","disused","razed"].includes(highway)) return false;
+  if (["no","private","agricultural","forestry"].includes(
+    (tags.motorcar ?? tags.motor_vehicle ?? tags.access ?? "").toLowerCase()
+  )) return false;
+  if (tags.area === "yes" || tags.tunnel === "yes") return false;
+  return true;
+}
+export function readMotorTrafficAccess(
+  rules: GeographicRoadRules | undefined,
+  sourceSha256: string,
+  wayCount: number,
+): Uint8Array {
+  const allowed = new Uint8Array(wayCount).fill(1);
+  if (!rules) return allowed;
+  if (rules.schema !== 1 || rules.sourceSha256 !== sourceSha256 ||
+    rules.wayCount !== wayCount)
+    throw Error("Geographic motor access rules stale; regenerate source-derived road-rules pack");
+  // Older Replit sessions may still have a v1 pack without traffic metadata.
+  // Fail closed for the NPC fleet, but never prevent the player's map boot.
+  if (rules.blockedMotor === undefined) return allowed.fill(0);
+  if (!Array.isArray(rules.blockedMotor)) throw Error("Invalid motor access rules");
+  for (const index of rules.blockedMotor) {
+    if (!Number.isInteger(index) || index < 0 || index >= wayCount || allowed[index] === 0)
+      throw Error("Invalid or duplicate geographic motor restriction");
+    allowed[index] = 0;
+  }
+  return allowed;
 }
