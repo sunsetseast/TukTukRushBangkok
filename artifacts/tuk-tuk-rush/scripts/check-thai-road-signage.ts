@@ -34,8 +34,8 @@ assert.deepEqual(classifyThaiSign(sign("sign",{traffic_sign:"no_parking"})),
   {type:"no-parking"});
 assert.deepEqual(classifyThaiSign(sign("sign",{traffic_sign:"no_u_turn"})),
   {type:"no-uturn"});
-assert.deepEqual(classifyThaiSign(sign("sign",{traffic_sign:"oneway"})),
-  {type:"oneway"});
+assert.equal(classifyThaiSign(sign("sign",{traffic_sign:"oneway"})),
+  undefined,"Source tag alone does not specify physical one-way arrow orientation");
 assert.deepEqual(classifyThaiSign(sign("sign",{traffic_sign:"bus_stop"})),
   undefined,"Do not mistake a bus stop for a mandatory stop control");
 assert.equal(thaiSignKey({type:"speed",kph:40}),"speed:40");
