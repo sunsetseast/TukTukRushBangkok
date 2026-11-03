@@ -31,6 +31,7 @@ export function sourceWayName(way:{id:string;name:string;thai?:string}){
 export function localThaiWayNames(
   network:NamedRoadNetwork,player:{x:number;z:number},
   max=6,radius=95,
+  clearance?:(p:{x:number;z:number})=>boolean,
 ):ThaiWayName[]{
   const chosen=new Map<number,ThaiWayName & {distance:number}>();
   for(const edge of network.trafficEdgesNear(player,radius)){
@@ -50,7 +51,7 @@ export function localThaiWayNames(
     const x=(x1+x2)/2+uz*shoulder,
       z=(z1+z2)/2-ux*shoulder;
     const dist=Math.hypot(x-player.x,z-player.z);
-    if(dist>radius)continue;
+    if(dist>radius || (clearance&&!clearance({x,z})))continue;
     const old=chosen.get(sourceIndex);
     if(old && old.distance<=dist)continue;
     chosen.set(sourceIndex,{
