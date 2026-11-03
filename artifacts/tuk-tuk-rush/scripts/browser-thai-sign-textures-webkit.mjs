@@ -72,7 +72,9 @@ try{
     "Thai ให้ทาง sign must use white triangle field");
   assert(result.signs.find(x=>x.type==="yield").red>100,
     "Thai ให้ทาง sign needs proper red border");
-  assert(result.plaque.blue>1000 && result.plaque.white>100,\n    "Bangkok bilingual street plaques must have blue/white readable canvas faces");\n  await page.screenshot({path:new URL("webkit-thai-sign-face-atlas.png",out).pathname});
+  assert(result.plaque.blue>1000 && result.plaque.white>100,
+    "Bangkok bilingual street plaques must have blue/white readable canvas faces");
+  await page.screenshot({path:new URL("webkit-thai-sign-face-atlas.png",out).pathname});
   fs.writeFileSync(new URL("webkit-thai-sign-textures.json",out),
     JSON.stringify({browser:browser.version(),checks:result},null,2)+"\n");
   console.log(JSON.stringify({pass:true,support:"WebKit Canvas2D",checks:result},null,2));
