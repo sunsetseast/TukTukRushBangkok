@@ -47,6 +47,8 @@ export type RuntimeTrafficSign = {
   y: number;
   node?: number;
   approaches: RuntimeApproach[];
+  /** Original OSM regulatory/informational tags; never invent speed limits or restrictions. */
+  tags?: Record<string,string>;
   /** false when the exact source position has no verified playable vertex. */
   mapped: boolean;
 };
@@ -131,7 +133,7 @@ export function compileControlPack(
       } catch { /* outside drivable network */ }
       if (near) pack.signs.push({
         id:n.id,kind:n.kind,x:coords.x,z:coords.z,y:0,
-        approaches:[],mapped:false,
+        approaches:[],mapped:false,tags:n.tags,
       });
       continue;
     }
@@ -176,7 +178,7 @@ export function compileControlPack(
     pack.signs.push({
       id:n.id,kind:n.kind,
       x:network.x[matched]!,z:network.z[matched]!,y:network.y[matched]!,
-      node:matched,approaches,mapped:true,
+      node:matched,approaches,mapped:true,tags:n.tags,
     });
   }
   for (const r of source.restrictions) {
