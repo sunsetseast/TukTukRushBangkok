@@ -39,7 +39,7 @@ jobs:
           # a change in canonical geography.
           git diff --exit-code -- data/bangkok/real-scale/manifest.v1.json data/bangkok/real-scale/buildings-report.v1.json data/bangkok/real-scale/building-exceptions.v1.json.gz artifacts/tuk-tuk-rush/public/assets/geography/ ':(exclude)artifacts/tuk-tuk-rush/public/assets/geography/compiled/**'
           # The replacement compiled geometry must still be present and tested.
-          node --import tsx scripts/check-geographic-compiled-delivery.ts
+          pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-compiled-delivery.ts
 
           python scripts/geography/check_data.py
           python scripts/geography/check_stations.py
