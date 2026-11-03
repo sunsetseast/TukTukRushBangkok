@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
 import type { RuntimeControlPack } from "../src/game/bangkok/geographic/controlImport";
+import { classifyThaiSign } from "../src/game/bangkok/geographic/thaiSignFaces";
 const dir=new URL("../public/assets/geography/",import.meta.url);
 const sourceFile=new URL("../../../data/bangkok/real-scale/traffic-controls.v1.json",import.meta.url);
 const archiveFile=new URL("../../../data/bangkok/real-scale/traffic-controls.v1.json.gz.b64",import.meta.url);
@@ -27,7 +28,14 @@ assert(pack.signs.some(s=>s.kind==="signal"&&s.approaches.length>0),
 assert(pack.stats.taggedNodes >= pack.stats.mappedSignals,
   "Count mismatch");
 const ids=new Set<string>();
+let unsourcedLimitSigns=0,unknownSkipped=0;
 for(const sign of pack.signs) {
+  assert(sign.tags && typeof sign.tags==="object",
+    "Thai sign visuals require original source tags: regenerate the runtime control pack");
+  if(sign.kind==="sign"&&!classifyThaiSign(sign)){
+    unknownSkipped++;
+    if(sign.tags.traffic_sign==="maxspeed")unsourcedLimitSigns++;
+  }
   assert(/^osm:node\/\d+$/.test(sign.id),"Fake/untraceable sign ID");
   assert(!ids.has(sign.id),"Duplicate sign ID");
   ids.add(sign.id);
@@ -43,4 +51,6 @@ console.log({
   verifiedYields:pack.stats.mappedYields,
   unmatched:pack.stats.unmatched,
   turnRestrictions:pack.stats.restrictions,
+  unknownSignCodesWithheld:unknownSkipped,
+  numericLimitsIntentionallyNotInvented:unsourcedLimitSigns,
 });
