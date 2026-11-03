@@ -55,6 +55,9 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
       - name: Install WebKit for gzip transport regression
         run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps webkit
+      - name: Verify mapped Thai traffic signs, moving vehicle art, and mobile UI toggle
+        run: node scripts/browser-geographic-traffic.mjs
+        working-directory: artifacts/tuk-tuk-rush
       - run: node scripts/browser-geographic-streaming.mjs
         working-directory: artifacts/tuk-tuk-rush
       - name: Verify opt-in mobile performance overlay (software WebGL only)
@@ -72,4 +75,5 @@ jobs:
             docs/qa/geographic-gameplay/
             docs/qa/geographic-buildings/
             docs/qa/geographic-mobile-performance/
+            docs/qa/geographic-traffic/
           retention-days: 30
