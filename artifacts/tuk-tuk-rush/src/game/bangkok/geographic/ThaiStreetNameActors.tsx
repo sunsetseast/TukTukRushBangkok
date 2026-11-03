@@ -6,6 +6,8 @@ import type { GeographicSession } from "./session";
 import {
   localThaiWayNames, paintBangkokRoadPlaque,
 } from "./thaiStreetNames";
+import { physicsObstacleIndex } from "../clearanceIndex";
+import { obstacleDistance } from "../../world";
 const CAPACITY=6;
 type Slot={
   group:T.Group;
@@ -85,7 +87,11 @@ export function ThaiStreetNameActors({
       for(const slot of art.slots)slot.group.visible=false;
       return;
     }
-    const named=localThaiWayNames(network,session.player,CAPACITY,95);
+    const obstacleIndex=physicsObstacleIndex(session.district);
+    const named=localThaiWayNames(network,session.player,CAPACITY,95,p=>
+      obstacleIndex.query(p).every(i=>
+        obstacleDistance(p,obstacleIndex.obstacles[i]!)>=.6),
+    );
     for(let i=0;i<CAPACITY;i++){
       const slot=art.slots[i]!,road=named[i];
       if(!road){slot.group.visible=false;continue;}
