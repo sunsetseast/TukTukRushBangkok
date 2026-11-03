@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import {gunzipSync} from "node:zlib";
 import {
   classifyThaiSign,thaiSignKey,
 } from "../src/game/bangkok/geographic/thaiSignFaces";
@@ -79,8 +81,24 @@ const narrow={
 assert.equal(localThaiWayNames(narrow,{x:2,z:0}).length,0,
   "Do not crowd junctions with plaques on <15m segments");
 
+// Audit real source metadata, not just hand-written fixtures: source road
+// names must actually exist for bilingual Bangkok plaques to render.
+const gameplay=JSON.parse(gunzipSync(fs.readFileSync(
+  new URL("../public/assets/geography/gameplay.v2.json.gz",import.meta.url),
+)).toString()) as {ways:Array<{id:string;name:string;thai?:string}>};
+const actualSourceNamed=gameplay.ways.filter(w=>sourceWayName(w));
+const actualBilingual=gameplay.ways.filter(w=>{
+  const label=sourceWayName(w);
+  return !!label?.thai && !!label.english;
+});
+assert(actualSourceNamed.length>100,
+  "Real Bangkok source must include actual OSM-named roads");
+assert(actualBilingual.length>0,
+  "No verified bilingual road names present; cannot claim Thai/English plaque support");
 console.log({
-  pass:true,thaiScript:["หยุด","ให้ทาง","ถนนเยาวราช"],
+  pass:true,actualSourceNamedRoads:actualSourceNamed.length,
+  actualBilingualOSMWayNames:actualBilingual.length,
+  thaiScript:["หยุด","ให้ทาง","ถนนเยาวราช"],
   unknownOMSSpeedValuesSkipped:true,
   sourceNamedRoadsOnly:true,
   leftHandRoadside:true,
