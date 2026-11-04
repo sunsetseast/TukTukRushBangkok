@@ -29,6 +29,12 @@ export function TrafficActors({
     });
     return ()=>{cancelled=true;};
   },[network]);
+  // Source-controlled legal GPS directions must use the identical relation
+  // index as the autonomous vehicles, not just the base one-way bits.
+  useEffect(()=>{
+    network.setVerifiedTurnRestrictions(pack?.restrictions??[]);
+    return ()=>network.setVerifiedTurnRestrictions([]);
+  },[network,pack]);
   const fleet=useMemo(()=>{
     const simulation=new GeographicTrafficSimulation(
       network,20261102,sourceApproachControls(pack),pack?.restrictions ?? [],
@@ -68,6 +74,7 @@ export function TrafficActors({
         playerTrafficContactFrames:contacts.current,
         sourceMatchedControls:pack?.stats.mappedSignals??0,
         sourceTurnRestrictions:pack?.stats.restrictions??0,
+        legalGPSRestrictions:network.sourceVerifiedTurnCount,
         drawBatches:fleet.visual.drawBatches,
         actors:fleet.simulation.vehicles.map(v=>({
           id:v.id,kind:v.kind,edge:v.edge,from:v.from,to:v.to,
