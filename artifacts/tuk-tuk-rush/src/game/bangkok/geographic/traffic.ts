@@ -1,5 +1,6 @@
 import type { GeographicNetwork } from "./network";
 import type { RuntimeTurnRestriction } from "./controlImport";
+import { indexVerifiedTurnRestrictions, turnAllowed, type TurnIndex } from "./trafficLaw";
 
 /** One lightweight, client-side simulated vehicle. World metres; no replay/save
  * state is changed. Traffic only uses the verified OSM source graph.
@@ -72,7 +73,7 @@ export class GeographicTrafficSimulation {
   private spawnAt = 0;
   private clock = 0;
   private controls: Map<string, VerifiedApproachControl>;
-  private restrictions: Map<string, RuntimeTurnRestriction[]>;
+  private restrictions: TurnIndex;
 
   constructor(
     readonly network: TrafficNetwork,
@@ -82,17 +83,7 @@ export class GeographicTrafficSimulation {
   ) {
     this.seed = seed >>> 0;
     this.controls = new Map();
-    this.restrictions = new Map();
-    for(const r of verifiedRestrictions) {
-      if(!r.id || r.via<0 || r.via>=network.x.length ||
-        r.fromWay<0 || r.toWay<0 ||
-        r.fromWay>=network.motorAllowed.length ||
-        r.toWay>=network.motorAllowed.length)
-        throw Error("Invalid source-backed Bangkok turn restriction");
-      const key=`${r.via}:${r.fromWay}`;
-      const list=this.restrictions.get(key) ?? [];
-      list.push(r);this.restrictions.set(key,list);
-    }
+    this.restrictions=indexVerifiedTurnRestrictions(verifiedRestrictions);
     for (const c of verifiedControls) {
       if (!c.sourceId || c.at < 0 || c.at >= network.x.length ||
           c.incomingEdge < 0 || c.incomingEdge >= network.a.length ||
@@ -118,14 +109,10 @@ export class GeographicTrafficSimulation {
     return Math.hypot(this.network.x[v.from]! - this.network.x[v.to]!,
       this.network.z[v.from]! - this.network.z[v.to]!);
   }
-  /** OSM turn restriction relations, not proximity-inferred junction rules. */
-  private legalTurn(v: TrafficVehicle, nextEdge: number) {
-    const fromWay=this.network.way[v.edge]!;
-    const toWay=this.network.way[nextEdge]!;
-    const restrictions=this.restrictions.get(`${v.to}:${fromWay}`) ?? [];
-    if(restrictions.some(r => r.type==="no" && r.toWay===toWay))return false;
-    const only=restrictions.filter(r=>r.type==="only");
-    return !only.length || only.some(r=>r.toWay===toWay);
+  /** The SAME source legal-turn resolver as GPS routing. */
+  private legalTurn(v:TrafficVehicle,nextEdge:number) {
+    return turnAllowed(this.restrictions,v.to,
+      this.network.way[v.edge]!,this.network.way[nextEdge]!);
   }
   private pickNext(v: TrafficVehicle) {
     const net = this.network, at = v.to;
