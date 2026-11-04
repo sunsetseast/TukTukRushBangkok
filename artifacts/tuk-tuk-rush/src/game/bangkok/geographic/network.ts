@@ -10,6 +10,9 @@ import { distanceToSegment } from "../../world";
 import { VEHICLE_COLLISION_RADIUS } from "../../vehicleEnvelope";
 import { inRiverWater } from "../waterGeometry";
 import { readRoadRuleDirections, readMotorTrafficAccess, type GeographicRoadRules } from "./roadRules";
+import type { RuntimeTurnRestriction } from "./controlImport";
+import { indexVerifiedTurnRestrictions, type TurnIndex } from "./trafficLaw";
+import { sourceLegalRoute } from "./legalRouting";
 import { fetchGeographicBytes, fetchGeographicJson } from "./packedAsset";
 
 export type GameplayMetadata = Pick<
@@ -103,6 +106,8 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   readonly offsets: Uint32Array;
   readonly incident: Uint32Array;
   private cells = new Map<string, Uint32Array>();
+  private turnIndex:TurnIndex=new Map();
+  private verifiedTurnCount=0;
   private costs: Float64Array;
   private parent: Int32Array;
   private seen: Uint32Array;
@@ -259,6 +264,17 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   node(i: number): RoadNode {
     return { id: `geo:${i}`, x: this.x[i]!, z: this.z[i]! };
   }
+  /** Exact approved OSM via-node restrictions used by GPS and moving traffic.
+   * Installing a new source inventory invalidates the cached GPS route.
+   * No relation data: GPS still respects one-ways and motor access, but
+   * does not claim every turn restriction has been certified.
+   */
+  setVerifiedTurnRestrictions(rules:readonly RuntimeTurnRestriction[]){
+    this.turnIndex=indexVerifiedTurnRestrictions(rules);
+    this.verifiedTurnCount=rules.length;
+    this.cached=undefined;
+  }
+  get sourceVerifiedTurnCount(){return this.verifiedTurnCount;}
   /** Bounded local source-road candidates for moving vehicles. Dedupe cells:
    * long streets can appear in several cells but remain a single edge.
    */
@@ -430,9 +446,17 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
     const da = Math.hypot(snap.point.x - this.x[a]!, snap.point.z - this.z[a]!);
     const db = Math.hypot(snap.point.x - this.x[b]!, snap.point.z - this.z[b]!);
     const direction = this.directions[this.way[e]!]!;
-    const seeds: Array<{ id: number; cost: number }> = [];
-    if (direction !== 1 || da < 0.5) seeds.push({ id: a, cost: da });
-    if (direction !== -1 || db < 0.5) seeds.push({ id: b, cost: db });
+    const seeds: Array<{ id: number; cost: number; incomingWay?: number }> = [];
+    // GPS does not route over mapped footpaths/private roads. It can only
+    // use a disallowed segment if the player is already exactly at its
+    // junction endpoint (zero-distance seed), which does not cross it.
+    const allowed=this.motorAllowed[this.way[e]!]===1;
+    if ((direction !== 1 || da < 0.5) && (allowed||da<0.5))
+      seeds.push({ id: a, cost: da,
+        incomingWay:da<.5?undefined:this.way[e]! });
+    if ((direction !== -1 || db < 0.5) && (allowed||db<0.5))
+      seeds.push({ id: b, cost: db,
+        incomingWay:db<.5?undefined:this.way[e]! });
     if (this.cached?.edge === e && this.cached.target === goal &&
         seeds.some(s => s.id === this.cached!.start)) {
       const c = this.cached;
@@ -443,46 +467,11 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
         distance: this.pathLength([p, snap.point, ...c.tail]),
       };
     }
-    const heap = new Heap(),
-      stamp = ++this.stamp;
-    const heuristic = (i: number) =>
-      Math.hypot(this.x[i]! - this.x[goal]!, this.z[i]! - this.z[goal]!);
-    for (const { id: i, cost } of seeds) {
-      this.seen[i] = stamp;
-      this.costs[i] = cost;
-      this.parent[i] = -1;
-      heap.push(i, cost + heuristic(i));
-    }
-    let found = false;
-    for (let q = heap.pop(); q; q = heap.pop()) {
-      const at = q.id;
-      if (q.cost > this.costs[at]! + heuristic(at) + 1e-5) continue;
-      if (at === goal) {
-        found = true;
-        break;
-      }
-      for (let k = this.offsets[at]!; k < this.offsets[at + 1]!; k++) {
-        const edge = this.incident[k]!;
-        const direction = this.directions[this.way[edge]!]!;
-        if (direction === 1 && this.a[edge] !== at) continue;
-        if (direction === -1 && this.b[edge] !== at) continue;
-        const to = this.a[edge] === at ? this.b[edge]! : this.a[edge]!;
-        const cost =
-          this.costs[at]! +
-          Math.hypot(this.x[to]! - this.x[at]!, this.z[to]! - this.z[at]!);
-        if (this.seen[to] !== stamp || cost < this.costs[to]! - 1e-8) {
-          this.seen[to] = stamp;
-          this.costs[to] = cost;
-          this.parent[to] = at;
-          heap.push(to, cost + heuristic(to));
-        }
-      }
-    }
-    if (!found) return;
-    const chain: number[] = [];
-    for (let i = goal; i !== -1; i = this.parent[i]!) chain.push(i);
-    chain.reverse();
-    const tail = chain.map((i) => this.node(i));
+    const chain=sourceLegalRoute(this,this.metadata.ways.length,
+      seeds.map(s=>({node:s.id,cost:s.cost,incomingWay:s.incomingWay})),
+      goal,this.turnIndex);
+    if(!chain?.length)return;
+    const tail=chain.map(i=>this.node(i));
     this.cached = { edge: e, target: goal, start: chain[0]!, tail };
     return {
       snap,
