@@ -310,3 +310,15 @@
   .geo-perf { top: max(56px, env(safe-area-inset-top)); max-height: 75vh; width: 238px; }
   .geo-perf small { font-size: 10px; }
 }
+
+/* Source-separated Bangkok road-law reference: plain, legible and never
+ * visually confused with a physical Thai sign or a police-issued citation. */
+.geo-road-law {
+  display: block;
+  font-size: .74rem;
+  line-height: 1.3;
+  letter-spacing: .005em;
+  color: #ffde94;
+  max-width: min(35rem, 100%);
+  overflow-wrap: anywhere;
+}
