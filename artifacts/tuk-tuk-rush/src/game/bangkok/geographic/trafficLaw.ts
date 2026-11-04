@@ -22,12 +22,14 @@ export type SpeedPolicy = {
   /** Not equivalent to a physical roadside speed-limit sign. */
   postedSignVerified: false;
 };
-const normalize=(s:string)=>s.toLowerCase()
-  .normalize("NFKC").replace(/\b(?:road|avenue|rd|ave|thanon|ถนน)\b/gu,"")
+const normalize=(s:string)=>s.toLowerCase().normalize("NFKC")
+  .replace(/^ถนน\s*/u,"")
+  .replace(/^(?:thanon|road|avenue)\s+/iu,"")
+  .replace(/\s+(?:road|avenue|rd|ave)$/iu,"")
   .replace(/[\s\-–—().,]+/g,"").trim();
 const palaceRoads = [
   ["ratchadamnoennai","ราชดำเนินใน"],
-  ["naphathat","หน้าพระธาตุ","naphra that","หน้าพระธาตุ"],
+  ["naphrathat","หน้าพระธาตุ","naphra that"],
   ["phrachan","พระจันทร์"],
   ["naphralan","หน้าพระลาน"],
   ["sanamchai","สนามไชย"],
@@ -49,7 +51,7 @@ const exemptTrunks=[
   ["romklao","ร่มเกล้า"],
   ["suwinthawong","สุวินทวงศ์"],
   ["chaengwatthana","แจ้งวัฒนะ","chaengwattana"],
-  ["rama3","พระราม3","rama iii","phraram3"],
+  ["rama3","ramaiii","พระราม3","พระรามที่3","rama iii","phraram3"],
   ["newsrinagarindraromklao","ศรีนครินทร์ร่มเกล้า","srinagarindraromklao"],
 ].map(names=>names.map(normalize));
 /** Fail conservatively where a way name is missing or could identify a
