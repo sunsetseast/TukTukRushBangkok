@@ -11,7 +11,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 GEOGRAPHY = ROOT / "artifacts/tuk-tuk-rush/public/assets/geography"
 OUTPUT = ROOT / "data/bangkok/real-scale/traffic-controls.v1.json"
 PBF_SHA = "e8373240cf0be47cc641f2c8627e674064d8c47f4ff2a11f6a33fcbfc9a50949"
-CONTROL_TAGS = {"highway", "traffic_sign", "traffic_sign:forward",
+CONTROL_TAGS = {"highway", "traffic_sign", "maxspeed", "maxspeed:conditional", "traffic_sign:forward",
                 "traffic_sign:backward", "traffic_signals:direction",
                 "traffic_signals", "direction", "stop", "give_way",
                 "crossing", "crossing:signals", "traffic_signals:sound"}

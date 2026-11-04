@@ -6,38 +6,93 @@ import type { RuntimeControlPack } from "./controlImport";
 import type { GeographicTrafficSimulation } from "./traffic";
 import { localVisibleTrafficSigns, simulatedSignalAspect } from "./trafficControlRuntime";
 import { trafficSignPlacement } from "./trafficSignPlacement";
+import {
+  classifyThaiSign, createThaiSignMaterial, thaiSignKey, type ThaiSignFace,
+} from "./thaiSignFaces";
 
-type Instance = T.InstancedMesh<T.BufferGeometry, T.MeshStandardMaterial>;
-const CAPACITY=48;
-/** OSM-tagged location artwork. The exact mapped node comes from OSM; rendered
- * pole shapes/height are stylized and NOT surveyed sign mounting locations.
+type Instance = T.InstancedMesh<T.BufferGeometry,T.Material>;
+type Batch = {mesh:Instance;count:number;capacity:number};
+const SIGNS_NEAR=48,HEADS_NEAR=SIGNS_NEAR*2;
+const redLit=new T.Color("#fa2532"),redOff=new T.Color("#49151a");
+const amberLit=new T.Color("#ffc23e"),amberOff=new T.Color("#51411d");
+const greenLit=new T.Color("#46ff86"),greenOff=new T.Color("#153b29");
+const deepBlack="#171b1f",steel="#7b858b";
+/** A single Thai regulatory face batch per actual mapped sign category.
+ * Instancing prevents scene complexity from growing with the city-wide OSM
+ * sign inventory. All 3 traffic-signal bulbs are visible, not one magic LED.
  */
-function createSignArt() {
-  const group=new T.Group();
-  group.name="MappedBangkokSigns";
-  const make=(geometry:T.BufferGeometry,color:string,capacity=CAPACITY):Instance=>{
-    const instance=new T.InstancedMesh(
-      geometry,new T.MeshStandardMaterial({color,roughness:.68}),capacity,
-    );
-    instance.count=0;
-    instance.frustumCulled=false;
-    instance.instanceMatrix.setUsage(T.DynamicDrawUsage);
-    group.add(instance);
-    return instance;
+function createThaiSignArt(){
+  const root=new T.Group();root.name="SourceMatchedThaiStreetSigns";
+  const batches=new Map<string,Batch>();
+  const materials=new Set<T.Material>(),geometries=new Set<T.BufferGeometry>();
+  const register=(key:string,geometry:T.BufferGeometry,material:T.Material,capacity:number)=>{
+    const mesh=new T.InstancedMesh(geometry,material,capacity);
+    mesh.name="Thai:"+key;
+    mesh.count=0;mesh.frustumCulled=false;
+    mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
+    root.add(mesh);
+    batches.set(key,{mesh,count:0,capacity});
+    materials.add(material);geometries.add(geometry);
   };
-  const poles=make(new T.CylinderGeometry(.045,.055,2.5,6),"#747d7c",CAPACITY*2);
-  // A four-way signal can have different red/green aspects for perpendicular
-  // approaches. Reserve two batched proxies per tagged location.
-  const housing=make(new T.BoxGeometry(.32,.96,.24),"#252b2d",CAPACITY*2);
-  const bulbs=make(new T.SphereGeometry(.13,6,5),"#ffffff",CAPACITY*2);
-  const stops=make(new T.CylinderGeometry(.47,.47,.09,8),"#df3343");
-  const yields=make(new T.ConeGeometry(.48,.88,3),"#f4f0e9");
-  const otherSigns=make(new T.BoxGeometry(.85,.82,.08),"#1d5599");
-  const list=[poles,housing,bulbs,stops,yields,otherSigns];
-  return {group,poles,housing,bulbs,stops,yields,otherSigns,dispose:()=>{
-    for(const mesh of list){mesh.geometry.dispose();mesh.material.dispose();}
+  const matte=(color:string)=>new T.MeshStandardMaterial({
+    color,metalness:.24,roughness:.69,
+  });
+  const lamp=()=>new T.MeshBasicMaterial({color:"#ffffff"});
+  const plateGeometry=new T.PlaneGeometry(1.04,1.04);
+  register("post",new T.CylinderGeometry(.043,.054,3.13,8),
+    matte(steel),HEADS_NEAR+SIGNS_NEAR);
+  register("signalBody",new T.BoxGeometry(.36,1.20,.27),
+    matte(deepBlack),HEADS_NEAR);
+  register("signalShroud",new T.BoxGeometry(.38,.105,.39),
+    matte("#24292d"),HEADS_NEAR*3);
+  const bulbGeometry=new T.SphereGeometry(.128,12,8);
+  register("redLamp",bulbGeometry,lamp(),HEADS_NEAR);
+  register("amberLamp",bulbGeometry,lamp(),HEADS_NEAR);
+  register("greenLamp",bulbGeometry,lamp(),HEADS_NEAR);
+  const plates=new Map<string,string>();
+  const face=(sign:ThaiSignFace)=>{
+    const key=thaiSignKey(sign);
+    if(plates.has(key))return plates.get(key)!;
+    const batch="face:"+key;
+    register(batch,plateGeometry,createThaiSignMaterial(sign),SIGNS_NEAR);
+    plates.set(key,batch);
+    return batch;
+  };
+  // Preload the two Thai-language regulatory plates; extra source-coded sign
+  // faces are created only for verified OSM tags (no speculative signs).
+  face({type:"stop"});face({type:"yield"});
+  const dummy=new T.Object3D();
+  const render=(key:string,x:number,y:number,z:number,yaw=0,
+    tint?:T.Color,rotationX=0)=>{
+    const b=batches.get(key);
+    if(!b||b.count>=b.capacity)throw Error("Thai sign GPU pool exhausted: "+key);
+    const i=b.count++;
+    dummy.position.set(x,y,z);
+    dummy.rotation.set(rotationX,yaw,0,"YXZ");
+    dummy.scale.set(1,1,1);dummy.updateMatrix();
+    b.mesh.setMatrixAt(i,dummy.matrix);
+    if(tint)b.mesh.setColorAt(i,tint);
+  };
+  const hide=()=>{for(const b of batches.values()){b.count=0;b.mesh.count=0;}};
+  const flush=()=>{for(const b of batches.values()){
+    b.mesh.count=b.count;
+    if(!b.count)continue;
+    b.mesh.instanceMatrix.needsUpdate=true;
+    if(b.mesh.instanceColor)b.mesh.instanceColor.needsUpdate=true;
   }};
+  const dispose=()=>{
+    for(const b of batches.values()){root.remove(b.mesh);b.mesh.dispose();}
+    for(const m of materials){
+      if(m instanceof T.MeshStandardMaterial)m.map?.dispose();
+      m.dispose();
+    }
+    for(const g of geometries)g.dispose();
+    batches.clear();plates.clear();
+  };
+  return {root,render,hide,flush,dispose,face,
+    get drawBatches(){return batches.size;}};
 }
+
 export function TrafficSignActors({
   pack,session,enabled,simulation,
 }:{
@@ -45,77 +100,76 @@ export function TrafficSignActors({
   session:GeographicSession;
   enabled:boolean;
   simulation: GeographicTrafficSimulation;
-}) {
-  const art=useMemo(()=>createSignArt(),[]);
-  const elapsed=useRef(0);
-  const cursor=useMemo(()=>new T.Object3D(),[]);
-  const red=useMemo(()=>new T.Color("#ea252c"),[]);
-  const green=useMemo(()=>new T.Color("#54ee8a"),[]);
-  const amber=useMemo(()=>new T.Color("#ffbf42"),[]);
-  const inactive=useMemo(()=>new T.Color("#66727c"),[]);
+}){
+  const art=useMemo(createThaiSignArt,[]);
   useEffect(()=>()=>art.dispose(),[art]);
+  const elapsed=useRef(0);
+  const debug=useMemo(()=>import.meta.env.DEV &&
+    new URLSearchParams(location.search).has("geographyQA"),[]);
   useFrame((_,delta)=>{
     elapsed.current+=delta;
-    if(elapsed.current<.2)return; // low-cost source sign streaming
+    if(elapsed.current<.20)return; // mobile-budgeted 5Hz sign refresh
     elapsed.current=0;
-    if(!pack || !enabled || session.model.snapshot.phase!=="playing") {
-      for(const mesh of [art.poles,art.housing,art.bulbs,art.stops,art.yields,art.otherSigns])mesh.count=0;
+    art.hide();
+    if(!pack||!enabled||session.model.snapshot.phase!=="playing"){
+      if(debug)(window as any).__geographicThaiSigns={visible:0,
+        signals:0,stops:0,yields:0,unknownSkipped:0,heads:0};
       return;
     }
-    const near=localVisibleTrafficSigns(
-      pack.signs,session.player.x,session.player.z,175,CAPACITY,
-    );
-    const count={poles:0,housing:0,bulbs:0,stops:0,yields:0,otherSigns:0};
-    const instance=(mesh:Instance,index:number,x:number,y:number,z:number,
-      rotationX=0,color?:T.Color,yaw=0)=>{
-      cursor.position.set(x,y,z);
-      // Explicit YXZ: face the approaching driver even for flat signs.
-      cursor.rotation.set(rotationX,yaw,0,"YXZ");
-      cursor.scale.set(1,1,1);
-      cursor.updateMatrix();
-      mesh.setMatrixAt(index,cursor.matrix);
-      if(color)mesh.setColorAt(index,color);
-    };
-    for(const sign of near) {
-      const {y}=sign;
+    const near=localVisibleTrafficSigns(pack.signs,
+      session.player.x,session.player.z,175,SIGNS_NEAR);
+    // visible counts ACTUALLY rendered, not merely nearby OSM tags.
+    const stats={visible:0,sourceNearby:near.length,signals:0,stops:0,yields:0,
+      unknownSkipped:0,heads:0,osmIds:[] as string[], drawBatches:0};
+    for(const sign of near){
       if(sign.kind==="signal"){
-        // Distinct crossing signal groups must not appear to share one green
-        // lamp. Anchor each stylized pole to its *verified incoming approach*.
-        const phases=sign.approaches.length
-          ? [...new Set(sign.approaches.map(a=>a.phase))]
-          : [null];
-        for(const phase of phases) {
+        stats.visible++;stats.signals++;stats.osmIds.push(sign.id);
+        // Cross-axis heads face separate verified approaches and never display
+        // a mixed green on the same panel. Unmatched signals are visibly OFF.
+        const phases=sign.approaches.length?
+          [...new Set(sign.approaches.map(a=>a.phase))]:[null];
+        for(const phase of phases){
           const edge=sign.approaches.find(a=>a.phase===phase)?.edge;
-          const placement=trafficSignPlacement(sign,simulation.network,edge);
-          const {x,z,yaw}=placement;
-          instance(art.poles,count.poles++,x,y+1.25,z);
-          instance(art.housing,count.housing++,x,y+2.7,z,0,undefined,yaw);
-          const aspect=phase===null ? "inactive" :
+          const {x,z,yaw}=trafficSignPlacement(sign,simulation.network,edge);
+          const y=sign.y;
+          art.render("post",x,y+1.565,z);
+          art.render("signalBody",x,y+3.09,z,yaw);
+          const aspect=phase===null?"inactive":
             simulatedSignalAspect(phase,simulation.simulationClockSeconds);
-          const color=aspect==="green"?green:
-            aspect==="amber"?amber:aspect==="red"?red:inactive;
-          // Local forward offset, not a fixed world-north indicator.
-          instance(art.bulbs,count.bulbs++,x-Math.sin(yaw)*.16,y+2.78,
-            z-Math.cos(yaw)*.16,0,color,yaw);
+          const bulbs=[
+            ["redLamp",3.45,aspect==="red"?redLit:redOff],
+            ["amberLamp",3.08,aspect==="amber"?amberLit:amberOff],
+            ["greenLamp",2.71,aspect==="green"?greenLit:greenOff],
+          ] as const;
+          for(const [key,height,color] of bulbs){
+            // The local housing is pointed toward oncoming vehicles; lens
+            // and visor positions are offset along its forward (+Z) axis.
+            art.render(key,x+Math.sin(yaw)*.158,y+height,
+              z+Math.cos(yaw)*.158,yaw,color);
+            art.render("signalShroud",x+Math.sin(yaw)*.06,y+height+.16,
+              z+Math.cos(yaw)*.06,yaw);
+          }
+          stats.heads++;
         }
-      }else{
-        const {x,z,yaw}=trafficSignPlacement(sign,simulation.network);
-        instance(art.poles,count.poles++,x,y+1.25,z);
-        if(sign.kind==="stop")
-          instance(art.stops,count.stops++,x,y+2.65,z,Math.PI/2,undefined,yaw);
-        else if(sign.kind==="yield")
-          instance(art.yields,count.yields++,x,y+2.62,z,Math.PI/2,undefined,yaw);
-        else
-          instance(art.otherSigns,count.otherSigns++,x,y+2.6,z,0,undefined,yaw);
+        continue;
       }
+      const style=classifyThaiSign(sign);
+      if(!style){stats.unknownSkipped++;continue;}
+      // Ambiguous stop/yield without a source-verified approach is hidden
+      // rather than placed in the road center with a guessed facing.
+      if((style.type==="stop"||style.type==="yield") &&
+         !sign.approaches.length){stats.unknownSkipped++;continue;}
+      const {x,z,yaw}=trafficSignPlacement(sign,simulation.network);
+      art.render("post",x,sign.y+1.565,z);
+      art.render(art.face(style),x,sign.y+2.77,z,yaw);
+      if(style.type==="stop")stats.stops++;
+      if(style.type==="yield")stats.yields++;
+      stats.visible++;stats.osmIds.push(sign.id);
     }
-    for(const [mesh,num] of [[art.poles,count.poles],[art.housing,count.housing],
-      [art.bulbs,count.bulbs],[art.stops,count.stops],[art.yields,count.yields],
-      [art.otherSigns,count.otherSigns]] as const) {
-      mesh.count=num;
-      if(num){mesh.instanceMatrix.needsUpdate=true;
-        if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;}
-    }
+    art.flush();
+    if(debug)(window as any).__geographicThaiSigns={
+      ...stats,drawBatches:art.drawBatches,
+    };
   });
-  return <primitive object={art.group}/>;
+  return <primitive object={art.root}/>;
 }

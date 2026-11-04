@@ -60,6 +60,9 @@ jobs:
         working-directory: artifacts/tuk-tuk-rush
       - run: node scripts/browser-geographic-streaming.mjs
         working-directory: artifacts/tuk-tuk-rush
+      - name: Capture actual Bangkok OSM-tagged Thai road sign art and bilingual street names
+        run: node scripts/browser-thai-road-signage.mjs
+        working-directory: artifacts/tuk-tuk-rush
       - name: Verify opt-in mobile performance overlay (software WebGL only)
         run: node scripts/browser-geographic-performance.mjs
         working-directory: artifacts/tuk-tuk-rush
@@ -76,4 +79,5 @@ jobs:
             docs/qa/geographic-buildings/
             docs/qa/geographic-mobile-performance/
             docs/qa/geographic-traffic/
+            docs/qa/thai-road-signage/
           retention-days: 30

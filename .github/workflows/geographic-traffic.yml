@@ -33,6 +33,8 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-control-import
+      - name: Verify Thai-language sign faces and source-backed street names
+        run: pnpm --filter @workspace/tuk-tuk-rush test:thai-road-signage
       - name: Regenerate pinned OSM road and access rules (no PBF re-import)
         run: node --import tsx scripts/pack-geographic-road-rules.ts
         working-directory: artifacts/tuk-tuk-rush
@@ -41,3 +43,13 @@ jobs:
       - name: Reject placeholder traffic controls (real OSM inventory required)
         run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-controls-ready
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-road-rules
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps webkit
+      - name: Verify Thai-script reflective stop and give-way sign faces in WebKit
+        run: node scripts/browser-thai-sign-textures-webkit.mjs
+        working-directory: artifacts/tuk-tuk-rush
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: thai-signage-webkit
+          path: docs/qa/thai-road-signage/
+          retention-days: 30
