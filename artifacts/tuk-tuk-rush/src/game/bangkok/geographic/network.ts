@@ -46,40 +46,6 @@ export async function loadGameplayGeography() {
   ]);
   return new GeographicNetwork(metadata, buffer, rules);
 }
-class Heap {
-  private values: { id: number; cost: number }[] = [];
-  push(id: number, cost: number) {
-    const v = { id, cost },
-      a = this.values;
-    let i = a.length;
-    a.push(v);
-    while (i) {
-      const parent = (i - 1) >> 1;
-      if (a[parent]!.cost <= cost) break;
-      a[i] = a[parent]!;
-      i = parent;
-    }
-    a[i] = v;
-  }
-  pop() {
-    const a = this.values,
-      first = a[0];
-    if (!first) return;
-    const v = a.pop()!;
-    if (a.length) {
-      let i = 0;
-      while (i * 2 + 1 < a.length) {
-        let k = i * 2 + 1;
-        if (k + 1 < a.length && a[k + 1]!.cost < a[k]!.cost) k++;
-        if (a[k]!.cost >= v.cost) break;
-        a[i] = a[k]!;
-        i = k;
-      }
-      a[i] = v;
-    }
-    return first;
-  }
-}
 type Snap = {
   edge: number;
   point: Point;
@@ -108,10 +74,6 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
   private cells = new Map<string, Uint32Array>();
   private turnIndex:TurnIndex=new Map();
   private verifiedTurnCount=0;
-  private costs: Float64Array;
-  private parent: Int32Array;
-  private seen: Uint32Array;
-  private stamp = 0;
   private water: District;
   private waterCells = new Map<string, number[]>();
   private cached?: {
@@ -213,9 +175,6 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
       this.incident[cursor[this.b[i]!]!++] = i;
     }
     for (const [k, v] of buckets) this.cells.set(k, Uint32Array.from(v));
-    this.costs = new Float64Array(n);
-    this.parent = new Int32Array(n);
-    this.seen = new Uint32Array(n);
     const polygons = metadata.waterUnion.map((p) =>
       p.map((r) => r.map(([x, z]) => ({ x, z }))),
     );
@@ -256,9 +215,6 @@ export class GeographicNetwork implements WorldNavigation, DrivingSurface {
       this.motorAllowed.byteLength +
       this.offsets.byteLength +
       this.incident.byteLength +
-      this.costs.byteLength +
-      this.parent.byteLength +
-      this.seen.byteLength +
       [...this.cells.values()].reduce((n, a) => n + a.byteLength, 0));
   }
   node(i: number): RoadNode {
