@@ -31,6 +31,7 @@ import { GeographicSession } from "./session";
 import { GeographicFrameProfiler, type GeographicPerfSample } from "./performance";
 import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
 import { TrafficActors } from "./TrafficActors";
+import { bangkokSpeedPolicy, type SpeedPolicy } from "./trafficLaw";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
 
@@ -435,6 +436,7 @@ function PreviewHud({
       distance: number | null;
       road: string;
       thai?: string;
+      roadLaw?: SpeedPolicy;
     }>({ name: "", distance: null, road: "" });
   const mapRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => session.subscribe((s) => setSnapshot(s)), [session]);
@@ -460,6 +462,7 @@ function PreviewHud({
         distance: g.distance,
         road: road.name,
         thai: road.thai,
+        roadLaw: bangkokSpeedPolicy(road.name,road.thai),
       });
       const canvas = mapRef.current;
       if (!canvas) return;
@@ -563,6 +566,16 @@ function PreviewHud({
             : `${Math.round(guide.distance).toLocaleString()} m via roads`}{" "}
           · {Math.round(snapshot.speed)} km/h
         </b>
+        <small className="geo-road-law" data-testid="geographic-road-law" role="status">
+          {guide.roadLaw?.limitKph
+            ? `Bangkok reference: ${guide.roadLaw.limitKph} km/h (general motor vehicles)`
+            : guide.roadLaw?.source==="named-exemption-unresolved"
+              ? "Major road exemption — local limit not verified"
+              : "Road limit not verified"}
+          {guide.roadLaw?.noHornZone?" · Royal precinct: no horn":""}
+          {guide.roadLaw?.limitKph&&snapshot.speed>guide.roadLaw.limitKph
+            ? " · Over general road reference":""}
+        </small>
         <div>
           ฿{snapshot.earnings} earned · {snapshot.deliveries} trips · Wallet ฿
           {snapshot.wallet ?? session.career.profile.wallet}
