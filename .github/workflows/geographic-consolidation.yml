@@ -34,6 +34,7 @@ jobs:
           node --import tsx scripts/prepare-geographic-browser-assets.ts
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-preparation.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-worker.ts
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic

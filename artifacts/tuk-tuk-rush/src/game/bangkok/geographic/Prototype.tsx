@@ -153,6 +153,7 @@ function Scene({
         return revision;
       },
       lastRevision: -1,
+      lastActivationCount: 0,
       routeTime: 0,
       lodTime: 0,
       metrics: {} as Record<string, unknown>,
@@ -231,6 +232,7 @@ function Scene({
       camera.position.fromArray(qaView.current.position);
       camera.lookAt(new T.Vector3().fromArray(qaView.current.target));
     }
+    const streamStarted = performance.now();
     content.stream.update(p, { x: camera.position.x, z: camera.position.z });
     if (content.stream.active.has(`${Math.floor(p.x / 1024) * 1024}:${Math.floor(p.z / 1024) * 1024}`)) content.notifyReady();
     const fog = state.scene.fog as T.Fog;
@@ -296,6 +298,10 @@ function Scene({
           (v) => v.root?.userData.buildingBuildMs ?? 0,
         ),
       };
+    }
+    if (content.lastActivationCount !== content.stream.stats.loaded) {
+      content.lastActivationCount = content.stream.stats.loaded;
+      content.activationMs[content.activationMs.length - 1] = performance.now() - streamStarted;
     }
     const dest = targetRef.current ?? s.target;
     content.ring.visible = s.phase === "playing";

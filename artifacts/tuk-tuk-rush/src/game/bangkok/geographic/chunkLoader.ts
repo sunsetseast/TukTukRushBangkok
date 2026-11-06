@@ -6,18 +6,24 @@ import type { ChunkReference } from './streaming';
 export class GeographicChunkLoader {
   private slots: { worker: Worker; busy: boolean; cancel?: () => void }[] = [];
   private closed = false;
+  constructor(
+    private readonly createWorker: () => Worker = () => new Worker(new URL('./chunk.worker.ts', import.meta.url), { type: 'module' }),
+    private readonly timeoutMs = 45_000,
+  ) {}
   load(ref: ChunkReference, signal: AbortSignal): Promise<GeographicChunkData> {
     if (this.closed || signal.aborted) return Promise.reject(new DOMException('Chunk cancelled', 'AbortError'));
     let slot = this.slots.find(s => !s.busy);
     if (!slot) {
       if (this.slots.length >= 2) return Promise.reject(Error('Geographic worker queue exceeded'));
-      slot = { worker: new Worker(new URL('./chunk.worker.ts', import.meta.url), { type: 'module' }), busy: false };
+      slot = { worker: this.createWorker(), busy: false };
       this.slots.push(slot);
     }
     const job = slot;
     job.busy = true;
     return new Promise((resolve, reject) => {
+      let timeout: ReturnType<typeof setTimeout> | undefined;
       const finish = (discard = false) => {
+        clearTimeout(timeout);
         signal.removeEventListener('abort', abort);
         job.worker.onmessage = null;
         job.worker.onerror = null;
@@ -37,7 +43,11 @@ export class GeographicChunkLoader {
         if (event.data.chunk) resolve(event.data.chunk);
         else reject(Error(event.data.error ?? `Invalid Bangkok chunk worker response (${ref.id})`));
       };
-      job.worker.postMessage(ref);
+      timeout = setTimeout(() => {
+        finish(true); reject(Error(`Bangkok chunk timed out (${ref.id}). Check the connection and retry Bangkok.`));
+      }, this.timeoutMs);
+      try { job.worker.postMessage(ref); }
+      catch (error) { finish(true); reject(error); }
     });
   }
   close() {
