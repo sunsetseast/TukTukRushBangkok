@@ -1,0 +1,95 @@
+{
+  "environment": "Node CPU; no GPU, not physical iPhone",
+  "records": [
+    {
+      "id": "2048:-1024",
+      "buildings": 2030,
+      "decodeMs": 62.15758399999993,
+      "geometryMs": 106.46147800000006,
+      "colliderMs": 2.9151359999999613,
+      "indexMs": 2.6726879999999937,
+      "batches": 5,
+      "gpuBytes": 2624576
+    },
+    {
+      "id": "2048:0",
+      "buildings": 1231,
+      "decodeMs": 42.748604,
+      "geometryMs": 14.220870999999988,
+      "colliderMs": 1.8158639999999195,
+      "indexMs": 1.7901650000000018,
+      "batches": 5,
+      "gpuBytes": 1461908
+    },
+    {
+      "id": "2048:1024",
+      "buildings": 1095,
+      "decodeMs": 11.752861000000053,
+      "geometryMs": 15.680897999999956,
+      "colliderMs": 1.3964600000000473,
+      "indexMs": 1.0710090000000037,
+      "batches": 8,
+      "gpuBytes": 1255764
+    },
+    {
+      "id": "3072:-1024",
+      "buildings": 1701,
+      "decodeMs": 18.923658000000046,
+      "geometryMs": 28.142169999999965,
+      "colliderMs": 4.98474299999998,
+      "indexMs": 2.2901709999999866,
+      "batches": 6,
+      "gpuBytes": 2208060
+    },
+    {
+      "id": "3072:0",
+      "buildings": 1999,
+      "decodeMs": 56.30556100000001,
+      "geometryMs": 31.83966799999996,
+      "colliderMs": 8.301024999999981,
+      "indexMs": 2.671267000000171,
+      "batches": 7,
+      "gpuBytes": 2778320
+    },
+    {
+      "id": "3072:1024",
+      "buildings": 1732,
+      "decodeMs": 28.843849999999975,
+      "geometryMs": 26.52189099999987,
+      "colliderMs": 2.5744410000002063,
+      "indexMs": 2.03483499999993,
+      "batches": 8,
+      "gpuBytes": 2502144
+    },
+    {
+      "id": "4096:-1024",
+      "buildings": 1570,
+      "decodeMs": 35.222710000000006,
+      "geometryMs": 15.788731000000098,
+      "colliderMs": 4.127116999999998,
+      "indexMs": 7.281223999999838,
+      "batches": 7,
+      "gpuBytes": 1755048
+    },
+    {
+      "id": "4096:0",
+      "buildings": 1372,
+      "decodeMs": 22.544820999999956,
+      "geometryMs": 37.859985999999935,
+      "colliderMs": 3.1570500000000266,
+      "indexMs": 2.332194999999956,
+      "batches": 5,
+      "gpuBytes": 1828300
+    },
+    {
+      "id": "4096:1024",
+      "buildings": 2144,
+      "decodeMs": 40.93583400000011,
+      "geometryMs": 31.89535099999989,
+      "colliderMs": 3.3871090000000095,
+      "indexMs": 2.9903790000000754,
+      "batches": 5,
+      "gpuBytes": 3114224
+    }
+  ]
+}

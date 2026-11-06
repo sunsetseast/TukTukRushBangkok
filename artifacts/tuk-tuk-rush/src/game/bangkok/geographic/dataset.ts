@@ -77,11 +77,16 @@ export type GeographicRail = {
   interchanges: { id: string; members: { id: string; role: string }[] }[];
 };
 export type GeographicChunkData = {
+  preparedSurfaces?: Partial<Record<'land' | 'water' | 'roads', {
+    position: Float32Array; normal: Float32Array; uv: Float32Array;
+  }>>;
+  preparedColliders?: import('../../types').Obstacle[];
   timing?: {
     fetchHeadersMs: number;
     decodeAndBodyMs: number;
     jsonParseMs: number;
     geometryDecodeMs?: number;
+    preparationMs?: number;
     compressedBytes?: number;
     decodedBytes?: number;
   };
