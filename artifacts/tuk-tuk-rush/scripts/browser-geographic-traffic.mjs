@@ -60,9 +60,9 @@ try{
   await page.screenshot({path:new URL("living-traffic-software-webgl.png",output).pathname});
   await page.getByRole('button',{name:'Settings',exact:true}).click();
   await toggle.click();
+  assert.equal(await toggle.getAttribute("aria-pressed"),"false");
   await page.getByRole('button',{name:'Close settings',exact:true}).click();
   await page.getByRole('button',{name:'Resume drive',exact:true}).click();
-  assert.equal(await toggle.getAttribute("aria-pressed"),"false");
   await page.waitForFunction(()=>window.__geographicTraffic?.active===0,
     undefined,{timeout:30000});
   report.off=await page.evaluate(()=>({
@@ -75,9 +75,9 @@ try{
 
   await page.getByRole('button',{name:'Settings',exact:true}).click();
   await toggle.click();
+  assert.equal(await toggle.getAttribute("aria-pressed"),"true");
   await page.getByRole('button',{name:'Close settings',exact:true}).click();
   await page.getByRole('button',{name:'Resume drive',exact:true}).click();
-  assert.equal(await toggle.getAttribute("aria-pressed"),"true");
   await page.waitForFunction(()=>window.__geographicTraffic?.active>0,
     undefined,{timeout:30000});
   report.restarted=await page.evaluate(()=>({
