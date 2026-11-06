@@ -82,8 +82,39 @@ for (const segment of area.segments) {
   const list = streetSegments.get(segment.id) ?? [];
   list.push(segment); streetSegments.set(segment.id, list);
 }
+/** A footprint can overlap another source record. Do not build hidden shop
+ * interiors behind a different authoritative building; preserve both masses. */
+function frontageVisibility(chunk: GeographicChunkData) {
+  const grid=new Map<string, RuntimeBuilding[]>();
+  for(const b of chunk.buildings??[]){
+    if(b.minHeight>1.2||b.height<2)continue;
+    const edges=b.edges.filter(e=>e.ring===0);if(!edges.length)continue;
+    const xs=edges.flatMap(e=>[e.a[0],e.b[0]]),zs=edges.flatMap(e=>[e.a[1],e.b[1]]);
+    for(let x=Math.floor(Math.min(...xs)/32);x<=Math.floor(Math.max(...xs)/32);x++)
+      for(let z=Math.floor(Math.min(...zs)/32);z<=Math.floor(Math.max(...zs)/32);z++){
+        const key=`${x}:${z}`,list=grid.get(key)??[];list.push(b);grid.set(key,list);
+      }
+  }
+  return (id:string,ax:number,az:number,bx:number,bz:number)=>{
+    const seen=new Set<RuntimeBuilding>();
+    for(let x=Math.floor(Math.min(ax,bx)/32);x<=Math.floor(Math.max(ax,bx)/32);x++)
+      for(let z=Math.floor(Math.min(az,bz)/32);z<=Math.floor(Math.max(az,bz)/32);z++)
+        for(const b of grid.get(`${x}:${z}`)??[]){
+          if(b.id===id||seen.has(b))continue;seen.add(b);
+          for(const e of b.edges){if(e.ring!==0)continue;
+            const dx=bx-ax,dz=bz-az,ex=e.b[0]-e.a[0],ez=e.b[1]-e.a[1],den=dx*ez-dz*ex;
+            if(Math.abs(den)<1e-9)continue;
+            const px=e.a[0]-ax,pz=e.a[1]-az,t=(px*ez-pz*ex)/den,u=(px*dz-pz*dx)/den;
+            if(t>0.001&&t<0.999&&u>=0&&u<=1)return false;
+          }
+        }
+    return true;
+  };
+}
 export function geographicFacades(chunk: GeographicChunkData): Facade[] {
   const result: Facade[] = [];
+  // Index lazily: ordinary chunks outside the showcase allocate no visibility grid.
+  let clear: ReturnType<typeof frontageVisibility> | undefined;
   const [minX, maxX, minZ, maxZ] = area.bounds;
   for (const b of chunk.buildings ?? []) {
     if (
@@ -139,6 +170,8 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
         ),
       );
       if (margin < 0.35) continue;
+      clear ??= frontageVisibility(chunk);
+      if(!clear(b.id,x-chunk.origin[0]+nx*.12,z-chunk.origin[1]+nz*.12,road.x-chunk.origin[0],road.z-chunk.origin[1]))continue;
       result.push({
         id: `${b.id}:${e.polygon}:${e.edge}`,
         buildingId: b.id,
@@ -192,6 +225,11 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
               Math.abs(a.nx * f.nx + a.nz * f.nz) > 0.95,
           ),
     );
+}
+export function facadeTrade(f: Facade) {
+  return f.tradeHint ?? (f.style === 'songwat'
+    ? [6,8,2,3][f.seed%4]!
+    : [0,1,2,3,4,5,6,7,9,10,11][f.seed%11]!);
 }
 export type PackedAttribute = {
   array: T.TypedArray;
@@ -270,11 +308,7 @@ export function prepareChinatown(
       n = Math.max(1, Math.ceil(W / 5.7)),
       bay = W / n,
       fh = H / f.floors;
-    const type =
-      f.tradeHint ??
-      (song
-        ? [6, 8, 2, 3][seed % 4]!
-        : [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11][seed % 11]!);
+    const type = facadeTrade(f);
     const wall = (
       song
         ? ["#cbbd9e", "#e5d8bb", "#c6c5b1", "#d8c9a7"]
