@@ -98,6 +98,7 @@ export function updateChinatownLOD(
   root: T.Group,
   camera: T.Vector3,
   quality: "low" | "medium",
+  player?: {x:number;z:number},
 ) {
   root.getWorldPosition(point);
   root.traverse((o) => {
@@ -108,11 +109,14 @@ export function updateChinatownLOD(
       camera.z - point.z - center[2]!,
     );
     const layer = o.userData.layer;
+    // Counter colliders remain visible around the vehicle even when the chase
+    // camera is on the far side of a batch cell or looking away.
+    const nearPlayer = player && Math.hypot(player.x-point.x-center[0]!,player.z-point.z-center[2]!)<55;
     o.visible =
       layer === "BangkokDetail"
         ? quality === "medium" && d < 30
         : layer === "BangkokFacade"
-          ? d < (quality === "low" ? 55 : 65)
+          ? nearPlayer || d < (quality === "low" ? 55 : 65)
           : layer === "BangkokNight"
             ? d < (quality === "low" ? 80 : 110)
             : d < (quality === "low" ? 110 : 150);

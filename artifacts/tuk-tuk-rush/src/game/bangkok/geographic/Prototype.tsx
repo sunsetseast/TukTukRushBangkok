@@ -250,7 +250,7 @@ function Scene({
       camera.getWorldDirection(content.forward);
       for (const v of content.stream.active.values())
         if (v.root)
-          {updateChinatownLOD(v.root,camera.position,s.quality);updateBuildingLOD(
+          {updateChinatownLOD(v.root,camera.position,s.quality,p);updateBuildingLOD(
             v.root,
             camera.position,
             s.quality,

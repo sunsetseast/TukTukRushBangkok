@@ -111,6 +111,29 @@ function frontageVisibility(chunk: GeographicChunkData) {
     return true;
   };
 }
+// Immutable local road index. Rectangle-to-segment distance admits long,
+// street-parallel counters without the old over-conservative bounding circle.
+const propRoadGrid=new Map<string,typeof area.segments>();
+for(const s of area.segments){if(s.bridge)continue;const pad=s.width/2+.2;
+  for(let x=Math.floor((Math.min(s.a[0]!,s.b[0]!)-pad)/32);x<=Math.floor((Math.max(s.a[0]!,s.b[0]!)+pad)/32);x++)
+    for(let z=Math.floor((Math.min(s.a[1]!,s.b[1]!)-pad)/32);z<=Math.floor((Math.max(s.a[1]!,s.b[1]!)+pad)/32);z++){
+      const key=`${x}:${z}`,list=propRoadGrid.get(key)??[];list.push(s);propRoadGrid.set(key,list);
+    }
+}
+export function decorativeRoadClearance(x:number,z:number,w:number,d:number,yaw:number){
+ const c=Math.cos(yaw),sn=Math.sin(yaw),hw=w/2,hd=d/2,rx=Math.abs(c)*hw+Math.abs(sn)*hd,rz=Math.abs(sn)*hw+Math.abs(c)*hd,candidates=new Set<(typeof area.segments)[number]>();
+ for(let i=Math.floor((x-rx)/32);i<=Math.floor((x+rx)/32);i++)for(let j=Math.floor((z-rz)/32);j<=Math.floor((z+rz)/32);j++)for(const s of propRoadGrid.get(`${i}:${j}`)??[])candidates.add(s);
+ let best=Infinity;
+ for(const s of candidates){
+  const ax=c*(s.a[0]!-x)-sn*(s.a[1]!-z),az=sn*(s.a[0]!-x)+c*(s.a[1]!-z),bx=c*(s.b[0]!-x)-sn*(s.b[1]!-z),bz=sn*(s.b[0]!-x)+c*(s.b[1]!-z),dx=bx-ax,dz=bz-az;
+  let lo=0,hi=1,hit=true;
+  for(const [a,delta,h]of [[ax,dx,hw],[az,dz,hd]]){if(Math.abs(delta!)<1e-12){if(Math.abs(a!)>h!)hit=false;}else{const t1=(-h!-a!)/delta!,t2=(h!-a!)/delta!;lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2));}}
+  let distance=hit&&lo<=hi?0:Math.min(Math.hypot(Math.max(Math.abs(ax)-hw,0),Math.max(Math.abs(az)-hd,0)),Math.hypot(Math.max(Math.abs(bx)-hw,0),Math.max(Math.abs(bz)-hd,0)));
+  for(const u of [-hw,hw])for(const v of [-hd,hd]){const t=Math.max(0,Math.min(1,((u-ax)*dx+(v-az)*dz)/(dx*dx+dz*dz||1)));distance=Math.min(distance,Math.hypot(u-ax-t*dx,v-az-t*dz));}
+  best=Math.min(best,distance-s.width/2);
+ }
+ return best;
+}
 export function geographicFacades(chunk: GeographicChunkData): Facade[] {
   const result: Facade[] = [];
   // Index lazily: ordinary chunks outside the showcase allocate no visibility grid.
@@ -226,10 +249,11 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
           ),
     );
 }
-export function facadeTrade(f: Facade) {
+export function facadeTrade(f: Facade, bay = 0) {
+  const seed = bay ? stableHash(`${f.id}:bay:${bay}`) : f.seed;
   return f.tradeHint ?? (f.style === 'songwat'
-    ? [6,8,2,3][f.seed%4]!
-    : [0,1,2,3,4,5,6,7,9,10,11][f.seed%11]!);
+    ? [6,8,2,3][seed%4]!
+    : [0,1,2,3,4,5,6,7,9,10,11][seed%11]!);
 }
 export type PackedAttribute = {
   array: T.TypedArray;
@@ -308,14 +332,14 @@ export function prepareChinatown(
       n = Math.max(1, Math.ceil(W / 5.7)),
       bay = W / n,
       fh = H / f.floors;
-    const type = facadeTrade(f);
+    const baseType = facadeTrade(f);
     const wall = (
       song
         ? ["#cbbd9e", "#e5d8bb", "#c6c5b1", "#d8c9a7"]
         : ["#a0b9ae", "#cfb59a", "#b0ad99", "#d6c4a0", "#93aba9", "#b8b6a7"]
     )[seed % (song ? 4 : 6)]!;
     const accent =
-      type === 0
+      baseType === 0
         ? "#98202a"
         : song
           ? "#476453"
@@ -336,14 +360,7 @@ export function prepareChinatown(
       surface: ArtPiece["surface"] = "plaster",
     ) => {
       if (pieces >= 18000 && layer === "detail") return;
-      if (y < 3.2 && v + d / 2 > 0.1) {
-        const safety = Math.hypot(w, d) / 2 + 0.12;
-        if (
-          roadClearance(f.x + f.nz * u + f.nx * v, f.z - f.nx * u + f.nz * v) <
-          safety
-        )
-          return;
-      }
+      if(y<3.2&&v+d/2>.1&&decorativeRoadClearance(f.x+f.nz*u+f.nx*v,f.z-f.nx*u+f.nz*v,w,d,yaw+rotate)<.12)return;
       if (
         layer === "near" &&
         shape === "box" &&
@@ -351,7 +368,7 @@ export function prepareChinatown(
         y < 1 &&
         h > 1 &&
         d > 0.3 &&
-        props.length < 128
+        props.length < 256
       )
         props.push({
           x: f.x + f.nz * u + f.nx * v,
@@ -390,6 +407,7 @@ export function prepareChinatown(
       vertical = false,
       rotation = 0,
       reverse = false,
+      trade = baseType,
     ) => {
       const ang = yaw + rotation + (reverse ? Math.PI : 0),
         tx = Math.cos(ang),
@@ -423,8 +441,8 @@ export function prepareChinatown(
       }
       const cols = vertical ? 8 : 4,
         rows = Math.ceil(GEO_SHOP_SIGNS.length / cols),
-        col = type % cols,
-        row = Math.floor(type / cols),
+        col = trade % cols,
+        row = Math.floor(trade / cols),
         corners = [
           [-0.5, -0.5],
           [0.5, -0.5],
@@ -445,6 +463,8 @@ export function prepareChinatown(
     put(0, 3.6, 0.18, W, 0.15, 0.35, accent);
     put(0, H - 0.3, 0.18, W, 0.32, 0.4, song ? "#e9dfc4" : "#c9c3ac");
     for (let j = 0; j < n; j++) {
+      const type = facadeTrade(f,j);
+      const accent = type === 0 ? "#98202a" : song ? "#476453" : ["#386b66","#8b3636","#253c53","#aa713d"][(seed+j)%4]!;
       const u = -W / 2 + bay * (j + 0.5),
         span = bay - 0.3;
       put(u, 1.55, 0.09, span, 2.9, 0.1, "#202d2b"); // real recessed shop back behind front columns/counter
@@ -458,7 +478,7 @@ export function prepareChinatown(
         song ? "#e8dec4" : "#ddd2b5",
       );
       put(u, 3.15, 0.16, span, 0.85, 0.18, accent);
-      sign(u, 3.15, 0.27, span - 0.1, 0.7);
+      sign(u, 3.15, 0.27, span - 0.1, 0.7, false, 0, false, type);
       const glow = type === 0 ? "#fbd281" : song ? "#ac8a52" : "#e6b87d";
       put(u, 1.4, 0.19, span - 0.4, 2.2, 0.08, glow, "night");
       put(
@@ -878,8 +898,8 @@ export function prepareChinatown(
         );
         put(u - bay * 0.39, sy - 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
         put(u - bay * 0.39, sy + 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2);
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true);
+        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, false, type);
+        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true, type);
       }
       if (j === 0 && out > 1.4 && seed % 4 === 0) {
         put(
