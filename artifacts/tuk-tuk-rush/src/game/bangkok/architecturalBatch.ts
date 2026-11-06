@@ -66,6 +66,7 @@ export class ArchitecturalBatch {
     private material: T.Material,
     private night: T.Material,
     private cellSize = 120,
+    private mergeCore = false,
   ) {}
   add(o: ArtPiece) {
     const shape = o.shape ?? "box",
@@ -73,7 +74,7 @@ export class ArchitecturalBatch {
       cx = Math.floor(o.x / this.cellSize),
       cz = Math.floor(o.z / this.cellSize),
       key = `${cx}:${cz}:${layer}`;
-    if (["panel", "box", "frond", "leaf", "orb", "canopy", "cylinder"].includes(shape)) {
+    if (!(this.mergeCore && layer === "core") && ["panel", "box", "frond", "leaf", "orb", "canopy", "cylinder"].includes(shape)) {
       const instanceKey = `${key}:${shape}`;
       let bucket = this.instances.get(instanceKey);
       if (!bucket) {
@@ -147,7 +148,8 @@ export class ArchitecturalBatch {
     }
     let geo = this.templates.get(shape);
     if (!geo) {
-      if (shape === "gable") {
+      if (shape === "panel") geo = new T.PlaneGeometry(1,1);
+      else if (shape === "gable") {
         const s = new T.Shape([
           new T.Vector2(-0.5, 0),
           new T.Vector2(0.5, 0),

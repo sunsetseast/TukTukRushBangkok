@@ -84,7 +84,9 @@ export function buildChinatownDecoration(
       g.computeBoundingSphere();
       mesh = new T.Mesh(g, material);
     }
-    // Allow the existing opaque scene ordering to reject occluded storefronts.
+    // Primary opaque skins reject the source mass behind them early. Volumetric
+    // props keep ordinary ordering so source buildings occlude rear shop clutter.
+    mesh.renderOrder = b.layer === "BangkokArchitecture" || b.layer === "CommercialSigns" ? -1 : 0;
     mesh.name = b.layer;
     mesh.userData = { chinatown: true, layer: b.layer, center: b.center };
     root.add(mesh);
@@ -108,9 +110,9 @@ export function updateChinatownLOD(
     const layer = o.userData.layer;
     o.visible =
       layer === "BangkokDetail"
-        ? quality === "medium" && d < 35
+        ? quality === "medium" && d < 30
         : layer === "BangkokFacade"
-          ? d < (quality === "low" ? 55 : 70)
+          ? d < (quality === "low" ? 55 : 65)
           : layer === "BangkokNight"
             ? d < (quality === "low" ? 80 : 110)
             : d < (quality === "low" ? 110 : 150);

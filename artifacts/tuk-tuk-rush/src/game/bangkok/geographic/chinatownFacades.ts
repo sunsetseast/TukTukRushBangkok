@@ -254,7 +254,7 @@ export function prepareChinatown(
   const facades = geographicFacades(chunk);
   if (!facades.length) return;
   const material = new T.MeshStandardMaterial(),
-    batch = new ArchitecturalBatch(material, material, 60),
+    batch = new ArchitecturalBatch(material, material, 60, true),
     signs = new Map<
       string,
       { p: number[]; uv: number[]; center: number[]; vertical: boolean }
@@ -408,7 +408,7 @@ export function prepareChinatown(
     };
     // Thin coloured skin follows every admitted edge. Existing massing remains authoritative.
     put(0, H / 2, 0.035, W - 0.08, H, 0.06, wall);
-    put(0, 3.5, 0.18, W, 0.3, 0.35, accent);
+    put(0, 3.6, 0.18, W, 0.15, 0.35, accent);
     put(0, H - 0.3, 0.18, W, 0.32, 0.4, song ? "#e9dfc4" : "#c9c3ac");
     for (let j = 0; j < n; j++) {
       const u = -W / 2 + bay * (j + 0.5),
