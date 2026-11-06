@@ -77,6 +77,7 @@ export type GeographicRail = {
   interchanges: { id: string; members: { id: string; role: string }[] }[];
 };
 export type GeographicChunkData = {
+  decoration?: import("./chinatownFacades").ChinatownDecoration;
   preparedSurfaces?: Partial<Record<'land' | 'water' | 'roads', {
     position: Float32Array; normal: Float32Array; uv: Float32Array;
   }>>;
