@@ -53,7 +53,9 @@ try {
   assert(report.initial.stream.active <= 25);
   // The same opt-in overlay is touch-accessible on a physical iPhone; software
   // Chromium only tests instrumentation/UI, NOT an iPhone FPS certification.
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
   await page.getByTestId("geographic-performance-toggle").click();
+  await page.getByRole('button',{name:'Close settings',exact:true}).click();
   await page.waitForFunction(() =>
     Number(document.querySelector('[data-testid="geographic-performance"]')?.getAttribute("data-samples") ?? 0) >= 2,
     undefined,
@@ -100,7 +102,9 @@ try {
   const destination = await page.evaluate(
     () => window.__geographyQA.network.stops[2].id,
   );
+  await page.getByRole('button',{name:'Route map',exact:true}).click();
   await page.getByLabel("Geographic destination").selectOption(destination);
+  await page.getByRole('button',{name:'Close route map',exact:true}).click();
   const before = await page.evaluate(() => window.__geography.position);
   await page.keyboard.down("ArrowUp");
   await page.waitForFunction(
@@ -182,7 +186,7 @@ try {
   await page.getByTestId("geographic-map").waitFor();
   report.checks.landscapeMap = true;
   await page.getByRole("button", { name: "Route map", exact: true }).click();
-  await page.setViewportSize({ width: 430, height: 932 });
+  await page.setViewportSize({ width: 844, height: 390 });
   const turbo = page.getByTestId("button-boost");
   if (await turbo.count()) {
     await turbo.tap();

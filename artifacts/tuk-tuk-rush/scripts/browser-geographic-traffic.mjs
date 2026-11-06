@@ -23,13 +23,15 @@ try{
       "--enable-unsafe-swiftshader","--disable-dev-shm-usage"],
   });
   const page=await browser.newPage({
-    viewport:{width:430,height:932},hasTouch:true,isMobile:true,
+    viewport:{width:844,height:390},hasTouch:true,isMobile:true,
   });
   page.on("pageerror",e=>report.errors.push(e.message));
   await page.goto(`http://127.0.0.1:${port}/?world=geographic&geographyQA=1&geoTraffic=1`);
   await page.getByTestId("button-free-roam").waitFor({timeout:120000});
   const toggle=page.getByTestId("geographic-traffic-toggle");
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
   assert.equal(await toggle.getAttribute("aria-pressed"),"true");
+  await page.getByRole('button',{name:'Close settings',exact:true}).click();
   await page.getByTestId("button-free-roam").click();
   await page.waitForFunction(()=>window.__geography?.snapshot?.phase==="playing",
     undefined,{timeout:60000});
@@ -56,7 +58,10 @@ try{
   report.checks.push("actual-road-traffic-spawns");
 
   await page.screenshot({path:new URL("living-traffic-software-webgl.png",output).pathname});
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
   await toggle.click();
+  await page.getByRole('button',{name:'Close settings',exact:true}).click();
+  await page.getByRole('button',{name:'Resume drive',exact:true}).click();
   assert.equal(await toggle.getAttribute("aria-pressed"),"false");
   await page.waitForFunction(()=>window.__geographicTraffic?.active===0,
     undefined,{timeout:30000});
@@ -68,7 +73,10 @@ try{
   assert.equal(report.off.actors,0);
   report.checks.push("traffic-off-clears-moving-fleet");
 
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
   await toggle.click();
+  await page.getByRole('button',{name:'Close settings',exact:true}).click();
+  await page.getByRole('button',{name:'Resume drive',exact:true}).click();
   assert.equal(await toggle.getAttribute("aria-pressed"),"true");
   await page.waitForFunction(()=>window.__geographicTraffic?.active>0,
     undefined,{timeout:30000});

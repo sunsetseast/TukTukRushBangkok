@@ -1,0 +1,64 @@
+name: Geographic mobile consolidation
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/src/**'
+      - 'artifacts/tuk-tuk-rush/scripts/*geographic*'
+      - '.github/workflows/geographic-consolidation.yml'
+  workflow_dispatch:
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PORT: '24830'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Prepare existing committed assets without reimporting Bangkok
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          node --import tsx scripts/pack-geographic-road-rules.ts
+          node --import tsx scripts/pack-geographic-traffic-controls.ts
+          node scripts/prepare-geographic-qa-fixtures.mjs
+          node --import tsx scripts/prepare-geographic-browser-assets.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-preparation.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:thai-road-signage
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-asset-delivery
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec vite build
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium webkit
+      - name: Matched before runtime
+        working-directory: artifacts/tuk-tuk-rush
+        env:
+          GEOGRAPHY_QA_BASELINE_REF: b6a050ba3f21d98c3ea22aac26998eed739ad637
+        run: timeout 420 node scripts/browser-geographic-consolidation.mjs
+      - name: Final mobile interactions and runtime
+        if: always()
+        working-directory: artifacts/tuk-tuk-rush
+        run: timeout 480 node scripts/browser-geographic-consolidation.mjs
+      - name: WebKit compressed assets and HTML fallback
+        if: always()
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          node scripts/browser-geographic-gzip-webkit.mjs
+          node scripts/browser-geographic-spa-fallback.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: geographic-consolidation-evidence
+          path: docs/qa/geographic-consolidation/
+          retention-days: 30

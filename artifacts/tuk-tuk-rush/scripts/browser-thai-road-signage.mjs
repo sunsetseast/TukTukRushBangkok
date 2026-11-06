@@ -23,7 +23,7 @@ try{
       "--enable-unsafe-swiftshader","--disable-dev-shm-usage"],
   });
   const page=await browser.newPage({
-    viewport:{width:430,height:932},hasTouch:true,isMobile:true,
+    viewport:{width:844,height:390},hasTouch:true,isMobile:true,
   });
   page.on("pageerror",err=>report.errors.push(err.message));
   await page.goto(`http://127.0.0.1:${port}/?world=geographic&geographyQA=1`);
@@ -80,7 +80,10 @@ try{
     "osm-bilingual-street-name-placards","48-sign-local-budget");
   await page.screenshot({path:new URL("bangkok-signs-mobile-webgl.png",out).pathname});
 
+  await page.getByRole('button',{name:'Settings',exact:true}).click();
   await page.getByTestId("geographic-traffic-toggle").click();
+  await page.getByRole('button',{name:'Close settings',exact:true}).click();
+  await page.getByRole('button',{name:'Resume drive',exact:true}).click();
   await page.waitForFunction(()=>window.__geographicTraffic?.active===0,
     undefined,{timeout:30000});
   await page.waitForTimeout(350);
