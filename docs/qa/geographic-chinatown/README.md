@@ -4,15 +4,15 @@ This is a bounded source-anchored visual layer, on main `e2afddf273ad4bfd752180b
 
 ## Implementation
 
-127 admitted footprint edges receive original procedural frontage, including 10 on Song Wat. Selection is confined to local projected x2780–3700 / z80–1080; Song Wat is further confined to x2920–3280 / z520–1030. `chinatownArea.generated.json` records the pinned runtime hash and source road IDs. `scripts/select-geographic-chinatown.py` regenerates this small **selection inventory**, without importing or modifying the map.
+157 admitted footprint edges receive original procedural frontage, including 40 on Song Wat. Selection is confined to local projected x2780–3700 / z80–1080; Song Wat is further confined to x2920–3280 / z520–1030. `chinatownArea.generated.json` records the pinned runtime hash and source road IDs. `scripts/select-geographic-chinatown.py` regenerates this small **selection inventory**, without importing or modifying the map.
 
-The adapter uses the original building ID, outer-ring winding, collision-enabled edge, matched source street, height/floors, district and available trade tags. Outward normals must face the source street. Unsafe frontages are rejected. Decorative skins retain the original massing and collision geometry. Ground-level objects pass a conservative road-envelope clearance check; solid display counters add bounded, source-tagged obstacles. The player, bridge surfaces, road graph, one-way/turn rules, traffic density, source signals and blue bilingual plaques remain authoritative.
+The adapter uses the original building ID, outer-ring winding, collision-enabled edge, matched source street (with a geometric source-road fallback for side-alley hints on the selected Song Wat block), height/floors, district and available trade tags. Outward normals must face the source street. Unsafe frontages are rejected. Decorative skins retain the original massing and collision geometry. Ground-level objects pass a conservative road-envelope clearance check; solid display counters add bounded, source-tagged obstacles. The player, bridge surfaces, road graph, one-way/turn rules, traffic density, source signals and blue bilingual plaques remain authoritative.
 
-Two existing preparation workers create ArchitecturalBatch buffers. Positions, quantized/interleaved normals and colors, instance matrices, and atlas UVs transfer with their original layout. The main thread only attaches buffers. Eviction disposes geometries and instance resources; the scene owns four shared materials and two commercial-sign textures. Existing compressed-world artwork and its renderer are unchanged.
+Two existing preparation workers create ArchitecturalBatch buffers. Positions, quantized/interleaved normals and colors, instance matrices, and atlas UVs transfer with their original layout. The main thread only attaches buffers. Eviction disposes geometries and instance resources; the scene owns four shared materials and two commercial-sign textures (2048×384 and 1024×1024, about 9.8 MB uncompressed with mipmaps; an estimate, not measured device VRAM). Existing compressed-world artwork and its renderer are unchanged.
 
 Twelve fictional/generic trade treatments include gold, noodles, restaurants, tea, coffee, pharmacy, merchant shops, guesthouse, produce, mini-market, bakery and warehouses. They are not claims of verified real businesses at imported addresses. Upper floors vary shutters, glazing, balconies, AC equipment and masonry. Song Wat uses restrained cream/green masonry, fanlights, shutters and warehouse gates. Original photographic references and the reasons for avoiding falsely located real brands are in [references.md](references.md).
 
-Day/dusk/night is deterministic, selectable in Settings or `geoTime`. Warm shop wash, emissive display/window surfaces and sign atlases provide night atmosphere. No point-light fleet, shadows, bloom or post-processing is added. The first software-GPU inspection rejected the expensive four-map facade shader; the final layer uses a shared inexpensive diffuse material with authored colors. The original finish library remains available to the original world.
+Day/dusk/night is deterministic, selectable in Settings or `geoTime`. Warm shop wash, emissive display/window surfaces and sign atlases provide night atmosphere. No point-light fleet, shadows, bloom or post-processing is added. The first software-GPU inspection rejected the expensive four-map facade shader; the final layer uses a shared inexpensive palette material with directional lighting evaluated per vertex. The original finish library remains available to the original world.
 
 ## Budgets and LOD
 
@@ -20,12 +20,12 @@ Only two source-owned chunks currently contain admitted decoration. There is no 
 
 | Layer | Fast | Pretty |
 | --- | --- | --- |
-| Primary architecture/signs | 190 m | 260 m |
-| Storefront depth, awnings, railings | 90 m | 135 m |
-| Occupied windows / lamps | 130 m | 190 m |
-| Small details, people, leaves | Off | 72 m |
+| Primary architecture/signs | 110 m | 150 m |
+| Storefront depth, awnings, railings | 55 m | 70 m |
+| Occupied windows / lamps | 80 m | 110 m |
+| Small details, people, leaves | Off | 35 m |
 
-The reused batch cells are 120 m wide. Distances use cell centers, so detail selection is deliberately coarse. The performance overlay reports decoration facade count and buffer MiB alongside existing frame/stream metrics.
+The geographic batch cells are 60 m wide; the original world retains its existing 120 m cells. Distances use cell centers, so detail selection is deliberately coarse. The performance overlay reports decoration facade count and buffer MiB alongside existing frame/stream metrics.
 
 ## iPhone-only inspection
 

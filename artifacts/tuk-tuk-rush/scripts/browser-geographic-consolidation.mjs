@@ -104,11 +104,15 @@ try {
   // Full game + worker transport, not just a standalone fetch mock.
   const fallbackRequests=[];
   page.on('request',r=>{if(r.url().includes('3072_0.bin.'))fallbackRequests.push(r.url());});
+  // Main intentionally removed obsolete generated .gz files. Serve the same real
+  // compiled bytes on the legacy alias to test that supported delivery variant.
+  await page.context().route('**/assets/geography/compiled/3072_0.bin.gz',route=>route.fulfill({status:200,contentType:'application/octet-stream',body:fs.readFileSync(new URL('../public/assets/geography/compiled/3072_0.bin.pack',import.meta.url))}));
   await page.context().route('**/assets/geography/compiled/3072_0.bin.pack',route=>route.fulfill({status:200,contentType:'text/html',body:'<!DOCTYPE html><html>app shell</html>'}));
   await page.goto('http://127.0.0.1:24830/?world=geographic&geographyQA&geoTraffic=0');
   await page.waitForFunction(()=>window.__geography?.stream.settled&&window.__geography.stream.active>=9,undefined,{timeout:90000});
-  assert(fallbackRequests.some(u=>u.endsWith('.bin.gz')));report.checks.push('worker recovers HTML generated chunk via committed gzip source');
+  assert(fallbackRequests.some(u=>u.endsWith('.bin.gz')));report.checks.push('worker recovers HTML generated chunk via gzip alias fixture containing identical compiled source bytes');
   await page.context().unroute('**/assets/geography/compiled/3072_0.bin.pack');
+  await page.context().unroute('**/assets/geography/compiled/3072_0.bin.gz');
   await page.context().route('**/assets/geography/gameplay.v2.json.*',route=>route.fulfill({status:503,body:'offline'}));
   await page.reload();await page.getByRole('alert').filter({hasText:'both failed'}).waitFor();
   await page.context().unroute('**/assets/geography/gameplay.v2.json.*');

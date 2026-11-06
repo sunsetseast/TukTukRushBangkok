@@ -98,17 +98,22 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
       return x>=minX! && x<=maxX! && z>=minZ! && z<=maxZ!;
     })) continue;
     for (const e of b.edges) {
-      if (e.ring !== 0 || !e.street || !e.collision) continue;
-      const roads = streetSegments.get(e.street);
-      if (!roads?.length) continue;
+      if (e.ring !== 0 || !e.collision) continue;
       const x = chunk.origin[0] + (e.a[0] + e.b[0]) / 2,
         z = chunk.origin[1] + (e.a[1] + e.b[1]) / 2;
       if (x < minX! || x > maxX! || z < minZ! || z > maxZ!) continue;
+      const sb = area.songWatBounds;
+      // The compiler's nearest-street hint can point to a side alley. For the
+      // selected historic block, also admit a genuine outward-facing Song Wat
+      // source edge when its distance/orientation/clearance prove the frontage.
+      const roads = streetSegments.get(e.street ?? "") ??
+        (x>=sb[0]!&&x<=sb[1]!&&z>=sb[2]!&&z<=sb[3]!
+          ? area.segments.filter(s=>s.name==='Song Wat Road') : []);
+      if (!roads.length) continue;
       const road = roads
         .map((s) => ({ s, ...segmentDistance(x, z, s) }))
         .sort((a, b) => a.distance - b.distance)[0]!;
-      const song = road.s.name === "Song Wat Road",
-        sb = area.songWatBounds;
+      const song = road.s.name === "Song Wat Road";
       if (song && (x < sb[0]! || x > sb[1]! || z < sb[2]! || z > sb[3]!))
         continue;
       const dx = e.b[0] - e.a[0],
@@ -137,7 +142,7 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
       result.push({
         id: `${b.id}:${e.polygon}:${e.edge}`,
         buildingId: b.id,
-        street: e.street,
+        street: road.s.id,
         chunk: chunk.origin.join(":"),
         style: song ? "songwat" : "yaowarat",
         x,
@@ -249,7 +254,7 @@ export function prepareChinatown(
   const facades = geographicFacades(chunk);
   if (!facades.length) return;
   const material = new T.MeshStandardMaterial(),
-    batch = new ArchitecturalBatch(material, material, 40),
+    batch = new ArchitecturalBatch(material, material, 60),
     signs = new Map<
       string,
       { p: number[]; uv: number[]; center: number[]; vertical: boolean }
@@ -367,16 +372,16 @@ export function prepareChinatown(
           f.nx * u +
           f.nz * v +
           (vertical ? Math.cos(ang) * 0.085 : 0);
-      const cell = `${Math.floor(x / 40)}:${Math.floor(z / 40)}:${vertical}`;
+      const cell = `${Math.floor(x / 60)}:${Math.floor(z / 60)}:${vertical}`;
       let s = signs.get(cell);
       if (!s) {
         s = {
           p: [],
           uv: [],
           center: [
-            Math.floor(x / 40) * 40 + 20,
+            Math.floor(x / 60) * 60 + 30,
             0,
-            Math.floor(z / 40) * 40 + 20,
+            Math.floor(z / 60) * 60 + 30,
           ],
           vertical,
         };

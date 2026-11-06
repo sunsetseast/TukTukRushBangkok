@@ -1,18 +1,18 @@
 {
   "pass": true,
-  "total": 127,
-  "songwat": 10,
+  "total": 157,
+  "songwat": 40,
   "signTypes": 12,
   "sourceUnchanged": true,
   "records": [
     {
       "id": "2048:0",
-      "facades": 16,
-      "songwat": 3,
-      "pieces": 2154,
-      "bytes": 285895,
-      "batches": 143,
-      "prepareMs": 130.91803799999997,
+      "facades": 29,
+      "songwat": 16,
+      "pieces": 4042,
+      "bytes": 542667,
+      "batches": 159,
+      "prepareMs": 199.31669600000004,
       "first": [
         {
           "id": "osm:way/1021129470:0:0",
@@ -274,12 +274,12 @@
     },
     {
       "id": "3072:0",
-      "facades": 111,
-      "songwat": 7,
-      "pieces": 14157,
-      "bytes": 1572849,
-      "batches": 558,
-      "prepareMs": 525.074657,
+      "facades": 128,
+      "songwat": 24,
+      "pieces": 16324,
+      "bytes": 1764739,
+      "batches": 416,
+      "prepareMs": 500.93185700000004,
       "first": [
         {
           "id": "osm:way/1021129461:0:3",
@@ -474,67 +474,67 @@
           }
         },
         {
-          "id": "osm:way/1144273180:0:0",
-          "buildingId": "osm:way/1144273180",
+          "id": "osm:way/1053924936:0:2",
+          "buildingId": "osm:way/1053924936",
           "street": "osm:way/462492028",
           "chunk": "3072:0",
           "style": "songwat",
-          "x": 3225.0465,
-          "z": 828.1115,
-          "nx": -0.9178691339014908,
-          "nz": 0.39688317302567416,
-          "width": 5.696890555381981,
+          "x": 3103.489,
+          "z": 808.704,
+          "nx": 0.6457791169680897,
+          "nz": -0.7635242838888062,
+          "width": 13.741540670536125,
           "height": 9.6,
           "floors": 3,
-          "seed": 1815018427,
-          "family": "residential",
+          "seed": 875090088,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
-              151.916,
-              825.497
+              36.735,
+              813.141
             ],
             "b": [
-              154.177,
-              830.726
+              26.243,
+              804.267
             ],
             "collision": true,
-            "edge": 0,
+            "edge": 2,
             "polygon": 0,
             "ring": 0,
-            "street": "osm:way/462492028"
+            "street": "osm:way/419065568"
           }
         },
         {
-          "id": "osm:way/1144273180:0:1",
-          "buildingId": "osm:way/1144273180",
-          "street": "osm:way/462492028",
+          "id": "osm:way/1144273169:0:2",
+          "buildingId": "osm:way/1144273169",
+          "street": "osm:way/242161003",
           "chunk": "3072:0",
           "style": "songwat",
-          "x": 3228.8545,
-          "z": 836.9325,
-          "nx": -0.918201189935477,
-          "nz": 0.3961143456138316,
-          "width": 13.518823691431162,
-          "height": 9.6,
-          "floors": 3,
-          "seed": 1798240808,
+          "x": 3255.346,
+          "z": 894.8705,
+          "nx": 0.7580372235547652,
+          "nz": -0.6522112906914314,
+          "width": 7.417841532413623,
+          "height": 6.4,
+          "floors": 2,
+          "seed": 3056508512,
           "family": "residential",
           "outset": 1.65,
           "edge": {
             "a": [
-              154.177,
-              830.726
+              185.765,
+              897.682
             ],
             "b": [
-              159.532,
-              843.139
+              180.927,
+              892.059
             ],
             "collision": true,
-            "edge": 1,
+            "edge": 2,
             "polygon": 0,
             "ring": 0,
-            "street": "osm:way/462492028"
+            "street": "osm:way/1507574355"
           }
         }
       ]

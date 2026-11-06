@@ -3,46 +3,25 @@ import { buildSignAtlas } from "../../signArt";
 import { GEO_SHOP_SIGNS, type ChinatownDecoration } from "./chinatownFacades";
 export function chinatownMaterials() {
   const atlas = buildSignAtlas(GEO_SHOP_SIGNS, true), night = { value: 0 };
-  // Shared low-cost diffuse material. The original architectural palette and
-  // batched geometry supply detail; four array/PBR samples per fragment doubled
-  // the first software-GPU benchmark. No per-shop textures or real-time lights.
-  const facade = new T.MeshLambertMaterial({ vertexColors: true });
-  facade.onBeforeCompile = (shader) => {
-    shader.uniforms.shopNight = night;
-    shader.vertexShader = "varying float shopWash;\n" + shader.vertexShader.replace(
-      "#include <begin_vertex>", `#include <begin_vertex>
-      vec4 washPosition=vec4(transformed,1.);
+  // Palette lighting is evaluated per vertex in this bounded decorative layer.
+  // Shared production world lighting remains unchanged. Avoid per-fragment PBR
+  // and array texture work on mobile; preserve readable directional profiles.
+  const facade = new T.MeshBasicMaterial({ vertexColors: true });
+  facade.onBeforeCompile = shader => {
+    shader.uniforms.shopNight=night;
+    shader.vertexShader="uniform float shopNight;\n"+shader.vertexShader.replace('#include <color_vertex>',`#include <color_vertex>
+      vec3 litNormal=normal;vec4 washPosition=vec4(position,1.);
       #ifdef USE_INSTANCING
-      washPosition=instanceMatrix*washPosition;
+      litNormal=mat3(instanceMatrix)*litNormal;washPosition=instanceMatrix*washPosition;
       #endif
-      shopWash=clamp(1.-max(0.,washPosition.y-1.)*.15,0.,1.);`);
-    shader.fragmentShader = "varying float shopWash;uniform float shopNight;\n" + shader.fragmentShader.replace(
-      "#include <emissivemap_fragment>", `#include <emissivemap_fragment>
-      totalEmissiveRadiance+=diffuseColor.rgb*vec3(.38,.16,.055)*shopWash*shopNight;`);
+      litNormal=normalize(mat3(modelMatrix)*litNormal);
+      float direct=max(0.,dot(litNormal,normalize(vec3(.4,.8,.2))));
+      float wash=clamp(1.-max(0.,washPosition.y-1.)*.2,0.,1.);
+      vColor.rgb*=mix(vec3(.72+direct*.4),mix(vec3(.19,.24,.34),vec3(.92,.49,.20),wash),shopNight);`);
   };
-  facade.customProgramCacheKey = () => "geographic-diffuse-shop-wash-v1";
-  const windows = new T.MeshLambertMaterial({
-    color: "#ffffff",
-    vertexColors: true,
-    emissive: "#ffffff",
-    emissiveIntensity: 0,
-  });
-  windows.onBeforeCompile = (shader) => {
-    shader.fragmentShader = shader.fragmentShader.replace(
-      "#include <emissivemap_fragment>",
-      "#include <emissivemap_fragment>\n#ifdef USE_COLOR\n totalEmissiveRadiance*=vColor.rgb;\n#endif",
-    );
-  };
-  windows.customProgramCacheKey = () => "geographic-occupied-windows-v1";
-  const h = new T.MeshLambertMaterial({
-      map: atlas.h.tex,
-      emissiveMap: atlas.h.tex,
-      emissive: "#ffffff",
-      emissiveIntensity: 0.1,
-    }),
-    v = h.clone();
-  v.map = atlas.v.tex;
-  v.emissiveMap = atlas.v.tex;
+  facade.customProgramCacheKey=()=>"geographic-palette-lighting-v1";
+  const windows=new T.MeshBasicMaterial({vertexColors:true,color:'#ffffff'});
+  const h=new T.MeshBasicMaterial({map:atlas.h.tex}),v=h.clone();v.map=atlas.v.tex;
   return {
     facade,
     windows,
@@ -51,9 +30,9 @@ export function chinatownMaterials() {
     night,
     setNight(value: number) {
       night.value = value;
-      windows.emissiveIntensity = value * 1.15;
-      h.emissiveIntensity = 0.12 + value * 0.95;
-      v.emissiveIntensity = 0.12 + value * 1.1;
+      windows.color.setScalar(.85+value*.45);
+      h.color.setScalar(.9+value*.25);
+      v.color.setScalar(.9+value*.35);
     },
     dispose() {
       for (const m of [facade, windows, h, v]) m.dispose();
@@ -105,9 +84,7 @@ export function buildChinatownDecoration(
       g.computeBoundingSphere();
       mesh = new T.Mesh(g, material);
     }
-    // Draw opaque decoration first so the original mass behind the skin benefits
-    // from early depth rejection rather than shading the same frontage twice.
-    mesh.renderOrder = -1;
+    // Allow the existing opaque scene ordering to reject occluded storefronts.
     mesh.name = b.layer;
     mesh.userData = { chinatown: true, layer: b.layer, center: b.center };
     root.add(mesh);
@@ -120,10 +97,10 @@ export function updateChinatownLOD(
   camera: T.Vector3,
   quality: "low" | "medium",
 ) {
+  root.getWorldPosition(point);
   root.traverse((o) => {
     if (!(o instanceof T.Mesh) || !o.userData.chinatown) return;
     const center = o.userData.center as number[];
-    root.getWorldPosition(point);
     const d = Math.hypot(
       camera.x - point.x - center[0]!,
       camera.z - point.z - center[2]!,
@@ -131,11 +108,11 @@ export function updateChinatownLOD(
     const layer = o.userData.layer;
     o.visible =
       layer === "BangkokDetail"
-        ? quality === "medium" && d < 40
+        ? quality === "medium" && d < 35
         : layer === "BangkokFacade"
-          ? d < (quality === "low" ? 55 : 85)
+          ? d < (quality === "low" ? 55 : 70)
           : layer === "BangkokNight"
-            ? d < (quality === "low" ? 90 : 135)
-            : d < (quality === "low" ? 130 : 180);
+            ? d < (quality === "low" ? 80 : 110)
+            : d < (quality === "low" ? 110 : 150);
   });
 }
