@@ -18,7 +18,7 @@ try {
     args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--disable-dev-shm-usage"],
   });
   report.browser = browser.version();
-  const page = await browser.newPage({ viewport: { width: 430, height: 932 }, hasTouch: true, isMobile: true });
+  const page = await browser.newPage({ viewport: { width: 844, height: 390 }, hasTouch: true, isMobile: true });
   page.on("pageerror", error => report.errors.push(error.message));
   await page.goto("http://127.0.0.1:24816/?world=geographic&geoPerf=1");
   await page.waitForFunction(() =>
@@ -47,6 +47,7 @@ try {
   await page.screenshot({ path: new URL("overlay-software-webgl.png", out).pathname });
   await page.getByLabel("Close performance monitor").click();
   assert.equal(await monitor.count(), 0);
+  await page.getByRole('button', {name:'Settings',exact:true}).click();
   await page.getByTestId("geographic-performance-toggle").click();
   await monitor.waitFor();
   report.checks.push("touch-control-close-and-reopen");

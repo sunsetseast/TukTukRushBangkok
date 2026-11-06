@@ -16,17 +16,19 @@ import {
   disposeGeographicChunk,
 } from "./rendering";
 import { riverWater } from "../riverfront";
-import { loadGeographicChunk, type GeographicChunkData } from "./dataset";
+import { type GeographicChunkData } from "./dataset";
+import { GeographicChunkLoader } from "./chunkLoader";
 import { loadGameplayGeography, type GeographicNetwork } from "./network";
 import { createGameplayDistrict, type GeographicPlace } from "./places";
-import { buildMigratedArt, disposeMigratedArt } from "./migratedArt";
+import { buildMigratedArt, disposeMigratedArt, releaseMigratedArtGPU } from "./migratedArt";
 import { geographicToMeters, metersToGeographic } from "./projection";
 import {
   buildingObstacles,
   updateBuildingLOD,
   buildingFogFar,
 } from "./buildings";
-import { readPreferences } from "../../ui/preferences";
+import { sfx } from "../../audio";
+import { readPreferences, usePreferences } from "../../ui/preferences";
 import { GeographicSession } from "./session";
 import { GeographicFrameProfiler, type GeographicPerfSample } from "./performance";
 import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
@@ -40,10 +42,13 @@ type Loaded = {
   art: ArtBundle;
   places: GeographicPlace[];
   loadMs: number;
+  landmarkArt: Map<string, ReturnType<typeof buildMigratedArt>[]>;
 };
 function Scene({
-  loaded, target, perfEnabled, onPerfSample, trafficEnabled,
+  loaded, target, perfEnabled, onPerfSample, trafficEnabled, onError, onReady,
 }: {
+  onError: (message: string) => void;
+  onReady: () => void;
   loaded: Loaded;
   target?: RoadNode;
   perfEnabled: boolean;
@@ -72,8 +77,10 @@ function Scene({
       resident = new Map<string, GeographicChunkData>(),
       colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
+    const loader = new GeographicChunkLoader();
     let revision = 0;
     const activationMs: number[] = [];
+    let readyNotified = false;
     const stream = new GeographicStream<{
       chunk: GeographicChunkData;
       root?: T.Group;
@@ -81,7 +88,7 @@ function Scene({
     }>(
       network.metadata.chunks,
       async (ref, signal) => ({
-        chunk: await loadGeographicChunk(ref, signal),
+        chunk: await loader.load(ref, signal),
       }),
       (v, ref) => {
         const started = performance.now();
@@ -91,15 +98,11 @@ function Scene({
         resident.set(ref.id, v.chunk);
         colliders.set(
           ref.id,
-          buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin),
+          v.chunk.preparedColliders ?? buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin),
         );
-        const local = places
-          .filter(
-            (p) =>
-              Math.floor(p.landmark.x / 1024) * 1024 === ref.origin[0] &&
-              Math.floor(p.landmark.z / 1024) * 1024 === ref.origin[1],
-          )
-          .map((p) => buildMigratedArt(p));
+        // Four fixed migrated landmarks are prepared once before the first drive.
+        // Eviction releases GPU resources but retains their bounded CPU art for revisit.
+        const local = loaded.landmarkArt.get(ref.id) ?? [];
         assets.set(ref.id, local);
         for (const a of local) group.add(a.root);
         activationMs.push(performance.now() - started);
@@ -111,11 +114,14 @@ function Scene({
         if (v.id) {
           resident.delete(v.id);
           colliders.delete(v.id);
-          for (const a of assets.get(v.id) ?? []) disposeMigratedArt(a.root);
+          for (const a of assets.get(v.id) ?? []) {
+            releaseMigratedArtGPU(a.root);
+          }
           assets.delete(v.id);
           revision++;
         }
       },
+      error => { session.pause(); onError(String(error)); },
     );
     const ring = new T.Mesh(
       new T.TorusGeometry(5, 0.16, 6, 48),
@@ -131,6 +137,7 @@ function Scene({
     group.add(route);
     return {
       group,
+      loader,
       activationMs,
       water,
       materials,
@@ -140,10 +147,12 @@ function Scene({
       stream,
       ring,
       route,
+      notifyReady() { if (!readyNotified) { readyNotified = true; onReady(); } },
       get revision() {
         return revision;
       },
       lastRevision: -1,
+      lastActivationCount: 0,
       routeTime: 0,
       lodTime: 0,
       metrics: {} as Record<string, unknown>,
@@ -155,6 +164,7 @@ function Scene({
   useEffect(
     () => () => {
       content.stream.close();
+      content.loader.close();
       content.ring.geometry.dispose();
       (content.ring.material as T.Material).dispose();
       content.route.geometry.dispose();
@@ -173,6 +183,14 @@ function Scene({
     },
     [content, tuk],
   );
+  useEffect(() => {
+    const lost = (event: Event) => {
+      event.preventDefault(); session.pause();
+      onError('The 3D graphics connection was lost. Your career is saved. Retry Bangkok to restore the scene.');
+    };
+    gl.domElement.addEventListener('webglcontextlost', lost);
+    return () => gl.domElement.removeEventListener('webglcontextlost', lost);
+  }, [gl, session, onError]);
   useFrame((state, delta) => {
     const now = performance.now();
     session.update(delta);
@@ -213,7 +231,9 @@ function Scene({
       camera.position.fromArray(qaView.current.position);
       camera.lookAt(new T.Vector3().fromArray(qaView.current.target));
     }
+    const streamStarted = performance.now();
     content.stream.update(p, { x: camera.position.x, z: camera.position.z });
+    if (content.stream.active.has(`${Math.floor(p.x / 1024) * 1024}:${Math.floor(p.z / 1024) * 1024}`)) content.notifyReady();
     const fog = state.scene.fog as T.Fog;
     fog.far = buildingFogFar(s.quality);
     fog.near = s.quality === "low" ? 260 : 320;
@@ -277,6 +297,10 @@ function Scene({
           (v) => v.root?.userData.buildingBuildMs ?? 0,
         ),
       };
+    }
+    if (content.lastActivationCount !== content.stream.stats.loaded) {
+      content.lastActivationCount = content.stream.stats.loaded;
+      content.activationMs[content.activationMs.length - 1] = performance.now() - streamStarted;
     }
     const dest = targetRef.current ?? s.target;
     content.ring.visible = s.phase === "playing";
@@ -413,6 +437,7 @@ function Scene({
 }
 function PreviewHud({
   loaded,
+  ready,
   onTarget,
   perfEnabled,
   onPerfToggle,
@@ -420,6 +445,7 @@ function PreviewHud({
   onTrafficToggle,
 }: {
   loaded: Loaded;
+  ready: boolean;
   onTarget: (n?: RoadNode) => void;
   perfEnabled: boolean;
   onPerfToggle: () => void;
@@ -430,12 +456,44 @@ function PreviewHud({
     [snapshot, setSnapshot] = useState(session.model.snapshot),
     [chosen, setChosen] = useState(""),
     [map, setMap] = useState(false),
+    [mapCity, setMapCity] = useState(false),
+    [settings, setSettings] = useState(false),
     [guide, setGuide] = useState<{
       name: string;
       distance: number | null;
       road: string;
       thai?: string;
     }>({ name: "", distance: null, road: "" });
+  const [prefs, updatePreferences] = usePreferences();
+  const resumeAfterMap = useRef(false);
+  const toggleMap = () => {
+    if (map) {
+      setMap(false);
+      if (resumeAfterMap.current && !document.hidden && window.matchMedia('(orientation: landscape)').matches) session.resume();
+    } else {
+      resumeAfterMap.current = session.model.snapshot.phase === 'playing';
+      session.pause(); session.clearInput(); setMap(true);
+    }
+  };
+  const start = (mode: 'shift' | 'free') => {
+    sfx.unlock(); setChosen(''); setMap(false); setSettings(false); session.start(mode);
+    if (window.matchMedia('(orientation: portrait)').matches) session.pause();
+  };
+  useEffect(() => { sfx.enabled = prefs.audio; }, [prefs.audio]);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const s = session.model.snapshot;
+      sfx.update(s.speed / 3.6, session.model.input.gas, s.phase === 'playing', s.boostState === 'active');
+    }, 100);
+    const orientation = window.matchMedia('(orientation: portrait)');
+    const changed = () => { if (orientation.matches) { session.clearInput(); session.pause(); } };
+    orientation.addEventListener('change', changed);
+    return () => { clearInterval(timer); orientation.removeEventListener('change', changed); sfx.update(0, false, false); };
+  }, [session]);
+  useEffect(() => {
+    // A keyboard resume cannot run the simulation behind an open route map/settings.
+    if ((map || settings) && snapshot.phase === 'playing') session.pause();
+  }, [map, settings, snapshot.phase, session]);
   const mapRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => session.subscribe((s) => setSnapshot(s)), [session]);
   useEffect(() => {
@@ -463,8 +521,20 @@ function PreviewHud({
       });
       const canvas = mapRef.current;
       if (!canvas) return;
+      // Default to the connected fare route, not a 30km city squeezed into a phone.
+      // The paused map keeps this background stable until target/view changes.
+      let minX = session.player.x, maxX = minX, minZ = session.player.z, maxZ = minZ;
+      for (const point of [...g.path, target]) {
+        minX = Math.min(minX, point.x); maxX = Math.max(maxX, point.x);
+        minZ = Math.min(minZ, point.z); maxZ = Math.max(maxZ, point.z);
+      }
+      const extent = Math.max(1200, maxX - minX, maxZ - minZ) * 1.2;
+      const centerX = (minX + maxX) / 2, centerZ = (minZ + maxZ) / 2;
       const ctx = canvas.getContext("2d")!,
-        b = network.metadata.bounds,
+        b = mapCity ? network.metadata.bounds : {
+          minX: centerX - extent / 2, maxX: centerX + extent / 2,
+          minZ: centerZ - extent / 2, maxZ: centerZ + extent / 2,
+        },
         w = canvas.width,
         h = canvas.height,
         scale = Math.min(w / (b.maxX - b.minX), h / (b.maxZ - b.minZ)),
@@ -518,135 +588,82 @@ function PreviewHud({
     update();
     const timer = setInterval(update, map ? 500 : 250);
     return () => clearInterval(timer);
-  }, [session, network, chosen, map]);
+  }, [session, network, chosen, map, mapCity]);
   return (
     <>
-      <nav className="geo-toolbar">
-        <b>REAL-SCALE BANGKOK · GAMEPLAY PREVIEW</b>
-        <button
-          onClick={() => {
-            if (snapshot.phase === "playing") session.pause();
-            else session.resume();
-          }}
-        >
-          {snapshot.phase === "playing" ? "Pause" : "Resume"}
-        </button>
-        <button onClick={() => setMap(!map)}>Route map</button>
-        <button type="button" data-testid="geographic-traffic-toggle"
-          aria-pressed={trafficEnabled} onClick={onTrafficToggle}>
-          Local traffic {trafficEnabled ? "ON" : "OFF"}
-        </button>
-        <button
-          type="button"
-          data-testid="geographic-performance-toggle"
-          aria-pressed={perfEnabled}
-          onClick={onPerfToggle}
-        >
-          Performance {perfEnabled ? "ON" : "OFF"}
-        </button>
-        <button onClick={() => session.recover()}>Recover</button>
-        <a href={location.pathname}>Full legacy game</a>
+      <nav className="geo-toolbar" aria-label="Real-scale Bangkok controls">
+        <b>REAL-SCALE BANGKOK</b>
+        {(snapshot.phase === 'playing' || snapshot.phase === 'paused') && <>
+          <button onClick={() => snapshot.phase === 'playing' ? session.pause() : session.resume()} disabled={map || settings}>
+            {snapshot.phase === 'playing' ? 'Pause' : 'Resume'}
+          </button>
+          <button onClick={toggleMap}>Route map</button>
+        </>}
+        <button onClick={() => { session.pause(); setSettings(true); }}>Settings</button>
       </nav>
-      <section className="geo-status" aria-live="polite">
-        <div className="geo-street">
-          <b>{guide.road}</b>
-          <small>{guide.thai}</small>
-        </div>
-        <strong>
-          {snapshot.stage === "pickup" ? "PICK UP" : "DELIVER"} ·{" "}
-          {snapshot.passenger}
-        </strong>
-        <div>{guide.name}</div>
-        <b>
-          {guide.distance === null
-            ? "No connected route"
-            : `${Math.round(guide.distance).toLocaleString()} m via roads`}{" "}
-          · {Math.round(snapshot.speed)} km/h
-        </b>
-        <div>
-          ฿{snapshot.earnings} earned · {snapshot.deliveries} trips · Wallet ฿
-          {snapshot.wallet ?? session.career.profile.wallet}
-          {snapshot.mode === "shift"
-            ? ` · Shift ${Math.ceil(snapshot.shiftTime / 60)} min`
-            : ""}
-        </div>
-        <div className="geo-message">
-          {snapshot.message || "Stop within the gold ring to board or deliver."}
-          {snapshot.boarding > 0
-            ? ` ${Math.round(snapshot.boarding * 100)}%`
-            : ""}
-        </div>
-        <label>
-          Navigate{" "}
-          <select
-            aria-label="Geographic destination"
-            value={chosen}
-            onChange={(e) => setChosen(e.target.value)}
-          >
+      {(snapshot.phase === 'playing' || snapshot.phase === 'paused') && !map && !settings && <>
+        <section className="geo-street-banner" aria-label="Current street">
+          <b>{guide.road}</b><small lang="th">{guide.thai}</small>
+        </section>
+        <section className="geo-status" aria-label="Passenger and navigation">
+          <strong>{snapshot.stage === 'pickup' ? 'PICK UP' : 'DELIVER'} · {snapshot.passenger}</strong>
+          <div>{guide.name}</div>
+          <b>{guide.distance === null ? 'No connected route — choose another destination on Route map' : `${Math.round(guide.distance).toLocaleString()} m via roads`}</b>
+          <div>฿{snapshot.earnings} earned · {snapshot.deliveries} trips · Wallet ฿{snapshot.wallet ?? session.career.profile.wallet}</div>
+          <div className="geo-message">{snapshot.message || 'Stop in the gold ring to board or deliver.'}{snapshot.boarding > 0 ? ` ${Math.round(snapshot.boarding * 100)}%` : ''}</div>
+          {chosen && <small>GPS override · passenger fare remains active</small>}
+        </section>
+        <div className="geo-speed"><b>{Math.round(snapshot.speed)}</b><small>km/h{snapshot.mode === 'shift' ? ` · ${Math.ceil(snapshot.shiftTime / 60)} min` : ''}</small></div>
+      </>}
+      {map && <aside className="geo-map" data-testid="geographic-map" role="dialog" aria-modal="true" aria-label="Bangkok route map">
+        <header><b>Bangkok route map</b><button onClick={toggleMap} aria-label="Close route map">Close</button></header>
+        <label>GPS destination
+          <select aria-label="Geographic destination" value={chosen} onChange={e => setChosen(e.target.value)}>
             <option value="">Follow passenger fare</option>
-            {network.stops.map((n) => (
-              <option key={n.id} value={n.id}>
-                {n.name?.split(" · ")[0]}
-              </option>
-            ))}
+            {network.stops.map(n => <option key={n.id} value={n.id}>{n.name?.split(' · ')[0]}</option>)}
+          </select>
+          Map view
+          <select aria-label="Map view" value={mapCity ? 'city' : 'route'} onChange={e => setMapCity(e.target.value === 'city')}>
+            <option value="route">Nearby route</option><option value="city">City overview</option>
           </select>
         </label>
-        {chosen && (
-          <small>
-            Passenger fare remains active. Select “Follow passenger fare” to
-            resume fare guidance.
-          </small>
-        )}
-      </section>
-      {map && (
-        <aside className="geo-map" data-testid="geographic-map">
-          <b>Connected source roads · gold route</b>
-          <canvas
-            ref={mapRef}
-            width={800}
-            height={800}
-            aria-label="Real Bangkok destination route map"
-          />
-          <small>© OpenStreetMap contributors · ODbL</small>
-        </aside>
-      )}
-      {(snapshot.phase === "title" || snapshot.phase === "ended") && (
-        <section className="geo-menu">
-          <h1>Bangkok, at real scale</h1>
-          <p>
-            Drive on mapped Bangkok streets with source-backed traffic
-            controls, Thai-language road signs and named blue street plaques.
-            Signal timing is a gameplay simulation; street-name signpost
-            mounting is scenic rather than surveyed.
-          </p>
-          <button
-            data-testid="button-start-shift"
-            onClick={() => session.start("shift")}
-          >
-            Start shift · 24 minutes
-          </button>
-          <button
-            data-testid="button-free-roam"
-            onClick={() => session.start("free")}
-          >
-            Free roam
-          </button>
-          <a href={location.pathname}>Return to full legacy game</a>
-        </section>
-      )}
+        <canvas ref={mapRef} width={800} height={800} aria-label="Real Bangkok destination route map" />
+        <small>Gold: road route · Pink: your tuk-tuk · © OpenStreetMap contributors · ODbL</small>
+      </aside>}
+      {settings && <section className="geo-menu geo-settings" role="dialog" aria-modal="true" aria-label="Driving settings">
+        <h2>Driving settings</h2>
+        <label>Graphics quality <select aria-label="Graphics quality" value={snapshot.quality} onChange={e => {
+          const quality = e.target.value as 'low' | 'medium'; session.setQuality(quality); updatePreferences({ quality });
+        }}><option value="low">Fast</option><option value="medium">Pretty</option></select></label>
+        <button onClick={() => { sfx.unlock(); updatePreferences({ audio: !prefs.audio }); }}>Sound {prefs.audio ? 'ON' : 'OFF'}</button>
+        <button data-testid="geographic-traffic-toggle" aria-pressed={trafficEnabled} onClick={onTrafficToggle}>Local traffic {trafficEnabled ? 'ON' : 'OFF'}</button>
+        <button data-testid="geographic-performance-toggle" aria-pressed={perfEnabled} onClick={onPerfToggle}>Performance {perfEnabled ? 'ON' : 'OFF'}</button>
+        <button onClick={() => setSettings(false)}>Close settings</button>
+      </section>}
+      {(snapshot.phase === 'title' || snapshot.phase === 'ended') && !settings && <section className="geo-menu">
+        <small>ตุ๊กตุ๊ก รัช · TUK TUK RUSH</small>
+        <h1>Real-Scale Bangkok</h1>
+        <p>Your next fare awaits. Explore Bangkok’s mapped streets at your pace, or start a 24-minute shift.</p>
+        {!ready && <p role="status">Preparing roads and building collisions…</p>}
+        {snapshot.phase === 'ended' && <strong>Shift complete · ฿{snapshot.earnings} earned · {snapshot.deliveries} trips</strong>}
+        <button data-testid="button-start-shift" disabled={!ready} onClick={() => start('shift')}>Start shift · 24 minutes</button>
+        <button data-testid="button-free-roam" disabled={!ready} onClick={() => start('free')}>Free roam</button>
+        <a href={location.pathname}>Main menu · Compact Bangkok</a>
+      </section>}
       {snapshot.viewingLandmark && <Inspection engine={session} />}
-      {snapshot.phase === "paused" && !snapshot.viewingLandmark && (
+      {snapshot.phase === "paused" && !snapshot.viewingLandmark && !map && !settings && (
         <section className="geo-menu">
           <h2>Drive paused</h2>
           <button onClick={() => session.resume()}>Resume drive</button>
-          <button onClick={() => session.returnToTitle()}>End session</button>
+          <button onClick={() => session.recover()}>Recover vehicle</button>
+          <button onClick={() => { setChosen(''); session.returnToTitle(); }}>Real-Scale Bangkok menu</button>
         </section>
       )}
-      {snapshot.phase === "playing" && (
-        <Controls engine={session} onHorn={() => {}} />
+      {snapshot.phase === "playing" && !map && !settings && (
+        <Controls engine={session} onHorn={() => { sfx.unlock(); sfx.horn(); }} />
       )}
       <small className="geo-credit">
-        Preview · 1 unit = 1 meter · © OpenStreetMap contributors · ODbL 1.0
+        1 unit = 1 meter · © OpenStreetMap contributors · ODbL 1.0
       </small>
     </>
   );
@@ -658,6 +675,8 @@ export default function GeographicPrototype() {
     [trafficEnabled, setTrafficEnabled] = useState(() => new URLSearchParams(location.search).get("geoTraffic") !== "0"),
     [perfEnabled, setPerfEnabled] = useState(() => new URLSearchParams(location.search).has("geoPerf")),
     [perfSample, setPerfSample] = useState<GeographicPerfSample>();
+  const [ready, setReady] = useState(false);
+  const onReady = useCallback(() => setReady(true), []);
   const onPerfSample = useCallback((sample: GeographicPerfSample) => setPerfSample(sample), []);
   useEffect(() => {
     let cancelled = false,
@@ -670,7 +689,7 @@ export default function GeographicPrototype() {
       loadArt().catch((error) => {
         throw Error(`Bangkok 3D artwork failed to load: ${String(error)}`, { cause: error });
       }),
-    ]).then(([network, art]) => {
+    ]).then(async ([network, art]) => {
         if (cancelled) {
           art.dispose();
           return;
@@ -678,11 +697,22 @@ export default function GeographicPrototype() {
         const { district, places } = createGameplayDistrict(network),
           session = new GeographicSession(district);
         session.setQuality(readPreferences().quality);
+        const landmarkArt = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
         cleanup = () => {
           session.dispose();
+          for (const entries of landmarkArt.values()) for (const entry of entries) disposeMigratedArt(entry.root);
           art.dispose();
         };
+        for (const place of places) {
+          await new Promise<void>(resolve => setTimeout(resolve, 0));
+          if (cancelled) { cleanup(); return; }
+          const key = `${Math.floor(place.landmark.x / 1024) * 1024}:${Math.floor(place.landmark.z / 1024) * 1024}`;
+          const entries = landmarkArt.get(key) ?? [];
+          entries.push(buildMigratedArt(place));
+          landmarkArt.set(key, entries);
+        }
         setLoaded({
+          landmarkArt,
           network,
           session,
           art,
@@ -690,7 +720,7 @@ export default function GeographicPrototype() {
           loadMs: performance.now() - start,
         });
       })
-      .catch((e) => setError(String(e)));
+      .catch((e) => { cleanup?.(); if (!cancelled) setError(String(e)); });
     return () => {
       cancelled = true;
       cleanup?.();
@@ -711,21 +741,25 @@ export default function GeographicPrototype() {
   return (
     <main className="tt-root geo-root" data-testid="geographic-prototype">
       <Canvas
+        fallback={<div className="geo-error" role="alert">3D graphics unavailable. <button onClick={() => location.reload()}>Retry Bangkok</button><a href={location.pathname}>Main menu</a></div>}
         dpr={1}
         camera={{ near: 0.1, far: 1800 }}
         gl={{ antialias: true, preserveDrawingBuffer: import.meta.env.DEV }}
       >
         <Scene loaded={loaded} target={target} perfEnabled={perfEnabled}
-          onPerfSample={onPerfSample} trafficEnabled={trafficEnabled} />
+          onPerfSample={onPerfSample} trafficEnabled={trafficEnabled}
+          onError={setError} onReady={onReady} />
       </Canvas>
       <PreviewHud
         loaded={loaded}
+        ready={ready}
         onTarget={setTarget}
         perfEnabled={perfEnabled}
         onPerfToggle={() => { setPerfSample(undefined); setPerfEnabled((value) => !value); }}
         trafficEnabled={trafficEnabled}
         onTrafficToggle={() => setTrafficEnabled((value) => !value)}
       />
+      <div className="tt-rotate" data-testid="hint-rotate"><b>Turn your phone sideways</b><span>หมุนจอเป็นแนวนอน</span></div>
       {perfEnabled && (
         <GeographicPerformanceOverlay
           sample={perfSample}

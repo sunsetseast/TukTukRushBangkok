@@ -1,0 +1,102 @@
+{
+  "environment": "Linux local Node v24.22.1; browser execution separately in GitHub Actions",
+  "workingDirectory": "artifacts/tuk-tuk-rush",
+  "results": [
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "log": "validation/typecheck.log"
+    },
+    {
+      "command": "PORT=24830 BASE_PATH=/ pnpm build",
+      "exitCode": 0,
+      "log": "validation/build.log"
+    },
+    {
+      "command": "PORT=24830 BASE_PATH=/ pnpm exec vite build",
+      "exitCode": 0,
+      "log": "validation/final-bundle.log"
+    },
+    {
+      "command": "pnpm test:geographic-streaming",
+      "exitCode": 0,
+      "log": "validation/stream.log"
+    },
+    {
+      "command": "pnpm test:geographic-gameplay",
+      "exitCode": 0,
+      "log": "validation/gameplay.log"
+    },
+    {
+      "command": "pnpm test:geographic-buildings",
+      "exitCode": 0,
+      "log": "validation/buildings.log"
+    },
+    {
+      "command": "pnpm test:geographic-traffic",
+      "exitCode": 0,
+      "log": "validation/traffic.log"
+    },
+    {
+      "command": "pnpm test:geographic-control-import",
+      "exitCode": 0,
+      "log": "validation/controls.log"
+    },
+    {
+      "command": "pnpm test:geographic-controls-ready",
+      "exitCode": 0,
+      "log": "validation/ready.log"
+    },
+    {
+      "command": "pnpm test:thai-road-signage",
+      "exitCode": 0,
+      "log": "validation/signs.log"
+    },
+    {
+      "command": "pnpm test:geographic-asset-delivery",
+      "exitCode": 0,
+      "log": "validation/assets.log"
+    },
+    {
+      "command": "pnpm test:gameplay",
+      "exitCode": 0,
+      "log": "validation/legacy.log"
+    },
+    {
+      "command": "pnpm test:startup",
+      "exitCode": 0,
+      "log": "validation/startup.log"
+    },
+    {
+      "command": "pnpm test:career",
+      "exitCode": 0,
+      "log": "validation/career.log"
+    },
+    {
+      "command": "node --import tsx scripts/check-geographic-worker.ts",
+      "exitCode": 0,
+      "log": "validation/worker.log"
+    },
+    {
+      "command": "node --import tsx scripts/check-geographic-landmark-cache.ts",
+      "exitCode": 0,
+      "log": "validation/landmark-cache.log"
+    }
+  ],
+  "additional": [
+    {
+      "command": "node --import tsx scripts/check-geographic-preparation.ts",
+      "exitCode": 0,
+      "report": "cpu-after.json"
+    },
+    {
+      "command": "git diff --exit-code b6a050ba3f21d98c3ea22aac26998eed739ad637 -- data/ artifacts/tuk-tuk-rush/public/assets/geography/",
+      "exitCode": 0,
+      "meaning": "Pinned source and committed runtime assets unchanged"
+    }
+  ],
+  "limitations": [
+    "Local Chromium launch denied by managed Unix-socket policy; no passing local browser result claimed.",
+    "Physical iPhone 17 Pro Max Safari performance/thermal/orientation run remains required."
+  ]
+}

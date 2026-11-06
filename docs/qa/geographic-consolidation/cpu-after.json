@@ -1,0 +1,69 @@
+{
+  "pass": true,
+  "environment": "Node CPU, no GPU; transfer and geometry equivalence",
+  "records": [
+    {
+      "id": "2048:-1024",
+      "workerPreparationMs": 31.472825,
+      "mainAttachmentMs": 7.861320000000092,
+      "gpuBytes": 2624576,
+      "buildings": 2030
+    },
+    {
+      "id": "2048:0",
+      "workerPreparationMs": 15.489333999999985,
+      "mainAttachmentMs": 1.779749000000038,
+      "gpuBytes": 1461908,
+      "buildings": 1231
+    },
+    {
+      "id": "2048:1024",
+      "workerPreparationMs": 16.062485000000038,
+      "mainAttachmentMs": 2.345354000000043,
+      "gpuBytes": 1255764,
+      "buildings": 1095
+    },
+    {
+      "id": "3072:-1024",
+      "workerPreparationMs": 62.77687800000001,
+      "mainAttachmentMs": 3.9385030000000825,
+      "gpuBytes": 2208060,
+      "buildings": 1701
+    },
+    {
+      "id": "3072:0",
+      "workerPreparationMs": 33.180865999999924,
+      "mainAttachmentMs": 3.9505810000000565,
+      "gpuBytes": 2778320,
+      "buildings": 1999
+    },
+    {
+      "id": "3072:1024",
+      "workerPreparationMs": 18.315621000000192,
+      "mainAttachmentMs": 2.9311199999999644,
+      "gpuBytes": 2502144,
+      "buildings": 1732
+    },
+    {
+      "id": "4096:-1024",
+      "workerPreparationMs": 8.806770000000142,
+      "mainAttachmentMs": 2.9869340000000193,
+      "gpuBytes": 1755048,
+      "buildings": 1570
+    },
+    {
+      "id": "4096:0",
+      "workerPreparationMs": 31.442168000000038,
+      "mainAttachmentMs": 3.558667999999898,
+      "gpuBytes": 1828300,
+      "buildings": 1372
+    },
+    {
+      "id": "4096:1024",
+      "workerPreparationMs": 23.186299999999846,
+      "mainAttachmentMs": 11.846593999999868,
+      "gpuBytes": 3114224,
+      "buildings": 2144
+    }
+  ]
+}

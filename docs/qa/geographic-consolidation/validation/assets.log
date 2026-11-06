@@ -1,0 +1,16 @@
+$ node --import tsx scripts/check-geographic-asset-delivery.ts && node --import tsx scripts/check-geographic-spa-fallback.ts
+{
+  pass: true,
+  exactGzipSources: 4,
+  alreadyDecoded: true,
+  corruptedGzipRejected: true
+}
+{
+  ok: true,
+  replitHtml200Fallback: true,
+  invalidJsonFallback: true,
+  originalGzip: true,
+  legacyBuildingChunk: true,
+  noSilentMissingRules: true,
+  abortSafe: true
+}

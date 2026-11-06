@@ -29,6 +29,16 @@ export function geographicMaterials(data: {
     ),
   };
 }
+function preparedSurface(c: GeographicChunkData, kind: 'land' | 'water' | 'roads') {
+  const attributes = c.preparedSurfaces?.[kind];
+  if (!attributes) return surfaceGeometry(c[kind], kind === 'land' ? -.25 : kind === 'water' ? -.48 : .1);
+  const g = new T.BufferGeometry();
+  g.setAttribute('position', new T.BufferAttribute(attributes.position, 3));
+  g.setAttribute('normal', new T.BufferAttribute(attributes.normal, 3));
+  g.setAttribute('uv', new T.BufferAttribute(attributes.uv, 2));
+  g.computeBoundingBox(); g.computeBoundingSphere();
+  return g;
+}
 function strip(points: [number, number, number][], width: number) {
   const pos: number[] = [];
   for (let i = 1; i < points.length; i++) {
@@ -93,10 +103,7 @@ export function buildGeographicChunk(
     if (c[kind].length)
       root.add(
         new T.Mesh(
-          surfaceGeometry(
-            c[kind],
-            kind === "land" ? -0.25 : kind === "water" ? -0.48 : 0.1,
-          ),
+          preparedSurface(c, kind),
           kind === "water" ? water : m[kind],
         ),
       );

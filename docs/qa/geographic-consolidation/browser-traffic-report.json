@@ -1,0 +1,38 @@
+{
+  "environment": "Headless Chromium SwiftShader WebGL; not a real iPhone",
+  "checks": [
+    "real-OSM-signals-in-runtime",
+    "batched-Thai-car-art-in-WebGL",
+    "actual-road-traffic-spawns",
+    "traffic-off-clears-moving-fleet",
+    "traffic-on-repopulates-roads"
+  ],
+  "before": {
+    "sources": 213,
+    "restrictions": 1720,
+    "drawBatches": 21
+  },
+  "on": {
+    "fleet": 1,
+    "actors": [
+      {
+        "id": 1,
+        "kind": "taxi",
+        "edge": 317627,
+        "from": 308365,
+        "to": 221721,
+        "x": 3563.273962097526,
+        "z": 970.8452705736149,
+        "speed": 0.4
+      }
+    ]
+  },
+  "off": {
+    "fleet": 0,
+    "actors": 0
+  },
+  "restarted": {
+    "fleet": 1
+  },
+  "errors": []
+}

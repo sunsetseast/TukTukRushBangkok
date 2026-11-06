@@ -1,0 +1,14 @@
+$ node --import tsx scripts/check-geographic-controls-ready.ts
+{
+  pass: true,
+  source: 'https://download.geofabrik.de/asia/thailand-latest.osm.pbf',
+  sourceSha256: 'ad4a11a4632397ae7f6fe9f9d02ed8852b695ea6db4f3ad61acbf7ecffbfa64b',
+  signTags: 495,
+  verifiedSignals: 213,
+  verifiedStops: 25,
+  verifiedYields: 0,
+  unmatched: 19,
+  turnRestrictions: 1720,
+  unknownSignCodesWithheld: 6,
+  numericLimitsIntentionallyNotInvented: 5
+}

@@ -1,0 +1,3 @@
+$ node --import tsx scripts/check-geographic-buildings.ts && node --import tsx scripts/check-geographic-compiled.ts
+{"pass":true,"buildings":222123,"vertices":18462054,"roofArea":300,"resourceDisposal":true,"lod":true,"productionCollision":true,"partRelationships":588}
+{"buildings":222123,"chunks":471,"vertices":18462054,"originalGPU":664633944,"gpu":282663084,"restoredEdges":4525,"comparedChunks":192,"maxPositionError":0.0005035400390625,"indexBuildMs":3.1456539999999222,"queryMs":{"samples":968,"mean":0.0021715795453868744,"p95":0.003735999998752959,"max":0.12795299999925192}}

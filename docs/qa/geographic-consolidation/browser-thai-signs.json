@@ -1,0 +1,211 @@
+{
+  "renderer": "Chromium ANGLE SwiftShader, mobile-sized viewport; not a physical iPhone",
+  "source": "OSM traffic-control inventory and named source roads",
+  "checks": [
+    "verified-real-bangkok-traffic-control-source",
+    "thai-3-lamp-signal-art",
+    "thai-stop-sign-source",
+    "osm-bilingual-street-name-placards",
+    "48-sign-local-budget",
+    "traffic-toggle-does-not-delete-road-signage"
+  ],
+  "locations": [
+    {
+      "name": "Chinatown Gate",
+      "signs": {
+        "visible": 2,
+        "sourceNearby": 2,
+        "signals": 0,
+        "stops": 2,
+        "yields": 0,
+        "unknownSkipped": 0,
+        "heads": 0,
+        "osmIds": [
+          "osm:node/13011821385",
+          "osm:node/12064913105"
+        ],
+        "drawBatches": 8
+      },
+      "streetNames": [
+        {
+          "id": "osm:way/448977312",
+          "thai": "ซอยเยาวราช 1",
+          "english": "Soi Yaowarat 1"
+        },
+        {
+          "id": "osm:way/168827268",
+          "thai": "ซอยเยาวราช 3",
+          "english": "Soi Yaowarat 3"
+        },
+        {
+          "id": "osm:way/175257878",
+          "thai": "ถนนเจริญกรุง",
+          "english": "Charoen Krung Road"
+        },
+        {
+          "id": "osm:way/1051323384",
+          "thai": "ถนนตรีมิตร",
+          "english": "Tri Mit Road"
+        },
+        {
+          "id": "osm:way/242163290",
+          "thai": "ซอยเยาวราช 5",
+          "english": "Soi Yaowarat 5"
+        },
+        {
+          "id": "osm:way/157690693",
+          "thai": "ถนนเจริญกรุง",
+          "english": "Charoen Krung Road"
+        }
+      ]
+    },
+    {
+      "name": "Charoen Krung",
+      "signs": {
+        "visible": 5,
+        "sourceNearby": 5,
+        "signals": 5,
+        "stops": 0,
+        "yields": 0,
+        "unknownSkipped": 0,
+        "heads": 6,
+        "osmIds": [
+          "osm:node/280287639",
+          "osm:node/6240117278",
+          "osm:node/2591707989",
+          "osm:node/7698899696",
+          "osm:node/7698899697"
+        ],
+        "drawBatches": 8
+      },
+      "streetNames": [
+        {
+          "id": "osm:way/629353146",
+          "thai": "ถนนพระรามที่ 4",
+          "english": "Rama IV Road"
+        },
+        {
+          "id": "osm:way/463801028",
+          "thai": "ถนนกรุงเกษม",
+          "english": "Krung Kasem Road"
+        },
+        {
+          "id": "osm:way/175257876",
+          "thai": "ถนนพระรามที่ 4",
+          "english": "Rama IV Road"
+        },
+        {
+          "id": "osm:way/463801025",
+          "thai": "ถนนไมตรีจิตต์",
+          "english": "Maitri Chit Road"
+        },
+        {
+          "id": "osm:way/175257886",
+          "thai": "ซอยโปลิศสภา",
+          "english": "Soi Porisapha"
+        },
+        {
+          "id": "osm:way/30134855",
+          "thai": "ถนนมิตรภาพไทย-จีน",
+          "english": "Mittraphap Thai-China Road"
+        }
+      ]
+    },
+    {
+      "name": "Yaowarat",
+      "signs": {
+        "visible": 1,
+        "sourceNearby": 1,
+        "signals": 1,
+        "stops": 0,
+        "yields": 0,
+        "unknownSkipped": 0,
+        "heads": 2,
+        "osmIds": [
+          "osm:node/280751206"
+        ],
+        "drawBatches": 8
+      },
+      "streetNames": [
+        {
+          "id": "osm:way/918283395",
+          "thai": "ถนนมิตรพันธ์",
+          "english": "Mittraphan Road"
+        },
+        {
+          "id": "osm:way/463790325",
+          "thai": "ถนนเจริญกรุง",
+          "english": "Charoen Krung Road"
+        },
+        {
+          "id": "osm:way/157690693",
+          "thai": "ถนนเจริญกรุง",
+          "english": "Charoen Krung Road"
+        },
+        {
+          "id": "osm:way/754824715",
+          "thai": "ถนนทรงสวัสดิ์",
+          "english": "Song Sawat Road"
+        },
+        {
+          "id": "osm:way/463801018",
+          "thai": "ถนนพระรามที่ 4",
+          "english": "Rama IV Road"
+        },
+        {
+          "id": "osm:way/918283394",
+          "thai": "ถนนมิตรพันธ์",
+          "english": "Mittraphan Road"
+        }
+      ]
+    },
+    {
+      "name": "Bang Rak",
+      "signs": {
+        "visible": 1,
+        "sourceNearby": 1,
+        "signals": 1,
+        "stops": 0,
+        "yields": 0,
+        "unknownSkipped": 0,
+        "heads": 2,
+        "osmIds": [
+          "osm:node/281478163"
+        ],
+        "drawBatches": 8
+      },
+      "streetNames": [
+        {
+          "id": "osm:way/185301806",
+          "thai": "ถนนสุรวงศ์",
+          "english": "Surawong Road"
+        },
+        {
+          "id": "osm:way/1208104030",
+          "thai": "ถนนสุรวงศ์",
+          "english": "Surawong Road"
+        },
+        {
+          "id": "osm:way/39943969",
+          "thai": "ถนนมเหสักข์",
+          "english": "Mahesak Road"
+        },
+        {
+          "id": "osm:way/1013632952",
+          "thai": "ถนนมหาเศรษฐ์",
+          "english": "Maha Set Road"
+        },
+        {
+          "id": "osm:way/156241479",
+          "thai": "ซอยปราโมทย์",
+          "english": "Soi Pramot"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "controls": {
+    "matchedSignals": 213,
+    "turnRestrictions": 1720
+  }
+}

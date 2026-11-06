@@ -1,0 +1,10 @@
+$ node --import tsx scripts/check-geographic-control-import.ts
+{
+  pass: true,
+  sourceAnchoring: true,
+  taggedControls: 3,
+  taggedSignsNotInvented: true,
+  phaseGroupsNonOverlapping: true,
+  exactOSMTurnRestrictions: 2,
+  newerSourceRequiresCoordinateMatch: true
+}
