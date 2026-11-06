@@ -54,11 +54,11 @@ jobs:
           GEOGRAPHY_QA_BASELINE_REF: e2afddf273ad4bfd752180bffa0b8422ca242be7
         run: timeout 420 node scripts/browser-geographic-chinatown.mjs
       - name: Genuine rendered visual evidence and matched driving
-        if: always()
+        if: ${{ !cancelled() }}
         working-directory: artifacts/tuk-tuk-rush
         run: timeout 600 node scripts/browser-geographic-chinatown.mjs
       - name: Safari asset fallback
-        if: always()
+        if: ${{ !cancelled() }}
         working-directory: artifacts/tuk-tuk-rush
         run: node scripts/browser-geographic-spa-fallback.mjs
       - uses: actions/upload-artifact@v4
