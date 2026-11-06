@@ -9,7 +9,7 @@ const port=Number(process.argv[2]);
 // written. Source changes require a fresh capture process, never live HMR.
 const baseline=process.env.GEOGRAPHY_QA_BASELINE_REF;
 if(baseline&&!/^[0-9a-f]{40}$/.test(baseline))throw Error('QA baseline must be a pinned commit SHA');
-const historical=new Set(['src/game/bangkok/clearanceIndex.ts',...['buildings.ts','dataset.ts','rendering.ts','Prototype.tsx','streaming.ts'].map(f=>`src/game/bangkok/geographic/${f}`)]);
+const historical=new Set(['src/game/bangkok/clearanceIndex.ts',...['buildings.ts','dataset.ts','rendering.ts','Prototype.tsx','streaming.ts','chunkLoader.ts','chunk.worker.ts','chunkPreparation.ts'].map(f=>`src/game/bangkok/geographic/${f}`)]);
 const server=await createServer({
   cacheDir:path.join(os.tmpdir(),`tuktuk-qa-vite-${port}-${baseline?.slice(0,12)??'working'}`),
   plugins:baseline?[{name:'pinned-geography-qa-baseline',enforce:'pre',load(id){

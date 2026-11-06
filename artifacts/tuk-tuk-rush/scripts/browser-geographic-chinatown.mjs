@@ -1,0 +1,26 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {chromium} from 'playwright';import {startQaServer} from './browser-vite.mjs';
+const baseline=!!process.env.GEOGRAPHY_QA_BASELINE_REF,out=new URL('../../../docs/qa/geographic-chinatown/',import.meta.url);fs.mkdirSync(out,{recursive:true});
+const fixtures=JSON.parse(fs.readFileSync(new URL('./geographic-chinatown-views.json',import.meta.url),'utf8'));
+const server=await startQaServer(24860);let browser;const report={baseline,physicalIPhone:false,environment:'Linux Chromium SwiftShader 844x390 touch; not physical iPhone',errors:[],views:[],samples:[]};
+try{
+ browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--disable-dev-shm-usage']});const page=await browser.newPage({viewport:{width:844,height:390},hasTouch:true,isMobile:true});page.setDefaultTimeout(45000);page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&/WebGLProgram|VALIDATE_STATUS|ERROR: 0:/.test(m.text()))report.errors.push(m.text());});
+ const started=performance.now();await page.goto('http://127.0.0.1:24860/?world=geographic&geographyQA&geoTime=day');await page.getByTestId('button-free-roam').tap({timeout:120000});await page.waitForFunction(()=>window.__geography?.stream.settled&&window.__geography.stream.active>=9,undefined,{timeout:120000});report.startupMs=performance.now()-started;report.initial=await page.evaluate(()=>window.__geography);
+ const setting=async(time,quality)=>{await page.getByRole('button',{name:'Settings',exact:true}).click();if(!baseline)await page.getByLabel('Time of day').selectOption(time);await page.getByLabel('Graphics quality').selectOption(quality);await page.getByRole('button',{name:'Close settings',exact:true}).click();await page.getByRole('button',{name:'Resume drive',exact:true}).click();};
+ const pose=async(v)=>{await page.evaluate(v=>{const q=window.__geographyQA;q.move(v.lon,v.lat,v.heading);q.view(v.camera,v.target);},v);await page.waitForFunction(v=>window.__geography.stream.settled&&Math.abs(window.__geography.coordinate.lon-v.lon)<.001&&Math.abs(window.__geography.coordinate.lat-v.lat)<.001,v,{timeout:90000});await page.waitForTimeout(1200);};
+ for(const v of fixtures){if(baseline&&v.time!=='day')continue;await setting(v.time,v.quality);await pose(v);await page.screenshot({path:new URL(`${baseline?'before-':''}${v.name}.png`,out).pathname});report.views.push({name:v.name,pose:v,stats:await page.evaluate(()=>({calls:window.__geography.drawCalls,triangles:window.__geography.triangles,geometries:window.__geography.geometries,quality:window.__geography.quality,chinatown:window.__geography.chinatown}))});}
+ // Exact same recorded road-following QA path, controls, camera and quality for both versions.
+ for(const quality of ['low','medium'])for(const traffic of [true,false]){
+  await setting('day',quality);await page.getByRole('button',{name:'Settings',exact:true}).click();const toggle=page.getByTestId('geographic-traffic-toggle');if((await toggle.getAttribute('aria-pressed'))!==String(traffic))await toggle.click();await page.getByRole('button',{name:'Close settings',exact:true}).click();await page.getByRole('button',{name:'Resume drive',exact:true}).click();
+  await pose(fixtures[0]);
+  const sample=await page.evaluate(async quality=>{
+   const q=window.__geographyQA,s=q.session,p=s.player,n=q.network.nearest(p);s.setQuality(quality);p.heading=n.heading;s.clearInput();s.model.input.gas=true;
+   const from={x:p.x,z:p.z},a=[];let last=performance.now(),i=0;
+   return await new Promise(resolve=>{const frame=now=>{a.push(now-last);last=now;i++;
+    const dx=Math.sin(p.heading),dz=Math.cos(p.heading);q.view([p.x-dx*9,3.8,p.z-dz*9],[p.x+dx*12,2,p.z+dz*12]);
+    if(i<60)requestAnimationFrame(frame);else{s.clearInput();a.sort((a,b)=>a-b);resolve({medianMs:a[29],p95Ms:a[56],worstMs:a.at(-1),stalls50:a.filter(t=>t>50).length,frames:a.length,from,to:{x:p.x,z:p.z},drivenMeters:Math.hypot(p.x-from.x,p.z-from.z)});}};requestAnimationFrame(frame);});
+  },quality);
+  report.samples.push({quality,traffic,...sample,stats:await page.evaluate(()=>({calls:window.__geography.drawCalls,triangles:window.__geography.triangles,buildings:window.__geography.buildings,geometries:window.__geography.geometries,activationMs:window.__geography.activationMs,stream:window.__geography.stream}))});
+ }
+ if(!baseline){assert(report.initial.chinatown?.facades.length>30);for(const v of report.views)assert(v.stats.calls<230,'Bound draw calls');}
+ assert.deepEqual(report.errors,[]);
+}catch(error){report.failure=String(error);throw error;}finally{fs.writeFileSync(new URL(baseline?'browser-before.json':'browser-after.json',out),JSON.stringify(report,null,2)+'\n');await browser?.close();server.kill();}
