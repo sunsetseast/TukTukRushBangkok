@@ -61,4 +61,6 @@ export type GeographicPerfSample = ReturnType<GeographicFrameProfiler["snapshot"
   maxChunkActivationMs: number;
   quality: "low" | "medium";
   streamErrors: number;
+  decorativeBufferBytes?: number;
+  decorativeFacades?: number;
 };

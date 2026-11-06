@@ -102,7 +102,7 @@ function Scene({
         resident.set(ref.id, v.chunk);
         colliders.set(
           ref.id,
-          v.chunk.preparedColliders ?? buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin),
+          [...(v.chunk.preparedColliders ?? buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin)), ...(v.chunk.decoration?.props ?? [])],
         );
         // Four fixed migrated landmarks are prepared once before the first drive.
         // Eviction releases GPU resources but retains their bounded CPU art for revisit.
@@ -425,6 +425,8 @@ function Scene({
           maxChunkActivationMs: Math.max(0, ...content.activationMs),
           quality: s.quality,
           streamErrors: content.stream.stats.errors,
+          decorativeBufferBytes: [...content.resident.values()].reduce((n,c)=>n+(c.decoration?.bytes??0),0),
+          decorativeFacades: [...content.resident.values()].reduce((n,c)=>n+(c.decoration?.facades.length??0),0),
         });
       }
     } else if (perfAt.current !== 0) {

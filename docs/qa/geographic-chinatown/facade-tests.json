@@ -9,10 +9,10 @@
       "id": "2048:0",
       "facades": 16,
       "songwat": 3,
-      "pieces": 1862,
-      "bytes": 224614,
-      "batches": 77,
-      "prepareMs": 177.42170300000004,
+      "pieces": 2072,
+      "bytes": 247097,
+      "batches": 83,
+      "prepareMs": 195.81293300000004,
       "first": [
         {
           "id": "osm:way/1021129470:0:0",
@@ -28,6 +28,7 @@
           "height": 12.8,
           "floors": 4,
           "seed": 4167259151,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -59,6 +60,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 3765068143,
+          "family": "shophouse",
           "outset": 1.3807377750001084,
           "edge": {
             "a": [
@@ -90,6 +92,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 3798623381,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -121,6 +124,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 3215623794,
+          "family": "shophouse",
           "outset": 0.8058777730292892,
           "edge": {
             "a": [
@@ -152,6 +156,7 @@
           "height": 15.2,
           "floors": 4,
           "seed": 1518717122,
+          "family": "mixed-use",
           "outset": 0.3766354379232313,
           "edge": {
             "a": [
@@ -183,6 +188,7 @@
           "height": 12.8,
           "floors": 4,
           "seed": 3420751388,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -214,6 +220,7 @@
           "height": 12.8,
           "floors": 4,
           "seed": 3094481941,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -245,6 +252,7 @@
           "height": 12.8,
           "floors": 4,
           "seed": 889810714,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -268,10 +276,10 @@
       "id": "3072:0",
       "facades": 111,
       "songwat": 7,
-      "pieces": 12179,
-      "bytes": 1100781,
-      "batches": 155,
-      "prepareMs": 430.1969160000001,
+      "pieces": 13602,
+      "bytes": 1268160,
+      "batches": 176,
+      "prepareMs": 564.2471760000001,
       "first": [
         {
           "id": "osm:way/1021129461:0:3",
@@ -287,6 +295,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 3368197308,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -318,6 +327,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 4110678733,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -349,6 +359,7 @@
           "height": 19,
           "floors": 5,
           "seed": 2194088071,
+          "family": "mixed-use",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -380,6 +391,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 2307891109,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -411,6 +423,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 1479854852,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -442,6 +455,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 310275833,
+          "family": "shophouse",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -473,6 +487,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 1815018427,
+          "family": "residential",
           "outset": 1.65,
           "edge": {
             "a": [
@@ -504,6 +519,7 @@
           "height": 9.6,
           "floors": 3,
           "seed": 1798240808,
+          "family": "residential",
           "outset": 1.65,
           "edge": {
             "a": [
