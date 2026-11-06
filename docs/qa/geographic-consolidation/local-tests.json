@@ -76,6 +76,11 @@
       "command": "node --import tsx scripts/check-geographic-worker.ts",
       "exitCode": 0,
       "log": "validation/worker.log"
+    },
+    {
+      "command": "node --import tsx scripts/check-geographic-landmark-cache.ts",
+      "exitCode": 0,
+      "log": "validation/landmark-cache.log"
     }
   ],
   "additional": [

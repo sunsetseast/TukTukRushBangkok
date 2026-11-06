@@ -1,0 +1,494 @@
+{
+  "testedCode": "78906b229f274e088e1f485af1104feb99741769",
+  "physicalIPhone": false,
+  "consolidation": {
+    "jobs": [
+      {
+        "id": 127782448965,
+        "name": "runtime",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 42184791817,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run pnpm install --frozen-lockfile --ignore-scripts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Prepare existing committed assets without reimporting Bangkok",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush typecheck",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-preparation.ts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-worker.ts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-landmark-cache.ts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:thai-road-signage",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-asset-delivery",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec vite build",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Run actions/cache@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          },
+          {
+            "name": "Install browser engines (bounded)",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 18
+          },
+          {
+            "name": "Matched before runtime",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          },
+          {
+            "name": "Final mobile interactions and runtime",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 20
+          },
+          {
+            "name": "WebKit compressed assets and HTML fallback",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Post Run actions/cache@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 41
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 42
+          },
+          {
+            "name": "Post Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 43
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 44
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 45
+          }
+        ]
+      }
+    ]
+  },
+  "fullGeographic": {
+    "jobs": [
+      {
+        "id": 127782449254,
+        "name": "geographic-proof",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 42184791827,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run pnpm install --frozen-lockfile",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run python -m pip install -r scripts/geography/requirements.txt",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Reproduce runtime offline and validate source geometry",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush typecheck",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:real-geography",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-buildings",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:chinatown-completion",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush test:historic-fidelity",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush build",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Run pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          },
+          {
+            "name": "Install WebKit for gzip transport regression",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 18
+          },
+          {
+            "name": "Verify mapped Thai traffic signs, moving vehicle art, and mobile UI toggle",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          },
+          {
+            "name": "Run node scripts/browser-geographic-streaming.mjs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 20
+          },
+          {
+            "name": "Capture actual Bangkok OSM-tagged Thai road sign art and bilingual street names",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          },
+          {
+            "name": "Verify opt-in mobile performance overlay (software WebGL only)",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Verify packed geography delivery on WebKit",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 24
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 45
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 46
+          },
+          {
+            "name": "Post Run pnpm/action-setup@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 47
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 48
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 49
+          }
+        ]
+      }
+    ]
+  },
+  "workflows": {
+    "workflow_runs": [
+      {
+        "id": 42184791804,
+        "name": "Yaowarat art inspection",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 238,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791804/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791804/logs",
+        "workflow_id": 381438825
+      },
+      {
+        "id": 42184792341,
+        "name": "Tuk Tuk Rush graphics checks",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 251,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792341/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792341/logs",
+        "workflow_id": 380859023
+      },
+      {
+        "id": 42184792156,
+        "name": "Bang Rak completion and visual evidence",
+        "status": "completed",
+        "conclusion": "cancelled",
+        "run_number": 93,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792156/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792156/logs",
+        "workflow_id": 395890848
+      },
+      {
+        "id": 42184791817,
+        "name": "Geographic mobile consolidation",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 4,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791817/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791817/logs",
+        "workflow_id": 409065333
+      },
+      {
+        "id": 42184792071,
+        "name": "Bangkok living cityscapes driving QA",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_number": 159,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792071/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792071/logs",
+        "workflow_id": 383949257
+      },
+      {
+        "id": 42184791876,
+        "name": "Bangkok matched environment survey",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_number": 156,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791876/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791876/logs",
+        "workflow_id": 383951269
+      },
+      {
+        "id": 42184792490,
+        "name": "Canonical Bangkok approval and benchmark gates",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 128,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792490/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792490/logs",
+        "workflow_id": 391948764
+      },
+      {
+        "id": 42184792098,
+        "name": "Chinatown geography and driving certification",
+        "status": "completed",
+        "conclusion": "cancelled",
+        "run_number": 119,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792098/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184792098/logs",
+        "workflow_id": 394237179
+      },
+      {
+        "id": 42184791923,
+        "name": "Geographic Bangkok local traffic foundation",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 73,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791923/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791923/logs",
+        "workflow_id": 405069737
+      },
+      {
+        "id": 42184791927,
+        "name": "Geographic map loading (Replit 200 HTML recovery)",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 70,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791927/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791927/logs",
+        "workflow_id": 405033935
+      },
+      {
+        "id": 42184791827,
+        "name": "Real-scale Bangkok geography",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 95,
+        "jobs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791827/jobs",
+        "logs_url": "https://api.github.com/repos/sunsetseast/TukTukRushBangkok/actions/runs/42184791827/logs",
+        "workflow_id": 396228844
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "runId": 42184791817,
+      "artifactId": 13487930400,
+      "sha256": "082c80dc0c661450721866119e5a4296822edeb8f911c4cb449688de9821bfa3"
+    },
+    {
+      "runId": 42184791827,
+      "artifactId": 13488191124,
+      "sha256": "f0138958808d0df8b38226518e80d4beb1aa31bcc2857cd6f2526a6ee5de07e7"
+    }
+  ]
+}
