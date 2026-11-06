@@ -6,7 +6,7 @@ on:
       - '.github/workflows/geographic-chinatown.yml'
   workflow_dispatch:
 concurrency:
-  group: chinatown-${{ github.ref }}
+  group: chinatown-${{ github.ref }}-${{ github.event.pull_request.head.sha || github.sha }}
   cancel-in-progress: true
 jobs:
   cleanup-superseded:
