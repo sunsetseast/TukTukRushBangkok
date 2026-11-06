@@ -20,7 +20,7 @@ import { type GeographicChunkData } from "./dataset";
 import { GeographicChunkLoader } from "./chunkLoader";
 import { loadGameplayGeography, type GeographicNetwork } from "./network";
 import { createGameplayDistrict, type GeographicPlace } from "./places";
-import { buildMigratedArt, disposeMigratedArt } from "./migratedArt";
+import { buildMigratedArt, disposeMigratedArt, releaseMigratedArtGPU } from "./migratedArt";
 import { geographicToMeters, metersToGeographic } from "./projection";
 import {
   buildingObstacles,
@@ -115,8 +115,7 @@ function Scene({
           resident.delete(v.id);
           colliders.delete(v.id);
           for (const a of assets.get(v.id) ?? []) {
-            a.root.removeFromParent();
-            disposeObject(a.root);
+            releaseMigratedArtGPU(a.root);
           }
           assets.delete(v.id);
           revision++;
@@ -457,6 +456,7 @@ function PreviewHud({
     [snapshot, setSnapshot] = useState(session.model.snapshot),
     [chosen, setChosen] = useState(""),
     [map, setMap] = useState(false),
+    [mapCity, setMapCity] = useState(false),
     [settings, setSettings] = useState(false),
     [guide, setGuide] = useState<{
       name: string;
@@ -521,8 +521,20 @@ function PreviewHud({
       });
       const canvas = mapRef.current;
       if (!canvas) return;
+      // Default to the connected fare route, not a 30km city squeezed into a phone.
+      // The paused map keeps this background stable until target/view changes.
+      let minX = session.player.x, maxX = minX, minZ = session.player.z, maxZ = minZ;
+      for (const point of [...g.path, target]) {
+        minX = Math.min(minX, point.x); maxX = Math.max(maxX, point.x);
+        minZ = Math.min(minZ, point.z); maxZ = Math.max(maxZ, point.z);
+      }
+      const extent = Math.max(1200, maxX - minX, maxZ - minZ) * 1.2;
+      const centerX = (minX + maxX) / 2, centerZ = (minZ + maxZ) / 2;
       const ctx = canvas.getContext("2d")!,
-        b = network.metadata.bounds,
+        b = mapCity ? network.metadata.bounds : {
+          minX: centerX - extent / 2, maxX: centerX + extent / 2,
+          minZ: centerZ - extent / 2, maxZ: centerZ + extent / 2,
+        },
         w = canvas.width,
         h = canvas.height,
         scale = Math.min(w / (b.maxX - b.minX), h / (b.maxZ - b.minZ)),
@@ -576,7 +588,7 @@ function PreviewHud({
     update();
     const timer = setInterval(update, map ? 500 : 250);
     return () => clearInterval(timer);
-  }, [session, network, chosen, map]);
+  }, [session, network, chosen, map, mapCity]);
   return (
     <>
       <nav className="geo-toolbar" aria-label="Real-scale Bangkok controls">
@@ -609,6 +621,10 @@ function PreviewHud({
           <select aria-label="Geographic destination" value={chosen} onChange={e => setChosen(e.target.value)}>
             <option value="">Follow passenger fare</option>
             {network.stops.map(n => <option key={n.id} value={n.id}>{n.name?.split(' · ')[0]}</option>)}
+          </select>
+          Map view
+          <select aria-label="Map view" value={mapCity ? 'city' : 'route'} onChange={e => setMapCity(e.target.value === 'city')}>
+            <option value="route">Nearby route</option><option value="city">City overview</option>
           </select>
         </label>
         <canvas ref={mapRef} width={800} height={800} aria-label="Real Bangkok destination route map" />

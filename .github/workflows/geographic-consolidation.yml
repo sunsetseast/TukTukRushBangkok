@@ -35,13 +35,19 @@ jobs:
       - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
       - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-preparation.ts
       - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-worker.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-landmark-cache.ts
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
       - run: pnpm --filter @workspace/tuk-tuk-rush test:thai-road-signage
       - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-asset-delivery
       - run: pnpm --filter @workspace/tuk-tuk-rush exec vite build
-      - run: pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium webkit
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+      - name: Install browser engines (bounded)
+        run: timeout 300 pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium webkit
       - name: Matched before runtime
         working-directory: artifacts/tuk-tuk-rush
         env:

@@ -1,0 +1,6 @@
+{
+  pass: true,
+  evictionReleasesGPU: true,
+  CPUArtworkReusable: true,
+  texturePixelsRetainedUntilFinalDisposal: true
+}

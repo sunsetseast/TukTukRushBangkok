@@ -56,3 +56,24 @@ export function disposeMigratedArt(root: T.Group) {
   disposeObject(root);
   root.clear();
 }
+
+/** Release renderer allocations on eviction while preserving the fixed CPU cache.
+ * Unlike final disposal, this must not close ImageBitmap texture sources: a
+ * revisited artwork needs those same source pixels to upload again. */
+export function releaseMigratedArtGPU(root: T.Group) {
+  root.removeFromParent();
+  const geometries = new Set<T.BufferGeometry>(), materials = new Set<T.Material>(), textures = new Set<T.Texture>();
+  root.traverse(object => {
+    if (object instanceof T.Mesh) {
+      geometries.add(object.geometry);
+      for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
+        materials.add(material);
+        for (const value of Object.values(material)) if (value instanceof T.Texture) textures.add(value);
+      }
+    }
+    if (object instanceof T.InstancedMesh) object.dispose();
+  });
+  for (const texture of textures) texture.dispose();
+  for (const material of materials) material.dispose();
+  for (const geometry of geometries) geometry.dispose();
+}

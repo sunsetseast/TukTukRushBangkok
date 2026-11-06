@@ -1,0 +1,46 @@
+$ node --import tsx scripts/pack-geographic-road-rules.ts && node --import tsx scripts/compile-geographic-buildings.ts && node --import tsx scripts/pack-geographic-traffic-controls.ts && node --import tsx scripts/prepare-geographic-browser-assets.ts && vite build --config vite.config.ts
+{
+  rulePack: 'road-rules.v1.json.gz',
+  sourceSha256: 'de2d5be9d4508bf9d191ea75047db33e11336f0c6a9cfb61c03077fc9cda9b4a',
+  ways: 87095,
+  directed: 12910,
+  blockedMotor: 15542,
+  explicitlyTwoWay: 2065,
+  unknownDynamicOrUnrecognized: 0
+}
+{"compiledChunks":471,"buildings":222123,"sourceBytes":36738182,"compiledBytes":90006348,"elapsedMs":129359.62706500001}
+{
+  source: 'https://download.geofabrik.de/asia/thailand-latest.osm.pbf',
+  status: 'ready',
+  controls: 492,
+  stats: {
+    taggedNodes: 495,
+    mappedSignals: 213,
+    mappedStops: 25,
+    mappedYields: 0,
+    unmatched: 19,
+    restrictions: 1720,
+    unresolvedRestrictions: 296
+  },
+  sourceHash: 'de2d5be9d4508bf9d191ea75047db33e11336f0c6a9cfb61c03077fc9cda9b4a'
+}
+Prepared browser-safe Bangkok assets: gameplay.v2.json.pack, navigation.v2.bin.pack, road-rules.v1.json.pack, traffic-controls.v1.json.pack, runtime.v1.json.pack
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1900 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/public/index.html                           1.46 kB │ gzip:   0.55 kB
+dist/public/assets/chunk.worker-Bhrwn6U4.js     93.24 kB
+dist/public/assets/Prototype-BcQjIU7i.css        5.78 kB │ gzip:   1.74 kB
+dist/public/assets/index-Bk-rwMzW.css          136.97 kB │ gzip:  24.98 kB
+dist/public/assets/Prototype-22iwpJSm.js        64.38 kB │ gzip:  24.65 kB
+dist/public/assets/index-DcqMyLHj.js           189.08 kB │ gzip:  60.07 kB
+dist/public/assets/App-BlhnjsPF.js             268.72 kB │ gzip: 103.65 kB
+dist/public/assets/engine-Du77mBE3.js        2,150.29 kB │ gzip: 684.16 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.65s

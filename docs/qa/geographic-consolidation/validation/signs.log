@@ -1,0 +1,12 @@
+$ node --import tsx scripts/check-thai-road-signage.ts
+{
+  pass: true,
+  actualSourceNamedRoads: 20247,
+  actualBilingualOSMWayNames: 16550,
+  thaiScript: [ 'หยุด', 'ให้ทาง', 'ถนนเยาวราช' ],
+  unknownOMSSpeedValuesSkipped: true,
+  sourceNamedRoadsOnly: true,
+  leftHandRoadside: true,
+  gradeSeparatedMountsExcluded: true,
+  noPhantomTrafficControls: true
+}

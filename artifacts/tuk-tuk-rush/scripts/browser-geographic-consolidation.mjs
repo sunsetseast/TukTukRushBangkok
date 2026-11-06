@@ -53,6 +53,8 @@ try {
   await page.getByRole('button',{name:'Route map',exact:true}).tap();
   await page.getByTestId('geographic-map').waitFor();assert.equal(await page.evaluate(()=>window.__geographyQA.session.model.snapshot.phase),'paused');
   await page.getByLabel('Geographic destination').selectOption({index:2});
+  await page.getByLabel('Map view',{exact:true}).selectOption('city');
+  await page.getByLabel('Map view',{exact:true}).selectOption('route');
   await page.screenshot({path:new URL('route-map.png',out).pathname});
   await page.getByRole('button',{name:'Close route map',exact:true}).tap();
   await settings();await page.getByLabel('Graphics quality').selectOption('low');await closeSettings();

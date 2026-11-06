@@ -1,0 +1,32 @@
+$ node --import tsx scripts/check-geographic-traffic.ts && node --import tsx scripts/check-geographic-traffic-art.ts && node --import tsx scripts/check-geographic-traffic-contact.ts
+{
+  result: 'pass',
+  noWrongWay: true,
+  noFootpaths: true,
+  bangkokLeftSide: true,
+  deterministic: true,
+  boundedAt16: true,
+  actualVehicleSpawning: true,
+  explicitlyTaggedRedSignal: true,
+  actualStopDwell: true,
+  sourceControlLocationsInProduction: 'not yet imported'
+}
+{
+  pass: true,
+  batchedDrawCalls: 21,
+  complexTrafficKinds: 4,
+  capacity: 16,
+  instanceColors: true,
+  cleanToggle: true,
+  cleanDisposal: true
+}
+{
+  result: 'pass',
+  intersectsMovingTaxi: true,
+  altitudeAware: true,
+  headingAware: true,
+  riderMotorcycleClearance: true,
+  lastKnownRoadSafePose: true,
+  noLongDistanceTeleport: true,
+  safeTrafficToggle: true
+}
