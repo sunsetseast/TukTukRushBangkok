@@ -76,6 +76,12 @@ export function roadClearance(x: number, z: number) {
   }
   return distance;
 }
+const streetSegments = new Map<string, typeof area.segments>();
+for (const segment of area.segments) {
+  if (!area.streets.includes(segment.name)) continue;
+  const list = streetSegments.get(segment.id) ?? [];
+  list.push(segment); streetSegments.set(segment.id, list);
+}
 export function geographicFacades(chunk: GeographicChunkData): Facade[] {
   const result: Facade[] = [];
   const [minX, maxX, minZ, maxZ] = area.bounds;
@@ -87,12 +93,14 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
       ["roof", "carport", "part"].includes(b.classification)
     )
       continue;
+    if (!b.edges.some(e => {
+      const x=chunk.origin[0]+e.a[0],z=chunk.origin[1]+e.a[1];
+      return x>=minX! && x<=maxX! && z>=minZ! && z<=maxZ!;
+    })) continue;
     for (const e of b.edges) {
       if (e.ring !== 0 || !e.street || !e.collision) continue;
-      const roads = area.segments.filter(
-        (s) => s.id === e.street && area.streets.includes(s.name),
-      );
-      if (!roads.length) continue;
+      const roads = streetSegments.get(e.street);
+      if (!roads?.length) continue;
       const x = chunk.origin[0] + (e.a[0] + e.b[0]) / 2,
         z = chunk.origin[1] + (e.a[1] + e.b[1]) / 2;
       if (x < minX! || x > maxX! || z < minZ! || z > maxZ!) continue;
@@ -241,7 +249,7 @@ export function prepareChinatown(
   const facades = geographicFacades(chunk);
   if (!facades.length) return;
   const material = new T.MeshStandardMaterial(),
-    batch = new ArchitecturalBatch(material, material),
+    batch = new ArchitecturalBatch(material, material, 40),
     signs = new Map<
       string,
       { p: number[]; uv: number[]; center: number[]; vertical: boolean }
@@ -251,6 +259,7 @@ export function prepareChinatown(
   for (const f of facades) {
     const song = f.style === "songwat",
       seed = f.seed,
+      modern = f.style !== "songwat" && f.seed % 5 === 2,
       W = f.width,
       H = f.height,
       n = Math.max(1, Math.ceil(W / 5.7)),
@@ -315,6 +324,9 @@ export function prepareChinatown(
           yaw: yaw + rotate,
           sourceId: `decor:${f.id}`,
         });
+      // Flat rear panels/windows need only the outward face. Keep projecting
+      // profiles, equipment and near props volumetric.
+      if (shape === "box" && d <= 0.18 && (layer === "core" || layer === "night")) shape = "panel";
       batch.add({
         x: f.x - chunk.origin[0] + f.nz * u + f.nx * v,
         y,
@@ -355,16 +367,16 @@ export function prepareChinatown(
           f.nx * u +
           f.nz * v +
           (vertical ? Math.cos(ang) * 0.085 : 0);
-      const cell = `${Math.floor(x / 120)}:${Math.floor(z / 120)}:${vertical}`;
+      const cell = `${Math.floor(x / 40)}:${Math.floor(z / 40)}:${vertical}`;
       let s = signs.get(cell);
       if (!s) {
         s = {
           p: [],
           uv: [],
           center: [
-            Math.floor(x / 120) * 120 + 60,
+            Math.floor(x / 40) * 40 + 20,
             0,
-            Math.floor(z / 120) * 120 + 60,
+            Math.floor(z / 40) * 40 + 20,
           ],
           vertical,
         };
@@ -680,11 +692,19 @@ export function prepareChinatown(
             "orb",
           );
       }
+      if ([1,4].includes(type) && out > 1.4 && j === 0) {
+        // Compact vendor trolley and stools, all admitted by the same road clearance.
+        put(u-span*.32,.78,.94,.68,.86,.43,"#8b9c94","near","box",0,"metal");
+        put(u-span*.32,1.25,.94,.74,.08,.5,"#c2ccc2","near","box",0,"metal");
+        for (const side of [-1,1]) put(u-span*.32+side*.25,.25,.99,.15,.15,.15,"#343e3a","detail","orb");
+        put(u+span*.32,.48,1.0,.38,.09,.38,"#b43939","near","cylinder");
+        for(const side of [-1,1])put(u+span*.32+side*.12,.24,1.0,.06,.45,.08,"#b43939","detail");
+      }
       // Upper-floor window bays, shutters, lintels, rails, balcony brackets and AC.
       for (let floor = 1; floor < f.floors; floor++) {
         const y = floor * fh + fh * 0.53,
-          ww = span * 0.65,
-          hh = Math.min(1.85, fh * 0.64);
+          ww = span * (modern ? 0.83 : 0.65),
+          hh = Math.min(modern ? 2.4 : 1.85, fh * 0.64);
         put(
           u,
           y,
@@ -694,7 +714,11 @@ export function prepareChinatown(
           0.14,
           song ? "#e8ddbd" : "#dcd0b6",
         );
-        put(u, y, 0.2, ww, hh, 0.12, song ? "#405d50" : "#304b51");
+        put(u, y, 0.2, ww, hh, 0.12, song ? "#405d50" : modern ? "#638186" : "#304b51");
+        if (!song && !modern && seed % 4 === 0) {
+          for (const side of [-1, 1]) put(u+side*ww*.39,y,.29,ww*.22,hh,.08,accent,"near","box",0,"wood");
+        }
+        if (modern) put(u,y+hh/2+.1,.24,ww+.3,.12,.25,"#b3c3c2","near","box",0,"metal");
         put(u, y, 0.3, 0.085, hh, 0.15, "#b8b99c", "near");
         put(u, y - hh / 2, 0.35, ww + 0.38, 0.12, 0.45, "#ded1ae", "near");
         if (song) {
@@ -792,6 +816,11 @@ export function prepareChinatown(
             0,
             "cloth",
           );
+      }
+      if(type===0) {
+        put(u,3.72,.24,span-.1,.13,.25,"#c7a244","near");
+        for(const side of [-1,1])put(u+side*span*.44,1.62,.3,.08,2.65,.12,"#c7a244","near");
+        put(u,3.9,.25,.34,.28,.12,"#d6b553","near","orb");
       }
       if (j === 0 && !song && out > 0.9 && H > 8) {
         const sy = Math.min(H - 2.5, 7.8),

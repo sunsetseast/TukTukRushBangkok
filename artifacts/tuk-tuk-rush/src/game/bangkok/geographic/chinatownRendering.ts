@@ -86,6 +86,7 @@ export function buildChinatownDecoration(
           ? new T.InstancedBufferAttribute(a.array, a.size, a.normalized)
           : new T.BufferAttribute(a.array, a.size, a.normalized),
       );
+    if (!g.getAttribute("normal")) g.computeVertexNormals();
     if (b.index) g.setIndex(new T.BufferAttribute(b.index, 1));
     const material = b.sign
       ? materials[b.sign]
@@ -130,11 +131,11 @@ export function updateChinatownLOD(
     const layer = o.userData.layer;
     o.visible =
       layer === "BangkokDetail"
-        ? quality === "medium" && d < 72
+        ? quality === "medium" && d < 40
         : layer === "BangkokFacade"
-          ? d < (quality === "low" ? 90 : 135)
+          ? d < (quality === "low" ? 55 : 85)
           : layer === "BangkokNight"
-            ? d < (quality === "low" ? 130 : 190)
-            : d < (quality === "low" ? 190 : 260);
+            ? d < (quality === "low" ? 90 : 135)
+            : d < (quality === "low" ? 130 : 180);
   });
 }
