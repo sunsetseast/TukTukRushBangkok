@@ -1,0 +1,26 @@
+{
+  "baseline": "0c84000d896922ba512d54f4c52d90881be0f105",
+  "runtime": "8697d316d67262a2346ef1e8308b817e917588ee",
+  "byteIdenticalTrees": {
+    "artifacts/tuk-tuk-rush/public/assets/geography": {
+      "baseTree": "898e5d4b0868da78686ef7e2adf3c817ccaa783e",
+      "finalTree": "898e5d4b0868da78686ef7e2adf3c817ccaa783e"
+    },
+    "data/bangkok/real-scale": {
+      "baseTree": "96ff6f2d2ac999a62ac8169cc02f928ce4038082",
+      "finalTree": "96ff6f2d2ac999a62ac8169cc02f928ce4038082"
+    },
+    "artifacts/tuk-tuk-rush/public/assets/models": {
+      "baseTree": "42d7478a4bd9593ee4f7834974587ad5f6b8a8bc",
+      "finalTree": "42d7478a4bd9593ee4f7834974587ad5f6b8a8bc"
+    },
+    "artifacts/tuk-tuk-rush/public/assets/textures": {
+      "baseTree": "ecde18162c1a7f40e8e1d761b13ddacef014d52c",
+      "finalTree": "ecde18162c1a7f40e8e1d761b13ddacef014d52c"
+    }
+  },
+  "newAssetsOnly": [
+    "assets/fonts/geographic-chinese-signs.ttf",
+    "assets/fonts/geographic-chinese-signs.json"
+  ]
+}

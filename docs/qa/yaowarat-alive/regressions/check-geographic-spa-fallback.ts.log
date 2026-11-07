@@ -1,0 +1,9 @@
+{
+  ok: true,
+  replitHtml200Fallback: true,
+  invalidJsonFallback: true,
+  originalGzip: true,
+  legacyBuildingChunk: true,
+  noSilentMissingRules: true,
+  abortSafe: true
+}

@@ -1,0 +1,543 @@
+{
+  "pass": true,
+  "total": 331,
+  "songwat": 48,
+  "signTypes": 25,
+  "sourceUnchanged": true,
+  "records": [
+    {
+      "id": "2048:0",
+      "facades": 139,
+      "songwat": 22,
+      "pieces": 22720,
+      "bytes": 3374163,
+      "batches": 540,
+      "prepareMs": 868.513254,
+      "first": [
+        {
+          "id": "osm:way/1021129470:0:0",
+          "buildingId": "osm:way/1021129470",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3060.9725,
+          "z": 363.03200000000004,
+          "nx": -0.6366893385257193,
+          "nz": 0.7711204096687378,
+          "width": 4.708732844407265,
+          "height": 12.8,
+          "floors": 4,
+          "seed": 4167259151,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              1011.157,
+              361.533
+            ],
+            "b": [
+              1014.788,
+              364.531
+            ],
+            "collision": true,
+            "edge": 0,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:0",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3018.059,
+          "z": 328.374,
+          "nx": -0.5722350331971895,
+          "nz": 0.8200896699640908,
+          "width": 11.708475733416343,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3765068143,
+          "family": "shophouse",
+          "outset": 1.3807377750001084,
+          "edge": {
+            "a": [
+              965.258,
+              325.024
+            ],
+            "b": [
+              974.86,
+              331.724
+            ],
+            "collision": true,
+            "edge": 0,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:2",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3027.3815,
+          "z": 331.8835,
+          "nx": -0.5695715045479931,
+          "nz": 0.8219417869940275,
+          "width": 4.889640682095177,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3798623381,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              977.372,
+              330.491
+            ],
+            "b": [
+              981.391,
+              333.276
+            ],
+            "collision": true,
+            "edge": 2,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:3",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/242161010",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3029.2515,
+          "z": 331.656,
+          "nx": 0.9963129307032609,
+          "nz": -0.08579361347722388,
+          "width": 3.2519903136387196,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3781845762,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              981.391,
+              333.276
+            ],
+            "b": [
+              981.112,
+              330.036
+            ],
+            "collision": true,
+            "edge": 3,
+            "polygon": 0,
+            "ring": 0,
+            "street": null
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:7",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3033.8905,
+          "z": 334.199,
+          "nx": -0.5185872326081556,
+          "nz": 0.8550247260610742,
+          "width": 6.20917715965649,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3714735286,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              983.236,
+              332.589
+            ],
+            "b": [
+              988.545,
+              335.809
+            ],
+            "collision": true,
+            "edge": 7,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/242161010"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:8",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/242161010",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3038.4905,
+          "z": 334.7345,
+          "nx": 0.4834638695562696,
+          "nz": 0.875364316632611,
+          "width": 4.445006411693981,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3899289095,
+          "family": "shophouse",
+          "outset": 0.4789425760618711,
+          "edge": {
+            "a": [
+              988.545,
+              335.809
+            ],
+            "b": [
+              992.436,
+              333.66
+            ],
+            "collision": true,
+            "edge": 8,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/242161010"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:9",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/242161010",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3041.4225,
+          "z": 332.3375,
+          "nx": 0.8015610088883042,
+          "nz": 0.5979129945317829,
+          "width": 3.2998112067207774,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3882511476,
+          "family": "shophouse",
+          "outset": 0.24147277573766246,
+          "edge": {
+            "a": [
+              992.436,
+              333.66
+            ],
+            "b": [
+              994.409,
+              331.015
+            ],
+            "collision": true,
+            "edge": 9,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/242161010"
+          }
+        },
+        {
+          "id": "osm:way/1021131319:0:1",
+          "buildingId": "osm:way/1021131319",
+          "street": "osm:way/242161010",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3039.2529999999997,
+          "z": 322.677,
+          "nx": 0.7679402708134316,
+          "nz": 0.640521459798962,
+          "width": 9.920042338619277,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 1791523859,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              988.076,
+              326.486
+            ],
+            "b": [
+              994.43,
+              318.868
+            ],
+            "collision": true,
+            "edge": 1,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/242161010"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3072:0",
+      "facades": 192,
+      "songwat": 26,
+      "pieces": 25415,
+      "bytes": 3799237,
+      "batches": 676,
+      "prepareMs": 1087.5641239999998,
+      "first": [
+        {
+          "id": "osm:way/1020878598:0:3",
+          "buildingId": "osm:way/1020878598",
+          "street": "osm:way/25745335",
+          "chunk": "3072:0",
+          "style": "songwat",
+          "x": 3520.468,
+          "z": 960.6835,
+          "nx": -0.07944556134090364,
+          "nz": -0.9968392060825199,
+          "width": 19.497627983936898,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 990651123,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              458.186,
+              959.909
+            ],
+            "b": [
+              438.75,
+              961.458
+            ],
+            "collision": true,
+            "edge": 3,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/1284652272"
+          }
+        },
+        {
+          "id": "osm:way/1021129460:0:1",
+          "buildingId": "osm:way/1021129460",
+          "street": "osm:way/448989820",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3183.6835,
+          "z": 467.6515,
+          "nx": 0.8203875407742891,
+          "nz": 0.5718079073800172,
+          "width": 29.431212445293497,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3862242945,
+          "family": "residential",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              103.269,
+              479.724
+            ],
+            "b": [
+              120.098,
+              455.579
+            ],
+            "collision": true,
+            "edge": 1,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/448989820"
+          }
+        },
+        {
+          "id": "osm:way/1021129469:0:0",
+          "buildingId": "osm:way/1021129469",
+          "street": "osm:way/832948770",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3071.55,
+          "z": 370.9035,
+          "nx": -0.5229995661565171,
+          "nz": 0.8523329477382033,
+          "width": 5.9483796953456105,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 4110678733,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              -2.985,
+              369.348
+            ],
+            "b": [
+              2.085,
+              372.459
+            ],
+            "collision": true,
+            "edge": 0,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        },
+        {
+          "id": "osm:way/1021238296:0:2",
+          "buildingId": "osm:way/1021238296",
+          "street": "osm:way/1305800722",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3428.1425,
+          "z": 599.597,
+          "nx": 0.35469222707473413,
+          "nz": -0.9349831143142452,
+          "width": 5.554110999971098,
+          "height": 15.2,
+          "floors": 4,
+          "seed": 3727896774,
+          "family": "mixed-use",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              358.739,
+              600.582
+            ],
+            "b": [
+              353.546,
+              598.612
+            ],
+            "collision": true,
+            "edge": 2,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/1504070564"
+          }
+        },
+        {
+          "id": "osm:way/1021238298:0:2",
+          "buildingId": "osm:way/1021238298",
+          "street": "osm:way/1305800722",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3441.9715,
+          "z": 610.2249999999999,
+          "nx": 0.9991161670684995,
+          "nz": 0.04203432766621179,
+          "width": 10.301104455348494,
+          "height": 19,
+          "floors": 5,
+          "seed": 2177310452,
+          "family": "mixed-use",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              369.755,
+              615.371
+            ],
+            "b": [
+              370.188,
+              605.079
+            ],
+            "collision": true,
+            "edge": 2,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/707618991"
+          }
+        },
+        {
+          "id": "osm:way/1021238298:0:3",
+          "buildingId": "osm:way/1021238298",
+          "street": "osm:way/1305800722",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3441.2315,
+          "z": 603.4590000000001,
+          "nx": 0.8611063701270567,
+          "nz": -0.5084248413744205,
+          "width": 3.762601360760845,
+          "height": 19,
+          "floors": 5,
+          "seed": 2194088071,
+          "family": "mixed-use",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              370.188,
+              605.079
+            ],
+            "b": [
+              368.275,
+              601.839
+            ],
+            "collision": true,
+            "edge": 3,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/1305800722"
+          }
+        },
+        {
+          "id": "osm:way/1021238298:0:4",
+          "buildingId": "osm:way/1021238298",
+          "street": "osm:way/1305800722",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3437.333,
+          "z": 605.2425000000001,
+          "nx": -0.756535546817905,
+          "nz": -0.6539525719812818,
+          "width": 8.99759440072724,
+          "height": 19,
+          "floors": 5,
+          "seed": 2143755214,
+          "family": "mixed-use",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              368.275,
+              601.839
+            ],
+            "b": [
+              362.391,
+              608.646
+            ],
+            "collision": true,
+            "edge": 4,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/1305800722"
+          }
+        },
+        {
+          "id": "osm:way/1021238298:0:7",
+          "buildingId": "osm:way/1021238298",
+          "street": "osm:way/1305800722",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3433.0745,
+          "z": 610.851,
+          "nx": 0.498883804160974,
+          "nz": -0.8666688813762006,
+          "width": 4.233450720157283,
+          "height": 19,
+          "floors": 5,
+          "seed": 2126977595,
+          "family": "mixed-use",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              362.909,
+              611.907
+            ],
+            "b": [
+              359.24,
+              609.795
+            ],
+            "collision": true,
+            "edge": 7,
+            "polygon": 0,
+            "ring": 0,
+            "street": null
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{"pass":true,"oneWayDetour":true,"disconnectedRoute":true,"hysteresis":true,"missionRoutes":11}
+Bang Rak procedural parcel reconciliation {
+  alreadyAbsentProcedural: [],
+  changedProceduralRetired: [],
+  changedProceduralKept: [],
+  unlistedProceduralRetired: [
+    'infill:frontage:1542415097',
+    'infill:rear:1378526068',
+    'infill:rear:1255669245',
+    'infill:rear:3969029324',
+    'infill:blockcourt:6:3:1',
+    'urban-block:sathorn-blocks:10:7:0',
+    'urban-block:sathorn-blocks:5:18:0'
+  ]
+}
