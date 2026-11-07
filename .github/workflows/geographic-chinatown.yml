@@ -1,0 +1,100 @@
+name: Geographic Chinatown visual certification
+on:
+  pull_request:
+    paths:
+      - 'artifacts/tuk-tuk-rush/**'
+      - '.github/workflows/geographic-chinatown.yml'
+  workflow_dispatch:
+concurrency:
+  group: chinatown-${{ github.ref }}-${{ github.event.pull_request.head.sha || github.sha }}
+  cancel-in-progress: true
+jobs:
+  cleanup-superseded:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const {owner, repo} = context.repo;
+            // Only this owned PR branch. Never touch another task or fork.
+            if (!pr || pr.number !== 60 || pr.head.ref !== 'feature/geographic-yaowarat-pr60' || pr.head.repo.full_name !== `${owner}/${repo}`) return;
+            const branch = pr.head.ref;
+            const current = await github.rest.repos.getBranch({owner, repo, branch});
+            if (current.data.commit.sha !== pr.head.sha) return;
+            for (const status of ['in_progress', 'queued', 'pending']) {
+              const {data} = await github.rest.actions.listWorkflowRunsForRepo({owner, repo, branch, event:'pull_request', status, per_page:100});
+              for (const run of data.workflow_runs) {
+                if (run.id === context.runId || run.head_sha === pr.head.sha || run.head_branch !== branch || !run.pull_requests.some(p => p.number === 60)) continue;
+                try {
+                  await github.rest.actions.cancelWorkflowRun({owner, repo, run_id:run.id});
+                  core.info(`Cancelled superseded PR60 run ${run.id}`);
+                } catch (error) {
+                  // A completed/cancelling run can race this bounded cleanup.
+                  if (error.status !== 409) { core.warning(`Cleanup unavailable: ${error.status}`); return; }
+                }
+              }
+            }
+  showcase:
+    needs: cleanup-superseded
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PORT: '24860'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - uses: actions/cache@v4
+        with:
+          path: artifacts/tuk-tuk-rush/public/assets/geography/compiled
+          key: geography-compiled-${{ hashFiles('artifacts/tuk-tuk-rush/scripts/compile-geographic-buildings.ts', 'artifacts/tuk-tuk-rush/scripts/geographic-building-authoring.ts', 'data/bangkok/real-scale/clearance*') }}
+      - name: Compile derived assets once without reimporting the map
+        run: |
+          pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/pack-geographic-road-rules.ts
+          pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/compile-geographic-buildings.ts
+          pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/pack-geographic-traffic-controls.ts
+          pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/prepare-geographic-browser-assets.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-chinatown.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-worker.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec node --import tsx scripts/check-geographic-landmark-cache.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-streaming
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-gameplay
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-asset-delivery
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:geographic-traffic
+      - run: pnpm --filter @workspace/tuk-tuk-rush test:thai-road-signage
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec vite build
+      - run: timeout 300 pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium webkit
+      - name: PR59 baseline at identical source camera positions
+        working-directory: artifacts/tuk-tuk-rush
+        env:
+          GEOGRAPHY_QA_BASELINE_REF: e2afddf273ad4bfd752180bffa0b8422ca242be7
+        run: timeout 420 node scripts/browser-geographic-chinatown.mjs
+      - name: Genuine rendered visual evidence and matched driving
+        if: ${{ !cancelled() }}
+        working-directory: artifacts/tuk-tuk-rush
+        run: timeout 600 node scripts/browser-geographic-chinatown.mjs
+      - name: Safari asset fallback
+        if: ${{ !cancelled() }}
+        working-directory: artifacts/tuk-tuk-rush
+        run: node scripts/browser-geographic-spa-fallback.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: geographic-chinatown-evidence
+          path: docs/qa/geographic-chinatown/
+          retention-days: 30

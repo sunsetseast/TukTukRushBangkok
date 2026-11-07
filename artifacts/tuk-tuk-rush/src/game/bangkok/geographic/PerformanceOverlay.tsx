@@ -29,6 +29,7 @@ export function GeographicPerformanceOverlay({
         <dt>Chunks active / waiting</dt><dd>{sample ? `${sample.activeChunks} / ${sample.pendingChunks + sample.readyChunks + sample.queuedChunks}` : "—"}</dd>
         <dt>Resident buildings</dt><dd>{sample?.residentBuildings.toLocaleString() ?? "—"}</dd>
         <dt>Worst chunk install</dt><dd>{n(sample?.maxChunkActivationMs, 1)} ms</dd>
+        <dt>Chinatown facades / buffers</dt><dd>{sample ? `${sample.decorativeFacades ?? 0} / ${((sample.decorativeBufferBytes ?? 0)/1048576).toFixed(2)} MiB` : '—'}</dd>
         <dt>Stream errors</dt><dd>{sample?.streamErrors ?? "—"}</dd>
         <dt>Graphics quality</dt><dd>{sample?.quality ?? "—"}</dd>
       </dl>

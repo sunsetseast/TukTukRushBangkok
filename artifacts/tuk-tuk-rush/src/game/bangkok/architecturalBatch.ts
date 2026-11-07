@@ -3,6 +3,7 @@ import { compactGeometry } from "../compactGeometry";
 import type { Surface } from "./buildingGrammar";
 import { tropicalLeafGeometry } from "./tropicalVegetation";
 export type Shape =
+  | "panel"
   | "box"
   | "gable"
   | "arch"
@@ -64,14 +65,16 @@ export class ArchitecturalBatch {
   constructor(
     private material: T.Material,
     private night: T.Material,
+    private cellSize = 120,
+    private mergeCore = false,
   ) {}
   add(o: ArtPiece) {
     const shape = o.shape ?? "box",
       layer = o.layer ?? "core",
-      cx = Math.floor(o.x / 120),
-      cz = Math.floor(o.z / 120),
+      cx = Math.floor(o.x / this.cellSize),
+      cz = Math.floor(o.z / this.cellSize),
       key = `${cx}:${cz}:${layer}`;
-    if (["box", "frond", "leaf", "orb", "canopy", "cylinder"].includes(shape)) {
+    if (!(this.mergeCore && layer === "core") && ["panel", "box", "frond", "leaf", "orb", "canopy", "cylinder"].includes(shape)) {
       const instanceKey = `${key}:${shape}`;
       let bucket = this.instances.get(instanceKey);
       if (!bucket) {
@@ -82,7 +85,7 @@ export class ArchitecturalBatch {
           tiles: [],
           layer,
           shape,
-          cell: new T.Vector3((cx + 0.5) * 120, 0, (cz + 0.5) * 120),
+          cell: new T.Vector3((cx + 0.5) * this.cellSize, 0, (cz + 0.5) * this.cellSize),
         };
         this.instances.set(instanceKey, bucket);
       }
@@ -139,13 +142,14 @@ export class ArchitecturalBatch {
         glow: [],
         ix: [],
         layer,
-        cell: new T.Vector3((cx + 0.5) * 120, 0, (cz + 0.5) * 120),
+        cell: new T.Vector3((cx + 0.5) * this.cellSize, 0, (cz + 0.5) * this.cellSize),
       };
       this.buckets.set(key, b);
     }
     let geo = this.templates.get(shape);
     if (!geo) {
-      if (shape === "gable") {
+      if (shape === "panel") geo = new T.PlaneGeometry(1,1);
+      else if (shape === "gable") {
         const s = new T.Shape([
           new T.Vector2(-0.5, 0),
           new T.Vector2(0.5, 0),
@@ -260,7 +264,9 @@ export class ArchitecturalBatch {
       let unit = units.get(shape);
       if (unit) return unit;
       unit =
-        shape === "frond" || shape === "leaf"
+        shape === "panel"
+          ? new T.PlaneGeometry(1,1)
+          : shape === "frond" || shape === "leaf"
           ? tropicalLeafGeometry(shape)
           : shape === "canopy"
             ? new T.SphereGeometry(0.5, 8, 5)

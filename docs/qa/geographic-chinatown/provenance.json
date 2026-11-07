@@ -1,0 +1,98 @@
+{
+  "sourceCommit": "cfb0ad3e661a21bb1f98e9bc860e3b4ebdfc74d8",
+  "baseCommit": "e2afddf273ad4bfd752180bffa0b8422ca242be7",
+  "sourceProof": {
+    "data": {
+      "before": "60743db6c7fbfce2c18cb5433309bdb5160a0998",
+      "after": "60743db6c7fbfce2c18cb5433309bdb5160a0998"
+    },
+    "publicAssets": {
+      "before": "9495cda89cd76ed7c86ef7b2323e435dd82e7314",
+      "after": "9495cda89cd76ed7c86ef7b2323e435dd82e7314"
+    }
+  },
+  "visualWorkflow": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42299624805",
+  "visualArtifact": {
+    "id": 13543482320,
+    "sha256": "9b348cd4313aa0eead58b8cfb8420957c1a359ef9b21f5801eafe95ecf8b607e"
+  },
+  "mobileWorkflow": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42299624870",
+  "mobileArtifact": {
+    "id": 13543437010,
+    "sha256": "03e7da61677131f58765336eb615f057d0d83c690952af031241070c2bc52528"
+  },
+  "workflows": [
+    {
+      "name": "Real-scale Bangkok geography",
+      "id": 42299624893,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Yaowarat art inspection",
+      "id": 42299624880,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Chinatown geography and driving certification",
+      "id": 42299624749,
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "name": "Bang Rak completion and visual evidence",
+      "id": 42299624734,
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "name": "Canonical Bangkok approval and benchmark gates",
+      "id": 42299624888,
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "name": "Geographic map loading (Replit 200 HTML recovery)",
+      "id": 42299624768,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Geographic Bangkok local traffic foundation",
+      "id": 42299624774,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Bangkok living cityscapes driving QA",
+      "id": 42299624738,
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Bangkok matched environment survey",
+      "id": 42299624800,
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Geographic mobile consolidation",
+      "id": 42299624870,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Geographic Chinatown visual certification",
+      "id": 42299624805,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Tuk Tuk Rush graphics checks",
+      "id": 42299624814,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

@@ -35,6 +35,7 @@ import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
 import { TrafficActors } from "./TrafficActors";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
+import {chinatownMaterials,updateChinatownLOD} from "./chinatownRendering";
 
 type Loaded = {
   network: GeographicNetwork;
@@ -45,8 +46,9 @@ type Loaded = {
   landmarkArt: Map<string, ReturnType<typeof buildMigratedArt>[]>;
 };
 function Scene({
-  loaded, target, perfEnabled, onPerfSample, trafficEnabled, onError, onReady,
+  loaded, target, perfEnabled, onPerfSample, trafficEnabled, onError, onReady, time,
 }: {
+  time: 'day'|'dusk'|'night';
   onError: (message: string) => void;
   onReady: () => void;
   loaded: Loaded;
@@ -67,6 +69,7 @@ function Scene({
     undefined,
   );
   targetRef.current = target;
+  const atmosphere = time==='day'?{sky:'#c3dce6',sun:'#fff1d1',ambient:2.3,direct:2.2,night:0}:time==='dusk'?{sky:'#515a80',sun:'#ffbe83',ambient:1.65,direct:1.35,night:.7}:{sky:'#101d35',sun:'#b6cbe9',ambient:1.25,direct:.55,night:1};
   const profiler = useMemo(() => new GeographicFrameProfiler(), []);
   const perfAt = useRef(0);
   const qaSnapshotAt = useRef(0);
@@ -74,6 +77,7 @@ function Scene({
     const group = new T.Group(),
       water = riverWater(),
       materials = geographicMaterials(network.metadata),
+      decorationMaterials = chinatownMaterials(),
       resident = new Map<string, GeographicChunkData>(),
       colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
@@ -93,12 +97,12 @@ function Scene({
       (v, ref) => {
         const started = performance.now();
         v.id = ref.id;
-        v.root = buildGeographicChunk(v.chunk, materials, water.material);
+        v.root = buildGeographicChunk(v.chunk, materials, water.material, decorationMaterials);
         group.add(v.root);
         resident.set(ref.id, v.chunk);
         colliders.set(
           ref.id,
-          v.chunk.preparedColliders ?? buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin),
+          [...(v.chunk.preparedColliders ?? buildingObstacles(v.chunk.buildings ?? [], v.chunk.origin)), ...(v.chunk.decoration?.props ?? [])],
         );
         // Four fixed migrated landmarks are prepared once before the first drive.
         // Eviction releases GPU resources but retains their bounded CPU art for revisit.
@@ -139,6 +143,7 @@ function Scene({
       group,
       loader,
       activationMs,
+      decorationMaterials,
       water,
       materials,
       resident,
@@ -160,11 +165,13 @@ function Scene({
       forward: new T.Vector3(),
     };
   }, [network, places]);
+  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;},[content,gl,time]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
       content.stream.close();
       content.loader.close();
+      content.decorationMaterials.dispose();
       content.ring.geometry.dispose();
       (content.ring.material as T.Material).dispose();
       content.route.geometry.dispose();
@@ -243,12 +250,12 @@ function Scene({
       camera.getWorldDirection(content.forward);
       for (const v of content.stream.active.values())
         if (v.root)
-          updateBuildingLOD(
+          {updateChinatownLOD(v.root,camera.position,s.quality,p);updateBuildingLOD(
             v.root,
             camera.position,
             s.quality,
             content.forward,
-          );
+          );}
     }
     if (content.lastRevision !== content.revision) {
       content.lastRevision = content.revision;
@@ -269,6 +276,7 @@ function Scene({
         ));
       session.district.buildings = session.district.obstacles;
       content.metrics = {
+        chinatown: {facades:[...content.resident.values()].flatMap(c=>c.decoration?.facades??[]),bytes:[...content.resident.values()].reduce((n,c)=>n+(c.decoration?.bytes??0),0)},
         buildings: [...content.resident.values()].reduce(
           (n, c) => n + (c.buildings?.length ?? 0),
           0,
@@ -351,6 +359,7 @@ function Scene({
     if (import.meta.env.DEV && (qaSnapshotAt.current === 0 || now - qaSnapshotAt.current >= 250)) {
       qaSnapshotAt.current = now;
       (window as any).__geography = {
+      timeOfDay: time,
       position: { x: p.x, z: p.z, heading: p.heading },
       coordinate: metersToGeographic(p),
       height: session.height,
@@ -416,6 +425,8 @@ function Scene({
           maxChunkActivationMs: Math.max(0, ...content.activationMs),
           quality: s.quality,
           streamErrors: content.stream.stats.errors,
+          decorativeBufferBytes: [...content.resident.values()].reduce((n,c)=>n+(c.decoration?.bytes??0),0),
+          decorativeFacades: [...content.resident.values()].reduce((n,c)=>n+(c.decoration?.facades.length??0),0),
         });
       }
     } else if (perfAt.current !== 0) {
@@ -425,10 +436,10 @@ function Scene({
   });
   return (
     <>
-      <color attach="background" args={["#c3dce6"]} />
-      <fog attach="fog" args={["#c3dce6", 320, 1350]} />
-      <hemisphereLight args={["#fff6de", "#697667", 2.3]} />
-      <directionalLight position={[40, 100, 60]} intensity={2.2} />
+      <color attach="background" args={[atmosphere.sky]} />
+      <fog attach="fog" args={[atmosphere.sky, 320, 1350]} />
+      <hemisphereLight args={[atmosphere.sun, time==='night'?'#24334a':'#697667', atmosphere.ambient]} />
+      <directionalLight position={[40, 100, 60]} color={atmosphere.sun} intensity={atmosphere.direct} />
       <primitive object={content.group} />
       <primitive object={tuk.root} />
       <TrafficActors network={network} session={session} enabled={trafficEnabled} />
@@ -438,6 +449,8 @@ function Scene({
 function PreviewHud({
   loaded,
   ready,
+  time,
+  onTime,
   onTarget,
   perfEnabled,
   onPerfToggle,
@@ -446,6 +459,8 @@ function PreviewHud({
 }: {
   loaded: Loaded;
   ready: boolean;
+  time: 'day'|'dusk'|'night';
+  onTime: (value:'day'|'dusk'|'night')=>void;
   onTarget: (n?: RoadNode) => void;
   perfEnabled: boolean;
   onPerfToggle: () => void;
@@ -632,6 +647,7 @@ function PreviewHud({
       </aside>}
       {settings && <section className="geo-menu geo-settings" role="dialog" aria-modal="true" aria-label="Driving settings">
         <h2>Driving settings</h2>
+        <label>Bangkok light <select aria-label="Time of day" value={time} onChange={e=>onTime(e.target.value as 'day'|'dusk'|'night')}><option value="day">Daylight</option><option value="dusk">Golden dusk</option><option value="night">Chinatown night</option></select></label>
         <label>Graphics quality <select aria-label="Graphics quality" value={snapshot.quality} onChange={e => {
           const quality = e.target.value as 'low' | 'medium'; session.setQuality(quality); updatePreferences({ quality });
         }}><option value="low">Fast</option><option value="medium">Pretty</option></select></label>
@@ -675,6 +691,7 @@ export default function GeographicPrototype() {
     [trafficEnabled, setTrafficEnabled] = useState(() => new URLSearchParams(location.search).get("geoTraffic") !== "0"),
     [perfEnabled, setPerfEnabled] = useState(() => new URLSearchParams(location.search).has("geoPerf")),
     [perfSample, setPerfSample] = useState<GeographicPerfSample>();
+  const [time,setTime]=useState<'day'|'dusk'|'night'>(()=>{const value=new URLSearchParams(location.search).get('geoTime');return value==='night'||value==='day'?value:'dusk';});
   const [ready, setReady] = useState(false);
   const onReady = useCallback(() => setReady(true), []);
   const onPerfSample = useCallback((sample: GeographicPerfSample) => setPerfSample(sample), []);
@@ -748,11 +765,12 @@ export default function GeographicPrototype() {
       >
         <Scene loaded={loaded} target={target} perfEnabled={perfEnabled}
           onPerfSample={onPerfSample} trafficEnabled={trafficEnabled}
-          onError={setError} onReady={onReady} />
+          onError={setError} onReady={onReady} time={time} />
       </Canvas>
       <PreviewHud
         loaded={loaded}
         ready={ready}
+        time={time} onTime={setTime}
         onTarget={setTarget}
         perfEnabled={perfEnabled}
         onPerfToggle={() => { setPerfSample(undefined); setPerfEnabled((value) => !value); }}

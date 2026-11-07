@@ -1,4 +1,5 @@
 import * as T from "three";
+import {buildChinatownDecoration,type ChinatownMaterials} from "./chinatownRendering";
 import { buildCompiledBuildings } from "./compiledBuildings";
 import { geographicToMeters } from "./projection";
 import type { GeographicChunkData, GeographicDataset } from "./dataset";
@@ -95,6 +96,7 @@ export function buildGeographicChunk(
   c: GeographicChunkData,
   m: GeographicMaterials,
   water: T.Material,
+  decorationMaterials?: ChinatownMaterials,
 ) {
   const root = new T.Group();
   root.position.set(c.origin[0], 0, c.origin[1]);
@@ -177,6 +179,7 @@ export function buildGeographicChunk(
     root.add(buildCompiledBuildings(c.buildingGeometry, m.buildings));
     root.userData.buildingBuildMs = performance.now() - start;
   }
+  if(c.decoration && decorationMaterials)root.add(buildChinatownDecoration(c.decoration,decorationMaterials));
   return root;
 }
 /** Shared materials survive chunk eviction. Each chunk exclusively owns its GPU geometry. */

@@ -1,0 +1,11 @@
+# Research and design decisions
+Original procedural geometry and original text atlas art only; photographs are reference, never game textures.
+
+- Tourism Authority of Thailand, “The Adventure Through Bangkok's Chinatown” (2020): https://www.tourismthailand.org/Articles/the-adventure-through-bangkok-s-chinatown — Gate/Wat Traimit arrival, dense mixed retail, evening food vendors.
+- Dsign Something, Song Wat photographic architecture survey (2022): https://dsignsomething.com/2022/06/09/song-wat/ — inspected actual street photo: continuous cream plaster row, recessed green shutters, semicircular fanlights, stucco pilasters, tile awning, dense dark cables, orange streetlamp. Use these proportions/details for Song Wat, not Yaowarat neon.
+- Yaowarat nighttime photograph: https://th.trip.com/moments/detail/bangkok-191-16991381/ — inspected photograph of red/gold gold-shop fascia and vertical Thai/Chinese signboards with real mounting and deep upper window rhythms. Use selective gold/red, warm lower interiors, dark upper stories rather than all-over neon.
+- Photographer Willy Thuan, Chinatown walking guide (2026): https://www.phuket101.net/bangkok/bangkok-chinatown-a-walking-guide/ — distinct main commercial artery, Song Wat merchant street, connecting market lanes. Not copied into textures.
+- Karen Tee/CNA, Song Wat (8 July 2026): https://cnaluxury.channelnewsasia.com/experiences/song-wat-bangkok-guide-what-do-eat-shop-294496 — heritage wholesalers and small cafes coexist; restrained signage and muted trade frontage.
+- Hua Seng Heng official branch directory: https://www.huasengheng.com/contact/ — verifies branches/addresses on Yaowarat, but does not prove which imported footprint contains a branch. Therefore this PR uses generic Thai/Chinese trade phrases and fictional compositions, not falsely located real businesses. Tang To Kang is not arbitrarily placed on Yaowarat.
+
+Selection uses pinned source road names and edge associations. Primary bounds are UTM-local x2780–3700, z80–1080; historic Song Wat is restricted to x2920–3280, z520–1030. Exact admitted source IDs and facade coverage are audited by tests. Surrounding roads are retained only as clearance constraints; no new graph links are created.
