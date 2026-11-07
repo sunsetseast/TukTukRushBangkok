@@ -57,8 +57,7 @@ specific real business to an adjacent footprint. Original tenants make no such c
 ## Evidence
 
 [Exact tests](TESTS.md), [source/life inventory](source-tests.json),
-[unchanged source/art tree proof](provenance.json). Rendered views and matched
-performance are recorded separately alongside raw browser reports.
+[unchanged source/art tree proof](provenance.json). [46 rendered views and matched examples](SCREENSHOTS.md), [performance comparison](PERFORMANCE.md) and lossless raw reports complete the evidence.
 
 ## Limits and next work
 

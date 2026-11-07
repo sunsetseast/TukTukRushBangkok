@@ -249,7 +249,7 @@ try {
   assert.equal(report.residency[0].bytes, 0);
   assert.equal(report.residency[2].bytes, 0);
   assert.equal(report.residency[1].bytes, report.residency[3].bytes);
-  assert(report.residency[3].geometries <= report.residency[1].geometries + 5);
+  assert(report.residency[2].geometries <= report.residency[0].geometries + 5);
   assert(report.residency.every((r) => r.stream.errors === 0));
   assert.deepEqual(report.errors, []);
 } catch (e) {

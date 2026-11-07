@@ -46,3 +46,24 @@ and explicit retry after network failure. Zero captured page errors.
 packed payloads decode, including the decorated 3072:0 source chunk. The separate
 WebKit HTTP-200-HTML fallback step also passed. This is Linux WebKit transport
 coverage, not a physical iOS WebGL or audio listening test.
+
+## Final capture and resource result
+
+The [matched capture job](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42392802436)
+completed 46 real images and all eight matched timing cases, then **failed** its
+last equality heuristic for uploaded geometry counts on return (215 vs 732).
+This job is not called passing. Both away samples had 63 geometries and zero
+Chinatown bytes. Captured errors were empty. The original failed report is kept
+losslessly, including its failure field.
+
+The [focused replacement check](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42394133919)
+**passed** three actual leave/return cycles with identical return chunk IDs,
+owned meshes, building buffers and decorative buffers, bounded uploaded geometry,
+away GPU release and zero stream errors. [Exact six samples](eviction-browser.json).
+This identifies lazy upload/LOD state as the reason for the invalid equality
+heuristic. The corrected primary harness checks the away release baseline.
+Runtime source remained identical throughout these evidence-only checks.
+
+Other automatic PR workflows may be pending or skipped; they are not counted
+among the 23 local passing checks or the explicitly linked browser outcomes.
+No canceled/skipped job is represented as passed.

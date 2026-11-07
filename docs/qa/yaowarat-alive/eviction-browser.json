@@ -1,0 +1,146 @@
+{
+  "physicalIPhone": false,
+  "environment": "Linux Chromium SwiftShader",
+  "samples": [
+    {
+      "cycle": 0,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "chunks": 9,
+      "geometries": 242,
+      "ownedMeshes": 563,
+      "buildingGPUBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "errors": 0,
+      "disposed": 9
+    },
+    {
+      "cycle": 0,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "chunks": 9,
+      "geometries": 289,
+      "ownedMeshes": 2219,
+      "buildingGPUBytes": 19528344,
+      "decorativeBytes": 8026175,
+      "facades": 357,
+      "errors": 0,
+      "disposed": 18
+    },
+    {
+      "cycle": 1,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "chunks": 9,
+      "geometries": 211,
+      "ownedMeshes": 563,
+      "buildingGPUBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "errors": 0,
+      "disposed": 27
+    },
+    {
+      "cycle": 1,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "chunks": 9,
+      "geometries": 731,
+      "ownedMeshes": 2219,
+      "buildingGPUBytes": 19528344,
+      "decorativeBytes": 8026175,
+      "facades": 357,
+      "errors": 0,
+      "disposed": 36
+    },
+    {
+      "cycle": 2,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "chunks": 9,
+      "geometries": 246,
+      "ownedMeshes": 563,
+      "buildingGPUBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "errors": 0,
+      "disposed": 45
+    },
+    {
+      "cycle": 2,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "chunks": 9,
+      "geometries": 808,
+      "ownedMeshes": 2219,
+      "buildingGPUBytes": 19528344,
+      "decorativeBytes": 8026175,
+      "facades": 357,
+      "errors": 0,
+      "disposed": 54
+    }
+  ],
+  "errors": [],
+  "pass": true
+}
