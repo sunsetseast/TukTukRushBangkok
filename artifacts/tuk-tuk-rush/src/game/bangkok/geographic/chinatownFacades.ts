@@ -156,20 +156,12 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
       const x = chunk.origin[0] + (e.a[0] + e.b[0]) / 2,
         z = chunk.origin[1] + (e.a[1] + e.b[1]) / 2;
       if (x < minX! || x > maxX! || z < minZ! || z > maxZ!) continue;
-      const sb = area.songWatBounds;
-      // The compiler's nearest-street hint can point to a side alley. For the
-      // selected historic block, also admit a genuine outward-facing Song Wat
-      // source edge when its distance/orientation/clearance prove the frontage.
-      const roads = streetSegments.get(e.street ?? "") ??
-        (x>=sb[0]!&&x<=sb[1]!&&z>=sb[2]!&&z<=sb[3]!
-          ? area.segments.filter(s=>s.name==='Song Wat Road') : []);
+      // Re-evaluate nearby selected roads instead of trusting the compiler's
+      // single nearest-street hint. A corner can face two legitimate streets.
+      const roads = area.segments.filter(s => area.streets.includes(s.name) &&
+        Math.abs((s.a[0]!+s.b[0]!)/2-x) < Math.abs(s.b[0]!-s.a[0]!)/2+40 &&
+        Math.abs((s.a[1]!+s.b[1]!)/2-z) < Math.abs(s.b[1]!-s.a[1]!)/2+40);
       if (!roads.length) continue;
-      const road = roads
-        .map((s) => ({ s, ...segmentDistance(x, z, s) }))
-        .sort((a, b) => a.distance - b.distance)[0]!;
-      const song = road.s.name === "Song Wat Road";
-      if (song && (x < sb[0]! || x > sb[1]! || z < sb[2]! || z > sb[3]!))
-        continue;
       const dx = e.b[0] - e.a[0],
         dz = e.b[1] - e.a[1],
         width = Math.hypot(dx, dz);
@@ -181,12 +173,13 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
         ring.reduce((n, a) => n + a.a[0] * a.b[1] - a.b[0] * a.a[1], 0) > 0;
       const nx = (ccw ? dz : -dz) / width,
         nz = (ccw ? -dx : dx) / width;
-      if (
-        ((road.x - x) * nx + (road.z - z) * nz) / Math.max(0.1, road.distance) <
-          0.65 ||
-        road.distance - road.s.width / 2 > 18
-      )
-        continue;
+      const road = roads.map(s => ({s,...segmentDistance(x,z,s)}))
+        .filter(r => ((r.x-x)*nx+(r.z-z)*nz)/Math.max(.1,r.distance) >= .65 &&
+          r.distance-r.s.width/2 <= 18)
+        .sort((a,b)=>a.distance-b.distance||a.s.id.localeCompare(b.s.id))[0];
+      if (!road) continue;
+      const sb=area.songWatBounds, song=road.s.name==='Song Wat Road';
+      if(song&&(x<sb[0]!||x>sb[1]!||z<sb[2]!||z>sb[3]!))continue;
       const margin = Math.min(
         ...[-0.45, 0, 0.45].map((u) =>
           roadClearance(x + nz * width * u, z - nx * width * u),
