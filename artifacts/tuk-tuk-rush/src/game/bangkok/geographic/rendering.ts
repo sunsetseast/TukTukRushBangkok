@@ -179,7 +179,7 @@ export function buildGeographicChunk(
     root.add(buildCompiledBuildings(c.buildingGeometry, m.buildings));
     root.userData.buildingBuildMs = performance.now() - start;
   }
-  if(c.decoration && decorationMaterials)root.add(buildChinatownDecoration(c.decoration,decorationMaterials));
+  if(c.decoration && decorationMaterials){const decoration=buildChinatownDecoration(c.decoration,decorationMaterials);root.userData.chinatownRoot=decoration;root.add(decoration);}
   return root;
 }
 /** Shared materials survive chunk eviction. Each chunk exclusively owns its GPU geometry. */

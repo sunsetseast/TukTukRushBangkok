@@ -35,6 +35,7 @@ import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
 import { TrafficActors } from "./TrafficActors";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
+import {updateChinatownLife} from "./chinatownLife";
 import {chinatownMaterials,updateChinatownLOD} from "./chinatownRendering";
 
 type Loaded = {
@@ -165,7 +166,7 @@ function Scene({
       forward: new T.Vector3(),
     };
   }, [network, places]);
-  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;},[content,gl,time]);
+  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.buildings.color.set(time==='night'?'#a0a6b4':time==='dusk'?'#d7c4b1':'#ffffff');},[content,gl,time]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
@@ -257,6 +258,8 @@ function Scene({
             content.forward,
           );}
     }
+    for(const v of content.stream.active.values())if(v.root?.userData.chinatownRoot)
+      updateChinatownLife(v.root.userData.chinatownRoot,state.clock.elapsedTime,s.quality,camera.position,p,s.phase==='playing');
     if (content.lastRevision !== content.revision) {
       content.lastRevision = content.revision;
       setStreamedPhysicsObstacles(session.district, [...content.resident.values()]

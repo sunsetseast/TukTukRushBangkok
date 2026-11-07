@@ -1,5 +1,7 @@
 import * as T from "three";
 import area from "./chinatownArea.generated.json";
+import {CHINATOWN_SITES,chinatownSite} from "./chinatownSites";
+import type {LifeAnchor} from "./chinatownLife";
 import type { GeographicChunkData } from "./dataset";
 import type { RuntimeBuilding, BuildingEdge } from "./buildings";
 import { stableHash } from "../stableHash";
@@ -27,9 +29,12 @@ export const GEO_SHOP_SIGNS: SignEntry[] = [
   style: style as SignEntry["style"],
   variant: i % 2,
   layout: "painted",
+  verticalText: /[\u3400-\u9fff]/.test(secondary!) ? secondary : undefined,
 }));
+GEO_SHOP_SIGNS.push(...CHINATOWN_SITES.map((s,i)=>({key:s.id,text:s.thai,secondary:s.secondary,verticalText:/[\u3400-\u9fff]/.test(s.secondary)?s.secondary:undefined,style:([0].includes(s.trade)?'gold':[1,4,11].includes(s.trade)?'noodle':s.trade===7?'hotel':'heritage') as SignEntry['style'],variant:0,layout:i%3===0?'neon' as const:'painted' as const})));
 export type Facade = {
   id: string;
+  siteId?: string;
   buildingId: string;
   street: string;
   chunk: string;
@@ -190,6 +195,7 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
       if(!clear(b.id,x-chunk.origin[0]+nx*.12,z-chunk.origin[1]+nz*.12,road.x-chunk.origin[0],road.z-chunk.origin[1]))continue;
       result.push({
         id: `${b.id}:${e.polygon}:${e.edge}`,
+        siteId: chinatownSite(`${b.id}:${e.polygon}:${e.edge}`)?.id,
         buildingId: b.id,
         street: road.s.id,
         chunk: chunk.origin.join(":"),
@@ -244,7 +250,7 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
 }
 export function facadeTrade(f: Facade, bay = 0) {
   const seed = bay ? stableHash(`${f.id}:bay:${bay}`) : f.seed;
-  return f.tradeHint ?? (f.style === 'songwat'
+  return chinatownSite(f.id)?.trade ?? f.tradeHint ?? (f.style === 'songwat'
     ? [6,8,2,3][seed%4]!
     : [0,1,2,3,4,5,6,7,9,10,11][seed%11]!);
 }
@@ -272,6 +278,7 @@ export type ChinatownDecoration = {
   pieces: number;
   bytes: number;
   props: (Obstacle & { sourceId: string })[];
+  life: LifeAnchor[];
 };
 function packed(
   mesh: T.Mesh,
@@ -315,8 +322,10 @@ export function prepareChinatown(
       { p: number[]; uv: number[]; center: number[]; vertical: boolean }
     >();
   const props: (Obstacle & { sourceId: string })[] = [];
+  const life:LifeAnchor[]=[];
+  const visible=frontageVisibility(chunk);
   let pieces = 0;
-  for (const f of facades) {
+  for (const f of [...facades].sort((a,b)=>Number(!!b.siteId)-Number(!!a.siteId)||a.id.localeCompare(b.id))) {
     const song = f.style === "songwat",
       seed = f.seed,
       modern = f.style !== "songwat" && f.seed % 5 === 2,
@@ -325,6 +334,7 @@ export function prepareChinatown(
       n = Math.max(1, Math.ceil(W / 5.7)),
       bay = W / n,
       fh = H / f.floors;
+    const site=chinatownSite(f.id);
     const baseType = facadeTrade(f);
     const wall = (
       song
@@ -400,7 +410,7 @@ export function prepareChinatown(
       vertical = false,
       rotation = 0,
       reverse = false,
-      trade = baseType,
+      trade = site?.sign ?? baseType,
     ) => {
       const ang = yaw + rotation + (reverse ? Math.PI : 0),
         tx = Math.cos(ang),
@@ -471,9 +481,18 @@ export function prepareChinatown(
         song ? "#e8dec4" : "#ddd2b5",
       );
       put(u, 3.15, 0.16, span, 0.85, 0.18, accent);
-      sign(u, 3.15, 0.27, span - 0.1, 0.7, false, 0, false, type);
+      sign(u, 3.15, 0.27, span - 0.1, 0.7, false, 0, false, site?.sign ?? type);
       const glow = type === 0 ? "#fbd281" : song ? "#ac8a52" : "#e6b87d";
-      put(u, 1.4, 0.19, span - 0.4, 2.2, 0.08, glow, "night");
+      put(u, 2.77, .24, span*.8, .12, .08, glow, "night");
+      // Sheltered display room: floor, ceiling, splayed jambs and rear wall.
+      // All depth projects into the independently cleared shop-owned setback.
+      const depth=Math.max(.22,Math.min(1.45,out-.12));
+      put(u,.16,depth/2,span,.13,depth,"#665d4c","near");
+      put(u,2.85,depth/2,span,.1,depth,"#b8a988","near");
+      for(const side of [-1,1])put(u+side*(span/2-.06),1.5,depth/2,.12,2.65,depth,side<0?"#897659":"#c4ac80","near");
+      put(u,2.5,.14,span*.86,.1,.1,"#9d7c4b","near");
+      put(u,1.5,.13,span*.58,1.8,.08,type===0?"#58282a":"#31413b");
+      for(const side of [-1,1])put(u+side*span*.29,1.48,.24,.06,2.25,.09,type===0?"#b88d4a":"#948c72","near");
       put(
         u,
         1.65,
@@ -510,6 +529,12 @@ export function prepareChinatown(
             "orb",
           );
         put(u, 2.5, 0.3, span * 0.78, 0.12, 0.2, "#d6b553", "near");
+        for(const k of [-1,0,1]){
+          put(u+k*span*.22,1.95,.23,.3,.48,.12,'#2b2626','near','orb');
+          put(u+k*span*.22,2.04,.32,.2,.25,.045,'#d8b856','near','arch');
+          put(u+k*span*.22,1.65,.25,.4,.08,.2,'#b59150','near');
+        }
+        put(u,1.52,.78,span*.68,.045,.2,'#e6c578','night');
       } else if ([1, 4, 11].includes(type)) {
         for (const k of [-1, 1]) {
           put(
@@ -891,8 +916,8 @@ export function prepareChinatown(
         );
         put(u - bay * 0.39, sy - 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
         put(u - bay * 0.39, sy + 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, false, type);
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true, type);
+        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, false, site?.sign ?? type);
+        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true, site?.sign ?? type);
       }
       if (j === 0 && out > 1.4 && seed % 4 === 0) {
         put(
@@ -920,32 +945,6 @@ export function prepareChinatown(
             turn,
           );
       }
-      // People are deliberately lightweight, inside the sheltered shop opening.
-      if ((seed + j) % 3 === 0 && out > 1.15) {
-        put(
-          u + span * 0.3,
-          0.95,
-          0.7,
-          0.38,
-          0.9,
-          0.3,
-          ["#c18a5c", "#416d65", "#92635b"][seed % 3]!,
-          "detail",
-          "cylinder",
-        );
-        put(
-          u + span * 0.3,
-          1.55,
-          0.7,
-          0.31,
-          0.38,
-          0.3,
-          "#bb8b69",
-          "detail",
-          "orb",
-        );
-        put(u + span * 0.3, 0.27, 0.7, 0.27, 0.55, 0.24, "#35454a", "detail");
-      }
       if (j === 0 && out > 1.1) {
         // shop-owned pole, cable loom and lamp; kept off drivable surface
         put(
@@ -963,6 +962,85 @@ export function prepareChinatown(
           put(u, 5.4 + k * 0.17, 0.7, span, 0.025, 0.025, "#252c2c", "near");
         put(u - bay * 0.4, 5, 0.8, 0.4, 0.15, 0.4, "#edc886", "night", "orb");
       }
+    }
+    // Rhythm changes at source boundaries; no new massing or source height.
+    for(let k=0;k<n;k++){
+      const u=-W/2+(k+.5)*bay;
+      if(seed%3===0||song){put(u,H-.6,.2,bay*.8,.3,.28,song?'#d9c9a6':'#b4ad96','near','arch');}
+      if(seed%4===1)put(u,H-.8,.15,bay*.6,.4,.12,'#6b827d');
+      if(k===0)put(u-bay*.43,H*.5,.32,.075,H-.8,.12,'#6d756c','near','cylinder');
+      if(!song&&seed%3===1)put(u,H-.15,.3,bay-.18,.14,.64,'#a9a694','near');
+    }
+    // Composed hero sites get a coherent entrance instead of unrelated tenants.
+    if(site){
+      const span=Math.min(W-.35,site.composition==='hotel'?12:W-.35),deep=Math.min(out-.1,1.45);
+      if(site.composition==='heritageGold'){
+        for(const side of [-1,1]){
+          put(side*(W/2-.3),H/2,.2,.44,H,.4,'#e4d9be');
+          for(let y=3.7;y<H;y+=H/7){put(side*(W/2-.3),y,.34,.65,.18,.4,'#af9d7c','near');}
+        }
+        for(let floor=1;floor<7;floor++)put(0,floor*H/7,.25,W,.18,.4,'#e4d5b6');
+        put(0,H-1,.23,W*.68,.8,.25,'#b6a27c','near','arch');
+        put(0,4.2,.24,W*.75,1.05,.2,'#77272c');sign(0,4.2,.36,W*.71,.92);
+      }else if(site.composition==='goldTower'){
+        const sh=Math.min(9,H-4.2),sy=H-sh/2-.5,su=-W*.32;
+        put(su,sy,.39,1.6,sh,.3,'#721e28');
+        for(const side of [-1,1])put(su+side*.86,sy,.51,.09,sh+.15,.14,'#d8b359','near');
+        sign(su,sy,.56,1.5,sh-.2,true);
+        put(0,3.8,.3,W-.2,.3,.4,'#d8b359');
+      }else if(site.composition==='hotel'){
+        put(0,3.6,.3,span,1.05,.5,'#87363b');sign(0,3.6,.57,span-.2,.85);
+        for(const side of [-1,1])put(side*span*.4,1.75,Math.max(.2,deep*.6),.55,3.1,.5,'#d2c2a4','near');
+        put(0,2.95,deep/2,span, .22,deep,'#7c5946','near');
+        put(0,1.75,.3,span*.55,2.25,.12,'#476368','near');
+      }else if(site.composition==='restaurant'){
+        put(0,3.8,.23,W-.2,.9,.25,'#e1d0a5');sign(0,3.8,.38,W-.5,.76);
+        for(let k=0;k<Math.min(n,3);k++){
+          const u=-W/2+(k+.5)*bay;
+          put(u,2.4,.25,bay*.6,.65,.25,'#77847c','near','canopy');
+          put(u,2.9,.22,.35,.7,.22,'#8e9990','near','cylinder');
+          put(u,1.2,.35,.7,.1,.5,'#b7b196','near');
+          for(const side of [-1,1])put(u+side*.4,.38,.4,.28,.7,.28,side<0?'#874d3d':'#43766a','detail','cylinder');
+          put(u,1.87,.75,.5,.1,.5,'#3b4542','near','cylinder');
+          for(let b=0;b<3;b++)put(u-.45+b*.25,1.82,.48,.19,.1,.19,'#e8d8b5','detail','orb');
+          put(u,2.1,.15,bay*.5,.4,.07,'#dfd1aa','near');
+        }
+      }else if(site.composition==='warehouse'){
+        put(0,3.65,.22,W-.3,.65,.25,'#b7a580');sign(0,3.65,.36,W-.6,.52);
+        for(const side of [-1,1]){put(side*W*.43,1.6,.35,.45,2.8,.3,'#697361','near');for(let k=0;k<3;k++)put(side*W*.25,.35+k*.4,.6,.7,.38,.45,'#a88d61','near','box',0,'wood');}
+        put(0,H-.5,.25,W*.62,.7,.2,'#ddd0ac','near','arch');
+      }else{
+        const tint=site.composition==='tea'?'#446455':site.composition==='bakery'?'#a36f49':'#517c78';
+        put(0,3.7,.24,W-.3,.7,.25,tint);sign(0,3.7,.39,W-.6,.58);
+        put(0,2.95,Math.max(.2,deep/2),W-.3,.12,deep,tint,'near');
+        for(const side of [-1,1])put(side*W*.4,1.5,.25,.26,2.7,.3,'#cdbb95','near');
+      }
+    }
+    if(site&&out>1.3){
+      for(const side of [-1,1]){
+        put(side*(W/2-.5),2.7,.65,.035,.36,.035,'#6c6355','near');
+        put(side*(W/2-.5),2.38,.65,.28,.38,.28,song?'#c3a977':'#a84a36','near','orb');
+        put(side*(W/2-.5),2.18,.65,.08,.1,.08,'#d9b96c','night');
+      }
+      if(site.composition==='market'||site.composition==='warehouse'){
+        for(let k=0;k<3;k++)put(-W*.3+k*.45,.25,1,.4,.45,.4,'#947c55','detail','box',0,'wood');
+      }
+    }
+    // Select bounded local activity after static furniture is known. Actor
+    // footprint and complete walking sweep must stay in the cleared setback.
+    if(out>1.15&&W>4&&life.length<24&&(site||seed%4===0)){
+      const kind=baseType===1?'stir':baseType===4?'wok':baseType===11?'serve':'browse';
+      const addLife=(u:number,v:number,kind:LifeAnchor['kind'],travel=0)=>{
+        if(life.length>=24)return;
+        const x=f.x+f.nz*u+f.nx*v,z=f.z-f.nx*u+f.nz*v;
+        if(decorativeRoadClearance(x,z,.68+travel*2,.7,yaw)<.18)return;
+        for(const t of [-travel,0,travel])if(!visible(f.buildingId,f.x-chunk.origin[0]+f.nz*(u+t)+f.nx*.1,f.z-chunk.origin[1]-f.nx*(u+t)+f.nz*.1,x-chunk.origin[0]+f.nz*t,z-chunk.origin[1]-f.nx*t))return;
+        if(kind!=='steam'&&kind!=='fan'&&props.some(p=>{const dx=x-p.x,dz=z-p.z,c=Math.cos(p.yaw??0),s=Math.sin(p.yaw??0);return Math.abs(c*dx-s*dz)<p.w/2+.3+travel&&Math.abs(s*dx+c*dz)<p.d/2+.18;}))return;
+        life.push({sourceId:f.id,x:x-chunk.origin[0],z:z-chunk.origin[1],yaw,kind,seed,travel,skin:['#b88461','#c49b76','#ad7958'][seed%3]!,shirt:['#657b72','#b65c44','#d5cbb0','#4b6f86'][seed%4]!});
+      };
+      addLife(-W/2+bay*.5,.39,kind);
+      if([1,4,11].includes(baseType)){addLife(-W/2+bay*.5,.48,'steam');addLife(W/2-.55,.3,'fan');}
+      if(out>1.6&&W>9&&seed%2===0)addLife(0,1.35,'walk',Math.min(.6,W*.06));
     }
     if (song) {
       for (let k = 0; k < n; k++)
@@ -1018,5 +1096,5 @@ export function prepareChinatown(
       (b.colors?.byteLength ?? 0),
     0,
   );
-  return { facades, batches, pieces, bytes, props };
+  return { facades, batches, pieces, bytes, props, life };
 }

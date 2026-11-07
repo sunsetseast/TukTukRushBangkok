@@ -1,0 +1,62 @@
+name: Yaowarat Alive matched browser QA
+on:
+  push:
+    branches: ['feature/yaowarat-alive-pr61']
+    paths: ['artifacts/tuk-tuk-rush/**', '.github/workflows/yaowarat-alive.yml']
+  workflow_dispatch:
+concurrency:
+  group: yaowarat-alive-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  matched-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      PORT: '24861'
+      BASE_PATH: '/'
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: pnpm/action-setup@v4
+        with: {version: 10}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: pnpm}
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - uses: actions/cache@v4
+        with:
+          path: artifacts/tuk-tuk-rush/public/assets/geography/compiled
+          key: geography-compiled-${{ hashFiles('artifacts/tuk-tuk-rush/scripts/compile-geographic-buildings.ts', 'artifacts/tuk-tuk-rush/scripts/geographic-building-authoring.ts', 'data/bangkok/real-scale/clearance*') }}
+      - name: Derived assets (cached source compilation, no geographic reimport)
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          node --import tsx scripts/pack-geographic-road-rules.ts
+          node --import tsx scripts/compile-geographic-buildings.ts
+          node --import tsx scripts/pack-geographic-traffic-controls.ts
+          node --import tsx scripts/prepare-geographic-browser-assets.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush typecheck
+      - name: Source, life and disposal tests
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          node --import tsx scripts/check-geographic-chinatown.ts
+          node --import tsx scripts/check-yaowarat-alive.ts
+          node --import tsx scripts/check-geographic-worker.ts
+          node --import tsx scripts/check-geographic-landmark-cache.ts
+      - run: pnpm --filter @workspace/tuk-tuk-rush exec vite build
+      - run: timeout 240 pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Matched PR60 baseline
+        working-directory: artifacts/tuk-tuk-rush
+        env:
+          GEOGRAPHY_QA_BASELINE_REF: 0c84000d896922ba512d54f4c52d90881be0f105
+        run: timeout 480 node scripts/browser-yaowarat-alive.mjs
+      - name: Final genuine rendered views, animation and driven samples
+        if: ${{ !cancelled() }}
+        working-directory: artifacts/tuk-tuk-rush
+        run: timeout 480 node scripts/browser-yaowarat-alive.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yaowarat-alive-evidence
+          path: docs/qa/yaowarat-alive/
+          retention-days: 30

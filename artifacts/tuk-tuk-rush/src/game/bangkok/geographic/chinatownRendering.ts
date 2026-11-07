@@ -1,4 +1,5 @@
 import * as T from "three";
+import {buildChinatownLife} from "./chinatownLife";
 import { buildSignAtlas } from "../../signArt";
 import { GEO_SHOP_SIGNS, type ChinatownDecoration } from "./chinatownFacades";
 export function chinatownMaterials() {
@@ -21,7 +22,7 @@ export function chinatownMaterials() {
   };
   facade.customProgramCacheKey=()=>"geographic-palette-lighting-v1";
   const windows=new T.MeshBasicMaterial({vertexColors:true,color:'#ffffff'});
-  const h=new T.MeshBasicMaterial({map:atlas.h.tex}),v=h.clone();v.map=atlas.v.tex;
+  const h=new T.MeshBasicMaterial({map:atlas.h.tex,toneMapped:false}),v=h.clone();v.map=atlas.v.tex;
   return {
     facade,
     windows,
@@ -91,6 +92,8 @@ export function buildChinatownDecoration(
     mesh.userData = { chinatown: true, layer: b.layer, center: b.center };
     root.add(mesh);
   }
+  const life=buildChinatownLife(data.life??[],materials.facade);
+  if(life){root.add(life);root.userData.life={mesh:life};}
   return root;
 }
 const point = new T.Vector3();
