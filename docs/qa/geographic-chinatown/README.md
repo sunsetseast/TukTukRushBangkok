@@ -32,6 +32,8 @@ The geographic batch cells are 60 m wide; the original world retains its existin
 Use your existing preview for this branch; this PR does not deploy a preview. Open in Safari, rotate to landscape, choose **Free roam**. The initial location remains the approved Chinatown Gate approach. Follow real Yaowarat Road northwest from the Gate toward the main shopfront corridor; use the current street label to stay on Yaowarat. The connected Song Sawat / Yaowa Phanit streets lead toward the quieter Song Wat block. The source-fixed screenshot poses also record exact longitude/latitude for reviewer reference.
 
 - `?world=geographic` — normal dusk presentation.
+- `?world=geographic&geoPerf=1` — normal dusk plus the monitor.
+- `?world=geographic&geoPerf=1&geoTraffic=0` — normal dusk/monitor with AI off.
 - `?world=geographic&geoTime=day&geoPerf=1` — daylight and performance monitor.
 - `?world=geographic&geoTime=night&geoPerf=1` — nighttime signs/interiors.
 - `?world=geographic&geoTime=night&geoPerf=1&geoTraffic=0` — same nighttime route with AI vehicles off; regulatory signs and street plaques remain.
@@ -44,4 +46,8 @@ Drive the corridor, leave for another district, return twice, then repeat after 
 
 The workflow `geographic-chinatown.yml` runs fixed source-camera captures against pinned PR59 and current code, plus identical short driven segments with AI on/off and Fast/Pretty. Browser evidence uses Linux Chromium/SwiftShader with an 844×390 touch viewport. Software rendering is slow and is not an estimate of iPhone GPU speed. Fixed relocations separately exercise evictions and revisits; they are not described as naturally driven journeys.
 
-Final metrics, screenshots and regression status will be recorded after visual inspection. No physical iPhone certification is claimed. Building interiors are shallow storefront compositions, pedestrians are simple static silhouettes, and real named businesses need verified footprint/address attribution before reconstruction. This PR does not complete all of Chinatown.
+Final evidence is saved in [PERFORMANCE.md](PERFORMANCE.md), [SCREENSHOTS.md](SCREENSHOTS.md) and [TESTS.md](TESTS.md). All fourteen final views were visually inspected. Matched software p95 overhead is 7.7–18.2%; the intended ~15% regression budget is not uniformly met. First-return presentation cost also remains a profiling target. No physical iPhone certification is claimed. Building interiors are shallow storefront compositions, pedestrians are simple static silhouettes, and real named businesses need verified footprint/address attribution before reconstruction. This PR does not complete all of Chinatown.
+
+## PR61 recommendation
+
+Prioritize physical-iPhone comparison, GPU/upload/driver profiling and further Chinatown refinement before expanding districts. The reusable source-edge adapter, static-core batching, instanced props, shared commercial-sign atlas and chunk ownership/disposal can support selected authored gold shops and richer heritage facades without moving source footprints. Large source masses outside admitted fronts, shallow interiors, static silhouettes and verified real-business attribution need further art work. Defer Bang Rak/Charoen Krung expansion and advanced pedestrian AI until the measured budget and visual review justify them.

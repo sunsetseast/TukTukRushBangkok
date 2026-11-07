@@ -12,7 +12,7 @@
       "pieces": 3405,
       "bytes": 533159,
       "batches": 141,
-      "prepareMs": 146.85085600000002,
+      "prepareMs": 150.01422299999996,
       "first": [
         {
           "id": "osm:way/1021129470:0:0",
@@ -279,7 +279,7 @@
       "pieces": 10289,
       "bytes": 1415832,
       "batches": 278,
-      "prepareMs": 267.196963,
+      "prepareMs": 207.25358499999993,
       "first": [
         {
           "id": "osm:way/1021129469:0:0",
@@ -539,5 +539,6 @@
         }
       ]
     }
-  ]
+  ],
+  "timingNote": "prepareMs includes repeated deterministic construction and validation; not a production worker benchmark."
 }
