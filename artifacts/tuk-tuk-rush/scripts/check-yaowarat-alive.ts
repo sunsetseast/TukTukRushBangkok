@@ -45,7 +45,7 @@ for (const ref of m.chunks.filter((c: any) =>
   assert.equal(JSON.stringify(c.buildings), before);
   assert.deepEqual(data, prepareChinatown(c));
   assert(data.bytes < 12e6);
-  assert(data.life.length <= 27);
+  assert(data.life.length <= 24);
   for (const f of data.facades) {
     assert(!ids.has(f.id));
     ids.add(f.id);

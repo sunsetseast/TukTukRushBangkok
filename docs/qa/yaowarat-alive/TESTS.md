@@ -30,3 +30,19 @@ separate geographic/driven mission unit regressions test actual driven routes.
 Initial local browser launch was blocked by restricted Unix sockets; the shared
 browser could not reach the isolated local server. Both attempts are excluded
 from passing browser results. Browser evidence comes from GitHub Actions.
+
+## Browser regression results
+
+[Mobile/WebKit workflow](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42392950732)
+passed on `0177980c1048ebbc2e015fe71852e1a9aadfc3e4` (runtime identical
+to `8697d31`; added CI workflow only). The [current-run report](mobile/summary.json)
+records 14 successful checks (lossless raw report: `mobile/browser-after.json.gz`): touch steering/pedals/boost/horn, traffic toggle
+with signs retained, map and destination selection, pause/resume/recovery,
+Fast/Pretty, eviction/revisits, LOOK, orientation, shift/career integration,
+context-loss recovery, original compressed-world startup, worker HTML fallback
+and explicit retry after network failure. Zero captured page errors.
+
+[WebKit payload results](mobile/webkit-gzip-report.json) confirm all four tested
+packed payloads decode, including the decorated 3072:0 source chunk. The separate
+WebKit HTTP-200-HTML fallback step also passed. This is Linux WebKit transport
+coverage, not a physical iOS WebGL or audio listening test.
