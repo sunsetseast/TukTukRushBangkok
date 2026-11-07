@@ -41,6 +41,7 @@ jobs:
         run: |
           node --import tsx scripts/check-geographic-chinatown.ts
           node --import tsx scripts/check-yaowarat-alive.ts
+          node --import tsx scripts/check-geographic-sign-fonts.ts
           node --import tsx scripts/check-geographic-worker.ts
           node --import tsx scripts/check-geographic-landmark-cache.ts
       - run: pnpm --filter @workspace/tuk-tuk-rush exec vite build

@@ -36,7 +36,7 @@ const PAL: Record<SignStyle, [string, string, string][]> = {
     ["#6b2c2a", "#d8b36a", "#f5e5be"],
   ],
 };
-const FONT = '"Rush Thai","Rush Chinese","Thonburi",sans-serif';
+const FONT = '"Rush Thai","Rush Chinese","Rush Geographic Chinese","Thonburi",sans-serif';
 
 function motif(
   c: CanvasRenderingContext2D,

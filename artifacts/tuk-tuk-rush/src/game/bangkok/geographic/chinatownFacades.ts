@@ -369,7 +369,7 @@ export function prepareChinatown(
         shape === "box" &&
         y > 0.4 &&
         y < 1 &&
-        h > 1 &&
+        h > .6 &&
         d > 0.3 &&
         props.length < 256
       )
@@ -495,7 +495,7 @@ export function prepareChinatown(
       for(const side of [-1,1])put(u+side*span*.29,1.48,.24,.06,2.25,.09,type===0?"#b88d4a":"#948c72","near");
       put(
         u,
-        1.65,
+        1.1,
         Math.min(0.9, out * 0.55),
         span * 0.8,
         0.15,
@@ -505,21 +505,21 @@ export function prepareChinatown(
       );
       put(
         u,
-        0.7,
+        0.55,
         Math.min(0.9, out * 0.55),
         span * 0.8,
-        1.2,
+        0.9,
         0.45,
         type === 0 ? "#6c4828" : "#405c54",
         "near",
       );
       // Recessed display glass + shelves, gold trays or steaming noodle equipment.
       if (type === 0) {
-        put(u, 1.25, 0.63, span * 0.72, 0.55, 0.12, "#8aabb0", "near");
+        put(u, 0.99, 0.63, span * 0.72, 0.25, 0.12, "#8aabb0", "near");
         for (let k = 0; k < 4; k++)
           put(
             u - span * 0.28 + k * span * 0.18,
-            1.5,
+            1.21,
             0.72,
             0.16,
             0.2,
@@ -534,12 +534,12 @@ export function prepareChinatown(
           put(u+k*span*.22,2.04,.32,.2,.25,.045,'#d8b856','near','arch');
           put(u+k*span*.22,1.65,.25,.4,.08,.2,'#b59150','near');
         }
-        put(u,1.52,.78,span*.68,.045,.2,'#e6c578','night');
+        put(u,1.13,.78,span*.68,.045,.2,'#e6c578','night');
       } else if ([1, 4, 11].includes(type)) {
         for (const k of [-1, 1]) {
           put(
             u + k * 0.5,
-            1.95,
+            1.4,
             0.62,
             0.55,
             0.6,
@@ -552,7 +552,7 @@ export function prepareChinatown(
           );
           put(
             u + k * 0.5,
-            2.3,
+            1.75,
             0.62,
             0.48,
             0.08,
@@ -779,6 +779,7 @@ export function prepareChinatown(
       }
       // Upper-floor window bays, shutters, lintels, rails, balcony brackets and AC.
       for (let floor = 1; floor < f.floors; floor++) {
+        if(site?.composition==='goldTower'&&j===0)continue;
         const y = floor * fh + fh * 0.53,
           ww = span * (modern ? 0.83 : 0.65),
           hh = Math.min(modern ? 2.4 : 1.85, fh * 0.64);
@@ -903,7 +904,7 @@ export function prepareChinatown(
         const sy = Math.min(H - 2.5, 7.8),
           v = 0.49;
         put(
-          u - bay * 0.39,
+          -W/2+.27,
           sy,
           v,
           0.82,
@@ -914,10 +915,10 @@ export function prepareChinatown(
           "box",
           Math.PI / 2,
         );
-        put(u - bay * 0.39, sy - 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
-        put(u - bay * 0.39, sy + 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, false, site?.sign ?? type);
-        sign(u - bay * 0.39, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true, site?.sign ?? type);
+        put(-W/2+.27, sy - 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
+        put(-W/2+.27, sy + 2.1, 0.28, 0.1, 0.09, 0.6, "#8a7e65", "near");
+        sign(-W/2+.27, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, false, site?.sign ?? type);
+        sign(-W/2+.27, sy, v + 0.01, 0.75, 4.2, true, Math.PI / 2, true, site?.sign ?? type);
       }
       if (j === 0 && out > 1.4 && seed % 4 === 0) {
         put(
@@ -983,7 +984,7 @@ export function prepareChinatown(
         put(0,H-1,.23,W*.68,.8,.25,'#b6a27c','near','arch');
         put(0,4.2,.24,W*.75,1.05,.2,'#77272c');sign(0,4.2,.36,W*.71,.92);
       }else if(site.composition==='goldTower'){
-        const sh=Math.min(9,H-4.2),sy=H-sh/2-.5,su=-W*.32;
+        const sh=Math.min(9,H-4.2),sy=H-sh/2-.5,su=-W/2+bay/2;
         put(su,sy,.39,1.6,sh,.3,'#721e28');
         for(const side of [-1,1])put(su+side*.86,sy,.51,.09,sh+.15,.14,'#d8b359','near');
         sign(su,sy,.56,1.5,sh-.2,true);
