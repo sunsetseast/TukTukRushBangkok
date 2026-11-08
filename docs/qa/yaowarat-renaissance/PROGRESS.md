@@ -5,9 +5,9 @@ Base: PR61 `b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735`, still an open draft on 20
 - A: COMPLETE. Fresh original golden/night and 18 pinned PR61 views captured and inspected in successful run 42527618107. Actual comparison findings in VISUAL-GAP.md. Original midday absence remains explicit.
 - B: IMPLEMENTED + rendered. One 512KiB finish array, source-backed shared light field and cinematic sky. Browser renders confirm tactile plaster/metal and localized pavement pools; zero WebGL errors.
 - C: IMPLEMENTED, visual review pending. 47 source edges in the ~180m signature sequence. Opening-aware wall grammar and source-wall draw-index masks preserve pinned source buffers/collision data.
-- D: NOT YET MET. Inspected 22 genuine showcase images from run 42528227210 (zero WebGL errors). Architectural depth is improved, but pavement remains too flat/broad and the commercial wash too uniform. Refining pavement extent, window warmth and per-piece interior light before expansion. That run failed its build step due to missing PORT, despite completing captures; it is not a passing workflow. Build environment corrected.
-- E: Connected corridor expansion pending.
-- F: Matched performance/regressions pending. Physical iPhone unavailable.
+- D: PASSED for the signature architecture/material/lighting benchmark after two rendered iterations. Run 42528852340 passes TypeScript, new regressions, production build and all real captures. Inspected closeups, day/golden/night, Fast and native chase driving. Source gaps/background blank sides remain visible and are addressed in E; no claim of photorealism.
+- E: IMPLEMENTED. Extend the opening-aware grammar across all 357 previously admitted source frontages, with quiet Song Wat shutters/arches, source-backed corner elevations, distinct hotel/merchant/cafe interiors, retained real business identities and source-width road edge paint. Expanded visual certification pending.
+- F: In progress. Core instancing replaces repeated transformed vertex arrays: representative chunks fall from 11.5/13.5MB in the initial expansion to 3.4/3.9MB. Preserve the existing 12MB/chunk packed-buffer ceiling; the old 30,000-piece count is raised to 50,000 for opening construction, while actual memory/renderer/ownership checks remain. Matched 8-case browser profiling and WebKit/gameplay checks queued. Physical iPhone unavailable.
 - G: Final gallery/certification pending.
 
 ## Audit observations (code, not visual certification)

@@ -47,8 +47,8 @@ export function installGeographicFinish(material:T.MeshBasicMaterial,texture:T.D
   `);
   shader.fragmentShader=`varying vec3 geoGlow;uniform highp sampler2DArray geoFinish;uniform float geoNight,geoDusk,geoDetail;varying vec3 geoWorld,geoNormal;varying vec2 geoMetric,geoEdge;varying float geoLayer;\n`+shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
    float layer=floor(geoLayer+.5);vec4 finish=texture(geoFinish,vec3(geoMetric/1.8,layer));
-   vec3 n=normalize(geoNormal),axis=abs(n.y)>.8?vec3(1.,0.,0.):normalize(cross(vec3(0.,1.,0.),n)),up=cross(n,axis);
-   n=normalize(n+(axis*(finish.g*2.-1.)+up*(finish.b*2.-1.))*.75*geoDetail);
+   vec3 n=normalize(geoNormal);
+   if(geoDetail>.5){vec3 axis=abs(n.y)>.8?vec3(1.,0.,0.):normalize(cross(vec3(0.,1.,0.),n)),up=cross(n,axis);n=normalize(n+(axis*(finish.g*2.-1.)+up*(finish.b*2.-1.))*.75);}
    vec3 sun=normalize(mix(vec3(-.45,.82,-.35),vec3(-.895,.31,-.435),geoDusk));float direct=max(0.,dot(n,sun));
    vec3 dayFill=mix(vec3(.56,.64,.76),vec3(.38,.43,.62),geoDusk);
    vec3 dayKey=mix(vec3(.92,.87,.70),vec3(1.32,.78,.38),geoDusk);
@@ -56,13 +56,12 @@ export function installGeographicFinish(material:T.MeshBasicMaterial,texture:T.D
    float edge=smoothstep(0.,.08,min(min(geoEdge.x,1.-geoEdge.x),min(geoEdge.y,1.-geoEdge.y)));
    float ao=mix(.84,1.,edge);diffuseColor.rgb*=finish.r*lit*ao;
    float polished=step(4.5,layer)*(1.-step(5.5,layer))+step(6.5,layer);
-   vec3 viewDir=normalize(cameraPosition-geoWorld),halfDir=normalize(sun+viewDir);
-   float spec=pow(max(0.,dot(n,halfDir)),mix(10.,55.,1.-finish.a));
-   diffuseColor.rgb+=vec3(1.,.82,.54)*spec*.32*polished*(1.-geoNight*.7)*geoDetail;
-   // Glass uses cool fresnel and an upper sky glint, without transparency/reflections.
+   if(polished>.5){
+    vec3 viewDir=normalize(cameraPosition-geoWorld);
+    if(geoDetail>.5){vec3 halfDir=normalize(sun+viewDir);float spec=pow(max(0.,dot(n,halfDir)),mix(10.,55.,1.-finish.a));diffuseColor.rgb+=vec3(1.,.82,.54)*spec*.32*(1.-geoNight*.7);}
+    if(layer>6.5){float fresnel=pow(1.-abs(dot(n,viewDir)),3.);diffuseColor.rgb+=(vec3(.065,.13,.18)*fresnel+vec3(.02,.035,.045))*(1.-geoNight*.8);}
+   }
    diffuseColor.rgb+=geoGlow*geoNight;
-   float glass=step(6.5,layer);float fresnel=pow(1.-abs(dot(n,viewDir)),3.);
-   diffuseColor.rgb+=glass*(vec3(.065,.13,.18)*fresnel+vec3(.02,.035,.045))*(1.-geoNight*.8);
   `);
  };
  material.customProgramCacheKey=()=> 'geographic-premium-packed-finish-v1';

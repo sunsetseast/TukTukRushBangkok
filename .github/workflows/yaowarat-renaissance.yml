@@ -90,3 +90,68 @@ jobs:
             git commit -m 'PR62 evidence: preserve actual baseline and current WebGL renders'
             git push origin HEAD:feature/yaowarat-renaissance-pr62
           fi
+  matched-performance:
+    needs: rendered-comparison
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: {contents: write}
+    env: {PORT: '24864', BASE_PATH: '/'}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0, ref: 'feature/yaowarat-renaissance-pr62'}
+      - uses: pnpm/action-setup@v4
+        with: {version: 10}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: pnpm}
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - uses: actions/cache@v4
+        with:
+          path: artifacts/tuk-tuk-rush/public/assets/geography/compiled
+          key: geography-compiled-${{ hashFiles('artifacts/tuk-tuk-rush/scripts/compile-geographic-buildings.ts', 'artifacts/tuk-tuk-rush/scripts/geographic-building-authoring.ts', 'data/bangkok/real-scale/clearance*') }}
+      - name: Derived assets from pinned geography
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          node --import tsx scripts/pack-geographic-road-rules.ts
+          node --import tsx scripts/compile-geographic-buildings.ts
+          node --import tsx scripts/pack-geographic-traffic-controls.ts
+          node scripts/prepare-geographic-qa-fixtures.mjs
+          node --import tsx scripts/prepare-geographic-browser-assets.ts
+      - run: timeout 240 pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium webkit
+      - name: Matched PR61 and PR62 140m route, eight conditions, 120 frames per condition
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          GEOGRAPHY_QA_BASELINE_REF=b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735 timeout 600 node scripts/profile-renaissance.mjs
+          timeout 600 node scripts/profile-renaissance.mjs
+      - name: Three repeated leave/revisit ownership cycles
+        working-directory: artifacts/tuk-tuk-rush
+        run: timeout 300 node ../../docs/qa/yaowarat-alive/check-eviction.mjs
+      - name: Browser gameplay, touch, original world and WebKit asset loading
+        working-directory: artifacts/tuk-tuk-rush
+        run: |
+          timeout 480 node scripts/browser-geographic-consolidation.mjs
+          node scripts/browser-geographic-gzip-webkit.mjs
+          node scripts/browser-geographic-spa-fallback.mjs
+      - name: Save lossless raw performance and browser evidence
+        if: always()
+        run: |
+          for report in docs/qa/yaowarat-renaissance/performance-*.json; do [ ! -f "$report" ] || gzip -nf "$report"; done
+          cp docs/qa/yaowarat-alive/eviction-browser.json docs/qa/yaowarat-renaissance/eviction-browser.json 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yaowarat-renaissance-performance
+          path: |
+            docs/qa/yaowarat-renaissance/
+            docs/qa/geographic-consolidation/
+            docs/qa/geographic-mobile-performance/webkit-gzip.json
+          retention-days: 30
+      - name: Preserve completed measurements on the draft branch
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/qa/yaowarat-renaissance/
+          if ! git diff --cached --quiet; then
+            git commit -m 'PR62 evidence: matched performance and repeated streaming ownership'
+            git push origin HEAD:feature/yaowarat-renaissance-pr62
+          fi

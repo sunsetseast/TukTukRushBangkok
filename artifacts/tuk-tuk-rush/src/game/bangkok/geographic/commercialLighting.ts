@@ -36,8 +36,8 @@ export function installGeographicCommercialLight(material:T.MeshBasicMaterial|T.
   shader.fragmentShader='uniform sampler2D geoLightField;uniform float geoFieldNight;varying vec3 geoLightWorld;\n'+shader.fragmentShader.replace(basic?'#include <opaque_fragment>':'#include <emissivemap_fragment>',`${basic?'':'#include <emissivemap_fragment>'}
    vec2 fieldUV=(geoLightWorld.xz-vec2(${COMMERCIAL_FIELD.minX}.,${COMMERCIAL_FIELD.minZ}.))/vec2(${COMMERCIAL_FIELD.sizeX}.,${COMMERCIAL_FIELD.sizeZ}.);
    float inside=step(0.,fieldUV.x)*step(fieldUV.x,1.)*step(0.,fieldUV.y)*step(fieldUV.y,1.);
-   vec3 pool=texture2D(geoLightField,fieldUV).rgb*inside*geoFieldNight;
-   float heightFall=exp(-max(0.,geoLightWorld.y-.25)*.22);
+   vec3 pool=vec3(0.);if(geoFieldNight>.001&&inside>.5)pool=texture2D(geoLightField,fieldUV).rgb*geoFieldNight;
+   float heightFall=1./(1.+pow(max(0.,geoLightWorld.y-.25)*.24,2.));
    ${basic?'outgoingLight+=pool*heightFall*.16;':'totalEmissiveRadiance+=pool*heightFall*.24;'}
    ${basic?'#include <opaque_fragment>':''}
   `);

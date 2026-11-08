@@ -62,6 +62,21 @@ export function emitRenaissanceFacade(f:Facade,put:Place,sign:Sign,site:(Chinato
    }
    for(let k=0;k<4;k++)put(u-span*.26+k*span*.17,1.95,-depth+.22,.20,.12,.19,k%2?'#c48b5d':'#ead7b3','near','orb');
    if(out>1.25&&j===0){const x=u+span*.36;put(x,.42,1.03,.32,.08,.33,'#a34c3c','near','cylinder');for(const side of [-1,1])put(x+side*.11,.23,1.03,.045,.4,.08,'#743e32','detail','box',0,'metal');}
+  }else if(type===7){
+   // Source-backed hotel podium: deep glazed foyer and reception, no food shelves.
+   put(u,1.45,-depth+.12,span*.78,2.5,.06,'#33565e','core','box',0,'panel');
+   for(const side of [-1,1])put(u+side*span*.25,1.45,-.30,.055,2.45,.08,'#b7a479','near','box',0,'metal');
+   put(u-span*.20,.73,-.22,span*.36,1.1,.48,'#8b6241','near','box',0,'wood');
+   put(u,roomTop-.08,-.42,span*.65,.055,.22,'#eac28a','night');
+  }else if(type===6||type===8){
+   for(const side of [-1,1])for(let k=0;k<3;k++)put(u+side*span*.43+k*.05,1.26,.10,.04,2.35,.16,'#4b6657','near','box',0,'metal');
+   for(let k=0;k<3;k++)put(u+span*.27,.35+k*.34,-.2,.62,.32,.5,'#aa8a56','near','box',0,'wood');
+   put(u,roomTop-.15,-.2,span*.72,.10,.14,'#89704d','near','box',0,'wood');
+  }else if(type===3){
+   put(u,.65,counter,span*.74,.95,.5,'#73573d','core','box',0,'wood');
+   put(u,1.35,counter,.76,.48,.38,'#718d89','near','box',0,'metal');
+   put(u+.62,1.39,counter,.22,.47,.24,'#394d51','near','cylinder',0,'metal');
+   for(let k=0;k<4;k++)put(u-span*.26+k*span*.17,1.80,-depth+.19,.14,.22,.14,'#e4d6b8','near','cylinder',0,'tile');
   }else if((seed+j)%5===0&&!site){
    // A closed tenant breaks the repeated fully lit restaurant rhythm.
    put(u,1.25,.09,span*.92,2.25,.11,'#647877','core','box',0,'metal');
@@ -131,6 +146,14 @@ export function emitRenaissanceFacade(f:Facade,put:Place,sign:Sign,site:(Chinato
   put(u,sy,v,1.30,sh,.22,seed%2?'#224f53':'#812b33','core','box',Math.PI/2);
   for(const end of [-1,1]){put(u,sy+end*(sh/2-.07),v,1.34,.10,.26,'#d5bd7b','near','box',Math.PI/2,'metal');put(u,sy+end*(sh/2-.22),.32,.10,.07,.74,metal,'core','box',0,'metal');}
   sign(u,sy,v,1.21,sh-.20,true,Math.PI/2,false,site?.sign??trades[0]);sign(u,sy,v,1.21,sh-.20,true,Math.PI/2,true,site?.sign??trades[0]);
+ }
+ if(site?.composition==='heritageGold'){
+  for(const side of [-1,1]){
+   put(side*(W/2-.27),H/2,.20,.42,H,.42,'#e9d9b7','core');
+   for(let level=1;level<7;level++)put(side*(W/2-.27),level*H/7,.35,.62,.18,.38,'#bca27c','near');
+  }
+  for(let level=1;level<7;level++)put(0,level*H/7,.23,W,.15,.40,'#ddc9a3','near');
+  put(0,H-.80,.24,W*.69,.68,.23,'#e2c99c','near','arch');
  }
  if(site?.composition==='goldTower'){
   const u=-W/2+bay/2,sh=Math.min(7.5,H-base-.5),sy=base+.24+sh/2;
