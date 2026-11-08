@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';import * as T from 'three';
+import {geographicFinishTexture,installGeographicFinish} from '../src/game/bangkok/geographic/premiumFinish';
+import {geographicCommercialField,installGeographicCommercialLight,COMMERCIAL_FIELD} from '../src/game/bangkok/geographic/commercialLighting';
+const a=geographicFinishTexture(),b=geographicFinishTexture();assert.equal(a.image.data.byteLength,524288);assert.deepEqual(a.image.data,b.image.data);assert.equal(a.image.depth,8);assert(a.generateMipmaps);assert.equal(a.wrapS,T.RepeatWrapping);
+const tileBytes=128*128*4;for(let l=0;l<8;l++){const values=a.image.data.slice(l*tileBytes,(l+1)*tileBytes);assert(new Set(values.filter((_,i)=>i%4===0)).size>=2,'Non-flat material values');if(l)assert.notDeepEqual(values,a.image.data.slice((l-1)*tileBytes,l*tileBytes),'Distinct tactile finishes');}
+const field=geographicCommercialField();assert.equal(field.image.data.byteLength,COMMERCIAL_FIELD.width*COMMERCIAL_FIELD.height*4);assert(field.image.data.some((v,i)=>i%4!==3&&v>0));assert(field.image.data.some((v,i)=>i%4!==3&&v===0),'Localized, not uniform commercial wash');
+const mat=new T.MeshBasicMaterial({vertexColors:true}),night={value:0},dusk={value:0},detail={value:1};installGeographicFinish(mat,a,{night,dusk,detail});installGeographicCommercialLight(mat,field,night,true);
+const shader={uniforms:{},vertexShader:T.ShaderLib.basic.vertexShader,fragmentShader:T.ShaderLib.basic.fragmentShader};mat.onBeforeCompile(shader as any,{} as any);
+assert.equal((shader.uniforms as any).geoNight,night);assert.equal((shader.uniforms as any).geoFieldNight,night);assert.equal((shader.fragmentShader.match(/#include <opaque_fragment>/g)||[]).length,1,'No duplicate output stage');assert(shader.vertexShader.includes('modelMatrix*geoLW'),'World coordinates cross chunk boundaries');assert(shader.fragmentShader.includes('sampler2DArray'));
+let textures=0;for(const tex of [a,b,field])tex.addEventListener('dispose',()=>textures++);mat.dispose();assert.equal(textures,0,'Materials do not release shared scene-owned textures');for(const tex of [a,b,field])tex.dispose();assert.equal(textures,3);
+console.log('PASS: deterministic eight finishes, bounded texture memory, shader composition and independent scene ownership');
