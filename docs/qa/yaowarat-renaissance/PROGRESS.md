@@ -2,10 +2,10 @@
 
 Base: PR61 `b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735`, still an open draft on 2026-11-08. Stack targets `feature/yaowarat-alive-pr61`. No merge/deployment/Replit.
 
-- A: Source audit complete. Actual new baseline capture and visual gap review pending CI browser evidence.
-- B: Materials/lighting pending.
-- C: Signature corridor pending.
-- D: Visual comparison gate NOT MET.
+- A: COMPLETE. Fresh original golden/night and 18 pinned PR61 views captured and inspected in successful run 42527618107. Actual comparison findings in VISUAL-GAP.md. Original midday absence remains explicit.
+- B: IMPLEMENTED + rendered. One 512KiB finish array, source-backed shared light field and cinematic sky. Browser renders confirm tactile plaster/metal and localized pavement pools; zero WebGL errors.
+- C: IMPLEMENTED, visual review pending. 47 source edges in the ~180m signature sequence. Opening-aware wall grammar and source-wall draw-index masks preserve pinned source buffers/collision data.
+- D: Visual comparison gate NOT MET. First reconstructed showcase renders must be inspected before expansion.
 - E: Connected corridor expansion pending.
 - F: Matched performance/regressions pending. Physical iPhone unavailable.
 - G: Final gallery/certification pending.

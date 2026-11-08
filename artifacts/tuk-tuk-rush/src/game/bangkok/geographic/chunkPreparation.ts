@@ -1,3 +1,4 @@
+import {prepareSourceOpenings} from "./sourceOpenings";
 import {prepareChinatown} from './chinatownFacades';
 import type { GeographicChunkData } from './dataset';
 import { surfaceGeometry } from '../roadSurfaceGraph';
@@ -17,6 +18,7 @@ export function prepareGeographicChunk(chunk: GeographicChunkData) {
     g.dispose();
   }
   chunk.decoration = prepareChinatown(chunk);
+  if(chunk.decoration)prepareSourceOpenings(chunk,chunk.decoration.facades);
   chunk.preparedColliders = buildingObstacles(chunk.buildings ?? [], chunk.origin);
   if (chunk.timing) chunk.timing.preparationMs = performance.now() - started;
   return chunk;
@@ -24,7 +26,7 @@ export function prepareGeographicChunk(chunk: GeographicChunkData) {
 export function chunkTransferables(chunk: GeographicChunkData): ArrayBuffer[] {
   return [...new Set([
     ...(chunk.decoration?.batches.flatMap(b => [...Object.values(b.attributes).map(a=>a.array.buffer), ...(b.index?[b.index.buffer]:[]), ...(b.matrices?[b.matrices.buffer]:[]), ...(b.colors?[b.colors.buffer]:[])]) as ArrayBuffer[] ?? []),
-    ...(chunk.buildingGeometry ? [chunk.buildingGeometry.body] : []),
+    ...(chunk.buildingGeometry ? [chunk.buildingGeometry.body,...Object.values(chunk.buildingGeometry.frontageIndices??{}).map(a=>a.buffer as ArrayBuffer)] : []),
     ...Object.values(chunk.preparedSurfaces ?? {}).flatMap(s =>
       [s.position.buffer, s.normal.buffer, s.uv.buffer] as ArrayBuffer[]),
   ])];

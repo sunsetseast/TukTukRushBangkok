@@ -1,3 +1,5 @@
+import {renaissanceFrontage} from "./renaissancePlan";
+import {emitRenaissanceFacade} from "./renaissanceArchitecture";
 import * as T from "three";
 import area from "./chinatownArea.generated.json";
 import {CHINATOWN_SITES,chinatownSite} from "./chinatownSites";
@@ -420,13 +422,13 @@ export function prepareChinatown(
           chunk.origin[0] +
           f.nz * u +
           f.nx * v +
-          (vertical ? Math.sin(ang) * 0.085 : 0),
+          (vertical ? Math.sin(ang) * 0.14 : 0),
         z =
           f.z -
           chunk.origin[1] -
           f.nx * u +
           f.nz * v +
-          (vertical ? Math.cos(ang) * 0.085 : 0);
+          (vertical ? Math.cos(ang) * 0.14 : 0);
       const cell = `${Math.floor(x / 60)}:${Math.floor(z / 60)}:${vertical}`;
       let s = signs.get(cell);
       if (!s) {
@@ -461,6 +463,15 @@ export function prepareChinatown(
         );
       }
     };
+    if(renaissanceFrontage(f)){
+      emitRenaissanceFacade(f,put,sign,site,Array.from({length:n},(_,j)=>facadeTrade(f,j)));
+      // Retain a bounded cook anchor behind the worktop, with a clear upper silhouette.
+      if([1,4,11].includes(baseType)&&out>1.25&&life.length<24){
+        const u=-W/2+bay*.5,x=f.x+f.nz*u+f.nx*.19,z=f.z-f.nx*u+f.nz*.19;
+        if(decorativeRoadClearance(x,z,.68,.7,yaw)>.18)life.push({sourceId:f.id,x:x-chunk.origin[0],z:z-chunk.origin[1],yaw,kind:baseType===4?'wok':'stir',seed,travel:0,skin:'#b98c68',shirt:['#59766b','#a65e49','#b7b2a0'][seed%3]!});
+      }
+      continue;
+    }
     // Thin coloured skin follows every admitted edge. Existing massing remains authoritative.
     put(0, H / 2, 0.035, W - 0.08, H, 0.06, wall);
     put(0, 3.6, 0.18, W, 0.15, 0.35, accent);
