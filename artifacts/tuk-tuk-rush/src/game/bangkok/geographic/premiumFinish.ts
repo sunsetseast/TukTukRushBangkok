@@ -10,8 +10,8 @@ export function geographicFinishTexture() {
       const n=((Math.imul(x+19,73856093)^Math.imul(y+37,19349663))>>>0)%101/100;
       const cloud=Math.sin(x*Math.PI/32+Math.sin(y*Math.PI/32)) * Math.sin(y*Math.PI/64)*.5+.5;
       let a=.94+n*.035,h=n*.025,r=rough[layer]!;
-      if(layer===0){a-=cloud*.085;h+=cloud*.04;}
-      if(layer===1){a-=cloud*.11;h+=cloud*.025;}
+      if(layer===0){a-=cloud*.04;h+=cloud*.04;}
+      if(layer===1){a-=cloud*.065;h+=cloud*.025;}
       if(layer===2){const joint=y%16<1.3||(x+(Math.floor(y/16)%2)*16)%32<1.4;a=joint?.61:.88+n*.09;h=joint?-.2:n*.05;}
       if(layer===3){const joint=x%32<1.2||y%32<1.2;a=joint?.7:.97;h=joint?-.12:.01;r=joint?.9:.42;}
       if(layer===4){const grain=Math.sin(x*Math.PI/8+Math.sin(y*Math.PI/32));a=.84+n*.03+grain*.07;h=grain*.09;}
@@ -34,8 +34,8 @@ export type GeographicFinishState={night:{value:number};dusk:{value:number};deta
 export function installGeographicFinish(material:T.MeshBasicMaterial,texture:T.DataArrayTexture,state:GeographicFinishState){
  material.onBeforeCompile=shader=>{
   shader.uniforms.geoFinish={value:texture};shader.uniforms.geoNight=state.night;shader.uniforms.geoDusk=state.dusk;shader.uniforms.geoDetail=state.detail;
-  shader.vertexShader=`varying vec3 geoWorld;varying vec3 geoNormal;varying vec2 geoMetric;varying vec2 geoEdge;varying float geoLayer;\n#ifdef USE_INSTANCING\nattribute float artSurface;\n#endif\n`+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
-   vec4 world=vec4(position,1.);vec3 gn=normal;
+  shader.vertexShader=`attribute vec3 artGlow;varying vec3 geoGlow;varying vec3 geoWorld;varying vec3 geoNormal;varying vec2 geoMetric;varying vec2 geoEdge;varying float geoLayer;\n#ifdef USE_INSTANCING\nattribute float artSurface;\n#endif\n`+shader.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
+   geoGlow=artGlow;vec4 world=vec4(position,1.);vec3 gn=normal;
    vec2 tile=floor(uv*vec2(4.,2.));geoLayer=tile.x+tile.y*4.;geoEdge=(uv*vec2(4.,2.)-tile-vec2(.025))/.95;
    #ifdef USE_INSTANCING
    world=instanceMatrix*world;
@@ -45,7 +45,7 @@ export function installGeographicFinish(material:T.MeshBasicMaterial,texture:T.D
    geoWorld=(modelMatrix*world).xyz;geoNormal=normalize(mat3(modelMatrix)*gn);
    vec3 an=abs(geoNormal);geoMetric=an.y>.6?geoWorld.xz:(an.x>an.z?geoWorld.zy:geoWorld.xy);
   `);
-  shader.fragmentShader=`uniform highp sampler2DArray geoFinish;uniform float geoNight,geoDusk,geoDetail;varying vec3 geoWorld,geoNormal;varying vec2 geoMetric,geoEdge;varying float geoLayer;\n`+shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+  shader.fragmentShader=`varying vec3 geoGlow;uniform highp sampler2DArray geoFinish;uniform float geoNight,geoDusk,geoDetail;varying vec3 geoWorld,geoNormal;varying vec2 geoMetric,geoEdge;varying float geoLayer;\n`+shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
    float layer=floor(geoLayer+.5);vec4 finish=texture(geoFinish,vec3(geoMetric/1.8,layer));
    vec3 n=normalize(geoNormal),axis=abs(n.y)>.8?vec3(1.,0.,0.):normalize(cross(vec3(0.,1.,0.),n)),up=cross(n,axis);
    n=normalize(n+(axis*(finish.g*2.-1.)+up*(finish.b*2.-1.))*.75*geoDetail);
@@ -60,6 +60,7 @@ export function installGeographicFinish(material:T.MeshBasicMaterial,texture:T.D
    float spec=pow(max(0.,dot(n,halfDir)),mix(10.,55.,1.-finish.a));
    diffuseColor.rgb+=vec3(1.,.82,.54)*spec*.32*polished*(1.-geoNight*.7)*geoDetail;
    // Glass uses cool fresnel and an upper sky glint, without transparency/reflections.
+   diffuseColor.rgb+=geoGlow*geoNight;
    float glass=step(6.5,layer);float fresnel=pow(1.-abs(dot(n,viewDir)),3.);
    diffuseColor.rgb+=glass*(vec3(.065,.13,.18)*fresnel+vec3(.02,.035,.045))*(1.-geoNight*.8);
   `);

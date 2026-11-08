@@ -50,6 +50,7 @@ export type Facade = {
   floors: number;
   seed: number;
   outset: number;
+  setback?: number;
   tradeHint?: number;
   family: string;
   edge: BuildingEdge;
@@ -230,6 +231,7 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
                       : b.tags.building === "warehouse"
                         ? 8
                         : undefined,
+        setback:margin,
         outset: Math.min(1.65, margin - 0.25),
         edge: e,
       });
@@ -367,7 +369,7 @@ export function prepareChinatown(
       if (pieces >= 18000 && layer === "detail") return;
       if(y<3.2&&v+d/2>.1&&decorativeRoadClearance(f.x+f.nz*u+f.nx*v,f.z-f.nx*u+f.nz*v,w,d,yaw+rotate)<.12)return;
       if (
-        layer === "near" &&
+        (layer === "near" || layer === "core") &&
         shape === "box" &&
         y > 0.4 &&
         y < 1 &&
@@ -400,6 +402,7 @@ export function prepareChinatown(
         layer,
         shape,
         surface,
+        glow:renaissanceFrontage(f)&&v<.12&&y<3.2? (baseType===0?"#71532d":"#63503b"):undefined,
       });
       pieces++;
     };

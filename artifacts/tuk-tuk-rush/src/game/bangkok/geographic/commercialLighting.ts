@@ -38,9 +38,18 @@ export function installGeographicCommercialLight(material:T.MeshBasicMaterial|T.
    float inside=step(0.,fieldUV.x)*step(fieldUV.x,1.)*step(0.,fieldUV.y)*step(fieldUV.y,1.);
    vec3 pool=texture2D(geoLightField,fieldUV).rgb*inside*geoFieldNight;
    float heightFall=exp(-max(0.,geoLightWorld.y-.25)*.22);
-   ${basic?'outgoingLight+=pool*heightFall*.48;':'totalEmissiveRadiance+=pool*heightFall*.24;'}
+   ${basic?'outgoingLight+=pool*heightFall*.16;':'totalEmissiveRadiance+=pool*heightFall*.24;'}
    ${basic?'#include <opaque_fragment>':''}
   `);
  };
  material.customProgramCacheKey=()=>key+'-source-field-v1';material.userData.commercialTexture=texture;
+}
+/** Restrained asphalt grain; the shared packed finish supplies the only extra
+ * sample. Source polygons, lane widths and traffic markings are untouched. */
+export function installGeographicAsphalt(material:T.MeshStandardMaterial,finish:T.DataArrayTexture){
+ const previous=material.onBeforeCompile,key=material.customProgramCacheKey();
+ material.onBeforeCompile=(shader,renderer)=>{previous(shader,renderer);shader.uniforms.geoRoadFinish={value:finish};shader.fragmentShader='uniform highp sampler2DArray geoRoadFinish;\n'+shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+ vec4 asphalt=texture(geoRoadFinish,vec3(geoLightWorld.xz/.48,1.));
+ diffuseColor.rgb*=mix(.86,1.06,asphalt.r);
+ `);};material.customProgramCacheKey=()=>key+'-asphalt-v1';
 }

@@ -11,7 +11,7 @@ export function emitRenaissanceFacade(f:Facade,put:Place,sign:Sign,site:(Chinato
  const wall=(song?['#cdbb96','#ddd0ae','#bbb6a0','#d8c8aa']:['#c8b18f','#b9c5b6','#d2b9a2','#9db1b4','#cebfa4','#b6b3a5'])[seed%(song?4:6)]!;
  const stone=song?'#e4d4b1':'#ded2ba',metal='#364d4b',wallSurface=brick?'brick':modern?'concrete':'plaster';
  // Continuous grounded threshold with ceramic tread and a distinct dry gutter.
- const pavement=Math.min(out,1.5);
+ const pavement=Math.max(.2,Math.min(f.setback?f.setback-.35:out,4.5));
  put(0,.08,pavement/2,W-.04,.14,pavement,'#938c7c','core','box',0,'concrete');
  put(0,.17,.18,W-.12,.06,.45,song?'#9c8666':'#7c8b85','core','box',0,'tile');
  if(pavement>.6){put(0,.065,pavement-.08,W-.08,.09,.12,'#4b5351','near','box',0,'concrete');for(let k=0;k<n;k++)put(-W/2+(k+.5)*bay,.115,pavement-.16,.44,.015,.18,'#343c3d','detail','box',0,'metal');}

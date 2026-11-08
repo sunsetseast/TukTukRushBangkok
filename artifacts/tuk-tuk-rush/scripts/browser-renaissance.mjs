@@ -20,8 +20,11 @@ if(mode==='original'){
  const fixtures=JSON.parse(fs.readFileSync(new URL('./yaowarat-alive-views.json',import.meta.url)));
  const settings=async(time,quality)=>{await page.getByRole('button',{name:'Settings',exact:true}).click();await page.getByLabel('Time of day').selectOption(time);await page.getByLabel('Graphics quality').selectOption(quality);await page.getByRole('button',{name:'Close settings',exact:true}).click();await page.getByRole('button',{name:'Resume drive',exact:true}).click();await page.evaluate(q=>{clearInterval(window.__holdQuality);window.__holdQuality=setInterval(()=>window.__geographyQA.session.setQuality(q),500)},quality)};
  const select=process.env.QA_SELECT?.split(',');
- const all=[...fixtures,{...fixtures[0],name:'21-yaowarat-golden',time:'dusk'}];
+ const all=[...fixtures,{...fixtures[0],name:'21-yaowarat-golden',time:'dusk'},{...fixtures[2],name:'22-materials-windows-day',time:'day',camera:[3287.1,4.5,496.2],target:[3278.95,5.8,507.55]},{...fixtures[15],name:'23-corner-side-street',time:'dusk',camera:[3327.4,3.6,532.2],target:[3340.6,5,516.7]}];
  for(const v of all){if(select&&!select.includes(v.name.slice(0,2)))continue;await settings(v.time,v.quality);await page.evaluate(v=>{const q=window.__geographyQA;q.move(v.lon,v.lat,v.heading??0);q.view(v.camera,v.target)},v);await page.waitForFunction(()=>window.__geography.stream.settled);await page.waitForTimeout(600);await page.waitForFunction(()=>window.__geography.stream.settled);const hide=v.hud?null:await page.addStyleTag({content:'.geo-toolbar,.geo-street-banner,.geo-status,.geo-speed,.tt-controls{visibility:hidden!important}'});await shot(v.name,v);await hide?.evaluate(e=>e.remove());}
+ if(mode==='final'){
+ await settings('night','medium');await page.evaluate(()=>{const q=window.__geographyQA;q.move(100.51087153478528,13.739924807620946,1.0489713159807854);q.chase?.();q.session.model.input.gas=true;});await page.waitForTimeout(3500);await page.evaluate(()=>window.__geographyQA.session.clearInput());await shot('24-native-gameplay-driving',{nativeChase:true,traffic:true,gasInputMs:3500});
+ }
 }
 if(report.errors.length)throw Error(JSON.stringify(report.errors));
 }finally{fs.writeFileSync(new URL(`${mode}-captures.json`,out),JSON.stringify(report,null,2));await browser.close();}

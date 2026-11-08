@@ -5,7 +5,7 @@ Base: PR61 `b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735`, still an open draft on 20
 - A: COMPLETE. Fresh original golden/night and 18 pinned PR61 views captured and inspected in successful run 42527618107. Actual comparison findings in VISUAL-GAP.md. Original midday absence remains explicit.
 - B: IMPLEMENTED + rendered. One 512KiB finish array, source-backed shared light field and cinematic sky. Browser renders confirm tactile plaster/metal and localized pavement pools; zero WebGL errors.
 - C: IMPLEMENTED, visual review pending. 47 source edges in the ~180m signature sequence. Opening-aware wall grammar and source-wall draw-index masks preserve pinned source buffers/collision data.
-- D: Visual comparison gate NOT MET. First reconstructed showcase renders must be inspected before expansion.
+- D: NOT YET MET. Inspected 22 genuine showcase images from run 42528227210 (zero WebGL errors). Architectural depth is improved, but pavement remains too flat/broad and the commercial wash too uniform. Refining pavement extent, window warmth and per-piece interior light before expansion. That run failed its build step due to missing PORT, despite completing captures; it is not a passing workflow. Build environment corrected.
 - E: Connected corridor expansion pending.
 - F: Matched performance/regressions pending. Physical iPhone unavailable.
 - G: Final gallery/certification pending.

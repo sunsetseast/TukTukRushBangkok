@@ -1,5 +1,5 @@
 import {geographicSky} from "./cinematicSky";
-import {installGeographicCommercialLight} from "./commercialLighting";
+import {installGeographicCommercialLight,installGeographicAsphalt} from "./commercialLighting";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as T from "three";
@@ -86,6 +86,7 @@ function Scene({
       colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
     for(const m of [materials.buildings,materials.roads,materials.land])installGeographicCommercialLight(m,decorationMaterials.field,decorationMaterials.night);
+    installGeographicAsphalt(materials.roads,decorationMaterials.finish);
     const loader = new GeographicChunkLoader();
     let revision = 0;
     const activationMs: number[] = [];
@@ -412,6 +413,7 @@ function Scene({
         view: (position: number[], target: number[]) => {
           qaView.current = { position, target };
         },
+        chase:()=>{qaView.current=undefined;},
         session,
         network,
         places,

@@ -23,7 +23,7 @@ export function chinatownMaterials() {
     setTime(value:"day"|"dusk"|"night"){dusk.value=value==='dusk'?1:0;},
     setNight(value: number) {
       night.value = value;
-      windows.color.setScalar(.85+value*.45);
+      windows.color.set("#ffdda6").multiplyScalar(.55+value*.55);
       h.color.setScalar(.9+value*.25);
       v.color.setScalar(.9+value*.35);
     },

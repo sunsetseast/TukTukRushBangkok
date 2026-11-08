@@ -11,7 +11,8 @@ jobs:
   rendered-comparison:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    permissions: {contents: write}
+    permissions: {contents: write, actions: read}
+    env: {PORT: "24862", BASE_PATH: "/"}
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 0}
@@ -39,6 +40,20 @@ jobs:
           node --import tsx scripts/check-geographic-openings.ts
           pnpm exec vite build
       - run: timeout 240 pnpm --filter @workspace/tuk-tuk-rush exec playwright install --with-deps chromium
+      - name: Reuse verified immutable original and PR61 reference renders
+        if: ${{ hashFiles('docs/qa/yaowarat-renaissance/views/original-night.png') == '' }}
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 42527618107
+          name: yaowarat-renaissance-rendered-evidence
+          path: /tmp/renaissance-reference
+      - name: Keep reference images and camera records
+        if: ${{ hashFiles('docs/qa/yaowarat-renaissance/views/original-night.png') == '' }}
+        run: |
+          mkdir -p docs/qa/yaowarat-renaissance/views
+          cp /tmp/renaissance-reference/views/original-*.png /tmp/renaissance-reference/views/baseline-*.png docs/qa/yaowarat-renaissance/views/
+          cp /tmp/renaissance-reference/original-captures.json /tmp/renaissance-reference/baseline-captures.json docs/qa/yaowarat-renaissance/
       - name: Condensed reference and pinned PR61 baseline
         working-directory: artifacts/tuk-tuk-rush
         run: |
