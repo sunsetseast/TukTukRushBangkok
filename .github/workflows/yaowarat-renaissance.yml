@@ -73,6 +73,9 @@ jobs:
           VITE_PID=$!
           trap 'kill "$VITE_PID"' EXIT
           for attempt in $(seq 1 60); do curl -sf http://127.0.0.1:24863/ > /dev/null && break; sleep 1; done
+          if [ ! -f ../../docs/qa/yaowarat-renaissance/views/originalday-day.png ]; then
+            QA_MODE=originalday QA_PORT=24863 timeout 240 node scripts/browser-renaissance.mjs
+          fi
           QA_MODE=final QA_PORT=24863 timeout 360 node scripts/browser-renaissance.mjs
       - uses: actions/upload-artifact@v4
         if: always()
@@ -124,8 +127,9 @@ jobs:
           timeout 600 node scripts/profile-renaissance.mjs
       - name: Three repeated leave/revisit ownership cycles
         working-directory: artifacts/tuk-tuk-rush
-        run: timeout 300 node ../../docs/qa/yaowarat-alive/check-eviction.mjs
+        run: timeout 300 node scripts/check-renaissance-residency.mjs
       - name: Browser gameplay, touch, original world and WebKit asset loading
+        if: ${{ !cancelled() }}
         working-directory: artifacts/tuk-tuk-rush
         run: |
           timeout 480 node scripts/browser-geographic-consolidation.mjs
@@ -135,7 +139,6 @@ jobs:
         if: always()
         run: |
           for report in docs/qa/yaowarat-renaissance/performance-*.json; do [ ! -f "$report" ] || gzip -nf "$report"; done
-          cp docs/qa/yaowarat-alive/eviction-browser.json docs/qa/yaowarat-renaissance/eviction-browser.json 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,5 +1,6 @@
 import {geographicSky} from "./cinematicSky";
-import {installGeographicCommercialLight,installGeographicAsphalt} from "./commercialLighting";
+import {installGeographicCommercialLight} from "./commercialLighting";
+import {installGeographicMassing} from "./premiumFinish";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as T from "three";
@@ -85,8 +86,8 @@ function Scene({
       resident = new Map<string, GeographicChunkData>(),
       colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
-    for(const m of [materials.buildings,materials.roads,materials.land])installGeographicCommercialLight(m,decorationMaterials.field,decorationMaterials.night);
-    installGeographicAsphalt(materials.roads,decorationMaterials.finish);
+    for(const m of [materials.roads,materials.land])installGeographicCommercialLight(m,decorationMaterials.field,decorationMaterials.night);
+    installGeographicMassing(materials.buildings,decorationMaterials);
     const loader = new GeographicChunkLoader();
     let revision = 0;
     const activationMs: number[] = [];
@@ -171,7 +172,7 @@ function Scene({
       forward: new T.Vector3(),
     };
   }, [network, places]);
-  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);content.decorationMaterials.setTime(time);content.sky.setTime(time);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.buildings.color.set(time==='night'?'#a0a6b4':time==='dusk'?'#d7c4b1':'#ffffff');},[content,gl,time]);
+  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);content.decorationMaterials.setTime(time);content.sky.setTime(time);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.roads.color.set(time==='night'?'#262c37':time==='dusk'?'#4c453f':'#495455');content.materials.land.color.set(time==='night'?'#353c47':time==='dusk'?'#8c8275':'#a8aa97');},[content,gl,time]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
@@ -403,6 +404,7 @@ function Scene({
     if (import.meta.env.DEV && location.search.includes("geographyQA"))
       (window as any).__geographyQA = {
         project: geographicToMeters,
+        chunkRoots: () => [...content.stream.active.values()].flatMap(value => value.root ? [value.root] : []),
         inspectBuilding: (id: string) => {
           for (const c of content.resident.values()) {
             const building = c.buildings?.find((b) => b.id === id);

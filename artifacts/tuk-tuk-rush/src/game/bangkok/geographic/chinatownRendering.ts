@@ -18,7 +18,7 @@ export function chinatownMaterials() {
     windows,
     h,
     v,
-    night,field,finish,
+    night,dusk,field,finish,
     setQuality(value:"low"|"medium"){detail.value=value==='low'?.35:1;},
     setTime(value:"day"|"dusk"|"night"){dusk.value=value==='dusk'?1:0;},
     setNight(value: number) {

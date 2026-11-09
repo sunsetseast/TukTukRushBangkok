@@ -9,13 +9,12 @@ export function geographicMaterials(data: {
   rail: Pick<GeographicDataset["rail"], "catalog">;
 }) {
   return {
-    buildings: new T.MeshStandardMaterial({
+    buildings: new T.MeshBasicMaterial({
       vertexColors: true,
-      roughness: 0.92,
       side: T.FrontSide,
     }),
-    land: new T.MeshStandardMaterial({ color: "#a8b6a1", roughness: 1 }),
-    roads: new T.MeshStandardMaterial({ color: "#414c56", roughness: 1 }),
+    land: new T.MeshBasicMaterial({ color: "#a8b6a1" }),
+    roads: new T.MeshBasicMaterial({ color: "#414c56" }),
     deck: new T.MeshStandardMaterial({
       color: "#a28f77",
       roughness: 1,

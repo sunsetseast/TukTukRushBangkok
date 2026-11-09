@@ -28,7 +28,7 @@ const report = {
   samples: [],
   residency: [],
 };
-const server = await startQaServer(Number(process.env.QA_PORT||24864));
+const server = await startQaServer(Number(process.env.QA_PORT || 24864));
 let browser;
 try {
   browser = await chromium.launch({
@@ -57,9 +57,31 @@ try {
     )
       report.errors.push(m.text());
   });
+  await page.addInitScript(() => {
+    let live = 0,
+      peak = 0;
+    const proto = WebGL2RenderingContext.prototype;
+    const create = proto.createTexture,
+      remove = proto.deleteTexture;
+    const textures = new WeakSet();
+    proto.createTexture = function () {
+      const texture = create.call(this);
+      if (texture) {
+        textures.add(texture);
+        live++;
+        peak = Math.max(peak, live);
+      }
+      return texture;
+    };
+    proto.deleteTexture = function (texture) {
+      if (textures.delete(texture)) live--;
+      return remove.call(this, texture);
+    };
+    window.__textureResidency = () => ({ live, peak });
+  });
   const t = performance.now();
   await page.goto(
-    `http://127.0.0.1:${process.env.QA_PORT||24864}/?world=geographic&geographyQA&geoTime=day`,
+    `http://127.0.0.1:${process.env.QA_PORT || 24864}/?world=geographic&geographyQA&geoTime=day`,
   );
   await page.getByTestId("button-free-roam").tap({ timeout: 120000 });
   await page.waitForFunction(
@@ -200,7 +222,14 @@ try {
           quality,
           traffic,
           ...sample,
-          diagnostics: await page.evaluate(() => window.__geography),
+          diagnostics: await page.evaluate(() => ({
+            ...window.__geography,
+            textureObjects: window.__textureResidency(),
+            glError: document
+              .querySelector("canvas")
+              .getContext("webgl2")
+              .getError(),
+          })),
         });
       }
   await settings("night", "medium");
@@ -214,9 +243,9 @@ try {
     report.residency.push(
       await page.evaluate(() => ({
         geometries: window.__geography.geometries,
-        textures: window.__geography.textures,
-        meshes:window.__geography.activeMeshes,
-        buildingBytes:window.__geography.buildingGPUBytes,
+        textures: window.__textureResidency().live,
+        meshes: window.__geography.activeMeshes,
+        buildingBytes: window.__geography.buildingGPUBytes,
         bytes: window.__geography.chinatown?.bytes ?? 0,
         facades: window.__geography.chinatown?.facades.length ?? 0,
         stream: window.__geography.stream,
@@ -227,16 +256,20 @@ try {
   assert.equal(report.residency[2].bytes, 0);
   assert.equal(report.residency[1].bytes, report.residency[3].bytes);
   assert.equal(report.residency[1].meshes, report.residency[3].meshes);
-  assert.equal(report.residency[1].textures,report.residency[3].textures);
+  assert.equal(report.residency[1].textures, report.residency[3].textures);
   assert(report.residency[2].geometries <= report.residency[0].geometries + 5);
   assert(report.residency.every((r) => r.stream.errors === 0));
+  assert(report.samples.every((sample) => sample.diagnostics.glError === 0));
   assert.deepEqual(report.errors, []);
 } catch (e) {
   report.failure = String(e);
   throw e;
 } finally {
   fs.writeFileSync(
-    new URL(before ? "performance-baseline.json" : "performance-final.json", out),
+    new URL(
+      before ? "performance-baseline.json" : "performance-final.json",
+      out,
+    ),
     JSON.stringify(report, null, 2) + "\n",
   );
   await browser?.close();

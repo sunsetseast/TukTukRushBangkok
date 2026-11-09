@@ -479,7 +479,7 @@ export function prepareChinatown(
         const dx=e.b[0]-e.a[0],dz=e.b[1]-e.a[1],len=Math.hypot(dx,dz);if(len<2||len>50)return false;
         const ccw=(f.edge.b[1]-f.edge.a[1])*f.nx-(f.edge.b[0]-f.edge.a[0])*f.nz>0?1:-1,nx=ccw*dz/len,nz=-ccw*dx/len;
         const x=(e.a[0]+e.b[0])/2,z=(e.a[1]+e.b[1])/2;
-        if(roadClearance(x+chunk.origin[0],z+chunk.origin[1])>12||!visible(f.buildingId,x+nx*.12,z+nz*.12,x+nx*8,z+nz*8))return false;
+        if(roadClearance(x+chunk.origin[0],z+chunk.origin[1])>12||!visible(f.buildingId,x+nx*.12,z+nz*.12,x+nx*.5,z+nz*.5))return false;
         returned.add(id);return true;
       });
       // Retain a bounded cook anchor behind the worktop, with a clear upper silhouette.
