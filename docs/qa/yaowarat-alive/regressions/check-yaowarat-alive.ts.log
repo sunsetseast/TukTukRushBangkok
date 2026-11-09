@@ -1,0 +1,395 @@
+{
+  "pass": true,
+  "baseline": "0c84000d896922ba512d54f4c52d90881be0f105",
+  "facades": 357,
+  "records": [
+    {
+      "chunk": "2048:-1024",
+      "facades": 5,
+      "songwat": 0,
+      "frontageMeters": 64.58831206720234,
+      "pieces": 691,
+      "bytes": 111023,
+      "batches": 31,
+      "life": [
+        {
+          "source": "osm:way/1354872501:0:8",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1354872501:0:8",
+          "kind": "walk",
+          "travel": 0.5597138358125452
+        },
+        {
+          "source": "osm:way/1339925694:0:14",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1339925694:0:14",
+          "kind": "walk",
+          "travel": 0.6
+        }
+      ],
+      "prepareTwiceAndTestMs": 155.75911000000002
+    },
+    {
+      "chunk": "2048:0",
+      "facades": 139,
+      "songwat": 22,
+      "frontageMeters": 1802.0794937705555,
+      "pieces": 22720,
+      "bytes": 3374163,
+      "batches": 540,
+      "life": [
+        {
+          "source": "osm:way/1021247410:0:2",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021247410:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1021446936:0:2",
+          "kind": "serve",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021446936:0:2",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021446936:0:2",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021446936:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1504508499:0:1",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1504508499:0:1",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/305102108:0:4",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/305102108:0:4",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1021238292:0:4",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021494625:0:2",
+          "kind": "stir",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021494625:0:2",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021494625:0:2",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021494625:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1053918894:0:0",
+          "kind": "stir",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918894:0:0",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918894:0:0",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918894:0:0",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1053918895:0:1",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053924943:0:2",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053924943:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1053924959:0:3",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053924959:0:3",
+          "kind": "walk",
+          "travel": 0.6
+        }
+      ],
+      "prepareTwiceAndTestMs": 588.8686190000001
+    },
+    {
+      "chunk": "3072:-1024",
+      "facades": 21,
+      "songwat": 0,
+      "frontageMeters": 445.5383175910414,
+      "pieces": 5395,
+      "bytes": 741752,
+      "batches": 145,
+      "life": [
+        {
+          "source": "osm:way/1528183266:0:2",
+          "kind": "serve",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183266:0:2",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183266:0:2",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183266:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1528183268:0:0",
+          "kind": "stir",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183268:0:0",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183268:0:0",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1528183268:0:0",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/634921946:0:0",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/634921946:0:0",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/755643838:0:5",
+          "kind": "stir",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/755643838:0:5",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/755643838:0:5",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/755643838:0:5",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/755650868:0:2",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/755650868:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        }
+      ],
+      "prepareTwiceAndTestMs": 109.41603299999997
+    },
+    {
+      "chunk": "3072:0",
+      "facades": 192,
+      "songwat": 26,
+      "frontageMeters": 2018.5438803412167,
+      "pieces": 25415,
+      "bytes": 3799237,
+      "batches": 676,
+      "life": [
+        {
+          "source": "osm:way/1144273181:0:1",
+          "kind": "stir",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1144273181:0:1",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1144273181:0:1",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1534283453:0:0",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/305102087:0:4",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/305102087:0:4",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/449024006:0:0",
+          "kind": "wok",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/449024006:0:0",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/449024006:0:0",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/449024152:0:2",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/586421834:0:0",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021238298:0:2",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021238298:0:2",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1021238356:0:1",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021238356:0:1",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1021446893:0:0",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1021446893:0:0",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1053918842:0:1",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918843:0:13",
+          "kind": "wok",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918843:0:13",
+          "kind": "steam",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918843:0:13",
+          "kind": "fan",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918843:0:13",
+          "kind": "walk",
+          "travel": 0.6
+        },
+        {
+          "source": "osm:way/1053918907:0:1",
+          "kind": "browse",
+          "travel": 0
+        },
+        {
+          "source": "osm:way/1053918907:0:1",
+          "kind": "walk",
+          "travel": 0.6
+        }
+      ],
+      "prepareTwiceAndTestMs": 602.281993
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  pass: true,
+  twoWorkerBound: true,
+  reuse: true,
+  abortTerminates: true,
+  lateResultIgnored: true,
+  closeRejects: true,
+  timeoutNoRetry: true
+}

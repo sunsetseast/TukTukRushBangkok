@@ -1,0 +1,12 @@
+{
+  result: 'pass',
+  noWrongWay: true,
+  noFootpaths: true,
+  bangkokLeftSide: true,
+  deterministic: true,
+  boundedAt16: true,
+  actualVehicleSpawning: true,
+  explicitlyTaggedRedSignal: true,
+  actualStopDwell: true,
+  sourceControlLocationsInProduction: 'not yet imported'
+}

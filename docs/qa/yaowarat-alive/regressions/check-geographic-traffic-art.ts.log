@@ -1,0 +1,9 @@
+{
+  pass: true,
+  batchedDrawCalls: 21,
+  complexTrafficKinds: 4,
+  capacity: 16,
+  instanceColors: true,
+  cleanToggle: true,
+  cleanDisposal: true
+}

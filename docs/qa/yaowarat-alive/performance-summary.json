@@ -1,0 +1,318 @@
+{
+  "workflow": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42392802436",
+  "runtime": "8697d316d67262a2346ef1e8308b817e917588ee",
+  "reportHashes": {
+    "baseline.json": {
+      "sha256": "40d2df76585e7c899e68dfbbc981f42dcbe0b42b673e6a2eec507a5b811de3ae",
+      "bytes": 3101916
+    },
+    "final.json": {
+      "sha256": "ba916be25bafeac9ab98c39966f049273b73b0fad2d4570bb506534be9a6b1d0",
+      "bytes": 10600824
+    }
+  },
+  "cases": [
+    {
+      "time": "day",
+      "quality": "low",
+      "traffic": false,
+      "p95ChangePercent": 5.8595128838655475,
+      "beforeP95Ms": 283.3000000000029,
+      "afterP95Ms": 299.8999999999942,
+      "beforeMaxCalls": 150,
+      "afterMaxCalls": 154,
+      "beforeMaxTriangles": 181024,
+      "afterMaxTriangles": 188572
+    },
+    {
+      "time": "day",
+      "quality": "low",
+      "traffic": true,
+      "p95ChangePercent": 5.129230373768223e-12,
+      "beforeP95Ms": 283.3000000000029,
+      "afterP95Ms": 283.30000000001746,
+      "beforeMaxCalls": 163,
+      "afterMaxCalls": 167,
+      "beforeMaxTriangles": 181748,
+      "afterMaxTriangles": 189020
+    },
+    {
+      "time": "day",
+      "quality": "medium",
+      "traffic": false,
+      "p95ChangePercent": -0.03157562362040567,
+      "beforeP95Ms": 316.70000000001164,
+      "afterP95Ms": 316.6000000000058,
+      "beforeMaxCalls": 176,
+      "afterMaxCalls": 180,
+      "beforeMaxTriangles": 206606,
+      "afterMaxTriangles": 210174
+    },
+    {
+      "time": "day",
+      "quality": "medium",
+      "traffic": true,
+      "p95ChangePercent": 0.0,
+      "beforeP95Ms": 300,
+      "afterP95Ms": 300,
+      "beforeMaxCalls": 190,
+      "afterMaxCalls": 187,
+      "beforeMaxTriangles": 207138,
+      "afterMaxTriangles": 210414
+    },
+    {
+      "time": "night",
+      "quality": "low",
+      "traffic": false,
+      "p95ChangePercent": 0.0352982703765381,
+      "beforeP95Ms": 283.30000000001746,
+      "afterP95Ms": 283.3999999999942,
+      "beforeMaxCalls": 150,
+      "afterMaxCalls": 159,
+      "beforeMaxTriangles": 181024,
+      "afterMaxTriangles": 188700
+    },
+    {
+      "time": "night",
+      "quality": "low",
+      "traffic": true,
+      "p95ChangePercent": 1.028066520802895e-11,
+      "beforeP95Ms": 283.29999999998836,
+      "afterP95Ms": 283.30000000001746,
+      "beforeMaxCalls": 163,
+      "afterMaxCalls": 172,
+      "beforeMaxTriangles": 181524,
+      "afterMaxTriangles": 189200
+    },
+    {
+      "time": "night",
+      "quality": "medium",
+      "traffic": false,
+      "p95ChangePercent": 0.0,
+      "beforeP95Ms": 300,
+      "afterP95Ms": 300,
+      "beforeMaxCalls": 176,
+      "afterMaxCalls": 185,
+      "beforeMaxTriangles": 206606,
+      "afterMaxTriangles": 210302
+    },
+    {
+      "time": "night",
+      "quality": "medium",
+      "traffic": true,
+      "p95ChangePercent": 0.033333333325580305,
+      "beforeP95Ms": 300,
+      "afterP95Ms": 300.0999999999767,
+      "beforeMaxCalls": 189,
+      "afterMaxCalls": 188,
+      "beforeMaxTriangles": 207106,
+      "afterMaxTriangles": 210478
+    }
+  ],
+  "residency": {
+    "before": [
+      {
+        "geometries": 63,
+        "bytes": 0,
+        "facades": 0,
+        "stream": {
+          "loaded": 24,
+          "disposed": 15,
+          "requests": 24,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "7168:-7168",
+            "8192:-7168",
+            "8192:-8192",
+            "7168:-8192",
+            "7168:-6144",
+            "8192:-6144",
+            "6144:-7168",
+            "6144:-8192",
+            "6144:-6144"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 392,
+        "bytes": 1948991,
+        "facades": 101,
+        "stream": {
+          "loaded": 33,
+          "disposed": 24,
+          "requests": 33,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "2048:0",
+            "3072:0",
+            "2048:-1024",
+            "3072:-1024",
+            "2048:1024",
+            "3072:1024",
+            "4096:0",
+            "4096:-1024",
+            "4096:1024"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 63,
+        "bytes": 0,
+        "facades": 0,
+        "stream": {
+          "loaded": 42,
+          "disposed": 33,
+          "requests": 42,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "7168:-7168",
+            "8192:-7168",
+            "7168:-8192",
+            "8192:-8192",
+            "7168:-6144",
+            "8192:-6144",
+            "6144:-7168",
+            "6144:-8192",
+            "6144:-6144"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 334,
+        "bytes": 1948991,
+        "facades": 101,
+        "stream": {
+          "loaded": 51,
+          "disposed": 42,
+          "requests": 51,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "2048:0",
+            "3072:0",
+            "2048:-1024",
+            "3072:-1024",
+            "2048:1024",
+            "3072:1024",
+            "4096:0",
+            "4096:-1024",
+            "4096:1024"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      }
+    ],
+    "after": [
+      {
+        "geometries": 63,
+        "bytes": 0,
+        "facades": 0,
+        "stream": {
+          "loaded": 24,
+          "disposed": 15,
+          "requests": 24,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "7168:-7168",
+            "8192:-7168",
+            "8192:-8192",
+            "7168:-8192",
+            "8192:-6144",
+            "7168:-6144",
+            "6144:-7168",
+            "6144:-8192",
+            "6144:-6144"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 215,
+        "bytes": 8026175,
+        "facades": 357,
+        "stream": {
+          "loaded": 33,
+          "disposed": 24,
+          "requests": 33,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "2048:0",
+            "3072:0",
+            "2048:-1024",
+            "3072:-1024",
+            "2048:1024",
+            "3072:1024",
+            "4096:0",
+            "4096:-1024",
+            "4096:1024"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 63,
+        "bytes": 0,
+        "facades": 0,
+        "stream": {
+          "loaded": 42,
+          "disposed": 33,
+          "requests": 42,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "7168:-7168",
+            "8192:-7168",
+            "7168:-8192",
+            "8192:-8192",
+            "7168:-6144",
+            "8192:-6144",
+            "6144:-7168",
+            "6144:-8192",
+            "6144:-6144"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      },
+      {
+        "geometries": 732,
+        "bytes": 8026175,
+        "facades": 357,
+        "stream": {
+          "loaded": 51,
+          "disposed": 42,
+          "requests": 51,
+          "errors": 0,
+          "active": 9,
+          "ids": [
+            "2048:0",
+            "3072:0",
+            "2048:-1024",
+            "3072:-1024",
+            "2048:1024",
+            "3072:1024",
+            "4096:0",
+            "4096:-1024",
+            "4096:1024"
+          ],
+          "settled": true,
+          "total": 471
+        }
+      }
+    ]
+  }
+}

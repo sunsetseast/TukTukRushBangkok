@@ -1,0 +1,10 @@
+{
+  result: 'pass',
+  intersectsMovingTaxi: true,
+  altitudeAware: true,
+  headingAware: true,
+  riderMotorcycleClearance: true,
+  lastKnownRoadSafePose: true,
+  noLongDistanceTeleport: true,
+  safeTrafficToggle: true
+}

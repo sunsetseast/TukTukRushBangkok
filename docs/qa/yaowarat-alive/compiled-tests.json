@@ -1,0 +1,4729 @@
+{
+  "buildings": 222123,
+  "chunks": 471,
+  "vertices": 18462054,
+  "originalGPU": 664633944,
+  "gpu": 282663084,
+  "restoredEdges": 4525,
+  "comparedChunks": 192,
+  "maxPositionError": 0.0005035400390625,
+  "indexBuildMs": 3.6663750000006985,
+  "queryMs": {
+    "samples": 968,
+    "mean": 0.002035472107527011,
+    "p95": 0.003935999997338513,
+    "max": 0.09074699999837321
+  },
+  "rows": [
+    {
+      "id": "-3072:-9216",
+      "buildings": 1,
+      "decodeMs": 0.5017569999999978,
+      "buildMs": 0.3971000000001368,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.09288999999989755,
+      "geometryDecodeMs": 0.16822400000000926
+    },
+    {
+      "id": "-3072:-8192",
+      "buildings": 10,
+      "decodeMs": 1.2707490000000234,
+      "buildMs": 0.26078400000005786,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.24336799999991854,
+      "geometryDecodeMs": 1.0245770000001357
+    },
+    {
+      "id": "-3072:-7168",
+      "buildings": 1,
+      "decodeMs": 0.144457999999986,
+      "buildMs": 0.0983680000001641,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.08399699999995391,
+      "geometryDecodeMs": 0.058567999999922904
+    },
+    {
+      "id": "-3072:-6144",
+      "buildings": 0,
+      "decodeMs": 0.05766700000003766,
+      "buildMs": 0.015333000000055108,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.05142799999998715,
+      "geometryDecodeMs": 0.004435999999941487
+    },
+    {
+      "id": "-3072:-5120",
+      "buildings": 0,
+      "decodeMs": 0.20315600000003542,
+      "buildMs": 0.01411099999995713,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.19833999999991647,
+      "geometryDecodeMs": 0.0028540000000703003
+    },
+    {
+      "id": "-3072:-4096",
+      "buildings": 29,
+      "decodeMs": 1.8238340000000335,
+      "buildMs": 0.08447799999999006,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.21819900000014059,
+      "geometryDecodeMs": 1.6033809999998994
+    },
+    {
+      "id": "-3072:-3072",
+      "buildings": 0,
+      "decodeMs": 0.04808200000002216,
+      "buildMs": 0.013590999999905762,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.03685600000017075,
+      "geometryDecodeMs": 0.0024639999999180873
+    },
+    {
+      "id": "-3072:-2048",
+      "buildings": 0,
+      "decodeMs": 0.05386199999998098,
+      "buildMs": 0.01018500000009226,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.050635999999940395,
+      "geometryDecodeMs": 0.0019330000000081782
+    },
+    {
+      "id": "-3072:-1024",
+      "buildings": 116,
+      "decodeMs": 2.9720069999998486,
+      "buildMs": 0.10335600000007616,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7211090000000695,
+      "geometryDecodeMs": 2.248164000000088
+    },
+    {
+      "id": "-3072:0",
+      "buildings": 0,
+      "decodeMs": 0.04871400000001813,
+      "buildMs": 0.01435100000003331,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.04595999999992273,
+      "geometryDecodeMs": 0.0011709999998856802
+    },
+    {
+      "id": "-3072:1024",
+      "buildings": 1,
+      "decodeMs": 0.06687099999999191,
+      "buildMs": 0.023886000000175045,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.05595399999992878,
+      "geometryDecodeMs": 0.009895000000142318
+    },
+    {
+      "id": "-3072:2048",
+      "buildings": 1,
+      "decodeMs": 0.19180900000014844,
+      "buildMs": 0.035402999999860185,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.08519899999987501,
+      "geometryDecodeMs": 0.105399000000034
+    },
+    {
+      "id": "-3072:3072",
+      "buildings": 0,
+      "decodeMs": 0.08011099999998805,
+      "buildMs": 0.009354000000030283,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.07600400000001173,
+      "geometryDecodeMs": 0.0022440000000187865
+    },
+    {
+      "id": "-3072:4096",
+      "buildings": 0,
+      "decodeMs": 0.031156999999893742,
+      "buildMs": 0.007651000000123531,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.027901999999812688,
+      "geometryDecodeMs": 0.001983000000109314
+    },
+    {
+      "id": "-3072:5120",
+      "buildings": 13,
+      "decodeMs": 0.6142879999999877,
+      "buildMs": 0.04256400000008398,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.08959600000002865,
+      "geometryDecodeMs": 0.5228589999999258
+    },
+    {
+      "id": "-3072:6144",
+      "buildings": 0,
+      "decodeMs": 0.1313190000000759,
+      "buildMs": 0.012388000000100874,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.03212899999994079,
+      "geometryDecodeMs": 0.0024530000000595464
+    },
+    {
+      "id": "-3072:7168",
+      "buildings": 0,
+      "decodeMs": 0.05632500000001528,
+      "buildMs": 0.009534999999914362,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.05331999999998516,
+      "geometryDecodeMs": 0.0017330000000583823
+    },
+    {
+      "id": "-3072:8192",
+      "buildings": 0,
+      "decodeMs": 0.031868000000031316,
+      "buildMs": 0.007430999999996857,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.02934400000003734,
+      "geometryDecodeMs": 0.0014630000000579457
+    },
+    {
+      "id": "-3072:9216",
+      "buildings": 0,
+      "decodeMs": 0.03879900000015368,
+      "buildMs": 0.007250999999996566,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.03590400000007321,
+      "geometryDecodeMs": 0.0018230000000585278
+    },
+    {
+      "id": "-3072:10240",
+      "buildings": 0,
+      "decodeMs": 0.02076100000022052,
+      "buildMs": 0.006810999999970591,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.01823699999999917,
+      "geometryDecodeMs": 0.0015429999998559651
+    },
+    {
+      "id": "-3072:11264",
+      "buildings": 0,
+      "decodeMs": 0.016695000000026994,
+      "buildMs": 0.006579999999985375,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.014652000000069165,
+      "geometryDecodeMs": 0.0011219999998957064
+    },
+    {
+      "id": "-3072:12288",
+      "buildings": 0,
+      "decodeMs": 0.012708999999858861,
+      "buildMs": 0.005918999999948937,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.010566000000153508,
+      "geometryDecodeMs": 0.0010620000000471919
+    },
+    {
+      "id": "-2048:-9216",
+      "buildings": 2,
+      "decodeMs": 0.3454110000000128,
+      "buildMs": 0.032928999999967346,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.24067300000001524,
+      "geometryDecodeMs": 0.10300600000005034
+    },
+    {
+      "id": "-2048:-8192",
+      "buildings": 50,
+      "decodeMs": 0.8455860000001394,
+      "buildMs": 0.0898259999999027,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5099099999999908,
+      "geometryDecodeMs": 0.33384399999999914
+    },
+    {
+      "id": "-2048:-7168",
+      "buildings": 1,
+      "decodeMs": 0.3823979999999665,
+      "buildMs": 0.03269000000000233,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.36550099999999475,
+      "geometryDecodeMs": 0.015042999999877793
+    },
+    {
+      "id": "-2048:-6144",
+      "buildings": 5,
+      "decodeMs": 0.4271649999998317,
+      "buildMs": 0.06405700000004799,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.37567699999999604,
+      "geometryDecodeMs": 0.05016599999999016
+    },
+    {
+      "id": "-2048:-5120",
+      "buildings": 71,
+      "decodeMs": 2.2727809999998954,
+      "buildMs": 0.2100669999999809,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.622099000000162,
+      "geometryDecodeMs": 0.6479789999998502
+    },
+    {
+      "id": "-2048:-4096",
+      "buildings": 37,
+      "decodeMs": 0.8395470000000387,
+      "buildMs": 0.13257999999996173,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5648730000000342,
+      "geometryDecodeMs": 0.2724309999998695
+    },
+    {
+      "id": "-2048:-3072",
+      "buildings": 11,
+      "decodeMs": 0.4962390000000596,
+      "buildMs": 0.10387700000001132,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.37555700000007164,
+      "geometryDecodeMs": 0.1191999999998643
+    },
+    {
+      "id": "-2048:-2048",
+      "buildings": 21,
+      "decodeMs": 0.9548119999999471,
+      "buildMs": 0.09626499999990301,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6666569999999865,
+      "geometryDecodeMs": 0.28638200000000325
+    },
+    {
+      "id": "-2048:-1024",
+      "buildings": 133,
+      "decodeMs": 4.191638000000012,
+      "buildMs": 0.355686999999989,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.0110760000000028,
+      "geometryDecodeMs": 2.17493300000001
+    },
+    {
+      "id": "-2048:0",
+      "buildings": 2,
+      "decodeMs": 0.5205359999999928,
+      "buildMs": 0.05425199999990582,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.45261299999992843,
+      "geometryDecodeMs": 0.03459300000008625
+    },
+    {
+      "id": "-2048:1024",
+      "buildings": 312,
+      "decodeMs": 4.4185110000000805,
+      "buildMs": 0.42976900000007845,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.070897000000059,
+      "geometryDecodeMs": 2.3453709999998864
+    },
+    {
+      "id": "-2048:2048",
+      "buildings": 321,
+      "decodeMs": 3.4692680000000564,
+      "buildMs": 0.3362970000000587,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.2781989999998586,
+      "geometryDecodeMs": 1.184308000000101
+    },
+    {
+      "id": "-2048:3072",
+      "buildings": 84,
+      "decodeMs": 1.4104389999999967,
+      "buildMs": 0.19182899999987058,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0525790000001507,
+      "geometryDecodeMs": 0.3552359999998771
+    },
+    {
+      "id": "-2048:4096",
+      "buildings": 2,
+      "decodeMs": 0.4118419999999787,
+      "buildMs": 0.044568000000026586,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.39396499999998014,
+      "geometryDecodeMs": 0.016415000000051805
+    },
+    {
+      "id": "-2048:5120",
+      "buildings": 19,
+      "decodeMs": 0.4231990000000678,
+      "buildMs": 0.028462999999874228,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3593519999999444,
+      "geometryDecodeMs": 0.06278500000007625
+    },
+    {
+      "id": "-2048:6144",
+      "buildings": 18,
+      "decodeMs": 0.4868650000000798,
+      "buildMs": 0.0691150000000107,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.41154200000005403,
+      "geometryDecodeMs": 0.07373099999995247
+    },
+    {
+      "id": "-2048:7168",
+      "buildings": 3,
+      "decodeMs": 0.7627720000000409,
+      "buildMs": 0.045057999999926324,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7416690000000017,
+      "geometryDecodeMs": 0.019530000000031578
+    },
+    {
+      "id": "-2048:8192",
+      "buildings": 1,
+      "decodeMs": 0.5279070000001411,
+      "buildMs": 0.03348099999993792,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5069650000000365,
+      "geometryDecodeMs": 0.01919899999984409
+    },
+    {
+      "id": "-2048:9216",
+      "buildings": 66,
+      "decodeMs": 1.0502050000000054,
+      "buildMs": 0.07041700000013407,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7440329999999449,
+      "geometryDecodeMs": 0.3043600000000879
+    },
+    {
+      "id": "-2048:10240",
+      "buildings": 0,
+      "decodeMs": 0.261353999999983,
+      "buildMs": 0.011026999999785403,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2593810000000758,
+      "geometryDecodeMs": 0.0008720000000721484
+    },
+    {
+      "id": "-2048:11264",
+      "buildings": 1,
+      "decodeMs": 0.1994609999999284,
+      "buildMs": 0.028943999999910375,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.18860500000005231,
+      "geometryDecodeMs": 0.009935000000041327
+    },
+    {
+      "id": "-2048:12288",
+      "buildings": 2,
+      "decodeMs": 0.18241600000010294,
+      "buildMs": 0.03295000000002801,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.16942600000015773,
+      "geometryDecodeMs": 0.011947999999847525
+    },
+    {
+      "id": "-1024:-9216",
+      "buildings": 47,
+      "decodeMs": 0.9510659999998552,
+      "buildMs": 0.10889400000019123,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7393059999999423,
+      "geometryDecodeMs": 0.21010799999999108
+    },
+    {
+      "id": "-1024:-8192",
+      "buildings": 4,
+      "decodeMs": 0.38911800000005314,
+      "buildMs": 0.046289999999999054,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.35968300000013187,
+      "geometryDecodeMs": 0.02797199999986333
+    },
+    {
+      "id": "-1024:-7168",
+      "buildings": 17,
+      "decodeMs": 0.6085789999999633,
+      "buildMs": 0.09530400000016925,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5087479999999687,
+      "geometryDecodeMs": 0.09802800000011302
+    },
+    {
+      "id": "-1024:-6144",
+      "buildings": 14,
+      "decodeMs": 0.604863000000023,
+      "buildMs": 0.10495900000000802,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5081170000000839,
+      "geometryDecodeMs": 0.09504300000003241
+    },
+    {
+      "id": "-1024:-5120",
+      "buildings": 89,
+      "decodeMs": 1.4494090000000597,
+      "buildMs": 0.21917100000018763,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.090005999999903,
+      "geometryDecodeMs": 0.3567480000001524
+    },
+    {
+      "id": "-1024:-4096",
+      "buildings": 39,
+      "decodeMs": 1.335266000000047,
+      "buildMs": 0.15499399999998786,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.938656999999921,
+      "geometryDecodeMs": 0.39247199999999793
+    },
+    {
+      "id": "-1024:-3072",
+      "buildings": 171,
+      "decodeMs": 2.1482129999999415,
+      "buildMs": 0.261745000000019,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.5086679999999433,
+      "geometryDecodeMs": 0.6362200000000939
+    },
+    {
+      "id": "-1024:-2048",
+      "buildings": 623,
+      "decodeMs": 7.5456819999999425,
+      "buildMs": 0.27419400000007954,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.4896889999999985,
+      "geometryDecodeMs": 4.048131000000012
+    },
+    {
+      "id": "-1024:-1024",
+      "buildings": 69,
+      "decodeMs": 1.2080430000000888,
+      "buildMs": 0.11769800000001851,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8252860000000055,
+      "geometryDecodeMs": 0.376788999999917
+    },
+    {
+      "id": "-1024:0",
+      "buildings": 183,
+      "decodeMs": 2.225149999999985,
+      "buildMs": 0.13944099999980608,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.4875859999999648,
+      "geometryDecodeMs": 0.7346290000000408
+    },
+    {
+      "id": "-1024:1024",
+      "buildings": 88,
+      "decodeMs": 1.9215209999999843,
+      "buildMs": 0.1186089999998785,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3273440000000392,
+      "geometryDecodeMs": 0.5908219999998892
+    },
+    {
+      "id": "-1024:2048",
+      "buildings": 738,
+      "decodeMs": 9.130153999999948,
+      "buildMs": 0.22909600000002683,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.466411999999991,
+      "geometryDecodeMs": 2.656941000000188
+    },
+    {
+      "id": "-1024:3072",
+      "buildings": 13,
+      "decodeMs": 2.0317680000000564,
+      "buildMs": 0.08120199999984834,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.8750910000001113,
+      "geometryDecodeMs": 0.1513479999998708
+    },
+    {
+      "id": "-1024:4096",
+      "buildings": 0,
+      "decodeMs": 0.29378300000007584,
+      "buildMs": 0.007170999999971173,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2915600000001177,
+      "geometryDecodeMs": 0.0010419999998703133
+    },
+    {
+      "id": "-1024:5120",
+      "buildings": 0,
+      "decodeMs": 0.5447120000001178,
+      "buildMs": 0.009404000000131418,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5117730000001757,
+      "geometryDecodeMs": 0.0028039999999691645
+    },
+    {
+      "id": "-1024:6144",
+      "buildings": 23,
+      "decodeMs": 1.0126290000000608,
+      "buildMs": 0.06988499999988562,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8764329999999063,
+      "geometryDecodeMs": 0.1344329999999445
+    },
+    {
+      "id": "-1024:7168",
+      "buildings": 28,
+      "decodeMs": 0.7003870000000916,
+      "buildMs": 0.03778699999998025,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5805869999999231,
+      "geometryDecodeMs": 0.11801800000012008
+    },
+    {
+      "id": "-1024:8192",
+      "buildings": 7,
+      "decodeMs": 0.41681900000003225,
+      "buildMs": 0.03340000000002874,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.38581199999998717,
+      "geometryDecodeMs": 0.02979500000014923
+    },
+    {
+      "id": "-1024:9216",
+      "buildings": 1,
+      "decodeMs": 0.35086999999998625,
+      "buildMs": 0.01871900000014648,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.34114499999986947,
+      "geometryDecodeMs": 0.008804000000054657
+    },
+    {
+      "id": "-1024:10240",
+      "buildings": 2,
+      "decodeMs": 0.410570000000007,
+      "buildMs": 0.026389999999992142,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.39290399999981673,
+      "geometryDecodeMs": 0.016454000000067026
+    },
+    {
+      "id": "-1024:11264",
+      "buildings": 111,
+      "decodeMs": 1.1603920000000016,
+      "buildMs": 0.10606000000007043,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7700330000000122,
+      "geometryDecodeMs": 0.38864699999999175
+    },
+    {
+      "id": "-1024:12288",
+      "buildings": 0,
+      "decodeMs": 0.08766200000013669,
+      "buildMs": 0.006149000000050364,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.08588000000008833,
+      "geometryDecodeMs": 0.0008909999999104912
+    },
+    {
+      "id": "0:-9216",
+      "buildings": 19,
+      "decodeMs": 0.4713610000001154,
+      "buildMs": 0.07341999999994187,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.354855999999927,
+      "geometryDecodeMs": 0.11489299999993818
+    },
+    {
+      "id": "0:-8192",
+      "buildings": 70,
+      "decodeMs": 1.166580999999951,
+      "buildMs": 0.10204399999997804,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8279699999998229,
+      "geometryDecodeMs": 0.3366990000001806
+    },
+    {
+      "id": "0:-7168",
+      "buildings": 850,
+      "decodeMs": 7.644880999999941,
+      "buildMs": 0.38870700000006764,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.519282999999859,
+      "geometryDecodeMs": 3.118938000000071
+    },
+    {
+      "id": "0:-6144",
+      "buildings": 1,
+      "decodeMs": 0.5587740000000849,
+      "buildMs": 0.043646000000080676,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5378820000000815,
+      "geometryDecodeMs": 0.016494999999849824
+    },
+    {
+      "id": "0:-5120",
+      "buildings": 1531,
+      "decodeMs": 13.51838900000007,
+      "buildMs": 0.24387799999999515,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.8505629999999655,
+      "geometryDecodeMs": 7.657961000000114
+    },
+    {
+      "id": "0:-4096",
+      "buildings": 1390,
+      "decodeMs": 14.38614900000016,
+      "buildMs": 0.2804639999999381,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.21533199999999,
+      "geometryDecodeMs": 5.159238999999843
+    },
+    {
+      "id": "0:-3072",
+      "buildings": 427,
+      "decodeMs": 4.77435800000012,
+      "buildMs": 0.25111900000001697,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.8771540000000186,
+      "geometryDecodeMs": 1.8889919999999165
+    },
+    {
+      "id": "0:-2048",
+      "buildings": 993,
+      "decodeMs": 9.395374000000174,
+      "buildMs": 0.3068630000002486,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.593844999999874,
+      "geometryDecodeMs": 3.7895809999999983
+    },
+    {
+      "id": "0:-1024",
+      "buildings": 429,
+      "decodeMs": 4.990725000000111,
+      "buildMs": 0.2620449999999437,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.030464999999822,
+      "geometryDecodeMs": 1.9532490000001417
+    },
+    {
+      "id": "0:0",
+      "buildings": 807,
+      "decodeMs": 86.34417699999995,
+      "buildMs": 0.46188700000038807,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 80.55846099999962,
+      "geometryDecodeMs": 5.772595000000365
+    },
+    {
+      "id": "0:1024",
+      "buildings": 270,
+      "decodeMs": 3.2982499999998254,
+      "buildMs": 0.2013040000001638,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.1264909999999873,
+      "geometryDecodeMs": 1.1664609999997992
+    },
+    {
+      "id": "0:2048",
+      "buildings": 78,
+      "decodeMs": 1.311591000000135,
+      "buildMs": 0.1147529999998369,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9187470000001667,
+      "geometryDecodeMs": 0.34608299999990777
+    },
+    {
+      "id": "0:3072",
+      "buildings": 28,
+      "decodeMs": 1.0088430000000699,
+      "buildMs": 0.19469399999979942,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.67789300000004,
+      "geometryDecodeMs": 0.30112499999995634
+    },
+    {
+      "id": "0:4096",
+      "buildings": 13,
+      "decodeMs": 0.9674009999998816,
+      "buildMs": 0.08282499999995707,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8402790000000095,
+      "geometryDecodeMs": 0.12524900000016714
+    },
+    {
+      "id": "0:5120",
+      "buildings": 150,
+      "decodeMs": 1.7611289999999826,
+      "buildMs": 0.13363100000015038,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1928609999999935,
+      "geometryDecodeMs": 0.5663549999999304
+    },
+    {
+      "id": "0:6144",
+      "buildings": 1393,
+      "decodeMs": 10.681586000000152,
+      "buildMs": 0.2846799999997529,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.816442000000279,
+      "geometryDecodeMs": 4.855829999999969
+    },
+    {
+      "id": "0:7168",
+      "buildings": 91,
+      "decodeMs": 1.1224139999999352,
+      "buildMs": 0.09857899999997244,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7576530000001185,
+      "geometryDecodeMs": 0.3608249999997497
+    },
+    {
+      "id": "0:8192",
+      "buildings": 108,
+      "decodeMs": 1.2994709999998122,
+      "buildMs": 0.08998599999995349,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8811709999999948,
+      "geometryDecodeMs": 0.41463599999997314
+    },
+    {
+      "id": "0:9216",
+      "buildings": 41,
+      "decodeMs": 0.7558810000000449,
+      "buildMs": 0.03803800000014235,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5431499999999687,
+      "geometryDecodeMs": 0.2110689999999522
+    },
+    {
+      "id": "0:10240",
+      "buildings": 49,
+      "decodeMs": 0.8867390000000341,
+      "buildMs": 0.04951400000027206,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.673956999999973,
+      "geometryDecodeMs": 0.2112090000000535
+    },
+    {
+      "id": "0:11264",
+      "buildings": 54,
+      "decodeMs": 0.8850970000003144,
+      "buildMs": 0.04366500000014639,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6155090000002019,
+      "geometryDecodeMs": 0.2671730000001844
+    },
+    {
+      "id": "0:12288",
+      "buildings": 0,
+      "decodeMs": 0.11628600000040024,
+      "buildMs": 0.008553000000119937,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.11318100000016784,
+      "geometryDecodeMs": 0.0021729999998569838
+    },
+    {
+      "id": "1024:-9216",
+      "buildings": 28,
+      "decodeMs": 0.45761099999981525,
+      "buildMs": 0.06872400000020207,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3427280000000792,
+      "geometryDecodeMs": 0.11365099999966333
+    },
+    {
+      "id": "1024:-8192",
+      "buildings": 37,
+      "decodeMs": 0.7485200000000987,
+      "buildMs": 0.06475799999998344,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5885789999997542,
+      "geometryDecodeMs": 0.15786800000023504
+    },
+    {
+      "id": "1024:-7168",
+      "buildings": 213,
+      "decodeMs": 2.373873999999887,
+      "buildMs": 0.13568499999973938,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.5713720000003377,
+      "geometryDecodeMs": 0.8004789999999957
+    },
+    {
+      "id": "1024:-6144",
+      "buildings": 0,
+      "decodeMs": 0.3969789999996465,
+      "buildMs": 0.01833699999997407,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3914509999999609,
+      "geometryDecodeMs": 0.002003000000058819
+    },
+    {
+      "id": "1024:-5120",
+      "buildings": 994,
+      "decodeMs": 8.068251000000146,
+      "buildMs": 0.2816859999998087,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.340101999999661,
+      "geometryDecodeMs": 3.7226910000003954
+    },
+    {
+      "id": "1024:-4096",
+      "buildings": 1827,
+      "decodeMs": 13.793724000000111,
+      "buildMs": 0.36416000000008353,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.449347000000216,
+      "geometryDecodeMs": 6.33547499999986
+    },
+    {
+      "id": "1024:-3072",
+      "buildings": 915,
+      "decodeMs": 146.00306499999988,
+      "buildMs": 0.2682549999999537,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 140.15574800000013,
+      "geometryDecodeMs": 5.8375929999997425
+    },
+    {
+      "id": "1024:-2048",
+      "buildings": 1289,
+      "decodeMs": 14.155290999999579,
+      "buildMs": 0.40311800000017683,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.809790999999677,
+      "geometryDecodeMs": 6.333512000000155
+    },
+    {
+      "id": "1024:-1024",
+      "buildings": 1862,
+      "decodeMs": 18.97880299999997,
+      "buildMs": 0.39512599999989106,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 10.881047000000308,
+      "geometryDecodeMs": 8.087029999999686
+    },
+    {
+      "id": "1024:0",
+      "buildings": 1031,
+      "decodeMs": 11.295301999999992,
+      "buildMs": 0.2933419999999387,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.084885999999642,
+      "geometryDecodeMs": 5.202284000000418
+    },
+    {
+      "id": "1024:1024",
+      "buildings": 220,
+      "decodeMs": 2.623250999999982,
+      "buildMs": 0.12624100000039107,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.7609879999999976,
+      "geometryDecodeMs": 0.8575949999999466
+    },
+    {
+      "id": "1024:2048",
+      "buildings": 40,
+      "decodeMs": 1.582288999999946,
+      "buildMs": 0.13444299999991927,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0698449999999866,
+      "geometryDecodeMs": 0.5081669999999576
+    },
+    {
+      "id": "1024:3072",
+      "buildings": 11,
+      "decodeMs": 0.6239220000002206,
+      "buildMs": 0.06016100000033475,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5452940000000126,
+      "geometryDecodeMs": 0.0773060000001351
+    },
+    {
+      "id": "1024:4096",
+      "buildings": 38,
+      "decodeMs": 1.2486050000002251,
+      "buildMs": 0.12842300000011164,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.966939999999795,
+      "geometryDecodeMs": 0.27973199999996723
+    },
+    {
+      "id": "1024:5120",
+      "buildings": 1122,
+      "decodeMs": 104.67889700000023,
+      "buildMs": 0.32191599999987375,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 98.93010800000002,
+      "geometryDecodeMs": 5.740185999999994
+    },
+    {
+      "id": "1024:6144",
+      "buildings": 458,
+      "decodeMs": 5.126650000000154,
+      "buildMs": 0.22619100000019898,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.11315999999988,
+      "geometryDecodeMs": 2.0075600000000122
+    },
+    {
+      "id": "1024:7168",
+      "buildings": 1,
+      "decodeMs": 0.5671159999997144,
+      "buildMs": 0.043175999999675696,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5496199999997771,
+      "geometryDecodeMs": 0.013270000000375148
+    },
+    {
+      "id": "1024:8192",
+      "buildings": 27,
+      "decodeMs": 0.638684000000012,
+      "buildMs": 0.04874400000016976,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.44636399999990317,
+      "geometryDecodeMs": 0.19053799999983312
+    },
+    {
+      "id": "1024:9216",
+      "buildings": 59,
+      "decodeMs": 1.3207239999997,
+      "buildMs": 0.10263500000019121,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8607090000000426,
+      "geometryDecodeMs": 0.45800199999985125
+    },
+    {
+      "id": "1024:10240",
+      "buildings": 80,
+      "decodeMs": 2.087130999999772,
+      "buildMs": 0.17152900000019144,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.2867019999998774,
+      "geometryDecodeMs": 0.7966329999999289
+    },
+    {
+      "id": "1024:11264",
+      "buildings": 1,
+      "decodeMs": 0.35737899999958245,
+      "buildMs": 0.04382600000008097,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.34209599999985585,
+      "geometryDecodeMs": 0.011828000000150496
+    },
+    {
+      "id": "1024:12288",
+      "buildings": 0,
+      "decodeMs": 0.17456399999991845,
+      "buildMs": 0.008653000000322209,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.1723309999997582,
+      "geometryDecodeMs": 0.0011410000001887965
+    },
+    {
+      "id": "2048:-9216",
+      "buildings": 39,
+      "decodeMs": 1.0904459999997016,
+      "buildMs": 0.08465799999976298,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8858770000001641,
+      "geometryDecodeMs": 0.2024660000001859
+    },
+    {
+      "id": "2048:-8192",
+      "buildings": 16,
+      "decodeMs": 0.7889810000001489,
+      "buildMs": 0.08264499999995678,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5497000000000298,
+      "geometryDecodeMs": 0.2377289999999448
+    },
+    {
+      "id": "2048:-7168",
+      "buildings": 13,
+      "decodeMs": 0.8511549999998351,
+      "buildMs": 0.048923999999715306,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7709039999999732,
+      "geometryDecodeMs": 0.07856900000024325
+    },
+    {
+      "id": "2048:-6144",
+      "buildings": 153,
+      "decodeMs": 1.853338000000349,
+      "buildMs": 0.07794799999965107,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.224608999999873,
+      "geometryDecodeMs": 0.6268559999998615
+    },
+    {
+      "id": "2048:-5120",
+      "buildings": 965,
+      "decodeMs": 9.111775999999736,
+      "buildMs": 0.28863500000034037,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.504922000000079,
+      "geometryDecodeMs": 4.6001649999998335
+    },
+    {
+      "id": "2048:-4096",
+      "buildings": 1152,
+      "decodeMs": 10.650829999999587,
+      "buildMs": 0.28131499999926746,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.9116049999993265,
+      "geometryDecodeMs": 4.729839999999967
+    },
+    {
+      "id": "2048:-3072",
+      "buildings": 653,
+      "decodeMs": 7.932136000000355,
+      "buildMs": 0.3388310000000274,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.558582999999999,
+      "geometryDecodeMs": 3.36659200000031
+    },
+    {
+      "id": "2048:-2048",
+      "buildings": 1366,
+      "decodeMs": 15.952213999999913,
+      "buildMs": 0.36531099999956496,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.458740000000034,
+      "geometryDecodeMs": 6.483849000000191
+    },
+    {
+      "id": "2048:-1024",
+      "buildings": 2030,
+      "decodeMs": 19.149379999999837,
+      "buildMs": 0.385190999999395,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 10.720125000000735,
+      "geometryDecodeMs": 8.41816899999958
+    },
+    {
+      "id": "2048:0",
+      "buildings": 1231,
+      "decodeMs": 11.142331999999442,
+      "buildMs": 0.3409849999998187,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.060790000000452,
+      "geometryDecodeMs": 5.072337999999945
+    },
+    {
+      "id": "2048:1024",
+      "buildings": 1095,
+      "decodeMs": 10.095680999999786,
+      "buildMs": 0.24879599999985658,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.792164999999841,
+      "geometryDecodeMs": 4.29492399999981
+    },
+    {
+      "id": "2048:2048",
+      "buildings": 245,
+      "decodeMs": 3.2221239999998943,
+      "buildMs": 0.2364270000007309,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.850083000000268,
+      "geometryDecodeMs": 1.3673140000000785
+    },
+    {
+      "id": "2048:3072",
+      "buildings": 32,
+      "decodeMs": 0.9203399999996691,
+      "buildMs": 0.11920000000009168,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6237019999998665,
+      "geometryDecodeMs": 0.29266200000074605
+    },
+    {
+      "id": "2048:4096",
+      "buildings": 2002,
+      "decodeMs": 102.72960300000068,
+      "buildMs": 0.307543999999325,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 92.6526700000004,
+      "geometryDecodeMs": 10.066115999999965
+    },
+    {
+      "id": "2048:5120",
+      "buildings": 2721,
+      "decodeMs": 21.570095000000038,
+      "buildMs": 0.37100999999984197,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.811963000000105,
+      "geometryDecodeMs": 9.74726499999997
+    },
+    {
+      "id": "2048:6144",
+      "buildings": 44,
+      "decodeMs": 0.7741690000002563,
+      "buildMs": 0.098468000000139,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5545270000002347,
+      "geometryDecodeMs": 0.21591600000010658
+    },
+    {
+      "id": "2048:7168",
+      "buildings": 1,
+      "decodeMs": 0.6360100000001694,
+      "buildMs": 0.027120999999169726,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6223700000000463,
+      "geometryDecodeMs": 0.011387000000468106
+    },
+    {
+      "id": "2048:8192",
+      "buildings": 4,
+      "decodeMs": 0.5453129999996236,
+      "buildMs": 0.037105999999766937,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5125340000004144,
+      "geometryDecodeMs": 0.03136699999959092
+    },
+    {
+      "id": "2048:9216",
+      "buildings": 28,
+      "decodeMs": 0.7033219999993889,
+      "buildMs": 0.06182300000000396,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5197849999995015,
+      "geometryDecodeMs": 0.18200500000057218
+    },
+    {
+      "id": "2048:10240",
+      "buildings": 66,
+      "decodeMs": 0.9770049999997354,
+      "buildMs": 0.052238999999644875,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7427010000001246,
+      "geometryDecodeMs": 0.23291100000005827
+    },
+    {
+      "id": "2048:11264",
+      "buildings": 2,
+      "decodeMs": 0.5306909999999334,
+      "buildMs": 0.025658999999905063,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4678960000001098,
+      "geometryDecodeMs": 0.06151300000055926
+    },
+    {
+      "id": "2048:12288",
+      "buildings": 2,
+      "decodeMs": 0.21104899999954796,
+      "buildMs": 0.023455000000467408,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.18944600000031642,
+      "geometryDecodeMs": 0.02079200000025594
+    },
+    {
+      "id": "3072:-9216",
+      "buildings": 61,
+      "decodeMs": 1.22346700000071,
+      "buildMs": 0.115034000000378,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.770713999999316,
+      "geometryDecodeMs": 0.45122100000025966
+    },
+    {
+      "id": "3072:-8192",
+      "buildings": 44,
+      "decodeMs": 1.4259529999999359,
+      "buildMs": 0.1655399999999645,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1200200000002951,
+      "geometryDecodeMs": 0.3043200000001889
+    },
+    {
+      "id": "3072:-7168",
+      "buildings": 20,
+      "decodeMs": 0.7355699999998251,
+      "buildMs": 0.07647499999984575,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6269660000007207,
+      "geometryDecodeMs": 0.10722199999963777
+    },
+    {
+      "id": "3072:-6144",
+      "buildings": 181,
+      "decodeMs": 2.419232000000193,
+      "buildMs": 0.14877400000023044,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.5737260000005335,
+      "geometryDecodeMs": 0.8429129999994984
+    },
+    {
+      "id": "3072:-5120",
+      "buildings": 2690,
+      "decodeMs": 116.14059399999951,
+      "buildMs": 0.4828690000003917,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 104.01320599999963,
+      "geometryDecodeMs": 12.115971000000172
+    },
+    {
+      "id": "3072:-4096",
+      "buildings": 1115,
+      "decodeMs": 14.067356999999902,
+      "buildMs": 0.34606299999995827,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.510338000000047,
+      "geometryDecodeMs": 6.546774000000369
+    },
+    {
+      "id": "3072:-3072",
+      "buildings": 204,
+      "decodeMs": 4.040060000000267,
+      "buildMs": 0.2531830000007176,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.476377999999386,
+      "geometryDecodeMs": 1.5581630000006044
+    },
+    {
+      "id": "3072:-2048",
+      "buildings": 918,
+      "decodeMs": 8.80985099999998,
+      "buildMs": 0.34370899999976245,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.778634999999667,
+      "geometryDecodeMs": 4.024045000000115
+    },
+    {
+      "id": "3072:-1024",
+      "buildings": 1701,
+      "decodeMs": 119.67439400000058,
+      "buildMs": 0.3842899999999645,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 108.84800899999937,
+      "geometryDecodeMs": 10.815559000000576
+    },
+    {
+      "id": "3072:0",
+      "buildings": 1999,
+      "decodeMs": 21.68821299999945,
+      "buildMs": 0.36465099999986705,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 12.800524999999652,
+      "geometryDecodeMs": 8.87568999999985
+    },
+    {
+      "id": "3072:1024",
+      "buildings": 1732,
+      "decodeMs": 95.25624600000083,
+      "buildMs": 0.37215199999991455,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.344312000000173,
+      "geometryDecodeMs": 83.90265900000031
+    },
+    {
+      "id": "3072:2048",
+      "buildings": 771,
+      "decodeMs": 9.376074999999219,
+      "buildMs": 0.30582200000026205,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.89995799999997,
+      "geometryDecodeMs": 4.467474000000038
+    },
+    {
+      "id": "3072:3072",
+      "buildings": 386,
+      "decodeMs": 4.928270000000339,
+      "buildMs": 0.2622559999999794,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.664753000000019,
+      "geometryDecodeMs": 2.258088999999927
+    },
+    {
+      "id": "3072:4096",
+      "buildings": 2946,
+      "decodeMs": 26.945424999999886,
+      "buildMs": 0.3266729999995732,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 15.88803100000041,
+      "geometryDecodeMs": 11.047067999999854
+    },
+    {
+      "id": "3072:5120",
+      "buildings": 2375,
+      "decodeMs": 147.7099250000001,
+      "buildMs": 0.38340900000002875,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 135.6936539999997,
+      "geometryDecodeMs": 12.005584999999883
+    },
+    {
+      "id": "3072:6144",
+      "buildings": 164,
+      "decodeMs": 2.2012030000005325,
+      "buildMs": 0.18546999999853142,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3007639999996172,
+      "geometryDecodeMs": 0.8960229999993317
+    },
+    {
+      "id": "3072:7168",
+      "buildings": 803,
+      "decodeMs": 7.105376999999862,
+      "buildMs": 0.2305980000001,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.434074000000692,
+      "geometryDecodeMs": 2.6665759999996226
+    },
+    {
+      "id": "3072:8192",
+      "buildings": 52,
+      "decodeMs": 0.9386369999992894,
+      "buildMs": 0.07046599999921455,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7547489999997197,
+      "geometryDecodeMs": 0.17973200000051293
+    },
+    {
+      "id": "3072:9216",
+      "buildings": 1,
+      "decodeMs": 0.34668299999975716,
+      "buildMs": 0.018648000001121545,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.33651800000006915,
+      "geometryDecodeMs": 0.009034000000610831
+    },
+    {
+      "id": "3072:10240",
+      "buildings": 11,
+      "decodeMs": 0.6702620000014576,
+      "buildMs": 0.03794700000071316,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6016079999990325,
+      "geometryDecodeMs": 0.06728199999997742
+    },
+    {
+      "id": "3072:11264",
+      "buildings": 0,
+      "decodeMs": 0.20702299999902607,
+      "buildMs": 0.007961999999679392,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.20507899999938672,
+      "geometryDecodeMs": 0.0009520000003249152
+    },
+    {
+      "id": "3072:12288",
+      "buildings": 0,
+      "decodeMs": 0.14864499999930558,
+      "buildMs": 0.005218000000240863,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.14730299999973795,
+      "geometryDecodeMs": 0.0007609999993292149
+    },
+    {
+      "id": "4096:-9216",
+      "buildings": 1,
+      "decodeMs": 0.5078659999999218,
+      "buildMs": 0.017958000000362517,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.491001000000324,
+      "geometryDecodeMs": 0.01602400000047055
+    },
+    {
+      "id": "4096:-8192",
+      "buildings": 170,
+      "decodeMs": 2.4662329999991925,
+      "buildMs": 0.14583999999922526,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.64411199999995,
+      "geometryDecodeMs": 0.8203880000000936
+    },
+    {
+      "id": "4096:-7168",
+      "buildings": 336,
+      "decodeMs": 3.6713829999989684,
+      "buildMs": 0.1571570000014617,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.2140330000001995,
+      "geometryDecodeMs": 1.4526329999989684
+    },
+    {
+      "id": "4096:-6144",
+      "buildings": 603,
+      "decodeMs": 6.878775000001042,
+      "buildMs": 0.2767579999999725,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.6500009999999747,
+      "geometryDecodeMs": 3.222114000000147
+    },
+    {
+      "id": "4096:-5120",
+      "buildings": 2464,
+      "decodeMs": 124.20027200000004,
+      "buildMs": 0.4234489999998914,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.403136000000814,
+      "geometryDecodeMs": 112.78557899999942
+    },
+    {
+      "id": "4096:-4096",
+      "buildings": 2802,
+      "decodeMs": 28.849355000000287,
+      "buildMs": 0.3796730000012758,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 16.216993000000002,
+      "geometryDecodeMs": 12.619362000001274
+    },
+    {
+      "id": "4096:-3072",
+      "buildings": 312,
+      "decodeMs": 4.4142940000001545,
+      "buildMs": 0.2668229999999312,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.616049000000203,
+      "geometryDecodeMs": 1.7925869999999122
+    },
+    {
+      "id": "4096:-2048",
+      "buildings": 458,
+      "decodeMs": 5.500184000000445,
+      "buildMs": 0.252119999999195,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.445932000000539,
+      "geometryDecodeMs": 2.0502250000008644
+    },
+    {
+      "id": "4096:-1024",
+      "buildings": 1570,
+      "decodeMs": 14.240920000000187,
+      "buildMs": 0.3501090000008844,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.190996000001178,
+      "geometryDecodeMs": 6.041089999998803
+    },
+    {
+      "id": "4096:0",
+      "buildings": 1372,
+      "decodeMs": 112.24961499999881,
+      "buildMs": 0.6920850000005885,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.500153000000864,
+      "geometryDecodeMs": 103.74073899999894
+    },
+    {
+      "id": "4096:1024",
+      "buildings": 2144,
+      "decodeMs": 29.30593299999964,
+      "buildMs": 1.233221999998932,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 14.403424000000086,
+      "geometryDecodeMs": 14.89204299999983
+    },
+    {
+      "id": "4096:2048",
+      "buildings": 1487,
+      "decodeMs": 20.239896000000954,
+      "buildMs": 0.5318429999988439,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.057533999999578,
+      "geometryDecodeMs": 11.17280799999935
+    },
+    {
+      "id": "4096:3072",
+      "buildings": 1654,
+      "decodeMs": 94.02459999999883,
+      "buildMs": 0.6492999999991298,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 83.7412349999995,
+      "geometryDecodeMs": 10.272619000001214
+    },
+    {
+      "id": "4096:4096",
+      "buildings": 2792,
+      "decodeMs": 22.27192400000058,
+      "buildMs": 0.40126600000075996,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.872835000000123,
+      "geometryDecodeMs": 10.387902999998914
+    },
+    {
+      "id": "4096:5120",
+      "buildings": 1599,
+      "decodeMs": 13.68434999999954,
+      "buildMs": 0.7297419999995327,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.54814499999884,
+      "geometryDecodeMs": 6.127610999999888
+    },
+    {
+      "id": "4096:6144",
+      "buildings": 1288,
+      "decodeMs": 157.77001800000107,
+      "buildMs": 0.2759360000000015,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 149.44749299999967,
+      "geometryDecodeMs": 8.311788000000888
+    },
+    {
+      "id": "4096:7168",
+      "buildings": 609,
+      "decodeMs": 4.702530000000479,
+      "buildMs": 0.21130900000025576,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.7304819999990286,
+      "geometryDecodeMs": 1.9670200000000477
+    },
+    {
+      "id": "4096:8192",
+      "buildings": 61,
+      "decodeMs": 0.9678810000004887,
+      "buildMs": 0.07698600000003353,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6989059999996243,
+      "geometryDecodeMs": 0.2655900000008842
+    },
+    {
+      "id": "4096:9216",
+      "buildings": 3,
+      "decodeMs": 0.5216770000006363,
+      "buildMs": 0.0363550000001851,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4750879999992321,
+      "geometryDecodeMs": 0.04493700000057288
+    },
+    {
+      "id": "4096:10240",
+      "buildings": 2,
+      "decodeMs": 0.31847100000049977,
+      "buildMs": 0.019720000000233995,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3015349999986938,
+      "geometryDecodeMs": 0.015744000000267988
+    },
+    {
+      "id": "4096:11264",
+      "buildings": 0,
+      "decodeMs": 0.3874850000011065,
+      "buildMs": 0.008163000000422471,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.38517099999990023,
+      "geometryDecodeMs": 0.0013120000003254972
+    },
+    {
+      "id": "4096:12288",
+      "buildings": 0,
+      "decodeMs": 0.06168299999990268,
+      "buildMs": 0.004928000000290922,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.0600799999992887,
+      "geometryDecodeMs": 0.0010419999998703133
+    },
+    {
+      "id": "5120:-9216",
+      "buildings": 11,
+      "decodeMs": 0.8546810000007099,
+      "buildMs": 0.06435700000110955,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6711830000003829,
+      "geometryDecodeMs": 0.1819950000008248
+    },
+    {
+      "id": "5120:-8192",
+      "buildings": 20,
+      "decodeMs": 1.0059779999992315,
+      "buildMs": 0.09304100000008475,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7440530000003491,
+      "geometryDecodeMs": 0.2604929999997694
+    },
+    {
+      "id": "5120:-7168",
+      "buildings": 195,
+      "decodeMs": 2.9513160000005882,
+      "buildMs": 0.18288599999868893,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.849181999999928,
+      "geometryDecodeMs": 1.0992000000005646
+    },
+    {
+      "id": "5120:-6144",
+      "buildings": 507,
+      "decodeMs": 5.96968299999935,
+      "buildMs": 0.2990509999999631,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.4413750000003347,
+      "geometryDecodeMs": 2.5242310000012367
+    },
+    {
+      "id": "5120:-5120",
+      "buildings": 882,
+      "decodeMs": 10.197566000000734,
+      "buildMs": 0.34212599999955273,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.60716500000126,
+      "geometryDecodeMs": 4.580404999998791
+    },
+    {
+      "id": "5120:-4096",
+      "buildings": 1681,
+      "decodeMs": 15.066796999999497,
+      "buildMs": 0.38640400000076625,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.375114000000394,
+      "geometryDecodeMs": 6.682369000000108
+    },
+    {
+      "id": "5120:-3072",
+      "buildings": 531,
+      "decodeMs": 6.693764999999985,
+      "buildMs": 0.33515600000100676,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.710251000000426,
+      "geometryDecodeMs": 2.977576000001136
+    },
+    {
+      "id": "5120:-2048",
+      "buildings": 639,
+      "decodeMs": 7.035190999999031,
+      "buildMs": 0.36984799999845563,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.068391999999221,
+      "geometryDecodeMs": 2.9610410000004777
+    },
+    {
+      "id": "5120:-1024",
+      "buildings": 847,
+      "decodeMs": 9.054288999999699,
+      "buildMs": 0.3566080000000511,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.927568999999494,
+      "geometryDecodeMs": 4.118056999999681
+    },
+    {
+      "id": "5120:0",
+      "buildings": 318,
+      "decodeMs": 6.4196220000012545,
+      "buildMs": 0.5742969999992056,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.5323929999995016,
+      "geometryDecodeMs": 2.8819410000014614
+    },
+    {
+      "id": "5120:1024",
+      "buildings": 1288,
+      "decodeMs": 17.964411000000837,
+      "buildMs": 0.3530430000009801,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.801207000000431,
+      "geometryDecodeMs": 8.152898000000278
+    },
+    {
+      "id": "5120:2048",
+      "buildings": 1058,
+      "decodeMs": 19.872009000000617,
+      "buildMs": 0.3645809999998164,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.78569299999981,
+      "geometryDecodeMs": 10.076161000000866
+    },
+    {
+      "id": "5120:3072",
+      "buildings": 2337,
+      "decodeMs": 19.44587599999977,
+      "buildMs": 0.4191820000014559,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 10.175421999998434,
+      "geometryDecodeMs": 9.260269000000335
+    },
+    {
+      "id": "5120:4096",
+      "buildings": 3507,
+      "decodeMs": 178.3230050000002,
+      "buildMs": 0.40444099999876926,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 160.3039630000003,
+      "geometryDecodeMs": 18.00618299999951
+    },
+    {
+      "id": "5120:5120",
+      "buildings": 2814,
+      "decodeMs": 30.574937000001228,
+      "buildMs": 0.5853430000006483,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 13.858280999998897,
+      "geometryDecodeMs": 16.70538000000124
+    },
+    {
+      "id": "5120:6144",
+      "buildings": 2733,
+      "decodeMs": 150.7410259999997,
+      "buildMs": 0.3769690000008268,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 140.38534199999958,
+      "geometryDecodeMs": 10.342693000000509
+    },
+    {
+      "id": "5120:7168",
+      "buildings": 886,
+      "decodeMs": 8.26258400000006,
+      "buildMs": 0.2823969999990368,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.7625089999983174,
+      "geometryDecodeMs": 3.4930330000006506
+    },
+    {
+      "id": "5120:8192",
+      "buildings": 436,
+      "decodeMs": 4.079248999998526,
+      "buildMs": 0.24177500000041618,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.6283480000001873,
+      "geometryDecodeMs": 1.4460929999986547
+    },
+    {
+      "id": "5120:9216",
+      "buildings": 80,
+      "decodeMs": 1.1508280000016384,
+      "buildMs": 0.07975999999871419,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8048549999984971,
+      "geometryDecodeMs": 0.344029000001683
+    },
+    {
+      "id": "5120:10240",
+      "buildings": 36,
+      "decodeMs": 0.7546689999999217,
+      "buildMs": 0.02685100000053353,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.47293399999944086,
+      "geometryDecodeMs": 0.28000299999985145
+    },
+    {
+      "id": "5120:11264",
+      "buildings": 84,
+      "decodeMs": 1.6805060000006051,
+      "buildMs": 0.09312999999929161,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0501150000000052,
+      "geometryDecodeMs": 0.6287389999997686
+    },
+    {
+      "id": "5120:12288",
+      "buildings": 1,
+      "decodeMs": 0.2158560000007128,
+      "buildMs": 0.014140999999654014,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.20656200000121316,
+      "geometryDecodeMs": 0.008432999999058666
+    },
+    {
+      "id": "6144:-9216",
+      "buildings": 18,
+      "decodeMs": 0.7094809999998688,
+      "buildMs": 0.1691049999990355,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5939469999993889,
+      "geometryDecodeMs": 0.11396199999944656
+    },
+    {
+      "id": "6144:-8192",
+      "buildings": 45,
+      "decodeMs": 1.1197609999999258,
+      "buildMs": 0.119870999998966,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8538189999999304,
+      "geometryDecodeMs": 0.26412800000071
+    },
+    {
+      "id": "6144:-7168",
+      "buildings": 57,
+      "decodeMs": 1.6206070000007458,
+      "buildMs": 0.15243100000043341,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.2308190000003378,
+      "geometryDecodeMs": 0.3883559999994759
+    },
+    {
+      "id": "6144:-6144",
+      "buildings": 538,
+      "decodeMs": 5.685301999999865,
+      "buildMs": 0.2902279999998427,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.382836999999199,
+      "geometryDecodeMs": 2.298259000001053
+    },
+    {
+      "id": "6144:-5120",
+      "buildings": 665,
+      "decodeMs": 9.472841000000699,
+      "buildMs": 0.32414000000062515,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.96085900000071,
+      "geometryDecodeMs": 4.445981999999276
+    },
+    {
+      "id": "6144:-4096",
+      "buildings": 1020,
+      "decodeMs": 11.942939999998998,
+      "buildMs": 0.4288680000008753,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.839504999999917,
+      "geometryDecodeMs": 6.094992000000275
+    },
+    {
+      "id": "6144:-3072",
+      "buildings": 1014,
+      "decodeMs": 10.502304999999978,
+      "buildMs": 0.38772599999902013,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.9769930000002205,
+      "geometryDecodeMs": 4.516107999999804
+    },
+    {
+      "id": "6144:-2048",
+      "buildings": 1141,
+      "decodeMs": 107.36325099999885,
+      "buildMs": 0.4129929999999149,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 101.87334200000078,
+      "geometryDecodeMs": 5.480003000000579
+    },
+    {
+      "id": "6144:-1024",
+      "buildings": 543,
+      "decodeMs": 8.54364700000042,
+      "buildMs": 0.4282169999987673,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.258168000000296,
+      "geometryDecodeMs": 4.276615999999194
+    },
+    {
+      "id": "6144:0",
+      "buildings": 361,
+      "decodeMs": 7.164286000001084,
+      "buildMs": 0.318450999999186,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.4746959999993123,
+      "geometryDecodeMs": 3.683951999999408
+    },
+    {
+      "id": "6144:1024",
+      "buildings": 467,
+      "decodeMs": 8.532811000000947,
+      "buildMs": 0.3574900000003254,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.634937999999238,
+      "geometryDecodeMs": 3.890943000000334
+    },
+    {
+      "id": "6144:2048",
+      "buildings": 1552,
+      "decodeMs": 20.460008000000016,
+      "buildMs": 0.43537800000012794,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.205165999999736,
+      "geometryDecodeMs": 9.244565999999395
+    },
+    {
+      "id": "6144:3072",
+      "buildings": 1186,
+      "decodeMs": 13.45498199999929,
+      "buildMs": 0.3574290000015026,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.075702000000092,
+      "geometryDecodeMs": 6.369054999999207
+    },
+    {
+      "id": "6144:4096",
+      "buildings": 1476,
+      "decodeMs": 13.180738000000929,
+      "buildMs": 0.3775999999998021,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.081600999999864,
+      "geometryDecodeMs": 6.089572999999291
+    },
+    {
+      "id": "6144:5120",
+      "buildings": 2256,
+      "decodeMs": 18.43042400000013,
+      "buildMs": 0.3443889999998646,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.666903999999704,
+      "geometryDecodeMs": 8.753334000000905
+    },
+    {
+      "id": "6144:6144",
+      "buildings": 1167,
+      "decodeMs": 10.476024999999936,
+      "buildMs": 0.3519510000005539,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.892805000001317,
+      "geometryDecodeMs": 4.5741760000000795
+    },
+    {
+      "id": "6144:7168",
+      "buildings": 1138,
+      "decodeMs": 149.94141800000034,
+      "buildMs": 0.3249899999991612,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 143.5013459999991,
+      "geometryDecodeMs": 6.429517000000487
+    },
+    {
+      "id": "6144:8192",
+      "buildings": 446,
+      "decodeMs": 5.419101000001319,
+      "buildMs": 0.18665199999850302,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.191037000000506,
+      "geometryDecodeMs": 2.222494999999981
+    },
+    {
+      "id": "6144:9216",
+      "buildings": 12,
+      "decodeMs": 0.48379000000022643,
+      "buildMs": 0.036554999998770654,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3984120000004623,
+      "geometryDecodeMs": 0.08339599999999336
+    },
+    {
+      "id": "6144:10240",
+      "buildings": 0,
+      "decodeMs": 0.4739560000016354,
+      "buildMs": 0.008914000000004307,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.47128100000009,
+      "geometryDecodeMs": 0.001172000000224216
+    },
+    {
+      "id": "6144:11264",
+      "buildings": 62,
+      "decodeMs": 0.625675000001138,
+      "buildMs": 0.026719999999841093,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.45391600000039034,
+      "geometryDecodeMs": 0.17056699999920966
+    },
+    {
+      "id": "6144:12288",
+      "buildings": 1,
+      "decodeMs": 0.11092699999971956,
+      "buildMs": 0.012017999999443418,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.10351599999921746,
+      "geometryDecodeMs": 0.0065699999995558755
+    },
+    {
+      "id": "7168:-9216",
+      "buildings": 23,
+      "decodeMs": 0.6728559999992285,
+      "buildMs": 0.05120799999895098,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5487090000005992,
+      "geometryDecodeMs": 0.12294500000098196
+    },
+    {
+      "id": "7168:-8192",
+      "buildings": 65,
+      "decodeMs": 2.361285000000862,
+      "buildMs": 0.16909499999928812,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.6540870000008,
+      "geometryDecodeMs": 0.7045930000003864
+    },
+    {
+      "id": "7168:-7168",
+      "buildings": 76,
+      "decodeMs": 2.168002999998862,
+      "buildMs": 0.1900870000008581,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.463039000000208,
+      "geometryDecodeMs": 0.7022399999987101
+    },
+    {
+      "id": "7168:-6144",
+      "buildings": 1996,
+      "decodeMs": 16.83039800000006,
+      "buildMs": 0.3539440000004106,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.055589999999938,
+      "geometryDecodeMs": 7.765514000000621
+    },
+    {
+      "id": "7168:-5120",
+      "buildings": 1433,
+      "decodeMs": 12.203332000000955,
+      "buildMs": 0.36767499999768916,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.471250000002328,
+      "geometryDecodeMs": 5.724310999998124
+    },
+    {
+      "id": "7168:-4096",
+      "buildings": 631,
+      "decodeMs": 9.857582000000548,
+      "buildMs": 0.303076999996847,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.680807000000641,
+      "geometryDecodeMs": 5.169204000001628
+    },
+    {
+      "id": "7168:-3072",
+      "buildings": 485,
+      "decodeMs": 7.379500999999436,
+      "buildMs": 0.5557890000018233,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.058026000002428,
+      "geometryDecodeMs": 3.3159659999982978
+    },
+    {
+      "id": "7168:-2048",
+      "buildings": 2003,
+      "decodeMs": 17.204013999999006,
+      "buildMs": 0.3306490000031772,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.649289000000863,
+      "geometryDecodeMs": 7.543108000001666
+    },
+    {
+      "id": "7168:-1024",
+      "buildings": 732,
+      "decodeMs": 8.884512999997241,
+      "buildMs": 0.2946040000024368,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.843342000000121,
+      "geometryDecodeMs": 4.0334900000016205
+    },
+    {
+      "id": "7168:0",
+      "buildings": 1066,
+      "decodeMs": 19.735806000000593,
+      "buildMs": 0.3694279999981518,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.98405300000013,
+      "geometryDecodeMs": 9.739534000000276
+    },
+    {
+      "id": "7168:1024",
+      "buildings": 890,
+      "decodeMs": 10.132427000000462,
+      "buildMs": 0.2719509999988077,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.616048999996565,
+      "geometryDecodeMs": 4.50812600000063
+    },
+    {
+      "id": "7168:2048",
+      "buildings": 1339,
+      "decodeMs": 91.01157299999977,
+      "buildMs": 0.37156099999992875,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 79.69237400000202,
+      "geometryDecodeMs": 11.308873999998468
+    },
+    {
+      "id": "7168:3072",
+      "buildings": 2104,
+      "decodeMs": 21.422763000002305,
+      "buildMs": 0.35455500000171014,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.73508700000093,
+      "geometryDecodeMs": 9.676478999997926
+    },
+    {
+      "id": "7168:4096",
+      "buildings": 1109,
+      "decodeMs": 8.566532999997435,
+      "buildMs": 0.23252099999808706,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.980830000000424,
+      "geometryDecodeMs": 3.578653000000486
+    },
+    {
+      "id": "7168:5120",
+      "buildings": 557,
+      "decodeMs": 5.764963999998145,
+      "buildMs": 0.17912100000103237,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.4322009999996226,
+      "geometryDecodeMs": 2.327884999998787
+    },
+    {
+      "id": "7168:6144",
+      "buildings": 659,
+      "decodeMs": 9.057874999998603,
+      "buildMs": 0.2405429999998887,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.633714999999938,
+      "geometryDecodeMs": 3.416527999997925
+    },
+    {
+      "id": "7168:7168",
+      "buildings": 314,
+      "decodeMs": 4.268783999999869,
+      "buildMs": 0.17550499999924796,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.2104870000002848,
+      "geometryDecodeMs": 2.0521479999988514
+    },
+    {
+      "id": "7168:8192",
+      "buildings": 201,
+      "decodeMs": 2.8203380000013567,
+      "buildMs": 0.14344600000185892,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.802772000002733,
+      "geometryDecodeMs": 1.0141210000001593
+    },
+    {
+      "id": "7168:9216",
+      "buildings": 52,
+      "decodeMs": 1.0035250000000815,
+      "buildMs": 0.0808820000020205,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5918439999986731,
+      "geometryDecodeMs": 0.40868699999919045
+    },
+    {
+      "id": "7168:10240",
+      "buildings": 5,
+      "decodeMs": 0.42608300000210875,
+      "buildMs": 0.03633500000069034,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.39155100000061793,
+      "geometryDecodeMs": 0.03337999999712338
+    },
+    {
+      "id": "7168:11264",
+      "buildings": 176,
+      "decodeMs": 3.885226000002149,
+      "buildMs": 0.10802299999704701,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.4204549999994924,
+      "geometryDecodeMs": 2.46184699999867
+    },
+    {
+      "id": "7168:12288",
+      "buildings": 301,
+      "decodeMs": 3.9320259999985865,
+      "buildMs": 0.07652499999676365,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.1294660000021395,
+      "geometryDecodeMs": 1.79378799999904
+    },
+    {
+      "id": "8192:-9216",
+      "buildings": 252,
+      "decodeMs": 3.4344049999999697,
+      "buildMs": 0.21876100000008591,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.9359829999993963,
+      "geometryDecodeMs": 1.492432999999437
+    },
+    {
+      "id": "8192:-8192",
+      "buildings": 394,
+      "decodeMs": 6.588386999999784,
+      "buildMs": 0.26104400000258465,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.8363119999994524,
+      "geometryDecodeMs": 2.7461459999976796
+    },
+    {
+      "id": "8192:-7168",
+      "buildings": 110,
+      "decodeMs": 2.2128100000009,
+      "buildMs": 0.17934100000275066,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.4201040000007197,
+      "geometryDecodeMs": 0.7886199999993551
+    },
+    {
+      "id": "8192:-6144",
+      "buildings": 2168,
+      "decodeMs": 21.18625500000053,
+      "buildMs": 0.42366000000038184,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 12.7339839999986,
+      "geometryDecodeMs": 8.440582999999606
+    },
+    {
+      "id": "8192:-5120",
+      "buildings": 1461,
+      "decodeMs": 12.590789000001678,
+      "buildMs": 0.4305500000009488,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.088440999999875,
+      "geometryDecodeMs": 5.493523999997706
+    },
+    {
+      "id": "8192:-4096",
+      "buildings": 2464,
+      "decodeMs": 104.85611900000004,
+      "buildMs": 0.35707900000124937,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 89.88362500000221,
+      "geometryDecodeMs": 14.962499999997817
+    },
+    {
+      "id": "8192:-3072",
+      "buildings": 3157,
+      "decodeMs": 30.234325999997964,
+      "buildMs": 0.3719119999987015,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 16.10110899999927,
+      "geometryDecodeMs": 14.12498499999856
+    },
+    {
+      "id": "8192:-2048",
+      "buildings": 3506,
+      "decodeMs": 172.83253999999943,
+      "buildMs": 0.5994249999966996,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 18.76009300000078,
+      "geometryDecodeMs": 154.05891699999847
+    },
+    {
+      "id": "8192:-1024",
+      "buildings": 394,
+      "decodeMs": 6.171986999997898,
+      "buildMs": 0.2857709999989311,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.1401000000005297,
+      "geometryDecodeMs": 3.0266889999984414
+    },
+    {
+      "id": "8192:0",
+      "buildings": 825,
+      "decodeMs": 11.082680999999866,
+      "buildMs": 0.3394220000009227,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.42529000000286,
+      "geometryDecodeMs": 5.651382000000012
+    },
+    {
+      "id": "8192:1024",
+      "buildings": 549,
+      "decodeMs": 8.219939000002341,
+      "buildMs": 0.2570080000004964,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.0978460000005725,
+      "geometryDecodeMs": 4.115132000002632
+    },
+    {
+      "id": "8192:2048",
+      "buildings": 961,
+      "decodeMs": 9.838122000001022,
+      "buildMs": 0.2719409999990603,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.692473000002792,
+      "geometryDecodeMs": 4.1381469999978435
+    },
+    {
+      "id": "8192:3072",
+      "buildings": 507,
+      "decodeMs": 6.5138630000001285,
+      "buildMs": 0.2471129999976256,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.064895999999862,
+      "geometryDecodeMs": 2.442706999998336
+    },
+    {
+      "id": "8192:4096",
+      "buildings": 303,
+      "decodeMs": 2.657932999998593,
+      "buildMs": 0.11736699999892153,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.7587950000015553,
+      "geometryDecodeMs": 0.8949609999981476
+    },
+    {
+      "id": "8192:5120",
+      "buildings": 271,
+      "decodeMs": 2.8366320000022824,
+      "buildMs": 0.1304259999997157,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.0399800000013784,
+      "geometryDecodeMs": 0.7946190000002389
+    },
+    {
+      "id": "8192:6144",
+      "buildings": 415,
+      "decodeMs": 4.077816000000894,
+      "buildMs": 0.15692699999999604,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.624652000002243,
+      "geometryDecodeMs": 1.4494679999988875
+    },
+    {
+      "id": "8192:7168",
+      "buildings": 337,
+      "decodeMs": 2.9776349999992817,
+      "buildMs": 0.11085800000000745,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.8013590000009572,
+      "geometryDecodeMs": 1.1735309999967285
+    },
+    {
+      "id": "8192:8192",
+      "buildings": 17,
+      "decodeMs": 0.48386000000027707,
+      "buildMs": 0.028622999998333398,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.39310399999885703,
+      "geometryDecodeMs": 0.08953499999915948
+    },
+    {
+      "id": "8192:9216",
+      "buildings": 40,
+      "decodeMs": 0.7120649999997113,
+      "buildMs": 0.072970000001078,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4993130000002566,
+      "geometryDecodeMs": 0.2113389999976789
+    },
+    {
+      "id": "8192:10240",
+      "buildings": 1,
+      "decodeMs": 0.15282099999967613,
+      "buildMs": 0.014672000001155538,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.14395800000056624,
+      "geometryDecodeMs": 0.00798199999917415
+    },
+    {
+      "id": "8192:11264",
+      "buildings": 636,
+      "decodeMs": 6.501213999999891,
+      "buildMs": 0.290367999998125,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.5695790000027046,
+      "geometryDecodeMs": 2.923001999999542
+    },
+    {
+      "id": "8192:12288",
+      "buildings": 534,
+      "decodeMs": 4.335244000001694,
+      "buildMs": 0.12206399999922724,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.377669000001333,
+      "geometryDecodeMs": 1.9531079999978829
+    },
+    {
+      "id": "9216:-9216",
+      "buildings": 123,
+      "decodeMs": 1.8189450000027136,
+      "buildMs": 0.17974099999992177,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1696550000015122,
+      "geometryDecodeMs": 0.646336000001611
+    },
+    {
+      "id": "9216:-8192",
+      "buildings": 515,
+      "decodeMs": 4.68492299999707,
+      "buildMs": 0.1696059999994759,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.76040699999794,
+      "geometryDecodeMs": 1.9210200000015902
+    },
+    {
+      "id": "9216:-7168",
+      "buildings": 99,
+      "decodeMs": 1.6453340000007302,
+      "buildMs": 0.13947099999859347,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1227549999966868,
+      "geometryDecodeMs": 0.5204350000021805
+    },
+    {
+      "id": "9216:-6144",
+      "buildings": 959,
+      "decodeMs": 8.350576000000729,
+      "buildMs": 0.2195610000017041,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.819565999998304,
+      "geometryDecodeMs": 3.523358999998891
+    },
+    {
+      "id": "9216:-5120",
+      "buildings": 1355,
+      "decodeMs": 10.87444499999765,
+      "buildMs": 0.34262699999817414,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.029130999999325,
+      "geometryDecodeMs": 4.836370999997598
+    },
+    {
+      "id": "9216:-4096",
+      "buildings": 1086,
+      "decodeMs": 9.322072999999364,
+      "buildMs": 0.33955299999797717,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.072317000001931,
+      "geometryDecodeMs": 4.2437169999975595
+    },
+    {
+      "id": "9216:-3072",
+      "buildings": 763,
+      "decodeMs": 8.323344000000361,
+      "buildMs": 0.35994299999947543,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.536768999998458,
+      "geometryDecodeMs": 3.7797150000005786
+    },
+    {
+      "id": "9216:-2048",
+      "buildings": 369,
+      "decodeMs": 6.5256310000004305,
+      "buildMs": 0.28517099999953643,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.293652000000293,
+      "geometryDecodeMs": 3.22570899999846
+    },
+    {
+      "id": "9216:-1024",
+      "buildings": 339,
+      "decodeMs": 4.497459999998682,
+      "buildMs": 0.26529999999911524,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.695519000000786,
+      "geometryDecodeMs": 1.797074000001885
+    },
+    {
+      "id": "9216:0",
+      "buildings": 786,
+      "decodeMs": 8.248462000003201,
+      "buildMs": 0.3110999999989872,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.907909000001382,
+      "geometryDecodeMs": 3.334382999997615
+    },
+    {
+      "id": "9216:1024",
+      "buildings": 761,
+      "decodeMs": 104.07697300000291,
+      "buildMs": 0.3590519999997923,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.867608000000473,
+      "geometryDecodeMs": 99.20159200000126
+    },
+    {
+      "id": "9216:2048",
+      "buildings": 731,
+      "decodeMs": 8.344435999999405,
+      "buildMs": 0.29904099999839673,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.378629999999248,
+      "geometryDecodeMs": 3.958425000000716
+    },
+    {
+      "id": "9216:3072",
+      "buildings": 391,
+      "decodeMs": 5.329074999997829,
+      "buildMs": 0.26566100000127335,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.3154749999994237,
+      "geometryDecodeMs": 2.00778100000025
+    },
+    {
+      "id": "9216:4096",
+      "buildings": 128,
+      "decodeMs": 1.5332950000010896,
+      "buildMs": 0.14010199999756878,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.004095000000234,
+      "geometryDecodeMs": 0.5250229999983276
+    },
+    {
+      "id": "9216:5120",
+      "buildings": 114,
+      "decodeMs": 1.5143860000025597,
+      "buildMs": 0.0677830000022368,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1119090000029246,
+      "geometryDecodeMs": 0.4003739999971003
+    },
+    {
+      "id": "9216:6144",
+      "buildings": 61,
+      "decodeMs": 0.8415509999977075,
+      "buildMs": 0.06828300000051968,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5755090000020573,
+      "geometryDecodeMs": 0.26470899999912945
+    },
+    {
+      "id": "9216:7168",
+      "buildings": 2,
+      "decodeMs": 0.3002229999983683,
+      "buildMs": 0.014402000000700355,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2829170000004524,
+      "geometryDecodeMs": 0.016134999998030253
+    },
+    {
+      "id": "9216:8192",
+      "buildings": 20,
+      "decodeMs": 0.48125599999912083,
+      "buildMs": 0.050526999999419786,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.31236100000023725,
+      "geometryDecodeMs": 0.16769399999975576
+    },
+    {
+      "id": "9216:9216",
+      "buildings": 63,
+      "decodeMs": 1.189726000000519,
+      "buildMs": 0.07997099999920465,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.701508999998623,
+      "geometryDecodeMs": 0.4867149999990943
+    },
+    {
+      "id": "9216:10240",
+      "buildings": 6,
+      "decodeMs": 0.31096899999829475,
+      "buildMs": 0.023615999998582993,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2753049999992072,
+      "geometryDecodeMs": 0.03486300000076881
+    },
+    {
+      "id": "9216:11264",
+      "buildings": 788,
+      "decodeMs": 6.967408000000432,
+      "buildMs": 0.335665999999037,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.090335000000778,
+      "geometryDecodeMs": 2.87359799999831
+    },
+    {
+      "id": "9216:12288",
+      "buildings": 679,
+      "decodeMs": 5.4338430000025255,
+      "buildMs": 0.13485299999956624,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.011686000001646,
+      "geometryDecodeMs": 2.4179000000003725
+    },
+    {
+      "id": "10240:-9216",
+      "buildings": 40,
+      "decodeMs": 0.7842239999990852,
+      "buildMs": 0.08690099999876111,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.47289399999863235,
+      "geometryDecodeMs": 0.3089570000011008
+    },
+    {
+      "id": "10240:-8192",
+      "buildings": 5,
+      "decodeMs": 0.35942200000135927,
+      "buildMs": 0.03705600000103004,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.32986800000071526,
+      "geometryDecodeMs": 0.0280319999983476
+    },
+    {
+      "id": "10240:-7168",
+      "buildings": 20,
+      "decodeMs": 0.8795680000002903,
+      "buildMs": 0.05167799999981071,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7547889999987092,
+      "geometryDecodeMs": 0.12301600000137114
+    },
+    {
+      "id": "10240:-6144",
+      "buildings": 19,
+      "decodeMs": 0.5347670000010112,
+      "buildMs": 0.06991500000003725,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.43395500000042375,
+      "geometryDecodeMs": 0.0990189999974973
+    },
+    {
+      "id": "10240:-5120",
+      "buildings": 156,
+      "decodeMs": 2.204127000000881,
+      "buildMs": 0.20705300000190618,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.394575000002078,
+      "geometryDecodeMs": 0.8078189999978349
+    },
+    {
+      "id": "10240:-4096",
+      "buildings": 336,
+      "decodeMs": 3.90251200000057,
+      "buildMs": 0.24115399999936926,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.1616030000004685,
+      "geometryDecodeMs": 1.7362610000018321
+    },
+    {
+      "id": "10240:-3072",
+      "buildings": 157,
+      "decodeMs": 6.620424000000639,
+      "buildMs": 0.19880000000193832,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.1953839999987395,
+      "geometryDecodeMs": 4.419792000000598
+    },
+    {
+      "id": "10240:-2048",
+      "buildings": 47,
+      "decodeMs": 1.4201839999986987,
+      "buildMs": 0.15618600000016158,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.028411999999662,
+      "geometryDecodeMs": 0.3879959999976563
+    },
+    {
+      "id": "10240:-1024",
+      "buildings": 287,
+      "decodeMs": 3.1736410000012256,
+      "buildMs": 0.23858000000109314,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.8910950000026787,
+      "geometryDecodeMs": 1.2801330000002054
+    },
+    {
+      "id": "10240:0",
+      "buildings": 1928,
+      "decodeMs": 24.372591999999713,
+      "buildMs": 0.37715899999966496,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.386310000001686,
+      "geometryDecodeMs": 14.975615999999718
+    },
+    {
+      "id": "10240:1024",
+      "buildings": 979,
+      "decodeMs": 10.537920000002487,
+      "buildMs": 0.3328529999998864,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.431800000002113,
+      "geometryDecodeMs": 4.0985079999991285
+    },
+    {
+      "id": "10240:2048",
+      "buildings": 731,
+      "decodeMs": 8.052716999998665,
+      "buildMs": 0.3086760000005597,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.430448000002798,
+      "geometryDecodeMs": 3.615037999999913
+    },
+    {
+      "id": "10240:3072",
+      "buildings": 399,
+      "decodeMs": 4.192989999999554,
+      "buildMs": 0.3897880000004079,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.676701000000321,
+      "geometryDecodeMs": 1.5109909999991942
+    },
+    {
+      "id": "10240:4096",
+      "buildings": 12,
+      "decodeMs": 0.4208650000000489,
+      "buildMs": 0.08186299999943003,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3092370000013034,
+      "geometryDecodeMs": 0.10744200000044657
+    },
+    {
+      "id": "10240:5120",
+      "buildings": 6,
+      "decodeMs": 0.3002730000007432,
+      "buildMs": 0.03303000000232714,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.25518599999850267,
+      "geometryDecodeMs": 0.04368600000088918
+    },
+    {
+      "id": "10240:6144",
+      "buildings": 28,
+      "decodeMs": 0.6934560000008787,
+      "buildMs": 0.06782200000088778,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5690089999989141,
+      "geometryDecodeMs": 0.12300600000162376
+    },
+    {
+      "id": "10240:7168",
+      "buildings": 7,
+      "decodeMs": 0.5426399999996647,
+      "buildMs": 0.031187999997200677,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.506665000000794,
+      "geometryDecodeMs": 0.03451199999835808
+    },
+    {
+      "id": "10240:8192",
+      "buildings": 146,
+      "decodeMs": 1.2844890000014857,
+      "buildMs": 0.06292499999835854,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7886499999985972,
+      "geometryDecodeMs": 0.4937260000006063
+    },
+    {
+      "id": "10240:9216",
+      "buildings": 298,
+      "decodeMs": 228.22319199999765,
+      "buildMs": 0.2529319999994186,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.7279790000029607,
+      "geometryDecodeMs": 225.48827299999903
+    },
+    {
+      "id": "10240:10240",
+      "buildings": 270,
+      "decodeMs": 2.664693000002444,
+      "buildMs": 0.15819899999769405,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.5509209999981977,
+      "geometryDecodeMs": 1.1075119999986782
+    },
+    {
+      "id": "10240:11264",
+      "buildings": 867,
+      "decodeMs": 7.941248999999516,
+      "buildMs": 0.3408839999974589,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.485892000000604,
+      "geometryDecodeMs": 3.4472939999977825
+    },
+    {
+      "id": "10240:12288",
+      "buildings": 149,
+      "decodeMs": 1.689580999998725,
+      "buildMs": 0.15350200000102632,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0478220000004512,
+      "geometryDecodeMs": 0.6381729999993695
+    },
+    {
+      "id": "11264:-9216",
+      "buildings": 139,
+      "decodeMs": 1.822081000002072,
+      "buildMs": 0.13163799999892944,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1139320000002044,
+      "geometryDecodeMs": 0.7052250000015192
+    },
+    {
+      "id": "11264:-8192",
+      "buildings": 0,
+      "decodeMs": 0.2602729999998701,
+      "buildMs": 0.0064399999973829836,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.25753899999835994,
+      "geometryDecodeMs": 0.0013319999998202547
+    },
+    {
+      "id": "11264:-7168",
+      "buildings": 26,
+      "decodeMs": 0.5459440000013274,
+      "buildMs": 0.04590900000039255,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.41744000000107917,
+      "geometryDecodeMs": 0.12735299999985727
+    },
+    {
+      "id": "11264:-6144",
+      "buildings": 737,
+      "decodeMs": 6.903341999997792,
+      "buildMs": 0.20436899999913294,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.186991000002308,
+      "geometryDecodeMs": 2.709990999999718
+    },
+    {
+      "id": "11264:-5120",
+      "buildings": 125,
+      "decodeMs": 1.538381999998819,
+      "buildMs": 0.1781489999993937,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0111160000014934,
+      "geometryDecodeMs": 0.5229089999993448
+    },
+    {
+      "id": "11264:-4096",
+      "buildings": 508,
+      "decodeMs": 5.38632200000211,
+      "buildMs": 0.2278039999982866,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.179759999999078,
+      "geometryDecodeMs": 2.1994809999996505
+    },
+    {
+      "id": "11264:-3072",
+      "buildings": 136,
+      "decodeMs": 2.017335999997158,
+      "buildMs": 0.15127900000152295,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.2568870000031893,
+      "geometryDecodeMs": 0.756902999997692
+    },
+    {
+      "id": "11264:-2048",
+      "buildings": 69,
+      "decodeMs": 1.00680999999895,
+      "buildMs": 0.09634599999844795,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7037230000023555,
+      "geometryDecodeMs": 0.3007639999996172
+    },
+    {
+      "id": "11264:-1024",
+      "buildings": 398,
+      "decodeMs": 3.957715000000462,
+      "buildMs": 0.14493900000161375,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.5007750000004307,
+      "geometryDecodeMs": 1.4535539999997127
+    },
+    {
+      "id": "11264:0",
+      "buildings": 902,
+      "decodeMs": 8.160619999998744,
+      "buildMs": 0.32889699999941513,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.583579999998619,
+      "geometryDecodeMs": 3.569018000001961
+    },
+    {
+      "id": "11264:1024",
+      "buildings": 1080,
+      "decodeMs": 8.759754999999132,
+      "buildMs": 0.327103999999963,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.761779000000388,
+      "geometryDecodeMs": 3.9908849999992526
+    },
+    {
+      "id": "11264:2048",
+      "buildings": 1146,
+      "decodeMs": 9.908369000000675,
+      "buildMs": 0.35944300000119256,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.55318299999999,
+      "geometryDecodeMs": 4.344880000000558
+    },
+    {
+      "id": "11264:3072",
+      "buildings": 1343,
+      "decodeMs": 12.584509000000253,
+      "buildMs": 0.31159000000116066,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.130045000001701,
+      "geometryDecodeMs": 5.444790000001376
+    },
+    {
+      "id": "11264:4096",
+      "buildings": 491,
+      "decodeMs": 5.42112399999678,
+      "buildMs": 0.44186700000136625,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.5834299999987707,
+      "geometryDecodeMs": 1.8300530000014987
+    },
+    {
+      "id": "11264:5120",
+      "buildings": 18,
+      "decodeMs": 0.606644999999844,
+      "buildMs": 0.05594500000006519,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4497990000018035,
+      "geometryDecodeMs": 0.15313099999912083
+    },
+    {
+      "id": "11264:6144",
+      "buildings": 144,
+      "decodeMs": 2.025377000001754,
+      "buildMs": 0.07302999999956228,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3108589999974356,
+      "geometryDecodeMs": 0.7114040000014938
+    },
+    {
+      "id": "11264:7168",
+      "buildings": 175,
+      "decodeMs": 2.6123640000005253,
+      "buildMs": 0.17519499999980326,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.6642630000023928,
+      "geometryDecodeMs": 0.9445059999998193
+    },
+    {
+      "id": "11264:8192",
+      "buildings": 132,
+      "decodeMs": 101.74059900000066,
+      "buildMs": 0.3117610000008426,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3436379999984638,
+      "geometryDecodeMs": 100.3900100000028
+    },
+    {
+      "id": "11264:9216",
+      "buildings": 896,
+      "decodeMs": 7.238267999997333,
+      "buildMs": 0.23498500000278,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.986518999998225,
+      "geometryDecodeMs": 3.2453800000002957
+    },
+    {
+      "id": "11264:10240",
+      "buildings": 1274,
+      "decodeMs": 10.180489000002126,
+      "buildMs": 0.3398029999989376,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.647616000002017,
+      "geometryDecodeMs": 4.5220269999990705
+    },
+    {
+      "id": "11264:11264",
+      "buildings": 579,
+      "decodeMs": 5.492793000001257,
+      "buildMs": 0.47749100000146427,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.231809000000794,
+      "geometryDecodeMs": 2.252851000001101
+    },
+    {
+      "id": "11264:12288",
+      "buildings": 224,
+      "decodeMs": 2.654007000001002,
+      "buildMs": 0.08600999999907799,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.4442000000017288,
+      "geometryDecodeMs": 1.2048690000010538
+    },
+    {
+      "id": "12288:-9216",
+      "buildings": 226,
+      "decodeMs": 2.3084950000011304,
+      "buildMs": 0.11395200000333716,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3533930000012333,
+      "geometryDecodeMs": 0.9517070000001695
+    },
+    {
+      "id": "12288:-8192",
+      "buildings": 35,
+      "decodeMs": 0.7617299999983516,
+      "buildMs": 0.20792399999845657,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.596109999998589,
+      "geometryDecodeMs": 0.16144300000087242
+    },
+    {
+      "id": "12288:-7168",
+      "buildings": 3,
+      "decodeMs": 0.34690300000147545,
+      "buildMs": 0.03158800000164774,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3257819999998901,
+      "geometryDecodeMs": 0.01939900000070338
+    },
+    {
+      "id": "12288:-6144",
+      "buildings": 126,
+      "decodeMs": 1.7967619999981252,
+      "buildMs": 0.07687599999917438,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0463700000000244,
+      "geometryDecodeMs": 0.7479889999995066
+    },
+    {
+      "id": "12288:-5120",
+      "buildings": 3,
+      "decodeMs": 0.3046200000026147,
+      "buildMs": 0.04431699999986449,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.24488000000201282,
+      "geometryDecodeMs": 0.056033999997453066
+    },
+    {
+      "id": "12288:-4096",
+      "buildings": 6,
+      "decodeMs": 0.446803999999247,
+      "buildMs": 0.0320289999981469,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.38703499999974156,
+      "geometryDecodeMs": 0.05835800000204472
+    },
+    {
+      "id": "12288:-3072",
+      "buildings": 38,
+      "decodeMs": 1.1941729999998643,
+      "buildMs": 0.09705700000267825,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9194979999992938,
+      "geometryDecodeMs": 0.2728019999995013
+    },
+    {
+      "id": "12288:-2048",
+      "buildings": 11,
+      "decodeMs": 1.1366869999983464,
+      "buildMs": 0.05214900000282796,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0090740000014193,
+      "geometryDecodeMs": 0.12565900000117836
+    },
+    {
+      "id": "12288:-1024",
+      "buildings": 51,
+      "decodeMs": 2.2854609999994864,
+      "buildMs": 0.22694199999750708,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.986389000001509,
+      "geometryDecodeMs": 0.2965069999991101
+    },
+    {
+      "id": "12288:0",
+      "buildings": 2013,
+      "decodeMs": 20.80572100000063,
+      "buildMs": 0.3415850000019418,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.34610000000248,
+      "geometryDecodeMs": 11.449174999997922
+    },
+    {
+      "id": "12288:1024",
+      "buildings": 1609,
+      "decodeMs": 17.490183999998408,
+      "buildMs": 0.3865029999979015,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.703370000002906,
+      "geometryDecodeMs": 9.778491999997641
+    },
+    {
+      "id": "12288:2048",
+      "buildings": 1699,
+      "decodeMs": 13.51079700000264,
+      "buildMs": 0.38332900000023074,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.077284999999392,
+      "geometryDecodeMs": 6.42457899999863
+    },
+    {
+      "id": "12288:3072",
+      "buildings": 1792,
+      "decodeMs": 16.874716999998782,
+      "buildMs": 0.3353260000003502,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.728728000001865,
+      "geometryDecodeMs": 8.135632999998052
+    },
+    {
+      "id": "12288:4096",
+      "buildings": 1315,
+      "decodeMs": 10.916260999998485,
+      "buildMs": 0.30596199999854434,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 6.020699000000604,
+      "geometryDecodeMs": 4.888590999998996
+    },
+    {
+      "id": "12288:5120",
+      "buildings": 14,
+      "decodeMs": 0.7488999999986845,
+      "buildMs": 0.05882799999744748,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6346180000000459,
+      "geometryDecodeMs": 0.11004599999796483
+    },
+    {
+      "id": "12288:6144",
+      "buildings": 89,
+      "decodeMs": 1.8391159999991942,
+      "buildMs": 0.11024600000018836,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1870930000004591,
+      "geometryDecodeMs": 0.650061000000278
+    },
+    {
+      "id": "12288:7168",
+      "buildings": 10,
+      "decodeMs": 0.5139559999988705,
+      "buildMs": 0.06157299999904353,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.339031999999861,
+      "geometryDecodeMs": 0.17374200000267592
+    },
+    {
+      "id": "12288:8192",
+      "buildings": 16,
+      "decodeMs": 0.3628480000006675,
+      "buildMs": 0.056024000001343666,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.26589200000307756,
+      "geometryDecodeMs": 0.09601499999916996
+    },
+    {
+      "id": "12288:9216",
+      "buildings": 1116,
+      "decodeMs": 9.015440999999555,
+      "buildMs": 0.2751960000023246,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.926888000001782,
+      "geometryDecodeMs": 4.078567000000476
+    },
+    {
+      "id": "12288:10240",
+      "buildings": 1487,
+      "decodeMs": 14.481261999997514,
+      "buildMs": 0.40313899999819114,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.670169000000897,
+      "geometryDecodeMs": 5.801099000000249
+    },
+    {
+      "id": "12288:11264",
+      "buildings": 1967,
+      "decodeMs": 14.546571000002587,
+      "buildMs": 0.3143450000025041,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 7.6001240000005055,
+      "geometryDecodeMs": 6.9377239999994345
+    },
+    {
+      "id": "12288:12288",
+      "buildings": 892,
+      "decodeMs": 7.048911999998381,
+      "buildMs": 0.16663100000005215,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.05777599999783,
+      "geometryDecodeMs": 2.984575999998924
+    },
+    {
+      "id": "13312:-9216",
+      "buildings": 42,
+      "decodeMs": 0.7279189999972004,
+      "buildMs": 0.07545399999798974,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5453330000018468,
+      "geometryDecodeMs": 0.17970100000093225
+    },
+    {
+      "id": "13312:-8192",
+      "buildings": 10,
+      "decodeMs": 0.34339900000122725,
+      "buildMs": 0.025548000001435867,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3016459999998915,
+      "geometryDecodeMs": 0.04035000000294531
+    },
+    {
+      "id": "13312:-7168",
+      "buildings": 19,
+      "decodeMs": 0.5461939999986498,
+      "buildMs": 0.04424699999799486,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3601440000020375,
+      "geometryDecodeMs": 0.18470799999704468
+    },
+    {
+      "id": "13312:-6144",
+      "buildings": 0,
+      "decodeMs": 0.43332399999781046,
+      "buildMs": 0.006880000000819564,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4310909999985597,
+      "geometryDecodeMs": 0.0012120000028517097
+    },
+    {
+      "id": "13312:-5120",
+      "buildings": 14,
+      "decodeMs": 0.708600000001752,
+      "buildMs": 0.061052000000927364,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6271370000031311,
+      "geometryDecodeMs": 0.08025099999940721
+    },
+    {
+      "id": "13312:-4096",
+      "buildings": 6,
+      "decodeMs": 0.6038819999994303,
+      "buildMs": 0.047832000000198605,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5269760000010137,
+      "geometryDecodeMs": 0.07569399999920279
+    },
+    {
+      "id": "13312:-3072",
+      "buildings": 22,
+      "decodeMs": 0.6410180000020773,
+      "buildMs": 0.06403599999975995,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.517241000001377,
+      "geometryDecodeMs": 0.12247499999648426
+    },
+    {
+      "id": "13312:-2048",
+      "buildings": 125,
+      "decodeMs": 1.480174000000261,
+      "buildMs": 0.08322599999883096,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9943510000011884,
+      "geometryDecodeMs": 0.484442000000854
+    },
+    {
+      "id": "13312:-1024",
+      "buildings": 39,
+      "decodeMs": 1.7518439999985276,
+      "buildMs": 0.12149399999907473,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3786309999995865,
+      "geometryDecodeMs": 0.3691880000005767
+    },
+    {
+      "id": "13312:0",
+      "buildings": 1042,
+      "decodeMs": 90.22273499999937,
+      "buildMs": 0.2604730000020936,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.9269769999991695,
+      "geometryDecodeMs": 84.28808700000081
+    },
+    {
+      "id": "13312:1024",
+      "buildings": 1934,
+      "decodeMs": 15.293809000002511,
+      "buildMs": 0.44875799999863375,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 8.315193000002182,
+      "geometryDecodeMs": 6.970001999998203
+    },
+    {
+      "id": "13312:2048",
+      "buildings": 1188,
+      "decodeMs": 9.426432000000204,
+      "buildMs": 0.33316300000296906,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.049203000002308,
+      "geometryDecodeMs": 4.36817499999961
+    },
+    {
+      "id": "13312:3072",
+      "buildings": 2134,
+      "decodeMs": 87.74411899999905,
+      "buildMs": 0.34967800000231364,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.38470800000141,
+      "geometryDecodeMs": 78.34942600000068
+    },
+    {
+      "id": "13312:4096",
+      "buildings": 2260,
+      "decodeMs": 17.74903600000107,
+      "buildMs": 0.3305189999991853,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.202422999998817,
+      "geometryDecodeMs": 8.536577999999281
+    },
+    {
+      "id": "13312:5120",
+      "buildings": 95,
+      "decodeMs": 1.3278649999992922,
+      "buildMs": 0.1348039999975299,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8343989999993937,
+      "geometryDecodeMs": 0.48968999999851803
+    },
+    {
+      "id": "13312:6144",
+      "buildings": 49,
+      "decodeMs": 1.3623269999989134,
+      "buildMs": 0.13095800000155577,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9408999999977823,
+      "geometryDecodeMs": 0.4194439999992028
+    },
+    {
+      "id": "13312:7168",
+      "buildings": 69,
+      "decodeMs": 1.9676299999991897,
+      "buildMs": 0.11678699999902165,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3970899999985704,
+      "geometryDecodeMs": 0.566595000000234
+    },
+    {
+      "id": "13312:8192",
+      "buildings": 326,
+      "decodeMs": 3.582188000000315,
+      "buildMs": 0.22404900000037742,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.992787999999564,
+      "geometryDecodeMs": 1.5851540000003297
+    },
+    {
+      "id": "13312:9216",
+      "buildings": 1031,
+      "decodeMs": 8.155532000000676,
+      "buildMs": 0.3050299999995332,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.337738999998692,
+      "geometryDecodeMs": 3.8122150000017427
+    },
+    {
+      "id": "13312:10240",
+      "buildings": 2160,
+      "decodeMs": 16.570286000001943,
+      "buildMs": 0.3799939999989874,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 9.08191099999749,
+      "geometryDecodeMs": 7.478471000002173
+    },
+    {
+      "id": "13312:11264",
+      "buildings": 2316,
+      "decodeMs": 103.24119199999768,
+      "buildMs": 0.36948800000027404,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 90.61993799999982,
+      "geometryDecodeMs": 12.610287999999855
+    },
+    {
+      "id": "13312:12288",
+      "buildings": 341,
+      "decodeMs": 2.875620999999228,
+      "buildMs": 0.13128800000049523,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.6869370000022172,
+      "geometryDecodeMs": 1.1845079999984591
+    },
+    {
+      "id": "14336:-9216",
+      "buildings": 31,
+      "decodeMs": 0.6422999999995227,
+      "buildMs": 0.06028100000185077,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.38706399999864516,
+      "geometryDecodeMs": 0.25292199999967124
+    },
+    {
+      "id": "14336:-8192",
+      "buildings": 17,
+      "decodeMs": 0.9922680000017863,
+      "buildMs": 0.06993599999987055,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7159409999985655,
+      "geometryDecodeMs": 0.2747650000019348
+    },
+    {
+      "id": "14336:-7168",
+      "buildings": 58,
+      "decodeMs": 1.6096900000011374,
+      "buildMs": 0.10128199999962817,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.1033449999995355,
+      "geometryDecodeMs": 0.5043320000004314
+    },
+    {
+      "id": "14336:-6144",
+      "buildings": 67,
+      "decodeMs": 1.0452080000031856,
+      "buildMs": 0.04258499999923515,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.752717000003031,
+      "geometryDecodeMs": 0.2907889999987674
+    },
+    {
+      "id": "14336:-5120",
+      "buildings": 2,
+      "decodeMs": 0.3507400000016787,
+      "buildMs": 0.023325000001932494,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.28651299999910407,
+      "geometryDecodeMs": 0.0632450000011886
+    },
+    {
+      "id": "14336:-4096",
+      "buildings": 5,
+      "decodeMs": 0.4075059999995574,
+      "buildMs": 0.034311999999772524,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.36446999999679974,
+      "geometryDecodeMs": 0.041853000002447516
+    },
+    {
+      "id": "14336:-3072",
+      "buildings": 216,
+      "decodeMs": 2.1973870000001625,
+      "buildMs": 0.19482499999867287,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.317749999998341,
+      "geometryDecodeMs": 0.8774040000025707
+    },
+    {
+      "id": "14336:-2048",
+      "buildings": 172,
+      "decodeMs": 2.8294710000009218,
+      "buildMs": 0.180051999999705,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.8038029999988794,
+      "geometryDecodeMs": 1.022954000000027
+    },
+    {
+      "id": "14336:-1024",
+      "buildings": 18,
+      "decodeMs": 0.599104000000807,
+      "buildMs": 0.12618099999963306,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.48803699999916716,
+      "geometryDecodeMs": 0.10611000000062631
+    },
+    {
+      "id": "14336:0",
+      "buildings": 15,
+      "decodeMs": 0.7030410000006668,
+      "buildMs": 0.04774199999883422,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5901410000005853,
+      "geometryDecodeMs": 0.11137800000142306
+    },
+    {
+      "id": "14336:1024",
+      "buildings": 35,
+      "decodeMs": 0.6228010000013455,
+      "buildMs": 0.055574000001797685,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.46175700000094366,
+      "geometryDecodeMs": 0.15956100000039442
+    },
+    {
+      "id": "14336:2048",
+      "buildings": 115,
+      "decodeMs": 1.2407330000023649,
+      "buildMs": 0.06158299999879091,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8311839999987569,
+      "geometryDecodeMs": 0.40768600000228616
+    },
+    {
+      "id": "14336:3072",
+      "buildings": 28,
+      "decodeMs": 0.9231839999993099,
+      "buildMs": 0.0872720000006666,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7530269999988377,
+      "geometryDecodeMs": 0.1663410000001022
+    },
+    {
+      "id": "14336:4096",
+      "buildings": 11,
+      "decodeMs": 0.3466840000000957,
+      "buildMs": 0.022032999997463776,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.29418400000213296,
+      "geometryDecodeMs": 0.05094699999972363
+    },
+    {
+      "id": "14336:5120",
+      "buildings": 7,
+      "decodeMs": 0.3107789999994566,
+      "buildMs": 0.08731099999931757,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2602530000003753,
+      "geometryDecodeMs": 0.049353999998857034
+    },
+    {
+      "id": "14336:6144",
+      "buildings": 29,
+      "decodeMs": 0.800308000001678,
+      "buildMs": 0.16357699999934994,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5182830000012473,
+      "geometryDecodeMs": 0.28044299999965006
+    },
+    {
+      "id": "14336:7168",
+      "buildings": 96,
+      "decodeMs": 1.9811609999997017,
+      "buildMs": 0.13756800000192015,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.431841000001441,
+      "geometryDecodeMs": 0.5471660000002885
+    },
+    {
+      "id": "14336:8192",
+      "buildings": 97,
+      "decodeMs": 2.478481999998621,
+      "buildMs": 0.23757900000055088,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8890119999996386,
+      "geometryDecodeMs": 1.5850940000018454
+    },
+    {
+      "id": "14336:9216",
+      "buildings": 393,
+      "decodeMs": 3.87326700000267,
+      "buildMs": 0.22738399999798276,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.215965999999753,
+      "geometryDecodeMs": 1.6539359999987937
+    },
+    {
+      "id": "14336:10240",
+      "buildings": 2325,
+      "decodeMs": 33.90191499999855,
+      "buildMs": 0.3839090000001306,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 16.065112000000227,
+      "geometryDecodeMs": 17.825425999999425
+    },
+    {
+      "id": "14336:11264",
+      "buildings": 2500,
+      "decodeMs": 103.63390000000072,
+      "buildMs": 0.399742999998125,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 11.641644999999698,
+      "geometryDecodeMs": 91.980397000003
+    },
+    {
+      "id": "14336:12288",
+      "buildings": 571,
+      "decodeMs": 5.072196999997686,
+      "buildMs": 0.1541030000007595,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.8839939999998023,
+      "geometryDecodeMs": 2.1822939999983646
+    },
+    {
+      "id": "15360:-9216",
+      "buildings": 11,
+      "decodeMs": 0.7374130000025616,
+      "buildMs": 0.0595099999991362,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6611379999994824,
+      "geometryDecodeMs": 0.0722490000007383
+    },
+    {
+      "id": "15360:-8192",
+      "buildings": 3,
+      "decodeMs": 4.8306420000008075,
+      "buildMs": 0.029193999998824438,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.798824000001332,
+      "geometryDecodeMs": 0.029163999999582302
+    },
+    {
+      "id": "15360:-7168",
+      "buildings": 20,
+      "decodeMs": 0.5101299999987532,
+      "buildMs": 0.03974999999991269,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4060430000026827,
+      "geometryDecodeMs": 0.102363999998488
+    },
+    {
+      "id": "15360:-6144",
+      "buildings": 58,
+      "decodeMs": 0.8783259999981965,
+      "buildMs": 0.07141799999953946,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6386139999995066,
+      "geometryDecodeMs": 0.23727800000051502
+    },
+    {
+      "id": "15360:-5120",
+      "buildings": 3,
+      "decodeMs": 0.360222999999678,
+      "buildMs": 0.02185300000201096,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.33664800000042305,
+      "geometryDecodeMs": 0.022433999998611398
+    },
+    {
+      "id": "15360:-4096",
+      "buildings": 5,
+      "decodeMs": 0.36513099999865517,
+      "buildMs": 0.03472199999669101,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3155259999984992,
+      "geometryDecodeMs": 0.04872400000022026
+    },
+    {
+      "id": "15360:-3072",
+      "buildings": 280,
+      "decodeMs": 3.140269999999873,
+      "buildMs": 0.2409540000007837,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.8129569999982778,
+      "geometryDecodeMs": 1.3247800000026473
+    },
+    {
+      "id": "15360:-2048",
+      "buildings": 103,
+      "decodeMs": 3.0756130000008852,
+      "buildMs": 0.318451000002824,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.945927999997366,
+      "geometryDecodeMs": 1.1242670000028738
+    },
+    {
+      "id": "15360:-1024",
+      "buildings": 85,
+      "decodeMs": 1.6818290000010165,
+      "buildMs": 0.20521999999982654,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0359429999989516,
+      "geometryDecodeMs": 0.6403370000007271
+    },
+    {
+      "id": "15360:0",
+      "buildings": 34,
+      "decodeMs": 1.3215550000022631,
+      "buildMs": 0.21215999999913038,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.919318000000203,
+      "geometryDecodeMs": 0.39960299999802373
+    },
+    {
+      "id": "15360:1024",
+      "buildings": 276,
+      "decodeMs": 2.483769000002212,
+      "buildMs": 0.14124299999821233,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.458731999999145,
+      "geometryDecodeMs": 1.0223530000002938
+    },
+    {
+      "id": "15360:2048",
+      "buildings": 432,
+      "decodeMs": 5.594986000000063,
+      "buildMs": 0.20136400000046706,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.005165999999008,
+      "geometryDecodeMs": 1.5854840000029071
+    },
+    {
+      "id": "15360:3072",
+      "buildings": 1,
+      "decodeMs": 0.6911739999995916,
+      "buildMs": 0.021022000000812113,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5553989999971236,
+      "geometryDecodeMs": 0.13304100000095787
+    },
+    {
+      "id": "15360:4096",
+      "buildings": 131,
+      "decodeMs": 1.3174379999982193,
+      "buildMs": 0.060391000002709916,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8569029999998747,
+      "geometryDecodeMs": 0.4583520000014687
+    },
+    {
+      "id": "15360:5120",
+      "buildings": 38,
+      "decodeMs": 0.587176000000909,
+      "buildMs": 0.03861799999867799,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.4447919999984151,
+      "geometryDecodeMs": 0.14077200000247103
+    },
+    {
+      "id": "15360:6144",
+      "buildings": 2,
+      "decodeMs": 0.2855210000016086,
+      "buildMs": 0.028213000001414912,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.2564970000021276,
+      "geometryDecodeMs": 0.02629999999771826
+    },
+    {
+      "id": "15360:7168",
+      "buildings": 9,
+      "decodeMs": 0.40719499999977415,
+      "buildMs": 0.03771699999924749,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3473450000019511,
+      "geometryDecodeMs": 0.057977000000391854
+    },
+    {
+      "id": "15360:8192",
+      "buildings": 6,
+      "decodeMs": 0.6011670000007143,
+      "buildMs": 0.044606999999814434,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5164399999994203,
+      "geometryDecodeMs": 0.08293500000218046
+    },
+    {
+      "id": "15360:9216",
+      "buildings": 296,
+      "decodeMs": 3.4730229999986477,
+      "buildMs": 0.1524200000021665,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.86581699999806,
+      "geometryDecodeMs": 1.60381100000086
+    },
+    {
+      "id": "15360:10240",
+      "buildings": 1029,
+      "decodeMs": 9.56100399999923,
+      "buildMs": 0.45438600000125007,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 5.302394999998796,
+      "geometryDecodeMs": 4.249514999999519
+    },
+    {
+      "id": "15360:11264",
+      "buildings": 2386,
+      "decodeMs": 22.958458000000974,
+      "buildMs": 0.3346160000000964,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 12.019454000001133,
+      "geometryDecodeMs": 10.92747700000109
+    },
+    {
+      "id": "15360:12288",
+      "buildings": 114,
+      "decodeMs": 1.506094000000303,
+      "buildMs": 0.093550999998115,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8643550000015239,
+      "geometryDecodeMs": 0.6364709999979823
+    },
+    {
+      "id": "16384:-9216",
+      "buildings": 3,
+      "decodeMs": 0.27222099999926286,
+      "buildMs": 0.03414200000042911,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.24199500000031549,
+      "geometryDecodeMs": 0.028582999999343883
+    },
+    {
+      "id": "16384:-8192",
+      "buildings": 2,
+      "decodeMs": 0.4266840000018419,
+      "buildMs": 0.025959999999031425,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3981710000007297,
+      "geometryDecodeMs": 0.026789999999891734
+    },
+    {
+      "id": "16384:-7168",
+      "buildings": 0,
+      "decodeMs": 0.1952450000026147,
+      "buildMs": 0.007782000000588596,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.19283100000029663,
+      "geometryDecodeMs": 0.0012319999987084884
+    },
+    {
+      "id": "16384:-6144",
+      "buildings": 1,
+      "decodeMs": 0.2861110000012559,
+      "buildMs": 0.01780700000017532,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.273191999996925,
+      "geometryDecodeMs": 0.011618000000453321
+    },
+    {
+      "id": "16384:-5120",
+      "buildings": 4,
+      "decodeMs": 0.33575700000073994,
+      "buildMs": 0.02811199999996461,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.295125000000553,
+      "geometryDecodeMs": 0.039550000001327135
+    },
+    {
+      "id": "16384:-4096",
+      "buildings": 6,
+      "decodeMs": 0.36210599999685655,
+      "buildMs": 0.03449199999886332,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3005640000010317,
+      "geometryDecodeMs": 0.06034100000033504
+    },
+    {
+      "id": "16384:-3072",
+      "buildings": 192,
+      "decodeMs": 2.6123029999980645,
+      "buildMs": 0.1736620000010589,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.5312809999995807,
+      "geometryDecodeMs": 1.077326999999059
+    },
+    {
+      "id": "16384:-2048",
+      "buildings": 34,
+      "decodeMs": 0.8053660000005038,
+      "buildMs": 0.1239370000002964,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5895999999993364,
+      "geometryDecodeMs": 0.21194000000105007
+    },
+    {
+      "id": "16384:-1024",
+      "buildings": 27,
+      "decodeMs": 1.0826750000014727,
+      "buildMs": 0.11868999999933294,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.8364730000030249,
+      "geometryDecodeMs": 0.24395799999911105
+    },
+    {
+      "id": "16384:0",
+      "buildings": 49,
+      "decodeMs": 1.4350369999992836,
+      "buildMs": 0.11151799999788636,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.0865909999993164,
+      "geometryDecodeMs": 0.3450909999992291
+    },
+    {
+      "id": "16384:1024",
+      "buildings": 159,
+      "decodeMs": 2.4069239999989804,
+      "buildMs": 0.10464800000045216,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.6578019999979006,
+      "geometryDecodeMs": 0.7448650000005728
+    },
+    {
+      "id": "16384:2048",
+      "buildings": 26,
+      "decodeMs": 1.149706000000151,
+      "buildMs": 0.08940499999880558,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9642560000029334,
+      "geometryDecodeMs": 0.18055199999798788
+    },
+    {
+      "id": "16384:3072",
+      "buildings": 13,
+      "decodeMs": 0.7552499999983411,
+      "buildMs": 0.07438299999921583,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6201160000018717,
+      "geometryDecodeMs": 0.13317100000131177
+    },
+    {
+      "id": "16384:4096",
+      "buildings": 5,
+      "decodeMs": 0.3564379999988887,
+      "buildMs": 0.028824000000895467,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.32860599999912665,
+      "geometryDecodeMs": 0.0265609999987646
+    },
+    {
+      "id": "16384:5120",
+      "buildings": 74,
+      "decodeMs": 1.0184580000022834,
+      "buildMs": 0.12771299999803887,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6532259999985399,
+      "geometryDecodeMs": 0.3637890000027255
+    },
+    {
+      "id": "16384:6144",
+      "buildings": 100,
+      "decodeMs": 1.1317889999991166,
+      "buildMs": 0.04496799999833456,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7536369999979797,
+      "geometryDecodeMs": 0.3762779999997292
+    },
+    {
+      "id": "16384:7168",
+      "buildings": 140,
+      "decodeMs": 2.4364580000001297,
+      "buildMs": 0.17048699999941164,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.4532040000012785,
+      "geometryDecodeMs": 0.9811109999973269
+    },
+    {
+      "id": "16384:8192",
+      "buildings": 61,
+      "decodeMs": 1.2979190000005474,
+      "buildMs": 0.08023099999991246,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9974059999985911,
+      "geometryDecodeMs": 0.2977390000014566
+    },
+    {
+      "id": "16384:9216",
+      "buildings": 49,
+      "decodeMs": 1.4540749999978289,
+      "buildMs": 0.1198210000002291,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.101713000000018,
+      "geometryDecodeMs": 0.3473839999969641
+    },
+    {
+      "id": "16384:10240",
+      "buildings": 11,
+      "decodeMs": 0.7590960000015912,
+      "buildMs": 0.06310599999778788,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5068350000001374,
+      "geometryDecodeMs": 0.24992700000075274
+    },
+    {
+      "id": "16384:11264",
+      "buildings": 791,
+      "decodeMs": 7.71053000000029,
+      "buildMs": 0.5292789999984961,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.680947000000742,
+      "geometryDecodeMs": 3.018235999999888
+    },
+    {
+      "id": "16384:12288",
+      "buildings": 152,
+      "decodeMs": 1.2821149999981571,
+      "buildMs": 0.06704100000206381,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.7213389999997162,
+      "geometryDecodeMs": 0.5570709999992687
+    },
+    {
+      "id": "17408:-9216",
+      "buildings": 37,
+      "decodeMs": 0.8352110000014363,
+      "buildMs": 0.15561499999967054,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5219279999982973,
+      "geometryDecodeMs": 0.3109599999988859
+    },
+    {
+      "id": "17408:-8192",
+      "buildings": 15,
+      "decodeMs": 0.6141069999976025,
+      "buildMs": 0.03512299999783863,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5102110000007087,
+      "geometryDecodeMs": 0.10229400000025635
+    },
+    {
+      "id": "17408:-7168",
+      "buildings": 6,
+      "decodeMs": 0.3347350000003644,
+      "buildMs": 0.032219000000623055,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.29097900000124355,
+      "geometryDecodeMs": 0.042765000001963926
+    },
+    {
+      "id": "17408:-6144",
+      "buildings": 69,
+      "decodeMs": 0.928051000002597,
+      "buildMs": 0.05552400000306079,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6822699999975157,
+      "geometryDecodeMs": 0.24354800000219257
+    },
+    {
+      "id": "17408:-5120",
+      "buildings": 764,
+      "decodeMs": 7.611862000001565,
+      "buildMs": 0.13966099999743165,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 4.8073179999992135,
+      "geometryDecodeMs": 2.7954099999988102
+    },
+    {
+      "id": "17408:-4096",
+      "buildings": 402,
+      "decodeMs": 4.051556000002165,
+      "buildMs": 0.14381700000012643,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 2.475748000000749,
+      "geometryDecodeMs": 1.570651000001817
+    },
+    {
+      "id": "17408:-3072",
+      "buildings": 160,
+      "decodeMs": 3.1331800000007206,
+      "buildMs": 0.20584000000235392,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.862873000001855,
+      "geometryDecodeMs": 1.266020999999455
+    },
+    {
+      "id": "17408:-2048",
+      "buildings": 7,
+      "decodeMs": 0.41175099999964004,
+      "buildMs": 0.09208900000157882,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.32665300000007846,
+      "geometryDecodeMs": 0.08185400000002119
+    },
+    {
+      "id": "17408:-1024",
+      "buildings": 39,
+      "decodeMs": 1.527314999999362,
+      "buildMs": 0.17022699999870383,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.2137320000001637,
+      "geometryDecodeMs": 0.30940800000098534
+    },
+    {
+      "id": "17408:0",
+      "buildings": 69,
+      "decodeMs": 1.9535500000019965,
+      "buildMs": 0.1414329999970505,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.3085160000009637,
+      "geometryDecodeMs": 0.6397759999999835
+    },
+    {
+      "id": "17408:1024",
+      "buildings": 71,
+      "decodeMs": 1.4508410000016738,
+      "buildMs": 0.15787899999850197,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.032428999998956,
+      "geometryDecodeMs": 0.4141550000022107
+    },
+    {
+      "id": "17408:2048",
+      "buildings": 1,
+      "decodeMs": 0.3927030000013474,
+      "buildMs": 0.017936999996891245,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.3747860000003129,
+      "geometryDecodeMs": 0.015704000001278473
+    },
+    {
+      "id": "17408:3072",
+      "buildings": 32,
+      "decodeMs": 0.9211410000025353,
+      "buildMs": 0.0659799999993993,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.749841999997443,
+      "geometryDecodeMs": 0.16901500000312808
+    },
+    {
+      "id": "17408:4096",
+      "buildings": 11,
+      "decodeMs": 0.6811080000006768,
+      "buildMs": 0.04613999999855878,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5921640000015032,
+      "geometryDecodeMs": 0.08702099999936763
+    },
+    {
+      "id": "17408:5120",
+      "buildings": 57,
+      "decodeMs": 1.294914999998582,
+      "buildMs": 0.13218000000051688,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9359929999991436,
+      "geometryDecodeMs": 0.3569790000001376
+    },
+    {
+      "id": "17408:6144",
+      "buildings": 33,
+      "decodeMs": 0.736482000000251,
+      "buildMs": 0.0692750000016531,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.5079670000013721,
+      "geometryDecodeMs": 0.22683200000028592
+    },
+    {
+      "id": "17408:7168",
+      "buildings": 16,
+      "decodeMs": 0.7510839999995369,
+      "buildMs": 0.07511299999896437,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.6297100000010687,
+      "geometryDecodeMs": 0.11962099999800557
+    },
+    {
+      "id": "17408:8192",
+      "buildings": 21,
+      "decodeMs": 1.2258199999996577,
+      "buildMs": 0.10113300000011805,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9465989999989688,
+      "geometryDecodeMs": 0.27692799999931594
+    },
+    {
+      "id": "17408:9216",
+      "buildings": 349,
+      "decodeMs": 5.095203000000765,
+      "buildMs": 0.2025260000009439,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 3.1867010000023583,
+      "geometryDecodeMs": 1.9010899999993853
+    },
+    {
+      "id": "17408:10240",
+      "buildings": 18,
+      "decodeMs": 0.52605400000175,
+      "buildMs": 0.05013600000165752,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.429178000002139,
+      "geometryDecodeMs": 0.09366099999897415
+    },
+    {
+      "id": "17408:11264",
+      "buildings": 344,
+      "decodeMs": 2.94637800000055,
+      "buildMs": 0.14349700000093435,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 1.7518940000009025,
+      "geometryDecodeMs": 1.1913589999967371
+    },
+    {
+      "id": "17408:12288",
+      "buildings": 205,
+      "decodeMs": 1.6403559999998834,
+      "buildMs": 0.0836860000017623,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.9197179999973741,
+      "geometryDecodeMs": 0.7177640000008978
+    },
+    {
+      "id": "18432:4096",
+      "buildings": 0,
+      "decodeMs": 0.01766700000007404,
+      "buildMs": 0.004316000002290821,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.015703999997640494,
+      "geometryDecodeMs": 0.0008610000004409812
+    },
+    {
+      "id": "18432:5120",
+      "buildings": 0,
+      "decodeMs": 0.030515999998897314,
+      "buildMs": 0.003506000000925269,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.02970400000049267,
+      "geometryDecodeMs": 0.0004310000003897585
+    },
+    {
+      "id": "18432:6144",
+      "buildings": 0,
+      "decodeMs": 0.05101699999795528,
+      "buildMs": 0.004536999997071689,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.04995499999859021,
+      "geometryDecodeMs": 0.0006109999994805548
+    },
+    {
+      "id": "18432:7168",
+      "buildings": 0,
+      "decodeMs": 0.020090000001800945,
+      "buildMs": 0.003324999997857958,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.019158999999490334,
+      "geometryDecodeMs": 0.0004510000035224948
+    },
+    {
+      "id": "18432:8192",
+      "buildings": 8,
+      "decodeMs": 0.2126509999980044,
+      "buildMs": 0.03964999999880092,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.0998909999980242,
+      "geometryDecodeMs": 0.11187900000004447
+    },
+    {
+      "id": "18432:9216",
+      "buildings": 0,
+      "decodeMs": 0.02774199999839766,
+      "buildMs": 0.006809999998949934,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.02624900000228081,
+      "geometryDecodeMs": 0.0006509999984700698
+    },
+    {
+      "id": "18432:10240",
+      "buildings": 0,
+      "decodeMs": 0.0254190000014205,
+      "buildMs": 0.005177999999432359,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.024156999999831896,
+      "geometryDecodeMs": 0.0005909999999857973
+    },
+    {
+      "id": "18432:11264",
+      "buildings": 33,
+      "decodeMs": 0.2535119999993185,
+      "buildMs": 0.017776999997295206,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.14705200000025798,
+      "geometryDecodeMs": 0.10598000000027241
+    },
+    {
+      "id": "18432:12288",
+      "buildings": 38,
+      "decodeMs": 0.31238200000007055,
+      "buildMs": 0.03286899999875459,
+      "fetchHeadersMs": 0,
+      "decodeAndBodyMs": 0,
+      "jsonParseMs": 0.17961099999956787,
+      "geometryDecodeMs": 0.13173900000037975
+    }
+  ]
+}

@@ -18,10 +18,11 @@ export type ArtBundle = {
   textures: Map<string, THREE.Texture>;
   dispose: () => void;
 };
-export async function loadArt(): Promise<ArtBundle> {
+export async function loadArt(extraFonts: FontFace[] = []): Promise<ArtBundle> {
   // Tiny local OFL subsets guarantee readable Thai/Chinese across test browsers
   // and iPhone; no remote font request or system-font assumption at runtime.
   const fonts = [
+    ...extraFonts,
     new FontFace(
       "Rush Thai",
       `url("${assetURL("assets/fonts/thai-signs.ttf")}")`,

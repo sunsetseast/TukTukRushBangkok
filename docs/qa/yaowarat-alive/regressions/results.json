@@ -1,0 +1,140 @@
+[
+  {
+    "script": "check-yaowarat-alive.ts",
+    "exit": 0,
+    "seconds": 2.145,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-chinatown.ts",
+    "exit": 0,
+    "seconds": 2.876,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-worker.ts",
+    "exit": 0,
+    "seconds": 0.258,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-landmark-cache.ts",
+    "exit": 0,
+    "seconds": 0.772,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-asset-delivery.ts",
+    "exit": 0,
+    "seconds": 1.339,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-performance.ts",
+    "exit": 0,
+    "seconds": 0.212,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-streaming.ts",
+    "exit": 0,
+    "seconds": 3.726,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-road-rules.ts",
+    "exit": 0,
+    "seconds": 1.187,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-traffic.ts",
+    "exit": 0,
+    "seconds": 0.206,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-traffic-art.ts",
+    "exit": 0,
+    "seconds": 0.278,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-traffic-contact.ts",
+    "exit": 0,
+    "seconds": 0.162,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-gameplay.ts",
+    "exit": 0,
+    "seconds": 13.962,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-buildings.ts",
+    "exit": 0,
+    "seconds": 16.386,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-compiled.ts",
+    "exit": 0,
+    "seconds": 30.373,
+    "status": "passed"
+  },
+  {
+    "script": "check-thai-road-signage.ts",
+    "exit": 0,
+    "seconds": 0.376,
+    "status": "passed"
+  },
+  {
+    "script": "check-career.ts",
+    "exit": 0,
+    "seconds": 74.203,
+    "status": "passed"
+  },
+  {
+    "script": "check-navigation-ui.ts",
+    "exit": 0,
+    "seconds": 22.731,
+    "status": "passed"
+  },
+  {
+    "script": "check-sign-fonts.ts",
+    "exit": 0,
+    "seconds": 21.474,
+    "status": "passed"
+  },
+  {
+    "script": "check-assets.mjs",
+    "exit": 0,
+    "seconds": 0.104,
+    "status": "passed"
+  },
+  {
+    "script": "check-geographic-spa-fallback.ts",
+    "exit": 0,
+    "seconds": 0.192,
+    "status": "passed"
+  },
+  {
+    "script": "check-gameplay.ts",
+    "exit": 0,
+    "seconds": 2.59,
+    "status": "passed"
+  },
+  {
+    "script": "check-driven-mission.ts",
+    "exit": 0,
+    "seconds": 0.441,
+    "status": "passed"
+  },
+  {
+    "script": "check-real-geography.ts",
+    "exit": 0,
+    "seconds": 5.678,
+    "status": "passed"
+  }
+]

@@ -9,6 +9,8 @@ export type SignEntry = {
   variant: number;
   signatureId?: string;
   secondary?: string;
+  /** Optional upright Chinese trade/name text for a vertical commercial blade. */
+  verticalText?: string;
   layout?: "neon" | "painted";
   palette?: [string, string, string];
 };
@@ -34,7 +36,7 @@ const PAL: Record<SignStyle, [string, string, string][]> = {
     ["#6b2c2a", "#d8b36a", "#f5e5be"],
   ],
 };
-const FONT = '"Rush Thai","Rush Chinese","Thonburi",sans-serif';
+const FONT = '"Rush Thai","Rush Chinese","Rush Geographic Chinese","Thonburi",sans-serif';
 
 function motif(
   c: CanvasRenderingContext2D,
@@ -313,9 +315,10 @@ export function buildSignAtlas(entries: SignEntry[], compact = false) {
       frame(c, x, y, V.cw, V.ch, bg, line);
       c.textAlign = "center";
       c.textBaseline = "middle";
-      const chinese = /[\u3400-\u9fff]/.test(e.text);
+      const verticalText=e.verticalText??e.text;
+      const chinese = /[\u3400-\u9fff]/.test(verticalText);
       if (chinese) {
-        const chars = [...e.text],
+        const chars = [...verticalText],
           cell = 350 / chars.length;
         chars.forEach((ch, j) => {
           const cy = y + 60 + (j + 0.5) * cell;

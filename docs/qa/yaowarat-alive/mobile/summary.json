@@ -1,0 +1,34 @@
+{
+  "workflow": "https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42392950732",
+  "head": "0177980c1048ebbc2e015fe71852e1a9aadfc3e4",
+  "environment": "Linux Chromium / SwiftShader, 844x390 touch simulation; not physical iPhone",
+  "checks": [
+    "AI OFF preserves actual road signs and bilingual street plaques",
+    "touch steering/gas/brake/boost/horn",
+    "pause freezes drive; recovery/resume",
+    "map pauses; destination selection and touch close",
+    "Fast/Pretty settings",
+    "repeated eviction/revisit preserves mission and wallet",
+    "LOOK opens/closes inspection",
+    "orientation pauses and clears input",
+    "return to geographic menu and Start shift",
+    "shift passenger boarding, delivery, earnings, XP and saved career",
+    "WebGL context loss recovery UI",
+    "compact Bangkok startup and Free Roam",
+    "worker recovers HTML generated chunk via gzip alias fixture containing identical compiled source bytes",
+    "genuine network failure exposes error and recovers after explicit retry"
+  ],
+  "errors": [],
+  "fare": {
+    "method": "QA relocation to source pickup/delivery; actual production fare updates, not a no-teleport drive",
+    "boarded": true,
+    "deliveries": 1,
+    "earnings": 214,
+    "before": 0,
+    "after": 214,
+    "xp": 57,
+    "storage": "{\"version\":1,\"wallet\":214,\"lifetimeEarnings\":214,\"fares\":1,\"shifts\":0,\"bestScore\":0,\"bestEarnings\":0,\"distance\":2.757605234399622,\"xp\":57,\"achievements\":[\"first-fare\"],\"districts\":[],\"landmarks\":[],\"sequence\":2,\"active\":{\"id\":2,\"fare\":0,\"completed\":false}}"
+  },
+  "rawSha256": "9a021772f4416cea48bab5a58df0425fd3aacc5eeeb7a4614635d5f288115a3e",
+  "rawBytes": 628279
+}

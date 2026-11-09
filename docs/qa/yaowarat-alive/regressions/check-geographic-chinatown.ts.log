@@ -1,0 +1,159 @@
+{
+  "pass": true,
+  "total": 331,
+  "songwat": 48,
+  "signTypes": 25,
+  "sourceUnchanged": true,
+  "records": [
+    {
+      "id": "2048:0",
+      "facades": 139,
+      "songwat": 22,
+      "pieces": 22720,
+      "bytes": 3374163,
+      "batches": 540,
+      "prepareMs": 868.513254,
+      "first": [
+        {
+          "id": "osm:way/1021129470:0:0",
+          "buildingId": "osm:way/1021129470",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3060.9725,
+          "z": 363.03200000000004,
+          "nx": -0.6366893385257193,
+          "nz": 0.7711204096687378,
+          "width": 4.708732844407265,
+          "height": 12.8,
+          "floors": 4,
+          "seed": 4167259151,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              1011.157,
+              361.533
+            ],
+            "b": [
+              1014.788,
+              364.531
+            ],
+            "collision": true,
+            "edge": 0,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        },
+        {
+          "id": "osm:way/1021131318:0:0",
+          "buildingId": "osm:way/1021131318",
+          "street": "osm:way/832948770",
+          "chunk": "2048:0",
+          "style": "yaowarat",
+          "x": 3018.059,
+          "z": 328.374,
+          "nx": -0.5722350331971895,
+          "nz": 0.8200896699640908,
+          "width": 11.708475733416343,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3765068143,
+          "family": "shophouse",
+          "outset": 1.3807377750001084,
+          "edge": {
+            "a": [
+              965.258,
+              325.024
+            ],
+            "b": [
+              974.86,
+              331.724
+            ],
+            "collision": true,
+            "edge": 0,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/832948770"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3072:0",
+      "facades": 192,
+      "songwat": 26,
+      "pieces": 25415,
+      "bytes": 3799237,
+      "batches": 676,
+      "prepareMs": 1087.5641239999998,
+      "first": [
+        {
+          "id": "osm:way/1020878598:0:3",
+          "buildingId": "osm:way/1020878598",
+          "street": "osm:way/25745335",
+          "chunk": "3072:0",
+          "style": "songwat",
+          "x": 3520.468,
+          "z": 960.6835,
+          "nx": -0.07944556134090364,
+          "nz": -0.9968392060825199,
+          "width": 19.497627983936898,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 990651123,
+          "family": "shophouse",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              458.186,
+              959.909
+            ],
+            "b": [
+              438.75,
+              961.458
+            ],
+            "collision": true,
+            "edge": 3,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/1284652272"
+          }
+        },
+        {
+          "id": "osm:way/1021129460:0:1",
+          "buildingId": "osm:way/1021129460",
+          "street": "osm:way/448989820",
+          "chunk": "3072:0",
+          "style": "yaowarat",
+          "x": 3183.6835,
+          "z": 467.6515,
+          "nx": 0.8203875407742891,
+          "nz": 0.5718079073800172,
+          "width": 29.431212445293497,
+          "height": 9.6,
+          "floors": 3,
+          "seed": 3862242945,
+          "family": "residential",
+          "outset": 1.65,
+          "edge": {
+            "a": [
+              103.269,
+              479.724
+            ],
+            "b": [
+              120.098,
+              455.579
+            ],
+            "collision": true,
+            "edge": 1,
+            "polygon": 0,
+            "ring": 0,
+            "street": "osm:way/448989820"
+          }
+        }
+      ]
+    }
+  ]
+}

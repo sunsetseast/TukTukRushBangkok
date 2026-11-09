@@ -5,7 +5,7 @@ import { Inspection } from "../../Inspection";
 import type { Vec3 } from "../../inspection";
 import { Controls } from "../../Controls";
 import { ChaseCamera } from "../../chaseCamera";
-import { loadArt, disposeObject, type ArtBundle } from "../../assets";
+import { loadArt, assetURL, disposeObject, type ArtBundle } from "../../assets";
 import { buildTuk } from "../../tukMesh";
 import { guidanceFor } from "../../navigation";
 import type { GameSnapshot, RoadNode } from "../../types";
@@ -35,6 +35,7 @@ import { GeographicPerformanceOverlay } from "./PerformanceOverlay";
 import { TrafficActors } from "./TrafficActors";
 import { setStreamedPhysicsObstacles } from "../clearanceIndex";
 import "./prototype.css";
+import {updateChinatownLife} from "./chinatownLife";
 import {chinatownMaterials,updateChinatownLOD} from "./chinatownRendering";
 
 type Loaded = {
@@ -165,13 +166,14 @@ function Scene({
       forward: new T.Vector3(),
     };
   }, [network, places]);
-  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;},[content,gl,time]);
+  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.buildings.color.set(time==='night'?'#a0a6b4':time==='dusk'?'#d7c4b1':'#ffffff');},[content,gl,time]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
       content.stream.close();
       content.loader.close();
       content.decorationMaterials.dispose();
+      sfx.street(0,false);
       content.ring.geometry.dispose();
       (content.ring.material as T.Material).dispose();
       content.route.geometry.dispose();
@@ -247,6 +249,10 @@ function Scene({
     content.lodTime += delta;
     if (content.lodTime > 0.2) {
       content.lodTime = 0;
+      let streetLevel=0;
+      if(s.quality==='medium')for(const c of content.resident.values())for(const a of c.decoration?.life??[])
+        if(a.kind==='stir'||a.kind==='wok')streetLevel=Math.max(streetLevel,1-Math.hypot(p.x-c.origin[0]-a.x,p.z-c.origin[1]-a.z)/18);
+      sfx.street(streetLevel,s.phase==='playing');
       camera.getWorldDirection(content.forward);
       for (const v of content.stream.active.values())
         if (v.root)
@@ -257,6 +263,8 @@ function Scene({
             content.forward,
           );}
     }
+    for(const v of content.stream.active.values())if(v.root?.userData.chinatownRoot)
+      updateChinatownLife(v.root.userData.chinatownRoot,state.clock.elapsedTime,s.quality,camera.position,p,s.phase==='playing');
     if (content.lastRevision !== content.revision) {
       content.lastRevision = content.revision;
       setStreamedPhysicsObstacles(session.district, [...content.resident.values()]
@@ -703,7 +711,7 @@ export default function GeographicPrototype() {
       loadGameplayGeography().catch((error) => {
         throw Error(`Bangkok road/map data failed to load: ${String(error)}`, { cause: error });
       }),
-      loadArt().catch((error) => {
+      loadArt([new FontFace("Rush Geographic Chinese",`url("${assetURL("assets/fonts/geographic-chinese-signs.ttf")}")`)]).catch((error) => {
         throw Error(`Bangkok 3D artwork failed to load: ${String(error)}`, { cause: error });
       }),
     ]).then(async ([network, art]) => {
