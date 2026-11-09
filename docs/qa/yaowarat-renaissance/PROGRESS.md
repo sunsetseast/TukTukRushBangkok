@@ -1,25 +1,17 @@
-# PR62 — Geographic Yaowarat Visual Renaissance
+# PR62 checkpoint record
 
-Base: PR61 `b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735`, still an open draft on 2026-11-08. Stack targets `feature/yaowarat-alive-pr61`. No merge/deployment/Replit.
+PR62 targets `feature/yaowarat-alive-pr61` at `b1ebccdf536a6b72a0cf8afb45bcdcd409a6d735`. The runtime tested in the final run is `a52700300da6cd44bcc2ae00657dff1be6090bdf`.
 
-- A: COMPLETE. Fresh original golden/night and 18 pinned PR61 views captured and inspected in successful run 42527618107. Actual comparison findings in VISUAL-GAP.md. Original midday absence remains explicit.
-- B: IMPLEMENTED + rendered. One 512KiB finish array, source-backed shared light field and cinematic sky. Browser renders confirm tactile plaster/metal and localized pavement pools; zero WebGL errors.
-- C: IMPLEMENTED and visually inspected. 47 source edges in the ~180m signature sequence. Opening-aware wall grammar and source-wall draw-index masks preserve pinned source buffers/collision data.
-- D: PASSED for the signature architecture/material/lighting benchmark after two rendered iterations. Run 42528852340 passes TypeScript, new regressions, production build and all real captures. Inspected closeups, day/golden/night, Fast and native chase driving. Source gaps/background blank sides remain visible and are addressed in E; no claim of photorealism.
-- E: IMPLEMENTED. Extend the opening-aware grammar across all 357 previously admitted source frontages, with quiet Song Wat shutters/arches, source-backed corner elevations, distinct hotel/merchant/cafe interiors, retained real business identities and source-width road edge paint. Expanded visual certification pending.
-- F: The first expanded route benchmark in run 42529614780 measured 21–44% higher p95 than PR61. Exact owned allocations were stable across three returns, but the previous uploaded-geometry assertion failed on variable frustum-dependent counts. The follow-up reduces pixel shader work, uses vertex lighting on source massing, retains the finish array and road light pools, and tests release events for every evicted geometry and instance stream. The full matched benchmark, browser gameplay and WebKit are being repeated against this checkpoint.
-- G: Expanded renders inspected from run 42529614780. The follow-up reserves the fascia band at Tang To Kang, treats visible narrow side returns and adds a labeled controlled-daylight capture of the original world. Final captures and certification are pending.
+| Checkpoint | Result |
+|---|---|
+| A. Audit and baseline | Inspected both renderers and saved the in-game PR61 and condensed references. The final gallery also includes a labeled controlled-daylight condensed view. |
+| B. Finishes and lighting | Implemented packed finishes, localized commercial lighting and a day, dusk and night sky. |
+| C. Signature reconstruction | Rebuilt 47 source edges along the roughly 180 m showcase. Verified window and storefront openings against pinned source walls and collision edges. |
+| D. Visual gate | Inspected multiple rendered iterations. The geographic showcase approaches the condensed reference in materials, windows and sign construction. The condensed version retains denser activity and more storefront variation. |
+| E. Connected corridor | Applied the architecture to 357 admitted source edges, including 48 in Song Wat. Added source-backed corner treatments and edge paint. |
+| F. Performance and regression checks | Optimized the first expanded build after measuring a 21–44% p95 regression. The final build matched or improved PR61 in eight cases. Exact resource release, gameplay, WebKit, typecheck and production build pass. |
+| G. Final visual review | Reviewed 25 geographic views and both controlled-daylight condensed views. Verified the Tang To Kang fascia repair, revised side shading and native chase view. The gallery, raw measurements and regression record are saved on the branch. |
 
-## Audit observations (code, not visual certification)
+Physical iPhone 17 Pro Max frame pacing, thermal behavior and graphics memory remain unmeasured. Some source-constrained side streets and Gate-adjacent blocks still use simple massing. The figures and vendor sets remain stylized. A useful next pass is to drive the same Yaowarat route in Fast and Pretty on the iPhone, then refine the most visible vendor clusters and corners within the measured device budget.
 
-The original uses eight surface finishes (color/PBR/normal arrays), coherent authored rooms/openings, per-piece bounce and a world-space commercial light field. Geographic architecture packs the same UV/surface information but ignores it with MeshBasicMaterial and per-vertex lighting. Most geographic pieces default to plaster. Continuous full-height skins visually flatten entrances and windows. Night wash is uniform by height rather than actual shop locations. Background source masses use a very bright ambient light, undermining shop contrast.
-
-Candidate: one compact repeatable finish array containing grayscale albedo plus relief, one directional fragment shader with surface-specific highlights, existing packed surface IDs, world coordinates and chunk-independent local light field. Compare against the existing texture-free material and full three-array PBR. Keep shared texture ownership at scene lifetime and chunk geometries at chunk lifetime.
-
-Source-backed showcase candidate: existing central Yaowarat gold/restaurant sequence around longitude 100.5102–100.5118 (approximately 180m); actual source edges and road-clearance policy retained. Confirm coverage with actual views before expanding.
-
-## Environment
-
-Local Chromium launch was attempted and is denied by the execution sandbox (`socket() failed: Operation not permitted`). Local command escalation is disabled. Real browser captures run in a read-only GitHub Actions job, never a deployment. All inspected images must come from that running game. Direct git writes require authentication; GitHub connector commits preserve remote checkpoints.
-
-Original condensed production world has sunset→night lighting and no midday control. Golden and night comparisons preserve it byte-for-byte. A true matched midday original capture remains an explicit evidence gap, not silently relabeled sunset.
+[In-game gallery](README.md) · [Original audit](VISUAL-GAP.md) · [Performance](PERFORMANCE.md) · [Verification](VERIFICATION.md) · [Passing final Actions run](https://github.com/sunsetseast/TukTukRushBangkok/actions/runs/42544455241)
