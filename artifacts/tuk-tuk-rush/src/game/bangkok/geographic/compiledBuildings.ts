@@ -11,6 +11,7 @@ export type CompiledBatch = {
 };
 export type CompiledBuildings = {
   body: ArrayBuffer;
+  frontageIndices?:Record<number,Uint16Array|Uint32Array>;
   batches: CompiledBatch[];
   buildingCount: number;
   vertices: number;
@@ -69,16 +70,16 @@ export function decodeCompiledChunk(raw: ArrayBuffer, ref: ChunkReference): Geog
 export function buildCompiledBuildings(data: CompiledBuildings, material: T.Material) {
   const root = new T.Group();
   root.name = "SourceBuildings";
-  for (const b of data.batches) {
+  for (const [bi,b] of data.batches.entries()) {
     const g = new T.BufferGeometry();
     for (const a of b.attributes)
       g.setAttribute(a.name, new T.BufferAttribute(a.kind === "millimeters"
         ? new Float32Array(data.body, a.offset, a.count) : a.kind === "snorm16"
           ? new Int16Array(data.body, a.offset, a.count) : new Uint8Array(data.body, a.offset, a.count), 3, a.kind !== "millimeters"));
     const { offset, count, width } = b.index;
-    g.setIndex(new T.BufferAttribute(width === 2
+    g.setIndex(new T.BufferAttribute(data.frontageIndices?.[bi] ?? (width === 2
       ? new Uint16Array(data.body, offset, count)
-      : new Uint32Array(data.body, offset, count), 1));
+      : new Uint32Array(data.body, offset, count)), 1));
     g.boundingSphere = new T.Sphere(new T.Vector3(...b.sphere.slice(0, 3) as [number, number, number]), b.sphere[3]!);
     const mesh = new T.Mesh(g, material);
     mesh.name = b.name; mesh.userData = { detail: b.detail, cell: b.cell };

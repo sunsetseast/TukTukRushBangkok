@@ -1,3 +1,7 @@
+import {emitRenaissanceRoadEdges} from "./renaissanceRoadEdges";
+import {emitRenaissanceReturns} from "./renaissanceReturns";
+import {renaissanceFrontage} from "./renaissancePlan";
+import {emitRenaissanceFacade} from "./renaissanceArchitecture";
 import * as T from "three";
 import area from "./chinatownArea.generated.json";
 import {CHINATOWN_SITES,chinatownSite} from "./chinatownSites";
@@ -48,6 +52,7 @@ export type Facade = {
   floors: number;
   seed: number;
   outset: number;
+  setback?: number;
   tradeHint?: number;
   family: string;
   edge: BuildingEdge;
@@ -228,6 +233,7 @@ export function geographicFacades(chunk: GeographicChunkData): Facade[] {
                       : b.tags.building === "warehouse"
                         ? 8
                         : undefined,
+        setback:margin,
         outset: Math.min(1.65, margin - 0.25),
         edge: e,
       });
@@ -316,7 +322,7 @@ export function prepareChinatown(
   const facades = geographicFacades(chunk);
   if (!facades.length) return;
   const material = new T.MeshStandardMaterial(),
-    batch = new ArchitecturalBatch(material, material, 60, true),
+    batch = new ArchitecturalBatch(material, material, 60, false),
     signs = new Map<
       string,
       { p: number[]; uv: number[]; center: number[]; vertical: boolean }
@@ -324,6 +330,7 @@ export function prepareChinatown(
   const props: (Obstacle & { sourceId: string })[] = [];
   const life:LifeAnchor[]=[];
   const visible=frontageVisibility(chunk);
+  const frontageIds=new Set(facades.map(f=>f.id)),returned=new Set<string>(),sourceBuildings=new Map((chunk.buildings??[]).map(b=>[b.id,b]));
   let pieces = 0;
   for (const f of [...facades].sort((a,b)=>Number(!!b.siteId)-Number(!!a.siteId)||a.id.localeCompare(b.id))) {
     const song = f.style === "songwat",
@@ -365,7 +372,7 @@ export function prepareChinatown(
       if (pieces >= 18000 && layer === "detail") return;
       if(y<3.2&&v+d/2>.1&&decorativeRoadClearance(f.x+f.nz*u+f.nx*v,f.z-f.nx*u+f.nz*v,w,d,yaw+rotate)<.12)return;
       if (
-        layer === "near" &&
+        (layer === "near" || layer === "core") &&
         shape === "box" &&
         y > 0.4 &&
         y < 1 &&
@@ -398,6 +405,7 @@ export function prepareChinatown(
         layer,
         shape,
         surface,
+        glow:renaissanceFrontage(f)&&v<.12&&y<3.2? (baseType===0?"#71532d":"#63503b"):undefined,
       });
       pieces++;
     };
@@ -420,13 +428,13 @@ export function prepareChinatown(
           chunk.origin[0] +
           f.nz * u +
           f.nx * v +
-          (vertical ? Math.sin(ang) * 0.085 : 0),
+          (vertical ? Math.sin(ang) * 0.14 : 0),
         z =
           f.z -
           chunk.origin[1] -
           f.nx * u +
           f.nz * v +
-          (vertical ? Math.cos(ang) * 0.085 : 0);
+          (vertical ? Math.cos(ang) * 0.14 : 0);
       const cell = `${Math.floor(x / 60)}:${Math.floor(z / 60)}:${vertical}`;
       let s = signs.get(cell);
       if (!s) {
@@ -461,6 +469,26 @@ export function prepareChinatown(
         );
       }
     };
+    if(renaissanceFrontage(f)){
+      emitRenaissanceFacade(f,put,sign,site,Array.from({length:n},(_,j)=>facadeTrade(f,j)));
+      const sourceBuilding=sourceBuildings.get(f.buildingId)!;
+      emitRenaissanceReturns(f,sourceBuilding,put,e=>{
+        const id=`${f.buildingId}:${e.polygon}:${e.edge}`;
+        if(e.ring!==0||!e.collision||frontageIds.has(id)||returned.has(id))return false;
+        const shared=[e.a,e.b].some(p=>[f.edge.a,f.edge.b].some(q=>Math.hypot(p[0]-q[0],p[1]-q[1])<.02));if(!shared)return false;
+        const dx=e.b[0]-e.a[0],dz=e.b[1]-e.a[1],len=Math.hypot(dx,dz);if(len<2||len>50)return false;
+        const ccw=(f.edge.b[1]-f.edge.a[1])*f.nx-(f.edge.b[0]-f.edge.a[0])*f.nz>0?1:-1,nx=ccw*dz/len,nz=-ccw*dx/len;
+        const x=(e.a[0]+e.b[0])/2,z=(e.a[1]+e.b[1])/2;
+        if(roadClearance(x+chunk.origin[0],z+chunk.origin[1])>12||!visible(f.buildingId,x+nx*.12,z+nz*.12,x+nx*.5,z+nz*.5))return false;
+        returned.add(id);return true;
+      });
+      // Retain a bounded cook anchor behind the worktop, with a clear upper silhouette.
+      if([1,4,11].includes(baseType)&&out>1.25&&life.length<24){
+        const u=-W/2+bay*.5,x=f.x+f.nz*u+f.nx*.19,z=f.z-f.nx*u+f.nz*.19;
+        if(decorativeRoadClearance(x,z,.68,.7,yaw)>.18)life.push({sourceId:f.id,x:x-chunk.origin[0],z:z-chunk.origin[1],yaw,kind:baseType===4?'wok':'stir',seed,travel:0,skin:'#b98c68',shirt:['#59766b','#a65e49','#b7b2a0'][seed%3]!});
+      }
+      continue;
+    }
     // Thin coloured skin follows every admitted edge. Existing massing remains authoritative.
     put(0, H / 2, 0.035, W - 0.08, H, 0.06, wall);
     put(0, 3.6, 0.18, W, 0.15, 0.35, accent);
@@ -1058,6 +1086,7 @@ export function prepareChinatown(
         );
     }
   }
+  emitRenaissanceRoadEdges(chunk,batch);
   const batches: DecorationBatch[] = [];
   for (const root of batch.finish()) {
     const mesh = root.children[0] as T.Mesh;

@@ -1,26 +1,16 @@
 import * as T from "three";
+import {geographicFinishTexture,installGeographicFinish} from "./premiumFinish";
+import {geographicCommercialField,installGeographicCommercialLight} from "./commercialLighting";
 import {buildChinatownLife} from "./chinatownLife";
 import { buildSignAtlas } from "../../signArt";
 import { GEO_SHOP_SIGNS, type ChinatownDecoration } from "./chinatownFacades";
 export function chinatownMaterials() {
   const atlas = buildSignAtlas(GEO_SHOP_SIGNS, true), night = { value: 0 };
-  // Palette lighting is evaluated per vertex in this bounded decorative layer.
-  // Shared production world lighting remains unchanged. Avoid per-fragment PBR
-  // and array texture work on mobile; preserve readable directional profiles.
-  const facade = new T.MeshBasicMaterial({ vertexColors: true });
-  facade.onBeforeCompile = shader => {
-    shader.uniforms.shopNight=night;
-    shader.vertexShader="uniform float shopNight;\n"+shader.vertexShader.replace('#include <color_vertex>',`#include <color_vertex>
-      vec3 litNormal=normal;vec4 washPosition=vec4(position,1.);
-      #ifdef USE_INSTANCING
-      litNormal=mat3(instanceMatrix)*litNormal;washPosition=instanceMatrix*washPosition;
-      #endif
-      litNormal=normalize(mat3(modelMatrix)*litNormal);
-      float direct=max(0.,dot(litNormal,normalize(vec3(.4,.8,.2))));
-      float wash=clamp(1.-max(0.,washPosition.y-1.)*.2,0.,1.);
-      vColor.rgb*=mix(vec3(.72+direct*.4),mix(vec3(.19,.24,.34),vec3(.92,.49,.20),wash),shopNight);`);
-  };
-  facade.customProgramCacheKey=()=>"geographic-palette-lighting-v1";
+  const finish=geographicFinishTexture(),field=geographicCommercialField();
+  const dusk={value:0},detail={value:1};
+  const facade=new T.MeshBasicMaterial({vertexColors:true});
+  installGeographicFinish(facade,finish,{night,dusk,detail});
+  installGeographicCommercialLight(facade,field,night,true);
   const windows=new T.MeshBasicMaterial({vertexColors:true,color:'#ffffff'});
   const h=new T.MeshBasicMaterial({map:atlas.h.tex,toneMapped:false}),v=h.clone();v.map=atlas.v.tex;
   return {
@@ -28,15 +18,18 @@ export function chinatownMaterials() {
     windows,
     h,
     v,
-    night,
+    night,dusk,field,finish,
+    setQuality(value:"low"|"medium"){detail.value=value==='low'?.35:1;},
+    setTime(value:"day"|"dusk"|"night"){dusk.value=value==='dusk'?1:0;},
     setNight(value: number) {
       night.value = value;
-      windows.color.setScalar(.85+value*.45);
+      windows.color.set("#ffdda6").multiplyScalar(.55+value*.55);
       h.color.setScalar(.9+value*.25);
       v.color.setScalar(.9+value*.35);
     },
     dispose() {
       for (const m of [facade, windows, h, v]) m.dispose();
+      finish.dispose();field.dispose();
       for (const t of [atlas.h.tex, atlas.v.tex])
         t.dispose();
     },

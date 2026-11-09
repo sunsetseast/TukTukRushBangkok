@@ -18,7 +18,7 @@ export function lifePose(
   time: number,
   player: { x: number; z: number },
 ) {
-  const phase = time * (a.kind === "walk" ? 1.25 : 1.8) + (a.seed % 97),
+  const phase = time * (a.kind === "walk" ? 1.25 : 1.5+(a.seed%11)*.045) + (a.seed % 97),
     wave = Math.sin(phase),
     react = Math.hypot(a.x - player.x, a.z - player.z) < 12;
   return {
@@ -59,7 +59,7 @@ export function buildChinatownLife(
     0,
   );
   if (!count) return;
-  const mesh = new T.InstancedMesh(new T.BoxGeometry(1, 1, 1), material, count);
+  const mesh = new T.InstancedMesh(new T.CylinderGeometry(.5, .43, 1, 6), material, count);
   mesh.name = "ChinatownLife";
   mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
   mesh.frustumCulled = false;

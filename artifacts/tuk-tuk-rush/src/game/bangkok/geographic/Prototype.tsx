@@ -1,3 +1,6 @@
+import {geographicSky} from "./cinematicSky";
+import {installGeographicCommercialLight} from "./commercialLighting";
+import {installGeographicMassing} from "./premiumFinish";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as T from "three";
@@ -70,18 +73,21 @@ function Scene({
     undefined,
   );
   targetRef.current = target;
-  const atmosphere = time==='day'?{sky:'#c3dce6',sun:'#fff1d1',ambient:2.3,direct:2.2,night:0}:time==='dusk'?{sky:'#515a80',sun:'#ffbe83',ambient:1.65,direct:1.35,night:.7}:{sky:'#101d35',sun:'#b6cbe9',ambient:1.25,direct:.55,night:1};
+  const atmosphere = time==='day'?{sky:'#bbd7e8',sun:'#fff2d9',ambient:1.12,direct:2.3,night:0}:time==='dusk'?{sky:'#c28c92',sun:'#ffc17b',ambient:.88,direct:2.1,night:.38}:{sky:'#10192f',sun:'#b6c9ec',ambient:.52,direct:.22,night:1};
   const profiler = useMemo(() => new GeographicFrameProfiler(), []);
   const perfAt = useRef(0);
   const qaSnapshotAt = useRef(0);
   const content = useMemo(() => {
     const group = new T.Group(),
       water = riverWater(),
+      sky = geographicSky(),
       materials = geographicMaterials(network.metadata),
       decorationMaterials = chinatownMaterials(),
       resident = new Map<string, GeographicChunkData>(),
       colliders = new Map<string, ReturnType<typeof buildingObstacles>>(),
       assets = new Map<string, ReturnType<typeof buildMigratedArt>[]>();
+    for(const m of [materials.roads,materials.land])installGeographicCommercialLight(m,decorationMaterials.field,decorationMaterials.night);
+    installGeographicMassing(materials.buildings,decorationMaterials);
     const loader = new GeographicChunkLoader();
     let revision = 0;
     const activationMs: number[] = [];
@@ -141,7 +147,7 @@ function Scene({
     route.renderOrder = 10;
     group.add(route);
     return {
-      group,
+      group,sky,
       loader,
       activationMs,
       decorationMaterials,
@@ -166,13 +172,14 @@ function Scene({
       forward: new T.Vector3(),
     };
   }, [network, places]);
-  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.buildings.color.set(time==='night'?'#a0a6b4':time==='dusk'?'#d7c4b1':'#ffffff');},[content,gl,time]);
+  useEffect(()=>{content.decorationMaterials.setNight(atmosphere.night);content.decorationMaterials.setTime(time);content.sky.setTime(time);gl.toneMapping=T.ACESFilmicToneMapping;gl.toneMappingExposure=time==='night'?1.12:1;content.materials.roads.color.set(time==='night'?'#262c37':time==='dusk'?'#4c453f':'#495455');content.materials.land.color.set(time==='night'?'#353c47':time==='dusk'?'#8c8275':'#a8aa97');},[content,gl,time]);
   const tuk = useMemo(() => buildTuk(art.hero, art.textures), [art]);
   useEffect(
     () => () => {
       content.stream.close();
       content.loader.close();
       content.decorationMaterials.dispose();
+      content.sky.dispose();
       sfx.street(0,false);
       content.ring.geometry.dispose();
       (content.ring.material as T.Material).dispose();
@@ -201,6 +208,7 @@ function Scene({
     return () => gl.domElement.removeEventListener('webglcontextlost', lost);
   }, [gl, session, onError]);
   useFrame((state, delta) => {
+    content.decorationMaterials.setQuality(session.model.snapshot.quality);
     const now = performance.now();
     session.update(delta);
     const p = session.player,
@@ -225,6 +233,7 @@ function Scene({
     content.look.copy(chase.current.look);
     content.look.y += session.height;
     camera.lookAt(content.look);
+    content.sky.root.position.copy(camera.position);
     const perspective = camera as T.PerspectiveCamera;
     perspective.fov = chase.current.fov;
     perspective.updateProjectionMatrix();
@@ -235,6 +244,7 @@ function Scene({
       camera.position.fromArray(inspectionPose.current.position);
       content.look.fromArray(inspectionPose.current.target);
       camera.lookAt(content.look);
+    content.sky.root.position.copy(camera.position);
     }
     if (import.meta.env.DEV && qaView.current) {
       camera.position.fromArray(qaView.current.position);
@@ -368,6 +378,7 @@ function Scene({
       qaSnapshotAt.current = now;
       (window as any).__geography = {
       timeOfDay: time,
+      textures:gl.info.memory.textures,
       position: { x: p.x, z: p.z, heading: p.heading },
       coordinate: metersToGeographic(p),
       height: session.height,
@@ -393,6 +404,7 @@ function Scene({
     if (import.meta.env.DEV && location.search.includes("geographyQA"))
       (window as any).__geographyQA = {
         project: geographicToMeters,
+        chunkRoots: () => [...content.stream.active.values()].flatMap(value => value.root ? [value.root] : []),
         inspectBuilding: (id: string) => {
           for (const c of content.resident.values()) {
             const building = c.buildings?.find((b) => b.id === id);
@@ -403,6 +415,7 @@ function Scene({
         view: (position: number[], target: number[]) => {
           qaView.current = { position, target };
         },
+        chase:()=>{qaView.current=undefined;},
         session,
         network,
         places,
@@ -447,7 +460,8 @@ function Scene({
       <color attach="background" args={[atmosphere.sky]} />
       <fog attach="fog" args={[atmosphere.sky, 320, 1350]} />
       <hemisphereLight args={[atmosphere.sun, time==='night'?'#24334a':'#697667', atmosphere.ambient]} />
-      <directionalLight position={[40, 100, 60]} color={atmosphere.sun} intensity={atmosphere.direct} />
+      <directionalLight position={time==='dusk'?[-89.5,31,-43.5]:[-45,82,-35]} color={atmosphere.sun} intensity={atmosphere.direct} />
+      <primitive object={content.sky.root} />
       <primitive object={content.group} />
       <primitive object={tuk.root} />
       <TrafficActors network={network} session={session} enabled={trafficEnabled} />

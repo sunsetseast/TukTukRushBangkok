@@ -1,0 +1,35 @@
+{
+  "mode": "originalday",
+  "environment": "Linux Chromium / SwiftShader, 844x390 DPR1. Physical iPhone untested.",
+  "errors": [],
+  "views": [
+    {
+      "name": "day",
+      "pose": {
+        "elapsed": 0,
+        "controlledDaylight": true
+      },
+      "stats": {
+        "calls": 545,
+        "triangles": 831922,
+        "geometries": 532,
+        "textures": 16,
+        "frameMs": 1077.5999999999767
+      }
+    },
+    {
+      "name": "shop-day",
+      "pose": {
+        "elapsed": 0,
+        "streetHeight": 3.5
+      },
+      "stats": {
+        "calls": 431,
+        "triangles": 683553,
+        "geometries": 686,
+        "textures": 16,
+        "frameMs": 1091.8000000000175
+      }
+    }
+  ]
+}

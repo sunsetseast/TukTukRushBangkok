@@ -90,7 +90,7 @@ export function paintBangkokRoadPlaque(
   const limit=(text:string,maxPx:number,fontSize:number)=>{
     let size=fontSize;
     while(size>24){
-      ctx.font=`700 ${size}px "Noto Sans Thai","Thonburi","Tahoma",sans-serif`;
+      ctx.font=`700 ${size}px "Rush Thai","Noto Sans Thai","Thonburi","Tahoma",sans-serif`;
       if(ctx.measureText(text).width<=maxPx)break;
       size-=3;
     }

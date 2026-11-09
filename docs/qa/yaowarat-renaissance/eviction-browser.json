@@ -1,0 +1,181 @@
+{
+  "environment": "Linux Chromium SwiftShader",
+  "samples": [
+    {
+      "cycle": 0,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "geometries": 195,
+      "textures": 8,
+      "ownedMeshes": 563,
+      "buildingBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 2113,
+        "instances": 1011,
+        "releasedGeometry": 2113,
+        "releasedInstances": 1011
+      },
+      "glError": 0
+    },
+    {
+      "cycle": 0,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "geometries": 722,
+      "textures": 10,
+      "ownedMeshes": 2150,
+      "buildingBytes": 19528344,
+      "decorativeBytes": 8556619,
+      "facades": 357,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 562,
+        "instances": 28,
+        "releasedGeometry": 562,
+        "releasedInstances": 28
+      },
+      "glError": 0
+    },
+    {
+      "cycle": 1,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "geometries": 188,
+      "textures": 10,
+      "ownedMeshes": 563,
+      "buildingBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 2113,
+        "instances": 1011,
+        "releasedGeometry": 2113,
+        "releasedInstances": 1011
+      },
+      "glError": 0
+    },
+    {
+      "cycle": 1,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "geometries": 175,
+      "textures": 10,
+      "ownedMeshes": 2150,
+      "buildingBytes": 19528344,
+      "decorativeBytes": 8556619,
+      "facades": 357,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 562,
+        "instances": 28,
+        "releasedGeometry": 562,
+        "releasedInstances": 28
+      },
+      "glError": 0
+    },
+    {
+      "cycle": 2,
+      "away": true,
+      "ids": [
+        "6144:-6144",
+        "6144:-7168",
+        "6144:-8192",
+        "7168:-6144",
+        "7168:-7168",
+        "7168:-8192",
+        "8192:-6144",
+        "8192:-7168",
+        "8192:-8192"
+      ],
+      "geometries": 213,
+      "textures": 10,
+      "ownedMeshes": 563,
+      "buildingBytes": 6666768,
+      "decorativeBytes": 0,
+      "facades": 0,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 2113,
+        "instances": 1011,
+        "releasedGeometry": 2113,
+        "releasedInstances": 1011
+      },
+      "glError": 0
+    },
+    {
+      "cycle": 2,
+      "away": false,
+      "ids": [
+        "2048:-1024",
+        "2048:0",
+        "2048:1024",
+        "3072:-1024",
+        "3072:0",
+        "3072:1024",
+        "4096:-1024",
+        "4096:0",
+        "4096:1024"
+      ],
+      "geometries": 175,
+      "textures": 10,
+      "ownedMeshes": 2150,
+      "buildingBytes": 19528344,
+      "decorativeBytes": 8556619,
+      "facades": 357,
+      "streamErrors": 0,
+      "release": {
+        "geometry": 562,
+        "instances": 28,
+        "releasedGeometry": 562,
+        "releasedInstances": 28
+      },
+      "glError": 0
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

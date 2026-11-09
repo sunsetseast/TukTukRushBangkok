@@ -1,0 +1,61 @@
+{
+  "mode": "original",
+  "environment": "Linux Chromium / SwiftShader, 844x390 DPR1. Physical iPhone untested.",
+  "errors": [],
+  "views": [
+    {
+      "name": "golden",
+      "pose": {
+        "elapsed": 0
+      },
+      "stats": {
+        "calls": 546,
+        "triangles": 831954,
+        "geometries": 695,
+        "textures": 16,
+        "frameMs": 1014
+      }
+    },
+    {
+      "name": "shop-golden",
+      "pose": {
+        "elapsed": 0,
+        "streetHeight": 3.5
+      },
+      "stats": {
+        "calls": 431,
+        "triangles": 683553,
+        "geometries": 805,
+        "textures": 16,
+        "frameMs": 1619.2000000000116
+      }
+    },
+    {
+      "name": "night",
+      "pose": {
+        "elapsed": 240
+      },
+      "stats": {
+        "calls": 545,
+        "triangles": 831922,
+        "geometries": 805,
+        "textures": 16,
+        "frameMs": 788.9000000000233
+      }
+    },
+    {
+      "name": "shop-night",
+      "pose": {
+        "elapsed": 240,
+        "streetHeight": 3.5
+      },
+      "stats": {
+        "calls": 431,
+        "triangles": 683553,
+        "geometries": 805,
+        "textures": 16,
+        "frameMs": 731.5999999999767
+      }
+    }
+  ]
+}
